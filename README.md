@@ -93,9 +93,63 @@ After extracting HB 10858, run `python3 compare_hb_nep.py` to create a project-t
 
 Names are normalized only for case and punctuation/spacing. These reports do not infer that two differently worded descriptions are the same project. The location field uses office when present and region otherwise; it is a comparison key, not a verified project site. No quantity, length, capacity, materials, or other scope/size field is present in the current 2027 Parquet, so the suite cannot compute unit costs such as pesos per kilometer or compare projects adjusted for size. Monetary values in the reports are converted to pesos from the source's thousand-peso values.
 
-## Scope of the current files
+## Full FY2027 NEP workbook
 
-The workspace currently has a single 2027 DPWH project extract (`2027.parquet`), with 11,372 records and fields for region, district/office, project name, PAP hierarchy, amount, and document count. The reports describe patterns in that extract only. Add the 2020–2026 Parquet files as inputs to get cross-year comparisons, provided their records are comparable and the field mapping is correct.
+`NEP-FY2027.xlsx` is the full national budget schedule, separate from the
+DPWH-only `2027.parquet` project extract. Parse it with:
+
+```sh
+python3 parse_nep_xlsx.py
+```
+
+The streaming parser writes `nep_fy2027_all.json`,
+`nep_fy2027_all.parquet`, and `nep_fy2027_all_summary.json`. It retains the
+workbook's 21 source fields and adds row, agency, fiscal year, and amount
+fields. `AMT` is in thousand pesos; `amountPesos` converts it to pesos. The
+summary reports row counts by PREXC level and samples of rows with amounts.
+The workbook's short `AGENCY` and `DEPARTMENT` code fields are retained as
+`agencyCode` and `departmentCode` beside the descriptive `agency` and
+`department` fields.
+The JSON file is large; Parquet is the compact format for queries.
+
+Screen the non-DPWH FY2027 HGAB schedules against the full NEP with:
+
+```sh
+python3 compare_hgab_non_dpwh_nep.py
+```
+
+This writes `analysis_output/hgab_non_dpwh_insertion_candidates.csv` and its
+summary JSON. Current coverage is the extracted FMR, NIA, and HFEP schedules
+from HB 10858 Volume I-B. It does not imply that all HB agencies have been
+extracted. NIA is compared by named project; FMR and HFEP are represented by
+shared or regional NEP budget envelopes, so newly named HGAB projects can be
+itemizations of those envelopes rather than additional budget. The reports
+show that distinction explicitly.
+
+In the current extract, the NIA screen finds 2 named HGAB candidates totaling
+₱1.00B without a close named NEP counterpart; 30 of 32 have exact normalized
+title matches. FMR has 795 named HB candidates totaling ₱14.04B under ₱16.00B
+of regional NEP FMR capital envelopes. HFEP has 513 facility candidates
+totaling ₱10.02B under a ₱14.47B NEP HFEP capital envelope. The FMR and HFEP
+figures compare itemized bill schedules with higher-level NEP envelopes, so
+they describe added detail and require line-level budget tracing before they
+can be called additions to the total budget.
+
+Refresh the report pages after the existing HB extraction and agency analysis:
+
+```sh
+python3 compare_hgab_non_dpwh_nep.py
+python3 build_fmr_report.py
+python3 build_nia_report.py
+python3 analyze_fmr_nia_repeats.py
+python3 build_hfep_report.py
+```
+
+The workspace also has a DPWH-only 2027 project extract (`2027.parquet`), with
+11,372 records and fields for region, district/office, project name, PAP
+hierarchy, amount, and document count. Add 2020–2026 Parquet files for that
+extract to run cross-year project comparisons, provided the records and field
+mapping are comparable.
 
 The standalone report has district-level views for Rainwater Collector System, multi-purpose buildings, access roads/bridges, and flood mitigation/drainage. The water-sector watchlist includes records under the shared water supply/rainwater PAP2 plus selected title keywords outside that group, so a possible rename can be reviewed across categories and years. These keyword matches are candidates only.
 

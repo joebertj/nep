@@ -2,9 +2,50 @@
 
 `nep` holds the report source, generated HTML, and private deployment helper.
 Keep this repository private because the helper contains the server address.
-Do not edit or deploy `open-data-visualization` as part of this preview stage.
 
-## Read-only inspection
+## Routine ODV deployment through Git
+
+Make and review the ODV changes in `open-data-visualization`, commit them, and
+push the intended commit to `origin/main`. The local ODV checkout may contain
+unrelated work; stage only the intended files. The server deploy helper refuses
+to run if the server checkout has unrelated changes or cannot fast-forward.
+It backs up the six release paths before advancing Git, replaces the four report
+files with the committed versions, and preserves server-only homepage edits
+when the target commit leaves those templates unchanged. If the frontend or any
+report URL fails its post-update check, it restores the previous commit and all
+six pre-deployment files.
+
+Inspect the server first:
+
+```sh
+./deployment/deploy_odv_git.sh inspect
+```
+
+Deploy after the intended ODV commit is on `origin/main`:
+
+```sh
+./deployment/deploy_odv_git.sh deploy
+```
+
+The deploy action asks for `DEPLOY ODV MAIN`, fetches `origin/main`, and
+fast-forwards the server checkout. The frontend loads Tera templates per
+request, and static reports are served directly, so these file changes need no
+service restart. It does not build Rust, install packages, restart services, or
+change service configuration. It checks the frontend before and after the
+update and returns the checkout to its previous commit if the post-update
+check fails.
+
+If deployment refuses because the server tree has unrelated changes or a
+published file differs from the target commit, inspect and reconcile those
+changes before retrying. The helper never stashes or resets unrelated work.
+
+## Direct intervention scripts
+
+`publish_odv_nep.sh` and `remote.sh` remain available for explicitly directed
+direct file publication or read-only inspection. Use them for exceptional
+intervention when the Git path is unsuitable, and keep routine releases in Git.
+
+## Direct remote inspection
 
 ```sh
 ./deployment/remote.sh inspect

@@ -1,0 +1,56 @@
+{
+  "source": {
+    "nep": "nep_fy2027_all.parquet",
+    "hgab": [
+      "hb10858_agency_projects.json",
+      "hb10858_nia_projects.json",
+      "hb10858_hfep_projects.json"
+    ],
+    "stage": "FY2027 NEP compared with HB 10858 HGAB schedules"
+  },
+  "NIA": {
+    "hgabCandidateCount": 32,
+    "hgabCandidateAmountPesos": 10655321000,
+    "nepNamedProjectCandidateCount": 38,
+    "comparisonCounts": {
+      "Named in NEP; compare amount and scope": 30,
+      "Potential insertion; no close named NEP counterpart": 2
+    },
+    "potentialInsertionAmountPesosByStatus": {
+      "Potential insertion; no close named NEP counterpart": 1000000000
+    },
+    "method": "Exact normalized title first, then token-overlap shortlist and character similarity. Direction conflicts remain distinct; tranche differences are a 50/50 review signal."
+  },
+  "FMR": {
+    "hgabCandidateCount": 795,
+    "hgabCandidateAmountPesos": 14035375000,
+    "nepRegionalCapitalEnvelopePesos": 16000000000,
+    "nepRegionalCapitalEnvelopeByRegionPesos": {
+      "Cordillera Administrative Region (CAR)": 1540000000,
+      "Negros Island Region (NIR)": 460000000,
+      "Region I - Ilocos": 1630000000,
+      "Region II - Cagayan Valley": 1865000000,
+      "Region III - Central Luzon": 3025000000,
+      "Region IVA - CALABARZON": 1627000000,
+      "Region IVB - MIMAROPA": 795000000,
+      "Region IX - Zamboanga Peninsula": 445000000,
+      "Region V - Bicol": 915000000,
+      "Region VI - Western Visayas": 500000000,
+      "Region VII - Central Visayas": 225000000,
+      "Region VIII - Eastern Visayas": 535000000,
+      "Region X - Northern Mindanao": 455000000,
+      "Region XI - Davao": 535000000,
+      "Region XII - SOCCSKSARGEN": 240000000,
+      "Region XIII - CARAGA": 1208000000
+    },
+    "interpretation": "NEP uses regional FMR capital envelopes; HGAB names local roads. These are newly itemized lines, not automatically new spending on top of the envelope."
+  },
+  "HFEP": {
+    "hgabCandidateCount": 513,
+    "hgabCandidateAmountPesos": 10021659000,
+    "nepCapitalOutlayEnvelopePesos": 14472659000,
+    "interpretation": "NEP has a shared HFEP capital-outlay envelope; HGAB names facilities. These line items may detail the shared envelope and are not automatically additional to it."
+  },
+  "caution": "HB schedule extracts are candidates from layout-specific PDF parsers. Unnamed NEP envelopes cannot establish that a facility/road was absent from planning or that HGAB raised the budget; verify each source schedule and classify at the same program level.",
+  "csv": "/Users/joebertj/nep/analysis_output/hgab_non_dpwh_insertion_candidates.csv"
+}
