@@ -1,0 +1,30 @@
+{
+  "method": {
+    "hypergeometric": "One-sided overlap test: among the year's district offices, fix the number with exact \u20b15M road entries and flood entries, then ask how often independent assignment gives at least the observed overlap.",
+    "region_controlled": "Monte Carlo randomization shuffles which offices have exact \u20b15M flood entries within each region, preserving each region's flood-office count and the observed road offices.",
+    "limitations": "Exploratory tests of office co-occurrence, not intent. They do not account for project need, office workload, project mix, or selection of \u20b15M and these categories after seeing the pattern. A small p-value rejects the specified chance model; it does not prove deliberate allocation.",
+    "random_seed": 502026
+  },
+  "results": [
+    {
+      "fiscal_year": 2027,
+      "district_offices": 199,
+      "road_offices": 96,
+      "flood_offices": 45,
+      "overlap_offices": 35,
+      "union_offices": 106,
+      "road_entries_at_5m": 853,
+      "flood_entries_at_5m": 119,
+      "road_entries_total": 3240,
+      "flood_entries_total": 1249,
+      "road_entry_share": 0.2632716049382716,
+      "flood_entry_share": 0.09527622097678143,
+      "independent_expected_overlap": 21.70854271356784,
+      "hypergeometric_p_value": 5.067002321181279e-06,
+      "odds_ratio": 5.336065573770492,
+      "region_controlled_expected_overlap": 25.12039072039072,
+      "region_controlled_simulated_p_value": 0.0003199968000319997,
+      "simulation_repetitions": 100000
+    }
+  ]
+}

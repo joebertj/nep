@@ -1,0 +1,22 @@
+{
+  "billSource": [
+    {
+      "file": "3 - HB 10858 VOL IC.pdf",
+      "pages": 942,
+      "duplicatePagesSkipped": 0,
+      "duplicateRowsSkipped": 6990,
+      "candidateRows": 12714
+    }
+  ],
+  "nepRecords": 11372,
+  "hbCandidateRecords": 12714,
+  "comparisonMethod": "Exact normalized title exclusion; for unmatched titles, a closest counterpart is suggested within the same office (or region when office is unavailable), using token overlap to narrow candidates and character similarity to rank them. Similarity is only a review lead; location, chainage, direction, tranche, scope, and extraction accuracy are not resolved automatically.",
+  "counts": {
+    "Likely schedule heading/total; exclude from insertion count": 4,
+    "Exact normalized title found in NEP": 3531,
+    "No close title counterpart; review candidate": 3888,
+    "Possible title counterpart; review scope": 5291
+  },
+  "warning": "Rows without an exact title match are potential insertions for review, not confirmed additions. Likely schedule headings/totals are excluded. Fuzzy counterparts do not establish overlap. Different naming, grouping, chainage, and extraction errors can all affect this screen.",
+  "csv": "/Users/joebertj/nep/analysis_output/hb_nep_comparison.csv"
+}
