@@ -50,7 +50,7 @@ printf '\n=== Homepage edits vs checkout ===\n'
 git -C "$r" diff --unified=3 -- templates/visualizations_home.html templates/mobile/visualizations_home.html | sed -n '1,180p'
 sha256sum "$r/templates/visualizations_home.html" "$r/templates/mobile/visualizations_home.html"
 printf '\n=== Nginx checks with the site Host header ===\n'
-for path in / /static/nep-preview/budget-innovations.html /static/nep-preview/deped.html /static/nep-preview/dpwh-hgab-comparison.html /static/nep-preview/dpwh-hgab.html /static/nep-preview/dpwh.html /static/nep-preview/fmr.html /static/nep-preview/hfep.html /static/nep-preview/nia-irrigation.html /static/nep-preview/nia.html /static/nep-preview/rcs.html; do
+for path in / /static/nep-preview/budget-innovations.html /static/nep-preview/congress.html /static/nep-preview/deped.html /static/nep-preview/dpwh-hgab-comparison.html /static/nep-preview/dpwh-hgab.html /static/nep-preview/dpwh.html /static/nep-preview/fmr.html /static/nep-preview/hfep.html /static/nep-preview/nia-irrigation.html /static/nep-preview/nia.html /static/nep-preview/rcs.html; do
   status="$(curl --silent --show-error --location --max-time 8 --resolve 'research.bettergov.ph:443:127.0.0.1' --output /dev/null --write-out '%{http_code}' "http://research.bettergov.ph$path" 2>/dev/null || true)"
   printf '%s %s\n' "$status" "$path"
 done
@@ -62,7 +62,7 @@ curl --silent --show-error --max-time 5 --output /dev/null --write-out '%{http_c
 app_ip="$(ss -H -ltn 'sport = :8888' 2>/dev/null | awk 'NR==1 {sub(/:[0-9]+$/, "", $4); print $4}')"
 if [[ -n "$app_ip" ]]; then
   printf 'Direct Actix listener checks (%s):\n' "$app_ip"
-  for path in / /static/nep-preview/budget-innovations.html /static/nep-preview/deped.html /static/nep-preview/dpwh-hgab-comparison.html /static/nep-preview/dpwh-hgab.html /static/nep-preview/dpwh.html /static/nep-preview/fmr.html /static/nep-preview/hfep.html /static/nep-preview/nia-irrigation.html /static/nep-preview/nia.html /static/nep-preview/rcs.html; do
+  for path in / /static/nep-preview/budget-innovations.html /static/nep-preview/congress.html /static/nep-preview/deped.html /static/nep-preview/dpwh-hgab-comparison.html /static/nep-preview/dpwh-hgab.html /static/nep-preview/dpwh.html /static/nep-preview/fmr.html /static/nep-preview/hfep.html /static/nep-preview/nia-irrigation.html /static/nep-preview/nia.html /static/nep-preview/rcs.html; do
     status="$(curl --silent --show-error --max-time 5 --output /dev/null --write-out '%{http_code}' "http://$app_ip:8888$path" 2>/dev/null || true)"
     printf '%s %s\n' "$status" "$path"
   done
@@ -81,6 +81,8 @@ r="$REMOTE_DIR"
 files=(
   static/nep-preview/budget-innovations-data.json
   static/nep-preview/budget-innovations.html
+  static/nep-preview/congress-data.json
+  static/nep-preview/congress.html
   static/nep-preview/deped-data.json
   static/nep-preview/deped.html
   static/nep-preview/dpwh-data.json
@@ -98,15 +100,24 @@ files=(
   static/nep-preview/rcs.html
 )
 health_files=(
+  static/nep-preview/budget-innovations-data.json
   static/nep-preview/budget-innovations.html
+  static/nep-preview/congress-data.json
+  static/nep-preview/congress.html
+  static/nep-preview/deped-data.json
   static/nep-preview/deped.html
   static/nep-preview/dpwh-hgab-comparison.html
+  static/nep-preview/dpwh-hgab-comparison.json
   static/nep-preview/dpwh-hgab.html
+  static/nep-preview/dpwh-data.json
   static/nep-preview/dpwh.html
   static/nep-preview/fmr.html
   static/nep-preview/hfep.html
+  static/nep-preview/hgab-revision-data.json
+  static/nep-preview/nia-irrigation-data.json
   static/nep-preview/nia-irrigation.html
   static/nep-preview/nia.html
+  static/nep-preview/rcs-data.json
   static/nep-preview/rcs.html
 )
 

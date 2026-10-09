@@ -1,5 +1,7 @@
 {
   "sourceFile": "NEP-FY2027.xlsx",
+  "sourceSHA256": "19f6b607062ba5564cbc29655f5bc0be8c3b3eb1a25dcb94591956ec574cdbb5",
+  "schemaVersion": 2,
   "sourceSheet": "NEP 2027",
   "records": 756628,
   "rowsWithAmount": 532314,
@@ -413,365 +415,3042 @@
     "National Tax Allotment": 19,
     "Net Lending": 1
   },
-  "amountByAgencyThousandsPesos": {
-    "Senate": 7968208.0,
-    "Senate Electoral Tribunal": 342407.0,
-    "Commission on Appointments": 1137659.0,
-    "House of Representatives": 18162122.0,
-    "House of Representatives Electoral Tribunal": 281903.0,
-    "The President's Offices": 10155758.0,
-    "Office of the Vice-President (OVP)": 800748.0,
-    "Office of the Secretary": 2704332877.0,
-    "Agricultural Credit Policy Council": 2865237.0,
-    "Bureau of Fisheries and Aquatic Resources": 12411576.0,
-    "Fertilizer and Pesticide Authority": 276008.0,
-    "National Meat Inspection Service": 368297.0,
-    "Philippine Carabao Center": 1384855.0,
-    "Philippine Center For Postharvest Development and Mechanization": 530754.0,
-    "Philippine Fiber Industry Development Authority": 679312.0,
-    "Philippine Council for Agriculture and Fisheries  ": 321222.0,
-    "National Fisheries Research and Development Institute": 745319.0,
-    "Government Procurement Policy Board-Technical Support Office": 160033.0,
-    "National Book Development Board": 169964.0,
-    "National Council for Children's Television": 76011.0,
-    "National Museum of the Philippines": 1561705.0,
-    "Philippine High School for the Arts": 135282.0,
-    "National Academy of Sports": 258476.0,
-    "Teacher Education Council": 360285.0,
-    "Eulogio 'Amang' Rodriguez Institute of Science and Technology": 559717.0,
-    "Marikina Polytechnic College": 357148.0,
-    "Philippine Normal University": 1223365.0,
-    "National Aviation Academy of the Philippines": 561166.0,
-    "Polytechnic University of the Philippines": 3646083.0,
-    "Rizal Technological University": 1029143.0,
-    "Technological University of the Philippines": 1661631.0,
-    "University of the Philippines System": 28068975.0,
-    "Don Mariano Marcos Memorial State University": 1836033.0,
-    "Mariano Marcos State University": 1303461.0,
-    "Pangasinan State University": 1827643.0,
-    "University of Northern Philippines": 1119902.0,
-    "Abra State Institute of Sciences and Technology": 396506.0,
-    "Apayao State College": 398470.0,
-    "Benguet State University": 1219667.0,
-    "Ifugao State University": 796998.0,
-    "Kalinga State University": 623752.0,
-    "Mountain Province State University": 555604.0,
-    "Batanes State College": 173860.0,
-    "Cagayan State University": 1764392.0,
-    "Isabela State University": 1957483.0,
-    "Nueva Vizcaya State University": 929722.0,
-    "Quirino State University": 529227.0,
-    "Aurora State College of Technology": 348262.0,
-    "Bataan Peninsula State University": 1137269.0,
-    "Bulacan Agricultural State College": 366894.0,
-    "Bulacan State University": 1928510.0,
-    "Central Luzon State University": 1361561.0,
-    "Pampanga State University": 1416185.0,
-    "Nueva Ecija University of Science and Technology": 1439418.0,
-    "Pampanga State Agricultural University": 593885.0,
-    "Philippine Merchant Marine Academy": 345398.0,
-    "President Ramon Magsaysay State University": 704532.0,
-    "Tarlac Agricultural University": 590028.0,
-    "Tarlac State University": 1081055.0,
-    "Batangas State University": 2186390.0,
-    "Cavite State University": 2108720.0,
-    "Laguna State Polytechnic University": 1037458.0,
-    "Southern Luzon State University": 889847.0,
-    "University of Rizal System": 1057403.0,
-    "Marinduque State University": 428888.0,
-    "Mindoro State University": 495457.0,
-    "Occidental Mindoro State College": 716509.0,
-    "Palawan State University": 1206843.0,
-    "Romblon State University": 671286.0,
-    "Western Philippines University": 639806.0,
-    "Bicol University": 1662692.0,
-    "Bicol State College of Applied Sciences and Technology": 340531.0,
-    "Camarines Norte State College": 574427.0,
-    "Camarines Sur Polytechnic Colleges": 773694.0,
-    "Catanduanes State University": 724410.0,
-    "Central Bicol State University of Agriculture": 1380602.0,
-    "Dr. Emilio B. Espinosa, Sr. Memorial State College of Agriculture and Technology": 360858.0,
-    "Partido State University": 642852.0,
-    "Sorsogon State University": 747715.0,
-    "Aklan State University": 851775.0,
-    "Capiz State University": 1304058.0,
-    "Carlos Hilado Memorial State University": 807085.0,
-    "Guimaras State University": 445224.0,
-    "Iloilo State University of Fisheries Science and Technology": 685874.0,
-    "Central Philippines State University": 654827.0,
-    "Northern Iloilo State University": 920772.0,
-    "State University of Northern Negros": 451823.0,
-    "University of Antique": 906678.0,
-    "Iloilo Science and Technology University": 1303994.0,
-    "West Visayas State University": 2779767.0,
-    "Bohol Island State University": 1170337.0,
-    "Cebu Normal University": 715720.0,
-    "Cebu Technological University": 2970307.0,
-    "Negros Oriental State University": 1174352.0,
-    "Siquijor State College": 255697.0,
-    "Eastern Samar State University": 911823.0,
-    "Eastern Visayas State University": 1104450.0,
-    "Leyte Normal University": 484580.0,
-    "Biliran Province State University": 649456.0,
-    "Northwest Samar State University": 669482.0,
-    "Palompon Institute of Technology": 413153.0,
-    "Samar State University": 622648.0,
-    "Southern Leyte State University": 882525.0,
-    "University of Eastern Philippines": 1107514.0,
-    "Visayas State University": 1532832.0,
-    "J. H. Cerilles State College": 488931.0,
-    "Jose Rizal Memorial State University": 1000482.0,
-    "Western Mindanao State University": 1284290.0,
-    "Zamboanga Peninsula Polytechnic State University": 664507.0,
-    "Zamboanga State College of Marine Sciences and Technology": 438874.0,
-    "Bukidnon State University": 1240046.0,
-    "Camiguin Polytechnic State College": 215854.0,
-    "Central Mindanao University": 1289743.0,
-    "MSU-Iligan Institute of Technology": 1818574.0,
-    "Northwestern Mindanao State College of Science and Technology": 448831.0,
-    "Davao del Norte State College": 527108.0,
-    "Davao Oriental State University": 785342.0,
-    "Southern Philippines Agri-Business and Marine and Aquatic School of Technology": 340445.0,
-    "University of Southeastern Philippines": 1063252.0,
-    "Cotabato State University": 507124.0,
-    "Cotabato Foundation College of Science and Technology": 445082.0,
-    "Sultan Kudarat State University": 814318.0,
-    "University of Southern Mindanao": 1180033.0,
-    "Agusan del Sur State University": 606188.0,
-    "Caraga State University": 1508513.0,
-    "North Eastern Mindanao State University": 1807913.0,
-    "Surigao del Norte State University": 851336.0,
-    "Adiong Memorial State College": 200426.0,
-    "Basilan State College": 344671.0,
-    "Mindanao State University": 7087303.0,
-    "MSU-Tawi-Tawi College of Technology and Oceanography": 1095786.0,
-    "Sulu State University": 440423.0,
-    "Tawi-Tawi Regional Agricultural College": 277073.0,
-    "Davao de Oro State College": 505493.0,
-    "Davao del Sur State College": 424618.0,
-    "Northern Bukidnon State College": 309354.0,
-    "South Cotabato State College": 126755.0,
-    "Ilocos Sur Polytechnic State College": 881991.0,
-    "Philippine Energy Research and Policy Institute": 83304.0,
-    "University of Science and Technology of Southern Philippines": 1710234.0,
-    "Environmental Management Bureau": 3367644.0,
-    "Mines and Geosciences Bureau": 2128042.0,
-    "National Mapping and Resource Information Authority": 2028298.0,
-    "National Water Resources Board": 291986.0,
-    "Palawan Council for Sustainable Development Staff": 172479.0,
-    "Bureau of Customs": 5901962.0,
-    "Bureau of Internal Revenue": 19395186.0,
-    "Bureau of Local Government Finance": 568541.0,
-    "Bureau of the Treasury": 4054917.0,
-    "Central Board of Assessment Appeals": 24737.0,
-    "Insurance Commission": 656693.0,
-    "National Tax Research Center": 148366.0,
-    "Privatization and Management Office": 134800.0,
-    "Foreign Service Institute": 166940.0,
-    "Technical Cooperation Council of the Philippines": 0.0,
-    "UNESCO National Commission of the Philippines": 52032.0,
-    "Presidential Commission on Visiting Forces": 51384.0,
-    "National Nutrition Council": 340638.0,
-    "Philippine National AIDS Council": 78239.0,
-    "Bureau of Fire Protection": 39121770.0,
-    "Bureau of Jail Management and Penology": 34433678.0,
-    "Local Government Academy": 557265.0,
-    "National Police Commission": 2403647.0,
-    "Philippine National Police": 242527279.0,
-    "Philippine Public Safety College": 1249090.0,
-    "National Commission on Muslim Filipinos (Office on Muslim Affairs)": 1245994.0,
-    "National Youth Commission": 303916.0,
-    "Philippine Commission on Women (National Commission on the Role of Filipino Women)": 183547.0,
-    "Early Childhood Care and Development Council": 124160.0,
-    "Bureau of Corrections": 11932437.0,
-    "Bureau of Immigration": 2980563.0,
-    "Land Registration Authority": 3279352.0,
-    "National Bureau of Investigation": 3026984.0,
-    "Office of the Government Corporate Counsel": 310168.0,
-    "Office of the Solicitor General": 2142502.0,
-    "Parole and Probation Administration": 1254016.0,
-    "Presidential Commission on Good Government": 338676.0,
-    "Public Attorney's Office": 7101211.0,
-    "Office for Alternative Dispute Resolution": 138756.0,
-    "Institute for Labor Studies": 82728.0,
-    "National Conciliation and Mediation Board": 351479.0,
-    "National Labor Relations Commission": 1817871.0,
-    "National Wages and Productivity Commission": 386751.0,
-    "Professional Regulation Commission": 2764449.0,
-    "Technical Education and Skills Development Authority": 21197232.0,
-    "Office of the Secretary - Proper": 1623374.0,
-    "Government Arsenal": 2262841.0,
-    "National Defense College of the Philippines": 283978.0,
-    "Office of Civil Defense": 2579259.0,
-    "Philippine Veterans Affairs Office (PVAO) - Proper": 1477993.0,
-    "Veterans Memorial Medical Center": 3840889.0,
-    "Philippine Army ( Land Forces )": 146931718.0,
-    "Philippine Air Force ( Air Forces )": 65354639.0,
-    "Philippine Navy ( Naval Forces )": 70521664.0,
-    "General Headquarters, AFP and AFP-Wide Service Support Units (AFPWSSUs)": 33906898.0,
-    "Advanced Science and Technology Institute": 528064.0,
-    "Food and Nutrition Research Institute": 634478.0,
-    "Forest Products Research and Development Institute": 406290.0,
-    "Industrial Technology Development Institute": 817725.0,
-    "Metals Industry Research and Development Center": 549896.0,
-    "National Academy of Science and Technology": 200556.0,
-    "National Research Council of the Philippines": 279077.0,
-    "Philippine Atmospheric, Geophysical and Astronomical Services Administration": 2524643.0,
-    "Philippine Council for Agriculture, Aquatic and Natural Resources Research and Development": 1704745.0,
-    "Philippine Council for Health Research and Development": 876542.0,
-    "Philippine Council for Industry, Energy and Emerging Technology Research and Development (PCIEERD)": 1189688.0,
-    "Philippine Institute of Volcanology and Seismology": 1174182.0,
-    "Philippine Nuclear Research Institute": 558867.0,
-    "Philippine Science High School System": 3986392.0,
-    "Philippine Textile Research Institute": 315927.0,
-    "Science Education Institute": 7707236.0,
-    "Science and Technology Information Institute": 181423.0,
-    "Technology Application and Promotion Institute": 277946.0,
-    "Council for the Welfare of Children": 140899.0,
-    "National Council on Disability Affairs": 95397.0,
-    "Juvenile Justice and Welfare Council": 131175.0,
-    "National Anti-Poverty Commission": 367287.0,
-    "Presidential Commission for the Urban Poor": 244450.0,
-    "National Authority for Child Care": 845443.0,
-    "National Commission of Senior Citizens": 3828275.0,
-    "Intramuros Administration": 158434.0,
-    "National Parks Development Committee": 291725.0,
-    "Philippine Commission on Sports Scuba Diving": 49952.0,
-    "Board of Investments": 568317.0,
-    "Philippine Trade Training Center": 128929.0,
-    "Design Center of the Philippines": 206723.0,
-    "Construction Industry Authority of the Philippines (CIAP)": 170951.0,
-    "Cooperative Development Authority": 951911.0,
-    "Film Academy of the Philippines": 104198.0,
-    "Philippine National Volunteer Service Coordinating Agency": 38292.0,
-    "Public-Private Partnership Center of the Philippines": 586378.0,
-    "Philippine Statistical Research and Training Institute (formerly Statistical Research and Training Center)": 163451.0,
-    "Tariff Commission": 118203.0,
-    "Philippine Statistics Authority": 13034653.0,
-    "Commission on Population and Development": 603098.0,
-    "Presidential Communications Office (Proper)": 784545.0,
-    "Presidential Broadcast Service-Bureau of Broadcast Services": 499740.0,
-    "Bureau of Communications Services": 80300.0,
-    "National Printing Office": 22888.0,
-    "News and Information Bureau": 157351.0,
-    "Philippine Information Agency": 697625.0,
-    "Presidential Broadcast Staff (RTVM)": 240250.0,
-    "Anti-Money Laundering Council": 144687.0,
-    "Climate Change Commission": 189410.0,
-    "Commission on Filipinos Overseas": 195200.0,
-    "Commission on Higher Education": 35452574.0,
-    "Commission on the Filipino Language": 120696.0,
-    "Dangerous Drugs Board  ": 526546.0,
-    "Energy Regulatory Commission": 944065.0,
-    "Film Development Council of the Philippines": 314426.0,
-    "Games and Amusements Board": 175206.0,
-    "Governance Commission for Government-Owned or Controlled Corporations": 408382.0,
-    "Mindanao Development Authority": 284892.0,
-    "Movie and Television Review and Classification Board": 197898.0,
-    "National Commission for Culture and the Arts-Proper": 692861.0,
-    "National Historical Commission of the Philippines": 422055.0,
-    "National Library of the Philippines": 271211.0,
-    "National Archives of the Philippines": 339349.0,
-    "National Commission on Indigenous Peoples": 1831074.0,
-    "National Intelligence Coordinating Agency": 2930628.0,
-    "National Security Council": 1136024.0,
-    "Office of the Presidential Adviser on Peace, Reconciliation and Unity": 9304525.0,
-    "Optical Media Board": 56393.0,
-    "Philippine Drug Enforcement Agency": 4619594.0,
-    "Philippine Racing Commission": 207854.0,
-    "Philippine Sports Commission": 1349373.0,
-    "Presidential Management Staff": 881662.0,
-    "Philippine Competition Commission": 832104.0,
-    "Anti-Red Tape Authority": 436720.0,
-    "Philippine Space Agency": 1316056.0,
-    "Marawi Compensation Board": 1265665.0,
-    "Metropolitan Baguio City, La Trinidad, Itogon, Sablan, Tuba, and Tublay Development Authority": 47754.0,
-    "National Amnesty Commission": 266685.0,
-    "Supreme Court of the Philippines and the Lower Courts": 73836447.0,
-    "Presidential Electoral Tribunal": 193428.0,
-    "Sandiganbayan": 3282279.0,
-    "Court of Appeals": 7604742.0,
-    "Court of Tax Appeals": 1353618.0,
-    "Civil Service Commission": 4039690.0,
-    "Career Executive Service Board": 142857.0,
-    "Commission on Audit (COA)": 16046527.0,
-    "Commission on Elections (COMELEC)": 29501545.0,
-    "Office of the Ombudsman": 7232934.0,
-    "Commission on Human Rights (CHR)": 1272592.0,
-    "Human Rights Violations Victims' Memorial Commission": 63539.0,
-    "National Dairy Authority": 2253696.0,
-    "National Food Authority": 11176528.0,
-    "National Irrigation Administration": 46355900.0,
-    "National Tobacco Administration": 699858.0,
-    "Philippine Coconut Authority": 1906289.0,
-    "Philippine Crop Insurance Corporation": 4500000.0,
-    "Philippine Fisheries Development Authority": 3810000.0,
-    "Philippine Rice Research Institute": 936577.0,
-    "Sugar Regulatory Administration": 1000000.0,
-    "National Electrification Administration": 6485760.0,
-    "National Power Corporation": 2000645.0,
-    "Power Sector Assets and Liabilities Management Corporation": 8000000.0,
-    "Philippine Reclamation Authority": 5000000.0,
-    "Lung Center of the Philippines": 1184823.0,
-    "National Kidney and Transplant Institute": 2112736.0,
-    "Philippine Children’s Medical Center": 1891281.0,
-    "Philippine Health Insurance Corporation": 74448505.0,
-    "Philippine Heart Center": 2920163.0,
-    "Philippine Institute of Traditional and Alternative Health Care": 214625.0,
-    "Local Water Utilities Administration": 29550.0,
-    "Metropolitan Waterworks and Sewerage System - Regulatory Office": 239029.0,
-    "Duty Free Philippines Corporation": 326326.0,
-    "Tourism Infrastructure and Enterprise Zone Authority": 0.0,
-    "Tourism Promotions Board": 1119259.0,
-    "Aurora Pacific Economic Zone and Freeport Authority": 67756.0,
-    "Center for International Trade Expositions and Missions": 854748.0,
-    "Small Business Corporation": 840170.0,
-    "Light Rail Transit Authority": 944547.0,
-    "Philippine National Railways": 283791.0,
-    "Philippine Institute for Development Studies": 395992.0,
-    "People's Television Network, Inc.": 138378.0,
-    "Authority of the Freeport Area of Bataan": 250000.0,
-    "Bases Conversion and Development Authority": 1982948.0,
-    "Cagayan Economic Zone Authority": 848734.0,
-    "Cultural Center of the Philippines": 457830.0,
-    "Development Academy of the Philippines": 812619.0,
-    "National Home Mortgage Finance Corporation": 450.0,
-    "National Housing Authority": 2274000.0,
-    "Philippine Center for Economic Development": 110038.0,
-    "Philippine Postal Corporation": 1239917.0,
-    "Southern Philippines Development Authority": 85520.0,
-    "Subic Bay Metropolitan Authority": 500000.0,
-    "Zamboanga City Special Economic Zone Authority": 375455.0,
-    "Social Housing Finance Corporation": 166080.0,
-    "Intercontinental Broadcasting Corporation": 0.0,
-    "Philippine Tax Academy": 59974.0,
-    "Metropolitan Manila Development Authority": 6560912.0,
-    "National Telecommunications Commission": 789855.0,
-    "National Privacy Commission": 505403.0,
-    "Cybercrime Investigation and Coordination Center": 594379.0,
-    "Civil Aeronautics Board": 270475.0,
-    "Maritime Industry Authority (MARINA)": 1466915.0,
-    "Office of Transportation Cooperatives": 42901.0,
-    "Office for Transportation Security": 1671186.0,
-    "Philippine Coast Guard": 45514357.0,
-    "Toll Regulatory Board": 63486.0,
-    "Human Settlements Adjudication Commission": 566039.0,
-    "Overseas Workers Welfare Administration": 4348810.0,
-    "Special Shares of LGUs in the Proceeds of National Taxes": 31475116.0,
-    "Local Government Support Fund (formerly Financial Subsidy to LGUs)": 58532578.0,
-    "Special Shares of LGUs in the Proceeds of Fire Code Fees": 1136462.0,
-    "Bangsamoro Autonomous Region in Muslim Mindanao (BARMM)": 115621093.0,
-    "National Disaster Risk Reduction and Management Fund ( Calamity Fund )": 45670000.0,
-    "Contingent Fund": 13000000.0,
-    "Miscellaneous Personnel Benefits Fund": 55865025.0,
-    "Pension and Gratuity Fund": 180265691.0,
-    "BSGC - Others": 500000.0,
-    "Revised AFP Modernization Program": 50000000.0,
-    "Customs duties and taxes, including tax expenditures": 14500000.0,
-    "Debt Interest Payments": 1114256000.0,
-    "National Tax Allotment": 1319834557.0,
-    "Net Lending": 28700000.0
+  "amountByAgencyLabelThousandsPesos": {
+    "Senate": 7968208,
+    "Senate Electoral Tribunal": 342407,
+    "Commission on Appointments": 1137659,
+    "House of Representatives": 18162122,
+    "House of Representatives Electoral Tribunal": 281903,
+    "The President's Offices": 10155758,
+    "Office of the Vice-President (OVP)": 800748,
+    "Office of the Secretary": 2704332877,
+    "Agricultural Credit Policy Council": 2865237,
+    "Bureau of Fisheries and Aquatic Resources": 12411576,
+    "Fertilizer and Pesticide Authority": 276008,
+    "National Meat Inspection Service": 368297,
+    "Philippine Carabao Center": 1384855,
+    "Philippine Center For Postharvest Development and Mechanization": 530754,
+    "Philippine Fiber Industry Development Authority": 679312,
+    "Philippine Council for Agriculture and Fisheries  ": 321222,
+    "National Fisheries Research and Development Institute": 745319,
+    "Government Procurement Policy Board-Technical Support Office": 160033,
+    "National Book Development Board": 169964,
+    "National Council for Children's Television": 76011,
+    "National Museum of the Philippines": 1561705,
+    "Philippine High School for the Arts": 135282,
+    "National Academy of Sports": 258476,
+    "Teacher Education Council": 360285,
+    "Eulogio 'Amang' Rodriguez Institute of Science and Technology": 559717,
+    "Marikina Polytechnic College": 357148,
+    "Philippine Normal University": 1223365,
+    "National Aviation Academy of the Philippines": 561166,
+    "Polytechnic University of the Philippines": 3646083,
+    "Rizal Technological University": 1029143,
+    "Technological University of the Philippines": 1661631,
+    "University of the Philippines System": 28068975,
+    "Don Mariano Marcos Memorial State University": 1836033,
+    "Mariano Marcos State University": 1303461,
+    "Pangasinan State University": 1827643,
+    "University of Northern Philippines": 1119902,
+    "Abra State Institute of Sciences and Technology": 396506,
+    "Apayao State College": 398470,
+    "Benguet State University": 1219667,
+    "Ifugao State University": 796998,
+    "Kalinga State University": 623752,
+    "Mountain Province State University": 555604,
+    "Batanes State College": 173860,
+    "Cagayan State University": 1764392,
+    "Isabela State University": 1957483,
+    "Nueva Vizcaya State University": 929722,
+    "Quirino State University": 529227,
+    "Aurora State College of Technology": 348262,
+    "Bataan Peninsula State University": 1137269,
+    "Bulacan Agricultural State College": 366894,
+    "Bulacan State University": 1928510,
+    "Central Luzon State University": 1361561,
+    "Pampanga State University": 1416185,
+    "Nueva Ecija University of Science and Technology": 1439418,
+    "Pampanga State Agricultural University": 593885,
+    "Philippine Merchant Marine Academy": 345398,
+    "President Ramon Magsaysay State University": 704532,
+    "Tarlac Agricultural University": 590028,
+    "Tarlac State University": 1081055,
+    "Batangas State University": 2186390,
+    "Cavite State University": 2108720,
+    "Laguna State Polytechnic University": 1037458,
+    "Southern Luzon State University": 889847,
+    "University of Rizal System": 1057403,
+    "Marinduque State University": 428888,
+    "Mindoro State University": 495457,
+    "Occidental Mindoro State College": 716509,
+    "Palawan State University": 1206843,
+    "Romblon State University": 671286,
+    "Western Philippines University": 639806,
+    "Bicol University": 1662692,
+    "Bicol State College of Applied Sciences and Technology": 340531,
+    "Camarines Norte State College": 574427,
+    "Camarines Sur Polytechnic Colleges": 773694,
+    "Catanduanes State University": 724410,
+    "Central Bicol State University of Agriculture": 1380602,
+    "Dr. Emilio B. Espinosa, Sr. Memorial State College of Agriculture and Technology": 360858,
+    "Partido State University": 642852,
+    "Sorsogon State University": 747715,
+    "Aklan State University": 851775,
+    "Capiz State University": 1304058,
+    "Carlos Hilado Memorial State University": 807085,
+    "Guimaras State University": 445224,
+    "Iloilo State University of Fisheries Science and Technology": 685874,
+    "Central Philippines State University": 654827,
+    "Northern Iloilo State University": 920772,
+    "State University of Northern Negros": 451823,
+    "University of Antique": 906678,
+    "Iloilo Science and Technology University": 1303994,
+    "West Visayas State University": 2779767,
+    "Bohol Island State University": 1170337,
+    "Cebu Normal University": 715720,
+    "Cebu Technological University": 2970307,
+    "Negros Oriental State University": 1174352,
+    "Siquijor State College": 255697,
+    "Eastern Samar State University": 911823,
+    "Eastern Visayas State University": 1104450,
+    "Leyte Normal University": 484580,
+    "Biliran Province State University": 649456,
+    "Northwest Samar State University": 669482,
+    "Palompon Institute of Technology": 413153,
+    "Samar State University": 622648,
+    "Southern Leyte State University": 882525,
+    "University of Eastern Philippines": 1107514,
+    "Visayas State University": 1532832,
+    "J. H. Cerilles State College": 488931,
+    "Jose Rizal Memorial State University": 1000482,
+    "Western Mindanao State University": 1284290,
+    "Zamboanga Peninsula Polytechnic State University": 664507,
+    "Zamboanga State College of Marine Sciences and Technology": 438874,
+    "Bukidnon State University": 1240046,
+    "Camiguin Polytechnic State College": 215854,
+    "Central Mindanao University": 1289743,
+    "MSU-Iligan Institute of Technology": 1818574,
+    "Northwestern Mindanao State College of Science and Technology": 448831,
+    "Davao del Norte State College": 527108,
+    "Davao Oriental State University": 785342,
+    "Southern Philippines Agri-Business and Marine and Aquatic School of Technology": 340445,
+    "University of Southeastern Philippines": 1063252,
+    "Cotabato State University": 507124,
+    "Cotabato Foundation College of Science and Technology": 445082,
+    "Sultan Kudarat State University": 814318,
+    "University of Southern Mindanao": 1180033,
+    "Agusan del Sur State University": 606188,
+    "Caraga State University": 1508513,
+    "North Eastern Mindanao State University": 1807913,
+    "Surigao del Norte State University": 851336,
+    "Adiong Memorial State College": 200426,
+    "Basilan State College": 344671,
+    "Mindanao State University": 7087303,
+    "MSU-Tawi-Tawi College of Technology and Oceanography": 1095786,
+    "Sulu State University": 440423,
+    "Tawi-Tawi Regional Agricultural College": 277073,
+    "Davao de Oro State College": 505493,
+    "Davao del Sur State College": 424618,
+    "Northern Bukidnon State College": 309354,
+    "South Cotabato State College": 126755,
+    "Ilocos Sur Polytechnic State College": 881991,
+    "Philippine Energy Research and Policy Institute": 83304,
+    "University of Science and Technology of Southern Philippines": 1710234,
+    "Environmental Management Bureau": 3367644,
+    "Mines and Geosciences Bureau": 2128042,
+    "National Mapping and Resource Information Authority": 2028298,
+    "National Water Resources Board": 291986,
+    "Palawan Council for Sustainable Development Staff": 172479,
+    "Bureau of Customs": 5901962,
+    "Bureau of Internal Revenue": 19395186,
+    "Bureau of Local Government Finance": 568541,
+    "Bureau of the Treasury": 4054917,
+    "Central Board of Assessment Appeals": 24737,
+    "Insurance Commission": 656693,
+    "National Tax Research Center": 148366,
+    "Privatization and Management Office": 134800,
+    "Foreign Service Institute": 166940,
+    "Technical Cooperation Council of the Philippines": 0,
+    "UNESCO National Commission of the Philippines": 52032,
+    "Presidential Commission on Visiting Forces": 51384,
+    "National Nutrition Council": 340638,
+    "Philippine National AIDS Council": 78239,
+    "Bureau of Fire Protection": 39121770,
+    "Bureau of Jail Management and Penology": 34433678,
+    "Local Government Academy": 557265,
+    "National Police Commission": 2403647,
+    "Philippine National Police": 242527279,
+    "Philippine Public Safety College": 1249090,
+    "National Commission on Muslim Filipinos (Office on Muslim Affairs)": 1245994,
+    "National Youth Commission": 303916,
+    "Philippine Commission on Women (National Commission on the Role of Filipino Women)": 183547,
+    "Early Childhood Care and Development Council": 124160,
+    "Bureau of Corrections": 11932437,
+    "Bureau of Immigration": 2980563,
+    "Land Registration Authority": 3279352,
+    "National Bureau of Investigation": 3026984,
+    "Office of the Government Corporate Counsel": 310168,
+    "Office of the Solicitor General": 2142502,
+    "Parole and Probation Administration": 1254016,
+    "Presidential Commission on Good Government": 338676,
+    "Public Attorney's Office": 7101211,
+    "Office for Alternative Dispute Resolution": 138756,
+    "Institute for Labor Studies": 82728,
+    "National Conciliation and Mediation Board": 351479,
+    "National Labor Relations Commission": 1817871,
+    "National Wages and Productivity Commission": 386751,
+    "Professional Regulation Commission": 2764449,
+    "Technical Education and Skills Development Authority": 21197232,
+    "Office of the Secretary - Proper": 1623374,
+    "Government Arsenal": 2262841,
+    "National Defense College of the Philippines": 283978,
+    "Office of Civil Defense": 2579259,
+    "Philippine Veterans Affairs Office (PVAO) - Proper": 1477993,
+    "Veterans Memorial Medical Center": 3840889,
+    "Philippine Army ( Land Forces )": 146931718,
+    "Philippine Air Force ( Air Forces )": 65354639,
+    "Philippine Navy ( Naval Forces )": 70521664,
+    "General Headquarters, AFP and AFP-Wide Service Support Units (AFPWSSUs)": 33906898,
+    "Advanced Science and Technology Institute": 528064,
+    "Food and Nutrition Research Institute": 634478,
+    "Forest Products Research and Development Institute": 406290,
+    "Industrial Technology Development Institute": 817725,
+    "Metals Industry Research and Development Center": 549896,
+    "National Academy of Science and Technology": 200556,
+    "National Research Council of the Philippines": 279077,
+    "Philippine Atmospheric, Geophysical and Astronomical Services Administration": 2524643,
+    "Philippine Council for Agriculture, Aquatic and Natural Resources Research and Development": 1704745,
+    "Philippine Council for Health Research and Development": 876542,
+    "Philippine Council for Industry, Energy and Emerging Technology Research and Development (PCIEERD)": 1189688,
+    "Philippine Institute of Volcanology and Seismology": 1174182,
+    "Philippine Nuclear Research Institute": 558867,
+    "Philippine Science High School System": 3986392,
+    "Philippine Textile Research Institute": 315927,
+    "Science Education Institute": 7707236,
+    "Science and Technology Information Institute": 181423,
+    "Technology Application and Promotion Institute": 277946,
+    "Council for the Welfare of Children": 140899,
+    "National Council on Disability Affairs": 95397,
+    "Juvenile Justice and Welfare Council": 131175,
+    "National Anti-Poverty Commission": 367287,
+    "Presidential Commission for the Urban Poor": 244450,
+    "National Authority for Child Care": 845443,
+    "National Commission of Senior Citizens": 3828275,
+    "Intramuros Administration": 158434,
+    "National Parks Development Committee": 291725,
+    "Philippine Commission on Sports Scuba Diving": 49952,
+    "Board of Investments": 568317,
+    "Philippine Trade Training Center": 128929,
+    "Design Center of the Philippines": 206723,
+    "Construction Industry Authority of the Philippines (CIAP)": 170951,
+    "Cooperative Development Authority": 951911,
+    "Film Academy of the Philippines": 104198,
+    "Philippine National Volunteer Service Coordinating Agency": 38292,
+    "Public-Private Partnership Center of the Philippines": 586378,
+    "Philippine Statistical Research and Training Institute (formerly Statistical Research and Training Center)": 163451,
+    "Tariff Commission": 118203,
+    "Philippine Statistics Authority": 13034653,
+    "Commission on Population and Development": 603098,
+    "Presidential Communications Office (Proper)": 784545,
+    "Presidential Broadcast Service-Bureau of Broadcast Services": 499740,
+    "Bureau of Communications Services": 80300,
+    "National Printing Office": 22888,
+    "News and Information Bureau": 157351,
+    "Philippine Information Agency": 697625,
+    "Presidential Broadcast Staff (RTVM)": 240250,
+    "Anti-Money Laundering Council": 144687,
+    "Climate Change Commission": 189410,
+    "Commission on Filipinos Overseas": 195200,
+    "Commission on Higher Education": 35452574,
+    "Commission on the Filipino Language": 120696,
+    "Dangerous Drugs Board  ": 526546,
+    "Energy Regulatory Commission": 944065,
+    "Film Development Council of the Philippines": 314426,
+    "Games and Amusements Board": 175206,
+    "Governance Commission for Government-Owned or Controlled Corporations": 408382,
+    "Mindanao Development Authority": 284892,
+    "Movie and Television Review and Classification Board": 197898,
+    "National Commission for Culture and the Arts-Proper": 692861,
+    "National Historical Commission of the Philippines": 422055,
+    "National Library of the Philippines": 271211,
+    "National Archives of the Philippines": 339349,
+    "National Commission on Indigenous Peoples": 1831074,
+    "National Intelligence Coordinating Agency": 2930628,
+    "National Security Council": 1136024,
+    "Office of the Presidential Adviser on Peace, Reconciliation and Unity": 9304525,
+    "Optical Media Board": 56393,
+    "Philippine Drug Enforcement Agency": 4619594,
+    "Philippine Racing Commission": 207854,
+    "Philippine Sports Commission": 1349373,
+    "Presidential Management Staff": 881662,
+    "Philippine Competition Commission": 832104,
+    "Anti-Red Tape Authority": 436720,
+    "Philippine Space Agency": 1316056,
+    "Marawi Compensation Board": 1265665,
+    "Metropolitan Baguio City, La Trinidad, Itogon, Sablan, Tuba, and Tublay Development Authority": 47754,
+    "National Amnesty Commission": 266685,
+    "Supreme Court of the Philippines and the Lower Courts": 73836447,
+    "Presidential Electoral Tribunal": 193428,
+    "Sandiganbayan": 3282279,
+    "Court of Appeals": 7604742,
+    "Court of Tax Appeals": 1353618,
+    "Civil Service Commission": 4039690,
+    "Career Executive Service Board": 142857,
+    "Commission on Audit (COA)": 16046527,
+    "Commission on Elections (COMELEC)": 29501545,
+    "Office of the Ombudsman": 7232934,
+    "Commission on Human Rights (CHR)": 1272592,
+    "Human Rights Violations Victims' Memorial Commission": 63539,
+    "National Dairy Authority": 2253696,
+    "National Food Authority": 11176528,
+    "National Irrigation Administration": 46355900,
+    "National Tobacco Administration": 699858,
+    "Philippine Coconut Authority": 1906289,
+    "Philippine Crop Insurance Corporation": 4500000,
+    "Philippine Fisheries Development Authority": 3810000,
+    "Philippine Rice Research Institute": 936577,
+    "Sugar Regulatory Administration": 1000000,
+    "National Electrification Administration": 6485760,
+    "National Power Corporation": 2000645,
+    "Power Sector Assets and Liabilities Management Corporation": 8000000,
+    "Philippine Reclamation Authority": 5000000,
+    "Lung Center of the Philippines": 1184823,
+    "National Kidney and Transplant Institute": 2112736,
+    "Philippine Children’s Medical Center": 1891281,
+    "Philippine Health Insurance Corporation": 74448505,
+    "Philippine Heart Center": 2920163,
+    "Philippine Institute of Traditional and Alternative Health Care": 214625,
+    "Local Water Utilities Administration": 29550,
+    "Metropolitan Waterworks and Sewerage System - Regulatory Office": 239029,
+    "Duty Free Philippines Corporation": 326326,
+    "Tourism Infrastructure and Enterprise Zone Authority": 0,
+    "Tourism Promotions Board": 1119259,
+    "Aurora Pacific Economic Zone and Freeport Authority": 67756,
+    "Center for International Trade Expositions and Missions": 854748,
+    "Small Business Corporation": 840170,
+    "Light Rail Transit Authority": 944547,
+    "Philippine National Railways": 283791,
+    "Philippine Institute for Development Studies": 395992,
+    "People's Television Network, Inc.": 138378,
+    "Authority of the Freeport Area of Bataan": 250000,
+    "Bases Conversion and Development Authority": 1982948,
+    "Cagayan Economic Zone Authority": 848734,
+    "Cultural Center of the Philippines": 457830,
+    "Development Academy of the Philippines": 812619,
+    "National Home Mortgage Finance Corporation": 450,
+    "National Housing Authority": 2274000,
+    "Philippine Center for Economic Development": 110038,
+    "Philippine Postal Corporation": 1239917,
+    "Southern Philippines Development Authority": 85520,
+    "Subic Bay Metropolitan Authority": 500000,
+    "Zamboanga City Special Economic Zone Authority": 375455,
+    "Social Housing Finance Corporation": 166080,
+    "Intercontinental Broadcasting Corporation": 0,
+    "Philippine Tax Academy": 59974,
+    "Metropolitan Manila Development Authority": 6560912,
+    "National Telecommunications Commission": 789855,
+    "National Privacy Commission": 505403,
+    "Cybercrime Investigation and Coordination Center": 594379,
+    "Civil Aeronautics Board": 270475,
+    "Maritime Industry Authority (MARINA)": 1466915,
+    "Office of Transportation Cooperatives": 42901,
+    "Office for Transportation Security": 1671186,
+    "Philippine Coast Guard": 45514357,
+    "Toll Regulatory Board": 63486,
+    "Human Settlements Adjudication Commission": 566039,
+    "Overseas Workers Welfare Administration": 4348810,
+    "Special Shares of LGUs in the Proceeds of National Taxes": 31475116,
+    "Local Government Support Fund (formerly Financial Subsidy to LGUs)": 58532578,
+    "Special Shares of LGUs in the Proceeds of Fire Code Fees": 1136462,
+    "Bangsamoro Autonomous Region in Muslim Mindanao (BARMM)": 115621093,
+    "National Disaster Risk Reduction and Management Fund ( Calamity Fund )": 45670000,
+    "Contingent Fund": 13000000,
+    "Miscellaneous Personnel Benefits Fund": 55865025,
+    "Pension and Gratuity Fund": 180265691,
+    "BSGC - Others": 500000,
+    "Revised AFP Modernization Program": 50000000,
+    "Customs duties and taxes, including tax expenditures": 14500000,
+    "Debt Interest Payments": 1114256000,
+    "National Tax Allotment": 1319834557,
+    "Net Lending": 28700000
   },
+  "agencyAllocations": [
+    {
+      "agencyKey": "01:001",
+      "department": "Congress of the Philippines (CONGRESS)",
+      "agency": "Senate",
+      "allocationRows": 96,
+      "amountPesos": 7968208000
+    },
+    {
+      "agencyKey": "01:002",
+      "department": "Congress of the Philippines (CONGRESS)",
+      "agency": "Senate Electoral Tribunal",
+      "allocationRows": 84,
+      "amountPesos": 342407000
+    },
+    {
+      "agencyKey": "01:003",
+      "department": "Congress of the Philippines (CONGRESS)",
+      "agency": "Commission on Appointments",
+      "allocationRows": 85,
+      "amountPesos": 1137659000
+    },
+    {
+      "agencyKey": "01:004",
+      "department": "Congress of the Philippines (CONGRESS)",
+      "agency": "House of Representatives",
+      "allocationRows": 70,
+      "amountPesos": 18162122000
+    },
+    {
+      "agencyKey": "01:005",
+      "department": "Congress of the Philippines (CONGRESS)",
+      "agency": "House of Representatives Electoral Tribunal",
+      "allocationRows": 106,
+      "amountPesos": 281903000
+    },
+    {
+      "agencyKey": "02:001",
+      "department": "Office of the President (OP)",
+      "agency": "The President's Offices",
+      "allocationRows": 451,
+      "amountPesos": 10155758000
+    },
+    {
+      "agencyKey": "03:000",
+      "department": "Office of the Vice-President (OVP)",
+      "agency": "Office of the Vice-President (OVP)",
+      "allocationRows": 97,
+      "amountPesos": 800748000
+    },
+    {
+      "agencyKey": "04:001",
+      "department": "Department of Agrarian Reform (DAR)",
+      "agency": "Office of the Secretary",
+      "allocationRows": 15370,
+      "amountPesos": 16935368000
+    },
+    {
+      "agencyKey": "05:001",
+      "department": "Department of Agriculture (DA)",
+      "agency": "Office of the Secretary",
+      "allocationRows": 10153,
+      "amountPesos": 152582534000
+    },
+    {
+      "agencyKey": "05:002",
+      "department": "Department of Agriculture (DA)",
+      "agency": "Agricultural Credit Policy Council",
+      "allocationRows": 111,
+      "amountPesos": 2865237000
+    },
+    {
+      "agencyKey": "05:003",
+      "department": "Department of Agriculture (DA)",
+      "agency": "Bureau of Fisheries and Aquatic Resources",
+      "allocationRows": 5883,
+      "amountPesos": 12411576000
+    },
+    {
+      "agencyKey": "05:005",
+      "department": "Department of Agriculture (DA)",
+      "agency": "Fertilizer and Pesticide Authority",
+      "allocationRows": 138,
+      "amountPesos": 276008000
+    },
+    {
+      "agencyKey": "05:009",
+      "department": "Department of Agriculture (DA)",
+      "agency": "National Meat Inspection Service",
+      "allocationRows": 171,
+      "amountPesos": 368297000
+    },
+    {
+      "agencyKey": "05:010",
+      "department": "Department of Agriculture (DA)",
+      "agency": "Philippine Carabao Center",
+      "allocationRows": 300,
+      "amountPesos": 1384855000
+    },
+    {
+      "agencyKey": "05:011",
+      "department": "Department of Agriculture (DA)",
+      "agency": "Philippine Center For Postharvest Development and Mechanization",
+      "allocationRows": 170,
+      "amountPesos": 530754000
+    },
+    {
+      "agencyKey": "05:012",
+      "department": "Department of Agriculture (DA)",
+      "agency": "Philippine Fiber Industry Development Authority",
+      "allocationRows": 274,
+      "amountPesos": 679312000
+    },
+    {
+      "agencyKey": "05:013",
+      "department": "Department of Agriculture (DA)",
+      "agency": "Philippine Council for Agriculture and Fisheries  ",
+      "allocationRows": 152,
+      "amountPesos": 321222000
+    },
+    {
+      "agencyKey": "05:014",
+      "department": "Department of Agriculture (DA)",
+      "agency": "National Fisheries Research and Development Institute",
+      "allocationRows": 123,
+      "amountPesos": 745319000
+    },
+    {
+      "agencyKey": "06:001",
+      "department": "Department of Budget and Management (DBM)",
+      "agency": "Office of the Secretary",
+      "allocationRows": 1323,
+      "amountPesos": 2964865000
+    },
+    {
+      "agencyKey": "06:002",
+      "department": "Department of Budget and Management (DBM)",
+      "agency": "Government Procurement Policy Board-Technical Support Office",
+      "allocationRows": 93,
+      "amountPesos": 160033000
+    },
+    {
+      "agencyKey": "07:001",
+      "department": "Department of Education (DepEd)",
+      "agency": "Office of the Secretary",
+      "allocationRows": 326437,
+      "amountPesos": 973401129000
+    },
+    {
+      "agencyKey": "07:002",
+      "department": "Department of Education (DepEd)",
+      "agency": "National Book Development Board",
+      "allocationRows": 136,
+      "amountPesos": 169964000
+    },
+    {
+      "agencyKey": "07:003",
+      "department": "Department of Education (DepEd)",
+      "agency": "National Council for Children's Television",
+      "allocationRows": 51,
+      "amountPesos": 76011000
+    },
+    {
+      "agencyKey": "07:004",
+      "department": "Department of Education (DepEd)",
+      "agency": "National Museum of the Philippines",
+      "allocationRows": 125,
+      "amountPesos": 1561705000
+    },
+    {
+      "agencyKey": "07:005",
+      "department": "Department of Education (DepEd)",
+      "agency": "Philippine High School for the Arts",
+      "allocationRows": 116,
+      "amountPesos": 135282000
+    },
+    {
+      "agencyKey": "07:007",
+      "department": "Department of Education (DepEd)",
+      "agency": "National Academy of Sports",
+      "allocationRows": 76,
+      "amountPesos": 258476000
+    },
+    {
+      "agencyKey": "07:008",
+      "department": "Department of Education (DepEd)",
+      "agency": "Teacher Education Council",
+      "allocationRows": 69,
+      "amountPesos": 360285000
+    },
+    {
+      "agencyKey": "08:001",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Eulogio 'Amang' Rodriguez Institute of Science and Technology",
+      "allocationRows": 140,
+      "amountPesos": 559717000
+    },
+    {
+      "agencyKey": "08:002",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Marikina Polytechnic College",
+      "allocationRows": 73,
+      "amountPesos": 357148000
+    },
+    {
+      "agencyKey": "08:003",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Philippine Normal University",
+      "allocationRows": 211,
+      "amountPesos": 1223365000
+    },
+    {
+      "agencyKey": "08:004",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "National Aviation Academy of the Philippines",
+      "allocationRows": 65,
+      "amountPesos": 561166000
+    },
+    {
+      "agencyKey": "08:005",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Polytechnic University of the Philippines",
+      "allocationRows": 267,
+      "amountPesos": 3646083000
+    },
+    {
+      "agencyKey": "08:006",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Rizal Technological University",
+      "allocationRows": 157,
+      "amountPesos": 1029143000
+    },
+    {
+      "agencyKey": "08:007",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Technological University of the Philippines",
+      "allocationRows": 542,
+      "amountPesos": 1661631000
+    },
+    {
+      "agencyKey": "08:008",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "University of the Philippines System",
+      "allocationRows": 541,
+      "amountPesos": 28068975000
+    },
+    {
+      "agencyKey": "08:009",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Don Mariano Marcos Memorial State University",
+      "allocationRows": 251,
+      "amountPesos": 1836033000
+    },
+    {
+      "agencyKey": "08:011",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Mariano Marcos State University",
+      "allocationRows": 421,
+      "amountPesos": 1303461000
+    },
+    {
+      "agencyKey": "08:013",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Pangasinan State University",
+      "allocationRows": 245,
+      "amountPesos": 1827643000
+    },
+    {
+      "agencyKey": "08:014",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "University of Northern Philippines",
+      "allocationRows": 186,
+      "amountPesos": 1119902000
+    },
+    {
+      "agencyKey": "08:015",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Abra State Institute of Sciences and Technology",
+      "allocationRows": 120,
+      "amountPesos": 396506000
+    },
+    {
+      "agencyKey": "08:016",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Apayao State College",
+      "allocationRows": 167,
+      "amountPesos": 398470000
+    },
+    {
+      "agencyKey": "08:017",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Benguet State University",
+      "allocationRows": 294,
+      "amountPesos": 1219667000
+    },
+    {
+      "agencyKey": "08:018",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Ifugao State University",
+      "allocationRows": 174,
+      "amountPesos": 796998000
+    },
+    {
+      "agencyKey": "08:019",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Kalinga State University",
+      "allocationRows": 150,
+      "amountPesos": 623752000
+    },
+    {
+      "agencyKey": "08:020",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Mountain Province State University",
+      "allocationRows": 204,
+      "amountPesos": 555604000
+    },
+    {
+      "agencyKey": "08:021",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Batanes State College",
+      "allocationRows": 118,
+      "amountPesos": 173860000
+    },
+    {
+      "agencyKey": "08:022",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Cagayan State University",
+      "allocationRows": 235,
+      "amountPesos": 1764392000
+    },
+    {
+      "agencyKey": "08:023",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Isabela State University",
+      "allocationRows": 269,
+      "amountPesos": 1957483000
+    },
+    {
+      "agencyKey": "08:024",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Nueva Vizcaya State University",
+      "allocationRows": 168,
+      "amountPesos": 929722000
+    },
+    {
+      "agencyKey": "08:025",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Quirino State University",
+      "allocationRows": 174,
+      "amountPesos": 529227000
+    },
+    {
+      "agencyKey": "08:026",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Aurora State College of Technology",
+      "allocationRows": 126,
+      "amountPesos": 348262000
+    },
+    {
+      "agencyKey": "08:027",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Bataan Peninsula State University",
+      "allocationRows": 193,
+      "amountPesos": 1137269000
+    },
+    {
+      "agencyKey": "08:028",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Bulacan Agricultural State College",
+      "allocationRows": 162,
+      "amountPesos": 366894000
+    },
+    {
+      "agencyKey": "08:029",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Bulacan State University",
+      "allocationRows": 168,
+      "amountPesos": 1928510000
+    },
+    {
+      "agencyKey": "08:030",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Central Luzon State University",
+      "allocationRows": 172,
+      "amountPesos": 1361561000
+    },
+    {
+      "agencyKey": "08:031",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Pampanga State University",
+      "allocationRows": 176,
+      "amountPesos": 1416185000
+    },
+    {
+      "agencyKey": "08:032",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Nueva Ecija University of Science and Technology",
+      "allocationRows": 204,
+      "amountPesos": 1439418000
+    },
+    {
+      "agencyKey": "08:033",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Pampanga State Agricultural University",
+      "allocationRows": 221,
+      "amountPesos": 593885000
+    },
+    {
+      "agencyKey": "08:034",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Philippine Merchant Marine Academy",
+      "allocationRows": 149,
+      "amountPesos": 345398000
+    },
+    {
+      "agencyKey": "08:035",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "President Ramon Magsaysay State University",
+      "allocationRows": 185,
+      "amountPesos": 704532000
+    },
+    {
+      "agencyKey": "08:036",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Tarlac Agricultural University",
+      "allocationRows": 283,
+      "amountPesos": 590028000
+    },
+    {
+      "agencyKey": "08:037",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Tarlac State University",
+      "allocationRows": 174,
+      "amountPesos": 1081055000
+    },
+    {
+      "agencyKey": "08:038",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Batangas State University",
+      "allocationRows": 226,
+      "amountPesos": 2186390000
+    },
+    {
+      "agencyKey": "08:039",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Cavite State University",
+      "allocationRows": 213,
+      "amountPesos": 2108720000
+    },
+    {
+      "agencyKey": "08:040",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Laguna State Polytechnic University",
+      "allocationRows": 154,
+      "amountPesos": 1037458000
+    },
+    {
+      "agencyKey": "08:041",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Southern Luzon State University",
+      "allocationRows": 202,
+      "amountPesos": 889847000
+    },
+    {
+      "agencyKey": "08:042",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "University of Rizal System",
+      "allocationRows": 148,
+      "amountPesos": 1057403000
+    },
+    {
+      "agencyKey": "08:043",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Marinduque State University",
+      "allocationRows": 146,
+      "amountPesos": 428888000
+    },
+    {
+      "agencyKey": "08:044",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Mindoro State University",
+      "allocationRows": 122,
+      "amountPesos": 495457000
+    },
+    {
+      "agencyKey": "08:045",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Occidental Mindoro State College",
+      "allocationRows": 149,
+      "amountPesos": 716509000
+    },
+    {
+      "agencyKey": "08:046",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Palawan State University",
+      "allocationRows": 175,
+      "amountPesos": 1206843000
+    },
+    {
+      "agencyKey": "08:047",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Romblon State University",
+      "allocationRows": 171,
+      "amountPesos": 671286000
+    },
+    {
+      "agencyKey": "08:048",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Western Philippines University",
+      "allocationRows": 168,
+      "amountPesos": 639806000
+    },
+    {
+      "agencyKey": "08:049",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Bicol University",
+      "allocationRows": 232,
+      "amountPesos": 1662692000
+    },
+    {
+      "agencyKey": "08:050",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Bicol State College of Applied Sciences and Technology",
+      "allocationRows": 137,
+      "amountPesos": 340531000
+    },
+    {
+      "agencyKey": "08:051",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Camarines Norte State College",
+      "allocationRows": 108,
+      "amountPesos": 574427000
+    },
+    {
+      "agencyKey": "08:052",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Camarines Sur Polytechnic Colleges",
+      "allocationRows": 224,
+      "amountPesos": 773694000
+    },
+    {
+      "agencyKey": "08:053",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Catanduanes State University",
+      "allocationRows": 188,
+      "amountPesos": 724410000
+    },
+    {
+      "agencyKey": "08:054",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Central Bicol State University of Agriculture",
+      "allocationRows": 223,
+      "amountPesos": 1380602000
+    },
+    {
+      "agencyKey": "08:055",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Dr. Emilio B. Espinosa, Sr. Memorial State College of Agriculture and Technology",
+      "allocationRows": 144,
+      "amountPesos": 360858000
+    },
+    {
+      "agencyKey": "08:056",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Partido State University",
+      "allocationRows": 168,
+      "amountPesos": 642852000
+    },
+    {
+      "agencyKey": "08:057",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Sorsogon State University",
+      "allocationRows": 183,
+      "amountPesos": 747715000
+    },
+    {
+      "agencyKey": "08:058",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Aklan State University",
+      "allocationRows": 221,
+      "amountPesos": 851775000
+    },
+    {
+      "agencyKey": "08:059",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Capiz State University",
+      "allocationRows": 185,
+      "amountPesos": 1304058000
+    },
+    {
+      "agencyKey": "08:060",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Carlos Hilado Memorial State University",
+      "allocationRows": 155,
+      "amountPesos": 807085000
+    },
+    {
+      "agencyKey": "08:061",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Guimaras State University",
+      "allocationRows": 130,
+      "amountPesos": 445224000
+    },
+    {
+      "agencyKey": "08:062",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Iloilo State University of Fisheries Science and Technology",
+      "allocationRows": 172,
+      "amountPesos": 685874000
+    },
+    {
+      "agencyKey": "08:063",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Central Philippines State University",
+      "allocationRows": 185,
+      "amountPesos": 654827000
+    },
+    {
+      "agencyKey": "08:064",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Northern Iloilo State University",
+      "allocationRows": 186,
+      "amountPesos": 920772000
+    },
+    {
+      "agencyKey": "08:065",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "State University of Northern Negros",
+      "allocationRows": 137,
+      "amountPesos": 451823000
+    },
+    {
+      "agencyKey": "08:066",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "University of Antique",
+      "allocationRows": 136,
+      "amountPesos": 906678000
+    },
+    {
+      "agencyKey": "08:067",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Iloilo Science and Technology University",
+      "allocationRows": 140,
+      "amountPesos": 1303994000
+    },
+    {
+      "agencyKey": "08:068",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "West Visayas State University",
+      "allocationRows": 303,
+      "amountPesos": 2779767000
+    },
+    {
+      "agencyKey": "08:069",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Bohol Island State University",
+      "allocationRows": 180,
+      "amountPesos": 1170337000
+    },
+    {
+      "agencyKey": "08:070",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Cebu Normal University",
+      "allocationRows": 125,
+      "amountPesos": 715720000
+    },
+    {
+      "agencyKey": "08:071",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Cebu Technological University",
+      "allocationRows": 244,
+      "amountPesos": 2970307000
+    },
+    {
+      "agencyKey": "08:072",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Negros Oriental State University",
+      "allocationRows": 263,
+      "amountPesos": 1174352000
+    },
+    {
+      "agencyKey": "08:073",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Siquijor State College",
+      "allocationRows": 111,
+      "amountPesos": 255697000
+    },
+    {
+      "agencyKey": "08:074",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Eastern Samar State University",
+      "allocationRows": 161,
+      "amountPesos": 911823000
+    },
+    {
+      "agencyKey": "08:075",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Eastern Visayas State University",
+      "allocationRows": 164,
+      "amountPesos": 1104450000
+    },
+    {
+      "agencyKey": "08:076",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Leyte Normal University",
+      "allocationRows": 187,
+      "amountPesos": 484580000
+    },
+    {
+      "agencyKey": "08:077",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Biliran Province State University",
+      "allocationRows": 106,
+      "amountPesos": 649456000
+    },
+    {
+      "agencyKey": "08:078",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Northwest Samar State University",
+      "allocationRows": 146,
+      "amountPesos": 669482000
+    },
+    {
+      "agencyKey": "08:079",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Palompon Institute of Technology",
+      "allocationRows": 146,
+      "amountPesos": 413153000
+    },
+    {
+      "agencyKey": "08:080",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Samar State University",
+      "allocationRows": 172,
+      "amountPesos": 622648000
+    },
+    {
+      "agencyKey": "08:081",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Southern Leyte State University",
+      "allocationRows": 243,
+      "amountPesos": 882525000
+    },
+    {
+      "agencyKey": "08:082",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "University of Eastern Philippines",
+      "allocationRows": 167,
+      "amountPesos": 1107514000
+    },
+    {
+      "agencyKey": "08:083",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Visayas State University",
+      "allocationRows": 236,
+      "amountPesos": 1532832000
+    },
+    {
+      "agencyKey": "08:084",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "J. H. Cerilles State College",
+      "allocationRows": 141,
+      "amountPesos": 488931000
+    },
+    {
+      "agencyKey": "08:085",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Jose Rizal Memorial State University",
+      "allocationRows": 235,
+      "amountPesos": 1000482000
+    },
+    {
+      "agencyKey": "08:086",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Western Mindanao State University",
+      "allocationRows": 193,
+      "amountPesos": 1284290000
+    },
+    {
+      "agencyKey": "08:087",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Zamboanga Peninsula Polytechnic State University",
+      "allocationRows": 128,
+      "amountPesos": 664507000
+    },
+    {
+      "agencyKey": "08:088",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Zamboanga State College of Marine Sciences and Technology",
+      "allocationRows": 132,
+      "amountPesos": 438874000
+    },
+    {
+      "agencyKey": "08:089",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Bukidnon State University",
+      "allocationRows": 194,
+      "amountPesos": 1240046000
+    },
+    {
+      "agencyKey": "08:090",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Camiguin Polytechnic State College",
+      "allocationRows": 105,
+      "amountPesos": 215854000
+    },
+    {
+      "agencyKey": "08:091",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Central Mindanao University",
+      "allocationRows": 160,
+      "amountPesos": 1289743000
+    },
+    {
+      "agencyKey": "08:093",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "MSU-Iligan Institute of Technology",
+      "allocationRows": 349,
+      "amountPesos": 1818574000
+    },
+    {
+      "agencyKey": "08:095",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Northwestern Mindanao State College of Science and Technology",
+      "allocationRows": 97,
+      "amountPesos": 448831000
+    },
+    {
+      "agencyKey": "08:096",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Davao del Norte State College",
+      "allocationRows": 186,
+      "amountPesos": 527108000
+    },
+    {
+      "agencyKey": "08:097",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Davao Oriental State University",
+      "allocationRows": 191,
+      "amountPesos": 785342000
+    },
+    {
+      "agencyKey": "08:098",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Southern Philippines Agri-Business and Marine and Aquatic School of Technology",
+      "allocationRows": 114,
+      "amountPesos": 340445000
+    },
+    {
+      "agencyKey": "08:099",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "University of Southeastern Philippines",
+      "allocationRows": 229,
+      "amountPesos": 1063252000
+    },
+    {
+      "agencyKey": "08:100",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Cotabato State University",
+      "allocationRows": 118,
+      "amountPesos": 507124000
+    },
+    {
+      "agencyKey": "08:101",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Cotabato Foundation College of Science and Technology",
+      "allocationRows": 165,
+      "amountPesos": 445082000
+    },
+    {
+      "agencyKey": "08:102",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Sultan Kudarat State University",
+      "allocationRows": 155,
+      "amountPesos": 814318000
+    },
+    {
+      "agencyKey": "08:103",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "University of Southern Mindanao",
+      "allocationRows": 274,
+      "amountPesos": 1180033000
+    },
+    {
+      "agencyKey": "08:104",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Agusan del Sur State University",
+      "allocationRows": 235,
+      "amountPesos": 606188000
+    },
+    {
+      "agencyKey": "08:105",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Caraga State University",
+      "allocationRows": 639,
+      "amountPesos": 1508513000
+    },
+    {
+      "agencyKey": "08:106",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "North Eastern Mindanao State University",
+      "allocationRows": 366,
+      "amountPesos": 1807913000
+    },
+    {
+      "agencyKey": "08:107",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Surigao del Norte State University",
+      "allocationRows": 258,
+      "amountPesos": 851336000
+    },
+    {
+      "agencyKey": "08:108",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Adiong Memorial State College",
+      "allocationRows": 120,
+      "amountPesos": 200426000
+    },
+    {
+      "agencyKey": "08:109",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Basilan State College",
+      "allocationRows": 123,
+      "amountPesos": 344671000
+    },
+    {
+      "agencyKey": "08:110",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Mindanao State University",
+      "allocationRows": 923,
+      "amountPesos": 7087303000
+    },
+    {
+      "agencyKey": "08:111",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "MSU-Tawi-Tawi College of Technology and Oceanography",
+      "allocationRows": 193,
+      "amountPesos": 1095786000
+    },
+    {
+      "agencyKey": "08:112",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Sulu State University",
+      "allocationRows": 118,
+      "amountPesos": 440423000
+    },
+    {
+      "agencyKey": "08:113",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Tawi-Tawi Regional Agricultural College",
+      "allocationRows": 58,
+      "amountPesos": 277073000
+    },
+    {
+      "agencyKey": "08:114",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Davao de Oro State College",
+      "allocationRows": 164,
+      "amountPesos": 505493000
+    },
+    {
+      "agencyKey": "08:115",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Davao del Sur State College",
+      "allocationRows": 132,
+      "amountPesos": 424618000
+    },
+    {
+      "agencyKey": "08:116",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Northern Bukidnon State College",
+      "allocationRows": 80,
+      "amountPesos": 309354000
+    },
+    {
+      "agencyKey": "08:117",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "South Cotabato State College",
+      "allocationRows": 116,
+      "amountPesos": 126755000
+    },
+    {
+      "agencyKey": "08:118",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Ilocos Sur Polytechnic State College",
+      "allocationRows": 165,
+      "amountPesos": 881991000
+    },
+    {
+      "agencyKey": "08:119",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "Philippine Energy Research and Policy Institute",
+      "allocationRows": 81,
+      "amountPesos": 83304000
+    },
+    {
+      "agencyKey": "08:120",
+      "department": "State Universities and Colleges (SUCs)",
+      "agency": "University of Science and Technology of Southern Philippines",
+      "allocationRows": 774,
+      "amountPesos": 1710234000
+    },
+    {
+      "agencyKey": "09:001",
+      "department": "Department of Energy (DOE)",
+      "agency": "Office of the Secretary",
+      "allocationRows": 725,
+      "amountPesos": 5575388000
+    },
+    {
+      "agencyKey": "10:001",
+      "department": "Department of Environment and Natural Resources (DENR)",
+      "agency": "Office of the Secretary",
+      "allocationRows": 27064,
+      "amountPesos": 21478116000
+    },
+    {
+      "agencyKey": "10:002",
+      "department": "Department of Environment and Natural Resources (DENR)",
+      "agency": "Environmental Management Bureau",
+      "allocationRows": 5276,
+      "amountPesos": 3367644000
+    },
+    {
+      "agencyKey": "10:003",
+      "department": "Department of Environment and Natural Resources (DENR)",
+      "agency": "Mines and Geosciences Bureau",
+      "allocationRows": 2408,
+      "amountPesos": 2128042000
+    },
+    {
+      "agencyKey": "10:004",
+      "department": "Department of Environment and Natural Resources (DENR)",
+      "agency": "National Mapping and Resource Information Authority",
+      "allocationRows": 217,
+      "amountPesos": 2028298000
+    },
+    {
+      "agencyKey": "10:005",
+      "department": "Department of Environment and Natural Resources (DENR)",
+      "agency": "National Water Resources Board",
+      "allocationRows": 189,
+      "amountPesos": 291986000
+    },
+    {
+      "agencyKey": "10:006",
+      "department": "Department of Environment and Natural Resources (DENR)",
+      "agency": "Palawan Council for Sustainable Development Staff",
+      "allocationRows": 261,
+      "amountPesos": 172479000
+    },
+    {
+      "agencyKey": "11:001",
+      "department": "Department of Finance (DOF)",
+      "agency": "Office of the Secretary",
+      "allocationRows": 388,
+      "amountPesos": 1148502000
+    },
+    {
+      "agencyKey": "11:002",
+      "department": "Department of Finance (DOF)",
+      "agency": "Bureau of Customs",
+      "allocationRows": 1893,
+      "amountPesos": 5901962000
+    },
+    {
+      "agencyKey": "11:003",
+      "department": "Department of Finance (DOF)",
+      "agency": "Bureau of Internal Revenue",
+      "allocationRows": 1969,
+      "amountPesos": 19395186000
+    },
+    {
+      "agencyKey": "11:004",
+      "department": "Department of Finance (DOF)",
+      "agency": "Bureau of Local Government Finance",
+      "allocationRows": 1312,
+      "amountPesos": 568541000
+    },
+    {
+      "agencyKey": "11:005",
+      "department": "Department of Finance (DOF)",
+      "agency": "Bureau of the Treasury",
+      "allocationRows": 322,
+      "amountPesos": 4054917000
+    },
+    {
+      "agencyKey": "11:006",
+      "department": "Department of Finance (DOF)",
+      "agency": "Central Board of Assessment Appeals",
+      "allocationRows": 46,
+      "amountPesos": 24737000
+    },
+    {
+      "agencyKey": "11:008",
+      "department": "Department of Finance (DOF)",
+      "agency": "Insurance Commission",
+      "allocationRows": 146,
+      "amountPesos": 656693000
+    },
+    {
+      "agencyKey": "11:009",
+      "department": "Department of Finance (DOF)",
+      "agency": "National Tax Research Center",
+      "allocationRows": 103,
+      "amountPesos": 148366000
+    },
+    {
+      "agencyKey": "11:010",
+      "department": "Department of Finance (DOF)",
+      "agency": "Privatization and Management Office",
+      "allocationRows": 26,
+      "amountPesos": 134800000
+    },
+    {
+      "agencyKey": "12:001",
+      "department": "Department of Foreign Affairs (DFA)",
+      "agency": "Office of the Secretary",
+      "allocationRows": 4658,
+      "amountPesos": 34902737000
+    },
+    {
+      "agencyKey": "12:002",
+      "department": "Department of Foreign Affairs (DFA)",
+      "agency": "Foreign Service Institute",
+      "allocationRows": 77,
+      "amountPesos": 166940000
+    },
+    {
+      "agencyKey": "12:003",
+      "department": "Department of Foreign Affairs (DFA)",
+      "agency": "Technical Cooperation Council of the Philippines",
+      "allocationRows": 36,
+      "amountPesos": 0
+    },
+    {
+      "agencyKey": "12:004",
+      "department": "Department of Foreign Affairs (DFA)",
+      "agency": "UNESCO National Commission of the Philippines",
+      "allocationRows": 50,
+      "amountPesos": 52032000
+    },
+    {
+      "agencyKey": "12:005",
+      "department": "Department of Foreign Affairs (DFA)",
+      "agency": "Presidential Commission on Visiting Forces",
+      "allocationRows": 15,
+      "amountPesos": 51384000
+    },
+    {
+      "agencyKey": "13:001",
+      "department": "Department of Health (DOH)",
+      "agency": "Office of the Secretary",
+      "allocationRows": 9151,
+      "amountPesos": 270564864000
+    },
+    {
+      "agencyKey": "13:003",
+      "department": "Department of Health (DOH)",
+      "agency": "National Nutrition Council",
+      "allocationRows": 140,
+      "amountPesos": 340638000
+    },
+    {
+      "agencyKey": "13:004",
+      "department": "Department of Health (DOH)",
+      "agency": "Philippine National AIDS Council",
+      "allocationRows": 101,
+      "amountPesos": 78239000
+    },
+    {
+      "agencyKey": "14:001",
+      "department": "Department of the Interior and Local Government (DILG)",
+      "agency": "Office of the Secretary",
+      "allocationRows": 1117,
+      "amountPesos": 10357309000
+    },
+    {
+      "agencyKey": "14:002",
+      "department": "Department of the Interior and Local Government (DILG)",
+      "agency": "Bureau of Fire Protection",
+      "allocationRows": 174,
+      "amountPesos": 39121770000
+    },
+    {
+      "agencyKey": "14:003",
+      "department": "Department of the Interior and Local Government (DILG)",
+      "agency": "Bureau of Jail Management and Penology",
+      "allocationRows": 109,
+      "amountPesos": 34433678000
+    },
+    {
+      "agencyKey": "14:004",
+      "department": "Department of the Interior and Local Government (DILG)",
+      "agency": "Local Government Academy",
+      "allocationRows": 83,
+      "amountPesos": 557265000
+    },
+    {
+      "agencyKey": "14:005",
+      "department": "Department of the Interior and Local Government (DILG)",
+      "agency": "National Police Commission",
+      "allocationRows": 2633,
+      "amountPesos": 2403647000
+    },
+    {
+      "agencyKey": "14:006",
+      "department": "Department of the Interior and Local Government (DILG)",
+      "agency": "Philippine National Police",
+      "allocationRows": 2250,
+      "amountPesos": 242527279000
+    },
+    {
+      "agencyKey": "14:007",
+      "department": "Department of the Interior and Local Government (DILG)",
+      "agency": "Philippine Public Safety College",
+      "allocationRows": 128,
+      "amountPesos": 1249090000
+    },
+    {
+      "agencyKey": "14:008",
+      "department": "Department of the Interior and Local Government (DILG)",
+      "agency": "National Commission on Muslim Filipinos (Office on Muslim Affairs)",
+      "allocationRows": 1347,
+      "amountPesos": 1245994000
+    },
+    {
+      "agencyKey": "14:009",
+      "department": "Department of the Interior and Local Government (DILG)",
+      "agency": "National Youth Commission",
+      "allocationRows": 77,
+      "amountPesos": 303916000
+    },
+    {
+      "agencyKey": "14:010",
+      "department": "Department of the Interior and Local Government (DILG)",
+      "agency": "Philippine Commission on Women (National Commission on the Role of Filipino Women)",
+      "allocationRows": 162,
+      "amountPesos": 183547000
+    },
+    {
+      "agencyKey": "14:011",
+      "department": "Department of the Interior and Local Government (DILG)",
+      "agency": "Early Childhood Care and Development Council",
+      "allocationRows": 48,
+      "amountPesos": 124160000
+    },
+    {
+      "agencyKey": "15:001",
+      "department": "Department of Justice (DOJ)",
+      "agency": "Office of the Secretary",
+      "allocationRows": 436,
+      "amountPesos": 13930346000
+    },
+    {
+      "agencyKey": "15:002",
+      "department": "Department of Justice (DOJ)",
+      "agency": "Bureau of Corrections",
+      "allocationRows": 486,
+      "amountPesos": 11932437000
+    },
+    {
+      "agencyKey": "15:003",
+      "department": "Department of Justice (DOJ)",
+      "agency": "Bureau of Immigration",
+      "allocationRows": 161,
+      "amountPesos": 2980563000
+    },
+    {
+      "agencyKey": "15:004",
+      "department": "Department of Justice (DOJ)",
+      "agency": "Land Registration Authority",
+      "allocationRows": 205,
+      "amountPesos": 3279352000
+    },
+    {
+      "agencyKey": "15:005",
+      "department": "Department of Justice (DOJ)",
+      "agency": "National Bureau of Investigation",
+      "allocationRows": 183,
+      "amountPesos": 3026984000
+    },
+    {
+      "agencyKey": "15:006",
+      "department": "Department of Justice (DOJ)",
+      "agency": "Office of the Government Corporate Counsel",
+      "allocationRows": 69,
+      "amountPesos": 310168000
+    },
+    {
+      "agencyKey": "15:007",
+      "department": "Department of Justice (DOJ)",
+      "agency": "Office of the Solicitor General",
+      "allocationRows": 94,
+      "amountPesos": 2142502000
+    },
+    {
+      "agencyKey": "15:008",
+      "department": "Department of Justice (DOJ)",
+      "agency": "Parole and Probation Administration",
+      "allocationRows": 741,
+      "amountPesos": 1254016000
+    },
+    {
+      "agencyKey": "15:009",
+      "department": "Department of Justice (DOJ)",
+      "agency": "Presidential Commission on Good Government",
+      "allocationRows": 97,
+      "amountPesos": 338676000
+    },
+    {
+      "agencyKey": "15:010",
+      "department": "Department of Justice (DOJ)",
+      "agency": "Public Attorney's Office",
+      "allocationRows": 72,
+      "amountPesos": 7101211000
+    },
+    {
+      "agencyKey": "15:011",
+      "department": "Department of Justice (DOJ)",
+      "agency": "Office for Alternative Dispute Resolution",
+      "allocationRows": 83,
+      "amountPesos": 138756000
+    },
+    {
+      "agencyKey": "16:001",
+      "department": "Department of Labor and Employment (DOLE)",
+      "agency": "Office of the Secretary",
+      "allocationRows": 3382,
+      "amountPesos": 21125278000
+    },
+    {
+      "agencyKey": "16:002",
+      "department": "Department of Labor and Employment (DOLE)",
+      "agency": "Institute for Labor Studies",
+      "allocationRows": 65,
+      "amountPesos": 82728000
+    },
+    {
+      "agencyKey": "16:003",
+      "department": "Department of Labor and Employment (DOLE)",
+      "agency": "National Conciliation and Mediation Board",
+      "allocationRows": 160,
+      "amountPesos": 351479000
+    },
+    {
+      "agencyKey": "16:004",
+      "department": "Department of Labor and Employment (DOLE)",
+      "agency": "National Labor Relations Commission",
+      "allocationRows": 147,
+      "amountPesos": 1817871000
+    },
+    {
+      "agencyKey": "16:006",
+      "department": "Department of Labor and Employment (DOLE)",
+      "agency": "National Wages and Productivity Commission",
+      "allocationRows": 161,
+      "amountPesos": 386751000
+    },
+    {
+      "agencyKey": "16:008",
+      "department": "Department of Labor and Employment (DOLE)",
+      "agency": "Professional Regulation Commission",
+      "allocationRows": 2355,
+      "amountPesos": 2764449000
+    },
+    {
+      "agencyKey": "16:009",
+      "department": "Department of Labor and Employment (DOLE)",
+      "agency": "Technical Education and Skills Development Authority",
+      "allocationRows": 3172,
+      "amountPesos": 21197232000
+    },
+    {
+      "agencyKey": "17:001",
+      "department": "Department of National Defense (DND)",
+      "agency": "Office of the Secretary - Proper",
+      "allocationRows": 119,
+      "amountPesos": 1623374000
+    },
+    {
+      "agencyKey": "17:002",
+      "department": "Department of National Defense (DND)",
+      "agency": "Government Arsenal",
+      "allocationRows": 99,
+      "amountPesos": 2262841000
+    },
+    {
+      "agencyKey": "17:003",
+      "department": "Department of National Defense (DND)",
+      "agency": "National Defense College of the Philippines",
+      "allocationRows": 113,
+      "amountPesos": 283978000
+    },
+    {
+      "agencyKey": "17:004",
+      "department": "Department of National Defense (DND)",
+      "agency": "Office of Civil Defense",
+      "allocationRows": 140,
+      "amountPesos": 2579259000
+    },
+    {
+      "agencyKey": "17:005",
+      "department": "Department of National Defense (DND)",
+      "agency": "Philippine Veterans Affairs Office (PVAO) - Proper",
+      "allocationRows": 256,
+      "amountPesos": 1477993000
+    },
+    {
+      "agencyKey": "17:006",
+      "department": "Department of National Defense (DND)",
+      "agency": "Veterans Memorial Medical Center",
+      "allocationRows": 111,
+      "amountPesos": 3840889000
+    },
+    {
+      "agencyKey": "17:007",
+      "department": "Department of National Defense (DND)",
+      "agency": "Philippine Army ( Land Forces )",
+      "allocationRows": 221,
+      "amountPesos": 146931718000
+    },
+    {
+      "agencyKey": "17:008",
+      "department": "Department of National Defense (DND)",
+      "agency": "Philippine Air Force ( Air Forces )",
+      "allocationRows": 216,
+      "amountPesos": 65354639000
+    },
+    {
+      "agencyKey": "17:009",
+      "department": "Department of National Defense (DND)",
+      "agency": "Philippine Navy ( Naval Forces )",
+      "allocationRows": 297,
+      "amountPesos": 70521664000
+    },
+    {
+      "agencyKey": "17:010",
+      "department": "Department of National Defense (DND)",
+      "agency": "General Headquarters, AFP and AFP-Wide Service Support Units (AFPWSSUs)",
+      "allocationRows": 602,
+      "amountPesos": 33906898000
+    },
+    {
+      "agencyKey": "18:001",
+      "department": "Department of Public Works and Highways (DPWH)",
+      "agency": "Office of the Secretary",
+      "allocationRows": 8993,
+      "amountPesos": 643953276000
+    },
+    {
+      "agencyKey": "19:001",
+      "department": "Department of Science and Technology (DOST)",
+      "agency": "Office of the Secretary",
+      "allocationRows": 1261,
+      "amountPesos": 6954257000
+    },
+    {
+      "agencyKey": "19:002",
+      "department": "Department of Science and Technology (DOST)",
+      "agency": "Advanced Science and Technology Institute",
+      "allocationRows": 117,
+      "amountPesos": 528064000
+    },
+    {
+      "agencyKey": "19:003",
+      "department": "Department of Science and Technology (DOST)",
+      "agency": "Food and Nutrition Research Institute",
+      "allocationRows": 233,
+      "amountPesos": 634478000
+    },
+    {
+      "agencyKey": "19:004",
+      "department": "Department of Science and Technology (DOST)",
+      "agency": "Forest Products Research and Development Institute",
+      "allocationRows": 305,
+      "amountPesos": 406290000
+    },
+    {
+      "agencyKey": "19:005",
+      "department": "Department of Science and Technology (DOST)",
+      "agency": "Industrial Technology Development Institute",
+      "allocationRows": 344,
+      "amountPesos": 817725000
+    },
+    {
+      "agencyKey": "19:007",
+      "department": "Department of Science and Technology (DOST)",
+      "agency": "Metals Industry Research and Development Center",
+      "allocationRows": 182,
+      "amountPesos": 549896000
+    },
+    {
+      "agencyKey": "19:008",
+      "department": "Department of Science and Technology (DOST)",
+      "agency": "National Academy of Science and Technology",
+      "allocationRows": 219,
+      "amountPesos": 200556000
+    },
+    {
+      "agencyKey": "19:009",
+      "department": "Department of Science and Technology (DOST)",
+      "agency": "National Research Council of the Philippines",
+      "allocationRows": 292,
+      "amountPesos": 279077000
+    },
+    {
+      "agencyKey": "19:010",
+      "department": "Department of Science and Technology (DOST)",
+      "agency": "Philippine Atmospheric, Geophysical and Astronomical Services Administration",
+      "allocationRows": 485,
+      "amountPesos": 2524643000
+    },
+    {
+      "agencyKey": "19:011",
+      "department": "Department of Science and Technology (DOST)",
+      "agency": "Philippine Council for Agriculture, Aquatic and Natural Resources Research and Development",
+      "allocationRows": 98,
+      "amountPesos": 1704745000
+    },
+    {
+      "agencyKey": "19:012",
+      "department": "Department of Science and Technology (DOST)",
+      "agency": "Philippine Council for Health Research and Development",
+      "allocationRows": 78,
+      "amountPesos": 876542000
+    },
+    {
+      "agencyKey": "19:013",
+      "department": "Department of Science and Technology (DOST)",
+      "agency": "Philippine Council for Industry, Energy and Emerging Technology Research and Development (PCIEERD)",
+      "allocationRows": 72,
+      "amountPesos": 1189688000
+    },
+    {
+      "agencyKey": "19:014",
+      "department": "Department of Science and Technology (DOST)",
+      "agency": "Philippine Institute of Volcanology and Seismology",
+      "allocationRows": 376,
+      "amountPesos": 1174182000
+    },
+    {
+      "agencyKey": "19:015",
+      "department": "Department of Science and Technology (DOST)",
+      "agency": "Philippine Nuclear Research Institute",
+      "allocationRows": 252,
+      "amountPesos": 558867000
+    },
+    {
+      "agencyKey": "19:016",
+      "department": "Department of Science and Technology (DOST)",
+      "agency": "Philippine Science High School System",
+      "allocationRows": 1225,
+      "amountPesos": 3986392000
+    },
+    {
+      "agencyKey": "19:017",
+      "department": "Department of Science and Technology (DOST)",
+      "agency": "Philippine Textile Research Institute",
+      "allocationRows": 274,
+      "amountPesos": 315927000
+    },
+    {
+      "agencyKey": "19:018",
+      "department": "Department of Science and Technology (DOST)",
+      "agency": "Science Education Institute",
+      "allocationRows": 121,
+      "amountPesos": 7707236000
+    },
+    {
+      "agencyKey": "19:019",
+      "department": "Department of Science and Technology (DOST)",
+      "agency": "Science and Technology Information Institute",
+      "allocationRows": 151,
+      "amountPesos": 181423000
+    },
+    {
+      "agencyKey": "19:020",
+      "department": "Department of Science and Technology (DOST)",
+      "agency": "Technology Application and Promotion Institute",
+      "allocationRows": 153,
+      "amountPesos": 277946000
+    },
+    {
+      "agencyKey": "20:001",
+      "department": "Department of Social Welfare and Development (DSWD)",
+      "agency": "Office of the Secretary",
+      "allocationRows": 4014,
+      "amountPesos": 235907210000
+    },
+    {
+      "agencyKey": "20:002",
+      "department": "Department of Social Welfare and Development (DSWD)",
+      "agency": "Council for the Welfare of Children",
+      "allocationRows": 87,
+      "amountPesos": 140899000
+    },
+    {
+      "agencyKey": "20:004",
+      "department": "Department of Social Welfare and Development (DSWD)",
+      "agency": "National Council on Disability Affairs",
+      "allocationRows": 77,
+      "amountPesos": 95397000
+    },
+    {
+      "agencyKey": "20:006",
+      "department": "Department of Social Welfare and Development (DSWD)",
+      "agency": "Juvenile Justice and Welfare Council",
+      "allocationRows": 68,
+      "amountPesos": 131175000
+    },
+    {
+      "agencyKey": "20:007",
+      "department": "Department of Social Welfare and Development (DSWD)",
+      "agency": "National Anti-Poverty Commission",
+      "allocationRows": 97,
+      "amountPesos": 367287000
+    },
+    {
+      "agencyKey": "20:009",
+      "department": "Department of Social Welfare and Development (DSWD)",
+      "agency": "Presidential Commission for the Urban Poor",
+      "allocationRows": 82,
+      "amountPesos": 244450000
+    },
+    {
+      "agencyKey": "20:010",
+      "department": "Department of Social Welfare and Development (DSWD)",
+      "agency": "National Authority for Child Care",
+      "allocationRows": 144,
+      "amountPesos": 845443000
+    },
+    {
+      "agencyKey": "20:011",
+      "department": "Department of Social Welfare and Development (DSWD)",
+      "agency": "National Commission of Senior Citizens",
+      "allocationRows": 184,
+      "amountPesos": 3828275000
+    },
+    {
+      "agencyKey": "21:001",
+      "department": "Department of Tourism (DOT)",
+      "agency": "Office of the Secretary",
+      "allocationRows": 1932,
+      "amountPesos": 3528978000
+    },
+    {
+      "agencyKey": "21:002",
+      "department": "Department of Tourism (DOT)",
+      "agency": "Intramuros Administration",
+      "allocationRows": 160,
+      "amountPesos": 158434000
+    },
+    {
+      "agencyKey": "21:003",
+      "department": "Department of Tourism (DOT)",
+      "agency": "National Parks Development Committee",
+      "allocationRows": 113,
+      "amountPesos": 291725000
+    },
+    {
+      "agencyKey": "21:004",
+      "department": "Department of Tourism (DOT)",
+      "agency": "Philippine Commission on Sports Scuba Diving",
+      "allocationRows": 88,
+      "amountPesos": 49952000
+    },
+    {
+      "agencyKey": "22:001",
+      "department": "Department of Trade and Industry (DTI)",
+      "agency": "Office of the Secretary",
+      "allocationRows": 5225,
+      "amountPesos": 7009099000
+    },
+    {
+      "agencyKey": "22:002",
+      "department": "Department of Trade and Industry (DTI)",
+      "agency": "Board of Investments",
+      "allocationRows": 249,
+      "amountPesos": 568317000
+    },
+    {
+      "agencyKey": "22:005",
+      "department": "Department of Trade and Industry (DTI)",
+      "agency": "Philippine Trade Training Center",
+      "allocationRows": 127,
+      "amountPesos": 128929000
+    },
+    {
+      "agencyKey": "22:006",
+      "department": "Department of Trade and Industry (DTI)",
+      "agency": "Design Center of the Philippines",
+      "allocationRows": 174,
+      "amountPesos": 206723000
+    },
+    {
+      "agencyKey": "22:007",
+      "department": "Department of Trade and Industry (DTI)",
+      "agency": "Construction Industry Authority of the Philippines (CIAP)",
+      "allocationRows": 164,
+      "amountPesos": 170951000
+    },
+    {
+      "agencyKey": "22:008",
+      "department": "Department of Trade and Industry (DTI)",
+      "agency": "Cooperative Development Authority",
+      "allocationRows": 2159,
+      "amountPesos": 951911000
+    },
+    {
+      "agencyKey": "22:009",
+      "department": "Department of Trade and Industry (DTI)",
+      "agency": "Technical Education and Skills Development Authority",
+      "allocationRows": 1,
+      "amountPesos": 0
+    },
+    {
+      "agencyKey": "22:010",
+      "department": "Department of Trade and Industry (DTI)",
+      "agency": "Film Academy of the Philippines",
+      "allocationRows": 48,
+      "amountPesos": 104198000
+    },
+    {
+      "agencyKey": "24:001",
+      "department": "Department of Economy, Planning, and Development (DEPDev)",
+      "agency": "Office of the Secretary",
+      "allocationRows": 3724,
+      "amountPesos": 2721360000
+    },
+    {
+      "agencyKey": "24:004",
+      "department": "Department of Economy, Planning, and Development (DEPDev)",
+      "agency": "Philippine National Volunteer Service Coordinating Agency",
+      "allocationRows": 104,
+      "amountPesos": 38292000
+    },
+    {
+      "agencyKey": "24:005",
+      "department": "Department of Economy, Planning, and Development (DEPDev)",
+      "agency": "Public-Private Partnership Center of the Philippines",
+      "allocationRows": 129,
+      "amountPesos": 586378000
+    },
+    {
+      "agencyKey": "24:006",
+      "department": "Department of Economy, Planning, and Development (DEPDev)",
+      "agency": "Philippine Statistical Research and Training Institute (formerly Statistical Research and Training Center)",
+      "allocationRows": 112,
+      "amountPesos": 163451000
+    },
+    {
+      "agencyKey": "24:007",
+      "department": "Department of Economy, Planning, and Development (DEPDev)",
+      "agency": "Tariff Commission",
+      "allocationRows": 224,
+      "amountPesos": 118203000
+    },
+    {
+      "agencyKey": "24:008",
+      "department": "Department of Economy, Planning, and Development (DEPDev)",
+      "agency": "Philippine Statistics Authority",
+      "allocationRows": 2607,
+      "amountPesos": 13034653000
+    },
+    {
+      "agencyKey": "24:009",
+      "department": "Department of Economy, Planning, and Development (DEPDev)",
+      "agency": "Commission on Population and Development",
+      "allocationRows": 1503,
+      "amountPesos": 603098000
+    },
+    {
+      "agencyKey": "25:001",
+      "department": "Presidential Communications Office (PCO)",
+      "agency": "Presidential Communications Office (Proper)",
+      "allocationRows": 85,
+      "amountPesos": 784545000
+    },
+    {
+      "agencyKey": "25:002",
+      "department": "Presidential Communications Office (PCO)",
+      "agency": "Presidential Broadcast Service-Bureau of Broadcast Services",
+      "allocationRows": 143,
+      "amountPesos": 499740000
+    },
+    {
+      "agencyKey": "25:003",
+      "department": "Presidential Communications Office (PCO)",
+      "agency": "Bureau of Communications Services",
+      "allocationRows": 106,
+      "amountPesos": 80300000
+    },
+    {
+      "agencyKey": "25:004",
+      "department": "Presidential Communications Office (PCO)",
+      "agency": "National Printing Office",
+      "allocationRows": 89,
+      "amountPesos": 22888000
+    },
+    {
+      "agencyKey": "25:005",
+      "department": "Presidential Communications Office (PCO)",
+      "agency": "News and Information Bureau",
+      "allocationRows": 107,
+      "amountPesos": 157351000
+    },
+    {
+      "agencyKey": "25:006",
+      "department": "Presidential Communications Office (PCO)",
+      "agency": "Philippine Information Agency",
+      "allocationRows": 235,
+      "amountPesos": 697625000
+    },
+    {
+      "agencyKey": "25:007",
+      "department": "Presidential Communications Office (PCO)",
+      "agency": "Presidential Broadcast Staff (RTVM)",
+      "allocationRows": 65,
+      "amountPesos": 240250000
+    },
+    {
+      "agencyKey": "26:001",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "Anti-Money Laundering Council",
+      "allocationRows": 31,
+      "amountPesos": 144687000
+    },
+    {
+      "agencyKey": "26:002",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "Climate Change Commission",
+      "allocationRows": 142,
+      "amountPesos": 189410000
+    },
+    {
+      "agencyKey": "26:003",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "Commission on Filipinos Overseas",
+      "allocationRows": 78,
+      "amountPesos": 195200000
+    },
+    {
+      "agencyKey": "26:004",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "Commission on Higher Education",
+      "allocationRows": 1437,
+      "amountPesos": 35452574000
+    },
+    {
+      "agencyKey": "26:005",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "Commission on the Filipino Language",
+      "allocationRows": 103,
+      "amountPesos": 120696000
+    },
+    {
+      "agencyKey": "26:006",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "Dangerous Drugs Board  ",
+      "allocationRows": 187,
+      "amountPesos": 526546000
+    },
+    {
+      "agencyKey": "26:008",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "Energy Regulatory Commission",
+      "allocationRows": 134,
+      "amountPesos": 944065000
+    },
+    {
+      "agencyKey": "26:009",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "Film Development Council of the Philippines",
+      "allocationRows": 77,
+      "amountPesos": 314426000
+    },
+    {
+      "agencyKey": "26:010",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "Games and Amusements Board",
+      "allocationRows": 121,
+      "amountPesos": 175206000
+    },
+    {
+      "agencyKey": "26:011",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "Governance Commission for Government-Owned or Controlled Corporations",
+      "allocationRows": 130,
+      "amountPesos": 408382000
+    },
+    {
+      "agencyKey": "26:014",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "Mindanao Development Authority",
+      "allocationRows": 223,
+      "amountPesos": 284892000
+    },
+    {
+      "agencyKey": "26:015",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "Movie and Television Review and Classification Board",
+      "allocationRows": 94,
+      "amountPesos": 197898000
+    },
+    {
+      "agencyKey": "26:017",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "National Commission for Culture and the Arts-Proper",
+      "allocationRows": 149,
+      "amountPesos": 692861000
+    },
+    {
+      "agencyKey": "26:018",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "National Historical Commission of the Philippines",
+      "allocationRows": 292,
+      "amountPesos": 422055000
+    },
+    {
+      "agencyKey": "26:019",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "National Library of the Philippines",
+      "allocationRows": 214,
+      "amountPesos": 271211000
+    },
+    {
+      "agencyKey": "26:020",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "National Archives of the Philippines",
+      "allocationRows": 157,
+      "amountPesos": 339349000
+    },
+    {
+      "agencyKey": "26:021",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "National Commission on Indigenous Peoples",
+      "allocationRows": 2129,
+      "amountPesos": 1831074000
+    },
+    {
+      "agencyKey": "26:023",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "National Intelligence Coordinating Agency",
+      "allocationRows": 110,
+      "amountPesos": 2930628000
+    },
+    {
+      "agencyKey": "26:024",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "National Security Council",
+      "allocationRows": 270,
+      "amountPesos": 1136024000
+    },
+    {
+      "agencyKey": "26:026",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "Office of the Presidential Adviser on Peace, Reconciliation and Unity",
+      "allocationRows": 135,
+      "amountPesos": 9304525000
+    },
+    {
+      "agencyKey": "26:027",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "Optical Media Board",
+      "allocationRows": 67,
+      "amountPesos": 56393000
+    },
+    {
+      "agencyKey": "26:030",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "Philippine Drug Enforcement Agency",
+      "allocationRows": 834,
+      "amountPesos": 4619594000
+    },
+    {
+      "agencyKey": "26:031",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "Philippine Racing Commission",
+      "allocationRows": 79,
+      "amountPesos": 207854000
+    },
+    {
+      "agencyKey": "26:032",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "Philippine Sports Commission",
+      "allocationRows": 124,
+      "amountPesos": 1349373000
+    },
+    {
+      "agencyKey": "26:036",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "Presidential Management Staff",
+      "allocationRows": 144,
+      "amountPesos": 881662000
+    },
+    {
+      "agencyKey": "26:038",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "Philippine Competition Commission",
+      "allocationRows": 97,
+      "amountPesos": 832104000
+    },
+    {
+      "agencyKey": "26:043",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "Anti-Red Tape Authority",
+      "allocationRows": 142,
+      "amountPesos": 436720000
+    },
+    {
+      "agencyKey": "26:044",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "Philippine Space Agency",
+      "allocationRows": 162,
+      "amountPesos": 1316056000
+    },
+    {
+      "agencyKey": "26:047",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "Marawi Compensation Board",
+      "allocationRows": 53,
+      "amountPesos": 1265665000
+    },
+    {
+      "agencyKey": "26:049",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "Metropolitan Baguio City, La Trinidad, Itogon, Sablan, Tuba, and Tublay Development Authority",
+      "allocationRows": 118,
+      "amountPesos": 47754000
+    },
+    {
+      "agencyKey": "26:050",
+      "department": "Other Executive Offices (OEOs)",
+      "agency": "National Amnesty Commission",
+      "allocationRows": 62,
+      "amountPesos": 266685000
+    },
+    {
+      "agencyKey": "29:001",
+      "department": "The Judiciary (JUD)",
+      "agency": "Supreme Court of the Philippines and the Lower Courts",
+      "allocationRows": 511,
+      "amountPesos": 73836447000
+    },
+    {
+      "agencyKey": "29:002",
+      "department": "The Judiciary (JUD)",
+      "agency": "Presidential Electoral Tribunal",
+      "allocationRows": 48,
+      "amountPesos": 193428000
+    },
+    {
+      "agencyKey": "29:003",
+      "department": "The Judiciary (JUD)",
+      "agency": "Sandiganbayan",
+      "allocationRows": 228,
+      "amountPesos": 3282279000
+    },
+    {
+      "agencyKey": "29:004",
+      "department": "The Judiciary (JUD)",
+      "agency": "Court of Appeals",
+      "allocationRows": 110,
+      "amountPesos": 7604742000
+    },
+    {
+      "agencyKey": "29:005",
+      "department": "The Judiciary (JUD)",
+      "agency": "Court of Tax Appeals",
+      "allocationRows": 88,
+      "amountPesos": 1353618000
+    },
+    {
+      "agencyKey": "30:001",
+      "department": "Civil Service Commission (CSC)",
+      "agency": "Civil Service Commission",
+      "allocationRows": 2071,
+      "amountPesos": 4039690000
+    },
+    {
+      "agencyKey": "30:002",
+      "department": "Civil Service Commission (CSC)",
+      "agency": "Career Executive Service Board",
+      "allocationRows": 183,
+      "amountPesos": 142857000
+    },
+    {
+      "agencyKey": "31:000",
+      "department": "Commission on Audit (COA)",
+      "agency": "Commission on Audit (COA)",
+      "allocationRows": 1952,
+      "amountPesos": 16046527000
+    },
+    {
+      "agencyKey": "32:000",
+      "department": "Commission on Elections (COMELEC)",
+      "agency": "Commission on Elections (COMELEC)",
+      "allocationRows": 724,
+      "amountPesos": 29501545000
+    },
+    {
+      "agencyKey": "33:000",
+      "department": "Office of the Ombudsman (OMB)",
+      "agency": "Office of the Ombudsman",
+      "allocationRows": 467,
+      "amountPesos": 7232934000
+    },
+    {
+      "agencyKey": "34:001",
+      "department": "Commission on Human Rights (CHR)",
+      "agency": "Commission on Human Rights (CHR)",
+      "allocationRows": 261,
+      "amountPesos": 1272592000
+    },
+    {
+      "agencyKey": "34:003",
+      "department": "Commission on Human Rights (CHR)",
+      "agency": "Human Rights Violations Victims' Memorial Commission",
+      "allocationRows": 76,
+      "amountPesos": 63539000
+    },
+    {
+      "agencyKey": "35:003",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "National Dairy Authority",
+      "allocationRows": 5,
+      "amountPesos": 2253696000
+    },
+    {
+      "agencyKey": "35:004",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "National Food Authority",
+      "allocationRows": 2,
+      "amountPesos": 11176528000
+    },
+    {
+      "agencyKey": "35:005",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "National Irrigation Administration",
+      "allocationRows": 84,
+      "amountPesos": 46355900000
+    },
+    {
+      "agencyKey": "35:007",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "National Tobacco Administration",
+      "allocationRows": 131,
+      "amountPesos": 699858000
+    },
+    {
+      "agencyKey": "35:008",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Philippine Coconut Authority",
+      "allocationRows": 8,
+      "amountPesos": 1906289000
+    },
+    {
+      "agencyKey": "35:009",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Philippine Crop Insurance Corporation",
+      "allocationRows": 1,
+      "amountPesos": 4500000000
+    },
+    {
+      "agencyKey": "35:010",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Philippine Fisheries Development Authority",
+      "allocationRows": 2,
+      "amountPesos": 3810000000
+    },
+    {
+      "agencyKey": "35:011",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Philippine Rice Research Institute",
+      "allocationRows": 7,
+      "amountPesos": 936577000
+    },
+    {
+      "agencyKey": "35:014",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Sugar Regulatory Administration",
+      "allocationRows": 7,
+      "amountPesos": 1000000000
+    },
+    {
+      "agencyKey": "35:015",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "National Electrification Administration",
+      "allocationRows": 7,
+      "amountPesos": 6485760000
+    },
+    {
+      "agencyKey": "35:016",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "National Power Corporation",
+      "allocationRows": 2,
+      "amountPesos": 2000645000
+    },
+    {
+      "agencyKey": "35:019",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Power Sector Assets and Liabilities Management Corporation",
+      "allocationRows": 1,
+      "amountPesos": 8000000000
+    },
+    {
+      "agencyKey": "35:022",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Philippine Reclamation Authority",
+      "allocationRows": 1,
+      "amountPesos": 5000000000
+    },
+    {
+      "agencyKey": "35:025",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Lung Center of the Philippines",
+      "allocationRows": 1,
+      "amountPesos": 1184823000
+    },
+    {
+      "agencyKey": "35:026",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "National Kidney and Transplant Institute",
+      "allocationRows": 1,
+      "amountPesos": 2112736000
+    },
+    {
+      "agencyKey": "35:027",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Philippine Children’s Medical Center",
+      "allocationRows": 5,
+      "amountPesos": 1891281000
+    },
+    {
+      "agencyKey": "35:028",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Philippine Health Insurance Corporation",
+      "allocationRows": 3,
+      "amountPesos": 74448505000
+    },
+    {
+      "agencyKey": "35:029",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Philippine Heart Center",
+      "allocationRows": 1,
+      "amountPesos": 2920163000
+    },
+    {
+      "agencyKey": "35:030",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Philippine Institute of Traditional and Alternative Health Care",
+      "allocationRows": 4,
+      "amountPesos": 214625000
+    },
+    {
+      "agencyKey": "35:034",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Local Water Utilities Administration",
+      "allocationRows": 1,
+      "amountPesos": 29550000
+    },
+    {
+      "agencyKey": "35:035",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Metropolitan Waterworks and Sewerage System - Regulatory Office",
+      "allocationRows": 1,
+      "amountPesos": 239029000
+    },
+    {
+      "agencyKey": "35:038",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Duty Free Philippines Corporation",
+      "allocationRows": 1,
+      "amountPesos": 326326000
+    },
+    {
+      "agencyKey": "35:040",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Tourism Infrastructure and Enterprise Zone Authority",
+      "allocationRows": 2,
+      "amountPesos": 0
+    },
+    {
+      "agencyKey": "35:041",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Tourism Promotions Board",
+      "allocationRows": 19,
+      "amountPesos": 1119259000
+    },
+    {
+      "agencyKey": "35:042",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Aurora Pacific Economic Zone and Freeport Authority",
+      "allocationRows": 21,
+      "amountPesos": 67756000
+    },
+    {
+      "agencyKey": "35:043",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Center for International Trade Expositions and Missions",
+      "allocationRows": 3,
+      "amountPesos": 854748000
+    },
+    {
+      "agencyKey": "35:049",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Small Business Corporation",
+      "allocationRows": 2,
+      "amountPesos": 840170000
+    },
+    {
+      "agencyKey": "35:052",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Light Rail Transit Authority",
+      "allocationRows": 2,
+      "amountPesos": 944547000
+    },
+    {
+      "agencyKey": "35:056",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Philippine National Railways",
+      "allocationRows": 2,
+      "amountPesos": 283791000
+    },
+    {
+      "agencyKey": "35:058",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Philippine Institute for Development Studies",
+      "allocationRows": 4,
+      "amountPesos": 395992000
+    },
+    {
+      "agencyKey": "35:059",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "People's Television Network, Inc.",
+      "allocationRows": 6,
+      "amountPesos": 138378000
+    },
+    {
+      "agencyKey": "35:061",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Authority of the Freeport Area of Bataan",
+      "allocationRows": 1,
+      "amountPesos": 250000000
+    },
+    {
+      "agencyKey": "35:063",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Bases Conversion and Development Authority",
+      "allocationRows": 1,
+      "amountPesos": 1982948000
+    },
+    {
+      "agencyKey": "35:064",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Cagayan Economic Zone Authority",
+      "allocationRows": 1,
+      "amountPesos": 848734000
+    },
+    {
+      "agencyKey": "35:067",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Cultural Center of the Philippines",
+      "allocationRows": 5,
+      "amountPesos": 457830000
+    },
+    {
+      "agencyKey": "35:068",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Development Academy of the Philippines",
+      "allocationRows": 18,
+      "amountPesos": 812619000
+    },
+    {
+      "agencyKey": "35:073",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "National Home Mortgage Finance Corporation",
+      "allocationRows": 1,
+      "amountPesos": 450000
+    },
+    {
+      "agencyKey": "35:074",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "National Housing Authority",
+      "allocationRows": 22,
+      "amountPesos": 2274000000
+    },
+    {
+      "agencyKey": "35:078",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Philippine Center for Economic Development",
+      "allocationRows": 3,
+      "amountPesos": 110038000
+    },
+    {
+      "agencyKey": "35:080",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Philippine Postal Corporation",
+      "allocationRows": 3,
+      "amountPesos": 1239917000
+    },
+    {
+      "agencyKey": "35:082",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Southern Philippines Development Authority",
+      "allocationRows": 2,
+      "amountPesos": 85520000
+    },
+    {
+      "agencyKey": "35:083",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Subic Bay Metropolitan Authority",
+      "allocationRows": 1,
+      "amountPesos": 500000000
+    },
+    {
+      "agencyKey": "35:084",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Zamboanga City Special Economic Zone Authority",
+      "allocationRows": 2,
+      "amountPesos": 375455000
+    },
+    {
+      "agencyKey": "35:086",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Social Housing Finance Corporation",
+      "allocationRows": 2,
+      "amountPesos": 166080000
+    },
+    {
+      "agencyKey": "35:087",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Intercontinental Broadcasting Corporation",
+      "allocationRows": 34,
+      "amountPesos": 0
+    },
+    {
+      "agencyKey": "35:090",
+      "department": "Budgetary Support to Government Corporations (BSGC)",
+      "agency": "Philippine Tax Academy",
+      "allocationRows": 1,
+      "amountPesos": 59974000
+    },
+    {
+      "agencyKey": "36:001",
+      "department": "Allocations to Local Government Units (ALGU)",
+      "agency": "Metropolitan Manila Development Authority",
+      "allocationRows": 197,
+      "amountPesos": 6560912000
+    },
+    {
+      "agencyKey": "37:001",
+      "department": "Department of Information and Communications Technology (DICT)",
+      "agency": "Office of the Secretary",
+      "allocationRows": 440,
+      "amountPesos": 17601858000
+    },
+    {
+      "agencyKey": "37:002",
+      "department": "Department of Information and Communications Technology (DICT)",
+      "agency": "National Telecommunications Commission",
+      "allocationRows": 817,
+      "amountPesos": 789855000
+    },
+    {
+      "agencyKey": "37:003",
+      "department": "Department of Information and Communications Technology (DICT)",
+      "agency": "National Privacy Commission",
+      "allocationRows": 84,
+      "amountPesos": 505403000
+    },
+    {
+      "agencyKey": "37:004",
+      "department": "Department of Information and Communications Technology (DICT)",
+      "agency": "Cybercrime Investigation and Coordination Center",
+      "allocationRows": 65,
+      "amountPesos": 594379000
+    },
+    {
+      "agencyKey": "38:001",
+      "department": "Department of Transportation (DOTr)",
+      "agency": "Office of the Secretary",
+      "allocationRows": 3140,
+      "amountPesos": 251931116000
+    },
+    {
+      "agencyKey": "38:002",
+      "department": "Department of Transportation (DOTr)",
+      "agency": "Civil Aeronautics Board",
+      "allocationRows": 109,
+      "amountPesos": 270475000
+    },
+    {
+      "agencyKey": "38:003",
+      "department": "Department of Transportation (DOTr)",
+      "agency": "Maritime Industry Authority (MARINA)",
+      "allocationRows": 599,
+      "amountPesos": 1466915000
+    },
+    {
+      "agencyKey": "38:004",
+      "department": "Department of Transportation (DOTr)",
+      "agency": "Office of Transportation Cooperatives",
+      "allocationRows": 90,
+      "amountPesos": 42901000
+    },
+    {
+      "agencyKey": "38:005",
+      "department": "Department of Transportation (DOTr)",
+      "agency": "Office for Transportation Security",
+      "allocationRows": 540,
+      "amountPesos": 1671186000
+    },
+    {
+      "agencyKey": "38:006",
+      "department": "Department of Transportation (DOTr)",
+      "agency": "Philippine Coast Guard",
+      "allocationRows": 1093,
+      "amountPesos": 45514357000
+    },
+    {
+      "agencyKey": "38:007",
+      "department": "Department of Transportation (DOTr)",
+      "agency": "Toll Regulatory Board",
+      "allocationRows": 151,
+      "amountPesos": 63486000
+    },
+    {
+      "agencyKey": "39:001",
+      "department": "Department of Human Settlements and Urban Development (DHSUD)",
+      "agency": "Office of the Secretary",
+      "allocationRows": 1866,
+      "amountPesos": 2492739000
+    },
+    {
+      "agencyKey": "39:002",
+      "department": "Department of Human Settlements and Urban Development (DHSUD)",
+      "agency": "Human Settlements Adjudication Commission",
+      "allocationRows": 1661,
+      "amountPesos": 566039000
+    },
+    {
+      "agencyKey": "40:001",
+      "department": "Department of Migrant Workers (DMW)",
+      "agency": "Office of the Secretary",
+      "allocationRows": 1954,
+      "amountPesos": 7266548000
+    },
+    {
+      "agencyKey": "40:002",
+      "department": "Department of Migrant Workers (DMW)",
+      "agency": "Overseas Workers Welfare Administration",
+      "allocationRows": 146,
+      "amountPesos": 4348810000
+    },
+    {
+      "agencyKey": "01:252",
+      "department": "New General Appropriations",
+      "agency": "Special Shares of LGUs in the Proceeds of National Taxes",
+      "allocationRows": 6,
+      "amountPesos": 31475116000
+    },
+    {
+      "agencyKey": "01:254",
+      "department": "New General Appropriations",
+      "agency": "Local Government Support Fund (formerly Financial Subsidy to LGUs)",
+      "allocationRows": 6,
+      "amountPesos": 58532578000
+    },
+    {
+      "agencyKey": "01:255",
+      "department": "New General Appropriations",
+      "agency": "Special Shares of LGUs in the Proceeds of Fire Code Fees",
+      "allocationRows": 1,
+      "amountPesos": 1136462000
+    },
+    {
+      "agencyKey": "01:257",
+      "department": "New General Appropriations",
+      "agency": "Bangsamoro Autonomous Region in Muslim Mindanao (BARMM)",
+      "allocationRows": 2,
+      "amountPesos": 11428648000
+    },
+    {
+      "agencyKey": "01:401",
+      "department": "New General Appropriations",
+      "agency": "National Disaster Risk Reduction and Management Fund ( Calamity Fund )",
+      "allocationRows": 6,
+      "amountPesos": 45670000000
+    },
+    {
+      "agencyKey": "01:402",
+      "department": "New General Appropriations",
+      "agency": "Contingent Fund",
+      "allocationRows": 2,
+      "amountPesos": 13000000000
+    },
+    {
+      "agencyKey": "01:406",
+      "department": "New General Appropriations",
+      "agency": "Miscellaneous Personnel Benefits Fund",
+      "allocationRows": 12,
+      "amountPesos": 55865025000
+    },
+    {
+      "agencyKey": "01:407",
+      "department": "New General Appropriations",
+      "agency": "Pension and Gratuity Fund",
+      "allocationRows": 14,
+      "amountPesos": 180265691000
+    },
+    {
+      "agencyKey": "01:412",
+      "department": "New General Appropriations",
+      "agency": "BSGC - Others",
+      "allocationRows": 1,
+      "amountPesos": 500000000
+    },
+    {
+      "agencyKey": "01:416",
+      "department": "New General Appropriations",
+      "agency": "Revised AFP Modernization Program",
+      "allocationRows": 1,
+      "amountPesos": 50000000000
+    },
+    {
+      "agencyKey": "04:105",
+      "department": "Automatic Appropriations",
+      "agency": "Customs duties and taxes, including tax expenditures",
+      "allocationRows": 1,
+      "amountPesos": 14500000000
+    },
+    {
+      "agencyKey": "04:110",
+      "department": "Automatic Appropriations",
+      "agency": "Debt Interest Payments",
+      "allocationRows": 1,
+      "amountPesos": 1114256000000
+    },
+    {
+      "agencyKey": "04:257",
+      "department": "Automatic Appropriations",
+      "agency": "Bangsamoro Autonomous Region in Muslim Mindanao (BARMM)",
+      "allocationRows": 1,
+      "amountPesos": 104192445000
+    },
+    {
+      "agencyKey": "04:258",
+      "department": "Automatic Appropriations",
+      "agency": "National Tax Allotment",
+      "allocationRows": 19,
+      "amountPesos": 1319834557000
+    },
+    {
+      "agencyKey": "04:280",
+      "department": "Automatic Appropriations",
+      "agency": "Net Lending",
+      "allocationRows": 1,
+      "amountPesos": 28700000000
+    }
+  ],
+  "rowsByBudgetType": {
+    "hierarchy": 4775,
+    "allocation": 532313,
+    "entry_without_allocation": 219539,
+    "grand_total": 1
+  },
+  "budgetAllocationTotalPesos": 7200186000000,
+  "grandTotalControls": [
+    {
+      "sourceRow": 756630,
+      "amountPesos": 7200186000000
+    }
+  ],
+  "reconciliationDifferencePesos": 0,
+  "grain": "Workbook object/fund allocation rows and unallocated catalogue/hierarchy rows; row count is not a project count",
   "amountRowSamplesByPrexcLevel": {
     "7": [
       {
@@ -781,7 +3460,7 @@
         "description": "General management and supervision",
         "expenditure": "Personnel Services",
         "object": "Salaries and Wages - Regular",
-        "amount": 695308.0
+        "amount": 695308
       },
       {
         "sourceRow": 4,
@@ -790,7 +3469,7 @@
         "description": "General management and supervision",
         "expenditure": "Personnel Services",
         "object": "Salaries and Wages - Casual/Contractual",
-        "amount": 60383.0
+        "amount": 60383
       },
       {
         "sourceRow": 5,
@@ -799,7 +3478,7 @@
         "description": "General management and supervision",
         "expenditure": "Personnel Services",
         "object": "Personal Economic Relief Allowance (PERA)",
-        "amount": 16656.0
+        "amount": 16656
       },
       {
         "sourceRow": 6,
@@ -808,7 +3487,7 @@
         "description": "General management and supervision",
         "expenditure": "Personnel Services",
         "object": "Representation Allowance (RA)",
-        "amount": 12978.0
+        "amount": 12978
       }
     ],
     "3": [
@@ -819,7 +3498,7 @@
         "description": "Tax Expenditure Fund",
         "expenditure": "Maintenance and Other Operating Expenses",
         "object": "Taxes, Duties and Licenses",
-        "amount": 14500000.0
+        "amount": 14500000
       },
       {
         "sourceRow": 756601,
@@ -828,7 +3507,7 @@
         "description": "Allocations to Local Government Units - Annual Block Grant",
         "expenditure": "Maintenance and Other Operating Expenses",
         "object": "Assistance to Local Government Units",
-        "amount": 104192445.0
+        "amount": 104192445
       },
       {
         "sourceRow": 756602,
@@ -837,7 +3516,7 @@
         "description": "Allocation to Local Government Units - National Tax Allotment",
         "expenditure": "Maintenance and Other Operating Expenses",
         "object": "Internal Revenue Allotment",
-        "amount": 129324885.0
+        "amount": 129324885
       },
       {
         "sourceRow": 756603,
@@ -846,7 +3525,7 @@
         "description": "Allocation to Local Government Units - National Tax Allotment",
         "expenditure": "Maintenance and Other Operating Expenses",
         "object": "Internal Revenue Allotment",
-        "amount": 63168602.0
+        "amount": 63168602
       }
     ],
     "": [
@@ -857,7 +3536,7 @@
         "description": "",
         "expenditure": "",
         "object": "",
-        "amount": 7200186000.0
+        "amount": 7200186000
       }
     ]
   },

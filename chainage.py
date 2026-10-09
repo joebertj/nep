@@ -3,10 +3,11 @@
 import re
 
 
-_MARKER = r"(?:(?:STA(?:TION)?|KM|KILOMET(?:ER|RE))\.?\s*[:=]?\s*)?"
+_MARKER = r"(?:(?:STA(?:TION)?|KM|KILOMET(?:ER|RE)|K)\.?\s*[:=]?\s*)?"
+_OFFSET = r"\(?\s*([+-]?\d+(?:\.\d+)?)\s*\)?"
 _PATTERN = re.compile(
-    rf"\b{_MARKER}(\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)"
-    rf"(?:\s*(?:[-–]|\bTO\b)\s*{_MARKER}(\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?))?",
+    rf"\b{_MARKER}(\d+(?:\.\d+)?)\s*\+\s*{_OFFSET}"
+    rf"(?:\s*(?:[-–]|\bTO\b)\s*{_MARKER}(\d+(?:\.\d+)?)\s*\+\s*{_OFFSET})?",
     re.I,
 )
 

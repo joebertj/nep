@@ -9,11 +9,11 @@ Make and review the ODV changes in `open-data-visualization`, commit them, and
 push the intended commit to `origin/main`. The local ODV checkout may contain
 unrelated work; stage only the intended files. The server deploy helper refuses
 to run if the server checkout has unrelated changes or cannot fast-forward.
-It backs up the six release paths before advancing Git, replaces the four report
-files with the committed versions, and preserves server-only homepage edits
+It backs up the 19 report HTML and data paths before advancing Git, replaces
+them with the committed versions, and preserves server-only homepage edits
 when the target commit leaves those templates unchanged. If the frontend or any
-report URL fails its post-update check, it restores the previous commit and all
-six pre-deployment files.
+report HTML/JSON URL fails its post-update check, it restores the previous commit
+and all 19 pre-deployment report paths.
 
 Inspect the server first:
 
@@ -64,8 +64,8 @@ After the explicit `COPY HTML` confirmation, this copies only `dpwh.html`,
 `fmr.html`, `nia.html`, and `hfep.html` from `analysis_output/` into the new
 `static/nep-preview/` directory in the remote checkout. The reports are served
 by the existing Actix static-file mapping at `/static/`, so their preview paths
-will be `/static/nep-preview/dpwh.html`, `/static/nep-preview/fmr.html`,
-`/static/nep-preview/nia.html`, and `/static/nep-preview/hfep.html`.
+will be `/static/nep-preview/*.html`, including the unlinked congressional
+allocation page at `/static/nep-preview/congress.html`.
 
 The helper creates only that new directory and does not overwrite current
 templates, edit routes, reset Git, build binaries, install packages, change

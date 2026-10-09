@@ -1,0 +1,329 @@
+{
+  "scope": "DPWH Volume I-C native PDF extraction, both HGAB editions",
+  "findings": [
+    "Old txtwrite parser included invisible neighbouring spread text.",
+    "Action-word/site-word filters dropped road and bridge names and flat office allocations.",
+    "Continuation fragments and row baselines were merged across projects; amounts could be attached to headings.",
+    "The supplied stage trace House PDF hash is the 2nd-reading PDF hash.",
+    "Source hierarchy, wrapped descriptions, explicit amounts and genuine allocation occurrences are now retained."
+  ],
+  "baselineFromGitHEAD": {
+    "2nd": {
+      "rows": 12714,
+      "rawExtractedPesos": 360773154440,
+      "extractionMethod": "Ghostscript text extraction; heuristic candidate detection, no OCR"
+    },
+    "3rd": {
+      "rows": 12732,
+      "rawExtractedPesos": 361650774440,
+      "extractionMethod": "Ghostscript text extraction; heuristic candidate detection, no OCR"
+    }
+  },
+  "editions": {
+    "2nd": {
+      "rows": 16270,
+      "pesos": 586941661000,
+      "sourceSHA256": "0b790d6018db59abab648486c5068108a42ff20a33facc8e21ace0bbedf2d15f",
+      "offPageCharactersExcluded": 2642350,
+      "programReconciliation": [
+        {
+          "program": "Asset Preservation Program",
+          "printedPesos": 79720290000,
+          "extractedPesos": 79720290000,
+          "differencePesos": 0
+        },
+        {
+          "program": "Network Development Program",
+          "printedPesos": 92435879000,
+          "extractedPesos": 92435879000,
+          "differencePesos": 0
+        },
+        {
+          "program": "Bridge Program",
+          "printedPesos": 37590473000,
+          "extractedPesos": 37590473000,
+          "differencePesos": 0
+        },
+        {
+          "program": "Flood Management Program",
+          "printedPesos": 87187778000,
+          "extractedPesos": 87187778000,
+          "differencePesos": 0
+        },
+        {
+          "program": "Convergence and Special Support Program",
+          "printedPesos": 231382287000,
+          "extractedPesos": 231382287000,
+          "differencePesos": 0
+        },
+        {
+          "program": "Local Program",
+          "printedPesos": 13875943000,
+          "extractedPesos": 13875943000,
+          "differencePesos": 0
+        },
+        {
+          "program": "FOREIGN-ASSISTED PROJECTS",
+          "printedPesos": 44749011000,
+          "extractedPesos": 44749011000,
+          "differencePesos": 0
+        }
+      ],
+      "rainwaterAllocations": {
+        "4200000": 199,
+        "9000000": 17,
+        "38400000": 1
+      },
+      "knownButuanRegressions": "all three fixtures recovered once at the printed amount",
+      "benchmark": {
+        "samePdfAsStageTrace": true,
+        "pageAmountOccurrencesAgree": false,
+        "traceAllocations": 16270,
+        "tracePesos": 586941661000,
+        "missingPageAmountOccurrences": [
+          [
+            936,
+            25075000,
+            1
+          ]
+        ],
+        "additionalPageAmountOccurrences": [
+          [
+            937,
+            25075000,
+            1
+          ]
+        ]
+      }
+    },
+    "3rd": {
+      "rows": 16275,
+      "pesos": 587075661000,
+      "sourceSHA256": "48cb7a11e391bd4da89d4f47cf39a2eba8fe9bfe636dba101c8284b224ac1b1b",
+      "offPageCharactersExcluded": 2644551,
+      "programReconciliation": [
+        {
+          "program": "Asset Preservation Program",
+          "printedPesos": 79720290000,
+          "extractedPesos": 79720290000,
+          "differencePesos": 0
+        },
+        {
+          "program": "Network Development Program",
+          "printedPesos": 92435879000,
+          "extractedPesos": 92435879000,
+          "differencePesos": 0
+        },
+        {
+          "program": "Bridge Program",
+          "printedPesos": 37590473000,
+          "extractedPesos": 37590473000,
+          "differencePesos": 0
+        },
+        {
+          "program": "Flood Management Program",
+          "printedPesos": 87255778000,
+          "extractedPesos": 87255778000,
+          "differencePesos": 0
+        },
+        {
+          "program": "Convergence and Special Support Program",
+          "printedPesos": 231448287000,
+          "extractedPesos": 231448287000,
+          "differencePesos": 0
+        },
+        {
+          "program": "Local Program",
+          "printedPesos": 13875943000,
+          "extractedPesos": 13875943000,
+          "differencePesos": 0
+        },
+        {
+          "program": "FOREIGN-ASSISTED PROJECTS",
+          "printedPesos": 44749011000,
+          "extractedPesos": 44749011000,
+          "differencePesos": 0
+        }
+      ],
+      "rainwaterAllocations": {
+        "4200000": 199,
+        "9000000": 17,
+        "38400000": 1
+      },
+      "knownButuanRegressions": "all three fixtures recovered once at the printed amount",
+      "benchmark": {
+        "samePdfAsStageTrace": false
+      }
+    }
+  },
+  "readingComparison": {
+    "secondCandidateCount": 16270,
+    "thirdCandidateCount": 16275,
+    "secondAllocationPesos": 586941661000,
+    "thirdAllocationPesos": 587075661000,
+    "statusCounts": {
+      "Retained · same amount": 16270,
+      "New in 3rd reading": 5
+    },
+    "method": "Exact normalized titles are paired first; fuzzy candidates require at least 78% sequence similarity, exclude opposite directions and disjoint stated chainage, and are for manual review. Totals are extracted schedule allocations, not verified duplicate costs."
+  },
+  "matchingChecks": {
+    "hb_nep_comparison": {
+      "uniqueAssignments": true,
+      "papDirectionChainageCompatibility": true,
+      "completeSourceAccounting": true,
+      "amountDeltasAgree": true,
+      "counts": {
+        "Exact normalized title found in NEP": 9624,
+        "Plausible NEP title counterpart; review scope": 656,
+        "No plausible NEP title counterpart; review candidate": 4606,
+        "Multiple or already paired NEP counterparts; review scope": 1384
+      }
+    },
+    "hb_nep_comparison_3rd": {
+      "uniqueAssignments": true,
+      "papDirectionChainageCompatibility": true,
+      "completeSourceAccounting": true,
+      "amountDeltasAgree": true,
+      "counts": {
+        "Exact normalized title found in NEP": 9626,
+        "Plausible NEP title counterpart; review scope": 654,
+        "No plausible NEP title counterpart; review candidate": 4610,
+        "Multiple or already paired NEP counterparts; review scope": 1385
+      }
+    }
+  },
+  "thirdReadingAddedAllocations": [
+    {
+      "id": "HB10858-3-0323-003955",
+      "code": "HB10858-3-0323-003955",
+      "fiscalYear": 2027,
+      "region": "Region XIII",
+      "office": "Metro Manila 3rd District Engineering Office",
+      "projectName": "Construction of Reinforced Concrete Box Culvert along J.P. Rizal St. (C 0+000 - C 0+484), Barangay 28, Caloocan City",
+      "pap1": "Flood Management Program",
+      "pap2": "",
+      "pap3": "Construction/ Maintenance of Flood Mitigation Structures and Drainage Systems",
+      "amount": 36000.0,
+      "amountPesos": 36000000,
+      "documentCount": 1,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 323,
+      "sourcePages": [
+        323
+      ],
+      "sourceText": "Construction of Reinforced Concrete Box Culvert along J.P. Rizal St. (C 0+000 - C 0+484), Barangay 28, Caloocan City\t36000000",
+      "sourceIndent": -330.7030194218335,
+      "sourceY": 632.0,
+      "reviewStatus": "visible native text; project matching remains provisional",
+      "sourceTitle": "Construction of Reinforced Concrete Box Culvert along J.P. Rizal St. (C 0+000 - C 0+484), Barangay 28, Caloocan City",
+      "allocationKind": "project",
+      "zone": "local"
+    },
+    {
+      "id": "HB10858-3-0323-003956",
+      "code": "HB10858-3-0323-003956",
+      "fiscalYear": 2027,
+      "region": "Region XIII",
+      "office": "Metro Manila 3rd District Engineering Office",
+      "projectName": "Construction of Reinforced Concrete Box Culvert along J.P. Rizal St. (C 0+953 - C 1+471), Barangay 34 and 35, Caloocan City",
+      "pap1": "Flood Management Program",
+      "pap2": "",
+      "pap3": "Construction/ Maintenance of Flood Mitigation Structures and Drainage Systems",
+      "amount": 32000.0,
+      "amountPesos": 32000000,
+      "documentCount": 1,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 323,
+      "sourcePages": [
+        323
+      ],
+      "sourceText": "Construction of Reinforced Concrete Box Culvert along J.P. Rizal St. (C 0+953 - C 1+471), Barangay 34 and 35, Caloocan City\t32000000",
+      "sourceIndent": -330.7030194218335,
+      "sourceY": 664.0,
+      "reviewStatus": "visible native text; project matching remains provisional",
+      "sourceTitle": "Construction of Reinforced Concrete Box Culvert along J.P. Rizal St. (C 0+953 - C 1+471), Barangay 34 and 35, Caloocan City",
+      "allocationKind": "project",
+      "zone": "local"
+    },
+    {
+      "id": "HB10858-3-0451-006453",
+      "code": "HB10858-3-0451-006453",
+      "fiscalYear": 2027,
+      "region": "Region XIII",
+      "office": "Metro Manila 3rd District Engineering Office",
+      "projectName": "Rehabilitation of Drainage including Pathwalk along 1st Street (C 0+000 - C 0+118), 2nd Street (C 0+000 - C 0+146) and 3rd Street (C 0+000 - C 0+160), Barangay 10, Caloocan City",
+      "pap1": "Convergence and Special Support Program",
+      "pap2": "",
+      "pap3": "BIP - Access Roads and/or Bridges from the National Roads leading to Major/ Strategic Public Buildings/ Facilities",
+      "amount": 25000.0,
+      "amountPesos": 25000000,
+      "documentCount": 1,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 451,
+      "sourcePages": [
+        451
+      ],
+      "sourceText": "Rehabilitation of Drainage including Pathwalk along 1st Street (C 0+000 - C 0+118), 2nd Street (C 0+000 - C 0+146) and 3rd Street (C 0+000 - C 0+160), Barangay 10, Caloocan City\t25000000",
+      "sourceIndent": -330.7030194218335,
+      "sourceY": 300.0,
+      "reviewStatus": "visible native text; project matching remains provisional",
+      "sourceTitle": "Rehabilitation of Drainage including Pathwalk along 1st Street (C 0+000 - C 0+118), 2nd Street (C 0+000 - C 0+146) and 3rd Street (C 0+000 - C 0+160), Barangay 10, Caloocan City",
+      "allocationKind": "project",
+      "zone": "local"
+    },
+    {
+      "id": "HB10858-3-0451-006454",
+      "code": "HB10858-3-0451-006454",
+      "fiscalYear": 2027,
+      "region": "Region XIII",
+      "office": "Metro Manila 3rd District Engineering Office",
+      "projectName": "Rehabilitation of Drainage including Pathwalk along Salaysay St. (C 0+000 - C 0+160) and Salmon St. (C 0+000 - C 0+110), Barangay 8, Caloocan City",
+      "pap1": "Convergence and Special Support Program",
+      "pap2": "",
+      "pap3": "BIP - Access Roads and/or Bridges from the National Roads leading to Major/ Strategic Public Buildings/ Facilities",
+      "amount": 15000.0,
+      "amountPesos": 15000000,
+      "documentCount": 1,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 451,
+      "sourcePages": [
+        451
+      ],
+      "sourceText": "Rehabilitation of Drainage including Pathwalk along Salaysay St. (C 0+000 - C 0+160) and Salmon St. (C 0+000 - C 0+110), Barangay 8, Caloocan City\t15000000",
+      "sourceIndent": -330.7030194218335,
+      "sourceY": 340.0,
+      "reviewStatus": "visible native text; project matching remains provisional",
+      "sourceTitle": "Rehabilitation of Drainage including Pathwalk along Salaysay St. (C 0+000 - C 0+160) and Salmon St. (C 0+000 - C 0+110), Barangay 8, Caloocan City",
+      "allocationKind": "project",
+      "zone": "local"
+    },
+    {
+      "id": "HB10858-3-0451-006455",
+      "code": "HB10858-3-0451-006455",
+      "fiscalYear": 2027,
+      "region": "Region XIII",
+      "office": "Metro Manila 3rd District Engineering Office",
+      "projectName": "Rehabilitation of Roads and Drainage along Tanigue St., (C 0+000 - C 0+180), Barangay 14, Caloocan City",
+      "pap1": "Convergence and Special Support Program",
+      "pap2": "",
+      "pap3": "BIP - Access Roads and/or Bridges from the National Roads leading to Major/ Strategic Public Buildings/ Facilities",
+      "amount": 26000.0,
+      "amountPesos": 26000000,
+      "documentCount": 1,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 451,
+      "sourcePages": [
+        451
+      ],
+      "sourceText": "Rehabilitation of Roads and Drainage along Tanigue St., (C 0+000 - C 0+180), Barangay 14, Caloocan City\t26000000",
+      "sourceIndent": -330.7030194218335,
+      "sourceY": 369.0,
+      "reviewStatus": "visible native text; project matching remains provisional",
+      "sourceTitle": "Rehabilitation of Roads and Drainage along Tanigue St., (C 0+000 - C 0+180), Barangay 14, Caloocan City",
+      "allocationKind": "project",
+      "zone": "local"
+    }
+  ],
+  "limits": "Printed control reconciliation validates extraction totals, not project identity. OCR uncertainty remains in the Official NEP records supplied through the trace; matches and unmatched records remain provisional."
+}

@@ -1,0 +1,30 @@
+{
+  "title": "FY2027 DPWH Official NEP vs HGAB 3rd Reading mapping screen",
+  "sources": {
+    "mapping": "analysis_output/hb_nep_comparison_3rd_mapping.json",
+    "nep": "2027.json plus Official NEP source records from stage_trace_2027.json",
+    "hgab": "hb10858_3rd_dpwh_projects.json"
+  },
+  "counts": {
+    "officialNepLineItems": 11420,
+    "transparencyNepLineItems": 11372,
+    "hgabExtractedAllocations": 16275,
+    "nepClearlyLinkedByCompatibleScopeNormalizedTitle": 9626,
+    "transparencyNepClearlyLinked": 9601,
+    "hgabNoPlausibleNepCounterpart": 4610,
+    "hgabAmbiguousOrAlreadyPairedCounterparts": 1385,
+    "potentialNonexactOneToOnePairs": 654,
+    "officialNepWithoutSelectedCounterpart": 1140,
+    "transparencyNepWithoutSelectedCounterpart": 1140,
+    "exactScopePairsWithAmountChanges": 257,
+    "exactScopePairsWithSameAmount": 9369
+  },
+  "comparisonCategoryCounts": {
+    "Exact normalized title found in NEP": 9626,
+    "Plausible NEP title counterpart; review scope": 654,
+    "No plausible NEP title counterpart; review candidate": 4610,
+    "Multiple or already paired NEP counterparts; review scope": 1385
+  },
+  "method": "Visible HGAB allocations; Official NEP source records augment the independently validated local Transparency snapshot. One-to-one occurrences; abbreviations and maintenance PAP prefixes normalized. Uncorroborated OCR/native-row-ambiguity titles can only support potential matches. Global candidate search checks PAP, direction and chainage compatibility. 83% fuzzy candidates remain provisional; amount alone never identifies a project.",
+  "limits": "Exact compatible title scopes are clear automated links, not manual certifications. Fuzzy pairs and unmatched or ambiguous rows remain for review. Ambiguous rows are excluded from the no-plausible-counterpart count."
+}

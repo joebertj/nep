@@ -1,0 +1,80 @@
+{
+  "workbookSHA256": "19f6b607062ba5564cbc29655f5bc0be8c3b3eb1a25dcb94591956ec574cdbb5",
+  "parquetSHA256": "8668cd5088c502ba797705ef0c020acd47466df3b20cdeaedafdf3daadb4f313",
+  "apiSnapshotSHA256": "dd57319349db0174fb59ae2a1939274a6ee072f889a48e85712818980a480e2e",
+  "officialSourceTraceSHA256": "b29b5603d0eaefe78f0f33ad179029ed0a5e1a453444a7ef0097ab6debf6829f",
+  "sourceCellAudit": {
+    "rowsChecked": 756628,
+    "allOriginalCellsAgree": true,
+    "sourceAllocationPesos": 7200186000000,
+    "sourceControls": [
+      {
+        "sourceRow": 756630,
+        "pesos": 7200186000000
+      }
+    ]
+  },
+  "ledger": {
+    "n": 756628,
+    "unique_source_rows": 756628,
+    "pesos": 7200186000000,
+    "allocations": 532313,
+    "contaminated_controls": 0
+  },
+  "dpwhWorkbookBranches": [
+    {
+      "branch": "1",
+      "pesos": 19314966000
+    },
+    {
+      "branch": "2",
+      "pesos": 51714236000
+    },
+    {
+      "branch": "3",
+      "pesos": 572924074000
+    }
+  ],
+  "dpwhWorkbookFunds": [
+    {
+      "fund_prefix": "101",
+      "pesos": 642612015000
+    },
+    {
+      "fund_prefix": "104",
+      "pesos": 1341261000
+    }
+  ],
+  "dpwhReconciliation": {
+    "operationsPesos": 572924074000,
+    "newAppropriationsPesos": 642612015000,
+    "apiRows": 11372,
+    "apiPesos": 445378063000,
+    "officialRows": 11420,
+    "outsideApiNonFapRows": 23,
+    "outsideApiNonFapPesos": 9797000000,
+    "outsideApiFapRows": 25,
+    "outsideApiFapPesos": 117749011000
+  },
+  "sourceTitleConfidence": {
+    "apiPairKinds": {
+      "exact_title_amount": 11199,
+      "ocr_title_candidate": 173
+    },
+    "officialTitlesAllowedOnlyAsPotential": 2658,
+    "primaryTitlesAllowedOnlyAsPotential": 23
+  },
+  "fixes": [
+    "Grand-total AMT retained as a control; excluded from normalized allocations to prevent counting the national budget twice.",
+    "Entries without AMT are marked as lacking allocations, not counted as funded projects.",
+    "Agency totals use department:agency codes to distinguish repeated Office of the Secretary labels.",
+    "Exact integer peso conversion and formula/error validation preserve source amounts.",
+    "Every trace API anchor checked against the actual local 2027.json; unique coverage and amount totals enforced.",
+    "Uncorroborated ambiguous PDF/OCR titles excluded from clear exact matches."
+  ],
+  "limits": [
+    "No original Official NEP PDF or its extraction generator exists in the current workspace; PDF titles cannot be independently re-extracted here.",
+    "The workbook provides DPWH PAP/office envelopes rather than detailed allocations for most named catalogue projects; it validates financial controls, not every project title.",
+    "Fund prefix 104 includes allocations outside printed new appropriations; these remain in the workbook ledger with their original fund labels."
+  ]
+}

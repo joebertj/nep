@@ -3,20 +3,685 @@
     {
       "file": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
       "pages": 942,
-      "duplicatePagesSkipped": 0,
-      "duplicateRowsSkipped": 7000,
-      "candidateRows": 12732
+      "sourceSHA256": "48cb7a11e391bd4da89d4f47cf39a2eba8fe9bfe636dba101c8284b224ac1b1b",
+      "offPageCharactersExcluded": 2644551,
+      "visibleHierarchyRows": 18660,
+      "candidateRows": 16275,
+      "allocationPesos": 587075661000,
+      "programCounts": {
+        "Asset Preservation Program": 1553,
+        "Network Development Program": 1052,
+        "Bridge Program": 836,
+        "Flood Management Program": 1458,
+        "Convergence and Special Support Program": 11137,
+        "Local Program": 210,
+        "FOREIGN-ASSISTED PROJECTS": 29
+      },
+      "programReconciliation": [
+        {
+          "program": "Asset Preservation Program",
+          "printedPesos": 79720290000,
+          "extractedPesos": 79720290000,
+          "differencePesos": 0
+        },
+        {
+          "program": "Network Development Program",
+          "printedPesos": 92435879000,
+          "extractedPesos": 92435879000,
+          "differencePesos": 0
+        },
+        {
+          "program": "Bridge Program",
+          "printedPesos": 37590473000,
+          "extractedPesos": 37590473000,
+          "differencePesos": 0
+        },
+        {
+          "program": "Flood Management Program",
+          "printedPesos": 87255778000,
+          "extractedPesos": 87255778000,
+          "differencePesos": 0
+        },
+        {
+          "program": "Convergence and Special Support Program",
+          "printedPesos": 231448287000,
+          "extractedPesos": 231448287000,
+          "differencePesos": 0
+        },
+        {
+          "program": "Local Program",
+          "printedPesos": 13875943000,
+          "extractedPesos": 13875943000,
+          "differencePesos": 0
+        },
+        {
+          "program": "FOREIGN-ASSISTED PROJECTS",
+          "printedPesos": 44749011000,
+          "extractedPesos": 44749011000,
+          "differencePesos": 0
+        }
+      ],
+      "papControls": [
+        {
+          "title": "Asset Preservation Program",
+          "program": "Asset Preservation Program",
+          "amountPesos": 79720290000,
+          "page": 110,
+          "indent": -407.73012021884443
+        },
+        {
+          "title": "Preventive Maintenance",
+          "program": "Asset Preservation Program",
+          "amountPesos": 36094823000,
+          "page": 110,
+          "indent": -393.35172807006904
+        },
+        {
+          "title": "Preventive Maintenance - Primary Roads",
+          "program": "Asset Preservation Program",
+          "amountPesos": 14395583000,
+          "page": 110,
+          "indent": -393.35172807006904
+        },
+        {
+          "title": "Preventive Maintenance - Secondary Roads",
+          "program": "Asset Preservation Program",
+          "amountPesos": 14433303000,
+          "page": 123,
+          "indent": -382.0
+        },
+        {
+          "title": "Preventive Maintenance - Tertiary Roads",
+          "program": "Asset Preservation Program",
+          "amountPesos": 7265937000,
+          "page": 139,
+          "indent": -382.0
+        },
+        {
+          "title": "Rehabilitation/ Reconstruction/ Upgrading of Damaged Paved Roads",
+          "program": "Asset Preservation Program",
+          "amountPesos": 28084988000,
+          "page": 148,
+          "indent": -382.0
+        },
+        {
+          "title": "Rehabilitation/ Reconstruction/ Upgrading of Damaged Paved Roads - Primary Roads",
+          "program": "Asset Preservation Program",
+          "amountPesos": 18611152000,
+          "page": 148,
+          "indent": -382.0
+        },
+        {
+          "title": "Rehabilitation/ Reconstruction/ Upgrading of Damaged Paved Roads - Secondary Roads",
+          "program": "Asset Preservation Program",
+          "amountPesos": 6587927000,
+          "page": 155,
+          "indent": -382.0
+        },
+        {
+          "title": "Rehabilitation/ Reconstruction/ Upgrading of Damaged Paved Roads - Tertiary Roads",
+          "program": "Asset Preservation Program",
+          "amountPesos": 2885909000,
+          "page": 166,
+          "indent": -382.0
+        },
+        {
+          "title": "Rehabilitation/ Reconstruction of Roads with Slips, Slope Collapse, and Landslide",
+          "program": "Asset Preservation Program",
+          "amountPesos": 10915924000,
+          "page": 172,
+          "indent": -382.0
+        },
+        {
+          "title": "Rehabilitation/ Reconstruction of Roads with Slips, Slope Collapse, and Landslide - Primary Roads",
+          "program": "Asset Preservation Program",
+          "amountPesos": 1604318000,
+          "page": 172,
+          "indent": -382.0
+        },
+        {
+          "title": "Rehabilitation/ Reconstruction of Roads with Slips, Slope Collapse, and Landslide - Secondary Roads",
+          "program": "Asset Preservation Program",
+          "amountPesos": 5736126000,
+          "page": 174,
+          "indent": -382.0
+        },
+        {
+          "title": "Rehabilitation/ Reconstruction of Roads with Slips, Slope Collapse, and Landslide - Tertiary Roads",
+          "program": "Asset Preservation Program",
+          "amountPesos": 3575480000,
+          "page": 182,
+          "indent": -382.0
+        },
+        {
+          "title": "Construction/ Upgrading/ Rehabilitation of Drainage along National Roads",
+          "program": "Asset Preservation Program",
+          "amountPesos": 4624555000,
+          "page": 187,
+          "indent": -382.0
+        },
+        {
+          "title": "Construction/ Upgrading/ Rehabilitation of Drainage along National Roads - Primary Roads",
+          "program": "Asset Preservation Program",
+          "amountPesos": 1668650000,
+          "page": 187,
+          "indent": -382.0
+        },
+        {
+          "title": "Construction/ Upgrading/ Rehabilitation of Drainage along National Roads - Secondary Roads",
+          "program": "Asset Preservation Program",
+          "amountPesos": 2226501000,
+          "page": 190,
+          "indent": -382.0
+        },
+        {
+          "title": "Construction/ Upgrading/ Rehabilitation of Drainage along National Roads - Tertiary Roads",
+          "program": "Asset Preservation Program",
+          "amountPesos": 729404000,
+          "page": 195,
+          "indent": -382.0
+        },
+        {
+          "title": "Network Development Program",
+          "program": "Network Development Program",
+          "amountPesos": 92435879000,
+          "page": 196,
+          "indent": -393.0
+        },
+        {
+          "title": "Road Widening",
+          "program": "Network Development Program",
+          "amountPesos": 18113243000,
+          "page": 197,
+          "indent": -382.0
+        },
+        {
+          "title": "Road Widening - Primary Roads",
+          "program": "Network Development Program",
+          "amountPesos": 4836582000,
+          "page": 197,
+          "indent": -382.0
+        },
+        {
+          "title": "Road Widening - Secondary Roads",
+          "program": "Network Development Program",
+          "amountPesos": 10900467000,
+          "page": 201,
+          "indent": -382.0
+        },
+        {
+          "title": "Road Widening - Tertiary Roads",
+          "program": "Network Development Program",
+          "amountPesos": 2376194000,
+          "page": 211,
+          "indent": -382.0
+        },
+        {
+          "title": "Construction of By-Pass and Diversion Roads",
+          "program": "Network Development Program",
+          "amountPesos": 44786384000,
+          "page": 213,
+          "indent": -382.0
+        },
+        {
+          "title": "Construction of Missing Links/ New Roads",
+          "program": "Network Development Program",
+          "amountPesos": 22661099000,
+          "page": 233,
+          "indent": -382.0
+        },
+        {
+          "title": "Construction of Flyovers/ Interchanges/ Underpasses/ Long Span Bridges",
+          "program": "Network Development Program",
+          "amountPesos": 515000000,
+          "page": 242,
+          "indent": -382.0
+        },
+        {
+          "title": "Off-Carriageway Improvement",
+          "program": "Network Development Program",
+          "amountPesos": 5764132000,
+          "page": 243,
+          "indent": -382.0
+        },
+        {
+          "title": "Off-Carriageway Improvement - Primary Roads",
+          "program": "Network Development Program",
+          "amountPesos": 1656179000,
+          "page": 243,
+          "indent": -382.0
+        },
+        {
+          "title": "Off-Carriageway Improvement - Secondary Roads",
+          "program": "Network Development Program",
+          "amountPesos": 3030074000,
+          "page": 247,
+          "indent": -382.0
+        },
+        {
+          "title": "Off-Carriageway Improvement - Tertiary Roads",
+          "program": "Network Development Program",
+          "amountPesos": 1077879000,
+          "page": 252,
+          "indent": -382.0
+        },
+        {
+          "title": "Paving of Unpaved Roads",
+          "program": "Network Development Program",
+          "amountPesos": 596021000,
+          "page": 255,
+          "indent": -382.0
+        },
+        {
+          "title": "Paving of Unpaved Roads - Primary Roads",
+          "program": "Network Development Program",
+          "amountPesos": 5000000,
+          "page": 255,
+          "indent": -382.0
+        },
+        {
+          "title": "Paving of Unpaved Roads - Secondary Roads",
+          "program": "Network Development Program",
+          "amountPesos": 21992000,
+          "page": 255,
+          "indent": -382.0
+        },
+        {
+          "title": "Paving of Unpaved Roads - Tertiary Roads",
+          "program": "Network Development Program",
+          "amountPesos": 569029000,
+          "page": 255,
+          "indent": -382.0
+        },
+        {
+          "title": "Bridge Program",
+          "program": "Bridge Program",
+          "amountPesos": 37590473000,
+          "page": 256,
+          "indent": -393.0
+        },
+        {
+          "title": "Replacement of Permanent Weak Bridges",
+          "program": "Bridge Program",
+          "amountPesos": 11690636000,
+          "page": 256,
+          "indent": -382.0
+        },
+        {
+          "title": "Retrofitting/ Strengthening of Permanent Bridges",
+          "program": "Bridge Program",
+          "amountPesos": 2842245000,
+          "page": 265,
+          "indent": -382.0
+        },
+        {
+          "title": "Rehabilitation/ Major Repair of Permanent Bridges",
+          "program": "Bridge Program",
+          "amountPesos": 3845294000,
+          "page": 270,
+          "indent": -382.0
+        },
+        {
+          "title": "Widening of Permanent Bridges",
+          "program": "Bridge Program",
+          "amountPesos": 13493005000,
+          "page": 283,
+          "indent": -382.0
+        },
+        {
+          "title": "Construction of New Bridges",
+          "program": "Bridge Program",
+          "amountPesos": 5719293000,
+          "page": 294,
+          "indent": -382.0
+        },
+        {
+          "title": "ORGANIZATIONAL OUTCOME 2 : Protect Lives and Properties Against Major Floods",
+          "program": "Bridge Program",
+          "amountPesos": 87255778000,
+          "page": 295,
+          "indent": -418.00040032511254
+        },
+        {
+          "title": "Flood Management Program",
+          "program": "Flood Management Program",
+          "amountPesos": 87255778000,
+          "page": 295,
+          "indent": -407.73012021884443
+        },
+        {
+          "title": "Construction/ Maintenance of Flood Mitigation Structures and Drainage Systems",
+          "program": "Flood Management Program",
+          "amountPesos": 71032897000,
+          "page": 295,
+          "indent": -392.32470005944225
+        },
+        {
+          "title": "Construction/ Rehabilitation of Flood Mitigation Facilities within Major River Basins and Principal Rivers",
+          "program": "Flood Management Program",
+          "amountPesos": 16222881000,
+          "page": 364,
+          "indent": -382.0
+        },
+        {
+          "title": "CONVERGENCE AND SPECIAL SUPPORT PROGRAM",
+          "program": "Convergence and Special Support Program",
+          "amountPesos": 231448287000,
+          "page": 373,
+          "indent": -415.9463443038589
+        },
+        {
+          "title": "Construction/ Rehabilitation of Water Supply/ Septage and Sewerage/ Rain Water Collectors",
+          "program": "Convergence and Special Support Program",
+          "amountPesos": 8867925000,
+          "page": 374,
+          "indent": -393.0
+        },
+        {
+          "title": "Water Supply System",
+          "program": "Convergence and Special Support Program",
+          "amountPesos": 7740725000,
+          "page": 374,
+          "indent": -382.0
+        },
+        {
+          "title": "Septage and Sewerage",
+          "program": "Convergence and Special Support Program",
+          "amountPesos": 100000000,
+          "page": 401,
+          "indent": -382.0
+        },
+        {
+          "title": "Rainwater Collector System",
+          "program": "Convergence and Special Support Program",
+          "amountPesos": 1027200000,
+          "page": 401,
+          "indent": -382.0
+        },
+        {
+          "title": "Rehabilitation of Disaster-Related Infrastructure and Other Facilities",
+          "program": "Convergence and Special Support Program",
+          "amountPesos": 1000000000,
+          "page": 409,
+          "indent": -393.0
+        },
+        {
+          "title": "Construction/Rehabilitation/Improvement of Facilities for Persons with Disabilities (PWD) and Elderlies/Senior Citizens, including Gender-Responsive Facilities",
+          "program": "Convergence and Special Support Program",
+          "amountPesos": 510000000,
+          "page": 410,
+          "indent": -393.0
+        },
+        {
+          "title": "Facilities for Persons with Disabilities (PWD)",
+          "program": "Convergence and Special Support Program",
+          "amountPesos": 85000000,
+          "page": 410,
+          "indent": -382.0
+        },
+        {
+          "title": "Facilities for Elderlies/ Senior Citizen",
+          "program": "Convergence and Special Support Program",
+          "amountPesos": 340000000,
+          "page": 410,
+          "indent": -382.0
+        },
+        {
+          "title": "Gender-Responsive Facilities",
+          "program": "Convergence and Special Support Program",
+          "amountPesos": 85000000,
+          "page": 411,
+          "indent": -382.0
+        },
+        {
+          "title": "Basic Infrastructure Program (BIP)",
+          "program": "Convergence and Special Support Program",
+          "amountPesos": 221070362000,
+          "page": 412,
+          "indent": -407.73012021884443
+        },
+        {
+          "title": "BIP - Access Roads and/or Bridges from the National Roads leading to Major/ Strategic Public Buildings/ Facilities",
+          "program": "Convergence and Special Support Program",
+          "amountPesos": 134993811000,
+          "page": 412,
+          "indent": -393.35172807006904
+        },
+        {
+          "title": "BIP - Coastal Roads to augment Resiliency of Coastal Communities",
+          "program": "Convergence and Special Support Program",
+          "amountPesos": 1670000000,
+          "page": 629,
+          "indent": -382.0
+        },
+        {
+          "title": "BIP - Multi-Purpose Buildings/ Facilities to support Social Services",
+          "program": "Convergence and Special Support Program",
+          "amountPesos": 83706551000,
+          "page": 630,
+          "indent": -382.0
+        },
+        {
+          "title": "BIP - Local Ports and Boat Landing",
+          "program": "Convergence and Special Support Program",
+          "amountPesos": 700000000,
+          "page": 924,
+          "indent": -382.0
+        },
+        {
+          "title": "LOCALLY-FUNDED PROJECTS",
+          "program": "Local Program",
+          "amountPesos": 13875943000,
+          "page": 926,
+          "indent": -404.0
+        },
+        {
+          "title": "Public-Private Partnership Strategic Support Fund (including ROW, Subsidy, and Variations)",
+          "program": "Local Program",
+          "amountPesos": 1000000000,
+          "page": 926,
+          "indent": -393.0
+        },
+        {
+          "title": "National Roads and Bridges",
+          "program": "Local Program",
+          "amountPesos": 1000000000,
+          "page": 926,
+          "indent": -382.0
+        },
+        {
+          "title": "National Roads",
+          "program": "Local Program",
+          "amountPesos": 1000000000,
+          "page": 926,
+          "indent": -372.0
+        },
+        {
+          "title": "National Building Program",
+          "program": "Local Program",
+          "amountPesos": 12875943000,
+          "page": 927,
+          "indent": -393.0
+        },
+        {
+          "title": "Buildings And Other Structures",
+          "program": "Local Program",
+          "amountPesos": 12875943000,
+          "page": 927,
+          "indent": -382.0
+        },
+        {
+          "title": "Multipurpose / Facilities",
+          "program": "Local Program",
+          "amountPesos": 12875943000,
+          "page": 927,
+          "indent": -371.0
+        },
+        {
+          "title": "FOREIGN-ASSISTED PROJECTS",
+          "program": "FOREIGN-ASSISTED PROJECTS",
+          "amountPesos": 44749011000,
+          "page": 939,
+          "indent": -403.0
+        },
+        {
+          "title": "National Capital Region",
+          "program": "FOREIGN-ASSISTED PROJECTS",
+          "amountPesos": 44749011000,
+          "page": 939,
+          "indent": -396.0
+        },
+        {
+          "title": "Central Office",
+          "program": "FOREIGN-ASSISTED PROJECTS",
+          "amountPesos": 44749011000,
+          "page": 939,
+          "indent": -393.0
+        },
+        {
+          "title": "GOP",
+          "program": "FOREIGN-ASSISTED PROJECTS",
+          "amountPesos": 25190650000,
+          "page": 939,
+          "indent": -331.0
+        },
+        {
+          "title": "Loan Proceeds",
+          "program": "FOREIGN-ASSISTED PROJECTS",
+          "amountPesos": 19558361000,
+          "page": 939,
+          "indent": -331.0
+        },
+        {
+          "title": "1. ORGANIZATIONAL OUTCOME 1 : Ensure Safe and Reliable National Road System",
+          "program": "FOREIGN-ASSISTED PROJECTS",
+          "amountPesos": 35712554000,
+          "page": 939,
+          "indent": -392.0
+        },
+        {
+          "title": "a. Asset Preservation Program",
+          "program": "FOREIGN-ASSISTED PROJECTS",
+          "amountPesos": 2832301000,
+          "page": 939,
+          "indent": -382.0
+        },
+        {
+          "title": "1. Preventive Maintenance - Primary Roads",
+          "program": "FOREIGN-ASSISTED PROJECTS",
+          "amountPesos": 1711754000,
+          "page": 939,
+          "indent": -358.0
+        },
+        {
+          "title": "2. Rehabilitation/ Reconstruction/ Upgrading of Damaged Paved Roads - Tertiary Roads",
+          "program": "FOREIGN-ASSISTED PROJECTS",
+          "amountPesos": 1120547000,
+          "page": 939,
+          "indent": -358.0
+        },
+        {
+          "title": "b. Network Development Program",
+          "program": "FOREIGN-ASSISTED PROJECTS",
+          "amountPesos": 29572974000,
+          "page": 939,
+          "indent": -382.0
+        },
+        {
+          "title": "1. Construction of By-Passes/Diversion Roads",
+          "program": "FOREIGN-ASSISTED PROJECTS",
+          "amountPesos": 27384818000,
+          "page": 940,
+          "indent": -359.0
+        },
+        {
+          "title": "2. Construction of Missing Links/New Roads",
+          "program": "FOREIGN-ASSISTED PROJECTS",
+          "amountPesos": 2072902000,
+          "page": 941,
+          "indent": -358.0
+        },
+        {
+          "title": "3. Paving of Unpaved Roads - Secondary",
+          "program": "FOREIGN-ASSISTED PROJECTS",
+          "amountPesos": 115254000,
+          "page": 941,
+          "indent": -358.0
+        },
+        {
+          "title": "c. Bridge Program",
+          "program": "FOREIGN-ASSISTED PROJECTS",
+          "amountPesos": 3307279000,
+          "page": 941,
+          "indent": -382.0
+        },
+        {
+          "title": "1. Rehabilitation/Major Repair of Permanent Bridges",
+          "program": "FOREIGN-ASSISTED PROJECTS",
+          "amountPesos": 1657642000,
+          "page": 941,
+          "indent": -358.0
+        },
+        {
+          "title": "2. Construction of New Bridges",
+          "program": "FOREIGN-ASSISTED PROJECTS",
+          "amountPesos": 1649637000,
+          "page": 941,
+          "indent": -358.0
+        },
+        {
+          "title": "2. ORGANIZATIONAL OUTCOME 2 : Protect Lives and Properties Against Major Floods",
+          "program": "FOREIGN-ASSISTED PROJECTS",
+          "amountPesos": 8853487000,
+          "page": 941,
+          "indent": -392.0
+        },
+        {
+          "title": "a. Flood Management Program",
+          "program": "FOREIGN-ASSISTED PROJECTS",
+          "amountPesos": 8853487000,
+          "page": 942,
+          "indent": -382.0
+        },
+        {
+          "title": "1. Construction/ Rehabilitation of Flood Mitigation Facilities within Major River Basins and Principal Rivers",
+          "program": "FOREIGN-ASSISTED PROJECTS",
+          "amountPesos": 8853487000,
+          "page": 942,
+          "indent": -359.0
+        },
+        {
+          "title": "3. NATIONAL BUILDING PROGRAM",
+          "program": "FOREIGN-ASSISTED PROJECTS",
+          "amountPesos": 182970000,
+          "page": 942,
+          "indent": -393.0
+        },
+        {
+          "title": "a. Buildings and Other Structures",
+          "program": "FOREIGN-ASSISTED PROJECTS",
+          "amountPesos": 182970000,
+          "page": 942,
+          "indent": -382.0
+        }
+      ],
+      "unresolvedExtractionRows": []
     }
   ],
-  "nepRecords": 11372,
-  "hbCandidateRecords": 12732,
-  "comparisonMethod": "Normalized exact-title matches are identified separately. For other rows, a closest title counterpart is suggested within the same office (or region when office is unavailable), using token overlap and character similarity. These scores are triage leads only; they do not establish project identity or an insertion. Location, chainage, direction, tranche, scope, and extraction accuracy require review.",
+  "nepRecords": 11420,
+  "transparencyNepRecords": 11372,
+  "officialNepSourceTrace": "analysis_output/stage_trace_2027.json",
+  "hbCandidateRecords": 16275,
   "counts": {
-    "Likely schedule heading/total; exclude from insertion count": 4,
-    "Exact normalized title found in NEP": 3539,
-    "No close title counterpart; review candidate": 3893,
-    "Possible title counterpart; review scope": 5296
+    "Exact normalized title found in NEP": 9626,
+    "Plausible NEP title counterpart; review scope": 654,
+    "No plausible NEP title counterpart; review candidate": 4610,
+    "Multiple or already paired NEP counterparts; review scope": 1385
   },
-  "warning": "This text-only screen does not establish a confirmed addition count. Unmatched titles remain unresolved review records; title variants, merged or truncated project names, misassigned offices, and other extraction errors can create false insertion signals. Verify each proposed addition against the NEP project scope and cited HGAB page.",
+  "pairedNepRecords": 10280,
+  "nepWithoutSelectedCounterpart": 1140,
+  "hbAllocationPesos": 587075661000,
+  "comparisonMethod": "Visible HGAB allocations; Official NEP source records augment the independently validated local Transparency snapshot. One-to-one occurrences; abbreviations and maintenance PAP prefixes normalized. Uncorroborated OCR/native-row-ambiguity titles can only support potential matches. Global candidate search checks PAP, direction and chainage compatibility. 83% fuzzy candidates remain provisional; amount alone never identifies a project.",
+  "warning": "Unmatched and potential matches require document review; they do not certify insertions or removals. Official NEP text in the supplied trace may contain OCR errors.",
   "csv": "analysis_output/hb_nep_comparison_3rd.csv"
 }

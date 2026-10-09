@@ -38,6 +38,10 @@ def value(row: dict | None) -> int:
 
 
 def comparable(row: dict) -> bool:
+    if row.get('allocationKind'):
+        # Native parser has already excluded totals by printed hierarchy and
+        # reconciled amounts. Large FAP project allocations are legitimate.
+        return True
     title = norm(row.get("projectName"))
     return not (
         "foreign assisted projects" in title

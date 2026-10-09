@@ -180,12 +180,18 @@ def update_dpwh_html(path: Path) -> None:
         '<th>District office</th><th>Representative(s) by named project location</th><th class="num">FY2027 NEP</th>',
         "repeat table representative header",
     )
-    text = replace_once(
-        text,
-        '<th>District office</th><th>Region</th><th class="num">HB allocation</th>',
-        '<th>District office</th><th>Representative(s) by named project location</th><th>Region</th><th class="num">HB allocation</th>',
-        "insertion table representative header",
-    )
+    insertion_header = '<th>District office</th><th>Representative(s) by named project location</th><th>Region</th><th class="num">HB allocation</th>'
+    # The current insertion table has a project-title column before the DEO.
+    # Detect the representative column independently of the amount header so
+    # this stays idempotent across HB/HGAB wording and regenerated templates.
+    has_rep_column = '<th>District office</th><th>Representative(s) by named project location</th><th>Region</th>' in text
+    if not has_rep_column:
+        text = replace_once(
+            text,
+            '<th>District office</th><th>Region</th><th class="num">HB allocation</th>',
+            insertion_header,
+            "insertion table representative header",
+        )
     text = replace_once(
         text,
         '${esc(r.office)}</td><td class="num">${peso(r.amount_2027)}',

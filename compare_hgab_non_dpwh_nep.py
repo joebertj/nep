@@ -78,7 +78,7 @@ def run_query(cli: str, parquet: Path, output: Path) -> None:
         UACS_EXP_DSC AS expenditure, UACS_OBJ_DSC AS object,
         amount, amountPesos
       FROM read_parquet('{p}')
-      WHERE PREXC_LEVEL=7 AND amount IS NOT NULL AND amount>0
+      WHERE isBudgetAllocation AND PREXC_LEVEL=7 AND amount IS NOT NULL AND amount>0
         AND (UACS_AGY_DSC='National Irrigation Administration'
           OR (UACS_DPT_DSC='Department of Agriculture (DA)'
               AND regexp_matches(DSC, '(?i)farm-to-market road|farm-to-market bridge|\\bFMR\\b'))

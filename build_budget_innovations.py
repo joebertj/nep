@@ -126,12 +126,12 @@ def main() -> None:
 
     keyword_rows = duckdb(
         "WITH named AS ("
-        "SELECT agency, projectName, round(sum(amountPesos)) AS pesos "
+        "SELECT agencyKey, department, agency, projectName, round(sum(amountPesos)) AS pesos "
         f"FROM read_parquet({q(str(ROOT / 'nep_fy2027_all.parquet'))}) "
-        "WHERE projectName IS NOT NULL GROUP BY agency, projectName HAVING sum(amountPesos)>0), "
-        "tokens AS (SELECT DISTINCT agency, projectName, pesos, "
+        "WHERE isBudgetAllocation AND projectName IS NOT NULL GROUP BY agencyKey, department, agency, projectName HAVING sum(amountPesos)>0), "
+        "tokens AS (SELECT DISTINCT agencyKey, department, agency, projectName, pesos, "
         "unnest(regexp_extract_all(projectName, '\\b[A-Z]{3,10}(?:-[A-Z]{1,5})?\\b')) AS keyword FROM named), "
-        "hits AS (SELECT keyword, count(DISTINCT projectName) AS projectCount, "
+        "hits AS (SELECT keyword, count(DISTINCT agencyKey || '|' || projectName) AS projectCount, "
         "round(sum(pesos)) AS pesos, string_agg(DISTINCT agency, ' | ') AS agencies, "
         "string_agg(DISTINCT projectName, ' || ') AS examples FROM tokens GROUP BY keyword) "
         "SELECT * FROM hits WHERE pesos > 0 ORDER BY pesos DESC"
@@ -168,12 +168,12 @@ def main() -> None:
         })
 
     phrase_rows = duckdb(
-        "WITH named AS (SELECT agency, projectName, round(sum(amountPesos)) AS pesos "
+        "WITH named AS (SELECT agencyKey, department, agency, projectName, round(sum(amountPesos)) AS pesos "
         f"FROM read_parquet({q(str(ROOT / 'nep_fy2027_all.parquet'))}) "
-        "WHERE projectName IS NOT NULL GROUP BY agency, projectName HAVING sum(amountPesos)>0), "
-        "phrases AS (SELECT agency, projectName, pesos, trim(split_part(projectName, ':', 1)) AS phrase "
+        "WHERE isBudgetAllocation AND projectName IS NOT NULL GROUP BY agencyKey, department, agency, projectName HAVING sum(amountPesos)>0), "
+        "phrases AS (SELECT agencyKey, department, agency, projectName, pesos, trim(split_part(projectName, ':', 1)) AS phrase "
         "FROM named WHERE strpos(projectName, ':') > 0) "
-        "SELECT phrase AS keyword, count(DISTINCT projectName) AS projectCount, "
+        "SELECT phrase AS keyword, count(DISTINCT agencyKey || '|' || projectName) AS projectCount, "
         "round(sum(pesos)) AS pesos, string_agg(DISTINCT agency, ' | ') AS agencies, "
         "string_agg(DISTINCT projectName, ' || ') AS examples FROM phrases "
         "WHERE length(phrase) >= 8 AND length(phrase) <= 65 AND lower(phrase) <> 'philippines' "
@@ -219,9 +219,9 @@ def main() -> None:
         value_rows = ",".join(f"({q(row['keyword'])}, {q(row['keywordType'])})" for row in new_keywords)
         allocation_rows = duckdb(
             "WITH keywords(keyword, kind) AS (VALUES " + value_rows + "), "
-            "line_allocations AS (SELECT agency, projectName, OPERUNIT, round(sum(amountPesos)) AS amount "
+            "line_allocations AS (SELECT agencyKey, agency, projectName, OPERUNIT, round(sum(amountPesos)) AS amount "
             f"FROM read_parquet({q(str(ROOT / 'nep_fy2027_all.parquet'))}) "
-            "WHERE projectName IS NOT NULL GROUP BY agency, projectName, OPERUNIT HAVING sum(amountPesos) > 0), "
+            "WHERE isBudgetAllocation AND projectName IS NOT NULL GROUP BY agencyKey, agency, projectName, OPERUNIT HAVING sum(amountPesos) > 0), "
             "matched AS (SELECT k.keyword, l.OPERUNIT, l.amount FROM keywords k JOIN line_allocations l ON "
             "((k.kind='Uppercase keyword' AND regexp_matches(l.projectName, '(^|[^A-Za-z0-9])' || regexp_escape(k.keyword) || '([^A-Za-z0-9]|$)')) "
             "OR (k.kind='Named phrase' AND contains(lower(l.projectName), lower(k.keyword))))), "

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Stream the FY2027 NEP workbook into NDJSON and Parquet.
+"""Stream the FY2027 NEP workbook into a JSON array and Parquet.
 
 Uses only the Python standard library for XLSX parsing. The workbook's source
 columns are retained, with normalized agency, hierarchy, and amount fields
@@ -11,13 +11,15 @@ AMT by 1,000.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
-import math
+import posixpath
 import re
 import shutil
 import subprocess
 import zipfile
 from collections import Counter
+from decimal import Decimal, InvalidOperation
 from pathlib import Path, PurePosixPath
 from xml.etree import ElementTree as ET
 
@@ -37,6 +39,8 @@ def col_index(reference: str) -> int:
 
 def read_shared_strings(archive: zipfile.ZipFile) -> list[str]:
     strings: list[str] = []
+    if "xl/sharedStrings.xml" not in archive.namelist():
+        return strings
     with archive.open("xl/sharedStrings.xml") as source:
         for _, elem in ET.iterparse(source, events=("end",)):
             if elem.tag == f"{{{NS}}}si":
@@ -54,7 +58,7 @@ def sheet_path(archive: zipfile.ZipFile, requested: str) -> str:
             target = targets[sheet.attrib[f"{{{REL_NS}}}id"]]
             if target.startswith("/"):
                 return target.lstrip("/")
-            return str(PurePosixPath("xl") / target)
+            return posixpath.normpath(str(PurePosixPath("xl") / target))
     names = [sheet.attrib["name"] for sheet in workbook.find(f"{{{NS}}}sheets")]
     raise ValueError(f"Sheet {requested!r} not found. Available sheets: {names}")
 
@@ -65,20 +69,26 @@ def cell_value(cell: ET.Element, shared: list[str]):
         return "".join(t.text or "" for t in cell.iter(f"{{{NS}}}t"))
     value = cell.find(f"{{{NS}}}v")
     if value is None or value.text is None:
+        if cell.find(f"{{{NS}}}f") is not None:
+            raise ValueError(f"Formula cell {cell.get('r')} has no cached value; recalculate the workbook first")
         return None
     raw = value.text
     if kind == "s":
         return shared[int(raw)]
     if kind == "b":
         return raw == "1"
-    if kind in ("str", "e"):
+    if kind == "e":
+        raise ValueError(f"Spreadsheet error in {cell.get('r')}: {raw}")
+    if kind == "str":
         return raw
     try:
-        number = float(raw)
-        if math.isfinite(number) and number.is_integer():
+        number = Decimal(raw)
+        if not number.is_finite():
+            raise ValueError(f"Nonfinite value in {cell.get('r')}: {raw}")
+        if number == number.to_integral_value():
             return int(number)
-        return number
-    except ValueError:
+        return float(number)
+    except InvalidOperation:
         return raw
 
 
@@ -86,9 +96,30 @@ def amount_value(value):
     if value is None or value == "":
         return None
     try:
-        return float(str(value).replace(",", ""))
-    except ValueError:
-        return None
+        number=Decimal(str(value).replace(",", ""))
+        if not number.is_finite():
+            raise ValueError(f"Nonfinite AMT: {value!r}")
+        return int(number) if number==number.to_integral_value() else float(number)
+    except InvalidOperation:
+        raise ValueError(f"Invalid AMT: {value!r}")
+
+
+def peso_value(amount):
+    value=Decimal(str(amount))*1000
+    if value!=value.to_integral_value():
+        raise ValueError(f"AMT does not convert to whole pesos: {amount!r}")
+    return int(value)
+
+
+def classify_record(record, amount):
+    has_identity=all(record.get(k) not in (None, "") for k in ('departmentCode','agencyCode','PREXC_FPAP_ID'))
+    if amount is not None:
+        if has_identity:
+            return 'allocation'
+        if not any(record.get(k) for k in ('departmentCode','agencyCode','PREXC_FPAP_ID','DSC')):
+            return 'grand_total'
+        raise ValueError(f"Amount row has incomplete budget identity: {record}")
+    return 'entry_without_allocation' if str(record.get('PREXC_LEVEL'))=='7' else 'hierarchy'
 
 
 def sql_path(path: Path) -> str:
@@ -118,6 +149,12 @@ def main() -> int:
     agency_rows: Counter[str] = Counter()
     amount_by_agency: Counter[str] = Counter()
     samples: dict[str, list[dict]] = {}
+    row_types=Counter()
+    ledger_pesos=0
+    grand_totals=[]
+    agency_totals={}
+    fiscal_year_match=re.search(r'(20\d{2})',args.sheet)
+    fiscal_year=int(fiscal_year_match[1]) if fiscal_year_match else 2027
 
     with zipfile.ZipFile(args.workbook) as archive:
         shared = read_shared_strings(archive)
@@ -143,6 +180,10 @@ def main() -> int:
                         cells[col_index(cell.attrib["r"])] = value
                 if row_num == 1:
                     headers = [str(cells.get(i, "")).strip() for i in range(max(cells) + 1)]
+                    if len([h for h in headers if h])!=len(set(h for h in headers if h)):
+                        raise ValueError("Duplicate workbook headers")
+                    if not {'DEPARTMENT','AGENCY','PREXC_FPAP_ID','PREXC_LEVEL','DSC','AMT'}.issubset(headers):
+                        raise ValueError("Required budget columns missing")
                     if sheet_data is not None:
                         sheet_data.clear()
                     continue
@@ -162,13 +203,31 @@ def main() -> int:
                 if agency:
                     agency_rows[agency] += 1
                 amount = amount_value(record.get("AMT"))
+                row_type=classify_record(record,amount)
+                row_types[row_type]+=1
+                record['budgetRowType']=row_type
+                record['isBudgetAllocation']=row_type=='allocation'
+                if record.get('departmentCode') is not None and record.get('agencyCode') is not None:
+                    record['agencyKey']=f"{record['departmentCode']}:{record['agencyCode']}"
                 if amount is not None:
                     amount_records += 1
                     amount_by_level[level] += 1
-                    if agency:
+                    pesos=peso_value(amount)
+                    if row_type=='grand_total':
+                        record['controlAmountPesos']=pesos
+                        grand_totals.append({'sourceRow':row_num,'amountPesos':pesos})
+                    else:
+                        ledger_pesos+=pesos
+                        key=record['agencyKey']
+                        total=agency_totals.setdefault(key,{'agencyKey':key,'department':record.get('UACS_DPT_DSC'),
+                            'agency':agency,'allocationRows':0,'amountPesos':0})
+                        total['allocationRows']+=1
+                        total['amountPesos']+=pesos
+                        record["amount"] = amount
+                        record["amountPesos"] = pesos
+                        record['fundingStatus']='positive' if amount>0 else 'zero' if amount==0 else 'negative'
+                    if agency and row_type=='allocation':
                         amount_by_agency[agency] += amount
-                    record["amount"] = amount
-                    record["amountPesos"] = amount * 1000
                     record["amountUnit"] = "thousand pesos"
                     sample = samples.setdefault(level, [])
                     if len(sample) < 4:
@@ -183,7 +242,7 @@ def main() -> int:
                         })
 
                 record["sourceRow"] = row_num
-                record["fiscalYear"] = 2027
+                record["fiscalYear"] = fiscal_year
                 if "UACS_AGY_DSC" in record:
                     record["agency"] = record["UACS_AGY_DSC"]
                 if "UACS_DPT_DSC" in record:
@@ -200,8 +259,13 @@ def main() -> int:
                     print(f"Parsed through source row {row_num:,}; wrote {records:,} rows", flush=True)
             output.write("\n]\n")
 
+    if len(grand_totals)!=1 or ledger_pesos!=grand_totals[0]['amountPesos']:
+        raise ValueError(f"Workbook allocations do not reconcile with the printed total: {ledger_pesos}, controls={grand_totals}")
+
     summary = {
         "sourceFile": args.workbook.name,
+        "sourceSHA256":hashlib.sha256(args.workbook.read_bytes()).hexdigest(),
+        "schemaVersion":2,
         "sourceSheet": args.sheet,
         "records": records,
         "rowsWithAmount": amount_records,
@@ -209,7 +273,13 @@ def main() -> int:
         "rowsByPrexcLevel": dict(row_by_level),
         "amountRowsByPrexcLevel": dict(amount_by_level),
         "rowsByAgency": dict(agency_rows),
-        "amountByAgencyThousandsPesos": dict(amount_by_agency),
+        "amountByAgencyLabelThousandsPesos": dict(amount_by_agency),
+        "agencyAllocations":list(agency_totals.values()),
+        "rowsByBudgetType":dict(row_types),
+        "budgetAllocationTotalPesos":ledger_pesos,
+        "grandTotalControls":grand_totals,
+        "reconciliationDifferencePesos":ledger_pesos-grand_totals[0]['amountPesos'],
+        "grain":"Workbook object/fund allocation rows and unallocated catalogue/hierarchy rows; row count is not a project count",
         "amountRowSamplesByPrexcLevel": samples,
         "json": str(json_path),
     }

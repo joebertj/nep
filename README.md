@@ -30,7 +30,7 @@ brew install ghostscript
 python3 extract_hb_projects.py
 ```
 
-The PDF amounts are pesos; the output `amount` is converted to thousands of pesos to match `2027.json`, while `amountPesos` preserves the exact printed amount. Each candidate includes its source PDF, PDF page, extracted text, and a review status. Ghostscript text extraction follows the two printed pages on each PDF sheet in sequence and carries the regional/office context forward. This remains a layout heuristic, not a certified transcription: verify candidate rows and missed records against the cited pages before comparing with NEP or describing anything as an insertion. Use `--include-all` to attempt parsing the other volumes; the default is the DPWH detail schedule in Volume I-C.
+The PDF amounts are pesos; the output `amount` is converted to thousands of pesos to match `2027.json`, while `amountPesos` preserves the exact printed amount. Each allocation includes its source PDF, physical PDF page, full title, extracted text and a review status. Native text is restricted to each page's visible CropBox. The parser follows the hierarchy of programs, PAPs, regions and offices, and checks all seven program totals before writing output. This parser is specifically for the DPWH Volume I-C detail schedule.
 
 The bill also contains non-DPWH schedules. `extract_hb_agency_projects.py` currently extracts the Department of Agriculture's Farm-to-Market Roads schedule from Volume I-B. Its layout-specific parser uses project text and PDF coordinates to pair a title with an amount in the same printed table column. It retains nearby source context, marks suspect amounts, and labels every row as a candidate because PAPs, subtotals, and projects sit in a hierarchy. Review the source page before relying on a row:
 
@@ -77,7 +77,19 @@ This writes the self-contained `analysis_output/fmr.html`.
 
 `compute_five_million_stats.py` runs two exploratory tests on exact ₱5M road/flood entries: a hypergeometric overlap test and a region-stratified randomization test (100,000 shuffles by default). It writes `analysis_output/five_million_stats.json`; the report shows the assumptions and limitations. These tests assess whether office overlap is unusual under the selected chance models, not whether an allocation was deliberate.
 
-After extracting HB 10858, run `python3 compare_hb_nep.py` to create a project-title and amount review list at `analysis_output/hb_nep_comparison.csv`, sorted from largest to smallest amount. It uses exact normalized-title matching only; unmatched rows are candidate insertions for document review, not confirmed additions. The parser and comparison should be checked against the original PDF before presenting totals.
+After extracting HB 10858, run `python3 compare_hb_nep.py` to create a review CSV and a one-to-one mapping JSON. Matching normalizes standard abbreviations and repeated maintenance PAP prefixes, checks PAP, directional and chainage compatibility, and retains nonexact candidates for review. Unmatched rows do not certify insertions.
+
+To rebuild both DPWH HGAB editions and all related local comparison artifacts:
+
+```sh
+python3 rerun_dpwh_hgab_analysis.py --text-cache /tmp/nep-hgab-text-cache
+```
+
+The native parser crops hidden neighbouring spread text using each PDF's CropBox, joins complete wrapped descriptions, retains explicitly printed amounts and identifies leaf allocations through the printed hierarchy. It preserves legitimate repeated occurrences and refuses to publish an extract that fails any of the seven printed program totals. The optional text cache is tied to the source PDF's SHA256.
+
+The pipeline uses the Official NEP source records in `analysis_output/stage_trace_2027.json` to supplement `2027.json`; it does not import that trace's House matches. The supplied trace's House PDF is **2nd reading**, verified by file hash. Current corrected extracts contain 16,270 allocations (₱586,941,661,000) in 2nd reading and 16,275 (₱587,075,661,000) in 3rd reading. Five printed additions account for the ₱134M difference. These are project schedule totals, not the entire DPWH appropriation.
+
+`analysis_output/hgab_parsing_audit.json` records printed control reconciliation, source hashes, known Butuan regression checks and the reading changes. `analysis_output/nep_hgab_mapping_counts.json` reports actual assignments and unresolved records; `butuan_nep_hgab_mapping.json` selects current records by source identity rather than old parser IDs. The pipeline writes only inside NEP and does not deploy or rebuild ODV pages.
 
 ## Reports
 
@@ -111,6 +123,39 @@ The workbook's short `AGENCY` and `DEPARTMENT` code fields are retained as
 `agencyCode` and `departmentCode` beside the descriptive `agency` and
 `department` fields.
 The JSON file is large; Parquet is the compact format for queries.
+
+The parser marks rows as `allocation`, `entry_without_allocation`, `hierarchy`,
+or `grand_total`. Only allocations receive normalized `amountPesos`. The raw
+footer `AMT` remains available as `controlAmountPesos`; adding it to the ledger
+would count the national budget twice. The 532,313 allocation rows reconcile
+exactly to the workbook's ₱7,200,186,000,000 control. These are object/fund rows,
+not a count of distinct projects. Agency totals use department and agency codes
+to distinguish agencies with the same descriptive name.
+
+Run the independent source and comparison-baseline audit with:
+
+```sh
+python3 analysis_output/audit_nep_parsing.py
+python3 rerun_dpwh_hgab_analysis.py --reparse-nep
+```
+
+The first command compares every original workbook cell with Parquet and writes
+`analysis_output/nep_parsing_audit.json` plus the validated DPWH baseline in
+`analysis_output/nep_dpwh_baseline.json`. The second regenerates both sources and
+the comparison reports, then refreshes all four local HTML pages under
+`analysis_output/`. It does not copy or deploy them to ODV. DPWH workbook operations reconcile to ₱572.924074B;
+fund-prefix 101 new appropriations reconcile to ₱642.612015B. Fund-prefix 104
+allocations account for the remaining ₱1.341261B in the workbook department
+total. Many named DPWH catalogue entries have no amount: their presence alone
+does not establish a funded project.
+
+The local API snapshot has 11,372 projects; the supplied Official NEP trace adds
+23 domestic allocations and 25 FAP allocations, producing 11,420 records. Every
+API anchor is checked against the actual snapshot's title, PAP, location and
+amount. Uncorroborated ambiguous OCR titles can support potential matches but
+cannot establish clear exact matches. No original Official NEP PDF or its
+extraction generator is present locally, so this audit validates its financial
+controls and API anchors without independently re-extracting its PDF titles.
 
 Screen the non-DPWH FY2027 HGAB schedules against the full NEP with:
 
