@@ -1,0 +1,132 @@
+{
+  "districtLines": 199,
+  "districtPoolPesos": 835800000,
+  "wholeUnits": 199,
+  "unallocatedRemainderPesos": 0,
+  "districtRainfallAreas": 78,
+  "allRcsLines": 217,
+  "otherLines": [
+    {
+      "office": "Regional Office NCR",
+      "region": "NCR",
+      "amountPesos": 9000000,
+      "projectName": "Rainwater Collector System - NCR Regional Office"
+    },
+    {
+      "office": "Regional Office I",
+      "region": "Region I",
+      "amountPesos": 9000000,
+      "projectName": "Rainwater Collector System - Regional Office I"
+    },
+    {
+      "office": "Regional Office CAR",
+      "region": "CAR",
+      "amountPesos": 9000000,
+      "projectName": "Rainwater Collector System - CAR Regional Office"
+    },
+    {
+      "office": "Regional Office II",
+      "region": "Region II",
+      "amountPesos": 9000000,
+      "projectName": "Rainwater Collector System - Regional Office II"
+    },
+    {
+      "office": "Regional Office III",
+      "region": "Region III",
+      "amountPesos": 9000000,
+      "projectName": "Rainwater Collector System - Regional Office III"
+    },
+    {
+      "office": "Regional Office IVA",
+      "region": "Region IV-A",
+      "amountPesos": 9000000,
+      "projectName": "Rainwater Collector System - Regional Office IV-A"
+    },
+    {
+      "office": "Regional Office MIMAROPA",
+      "region": "MIMAROPA",
+      "amountPesos": 9000000,
+      "projectName": "Rainwater Collector System - Regional Office MIMAROPA Region"
+    },
+    {
+      "office": "Regional Office V",
+      "region": "Region V",
+      "amountPesos": 9000000,
+      "projectName": "Rainwater Collector System - Regional Office V"
+    },
+    {
+      "office": "Regional Office VI",
+      "region": "Region VI",
+      "amountPesos": 9000000,
+      "projectName": "Rainwater Collector System - Regional Office VI"
+    },
+    {
+      "office": "Regional Office NIR",
+      "region": "NIR",
+      "amountPesos": 9000000,
+      "projectName": "Rainwater Collector System - NIR Regional Office"
+    },
+    {
+      "office": "Regional Office VII",
+      "region": "Region VII",
+      "amountPesos": 9000000,
+      "projectName": "Rainwater Collector System - Regional Office VII"
+    },
+    {
+      "office": "Regional Office VIII",
+      "region": "Region VIII",
+      "amountPesos": 9000000,
+      "projectName": "Rainwater Collector System - Regional Office VIII"
+    },
+    {
+      "office": "Regional Office IX",
+      "region": "Region IX",
+      "amountPesos": 9000000,
+      "projectName": "Rainwater Collector System - Regional Office IX"
+    },
+    {
+      "office": "Regional Office X",
+      "region": "Region X",
+      "amountPesos": 9000000,
+      "projectName": "Rainwater Collector System - Regional Office X"
+    },
+    {
+      "office": "Regional Office XI",
+      "region": "Region XI",
+      "amountPesos": 9000000,
+      "projectName": "Rainwater Collector System - Regional Office XI"
+    },
+    {
+      "office": "Regional Office XII",
+      "region": "Region XII",
+      "amountPesos": 9000000,
+      "projectName": "Rainwater Collector System - Regional Office XII"
+    },
+    {
+      "office": "Regional Office XIII",
+      "region": "Region XIII",
+      "amountPesos": 9000000,
+      "projectName": "Rainwater Collector System - Regional Office XIII"
+    },
+    {
+      "office": "Central Office",
+      "region": "Nationwide",
+      "amountPesos": 38400000,
+      "projectName": "Rainwater Collector System - BARMM"
+    }
+  ],
+  "nationalAndRegionalPesos": 191400000,
+  "rainfallProvinces": 81,
+  "firstYear": 1981,
+  "lastYear": 2025,
+  "averageAnnualRainfallMm": 2735.4,
+  "method": {
+    "unitPesos": 4200000,
+    "rainfallMeasure": "rfh source field, treated as millimetres; dekadal values summed to annual totals",
+    "rainfallYears": "1981–2025",
+    "completeYearsOnly": true,
+    "provinceCrosswalk": "PCODE to province name; matched to ODV province GeoJSON",
+    "allocation": "District RCS pool proportional to mean annual rainfall by province; province share divided evenly among listed DPWH district offices; whole units assigned by largest remainder.",
+    "limitations": "Rainfall depth alone is a screening scenario, not a final needs model. It does not measure population, demand, catchment area, storage capacity, water access, dry-season reliability, or district boundaries. Province rainfall is used for all offices in that province."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "billSource": [
+    {
+      "file": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "pages": 942,
+      "duplicatePagesSkipped": 0,
+      "duplicateRowsSkipped": 7000,
+      "candidateRows": 12732
+    }
+  ],
+  "nepRecords": 11372,
+  "hbCandidateRecords": 12732,
+  "comparisonMethod": "Normalized exact-title matches are identified separately. For other rows, a closest title counterpart is suggested within the same office (or region when office is unavailable), using token overlap and character similarity. These scores are triage leads only; they do not establish project identity or an insertion. Location, chainage, direction, tranche, scope, and extraction accuracy require review.",
+  "counts": {
+    "Likely schedule heading/total; exclude from insertion count": 4,
+    "Exact normalized title found in NEP": 3539,
+    "No close title counterpart; review candidate": 3893,
+    "Possible title counterpart; review scope": 5296
+  },
+  "warning": "This text-only screen does not establish a confirmed addition count. Unmatched titles remain unresolved review records; title variants, merged or truncated project names, misassigned offices, and other extraction errors can create false insertion signals. Verify each proposed addition against the NEP project scope and cited HGAB page.",
+  "csv": "analysis_output/hb_nep_comparison_3rd.csv"
+}

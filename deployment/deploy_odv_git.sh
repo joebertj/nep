@@ -50,7 +50,7 @@ printf '\n=== Homepage edits vs checkout ===\n'
 git -C "$r" diff --unified=3 -- templates/visualizations_home.html templates/mobile/visualizations_home.html | sed -n '1,180p'
 sha256sum "$r/templates/visualizations_home.html" "$r/templates/mobile/visualizations_home.html"
 printf '\n=== Nginx checks with the site Host header ===\n'
-for path in / /static/nep-preview/dpwh.html /static/nep-preview/fmr.html /static/nep-preview/nia.html /static/nep-preview/hfep.html; do
+for path in / /static/nep-preview/budget-innovations.html /static/nep-preview/deped.html /static/nep-preview/dpwh-hgab-comparison.html /static/nep-preview/dpwh-hgab.html /static/nep-preview/dpwh.html /static/nep-preview/fmr.html /static/nep-preview/hfep.html /static/nep-preview/nia-irrigation.html /static/nep-preview/nia.html /static/nep-preview/rcs.html; do
   status="$(curl --silent --show-error --location --max-time 8 --resolve 'research.bettergov.ph:443:127.0.0.1' --output /dev/null --write-out '%{http_code}' "http://research.bettergov.ph$path" 2>/dev/null || true)"
   printf '%s %s\n' "$status" "$path"
 done
@@ -62,7 +62,7 @@ curl --silent --show-error --max-time 5 --output /dev/null --write-out '%{http_c
 app_ip="$(ss -H -ltn 'sport = :8888' 2>/dev/null | awk 'NR==1 {sub(/:[0-9]+$/, "", $4); print $4}')"
 if [[ -n "$app_ip" ]]; then
   printf 'Direct Actix listener checks (%s):\n' "$app_ip"
-  for path in / /static/nep-preview/dpwh.html /static/nep-preview/fmr.html /static/nep-preview/nia.html /static/nep-preview/hfep.html; do
+  for path in / /static/nep-preview/budget-innovations.html /static/nep-preview/deped.html /static/nep-preview/dpwh-hgab-comparison.html /static/nep-preview/dpwh-hgab.html /static/nep-preview/dpwh.html /static/nep-preview/fmr.html /static/nep-preview/hfep.html /static/nep-preview/nia-irrigation.html /static/nep-preview/nia.html /static/nep-preview/rcs.html; do
     status="$(curl --silent --show-error --max-time 5 --output /dev/null --write-out '%{http_code}' "http://$app_ip:8888$path" 2>/dev/null || true)"
     printf '%s %s\n' "$status" "$path"
   done
@@ -79,12 +79,35 @@ REMOTE_INSPECT
 set -euo pipefail
 r="$REMOTE_DIR"
 files=(
-  templates/visualizations_home.html
-  templates/mobile/visualizations_home.html
+  static/nep-preview/budget-innovations-data.json
+  static/nep-preview/budget-innovations.html
+  static/nep-preview/deped-data.json
+  static/nep-preview/deped.html
+  static/nep-preview/dpwh-data.json
+  static/nep-preview/dpwh-hgab-comparison.html
+  static/nep-preview/dpwh-hgab-comparison.json
+  static/nep-preview/dpwh-hgab.html
   static/nep-preview/dpwh.html
   static/nep-preview/fmr.html
-  static/nep-preview/nia.html
   static/nep-preview/hfep.html
+  static/nep-preview/hgab-revision-data.json
+  static/nep-preview/nia-irrigation-data.json
+  static/nep-preview/nia-irrigation.html
+  static/nep-preview/nia.html
+  static/nep-preview/rcs-data.json
+  static/nep-preview/rcs.html
+)
+health_files=(
+  static/nep-preview/budget-innovations.html
+  static/nep-preview/deped.html
+  static/nep-preview/dpwh-hgab-comparison.html
+  static/nep-preview/dpwh-hgab.html
+  static/nep-preview/dpwh.html
+  static/nep-preview/fmr.html
+  static/nep-preview/hfep.html
+  static/nep-preview/nia-irrigation.html
+  static/nep-preview/nia.html
+  static/nep-preview/rcs.html
 )
 
 if [[ "$(git -C "$r" branch --show-current)" != "main" ]]; then
@@ -108,9 +131,8 @@ dirty_paths="$(git -C "$r" diff --name-only; git -C "$r" diff --cached --name-on
 preserve_templates=()
 if [[ -n "$dirty_paths" ]]; then
   while IFS= read -r path; do
-    case "$path" in
-      static/nep-preview/dpwh.html|static/nep-preview/fmr.html|static/nep-preview/nia.html|static/nep-preview/hfep.html) ;;
-      templates/visualizations_home.html|templates/mobile/visualizations_home.html)
+      case "$path" in
+        templates/visualizations_home.html|templates/mobile/visualizations_home.html)
         worktree_blob="$(git -C "$r" hash-object -- "$path")"
         target_blob="$(git -C "$r" rev-parse "$target:$path")"
         if [[ "$worktree_blob" == "$target_blob" ]]; then
@@ -124,12 +146,18 @@ if [[ -n "$dirty_paths" ]]; then
         fi
         preserve_templates+=("$path")
         ;;
-      *)
-        echo "Refusing deployment: unrelated server changes exist." >&2
-        git -C "$r" status --short >&2
-        exit 2
+        *)
+        release_path=false
+        for file in "${files[@]}"; do
+          if [[ "$path" == "$file" ]]; then release_path=true; break; fi
+        done
+        if [[ "$release_path" != true ]]; then
+          echo "Refusing deployment: unrelated server changes exist." >&2
+          git -C "$r" status --short >&2
+          exit 2
+        fi
         ;;
-    esac
+      esac
   done <<< "$dirty_paths"
 fi
 if ! git -C "$r" merge-base --is-ancestor "$previous" "$target"; then
@@ -174,8 +202,8 @@ healthy=true
 if ! curl --silent --show-error --fail "$health_base/" >/dev/null; then
   healthy=false
 fi
-for report in dpwh fmr nia hfep; do
-  if ! curl --silent --show-error --fail "$health_base/static/nep-preview/$report.html" >/dev/null; then
+for file in "${health_files[@]}"; do
+  if ! curl --silent --show-error --fail "$health_base/$file" >/dev/null; then
     healthy=false
   fi
 done
