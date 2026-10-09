@@ -399,9 +399,13 @@ def main():
         b.source(DATA/name,'unified_locations','duplicate_serialization','not_reimported','JSON representation imported; these serializations are not independent evidence.')
     for name in ['dpwh_annex_a5_district_cache.json','congressman-ranking.json','top-200-congressmen.json']:
         b.source(DATA/name,'derived_project_rankings','derived_project_matching','reference_only','Derived matches/rankings are not administrative boundary evidence.')
+    from apply_spelling_decisions import apply as apply_spelling
+    apply_spelling(con)
     if args.with_gaa:
         from import_gaa_names import ingest
         ingest(b)
+    from refine_database import refine
+    refine(con)
     b.finish();con.commit()
     # Integrity checks are part of the build; publication is atomic.
     if con.execute('PRAGMA foreign_key_check').fetchone():raise ValueError('Foreign key integrity failure')

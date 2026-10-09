@@ -1,0 +1,406 @@
+{
+  "beforeSummary": {
+    "candidateLineItems": 16275,
+    "candidateTotalPesos": 587075661000,
+    "excludedScheduleLines": 0,
+    "excludedScheduleAmountPesos": 0,
+    "sourceLineItems": 16275,
+    "sourceTotalPesos": 587075661000,
+    "uniquelyAssignedLines": 6941,
+    "sharedAssignedLines": 2,
+    "unassignedLines": 9332,
+    "unassignedAmountPesos": 405119129000,
+    "sharedSourceAmountPesos": 375000000,
+    "assignedSourceAmountPesos": 181956532000,
+    "strictAssignedPesos": 181581532000,
+    "strictExcludedLines": 9334,
+    "strictExcludedAmountPesos": 405494129000,
+    "strictCoveragePct": 30.93,
+    "districtCount": 254
+  },
+  "afterSummary": {
+    "candidateLineItems": 16275,
+    "candidateTotalPesos": 587075661000,
+    "excludedScheduleLines": 0,
+    "excludedScheduleAmountPesos": 0,
+    "sourceLineItems": 16275,
+    "sourceTotalPesos": 587075661000,
+    "uniquelyAssignedLines": 6950,
+    "sharedAssignedLines": 2,
+    "unassignedLines": 9323,
+    "unassignedAmountPesos": 405066629000,
+    "sharedSourceAmountPesos": 375000000,
+    "assignedSourceAmountPesos": 182009032000,
+    "strictAssignedPesos": 181634032000,
+    "strictExcludedLines": 9325,
+    "strictExcludedAmountPesos": 405441629000,
+    "strictCoveragePct": 30.94,
+    "districtCount": 254
+  },
+  "changes": [
+    {
+      "id": "HB10858-3-0322-003940",
+      "title": "Rehabilitation of Flood Mitigation Structure along Col. E. De Leon towards Parañaque River (Sta 0+000 - Sta 0+177), Barangay Sto. Niño, District I, Parañaque City",
+      "amountPesos": 7500000,
+      "oldStatus": "unresolved",
+      "oldDistricts": [],
+      "status": "unique",
+      "districts": [
+        "Parañaque · 1st District"
+      ],
+      "evidence": [
+        {
+          "level": "barangay",
+          "name": "santo nino",
+          "city": "paranaque",
+          "district": "1st",
+          "basis": "Exact marked barangay and explicit parent city; maps agree"
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0623-010115",
+      "title": "Concreting of Purok Sampaguita - Sitio Tunga Road, Barangay Poblacion, Sto. Nino, South Cotabato",
+      "amountPesos": 5000000,
+      "oldStatus": "unresolved",
+      "oldDistricts": [],
+      "status": "unique",
+      "districts": [
+        "South Cotabato · 3rd District"
+      ],
+      "evidence": [
+        {
+          "level": "municipality",
+          "name": "santo nino",
+          "province": "south cotabato",
+          "primaryDistricts": [
+            "3rd"
+          ],
+          "alternateDistricts": [
+            "3rd"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "400156b125e6cd6f461f7b132597ef9a",
+              "name": "SANTO NIÑO",
+              "level": "locality",
+              "provinceId": "80d531976fa43803aed31bee64863983",
+              "province": "SOUTH COTABATO"
+            },
+            {
+              "placeId": "b612c0fa28c11dd6ee56a75b6811bf62",
+              "name": "Santo Nino",
+              "level": "municipality",
+              "provinceId": "80d531976fa43803aed31bee64863983",
+              "province": "SOUTH COTABATO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0908-015705",
+      "title": "Construction of Multi-Purpose Building, Barangay Katipunan, Sto. Nino, South Cotabato",
+      "amountPesos": 5000000,
+      "oldStatus": "unresolved",
+      "oldDistricts": [],
+      "status": "unique",
+      "districts": [
+        "South Cotabato · 3rd District"
+      ],
+      "evidence": [
+        {
+          "level": "municipality",
+          "name": "santo nino",
+          "province": "south cotabato",
+          "primaryDistricts": [
+            "3rd"
+          ],
+          "alternateDistricts": [
+            "3rd"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "400156b125e6cd6f461f7b132597ef9a",
+              "name": "SANTO NIÑO",
+              "level": "locality",
+              "provinceId": "80d531976fa43803aed31bee64863983",
+              "province": "SOUTH COTABATO"
+            },
+            {
+              "placeId": "b612c0fa28c11dd6ee56a75b6811bf62",
+              "name": "Santo Nino",
+              "level": "municipality",
+              "provinceId": "80d531976fa43803aed31bee64863983",
+              "province": "SOUTH COTABATO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0908-015706",
+      "title": "Constraction of Multi-Purpose Building, Barangay Poblacion, Sto. Nino, South Cotabato",
+      "amountPesos": 5000000,
+      "oldStatus": "unresolved",
+      "oldDistricts": [],
+      "status": "unique",
+      "districts": [
+        "South Cotabato · 3rd District"
+      ],
+      "evidence": [
+        {
+          "level": "municipality",
+          "name": "santo nino",
+          "province": "south cotabato",
+          "primaryDistricts": [
+            "3rd"
+          ],
+          "alternateDistricts": [
+            "3rd"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "400156b125e6cd6f461f7b132597ef9a",
+              "name": "SANTO NIÑO",
+              "level": "locality",
+              "provinceId": "80d531976fa43803aed31bee64863983",
+              "province": "SOUTH COTABATO"
+            },
+            {
+              "placeId": "b612c0fa28c11dd6ee56a75b6811bf62",
+              "name": "Santo Nino",
+              "level": "municipality",
+              "provinceId": "80d531976fa43803aed31bee64863983",
+              "province": "SOUTH COTABATO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0909-015707",
+      "title": "Construction of 2 Units of Multi-Purpose Building, Barangay Poblacion, Sto. Nino, South Cotabato",
+      "amountPesos": 10000000,
+      "oldStatus": "unresolved",
+      "oldDistricts": [],
+      "status": "unique",
+      "districts": [
+        "South Cotabato · 3rd District"
+      ],
+      "evidence": [
+        {
+          "level": "municipality",
+          "name": "santo nino",
+          "province": "south cotabato",
+          "primaryDistricts": [
+            "3rd"
+          ],
+          "alternateDistricts": [
+            "3rd"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "400156b125e6cd6f461f7b132597ef9a",
+              "name": "SANTO NIÑO",
+              "level": "locality",
+              "provinceId": "80d531976fa43803aed31bee64863983",
+              "province": "SOUTH COTABATO"
+            },
+            {
+              "placeId": "b612c0fa28c11dd6ee56a75b6811bf62",
+              "name": "Santo Nino",
+              "level": "municipality",
+              "provinceId": "80d531976fa43803aed31bee64863983",
+              "province": "SOUTH COTABATO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0909-015708",
+      "title": "Constraction of Multi-Purpose Building, Barangay San Isidro, Sto. Nino, South Cotabato",
+      "amountPesos": 5000000,
+      "oldStatus": "unresolved",
+      "oldDistricts": [],
+      "status": "unique",
+      "districts": [
+        "South Cotabato · 3rd District"
+      ],
+      "evidence": [
+        {
+          "level": "municipality",
+          "name": "santo nino",
+          "province": "south cotabato",
+          "primaryDistricts": [
+            "3rd"
+          ],
+          "alternateDistricts": [
+            "3rd"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "400156b125e6cd6f461f7b132597ef9a",
+              "name": "SANTO NIÑO",
+              "level": "locality",
+              "provinceId": "80d531976fa43803aed31bee64863983",
+              "province": "SOUTH COTABATO"
+            },
+            {
+              "placeId": "b612c0fa28c11dd6ee56a75b6811bf62",
+              "name": "Santo Nino",
+              "level": "municipality",
+              "provinceId": "80d531976fa43803aed31bee64863983",
+              "province": "SOUTH COTABATO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0909-015709",
+      "title": "Construction of Multi-Purpose Building, Barangay San Vicente, Sto. Nino, South Cotabato",
+      "amountPesos": 5000000,
+      "oldStatus": "unresolved",
+      "oldDistricts": [],
+      "status": "unique",
+      "districts": [
+        "South Cotabato · 3rd District"
+      ],
+      "evidence": [
+        {
+          "level": "municipality",
+          "name": "santo nino",
+          "province": "south cotabato",
+          "primaryDistricts": [
+            "3rd"
+          ],
+          "alternateDistricts": [
+            "3rd"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "400156b125e6cd6f461f7b132597ef9a",
+              "name": "SANTO NIÑO",
+              "level": "locality",
+              "provinceId": "80d531976fa43803aed31bee64863983",
+              "province": "SOUTH COTABATO"
+            },
+            {
+              "placeId": "b612c0fa28c11dd6ee56a75b6811bf62",
+              "name": "Santo Nino",
+              "level": "municipality",
+              "provinceId": "80d531976fa43803aed31bee64863983",
+              "province": "SOUTH COTABATO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0909-015710",
+      "title": "Construction of Multi-Purpose Building, Barangay Ambalgan, Sto. Nino, South Cotabato",
+      "amountPesos": 5000000,
+      "oldStatus": "unresolved",
+      "oldDistricts": [],
+      "status": "unique",
+      "districts": [
+        "South Cotabato · 3rd District"
+      ],
+      "evidence": [
+        {
+          "level": "municipality",
+          "name": "santo nino",
+          "province": "south cotabato",
+          "primaryDistricts": [
+            "3rd"
+          ],
+          "alternateDistricts": [
+            "3rd"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "400156b125e6cd6f461f7b132597ef9a",
+              "name": "SANTO NIÑO",
+              "level": "locality",
+              "provinceId": "80d531976fa43803aed31bee64863983",
+              "province": "SOUTH COTABATO"
+            },
+            {
+              "placeId": "b612c0fa28c11dd6ee56a75b6811bf62",
+              "name": "Santo Nino",
+              "level": "municipality",
+              "provinceId": "80d531976fa43803aed31bee64863983",
+              "province": "SOUTH COTABATO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0909-015711",
+      "title": "Construction of Multi-Purpose Building, Barangay M. Roxas, Sto. Nino, South Cotabato",
+      "amountPesos": 5000000,
+      "oldStatus": "unresolved",
+      "oldDistricts": [],
+      "status": "unique",
+      "districts": [
+        "South Cotabato · 3rd District"
+      ],
+      "evidence": [
+        {
+          "level": "municipality",
+          "name": "santo nino",
+          "province": "south cotabato",
+          "primaryDistricts": [
+            "3rd"
+          ],
+          "alternateDistricts": [
+            "3rd"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "400156b125e6cd6f461f7b132597ef9a",
+              "name": "SANTO NIÑO",
+              "level": "locality",
+              "provinceId": "80d531976fa43803aed31bee64863983",
+              "province": "SOUTH COTABATO"
+            },
+            {
+              "placeId": "b612c0fa28c11dd6ee56a75b6811bf62",
+              "name": "Santo Nino",
+              "level": "municipality",
+              "provinceId": "80d531976fa43803aed31bee64863983",
+              "province": "SOUTH COTABATO"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

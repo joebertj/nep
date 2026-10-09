@@ -1,0 +1,58 @@
+{
+  "candidates": [
+    {
+      "name_key": "isabela",
+      "place_id": "683c8310ff6ebd258a9db82f1a1a2ec0",
+      "name": "Isabela",
+      "level": "city",
+      "parent_id": "7684dff21f27298c8451d22ca592d8ed",
+      "parent_name": "BASILAN",
+      "parent_level": "province",
+      "province_id": "7684dff21f27298c8451d22ca592d8ed",
+      "province_name": "BASILAN"
+    },
+    {
+      "name_key": "isabela",
+      "place_id": "87444f2d523e70bfb3d5a293f3ee27d7",
+      "name": "ISABELA",
+      "level": "city",
+      "parent_id": "65897444f965fdd638c27561d72d3f32",
+      "parent_name": "CITY OF ISABELA (Not a Province)",
+      "parent_level": "province",
+      "province_id": "65897444f965fdd638c27561d72d3f32",
+      "province_name": "CITY OF ISABELA (Not a Province)"
+    },
+    {
+      "name_key": "isabela",
+      "place_id": "e7dc8d0719f7faf403ce537a1ceb1774",
+      "name": "ISABELA",
+      "level": "locality",
+      "parent_id": "7e41b82a2168d548d0077f07fa0c0195",
+      "parent_name": "NEGROS OCCIDENTAL",
+      "parent_level": "province",
+      "province_id": "7e41b82a2168d548d0077f07fa0c0195",
+      "province_name": "NEGROS OCCIDENTAL"
+    },
+    {
+      "name_key": "isabela",
+      "place_id": "f0644f524b7829d67c466f56497daf69",
+      "name": "ISABELA",
+      "level": "province",
+      "parent_id": "5c6b2a2ec8d16dd1614ff1c24755c61e",
+      "parent_name": "Philippines",
+      "parent_level": "country",
+      "province_id": "f0644f524b7829d67c466f56497daf69",
+      "province_name": "ISABELA"
+    }
+  ],
+  "review": [
+    {
+      "name_key": "isabela",
+      "candidate_places": 4,
+      "geographic_levels": 3,
+      "provinces": 4,
+      "parent_contexts": 4
+    }
+  ],
+  "warning": "All levels and parent identities stay distinct. Candidate counts are not confidence scores."
+}

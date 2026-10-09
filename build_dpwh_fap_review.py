@@ -38,6 +38,30 @@ def summarize(rows):
             'pairedHgabAllocationPesos': sum(int(r['amountPesos']) for r in paired)}
 
 
+def unpaired_section(rows):
+    records = sorted([r for r in rows if r.get('paired_one_to_one') != 'True'], key=lambda r:-int(r['amountPesos']))
+    total = sum(int(r['amountPesos']) for r in records)
+    maximum = max([int(r['amountPesos']) for r in records]+[1])
+    bars=[];table=[]
+    for i,r in enumerate(records,1):
+        value=int(r['amountPesos']);height=value/maximum*175;x=60+(i-1)*170
+        bars.append(f'<g><title>{html.escape(r["projectName"])} · {money(value)}</title><rect x="{x}" y="{220-height:.2f}" width="110" height="{height:.2f}" fill="#ba5c16"/><text x="{x+55}" y="{210-height:.2f}" text-anchor="middle">₱{value/1e6:,.3f}M</text><text x="{x+55}" y="248" text-anchor="middle">#{i}</text></g>')
+        source=html.escape(r['sourceVolume'])+' · PDF p. '+html.escape(r['sourcePage'])+'<br>'+html.escape(r['hgab_id'])
+        cells=[str(i),html.escape(r['projectName']),money(value),html.escape(r['closest_nep_title']),html.escape(r['title_similarity_pct'])+'%',source]
+        table.append('<tr>'+''.join('<td>'+v+'</td>' for v in cells)+'</tr>')
+    import io
+    stream=io.StringIO();writer=csv.writer(stream)
+    writer.writerow(['Project','HGAB allocation pesos','Review status','Closest NEP title (not matched)','Title similarity percent','PDF','PDF page','HGAB source ID'])
+    for r in records:writer.writerow([r['projectName'],r['amountPesos'],'Unpaired FAP; not a confirmed insertion',r['closest_nep_title'],r['title_similarity_pct'],r['sourceVolume'],r['sourcePage'],r['hgab_id']])
+    payload=json.dumps(stream.getvalue(),ensure_ascii=False).replace('<','\\u003c')
+    return f'''<div id="unpaired-fap-review"><h3>{len(records)} unpaired FAP lines · {money(total)}</h3>
+<p class="sub">Excluded from the domestic insertion shortlist. These records have no selected or plausible NEP counterpart under the current matching rules; this does not confirm a new foreign assisted project or loan. The closest titles below are review hints, not established matches. No zero NEP baseline or allocation increase is assumed.</p>
+<figure class="comparison-graphic"><figcaption><strong>HGAB allocation of each unpaired FAP line</strong><span>Bar numbers identify the corresponding table rows. Hover for the complete project title.</span></figcaption><svg viewBox="0 0 760 275" style="display:block;width:100%;height:auto;max-height:360px;font:14px sans-serif" role="img" aria-label="Allocations of four unpaired foreign assisted project lines">{''.join(bars)}</svg></figure>
+<button class="export-btn" id="unpairedFapCsv" type="button">Export unpaired FAP CSV</button>
+<div class="tablewrap"><table><thead><tr><th>#</th><th>Unpaired FAP project</th><th>HGAB allocation</th><th>Closest NEP title · not matched</th><th>Title similarity</th><th>HGAB source</th></tr></thead><tbody>{''.join(table)}</tbody></table></div></div>
+<script id="unpaired-fap-script">document.getElementById('unpairedFapCsv').onclick=()=>{{const url=URL.createObjectURL(PHLocation.createBlob(['\\ufeff',{payload}],{{type:'text/csv;charset=utf-8'}})),a=document.createElement('a');a.href=url;a.download='dpwh_unpaired_fap_hgab_3rd.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}};</script>'''
+
+
 def review_section(rows, summary):
     paired = [r for r in rows if r.get('paired_one_to_one') == 'True']
     # Compare only the same selected occurrences; an unpaired line has no zero baseline.
@@ -46,7 +70,7 @@ def review_section(rows, summary):
     bars = ''.join(f'<text x="0" y="{30+i*65}">{label}</text><rect x="180" y="{12+i*65}" width="{value/scale*480:.2f}" height="26" fill="{color}"/><text x="180" y="{56+i*65}">{money(value)}</text>'
                    for i, (label, value, color) in enumerate(zip(['Paired NEP FAP', 'Paired HGAB FAP'], totals, ['#637381', '#087e78'])))
     table = []
-    for r in rows:
+    for r in paired:
         selected = r.get('paired_one_to_one') == 'True'
         nep = int(r['closest_nep_amount_pesos']) if selected else None
         value = int(r['amountPesos'])
@@ -66,11 +90,13 @@ def review_section(rows, summary):
     payload = json.dumps(stream.getvalue(), ensure_ascii=False).replace('<', '\\u003c')
     return f'''<section class="card section" id="foreign-assisted-review"><h2>Foreign assisted projects · separate NEP → HGAB review</h2>
 <p class="sub">The printed FAP schedule contains <strong>{len(rows)} lines, {money(summary['fapAllocationPesos'])}</strong>. All are excluded from the domestic additions shortlist. This excludes {summary['excludedFromUnmatchedShortlistRows']} unmatched FAP lines carrying {money(summary['excludedFromUnmatchedShortlistPesos'])}; it does not establish that those projects are absent from NEP. Loan identity, counterpart funding and project scope need separate verification.</p>
+{unpaired_section(rows)}
+<h3>{len(paired)} FAP lines with selected NEP counterparts</h3>
 <p class="sub">{len(paired)} selected counterparts are compared below. Unpaired lines have no assumed zero NEP baseline. Fuzzy counterparts remain provisional. PDF page numbers use the parser’s physical-page convention.</p>
 <svg viewBox="0 0 720 145" role="img" aria-label="NEP and HGAB allocations for paired foreign assisted lines" style="display:block;width:100%;max-height:190px;font:15px sans-serif">{bars}</svg>
-<button type="button" class="export-btn" id="fapCsv">Export FAP review CSV</button>
+<button type="button" class="export-btn" id="fapCsv">Export full FAP schedule review CSV</button>
 <div class="tablewrap"><table><thead><tr><th>Foreign assisted project</th><th>NEP match</th><th>NEP allocation</th><th>HGAB allocation</th><th>Change</th><th>Source</th></tr></thead><tbody>{''.join(table)}</tbody></table></div></section>
-<script id="fap-review-script">document.getElementById('fapCsv').onclick=()=>{{const blob=new Blob(['\\ufeff',{payload}],{{type:'text/csv;charset=utf-8'}}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='dpwh_fap_nep_hgab_3rd.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}};</script>'''
+<script id="fap-review-script">document.getElementById('fapCsv').onclick=()=>{{const blob=PHLocation.createBlob(['\\ufeff',{payload}],{{type:'text/csv;charset=utf-8'}}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='dpwh_fap_nep_hgab_3rd.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}};</script>'''
 
 
 def refresh():
@@ -103,6 +129,7 @@ def refresh():
         path = STATIC / name; page = path.read_text()
         page = re.sub(r'<section class="card section" id="foreign-assisted-review">.*?</section>', '', page, flags=re.S)
         page = re.sub(r'<script id="fap-review-script">.*?</script>', '', page, flags=re.S)
+        page = re.sub(r'<script id="unpaired-fap-script">.*?</script>', '', page, flags=re.S)
         intro = (f'The domestic 3rd-reading title screen leaves <strong>{count:,} HGAB lines</strong> without a plausible NEP counterpart, carrying <strong>₱{cost/1e9:,.2f}B</strong>. Foreign assisted projects are excluded and reviewed separately below. Unmatched titles are review leads, not confirmed additions.')
         page = re.sub(r'(<section id="hgab-insertion".*?<h2>).*?(</h2>\s*<p class="sub">).*?(</p>)', lambda m:m[1]+'Potential insertions · domestic HGAB-only line items'+m[2]+intro+m[3], page, count=1, flags=re.S)
         page = page.replace('Counts across all 3rd-reading DPWH records;', 'Counts across domestic 3rd-reading DPWH records;')

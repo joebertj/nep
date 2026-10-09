@@ -1,13 +1,13 @@
 {
   "databaseName": "PH location DB",
-  "databaseSha256": "b2902f7a4d483cc2dc2d2ab6b501103dbf0d5189e08f50a9ed49bac5cdaa7bc7",
+  "databaseSha256": "0d1b9799f1a4b14c2bc642581e0a64cd7c42aec4fe7feb5900a03884e85f301a",
   "counts": {
-    "rowsReviewed": 91253,
-    "rowsUnresolved": 80620,
-    "rowsWithNames": 10633,
-    "assignmentsChanged": 1565
+    "rowsReviewed": 92530,
+    "rowsUnresolved": 81395,
+    "rowsWithNames": 11135,
+    "assignmentsChanged": 600
   },
-  "catalogTitles": 27200,
+  "catalogTitles": 27157,
   "pages": [
     {
       "page": "budget-innovations.html",
@@ -17,9 +17,9 @@
     },
     {
       "page": "congress.html",
-      "tables": 6,
+      "tables": 5,
       "embeddedDocuments": 1,
-      "tablesWithLocationColumns": 6
+      "tablesWithLocationColumns": 5
     },
     {
       "page": "deped.html",
@@ -35,15 +35,15 @@
     },
     {
       "page": "dpwh-hgab.html",
-      "tables": 14,
+      "tables": 17,
       "embeddedDocuments": 5,
-      "tablesWithLocationColumns": 14
+      "tablesWithLocationColumns": 17
     },
     {
       "page": "dpwh.html",
-      "tables": 13,
+      "tables": 14,
       "embeddedDocuments": 4,
-      "tablesWithLocationColumns": 13
+      "tablesWithLocationColumns": 14
     },
     {
       "page": "fmr.html",

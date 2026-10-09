@@ -101,7 +101,7 @@ def main():
              'hgabSha256':hashlib.sha256(source.read_bytes()).hexdigest(),'qualifiedLocationRows':qualified,
              'unresolvedWithQualifiedPlaceCandidates':len(review),'scopeHolds':len(held),
              'previouslyAcceptedScopeHolds':blocked_baseline,'datedMembershipClaims':dated,
-             'newAssignmentsFromUndatedDbClaims':0,'policy':'Geographic evidence and scope exclusions only. Undated LEG claims, DEOs and historic GAA titles do not establish new current district assignments.'}
+             'newAssignmentsFromUndatedDbClaims':0,'confirmedSpellingDecisionSha256':hashlib.sha256((ROOT/'location_data/name_spelling_decisions.json').read_bytes()).hexdigest(),'policy':'Geographic evidence and scope exclusions only. Undated LEG claims, DEOs and historic GAA titles do not establish new current district assignments.'}
     out=ROOT/'analysis_output/congress_location_db_review.json'
     out.write_text(json.dumps({'summary':summary,'decisions':evidence,'candidateReview':review,'heldRows':held},ensure_ascii=False,indent=2)+'\n')
     if args.write_scope_review:

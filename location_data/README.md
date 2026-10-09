@@ -214,3 +214,49 @@ still needs to classify each mention's role, establish a qualified geographic
 chain, review applicable LEG boundaries and dates, and distinguish project
 locations from route endpoints or road/bridge names. Only reviewed mappings
 should feed a subsequent congressional allocation rebuild.
+
+## Refinement: short names and historical provinces
+
+```sh
+python3 location_data/import_gaa_names.py --reclassify
+python3 location_data/refine_database.py
+python3 location_data/query_locations.py --ambiguity Isabela
+python3 location_data/query_locations.py --lineage Maguindanao
+```
+
+Reclassification keeps historical evidence IDs, original titles, source locators
+and year/context records; it refreshes name mentions and review groups. Short
+names and numbered barangays require explicit geographic markers. Marked
+`Brgy. 122` can use an existing `Barangay 122` identity; bare numbers never
+establish a geographic chain. All matching retains exact parent context.
+
+`qualified_alias_candidates` and `alias_ambiguity_review` expose collisions
+across levels and parents. `administrative_transition_review` records proposed
+predecessor/successor identities separately from aliases. A shared province
+base name with del Norte / del Sur creates only a review candidate. It does
+not establish a legal split, date, municipality transfer or current LEG
+boundary. NULL dates stay NULL. Historical GAA mention years are title
+evidence, not effective dates. Old province names are never expanded to
+successor provinces automatically. A base database rebuild includes these
+review views; the standalone command can refresh an existing database.
+
+These refinements do not regenerate Congress allocations or public reports.
+
+User-confirmed Santo Niño / Sto. Niño / Sto. Nino / corrupted Sto. Ni±o
+spellings are recorded in `name_spelling_decisions.json`. Run
+`python3 location_data/apply_spelling_decisions.py` to apply them to existing
+identities; refinement and base/import builds also consume the decision.
+Only complete place names (or explicit barangay labels) qualify. IDs, levels
+and parent locations remain distinct, including same-named barangays in
+separate municipalities. This answers a spelling question, not LEG coverage
+or construction scope. Existing historical mentions can be refreshed with
+`import_gaa_names.py --reclassify`; source titles are retained verbatim.
+
+Congress spelling reapplication uses `qualified-location-consensus-v3-confirmed-spelling`
+in ODV's strict matcher. Complete Santo Niño variants are canonicalized only
+inside geographic field and marked-barangay matching. Both local LEG maps
+must still agree; canonical collisions with different seats remain conflicts.
+Original project titles and source IDs are preserved. The private before/after
+assignment audit is `analysis_output/congress_spelling_reapply_changes.json`.
+After a Congress rebuild, regenerate the hero and LEG insertion view, then
+refresh report-table representatives before copying/committing static files.

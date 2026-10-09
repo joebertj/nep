@@ -1,9 +1,9 @@
 {
   "method": "Domestic HGAB-only candidates intersected with uniquely assigned scope-reviewed LEG geography; unresolved/shared locations and FAP excluded.",
   "domesticCandidateLines": 4606,
-  "assignedCandidateLines": 1502,
-  "excludedCandidateLines": 3104,
-  "assignedCandidatePesos": 44297221000,
+  "assignedCandidateLines": 1505,
+  "excludedCandidateLines": 3101,
+  "assignedCandidatePesos": 44312221000,
   "districts": [
     {
       "district": "Ilocos Norte · 1st District",
@@ -11334,68 +11334,11 @@
       ]
     },
     {
-      "district": "Samar · 2nd District",
-      "representative": "Reynolds Michael Tan",
-      "candidateLines": 4,
-      "candidateAllocationPesos": 383000000,
-      "acceptedDistrictLines": 5,
-      "rows": [
-        {
-          "id": "HB10858-3-0314-003789",
-          "district": "Samar · 2nd District",
-          "representative": "Reynolds Michael Tan",
-          "projectName": "Construction of Catbalogan Drainage System, Pier 1 – Bunu-anan – Guinsorongan Reclamation Area, Catbalogan City, Samar",
-          "amountPesos": 150000000,
-          "office": "Central Office",
-          "closestNepTitle": "Construction of Drainage System, Sta. 0+000 - Sta. 0+850, Barangay Matobato, Calbayog City, Samar",
-          "similarityPct": 64.0,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "314"
-        },
-        {
-          "id": "HB10858-3-0314-003790",
-          "district": "Samar · 2nd District",
-          "representative": "Reynolds Michael Tan",
-          "projectName": "Construction of Catbalogan Retention Pond, Barangay 8, Catbalogan City, Samar",
-          "amountPesos": 120000000,
-          "office": "Central Office",
-          "closestNepTitle": "Construction of Detention Pond, Barangay Looc, Mandaue City, Cebu",
-          "similarityPct": 72.06,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "314"
-        },
-        {
-          "id": "HB10858-3-0314-003791",
-          "district": "Samar · 2nd District",
-          "representative": "Reynolds Michael Tan",
-          "projectName": "Construction of Catbalogan Retention Pond, Barangay Guinsorongan, Catbalogan City, Samar",
-          "amountPesos": 100000000,
-          "office": "Central Office",
-          "closestNepTitle": "Construction of Detention Pond, Barangay Looc, Mandaue City, Cebu",
-          "similarityPct": 68.03,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "314"
-        },
-        {
-          "id": "HB10858-3-0863-014852",
-          "district": "Samar · 2nd District",
-          "representative": "Reynolds Michael Tan",
-          "projectName": "Rehabilitation of Multi Purpose Building, Barangay 5, Catbalogan City, Samar",
-          "amountPesos": 13000000,
-          "office": "Samar 2nd District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building, Barangay Payao, Catbalogan City, Samar ( 11°48'13.95°N, 124°5154.78E)",
-          "similarityPct": 73.26,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "863"
-        }
-      ]
-    },
-    {
       "district": "South Cotabato · 3rd District",
       "representative": "Dibu Tuan",
-      "candidateLines": 53,
-      "candidateAllocationPesos": 380000000,
-      "acceptedDistrictLines": 79,
+      "candidateLines": 56,
+      "candidateAllocationPesos": 395000000,
+      "acceptedDistrictLines": 87,
       "rows": [
         {
           "id": "HB10858-3-0445-006357",
@@ -11540,6 +11483,18 @@
           "similarityPct": 76.3,
           "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
           "sourcePage": "400"
+        },
+        {
+          "id": "HB10858-3-0623-010115",
+          "district": "South Cotabato · 3rd District",
+          "representative": "Dibu Tuan",
+          "projectName": "Concreting of Purok Sampaguita - Sitio Tunga Road, Barangay Poblacion, Sto. Nino, South Cotabato",
+          "amountPesos": 5000000,
+          "office": "South Cotabato 2nd District Engineering Office",
+          "closestNepTitle": "Construction of Pobalcion - Desawo Road, Barangay Poblacion T'boli, South Cotabato",
+          "similarityPct": 71.43,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "623"
         },
         {
           "id": "HB10858-3-0623-010118",
@@ -11744,6 +11699,30 @@
           "similarityPct": 78.26,
           "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
           "sourcePage": "907"
+        },
+        {
+          "id": "HB10858-3-0909-015708",
+          "district": "South Cotabato · 3rd District",
+          "representative": "Dibu Tuan",
+          "projectName": "Constraction of Multi-Purpose Building, Barangay San Isidro, Sto. Nino, South Cotabato",
+          "amountPesos": 5000000,
+          "office": "South Cotabato 2nd District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building, Barangay Sto. Niño, San Nicolas, Batangas",
+          "similarityPct": 80.5,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "909"
+        },
+        {
+          "id": "HB10858-3-0909-015709",
+          "district": "South Cotabato · 3rd District",
+          "representative": "Dibu Tuan",
+          "projectName": "Construction of Multi-Purpose Building, Barangay San Vicente, Sto. Nino, South Cotabato",
+          "amountPesos": 5000000,
+          "office": "South Cotabato 2nd District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building, Barangay San Vicente East, Asingan, Pangasinan",
+          "similarityPct": 81.93,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "909"
         },
         {
           "id": "HB10858-3-0909-015717",
@@ -12032,6 +12011,63 @@
           "similarityPct": 71.91,
           "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
           "sourcePage": "911"
+        }
+      ]
+    },
+    {
+      "district": "Samar · 2nd District",
+      "representative": "Reynolds Michael Tan",
+      "candidateLines": 4,
+      "candidateAllocationPesos": 383000000,
+      "acceptedDistrictLines": 5,
+      "rows": [
+        {
+          "id": "HB10858-3-0314-003789",
+          "district": "Samar · 2nd District",
+          "representative": "Reynolds Michael Tan",
+          "projectName": "Construction of Catbalogan Drainage System, Pier 1 – Bunu-anan – Guinsorongan Reclamation Area, Catbalogan City, Samar",
+          "amountPesos": 150000000,
+          "office": "Central Office",
+          "closestNepTitle": "Construction of Drainage System, Sta. 0+000 - Sta. 0+850, Barangay Matobato, Calbayog City, Samar",
+          "similarityPct": 64.0,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "314"
+        },
+        {
+          "id": "HB10858-3-0314-003790",
+          "district": "Samar · 2nd District",
+          "representative": "Reynolds Michael Tan",
+          "projectName": "Construction of Catbalogan Retention Pond, Barangay 8, Catbalogan City, Samar",
+          "amountPesos": 120000000,
+          "office": "Central Office",
+          "closestNepTitle": "Construction of Detention Pond, Barangay Looc, Mandaue City, Cebu",
+          "similarityPct": 72.06,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "314"
+        },
+        {
+          "id": "HB10858-3-0314-003791",
+          "district": "Samar · 2nd District",
+          "representative": "Reynolds Michael Tan",
+          "projectName": "Construction of Catbalogan Retention Pond, Barangay Guinsorongan, Catbalogan City, Samar",
+          "amountPesos": 100000000,
+          "office": "Central Office",
+          "closestNepTitle": "Construction of Detention Pond, Barangay Looc, Mandaue City, Cebu",
+          "similarityPct": 68.03,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "314"
+        },
+        {
+          "id": "HB10858-3-0863-014852",
+          "district": "Samar · 2nd District",
+          "representative": "Reynolds Michael Tan",
+          "projectName": "Rehabilitation of Multi Purpose Building, Barangay 5, Catbalogan City, Samar",
+          "amountPesos": 13000000,
+          "office": "Samar 2nd District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building, Barangay Payao, Catbalogan City, Samar ( 11°48'13.95°N, 124°5154.78E)",
+          "similarityPct": 73.26,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "863"
         }
       ]
     },
@@ -20009,7 +20045,7 @@
       "representative": "Eric Olivarez",
       "candidateLines": 0,
       "candidateAllocationPesos": 0,
-      "acceptedDistrictLines": 10,
+      "acceptedDistrictLines": 11,
       "rows": []
     },
     {
@@ -20220,7 +20256,7 @@
     },
     {
       "file": "congress_geographic_attribution_db_3rd.json",
-      "sha256": "7e2db757ac954e4b5087246706be55e6af39007201f19e6b512064a3d58bfe4c"
+      "sha256": "6c267eed0faf31ed0a23d93c5fe5b26cba076ea264df01eed31c635da84881eb"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "method": "qualified-location-consensus-v3-confirmed-spelling",
+  "method": "qualified-location-consensus-v2-province-city-context",
   "warning": "Conservative location-based coverage, not complete district budgets or evidence of a representative's sponsorship. Exact municipality + province fields require agreement between both local district maps. Multi-seat cities require explicitly named barangays and agreeing maps. Shared lines, conflicts and missing scope stay outside the ranking. Local map agreement is a screening rule, not independent official boundary verification. A zero means no accepted attribution, not no allocation. The private location evidence database supplies qualified-place evidence and scope exclusions. Undated LEG claims and historical GAA project names do not establish new current district assignments.",
   "sources": [
     {
@@ -32,11 +32,11 @@
     },
     {
       "file": "/Users/joebertj/open-data-visualization/analysis/strict_congress_geography.py",
-      "sha256": "07593bc29bcdf90894058719ccbfca7dea72c44c8f78f4ae5e6bf501a34d0324"
+      "sha256": "ecf3ba3daeee189898993611a09111aa53b72d1f14fe1589ddf8977db5d28f98"
     },
     {
       "file": "analysis_output/congress_location_db_review.json",
-      "sha256": "208895b9a589d51592ffc824b7e8deae4a3f7394ac8365897997e7e7f1a7099c"
+      "sha256": "f9389138fd9038115c85ab449397fa83862fa489687dc6ff8cde4bf27d6c4085"
     }
   ],
   "summary": {
@@ -46,16 +46,16 @@
     "excludedScheduleAmountPesos": 0,
     "sourceLineItems": 16275,
     "sourceTotalPesos": 587075661000,
-    "uniquelyAssignedLines": 6950,
+    "uniquelyAssignedLines": 6941,
     "sharedAssignedLines": 2,
-    "unassignedLines": 9323,
-    "unassignedAmountPesos": 405066629000,
+    "unassignedLines": 9332,
+    "unassignedAmountPesos": 405119129000,
     "sharedSourceAmountPesos": 375000000,
-    "assignedSourceAmountPesos": 182009032000,
-    "strictAssignedPesos": 181634032000,
-    "strictExcludedLines": 9325,
-    "strictExcludedAmountPesos": 405441629000,
-    "strictCoveragePct": 30.94,
+    "assignedSourceAmountPesos": 181956532000,
+    "strictAssignedPesos": 181581532000,
+    "strictExcludedLines": 9334,
+    "strictExcludedAmountPesos": 405494129000,
+    "strictCoveragePct": 30.93,
     "districtCount": 254
   },
   "projects": [
@@ -61476,7 +61476,6 @@
       "representatives": [],
       "status": "unresolved",
       "reasons": [
-        "Barangay missing or conflicting between local city crosswalks",
         "Explicit barangay has no exact city-qualified crosswalk entry"
       ],
       "geographicEvidence": []
@@ -75339,23 +75338,13 @@
       "sourcePage": 322,
       "region": "Region XIII",
       "office": "Metro Manila 2nd District Engineering Office",
-      "districts": [
-        "Parañaque · 1st District"
+      "districts": [],
+      "representatives": [],
+      "status": "unresolved",
+      "reasons": [
+        "Explicit barangay has no exact city-qualified crosswalk entry"
       ],
-      "representatives": [
-        "Eric Olivarez"
-      ],
-      "status": "unique",
-      "reasons": [],
-      "geographicEvidence": [
-        {
-          "level": "barangay",
-          "name": "santo nino",
-          "city": "paranaque",
-          "district": "1st",
-          "basis": "Exact marked barangay and explicit parent city; maps agree"
-        }
-      ]
+      "geographicEvidence": []
     },
     {
       "id": "HB10858-3-0322-003941",
@@ -77046,7 +77035,7 @@
       "representatives": [],
       "status": "unresolved",
       "reasons": [
-        "Barangay missing or conflicting between local city crosswalks"
+        "Explicit barangay has no exact city-qualified crosswalk entry"
       ],
       "geographicEvidence": []
     },
@@ -294983,46 +294972,13 @@
       "sourcePage": 623,
       "region": "Region XII",
       "office": "South Cotabato 2nd District Engineering Office",
-      "districts": [
-        "South Cotabato · 3rd District"
+      "districts": [],
+      "representatives": [],
+      "status": "unresolved",
+      "reasons": [
+        "Province named without an exact municipality/city location field"
       ],
-      "representatives": [
-        "Dibu Tuan"
-      ],
-      "status": "unique",
-      "reasons": [],
-      "geographicEvidence": [
-        {
-          "level": "municipality",
-          "name": "santo nino",
-          "province": "south cotabato",
-          "primaryDistricts": [
-            "3rd"
-          ],
-          "alternateDistricts": [
-            "3rd"
-          ]
-        },
-        {
-          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
-          "candidatePlaces": [
-            {
-              "placeId": "400156b125e6cd6f461f7b132597ef9a",
-              "name": "SANTO NIÑO",
-              "level": "locality",
-              "provinceId": "80d531976fa43803aed31bee64863983",
-              "province": "SOUTH COTABATO"
-            },
-            {
-              "placeId": "b612c0fa28c11dd6ee56a75b6811bf62",
-              "name": "Santo Nino",
-              "level": "municipality",
-              "provinceId": "80d531976fa43803aed31bee64863983",
-              "province": "SOUTH COTABATO"
-            }
-          ]
-        }
-      ]
+      "geographicEvidence": []
     },
     {
       "id": "HB10858-3-0623-010116",
@@ -314171,7 +314127,7 @@
       "representatives": [],
       "status": "unresolved",
       "reasons": [
-        "Barangay missing or conflicting between local city crosswalks"
+        "Explicit barangay has no exact city-qualified crosswalk entry"
       ],
       "geographicEvidence": []
     },
@@ -314684,7 +314640,6 @@
       "representatives": [],
       "status": "unresolved",
       "reasons": [
-        "Barangay missing or conflicting between local city crosswalks",
         "Explicit barangay has no exact city-qualified crosswalk entry"
       ],
       "geographicEvidence": []
@@ -486465,46 +486420,13 @@
       "sourcePage": 908,
       "region": "Region XII",
       "office": "South Cotabato 2nd District Engineering Office",
-      "districts": [
-        "South Cotabato · 3rd District"
+      "districts": [],
+      "representatives": [],
+      "status": "unresolved",
+      "reasons": [
+        "Province named without an exact municipality/city location field"
       ],
-      "representatives": [
-        "Dibu Tuan"
-      ],
-      "status": "unique",
-      "reasons": [],
-      "geographicEvidence": [
-        {
-          "level": "municipality",
-          "name": "santo nino",
-          "province": "south cotabato",
-          "primaryDistricts": [
-            "3rd"
-          ],
-          "alternateDistricts": [
-            "3rd"
-          ]
-        },
-        {
-          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
-          "candidatePlaces": [
-            {
-              "placeId": "400156b125e6cd6f461f7b132597ef9a",
-              "name": "SANTO NIÑO",
-              "level": "locality",
-              "provinceId": "80d531976fa43803aed31bee64863983",
-              "province": "SOUTH COTABATO"
-            },
-            {
-              "placeId": "b612c0fa28c11dd6ee56a75b6811bf62",
-              "name": "Santo Nino",
-              "level": "municipality",
-              "provinceId": "80d531976fa43803aed31bee64863983",
-              "province": "SOUTH COTABATO"
-            }
-          ]
-        }
-      ]
+      "geographicEvidence": []
     },
     {
       "id": "HB10858-3-0908-015706",
@@ -486514,46 +486436,13 @@
       "sourcePage": 908,
       "region": "Region XII",
       "office": "South Cotabato 2nd District Engineering Office",
-      "districts": [
-        "South Cotabato · 3rd District"
+      "districts": [],
+      "representatives": [],
+      "status": "unresolved",
+      "reasons": [
+        "Province named without an exact municipality/city location field"
       ],
-      "representatives": [
-        "Dibu Tuan"
-      ],
-      "status": "unique",
-      "reasons": [],
-      "geographicEvidence": [
-        {
-          "level": "municipality",
-          "name": "santo nino",
-          "province": "south cotabato",
-          "primaryDistricts": [
-            "3rd"
-          ],
-          "alternateDistricts": [
-            "3rd"
-          ]
-        },
-        {
-          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
-          "candidatePlaces": [
-            {
-              "placeId": "400156b125e6cd6f461f7b132597ef9a",
-              "name": "SANTO NIÑO",
-              "level": "locality",
-              "provinceId": "80d531976fa43803aed31bee64863983",
-              "province": "SOUTH COTABATO"
-            },
-            {
-              "placeId": "b612c0fa28c11dd6ee56a75b6811bf62",
-              "name": "Santo Nino",
-              "level": "municipality",
-              "provinceId": "80d531976fa43803aed31bee64863983",
-              "province": "SOUTH COTABATO"
-            }
-          ]
-        }
-      ]
+      "geographicEvidence": []
     },
     {
       "id": "HB10858-3-0909-015707",
@@ -486563,46 +486452,13 @@
       "sourcePage": 909,
       "region": "Region XII",
       "office": "South Cotabato 2nd District Engineering Office",
-      "districts": [
-        "South Cotabato · 3rd District"
+      "districts": [],
+      "representatives": [],
+      "status": "unresolved",
+      "reasons": [
+        "Province named without an exact municipality/city location field"
       ],
-      "representatives": [
-        "Dibu Tuan"
-      ],
-      "status": "unique",
-      "reasons": [],
-      "geographicEvidence": [
-        {
-          "level": "municipality",
-          "name": "santo nino",
-          "province": "south cotabato",
-          "primaryDistricts": [
-            "3rd"
-          ],
-          "alternateDistricts": [
-            "3rd"
-          ]
-        },
-        {
-          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
-          "candidatePlaces": [
-            {
-              "placeId": "400156b125e6cd6f461f7b132597ef9a",
-              "name": "SANTO NIÑO",
-              "level": "locality",
-              "provinceId": "80d531976fa43803aed31bee64863983",
-              "province": "SOUTH COTABATO"
-            },
-            {
-              "placeId": "b612c0fa28c11dd6ee56a75b6811bf62",
-              "name": "Santo Nino",
-              "level": "municipality",
-              "provinceId": "80d531976fa43803aed31bee64863983",
-              "province": "SOUTH COTABATO"
-            }
-          ]
-        }
-      ]
+      "geographicEvidence": []
     },
     {
       "id": "HB10858-3-0909-015708",
@@ -486612,46 +486468,13 @@
       "sourcePage": 909,
       "region": "Region XII",
       "office": "South Cotabato 2nd District Engineering Office",
-      "districts": [
-        "South Cotabato · 3rd District"
+      "districts": [],
+      "representatives": [],
+      "status": "unresolved",
+      "reasons": [
+        "Province named without an exact municipality/city location field"
       ],
-      "representatives": [
-        "Dibu Tuan"
-      ],
-      "status": "unique",
-      "reasons": [],
-      "geographicEvidence": [
-        {
-          "level": "municipality",
-          "name": "santo nino",
-          "province": "south cotabato",
-          "primaryDistricts": [
-            "3rd"
-          ],
-          "alternateDistricts": [
-            "3rd"
-          ]
-        },
-        {
-          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
-          "candidatePlaces": [
-            {
-              "placeId": "400156b125e6cd6f461f7b132597ef9a",
-              "name": "SANTO NIÑO",
-              "level": "locality",
-              "provinceId": "80d531976fa43803aed31bee64863983",
-              "province": "SOUTH COTABATO"
-            },
-            {
-              "placeId": "b612c0fa28c11dd6ee56a75b6811bf62",
-              "name": "Santo Nino",
-              "level": "municipality",
-              "provinceId": "80d531976fa43803aed31bee64863983",
-              "province": "SOUTH COTABATO"
-            }
-          ]
-        }
-      ]
+      "geographicEvidence": []
     },
     {
       "id": "HB10858-3-0909-015709",
@@ -486661,46 +486484,13 @@
       "sourcePage": 909,
       "region": "Region XII",
       "office": "South Cotabato 2nd District Engineering Office",
-      "districts": [
-        "South Cotabato · 3rd District"
+      "districts": [],
+      "representatives": [],
+      "status": "unresolved",
+      "reasons": [
+        "Province named without an exact municipality/city location field"
       ],
-      "representatives": [
-        "Dibu Tuan"
-      ],
-      "status": "unique",
-      "reasons": [],
-      "geographicEvidence": [
-        {
-          "level": "municipality",
-          "name": "santo nino",
-          "province": "south cotabato",
-          "primaryDistricts": [
-            "3rd"
-          ],
-          "alternateDistricts": [
-            "3rd"
-          ]
-        },
-        {
-          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
-          "candidatePlaces": [
-            {
-              "placeId": "400156b125e6cd6f461f7b132597ef9a",
-              "name": "SANTO NIÑO",
-              "level": "locality",
-              "provinceId": "80d531976fa43803aed31bee64863983",
-              "province": "SOUTH COTABATO"
-            },
-            {
-              "placeId": "b612c0fa28c11dd6ee56a75b6811bf62",
-              "name": "Santo Nino",
-              "level": "municipality",
-              "provinceId": "80d531976fa43803aed31bee64863983",
-              "province": "SOUTH COTABATO"
-            }
-          ]
-        }
-      ]
+      "geographicEvidence": []
     },
     {
       "id": "HB10858-3-0909-015710",
@@ -486710,46 +486500,13 @@
       "sourcePage": 909,
       "region": "Region XII",
       "office": "South Cotabato 2nd District Engineering Office",
-      "districts": [
-        "South Cotabato · 3rd District"
+      "districts": [],
+      "representatives": [],
+      "status": "unresolved",
+      "reasons": [
+        "Province named without an exact municipality/city location field"
       ],
-      "representatives": [
-        "Dibu Tuan"
-      ],
-      "status": "unique",
-      "reasons": [],
-      "geographicEvidence": [
-        {
-          "level": "municipality",
-          "name": "santo nino",
-          "province": "south cotabato",
-          "primaryDistricts": [
-            "3rd"
-          ],
-          "alternateDistricts": [
-            "3rd"
-          ]
-        },
-        {
-          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
-          "candidatePlaces": [
-            {
-              "placeId": "400156b125e6cd6f461f7b132597ef9a",
-              "name": "SANTO NIÑO",
-              "level": "locality",
-              "provinceId": "80d531976fa43803aed31bee64863983",
-              "province": "SOUTH COTABATO"
-            },
-            {
-              "placeId": "b612c0fa28c11dd6ee56a75b6811bf62",
-              "name": "Santo Nino",
-              "level": "municipality",
-              "provinceId": "80d531976fa43803aed31bee64863983",
-              "province": "SOUTH COTABATO"
-            }
-          ]
-        }
-      ]
+      "geographicEvidence": []
     },
     {
       "id": "HB10858-3-0909-015711",
@@ -486759,46 +486516,13 @@
       "sourcePage": 909,
       "region": "Region XII",
       "office": "South Cotabato 2nd District Engineering Office",
-      "districts": [
-        "South Cotabato · 3rd District"
+      "districts": [],
+      "representatives": [],
+      "status": "unresolved",
+      "reasons": [
+        "Province named without an exact municipality/city location field"
       ],
-      "representatives": [
-        "Dibu Tuan"
-      ],
-      "status": "unique",
-      "reasons": [],
-      "geographicEvidence": [
-        {
-          "level": "municipality",
-          "name": "santo nino",
-          "province": "south cotabato",
-          "primaryDistricts": [
-            "3rd"
-          ],
-          "alternateDistricts": [
-            "3rd"
-          ]
-        },
-        {
-          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
-          "candidatePlaces": [
-            {
-              "placeId": "400156b125e6cd6f461f7b132597ef9a",
-              "name": "SANTO NIÑO",
-              "level": "locality",
-              "provinceId": "80d531976fa43803aed31bee64863983",
-              "province": "SOUTH COTABATO"
-            },
-            {
-              "placeId": "b612c0fa28c11dd6ee56a75b6811bf62",
-              "name": "Santo Nino",
-              "level": "municipality",
-              "provinceId": "80d531976fa43803aed31bee64863983",
-              "province": "SOUTH COTABATO"
-            }
-          ]
-        }
-      ]
+      "geographicEvidence": []
     },
     {
       "id": "HB10858-3-0909-015712",

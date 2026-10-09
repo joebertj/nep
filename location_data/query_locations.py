@@ -27,6 +27,8 @@ def main():
     parser.add_argument('--database',type=Path,default=ROOT/'philippine_locations.sqlite')
     mode=parser.add_mutually_exclusive_group(required=True)
     mode.add_argument('--name');mode.add_argument('--deo');mode.add_argument('--leg',help='exact LEG jurisdiction name');mode.add_argument('--case',help='source project ID for an imported location edge case');mode.add_argument('--summary',action='store_true')
+    mode.add_argument('--lineage',help='Province predecessor/successor review; candidates are not verified boundary changes')
+    mode.add_argument('--ambiguity',help='Exact name with all distinct geographic levels and parent contexts')
     mode.add_argument('--gaa',help='search original historical GAA titles (substring)')
     mode.add_argument('--review',help='search grouped location questions (substring)')
     parser.add_argument('--level',choices=['region','province','city','municipality','locality','barangay'])
@@ -34,6 +36,13 @@ def main():
     args=parser.parse_args();db=sqlite3.connect(args.database.resolve().as_uri()+'?mode=ro',uri=True);db.row_factory=sqlite3.Row
     if args.summary:
         out={'placesByClaimedLevel':dict(db.execute('SELECT level,COUNT(*) FROM places GROUP BY level').fetchall()),'issuesByKind':dict(db.execute('SELECT kind,COUNT(*) FROM issues GROUP BY kind').fetchall()),'warning':'Counts include source variants and disputed identities, not official administrative totals.'}
+    elif args.lineage:
+        out={'transitions':[dict(r) for r in db.execute('SELECT t.*,p.name predecessor_name,c.name successor_name FROM administrative_transition_review t JOIN places p ON p.id=t.predecessor_id JOIN places c ON c.id=t.successor_id WHERE p.name_key=? OR c.name_key=? ORDER BY p.name,c.name',(norm(args.lineage),norm(args.lineage)))],
+             'warning':'Candidate relations only. Unknown dates stay NULL; no alias, municipality transfer or LEG continuity is inferred.'}
+    elif args.ambiguity:
+        out={'candidates':[dict(r) for r in db.execute('SELECT * FROM qualified_alias_candidates WHERE name_key=? ORDER BY level,province_name,parent_name,name LIMIT ?',(norm(args.ambiguity),max(0,args.limit)))],
+             'review':[dict(r) for r in db.execute('SELECT * FROM alias_ambiguity_review WHERE name_key=?',(norm(args.ambiguity),))],
+             'warning':'All levels and parent identities stay distinct. Candidate counts are not confidence scores.'}
     elif args.gaa:
         records=[]
         for row in db.execute('SELECT e.*,s.path FROM gaa_name_evidence e JOIN sources s ON s.id=e.source_id WHERE instr(lower(e.title),lower(?))>0 ORDER BY fiscal_year,source_locator LIMIT ?',(args.gaa,max(0,args.limit))):

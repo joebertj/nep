@@ -1,0 +1,8 @@
+{
+  "decisions": [{
+    "id": "santo_nino_spelling_variants",
+    "variants": ["Santo Niño", "Santo Nino", "Sto. Niño", "Sto. Nino", "Sto Niño", "Sto Nino", "Sto. Ni±o", "Sto Ni±o"],
+    "supporting_user_answer": "the is santo nino, sto. nino. etc",
+    "scope": "Spelling equivalence only for complete place names, including names prefixed Barangay/Brgy. Preserve place IDs, geographic levels and parents; do not merge places or assign LEG boundaries."
+  }]
+}
