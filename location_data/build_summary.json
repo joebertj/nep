@@ -1,0 +1,834 @@
+{
+  "schemaVersion": 1,
+  "database": "/Users/joebertj/nep/location_data/philippine_locations.sqlite",
+  "placesByLevel": {
+    "barangay": 46619,
+    "city": 249,
+    "country": 1,
+    "locality": 1705,
+    "municipality": 1232,
+    "province": 137,
+    "region": 21,
+    "source_container": 4
+  },
+  "counts": {
+    "sources": 113,
+    "aliases": 56206,
+    "leg_districts": 331,
+    "leg_memberships": 60305,
+    "representatives": 766,
+    "representative_terms": 1761,
+    "deos": 205,
+    "deo_leg_claims": 108,
+    "observations": 24765,
+    "issues": 11210
+  },
+  "issuesByKind": {
+    "ambiguous_place": 8386,
+    "city_listed_as_barangay": 9,
+    "leg_membership_conflict": 1161,
+    "locality_type_conflict": 1057,
+    "project_route_scope_review": 1,
+    "uncorroborated_city_type": 73,
+    "unlocated_source_claim": 523
+  },
+  "limitations": [
+    "All imported geography and boundaries are source claims, not newly verified official boundaries.",
+    "Unknown dates stay NULL; historical records do not establish current membership.",
+    "Derived datasets and backups do not establish independent corroboration.",
+    "No budget ranking or public ODV page was regenerated from this database."
+  ],
+  "sources": [
+    {
+      "path": "/Users/joebertj/nep/2027.json",
+      "family": "NEP_DPWH",
+      "kind": "budget_office_observations",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/nep/DPWH per district.pdf",
+      "family": "dpwh_district_pdf",
+      "kind": "scanned_pdf",
+      "disposition": "reference_only",
+      "note": "Source of the existing transcription; no new OCR performed."
+    },
+    {
+      "path": "/Users/joebertj/nep/analysis_output/butuan_congress_location_edge_cases.json",
+      "family": "butuan_location_review",
+      "kind": "derived_location_role_review",
+      "disposition": "imported",
+      "note": "Source-specific scope review; does not establish district boundaries or adjust public allocations."
+    },
+    {
+      "path": "/Users/joebertj/nep/build_rcs_analysis.py",
+      "family": "legacy_rainfall_crosswalk",
+      "kind": "legacy_codes",
+      "disposition": "imported",
+      "note": "Rainfall P-codes are source-specific legacy codes, not asserted current PSGC identifiers."
+    },
+    {
+      "path": "/Users/joebertj/nep/hb10858_3rd_dpwh_projects.json",
+      "family": "HGAB_3rd_DPWH",
+      "kind": "budget_office_observations",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/city_barangays_mapping.json",
+      "family": "city_barangay_hierarchy",
+      "kind": "hierarchy",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/database/philippine_locations.json",
+      "family": "geo_derived",
+      "kind": "derived_geometry_hierarchy",
+      "disposition": "imported",
+      "note": "Existing derived city classifications are claims; bare names are not automatically classified as cities."
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/metropolitan-manila-cities.json",
+      "family": "metro_city_aliases",
+      "kind": "explicit_aliases",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/20th_congress_representatives.json",
+      "family": "20th_congress_roster",
+      "kind": "representative_roster",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/barmm_overrides.json",
+      "family": "manual_barmm_overrides",
+      "kind": "leg_mapping",
+      "disposition": "imported",
+      "note": "District boundaries and dates are source claims, not independently verified."
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/congressman-ranking.json",
+      "family": "derived_project_rankings",
+      "kind": "derived_project_matching",
+      "disposition": "reference_only",
+      "note": "Derived matches/rankings are not administrative boundary evidence."
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/congressmen_consolidated.json",
+      "family": "consolidated_representatives",
+      "kind": "historical_roster_and_coverage",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/districts.json",
+      "family": "compiled_districts",
+      "kind": "leg_mapping",
+      "disposition": "imported",
+      "note": "District boundaries and dates are source claims, not independently verified."
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/districts.json.pre-cities-backup",
+      "family": "compiled_districts",
+      "kind": "leg_mapping",
+      "disposition": "imported",
+      "note": "District boundaries and dates are source claims, not independently verified."
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/districts.json.wiki-backup",
+      "family": "compiled_districts",
+      "kind": "leg_mapping",
+      "disposition": "imported",
+      "note": "District boundaries and dates are source claims, not independently verified."
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/districts_generated.json",
+      "family": "election_generated",
+      "kind": "leg_mapping",
+      "disposition": "imported",
+      "note": "District boundaries and dates are source claims, not independently verified."
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/dpwh_annex_a5_district_cache.json",
+      "family": "derived_project_rankings",
+      "kind": "derived_project_matching",
+      "disposition": "reference_only",
+      "note": "Derived matches/rankings are not administrative boundary evidence."
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.autonomous-region-of-muslim-mindanao-armm.basilan.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.autonomous-region-of-muslim-mindanao-armm.lanao-del-sur.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.autonomous-region-of-muslim-mindanao-armm.maguindanao.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.autonomous-region-of-muslim-mindanao-armm.shariff-kabunsuan.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.autonomous-region-of-muslim-mindanao-armm.sulu.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.autonomous-region-of-muslim-mindanao-armm.tawi-tawi.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.bicol-region-region-v.albay.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.bicol-region-region-v.camarines-norte.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.bicol-region-region-v.camarines-sur.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.bicol-region-region-v.catanduanes.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.bicol-region-region-v.masbate.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.bicol-region-region-v.sorsogon.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.cagayan-valley-region-ii.batanes.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.cagayan-valley-region-ii.cagayan.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.cagayan-valley-region-ii.isabela.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.cagayan-valley-region-ii.isabela.cauayan-city.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.cagayan-valley-region-ii.nueva-vizcaya.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.cagayan-valley-region-ii.quirino.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.calabarzon-region-iv-a.batangas.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.calabarzon-region-iv-a.cavite.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.calabarzon-region-iv-a.laguna.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.calabarzon-region-iv-a.quezon.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.calabarzon-region-iv-a.rizal.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.caraga-region-xiii.agusan-del-norte.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.caraga-region-xiii.agusan-del-sur.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.caraga-region-xiii.dinagat-islands.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.caraga-region-xiii.surigao-del-norte.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.caraga-region-xiii.surigao-del-sur.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.central-luzon-region-iii.aurora.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.central-luzon-region-iii.bataan.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.central-luzon-region-iii.bulacan.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.central-luzon-region-iii.nueva-ecija.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.central-luzon-region-iii.pampanga.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.central-luzon-region-iii.tarlac.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.central-luzon-region-iii.zambales.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.central-visayas-region-vii.bohol.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.central-visayas-region-vii.cebu.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.central-visayas-region-vii.negros-oriental.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.central-visayas-region-vii.siquijor.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.cordillera-administrative-region-car.abra.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.cordillera-administrative-region-car.apayao.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.cordillera-administrative-region-car.benguet.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.cordillera-administrative-region-car.ifugao.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.cordillera-administrative-region-car.kalinga.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.cordillera-administrative-region-car.mountain-province.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.davao-region-region-xi.compostela-valley.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.davao-region-region-xi.davao-del-norte.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.davao-region-region-xi.davao-del-sur.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.davao-region-region-xi.davao-oriental.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.eastern-visayas-region-viii.biliran.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.eastern-visayas-region-viii.eastern-samar.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.eastern-visayas-region-viii.leyte.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.eastern-visayas-region-viii.northern-samar.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.eastern-visayas-region-viii.samar.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.eastern-visayas-region-viii.samar.catbalogan-city.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.eastern-visayas-region-viii.southern-leyte.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.ilocos-region-region-i.ilocos-norte.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.ilocos-region-region-i.ilocos-sur.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.ilocos-region-region-i.la-union.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.ilocos-region-region-i.pangasinan.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.mimaropa-region-iv-b.marinduque.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.mimaropa-region-iv-b.occidental-mindoro.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.mimaropa-region-iv-b.oriental-mindoro.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.mimaropa-region-iv-b.palawan.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.mimaropa-region-iv-b.romblon.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.national-capital-region.metropolitan-manila.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.northern-mindanao-region-x.bukidnon.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.northern-mindanao-region-x.camiguin.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.northern-mindanao-region-x.lanao-del-norte.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.northern-mindanao-region-x.lanao-del-norte.iligan-city.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.northern-mindanao-region-x.misamis-occidental.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.northern-mindanao-region-x.misamis-oriental.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.soccsksargen-region-xii.north-cotabato.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.soccsksargen-region-xii.sarangani.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.soccsksargen-region-xii.south-cotabato.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.soccsksargen-region-xii.sultan-kudarat.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.western-visayas-region-vi.aklan.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.western-visayas-region-vi.antique.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.western-visayas-region-vi.capiz.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.western-visayas-region-vi.guimaras.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.western-visayas-region-vi.iloilo.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.western-visayas-region-vi.negros-occidental.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.zamboanga-peninsula-region-ix.zamboanga-del-norte.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.zamboanga-peninsula-region-ix.zamboanga-del-norte.dipolog-city.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.zamboanga-peninsula-region-ix.zamboanga-del-sur.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/ph.zamboanga-peninsula-region-ix.zamboanga-sibugay.any.any.geo.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/philippines-provinces.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/philippines-regions.json",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/philippines_regions.geojson",
+      "family": "local_geojson",
+      "kind": "geometry_metadata",
+      "disposition": "imported",
+      "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/province_cities_mapping.json",
+      "family": "province_city_cache",
+      "kind": "derived_hierarchy",
+      "disposition": "imported",
+      "note": "Some lists contain municipality names; the file name is not evidence of city status."
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/province_cities_mapping_geojson.json",
+      "family": "province_city_cache",
+      "kind": "derived_hierarchy",
+      "disposition": "imported",
+      "note": "Some lists contain municipality names; the file name is not evidence of city status."
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/top-200-congressmen.json",
+      "family": "derived_project_rankings",
+      "kind": "derived_project_matching",
+      "disposition": "reference_only",
+      "note": "Derived matches/rankings are not administrative boundary evidence."
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/unified_locations.duckdb",
+      "family": "unified_locations",
+      "kind": "duplicate_serialization",
+      "disposition": "not_reimported",
+      "note": "JSON representation imported; these serializations are not independent evidence."
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/unified_locations.json",
+      "family": "unified_locations",
+      "kind": "derived_hierarchy_and_districts",
+      "disposition": "imported",
+      "note": "Derived merged dataset; not independent confirmation of its constituent maps."
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/unified_locations.parquet",
+      "family": "unified_locations",
+      "kind": "duplicate_serialization",
+      "disposition": "not_reimported",
+      "note": "JSON representation imported; these serializations are not independent evidence."
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/nep-preview/congress.html",
+      "family": "dpwh_district_pdf_transcription",
+      "kind": "deo_leg_crosswalk",
+      "disposition": "imported",
+      "note": "Existing literal JavaScript transcription; fiscal year, stage and source pages unknown. Not project reallocation."
+    }
+  ]
+}

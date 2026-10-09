@@ -1,0 +1,86 @@
+{
+  "officeBreakdown": [
+    {
+      "label": "Central Office",
+      "insertionCount": 874,
+      "insertionPesos": 94398237000,
+      "removalCount": 0,
+      "removalPesos": 0
+    },
+    {
+      "label": "DEOs",
+      "insertionCount": 3732,
+      "insertionPesos": 52354145000,
+      "removalCount": 852,
+      "removalPesos": 60064038000
+    },
+    {
+      "label": "Regional Offices",
+      "insertionCount": 0,
+      "insertionPesos": 0,
+      "removalCount": 8,
+      "removalPesos": 678794000
+    },
+    {
+      "label": "Other / unspecified",
+      "insertionCount": 4,
+      "insertionPesos": 806910000,
+      "removalCount": 0,
+      "removalPesos": 0
+    }
+  ],
+  "programBreakdown": [
+    {
+      "label": "Asset Preservation",
+      "insertionCount": 382,
+      "insertionPesos": 21520227000,
+      "removalCount": 164,
+      "removalPesos": 9076886000
+    },
+    {
+      "label": "Network Development",
+      "insertionCount": 232,
+      "insertionPesos": 18782271000,
+      "removalCount": 149,
+      "removalPesos": 14657151000
+    },
+    {
+      "label": "Bridges",
+      "insertionCount": 54,
+      "insertionPesos": 2705504000,
+      "removalCount": 37,
+      "removalPesos": 2333761000
+    },
+    {
+      "label": "Flood Management",
+      "insertionCount": 382,
+      "insertionPesos": 24230750000,
+      "removalCount": 211,
+      "removalPesos": 17074831000
+    },
+    {
+      "label": "CSSP",
+      "insertionCount": 3531,
+      "insertionPesos": 78181983000,
+      "removalCount": 282,
+      "removalPesos": 16545703000
+    },
+    {
+      "label": "Local Program",
+      "insertionCount": 25,
+      "insertionPesos": 1331647000,
+      "removalCount": 17,
+      "removalPesos": 1054500000
+    },
+    {
+      "label": "FAPs",
+      "insertionCount": 4,
+      "insertionPesos": 806910000,
+      "removalCount": 0,
+      "removalPesos": 0
+    }
+  ],
+  "insertionCount": 4610,
+  "removalCount": 860,
+  "method": "Domestic HGAB-only candidates plus separately reviewed unpaired FAP records; reverse-screened NEP-only removal candidates. Amounts use HGAB for insertions and original NEP for removals."
+}

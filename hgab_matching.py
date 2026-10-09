@@ -17,6 +17,12 @@ UNMATCHED='No plausible NEP title counterpart; review candidate'
 AMBIGUOUS='Multiple or already paired NEP counterparts; review scope'
 
 
+def is_fap(row):
+    """Use the printed schedule classification, not a loan-name guess."""
+    return (row.get('allocationKind') == 'foreign-assisted project'
+            or normalize(row.get('pap3')) == 'foreign assisted projects fap')
+
+
 def normalize(value):
     value=unicodedata.normalize('NFKD',str(value or '')).encode('ascii','ignore').decode().lower()
     value=re.sub(r'\bk\s*(\d+)\s*\+',r'\1+',value)

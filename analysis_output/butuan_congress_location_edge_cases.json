@@ -1,0 +1,3590 @@
+{
+  "summary": {
+    "source": "FY2027 DPWH HGAB 3rd Reading",
+    "previousCommit": "a99f5326e",
+    "previousStrict": {
+      "district": "Butuan · Lone District",
+      "representative": "Jose Aquino II",
+      "lineItems": 44,
+      "totalPesos": 4857422000
+    },
+    "currentStrict": {
+      "district": "Butuan · Lone District",
+      "representative": "Jose Aquino II",
+      "lineItems": 99,
+      "totalPesos": 5428982000
+    },
+    "publishedNetLineChange": 55,
+    "publishedNetPesosChange": 571560000,
+    "legacyMatcherOnCurrentInputs": {
+      "currentlyAcceptedRowsNotSelectedByLegacyMatcher": 65,
+      "allocationPesos": 1567958000,
+      "limitation": "Reconstructed decisions use current input files, not archived source files from the prior release. They do not establish historical per-row additions."
+    },
+    "interpretation": "These are changes in automated attribution, not budget-stage increases. The rank also rises when other districts lose false or unresolved matches.",
+    "sourceScopeWarning": "A single-seat city suffix does not establish that a route-wide project is entirely inside the city. No adjusted total is asserted by this investigation."
+  },
+  "edgeCases": [
+    {
+      "id": "HB10858-3-0447-006385",
+      "projectName": "Construction of Daang Maharlika Alternate Route (Jct. BCIR-Baan Tiniwisan-NRJ Daang Maharlika, RTR), Butuan City",
+      "amountPesos": 1200000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 447,
+      "region": "Region XIII",
+      "office": "Central Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Construction of Daang Maharlika Alternate Route (Jct. BCIR-Baan Tiniwisan-NRJ Daang Maharlika, RTR), Butuan City\t1200000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Construction of Daang Maharlika Alternate Route (Jct. BCIR-Baan Tiniwisan-NRJ Daang Maharlika, RTR), Butuan City",
+      "nepAmountPesos": "1200000000",
+      "nepSourcePage": "454",
+      "amountDeltaPesos": "0",
+      "edgeCase": "Unresolved route-wide scope",
+      "assessment": "RTR was confirmed by the user as Remedios T. Romualdez in this title. The user requested keeping the project unresolved pending segment evidence; no chainage or budget split establishes the entire allocation belongs to Butuan."
+    },
+    {
+      "id": "HB10858-3-0447-006383",
+      "projectName": "Butuan City - Gingoog City Alternate Route, Sta. 0+000 - Sta. 1+714 , Butuan City",
+      "amountPesos": 350000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 447,
+      "region": "Region XIII",
+      "office": "Central Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Butuan City - Gingoog City Alternate Route, Sta. 0+000 - Sta. 1+714 , Butuan City\t350000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Butuan City - Gingoog City Alternate Route, Sta. 0+000 - Sta. 1+714 , Butuan City",
+      "nepAmountPesos": "350000000",
+      "nepSourcePage": "454",
+      "amountDeltaPesos": "0",
+      "edgeCase": "Cross-city route with a stated segment",
+      "assessment": "Gingoog City is a separate city candidate in Misamis Oriental. The source specifies a chainage and ends in Butuan City; the road name alone does not locate that chainage across the boundary. Keep the city-qualified segment and route reference distinct; geometry or a project schedule is needed to independently verify the segment."
+    },
+    {
+      "id": "HB10858-3-0447-006392",
+      "projectName": "Construction of NRJ Daang Maharlika, Sibagat (Sitio Eureka, Tabon-Tabon) - Bugsukan - Antongalon Road, Barangay Bugsukan - Barangay Antongalon Section, Butuan City",
+      "amountPesos": 250000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 447,
+      "region": "Region XIII",
+      "office": "Central Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Construction of NRJ Daang Maharlika, Sibagat (Sitio Eureka, Tabon-Tabon) - Bugsukan - Antongalon Road, Barangay Bugsukan - Barangay Antongalon Section, Butuan City\t250000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Construction of NRJ Daang Maharlika, Sibagat (Sitio Eureka, Tabon-Tabon) - Bugsukan - Antongalon Road, Brgy. Bugsukan - Brgy. Antongalon Section, Butuan City",
+      "nepAmountPesos": "250000000",
+      "nepSourcePage": "454",
+      "amountDeltaPesos": "0",
+      "edgeCase": "External route reference and local named section",
+      "assessment": "Sibagat is a municipality/locality candidate in Agusan del Sur. Bugsukan and Antongalon have source claims as barangays under Butuan. The explicitly named section provides stronger local scope evidence than the route name; Bugsukan also occurs under Cantilan, Surigao del Sur, so it must be city-qualified."
+    },
+    {
+      "id": "HB10858-3-0447-006384",
+      "projectName": "Construction of Babag-Lumbocan road leading to proposed Butuan Logistical Seaport, Babag-Lumbocan Section, Butuan City",
+      "amountPesos": 350000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 447,
+      "region": "Region XIII",
+      "office": "Central Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Construction of Babag-Lumbocan road leading to proposed Butuan Logistical Seaport, Babag-Lumbocan Section, Butuan City\t350000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Construction of Babag-Lumbocan Road leading to Proposed Butuan Logistical Seaport, Babag-Lumbocan Section, Butuan City",
+      "nepAmountPesos": "350000000",
+      "nepSourcePage": "454",
+      "amountDeltaPesos": "0",
+      "edgeCase": "Shared barangay names requiring city qualification",
+      "assessment": "Babag occurs under several municipalities/cities. Babag and Lumbocan are also explicitly listed under Butuan in the local hierarchy. A barangay token alone cannot establish the location."
+    },
+    {
+      "id": "HB10858-3-0228-002167",
+      "projectName": "Butuan City By-pass Road (Lemon-NRJ-Antongalon-Pianing Section) (Arc Bridge), Butuan City, Agusan del Norte",
+      "amountPesos": 245000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 228,
+      "region": "Region XIII",
+      "office": "Central Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Butuan City By-pass Road (Lemon-NRJ-Antongalon-Pianing Section) (Arc Bridge), Butuan City, Agusan del Norte\t245000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Butuan City By-pass Road (Lemon-NRJ-Antongalon-Pianing Section) (Arc Bridge), Butuan City, Agusan del Norte",
+      "nepAmountPesos": "245000000",
+      "nepSourcePage": "289",
+      "amountDeltaPesos": "0",
+      "edgeCase": "Geographic province versus LEG jurisdiction",
+      "assessment": "Butuan City, Agusan del Norte is a geographic chain. It does not make Butuan part of the province LEG district. The roster lists a separate Butuan lone seat, while older local maps retain differing provincial district claims."
+    }
+  ],
+  "exactDatabaseCandidates": {
+    "Butuan City": [
+      {
+        "id": "7111872262d37457539803fe725f5576",
+        "name": "Butuan",
+        "level": "city",
+        "path": "Philippines > AGUSAN DEL NORTE > Butuan"
+      }
+    ],
+    "RTR": [],
+    "Sibagat": [
+      {
+        "id": "9060ac091a3cc9634502c5fe00c86101",
+        "name": "SIBAGAT",
+        "level": "locality",
+        "path": "Philippines > AGUSAN DEL SUR > SIBAGAT"
+      },
+      {
+        "id": "d5abd574a3f3b62cc0d73ea23228a48f",
+        "name": "Sibagat",
+        "level": "municipality",
+        "path": "Philippines > AGUSAN DEL SUR > Sibagat"
+      }
+    ],
+    "Gingoog City": [
+      {
+        "id": "7c2f4de686c68f5796fccd03b8d94273",
+        "name": "GINGOOG",
+        "level": "city",
+        "path": "Philippines > MISAMIS ORIENTAL > GINGOOG"
+      }
+    ],
+    "Babag": [
+      {
+        "id": "874c6cb9c981a04378d52218d090e7b5",
+        "name": "Babag",
+        "level": "barangay",
+        "path": "Philippines > DAVAO DE ORO > MONKAYO > Babag"
+      },
+      {
+        "id": "8d1a6e33809ef2484f0daa8fbaac9932",
+        "name": "Babag",
+        "level": "barangay",
+        "path": "Philippines > CITY OF CEBU (CAPITAL) > CEBU (Capital) > Babag"
+      },
+      {
+        "id": "81ced7c4b23717d20cd76b6d88d402b8",
+        "name": "Babag",
+        "level": "barangay",
+        "path": "Philippines > CITY OF LAPU-LAPU > LAPU-LAPU (OPON) > Babag"
+      },
+      {
+        "id": "3f1ab6212a58c51d8a1de36a04dbb939",
+        "name": "Babag",
+        "level": "barangay",
+        "path": "Philippines > BOHOL > DAGOHOY > Babag"
+      },
+      {
+        "id": "bd5ec8f1c3d125f7c6c64536a5518f99",
+        "name": "Babag",
+        "level": "barangay",
+        "path": "Philippines > BASILAN > TABUAN-LASA > Babag"
+      },
+      {
+        "id": "f783d08f28666254e980fb901b03725c",
+        "name": "Babag",
+        "level": "barangay",
+        "path": "Philippines > AGUSAN DEL NORTE > BUTUAN (Capital) > Babag"
+      },
+      {
+        "id": "a5a5378a9d3a57ace0eb3f0e39394773",
+        "name": "Babag",
+        "level": "barangay",
+        "path": "Philippines > AGUSAN DEL NORTE > Butuan > Babag"
+      },
+      {
+        "id": "6c5249fe81a6bd90ead5b2a90fbc1a2a",
+        "name": "Babag",
+        "level": "barangay",
+        "path": "Philippines > CEBU > Cebu > Babag"
+      },
+      {
+        "id": "e7b7728ad2bcd0c671a338e5806164ef",
+        "name": "Babag",
+        "level": "barangay",
+        "path": "Philippines > CEBU > Lapu Lapu > Babag"
+      }
+    ],
+    "Lumbocan": [
+      {
+        "id": "c106345ea8b38bd8f114e6ab65699533",
+        "name": "Lumbocan",
+        "level": "barangay",
+        "path": "Philippines > AGUSAN DEL NORTE > BUTUAN (Capital) > Lumbocan"
+      },
+      {
+        "id": "d6503cc03ae372ab0950962fb6086b02",
+        "name": "Lumbocan",
+        "level": "barangay",
+        "path": "Philippines > AGUSAN DEL NORTE > Butuan > Lumbocan"
+      }
+    ],
+    "Bugsukan": [
+      {
+        "id": "7cbd2e119843568bc0d3c4fc0fa54850",
+        "name": "Bugsukan",
+        "level": "barangay",
+        "path": "Philippines > SURIGAO DEL SUR > CANTILAN > Bugsukan"
+      },
+      {
+        "id": "7c6d40ff00e26a945e15f01dfd859a9f",
+        "name": "Bugsukan",
+        "level": "barangay",
+        "path": "Philippines > AGUSAN DEL NORTE > BUTUAN (Capital) > Bugsukan"
+      },
+      {
+        "id": "51bf17b0f9a8c697a5f0cae4c44a9481",
+        "name": "Bugsukan",
+        "level": "barangay",
+        "path": "Philippines > AGUSAN DEL NORTE > Butuan > Bugsukan"
+      }
+    ],
+    "Antongalon": [
+      {
+        "id": "ba3374b316336e4cf7ee722749b89825",
+        "name": "Antongalon",
+        "level": "barangay",
+        "path": "Philippines > AGUSAN DEL NORTE > BUTUAN (Capital) > Antongalon"
+      },
+      {
+        "id": "5d049c37762c7a338ac1ddc90972ba48",
+        "name": "Antongalon",
+        "level": "barangay",
+        "path": "Philippines > AGUSAN DEL NORTE > Butuan > Antongalon"
+      }
+    ]
+  },
+  "acceptedProjects": [
+    {
+      "id": "HB10858-3-0447-006385",
+      "projectName": "Construction of Daang Maharlika Alternate Route (Jct. BCIR-Baan Tiniwisan-NRJ Daang Maharlika, RTR), Butuan City",
+      "amountPesos": 1200000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 447,
+      "region": "Region XIII",
+      "office": "Central Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Construction of Daang Maharlika Alternate Route (Jct. BCIR-Baan Tiniwisan-NRJ Daang Maharlika, RTR), Butuan City\t1200000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Construction of Daang Maharlika Alternate Route (Jct. BCIR-Baan Tiniwisan-NRJ Daang Maharlika, RTR), Butuan City",
+      "nepAmountPesos": "1200000000",
+      "nepSourcePage": "454",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0446-006376",
+      "projectName": "Butuan City - Agusan del Norte Logistical Highway, Sta. 14+780 - Sta. 15+934.3, Sta. Sta. 16+144.3 - Sta. 17+000, Masao Section, Butuan City",
+      "amountPesos": 400000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 446,
+      "region": "Region XIII",
+      "office": "Central Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Butuan City - Agusan del Norte Logistical Highway, Sta. 14+780 - Sta. 15+934.3, Sta. Sta. 16+144.3 - Sta. 17+000, Masao Section, Butuan City\t400000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Butuan City - Agusan del Norte Logistical Highway, Sta. 14+780 - Sta. 15+934.3, Sta. Sta. 16+144.3 - Sta. 17+000, Masao Section, Butuan City",
+      "nepAmountPesos": "400000000",
+      "nepSourcePage": "454",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0447-006383",
+      "projectName": "Butuan City - Gingoog City Alternate Route, Sta. 0+000 - Sta. 1+714 , Butuan City",
+      "amountPesos": 350000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 447,
+      "region": "Region XIII",
+      "office": "Central Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Butuan City - Gingoog City Alternate Route, Sta. 0+000 - Sta. 1+714 , Butuan City\t350000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Butuan City - Gingoog City Alternate Route, Sta. 0+000 - Sta. 1+714 , Butuan City",
+      "nepAmountPesos": "350000000",
+      "nepSourcePage": "454",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0447-006384",
+      "projectName": "Construction of Babag-Lumbocan road leading to proposed Butuan Logistical Seaport, Babag-Lumbocan Section, Butuan City",
+      "amountPesos": 350000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 447,
+      "region": "Region XIII",
+      "office": "Central Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Construction of Babag-Lumbocan road leading to proposed Butuan Logistical Seaport, Babag-Lumbocan Section, Butuan City\t350000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Construction of Babag-Lumbocan Road leading to Proposed Butuan Logistical Seaport, Babag-Lumbocan Section, Butuan City",
+      "nepAmountPesos": "350000000",
+      "nepSourcePage": "454",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0228-002168",
+      "projectName": "Butuan City West Diversion Road, Butuan City",
+      "amountPesos": 300000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 228,
+      "region": "Region XIII",
+      "office": "Central Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Butuan City West Diversion Road, Butuan City\t300000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Butuan City West Diversion Road, Butuan City",
+      "nepAmountPesos": "300000000",
+      "nepSourcePage": "289",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0375-004934",
+      "projectName": "Construction of Butuan City Water System, Main Bypass Pipeline , (Barangay Villa Kanangga - Barangay Bancasi Section ), Butuan City",
+      "amountPesos": 300000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 375,
+      "region": "Region XIII",
+      "office": "Central Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Construction of Butuan City Water System, Main Bypass Pipeline , (Barangay Villa Kanangga - Barangay Bancasi Section ), Butuan City\t300000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Construction of Butuan City Water System, Main Bypass Pipeline , (Barangay Villa Kanangga - Barangay Bancasi Section ), Butuan City",
+      "nepAmountPesos": "300000000",
+      "nepSourcePage": "405",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0375-004933",
+      "projectName": "Construction of Butuan City Water System, Main Bypass Pipeline , (Barangay Mahay - Barangay Villa Kanangga Section ), Butuan City",
+      "amountPesos": 250000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 375,
+      "region": "Region XIII",
+      "office": "Central Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Construction of Butuan City Water System, Main Bypass Pipeline , (Barangay Mahay - Barangay Villa Kanangga Section ), Butuan City\t250000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Construction of Butuan City Water System, Main Bypass Pipeline , (Barangay Mahay - Barangay Villa Kanangga Section ), Butuan City",
+      "nepAmountPesos": "250000000",
+      "nepSourcePage": "404",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0447-006392",
+      "projectName": "Construction of NRJ Daang Maharlika, Sibagat (Sitio Eureka, Tabon-Tabon) - Bugsukan - Antongalon Road, Barangay Bugsukan - Barangay Antongalon Section, Butuan City",
+      "amountPesos": 250000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 447,
+      "region": "Region XIII",
+      "office": "Central Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Construction of NRJ Daang Maharlika, Sibagat (Sitio Eureka, Tabon-Tabon) - Bugsukan - Antongalon Road, Barangay Bugsukan - Barangay Antongalon Section, Butuan City\t250000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Construction of NRJ Daang Maharlika, Sibagat (Sitio Eureka, Tabon-Tabon) - Bugsukan - Antongalon Road, Brgy. Bugsukan - Brgy. Antongalon Section, Butuan City",
+      "nepAmountPesos": "250000000",
+      "nepSourcePage": "454",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0228-002167",
+      "projectName": "Butuan City By-pass Road (Lemon-NRJ-Antongalon-Pianing Section) (Arc Bridge), Butuan City, Agusan del Norte",
+      "amountPesos": 245000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 228,
+      "region": "Region XIII",
+      "office": "Central Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Butuan City By-pass Road (Lemon-NRJ-Antongalon-Pianing Section) (Arc Bridge), Butuan City, Agusan del Norte\t245000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Butuan City By-pass Road (Lemon-NRJ-Antongalon-Pianing Section) (Arc Bridge), Butuan City, Agusan del Norte",
+      "nepAmountPesos": "245000000",
+      "nepSourcePage": "289",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0228-002166",
+      "projectName": "Butuan City - Agusan del Norte Logistical Highway, Sta. 2+140 - Sta. 2+646.1, Cabcabon Section, Butuan City",
+      "amountPesos": 201129000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 228,
+      "region": "Region XIII",
+      "office": "Central Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Butuan City - Agusan del Norte Logistical Highway, Sta. 2+140 - Sta. 2+646.1, Cabcabon Section, Butuan City\t201129000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Butuan City - Agusan del Norte Logistical Highway, Sta. 2+140 - Sta. 2+646.1, Cabcabon Section, Butuan City",
+      "nepAmountPesos": "201129000",
+      "nepSourcePage": "289",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0319-003877",
+      "projectName": "Construction Of Main Drainage Along R. Calo St., Montilla Street Jct. To Salvador Calo Jct., Butuan City",
+      "amountPesos": 150000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 319,
+      "region": "Region XIII",
+      "office": "Central Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Construction Of Main Drainage Along R. Calo St., Montilla Street Jct. To Salvador Calo Jct., Butuan City\t150000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Construction Of Main Drainage Along R. Calo St., Montilla Street Jct. To Salvador Calo Jct., Butuan City",
+      "nepAmountPesos": "300000000",
+      "nepSourcePage": "364",
+      "amountDeltaPesos": "-150000000"
+    },
+    {
+      "id": "HB10858-3-0319-003873",
+      "projectName": "Construction of Drainage Structure, DENR to NRJ Masao Port Road (Sta. 0+000 - Sta. 1+050), Barangay Ambago, Butuan City",
+      "amountPesos": 64450000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 319,
+      "region": "Region XIII",
+      "office": "Central Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Construction of Drainage Structure, DENR to NRJ Masao Port Road (Sta. 0+000 - Sta. 1+050), Barangay Ambago, Butuan City\t64450000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Construction of Drainage Structure, DENR to NRJ Masao Port Road (Sta. 0+000 - Sta. 1+050), Barangay Ambago, Butuan City",
+      "nepAmountPesos": "114450000",
+      "nepSourcePage": "364",
+      "amountDeltaPesos": "-50000000"
+    },
+    {
+      "id": "HB10858-3-0229-002170",
+      "projectName": "Daang Maharlika (Alternate Route) (NRJ - Mayor Democrito D. Plaza II Avenue - Las Nieves - Sibagat), Florida - Bilay Section, , Sta. 13+067 - Sta. 13+187.8, Sta. 24+119 - Sta. 24+548.31, Butuan City",
+      "amountPesos": 50000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 229,
+      "region": "Region XIII",
+      "office": "Central Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Daang Maharlika (Alternate Route) (NRJ - Mayor Democrito D. Plaza II Avenue - Las Nieves - Sibagat), Florida - Bilay Section, , Sta. 13+067 - Sta. 13+187.8, Sta. 24+119 - Sta. 24+548.31, Butuan City\t50000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Daang Maharlika (Alternate Route) (NRJ - Mayor Democrito D. Plaza II Avenue - Las Nieves - Sibagat), Florida - Bilay Section, , Sta. 13+067 - Sta. 13+187.8, Sta. 24+119 - Sta. 24+548.31, Butuan City",
+      "nepAmountPesos": "50000000",
+      "nepSourcePage": "289",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0229-002171",
+      "projectName": "Daang Maharlika (Alternate Route) NRJ Mayor Democrito D. Plaza II Avenue - Las Nieves - Sibagat), Sta. 13+067 - Sta. 13+097.77, Butuan City",
+      "amountPesos": 50000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 229,
+      "region": "Region XIII",
+      "office": "Central Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Daang Maharlika (Alternate Route) NRJ Mayor Democrito D. Plaza II Avenue - Las Nieves - Sibagat), Sta. 13+067 - Sta. 13+097.77, Butuan City\t50000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Daang Maharlika (Alternate Route) NRJ Mayor Democrito D. Plaza II Avenue - Las Nieves - Sibagat), Sta. 13+067 - Sta. 13+097.77, Butuan City",
+      "nepAmountPesos": "50000000",
+      "nepSourcePage": "289",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0229-002176",
+      "projectName": "NRJ Daang Maharlika (Taguibo Section) - Masao Port, Maug-Lumbocan Section, Sta. 8+866.2 - Sta. 9+057.73, Butuan City",
+      "amountPesos": 50000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 229,
+      "region": "Region XIII",
+      "office": "Central Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "NRJ Daang Maharlika (Taguibo Section) - Masao Port, Maug-Lumbocan Section, Sta. 8+866.2 - Sta. 9+057.73, Butuan City\t50000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "NRJ Daang Maharlika (Taguibo Section) - Masao Port, Maug-Lumbocan Section, Sta. 8+866.2 - Sta. 9+057.73, Butuan City",
+      "nepAmountPesos": "50000000",
+      "nepSourcePage": "289",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0233-002249",
+      "projectName": "Radial Road (NRJ BCIR-NRJ Mayor Democrito D. Plaza II Ave.), (Mahay - Baan) (Sta. 0+289 - Sta. 0+955.67), Butuan City",
+      "amountPesos": 40000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 233,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Radial Road (NRJ BCIR-NRJ Mayor Democrito D. Plaza II Ave.), (Mahay - Baan) (Sta. 0+289 - Sta. 0+955.67), Butuan City\t40000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Radial Road (NRJ BCIR-NRJ Mayor Democrito D. Plaza II Ave.), (Mahay - Baan) (Sta. 0+289 - Sta. 0+955.67), Butuan City",
+      "nepAmountPesos": "50000000",
+      "nepSourcePage": "293",
+      "amountDeltaPesos": "-10000000"
+    },
+    {
+      "id": "HB10858-3-0363-004729",
+      "projectName": "Construction of Main Drainage along Emilia Compound - JCT Masao Port Rd. (Sta. 0+000 -Sta. 0+380), Holy Redeemer Poblacion, Butuan City",
+      "amountPesos": 40000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 363,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Construction of Main Drainage along Emilia Compound - JCT Masao Port Rd. (Sta. 0+000 -Sta. 0+380), Holy Redeemer Poblacion, Butuan City\t40000000",
+      "nepComparison": "Plausible NEP title counterpart; review scope",
+      "nepTitle": "Construction of Main Drainage along Emilia Compound - JCT Masao Port Rd. (Sta. 0+000 -Sta. 0+380), Brgy Holy Redeemer Poblacion, Butuan City",
+      "nepAmountPesos": "50000000",
+      "nepSourcePage": "393",
+      "amountDeltaPesos": "-10000000"
+    },
+    {
+      "id": "HB10858-3-0363-004730",
+      "projectName": "Construction of Main Drainage Canal, NRJ BCIR to Provincial Hospital to LADP (Sta. 0+000 -Sta. 0+380), Barangay Libertad, Butuan City",
+      "amountPesos": 40000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 363,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Construction of Main Drainage Canal, NRJ BCIR to Provincial Hospital to LADP (Sta. 0+000 -Sta. 0+380), Barangay Libertad, Butuan City\t40000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Construction of Main Drainage Canal, NRJ BCIR to Provincial Hospital to LADP (Sta. 0+000 -Sta. 0+380), Barangay Libertad, Butuan City",
+      "nepAmountPesos": "50000000",
+      "nepSourcePage": "393",
+      "amountDeltaPesos": "-10000000"
+    },
+    {
+      "id": "HB10858-3-0363-004731",
+      "projectName": "Construction of Main Drainage Canal, NRJ BCIR to Damayan Creek (Dotties Place Section) (Sta. 0+000 -Sta. 0+380), Barangay Bayanihan, Butuan City, Agusan del Norte",
+      "amountPesos": 40000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 363,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Construction of Main Drainage Canal, NRJ BCIR to Damayan Creek (Dotties Place Section) (Sta. 0+000 -Sta. 0+380), Barangay Bayanihan, Butuan City, Agusan del Norte\t40000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Construction of Main Drainage Canal, NRJ BCIR to Damayan Creek (Dotties Place Section) (Sta. 0+000 -Sta. 0+380), Barangay Bayanihan, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "50000000",
+      "nepSourcePage": "393",
+      "amountDeltaPesos": "-10000000"
+    },
+    {
+      "id": "HB10858-3-0363-004732",
+      "projectName": "Construction of Main Drainage Canal, NRJ BCIR to Damayan Creek (Hidalgo Village Section) (Sta. 0+000 -Sta. 0+380), Libertad, Butuan City, Agusan del Norte",
+      "amountPesos": 40000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 363,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Construction of Main Drainage Canal, NRJ BCIR to Damayan Creek (Hidalgo Village Section) (Sta. 0+000 -Sta. 0+380), Libertad, Butuan City, Agusan del Norte\t40000000",
+      "nepComparison": "Plausible NEP title counterpart; review scope",
+      "nepTitle": "Construction of Main Drainage Canal, NRJ BCIR to Damayan Creek (Hidalgo Village Section) (Sta. 0+000 -Sta. 0+380), Brgy Libertad, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "50000000",
+      "nepSourcePage": "393",
+      "amountDeltaPesos": "-10000000"
+    },
+    {
+      "id": "HB10858-3-0363-004733",
+      "projectName": "Construction of Main Drainage Canal, NRJ BCIR to LADP Creek (Butuan Doctors Hospital Section) (Sta. 0+000 -Sta. 0+380), Barangay Libertad, Butuan City, Agusan del Norte",
+      "amountPesos": 40000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 363,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Construction of Main Drainage Canal, NRJ BCIR to LADP Creek (Butuan Doctors Hospital Section) (Sta. 0+000 -Sta. 0+380), Barangay Libertad, Butuan City, Agusan del Norte\t40000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Construction of Main Drainage Canal, NRJ BCIR to LADP Creek (Butuan Doctors Hospital Section) (Sta. 0+000 -Sta. 0+380), Barangay Libertad, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "50000000",
+      "nepSourcePage": "393",
+      "amountDeltaPesos": "-10000000"
+    },
+    {
+      "id": "HB10858-3-0233-002248",
+      "projectName": "Radial Road (NRJ BCIR - NRJ Mayor Democrito D. Plaza II Ave.), (Libertad-Bonbon Section) (Sta. 0+000 - Sta. 0+481, Sta. 1+940 - Sta. 1+960, Sta. 2+000 - Sta. 2+122, Sta. 2+230 - Sta. 2+637), Butuan City",
+      "amountPesos": 35000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 233,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Radial Road (NRJ BCIR - NRJ Mayor Democrito D. Plaza II Ave.), (Libertad-Bonbon Section) (Sta. 0+000 - Sta. 0+481, Sta. 1+940 - Sta. 1+960, Sta. 2+000 - Sta. 2+122, Sta. 2+230 - Sta. 2+637), Butuan City\t35000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Radial Road (NRJ BCIR - NRJ Mayor Democrito D. Plaza II Ave.), (Libertad-Bonbon Section) (Sta. 0+000 - Sta. 0+481, Sta. 1+940 - Sta. 1+960, Sta. 2+000 - Sta. 2+122, Sta. 2+230 - Sta. 2+637), Butuan City",
+      "nepAmountPesos": "45000000",
+      "nepSourcePage": "293",
+      "amountDeltaPesos": "-10000000"
+    },
+    {
+      "id": "HB10858-3-0627-010189",
+      "projectName": "Construction of Road at Farmers Producers Cooperative Nursery Demo and Integrated Farm (Sta. 4+652 - Sta. 8+652), Barangay Tungao, Butuan City",
+      "amountPesos": 35000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 627,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Construction of Road at Farmers Producers Cooperative Nursery Demo and Integrated Farm (Sta. 4+652 - Sta. 8+652), Barangay Tungao, Butuan City\t35000000",
+      "nepComparison": "No plausible NEP title counterpart; review candidate",
+      "nepTitle": "Construction of Road at Purok 8, Upper Puerto, Barangay Puerto, Cagayan de Oro City",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "549",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0917-015867",
+      "projectName": "Construction of Multi-Purpose building, Barangay San Vicente, Butuan City",
+      "amountPesos": 32000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 917,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Construction of Multi-Purpose building, Barangay San Vicente, Butuan City\t32000000",
+      "nepComparison": "Multiple or already paired NEP counterparts; review scope",
+      "nepTitle": "Construction of Multi-Purpose Building, Barangay San Vicente, Iguig, Cagayan",
+      "nepAmountPesos": "5000000",
+      "nepSourcePage": "588",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0917-015865",
+      "projectName": "Construction of Multi-Purpose Building (PAWS building), Barangay Baan Km. 3, Butuan City",
+      "amountPesos": 30000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 917,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Construction of Multi-Purpose Building (PAWS building), Barangay Baan Km. 3, Butuan City\t30000000",
+      "nepComparison": "No plausible NEP title counterpart; review candidate",
+      "nepTitle": "Construction of Multi-Purpose Building (Senior Citizen Building), Barangay Florida, Butuan, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0916-015844",
+      "projectName": "Construction of 2 units Multi Purpose Building and other facility, Kinamlutan Elementary School, Barangay Kinamlutan, Butuan City",
+      "amountPesos": 28500000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 916,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Construction of 2 units Multi Purpose Building and other facility, Kinamlutan Elementary School, Barangay Kinamlutan, Butuan City\t28500000",
+      "nepComparison": "No plausible NEP title counterpart; review candidate",
+      "nepTitle": "Construction of Multi-Purpose Building (Materials Recovery Facility) at Barangay Indahag, Cagayan de Oro City",
+      "nepAmountPesos": "5000000",
+      "nepSourcePage": "657",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0917-015866",
+      "projectName": "Completion of Multi-Purpose Building (Convention Center), Barangay Limaha, Butuan City",
+      "amountPesos": 26000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 917,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Completion of Multi-Purpose Building (Convention Center), Barangay Limaha, Butuan City\t26000000",
+      "nepComparison": "No plausible NEP title counterpart; review candidate",
+      "nepTitle": "Construction (Completion) of Multi-Purpose Building (Covered Court), Barangay Mahogany, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "7000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0915-015834",
+      "projectName": "Rehabilitation of Multi Purpose Building including facility at Agusan National High School, Butuan City",
+      "amountPesos": 25000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 915,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Rehabilitation of Multi Purpose Building including facility at Agusan National High School, Butuan City\t25000000",
+      "nepComparison": "No plausible NEP title counterpart; review candidate",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building, Barangay MJ Santos, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "673",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0233-002247",
+      "projectName": "Butuan City Bypass Road (Lemon-NRJ-Antongalon-Pianing Section) (Sta. 4+749.5 - Sta. 5+128.60), Butuan City",
+      "amountPesos": 20000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 233,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Butuan City Bypass Road (Lemon-NRJ-Antongalon-Pianing Section) (Sta. 4+749.5 - Sta. 5+128.60), Butuan City\t20000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Butuan City Bypass Road (Lemon-NRJ-Antongalon-Pianing Section) (Sta. 4+749.5 - Sta. 5+128.60), Butuan City",
+      "nepAmountPesos": "20000000",
+      "nepSourcePage": "293",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0916-015850",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Baan Km3, Butuan City, Agusan del Norte",
+      "amountPesos": 20000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 916,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Baan Km3, Butuan City, Agusan del Norte\t20000000",
+      "nepComparison": "Multiple or already paired NEP counterparts; review scope",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Bading, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0626-010186",
+      "projectName": "Construction of Road, CARBDP Levee Service Road, Barangay Maon to Barangay Pangabugan (Sta. 0 + 000.00 - Sta. 0 + 760.00), Butuan City, Agusan del Norte",
+      "amountPesos": 17480000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 626,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Construction of Road, CARBDP Levee Service Road, Barangay Maon to Barangay Pangabugan (Sta. 0 + 000.00 - Sta. 0 + 760.00), Butuan City, Agusan del Norte\t17480000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Construction of Road, CARBDP Levee Service Road, Barangay Maon to Barangay Pangabugan (Sta. 0 + 000.00 - Sta. 0 + 760.00), Butuan City, Agusan del Norte",
+      "nepAmountPesos": "17480000",
+      "nepSourcePage": "557",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0626-010187",
+      "projectName": "Construction of Road, Estipona Subdivision Road, Barangay Libertad (Sta. 0 + 000.00 - Sta. 0 + 715.00), Butuan City, Agusan del Norte",
+      "amountPesos": 16445000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 626,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Construction of Road, Estipona Subdivision Road, Barangay Libertad (Sta. 0 + 000.00 - Sta. 0 + 715.00), Butuan City, Agusan del Norte\t16445000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Construction of Road, Estipona Subdivision Road, Barangay Libertad (Sta. 0 + 000.00 - Sta. 0 + 715.00), Butuan City, Agusan del Norte",
+      "nepAmountPesos": "16445000",
+      "nepSourcePage": "557",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0915-015833",
+      "projectName": "Construction (Completion) of Multi-Purpose Building, 8.955947°, 125.605601°, Barangay Ampayon, Butuan City, Agusan del Norte",
+      "amountPesos": 16000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 915,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Construction (Completion) of Multi-Purpose Building, 8.955947°, 125.605601°, Barangay Ampayon, Butuan City, Agusan del Norte\t16000000",
+      "nepComparison": "No plausible NEP title counterpart; review candidate",
+      "nepTitle": "Construction (Completion) of Multi-Purpose Building (Covered Court), Barangay Mahogany, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "7000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0626-010184",
+      "projectName": "Construction of Road going to Chinese Cemetery, Barangay Bancasi (Sta. 0 + 000.00 - Sta. 0 + 458.00, Sta. 0 + 000.00 - Sta. 0 + 230.00), Butuan City, Agusan del Norte",
+      "amountPesos": 15824000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 626,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Construction of Road going to Chinese Cemetery, Barangay Bancasi (Sta. 0 + 000.00 - Sta. 0 + 458.00, Sta. 0 + 000.00 - Sta. 0 + 230.00), Butuan City, Agusan del Norte\t15824000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Construction of Road going to Chinese Cemetery, Barangay Bancasi (Sta. 0 + 000.00 - Sta. 0 + 458.00, Sta. 0 + 000.00 - Sta. 0 + 230.00), Butuan City, Agusan del Norte",
+      "nepAmountPesos": "15824000",
+      "nepSourcePage": "556",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0626-010180",
+      "projectName": "Construction of Road at Purok 9A, Barangay Libertad, Butuan City, Agusan del Norte",
+      "amountPesos": 15000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 626,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Construction of Road at Purok 9A, Barangay Libertad, Butuan City, Agusan del Norte\t15000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Construction of Road at Purok 9A, Barangay Libertad, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "15000000",
+      "nepSourcePage": "556",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0626-010182",
+      "projectName": "Concreting of Road, Sta. 0+000 - Sta. 0+525, Purok 17, Barangay Maguinda, Butuan City",
+      "amountPesos": 15000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 626,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Concreting of Road, Sta. 0+000 - Sta. 0+525, Purok 17, Barangay Maguinda, Butuan City\t15000000",
+      "nepComparison": "No plausible NEP title counterpart; review candidate",
+      "nepTitle": "Rehabilitation of Road, Sta. 0+000 - Sta. 0+414, Purok 3, Barangay Payahan, Calbayog City, Samar",
+      "nepAmountPesos": "12000000",
+      "nepSourcePage": "543",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0626-010183",
+      "projectName": "Concreting of Road, Sta. 0+000 - Sta. 0+525, Purok 6, Barangay De Oro, Butuan City",
+      "amountPesos": 15000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 626,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Concreting of Road, Sta. 0+000 - Sta. 0+525, Purok 6, Barangay De Oro, Butuan City\t15000000",
+      "nepComparison": "No plausible NEP title counterpart; review candidate",
+      "nepTitle": "Rehabilitation of Road, Sta. 0+000 - Sta. 0+414, Purok 3, Barangay Payahan, Calbayog City, Samar",
+      "nepAmountPesos": "12000000",
+      "nepSourcePage": "543",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0627-010191",
+      "projectName": "Construction Road Caraga State University, Barangay Ampayon, Butuan City",
+      "amountPesos": 15000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 627,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Construction Road Caraga State University, Barangay Ampayon, Butuan City\t15000000",
+      "nepComparison": "No plausible NEP title counterpart; review candidate",
+      "nepTitle": "Construction of Road at Purok 9A, Barangay Libertad, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "15000000",
+      "nepSourcePage": "556",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0915-015838",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Coverd Court), Barangay Los Angeles, Butuan City, Agusan Del Norte",
+      "amountPesos": 15000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 915,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Coverd Court), Barangay Los Angeles, Butuan City, Agusan Del Norte\t15000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Coverd Court), Barangay Los Angeles, Butuan City, Agusan Del Norte",
+      "nepAmountPesos": "15000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0916-015855",
+      "projectName": "Rehabilitation of Multi-Purpose Building, Barangay Basag, Butuan City, Agusan del Norte",
+      "amountPesos": 15000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 916,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building, Barangay Basag, Butuan City, Agusan del Norte\t15000000",
+      "nepComparison": "Multiple or already paired NEP counterparts; review scope",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building, Barangay MJ Santos, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "673",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0917-015862",
+      "projectName": "Construction of Multi-Purpose Building (Covered Court) at Purok 5, Barangay De Oro, Butuan City, Agusan del Norte",
+      "amountPesos": 15000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 917,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Construction of Multi-Purpose Building (Covered Court) at Purok 5, Barangay De Oro, Butuan City, Agusan del Norte\t15000000",
+      "nepComparison": "Multiple or already paired NEP counterparts; review scope",
+      "nepTitle": "Construction (Completion) of Multi-Purpose Building (Covered Court), Barangay Mahogany, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "7000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0917-015868",
+      "projectName": "Construction of Multi Purpose Building and other facility, Tud-ol Elementary School, Barangay Tungao, Butuan City",
+      "amountPesos": 15000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 917,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Construction of Multi Purpose Building and other facility, Tud-ol Elementary School, Barangay Tungao, Butuan City\t15000000",
+      "nepComparison": "No plausible NEP title counterpart; review candidate",
+      "nepTitle": "Construction of Multi-Purpose Building (Materials Recovery Facility) at Barangay Indahag, Cagayan de Oro City",
+      "nepAmountPesos": "5000000",
+      "nepSourcePage": "657",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0917-015869",
+      "projectName": "Construction of Multi Purpose Building and other facility, Danapa Elementary School, Barangay Tungao, Butuan City",
+      "amountPesos": 14000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 917,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Construction of Multi Purpose Building and other facility, Danapa Elementary School, Barangay Tungao, Butuan City\t14000000",
+      "nepComparison": "No plausible NEP title counterpart; review candidate",
+      "nepTitle": "Construction of Multi-Purpose Building (Materials Recovery Facility) at Barangay Indahag, Cagayan de Oro City",
+      "nepAmountPesos": "5000000",
+      "nepSourcePage": "657",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0917-015871",
+      "projectName": "Construction of Multi Purpose Building and other facility, Imelda Mar Elementary School, Barangay Manila de Bugabus, Butuan City",
+      "amountPesos": 14000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 917,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Construction of Multi Purpose Building and other facility, Imelda Mar Elementary School, Barangay Manila de Bugabus, Butuan City\t14000000",
+      "nepComparison": "No plausible NEP title counterpart; review candidate",
+      "nepTitle": "Construction of Multi-Purpose Building (Materials Recovery Facility) at Barangay Indahag, Cagayan de Oro City",
+      "nepAmountPesos": "5000000",
+      "nepSourcePage": "657",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0917-015872",
+      "projectName": "Construction of Multi Purpose Building and other facility, Dalingdingan Elementary School, BarangayPinamanculan, Butuan City",
+      "amountPesos": 14000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 917,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Construction of Multi Purpose Building and other facility, Dalingdingan Elementary School, BarangayPinamanculan, Butuan City\t14000000",
+      "nepComparison": "No plausible NEP title counterpart; review candidate",
+      "nepTitle": "Construction of Multi-Purpose Building (Materials Recovery Facility) at Barangay Indahag, Cagayan de Oro City",
+      "nepAmountPesos": "5000000",
+      "nepSourcePage": "657",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0917-015873",
+      "projectName": "Construction of Multi Purpose Building other facility, Kauswagan Elementary School, Barangay Tungao, Butuan City",
+      "amountPesos": 14000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 917,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Construction of Multi Purpose Building other facility, Kauswagan Elementary School, Barangay Tungao, Butuan City\t14000000",
+      "nepComparison": "No plausible NEP title counterpart; review candidate",
+      "nepTitle": "Construction of Multi-Purpose Building (Materials Recovery Facility) at Barangay Indahag, Cagayan de Oro City",
+      "nepAmountPesos": "5000000",
+      "nepSourcePage": "657",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0917-015874",
+      "projectName": "Construction of Multi Purpose Building and other facility, Santo Niño Elementary School, Barangay Santo Niño, Butuan City",
+      "amountPesos": 14000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 917,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Construction of Multi Purpose Building and other facility, Santo Niño Elementary School, Barangay Santo Niño, Butuan City\t14000000",
+      "nepComparison": "No plausible NEP title counterpart; review candidate",
+      "nepTitle": "Construction of Multi-Purpose Building (Covered Court), Barangay Santo Niño, Magallanes, Lanao del Norte",
+      "nepAmountPesos": "8000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0626-010181",
+      "projectName": "Concreting of Road, Sta. 0+000 - Sta. 0+420, Purok 1A, Barangay Ampayon, Butuan City",
+      "amountPesos": 12000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 626,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Concreting of Road, Sta. 0+000 - Sta. 0+420, Purok 1A, Barangay Ampayon, Butuan City\t12000000",
+      "nepComparison": "No plausible NEP title counterpart; review candidate",
+      "nepTitle": "Rehabilitation of Road, Sta. 0+000 - Sta. 0+414, Purok 3, Barangay Payahan, Calbayog City, Samar",
+      "nepAmountPesos": "12000000",
+      "nepSourcePage": "543",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0626-010185",
+      "projectName": "Construction of Road, Barangay Pangabugan to Barangay San Vicente (Sta. 0 + 000.00 - Sta. 0 + 460.00), Butuan City, Agusan del Norte",
+      "amountPesos": 10580000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 626,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Construction of Road, Barangay Pangabugan to Barangay San Vicente (Sta. 0 + 000.00 - Sta. 0 + 460.00), Butuan City, Agusan del Norte\t10580000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Construction of Road, Barangay Pangabugan to Barangay San Vicente (Sta. 0 + 000.00 - Sta. 0 + 460.00), Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10580000",
+      "nepSourcePage": "557",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0627-010188",
+      "projectName": "Construction of Road with Roadway lighting, Badiangon (Sta. 0+000 - Sta. 0+180), Barangay Ampayon, Butuan City",
+      "amountPesos": 10074000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 627,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Construction of Road with Roadway lighting, Badiangon (Sta. 0+000 - Sta. 0+180), Barangay Ampayon, Butuan City\t10074000",
+      "nepComparison": "No plausible NEP title counterpart; review candidate",
+      "nepTitle": "Construction of Road with Drainage along Gaabucayan Street Agora - Sta. 0+000 to Sta. 0+285, Barangay Lapasan, Cagayan de Oro City",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "549",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0363-004727",
+      "projectName": "Construction of Drainage Structure, Felipe Street (Sta. 0+000 - Sta. 0+400), Luz Village, Barangay Bayanihan, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 363,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Construction of Drainage Structure, Felipe Street (Sta. 0+000 - Sta. 0+400), Luz Village, Barangay Bayanihan, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Construction of Drainage Structure, Felipe Street (Sta. 0+000 - Sta. 0+400), Luz Village, Barangay Bayanihan, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "393",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0915-015837",
+      "projectName": "Construction of Multi-Purpose Building (Senior Citizen Building), Barangay Florida, Butuan, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 915,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Construction of Multi-Purpose Building (Senior Citizen Building), Barangay Florida, Butuan, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Construction of Multi-Purpose Building (Senior Citizen Building), Barangay Florida, Butuan, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0915-015839",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court) Barangay Baan Riverside, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 915,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court) Barangay Baan Riverside, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court) Barangay Baan Riverside, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0915-015840",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Amparo, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 915,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Amparo, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Amparo, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0916-015841",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Antongalon, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 916,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Antongalon, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Antongalon, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0916-015842",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Bading, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 916,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Bading, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Bading, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0916-015847",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Tandang Sora, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 916,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Tandang Sora, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Multiple or already paired NEP counterparts; review scope",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Bading, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0916-015848",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Villa Kananga, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 916,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Villa Kananga, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Multiple or already paired NEP counterparts; review scope",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Pianing, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "673",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0916-015849",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Sumile, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 916,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Sumile, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Multiple or already paired NEP counterparts; review scope",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Sumilihon, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "673",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0916-015851",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Bobon, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 916,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Bobon, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Multiple or already paired NEP counterparts; review scope",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Bonbon, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0916-015852",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court) at Pedro D. Duncano National High School, Barangay Tiniwisan, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 916,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court) at Pedro D. Duncano National High School, Barangay Tiniwisan, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "No plausible NEP title counterpart; review candidate",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Taligaman, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "673",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0916-015853",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court)at Pedro D. Duncano Elementary School, Barangay Tiniwisan, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 916,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court)at Pedro D. Duncano Elementary School, Barangay Tiniwisan, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "No plausible NEP title counterpart; review candidate",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Maon, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "673",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0916-015854",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), at Anticala Elementary School , Barangay Anticala, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 916,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), at Anticala Elementary School , Barangay Anticala, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Multiple or already paired NEP counterparts; review scope",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Dankias, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0916-015856",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Maibu, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 916,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Maibu, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Multiple or already paired NEP counterparts; review scope",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Maug, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "673",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0916-015858",
+      "projectName": "Rehabilitation of Multi-Purpose Building, Barangay Imadejas, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 916,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building, Barangay Imadejas, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Multiple or already paired NEP counterparts; review scope",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building, Barangay MJ Santos, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "673",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0917-015876",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Bitan-agan, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 917,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Bitan-agan, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Bitan-agan, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0917-015877",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Bonbon, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 917,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Bonbon, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Bonbon, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0917-015878",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Bugsukan, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 917,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Bugsukan, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Bugsukan, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0918-015879",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Cabcabon, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 918,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Cabcabon, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Cabcabon, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0918-015880",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Dankias, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 918,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Dankias, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Dankias, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0918-015881",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Dulag, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 918,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Dulag, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Dulag, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0918-015882",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Dumalagan, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 918,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Dumalagan, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Dumalagan, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0918-015883",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Holy Redeemer, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 918,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Holy Redeemer, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Holy Redeemer, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0918-015884",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Kinamlutan, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 918,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Kinamlutan, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Kinamlutan, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0918-015885",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Maguinda, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 918,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Maguinda, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Maguinda, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0918-015886",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Mahay, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 918,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Mahay, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Mahay, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0918-015887",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Manila De Bugabus, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 918,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Manila De Bugabus, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Manila De Bugabus, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0918-015888",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Maon, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 918,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Maon, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Maon, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "673",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0918-015889",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Masao, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 918,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Masao, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Masao, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "673",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0918-015890",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Maug, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 918,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Maug, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Maug, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "673",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0918-015891",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Pianing, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 918,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Pianing, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Pianing, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "673",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0918-015892",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Pinamanculan, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 918,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Pinamanculan, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Pinamanculan, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "673",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0918-015893",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay San Mateo, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 918,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay San Mateo, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay San Mateo, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "673",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0918-015894",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Santo Niño, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 918,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Santo Niño, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Santo Niño, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "673",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0918-015895",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Sumilihon, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 918,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Sumilihon, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Sumilihon, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "673",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0918-015896",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Taligaman, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 918,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Taligaman, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Taligaman, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "673",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0918-015897",
+      "projectName": "Rehabilitation of Multi-Purpose Building, Barangay MJ Santos, Butuan City, Agusan del Norte",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 918,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building, Barangay MJ Santos, Butuan City, Agusan del Norte\t10000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building, Barangay MJ Santos, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "673",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0363-004728",
+      "projectName": "Construction of Drainage Structure, Provincial Hospital to NRJ Butuan City-Cagayan de Oro City-Iligan City Road (Agusan-Misamis Or Rd) (Sta. 0+000 - Sta. 0+281), Barangay Libertad, Butuan City",
+      "amountPesos": 8000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 363,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Construction of Drainage Structure, Provincial Hospital to NRJ Butuan City-Cagayan de Oro City-Iligan City Road (Agusan-Misamis Or Rd) (Sta. 0+000 - Sta. 0+281), Barangay Libertad, Butuan City\t8000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Construction of Drainage Structure, Provincial Hospital to NRJ Butuan City-Cagayan de Oro City-Iligan City Road (Agusan-Misamis Or Rd) (Sta. 0+000 - Sta. 0+281), Barangay Libertad, Butuan City",
+      "nepAmountPesos": "8000000",
+      "nepSourcePage": "393",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0915-015836",
+      "projectName": "Construction (Completion) of Multi-Purpose Building (Covered Court), Barangay Tagabaca, Butuan City, Agusan del Norte",
+      "amountPesos": 8000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 915,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Construction (Completion) of Multi-Purpose Building (Covered Court), Barangay Tagabaca, Butuan City, Agusan del Norte\t8000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Construction (Completion) of Multi-Purpose Building (Covered Court), Barangay Tagabaca, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "8000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0915-015835",
+      "projectName": "Construction (Completion) of Multi-Purpose Building (Covered Court), Barangay Mahogany, Butuan City, Agusan del Norte",
+      "amountPesos": 7000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 915,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Construction (Completion) of Multi-Purpose Building (Covered Court), Barangay Mahogany, Butuan City, Agusan del Norte\t7000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Construction (Completion) of Multi-Purpose Building (Covered Court), Barangay Mahogany, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "7000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0917-015861",
+      "projectName": "Construction of Multi-Purpose Building, Barangay Baobaoan, Butuan City, Agusan del Norte",
+      "amountPesos": 7000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 917,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Construction of Multi-Purpose Building, Barangay Baobaoan, Butuan City, Agusan del Norte\t7000000",
+      "nepComparison": "Multiple or already paired NEP counterparts; review scope",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building, Barangay MJ Santos, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "673",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0917-015863",
+      "projectName": "Construction of Multi-Purpose Building (Covered Court) at Maibu National High School, Barangay Maibu, Butuan City, Agusan del Norte",
+      "amountPesos": 7000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 917,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Construction of Multi-Purpose Building (Covered Court) at Maibu National High School, Barangay Maibu, Butuan City, Agusan del Norte\t7000000",
+      "nepComparison": "No plausible NEP title counterpart; review candidate",
+      "nepTitle": "Construction (Completion) of Multi-Purpose Building (Covered Court), Barangay Tagabaca, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "8000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0917-015875",
+      "projectName": "Construction (Completion) of Multi Purpose Building at SPED, Barangay Diego Silang, Butuan City",
+      "amountPesos": 7000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 917,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": true,
+      "legacyComputedDistrictsOnCurrentInputs": [
+        "Butuan · Lone District"
+      ],
+      "sourceText": "Construction (Completion) of Multi Purpose Building at SPED, Barangay Diego Silang, Butuan City\t7000000",
+      "nepComparison": "Multiple or already paired NEP counterparts; review scope",
+      "nepTitle": "Construction (Completion) of Multi-Purpose Building at Barangay Manresa, Quezon City",
+      "nepAmountPesos": "72000000",
+      "nepSourcePage": "560",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0915-015832",
+      "projectName": "Construction of Multi-Purpose Building at Pedro D. Duncano Elementary School, Barangay Tiniwisan, Butuan City, Agusan del Norte",
+      "amountPesos": 6500000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 915,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Construction of Multi-Purpose Building at Pedro D. Duncano Elementary School, Barangay Tiniwisan, Butuan City, Agusan del Norte\t6500000",
+      "nepComparison": "No plausible NEP title counterpart; review candidate",
+      "nepTitle": "Construction (Completion) of Multi-Purpose Building (Covered Court), Barangay Anticala, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "5000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0915-015831",
+      "projectName": "Construction (Completion) of Multi-Purpose Building (Covered Court), Barangay Anticala, Butuan City, Agusan del Norte",
+      "amountPesos": 5000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 915,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Construction (Completion) of Multi-Purpose Building (Covered Court), Barangay Anticala, Butuan City, Agusan del Norte\t5000000",
+      "nepComparison": "Exact normalized title found in NEP",
+      "nepTitle": "Construction (Completion) of Multi-Purpose Building (Covered Court), Barangay Anticala, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "5000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": "0"
+    },
+    {
+      "id": "HB10858-3-0917-015864",
+      "projectName": "Rehabilitation of Multi-Purpose Building (Senior Citizen Building), Barangay Maug, Butuan City, Agusan del Norte",
+      "amountPesos": 5000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 917,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Rehabilitation of Multi-Purpose Building (Senior Citizen Building), Barangay Maug, Butuan City, Agusan del Norte\t5000000",
+      "nepComparison": "Multiple or already paired NEP counterparts; review scope",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Maug, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "673",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0916-015857",
+      "projectName": "Completion of Multi-Purpose Building (Covered Court), Barangay Florida, Butuan City, Agusan del Norte",
+      "amountPesos": 3000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 916,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Completion of Multi-Purpose Building (Covered Court), Barangay Florida, Butuan City, Agusan del Norte\t3000000",
+      "nepComparison": "Multiple or already paired NEP counterparts; review scope",
+      "nepTitle": "Rehabilitation of Multi-Purpose Building (Covered Court), Barangay Dulag, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "10000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0916-015845",
+      "projectName": "Construction (Completion) of Multi-Purpose Building (Covered Court), Purok 7, Barangay Doongan, Butuan City, Agusan del Norte",
+      "amountPesos": 2500000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 916,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Construction (Completion) of Multi-Purpose Building (Covered Court), Purok 7, Barangay Doongan, Butuan City, Agusan del Norte\t2500000",
+      "nepComparison": "Multiple or already paired NEP counterparts; review scope",
+      "nepTitle": "Construction (Completion) of Multi-Purpose Building (Covered Court), Barangay Mahogany, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "7000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": ""
+    },
+    {
+      "id": "HB10858-3-0916-015846",
+      "projectName": "Construction (Completion) of Multi-Purpose Building, Purok Malalag, Barangay Libertad, Butuan City, Agusan del Norte",
+      "amountPesos": 2500000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 916,
+      "region": "Region XIII",
+      "office": "Butuan City District Engineering Office",
+      "districts": [
+        "Butuan · Lone District"
+      ],
+      "representatives": [
+        "Jose Aquino II"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "city",
+          "name": "butuan",
+          "basis": "Explicit single-seat city location"
+        }
+      ],
+      "legacyStrictSelectedOnCurrentInputs": false,
+      "legacyComputedDistrictsOnCurrentInputs": [],
+      "sourceText": "Construction (Completion) of Multi-Purpose Building, Purok Malalag, Barangay Libertad, Butuan City, Agusan del Norte\t2500000",
+      "nepComparison": "Multiple or already paired NEP counterparts; review scope",
+      "nepTitle": "Construction (Completion) of Multi-Purpose Building (Covered Court), Barangay Tagabaca, Butuan City, Agusan del Norte",
+      "nepAmountPesos": "8000000",
+      "nepSourcePage": "672",
+      "amountDeltaPesos": ""
+    }
+  ],
+  "requiredResolverRules": [
+    "Separate geographic province from LEG jurisdiction.",
+    "Require context for repeated barangay names.",
+    "Do not expand unestablished acronyms such as RTR.",
+    "Treat road endpoints separately from the stated construction section.",
+    "Keep inherited district boundary and term conflicts visible."
+  ],
+  "limitations": "Local sources only. Candidate matches and title-defined sections are not independently verified project coordinates or district boundaries. Allocation concentration does not establish corruption or sponsorship."
+}

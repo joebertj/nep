@@ -1,0 +1,265 @@
+{
+  "years": [
+    {
+      "fiscal_year": 2020,
+      "description_groups": 27847,
+      "source_rows": 480554
+    },
+    {
+      "fiscal_year": 2021,
+      "description_groups": 37440,
+      "source_rows": 495134
+    },
+    {
+      "fiscal_year": 2022,
+      "description_groups": 31628,
+      "source_rows": 507048
+    },
+    {
+      "fiscal_year": 2023,
+      "description_groups": 32451,
+      "source_rows": 517272
+    },
+    {
+      "fiscal_year": 2024,
+      "description_groups": 34191,
+      "source_rows": 530185
+    },
+    {
+      "fiscal_year": 2025,
+      "description_groups": 34875,
+      "source_rows": 539379
+    },
+    {
+      "fiscal_year": 2026,
+      "description_groups": 18240,
+      "source_rows": 18240
+    }
+  ],
+  "classifications": {
+    "mentions_without_qualified_chain": 64650,
+    "no_recognized_location": 39529,
+    "qualified_location_evidence": 112493
+  },
+  "reviewGroups": 23315,
+  "reviewStatus": "Unanswered groups remain unresolved; no LEG assignment, alias creation or public budget recalculation is performed.",
+  "limitations": [
+    "Description groups are not project counts.",
+    "FY2026 coverage is DPWH only; col_J may be a title fragment.",
+    "Historic title evidence does not establish current LEG boundaries.",
+    "Mention offsets refer to normalized lookup text, not original title character positions.",
+    "Only existing exact aliases generate candidates; unknown spellings and acronyms require review."
+  ],
+  "firstReviewExamples": [
+    {
+      "id": "9e13dd4072882c202ded21dd9d2e80e6",
+      "kind": "marked_place_without_qualified_chain",
+      "mention": "davao city",
+      "context_key": "city",
+      "example_evidence_id": "dae17619f6f79ed5a5e7d408a613899d",
+      "occurrences": 1990,
+      "status": "pending_user_classification",
+      "decision_json": null,
+      "fiscal_year": 2020,
+      "title": "Concreting of Brgy. Baliok FMR, Brgy. Baliok, Talomo District, Davao City",
+      "source_locator": "36462",
+      "path": "/Users/joebertj/open-data-visualization/data/parquet/budget_2020.parquet"
+    },
+    {
+      "id": "9536f6b5c8a58827c11e906b01811e51",
+      "kind": "unrecognized_marked_place",
+      "mention": "hall",
+      "context_key": "barangay",
+      "example_evidence_id": "a5635e70cb618516650e8bc626a15eb7",
+      "occurrences": 1757,
+      "status": "pending_user_classification",
+      "decision_json": null,
+      "fiscal_year": 2020,
+      "title": "Construction of New Barangay Hall, Brgy. Pinagsama, Taguig City",
+      "source_locator": "466160",
+      "path": "/Users/joebertj/open-data-visualization/data/parquet/budget_2020.parquet"
+    },
+    {
+      "id": "641ee7474b4614ffc10a5de1aadbeb76",
+      "kind": "marked_place_without_qualified_chain",
+      "mention": "caloocan city",
+      "context_key": "city",
+      "example_evidence_id": "898ca5c2b50b5742fb188e50c6121fbf",
+      "occurrences": 967,
+      "status": "pending_user_classification",
+      "decision_json": null,
+      "fiscal_year": 2020,
+      "title": "Construction of Multi-purpose Building, Brgy. 122, Caloocan City",
+      "source_locator": "466280",
+      "path": "/Users/joebertj/open-data-visualization/data/parquet/budget_2020.parquet"
+    },
+    {
+      "id": "b567c1e9bca3a023a4aeb6457c546f95",
+      "kind": "marked_place_without_qualified_chain",
+      "mention": "poblacion",
+      "context_key": "barangay",
+      "example_evidence_id": "65fefcce9d1b302e92ed7557b1a92fcf",
+      "occurrences": 953,
+      "status": "pending_user_classification",
+      "decision_json": null,
+      "fiscal_year": 2020,
+      "title": "Concreting of Sitio Minuwa, Brgy. Poblacion FMR, Brgy. Poblacion, Licuan-Baay, Abra",
+      "source_locator": "35983",
+      "path": "/Users/joebertj/open-data-visualization/data/parquet/budget_2020.parquet"
+    },
+    {
+      "id": "caafce02ee30f4160019ab304a20fdc8",
+      "kind": "marked_place_without_qualified_chain",
+      "mention": "quezon city",
+      "context_key": "city",
+      "example_evidence_id": "4d553a8d33198620311d17eca095d1fd",
+      "occurrences": 943,
+      "status": "pending_user_classification",
+      "decision_json": null,
+      "fiscal_year": 2020,
+      "title": "Rehabilitation of Lucas R. Pascual Elementary School, Baranagay Baesa, Quezon City",
+      "source_locator": "464208",
+      "path": "/Users/joebertj/open-data-visualization/data/parquet/budget_2020.parquet"
+    },
+    {
+      "id": "b47b0ae7a5642725d582d861f29000b3",
+      "kind": "marked_place_without_qualified_chain",
+      "mention": "butuan city",
+      "context_key": "city",
+      "example_evidence_id": "913c19e1f7a59b8de3e50b8aee9af966",
+      "occurrences": 890,
+      "status": "pending_user_classification",
+      "decision_json": null,
+      "fiscal_year": 2020,
+      "title": "Construction (Completion) of Multipurpose Building, Brgy. Ong Yiu, Butuan City",
+      "source_locator": "486041",
+      "path": "/Users/joebertj/open-data-visualization/data/parquet/budget_2020.parquet"
+    },
+    {
+      "id": "2a3c07c2c7e7cf488a469b83fefa4f59",
+      "kind": "marked_place_without_qualified_chain",
+      "mention": "cagayan de oro city",
+      "context_key": "city",
+      "example_evidence_id": "eab56ffff7415de4f8dbbc0cc5df688b",
+      "occurrences": 840,
+      "status": "pending_user_classification",
+      "decision_json": null,
+      "fiscal_year": 2020,
+      "title": "Completion of Cagayan de Oro Civic/ Convention Center, Cagayan de Oro City",
+      "source_locator": "465899",
+      "path": "/Users/joebertj/open-data-visualization/data/parquet/budget_2020.parquet"
+    },
+    {
+      "id": "f210ee7840c1d2c89c071dc5adc66447",
+      "kind": "marked_place_without_qualified_chain",
+      "mention": "zamboanga city",
+      "context_key": "city",
+      "example_evidence_id": "94b0268413dd23b0ec788f6bfb91fccf",
+      "occurrences": 762,
+      "status": "pending_user_classification",
+      "decision_json": null,
+      "fiscal_year": 2020,
+      "title": "Concreting of Brgy. Apasan to Brgy. Dulian FMR, Brgy. Apasan and Brgy. Dulian, Dumingag, Zamboanga City",
+      "source_locator": "36404",
+      "path": "/Users/joebertj/open-data-visualization/data/parquet/budget_2020.parquet"
+    },
+    {
+      "id": "2fe88f6ec80d0368dfe9773ea0ad0c5c",
+      "kind": "marked_place_without_qualified_chain",
+      "mention": "manila city",
+      "context_key": "city",
+      "example_evidence_id": "8e4e2cf0fbee0a9972e95fad70e26199",
+      "occurrences": 698,
+      "status": "pending_user_classification",
+      "decision_json": null,
+      "fiscal_year": 2020,
+      "title": "Construction of Multi-Purpose Buildings (Daycare Centers), Manila City",
+      "source_locator": "465952",
+      "path": "/Users/joebertj/open-data-visualization/data/parquet/budget_2020.parquet"
+    },
+    {
+      "id": "c5ed8d4fa437eb21313a79396a77a88a",
+      "kind": "marked_place_without_qualified_chain",
+      "mention": "iligan city",
+      "context_key": "city",
+      "example_evidence_id": "2b1bd6ee4fa326c35b7438732ce9afef",
+      "occurrences": 648,
+      "status": "pending_user_classification",
+      "decision_json": null,
+      "fiscal_year": 2020,
+      "title": "Construction of Multi-Purpose Building at DPWH Area Equipment Services Compound Del Carmen, Iligan City",
+      "source_locator": "486575",
+      "path": "/Users/joebertj/open-data-visualization/data/parquet/budget_2020.parquet"
+    },
+    {
+      "id": "e88ce972952545c0470cc4b5d6749490",
+      "kind": "unrecognized_marked_place",
+      "mention": "road",
+      "context_key": "barangay",
+      "example_evidence_id": "accf9471d3acf756639391b07740d703",
+      "occurrences": 529,
+      "status": "pending_user_classification",
+      "decision_json": null,
+      "fiscal_year": 2020,
+      "title": "Concreting of Barangay Road, Brgy. Poblacion, Aritao, Nueva Vizcaya",
+      "source_locator": "492469",
+      "path": "/Users/joebertj/open-data-visualization/data/parquet/budget_2020.parquet"
+    },
+    {
+      "id": "10f87494b624d955680ce842445e67f3",
+      "kind": "marked_place_without_qualified_chain",
+      "mention": "taguig city",
+      "context_key": "city",
+      "example_evidence_id": "1c0d87c63d08453f3e5310eb43dcbc50",
+      "occurrences": 476,
+      "status": "pending_user_classification",
+      "decision_json": null,
+      "fiscal_year": 2020,
+      "title": "Construction of Multi-Purpose Building (Senior Citizens' Center), Brgy. Sta. Ana, Taguig City",
+      "source_locator": "465935",
+      "path": "/Users/joebertj/open-data-visualization/data/parquet/budget_2020.parquet"
+    },
+    {
+      "id": "a5cdca7fd2da41f387c95613499981f1",
+      "kind": "marked_place_without_qualified_chain",
+      "mention": "iloilo city",
+      "context_key": "city",
+      "example_evidence_id": "436b498409892f070c6b5aed6a1b4494",
+      "occurrences": 386,
+      "status": "pending_user_classification",
+      "decision_json": null,
+      "fiscal_year": 2020,
+      "title": "Construction of DPWH Regional Office VI Building, DPWH  RES Compound, Iloilo City",
+      "source_locator": "465973",
+      "path": "/Users/joebertj/open-data-visualization/data/parquet/budget_2020.parquet"
+    },
+    {
+      "id": "31bd2347b37f1e18458fa10543f75c5d",
+      "kind": "marked_place_without_qualified_chain",
+      "mention": "tacloban city",
+      "context_key": "city",
+      "example_evidence_id": "ac4eef2bf94760419e61df60a62eb082",
+      "occurrences": 375,
+      "status": "pending_user_classification",
+      "decision_json": null,
+      "fiscal_year": 2020,
+      "title": "Construction/Improvement of Abucay New Bus Terminal, Tacloban City",
+      "source_locator": "465965",
+      "path": "/Users/joebertj/open-data-visualization/data/parquet/budget_2020.parquet"
+    },
+    {
+      "id": "c9de85f3d78cface1521f2c47aeede86",
+      "kind": "unrecognized_marked_place",
+      "mention": "san fernando",
+      "context_key": "city of",
+      "example_evidence_id": "e5d7469857a63c3fedaa6bbb80f037a2",
+      "occurrences": 335,
+      "status": "pending_user_classification",
+      "decision_json": null,
+      "fiscal_year": 2020,
+      "title": "Rehabilitation of Various Buildings at Camp Olivas, City of San Fernando, Pampanga",
+      "source_locator": "465972",
+      "path": "/Users/joebertj/open-data-visualization/data/parquet/budget_2020.parquet"
+    }
+  ]
+}

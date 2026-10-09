@@ -1,0 +1,86 @@
+{
+  "databaseName": "PH location DB",
+  "databaseSha256": "b2902f7a4d483cc2dc2d2ab6b501103dbf0d5189e08f50a9ed49bac5cdaa7bc7",
+  "counts": {
+    "rowsReviewed": 91253,
+    "rowsUnresolved": 80620,
+    "rowsWithNames": 10633,
+    "assignmentsChanged": 1565
+  },
+  "catalogTitles": 27200,
+  "pages": [
+    {
+      "page": "budget-innovations.html",
+      "tables": 2,
+      "embeddedDocuments": 0,
+      "tablesWithLocationColumns": 2
+    },
+    {
+      "page": "congress.html",
+      "tables": 6,
+      "embeddedDocuments": 1,
+      "tablesWithLocationColumns": 6
+    },
+    {
+      "page": "deped.html",
+      "tables": 1,
+      "embeddedDocuments": 1,
+      "tablesWithLocationColumns": 1
+    },
+    {
+      "page": "dpwh-hgab-comparison.html",
+      "tables": 1,
+      "embeddedDocuments": 1,
+      "tablesWithLocationColumns": 1
+    },
+    {
+      "page": "dpwh-hgab.html",
+      "tables": 14,
+      "embeddedDocuments": 5,
+      "tablesWithLocationColumns": 14
+    },
+    {
+      "page": "dpwh.html",
+      "tables": 13,
+      "embeddedDocuments": 4,
+      "tablesWithLocationColumns": 13
+    },
+    {
+      "page": "fmr.html",
+      "tables": 3,
+      "embeddedDocuments": 2,
+      "tablesWithLocationColumns": 3
+    },
+    {
+      "page": "hfep.html",
+      "tables": 4,
+      "embeddedDocuments": 1,
+      "tablesWithLocationColumns": 4
+    },
+    {
+      "page": "nia-irrigation.html",
+      "tables": 2,
+      "embeddedDocuments": 0,
+      "tablesWithLocationColumns": 2
+    },
+    {
+      "page": "nia.html",
+      "tables": 4,
+      "embeddedDocuments": 1,
+      "tablesWithLocationColumns": 4
+    },
+    {
+      "page": "rcs.html",
+      "tables": 2,
+      "embeddedDocuments": 0,
+      "tablesWithLocationColumns": 2
+    }
+  ],
+  "policy": "PH location DB; current 20th Congress geographic coverage, not sponsorship. Undated historic claims do not create new assignments. DEO numbers never establish legislative seats.",
+  "limitations": [
+    "A blank name is unresolved coverage, not absence of funding.",
+    "School names, DEO aggregates, generic scheme titles and geographic terms alone cannot identify a legislative seat.",
+    "Province-wide names are geographic context only; names for featured projects do not cover all projects in an aggregate.",
+    "Row counts include repeated appearances across report data and embedded views; they are not distinct project counts."
+  ]
+}

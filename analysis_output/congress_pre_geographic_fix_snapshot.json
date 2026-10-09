@@ -1,0 +1,61 @@
+{
+  "source": "FY2027 DPWH HGAB 3rd Reading local extraction",
+  "summary": {
+    "candidateLineItems": 16275,
+    "candidateTotalPesos": 587075661000,
+    "excludedScheduleLines": 0,
+    "excludedScheduleAmountPesos": 0,
+    "sourceLineItems": 16275,
+    "sourceTotalPesos": 587075661000,
+    "uniquelyAssignedLines": 11844,
+    "sharedAssignedLines": 138,
+    "unassignedLines": 4293,
+    "unassignedAmountPesos": 227731689450,
+    "accommodatingAssignedPesos": 367066398550,
+    "strictAssignedPesos": 353015584550,
+    "sharedReplicatedAdditionalPesos": 14050814000,
+    "districtCount": 254
+  },
+  "selectedDistricts": {
+    "strict": [
+      {
+        "district": "Quezon · 3rd District",
+        "representative": "Reynante Arrogancia",
+        "lineItems": 239,
+        "totalPesos": 11460256000
+      },
+      {
+        "district": "Cagayan de Oro · 2nd District",
+        "representative": "Rufus Rodriguez",
+        "lineItems": 201,
+        "totalPesos": 8802003000
+      },
+      {
+        "district": "Ilocos Norte · 1st District",
+        "representative": "Sandro Marcos",
+        "lineItems": 412,
+        "totalPesos": 5498300000
+      }
+    ],
+    "accommodating": [
+      {
+        "district": "Quezon · 3rd District",
+        "representative": "Reynante Arrogancia",
+        "lineItems": 254,
+        "totalPesos": 11824261000
+      },
+      {
+        "district": "Cagayan de Oro · 2nd District",
+        "representative": "Rufus Rodriguez",
+        "lineItems": 201,
+        "totalPesos": 8802003000
+      },
+      {
+        "district": "Ilocos Norte · 1st District",
+        "representative": "Sandro Marcos",
+        "lineItems": 413,
+        "totalPesos": 5503300000
+      }
+    ]
+  }
+}

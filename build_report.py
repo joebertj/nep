@@ -36,7 +36,8 @@ five_million_rows = read_csv("five_million_roads_flood.csv")
 five_million_stats = json.loads((REPORTS / "five_million_stats.json").read_text(encoding="utf-8"))
 priority_candidates = read_csv("priority_program_year_on_year_candidates.csv")
 hb_nep_all = read_csv("hb_nep_comparison_3rd.csv")
-hb_nep_insertions = [row for row in hb_nep_all if row["comparison"] in {"No plausible NEP title counterpart; review candidate", "Multiple or already paired NEP counterparts; review scope"}]
+from hgab_matching import is_fap
+hb_nep_insertions = [row for row in hb_nep_all if not is_fap(row) and row["comparison"] in {"No plausible NEP title counterpart; review candidate", "Multiple or already paired NEP counterparts; review scope"}]
 hb_nep_insertions.sort(key=lambda row: int(float(row.get("amountPesos") or 0)), reverse=True)
 hb_nep_cost = sum(int(float(row.get("amountPesos") or 0)) for row in hb_nep_insertions)
 hb_nep_near_matches = sum(row["comparison"] == "Multiple or already paired NEP counterparts; review scope" for row in hb_nep_insertions)

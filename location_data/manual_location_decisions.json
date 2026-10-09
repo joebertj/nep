@@ -1,0 +1,38 @@
+{
+  "description": "Scoped user classifications. Unknown cases remain unresolved. Add decisions only from an explicit user answer, with review_id, interpretation, geographic scope, applicable years/stages, and the supporting answer.",
+  "decisions": [
+    {
+      "review_id": "RTR_two_user_confirmed_titles",
+      "interpretation": "Remedios T. Romualdez municipality, Agusan del Norte",
+      "scope": {
+        "titles": [
+          "Species Composition and Vegetation Analysis in Mt. Hilong-hilong RTR, Agusan Del Norte Mindanao, Philippines: Strategy in Developing as Protected Area (YEAR 1)",
+          "Construction of Daang Maharlika Alternate Route (Jct. BCIR-Baan Tiniwisan-NRJ Daang Maharlika, RTR), Butuan City"
+        ],
+        "years": [
+          2025,
+          2027
+        ]
+      },
+      "supporting_user_answer": "Remedios T. Romualdez in both titles",
+      "status": "Recorded; database work paused. Acronym interpretation does not determine construction segment or LEG allocation."
+    },
+    {
+      "review_id": "HB10858-3-0447-006385_scope_hold",
+      "interpretation": "Keep the entire allocation unresolved pending construction-segment evidence",
+      "scope": {
+        "project_ids": [
+          "HB10858-3-0447-006385"
+        ],
+        "years": [
+          2027
+        ],
+        "stages": [
+          "HGAB 3rd Reading"
+        ]
+      },
+      "supporting_user_answer": "Keep it unresolved pending segment evidence",
+      "status": "Confirmed scope hold; no strict congressional assignment"
+    }
+  ]
+}

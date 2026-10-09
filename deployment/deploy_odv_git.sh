@@ -79,6 +79,7 @@ REMOTE_INSPECT
 set -euo pipefail
 r="$REMOTE_DIR"
 files=(
+  static/nep-preview/ph-location-representatives.js
   static/nep-preview/budget-innovations-data.json
   static/nep-preview/budget-innovations.html
   static/nep-preview/congress-data.json
@@ -100,6 +101,7 @@ files=(
   static/nep-preview/rcs.html
 )
 health_files=(
+  static/nep-preview/ph-location-representatives.js
   static/nep-preview/budget-innovations-data.json
   static/nep-preview/budget-innovations.html
   static/nep-preview/congress-data.json
