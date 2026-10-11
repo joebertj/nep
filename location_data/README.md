@@ -260,3 +260,76 @@ Original project titles and source IDs are preserved. The private before/after
 assignment audit is `analysis_output/congress_spelling_reapply_changes.json`.
 After a Congress rebuild, regenerate the hero and LEG insertion view, then
 refresh report-table representatives before copying/committing static files.
+
+## Shared address metadata and comparison location guard
+
+`location_text.py` is the PH location DB's canonical address-text helper.
+`refine_database.py` stores the version, rule definitions and source hash in
+`location_text_rules`. Export it with `sync_location_rules.py`; ODV's
+`analysis/ph_location_text.py` is a generated copy. Its strict Congress
+matcher consumes this helper; the NEP/HGAB matcher consumes the private copy.
+Original source titles and chainage remain intact. Only complete trailing
+station fields or Philippine-range decimal coordinate pairs can be separated
+from an address. Bare road names and route endpoints never prove a LEG.
+
+`project_location_scope.py` uses DB aliases and exact province/municipality
+parent links to veto comparisons with conflicting explicit locations. Complete
+marked barangay fields remain distinct even when local barangay inventory is
+incomplete. Compound routes remain review cases. A possible spelling variant
+can prevent a veto; it does not establish project identity or LEG attribution.
+The same guard is used for forward matching and reverse removal screening.
+
+For a local analyst export such as the 100 Nueva Ecija 1st DEO records:
+
+```sh
+python3 location_data/reconcile_deo_insertions.py
+```
+
+This reconciles full title + allocation + physical PDF page to native HGAB
+records before comparing local NEP statuses and strict LEG assignments. Office
+coverage is not treated as LEG ownership. The JSON/CSV includes unmatched
+source lookups, candidate matches, unresolved locations and accepted district
+assignments. The external analyst's insertion labels are not adopted.
+
+## Nationwide analyst evidence enrichment
+
+```sh
+python3 location_data/import_analyst_candidates.py
+python3 location_data/query_locations.py --analyst Licab --limit 10
+python3 location_data/query_locations.py --analyst 'Dupinga Sabo Dam'
+```
+
+The importer reads the 100-row Mika export and `all_house_only_candidates.json`.
+It preserves full external records and source hashes in `analyst_candidate_evidence`,
+links exact native allocations in `analyst_native_links`, and records existing
+parent-qualified identities in `analyst_location_candidates`. These are location
+evidence, not new aliases, funded construction segments or legislative boundaries.
+The base DB rebuild includes the importer when these local files are available.
+
+Comparison rows and allocation records are counted separately: a complete
+identical-occurrence group can link two native allocations without assigning an
+arbitrary occurrence. FAPs remain separate; a `region` header never becomes a
+project. Truncated or disagreeing titles, parenthesized address metadata, missing
+municipality context and unresolved LEG/scope claims enter `analyst_location_review`.
+Refreshes preserve manually changed review statuses. Original titles stay intact.
+
+`analyst_candidate_import_summary.json` inventories source and link counts;
+`analysis_output/*_location_evidence.json` and the accompanying review CSVs retain
+row-level provenance. External insertion assertions are compared with our own
+NEP/HGAB statuses, never adopted as truth. The user-confirmed Gabadlon → Gabaldon
+correction is scoped to the Dupinga Sabo Dam title, FY2027 HGAB 3rd Reading and
+Nueva Ecija; it creates no global alias. This import does not rebuild or deploy
+public pages or change congressional totals.
+
+The shared address parser v5 accepts complete final parenthesized coordinate
+pairs (optional degree signs, Philippine bounds) and balanced STA/K/KM/chainage
+lists, including parenthesized signed offsets. It separates these annotations
+only for address lookup. Interior annotations, route endpoints, mixed comments,
+multiple coordinate pairs and malformed parentheses remain in the source text.
+Coordinates never establish a district; station ranges still constrain project
+matching through the original title. Parsed address observations retain the
+original title, separated metadata and any title-scoped correction decision.
+
+### Crosswalk PDF provenance
+
+The contributor confirmed on 2026-10-11 that `DPWH per district.pdf` came from the Philippine Center for Investigative Journalism (PCIJ). The file hash and attribution basis are recorded in `crosswalk_pdf_provenance.json`. Credit is displayed in the congressional report footer. Budget stage and boundary dates remain unverified; this provenance confirmation does not change project attribution or allocation totals.

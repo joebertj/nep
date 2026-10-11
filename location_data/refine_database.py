@@ -8,6 +8,7 @@ from pathlib import Path
 from build_database import norm,uid
 ROOT=Path(__file__).resolve().parent
 SQL='''
+CREATE TABLE IF NOT EXISTS location_text_rules(id TEXT PRIMARY KEY,source_id TEXT REFERENCES sources(id),version TEXT NOT NULL,definition_json TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS administrative_transition_review(
  id TEXT PRIMARY KEY,predecessor_id TEXT REFERENCES places(id),successor_id TEXT REFERENCES places(id),
  relation TEXT NOT NULL,valid_from TEXT,valid_to TEXT,status TEXT NOT NULL,
@@ -29,6 +30,16 @@ CREATE VIEW IF NOT EXISTS alias_ambiguity_review AS
 
 def refine(con):
     con.executescript(SQL)
+    from build_database import Builder
+    manual=ROOT/'manual_location_decisions.json'
+    if manual.exists():
+        builder=Builder(con)
+        manual_sid=builder.source(manual,'human_location_review','human_classification',note='Scoped user decisions; original project titles and geographic identities retained.')
+        for decision in json.loads(manual.read_text()).get('decisions',[]):
+            builder.observed(manual_sid,decision['review_id'],'manual_location_decision',decision)
+    guard=ROOT/'project_location_scope.py';guard_sid=Builder(con).source(guard,'PH_project_location_scope','qualified_location_match_veto',note='Rejects explicitly conflicting qualified location names; does not establish project or LEG identity.')
+    rules=ROOT/'location_text.py';sid=Builder(con).source(rules,'PH_location_text_rules','shared_location_normalization',note='Address lookup only; original titles, metadata and construction scope retained.')
+    con.execute('INSERT OR REPLACE INTO location_text_rules VALUES(?,?,?,?)',('qualified_address_annotations',sid,'v5',json.dumps({'stationMetadata':'Complete trailing STA/K/KM/chainage fields and balanced final parenthesized station lists; numeric offsets may have balanced parentheses. Interior station annotations and route/place wording retained.','coordinateMetadata':'Complete trailing latitude/longitude decimal pair, with optional degree signs and final parentheses, in Philippine bounds. Coordinates do not establish a district. Multiple endpoint pairs and mixed annotations remain unresolved.','nameSpelling':'User-confirmed complete Santo Niño variants only; parent and level required.','matchingGuardSourceId':guard_sid,'matchingGuard':'location_data/project_location_scope.py vetoes conflicting explicit qualified locations; no assignment inferred from shared wording.'})))
     from apply_spelling_decisions import apply
     spelling=apply(con)
     # Keep proposed relations separate from aliases and dated administrative claims.

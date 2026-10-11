@@ -1,0 +1,4973 @@
+{
+  "method": "Exact normalized full title + HGAB allocation + physical PDF page. The external DEO filter is not treated as LEG attribution. No external match labels are adopted.",
+  "summary": {
+    "externalRows": 100,
+    "externalAllocationPesos": 1335459000,
+    "comparisonStatuses": {
+      "No plausible NEP title counterpart; review candidate": 97,
+      "Multiple or already paired NEP counterparts; review scope": 2,
+      "Plausible NEP title counterpart; review scope": 1
+    },
+    "LEGStatuses": {
+      "Unresolved": 26,
+      "Nueva Ecija · 1st District": 53,
+      "Nueva Ecija · 2nd District": 21
+    },
+    "requestedLEG": "Nueva Ecija · 1st District",
+    "requestedLEGExternalInsertionRows": 51,
+    "requestedLEGAllAssignedHGABRows": 179,
+    "requestedLEGAllAssignedHGABPesos": 2231890000,
+    "requestedLEGInsertionRows": 57,
+    "requestedLEGInsertionPesos": 669978000
+  },
+  "rows": [
+    {
+      "id": "HB10858-3-0253-002564",
+      "title": "Aliaga-Guimba Road, STA. 4+682 - STA. 21+402 Road Safety Facilities (Roadway Lighting)",
+      "amountPesos": 40000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Dumaguete City-Valencia-Bacong Rd - K0003 + (-697) - K0007 + 332 (Road Safety: Roadway Lighting)",
+      "nepPesos": "40000000",
+      "geographicStatus": "unresolved",
+      "districts": [],
+      "sourcePage": 253
+    },
+    {
+      "id": "HB10858-3-0143-000654",
+      "title": "Cabanatuan City - Carmen Rd, K0133 + 000 - K0133 + 750",
+      "amountPesos": 32000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "",
+      "nepPesos": "",
+      "geographicStatus": "unresolved",
+      "districts": [],
+      "sourcePage": 143
+    },
+    {
+      "id": "HB10858-3-0169-001098",
+      "title": "Cabanatuan City - Carmen Rd, K0135 + 439 - K0135 + 492, K0135 + 941 - K0136 + 000, K0139 + 613 - K0139 + 736, K0140 + 471 - K0141 + 043",
+      "amountPesos": 17300000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Candoni-Sipalay Rd - K0132 + 000 - K0132 + 774, K0132 + 823 - K0133 + 000, K0134 + 182 - K0134 + 789, K0135 + 000 - K0135 + 845",
+      "nepPesos": "53923000",
+      "geographicStatus": "unresolved",
+      "districts": [],
+      "sourcePage": 169
+    },
+    {
+      "id": "HB10858-3-0196-001539",
+      "title": "Cabanatuan City - Carmen Road K0129±358 - K0129±091 LS, K0129±248 - K0129±091 RS",
+      "amountPesos": 9328000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "",
+      "nepPesos": "",
+      "geographicStatus": "unresolved",
+      "districts": [],
+      "sourcePage": 196
+    },
+    {
+      "id": "HB10858-3-0253-002562",
+      "title": "Cabanatuan City-Carmen Road, K129+270 - K132+050, K138+575- K141+000 Road Safety Facilities (Roadway Lighting)",
+      "amountPesos": 11500000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Installation/Application of Road Safety Facilities (Roadway Lighting) along Tarlac - Guimba Road K0148±184 - K0151+650",
+      "nepPesos": "9250000",
+      "geographicStatus": "unresolved",
+      "districts": [],
+      "sourcePage": 253
+    },
+    {
+      "id": "HB10858-3-0737-012320",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay Bacayao, Guimba, Nueva Ecija, 15.660528, 120.750249",
+      "amountPesos": 3500000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction (Completion) of Multi-Purpose Building, Barangay Buasao, Sto. Domingo, Nueva Ecija",
+      "nepPesos": "6000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 737
+    },
+    {
+      "id": "HB10858-3-0736-012317",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay Bued, Cuyapo, Nueva Ecija, 15.819124, 120.652269",
+      "amountPesos": 5000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction (Completion) of Multi-Purpose Building, Barangay Buasao, Sto. Domingo, Nueva Ecija",
+      "nepPesos": "6000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 736
+    },
+    {
+      "id": "HB10858-3-0736-012316",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay Cabatuan, Cuyapo, Nueva Ecija, 15.789865, 120.704750",
+      "amountPesos": 5000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction (Completion) of Multi-Purpose Building, Barangay Cabugao, Sto. Domingo, Nueva Ecija",
+      "nepPesos": "5000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 736
+    },
+    {
+      "id": "HB10858-3-0736-012314",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay Caingin Tabing Ilog, Guimba, Nueva Ecija, 15.568427, 120.747150",
+      "amountPesos": 5000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction (Completion) of Multi-Purpose Building, Barangay Cabugao, Sto. Domingo, Nueva Ecija",
+      "nepPesos": "5000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 736
+    },
+    {
+      "id": "HB10858-3-0737-012321",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay Dinarayat, Talavera, Nueva Ecija, 15.556581, 120.924814",
+      "amountPesos": 3500000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction (Completion) of Multi-Purpose Building at Barangay Dela Paz, Tarlac City, Tarlac (15.426184, 120.576897)",
+      "nepPesos": "8000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 737
+    },
+    {
+      "id": "HB10858-3-0736-012319",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay Linao, Licab, Nueva Ecija, 15.566295, 120.781137",
+      "amountPesos": 3500000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction (Completion) of Multi-Purpose Building, Barangay Buasao, Sto. Domingo, Nueva Ecija",
+      "nepPesos": "6000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 736
+    },
+    {
+      "id": "HB10858-3-0736-012311",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay Matias, Talavera, Nueva Ecija, 15.590252, 120.916458",
+      "amountPesos": 6000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction (Completion) of Multi-Purpose Building, Barangay Buasao, Sto. Domingo, Nueva Ecija",
+      "nepPesos": "6000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 736
+    },
+    {
+      "id": "HB10858-3-0736-012318",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay Narvacan I, Guimba, Nueva Ecija, 15.686464, 120.735439",
+      "amountPesos": 4000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction (Completion) of Multi-Purpose Building, Barangay Cabugao, Sto. Domingo, Nueva Ecija",
+      "nepPesos": "5000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 736
+    },
+    {
+      "id": "HB10858-3-0736-012307",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay Poblacion Sur, Licab, Nueva Ecija, 15.5384, 120.76093",
+      "amountPesos": 50000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "Multiple or already paired NEP counterparts; review scope",
+      "nepId": "",
+      "nepTitle": "Construction of Multi-Purpose Building, Barangay Poblacion Sur, Licab, Nueva Ecija",
+      "nepPesos": "15000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 736
+    },
+    {
+      "id": "HB10858-3-0736-012310",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay Saint John District, Guimba, Nueva Ecija, 15.661223, 120.772057",
+      "amountPesos": 15000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction (Completion) of Multi-Purpose Building, Barangay Buasao, Sto. Domingo, Nueva Ecija",
+      "nepPesos": "6000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 736
+    },
+    {
+      "id": "HB10858-3-0736-012312",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay San Miguel na Munti, Talavera, Nueva Ecija, 15.541113, 120.93133",
+      "amountPesos": 6000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction (Completion) of Multi-Purpose Building, Barangay San Miguel, Mahinog, Camiguin(124.783466,9.131037)",
+      "nepPesos": "5000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 736
+    },
+    {
+      "id": "HB10858-3-0736-012313",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay San Vicente, Zaragoza, Nueva Ecija, 15.454779, 120.791533",
+      "amountPesos": 5000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction (Completion) of Multi-Purpose Building at Barangay Dela Paz, Tarlac City, Tarlac (15.426184, 120.576897)",
+      "nepPesos": "8000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 736
+    },
+    {
+      "id": "HB10858-3-0737-012322",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay Sto. Cristo, Quezon, Nueva Ecija, 15.530863, 120.806670",
+      "amountPesos": 2500000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction (Completion) of Multi-Purpose Building, Barangay Sto. Rosario, Sto. Domingo, Nueva Ecija",
+      "nepPesos": "6000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 737
+    },
+    {
+      "id": "HB10858-3-0736-012315",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay Ungab, Cuyapo, Nueva Ecija, 15.799706, 120.623031",
+      "amountPesos": 5000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction (Completion) of Multi-Purpose Building, Barangay Buasao, Sto. Domingo, Nueva Ecija",
+      "nepPesos": "6000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 736
+    },
+    {
+      "id": "HB10858-3-0340-004288",
+      "title": "Construction of Box Culvert, Barangay Concepcion, Zaragoza, Nueva Ecija, Sta. 0+000 - Sta. 0+014.4",
+      "amountPesos": 10000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Box Culvert Barangay NBBS Proper (C 0 + 000 - C 0 + 504), Navotas City",
+      "nepPesos": "50000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 340
+    },
+    {
+      "id": "HB10858-3-0340-004289",
+      "title": "Construction of Box Culvert, Barangay Malbeg, Cuyapo, Nueva Ecija, Sta. 0+000 - Sta. 0+014.4",
+      "amountPesos": 9000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Box Culvert Barangay NBBS Proper (C 0 + 000 - C 0 + 504), Navotas City",
+      "nepPesos": "50000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 340
+    },
+    {
+      "id": "HB10858-3-0518-007860",
+      "title": "Construction of Bridge, Barangay Narvacan II, Guimba, Nueva Ecija, 15.6950777, 120.749619",
+      "amountPesos": 31850000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Road, Barangay Narvacan II, Guimba, Nueva Ecija",
+      "nepPesos": "5000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 518
+    },
+    {
+      "id": "HB10858-3-0519-007881",
+      "title": "Construction of Drainage Barangay Andal Aliño, Talavera, Nueva Ecija, STA. 0+000 - STA 0+320",
+      "amountPesos": 5000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Bridge, Barangay Concepcion, Sto. Domingo, Nueva Ecija Sta. 0+000 - Sta. 0+035",
+      "nepPesos": "47850000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 519
+    },
+    {
+      "id": "HB10858-3-0340-004286",
+      "title": "Construction of Drainage Barangay La Torre, Talavera, Nueva Ecija STA 0+000 - STA 0+936",
+      "amountPesos": 16400000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Drainage Structure (including Pumping Station) along La Salle Avenue, Bacolod City (Sta. 0+000 - Sta. 0+150)",
+      "nepPesos": "302100000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 340
+    },
+    {
+      "id": "HB10858-3-0340-004290",
+      "title": "Construction of Drainage Barangay Poblacion Sur, Talavera, Nueva Ecija, Sta. 0+000 - Sta. 0+231",
+      "amountPesos": 5000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Drainage, Barangay Poblacion, Kawayan, Biliran (Sta. 0+000 - Sta. 0+160)",
+      "nepPesos": "5000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 340
+    },
+    {
+      "id": "HB10858-3-0521-007932",
+      "title": "Construction of Drainage System, Barangay Tulat, San jose City, Nueva Ecija",
+      "amountPesos": 7500000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Bridge, Barangay Kaliwanagan to Barangay Tayabo, San Jose City, Nueva Ecija",
+      "nepPesos": "180000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 2nd District"
+      ],
+      "sourcePage": 521
+    },
+    {
+      "id": "HB10858-3-0340-004287",
+      "title": "Construction of Drainage, Barangay Mayamot, Zaragoza, Nueva Ecija, Sta. 0+000 - Sta. 0+399",
+      "amountPesos": 11500000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Drainage System along Golden Meadows Ave. Sta. 0+000 - Sta. 0+385, Golden Meadows Subd., Barangay Mayamot, Antipolo City",
+      "nepPesos": "15000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 340
+    },
+    {
+      "id": "HB10858-3-0736-012306",
+      "title": "Construction of Multi Purpose Building at Barangay Rang-ayan, Muñoz, Nueva Ecija, 15.742701, 120.881954",
+      "amountPesos": 6500000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Multi-Purpose Building at Barangay Buenlag, Gerona, Tarlac (15.627114, 120.581505)",
+      "nepPesos": "15000000",
+      "geographicStatus": "unresolved",
+      "districts": [],
+      "sourcePage": 736
+    },
+    {
+      "id": "HB10858-3-0737-012330",
+      "title": "Construction of Multi-Purpose Building (Senior Citizens Center), Barangay F.C. Otic, Carranglan, Nueva Ecija",
+      "amountPesos": 10000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Multi-Purpose Building (Senior Citizen & SK Center), Barangay Poblacion, Municipality of Anao, Province of Tarlac",
+      "nepPesos": "7000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 2nd District"
+      ],
+      "sourcePage": 737
+    },
+    {
+      "id": "HB10858-3-0736-012301",
+      "title": "Construction of Multi-Purpose Building at Barangay Capintalan, Carranglan, Nueva Ecija, 16.101797, 120.926338",
+      "amountPesos": 6500000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Multi-Purpose Building at Barangay Mabini, Tarlac City, Tarlac (15.4921816, 120.5919821)",
+      "nepPesos": "6000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 2nd District"
+      ],
+      "sourcePage": 736
+    },
+    {
+      "id": "HB10858-3-0735-012300",
+      "title": "Construction of Multi-Purpose Building at Barangay Del Pilar, Rizal, Nueva Ecija, 15.696469, 121.090455",
+      "amountPesos": 31000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Multi-Purpose Building at Barangay Buenlag, Gerona, Tarlac (15.627114, 120.581505)",
+      "nepPesos": "15000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 2nd District"
+      ],
+      "sourcePage": 735
+    },
+    {
+      "id": "HB10858-3-0736-012305",
+      "title": "Construction of Multi-Purpose Building at Barangay Gen. Luna, Carranglan, Nueva Ecija, 15.952991, 121.10932",
+      "amountPesos": 6500000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Multi-Purpose Building at Barangay Bawa, Gerona, Tarlac (15.603553, 120.623772)",
+      "nepPesos": "20000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 2nd District"
+      ],
+      "sourcePage": 736
+    },
+    {
+      "id": "HB10858-3-0736-012304",
+      "title": "Construction of Multi-Purpose Building at Barangay Marikit, Pantabangan, Nueva Ecija, 15.798860, 121.249358",
+      "amountPesos": 6500000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Multi-Purpose Building at Barangay Buting, Pasig City 14.55329035, 121.0689975",
+      "nepPesos": "25000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 2nd District"
+      ],
+      "sourcePage": 736
+    },
+    {
+      "id": "HB10858-3-0736-012302",
+      "title": "Construction of Multi-Purpose Building at Barangay Poblacion East, Rizal, Nueva Ecija, 15.709594, 121.108445",
+      "amountPesos": 6500000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Multi-Purpose Building at Barangay Balanti, Tarlac City, Tarlac (15.457675, 120.559685)",
+      "nepPesos": "10000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 2nd District"
+      ],
+      "sourcePage": 736
+    },
+    {
+      "id": "HB10858-3-0737-012325",
+      "title": "Construction of Multi-Purpose Building, Barangay Cabawangan, Nampicuan, Nueva Ecija",
+      "amountPesos": 50000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Multi-Purpose Facility (Evacuation Center) at Barangay Escaño, Guimba Nueva Ecija",
+      "nepPesos": "30000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 737
+    },
+    {
+      "id": "HB10858-3-0739-012377",
+      "title": "Construction of Multi-Purpose Building, Barangay Kita-Kita, San Jose City, Nueva Ecija",
+      "amountPesos": 6000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Multi-Purpose Building, Barangay San Jose, Balanga City, Bataan (14.671365, 120.535013)",
+      "nepPesos": "25000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 2nd District"
+      ],
+      "sourcePage": 739
+    },
+    {
+      "id": "HB10858-3-0736-012309",
+      "title": "Construction of Multi-Purpose Building, Barangay North Poblacion, Nampicuan, Nueva Ecija, 15.733979, 120.635554",
+      "amountPesos": 20000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Multi-Purpose Building at Barangay Balanti, Tarlac City, Tarlac (15.457675, 120.559685)",
+      "nepPesos": "10000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 736
+    },
+    {
+      "id": "HB10858-3-0736-012308",
+      "title": "Construction of Multi-Purpose Building, District I, Cuyapo, Nueva Ecija, 15.77927, 120.66268",
+      "amountPesos": 20000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Multi-Purpose Building at Barangay San Manuel, Tarlac City, Tarlac (15.4833711, 120.662658)",
+      "nepPesos": "12000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 736
+    },
+    {
+      "id": "HB10858-3-0518-007863",
+      "title": "Construction of Road, Aliaga IS, Barangay Santiago, Aliaga Nueva Ecija (KATUBIGAN- Kalsada Tungo sa Patubigan), Sta. 0+000 - Sta. 1+068",
+      "amountPesos": 12000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Road, Barangay Santa Maria, Licab, Nueva Ecija Sta. + 0+000 - Sta.1+500",
+      "nepPesos": "20300000",
+      "geographicStatus": "unresolved",
+      "districts": [],
+      "sourcePage": 518
+    },
+    {
+      "id": "HB10858-3-0521-007935",
+      "title": "Construction of Road, Anak-Pawis, Sitio Cabanasan, Barangay San Roque, Lupao, Nueva Ecija",
+      "amountPesos": 10000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Road, Barangay San Francisco, Sto. Domingo, Nueva Ecija",
+      "nepPesos": "5000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 2nd District"
+      ],
+      "sourcePage": 521
+    },
+    {
+      "id": "HB10858-3-0521-007934",
+      "title": "Construction of Road, Barangay A. Bonifacio, Llanera, Nueva Ecija",
+      "amountPesos": 7000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Road, Barangay Baloc, Sto. Domingo, Nueva Ecija",
+      "nepPesos": "5000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 2nd District"
+      ],
+      "sourcePage": 521
+    },
+    {
+      "id": "HB10858-3-0519-007885",
+      "title": "Construction of Road, Barangay Alemania, Nampicuan, Nueva Ecija, Sta. 0+000 - Sta. 0+444",
+      "amountPesos": 5000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Road, Barangay Bentigan Cuyapo to Nampicuan Nueva Ecija",
+      "nepPesos": "20000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 519
+    },
+    {
+      "id": "HB10858-3-0521-007937",
+      "title": "Construction of Road, Barangay Bagong Flores, Lupao, Nueva Ecija",
+      "amountPesos": 10000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Road, Barangay Baloc, Sto. Domingo, Nueva Ecija",
+      "nepPesos": "5000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 2nd District"
+      ],
+      "sourcePage": 521
+    },
+    {
+      "id": "HB10858-3-0519-007876",
+      "title": "Construction of Road, Barangay Bakal III, Talavera, Nueva Ecija, Sta. 0+000 - Sta. 0+622",
+      "amountPesos": 7000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Bridge, Barangay Concepcion, Sto. Domingo, Nueva Ecija Sta. 0+000 - Sta. 0+035",
+      "nepPesos": "47850000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 519
+    },
+    {
+      "id": "HB10858-3-0518-007871",
+      "title": "Construction of Road, Barangay Balingog East, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 0+798",
+      "amountPesos": 10000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Bridge, Barangay Concepcion, Sto. Domingo, Nueva Ecija Sta. 0+000 - Sta. 0+035",
+      "nepPesos": "47850000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 518
+    },
+    {
+      "id": "HB10858-3-0518-007861",
+      "title": "Construction of Road, Barangay Betes, Aliaga, Nueva Ecija, Sta. 0+000 - Sta. 1+424",
+      "amountPesos": 16000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Bridge, Barangay Concepcion, Sto. Domingo, Nueva Ecija Sta. 0+000 - Sta. 0+035",
+      "nepPesos": "47850000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 518
+    },
+    {
+      "id": "HB10858-3-0519-007884",
+      "title": "Construction of Road, Barangay Bulakid, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 0+444",
+      "amountPesos": 5000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Bridge, Barangay Concepcion, Sto. Domingo, Nueva Ecija Sta. 0+000 - Sta. 0+035",
+      "nepPesos": "47850000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 519
+    },
+    {
+      "id": "HB10858-3-0521-007938",
+      "title": "Construction of Road, Barangay Buted, Talugtug, Nueva Ecija",
+      "amountPesos": 10000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Road, Barangay Baloc, Sto. Domingo, Nueva Ecija",
+      "nepPesos": "5000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 2nd District"
+      ],
+      "sourcePage": 521
+    },
+    {
+      "id": "HB10858-3-0519-007874",
+      "title": "Construction of Road, Barangay Caballero to Barangay Triala, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 0+693",
+      "amountPesos": 8500000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Road, Barangay Cavite to Barangay Sta. Ana, Guimba, Nueva Ecija",
+      "nepPesos": "10000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 519
+    },
+    {
+      "id": "HB10858-3-0519-007887",
+      "title": "Construction of Road, Barangay Cabawangan, Nampicuan, Nueva Ecija, Sta. 0+000 - Sta. 0+444",
+      "amountPesos": 5000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Road, Barangay Bentigan Cuyapo to Nampicuan Nueva Ecija",
+      "nepPesos": "20000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 519
+    },
+    {
+      "id": "HB10858-3-0519-007877",
+      "title": "Construction of Road, Barangay Catimon, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 0+554",
+      "amountPesos": 6800000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Bridge, Barangay Concepcion, Sto. Domingo, Nueva Ecija Sta. 0+000 - Sta. 0+035",
+      "nepPesos": "47850000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 519
+    },
+    {
+      "id": "HB10858-3-0518-007862",
+      "title": "Construction of Road, Barangay Cawayang Bugtong, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 1+223",
+      "amountPesos": 15000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Road, Barangay Cavite to Barangay Sta. Ana, Guimba, Nueva Ecija",
+      "nepPesos": "10000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 518
+    },
+    {
+      "id": "HB10858-3-0518-007867",
+      "title": "Construction of Road, Barangay Curva, Cuyapo, Nueva Ecija, Sta. 0+000 - Sta. 0+798",
+      "amountPesos": 10000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Bridge, Barangay Concepcion, Sto. Domingo, Nueva Ecija Sta. 0+000 - Sta. 0+035",
+      "nepPesos": "47850000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 518
+    },
+    {
+      "id": "HB10858-3-0518-007872",
+      "title": "Construction of Road, Barangay Doña Lucia, Quezon, Nueva Ecija, Sta. 0+000 - Sta. 0+798",
+      "amountPesos": 10000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Road, Barangay Barangay I, Quezon, Nueva Ecija",
+      "nepPesos": "5417500",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 518
+    },
+    {
+      "id": "HB10858-3-0519-007886",
+      "title": "Construction of Road, Barangay Escaño, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 0+444",
+      "amountPesos": 5000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Bridge, Barangay Concepcion, Sto. Domingo, Nueva Ecija Sta. 0+000 - Sta. 0+035",
+      "nepPesos": "47850000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 519
+    },
+    {
+      "id": "HB10858-3-0519-007883",
+      "title": "Construction of Road, Barangay Guiset, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 0+444",
+      "amountPesos": 5000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Bridge, Barangay Concepcion, Sto. Domingo, Nueva Ecija Sta. 0+000 - Sta. 0+035",
+      "nepPesos": "47850000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 519
+    },
+    {
+      "id": "HB10858-3-0518-007868",
+      "title": "Construction of Road, Barangay H. Romero, Zaragoza, Nueva Ecija, Sta. 0+000 - Sta. 0+798",
+      "amountPesos": 10000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Road, Barangay Carmen, Zaragoza Nueva Ecija",
+      "nepPesos": "11000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 518
+    },
+    {
+      "id": "HB10858-3-0518-007869",
+      "title": "Construction of Road, Barangay Lamorito, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 0+798",
+      "amountPesos": 10000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Bridge, Barangay Concepcion, Sto. Domingo, Nueva Ecija Sta. 0+000 - Sta. 0+035",
+      "nepPesos": "47850000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 518
+    },
+    {
+      "id": "HB10858-3-0524-008011",
+      "title": "Construction of Road, Barangay Mabuhay, Talavera, Nueva Ecija, Sta. 0+000 - Sta. 0+975",
+      "amountPesos": 10978000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Road, Barangay Pula to Barangay Minabuyok, Talavera, Nueva Ecija",
+      "nepPesos": "10000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 524
+    },
+    {
+      "id": "HB10858-3-0522-007946",
+      "title": "Construction of Road, Barangay Macatcatuit, Guimba, Nueva Ecija Sta. 0+000 - Sta. 0+993",
+      "amountPesos": 10000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Road, Barangay Macatcatuit to Barangay Calem, Guimba, Nueva Ecija",
+      "nepPesos": "10000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 522
+    },
+    {
+      "id": "HB10858-3-0521-007936",
+      "title": "Construction of Road, Barangay Mangandingay, Muñoz, Nueva Ecija",
+      "amountPesos": 6500000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Road, Barangay Carmen, Zaragoza Nueva Ecija",
+      "nepPesos": "11000000",
+      "geographicStatus": "unresolved",
+      "districts": [],
+      "sourcePage": 521
+    },
+    {
+      "id": "HB10858-3-0521-007933",
+      "title": "Construction of Road, Barangay Mapangpang, Lupao, Nueva Ecija",
+      "amountPesos": 6000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Road, Barangay Carmen, Zaragoza Nueva Ecija",
+      "nepPesos": "11000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 2nd District"
+      ],
+      "sourcePage": 521
+    },
+    {
+      "id": "HB10858-3-0522-007959",
+      "title": "Construction of Road, Barangay Pag-asa, Talavera, Nueva Ecija, Sta. 0+000 - Sta. 0+416",
+      "amountPesos": 5000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Road, Barangay Pag-asa (Bridge Approach), Talavera, Nueva Ecija",
+      "nepPesos": "5000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 522
+    },
+    {
+      "id": "HB10858-3-0519-007889",
+      "title": "Construction of Road, Barangay Paitan Sur, Cuyapo, Nueva Ecija, Sta. 0+000 - Sta. 0+444",
+      "amountPesos": 5000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Bridge, Barangay Concepcion, Sto. Domingo, Nueva Ecija Sta. 0+000 - Sta. 0+035",
+      "nepPesos": "47850000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 519
+    },
+    {
+      "id": "HB10858-3-0519-007888",
+      "title": "Construction of Road, Barangay Sabit, Cuyapo, Nueva Ecija, Sta. 0+000 - Sta. 0+444",
+      "amountPesos": 5000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Bridge, Barangay Concepcion, Sto. Domingo, Nueva Ecija Sta. 0+000 - Sta. 0+035",
+      "nepPesos": "47850000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 519
+    },
+    {
+      "id": "HB10858-3-0518-007866",
+      "title": "Construction of Road, Barangay San Antonio, Cuyapo, Nueva Ecija, Sta. 0+000 - Sta. 0+798",
+      "amountPesos": 10000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Bridge, Barangay Concepcion, Sto. Domingo, Nueva Ecija Sta. 0+000 - Sta. 0+035",
+      "nepPesos": "47850000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 518
+    },
+    {
+      "id": "HB10858-3-0519-007879",
+      "title": "Construction of Road, Barangay San Pascual, Talavera, Nueva Ecija, Sta. 0+000 - Sta. 0+533",
+      "amountPesos": 6000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Road, Barangay San Pascual, Sto. Domingo, Nueva Ecija",
+      "nepPesos": "5500000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 519
+    },
+    {
+      "id": "HB10858-3-0524-008012",
+      "title": "Construction of Road, Barangay Sta. Cruz Purok 1, Zaragoza, Nueva Ecija, Sta. 0+000 - Sta. 0+500",
+      "amountPesos": 6000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Bridge, Barangay Concepcion, Sto. Domingo, Nueva Ecija Sta. 0+000 - Sta. 0+035",
+      "nepPesos": "47850000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 524
+    },
+    {
+      "id": "HB10858-3-0518-007865",
+      "title": "Construction of Road, Barangay Sta. Lucia Young, Zaragoza, Nueva Ecija, Sta. 0+000 - Sta. 0+977",
+      "amountPesos": 11000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "Multiple or already paired NEP counterparts; review scope",
+      "nepId": "",
+      "nepTitle": "Construction of Bridge Barangay Sta. Lucia Young, Zaragoza, Nueva Ecija",
+      "nepPesos": "35100000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 518
+    },
+    {
+      "id": "HB10858-3-0518-007864",
+      "title": "Construction of Road, Barangay Sto. Tomas Feria, Quezon, Nueva Ecija, Sta. 0+000 - Sta. 0+977",
+      "amountPesos": 11000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Bridge, Barangay Concepcion, Sto. Domingo, Nueva Ecija Sta. 0+000 - Sta. 0+035",
+      "nepPesos": "47850000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 518
+    },
+    {
+      "id": "HB10858-3-0518-007870",
+      "title": "Construction of Road, Barangay Tutuloy, Cuyapo, Nueva Ecija, Sta. 0+000 - Sta. 0+798",
+      "amountPesos": 10000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Bridge, Barangay Concepcion, Sto. Domingo, Nueva Ecija Sta. 0+000 - Sta. 0+035",
+      "nepPesos": "47850000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 518
+    },
+    {
+      "id": "HB10858-3-0524-008013",
+      "title": "Construction of Road, Barangay Yuson, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 0+718",
+      "amountPesos": 9000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Bridge, Barangay Concepcion, Sto. Domingo, Nueva Ecija Sta. 0+000 - Sta. 0+035",
+      "nepPesos": "47850000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 524
+    },
+    {
+      "id": "HB10858-3-0521-007930",
+      "title": "Construction of Road, Sitio Binbin, Barangay General Luna, Carranglan, Nueva Ecija Sta. 0+000 - Sta. 2+900, Sta. 4+700 - Sta. 5+30",
+      "amountPesos": 40000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "Plausible NEP title counterpart; review scope",
+      "nepId": "p495:r27",
+      "nepTitle": "Construction of Road, Barangay General Luna to Barangay Binbin, Carranglan, Nueva Ecija Sta. 0+000 - Sta. 2+900, Sta. 4+750 - Sta. 6+570",
+      "nepPesos": "7000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 2nd District"
+      ],
+      "sourcePage": 521
+    },
+    {
+      "id": "HB10858-3-0383-005080",
+      "title": "Construction of Water System, Barangay Bicos, Rizal, Nueva Ecija",
+      "amountPesos": 6000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "",
+      "nepPesos": "",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 2nd District"
+      ],
+      "sourcePage": 383
+    },
+    {
+      "id": "HB10858-3-0383-005081",
+      "title": "Construction of Water System, Barangay Caridad Sur, Llanera, Nueva Ecija",
+      "amountPesos": 6000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "",
+      "nepPesos": "",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 2nd District"
+      ],
+      "sourcePage": 383
+    },
+    {
+      "id": "HB10858-3-0383-005082",
+      "title": "Construction of Water System, Barangay Mayamot I, Talugtug, Nueva Ecija",
+      "amountPesos": 6000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "",
+      "nepPesos": "",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 2nd District"
+      ],
+      "sourcePage": 383
+    },
+    {
+      "id": "HB10858-3-0383-005084",
+      "title": "Construction of Water System, Barangay Murcon, Llanera, Nueva Ecija",
+      "amountPesos": 6000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "",
+      "nepPesos": "",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 2nd District"
+      ],
+      "sourcePage": 383
+    },
+    {
+      "id": "HB10858-3-0383-005085",
+      "title": "Construction of Water System, Barangay San Gregorio, Rizal, Nueva Ecija",
+      "amountPesos": 6000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "",
+      "nepPesos": "",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 2nd District"
+      ],
+      "sourcePage": 383
+    },
+    {
+      "id": "HB10858-3-0383-005083",
+      "title": "Construction of Water System, Barangay Villa Viniegas, Llanera, Nueva Ecija",
+      "amountPesos": 6000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Butuan City Water System, Main Bypass Pipeline , (Barangay Villa Kanangga - Barangay Bancasi Section ), Butuan City",
+      "nepPesos": "300000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 2nd District"
+      ],
+      "sourcePage": 383
+    },
+    {
+      "id": "HB10858-3-0736-012303",
+      "title": "Construction/ Rehabilitation of Multi-Purpose Hall, Barangay Fatima, Pantabangan, Nueva Ecija, 15.81282, 121.096617",
+      "amountPesos": 6500000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Multi-Purpose Facility (Evacuation Center) at Barangay Escaño, Guimba Nueva Ecija",
+      "nepPesos": "30000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 2nd District"
+      ],
+      "sourcePage": 736
+    },
+    {
+      "id": "HB10858-3-0230-002195",
+      "title": "Guimba - Pura Road, Nueva Ecija, STA. 6+146 - STA. 7+100",
+      "amountPesos": 50000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Sto. Rosario - Carmen Road, Zaragoza By-Pass, Nueva Ecija, Sta. 6+395 - Sta. 8+000",
+      "nepPesos": "220000000",
+      "geographicStatus": "unresolved",
+      "districts": [],
+      "sourcePage": 230
+    },
+    {
+      "id": "HB10858-3-0253-002563",
+      "title": "Guimba-Pura Road, Chainage 0 - Chainage 8109 Road Safety Facilities (Roadway Lighting)",
+      "amountPesos": 20000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Dapa-Union-General Luna Road (SG00364SG), K0001+(961)-K0007+39 (Road Safety: Roadway Lighting)",
+      "nepPesos": "50000000",
+      "geographicStatus": "unresolved",
+      "districts": [],
+      "sourcePage": 253
+    },
+    {
+      "id": "HB10858-3-0253-002560",
+      "title": "Jct. Pinagpanaan-Rizal-Pantabangan Road, K0127+644 - K0128+800, K0131+105 - K0132+190",
+      "amountPesos": 24970000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Installation/Application of Road Safety Facilities (Roadway Lighting) along Jct. Pinagpanaan - Rizal - Pantabangan Road",
+      "nepPesos": "14800000",
+      "geographicStatus": "unresolved",
+      "districts": [],
+      "sourcePage": 253
+    },
+    {
+      "id": "HB10858-3-0230-002196",
+      "title": "Licab - Victoria Diversion Road, Nueva Ecija Sta. 4+067.00 - Sta. 4+554.95",
+      "amountPesos": 15000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "",
+      "nepPesos": "",
+      "geographicStatus": "unresolved",
+      "districts": [],
+      "sourcePage": 230
+    },
+    {
+      "id": "HB10858-3-0253-002561",
+      "title": "Muñoz-Lupao Rd - K0162 + 833 - K0163 + 000, K0164 + 000 - K0164 + 377",
+      "amountPesos": 10000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "",
+      "nepPesos": "",
+      "geographicStatus": "unresolved",
+      "districts": [],
+      "sourcePage": 253
+    },
+    {
+      "id": "HB10858-3-0169-001097",
+      "title": "Nueva Ecija - Pangasinan Rd Chainage 8 - Chainage 104",
+      "amountPesos": 2200000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "",
+      "nepPesos": "",
+      "geographicStatus": "unresolved",
+      "districts": [],
+      "sourcePage": 169
+    },
+    {
+      "id": "HB10858-3-0192-001483",
+      "title": "Nueva Ecija - Pangasinan Rd K0139+000 - K0139+300 BS, K0139+300 - K0139+700 LS",
+      "amountPesos": 13200000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "",
+      "nepPesos": "",
+      "geographicStatus": "unresolved",
+      "districts": [],
+      "sourcePage": 192
+    },
+    {
+      "id": "HB10858-3-0192-001484",
+      "title": "Nueva Ecija - Pangasinan Rd K0140+000 - K0140+330 LS",
+      "amountPesos": 7260000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "",
+      "nepPesos": "",
+      "geographicStatus": "unresolved",
+      "districts": [],
+      "sourcePage": 192
+    },
+    {
+      "id": "HB10858-3-0192-001485",
+      "title": "Nueva Ecija - Pangasinan Rd K0143+716 - K144+670 RS",
+      "amountPesos": 20923000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "",
+      "nepPesos": "",
+      "geographicStatus": "unresolved",
+      "districts": [],
+      "sourcePage": 192
+    },
+    {
+      "id": "HB10858-3-0193-001486",
+      "title": "Nueva Ecija - Pangasinan Rd K0157+400 - K0157+600 LS",
+      "amountPesos": 4400000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "",
+      "nepPesos": "",
+      "geographicStatus": "unresolved",
+      "districts": [],
+      "sourcePage": 193
+    },
+    {
+      "id": "HB10858-3-0130-000378",
+      "title": "Nueva Ecija - Pangasinan Rd K0168+889 - K0169+596",
+      "amountPesos": 15000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "",
+      "nepPesos": "",
+      "geographicStatus": "unresolved",
+      "districts": [],
+      "sourcePage": 130
+    },
+    {
+      "id": "HB10858-3-0130-000379",
+      "title": "Nueva Ecija - Pangasinan Rd K0173+000 - K0175+276",
+      "amountPesos": 48100000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "P Burgos-Pototanin Jct - K0172 + 000 - K0173 + 043, K0175 + 000 - K0175 + 622, K0181 + 220 - K0181 + 330",
+      "nepPesos": "100000000",
+      "geographicStatus": "unresolved",
+      "districts": [],
+      "sourcePage": 130
+    },
+    {
+      "id": "HB10858-3-0521-007931",
+      "title": "Rehabilitation of Bridge, Barangay Cabisuculan, Science City of Muñoz, Nueva Ecija",
+      "amountPesos": 20000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Road, Barangay Carmen, Zaragoza Nueva Ecija",
+      "nepPesos": "11000000",
+      "geographicStatus": "unresolved",
+      "districts": [],
+      "sourcePage": 521
+    },
+    {
+      "id": "HB10858-3-0340-004285",
+      "title": "Rehabilitation/ Improvement of Flood Control, Barangay Aquino, Licab, Nueva Ecija, Sta. 0+000 - Sta. 0+290",
+      "amountPesos": 50000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Construction of Drainage, Barangay Ninoy Aquino, Angeles City Pampanga, Sta. 0+000 - Sta. 0+550, Sta. 0+000 - Sta. 0+615",
+      "nepPesos": "5571000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 340
+    },
+    {
+      "id": "HB10858-3-0340-004284",
+      "title": "Rehabilitation/ Improvement of Flood Control, Barangay San Juan, Licab, Nueva Ecija, Sta. 0+000 - Sta. 0+290",
+      "amountPesos": 50000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Rehabilitation of Drainage System at Mañalac Ave. (Sta. 0+000 - Sta. 0+084), Barangay San Martin de Porres, Parañaque City",
+      "nepPesos": "5000000",
+      "geographicStatus": "unique",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "sourcePage": 340
+    },
+    {
+      "id": "HB10858-3-0262-002737",
+      "title": "San Felipe Br. 1 (B03436LZ) along Muñoz-Lupao Rd",
+      "amountPesos": 39150000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "Mapangpang Br. (Muñoz) (B01271LZ) along Muñoz-Lupao Rd",
+      "nepPesos": "35000000",
+      "geographicStatus": "unresolved",
+      "districts": [],
+      "sourcePage": 262
+    },
+    {
+      "id": "HB10858-3-0119-000165",
+      "title": "Sta. Rosa - Tarlac Rd - K0120+296 - K0121+510",
+      "amountPesos": 15000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "",
+      "nepPesos": "",
+      "geographicStatus": "unresolved",
+      "districts": [],
+      "sourcePage": 119
+    },
+    {
+      "id": "HB10858-3-0119-000164",
+      "title": "Sta. Rosa - Tarlac Rd - K0120+296 - K0121+510 Start: 15.4469474, 120.8193798 End: 15.4482286, 120.8081534",
+      "amountPesos": 26000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "",
+      "nepPesos": "",
+      "geographicStatus": "unresolved",
+      "districts": [],
+      "sourcePage": 119
+    },
+    {
+      "id": "HB10858-3-0189-001431",
+      "title": "Sta. Rosa - Tarlac Rd K0123+102 - K0123+396LS",
+      "amountPesos": 8000000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "",
+      "nepPesos": "",
+      "geographicStatus": "unresolved",
+      "districts": [],
+      "sourcePage": 189
+    },
+    {
+      "id": "HB10858-3-0153-000818",
+      "title": "Sta. Rosa - Tarlac Rd, K0118 + 185 - K0119 + 000, K0121 + 591 - K0121 + 722, K0121 + 772 - K0122",
+      "amountPesos": 30100000,
+      "externalOffice": "Nueva Ecija 1st District Engineering Office",
+      "status": "No plausible NEP title counterpart; review candidate",
+      "nepId": "",
+      "nepTitle": "",
+      "nepPesos": "",
+      "geographicStatus": "unresolved",
+      "districts": [],
+      "sourcePage": 153
+    }
+  ],
+  "requestedLEGInsertions": [
+    {
+      "id": "HB10858-3-0340-004284",
+      "projectName": "Rehabilitation/ Improvement of Flood Control, Barangay San Juan, Licab, Nueva Ecija, Sta. 0+000 - Sta. 0+290",
+      "amountPesos": 50000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 340,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "licab",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+290"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+290"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "281efe4f4e10e0f7d49a510b273eccd6",
+              "name": "LICAB",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "c4742815bf68ab4c64d3b098de22d88f",
+              "name": "Licab",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0340-004285",
+      "projectName": "Rehabilitation/ Improvement of Flood Control, Barangay Aquino, Licab, Nueva Ecija, Sta. 0+000 - Sta. 0+290",
+      "amountPesos": 50000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 340,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "licab",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+290"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+290"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "281efe4f4e10e0f7d49a510b273eccd6",
+              "name": "LICAB",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "c4742815bf68ab4c64d3b098de22d88f",
+              "name": "Licab",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0340-004286",
+      "projectName": "Construction of Drainage Barangay La Torre, Talavera, Nueva Ecija STA 0+000 - STA 0+936",
+      "amountPesos": 16400000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 340,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "talavera",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta 0+000 - sta 0+936"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta 0+000 - sta 0+936"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "92427e7f6244bcdb92c55f7cec7796dc",
+              "name": "TALAVERA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "36027f1ada64728f7b6416d71b464346",
+              "name": "Talavera",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0340-004287",
+      "projectName": "Construction of Drainage, Barangay Mayamot, Zaragoza, Nueva Ecija, Sta. 0+000 - Sta. 0+399",
+      "amountPesos": 11500000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 340,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "zaragoza",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+399"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+399"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "050eca895c739a3433e09e1821c67a84",
+              "name": "ZARAGOZA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "1719cb231cf6b57c9110e750930070d9",
+              "name": "Zaragoza",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0340-004288",
+      "projectName": "Construction of Box Culvert, Barangay Concepcion, Zaragoza, Nueva Ecija, Sta. 0+000 - Sta. 0+014.4",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 340,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "zaragoza",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+014.4"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+014.4"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "050eca895c739a3433e09e1821c67a84",
+              "name": "ZARAGOZA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "1719cb231cf6b57c9110e750930070d9",
+              "name": "Zaragoza",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0340-004289",
+      "projectName": "Construction of Box Culvert, Barangay Malbeg, Cuyapo, Nueva Ecija, Sta. 0+000 - Sta. 0+014.4",
+      "amountPesos": 9000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 340,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "cuyapo",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+014.4"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+014.4"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "cc89a653283653abc501c6c51e0a585e",
+              "name": "CUYAPO",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "4adaf993c5b804d4004e70db5a1cf31c",
+              "name": "Cuyapo",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0340-004290",
+      "projectName": "Construction of Drainage Barangay Poblacion Sur, Talavera, Nueva Ecija, Sta. 0+000 - Sta. 0+231",
+      "amountPesos": 5000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 340,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "talavera",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+231"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+231"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "92427e7f6244bcdb92c55f7cec7796dc",
+              "name": "TALAVERA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "36027f1ada64728f7b6416d71b464346",
+              "name": "Talavera",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0518-007860",
+      "projectName": "Construction of Bridge, Barangay Narvacan II, Guimba, Nueva Ecija, 15.6950777, 120.749619",
+      "amountPesos": 31850000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 518,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "guimba",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "15.6950777",
+            "120.749619"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "15.6950777",
+            "120.749619"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "89a669fd3ea92102879bc657acbec7b8",
+              "name": "GUIMBA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "a1dd42e3f5e8e92a691654f63caa16f2",
+              "name": "Guimba",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0518-007861",
+      "projectName": "Construction of Road, Barangay Betes, Aliaga, Nueva Ecija, Sta. 0+000 - Sta. 1+424",
+      "amountPesos": 16000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 518,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "aliaga",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 1+424"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 1+424"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "d2020b030bee9605828515d88ce386f7",
+              "name": "ALIAGA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "0d03b2d3c169653915211b339e3587b3",
+              "name": "Aliaga",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0518-007862",
+      "projectName": "Construction of Road, Barangay Cawayang Bugtong, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 1+223",
+      "amountPesos": 15000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 518,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "guimba",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 1+223"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 1+223"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "89a669fd3ea92102879bc657acbec7b8",
+              "name": "GUIMBA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "a1dd42e3f5e8e92a691654f63caa16f2",
+              "name": "Guimba",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0518-007864",
+      "projectName": "Construction of Road, Barangay Sto. Tomas Feria, Quezon, Nueva Ecija, Sta. 0+000 - Sta. 0+977",
+      "amountPesos": 11000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 518,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "quezon",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+977"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+977"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "3361e2e089ca14ec300c427c282da9a5",
+              "name": "QUEZON",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0518-007866",
+      "projectName": "Construction of Road, Barangay San Antonio, Cuyapo, Nueva Ecija, Sta. 0+000 - Sta. 0+798",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 518,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "cuyapo",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+798"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+798"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "cc89a653283653abc501c6c51e0a585e",
+              "name": "CUYAPO",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "4adaf993c5b804d4004e70db5a1cf31c",
+              "name": "Cuyapo",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0518-007867",
+      "projectName": "Construction of Road, Barangay Curva, Cuyapo, Nueva Ecija, Sta. 0+000 - Sta. 0+798",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 518,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "cuyapo",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+798"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+798"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "cc89a653283653abc501c6c51e0a585e",
+              "name": "CUYAPO",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "4adaf993c5b804d4004e70db5a1cf31c",
+              "name": "Cuyapo",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0518-007868",
+      "projectName": "Construction of Road, Barangay H. Romero, Zaragoza, Nueva Ecija, Sta. 0+000 - Sta. 0+798",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 518,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "zaragoza",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+798"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+798"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "050eca895c739a3433e09e1821c67a84",
+              "name": "ZARAGOZA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "1719cb231cf6b57c9110e750930070d9",
+              "name": "Zaragoza",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0518-007869",
+      "projectName": "Construction of Road, Barangay Lamorito, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 0+798",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 518,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "guimba",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+798"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+798"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "89a669fd3ea92102879bc657acbec7b8",
+              "name": "GUIMBA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "a1dd42e3f5e8e92a691654f63caa16f2",
+              "name": "Guimba",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0518-007870",
+      "projectName": "Construction of Road, Barangay Tutuloy, Cuyapo, Nueva Ecija, Sta. 0+000 - Sta. 0+798",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 518,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "cuyapo",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+798"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+798"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "cc89a653283653abc501c6c51e0a585e",
+              "name": "CUYAPO",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "4adaf993c5b804d4004e70db5a1cf31c",
+              "name": "Cuyapo",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0518-007871",
+      "projectName": "Construction of Road, Barangay Balingog East, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 0+798",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 518,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "guimba",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+798"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+798"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "89a669fd3ea92102879bc657acbec7b8",
+              "name": "GUIMBA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "a1dd42e3f5e8e92a691654f63caa16f2",
+              "name": "Guimba",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0518-007872",
+      "projectName": "Construction of Road, Barangay Doña Lucia, Quezon, Nueva Ecija, Sta. 0+000 - Sta. 0+798",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 518,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "quezon",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+798"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+798"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "3361e2e089ca14ec300c427c282da9a5",
+              "name": "QUEZON",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0518-007873",
+      "projectName": "Construction of Road, Barangay Villarosa, Licab, Nueva Ecija, Sta. 0+000 - Sta. 695",
+      "amountPesos": 9000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 518,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "licab",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 695"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 695"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "281efe4f4e10e0f7d49a510b273eccd6",
+              "name": "LICAB",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "c4742815bf68ab4c64d3b098de22d88f",
+              "name": "Licab",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0519-007874",
+      "projectName": "Construction of Road, Barangay Caballero to Barangay Triala, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 0+693",
+      "amountPesos": 8500000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 519,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "guimba",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+693"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+693"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "89a669fd3ea92102879bc657acbec7b8",
+              "name": "GUIMBA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "a1dd42e3f5e8e92a691654f63caa16f2",
+              "name": "Guimba",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0519-007876",
+      "projectName": "Construction of Road, Barangay Bakal III, Talavera, Nueva Ecija, Sta. 0+000 - Sta. 0+622",
+      "amountPesos": 7000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 519,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "talavera",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+622"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+622"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "92427e7f6244bcdb92c55f7cec7796dc",
+              "name": "TALAVERA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "36027f1ada64728f7b6416d71b464346",
+              "name": "Talavera",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0519-007877",
+      "projectName": "Construction of Road, Barangay Catimon, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 0+554",
+      "amountPesos": 6800000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 519,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "guimba",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+554"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+554"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "89a669fd3ea92102879bc657acbec7b8",
+              "name": "GUIMBA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "a1dd42e3f5e8e92a691654f63caa16f2",
+              "name": "Guimba",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0519-007878",
+      "projectName": "Construction of Road, Barangay Burnay, Talavera, Nueva Ecija, Sta. 0+000 - Sta. 0+582",
+      "amountPesos": 6550000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 519,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "talavera",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+582"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+582"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "92427e7f6244bcdb92c55f7cec7796dc",
+              "name": "TALAVERA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "36027f1ada64728f7b6416d71b464346",
+              "name": "Talavera",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0519-007879",
+      "projectName": "Construction of Road, Barangay San Pascual, Talavera, Nueva Ecija, Sta. 0+000 - Sta. 0+533",
+      "amountPesos": 6000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 519,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "talavera",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+533"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+533"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "92427e7f6244bcdb92c55f7cec7796dc",
+              "name": "TALAVERA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "36027f1ada64728f7b6416d71b464346",
+              "name": "Talavera",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0519-007880",
+      "projectName": "Construction of Road, Barangay Manggang Marikit, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 0+500",
+      "amountPesos": 5400000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 519,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "guimba",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+500"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+500"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "89a669fd3ea92102879bc657acbec7b8",
+              "name": "GUIMBA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "a1dd42e3f5e8e92a691654f63caa16f2",
+              "name": "Guimba",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0519-007881",
+      "projectName": "Construction of Drainage Barangay Andal Aliño, Talavera, Nueva Ecija, STA. 0+000 - STA 0+320",
+      "amountPesos": 5000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 519,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "talavera",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta 0+320"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta 0+320"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "92427e7f6244bcdb92c55f7cec7796dc",
+              "name": "TALAVERA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "36027f1ada64728f7b6416d71b464346",
+              "name": "Talavera",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0519-007882",
+      "projectName": "Construction of Road, Barangay Valle, Talavera, Nueva Ecija, Sta. 0+000 - Sta. 0+444",
+      "amountPesos": 5000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 519,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "talavera",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+444"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+444"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "92427e7f6244bcdb92c55f7cec7796dc",
+              "name": "TALAVERA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "36027f1ada64728f7b6416d71b464346",
+              "name": "Talavera",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0519-007883",
+      "projectName": "Construction of Road, Barangay Guiset, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 0+444",
+      "amountPesos": 5000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 519,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "guimba",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+444"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+444"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "89a669fd3ea92102879bc657acbec7b8",
+              "name": "GUIMBA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "a1dd42e3f5e8e92a691654f63caa16f2",
+              "name": "Guimba",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0519-007884",
+      "projectName": "Construction of Road, Barangay Bulakid, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 0+444",
+      "amountPesos": 5000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 519,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "guimba",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+444"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+444"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "89a669fd3ea92102879bc657acbec7b8",
+              "name": "GUIMBA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "a1dd42e3f5e8e92a691654f63caa16f2",
+              "name": "Guimba",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0519-007885",
+      "projectName": "Construction of Road, Barangay Alemania, Nampicuan, Nueva Ecija, Sta. 0+000 - Sta. 0+444",
+      "amountPesos": 5000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 519,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "nampicuan",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+444"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+444"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "37ce9710e179dc4a12aedb243da915cb",
+              "name": "NAMPICUAN",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "81a4268ff797712c8d2041c535c21216",
+              "name": "Nampicuan",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0519-007886",
+      "projectName": "Construction of Road, Barangay Escaño, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 0+444",
+      "amountPesos": 5000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 519,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "guimba",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+444"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+444"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "89a669fd3ea92102879bc657acbec7b8",
+              "name": "GUIMBA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "a1dd42e3f5e8e92a691654f63caa16f2",
+              "name": "Guimba",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0519-007887",
+      "projectName": "Construction of Road, Barangay Cabawangan, Nampicuan, Nueva Ecija, Sta. 0+000 - Sta. 0+444",
+      "amountPesos": 5000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 519,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "nampicuan",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+444"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+444"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "37ce9710e179dc4a12aedb243da915cb",
+              "name": "NAMPICUAN",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "81a4268ff797712c8d2041c535c21216",
+              "name": "Nampicuan",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0519-007888",
+      "projectName": "Construction of Road, Barangay Sabit, Cuyapo, Nueva Ecija, Sta. 0+000 - Sta. 0+444",
+      "amountPesos": 5000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 519,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "cuyapo",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+444"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+444"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "cc89a653283653abc501c6c51e0a585e",
+              "name": "CUYAPO",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "4adaf993c5b804d4004e70db5a1cf31c",
+              "name": "Cuyapo",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0519-007889",
+      "projectName": "Construction of Road, Barangay Paitan Sur, Cuyapo, Nueva Ecija, Sta. 0+000 - Sta. 0+444",
+      "amountPesos": 5000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 519,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "cuyapo",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+444"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+444"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "cc89a653283653abc501c6c51e0a585e",
+              "name": "CUYAPO",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "4adaf993c5b804d4004e70db5a1cf31c",
+              "name": "Cuyapo",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0522-007946",
+      "projectName": "Construction of Road, Barangay Macatcatuit, Guimba, Nueva Ecija Sta. 0+000 - Sta. 0+993",
+      "amountPesos": 10000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 522,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "guimba",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+993"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+993"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "89a669fd3ea92102879bc657acbec7b8",
+              "name": "GUIMBA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "a1dd42e3f5e8e92a691654f63caa16f2",
+              "name": "Guimba",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0522-007959",
+      "projectName": "Construction of Road, Barangay Pag-asa, Talavera, Nueva Ecija, Sta. 0+000 - Sta. 0+416",
+      "amountPesos": 5000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 522,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "talavera",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+416"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+416"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "92427e7f6244bcdb92c55f7cec7796dc",
+              "name": "TALAVERA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "36027f1ada64728f7b6416d71b464346",
+              "name": "Talavera",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0524-008011",
+      "projectName": "Construction of Road, Barangay Mabuhay, Talavera, Nueva Ecija, Sta. 0+000 - Sta. 0+975",
+      "amountPesos": 10978000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 524,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "talavera",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+975"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+975"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "92427e7f6244bcdb92c55f7cec7796dc",
+              "name": "TALAVERA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "36027f1ada64728f7b6416d71b464346",
+              "name": "Talavera",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0524-008012",
+      "projectName": "Construction of Road, Barangay Sta. Cruz Purok 1, Zaragoza, Nueva Ecija, Sta. 0+000 - Sta. 0+500",
+      "amountPesos": 6000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 524,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "zaragoza",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+500"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+500"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "050eca895c739a3433e09e1821c67a84",
+              "name": "ZARAGOZA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "1719cb231cf6b57c9110e750930070d9",
+              "name": "Zaragoza",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0524-008013",
+      "projectName": "Construction of Road, Barangay Yuson, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 0+718",
+      "amountPesos": 9000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 524,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "guimba",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "sta. 0+000 - sta. 0+718"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "sta. 0+000 - sta. 0+718"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "89a669fd3ea92102879bc657acbec7b8",
+              "name": "GUIMBA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "a1dd42e3f5e8e92a691654f63caa16f2",
+              "name": "Guimba",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0636-010373",
+      "projectName": "Construction (Completion) of Multi-Purpose Building, Barangay Dinarayat, Talavera, Nueva Ecija, 15.556002, 120.928936",
+      "amountPesos": 75000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 636,
+      "region": "Region III",
+      "office": "Central Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "talavera",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "15.556002",
+            "120.928936"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "15.556002",
+            "120.928936"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "92427e7f6244bcdb92c55f7cec7796dc",
+              "name": "TALAVERA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "36027f1ada64728f7b6416d71b464346",
+              "name": "Talavera",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0736-012308",
+      "projectName": "Construction of Multi-Purpose Building, District I, Cuyapo, Nueva Ecija, 15.77927, 120.66268",
+      "amountPesos": 20000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 736,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "cuyapo",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "15.77927",
+            "120.66268"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "15.77927",
+            "120.66268"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "cc89a653283653abc501c6c51e0a585e",
+              "name": "CUYAPO",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "4adaf993c5b804d4004e70db5a1cf31c",
+              "name": "Cuyapo",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0736-012309",
+      "projectName": "Construction of Multi-Purpose Building, Barangay North Poblacion, Nampicuan, Nueva Ecija, 15.733979, 120.635554",
+      "amountPesos": 20000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 736,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "nampicuan",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "15.733979",
+            "120.635554"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "15.733979",
+            "120.635554"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "37ce9710e179dc4a12aedb243da915cb",
+              "name": "NAMPICUAN",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "81a4268ff797712c8d2041c535c21216",
+              "name": "Nampicuan",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0736-012310",
+      "projectName": "Construction (Completion) of Multi-Purpose Building, Barangay Saint John District, Guimba, Nueva Ecija, 15.661223, 120.772057",
+      "amountPesos": 15000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 736,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "guimba",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "15.661223",
+            "120.772057"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "15.661223",
+            "120.772057"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "89a669fd3ea92102879bc657acbec7b8",
+              "name": "GUIMBA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "a1dd42e3f5e8e92a691654f63caa16f2",
+              "name": "Guimba",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0736-012311",
+      "projectName": "Construction (Completion) of Multi-Purpose Building, Barangay Matias, Talavera, Nueva Ecija, 15.590252, 120.916458",
+      "amountPesos": 6000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 736,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "talavera",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "15.590252",
+            "120.916458"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "15.590252",
+            "120.916458"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "92427e7f6244bcdb92c55f7cec7796dc",
+              "name": "TALAVERA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "36027f1ada64728f7b6416d71b464346",
+              "name": "Talavera",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0736-012312",
+      "projectName": "Construction (Completion) of Multi-Purpose Building, Barangay San Miguel na Munti, Talavera, Nueva Ecija, 15.541113, 120.93133",
+      "amountPesos": 6000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 736,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "talavera",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "15.541113",
+            "120.93133"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "15.541113",
+            "120.93133"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "92427e7f6244bcdb92c55f7cec7796dc",
+              "name": "TALAVERA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "36027f1ada64728f7b6416d71b464346",
+              "name": "Talavera",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0736-012313",
+      "projectName": "Construction (Completion) of Multi-Purpose Building, Barangay San Vicente, Zaragoza, Nueva Ecija, 15.454779, 120.791533",
+      "amountPesos": 5000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 736,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "zaragoza",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "15.454779",
+            "120.791533"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "15.454779",
+            "120.791533"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "050eca895c739a3433e09e1821c67a84",
+              "name": "ZARAGOZA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "1719cb231cf6b57c9110e750930070d9",
+              "name": "Zaragoza",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0736-012314",
+      "projectName": "Construction (Completion) of Multi-Purpose Building, Barangay Caingin Tabing Ilog, Guimba, Nueva Ecija, 15.568427, 120.747150",
+      "amountPesos": 5000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 736,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "guimba",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "15.568427",
+            "120.747150"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "15.568427",
+            "120.747150"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "89a669fd3ea92102879bc657acbec7b8",
+              "name": "GUIMBA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "a1dd42e3f5e8e92a691654f63caa16f2",
+              "name": "Guimba",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0736-012315",
+      "projectName": "Construction (Completion) of Multi-Purpose Building, Barangay Ungab, Cuyapo, Nueva Ecija, 15.799706, 120.623031",
+      "amountPesos": 5000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 736,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "cuyapo",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "15.799706",
+            "120.623031"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "15.799706",
+            "120.623031"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "cc89a653283653abc501c6c51e0a585e",
+              "name": "CUYAPO",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "4adaf993c5b804d4004e70db5a1cf31c",
+              "name": "Cuyapo",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0736-012316",
+      "projectName": "Construction (Completion) of Multi-Purpose Building, Barangay Cabatuan, Cuyapo, Nueva Ecija, 15.789865, 120.704750",
+      "amountPesos": 5000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 736,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "cuyapo",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "15.789865",
+            "120.704750"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "15.789865",
+            "120.704750"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "cc89a653283653abc501c6c51e0a585e",
+              "name": "CUYAPO",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "4adaf993c5b804d4004e70db5a1cf31c",
+              "name": "Cuyapo",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0736-012317",
+      "projectName": "Construction (Completion) of Multi-Purpose Building, Barangay Bued, Cuyapo, Nueva Ecija, 15.819124, 120.652269",
+      "amountPesos": 5000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 736,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "cuyapo",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "15.819124",
+            "120.652269"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "15.819124",
+            "120.652269"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "cc89a653283653abc501c6c51e0a585e",
+              "name": "CUYAPO",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "4adaf993c5b804d4004e70db5a1cf31c",
+              "name": "Cuyapo",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0736-012318",
+      "projectName": "Construction (Completion) of Multi-Purpose Building, Barangay Narvacan I, Guimba, Nueva Ecija, 15.686464, 120.735439",
+      "amountPesos": 4000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 736,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "guimba",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "15.686464",
+            "120.735439"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "15.686464",
+            "120.735439"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "89a669fd3ea92102879bc657acbec7b8",
+              "name": "GUIMBA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "a1dd42e3f5e8e92a691654f63caa16f2",
+              "name": "Guimba",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0736-012319",
+      "projectName": "Construction (Completion) of Multi-Purpose Building, Barangay Linao, Licab, Nueva Ecija, 15.566295, 120.781137",
+      "amountPesos": 3500000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 736,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "licab",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "15.566295",
+            "120.781137"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "15.566295",
+            "120.781137"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "281efe4f4e10e0f7d49a510b273eccd6",
+              "name": "LICAB",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "c4742815bf68ab4c64d3b098de22d88f",
+              "name": "Licab",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0737-012320",
+      "projectName": "Construction (Completion) of Multi-Purpose Building, Barangay Bacayao, Guimba, Nueva Ecija, 15.660528, 120.750249",
+      "amountPesos": 3500000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 737,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "guimba",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "15.660528",
+            "120.750249"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "15.660528",
+            "120.750249"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "89a669fd3ea92102879bc657acbec7b8",
+              "name": "GUIMBA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "a1dd42e3f5e8e92a691654f63caa16f2",
+              "name": "Guimba",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0737-012321",
+      "projectName": "Construction (Completion) of Multi-Purpose Building, Barangay Dinarayat, Talavera, Nueva Ecija, 15.556581, 120.924814",
+      "amountPesos": 3500000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 737,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "talavera",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "15.556581",
+            "120.924814"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "15.556581",
+            "120.924814"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "92427e7f6244bcdb92c55f7cec7796dc",
+              "name": "TALAVERA",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "36027f1ada64728f7b6416d71b464346",
+              "name": "Talavera",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0737-012322",
+      "projectName": "Construction (Completion) of Multi-Purpose Building, Barangay Sto. Cristo, Quezon, Nueva Ecija, 15.530863, 120.806670",
+      "amountPesos": 2500000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 737,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "quezon",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "15.530863",
+            "120.806670"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "15.530863",
+            "120.806670"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "3361e2e089ca14ec300c427c282da9a5",
+              "name": "QUEZON",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0737-012325",
+      "projectName": "Construction of Multi-Purpose Building, Barangay Cabawangan, Nampicuan, Nueva Ecija",
+      "amountPesos": 50000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 737,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "nampicuan",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "37ce9710e179dc4a12aedb243da915cb",
+              "name": "NAMPICUAN",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "81a4268ff797712c8d2041c535c21216",
+              "name": "Nampicuan",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HB10858-3-0738-012346",
+      "projectName": "Construction (Completion) of Multi-Purpose Building, Barangay West Poblacion, Nampicuan, Nueva Ecija, 15.731041, 120.629443",
+      "amountPesos": 5000000,
+      "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+      "sourcePage": 738,
+      "region": "Region III",
+      "office": "Nueva Ecija 1st District Engineering Office",
+      "districts": [
+        "Nueva Ecija · 1st District"
+      ],
+      "representatives": [
+        "Mika Suansing"
+      ],
+      "status": "unique",
+      "reasons": [],
+      "geographicEvidence": [
+        {
+          "level": "municipality",
+          "name": "nampicuan",
+          "province": "nueva ecija",
+          "primaryDistricts": [
+            "1st"
+          ],
+          "alternateDistricts": [
+            "1st"
+          ]
+        },
+        {
+          "basis": "Trailing station/coordinate metadata excluded from address matching only; original project title and construction scope retained",
+          "metadata": [
+            "15.731041",
+            "120.629443"
+          ]
+        },
+        {
+          "basis": "PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only",
+          "metadata": [
+            "15.731041",
+            "120.629443"
+          ]
+        },
+        {
+          "basis": "Private DB exact adjacent municipality/city and province fields; geographic evidence only",
+          "candidatePlaces": [
+            {
+              "placeId": "37ce9710e179dc4a12aedb243da915cb",
+              "name": "NAMPICUAN",
+              "level": "locality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            },
+            {
+              "placeId": "81a4268ff797712c8d2041c535c21216",
+              "name": "Nampicuan",
+              "level": "municipality",
+              "provinceId": "31ccd8ce2a4071509c4ec653899dab2d",
+              "province": "NUEVA ECIJA"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "file": "/Users/joebertj/nep/analysis_output/dpwh-projects-filtered.json",
+      "sha256": "224c89268c3658909766daa13ce74c0c302f957b386da9be566960e1ee7df26e"
+    },
+    {
+      "file": "/Users/joebertj/nep/hb10858_3rd_dpwh_projects.json",
+      "sha256": "de70f9a4956b274395cb95eeda47c9173cf73a7ae06c0cb695238143c44daf9b"
+    },
+    {
+      "file": "/Users/joebertj/nep/analysis_output/hb_nep_comparison_3rd.csv",
+      "sha256": "e38297d4460fc6c09c58cc79b152c402e2eecd3c645af06acefba2697fc1c656"
+    },
+    {
+      "file": "/Users/joebertj/nep/analysis_output/congress_geographic_attribution_db_3rd.json",
+      "sha256": "18bbc3531f9644a00bdd63bd5dd15612186af0228acb9e25b90a0af36750afe9"
+    }
+  ]
+}

@@ -12,6 +12,7 @@ ROOT=Path(__file__).resolve().parent.parent
 ODV=ROOT.parent/'open-data-visualization'
 sys.path.insert(0,str(ODV/'analysis'))
 from strict_congress_geography import GeographicAttribution, text_key, place_key, seat_key
+from location_text import geographic_title
 
 
 def main():
@@ -55,7 +56,8 @@ def main():
     evidence={};review=[];held=[];qualified=0;blocked_baseline=0
     for row in projects:
         title=row['projectName'];baseline=legacy.resolve(row)
-        fields=[f.strip(' .') for f in title.split(',')]
+        geographic,metadata=geographic_title(title)
+        fields=[f.strip(' .') for f in geographic.split(',')]
         candidates=[]
         if len(fields)>=2:
             for parent in lookup(fields[-1]):
@@ -66,6 +68,7 @@ def main():
                     candidates.append({'placeId':child['id'],'name':child['name'],'level':child['level'],
                                        'provinceId':parent['id'],'province':parent['name'],'legClaims':claims})
         extra=[]
+        if metadata:extra.append({'basis':'PH location DB shared text rules: trailing station/coordinate metadata excluded from address lookup only','metadata':metadata})
         if candidates:
             qualified+=1
             extra.append({'basis':'Private DB exact adjacent municipality/city and province fields; geographic evidence only',
@@ -86,6 +89,7 @@ def main():
                           'RTRInterpretation':'User confirmed Remedios T. Romualdez for this title; construction segment remains unestablished'})
             for decision in manual:
                 if row['id'] in decision.get('scope',{}).get('project_ids',[]):
+                    reasons=[decision['interpretation']]
                     extra.append({'basis':'Scoped user location review','decisionId':decision['review_id'],
                                   'supportingUserAnswer':decision['supporting_user_answer'],
                                   'interpretation':decision['interpretation']})

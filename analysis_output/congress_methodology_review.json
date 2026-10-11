@@ -1,0 +1,13 @@
+{
+  "allDistrictRows": 254,
+  "allocationTotalPesos": 221047202000,
+  "namedBaselineFieldsAbsent": true,
+  "optionalComparisonStartsWithoutDistrict": true,
+  "projectDetailsStartWithoutDistrict": true,
+  "defaultTableDoesNotHighlightMembership": true,
+  "selectionMethodologyVisible": true,
+  "retiredSelectedPersonSectionAbsent": true,
+  "namesAndRolesPolicy": "Names and verified roles are descriptive metadata; location and source matching determine allocation attribution. Classification filters are optional and data-driven.",
+  "reviewScope": "Generator and generated HTML/JSON methodology review; browser interaction not exercised.",
+  "financialChange": "No project amounts, location assignments or NEP/HGAB match classifications changed."
+}

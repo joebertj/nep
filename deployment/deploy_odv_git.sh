@@ -14,7 +14,7 @@ Usage: ./deployment/deploy_odv_git.sh [inspect|deploy]
 
   inspect  Read-only server checkout status (default)
   deploy   Fetch origin/main, fast-forward the server checkout, and check the
-           local frontend response. No service restart is needed for these files.
+           local frontend response. Rebuild and restart the frontend only when Rust source or Cargo files change.
 
 Overrides: NEP_DEPLOY_HOST, NEP_DEPLOY_USER, NEP_DEPLOY_DIR, NEP_SSH_IDENTITY
 EOF
@@ -50,7 +50,7 @@ printf '\n=== Homepage edits vs checkout ===\n'
 git -C "$r" diff --unified=3 -- templates/visualizations_home.html templates/mobile/visualizations_home.html | sed -n '1,180p'
 sha256sum "$r/templates/visualizations_home.html" "$r/templates/mobile/visualizations_home.html"
 printf '\n=== Nginx checks with the site Host header ===\n'
-for path in / /static/nep-preview/budget-innovations.html /static/nep-preview/congress.html /static/nep-preview/deped.html /static/nep-preview/dpwh-hgab-comparison.html /static/nep-preview/dpwh-hgab.html /static/nep-preview/dpwh.html /static/nep-preview/fmr.html /static/nep-preview/hfep.html /static/nep-preview/nia-irrigation.html /static/nep-preview/nia.html /static/nep-preview/rcs.html; do
+for path in / /static/nep-preview/ /static/nep-preview/summary.html /static/nep-preview/budget-innovations.html /static/nep-preview/congress.html /static/nep-preview/deped.html /static/nep-preview/dpwh-hgab-comparison.html /static/nep-preview/dpwh-hgab.html /static/nep-preview/dpwh.html /static/nep-preview/fmr.html /static/nep-preview/hfep.html /static/nep-preview/nia-irrigation.html /static/nep-preview/nia.html /static/nep-preview/rcs.html; do
   status="$(curl --silent --show-error --location --max-time 8 --resolve 'research.bettergov.ph:443:127.0.0.1' --output /dev/null --write-out '%{http_code}' "http://research.bettergov.ph$path" 2>/dev/null || true)"
   printf '%s %s\n' "$status" "$path"
 done
@@ -62,7 +62,7 @@ curl --silent --show-error --max-time 5 --output /dev/null --write-out '%{http_c
 app_ip="$(ss -H -ltn 'sport = :8888' 2>/dev/null | awk 'NR==1 {sub(/:[0-9]+$/, "", $4); print $4}')"
 if [[ -n "$app_ip" ]]; then
   printf 'Direct Actix listener checks (%s):\n' "$app_ip"
-  for path in / /static/nep-preview/budget-innovations.html /static/nep-preview/congress.html /static/nep-preview/deped.html /static/nep-preview/dpwh-hgab-comparison.html /static/nep-preview/dpwh-hgab.html /static/nep-preview/dpwh.html /static/nep-preview/fmr.html /static/nep-preview/hfep.html /static/nep-preview/nia-irrigation.html /static/nep-preview/nia.html /static/nep-preview/rcs.html; do
+  for path in / /static/nep-preview/ /static/nep-preview/summary.html /static/nep-preview/budget-innovations.html /static/nep-preview/congress.html /static/nep-preview/deped.html /static/nep-preview/dpwh-hgab-comparison.html /static/nep-preview/dpwh-hgab.html /static/nep-preview/dpwh.html /static/nep-preview/fmr.html /static/nep-preview/hfep.html /static/nep-preview/nia-irrigation.html /static/nep-preview/nia.html /static/nep-preview/rcs.html; do
     status="$(curl --silent --show-error --max-time 5 --output /dev/null --write-out '%{http_code}' "http://$app_ip:8888$path" 2>/dev/null || true)"
     printf '%s %s\n' "$status" "$path"
   done
@@ -79,10 +79,22 @@ REMOTE_INSPECT
 set -euo pipefail
 r="$REMOTE_DIR"
 files=(
+  static/nep-preview/congress-benchmark.json
+  static/nep-preview/index.html
+  static/nep-preview/summary.html
+  static/nep-preview/summary-data.json
+  static/nep-preview/rcs-stage-trace.json
+  static/nep-preview/rcs-stage-trace.csv
+  static/nep-preview/repeat-nep-hgab-survival.json
+  static/nep-preview/repeat-nep-hgab-proposals.csv
   static/nep-preview/ph-location-representatives.js
   static/nep-preview/budget-innovations-data.json
   static/nep-preview/budget-innovations.html
   static/nep-preview/congress-data.json
+  static/nep-preview/congress-benchmark.json
+  static/nep-preview/appropriations-roster.json
+  static/nep-preview/house-leadership-roles.json
+  static/nep-preview/house-party-list-roster.json
   static/nep-preview/congress.html
   static/nep-preview/deped-data.json
   static/nep-preview/deped.html
@@ -101,10 +113,22 @@ files=(
   static/nep-preview/rcs.html
 )
 health_files=(
+  static/nep-preview/congress-benchmark.json
+  static/nep-preview/rcs-stage-trace.json
+  static/nep-preview/rcs-stage-trace.csv
+  static/nep-preview/index.html
+  static/nep-preview/summary.html
+  static/nep-preview/summary-data.json
+  static/nep-preview/repeat-nep-hgab-survival.json
+  static/nep-preview/repeat-nep-hgab-proposals.csv
   static/nep-preview/ph-location-representatives.js
   static/nep-preview/budget-innovations-data.json
   static/nep-preview/budget-innovations.html
   static/nep-preview/congress-data.json
+  static/nep-preview/congress-benchmark.json
+  static/nep-preview/appropriations-roster.json
+  static/nep-preview/house-leadership-roles.json
+  static/nep-preview/house-party-list-roster.json
   static/nep-preview/congress.html
   static/nep-preview/deped-data.json
   static/nep-preview/deped.html
@@ -206,13 +230,54 @@ done
 
 # HEAD is an ancestor of target. The only preserved dirt is in templates that
 # are unchanged by this commit; all report assets are replaced by Git blobs.
+needs_build=false
+if [[ -n "$(git -C "$r" diff --name-only "$previous" "$target" -- src Cargo.toml Cargo.lock)" ]]; then
+  needs_build=true
+fi
+binary="$r/target/release/open-data-visualization"
+if [[ "$needs_build" == true ]]; then
+  cp -a "$binary" "$backup/frontend-binary"
+fi
+rollback_release() {
+  trap - ERR
+  echo "Deployment failed; restoring previous checkout and report files." >&2
+  git -C "$r" reset --hard "$previous"
+  for file in "${files[@]}"; do
+    if [[ -f "$backup/$file.existed" ]]; then
+      mkdir -p "$r/$(dirname "$file")"
+      cp -a "$backup/$file" "$r/$file"
+    else
+      rm -f "$r/$file"
+    fi
+  done
+  if [[ -f "$backup/frontend-binary" ]]; then
+    cp -a "$backup/frontend-binary" "$binary.rollback"
+    mv -f "$binary.rollback" "$binary"
+    sudo -n systemctl restart visualization.service
+  fi
+  echo "Rollback complete. Backup retained at $backup." >&2
+}
+trap 'rollback_release; exit 1' ERR
 git -C "$r" reset --hard "$target"
 for file in "${preserve_templates[@]}"; do
   cp -a "$backup/$file" "$r/$file"
 done
 
+if [[ "$needs_build" == true ]]; then
+  echo "Building the frontend for the route change."
+  [[ ! -f "$HOME/.cargo/env" ]] || source "$HOME/.cargo/env"
+  (cd "$r" && cargo build --release --locked --bin open-data-visualization)
+  sudo -n systemctl restart visualization.service
+  for attempt in {1..20}; do
+    if curl --silent --fail --max-time 2 "$health_base/" >/dev/null; then break; fi
+    sleep 1
+  done
+fi
 healthy=true
 if ! curl --silent --show-error --fail "$health_base/" >/dev/null; then
+  healthy=false
+fi
+if ! curl --silent --show-error --fail "$health_base/static/nep-preview/" >/dev/null; then
   healthy=false
 fi
 for file in "${health_files[@]}"; do
@@ -221,6 +286,7 @@ for file in "${health_files[@]}"; do
   fi
 done
 if [[ "$healthy" == true ]]; then
+  trap - ERR
   rm -rf "$backup"
   echo "Deployment succeeded at $(git -C "$r" rev-parse --short HEAD)."
   if [[ ${#preserve_templates[@]} -gt 0 ]]; then
@@ -229,18 +295,8 @@ if [[ "$healthy" == true ]]; then
   exit 0
 fi
 
-echo "Frontend health check failed; rolling back to $previous." >&2
-git -C "$r" reset --hard "$previous"
-for file in "${files[@]}"; do
-  if [[ -f "$backup/$file.existed" ]]; then
-    mkdir -p "$r/$(dirname "$file")"
-    cp -a "$backup/$file" "$r/$file"
-  else
-    rm -f "$r/$file"
-  fi
-done
-rm -rf "$backup"
-echo "Rolled back to $(git -C "$r" rev-parse --short HEAD)." >&2
+echo "Frontend health check failed." >&2
+rollback_release
 exit 1
 REMOTE_DEPLOY
     ;;

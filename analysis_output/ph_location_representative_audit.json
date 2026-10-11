@@ -1,25 +1,25 @@
 {
   "databaseName": "PH location DB",
-  "databaseSha256": "0d1b9799f1a4b14c2bc642581e0a64cd7c42aec4fe7feb5900a03884e85f301a",
+  "databaseSha256": "d5da67fb29bea9b6227be68374133270cc48d983da24b194eb975ae0aa783dfb",
   "counts": {
-    "rowsReviewed": 92530,
-    "rowsUnresolved": 81395,
-    "rowsWithNames": 11135,
-    "assignmentsChanged": 600
+    "rowsReviewed": 98821,
+    "rowsUnresolved": 83944,
+    "rowsWithNames": 14877,
+    "assignmentsChanged": 537
   },
-  "catalogTitles": 27157,
+  "catalogTitles": 27257,
   "pages": [
     {
       "page": "budget-innovations.html",
-      "tables": 2,
+      "tables": 3,
       "embeddedDocuments": 0,
       "tablesWithLocationColumns": 2
     },
     {
       "page": "congress.html",
-      "tables": 5,
+      "tables": 7,
       "embeddedDocuments": 1,
-      "tablesWithLocationColumns": 5
+      "tablesWithLocationColumns": 7
     },
     {
       "page": "deped.html",
@@ -35,13 +35,13 @@
     },
     {
       "page": "dpwh-hgab.html",
-      "tables": 17,
+      "tables": 18,
       "embeddedDocuments": 5,
       "tablesWithLocationColumns": 17
     },
     {
       "page": "dpwh.html",
-      "tables": 14,
+      "tables": 17,
       "embeddedDocuments": 4,
       "tablesWithLocationColumns": 14
     },
@@ -71,9 +71,15 @@
     },
     {
       "page": "rcs.html",
-      "tables": 2,
+      "tables": 4,
       "embeddedDocuments": 0,
-      "tablesWithLocationColumns": 2
+      "tablesWithLocationColumns": 3
+    },
+    {
+      "page": "summary.html",
+      "tables": 3,
+      "embeddedDocuments": 0,
+      "tablesWithLocationColumns": 1
     }
   ],
   "policy": "PH location DB; current 20th Congress geographic coverage, not sponsorship. Undated historic claims do not create new assignments. DEO numbers never establish legislative seats.",

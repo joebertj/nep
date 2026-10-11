@@ -29,9 +29,10 @@ Deploy after the intended ODV commit is on `origin/main`:
 
 The deploy action asks for `DEPLOY ODV MAIN`, fetches `origin/main`, and
 fast-forwards the server checkout. The frontend loads Tera templates per
-request, and static reports are served directly, so these file changes need no
-service restart. It does not build Rust, install packages, restart services, or
-change service configuration. It checks the frontend before and after the
+request, and static reports are served directly, so static-only releases need no service restart. If the target commit changes
+Rust source or Cargo files, the helper backs up the running binary, builds the
+frontend with the locked dependencies, and restarts visualization.service.
+It does not install packages or change service configuration. It checks the frontend before and after the
 update and returns the checkout to its previous commit if the post-update
 check fails.
 

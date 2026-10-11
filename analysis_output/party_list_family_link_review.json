@@ -1,0 +1,1202 @@
+{
+  "scope": "Private review of historical ODV relationship claims against recovered party-list roster and current district identities. No relationship is independently verified by this script.",
+  "policy": "Kinship does not establish party-list control, geographic representation, allocation authorship or receipts. No allocations are reassigned or summed through family relationships. Historical offices and shared names require review. A source URL and model confidence are not verification.",
+  "summary": {
+    "relationshipRecordsRead": 897,
+    "recordsTouchingExactPartyListIdentity": 0,
+    "familyClaimsBetweenRosterEndpoints": 0,
+    "familyClaimsWithSourceURL": 0,
+    "historicalPartyListEndpointRecords": 24,
+    "historicalPartyListFamilyClaims": 22
+  },
+  "familyClaimsBetweenRosterEndpoints": [],
+  "allPartyListEndpointClaims": [],
+  "historicalPartyListEndpointClaims": [
+    {
+      "id": 65044,
+      "person_id": 4145240,
+      "related_person_id": 4162626,
+      "relationship_type": 98,
+      "relationship_description": "Received kickbacks from DPWH projects - P355M in 2025 GAA, P600M in 2023",
+      "source_url": null,
+      "normalized_description": null,
+      "confidence_level": null,
+      "created_at": "2025-11-23 16:52:43.008142",
+      "created_by": "CSV_Import",
+      "relationship_category": "Commissioner of the Commission on Elections",
+      "person": {
+        "id": 4145240,
+        "first_name": "ELIZALDY",
+        "middle_name": null,
+        "last_name": "CO",
+        "normalized_name": "ELIZALDY CO",
+        "nickname": "Zaldy",
+        "position": "Representative, Ako Bicol Party-list",
+        "province": null,
+        "municipality_city": null,
+        "year": 2025.0
+      },
+      "related_person": {
+        "id": 4162626,
+        "first_name": "ROBERTO",
+        "middle_name": null,
+        "last_name": "BERNARDO",
+        "normalized_name": null,
+        "nickname": null,
+        "position": "FORMER DPWH UNDERSECRETARY",
+        "province": null,
+        "municipality_city": null,
+        "year": 2025.0
+      },
+      "partyListEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "geographicEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "familyType": false,
+      "status": "Needs source and current identity review",
+      "sourceURLPresent": false,
+      "matchingBasis": "Exact full-name tokens after removing quoted nicknames, allowing order changes and sourced official/display aliases; no substring, nickname inference or surname-only matching"
+    },
+    {
+      "id": 64586,
+      "person_id": 4145240,
+      "related_person_id": 4162616,
+      "relationship_type": 9,
+      "relationship_description": "Uncle",
+      "source_url": null,
+      "normalized_description": null,
+      "confidence_level": null,
+      "created_at": "2025-11-14 21:44:03.249918",
+      "created_by": "CSV_Import",
+      "relationship_category": "Extended family relationship",
+      "person": {
+        "id": 4145240,
+        "first_name": "ELIZALDY",
+        "middle_name": null,
+        "last_name": "CO",
+        "normalized_name": "ELIZALDY CO",
+        "nickname": "Zaldy",
+        "position": "Representative, Ako Bicol Party-list",
+        "province": null,
+        "municipality_city": null,
+        "year": 2025.0
+      },
+      "related_person": {
+        "id": 4162616,
+        "first_name": "Claudine",
+        "middle_name": null,
+        "last_name": "Co",
+        "normalized_name": null,
+        "nickname": null,
+        "position": null,
+        "province": null,
+        "municipality_city": null,
+        "year": null
+      },
+      "partyListEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "geographicEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "familyType": true,
+      "status": "Needs source and current identity review",
+      "sourceURLPresent": false,
+      "matchingBasis": "Exact full-name tokens after removing quoted nicknames, allowing order changes and sourced official/display aliases; no substring, nickname inference or surname-only matching"
+    },
+    {
+      "id": 64585,
+      "person_id": 4145240,
+      "related_person_id": 4145227,
+      "relationship_type": 7,
+      "relationship_description": "Sibling",
+      "source_url": null,
+      "normalized_description": null,
+      "confidence_level": null,
+      "created_at": "2025-11-14 21:42:38.67558",
+      "created_by": "CSV_Import",
+      "relationship_category": "Sibling relationship",
+      "person": {
+        "id": 4145240,
+        "first_name": "ELIZALDY",
+        "middle_name": null,
+        "last_name": "CO",
+        "normalized_name": "ELIZALDY CO",
+        "nickname": "Zaldy",
+        "position": "Representative, Ako Bicol Party-list",
+        "province": null,
+        "municipality_city": null,
+        "year": 2025.0
+      },
+      "related_person": {
+        "id": 4145227,
+        "first_name": "CHRISTOPHER",
+        "middle_name": null,
+        "last_name": "CO",
+        "normalized_name": "CHRISTOPHER CO",
+        "nickname": "KITO",
+        "position": "CONGRESSMAN",
+        "province": null,
+        "municipality_city": null,
+        "year": 2025.0
+      },
+      "partyListEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "geographicEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "familyType": true,
+      "status": "Needs source and current identity review",
+      "sourceURLPresent": false,
+      "matchingBasis": "Exact full-name tokens after removing quoted nicknames, allowing order changes and sourced official/display aliases; no substring, nickname inference or surname-only matching"
+    },
+    {
+      "id": 65067,
+      "person_id": 4162452,
+      "related_person_id": 4162640,
+      "relationship_type": 4,
+      "relationship_description": "Katrina Mara Gardiola is daughter of Edwin Gardiola",
+      "source_url": "https://www.rappler.com/newsbreak/investigative/politicians-government-contractors-connections-map/",
+      "normalized_description": null,
+      "confidence_level": null,
+      "created_at": "2025-11-24 17:06:30.480859",
+      "created_by": "CSV_Import",
+      "relationship_category": "Parent-child relationship",
+      "person": {
+        "id": 4162452,
+        "first_name": "EDWIN",
+        "middle_name": null,
+        "last_name": "GARDIOLA",
+        "normalized_name": "EDWIN GARDIOLA",
+        "nickname": null,
+        "position": "Representative, CWS Party-list",
+        "province": null,
+        "municipality_city": null,
+        "year": 2025.0
+      },
+      "related_person": {
+        "id": 4162640,
+        "first_name": "KATRINA MARA",
+        "middle_name": null,
+        "last_name": "GARDIOLA",
+        "normalized_name": null,
+        "nickname": null,
+        "position": "CORPORATE OFFICER",
+        "province": null,
+        "municipality_city": null,
+        "year": null
+      },
+      "partyListEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "geographicEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "familyType": true,
+      "status": "Needs source and current identity review",
+      "sourceURLPresent": true,
+      "matchingBasis": "Exact full-name tokens after removing quoted nicknames, allowing order changes and sourced official/display aliases; no substring, nickname inference or surname-only matching"
+    },
+    {
+      "id": 64579,
+      "person_id": 4162471,
+      "related_person_id": 4162452,
+      "relationship_type": 7,
+      "relationship_description": "Brother of Edwin Gardiola",
+      "source_url": "https://www.rappler.com/newsbreak/investigative/politicians-government-contractors-connections-map/",
+      "normalized_description": "BROTHER OF EDWIN GARDIOLA",
+      "confidence_level": null,
+      "created_at": "2025-11-11 14:47:33.560898",
+      "created_by": "Politicontractors sync",
+      "relationship_category": "Sibling relationship",
+      "person": {
+        "id": 4162471,
+        "first_name": "ALBERTO",
+        "middle_name": null,
+        "last_name": "GARDIOLA",
+        "normalized_name": "ALBERTO GARDIOLA",
+        "nickname": null,
+        "position": "Vice President, Newington Builders, Inc.",
+        "province": null,
+        "municipality_city": null,
+        "year": 2025.0
+      },
+      "related_person": {
+        "id": 4162452,
+        "first_name": "EDWIN",
+        "middle_name": null,
+        "last_name": "GARDIOLA",
+        "normalized_name": "EDWIN GARDIOLA",
+        "nickname": null,
+        "position": "Representative, CWS Party-list",
+        "province": null,
+        "municipality_city": null,
+        "year": 2025.0
+      },
+      "partyListEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "geographicEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "familyType": true,
+      "status": "Needs source and current identity review",
+      "sourceURLPresent": true,
+      "matchingBasis": "Exact full-name tokens after removing quoted nicknames, allowing order changes and sourced official/display aliases; no substring, nickname inference or surname-only matching"
+    },
+    {
+      "id": 64581,
+      "person_id": 4162472,
+      "related_person_id": 4162452,
+      "relationship_type": 6,
+      "relationship_description": "Wife of Edwin Gardiola",
+      "source_url": "https://www.rappler.com/newsbreak/investigative/politicians-government-contractors-connections-map/",
+      "normalized_description": "WIFE OF EDWIN GARDIOLA",
+      "confidence_level": null,
+      "created_at": "2025-11-11 14:47:33.560898",
+      "created_by": "Politicontractors sync",
+      "relationship_category": "Marriage relationship",
+      "person": {
+        "id": 4162472,
+        "first_name": "JUDY",
+        "middle_name": "SILVA",
+        "last_name": "GARDIOLA",
+        "normalized_name": "JUDY GARDIOLA",
+        "nickname": null,
+        "position": "President, S-Ang Construction & General Trading, Inc.",
+        "province": null,
+        "municipality_city": null,
+        "year": 2025.0
+      },
+      "related_person": {
+        "id": 4162452,
+        "first_name": "EDWIN",
+        "middle_name": null,
+        "last_name": "GARDIOLA",
+        "normalized_name": "EDWIN GARDIOLA",
+        "nickname": null,
+        "position": "Representative, CWS Party-list",
+        "province": null,
+        "municipality_city": null,
+        "year": 2025.0
+      },
+      "partyListEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "geographicEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "familyType": true,
+      "status": "Needs source and current identity review",
+      "sourceURLPresent": true,
+      "matchingBasis": "Exact full-name tokens after removing quoted nicknames, allowing order changes and sourced official/display aliases; no substring, nickname inference or surname-only matching"
+    },
+    {
+      "id": 64583,
+      "person_id": 4162473,
+      "related_person_id": 4162452,
+      "relationship_type": 7,
+      "relationship_description": "Brother of Edwin Gardiola",
+      "source_url": "https://www.rappler.com/newsbreak/investigative/politicians-government-contractors-connections-map/",
+      "normalized_description": "BROTHER OF EDWIN GARDIOLA",
+      "confidence_level": null,
+      "created_at": "2025-11-11 14:47:33.560898",
+      "created_by": "Politicontractors sync",
+      "relationship_category": "Sibling relationship",
+      "person": {
+        "id": 4162473,
+        "first_name": "EAREL",
+        "middle_name": null,
+        "last_name": "GARDIOLA",
+        "normalized_name": "EAREL GARDIOLA",
+        "nickname": null,
+        "position": "President, Lourel Development Corporation",
+        "province": null,
+        "municipality_city": null,
+        "year": 2025.0
+      },
+      "related_person": {
+        "id": 4162452,
+        "first_name": "EDWIN",
+        "middle_name": null,
+        "last_name": "GARDIOLA",
+        "normalized_name": "EDWIN GARDIOLA",
+        "nickname": null,
+        "position": "Representative, CWS Party-list",
+        "province": null,
+        "municipality_city": null,
+        "year": 2025.0
+      },
+      "partyListEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "geographicEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "familyType": true,
+      "status": "Needs source and current identity review",
+      "sourceURLPresent": true,
+      "matchingBasis": "Exact full-name tokens after removing quoted nicknames, allowing order changes and sourced official/display aliases; no substring, nickname inference or surname-only matching"
+    },
+    {
+      "id": 65066,
+      "person_id": 4162452,
+      "related_person_id": 4162639,
+      "relationship_type": 4,
+      "relationship_description": "Kim Ann Gardiola is daughter of Edwin Gardiola",
+      "source_url": "https://www.rappler.com/newsbreak/investigative/politicians-government-contractors-connections-map/",
+      "normalized_description": null,
+      "confidence_level": null,
+      "created_at": "2025-11-24 17:06:30.478452",
+      "created_by": "CSV_Import",
+      "relationship_category": "Parent-child relationship",
+      "person": {
+        "id": 4162452,
+        "first_name": "EDWIN",
+        "middle_name": null,
+        "last_name": "GARDIOLA",
+        "normalized_name": "EDWIN GARDIOLA",
+        "nickname": null,
+        "position": "Representative, CWS Party-list",
+        "province": null,
+        "municipality_city": null,
+        "year": 2025.0
+      },
+      "related_person": {
+        "id": 4162639,
+        "first_name": "KIM ANN",
+        "middle_name": null,
+        "last_name": "GARDIOLA",
+        "normalized_name": null,
+        "nickname": null,
+        "position": "CORPORATE OFFICER",
+        "province": null,
+        "municipality_city": null,
+        "year": null
+      },
+      "partyListEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "geographicEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "familyType": true,
+      "status": "Needs source and current identity review",
+      "sourceURLPresent": true,
+      "matchingBasis": "Exact full-name tokens after removing quoted nicknames, allowing order changes and sourced official/display aliases; no substring, nickname inference or surname-only matching"
+    },
+    {
+      "id": 65063,
+      "person_id": 4162453,
+      "related_person_id": 4162452,
+      "relationship_type": 7,
+      "relationship_description": "Elmer Gardiola and Edwin Gardiola are brothers",
+      "source_url": "POLITICONTRACTORS.xlsx",
+      "normalized_description": null,
+      "confidence_level": null,
+      "created_at": "2025-11-24 17:06:30.471974",
+      "created_by": "CSV_Import",
+      "relationship_category": "Sibling relationship",
+      "person": {
+        "id": 4162453,
+        "first_name": "ELMER",
+        "middle_name": null,
+        "last_name": "GARDIOLA",
+        "normalized_name": "ELMER GARDIOLA",
+        "nickname": null,
+        "position": "Business Owner",
+        "province": null,
+        "municipality_city": null,
+        "year": null
+      },
+      "related_person": {
+        "id": 4162452,
+        "first_name": "EDWIN",
+        "middle_name": null,
+        "last_name": "GARDIOLA",
+        "normalized_name": "EDWIN GARDIOLA",
+        "nickname": null,
+        "position": "Representative, CWS Party-list",
+        "province": null,
+        "municipality_city": null,
+        "year": 2025.0
+      },
+      "partyListEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "geographicEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "familyType": true,
+      "status": "Needs source and current identity review",
+      "sourceURLPresent": true,
+      "matchingBasis": "Exact full-name tokens after removing quoted nicknames, allowing order changes and sourced official/display aliases; no substring, nickname inference or surname-only matching"
+    },
+    {
+      "id": 64577,
+      "person_id": 4162470,
+      "related_person_id": 4162452,
+      "relationship_type": 8,
+      "relationship_description": "Sister of Edwin Gardiola",
+      "source_url": "https://www.rappler.com/newsbreak/investigative/politicians-government-contractors-connections-map/",
+      "normalized_description": "SISTER OF EDWIN GARDIOLA",
+      "confidence_level": null,
+      "created_at": "2025-11-11 14:47:33.560898",
+      "created_by": "Politicontractors sync",
+      "relationship_category": "Sibling relationship",
+      "person": {
+        "id": 4162470,
+        "first_name": "ELAINE",
+        "middle_name": null,
+        "last_name": "GARDIOLA",
+        "normalized_name": "ELAINE GARDIOLA",
+        "nickname": null,
+        "position": "President, Newington Builders, Inc.",
+        "province": null,
+        "municipality_city": null,
+        "year": 2025.0
+      },
+      "related_person": {
+        "id": 4162452,
+        "first_name": "EDWIN",
+        "middle_name": null,
+        "last_name": "GARDIOLA",
+        "normalized_name": "EDWIN GARDIOLA",
+        "nickname": null,
+        "position": "Representative, CWS Party-list",
+        "province": null,
+        "municipality_city": null,
+        "year": 2025.0
+      },
+      "partyListEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "geographicEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "familyType": true,
+      "status": "Needs source and current identity review",
+      "sourceURLPresent": true,
+      "matchingBasis": "Exact full-name tokens after removing quoted nicknames, allowing order changes and sourced official/display aliases; no substring, nickname inference or surname-only matching"
+    },
+    {
+      "id": 64371,
+      "person_id": 4162402,
+      "related_person_id": 70156,
+      "relationship_type": 1,
+      "relationship_description": "Family relationship (both Romualdez family)",
+      "source_url": null,
+      "normalized_description": "FAMILY RELATIONSHIP (BOTH ROMUALDEZ FAMILY)",
+      "confidence_level": 10.0,
+      "created_at": "2025-11-01 14:34:01.047227",
+      "created_by": "CSV_Import",
+      "relationship_category": "Parent-child relationship",
+      "person": {
+        "id": 4162402,
+        "first_name": "MARTIN",
+        "middle_name": null,
+        "last_name": "ROMUALDEZ",
+        "normalized_name": "MARTIN ROMUALDEZ",
+        "nickname": null,
+        "position": "SPEAKER, HOUSE OF REPRESENTATIVES",
+        "province": "Leyte",
+        "municipality_city": "Tacloban",
+        "year": null
+      },
+      "related_person": {
+        "id": 70156,
+        "first_name": "YEDDA MARIE",
+        "middle_name": "K",
+        "last_name": "ROMUALDEZ",
+        "normalized_name": "YEDDA MARIE K ROMUALDEZ",
+        "nickname": null,
+        "position": "PARTY-LIST REPRESENTATIVE",
+        "province": "LEYTE",
+        "municipality_city": "",
+        "year": 2016.0
+      },
+      "partyListEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "geographicEndpointMatches": {
+        "person": [
+          {
+            "district": "Leyte · 1st District",
+            "representative": "Martin Romualdez"
+          }
+        ],
+        "relatedPerson": []
+      },
+      "familyType": true,
+      "status": "Needs source and current identity review",
+      "sourceURLPresent": false,
+      "matchingBasis": "Exact full-name tokens after removing quoted nicknames, allowing order changes and sourced official/display aliases; no substring, nickname inference or surname-only matching"
+    },
+    {
+      "id": 64584,
+      "person_id": 4162452,
+      "related_person_id": 4162473,
+      "relationship_type": 7,
+      "relationship_description": "Brother of Earel Gardiola, president of Lourel Development Corporation",
+      "source_url": "https://www.rappler.com/newsbreak/investigative/politicians-government-contractors-connections-map/",
+      "normalized_description": "BROTHER OF EAREL GARDIOLA, PRESIDENT OF LOUREL DEVELOPMENT CORPORATION",
+      "confidence_level": null,
+      "created_at": "2025-11-11 14:47:33.560898",
+      "created_by": "Politicontractors sync",
+      "relationship_category": "Sibling relationship",
+      "person": {
+        "id": 4162452,
+        "first_name": "EDWIN",
+        "middle_name": null,
+        "last_name": "GARDIOLA",
+        "normalized_name": "EDWIN GARDIOLA",
+        "nickname": null,
+        "position": "Representative, CWS Party-list",
+        "province": null,
+        "municipality_city": null,
+        "year": 2025.0
+      },
+      "related_person": {
+        "id": 4162473,
+        "first_name": "EAREL",
+        "middle_name": null,
+        "last_name": "GARDIOLA",
+        "normalized_name": "EAREL GARDIOLA",
+        "nickname": null,
+        "position": "President, Lourel Development Corporation",
+        "province": null,
+        "municipality_city": null,
+        "year": 2025.0
+      },
+      "partyListEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "geographicEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "familyType": true,
+      "status": "Needs source and current identity review",
+      "sourceURLPresent": true,
+      "matchingBasis": "Exact full-name tokens after removing quoted nicknames, allowing order changes and sourced official/display aliases; no substring, nickname inference or surname-only matching"
+    },
+    {
+      "id": 64582,
+      "person_id": 4162452,
+      "related_person_id": 4162472,
+      "relationship_type": 5,
+      "relationship_description": "Husband of Judy Silva Gardiola",
+      "source_url": "https://www.rappler.com/newsbreak/investigative/politicians-government-contractors-connections-map/",
+      "normalized_description": "HUSBAND OF JUDY SILVA GARDIOLA",
+      "confidence_level": null,
+      "created_at": "2025-11-11 14:47:33.560898",
+      "created_by": "Politicontractors sync",
+      "relationship_category": "Marriage relationship",
+      "person": {
+        "id": 4162452,
+        "first_name": "EDWIN",
+        "middle_name": null,
+        "last_name": "GARDIOLA",
+        "normalized_name": "EDWIN GARDIOLA",
+        "nickname": null,
+        "position": "Representative, CWS Party-list",
+        "province": null,
+        "municipality_city": null,
+        "year": 2025.0
+      },
+      "related_person": {
+        "id": 4162472,
+        "first_name": "JUDY",
+        "middle_name": "SILVA",
+        "last_name": "GARDIOLA",
+        "normalized_name": "JUDY GARDIOLA",
+        "nickname": null,
+        "position": "President, S-Ang Construction & General Trading, Inc.",
+        "province": null,
+        "municipality_city": null,
+        "year": 2025.0
+      },
+      "partyListEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "geographicEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "familyType": true,
+      "status": "Needs source and current identity review",
+      "sourceURLPresent": true,
+      "matchingBasis": "Exact full-name tokens after removing quoted nicknames, allowing order changes and sourced official/display aliases; no substring, nickname inference or surname-only matching"
+    },
+    {
+      "id": 64580,
+      "person_id": 4162452,
+      "related_person_id": 4162471,
+      "relationship_type": 7,
+      "relationship_description": "Brother of Alberto Gardiola, vice president of Newington Builders, Inc.",
+      "source_url": "https://www.rappler.com/newsbreak/investigative/politicians-government-contractors-connections-map/",
+      "normalized_description": "BROTHER OF ALBERTO GARDIOLA, VICE PRESIDENT OF NEWINGTON BUILDERS, INC.",
+      "confidence_level": null,
+      "created_at": "2025-11-11 14:47:33.560898",
+      "created_by": "Politicontractors sync",
+      "relationship_category": "Sibling relationship",
+      "person": {
+        "id": 4162452,
+        "first_name": "EDWIN",
+        "middle_name": null,
+        "last_name": "GARDIOLA",
+        "normalized_name": "EDWIN GARDIOLA",
+        "nickname": null,
+        "position": "Representative, CWS Party-list",
+        "province": null,
+        "municipality_city": null,
+        "year": 2025.0
+      },
+      "related_person": {
+        "id": 4162471,
+        "first_name": "ALBERTO",
+        "middle_name": null,
+        "last_name": "GARDIOLA",
+        "normalized_name": "ALBERTO GARDIOLA",
+        "nickname": null,
+        "position": "Vice President, Newington Builders, Inc.",
+        "province": null,
+        "municipality_city": null,
+        "year": 2025.0
+      },
+      "partyListEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "geographicEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "familyType": true,
+      "status": "Needs source and current identity review",
+      "sourceURLPresent": true,
+      "matchingBasis": "Exact full-name tokens after removing quoted nicknames, allowing order changes and sourced official/display aliases; no substring, nickname inference or surname-only matching"
+    },
+    {
+      "id": 64578,
+      "person_id": 4162452,
+      "related_person_id": 4162470,
+      "relationship_type": 7,
+      "relationship_description": "Brother of Elaine Gardiola, president of Newington Builders, Inc.",
+      "source_url": "https://www.rappler.com/newsbreak/investigative/politicians-government-contractors-connections-map/",
+      "normalized_description": "BROTHER OF ELAINE GARDIOLA, PRESIDENT OF NEWINGTON BUILDERS, INC.",
+      "confidence_level": null,
+      "created_at": "2025-11-11 14:47:33.560898",
+      "created_by": "Politicontractors sync",
+      "relationship_category": "Sibling relationship",
+      "person": {
+        "id": 4162452,
+        "first_name": "EDWIN",
+        "middle_name": null,
+        "last_name": "GARDIOLA",
+        "normalized_name": "EDWIN GARDIOLA",
+        "nickname": null,
+        "position": "Representative, CWS Party-list",
+        "province": null,
+        "municipality_city": null,
+        "year": 2025.0
+      },
+      "related_person": {
+        "id": 4162470,
+        "first_name": "ELAINE",
+        "middle_name": null,
+        "last_name": "GARDIOLA",
+        "normalized_name": "ELAINE GARDIOLA",
+        "nickname": null,
+        "position": "President, Newington Builders, Inc.",
+        "province": null,
+        "municipality_city": null,
+        "year": 2025.0
+      },
+      "partyListEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "geographicEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "familyType": true,
+      "status": "Needs source and current identity review",
+      "sourceURLPresent": true,
+      "matchingBasis": "Exact full-name tokens after removing quoted nicknames, allowing order changes and sourced official/display aliases; no substring, nickname inference or surname-only matching"
+    },
+    {
+      "id": 64544,
+      "person_id": 4162452,
+      "related_person_id": 4162453,
+      "relationship_type": 7,
+      "relationship_description": "EDWIN GARDIOLA is brother of ELMER GARDIOLA",
+      "source_url": null,
+      "normalized_description": "EDWIN GARDIOLA IS BROTHER OF ELMER GARDIOLA",
+      "confidence_level": null,
+      "created_at": "2025-11-04 19:54:20.845307",
+      "created_by": "CSV_Import",
+      "relationship_category": "Sibling relationship",
+      "person": {
+        "id": 4162452,
+        "first_name": "EDWIN",
+        "middle_name": null,
+        "last_name": "GARDIOLA",
+        "normalized_name": "EDWIN GARDIOLA",
+        "nickname": null,
+        "position": "Representative, CWS Party-list",
+        "province": null,
+        "municipality_city": null,
+        "year": 2025.0
+      },
+      "related_person": {
+        "id": 4162453,
+        "first_name": "ELMER",
+        "middle_name": null,
+        "last_name": "GARDIOLA",
+        "normalized_name": "ELMER GARDIOLA",
+        "nickname": null,
+        "position": "Business Owner",
+        "province": null,
+        "municipality_city": null,
+        "year": null
+      },
+      "partyListEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "geographicEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "familyType": true,
+      "status": "Needs source and current identity review",
+      "sourceURLPresent": false,
+      "matchingBasis": "Exact full-name tokens after removing quoted nicknames, allowing order changes and sourced official/display aliases; no substring, nickname inference or surname-only matching"
+    },
+    {
+      "id": 65045,
+      "person_id": 3794,
+      "related_person_id": 4145240,
+      "relationship_type": 98,
+      "relationship_description": "Delivered alleged kickbacks to Zaldy Co's residence in Pasig and Taguig",
+      "source_url": null,
+      "normalized_description": null,
+      "confidence_level": null,
+      "created_at": "2025-11-23 16:52:43.010067",
+      "created_by": "CSV_Import",
+      "relationship_category": "Commissioner of the Commission on Elections",
+      "person": {
+        "id": 3794,
+        "first_name": "Henry",
+        "middle_name": null,
+        "last_name": "Alcantara",
+        "normalized_name": "HENRY ALCANTARA",
+        "nickname": null,
+        "position": "COUNCILOR",
+        "province": "CATANDUANES",
+        "municipality_city": "PANGANIBAN (PAYO)",
+        "year": 2010.0
+      },
+      "related_person": {
+        "id": 4145240,
+        "first_name": "ELIZALDY",
+        "middle_name": null,
+        "last_name": "CO",
+        "normalized_name": "ELIZALDY CO",
+        "nickname": "Zaldy",
+        "position": "Representative, Ako Bicol Party-list",
+        "province": null,
+        "municipality_city": null,
+        "year": 2025.0
+      },
+      "partyListEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "geographicEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "familyType": false,
+      "status": "Needs source and current identity review",
+      "sourceURLPresent": false,
+      "matchingBasis": "Exact full-name tokens after removing quoted nicknames, allowing order changes and sourced official/display aliases; no substring, nickname inference or surname-only matching"
+    },
+    {
+      "id": 64597,
+      "person_id": 53232,
+      "related_person_id": 70156,
+      "relationship_type": 13,
+      "relationship_description": "IMEE MARCOS is cousin of YEDDA ROMUALDEZ (REPRESENTATIVE, TINGOG PARTYLIST)",
+      "source_url": "OCR:pd18.jpg",
+      "normalized_description": null,
+      "confidence_level": null,
+      "created_at": "2025-11-14 22:15:46.753155",
+      "created_by": "CSV_Import",
+      "relationship_category": "Extended family relationship",
+      "person": {
+        "id": 53232,
+        "first_name": "IMEE",
+        "middle_name": "REMEDIOS",
+        "last_name": "MARCOS",
+        "normalized_name": "IMEE MARCOS",
+        "nickname": null,
+        "position": "MEMBER, HOUSE OF REPRESENTATIVES",
+        "province": "ILOCOS NORTE",
+        "municipality_city": "",
+        "year": 2013.0
+      },
+      "related_person": {
+        "id": 70156,
+        "first_name": "YEDDA MARIE",
+        "middle_name": "K",
+        "last_name": "ROMUALDEZ",
+        "normalized_name": "YEDDA MARIE K ROMUALDEZ",
+        "nickname": null,
+        "position": "PARTY-LIST REPRESENTATIVE",
+        "province": "LEYTE",
+        "municipality_city": "",
+        "year": 2016.0
+      },
+      "partyListEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "geographicEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "familyType": true,
+      "status": "Needs source and current identity review",
+      "sourceURLPresent": true,
+      "matchingBasis": "Exact full-name tokens after removing quoted nicknames, allowing order changes and sourced official/display aliases; no substring, nickname inference or surname-only matching"
+    },
+    {
+      "id": 64929,
+      "person_id": 70156,
+      "related_person_id": 70158,
+      "relationship_type": 6,
+      "relationship_description": "Alfred Romualdez is married to Yedda Marie Romualdez, who is also a politician, both part of the Romualdez dynasty.",
+      "source_url": "https://en.wikipedia.org/wiki/Political_families_of_the_Philippines",
+      "normalized_description": null,
+      "confidence_level": null,
+      "created_at": "2025-11-14 22:18:16.546301",
+      "created_by": "CSV_Import",
+      "relationship_category": "Marriage relationship",
+      "person": {
+        "id": 70156,
+        "first_name": "YEDDA MARIE",
+        "middle_name": "K",
+        "last_name": "ROMUALDEZ",
+        "normalized_name": "YEDDA MARIE K ROMUALDEZ",
+        "nickname": null,
+        "position": "PARTY-LIST REPRESENTATIVE",
+        "province": "LEYTE",
+        "municipality_city": "",
+        "year": 2016.0
+      },
+      "related_person": {
+        "id": 70158,
+        "first_name": "Alfred",
+        "middle_name": null,
+        "last_name": "Romualdez",
+        "normalized_name": "ALFRED ROMUALDEZ",
+        "nickname": null,
+        "position": "MAYOR",
+        "province": "LEYTE",
+        "municipality_city": "TACLOBAN CITY",
+        "year": 2007.0
+      },
+      "partyListEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "geographicEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "familyType": true,
+      "status": "Needs source and current identity review",
+      "sourceURLPresent": true,
+      "matchingBasis": "Exact full-name tokens after removing quoted nicknames, allowing order changes and sourced official/display aliases; no substring, nickname inference or surname-only matching"
+    },
+    {
+      "id": 64723,
+      "person_id": 70153,
+      "related_person_id": 70156,
+      "relationship_type": 6,
+      "relationship_description": "Married couple within the ROMUALDEZ dynasty",
+      "source_url": "https://www.philstar.com/headlines/2019/07/23/1937270/romualdez-couple-gets-top-posts-house",
+      "normalized_description": null,
+      "confidence_level": null,
+      "created_at": "2025-11-14 22:16:43.863252",
+      "created_by": "CSV_Import",
+      "relationship_category": "Marriage relationship",
+      "person": {
+        "id": 70153,
+        "first_name": "FERDINAND",
+        "middle_name": "MARTIN",
+        "last_name": "ROMUALDEZ",
+        "normalized_name": "FERDINAND ROMUALDEZ",
+        "nickname": null,
+        "position": "MEMBER, HOUSE OF REPRESENTATIVES",
+        "province": "LEYTE",
+        "municipality_city": "",
+        "year": 2007.0
+      },
+      "related_person": {
+        "id": 70156,
+        "first_name": "YEDDA MARIE",
+        "middle_name": "K",
+        "last_name": "ROMUALDEZ",
+        "normalized_name": "YEDDA MARIE K ROMUALDEZ",
+        "nickname": null,
+        "position": "PARTY-LIST REPRESENTATIVE",
+        "province": "LEYTE",
+        "municipality_city": "",
+        "year": 2016.0
+      },
+      "partyListEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "geographicEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "familyType": true,
+      "status": "Needs source and current identity review",
+      "sourceURLPresent": true,
+      "matchingBasis": "Exact full-name tokens after removing quoted nicknames, allowing order changes and sourced official/display aliases; no substring, nickname inference or surname-only matching"
+    },
+    {
+      "id": 64928,
+      "person_id": 70156,
+      "related_person_id": 4162401,
+      "relationship_type": 4,
+      "relationship_description": "Political connection - TINGOG party-list representative",
+      "source_url": null,
+      "normalized_description": null,
+      "confidence_level": null,
+      "created_at": "2025-11-14 22:18:16.544518",
+      "created_by": "CSV_Import",
+      "relationship_category": "Parent-child relationship",
+      "person": {
+        "id": 70156,
+        "first_name": "YEDDA MARIE",
+        "middle_name": "K",
+        "last_name": "ROMUALDEZ",
+        "normalized_name": "YEDDA MARIE K ROMUALDEZ",
+        "nickname": null,
+        "position": "PARTY-LIST REPRESENTATIVE",
+        "province": "LEYTE",
+        "municipality_city": "",
+        "year": 2016.0
+      },
+      "related_person": {
+        "id": 4162401,
+        "first_name": "FERDINAND",
+        "middle_name": "ROMUALDEZ",
+        "last_name": "MARCOS",
+        "normalized_name": "FERDINAND MARCOS SR.",
+        "nickname": null,
+        "position": "PRESIDENT",
+        "province": "NATIONAL",
+        "municipality_city": null,
+        "year": 1965.0
+      },
+      "partyListEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "geographicEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "familyType": true,
+      "status": "Needs source and current identity review",
+      "sourceURLPresent": false,
+      "matchingBasis": "Exact full-name tokens after removing quoted nicknames, allowing order changes and sourced official/display aliases; no substring, nickname inference or surname-only matching"
+    },
+    {
+      "id": 64906,
+      "person_id": 70158,
+      "related_person_id": 70156,
+      "relationship_type": 5,
+      "relationship_description": "Alfred Romualdez is married to Yedda Marie Romualdez, who is also a politician, both part of the Romualdez dynasty.",
+      "source_url": "https://en.wikipedia.org/wiki/Political_families_of_the_Philippines",
+      "normalized_description": null,
+      "confidence_level": null,
+      "created_at": "2025-11-14 22:18:11.680444",
+      "created_by": "CSV_Import",
+      "relationship_category": "Marriage relationship",
+      "person": {
+        "id": 70158,
+        "first_name": "Alfred",
+        "middle_name": null,
+        "last_name": "Romualdez",
+        "normalized_name": "ALFRED ROMUALDEZ",
+        "nickname": null,
+        "position": "MAYOR",
+        "province": "LEYTE",
+        "municipality_city": "TACLOBAN CITY",
+        "year": 2007.0
+      },
+      "related_person": {
+        "id": 70156,
+        "first_name": "YEDDA MARIE",
+        "middle_name": "K",
+        "last_name": "ROMUALDEZ",
+        "normalized_name": "YEDDA MARIE K ROMUALDEZ",
+        "nickname": null,
+        "position": "PARTY-LIST REPRESENTATIVE",
+        "province": "LEYTE",
+        "municipality_city": "",
+        "year": 2016.0
+      },
+      "partyListEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "geographicEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "familyType": true,
+      "status": "Needs source and current identity review",
+      "sourceURLPresent": true,
+      "matchingBasis": "Exact full-name tokens after removing quoted nicknames, allowing order changes and sourced official/display aliases; no substring, nickname inference or surname-only matching"
+    },
+    {
+      "id": 64927,
+      "person_id": 70156,
+      "related_person_id": 70153,
+      "relationship_type": 5,
+      "relationship_description": "Married couple within the ROMUALDEZ dynasty",
+      "source_url": "https://www.philstar.com/headlines/2019/07/23/1937270/romualdez-couple-gets-top-posts-house",
+      "normalized_description": null,
+      "confidence_level": null,
+      "created_at": "2025-11-14 22:18:16.543132",
+      "created_by": "CSV_Import",
+      "relationship_category": "Marriage relationship",
+      "person": {
+        "id": 70156,
+        "first_name": "YEDDA MARIE",
+        "middle_name": "K",
+        "last_name": "ROMUALDEZ",
+        "normalized_name": "YEDDA MARIE K ROMUALDEZ",
+        "nickname": null,
+        "position": "PARTY-LIST REPRESENTATIVE",
+        "province": "LEYTE",
+        "municipality_city": "",
+        "year": 2016.0
+      },
+      "related_person": {
+        "id": 70153,
+        "first_name": "FERDINAND",
+        "middle_name": "MARTIN",
+        "last_name": "ROMUALDEZ",
+        "normalized_name": "FERDINAND ROMUALDEZ",
+        "nickname": null,
+        "position": "MEMBER, HOUSE OF REPRESENTATIVES",
+        "province": "LEYTE",
+        "municipality_city": "",
+        "year": 2007.0
+      },
+      "partyListEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "geographicEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "familyType": true,
+      "status": "Needs source and current identity review",
+      "sourceURLPresent": true,
+      "matchingBasis": "Exact full-name tokens after removing quoted nicknames, allowing order changes and sourced official/display aliases; no substring, nickname inference or surname-only matching"
+    },
+    {
+      "id": 64926,
+      "person_id": 70156,
+      "related_person_id": 53232,
+      "relationship_type": 13,
+      "relationship_description": "YEDDA ROMUALDEZ is cousin of IMEE MARCOS",
+      "source_url": "OCR:pd18.jpg",
+      "normalized_description": null,
+      "confidence_level": null,
+      "created_at": "2025-11-14 22:18:16.541167",
+      "created_by": "CSV_Import",
+      "relationship_category": "Extended family relationship",
+      "person": {
+        "id": 70156,
+        "first_name": "YEDDA MARIE",
+        "middle_name": "K",
+        "last_name": "ROMUALDEZ",
+        "normalized_name": "YEDDA MARIE K ROMUALDEZ",
+        "nickname": null,
+        "position": "PARTY-LIST REPRESENTATIVE",
+        "province": "LEYTE",
+        "municipality_city": "",
+        "year": 2016.0
+      },
+      "related_person": {
+        "id": 53232,
+        "first_name": "IMEE",
+        "middle_name": "REMEDIOS",
+        "last_name": "MARCOS",
+        "normalized_name": "IMEE MARCOS",
+        "nickname": null,
+        "position": "MEMBER, HOUSE OF REPRESENTATIVES",
+        "province": "ILOCOS NORTE",
+        "municipality_city": "",
+        "year": 2013.0
+      },
+      "partyListEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "geographicEndpointMatches": {
+        "person": [],
+        "relatedPerson": []
+      },
+      "familyType": true,
+      "status": "Needs source and current identity review",
+      "sourceURLPresent": true,
+      "matchingBasis": "Exact full-name tokens after removing quoted nicknames, allowing order changes and sourced official/display aliases; no substring, nickname inference or surname-only matching"
+    }
+  ],
+  "sources": [
+    "data/parquet/relationships.parquet",
+    "data/parquet/political_dynasties.parquet",
+    "data/parquet/connection_types.parquet"
+  ]
+}

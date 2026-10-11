@@ -1,0 +1,62 @@
+{
+  "policy": "Personal names and individual position titles appear only as sourced data in tables and graphs. Free-form narrative uses geographic districts, aggregate values and neutral descriptions of methodology.",
+  "pages": [
+    {
+      "page": "budget-innovations.html",
+      "representativeNamesOutsideTablesOrGraphs": []
+    },
+    {
+      "page": "congress.html",
+      "representativeNamesOutsideTablesOrGraphs": []
+    },
+    {
+      "page": "deped.html",
+      "representativeNamesOutsideTablesOrGraphs": []
+    },
+    {
+      "page": "dpwh-hgab-comparison.html",
+      "representativeNamesOutsideTablesOrGraphs": []
+    },
+    {
+      "page": "dpwh-hgab.html",
+      "representativeNamesOutsideTablesOrGraphs": []
+    },
+    {
+      "page": "dpwh.html",
+      "representativeNamesOutsideTablesOrGraphs": []
+    },
+    {
+      "page": "fmr.html",
+      "representativeNamesOutsideTablesOrGraphs": []
+    },
+    {
+      "page": "hfep.html",
+      "representativeNamesOutsideTablesOrGraphs": []
+    },
+    {
+      "page": "index.html",
+      "representativeNamesOutsideTablesOrGraphs": []
+    },
+    {
+      "page": "nia-irrigation.html",
+      "representativeNamesOutsideTablesOrGraphs": []
+    },
+    {
+      "page": "nia.html",
+      "representativeNamesOutsideTablesOrGraphs": []
+    },
+    {
+      "page": "rcs.html",
+      "representativeNamesOutsideTablesOrGraphs": []
+    },
+    {
+      "page": "summary.html",
+      "representativeNamesOutsideTablesOrGraphs": []
+    }
+  ],
+  "scope": "Static prose and dynamic congressional narrative generator reviewed; source project titles and roster data are retained.",
+  "positionTitleChanges": [
+    "A roster title alone does not establish political alignment.",
+    "Membership in a different body or participation in a prior-year conference does not establish participation in the FY2027 bicam."
+  ]
+}

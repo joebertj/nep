@@ -1,0 +1,1368 @@
+{
+  "scope": "Local source inventory for party-list and district family-context enrichment; no public kinship assertion or allocation attribution.",
+  "asog": {
+    "path": "database/ASoG-POLITICAL-DYNASTIES-DATASET-V2016.xlsx",
+    "sha256": "cedad546422e789a0776dfe3e727b53efa3d878775d7a582936da380beb4aa29",
+    "sheet": "Data",
+    "rowCount": 86234,
+    "years": {
+      "2004": 17372,
+      "2007": 16610,
+      "2010": 17507,
+      "2013": 17164,
+      "2016": 17581
+    },
+    "provinceLabels": 85,
+    "positions": {
+      "COUNCILOR": 64792,
+      "PROVINCIAL BOARD MEMBER": 3747,
+      "VICE MAYOR": 7882,
+      "MAYOR": 7901,
+      "MEMBER, HOUSE OF REPRESENTATIVES": 1121,
+      "VICE GOVERNOR": 394,
+      "GOVERNOR": 397
+    },
+    "dynastyFlagValues": {
+      "0": 63229,
+      "1": 23005
+    },
+    "interpretation": "Historical election rows and an existing dynasty flag. No person-to-person kinship edges or current legislative boundary crosswalk are present in the Data sheet. The filename version is not the observed election-year range.",
+    "exactPartyListNameCandidates": {},
+    "matchingPolicy": "Exact full-name tokens after removing quoted nicknames; order-insensitive. These are historical identity candidates, not proof of same person or current kinship. No surname-only joins."
+  },
+  "parquetSources": [
+    {
+      "path": "data/parquet/political_dynasties.parquet",
+      "sha256": "ba95fd52fe39ac4e5c9a89284d567b78dde1a2fdce939d71040c9ba2eb78b2d8",
+      "rowCount": 61268,
+      "columns": [
+        "id",
+        "first_name",
+        "last_name",
+        "middle_name",
+        "party",
+        "region",
+        "province",
+        "municipality_city",
+        "position",
+        "year",
+        "fat",
+        "nickname",
+        "normalized_name"
+      ]
+    },
+    {
+      "path": "data/parquet/party_list_members.parquet",
+      "sha256": "0f83d93bf30b4304f55ab2ff95fb70a6e68fc60942d5e4340f2e1eff629cba30",
+      "rowCount": 59,
+      "columns": [
+        "id",
+        "person_id",
+        "party_code",
+        "party_list_number",
+        "party_name",
+        "created_at"
+      ]
+    },
+    {
+      "path": "data/parquet/relationships.parquet",
+      "sha256": "311eaf65b9428e3ab2dfe6f013856ad0d770432c62da6ce0a67884cb1fc323ed",
+      "rowCount": 897,
+      "columns": [
+        "id",
+        "person_id",
+        "related_person_id",
+        "relationship_type",
+        "relationship_description",
+        "source_url",
+        "normalized_description",
+        "confidence_level",
+        "created_at",
+        "created_by"
+      ]
+    },
+    {
+      "path": "data/parquet/connection_types.parquet",
+      "sha256": "590ca2ed26ee37fb7ed1961575c7c9aa35caed5a9a7aecd6c78ee0f3ca4c4a47",
+      "rowCount": 33,
+      "columns": [
+        "id",
+        "code",
+        "description"
+      ]
+    }
+  ],
+  "duckdb": {
+    "path": "data/parquet/dynasty_data.duckdb",
+    "readOnly": true,
+    "tables": [
+      {
+        "table": "config_metadata",
+        "rowCount": 1,
+        "columns": [
+          "id",
+          "metadata",
+          "verified_contractors"
+        ]
+      },
+      {
+        "table": "congressmen",
+        "rowCount": 430,
+        "columns": [
+          "id",
+          "first_name_pattern",
+          "last_name_pattern",
+          "display_name",
+          "full_name",
+          "province",
+          "district_number",
+          "district_key",
+          "is_city_district",
+          "is_partylist",
+          "terms",
+          "family_connections",
+          "previous_positions",
+          "barangays_file"
+        ]
+      },
+      {
+        "table": "congressmen_barangays",
+        "rowCount": 6028,
+        "columns": [
+          "congressman_id",
+          "district_key",
+          "barangay"
+        ]
+      },
+      {
+        "table": "congressmen_config",
+        "rowCount": 432,
+        "columns": [
+          "id",
+          "first_name_pattern",
+          "last_name_pattern",
+          "display_name",
+          "province",
+          "district_number",
+          "is_city_district",
+          "terms",
+          "barangays",
+          "full_name",
+          "is_partylist",
+          "family_connections",
+          "previous_positions",
+          "barangays_file"
+        ]
+      },
+      {
+        "table": "contractor_dynasty_matches",
+        "rowCount": 197,
+        "columns": [
+          "dynasty_first_name",
+          "dynasty_last_name",
+          "company_name",
+          "role"
+        ]
+      },
+      {
+        "table": "district_barangays",
+        "rowCount": 2824,
+        "columns": [
+          "district_key",
+          "barangay",
+          "province_name"
+        ]
+      },
+      {
+        "table": "district_entries",
+        "rowCount": 115,
+        "columns": [
+          "name",
+          "entity_type",
+          "data"
+        ]
+      },
+      {
+        "table": "district_metadata",
+        "rowCount": 1,
+        "columns": [
+          "id",
+          "metadata",
+          "key_findings",
+          "validation",
+          "notes"
+        ]
+      },
+      {
+        "table": "district_municipalities",
+        "rowCount": 1666,
+        "columns": [
+          "district_key",
+          "municipality",
+          "province_name"
+        ]
+      },
+      {
+        "table": "districts",
+        "rowCount": 258,
+        "columns": [
+          "province_name",
+          "district_number",
+          "district_key",
+          "is_city"
+        ]
+      },
+      {
+        "table": "party_list_members",
+        "rowCount": 59,
+        "columns": [
+          "person_id",
+          "party_list_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      {
+        "table": "political_dynasties_congressmen",
+        "rowCount": 675,
+        "columns": [
+          "id",
+          "first_name",
+          "last_name",
+          "middle_name",
+          "province",
+          "municipality_city",
+          "region",
+          "party",
+          "position"
+        ]
+      }
+    ]
+  },
+  "relationshipCSVFiles": [
+    {
+      "path": "family_analysis/family_parser/llm_relationships_01.csv",
+      "sha256": "f883de4c16e2e287c979b1f03a4a33cc55561ec98aa88ca8e5ea3dd022c97644",
+      "rowCount": 6,
+      "rowsWithSourceURL": 6,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_09.csv",
+      "sha256": "169ca98e4b2d6c124603202abc9fbd975d841ad4518d7ba607a833515a077ad6",
+      "rowCount": 3,
+      "rowsWithSourceURL": 3,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_113.csv",
+      "sha256": "77e39d119888b597a21631bd4612663949ebb1aefda02888b4194700cd69a369",
+      "rowCount": 6,
+      "rowsWithSourceURL": 6,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_118.csv",
+      "sha256": "cd99f4594a1f63d6f37902447de553aef5497005b663e0732bab47f02e41d7eb",
+      "rowCount": 7,
+      "rowsWithSourceURL": 7,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_121.csv",
+      "sha256": "34d4d5dff8d41306c3a70a3dc12987a8914e66695964e0c55f84d39f479e33d4",
+      "rowCount": 2,
+      "rowsWithSourceURL": 2,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_122.csv",
+      "sha256": "75d8c556dd85ac53f48ca3e388e7dd428a0fdf13a32140ed5d5a88352cd49d67",
+      "rowCount": 2,
+      "rowsWithSourceURL": 2,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_16.csv",
+      "sha256": "78206e67835452f7b46f09a827a3bfe29fd2ccd309797186d9a54f46e8b5357c",
+      "rowCount": 4,
+      "rowsWithSourceURL": 4,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_176.csv",
+      "sha256": "5d9efdbdf5f1f7a4f5b8a1c09d41c10b19570024143b4bdd7af70755f848e453",
+      "rowCount": 4,
+      "rowsWithSourceURL": 4,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_23.csv",
+      "sha256": "24cfa4b01bc461c72cbda54a854ad92fd46a6e6e7f657901af500ea44b6b1ea3",
+      "rowCount": 4,
+      "rowsWithSourceURL": 4,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_234.csv",
+      "sha256": "2f3776d8ede4e84182613910dfdb190f735f1add9a6c35c34d2acc02a7ececd5",
+      "rowCount": 2,
+      "rowsWithSourceURL": 2,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_24.csv",
+      "sha256": "d840e692ff3b57fd2ebac9158447bb5b708948fde1b91dda161edcaa17cb8976",
+      "rowCount": 3,
+      "rowsWithSourceURL": 3,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_255.csv",
+      "sha256": "9d152be3a8d3ef257d7c1f3137f14c3009516019f512f2fe6a9b8ebf8d2236a9",
+      "rowCount": 4,
+      "rowsWithSourceURL": 4,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_257.csv",
+      "sha256": "2bcaeec90262e8a64582b54a1615fbd42bc38bba5f40bcc3c91933d2262019c6",
+      "rowCount": 3,
+      "rowsWithSourceURL": 3,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_258.csv",
+      "sha256": "3fed5bc8388aa508b306854fbc957cee12be2f0cf8fcf0b4a2f4b2fa62734f88",
+      "rowCount": 4,
+      "rowsWithSourceURL": 4,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_298.csv",
+      "sha256": "e5f2491554a290354692a6fa15bad028f130eaef74691927ead3cece0ffcfeb4",
+      "rowCount": 4,
+      "rowsWithSourceURL": 4,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_325.csv",
+      "sha256": "fb0ab9d80c3e6179d0779fb752bf86ee532d72230fbb0b665c3d74f6362934e2",
+      "rowCount": 6,
+      "rowsWithSourceURL": 6,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_327.csv",
+      "sha256": "d5afce799cf681c3c7b5772a31576dc553fc102c6d14dff61bbdc449c8feb739",
+      "rowCount": 2,
+      "rowsWithSourceURL": 2,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_328.csv",
+      "sha256": "96fda5f24fdbb41e85517c6c8bec724cb214ba643d9941068895f2d15bb9fab4",
+      "rowCount": 4,
+      "rowsWithSourceURL": 4,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_339.csv",
+      "sha256": "fe6a59a07c0040f5ee92ffdc30e88a76e51ffb59ee05c850145c7dd0c2a3c5af",
+      "rowCount": 3,
+      "rowsWithSourceURL": 3,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_357.csv",
+      "sha256": "0fd713619221120f404d3743414ddb4fb6b093ff94174af36dc2148f9c7d65ca",
+      "rowCount": 1,
+      "rowsWithSourceURL": 1,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_36.csv",
+      "sha256": "90b6108bad85ff10ed3c5d549c618e8893bf2e0ddf5e95259de9057c8028197f",
+      "rowCount": 4,
+      "rowsWithSourceURL": 4,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_365.csv",
+      "sha256": "09918fea181719b9487d9507d5455fb306536b8262e93e9f342e07bfe6d6c35b",
+      "rowCount": 5,
+      "rowsWithSourceURL": 5,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_371.csv",
+      "sha256": "583b3a4302611807d75420b980c83c4a9fb462fdcc908705cf909f5359d10d50",
+      "rowCount": 3,
+      "rowsWithSourceURL": 3,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_376.csv",
+      "sha256": "928fb4c0e693d0828f754af487cb64b3e7b26414dac42c387905197815cc19ea",
+      "rowCount": 3,
+      "rowsWithSourceURL": 3,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_381.csv",
+      "sha256": "21fe3f7a7ca63379e6539f10dce61b535078e677f5a2c892a2f9671825abaa66",
+      "rowCount": 3,
+      "rowsWithSourceURL": 3,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_402.csv",
+      "sha256": "39377f726b2572c6621994c92e3edec0b2d83fa12ca9d1bfe4c9658fe903196a",
+      "rowCount": 1,
+      "rowsWithSourceURL": 1,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_419.csv",
+      "sha256": "0914453cb313d580a7940acde61bf14ec9e398a384824f42fa663f7a209394dc",
+      "rowCount": 3,
+      "rowsWithSourceURL": 3,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_425.csv",
+      "sha256": "c34fd347da55315535fb265551f905cb7214fba9e42041b698f0b87006f7ec4e",
+      "rowCount": 1,
+      "rowsWithSourceURL": 1,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_435.csv",
+      "sha256": "ca34e7b9e50d37fdfa86aa019561f92fceb09188d9ec8b6db0b3351576f92fd3",
+      "rowCount": 5,
+      "rowsWithSourceURL": 5,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_436.csv",
+      "sha256": "e645ba2572c2419a368a656fe1e719bbc70f85ee0b5ad1fc4384ec927cbcd153",
+      "rowCount": 1,
+      "rowsWithSourceURL": 1,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_442.csv",
+      "sha256": "9272d5881e4bf3e9a588dfce1d2dad42841cbaf151185ae652131bd0c492883d",
+      "rowCount": 8,
+      "rowsWithSourceURL": 8,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_443.csv",
+      "sha256": "fbe5609bbfb8d147f41ec92f13c4cf95fe667a813db494d2337bc346bda2264d",
+      "rowCount": 4,
+      "rowsWithSourceURL": 4,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_448.csv",
+      "sha256": "04c8d383bf5fe2a25e3f35b66fc04ecd16c247cbb4e1b4d7fc8af52f6ba99912",
+      "rowCount": 3,
+      "rowsWithSourceURL": 3,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_452.csv",
+      "sha256": "c493875a79e7dd5f4e678e255a6e0198001eeb8da30377928bef405000686bb0",
+      "rowCount": 1,
+      "rowsWithSourceURL": 0,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_453.csv",
+      "sha256": "cae444c0ca4336ea0c7771be3b1dce1f2173d129684ad8ae284ef729753036bd",
+      "rowCount": 2,
+      "rowsWithSourceURL": 2,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_517.csv",
+      "sha256": "603679b8fc0f66007f407116dddb508d384694e342fd7611b3579a3bb8199374",
+      "rowCount": 4,
+      "rowsWithSourceURL": 4,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_536.csv",
+      "sha256": "2b81f459e41c7776188cbac8554d1c552f616b16bb7efad6f2995523e4a81b30",
+      "rowCount": 1,
+      "rowsWithSourceURL": 1,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_54.csv",
+      "sha256": "54816b00a2bf6ad7450b5440eef2901f7a421cb8fa2b9aa419da0456e17a3f70",
+      "rowCount": 4,
+      "rowsWithSourceURL": 4,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_544.csv",
+      "sha256": "9204c1c2ed49f029d14aa9b1284326f47a00b64461458a46d88c06180ec10c3f",
+      "rowCount": 3,
+      "rowsWithSourceURL": 3,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_552.csv",
+      "sha256": "90b6b395f90af30100294e11bd423e106689efc0e932176ce03cbc54b4fe08cd",
+      "rowCount": 1,
+      "rowsWithSourceURL": 1,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_573.csv",
+      "sha256": "1de90cbd71300e874adf2b84ce0b87e606198fc4dacda141981bada973ab2a39",
+      "rowCount": 7,
+      "rowsWithSourceURL": 7,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_58.csv",
+      "sha256": "c6284e5abfc2d8667d72a77bd4243b7bce8b93b91393fb134ea5cc5e8d4b8511",
+      "rowCount": 3,
+      "rowsWithSourceURL": 3,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_586.csv",
+      "sha256": "12650048ad850a7c43edd9ab7a31d59a2d68d36c6ffcae29133e3314a17cbde2",
+      "rowCount": 11,
+      "rowsWithSourceURL": 11,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_587.csv",
+      "sha256": "7428c7218051adc530472e97b6398e80b995f38a0e2fc6244d8291b0c2441bae",
+      "rowCount": 11,
+      "rowsWithSourceURL": 11,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_59.csv",
+      "sha256": "3e901979ba95ffa35965599a770034df9fc45b5245b3033edb747da54c513e56",
+      "rowCount": 4,
+      "rowsWithSourceURL": 4,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_590.csv",
+      "sha256": "e8fa8b96d455c0c307f679bb4d159c4161ba2c76c0dde6859888c3ddf782c21c",
+      "rowCount": 1,
+      "rowsWithSourceURL": 1,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_591.csv",
+      "sha256": "d32700b2b029e1521b439ddf56bf4e2e918c87df05ccc3c0058d4fb07d8aaadb",
+      "rowCount": 1,
+      "rowsWithSourceURL": 1,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_592.csv",
+      "sha256": "847e4a14abea4583958be29d44bc4ff5da0870c2c11d279561944a6cf8263b7c",
+      "rowCount": 19,
+      "rowsWithSourceURL": 19,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_593.csv",
+      "sha256": "19eabc8b32b07c6b3881cc891711508f7d40be3c0d7172cbf42e7107ee5fc0ff",
+      "rowCount": 18,
+      "rowsWithSourceURL": 18,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_594.csv",
+      "sha256": "3068e089636c1177f7dfa0d8ad48e0cd48d4f0d9d1c6711a8f6b27952215120a",
+      "rowCount": 14,
+      "rowsWithSourceURL": 14,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_595.csv",
+      "sha256": "c03f0b161a835e8fef9b0b69c961dfa1eb29ff338e610b0bd301b6e05f410436",
+      "rowCount": 6,
+      "rowsWithSourceURL": 6,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_596.csv",
+      "sha256": "a5a157e07f3e866e30e0fd3e3e090006d6720d240fb4b8ae48d59c8e2152d5c7",
+      "rowCount": 9,
+      "rowsWithSourceURL": 9,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_597.csv",
+      "sha256": "f038971591401445a42091bf3c8493fa9ad6d330ab0cf7252ae98a345d4b9d9c",
+      "rowCount": 10,
+      "rowsWithSourceURL": 10,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_598.csv",
+      "sha256": "362fc34142835b8506613674e6a607bf0539f5fb7ba08e481ad9003bdec26472",
+      "rowCount": 7,
+      "rowsWithSourceURL": 7,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_599.csv",
+      "sha256": "c8e78b3b11968fb88a67696f2172233d6bc43398acff94453dc5c0d7195a726e",
+      "rowCount": 10,
+      "rowsWithSourceURL": 10,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_600.csv",
+      "sha256": "ecb093f06303cca174487b69a83abf9241583ff80dd8e7f27a8f9818d3614942",
+      "rowCount": 6,
+      "rowsWithSourceURL": 6,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_601.csv",
+      "sha256": "c138693f3e2ca90554a94fcb999e064ad4a7d92ebccf1dc9b1cd19677a130c2e",
+      "rowCount": 8,
+      "rowsWithSourceURL": 8,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_602.csv",
+      "sha256": "17f0b7d4974345bbcb0db519b0d4376675fbbb4c80f3742184fe2652f1dd3b8d",
+      "rowCount": 9,
+      "rowsWithSourceURL": 9,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_603.csv",
+      "sha256": "703335747d3706b1aee31a9352ba5cbcc22e961d178fa65c5b17f842a4280b27",
+      "rowCount": 6,
+      "rowsWithSourceURL": 6,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_604.csv",
+      "sha256": "ac3985f94482c7544cdbc4fed258c29b78c7251fd670a6c2beb9d079fa8e81be",
+      "rowCount": 7,
+      "rowsWithSourceURL": 7,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_606.csv",
+      "sha256": "5bbd2aecd9ed5a44947b18db612be8767c9db5c30aa3f084843b6307eb1b8556",
+      "rowCount": 3,
+      "rowsWithSourceURL": 3,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_607.csv",
+      "sha256": "e1735fb0c38edc91bf5657e97c6fac93e43dd33ffaabf1817b7f2be56a2f5fc7",
+      "rowCount": 4,
+      "rowsWithSourceURL": 4,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_612.csv",
+      "sha256": "aa373f8dceaf8d8b294e1f09a9d3104f54e1236d80553ae9d72378d762ea21a1",
+      "rowCount": 5,
+      "rowsWithSourceURL": 5,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    },
+    {
+      "path": "family_analysis/family_parser/llm_relationships_67.csv",
+      "sha256": "16752c00acfc6629e6126916c6ed979ebb429aed0a86b353e97949164dcd15a2",
+      "rowCount": 6,
+      "rowsWithSourceURL": 6,
+      "columns": [
+        "person1_name",
+        "person2_name",
+        "relationship_type",
+        "relationship_description",
+        "dynasty1",
+        "dynasty2",
+        "source_url",
+        "confidence_level"
+      ],
+      "verification": "Relationship extraction claims; confidence scores are not independent verification."
+    }
+  ],
+  "chainCache": {
+    "path": "static/data/relationship_chains_cache.json",
+    "summary": {
+      "total_chains": 1202,
+      "total_constellations": 353,
+      "direct_relationships": 506,
+      "contractor_mediated": 623,
+      "party_list_mediated": 73,
+      "standalone_party_list": 66,
+      "max_chain_length": 12,
+      "constellation_mapping": {
+        "1": 82,
+        "2": 120,
+        "5": 162,
+        "10": 200,
+        "20": 255,
+        "50": 355,
+        "100": 455,
+        "120": 495,
+        "150": 525,
+        "ALL": 1202
+      },
+      "last_updated": "2025-11-29T13:47:33.823791",
+      "description": "Relationship constellations between different political families (includes contractor-mediated and party-list-mediated connections)"
+    },
+    "people": 519,
+    "chains": 1202,
+    "limitations": "Includes family, political, contractor and party-list connections. Shared organization and business connections must not be converted into family edges."
+  },
+  "nextJoinPolicy": [
+    "Keep source-specific person IDs; never assume IDs agree across independent databases.",
+    "Resolve current official identity, district and term against historical rows before using a family link.",
+    "Retain relationship direction, description, source URL and dates. Check referenced evidence before marking verified.",
+    "Record unmatched identities and contradictory claims for review. Do not infer relatives from surname or a dynasty flag.",
+    "Display verified kinship as descriptive context in tables; keep geographic allocation calculations unchanged."
+  ]
+}

@@ -170,7 +170,7 @@ def main() -> int:
         elif match and direction_conflict:
             status = "Potential insertion; closest NEP title has directional conflict"
         elif match and score >= 0.72 and tranche["tranche_conflict"]:
-            status = "Review as possible insertion; tranche differs (50/50 signal)"
+            status = "Review as possible insertion; tranche differs (scope review needed)"
         elif match and score >= 0.72:
             status = "Possible NEP counterpart; verify scope and location"
         else:
@@ -245,7 +245,7 @@ def main() -> int:
             "nepNamedProjectCandidateCount": len(nia_nep),
             "comparisonCounts": dict(nia_counts),
             "potentialInsertionAmountPesosByStatus": dict(nia_amounts),
-            "method": "Exact normalized title first, then token-overlap shortlist and character similarity. Direction conflicts remain distinct; tranche differences are a 50/50 review signal.",
+            "method": "Exact normalized title first, then token-overlap shortlist and character similarity. Direction conflicts remain distinct; tranche differences require scope review.",
         },
         "FMR": {
             "hgabCandidateCount": len(fmr_hb), "hgabCandidateAmountPesos": fmr_total,

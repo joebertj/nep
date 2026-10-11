@@ -1,0 +1,69 @@
+{
+  "sources": [
+    {
+      "source": "analysis_output/dpwh-projects-filtered.json",
+      "sha256": "224c89268c3658909766daa13ce74c0c302f957b386da9be566960e1ee7df26e",
+      "comparisonRows": 100,
+      "externalAllocationPesos": 1335459000,
+      "recordKinds": {
+        "project": 100
+      },
+      "sourceLinks": {
+        "exact_unique_allocation": 100
+      },
+      "linkedNativeAllocationRecords": 100,
+      "linkedExternalAllocationPesos": 1335459000,
+      "reviewReasons": {
+        "qualified_location_unresolved": 46,
+        "leg_or_construction_scope_unresolved": 26
+      },
+      "rowsWithQualifiedPlaceCandidates": 79,
+      "linkedNativeComparisonStatuses": {
+        "No plausible NEP title counterpart; review candidate": 97,
+        "Multiple or already paired NEP counterparts; review scope": 2,
+        "Plausible NEP title counterpart; review scope": 1
+      },
+      "newAliases": 0,
+      "newBoundaryClaims": 0,
+      "newAutomaticLEGAssignments": 0
+    },
+    {
+      "source": "analysis_output/all_house_only_candidates.json",
+      "sha256": "73bbc7167a3c088049a31600f1e46ab7ea92fa6f63699ddb7aa72356cd1b0c87",
+      "comparisonRows": 5797,
+      "externalAllocationPesos": 165801488000,
+      "recordKinds": {
+        "project": 5792,
+        "fap_project": 4,
+        "region": 1
+      },
+      "sourceLinks": {
+        "exact_unique_allocation": 5790,
+        "source_review": 6,
+        "exact_allocation_group": 1
+      },
+      "linkedNativeAllocationRecords": 5792,
+      "linkedExternalAllocationPesos": 165661113000,
+      "reviewReasons": {
+        "qualified_location_unresolved": 3548,
+        "leg_or_construction_scope_unresolved": 2371,
+        "trailing_address_metadata_review": 214,
+        "source_link_discrepancy": 5,
+        "fap_separate_review": 4,
+        "non_project_source_record": 1
+      },
+      "rowsWithQualifiedPlaceCandidates": 4293,
+      "linkedNativeComparisonStatuses": {
+        "No plausible NEP title counterpart; review candidate": 5317,
+        "Multiple or already paired NEP counterparts; review scope": 437,
+        "Plausible NEP title counterpart; review scope": 33,
+        "Exact normalized title found in NEP": 5
+      },
+      "newAliases": 0,
+      "newBoundaryClaims": 0,
+      "newAutomaticLEGAssignments": 0
+    }
+  ],
+  "externalStatusesAdopted": false,
+  "publicPagesChanged": false
+}

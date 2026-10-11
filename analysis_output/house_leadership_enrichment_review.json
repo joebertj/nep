@@ -1,0 +1,121 @@
+{
+  "asOf": "2026-10-11",
+  "mappedDeputyDistricts": 13,
+  "unassignedPartyListEntries": 1,
+  "totalStrictLines": 8558,
+  "totalStrictPesos": 221047202000,
+  "potentialInsertionLines": 3358,
+  "potentialInsertionPesos": 75043195000,
+  "rows": [
+    {
+      "district": "Misamis Oriental · 2nd District",
+      "representative": "Yevgeny Emano",
+      "relevantRoles": "Deputy Speaker",
+      "roleSources": [
+        "https://congress.gov.ph/house-members/house-leaders"
+      ]
+    },
+    {
+      "district": "La Union · 1st District",
+      "representative": "Paolo Ortega",
+      "relevantRoles": "Deputy Speaker",
+      "roleSources": [
+        "https://congress.gov.ph/house-members/house-leaders"
+      ]
+    },
+    {
+      "district": "Iloilo · 1st District",
+      "representative": "Janette Garin",
+      "relevantRoles": "Deputy Speaker",
+      "roleSources": [
+        "https://congress.gov.ph/house-members/house-leaders"
+      ]
+    },
+    {
+      "district": "Bacolod · Lone District",
+      "representative": "Albee Benitez",
+      "relevantRoles": "Deputy Speaker",
+      "roleSources": [
+        "https://congress.gov.ph/house-members/house-leaders"
+      ]
+    },
+    {
+      "district": "Zambales · 1st District",
+      "representative": "Jay Khonghun",
+      "relevantRoles": "Deputy Speaker",
+      "roleSources": [
+        "https://congress.gov.ph/house-members/house-leaders"
+      ]
+    },
+    {
+      "district": "Quezon · 2nd District",
+      "representative": "David Suarez",
+      "relevantRoles": "Deputy Speaker",
+      "roleSources": [
+        "https://congress.gov.ph/house-members/house-leaders"
+      ]
+    },
+    {
+      "district": "Cebu · 5th District",
+      "representative": "Duke Frasco",
+      "relevantRoles": "Deputy Speaker",
+      "roleSources": [
+        "https://congress.gov.ph/house-members/house-leaders"
+      ]
+    },
+    {
+      "district": "South Cotabato · 2nd District",
+      "representative": "Ferdinand Hernandez",
+      "relevantRoles": "Senior Deputy Speaker; Vice-Chairperson",
+      "roleSources": [
+        "https://www.congress.gov.ph/committees/committee/view/0504",
+        "https://congress.gov.ph/house-members/house-leaders",
+        "https://congress.gov.ph/media/press-releases/9695"
+      ]
+    },
+    {
+      "district": "Pangasinan · 3rd District",
+      "representative": "Maria Rachel Arenas",
+      "relevantRoles": "Deputy Speaker; Member for the Majority",
+      "roleSources": [
+        "https://www.congress.gov.ph/committees/committee/view/0504",
+        "https://congress.gov.ph/house-members/house-leaders"
+      ]
+    },
+    {
+      "district": "Negros Occidental · 6th District",
+      "representative": "Mercedes Alvarez-Lansang",
+      "relevantRoles": "Deputy Speaker; Vice-Chairperson",
+      "roleSources": [
+        "https://www.congress.gov.ph/committees/committee/view/0504",
+        "https://congress.gov.ph/house-members/house-leaders",
+        "https://congress.gov.ph/index.php/house-members/view/G006"
+      ]
+    },
+    {
+      "district": "Lanao del Sur · 2nd District",
+      "representative": "Yasser Balindong",
+      "relevantRoles": "Deputy Speaker",
+      "roleSources": [
+        "https://congress.gov.ph/house-members/house-leaders"
+      ]
+    },
+    {
+      "district": "Iloilo · 4th District",
+      "representative": "Ferjenel Biron",
+      "relevantRoles": "Deputy Speaker",
+      "roleSources": [
+        "https://congress.gov.ph/house-members/house-leaders"
+      ]
+    },
+    {
+      "district": "Antipolo · 1st District",
+      "representative": "Ronaldo Puno",
+      "relevantRoles": "Deputy Speaker",
+      "roleSources": [
+        "https://congress.gov.ph/house-members/house-leaders"
+      ]
+    }
+  ],
+  "privateCongressMirrorMatchesODV": true
+}

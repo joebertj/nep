@@ -19,7 +19,7 @@
     "potentialInsertionAmountPesosByStatus": {
       "Potential insertion; no close named NEP counterpart": 1000000000
     },
-    "method": "Exact normalized title first, then token-overlap shortlist and character similarity. Direction conflicts remain distinct; tranche differences are a 50/50 review signal."
+    "method": "Exact normalized title first, then token-overlap shortlist and character similarity. Direction conflicts remain distinct; tranche differences require scope review."
   },
   "FMR": {
     "hgabCandidateCount": 795,

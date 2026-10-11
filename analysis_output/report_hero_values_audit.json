@@ -1,0 +1,69 @@
+{
+  "pages": [
+    {
+      "page": "dpwh.html",
+      "currentSourceValuesPresent": true,
+      "heroText": "FY2027 NEP vs enacted DPWH GAA 737 potential repeat matches ₱27.26B FY2027 NEP allocation across distinct matched lines 283 matches vs FY2026 GAA ₱5.88B sum of matched enacted allocations 454 matches vs FY2025 GAA ₱13.11B sum of matched enacted allocations 686 distinct NEP proposals produce 737 comparison pairs; 51 proposals match more than one historical year. The NEP cost counts each proposal once. These are screened allocations, not confirmed duplicate costs. Overlapping chainage and incomplete chainage require scope review."
+    },
+    {
+      "page": "dpwh-hgab.html",
+      "currentSourceValuesPresent": true,
+      "heroText": "DPWH · FY2027 NEP to 3rd-reading HGAB 5,549 potential domestic insertion candidates ₱158.36B HGAB allocation across domestic candidates · not alleged losses Full 3rd-reading DPWH allocation ₱587.08B 16,275 extracted allocation records Ambiguous / already paired 556 held out of the insertion shortlist This excludes 4 unmatched FAP records carrying ₱806.9M; they are reviewed separately. Unmatched titles are review leads, not confirmed legislative insertions. Inspect source pages, scope and plausible counterpart links."
+    },
+    {
+      "page": "dpwh-hgab-comparison.html",
+      "currentSourceValuesPresent": true,
+      "heroText": "DPWH · HB 10858 2nd vs 3rd Reading 5 line items appear only in the 3rd-reading extraction ₱134.0M net increase across the extracted schedules 2nd-reading lines 16,270 ₱586.94B 3rd-reading lines 16,275 ₱587.08B This is a document-stage comparison. A line appearing in one extraction does not by itself establish a policy insertion or deletion."
+    },
+    {
+      "page": "nia-irrigation.html",
+      "currentSourceValuesPresent": true,
+      "heroText": "NIA irrigation appendix · 3rd vs 2nd Reading 423 irrigation schedule lines retained at the same allocation ₱7.63B schedule total in the 3rd reading 2nd-reading total ₱7.63B 423 lines Allocation changes 0 between the two readings This appendix is separate from NIA named projects. Matching rows show extracted schedule stability, not repeat projects across fiscal years."
+    },
+    {
+      "page": "deped.html",
+      "currentSourceValuesPresent": true,
+      "heroText": "DepEd school operations · 3rd vs 2nd Reading 10,721 school allocation lines retained at the same amounts ₱102.67B schedule total in the 3rd reading 2nd-reading total ₱102.67B 10,721 school lines Allocation changes 0 between the two readings These are school operating allocations, not a school construction-project list. Compare schedule fields and source pages before interpreting the unchanged total."
+    },
+    {
+      "page": "fmr.html",
+      "currentSourceValuesPresent": true,
+      "heroText": "Farm-to-market roads · 3rd vs 2nd Reading 795 FMR lines retained at the same allocation ₱14.04B schedule total in each reading 2nd-reading total ₱14.04B 795 lines Net allocation change ₱0 between the two readings This compares bill stages. Program envelopes and named lines may represent different levels; unchanged amounts do not establish year-on-year project repetition."
+    },
+    {
+      "page": "nia.html",
+      "currentSourceValuesPresent": true,
+      "heroText": "NIA named projects · 3rd vs 2nd Reading 32 named-project lines retained at the same allocation ₱10.66B schedule total in each reading 2nd-reading total ₱10.66B 32 lines Net allocation change ₱0 between the two readings This page covers NIA named projects. The separate NIA irrigation appendix is reported independently; bill-stage stability is not a repeat-project finding."
+    },
+    {
+      "page": "hfep.html",
+      "currentSourceValuesPresent": true,
+      "heroText": "HFEP · 3rd vs 2nd Reading 513 health-facility lines retained at the same allocation ₱10.02B schedule total in each reading 2nd-reading total ₱10.02B 513 lines Net allocation change ₱0 between the two readings This compares bill stages. Program envelopes and named facility lines can sit at different budget hierarchy levels."
+    },
+    {
+      "page": "rcs.html",
+      "currentSourceValuesPresent": true,
+      "heroText": "Rainwater Collector System · NEP → HGAB 3rd reading 199 offices each allocated the same ₱4.2M package ₱835.8M district-office allocation pool · not verified disbursements Retained unchanged in HGAB 199 district-office allocations No selected HGAB counterpart 0 in the current stage trace No differentiated needs weighting is visible in these amounts. Equal packages do not establish what planners considered or prove misconduct. Rainfall-only redistribution belongs to the scenario sections below, not the observed budget outcome."
+    },
+    {
+      "page": "budget-innovations.html",
+      "currentSourceValuesPresent": true,
+      "heroText": "FY2027 NEP · exact keyword screen 32 terms potential first appearances or revived terms ₱17.66B largest keyword-linked allocation · Panahon ng Pagkilos Potential first appearances 28 no exact match in local FY2020–FY2025 GAA text Revived terms 4 seen in FY2020–FY2022 only Keyword-linked allocations may overlap and do not prove a new project. Terms are prompts for line-item review; this local archive starts in FY2020."
+    },
+    {
+      "page": "congress.html",
+      "currentSourceValuesPresent": true,
+      "heroText": "HGAB 3rd Reading · strict congressional location attribution 7,717 lines remain outside the strict district ranking ₱366.03B unresolved or shared project allocations Accepted allocations ₱221.05B 8,558 lines mapped to one district Allocation coverage 37.65% of the extracted schedule passes the location rules The ranking covers accepted location matches, not complete district budgets. Conflicting maps, incomplete locations and shared lines are excluded. No accepted match does not mean no allocation; location attribution does not establish sponsorship by a representative."
+    },
+    {
+      "page": "summary.html",
+      "currentSourceValuesPresent": true
+    },
+    {
+      "page": "index.html",
+      "currentSourceValuesPresent": true
+    }
+  ],
+  "scope": "Rendered hero text checked against current native comparison CSV and per-page JSON; summary/index checked against summary-data.json.",
+  "note": "No project matching, location attribution or financial source values were changed."
+}

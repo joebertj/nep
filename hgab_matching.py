@@ -9,6 +9,7 @@ from collections import Counter, defaultdict
 from difflib import SequenceMatcher
 from pathlib import Path
 from chainage import compare_chainage, compare_tranche, has_directional_conflict
+from location_data.project_location_scope import location_conflict
 
 ROOT=Path(__file__).resolve().parent
 EXACT='Exact normalized title found in NEP'
@@ -94,7 +95,7 @@ def load_nep(api_path,trace_path=None):
 
 def compatible(a,b):
     left,right=a['projectName'],b['projectName']
-    if has_directional_conflict(left,right): return False
+    if has_directional_conflict(left,right) or location_conflict(left,right): return False
     c=compare_chainage(left,right)
     if c['has_current_range'] and c['has_prior_range'] and not c['overlaps']: return False
     pa,pb=normalize(a.get('pap3')),normalize(b.get('pap3'))
@@ -174,7 +175,7 @@ def main():
         'officialNepSourceTrace':str(args.official_nep_trace) if args.official_nep_trace else None,
         'hbCandidateRecords':len(hb),'counts':dict(counts),'pairedNepRecords':len(used),
         'nepWithoutSelectedCounterpart':len(nep)-len(used),'hbAllocationPesos':sum(r['amountPesos'] for r in hb),
-        'comparisonMethod':'Visible HGAB allocations; Official NEP source records augment the independently validated local Transparency snapshot. One-to-one occurrences; abbreviations and maintenance PAP prefixes normalized. Uncorroborated OCR/native-row-ambiguity titles can only support potential matches. Global candidate search checks PAP, direction and chainage compatibility. 83% fuzzy candidates remain provisional; amount alone never identifies a project.',
+        'comparisonMethod':'Visible HGAB allocations; Official NEP source records augment the independently validated local Transparency snapshot. One-to-one occurrences; abbreviations and maintenance PAP prefixes normalized. Uncorroborated OCR/native-row-ambiguity titles can only support potential matches. Global candidate search checks PAP, direction, chainage and explicit qualified-location compatibility. 83% fuzzy candidates remain provisional; amount alone never identifies a project.',
         'warning':'Unmatched and potential matches require document review; they do not certify insertions or removals. Official NEP text in the supplied trace may contain OCR errors.', 'csv':str(args.out)}
     args.out.with_name(args.out.stem+'_summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n')
     mapping={'summary':{k:v for k,v in summary.items() if k!='billSource'},'pairs':paired,

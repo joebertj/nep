@@ -1,0 +1,75 @@
+{
+  "pages": [
+    {
+      "page": "dpwh.html",
+      "heroRefreshed": true,
+      "changed": false,
+      "valuesDerivedFromCurrentData": true
+    },
+    {
+      "page": "dpwh-hgab.html",
+      "heroRefreshed": true,
+      "changed": false,
+      "valuesDerivedFromCurrentData": true
+    },
+    {
+      "page": "dpwh-hgab-comparison.html",
+      "heroRefreshed": true,
+      "changed": false,
+      "valuesDerivedFromCurrentData": true
+    },
+    {
+      "page": "nia-irrigation.html",
+      "heroRefreshed": true,
+      "changed": false,
+      "valuesDerivedFromCurrentData": true
+    },
+    {
+      "page": "deped.html",
+      "heroRefreshed": true,
+      "changed": false,
+      "valuesDerivedFromCurrentData": true
+    },
+    {
+      "page": "fmr.html",
+      "heroRefreshed": true,
+      "changed": false,
+      "valuesDerivedFromCurrentData": true
+    },
+    {
+      "page": "nia.html",
+      "heroRefreshed": true,
+      "changed": false,
+      "valuesDerivedFromCurrentData": true
+    },
+    {
+      "page": "hfep.html",
+      "heroRefreshed": true,
+      "changed": false,
+      "valuesDerivedFromCurrentData": true
+    },
+    {
+      "page": "rcs.html",
+      "heroRefreshed": true,
+      "changed": false,
+      "valuesDerivedFromCurrentData": true
+    },
+    {
+      "page": "budget-innovations.html",
+      "heroRefreshed": true,
+      "changed": false,
+      "valuesDerivedFromCurrentData": true
+    },
+    {
+      "page": "congress.html",
+      "heroRefreshed": true,
+      "changed": false,
+      "valuesDerivedFromCurrentData": true
+    }
+  ],
+  "policy": "Hero values derive from the current report JSON and native comparison CSV. Matching pairs and unique proposals are distinct; FAP candidates are separated from domestic candidates. Scenario outputs are not observed budget outcomes.",
+  "summaryAliases": [
+    "summary.html",
+    "index.html"
+  ]
+}

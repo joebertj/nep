@@ -108,8 +108,14 @@ def refresh():
         summary = summarize(rows); audit[edition] = {'summary': summary, 'rows': fap}
         # Rebuild the shortlist from the comparison rather than subtracting counts on every rerun.
         allowed = {(r['projectName'], r['sourceVolume'], str(r['sourcePage'])) for r in rows if not is_fap(r) and r['comparison'] == UNMATCHED}
-        data[data_key] = [r for r in data[data_key] if (r['projectName'], r['sourceVolume'], str(r['sourcePage'])) in allowed]
+        old_names={(r['projectName'],r['sourceVolume'],str(r['sourcePage'])):r.get('congressional_representatives',[]) for r in data[data_key]}
+        data[data_key]=[{**{k:r[k] for k in ['comparison','projectName','region','office','closest_nep_title','sourceVolume','sourcePage']},
+            'amountPesos':int(r['amountPesos']),'title_similarity_pct':float(r['title_similarity_pct'] or 0),
+            'congressional_representatives':old_names.get((r['projectName'],r['sourceVolume'],str(r['sourcePage'])),[])}
+            for r in rows if (r['projectName'],r['sourceVolume'],str(r['sourcePage'])) in allowed]
         screen = data[summary_key]
+        fresh_summary=OUT/('hb_nep_comparison_3rd_summary.json' if edition=='3rd' else 'hb_nep_comparison_summary.json')
+        if fresh_summary.exists():screen.update(json.loads(fresh_summary.read_text()))
         screen['allScheduleCounts'] = dict(Counter(r['comparison'] for r in rows))
         screen['counts'] = summary['domesticCounts']
         screen['screenScope'] = 'Domestic schedule only; printed foreign assisted allocations reviewed separately.'
@@ -147,7 +153,7 @@ def refresh():
                 page = page[:hero.start()] + block + page[hero.end():]
             # Archive count and cost also use domestic scope.
             old = data['hbInsertions2nd']; old_cost=sum(int(r['amountPesos']) for r in old)
-            page = re.sub(r'The 2nd-reading edition has .*?confirmed additions\.', f'The domestic 2nd-reading shortlist has {len(old):,} unmatched records carrying ₱{old_cost/1e9:,.2f}B. FAP allocations are excluded; these are review leads, not confirmed additions.', page)
+            page = re.sub(r'The (?:2nd-reading edition has|domestic 2nd-reading shortlist has) .*?(?:confirmed additions|not confirmed additions)\.', f'The domestic 2nd-reading shortlist has {len(old):,} unmatched records carrying ₱{old_cost/1e9:,.2f}B. FAP allocations are excluded; these are review leads, not confirmed additions.', page)
         if '</main>' not in page: raise ValueError(f'Cannot locate main container in {name}')
         page = page.replace('</main>', section+'</main>', 1)
         path.write_text(page)

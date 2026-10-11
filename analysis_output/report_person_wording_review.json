@@ -1,0 +1,71 @@
+{
+  "scope": "Public prose across all report pages and comparison generators. Names in data are permitted; person-specific selection and accusatory wording removed. No financial or project matching changes.",
+  "pages": [
+    {
+      "page": "budget-innovations.html",
+      "personTargetingPhrases": [],
+      "review": "Names retained as roster labels; no named-person comparison defaults. All districts use the same rules."
+    },
+    {
+      "page": "congress.html",
+      "personTargetingPhrases": [],
+      "review": "Names retained as roster labels; no named-person comparison defaults. All districts use the same rules."
+    },
+    {
+      "page": "deped.html",
+      "personTargetingPhrases": [],
+      "review": "Names retained as roster labels; no named-person comparison defaults. All districts use the same rules."
+    },
+    {
+      "page": "dpwh-hgab-comparison.html",
+      "personTargetingPhrases": [],
+      "review": "Names retained as roster labels; no named-person comparison defaults. All districts use the same rules."
+    },
+    {
+      "page": "dpwh-hgab.html",
+      "personTargetingPhrases": [],
+      "review": "Names retained as roster labels; no named-person comparison defaults. All districts use the same rules."
+    },
+    {
+      "page": "dpwh.html",
+      "personTargetingPhrases": [],
+      "review": "Names retained as roster labels; no named-person comparison defaults. All districts use the same rules."
+    },
+    {
+      "page": "fmr.html",
+      "personTargetingPhrases": [],
+      "review": "Names retained as roster labels; no named-person comparison defaults. All districts use the same rules."
+    },
+    {
+      "page": "hfep.html",
+      "personTargetingPhrases": [],
+      "review": "Names retained as roster labels; no named-person comparison defaults. All districts use the same rules."
+    },
+    {
+      "page": "index.html",
+      "personTargetingPhrases": [],
+      "review": "Names retained as roster labels; no named-person comparison defaults. All districts use the same rules."
+    },
+    {
+      "page": "nia-irrigation.html",
+      "personTargetingPhrases": [],
+      "review": "Names retained as roster labels; no named-person comparison defaults. All districts use the same rules."
+    },
+    {
+      "page": "nia.html",
+      "personTargetingPhrases": [],
+      "review": "Names retained as roster labels; no named-person comparison defaults. All districts use the same rules."
+    },
+    {
+      "page": "rcs.html",
+      "personTargetingPhrases": [],
+      "review": "Names retained as roster labels; no named-person comparison defaults. All districts use the same rules."
+    },
+    {
+      "page": "summary.html",
+      "personTargetingPhrases": [],
+      "review": "Names retained as roster labels; no named-person comparison defaults. All districts use the same rules."
+    }
+  ],
+  "comparisonDefault": "Three largest mapped allocations computed from data; reader may choose any district."
+}

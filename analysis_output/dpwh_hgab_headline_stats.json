@@ -2,17 +2,17 @@
   "officeBreakdown": [
     {
       "label": "Central Office",
-      "insertionCount": 874,
-      "insertionPesos": 94398237000,
+      "insertionCount": 931,
+      "insertionPesos": 97965612000,
       "removalCount": 0,
       "removalPesos": 0
     },
     {
       "label": "DEOs",
-      "insertionCount": 3732,
-      "insertionPesos": 52354145000,
-      "removalCount": 852,
-      "removalPesos": 60064038000
+      "insertionCount": 4618,
+      "insertionPesos": 60397713000,
+      "removalCount": 994,
+      "removalPesos": 63738438000
     },
     {
       "label": "Regional Offices",
@@ -39,10 +39,10 @@
     },
     {
       "label": "Network Development",
-      "insertionCount": 232,
-      "insertionPesos": 18782271000,
-      "removalCount": 149,
-      "removalPesos": 14657151000
+      "insertionCount": 233,
+      "insertionPesos": 18932271000,
+      "removalCount": 150,
+      "removalPesos": 14787201000
     },
     {
       "label": "Bridges",
@@ -53,17 +53,17 @@
     },
     {
       "label": "Flood Management",
-      "insertionCount": 382,
-      "insertionPesos": 24230750000,
-      "removalCount": 211,
-      "removalPesos": 17074831000
+      "insertionCount": 421,
+      "insertionPesos": 25453800000,
+      "removalCount": 234,
+      "removalPesos": 18692081000
     },
     {
       "label": "CSSP",
-      "insertionCount": 3531,
-      "insertionPesos": 78181983000,
-      "removalCount": 282,
-      "removalPesos": 16545703000
+      "insertionCount": 4434,
+      "insertionPesos": 88419876000,
+      "removalCount": 400,
+      "removalPesos": 18472803000
     },
     {
       "label": "Local Program",
@@ -80,7 +80,7 @@
       "removalPesos": 0
     }
   ],
-  "insertionCount": 4610,
-  "removalCount": 860,
+  "insertionCount": 5553,
+  "removalCount": 1002,
   "method": "Domestic HGAB-only candidates plus separately reviewed unpaired FAP records; reverse-screened NEP-only removal candidates. Amounts use HGAB for insertions and original NEP for removals."
 }

@@ -19,7 +19,7 @@
     },
     {
       "review_id": "HB10858-3-0447-006385_scope_hold",
-      "interpretation": "Keep the entire allocation unresolved pending construction-segment evidence",
+      "interpretation": "Confirmed multi-place project naming Butuan City and Remedios T. Romualdez; exclude the entire allocation from strict single-LEG attribution",
       "scope": {
         "project_ids": [
           "HB10858-3-0447-006385"
@@ -31,8 +31,30 @@
           "HGAB 3rd Reading"
         ]
       },
-      "supporting_user_answer": "Keep it unresolved pending segment evidence",
-      "status": "Confirmed scope hold; no strict congressional assignment"
+      "supporting_user_answer": "we can't attribute this to a LEG as this is a multi place",
+      "previous_user_answer": "Keep it unresolved pending segment evidence",
+      "status": "Confirmed multi-place exclusion; no full allocation or assumed split assigned to any LEG"
+    },
+    {
+      "review_id": "Dupinga_Sabo_Dam_Gabadlon_user_confirmed",
+      "interpretation": "Gabaldon municipality, Nueva Ecija",
+      "scope": {
+        "titles": [
+          "Construction of Dupinga Sabo Dam, Gabadlon, Nueva Ecija"
+        ],
+        "years": [
+          2027
+        ],
+        "stages": [
+          "HGAB 3rd Reading"
+        ]
+      },
+      "address_replacement": {
+        "from": "Gabadlon, Nueva Ecija",
+        "to": "Gabaldon, Nueva Ecija"
+      },
+      "supporting_user_answer": "yes",
+      "status": "Confirmed title-scoped spelling interpretation; original source title retained. Not a global alias or automatic LEG assignment."
     }
   ]
 }

@@ -1,0 +1,57 @@
+{
+  "policy": "Numeric cells under currency headers display \u20b1 and thousands separators. Decimal places, signs, source amounts, column units and CSV payloads are preserved. Counts and percentages are excluded.",
+  "pages": [
+    {
+      "page": "budget-innovations.html",
+      "formattedCurrencyCells": 0
+    },
+    {
+      "page": "congress.html",
+      "formattedCurrencyCells": 0
+    },
+    {
+      "page": "deped.html",
+      "formattedCurrencyCells": 0
+    },
+    {
+      "page": "dpwh-hgab-comparison.html",
+      "formattedCurrencyCells": 0
+    },
+    {
+      "page": "dpwh-hgab.html",
+      "formattedCurrencyCells": 0
+    },
+    {
+      "page": "dpwh.html",
+      "formattedCurrencyCells": 0
+    },
+    {
+      "page": "fmr.html",
+      "formattedCurrencyCells": 0
+    },
+    {
+      "page": "hfep.html",
+      "formattedCurrencyCells": 0
+    },
+    {
+      "page": "index.html",
+      "formattedCurrencyCells": 0
+    },
+    {
+      "page": "nia-irrigation.html",
+      "formattedCurrencyCells": 0
+    },
+    {
+      "page": "nia.html",
+      "formattedCurrencyCells": 0
+    },
+    {
+      "page": "rcs.html",
+      "formattedCurrencyCells": 0
+    },
+    {
+      "page": "summary.html",
+      "formattedCurrencyCells": 0
+    }
+  ]
+}

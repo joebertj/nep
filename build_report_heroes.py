@@ -6,6 +6,8 @@ from __future__ import annotations
 import json
 import argparse
 import re
+import csv
+from hgab_matching import UNMATCHED, is_fap
 from pathlib import Path
 
 STATIC = Path(__file__).resolve().parent.parent / "open-data-visualization" / "static" / "nep-preview"
@@ -38,11 +40,19 @@ def make_heroes() -> dict[str, str]:
     repeat_rows = dpwh["priorityRepeats"]
     distinct_repeat_rows = {x["source_code"]: x for x in repeat_rows}
     repeat_total = sum(int(x.get("amount_2027") or 0) for x in distinct_repeat_rows.values())
-    insertion_rows = dpwh["hbInsertions"]
+    comparison_path=Path(__file__).resolve().parent/'analysis_output/hb_nep_comparison_3rd.csv'
+    with comparison_path.open() as f:current_comparison=list(csv.DictReader(f))
+    insertion_rows = [r for r in current_comparison if r['comparison']==UNMATCHED and not is_fap(r)]
     insertion_total = sum(int(x.get("amountPesos") or 0) for x in insertion_rows)
-    summary3 = dpwh["hbInsertions3rdSummary"]
-    counts3 = summary3["counts"]
-    ambiguous = counts3.get("Multiple or already paired NEP counterparts; review scope", 0)
+    full_schedule_total=sum(int(r["amountPesos"]) for r in current_comparison)
+    fap_candidates=[r for r in current_comparison if r["comparison"]==UNMATCHED and is_fap(r)]
+    years=sorted({r["comparison_year"] for r in repeat_rows},reverse=True)
+    repeat_cards=[]
+    for year in years:
+        year_rows=[r for r in repeat_rows if r["comparison_year"]==year]
+        repeat_cards.append((f"{len(year_rows):,} matches vs FY{year} GAA",peso(sum(int(r["prior_amount"]) for r in year_rows)),"sum of matched enacted allocations"))
+    repeated_across_years=sum(len({r["comparison_year"] for r in repeat_rows if r["source_code"]==code})>1 for code in distinct_repeat_rows)
+    ambiguous = sum(r['comparison']=="Multiple or already paired NEP counterparts; review scope" for r in current_comparison)
 
     rev = read("hgab-revision-data.json")
     def revision(key: str) -> dict:
@@ -52,41 +62,41 @@ def make_heroes() -> dict[str, str]:
     deped = read("deped-data.json")["summary"]
     comparison = read("dpwh-hgab-comparison.json")["summary"]
     rcs = read("rcs-data.json")["summary"]
+    rcs_trace=read("rcs-stage-trace.json")["summary"]
     innovations = read("budget-innovations-data.json")
     kws = innovations["potentialKeywords"]
     potential = sum(x.get("keywordStatus") == "Potential first appearance" for x in kws)
     revived = sum(x.get("keywordStatus") == "Revived" for x in kws)
-    top_kw = kws[0]
+    top_kw = max(kws,key=lambda r:int(r["pesos"]))
     congress = read("congress-data.json")["summary"]
 
     return {
-        "dpwh.html": hero("FY2027 NEP vs enacted DPWH GAA", "737", "potential repeat matches", peso(repeat_total), "FY2027 NEP allocation across distinct matched lines", [
-            ("283 matches vs FY2026 GAA", "₱5.88B", "enacted allocations"), ("454 matches vs FY2025 GAA", "₱13.11B", "enacted allocations")],
-            "51 FY2027 NEP lines match both GAA years. Totals are screened allocations, not confirmed duplicate costs. Bridge chainage must overlap; missing chainage remains flagged for review."),
-        "dpwh-hgab.html": hero("DPWH · FY2027 NEP to 3rd-reading HGAB", f"{len(insertion_rows):,}", "Potential domestic insertions · HGAB-only line items", peso(insertion_total), "allocation across the domestic review shortlist", [
-            ("All 3rd-reading DPWH lines", f"{summary3['hbAllocationPesos']:,}", "full schedule allocation in pesos"), ("Ambiguous / already paired", f"{ambiguous:,}", "held out of the shortlist")],
-            "Foreign assisted projects are excluded and reviewed separately. Title screening creates review leads, not confirmed insertions. Exact and plausible fuzzy counterparts are screened out; inspect source pages and project scope before drawing conclusions."),
+        "dpwh.html": hero("FY2027 NEP vs enacted DPWH GAA", f"{len(repeat_rows):,}", "potential repeat matches", peso(repeat_total), "FY2027 NEP allocation across distinct matched lines", repeat_cards,
+            f"{len(distinct_repeat_rows):,} distinct NEP proposals produce {len(repeat_rows):,} comparison pairs; {repeated_across_years:,} proposals match more than one historical year. The NEP cost counts each proposal once. These are screened allocations, not confirmed duplicate costs. Overlapping chainage and incomplete chainage require scope review."),
+        "dpwh-hgab.html": hero("DPWH · FY2027 NEP to 3rd-reading HGAB", f"{len(insertion_rows):,}", "potential domestic insertion candidates", peso(insertion_total), "HGAB allocation across domestic candidates · not alleged losses", [
+            ("Full 3rd-reading DPWH allocation", peso(full_schedule_total), f"{len(current_comparison):,} extracted allocation records"), ("Ambiguous / already paired", f"{ambiguous:,}", "held out of the insertion shortlist")],
+            f"This excludes {len(fap_candidates):,} unmatched FAP records carrying {peso(sum(int(r['amountPesos']) for r in fap_candidates))}; they are reviewed separately. Unmatched titles are review leads, not confirmed legislative insertions. Inspect source pages, scope and plausible counterpart links."),
         "dpwh-hgab-comparison.html": hero("DPWH · HB 10858 2nd vs 3rd Reading", str(comparison["statusCounts"].get("New in 3rd reading", 0)), "line items appear only in the 3rd-reading extraction", peso(comparison["thirdAllocationPesos"] - comparison["secondAllocationPesos"]), "net increase across the extracted schedules", [
             ("2nd-reading lines", f"{comparison['secondCandidateCount']:,}", peso(comparison["secondAllocationPesos"])), ("3rd-reading lines", f"{comparison['thirdCandidateCount']:,}", peso(comparison["thirdAllocationPesos"]))],
             "This is a document-stage comparison. A line appearing in one extraction does not by itself establish a policy insertion or deletion."),
-        "nia-irrigation.html": hero("NIA irrigation appendix · 3rd vs 2nd Reading", f"{ir['thirdRows']:,}", "irrigation schedule lines retained at the same allocation", peso(ir["thirdTotal"]), "schedule total in the 3rd reading", [
+        "nia-irrigation.html": hero("NIA irrigation appendix · 3rd vs 2nd Reading", f"{ir['statusCounts'].get('Same allocation', 0):,}", "irrigation schedule lines retained at the same allocation", peso(ir["thirdTotal"]), "schedule total in the 3rd reading", [
             ("2nd-reading total", peso(ir["secondTotal"]), f"{ir['secondRows']:,} lines"), ("Allocation changes", f"{ir['statusCounts'].get('Allocation changed', 0):,}", "between the two readings")],
             "This appendix is separate from NIA named projects. Matching rows show extracted schedule stability, not repeat projects across fiscal years."),
-        "deped.html": hero("DepEd school operations · 3rd vs 2nd Reading", f"{deped['thirdRows']:,}", "school allocation lines retained at the same amounts", peso(deped["thirdTotal"]), "schedule total in the 3rd reading", [
+        "deped.html": hero("DepEd school operations · 3rd vs 2nd Reading", f"{deped['statusCounts'].get('Same allocation', 0):,}", "school allocation lines retained at the same amounts", peso(deped["thirdTotal"]), "schedule total in the 3rd reading", [
             ("2nd-reading total", peso(deped["secondTotal"]), f"{deped['secondRows']:,} school lines"), ("Allocation changes", f"{deped['statusCounts'].get('Allocation changed', 0):,}", "between the two readings")],
             "These are school operating allocations, not a school construction-project list. Compare schedule fields and source pages before interpreting the unchanged total."),
-        "fmr.html": hero("Farm-to-market roads · 3rd vs 2nd Reading", f"{fmr['thirdRows']:,}", "FMR lines retained at the same allocation", peso(fmr["thirdTotal"]), "schedule total in each reading", [
+        "fmr.html": hero("Farm-to-market roads · 3rd vs 2nd Reading", f"{fmr['statusCounts'].get('Same allocation', 0):,}", "FMR lines retained at the same allocation", peso(fmr["thirdTotal"]), "schedule total in each reading", [
             ("2nd-reading total", peso(fmr["secondTotal"]), f"{fmr['secondRows']:,} lines"), ("Net allocation change", peso(fmr["thirdTotal"]-fmr["secondTotal"]), "between the two readings")],
             "This compares bill stages. Program envelopes and named lines may represent different levels; unchanged amounts do not establish year-on-year project repetition."),
-        "nia.html": hero("NIA named projects · 3rd vs 2nd Reading", f"{nia['thirdRows']:,}", "named-project lines retained at the same allocation", peso(nia["thirdTotal"]), "schedule total in each reading", [
+        "nia.html": hero("NIA named projects · 3rd vs 2nd Reading", f"{nia['statusCounts'].get('Same allocation', 0):,}", "named-project lines retained at the same allocation", peso(nia["thirdTotal"]), "schedule total in each reading", [
             ("2nd-reading total", peso(nia["secondTotal"]), f"{nia['secondRows']:,} lines"), ("Net allocation change", peso(nia["thirdTotal"]-nia["secondTotal"]), "between the two readings")],
             "This page covers NIA named projects. The separate NIA irrigation appendix is reported independently; bill-stage stability is not a repeat-project finding."),
-        "hfep.html": hero("HFEP · 3rd vs 2nd Reading", f"{hfep['thirdRows']:,}", "health-facility lines retained at the same allocation", peso(hfep["thirdTotal"]), "schedule total in each reading", [
+        "hfep.html": hero("HFEP · 3rd vs 2nd Reading", f"{hfep['statusCounts'].get('Same allocation', 0):,}", "health-facility lines retained at the same allocation", peso(hfep["thirdTotal"]), "schedule total in each reading", [
             ("2nd-reading total", peso(hfep["secondTotal"]), f"{hfep['secondRows']:,} lines"), ("Net allocation change", peso(hfep["thirdTotal"]-hfep["secondTotal"]), "between the two readings")],
             "This compares bill stages. Program envelopes and named facility lines can sit at different budget hierarchy levels."),
-        "rcs.html": hero("Rainwater Collector System · schedule and rainfall-only scenario", f"{rcs['districtLines']} offices", "each receives one RCS unit in the current schedule", peso(rcs["districtPoolPesos"]), "district-office pool · ₱4.2M per unit", [
-            ("Scenario shift", "₱184.8M", "from losing to gaining offices"), ("Unchanged offices", "120", "under rainfall-only whole-unit allocation")],
-            "The scenario redistributes the same 199 units using province-average rainfall only. Rainfall depth is not a complete measure of water need or project capacity."),
+        "rcs.html": hero("Rainwater Collector System · NEP → HGAB 3rd reading", f"{rcs['districtLines']:,} offices", "each allocated the same ₱4.2M package", peso(rcs["districtPoolPesos"]), "district-office allocation pool · not verified disbursements", [
+            ("Retained unchanged in HGAB", f"{rcs_trace['unchangedInHGAB']:,}", "district-office allocations"), ("No selected HGAB counterpart", f"{rcs_trace['withoutSelectedCounterpart']:,}", "in the current stage trace")],
+            "No differentiated needs weighting is visible in these amounts. Equal packages do not establish what planners considered or prove misconduct. Rainfall-only redistribution belongs to the scenario sections below, not the observed budget outcome."),
         "budget-innovations.html": hero("FY2027 NEP · exact keyword screen", f"{len(kws)} terms", "potential first appearances or revived terms", peso(int(top_kw["pesos"])), f"largest keyword-linked allocation · {top_kw['keyword']}", [
             ("Potential first appearances", str(potential), "no exact match in local FY2020–FY2025 GAA text"), ("Revived terms", str(revived), "seen in FY2020–FY2022 only")],
             "Keyword-linked allocations may overlap and do not prove a new project. Terms are prompts for line-item review; this local archive starts in FY2020."),
@@ -99,7 +109,7 @@ def make_heroes() -> dict[str, str]:
 def replace_lead(html: str, page: str, card: str) -> str:
     # Remove previous standalone teaser cards; keep all report tables and charts.
     html = re.sub(r'<section\b[^>]*class="impact-teaser"[^>]*>.*?</section>', '', html, count=1, flags=re.S)
-    if page == "congress.html" and 'id="report-hero"' in html:
+    if 'id="report-hero"' in html:
         html = re.sub(r'<section id="report-hero">.*?</section>', '<section id="report-hero">' + card + '</section>', html, count=1, flags=re.S)
     if page == "dpwh-hgab.html":
         html = html.replace(
@@ -136,18 +146,28 @@ def replace_lead(html: str, page: str, card: str) -> str:
     return html
 
 
+def refresh(page_filter=None):
+    root=Path(__file__).resolve().parent
+    records=[]
+    for page,card in make_heroes().items():
+        if page_filter and page_filter!=page:continue
+        path=STATIC/page
+        before=path.read_text(encoding="utf-8")
+        after=replace_lead(before,page,card)
+        path.write_text(after,encoding="utf-8")
+        mirror=root/'analysis_output'/page
+        if mirror.exists():mirror.write_text(after,encoding="utf-8")
+        records.append({'page':page,'heroRefreshed':True,'changed':after!=before,'valuesDerivedFromCurrentData':True})
+    # Summary and its index alias use the summary builder's current findings,
+    # repeat-proposal count and observed RCS count rather than this card builder.
+    report={'pages':records,'policy':'Hero values derive from the current report JSON and native comparison CSV. Matching pairs and unique proposals are distinct; FAP candidates are separated from domestic candidates. Scenario outputs are not observed budget outcomes.','summaryAliases':['summary.html','index.html']}
+    (root/'analysis_output/report_hero_review.json').write_text(json.dumps(report,indent=2)+'\n')
+    return report
+
 def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--page", help="refresh one report instead of all reports")
-    args = parser.parse_args()
-    for page, card in make_heroes().items():
-        if args.page and args.page != page:
-            continue
-        path = STATIC / page
-        html = path.read_text(encoding="utf-8")
-        path.write_text(replace_lead(html, page, card), encoding="utf-8")
-        print(f"Updated {page}")
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--page',help='refresh one report instead of all reports')
+    args=parser.parse_args()
+    print(json.dumps(refresh(args.page),indent=2))
 
-
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':main()

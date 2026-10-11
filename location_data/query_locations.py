@@ -31,6 +31,7 @@ def main():
     mode.add_argument('--ambiguity',help='Exact name with all distinct geographic levels and parent contexts')
     mode.add_argument('--gaa',help='search original historical GAA titles (substring)')
     mode.add_argument('--review',help='search grouped location questions (substring)')
+    mode.add_argument('--analyst',help='search imported analyst titles or native allocation IDs')
     parser.add_argument('--level',choices=['region','province','city','municipality','locality','barangay'])
     parser.add_argument('--province');parser.add_argument('--municipality');parser.add_argument('--district');parser.add_argument('--limit',type=int,default=20)
     args=parser.parse_args();db=sqlite3.connect(args.database.resolve().as_uri()+'?mode=ro',uri=True);db.row_factory=sqlite3.Row
@@ -51,10 +52,21 @@ def main():
             item['chains']=[dict(r) for r in db.execute('SELECT c.*,p.name child_name,a.name parent_name FROM gaa_location_chains c JOIN places p ON p.id=c.child_id JOIN places a ON a.id=c.parent_id WHERE c.evidence_id=?',(row['id'],))]
             records.append(item)
         out={'evidence':records,'warning':'Historical title evidence, not a current LEG attribution. Repeated source rows are not project counts.'}
+    elif args.analyst:
+        records=[]
+        for row in db.execute('SELECT DISTINCT e.*,s.path,s.sha256 FROM analyst_candidate_evidence e JOIN sources s ON s.id=e.source_id LEFT JOIN analyst_native_links n ON n.evidence_id=e.id WHERE instr(lower(e.title),lower(?))>0 OR n.native_id=? ORDER BY e.amount_pesos DESC LIMIT ?',(args.analyst,args.analyst,max(0,args.limit))):
+            item=dict(row);item['externalRecord']=json.loads(item.pop('raw_json'))
+            item['nativeLinks']=[dict(r) for r in db.execute('SELECT * FROM analyst_native_links WHERE evidence_id=?',(row['id'],))]
+            item['qualifiedPlaceCandidates']=[dict(r) for r in db.execute('SELECT c.role,c.basis,p.* FROM analyst_location_candidates c JOIN qualified_alias_candidates p ON p.place_id=c.place_id WHERE c.evidence_id=? GROUP BY c.role,p.place_id ORDER BY p.level,p.province_name,p.parent_name',(row['id'],))]
+            item['review']=[dict(r) for r in db.execute('SELECT * FROM analyst_location_review WHERE evidence_id=?',(row['id'],))]
+            records.append(item)
+        out={'evidence':records,'warning':'External insertion labels remain assertions. Qualified locations are candidates, not construction scope or new LEG boundaries. Grouped rows can link multiple native allocations.'}
     elif args.review:
         out={'questions':[dict(r) for r in db.execute('SELECT q.*,e.fiscal_year,e.title,e.source_locator FROM location_review_queue q JOIN gaa_name_evidence e ON e.id=q.example_evidence_id WHERE instr(lower(q.mention),lower(?))>0 ORDER BY occurrences DESC LIMIT ?',(args.review,max(0,args.limit)))]}
     elif args.case:
         out={'cases':[{'source':r['path'],'evidence':json.loads(r['raw_json'])} for r in db.execute("SELECT s.path,o.raw_json FROM observations o JOIN sources s ON s.id=o.source_id WHERE o.kind='location_edge_case' AND o.locator=?",(args.case,))]}
+        out['manualDecisions']=[{'source':r['path'],'decision':d} for r in db.execute("SELECT s.path,o.raw_json FROM observations o JOIN sources s ON s.id=o.source_id WHERE o.kind='manual_location_decision'")
+                                if args.case in (d:=json.loads(r['raw_json'])).get('scope',{}).get('project_ids',[])]
     elif args.deo:
         rows=db.execute('SELECT DISTINCT d.* FROM deos d JOIN deo_aliases a ON d.id=a.deo_id WHERE a.name_key=? OR d.name_key=?',(norm(args.deo),norm(args.deo))).fetchall()
         out={'candidates':[]}

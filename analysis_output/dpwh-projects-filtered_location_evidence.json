@@ -1,0 +1,2171 @@
+{
+  "method": "External assertions retained separately; exact source linkage and parent-qualified existing identities only. Comparison rows may group allocation records.",
+  "summary": {
+    "source": "analysis_output/dpwh-projects-filtered.json",
+    "sha256": "224c89268c3658909766daa13ce74c0c302f957b386da9be566960e1ee7df26e",
+    "comparisonRows": 100,
+    "externalAllocationPesos": 1335459000,
+    "recordKinds": {
+      "project": 100
+    },
+    "sourceLinks": {
+      "exact_unique_allocation": 100
+    },
+    "linkedNativeAllocationRecords": 100,
+    "linkedExternalAllocationPesos": 1335459000,
+    "reviewReasons": {
+      "qualified_location_unresolved": 46,
+      "leg_or_construction_scope_unresolved": 26
+    },
+    "rowsWithQualifiedPlaceCandidates": 79,
+    "linkedNativeComparisonStatuses": {
+      "No plausible NEP title counterpart; review candidate": 97,
+      "Multiple or already paired NEP counterparts; review scope": 2,
+      "Plausible NEP title counterpart; review scope": 1
+    },
+    "newAliases": 0,
+    "newBoundaryClaims": 0,
+    "newAutomaticLEGAssignments": 0
+  },
+  "rows": [
+    {
+      "evidenceId": "65d808fb1ccd49d8e262f7fef198297b",
+      "externalId": "house-reading:2592",
+      "title": "Aliaga-Guimba Road, STA. 4+682 - STA. 21+402 Road Safety Facilities (Roadway Lighting)",
+      "amountPesos": 40000000,
+      "recordKind": "project",
+      "sourcePage": 253,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0253-002564"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [],
+      "reviewKinds": [
+        "leg_or_construction_scope_unresolved",
+        "qualified_location_unresolved"
+      ]
+    },
+    {
+      "evidenceId": "154f3f5ad1b643a50548afc8a47cf917",
+      "externalId": "house-reading:660",
+      "title": "Cabanatuan City - Carmen Rd, K0133 + 000 - K0133 + 750",
+      "amountPesos": 32000000,
+      "recordKind": "project",
+      "sourcePage": 143,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0143-000654"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [],
+      "reviewKinds": [
+        "leg_or_construction_scope_unresolved",
+        "qualified_location_unresolved"
+      ]
+    },
+    {
+      "evidenceId": "d35522b52c730ae49520dd924cbd4138",
+      "externalId": "house-reading:1125",
+      "title": "Cabanatuan City - Carmen Rd, K0135 + 439 - K0135 + 492, K0135 + 941 - K0136 + 000, K0139 + 613 - K0139 + 736, K0140 + 471 - K0141 + 043",
+      "amountPesos": 17300000,
+      "recordKind": "project",
+      "sourcePage": 169,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0169-001098"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [],
+      "reviewKinds": [
+        "leg_or_construction_scope_unresolved",
+        "qualified_location_unresolved"
+      ]
+    },
+    {
+      "evidenceId": "4b964d3b7f802599809970f174e8f151",
+      "externalId": "house-reading:1567",
+      "title": "Cabanatuan City - Carmen Road K0129±358 - K0129±091 LS, K0129±248 - K0129±091 RS",
+      "amountPesos": 9328000,
+      "recordKind": "project",
+      "sourcePage": 196,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0196-001539"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [],
+      "reviewKinds": [
+        "leg_or_construction_scope_unresolved",
+        "qualified_location_unresolved"
+      ]
+    },
+    {
+      "evidenceId": "fdc1597e2f7f1b92eb7e8c2a1ae87947",
+      "externalId": "house-reading:2593",
+      "title": "Cabanatuan City-Carmen Road, K129+270 - K132+050, K138+575- K141+000 Road Safety Facilities (Roadway Lighting)",
+      "amountPesos": 11500000,
+      "recordKind": "project",
+      "sourcePage": 253,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0253-002562"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [],
+      "reviewKinds": [
+        "leg_or_construction_scope_unresolved",
+        "qualified_location_unresolved"
+      ]
+    },
+    {
+      "evidenceId": "aaad93368309a2b35969d97f0144eb0b",
+      "externalId": "house-reading:12443",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay Bacayao, Guimba, Nueva Ecija, 15.660528, 120.750249",
+      "amountPesos": 3500000,
+      "recordKind": "project",
+      "sourcePage": 737,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0737-012320"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "89a669fd3ea92102879bc657acbec7b8",
+        "a1dd42e3f5e8e92a691654f63caa16f2",
+        "fdfc0586b4f5deea050edcfabd6614c9"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "64669bb3828fe67f1590ecde73bfc884",
+      "externalId": "house-reading:12447",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay Bued, Cuyapo, Nueva Ecija, 15.819124, 120.652269",
+      "amountPesos": 5000000,
+      "recordKind": "project",
+      "sourcePage": 736,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0736-012317"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "3ddb2306191a7e19e4cc393e4a94bdaa",
+        "4adaf993c5b804d4004e70db5a1cf31c",
+        "cc89a653283653abc501c6c51e0a585e"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "9062d57df3fd987ded74c19371338c05",
+      "externalId": "house-reading:12449",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay Cabatuan, Cuyapo, Nueva Ecija, 15.789865, 120.704750",
+      "amountPesos": 5000000,
+      "recordKind": "project",
+      "sourcePage": 736,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0736-012316"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "0b9bc78e4dd7b707fb7160d7c583988f",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "4adaf993c5b804d4004e70db5a1cf31c",
+        "cc89a653283653abc501c6c51e0a585e"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "82a27c4b2af6ff519200c3c2b290d7a8",
+      "externalId": "house-reading:12452",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay Caingin Tabing Ilog, Guimba, Nueva Ecija, 15.568427, 120.747150",
+      "amountPesos": 5000000,
+      "recordKind": "project",
+      "sourcePage": 736,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0736-012314"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "89a669fd3ea92102879bc657acbec7b8",
+        "934f02425c2228a86bb3a4558ffd3d96",
+        "a1dd42e3f5e8e92a691654f63caa16f2"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "195cd9b56c8039d51bf0142d292aa830",
+      "externalId": "house-reading:12453",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay Dinarayat, Talavera, Nueva Ecija, 15.556581, 120.924814",
+      "amountPesos": 3500000,
+      "recordKind": "project",
+      "sourcePage": 737,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0737-012321"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "36027f1ada64728f7b6416d71b464346",
+        "92427e7f6244bcdb92c55f7cec7796dc",
+        "f113f03e05cd58d4c2f40080e0aa371f"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "457058c2c2f37fb0081076831c68a600",
+      "externalId": "house-reading:12457",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay Linao, Licab, Nueva Ecija, 15.566295, 120.781137",
+      "amountPesos": 3500000,
+      "recordKind": "project",
+      "sourcePage": 736,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0736-012319"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "14e22dd3dd9c39ff54b10c7dfdb46ea8",
+        "281efe4f4e10e0f7d49a510b273eccd6",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "c4742815bf68ab4c64d3b098de22d88f"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "6e1f3fda286b988b9a5deeeb9c527a83",
+      "externalId": "house-reading:12460",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay Matias, Talavera, Nueva Ecija, 15.590252, 120.916458",
+      "amountPesos": 6000000,
+      "recordKind": "project",
+      "sourcePage": 736,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0736-012311"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "36027f1ada64728f7b6416d71b464346",
+        "92427e7f6244bcdb92c55f7cec7796dc"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "2382eb941446c0b589da8f1ad5a610b6",
+      "externalId": "house-reading:12464",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay Narvacan I, Guimba, Nueva Ecija, 15.686464, 120.735439",
+      "amountPesos": 4000000,
+      "recordKind": "project",
+      "sourcePage": 736,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0736-012318"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "89a669fd3ea92102879bc657acbec7b8",
+        "a1dd42e3f5e8e92a691654f63caa16f2",
+        "f9cb4b52595133b4d282ac92ca8ea188"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "de2de77f78f56e0404522f6c0c655ab1",
+      "externalId": "house-reading:12467",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay Poblacion Sur, Licab, Nueva Ecija, 15.5384, 120.76093",
+      "amountPesos": 50000000,
+      "recordKind": "project",
+      "sourcePage": 736,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0736-012307"
+      ],
+      "ownComparison": [
+        "Multiple or already paired NEP counterparts; review scope"
+      ],
+      "placeCandidateIds": [
+        "281efe4f4e10e0f7d49a510b273eccd6",
+        "31936276790b4b7151ff08d41d2d8307",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "c4742815bf68ab4c64d3b098de22d88f"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "c91859a0c35f3f12864cd606dab8aae9",
+      "externalId": "house-reading:12469",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay Saint John District, Guimba, Nueva Ecija, 15.661223, 120.772057",
+      "amountPesos": 15000000,
+      "recordKind": "project",
+      "sourcePage": 736,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0736-012310"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "89a669fd3ea92102879bc657acbec7b8",
+        "a1dd42e3f5e8e92a691654f63caa16f2",
+        "b32a66cbaccd82e40c79dc24112fda89"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "235bb417fe52aedbfb674919ecdb0039",
+      "externalId": "house-reading:12473",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay San Miguel na Munti, Talavera, Nueva Ecija, 15.541113, 120.93133",
+      "amountPesos": 6000000,
+      "recordKind": "project",
+      "sourcePage": 736,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0736-012312"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "36027f1ada64728f7b6416d71b464346",
+        "6332527fd3ec96c9644218cd67f1893d",
+        "92427e7f6244bcdb92c55f7cec7796dc"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "9c4ebffbe8cc3b71ccdf094f2aca020d",
+      "externalId": "house-reading:12475",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay San Vicente, Zaragoza, Nueva Ecija, 15.454779, 120.791533",
+      "amountPesos": 5000000,
+      "recordKind": "project",
+      "sourcePage": 736,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0736-012313"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "050eca895c739a3433e09e1821c67a84",
+        "1719cb231cf6b57c9110e750930070d9",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "d9674247624383dad7633461e6015dc0"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "ec2b1250c8673733db8fb59241eaab7d",
+      "externalId": "house-reading:12479",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay Sto. Cristo, Quezon, Nueva Ecija, 15.530863, 120.806670",
+      "amountPesos": 2500000,
+      "recordKind": "project",
+      "sourcePage": 737,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0737-012322"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "3361e2e089ca14ec300c427c282da9a5"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "51f0c1cf1df28a192662433e9657d03b",
+      "externalId": "house-reading:12482",
+      "title": "Construction (Completion) of Multi-Purpose Building, Barangay Ungab, Cuyapo, Nueva Ecija, 15.799706, 120.623031",
+      "amountPesos": 5000000,
+      "recordKind": "project",
+      "sourcePage": 736,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0736-012315"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "4adaf993c5b804d4004e70db5a1cf31c",
+        "96cc3c09000273df9dffbd48727e07fd",
+        "cc89a653283653abc501c6c51e0a585e"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "fe948f54d1967bebb44ad86304847322",
+      "externalId": "house-reading:4115",
+      "title": "Construction of Box Culvert, Barangay Concepcion, Zaragoza, Nueva Ecija, Sta. 0+000 - Sta. 0+014.4",
+      "amountPesos": 10000000,
+      "recordKind": "project",
+      "sourcePage": 340,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0340-004288"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "050eca895c739a3433e09e1821c67a84",
+        "1719cb231cf6b57c9110e750930070d9",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "642c227586b87a94171c1d72faf4c15e"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "cfed8a95d9855b7df3b29b82598a75d4",
+      "externalId": "house-reading:4116",
+      "title": "Construction of Box Culvert, Barangay Malbeg, Cuyapo, Nueva Ecija, Sta. 0+000 - Sta. 0+014.4",
+      "amountPesos": 9000000,
+      "recordKind": "project",
+      "sourcePage": 340,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0340-004289"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "4adaf993c5b804d4004e70db5a1cf31c",
+        "cc89a653283653abc501c6c51e0a585e"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "707915d60cccc903645aaa8a845bf6e5",
+      "externalId": "house-reading:7799",
+      "title": "Construction of Bridge, Barangay Narvacan II, Guimba, Nueva Ecija, 15.6950777, 120.749619",
+      "amountPesos": 31850000,
+      "recordKind": "project",
+      "sourcePage": 518,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0518-007860"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "89a669fd3ea92102879bc657acbec7b8",
+        "a1dd42e3f5e8e92a691654f63caa16f2",
+        "f47d2ccb46efbc2cf455e1e1bd1ae396"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "e630c1bc823e29dc0242c2099c9aee30",
+      "externalId": "house-reading:7801",
+      "title": "Construction of Drainage Barangay Andal Aliño, Talavera, Nueva Ecija, STA. 0+000 - STA 0+320",
+      "amountPesos": 5000000,
+      "recordKind": "project",
+      "sourcePage": 519,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0519-007881"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "36027f1ada64728f7b6416d71b464346",
+        "92427e7f6244bcdb92c55f7cec7796dc",
+        "e1f27532a093c4051456c26b0be828c8"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "816adef9ed4635d43466c6e1e25561fe",
+      "externalId": "house-reading:4121",
+      "title": "Construction of Drainage Barangay La Torre, Talavera, Nueva Ecija STA 0+000 - STA 0+936",
+      "amountPesos": 16400000,
+      "recordKind": "project",
+      "sourcePage": 340,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0340-004286"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "36027f1ada64728f7b6416d71b464346",
+        "92427e7f6244bcdb92c55f7cec7796dc",
+        "f39ac70f7122b7a4f0f022e96488e7f7"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "3d7f428114601e4da62e7a1faf447fdb",
+      "externalId": "house-reading:4123",
+      "title": "Construction of Drainage Barangay Poblacion Sur, Talavera, Nueva Ecija, Sta. 0+000 - Sta. 0+231",
+      "amountPesos": 5000000,
+      "recordKind": "project",
+      "sourcePage": 340,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0340-004290"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "36027f1ada64728f7b6416d71b464346",
+        "92427e7f6244bcdb92c55f7cec7796dc",
+        "d797bd3e38a5ccbd841147c3fe8f7bc4"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "3df8b09b5d02da595a20e2c83141faea",
+      "externalId": "house-reading:7802",
+      "title": "Construction of Drainage System, Barangay Tulat, San jose City, Nueva Ecija",
+      "amountPesos": 7500000,
+      "recordKind": "project",
+      "sourcePage": 521,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0521-007932"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "1456bb83708d34f9f432ba3ad5d7d278",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "ef1da7b2789739ff8411cbaaba7d440f"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "af916b8e9b8dd1c73cb1e2952f20d3b3",
+      "externalId": "house-reading:4122",
+      "title": "Construction of Drainage, Barangay Mayamot, Zaragoza, Nueva Ecija, Sta. 0+000 - Sta. 0+399",
+      "amountPesos": 11500000,
+      "recordKind": "project",
+      "sourcePage": 340,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0340-004287"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "050eca895c739a3433e09e1821c67a84",
+        "1719cb231cf6b57c9110e750930070d9",
+        "3184c950c1e0e490d43b43a65059f9a1",
+        "31ccd8ce2a4071509c4ec653899dab2d"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "d063ba8080d12b6e384e877bee947d08",
+      "externalId": "house-reading:12492",
+      "title": "Construction of Multi Purpose Building at Barangay Rang-ayan, Muñoz, Nueva Ecija, 15.742701, 120.881954",
+      "amountPesos": 6500000,
+      "recordKind": "project",
+      "sourcePage": 736,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0736-012306"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "15fc23361e2b9135d52b10acec7b1af5",
+        "31ccd8ce2a4071509c4ec653899dab2d"
+      ],
+      "reviewKinds": [
+        "leg_or_construction_scope_unresolved"
+      ]
+    },
+    {
+      "evidenceId": "4938efad080414377b3970223efe431f",
+      "externalId": "house-reading:12530",
+      "title": "Construction of Multi-Purpose Building (Senior Citizens Center), Barangay F.C. Otic, Carranglan, Nueva Ecija",
+      "amountPesos": 10000000,
+      "recordKind": "project",
+      "sourcePage": 737,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0737-012330"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "2bde5db972a6fd0fbe138292d44473b0",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "94e69ea1ad1452b12f77c4c5a3dc4500"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "cb665d2814cb1e147b4ead7f4dfb0724",
+      "externalId": "house-reading:12485",
+      "title": "Construction of Multi-Purpose Building at Barangay Capintalan, Carranglan, Nueva Ecija, 16.101797, 120.926338",
+      "amountPesos": 6500000,
+      "recordKind": "project",
+      "sourcePage": 736,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0736-012301"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "2bde5db972a6fd0fbe138292d44473b0",
+        "2f2a07d6e84f4b853c7c94eb9d09d461",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "94e69ea1ad1452b12f77c4c5a3dc4500"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "089d2e09967e91f9b2e1c73e1172f0e9",
+      "externalId": "house-reading:12486",
+      "title": "Construction of Multi-Purpose Building at Barangay Del Pilar, Rizal, Nueva Ecija, 15.696469, 121.090455",
+      "amountPesos": 31000000,
+      "recordKind": "project",
+      "sourcePage": 735,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0735-012300"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "1dea3697e280bcfb2af39996138ef998",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "f7633bb1b0d677c449d7002a189980ba"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "3f7636cbbc03c9dd92f2d5be205ef301",
+      "externalId": "house-reading:12487",
+      "title": "Construction of Multi-Purpose Building at Barangay Gen. Luna, Carranglan, Nueva Ecija, 15.952991, 121.10932",
+      "amountPesos": 6500000,
+      "recordKind": "project",
+      "sourcePage": 736,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0736-012305"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "2bde5db972a6fd0fbe138292d44473b0",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "94e69ea1ad1452b12f77c4c5a3dc4500"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "16c846efd2abdbdb1d7674423d221b7e",
+      "externalId": "house-reading:12489",
+      "title": "Construction of Multi-Purpose Building at Barangay Marikit, Pantabangan, Nueva Ecija, 15.798860, 121.249358",
+      "amountPesos": 6500000,
+      "recordKind": "project",
+      "sourcePage": 736,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0736-012304"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "10bbb754562faae4f5cfd794efbceab0",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "865e8e125a15590200b9dd7c7069cc43",
+        "b96e6ba7f73482373c9282fb8303c661"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "efda984dec0bc155cc692b22d0288cb9",
+      "externalId": "house-reading:12491",
+      "title": "Construction of Multi-Purpose Building at Barangay Poblacion East, Rizal, Nueva Ecija, 15.709594, 121.108445",
+      "amountPesos": 6500000,
+      "recordKind": "project",
+      "sourcePage": 736,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0736-012302"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "1dea3697e280bcfb2af39996138ef998",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "d615ad58105743d8f89b33411b168e8c"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "56f6cc1934b4f38e1d4be78edf482485",
+      "externalId": "house-reading:12500",
+      "title": "Construction of Multi-Purpose Building, Barangay Cabawangan, Nampicuan, Nueva Ecija",
+      "amountPesos": 50000000,
+      "recordKind": "project",
+      "sourcePage": 737,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0737-012325"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "2ddbfcb0a9fd249070f3eb8558463bed",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "37ce9710e179dc4a12aedb243da915cb",
+        "81a4268ff797712c8d2041c535c21216"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "064fc6a79c4b0cec1340f42b5e908cc3",
+      "externalId": "house-reading:12510",
+      "title": "Construction of Multi-Purpose Building, Barangay Kita-Kita, San Jose City, Nueva Ecija",
+      "amountPesos": 6000000,
+      "recordKind": "project",
+      "sourcePage": 739,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0739-012377"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "1456bb83708d34f9f432ba3ad5d7d278",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "6f72971557ea7176fe0a2c97aa3a4290"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "b0ac464a1ee471d95192ba1130af1e8d",
+      "externalId": "house-reading:12514",
+      "title": "Construction of Multi-Purpose Building, Barangay North Poblacion, Nampicuan, Nueva Ecija, 15.733979, 120.635554",
+      "amountPesos": 20000000,
+      "recordKind": "project",
+      "sourcePage": 736,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0736-012309"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "37ce9710e179dc4a12aedb243da915cb",
+        "81a4268ff797712c8d2041c535c21216",
+        "fe1ca9bbf639349f909f50a1cfe24335"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "31df949d1742d6d79ac9a149f0136c82",
+      "externalId": "house-reading:12525",
+      "title": "Construction of Multi-Purpose Building, District I, Cuyapo, Nueva Ecija, 15.77927, 120.66268",
+      "amountPesos": 20000000,
+      "recordKind": "project",
+      "sourcePage": 736,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0736-012308"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "4adaf993c5b804d4004e70db5a1cf31c",
+        "cc89a653283653abc501c6c51e0a585e"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "58ca6759261c0036e95c68a96f1b7a96",
+      "externalId": "house-reading:7804",
+      "title": "Construction of Road, Aliaga IS, Barangay Santiago, Aliaga Nueva Ecija (KATUBIGAN- Kalsada Tungo sa Patubigan), Sta. 0+000 - Sta. 1+068",
+      "amountPesos": 12000000,
+      "recordKind": "project",
+      "sourcePage": 518,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0518-007863"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [],
+      "reviewKinds": [
+        "leg_or_construction_scope_unresolved",
+        "qualified_location_unresolved"
+      ]
+    },
+    {
+      "evidenceId": "dd90caa1fe7fcb07b3890d449bb2daa0",
+      "externalId": "house-reading:7805",
+      "title": "Construction of Road, Anak-Pawis, Sitio Cabanasan, Barangay San Roque, Lupao, Nueva Ecija",
+      "amountPesos": 10000000,
+      "recordKind": "project",
+      "sourcePage": 521,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0521-007935"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "0563f3f14a62af75175ee0550f9f5822",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "6edf81d5bdf64ade841d83136686fc7f",
+        "8c927c995288c04012e2807cb1db6e74"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "d2c16ed54fc1a8e083d1de94cb8c0978",
+      "externalId": "house-reading:7807",
+      "title": "Construction of Road, Barangay A. Bonifacio, Llanera, Nueva Ecija",
+      "amountPesos": 7000000,
+      "recordKind": "project",
+      "sourcePage": 521,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0521-007934"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "7f1b6ecd9443c6d1d93a897e81ea8c64",
+        "82a197c0504352ab37a25525bfc65e22",
+        "f66e9f9afa9c31a73acb0c5069fce001"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "1d7962ddb26b9984064899d700c0903b",
+      "externalId": "house-reading:7810",
+      "title": "Construction of Road, Barangay Alemania, Nampicuan, Nueva Ecija, Sta. 0+000 - Sta. 0+444",
+      "amountPesos": 5000000,
+      "recordKind": "project",
+      "sourcePage": 519,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0519-007885"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "37ce9710e179dc4a12aedb243da915cb",
+        "7f4a6e71255a2d254c32ec095f57a31a",
+        "81a4268ff797712c8d2041c535c21216"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "f277fe51b568842aa9a99a660ed09b4c",
+      "externalId": "house-reading:7812",
+      "title": "Construction of Road, Barangay Bagong Flores, Lupao, Nueva Ecija",
+      "amountPesos": 10000000,
+      "recordKind": "project",
+      "sourcePage": 521,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0521-007937"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "0563f3f14a62af75175ee0550f9f5822",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "6edf81d5bdf64ade841d83136686fc7f",
+        "95bd8e3e5075b1f9993be90a30831344"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "3b456e26eb65c0251268672403a4382c",
+      "externalId": "house-reading:7815",
+      "title": "Construction of Road, Barangay Bakal III, Talavera, Nueva Ecija, Sta. 0+000 - Sta. 0+622",
+      "amountPesos": 7000000,
+      "recordKind": "project",
+      "sourcePage": 519,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0519-007876"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "36027f1ada64728f7b6416d71b464346",
+        "92427e7f6244bcdb92c55f7cec7796dc",
+        "db4bdc002f319d0a0be3d5e1474c4b2e"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "b35f91fe6c38fe0c7b5809ac17618ace",
+      "externalId": "house-reading:7818",
+      "title": "Construction of Road, Barangay Balingog East, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 0+798",
+      "amountPesos": 10000000,
+      "recordKind": "project",
+      "sourcePage": 518,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0518-007871"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "0a30d35edfbc54497d70ebdefb55ee57",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "89a669fd3ea92102879bc657acbec7b8",
+        "a1dd42e3f5e8e92a691654f63caa16f2"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "640d10fc9ee2dc5e7d5736e5936bcb55",
+      "externalId": "house-reading:7824",
+      "title": "Construction of Road, Barangay Betes, Aliaga, Nueva Ecija, Sta. 0+000 - Sta. 1+424",
+      "amountPesos": 16000000,
+      "recordKind": "project",
+      "sourcePage": 518,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0518-007861"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "0d03b2d3c169653915211b339e3587b3",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "33bb0df95acca3f1e9a96a0c09402597",
+        "d2020b030bee9605828515d88ce386f7"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "8f4d45b836305a944d5d5dea867f859b",
+      "externalId": "house-reading:7829",
+      "title": "Construction of Road, Barangay Bulakid, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 0+444",
+      "amountPesos": 5000000,
+      "recordKind": "project",
+      "sourcePage": 519,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0519-007884"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "89a669fd3ea92102879bc657acbec7b8",
+        "a1dd42e3f5e8e92a691654f63caa16f2",
+        "f97f9b18d2b2ff102199c339d5fa4f71"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "5ae90a74ddb0a3bd3434435816d3dc74",
+      "externalId": "house-reading:7832",
+      "title": "Construction of Road, Barangay Buted, Talugtug, Nueva Ecija",
+      "amountPesos": 10000000,
+      "recordKind": "project",
+      "sourcePage": 521,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0521-007938"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "2b8c04bab081d1678ed22914e1b8987d",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "8d8aa4f2a56a1188e6f85fbf26b364a8",
+        "de4a13bec76e412c00bd705fc8fb51be"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "db48cb8f31354852592cfae714f42182",
+      "externalId": "house-reading:7835",
+      "title": "Construction of Road, Barangay Caballero to Barangay Triala, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 0+693",
+      "amountPesos": 8500000,
+      "recordKind": "project",
+      "sourcePage": 519,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0519-007874"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "89a669fd3ea92102879bc657acbec7b8",
+        "a1dd42e3f5e8e92a691654f63caa16f2"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "c3ec77f0e84dd5b8c3f069cef284af2e",
+      "externalId": "house-reading:7836",
+      "title": "Construction of Road, Barangay Cabawangan, Nampicuan, Nueva Ecija, Sta. 0+000 - Sta. 0+444",
+      "amountPesos": 5000000,
+      "recordKind": "project",
+      "sourcePage": 519,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0519-007887"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "2ddbfcb0a9fd249070f3eb8558463bed",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "37ce9710e179dc4a12aedb243da915cb",
+        "81a4268ff797712c8d2041c535c21216"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "cbb1dda8e50ab172dbe73434e32b463a",
+      "externalId": "house-reading:7841",
+      "title": "Construction of Road, Barangay Catimon, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 0+554",
+      "amountPesos": 6800000,
+      "recordKind": "project",
+      "sourcePage": 519,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0519-007877"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "50bd58fda0931f0551939ed6226fed3b",
+        "89a669fd3ea92102879bc657acbec7b8",
+        "a1dd42e3f5e8e92a691654f63caa16f2"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "6c63309674a937b652c177ec12706540",
+      "externalId": "house-reading:7843",
+      "title": "Construction of Road, Barangay Cawayang Bugtong, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 1+223",
+      "amountPesos": 15000000,
+      "recordKind": "project",
+      "sourcePage": 518,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0518-007862"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "89a669fd3ea92102879bc657acbec7b8",
+        "a1dd42e3f5e8e92a691654f63caa16f2"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "7dca4e71f9ba97b5b335ad2c451b4504",
+      "externalId": "house-reading:7849",
+      "title": "Construction of Road, Barangay Curva, Cuyapo, Nueva Ecija, Sta. 0+000 - Sta. 0+798",
+      "amountPesos": 10000000,
+      "recordKind": "project",
+      "sourcePage": 518,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0518-007867"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "4adaf993c5b804d4004e70db5a1cf31c",
+        "cc70ca5e6e6544fdae43900ff8f22918",
+        "cc89a653283653abc501c6c51e0a585e"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "912b9a6433cce48c1ebbe681543c00e7",
+      "externalId": "house-reading:7853",
+      "title": "Construction of Road, Barangay Doña Lucia, Quezon, Nueva Ecija, Sta. 0+000 - Sta. 0+798",
+      "amountPesos": 10000000,
+      "recordKind": "project",
+      "sourcePage": 518,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0518-007872"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "3361e2e089ca14ec300c427c282da9a5",
+        "e6faf201f323c7c34f5205df09d409c5"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "d94d1719b6fa31b7e3aee3bccdaaadde",
+      "externalId": "house-reading:7855",
+      "title": "Construction of Road, Barangay Escaño, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 0+444",
+      "amountPesos": 5000000,
+      "recordKind": "project",
+      "sourcePage": 519,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0519-007886"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "89a669fd3ea92102879bc657acbec7b8",
+        "a1dd42e3f5e8e92a691654f63caa16f2",
+        "b473e47c73f4a0801cc019016261e127"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "577265bf160967fcc2c447158d3f243c",
+      "externalId": "house-reading:7862",
+      "title": "Construction of Road, Barangay Guiset, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 0+444",
+      "amountPesos": 5000000,
+      "recordKind": "project",
+      "sourcePage": 519,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0519-007883"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "89a669fd3ea92102879bc657acbec7b8",
+        "a1dd42e3f5e8e92a691654f63caa16f2",
+        "e83acd3cc95dd1aefbae5fa81534ad0e"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "21be15b5bc1ae1d06ec333c525983dea",
+      "externalId": "house-reading:7863",
+      "title": "Construction of Road, Barangay H. Romero, Zaragoza, Nueva Ecija, Sta. 0+000 - Sta. 0+798",
+      "amountPesos": 10000000,
+      "recordKind": "project",
+      "sourcePage": 518,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0518-007868"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "050eca895c739a3433e09e1821c67a84",
+        "1719cb231cf6b57c9110e750930070d9",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "7a1bac33e2109706b3f1579760f25e57"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "14ea751496cefda937ec091df694d126",
+      "externalId": "house-reading:7869",
+      "title": "Construction of Road, Barangay Lamorito, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 0+798",
+      "amountPesos": 10000000,
+      "recordKind": "project",
+      "sourcePage": 518,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0518-007869"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "46c20cfdc7a8b5f0a96b3020f18cad5c",
+        "89a669fd3ea92102879bc657acbec7b8",
+        "a1dd42e3f5e8e92a691654f63caa16f2"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "a923cf32ede4e938e850e047ded61c36",
+      "externalId": "house-reading:7872",
+      "title": "Construction of Road, Barangay Mabuhay, Talavera, Nueva Ecija, Sta. 0+000 - Sta. 0+975",
+      "amountPesos": 10978000,
+      "recordKind": "project",
+      "sourcePage": 524,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0524-008011"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "36027f1ada64728f7b6416d71b464346",
+        "92427e7f6244bcdb92c55f7cec7796dc",
+        "f361f78ff6ef3e9fa9f80099b9018a83"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "2cf08ab902036ee19ab494fc694455cf",
+      "externalId": "house-reading:7874",
+      "title": "Construction of Road, Barangay Macatcatuit, Guimba, Nueva Ecija Sta. 0+000 - Sta. 0+993",
+      "amountPesos": 10000000,
+      "recordKind": "project",
+      "sourcePage": 522,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0522-007946"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "45ded5773b9402d0761c1386011a774a",
+        "89a669fd3ea92102879bc657acbec7b8",
+        "a1dd42e3f5e8e92a691654f63caa16f2"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "8c120f13437a8ea6296d434a478f88e0",
+      "externalId": "house-reading:7880",
+      "title": "Construction of Road, Barangay Mangandingay, Muñoz, Nueva Ecija",
+      "amountPesos": 6500000,
+      "recordKind": "project",
+      "sourcePage": 521,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0521-007936"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "15fc23361e2b9135d52b10acec7b1af5",
+        "31ccd8ce2a4071509c4ec653899dab2d"
+      ],
+      "reviewKinds": [
+        "leg_or_construction_scope_unresolved"
+      ]
+    },
+    {
+      "evidenceId": "ec0b02ebdefb7217c966e0e2a3ac863b",
+      "externalId": "house-reading:7882",
+      "title": "Construction of Road, Barangay Mapangpang, Lupao, Nueva Ecija",
+      "amountPesos": 6000000,
+      "recordKind": "project",
+      "sourcePage": 521,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0521-007933"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "0563f3f14a62af75175ee0550f9f5822",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "6edf81d5bdf64ade841d83136686fc7f",
+        "b6ff5df5cafa9cf6f08b5525ca305cc1"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "1b9d6ac138560e72c074f57661261059",
+      "externalId": "house-reading:7890",
+      "title": "Construction of Road, Barangay Pag-asa, Talavera, Nueva Ecija, Sta. 0+000 - Sta. 0+416",
+      "amountPesos": 5000000,
+      "recordKind": "project",
+      "sourcePage": 522,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0522-007959"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "36027f1ada64728f7b6416d71b464346",
+        "92427e7f6244bcdb92c55f7cec7796dc",
+        "fc84d7a49061c27bec4eb480e836a98d"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "f4a736a10a12c10c038fde82d65ef6f5",
+      "externalId": "house-reading:7891",
+      "title": "Construction of Road, Barangay Paitan Sur, Cuyapo, Nueva Ecija, Sta. 0+000 - Sta. 0+444",
+      "amountPesos": 5000000,
+      "recordKind": "project",
+      "sourcePage": 519,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0519-007889"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "1708161771be20ae29445f0cb51415c6",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "4adaf993c5b804d4004e70db5a1cf31c",
+        "cc89a653283653abc501c6c51e0a585e"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "562ac8388d31144df33a7e5e212cf6b1",
+      "externalId": "house-reading:7901",
+      "title": "Construction of Road, Barangay Sabit, Cuyapo, Nueva Ecija, Sta. 0+000 - Sta. 0+444",
+      "amountPesos": 5000000,
+      "recordKind": "project",
+      "sourcePage": 519,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0519-007888"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "4adaf993c5b804d4004e70db5a1cf31c",
+        "cc89a653283653abc501c6c51e0a585e",
+        "e5253442f886c8ccd1612bf66420f5f6"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "357e8955a778777a2b0b665ea9b2d0e1",
+      "externalId": "house-reading:7907",
+      "title": "Construction of Road, Barangay San Antonio, Cuyapo, Nueva Ecija, Sta. 0+000 - Sta. 0+798",
+      "amountPesos": 10000000,
+      "recordKind": "project",
+      "sourcePage": 518,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0518-007866"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "4adaf993c5b804d4004e70db5a1cf31c",
+        "cc89a653283653abc501c6c51e0a585e",
+        "d38b1039ccfa376dfaa9b6848f297ff0"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "6a5aba5649d5a4b1f47d627f8f0a524a",
+      "externalId": "house-reading:7922",
+      "title": "Construction of Road, Barangay San Pascual, Talavera, Nueva Ecija, Sta. 0+000 - Sta. 0+533",
+      "amountPesos": 6000000,
+      "recordKind": "project",
+      "sourcePage": 519,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0519-007879"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "1475f90f42ed91ebd7668187c1d9f733",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "36027f1ada64728f7b6416d71b464346",
+        "92427e7f6244bcdb92c55f7cec7796dc"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "857767cb49aaba647a5a86424de60073",
+      "externalId": "house-reading:7928",
+      "title": "Construction of Road, Barangay Sta. Cruz Purok 1, Zaragoza, Nueva Ecija, Sta. 0+000 - Sta. 0+500",
+      "amountPesos": 6000000,
+      "recordKind": "project",
+      "sourcePage": 524,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0524-008012"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "050eca895c739a3433e09e1821c67a84",
+        "1719cb231cf6b57c9110e750930070d9",
+        "31ccd8ce2a4071509c4ec653899dab2d"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "ea3a4f201055662c3c2b695f17bde1e3",
+      "externalId": "house-reading:7930",
+      "title": "Construction of Road, Barangay Sta. Lucia Young, Zaragoza, Nueva Ecija, Sta. 0+000 - Sta. 0+977",
+      "amountPesos": 11000000,
+      "recordKind": "project",
+      "sourcePage": 518,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0518-007865"
+      ],
+      "ownComparison": [
+        "Multiple or already paired NEP counterparts; review scope"
+      ],
+      "placeCandidateIds": [
+        "050eca895c739a3433e09e1821c67a84",
+        "1719cb231cf6b57c9110e750930070d9",
+        "31ccd8ce2a4071509c4ec653899dab2d"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "b97a0015df6816b2f0c356a773b0d4da",
+      "externalId": "house-reading:7938",
+      "title": "Construction of Road, Barangay Sto. Tomas Feria, Quezon, Nueva Ecija, Sta. 0+000 - Sta. 0+977",
+      "amountPesos": 11000000,
+      "recordKind": "project",
+      "sourcePage": 518,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0518-007864"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "3361e2e089ca14ec300c427c282da9a5"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "f9fdc6745d3f401e3a1eb40bd0d3f142",
+      "externalId": "house-reading:7941",
+      "title": "Construction of Road, Barangay Tutuloy, Cuyapo, Nueva Ecija, Sta. 0+000 - Sta. 0+798",
+      "amountPesos": 10000000,
+      "recordKind": "project",
+      "sourcePage": 518,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0518-007870"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "4adaf993c5b804d4004e70db5a1cf31c",
+        "c6971dcf6b2d7473b70f2dfda60e67c8",
+        "cc89a653283653abc501c6c51e0a585e"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "e19c422662b24374e8ef456b73844bdf",
+      "externalId": "house-reading:7948",
+      "title": "Construction of Road, Barangay Yuson, Guimba, Nueva Ecija, Sta. 0+000 - Sta. 0+718",
+      "amountPesos": 9000000,
+      "recordKind": "project",
+      "sourcePage": 524,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0524-008013"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "85ecff7f11ff036ca2742559590f6e10",
+        "89a669fd3ea92102879bc657acbec7b8",
+        "a1dd42e3f5e8e92a691654f63caa16f2"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "86787959e4c66f1d0fa515e051abaea4",
+      "externalId": "house-reading:7952",
+      "title": "Construction of Road, Sitio Binbin, Barangay General Luna, Carranglan, Nueva Ecija Sta. 0+000 - Sta. 2+900, Sta. 4+700 - Sta. 5+30",
+      "amountPesos": 40000000,
+      "recordKind": "project",
+      "sourcePage": 521,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0521-007930"
+      ],
+      "ownComparison": [
+        "Plausible NEP title counterpart; review scope"
+      ],
+      "placeCandidateIds": [
+        "2bde5db972a6fd0fbe138292d44473b0",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "53b6f1c37dec18804cc13b1352793bbd",
+        "94e69ea1ad1452b12f77c4c5a3dc4500"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "bc067013fbb7c4eb6f5946d384a399c2",
+      "externalId": "house-reading:5116",
+      "title": "Construction of Water System, Barangay Bicos, Rizal, Nueva Ecija",
+      "amountPesos": 6000000,
+      "recordKind": "project",
+      "sourcePage": 383,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0383-005080"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "1dea3697e280bcfb2af39996138ef998",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "cdd5eace9ffd04f487ab0a586714d83d"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "90fdb187ac1988954a470d9989b45434",
+      "externalId": "house-reading:5121",
+      "title": "Construction of Water System, Barangay Caridad Sur, Llanera, Nueva Ecija",
+      "amountPesos": 6000000,
+      "recordKind": "project",
+      "sourcePage": 383,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0383-005081"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "82a197c0504352ab37a25525bfc65e22",
+        "f2d0fe1918ea7f9d1bce9203533f68ae",
+        "f66e9f9afa9c31a73acb0c5069fce001"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "87806efeadcc78bfa41f9c85ec09aa4d",
+      "externalId": "house-reading:5128",
+      "title": "Construction of Water System, Barangay Mayamot I, Talugtug, Nueva Ecija",
+      "amountPesos": 6000000,
+      "recordKind": "project",
+      "sourcePage": 383,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0383-005082"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "7780168b3204a7ffa099d12e90b108bd",
+        "8d8aa4f2a56a1188e6f85fbf26b364a8",
+        "de4a13bec76e412c00bd705fc8fb51be"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "7c99671a062f0c41146705481f307645",
+      "externalId": "house-reading:5129",
+      "title": "Construction of Water System, Barangay Murcon, Llanera, Nueva Ecija",
+      "amountPesos": 6000000,
+      "recordKind": "project",
+      "sourcePage": 383,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0383-005084"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "82a197c0504352ab37a25525bfc65e22",
+        "8c3a6cc8fe80c73b6e070c633ad06cc7",
+        "f66e9f9afa9c31a73acb0c5069fce001"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "9a96cdd343c6b2b7ad4e9f570ff4d69d",
+      "externalId": "house-reading:5133",
+      "title": "Construction of Water System, Barangay San Gregorio, Rizal, Nueva Ecija",
+      "amountPesos": 6000000,
+      "recordKind": "project",
+      "sourcePage": 383,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0383-005085"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "1dea3697e280bcfb2af39996138ef998",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "4919c5e9ec87f3a0cde2d9ffbfbeddbd"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "b33585d1ffb2ce5b3e0436a53f5a9c37",
+      "externalId": "house-reading:5137",
+      "title": "Construction of Water System, Barangay Villa Viniegas, Llanera, Nueva Ecija",
+      "amountPesos": 6000000,
+      "recordKind": "project",
+      "sourcePage": 383,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0383-005083"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "82a197c0504352ab37a25525bfc65e22",
+        "954c249aaebf057f8e9e44169d75c37f",
+        "f66e9f9afa9c31a73acb0c5069fce001"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "0d4183b1fe6d923c634022fce5c70451",
+      "externalId": "house-reading:12531",
+      "title": "Construction/ Rehabilitation of Multi-Purpose Hall, Barangay Fatima, Pantabangan, Nueva Ecija, 15.81282, 121.096617",
+      "amountPesos": 6500000,
+      "recordKind": "project",
+      "sourcePage": 736,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0736-012303"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "10bbb754562faae4f5cfd794efbceab0",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "b15716db88747ae727800636616c18b0",
+        "b96e6ba7f73482373c9282fb8303c661"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "f82e328b85668c655e735f932475352f",
+      "externalId": "house-reading:2022",
+      "title": "Guimba - Pura Road, Nueva Ecija, STA. 6+146 - STA. 7+100",
+      "amountPesos": 50000000,
+      "recordKind": "project",
+      "sourcePage": 230,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0230-002195"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d"
+      ],
+      "reviewKinds": [
+        "leg_or_construction_scope_unresolved",
+        "qualified_location_unresolved"
+      ]
+    },
+    {
+      "evidenceId": "2cb193d5ce242c640357814a74876bea",
+      "externalId": "house-reading:2594",
+      "title": "Guimba-Pura Road, Chainage 0 - Chainage 8109 Road Safety Facilities (Roadway Lighting)",
+      "amountPesos": 20000000,
+      "recordKind": "project",
+      "sourcePage": 253,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0253-002563"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [],
+      "reviewKinds": [
+        "leg_or_construction_scope_unresolved",
+        "qualified_location_unresolved"
+      ]
+    },
+    {
+      "evidenceId": "f51415f8f928fd35d2008987390ac7e7",
+      "externalId": "house-reading:2599",
+      "title": "Jct. Pinagpanaan-Rizal-Pantabangan Road, K0127+644 - K0128+800, K0131+105 - K0132+190",
+      "amountPesos": 24970000,
+      "recordKind": "project",
+      "sourcePage": 253,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0253-002560"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [],
+      "reviewKinds": [
+        "leg_or_construction_scope_unresolved",
+        "qualified_location_unresolved"
+      ]
+    },
+    {
+      "evidenceId": "37cd2db587e7680861b0f2ce853b18a7",
+      "externalId": "house-reading:2023",
+      "title": "Licab - Victoria Diversion Road, Nueva Ecija Sta. 4+067.00 - Sta. 4+554.95",
+      "amountPesos": 15000000,
+      "recordKind": "project",
+      "sourcePage": 230,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0230-002196"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d"
+      ],
+      "reviewKinds": [
+        "leg_or_construction_scope_unresolved",
+        "qualified_location_unresolved"
+      ]
+    },
+    {
+      "evidenceId": "4064b5c4efba6ae201b7e886ee165972",
+      "externalId": "house-reading:2600",
+      "title": "Muñoz-Lupao Rd - K0162 + 833 - K0163 + 000, K0164 + 000 - K0164 + 377",
+      "amountPesos": 10000000,
+      "recordKind": "project",
+      "sourcePage": 253,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0253-002561"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [],
+      "reviewKinds": [
+        "leg_or_construction_scope_unresolved",
+        "qualified_location_unresolved"
+      ]
+    },
+    {
+      "evidenceId": "001c2fee0182ccae5fc80a416c400483",
+      "externalId": "house-reading:1126",
+      "title": "Nueva Ecija - Pangasinan Rd Chainage 8 - Chainage 104",
+      "amountPesos": 2200000,
+      "recordKind": "project",
+      "sourcePage": 169,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0169-001097"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [],
+      "reviewKinds": [
+        "leg_or_construction_scope_unresolved",
+        "qualified_location_unresolved"
+      ]
+    },
+    {
+      "evidenceId": "8ba5c1dc400043babe59eba499231ada",
+      "externalId": "house-reading:1519",
+      "title": "Nueva Ecija - Pangasinan Rd K0139+000 - K0139+300 BS, K0139+300 - K0139+700 LS",
+      "amountPesos": 13200000,
+      "recordKind": "project",
+      "sourcePage": 192,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0192-001483"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [],
+      "reviewKinds": [
+        "leg_or_construction_scope_unresolved",
+        "qualified_location_unresolved"
+      ]
+    },
+    {
+      "evidenceId": "4c3cf69c916323be80c895ba69e597f0",
+      "externalId": "house-reading:1520",
+      "title": "Nueva Ecija - Pangasinan Rd K0140+000 - K0140+330 LS",
+      "amountPesos": 7260000,
+      "recordKind": "project",
+      "sourcePage": 192,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0192-001484"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [],
+      "reviewKinds": [
+        "leg_or_construction_scope_unresolved",
+        "qualified_location_unresolved"
+      ]
+    },
+    {
+      "evidenceId": "bd7ec6bbe58047178de9aa3e82fcdb08",
+      "externalId": "house-reading:1521",
+      "title": "Nueva Ecija - Pangasinan Rd K0143+716 - K144+670 RS",
+      "amountPesos": 20923000,
+      "recordKind": "project",
+      "sourcePage": 192,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0192-001485"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [],
+      "reviewKinds": [
+        "leg_or_construction_scope_unresolved",
+        "qualified_location_unresolved"
+      ]
+    },
+    {
+      "evidenceId": "0a80917e669768f6fdd87550b37eb68a",
+      "externalId": "house-reading:1522",
+      "title": "Nueva Ecija - Pangasinan Rd K0157+400 - K0157+600 LS",
+      "amountPesos": 4400000,
+      "recordKind": "project",
+      "sourcePage": 193,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0193-001486"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [],
+      "reviewKinds": [
+        "leg_or_construction_scope_unresolved",
+        "qualified_location_unresolved"
+      ]
+    },
+    {
+      "evidenceId": "1bfbe37dd5cf4b0f6cc8ba78810be4cd",
+      "externalId": "house-reading:357",
+      "title": "Nueva Ecija - Pangasinan Rd K0168+889 - K0169+596",
+      "amountPesos": 15000000,
+      "recordKind": "project",
+      "sourcePage": 130,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0130-000378"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [],
+      "reviewKinds": [
+        "leg_or_construction_scope_unresolved",
+        "qualified_location_unresolved"
+      ]
+    },
+    {
+      "evidenceId": "efe0eacc4d9d720d4f68a50ce3a4cb08",
+      "externalId": "house-reading:358",
+      "title": "Nueva Ecija - Pangasinan Rd K0173+000 - K0175+276",
+      "amountPesos": 48100000,
+      "recordKind": "project",
+      "sourcePage": 130,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0130-000379"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [],
+      "reviewKinds": [
+        "leg_or_construction_scope_unresolved",
+        "qualified_location_unresolved"
+      ]
+    },
+    {
+      "evidenceId": "8a9bbc97c8254931b99032fad8ab8f16",
+      "externalId": "house-reading:7953",
+      "title": "Rehabilitation of Bridge, Barangay Cabisuculan, Science City of Muñoz, Nueva Ecija",
+      "amountPesos": 20000000,
+      "recordKind": "project",
+      "sourcePage": 521,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0521-007931"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "5115c98f0c6ea3403c09abe0f805908a",
+        "cebd3d28490c48efc08db93c2c2a4647"
+      ],
+      "reviewKinds": [
+        "leg_or_construction_scope_unresolved"
+      ]
+    },
+    {
+      "evidenceId": "888f2ede87f970ca08972b2241b8dec0",
+      "externalId": "house-reading:4129",
+      "title": "Rehabilitation/ Improvement of Flood Control, Barangay Aquino, Licab, Nueva Ecija, Sta. 0+000 - Sta. 0+290",
+      "amountPesos": 50000000,
+      "recordKind": "project",
+      "sourcePage": 340,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0340-004285"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "281efe4f4e10e0f7d49a510b273eccd6",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "3eaee0eb181482ebe5731d17fac5bd20",
+        "c4742815bf68ab4c64d3b098de22d88f"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "46deb92bdbceb29264eef6fee5885343",
+      "externalId": "house-reading:4130",
+      "title": "Rehabilitation/ Improvement of Flood Control, Barangay San Juan, Licab, Nueva Ecija, Sta. 0+000 - Sta. 0+290",
+      "amountPesos": 50000000,
+      "recordKind": "project",
+      "sourcePage": 340,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0340-004284"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [
+        "281efe4f4e10e0f7d49a510b273eccd6",
+        "31ccd8ce2a4071509c4ec653899dab2d",
+        "411f354f16007474ff4e9a7bff216bb6",
+        "c4742815bf68ab4c64d3b098de22d88f"
+      ],
+      "reviewKinds": []
+    },
+    {
+      "evidenceId": "cc5f46737c254230940d8c3ad9ff31f3",
+      "externalId": "house-reading:2678",
+      "title": "San Felipe Br. 1 (B03436LZ) along Muñoz-Lupao Rd",
+      "amountPesos": 39150000,
+      "recordKind": "project",
+      "sourcePage": 262,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0262-002737"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [],
+      "reviewKinds": [
+        "leg_or_construction_scope_unresolved",
+        "qualified_location_unresolved"
+      ]
+    },
+    {
+      "evidenceId": "754f81ace7da9b662c3eb68b2e2f4f47",
+      "externalId": "house-reading:95",
+      "title": "Sta. Rosa - Tarlac Rd - K0120+296 - K0121+510",
+      "amountPesos": 15000000,
+      "recordKind": "project",
+      "sourcePage": 119,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0119-000165"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [],
+      "reviewKinds": [
+        "leg_or_construction_scope_unresolved",
+        "qualified_location_unresolved"
+      ]
+    },
+    {
+      "evidenceId": "83bad74ce3340d16928de2a76cc2868d",
+      "externalId": "house-reading:96",
+      "title": "Sta. Rosa - Tarlac Rd - K0120+296 - K0121+510 Start: 15.4469474, 120.8193798 End: 15.4482286, 120.8081534",
+      "amountPesos": 26000000,
+      "recordKind": "project",
+      "sourcePage": 119,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0119-000164"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [],
+      "reviewKinds": [
+        "leg_or_construction_scope_unresolved",
+        "qualified_location_unresolved"
+      ]
+    },
+    {
+      "evidenceId": "e365ce9b4ac192d168388fe746ebd1a6",
+      "externalId": "house-reading:1442",
+      "title": "Sta. Rosa - Tarlac Rd K0123+102 - K0123+396LS",
+      "amountPesos": 8000000,
+      "recordKind": "project",
+      "sourcePage": 189,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0189-001431"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [],
+      "reviewKinds": [
+        "leg_or_construction_scope_unresolved",
+        "qualified_location_unresolved"
+      ]
+    },
+    {
+      "evidenceId": "6c2f0d4b97f555ee8678588333a2362c",
+      "externalId": "house-reading:807",
+      "title": "Sta. Rosa - Tarlac Rd, K0118 + 185 - K0119 + 000, K0121 + 591 - K0121 + 722, K0121 + 772 - K0122",
+      "amountPesos": 30100000,
+      "recordKind": "project",
+      "sourcePage": 153,
+      "sourceLink": "exact_unique_allocation",
+      "nativeIds": [
+        "HB10858-3-0153-000818"
+      ],
+      "ownComparison": [
+        "No plausible NEP title counterpart; review candidate"
+      ],
+      "placeCandidateIds": [],
+      "reviewKinds": [
+        "leg_or_construction_scope_unresolved",
+        "qualified_location_unresolved"
+      ]
+    }
+  ]
+}

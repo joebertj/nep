@@ -674,14 +674,14 @@
   "hbCandidateRecords": 16275,
   "counts": {
     "Exact normalized title found in NEP": 9626,
-    "Plausible NEP title counterpart; review scope": 654,
-    "No plausible NEP title counterpart; review candidate": 4610,
-    "Multiple or already paired NEP counterparts; review scope": 1385
+    "Plausible NEP title counterpart; review scope": 540,
+    "No plausible NEP title counterpart; review candidate": 5553,
+    "Multiple or already paired NEP counterparts; review scope": 556
   },
-  "pairedNepRecords": 10280,
-  "nepWithoutSelectedCounterpart": 1140,
+  "pairedNepRecords": 10166,
+  "nepWithoutSelectedCounterpart": 1254,
   "hbAllocationPesos": 587075661000,
-  "comparisonMethod": "Visible HGAB allocations; Official NEP source records augment the independently validated local Transparency snapshot. One-to-one occurrences; abbreviations and maintenance PAP prefixes normalized. Uncorroborated OCR/native-row-ambiguity titles can only support potential matches. Global candidate search checks PAP, direction and chainage compatibility. 83% fuzzy candidates remain provisional; amount alone never identifies a project.",
+  "comparisonMethod": "Visible HGAB allocations; Official NEP source records augment the independently validated local Transparency snapshot. One-to-one occurrences; abbreviations and maintenance PAP prefixes normalized. Uncorroborated OCR/native-row-ambiguity titles can only support potential matches. Global candidate search checks PAP, direction, chainage and explicit qualified-location compatibility. 83% fuzzy candidates remain provisional; amount alone never identifies a project.",
   "warning": "Unmatched and potential matches require document review; they do not certify insertions or removals. Official NEP text in the supplied trace may contain OCR errors.",
   "csv": "analysis_output/hb_nep_comparison_3rd.csv"
 }

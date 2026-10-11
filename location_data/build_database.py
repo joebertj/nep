@@ -287,7 +287,7 @@ class Builder:
         return did
 
     def deo_crosswalk(self,path,pdf):
-        sid=self.source(path,'dpwh_district_pdf_transcription','deo_leg_crosswalk',note='Existing literal JavaScript transcription; fiscal year, stage and source pages unknown. Not project reallocation.')
+        sid=self.source(path,'dpwh_district_pdf_transcription','deo_leg_crosswalk',note='Existing literal JavaScript transcription of DPWH per district.pdf, provided by PCIJ per contributor confirmation on 2026-10-11; fiscal year, stage and source pages unverified. Not project reallocation.')
         self.source(pdf,'dpwh_district_pdf','scanned_pdf','reference_only','Source of the existing transcription; no new OCR performed.')
         text=path.read_text();start=text.index('const deoLegRows=');end=text.index('const moneyMillions',start)
         rows=re.findall(r"\['([^']+)','([^']+)',([0-9]+)\]",text[start:end])
@@ -406,6 +406,8 @@ def main():
         ingest(b)
     from refine_database import refine
     refine(con)
+    from import_analyst_candidates import ingest as ingest_analyst
+    ingest_analyst(con)
     b.finish();con.commit()
     # Integrity checks are part of the build; publication is atomic.
     if con.execute('PRAGMA foreign_key_check').fetchone():raise ValueError('Foreign key integrity failure')

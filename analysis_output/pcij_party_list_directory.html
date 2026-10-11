@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Party-List Representatives: 20th Congress</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div id="progressBar"></div>
+
+    <div id="scrollySection">
+
+        <div id="stickyScene">
+
+            <div id="photoGrid"></div>
+
+            <div id="textCard">
+
+                <div class="card-panel" id="p1">
+                    <p class="p-eye">20th Congress of the Philippines</p>
+                    <h1 class="p-head">Party-List Representatives</h1>
+                    <p class="p-body">A look into the family ties and business interests behind party-list seats</p>
+                    <div class="scroll-hint">
+                        <div class="scroll-arrow"></div>
+                        <span>scroll</span>
+                    </div>
+                </div>
+
+                <div class="card-panel" id="p2">
+                    <p class="p-eye">Political Dynasties</p>
+                    <!-- <h2 class="p-head">The golden years<br>of the family seat</h2> -->
+                    <p class="p-body">32 of 64—or half of all—party-list representatives either have family members in elective office, won a seat after their relatives retired from Congress, or both.</p>
+                </div>
+
+                <div class="card-panel" id="p3">
+                    <p class="p-eye">Links to contractors, franchisees</p>
+                    <!-- <h2 class="p-head">Love in a liberal<br>procurement</h2> -->
+                    <p class="p-body">20 of 64 either are government contractors themselves, have contractor relatives, or received campaign donations from contractors and legislative franchise holders.</p>
+                </div>
+
+                <div class="card-panel" id="p4">
+                    <p class="p-eye">Double Ties</p>
+                    <!-- <h2 class="p-head">Where dynasties<br>meet contracts</h2> -->
+                    <p class="p-body">11 of 64 party-list representatives are both members of political dynasties and have ties to government contractors.</p>
+                </div>
+
+                <div class="card-panel" id="p5">
+                    <p class="p-eye">Explore</p>
+                    <h2 class="p-head">Hover or click any portrait to reveal their ties</h2>
+                    <p class="p-body">Representatives are ordered alphabetically. All categories shown.</p>
+                    <div id="exploreLegend">
+                        <div class="leg"><span class="leg-dot" style="background:var(--dynasty)"></span>Dynasty only</div>
+                        <div class="leg"><span class="leg-dot" style="background:var(--contractor)"></span>Contractor- or Franchisee-linked</div>
+                        <div class="leg"><span class="leg-dot" style="background:var(--both)"></span>Linked to both</div>
+                        <div class="leg"><span class="leg-dot" style="background:var(--no-ties)"></span>No known ties</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="scroll-trigger"></div>
+        <div class="scroll-trigger"></div>
+        <div class="scroll-trigger"></div>
+        <div class="scroll-trigger"></div>
+        <div class="scroll-trigger"></div>
+
+    </div>
+
+    <div id="annTooltip">
+        <div class="att-header">
+            <div class="att-meta">
+                <span class="att-name"></span>
+                <span class="att-pl"></span>
+                <span class="att-cat"></span>
+            </div>
+            <button id="annClose" aria-label="Close">×</button>
+        </div>
+        <div class="att-divider"></div>
+        <div class="att-body"></div>
+        <div class="att-hint">click image to pin</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
