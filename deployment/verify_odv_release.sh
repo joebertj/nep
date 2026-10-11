@@ -45,7 +45,7 @@ if grep -q 'Rank all districts against the Bojie Dy' "$r/static/nep-preview/summ
 fi
 echo 'OK retired selected-district section and person-specific summary link removed'
 
-for path in / /static/nep-preview/ /static/nep-preview/congress.html /static/nep-preview/appropriations-roster.json; do
+for path in / /static/nep-preview/ /static/nep-preview/congress.html /static/nep-preview/appropriations-roster.json /static/nep-preview/mpb.html /static/nep-preview/mpb-data.json /static/nep-preview/cost-per-km.html /static/nep-preview/cost-per-km-data.json; do
   status="$(curl --silent --show-error --location --max-time 10 --resolve 'research.bettergov.ph:443:127.0.0.1' --output /dev/null --write-out '%{http_code}' "http://research.bettergov.ph$path")"
   [[ "$status" == 200 ]]
   echo "OK public proxy $path: $status"
