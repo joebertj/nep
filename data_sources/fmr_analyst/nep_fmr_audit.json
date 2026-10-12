@@ -1,0 +1,1644 @@
+{
+  "metadata": {
+    "schema_version": 1,
+    "fiscal_year": 2027,
+    "currency": "PHP",
+    "source_unit": "pesos",
+    "unit_multiplier": 1,
+    "document": "National Expenditure Program FY 2027, supplied standalone FMR schedule",
+    "legislative_stage": "NEP executive proposal; not an enacted appropriation",
+    "scope": "DA locally-funded FMR annex; not the full DA budget or FMR planning/bridges activities",
+    "source_pdf": "dbm-other-nep-line-data/FMR.pdf",
+    "source_sha256": "07355c115f45a84771b8a8ac22711992ea695ea28f0c9c1b2c71879d4a6dc4ba",
+    "source_pdf_pages": [
+      1,
+      47
+    ],
+    "source_printed_pages": [
+      1511,
+      1557
+    ],
+    "cross_volume_source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+    "cross_volume_source_sha256": "566ad3972b429b7c4f9737797b674f4a6d1bd1dda85f0f2aacad5c385ec3a222",
+    "extractor_sha256": "6c7aef2b5ecce951e7e3378fb0ee71a5932c8041a9025e2fbccb4882233bfb70",
+    "pymupdf_version": "1.28.2",
+    "opencv_version": "4.10.0",
+    "numpy_version": "2.1.0",
+    "raster_rule_scale": 2,
+    "text_layer": "supplied OCR; no fresh OCR and no title or coordinate corrections",
+    "full_volume_annex_pdf_pages": [
+      1535,
+      1581
+    ],
+    "cross_volume_control_pdf_pages": [
+      169,
+      170
+    ],
+    "cross_volume_control_printed_pages": [
+      145,
+      146
+    ],
+    "ids": "source-artifact-local page and ruled row identifiers; not cross-document project identities"
+  },
+  "passed": true,
+  "errors": [],
+  "summary": {
+    "detail_pages": 47,
+    "source_table_rows": 769,
+    "row_role_counts": {
+      "annex_heading": 1,
+      "column_header": 47,
+      "program_control": 1,
+      "region_control": 16,
+      "project": 704
+    },
+    "table_words_accounted_for": 14155,
+    "nodes": 721,
+    "projects": 704,
+    "regions": 16,
+    "project_ledger_total_php": 16000000000,
+    "recursive_project_total_php": 16000000000,
+    "internal_control_checks": 17,
+    "failed_internal_controls": 0,
+    "cross_volume_control_checks": 17,
+    "cross_volume_office_echo_checks": 16,
+    "failed_cross_volume_checks": 0,
+    "coordinate_review_projects": 52
+  },
+  "rollup_checks": [
+    {
+      "node_id": "nep_fmr:p1:r4",
+      "label": "Region I - ILOCOS",
+      "printed_amount_php": 1630000000,
+      "immediate_children_sum_php": 1630000000,
+      "recursive_project_sum_php": 1630000000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 90,
+      "passed": true
+    },
+    {
+      "node_id": "nep_fmr:p6:r16",
+      "label": "CORDILLERA ADMINISTRATIVE REGION (CAR)",
+      "printed_amount_php": 1540000000,
+      "immediate_children_sum_php": 1540000000,
+      "recursive_project_sum_php": 1540000000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 21,
+      "passed": true
+    },
+    {
+      "node_id": "nep_fmr:p8:r7",
+      "label": "Region II - CAGAYAN VALLEY",
+      "printed_amount_php": 1865000000,
+      "immediate_children_sum_php": 1865000000,
+      "recursive_project_sum_php": 1865000000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 77,
+      "passed": true
+    },
+    {
+      "node_id": "nep_fmr:p13:r9",
+      "label": "Region III - CENTRAL LUZON",
+      "printed_amount_php": 3025000000,
+      "immediate_children_sum_php": 3025000000,
+      "recursive_project_sum_php": 3025000000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 131,
+      "passed": true
+    },
+    {
+      "node_id": "nep_fmr:p21:r15",
+      "label": "Region IVA - CALABARZON",
+      "printed_amount_php": 1627000000,
+      "immediate_children_sum_php": 1627000000,
+      "recursive_project_sum_php": 1627000000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 79,
+      "passed": true
+    },
+    {
+      "node_id": "nep_fmr:p27:r3",
+      "label": "Region IVB - MIMAROPA",
+      "printed_amount_php": 795000000,
+      "immediate_children_sum_php": 795000000,
+      "recursive_project_sum_php": 795000000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 34,
+      "passed": true
+    },
+    {
+      "node_id": "nep_fmr:p29:r6",
+      "label": "Region V - BICOL",
+      "printed_amount_php": 915000000,
+      "immediate_children_sum_php": 915000000,
+      "recursive_project_sum_php": 915000000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 51,
+      "passed": true
+    },
+    {
+      "node_id": "nep_fmr:p32:r12",
+      "label": "Region VI - WESTERN VISAYAS",
+      "printed_amount_php": 500000000,
+      "immediate_children_sum_php": 500000000,
+      "recursive_project_sum_php": 500000000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 28,
+      "passed": true
+    },
+    {
+      "node_id": "nep_fmr:p34:r10",
+      "label": "NEGROS ISLAND REGION (NIR)",
+      "printed_amount_php": 460000000,
+      "immediate_children_sum_php": 460000000,
+      "recursive_project_sum_php": 460000000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 24,
+      "passed": true
+    },
+    {
+      "node_id": "nep_fmr:p36:r4",
+      "label": "Region VII - CENTRAL VISAYAS",
+      "printed_amount_php": 225000000,
+      "immediate_children_sum_php": 225000000,
+      "recursive_project_sum_php": 225000000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 14,
+      "passed": true
+    },
+    {
+      "node_id": "nep_fmr:p37:r3",
+      "label": "Region VIII - EASTERN VISAYAS",
+      "printed_amount_php": 535000000,
+      "immediate_children_sum_php": 535000000,
+      "recursive_project_sum_php": 535000000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 28,
+      "passed": true
+    },
+    {
+      "node_id": "nep_fmr:p39:r2",
+      "label": "Region IX - ZAMBOANGA PENINSULA",
+      "printed_amount_php": 445000000,
+      "immediate_children_sum_php": 445000000,
+      "recursive_project_sum_php": 445000000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 26,
+      "passed": true
+    },
+    {
+      "node_id": "nep_fmr:p40:r12",
+      "label": "Region X - NORTHERN MINDANAO",
+      "printed_amount_php": 455000000,
+      "immediate_children_sum_php": 455000000,
+      "recursive_project_sum_php": 455000000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 21,
+      "passed": true
+    },
+    {
+      "node_id": "nep_fmr:p42:r2",
+      "label": "Region XI - DAVAO",
+      "printed_amount_php": 535000000,
+      "immediate_children_sum_php": 535000000,
+      "recursive_project_sum_php": 535000000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 14,
+      "passed": true
+    },
+    {
+      "node_id": "nep_fmr:p43:r2",
+      "label": "Region XII - SOCCSKSARGEN",
+      "printed_amount_php": 240000000,
+      "immediate_children_sum_php": 240000000,
+      "recursive_project_sum_php": 240000000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 16,
+      "passed": true
+    },
+    {
+      "node_id": "nep_fmr:p44:r5",
+      "label": "Region XIII - CARAGA",
+      "printed_amount_php": 1208000000,
+      "immediate_children_sum_php": 1208000000,
+      "recursive_project_sum_php": 1208000000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 50,
+      "passed": true
+    },
+    {
+      "node_id": "nep_fmr:p1:r3",
+      "label": "REPAIR/REHABILITATION AND CONSTRUCTION OF FARM-TO-MARKET ROADS IN DESIGNATED KEY PRODUCTION AREAS",
+      "printed_amount_php": 16000000000,
+      "immediate_children_sum_php": 16000000000,
+      "recursive_project_sum_php": 16000000000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": null,
+      "passed": true
+    }
+  ],
+  "cross_volume_checks": [
+    {
+      "label": "Repair/Rehabilitation and Construction of Farm-to-Market Roads in Designated Key Production Areas",
+      "role": "program_control",
+      "co_php": 16000000000,
+      "total_php": 16000000000,
+      "co_raw": "16,000,000,000",
+      "total_raw": "16,000,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 169,
+        "printed_page": 145,
+        "bbox": [
+          142,
+          165,
+          678,
+          196
+        ],
+        "co_token_bboxes": [
+          [
+            545.0833,
+            184.2031,
+            604.0349,
+            195.2568
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            617.3333,
+            184.3432,
+            676.0427,
+            195.396
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p1:r3",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region I - Ilocos",
+      "role": "region_control",
+      "co_php": 1630000000,
+      "total_php": 1630000000,
+      "co_raw": "1,630,000,000",
+      "total_raw": "1,630,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 169,
+        "printed_page": 145,
+        "bbox": [
+          142.3499,
+          201.6617,
+          676.0011,
+          213.396
+        ],
+        "co_token_bboxes": [
+          [
+            549.3882,
+            202.2116,
+            603.7833,
+            213.256
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            621.6082,
+            202.3515,
+            676.0011,
+            213.396
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p1:r4",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - I",
+      "role": "office_control_echo",
+      "co_php": 1630000000,
+      "total_php": 1630000000,
+      "co_raw": "1,630,000,000",
+      "total_raw": "1,630,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 169,
+        "printed_page": 145,
+        "bbox": [
+          167.993,
+          219.4725,
+          676.2072,
+          231.016
+        ],
+        "co_token_bboxes": [
+          [
+            549.3335,
+            219.9715,
+            603.9695,
+            231.016
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            621.5712,
+            219.8739,
+            676.2072,
+            230.9185
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p1:r4",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Cordillera Administrative Region (CAR)",
+      "role": "region_control",
+      "co_php": 1540000000,
+      "total_php": 1540000000,
+      "co_raw": "1,540,000,000",
+      "total_raw": "1,540,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 169,
+        "printed_page": 145,
+        "bbox": [
+          142.2019,
+          245.5827,
+          676.1593,
+          257.3058
+        ],
+        "co_token_bboxes": [
+          [
+            549.5233,
+            246.1217,
+            604.1592,
+            257.1663
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            621.5233,
+            246.2612,
+            676.1593,
+            257.3058
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p6:r16",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - CAR",
+      "role": "office_control_echo",
+      "co_php": 1540000000,
+      "total_php": 1540000000,
+      "co_raw": "1,540,000,000",
+      "total_raw": "1,540,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 169,
+        "printed_page": 145,
+        "bbox": [
+          168.1472,
+          263.383,
+          676.1211,
+          275.1653
+        ],
+        "co_token_bboxes": [
+          [
+            549.4882,
+            264.1208,
+            604.1241,
+            275.1653
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            621.4851,
+            264.0227,
+            676.1211,
+            275.0673
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p6:r16",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region II - Cagayan Valley",
+      "role": "region_control",
+      "co_php": 1865000000,
+      "total_php": 1865000000,
+      "co_raw": "1,865,000,000",
+      "total_raw": "1 , 865,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 169,
+        "printed_page": 145,
+        "bbox": [
+          142.6547,
+          290.2137,
+          676.1406,
+          302.1866
+        ],
+        "co_token_bboxes": [
+          [
+            549.4357,
+            291.0003,
+            604.0717,
+            302.0449
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            621.6947,
+            291.142,
+            625.816,
+            302.0888
+          ],
+          [
+            626.645,
+            291.1516,
+            628.7164,
+            302.0944
+          ],
+          [
+            629.9847,
+            291.1581,
+            676.1406,
+            302.1866
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p8:r7",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - II",
+      "role": "office_control_echo",
+      "co_php": 1865000000,
+      "total_php": 1865000000,
+      "co_raw": "1,865,000 ,000",
+      "total_raw": "1,865,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 169,
+        "printed_page": 145,
+        "bbox": [
+          168.06,
+          308.033,
+          676.2759,
+          319.9565
+        ],
+        "co_token_bboxes": [
+          [
+            549.64,
+            308.7725,
+            587.2311,
+            319.784
+          ],
+          [
+            588.69,
+            308.8481,
+            603.8223,
+            319.8162
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            621.64,
+            308.912,
+            676.2759,
+            319.9565
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p8:r7",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region III - Central Luzon",
+      "role": "region_control",
+      "co_php": 3025000000,
+      "total_php": 3025000000,
+      "co_raw": "3,025,000,000",
+      "total_raw": "3,025,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 169,
+        "printed_page": 145,
+        "bbox": [
+          142.568,
+          334.6237,
+          676.1274,
+          346.5955
+        ],
+        "co_token_bboxes": [
+          [
+            549.308,
+            335.4119,
+            604.1281,
+            346.4565
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            621.3074,
+            335.5509,
+            676.1274,
+            346.5955
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p13:r9",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - III",
+      "role": "office_control_echo",
+      "co_php": 3025000000,
+      "total_php": 3025000000,
+      "co_raw": "3,025,000,000",
+      "total_raw": "3,025,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 169,
+        "printed_page": 145,
+        "bbox": [
+          168.2133,
+          352.4235,
+          676.3325,
+          364.3492
+        ],
+        "co_token_bboxes": [
+          [
+            549.2733,
+            353.1649,
+            604.0934,
+            364.2095
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            621.5125,
+            353.3047,
+            676.3325,
+            364.3492
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p13:r9",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region IVA - CALABARZON",
+      "role": "region_control",
+      "co_php": 1627000000,
+      "total_php": 1627000000,
+      "co_raw": "1,627,000,000",
+      "total_raw": "1,627,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 169,
+        "printed_page": 145,
+        "bbox": [
+          142.7213,
+          379.0242,
+          676.3773,
+          390.9976
+        ],
+        "co_token_bboxes": [
+          [
+            549.5013,
+            379.8125,
+            604.1373,
+            390.8574
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            621.7413,
+            379.9528,
+            676.3773,
+            390.9976
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p21:r15",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - IVA",
+      "role": "office_control_echo",
+      "co_php": 1627000000,
+      "total_php": 1627000000,
+      "co_raw": "1,627,000,000",
+      "total_raw": "1 , 627, 000, 000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 169,
+        "printed_page": 145,
+        "bbox": [
+          168.3666,
+          396.8239,
+          676.1287,
+          408.7468
+        ],
+        "co_token_bboxes": [
+          [
+            549.7075,
+            397.566,
+            604.3434,
+            408.6108
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            621.7266,
+            397.7025,
+            625.8479,
+            408.6493
+          ],
+          [
+            626.9163,
+            397.7126,
+            628.9877,
+            408.6553
+          ],
+          [
+            630.066,
+            397.7187,
+            645.409,
+            408.6872
+          ],
+          [
+            647.368,
+            397.7522,
+            662.2067,
+            408.7197
+          ],
+          [
+            664.1698,
+            397.7848,
+            676.1287,
+            408.7468
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p21:r15",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region IVB - MIMAROPA",
+      "role": "region_control",
+      "co_php": 795000000,
+      "total_php": 795000000,
+      "co_raw": "795,000,000",
+      "total_raw": "795,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 169,
+        "printed_page": 145,
+        "bbox": [
+          142.8746,
+          423.4246,
+          676.0922,
+          435.3963
+        ],
+        "co_token_bboxes": [
+          [
+            558.0246,
+            424.2291,
+            604.092,
+            435.257
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            630.0248,
+            424.3684,
+            676.0922,
+            435.3963
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p27:r3",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - IVB",
+      "role": "office_control_echo",
+      "co_php": 795000000,
+      "total_php": 795000000,
+      "co_raw": "795,000,000",
+      "total_raw": "795,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 169,
+        "printed_page": 145,
+        "bbox": [
+          168.2799,
+          441.2339,
+          676.299,
+          452.9072
+        ],
+        "co_token_bboxes": [
+          [
+            557.9904,
+            441.7361,
+            604.0579,
+            452.764
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            629.9903,
+            441.8787,
+            676.299,
+            452.9072
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p27:r3",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region V - Bicol",
+      "role": "region_control",
+      "co_php": 915000000,
+      "total_php": 915000000,
+      "co_raw": "915,000,000",
+      "total_raw": "915,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 169,
+        "printed_page": 145,
+        "bbox": [
+          142.7879,
+          467.8146,
+          676.2518,
+          479.5568
+        ],
+        "co_token_bboxes": [
+          [
+            558.1783,
+            468.3896,
+            604.2484,
+            479.4175
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            630.1818,
+            468.5289,
+            676.2518,
+            479.5568
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p29:r6",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - V",
+      "role": "office_control_echo",
+      "co_php": 915000000,
+      "total_php": 915000000,
+      "co_raw": "915,000,000",
+      "total_raw": "915,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 169,
+        "printed_page": 145,
+        "bbox": [
+          168.4336,
+          485.3944,
+          676.213,
+          497.318
+        ],
+        "co_token_bboxes": [
+          [
+            558.1436,
+            486.1508,
+            604.2137,
+            497.1787
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            630.1429,
+            486.2901,
+            676.213,
+            497.318
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p29:r6",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region VI - Western Visayas",
+      "role": "region_control",
+      "co_php": 500000000,
+      "total_php": 500000000,
+      "co_raw": "500,000,000",
+      "total_raw": "500,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 169,
+        "printed_page": 145,
+        "bbox": [
+          142.9442,
+          511.9867,
+          676.4492,
+          523.9585
+        ],
+        "co_token_bboxes": [
+          [
+            558.0616,
+            512.7895,
+            604.2097,
+            523.818
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            630.3011,
+            512.93,
+            676.4492,
+            523.9585
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p32:r12",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - VI",
+      "role": "office_control_echo",
+      "co_php": 500000000,
+      "total_php": 500000000,
+      "co_raw": "500,000,000",
+      "total_raw": "500,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 169,
+        "printed_page": 145,
+        "bbox": [
+          168.5869,
+          529.7949,
+          676.4239,
+          541.7179
+        ],
+        "co_token_bboxes": [
+          [
+            558.0269,
+            530.5495,
+            604.4172,
+            541.578
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            630.5169,
+            530.69,
+            676.4239,
+            541.7179
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p32:r12",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Negros Island Region (NIR)",
+      "role": "region_control",
+      "co_php": 460000000,
+      "total_php": 460000000,
+      "co_raw": "460,000,000",
+      "total_raw": "460,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 169,
+        "printed_page": 145,
+        "bbox": [
+          142.6944,
+          556.6148,
+          676.2948,
+          568.348
+        ],
+        "co_token_bboxes": [
+          [
+            558.0649,
+            557.1797,
+            604.2949,
+            568.2083
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            630.0648,
+            557.3195,
+            676.2948,
+            568.348
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p34:r10",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - NIR",
+      "role": "office_control_echo",
+      "co_php": 460000000,
+      "total_php": 460000000,
+      "co_raw": "460,000,000",
+      "total_raw": "460,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 169,
+        "printed_page": 145,
+        "bbox": [
+          168.5002,
+          574.1949,
+          676.2606,
+          585.8795
+        ],
+        "co_token_bboxes": [
+          [
+            558.0307,
+            574.7113,
+            604.2607,
+            585.7398
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            630.0306,
+            574.851,
+            676.2606,
+            585.8795
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p34:r10",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region VII~ Central Visayas",
+      "role": "region_control",
+      "co_php": 225000000,
+      "total_php": 225000000,
+      "co_raw": "225,000,000",
+      "total_raw": "225,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 169,
+        "printed_page": 145,
+        "bbox": [
+          143.0091,
+          600.2956,
+          676.4579,
+          612.2676
+        ],
+        "co_token_bboxes": [
+          [
+            558.4391,
+            601.1006,
+            604.2178,
+            612.1279
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            630.6791,
+            601.2404,
+            676.4579,
+            612.2676
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p36:r4",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - VII",
+      "role": "office_control_echo",
+      "co_php": 225000000,
+      "total_php": 225000000,
+      "co_raw": "225,000,000",
+      "total_raw": "225,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 169,
+        "printed_page": 145,
+        "bbox": [
+          168.6539,
+          618.3453,
+          676.4232,
+          630.0379
+        ],
+        "co_token_bboxes": [
+          [
+            558.4044,
+            618.8706,
+            604.4236,
+            629.8985
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            630.6444,
+            619.0106,
+            676.4232,
+            630.0379
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p36:r4",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region VIII - Eastern Visayas",
+      "role": "region_control",
+      "co_php": 535000000,
+      "total_php": 535000000,
+      "co_raw": "535,000,000",
+      "total_raw": "535,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 169,
+        "printed_page": 145,
+        "bbox": [
+          143.1645,
+          644.9377,
+          676.4394,
+          656.6784
+        ],
+        "co_token_bboxes": [
+          [
+            558.2824,
+            645.5105,
+            604.4305,
+            656.539
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            630.5324,
+            645.6505,
+            676.4394,
+            656.6784
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p37:r3",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit· - VIII",
+      "role": "office_control_echo",
+      "co_php": 535000000,
+      "total_php": 535000000,
+      "co_raw": "535,000,000",
+      "total_raw": "535,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 169,
+        "printed_page": 145,
+        "bbox": [
+          168.5672,
+          662.7553,
+          676.6442,
+          674.6788
+        ],
+        "co_token_bboxes": [
+          [
+            558.2472,
+            663.5105,
+            604.3953,
+            674.539
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            630.7372,
+            663.6509,
+            676.6442,
+            674.6788
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p37:r3",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region IX - Zamboanga Peninsula",
+      "role": "region_control",
+      "co_php": 445000000,
+      "total_php": 445000000,
+      "co_raw": "445,000,000",
+      "total_raw": "445,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 169,
+        "printed_page": 145,
+        "bbox": [
+          143.0752,
+          689.346,
+          676.5151,
+          701.3187
+        ],
+        "co_token_bboxes": [
+          [
+            558.0452,
+            690.1502,
+            604.5162,
+            701.1791
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            630.2852,
+            690.2902,
+            676.5151,
+            701.3187
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p39:r2",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "_Regional Field Unit - IX",
+      "role": "office_control_echo",
+      "co_php": 445000000,
+      "total_php": 445000000,
+      "co_raw": "445,000,000",
+      "total_raw": "445,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 169,
+        "printed_page": 145,
+        "bbox": [
+          165.91,
+          707.3903,
+          676.4806,
+          719.178
+        ],
+        "co_token_bboxes": [
+          [
+            558.2484,
+            708.1495,
+            604.4784,
+            719.178
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            630.2505,
+            708.0432,
+            676.4806,
+            719.0717
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p39:r2",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region X - Northern Mindanao",
+      "role": "region_control",
+      "co_php": 455000000,
+      "total_php": 455000000,
+      "co_raw": "455,000,000",
+      "total_raw": "455,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 170,
+        "printed_page": 146,
+        "bbox": [
+          115.0265,
+          58.5539,
+          648.4659,
+          69.7367
+        ],
+        "co_token_bboxes": [
+          [
+            529.9985,
+            58.6434,
+            576.2285,
+            69.6719
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            602.2359,
+            58.5539,
+            648.4659,
+            69.5824
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p40:r12",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - X",
+      "role": "office_control_echo",
+      "co_php": 455000000,
+      "total_php": 455000000,
+      "co_raw": "455,000,000",
+      "total_raw": "455,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 170,
+        "printed_page": 146,
+        "bbox": [
+          140.6724,
+          76.3139,
+          648.4335,
+          87.5094
+        ],
+        "co_token_bboxes": [
+          [
+            530.2038,
+            76.4139,
+            576.6748,
+            87.4431
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            602.4442,
+            76.3139,
+            648.4335,
+            87.3418
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p40:r12",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region XI - Davao",
+      "role": "region_control",
+      "co_php": 535000000,
+      "total_php": 535000000,
+      "co_raw": "535,000,000",
+      "total_raw": "535,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 170,
+        "printed_page": 146,
+        "bbox": [
+          115.1825,
+          103.0547,
+          648.6894,
+          114.2866
+        ],
+        "co_token_bboxes": [
+          [
+            530.5417,
+            103.0547,
+            576.6898,
+            114.0832
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            602.5413,
+            103.1946,
+            648.6894,
+            114.2231
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p42:r2",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - XI",
+      "role": "office_control_echo",
+      "co_php": 535000000,
+      "total_php": 535000000,
+      "co_raw": "535,000,000",
+      "total_raw": "535,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 170,
+        "printed_page": 146,
+        "bbox": [
+          140.5852,
+          121.0191,
+          648.6636,
+          132.2226
+        ],
+        "co_token_bboxes": [
+          [
+            530.5066,
+            121.0537,
+            576.6547,
+            132.0822
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            602.7566,
+            121.1947,
+            648.6636,
+            132.2226
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p42:r2",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region XII - SOCCSKSARGEN",
+      "role": "region_control",
+      "co_php": 240000000,
+      "total_php": 240000000,
+      "co_raw": "240,000,000",
+      "total_raw": "240,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 170,
+        "printed_page": 146,
+        "bbox": [
+          115.3331,
+          147.6102,
+          648.5433,
+          158.8621
+        ],
+        "co_token_bboxes": [
+          [
+            530.7646,
+            147.6953,
+            576.7839,
+            158.7233
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            602.7646,
+            147.8348,
+            648.5433,
+            158.8621
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p43:r2",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - XII",
+      "role": "office_control_echo",
+      "co_php": 240000000,
+      "total_php": 240000000,
+      "co_raw": "240,000,000",
+      "total_raw": "240,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 170,
+        "printed_page": 146,
+        "bbox": [
+          140.738,
+          165.6595,
+          648.7481,
+          176.8625
+        ],
+        "co_token_bboxes": [
+          [
+            530.7294,
+            165.6953,
+            576.7487,
+            176.7233
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            602.9694,
+            165.8352,
+            648.7481,
+            176.8625
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p43:r2",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region XIII - CARAGA",
+      "role": "region_control",
+      "co_php": 1208000000,
+      "total_php": 1208000000,
+      "co_raw": "1,208,000,000",
+      "total_raw": "1,208,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 170,
+        "printed_page": 146,
+        "bbox": [
+          115.4891,
+          192.0145,
+          649.1439,
+          203.2535
+        ],
+        "co_token_bboxes": [
+          [
+            522.2679,
+            192.069,
+            576.9039,
+            203.1136
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            594.5079,
+            192.209,
+            649.1439,
+            203.2535
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p44:r5",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - XIII",
+      "role": "office_control_echo",
+      "co_php": 1208000000,
+      "total_php": 1208000000,
+      "co_raw": "1,208,000,000",
+      "total_raw": "1,208,000,000",
+      "amount_interpretation": "intra_amount_OCR_whitespace_removed",
+      "source": {
+        "source_pdf": "dbm-nep-data/NEP-2027-VOLUME-1_OCR.pdf",
+        "pdf_page": 170,
+        "printed_page": 146,
+        "bbox": [
+          141.1322,
+          209.5804,
+          649.1092,
+          221.0135
+        ],
+        "co_token_bboxes": [
+          [
+            522.4932,
+            209.8295,
+            576.931,
+            220.8736
+          ]
+        ],
+        "total_token_bboxes": [
+          [
+            594.4732,
+            209.9689,
+            649.1092,
+            221.0135
+          ]
+        ]
+      },
+      "annex_node_id": "nep_fmr:p44:r5",
+      "difference_php": 0,
+      "passed": true
+    }
+  ],
+  "amount_interpretations": [
+    {
+      "row_id": "nep_fmr:p19:r12",
+      "rule": "ocr_trailing_non_numeric_decoration_removed",
+      "raw": "11,000,000}",
+      "interpreted": "11,000,000",
+      "evidence": "rendered amount cell reviewed; digits unchanged"
+    },
+    {
+      "row_id": "nep_fmr:p20:r5",
+      "rule": "ocr_trailing_non_numeric_decoration_removed",
+      "raw": "15,125,000(",
+      "interpreted": "15,125,000",
+      "evidence": "rendered amount cell reviewed; digits unchanged"
+    },
+    {
+      "row_id": "nep_fmr:p26:r8",
+      "rule": "ocr_trailing_non_numeric_decoration_removed",
+      "raw": "15,000,000(",
+      "interpreted": "15,000,000",
+      "evidence": "rendered amount cell reviewed; digits unchanged"
+    },
+    {
+      "row_id": "nep_fmr:p40:r14",
+      "rule": "ocr_trailing_non_numeric_decoration_removed",
+      "raw": "10,000,000|",
+      "interpreted": "10,000,000",
+      "evidence": "rendered amount cell reviewed; digits unchanged"
+    }
+  ],
+  "repeated_title_groups": [
+    {
+      "title": "Construction of Sitio Santiago to Sitio Gumpay, Brgy. Gabon to Brgy. Laon FMR, Brgy. Gabon, Abucay, Bataan",
+      "project_ids": [
+        "nep_fmr:p17:r10",
+        "nep_fmr:p17:r12"
+      ]
+    }
+  ],
+  "source_evidence": {
+    "method": "existing OCR words assigned by centres to page-specific raster ruled cells",
+    "rendered_spot_check_pdf_pages": [
+      1,
+      19,
+      20,
+      26,
+      28,
+      40,
+      47
+    ],
+    "spot_check_scope": "boundary/layout checks and selected amount cells; not complete OCR transcription review",
+    "open_bottom_row_id": "nep_fmr:p28:r16",
+    "all_rows_individually_image_reviewed": false,
+    "geographic_coordinates_certified": false,
+    "comparison_ready": false
+  }
+}

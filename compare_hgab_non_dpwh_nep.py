@@ -263,6 +263,10 @@ def main() -> int:
     }
     summary_path = args.out.with_name("hgab_non_dpwh_insertion_summary.json")
     summary_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    if (ROOT/'data_sources/fmr_analyst/hgab_fmr_coordinates_normalized.json').exists():
+        from build_fmr_dataset import build as build_corrected_fmr
+        build_corrected_fmr()
+        summary=json.loads(summary_path.read_text())
     print(json.dumps(summary, ensure_ascii=False, indent=2))
     return 0
 

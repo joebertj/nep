@@ -1,0 +1,1335 @@
+{
+  "metadata": {
+    "schema_version": 1,
+    "fiscal_year": 2027,
+    "currency": "PHP",
+    "source_unit": "pesos",
+    "unit_multiplier": 1,
+    "document": "HB 10858 General Appropriations Bill, local HB_BUDGET copy",
+    "legislative_stage": "not_independently_authenticated",
+    "scope": "DA locally-funded FMR annex; not the full DA budget or FMR planning/bridges activities",
+    "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
+    "source_sha256": "a82800c4cc2684566a37f7780d8f9131d2e7b2c97444d335d94df012dec065b6",
+    "source_pdf_pages": [
+      667,
+      726
+    ],
+    "source_printed_pages": [
+      651,
+      710
+    ],
+    "cross_volume_source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+    "cross_volume_source_sha256": "6fffb251c2b98e9aefd5d3295e561780c6744e83f313507b8da0d3671cc9be13",
+    "extractor_sha256": "46b669fb56a14e1c8fc3fe2f222fe6009ef911078081cc8201011e591d273164",
+    "pymupdf_version": "1.28.2",
+    "ids": "source-artifact-local page and ruled row identifiers; not cross-document project identities"
+  },
+  "passed": true,
+  "errors": [],
+  "summary": {
+    "detail_pages": 60,
+    "source_table_rows": 1057,
+    "row_role_counts": {
+      "column_header": 60,
+      "program_control": 1,
+      "blank_spacer": 16,
+      "region_control": 16,
+      "project": 964
+    },
+    "table_words_accounted_for": 19545,
+    "nodes": 981,
+    "projects": 964,
+    "regions": 16,
+    "project_ledger_total_php": 19628100000,
+    "recursive_project_total_php": 19628100000,
+    "internal_control_checks": 17,
+    "failed_internal_controls": 0,
+    "cross_volume_control_checks": 17,
+    "cross_volume_office_echo_checks": 16,
+    "failed_cross_volume_checks": 0,
+    "coordinate_review_projects": 83
+  },
+  "rollup_checks": [
+    {
+      "node_id": "ib:p667:r4",
+      "label": "REGION I - ILOCOS",
+      "printed_amount_php": 1590000000,
+      "immediate_children_sum_php": 1590000000,
+      "recursive_project_sum_php": 1590000000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 96,
+      "passed": true
+    },
+    {
+      "node_id": "ib:p672:r18",
+      "label": "CORDILLERA ADMINISTRATIVE REGION (CAR)",
+      "printed_amount_php": 1565000000,
+      "immediate_children_sum_php": 1565000000,
+      "recursive_project_sum_php": 1565000000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 22,
+      "passed": true
+    },
+    {
+      "node_id": "ib:p674:r6",
+      "label": "REGION II - CAGAYAN VALLEY",
+      "printed_amount_php": 2133200000,
+      "immediate_children_sum_php": 2133200000,
+      "recursive_project_sum_php": 2133200000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 99,
+      "passed": true
+    },
+    {
+      "node_id": "ib:p680:r10",
+      "label": "REGION III - CENTRAL LUZON",
+      "printed_amount_php": 3418800000,
+      "immediate_children_sum_php": 3418800000,
+      "recursive_project_sum_php": 3418800000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 173,
+      "passed": true
+    },
+    {
+      "node_id": "ib:p690:r12",
+      "label": "REGION IVA - CALABARZON",
+      "printed_amount_php": 2403400000,
+      "immediate_children_sum_php": 2403400000,
+      "recursive_project_sum_php": 2403400000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 133,
+      "passed": true
+    },
+    {
+      "node_id": "ib:p699:r9",
+      "label": "REGION IVB - MIMAROPA",
+      "printed_amount_php": 1005350000,
+      "immediate_children_sum_php": 1005350000,
+      "recursive_project_sum_php": 1005350000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 44,
+      "passed": true
+    },
+    {
+      "node_id": "ib:p702:r4",
+      "label": "REGION V - BICOL",
+      "printed_amount_php": 1391200000,
+      "immediate_children_sum_php": 1391200000,
+      "recursive_project_sum_php": 1391200000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 77,
+      "passed": true
+    },
+    {
+      "node_id": "ib:p706:r16",
+      "label": "REGION VI - WESTERN VISAYAS",
+      "printed_amount_php": 1042750000,
+      "immediate_children_sum_php": 1042750000,
+      "recursive_project_sum_php": 1042750000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 50,
+      "passed": true
+    },
+    {
+      "node_id": "ib:p709:r16",
+      "label": "NEGROS ISLAND REGION (NIR)",
+      "printed_amount_php": 665000000,
+      "immediate_children_sum_php": 665000000,
+      "recursive_project_sum_php": 665000000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 35,
+      "passed": true
+    },
+    {
+      "node_id": "ib:p712:r4",
+      "label": "REGION VII - CENTRAL VISAYAS",
+      "printed_amount_php": 315000000,
+      "immediate_children_sum_php": 315000000,
+      "recursive_project_sum_php": 315000000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 19,
+      "passed": true
+    },
+    {
+      "node_id": "ib:p713:r7",
+      "label": "REGION VIII - EASTERN VISAYAS",
+      "printed_amount_php": 996800000,
+      "immediate_children_sum_php": 996800000,
+      "recursive_project_sum_php": 996800000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 52,
+      "passed": true
+    },
+    {
+      "node_id": "ib:p716:r14",
+      "label": "REGION IX - ZAMBOANGA PENINSULA",
+      "printed_amount_php": 580000000,
+      "immediate_children_sum_php": 580000000,
+      "recursive_project_sum_php": 580000000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 32,
+      "passed": true
+    },
+    {
+      "node_id": "ib:p718:r12",
+      "label": "REGION X - NORTHERN MINDANAO",
+      "printed_amount_php": 683400000,
+      "immediate_children_sum_php": 683400000,
+      "recursive_project_sum_php": 683400000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 33,
+      "passed": true
+    },
+    {
+      "node_id": "ib:p720:r11",
+      "label": "REGION XI - DAVAO",
+      "printed_amount_php": 475000000,
+      "immediate_children_sum_php": 475000000,
+      "recursive_project_sum_php": 475000000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 20,
+      "passed": true
+    },
+    {
+      "node_id": "ib:p721:r15",
+      "label": "REGION XII - SOCCSKSARGEN",
+      "printed_amount_php": 425000000,
+      "immediate_children_sum_php": 425000000,
+      "recursive_project_sum_php": 425000000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 28,
+      "passed": true
+    },
+    {
+      "node_id": "ib:p723:r12",
+      "label": "REGION XIII - CARAGA",
+      "printed_amount_php": 938200000,
+      "immediate_children_sum_php": 938200000,
+      "recursive_project_sum_php": 938200000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": 51,
+      "passed": true
+    },
+    {
+      "node_id": "ib:p667:r2",
+      "label": "REPAIR/REHABILITATION AND CONSTRUCTION OF FARM-TO-MARKET ROADS IN DESIGNATED KEY PRODUCTION AREAS",
+      "printed_amount_php": 19628100000,
+      "immediate_children_sum_php": 19628100000,
+      "recursive_project_sum_php": 19628100000,
+      "direct_difference_php": 0,
+      "recursive_difference_php": 0,
+      "project_count": null,
+      "passed": true
+    }
+  ],
+  "cross_volume_checks": [
+    {
+      "label": "Repair/Rehabilitation and Construction of Farm-to-Market Roads in Designated Key Production Areas",
+      "role": "program_control",
+      "co_php": 19628100000,
+      "total_php": 19628100000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 137,
+        "printed_page": 127,
+        "bbox": [
+          80,
+          468,
+          596,
+          506
+        ],
+        "co_token_bbox": [
+          476.108,
+          493.6935,
+          517.5762,
+          504.4741
+        ],
+        "total_token_bbox": [
+          549.0721,
+          493.6935,
+          590.5403,
+          504.4741
+        ]
+      },
+      "annex_node_id": "ib:p667:r2",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region I - Ilocos",
+      "role": "region_control",
+      "co_php": 1590000000,
+      "total_php": 1590000000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 137,
+        "printed_page": 127,
+        "bbox": [
+          91.6074,
+          516.3068,
+          590.5437,
+          527.4216
+        ],
+        "co_token_bbox": [
+          479.4499,
+          516.6409,
+          517.5795,
+          527.4216
+        ],
+        "total_token_bbox": [
+          552.4141,
+          516.6409,
+          590.5437,
+          527.4216
+        ]
+      },
+      "annex_node_id": "ib:p667:r4",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - I",
+      "role": "office_control_echo",
+      "co_php": 1590000000,
+      "total_php": 1590000000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 137,
+        "printed_page": 127,
+        "bbox": [
+          104.7521,
+          539.2542,
+          590.5437,
+          550.3691
+        ],
+        "co_token_bbox": [
+          479.4499,
+          539.5884,
+          517.5795,
+          550.3691
+        ],
+        "total_token_bbox": [
+          552.4141,
+          539.5884,
+          590.5437,
+          550.3691
+        ]
+      },
+      "annex_node_id": "ib:p667:r4",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Cordillera Administrative Region (CAR)",
+      "role": "region_control",
+      "co_php": 1565000000,
+      "total_php": 1565000000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 137,
+        "printed_page": 127,
+        "bbox": [
+          91.6074,
+          562.2017,
+          590.5437,
+          573.3166
+        ],
+        "co_token_bbox": [
+          479.4499,
+          562.5359,
+          517.5795,
+          573.3166
+        ],
+        "total_token_bbox": [
+          552.4141,
+          562.5359,
+          590.5437,
+          573.3166
+        ]
+      },
+      "annex_node_id": "ib:p672:r18",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - CAR",
+      "role": "office_control_echo",
+      "co_php": 1565000000,
+      "total_php": 1565000000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 137,
+        "printed_page": 127,
+        "bbox": [
+          104.7521,
+          585.1492,
+          590.5437,
+          596.2641
+        ],
+        "co_token_bbox": [
+          479.4499,
+          585.4835,
+          517.5795,
+          596.2641
+        ],
+        "total_token_bbox": [
+          552.4141,
+          585.4835,
+          590.5437,
+          596.2641
+        ]
+      },
+      "annex_node_id": "ib:p672:r18",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region II - Cagayan Valley",
+      "role": "region_control",
+      "co_php": 2133200000,
+      "total_php": 2133200000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 137,
+        "printed_page": 127,
+        "bbox": [
+          91.6074,
+          608.0967,
+          590.5437,
+          619.2116
+        ],
+        "co_token_bbox": [
+          479.4499,
+          608.431,
+          517.5795,
+          619.2116
+        ],
+        "total_token_bbox": [
+          552.4141,
+          608.431,
+          590.5437,
+          619.2116
+        ]
+      },
+      "annex_node_id": "ib:p674:r6",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - II",
+      "role": "office_control_echo",
+      "co_php": 2133200000,
+      "total_php": 2133200000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 137,
+        "printed_page": 127,
+        "bbox": [
+          104.7521,
+          631.0443,
+          590.5437,
+          642.1591
+        ],
+        "co_token_bbox": [
+          479.4499,
+          631.3785,
+          517.5795,
+          642.1591
+        ],
+        "total_token_bbox": [
+          552.4141,
+          631.3785,
+          590.5437,
+          642.1591
+        ]
+      },
+      "annex_node_id": "ib:p674:r6",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region III - Central Luzon",
+      "role": "region_control",
+      "co_php": 3418800000,
+      "total_php": 3418800000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 137,
+        "printed_page": 127,
+        "bbox": [
+          91.6074,
+          654.0197,
+          590.5437,
+          665.1344
+        ],
+        "co_token_bbox": [
+          479.4499,
+          654.3538,
+          517.5795,
+          665.1344
+        ],
+        "total_token_bbox": [
+          552.4141,
+          654.3538,
+          590.5437,
+          665.1344
+        ]
+      },
+      "annex_node_id": "ib:p680:r10",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - III",
+      "role": "office_control_echo",
+      "co_php": 3418800000,
+      "total_php": 3418800000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 137,
+        "printed_page": 127,
+        "bbox": [
+          104.7521,
+          676.9672,
+          590.5437,
+          688.0819
+        ],
+        "co_token_bbox": [
+          479.4499,
+          677.3013,
+          517.5795,
+          688.0819
+        ],
+        "total_token_bbox": [
+          552.4141,
+          677.3013,
+          590.5437,
+          688.0819
+        ]
+      },
+      "annex_node_id": "ib:p680:r10",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region IVA - CALABARZON",
+      "role": "region_control",
+      "co_php": 2403400000,
+      "total_php": 2403400000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 138,
+        "printed_page": 128,
+        "bbox": [
+          78.1074,
+          57.2916,
+          592.9924,
+          68.4065
+        ],
+        "co_token_bbox": [
+          465.9499,
+          57.6259,
+          504.0796,
+          68.4065
+        ],
+        "total_token_bbox": [
+          538.9141,
+          57.6259,
+          577.0437,
+          68.4065
+        ]
+      },
+      "annex_node_id": "ib:p690:r12",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - IVA",
+      "role": "office_control_echo",
+      "co_php": 2403400000,
+      "total_php": 2403400000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 138,
+        "printed_page": 128,
+        "bbox": [
+          91.2521,
+          80.2391,
+          592.9924,
+          91.354
+        ],
+        "co_token_bbox": [
+          465.9499,
+          80.5734,
+          504.0796,
+          91.354
+        ],
+        "total_token_bbox": [
+          538.9141,
+          80.5734,
+          577.0437,
+          91.354
+        ]
+      },
+      "annex_node_id": "ib:p690:r12",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region IVB - MIMAROPA",
+      "role": "region_control",
+      "co_php": 1005350000,
+      "total_php": 1005350000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 138,
+        "printed_page": 128,
+        "bbox": [
+          78.1074,
+          103.1868,
+          592.9924,
+          114.3015
+        ],
+        "co_token_bbox": [
+          465.9499,
+          103.5209,
+          504.0796,
+          114.3015
+        ],
+        "total_token_bbox": [
+          538.9141,
+          103.5209,
+          577.0437,
+          114.3015
+        ]
+      },
+      "annex_node_id": "ib:p699:r9",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - IVB",
+      "role": "office_control_echo",
+      "co_php": 1005350000,
+      "total_php": 1005350000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 138,
+        "printed_page": 128,
+        "bbox": [
+          91.2521,
+          126.1343,
+          592.9924,
+          137.2491
+        ],
+        "co_token_bbox": [
+          465.9499,
+          126.4685,
+          504.0796,
+          137.2491
+        ],
+        "total_token_bbox": [
+          538.9141,
+          126.4685,
+          577.0437,
+          137.2491
+        ]
+      },
+      "annex_node_id": "ib:p699:r9",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region V - Bicol",
+      "role": "region_control",
+      "co_php": 1391200000,
+      "total_php": 1391200000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 138,
+        "printed_page": 128,
+        "bbox": [
+          78.1074,
+          149.1003,
+          592.9924,
+          160.2151
+        ],
+        "co_token_bbox": [
+          465.9499,
+          149.4345,
+          504.0796,
+          160.2151
+        ],
+        "total_token_bbox": [
+          538.9141,
+          149.4345,
+          577.0437,
+          160.2151
+        ]
+      },
+      "annex_node_id": "ib:p702:r4",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - V",
+      "role": "office_control_echo",
+      "co_php": 1391200000,
+      "total_php": 1391200000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 138,
+        "printed_page": 128,
+        "bbox": [
+          91.2521,
+          172.0477,
+          592.9882,
+          183.1626
+        ],
+        "co_token_bbox": [
+          465.9499,
+          172.382,
+          504.0796,
+          183.1626
+        ],
+        "total_token_bbox": [
+          538.9141,
+          172.382,
+          577.0437,
+          183.1626
+        ]
+      },
+      "annex_node_id": "ib:p702:r4",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region VI - Western Visayas",
+      "role": "region_control",
+      "co_php": 1042750000,
+      "total_php": 1042750000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 138,
+        "printed_page": 128,
+        "bbox": [
+          78.1074,
+          194.9953,
+          592.9882,
+          206.1101
+        ],
+        "co_token_bbox": [
+          465.9499,
+          195.3295,
+          504.0796,
+          206.1101
+        ],
+        "total_token_bbox": [
+          538.9141,
+          195.3295,
+          577.0437,
+          206.1101
+        ]
+      },
+      "annex_node_id": "ib:p706:r16",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - VI",
+      "role": "office_control_echo",
+      "co_php": 1042750000,
+      "total_php": 1042750000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 138,
+        "printed_page": 128,
+        "bbox": [
+          91.2521,
+          217.9429,
+          592.9882,
+          229.0576
+        ],
+        "co_token_bbox": [
+          465.9499,
+          218.277,
+          504.0796,
+          229.0576
+        ],
+        "total_token_bbox": [
+          538.9141,
+          218.277,
+          577.0437,
+          229.0576
+        ]
+      },
+      "annex_node_id": "ib:p706:r16",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Negros Island Region (NIR)",
+      "role": "region_control",
+      "co_php": 665000000,
+      "total_php": 665000000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 138,
+        "printed_page": 128,
+        "bbox": [
+          78.1074,
+          240.8904,
+          592.9882,
+          252.005
+        ],
+        "co_token_bbox": [
+          470.8513,
+          241.2244,
+          504.0714,
+          252.005
+        ],
+        "total_token_bbox": [
+          543.8154,
+          241.2244,
+          577.0355,
+          252.005
+        ]
+      },
+      "annex_node_id": "ib:p709:r16",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - NIR",
+      "role": "office_control_echo",
+      "co_php": 665000000,
+      "total_php": 665000000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 138,
+        "printed_page": 128,
+        "bbox": [
+          91.2521,
+          263.8378,
+          592.9882,
+          274.9525
+        ],
+        "co_token_bbox": [
+          470.8513,
+          264.1719,
+          504.0714,
+          274.9525
+        ],
+        "total_token_bbox": [
+          543.8154,
+          264.1719,
+          577.0355,
+          274.9525
+        ]
+      },
+      "annex_node_id": "ib:p709:r16",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region VII - Central Visayas",
+      "role": "region_control",
+      "co_php": 315000000,
+      "total_php": 315000000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 138,
+        "printed_page": 128,
+        "bbox": [
+          78.1074,
+          286.7853,
+          592.9882,
+          297.9002
+        ],
+        "co_token_bbox": [
+          470.8513,
+          287.1196,
+          504.0714,
+          297.9002
+        ],
+        "total_token_bbox": [
+          543.8154,
+          287.1196,
+          577.0355,
+          297.9002
+        ]
+      },
+      "annex_node_id": "ib:p712:r4",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - VII",
+      "role": "office_control_echo",
+      "co_php": 315000000,
+      "total_php": 315000000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 138,
+        "printed_page": 128,
+        "bbox": [
+          91.2521,
+          309.7607,
+          592.9882,
+          320.8755
+        ],
+        "co_token_bbox": [
+          470.8513,
+          310.0948,
+          504.0714,
+          320.8755
+        ],
+        "total_token_bbox": [
+          543.8154,
+          310.0948,
+          577.0355,
+          320.8755
+        ]
+      },
+      "annex_node_id": "ib:p712:r4",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region VIII - Eastern Visayas",
+      "role": "region_control",
+      "co_php": 996800000,
+      "total_php": 996800000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 138,
+        "printed_page": 128,
+        "bbox": [
+          78.1074,
+          332.7082,
+          592.9882,
+          343.823
+        ],
+        "co_token_bbox": [
+          470.8513,
+          333.0424,
+          504.0714,
+          343.823
+        ],
+        "total_token_bbox": [
+          543.8154,
+          333.0424,
+          577.0355,
+          343.823
+        ]
+      },
+      "annex_node_id": "ib:p713:r7",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - VIII",
+      "role": "office_control_echo",
+      "co_php": 996800000,
+      "total_php": 996800000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 138,
+        "printed_page": 128,
+        "bbox": [
+          91.2521,
+          355.6556,
+          592.9882,
+          366.7704
+        ],
+        "co_token_bbox": [
+          470.8513,
+          355.9898,
+          504.0714,
+          366.7704
+        ],
+        "total_token_bbox": [
+          543.8154,
+          355.9898,
+          577.0355,
+          366.7704
+        ]
+      },
+      "annex_node_id": "ib:p713:r7",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region IX - Zamboanga Peninsula",
+      "role": "region_control",
+      "co_php": 580000000,
+      "total_php": 580000000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 138,
+        "printed_page": 128,
+        "bbox": [
+          78.1074,
+          378.6031,
+          592.9882,
+          389.718
+        ],
+        "co_token_bbox": [
+          470.8513,
+          378.9373,
+          504.0714,
+          389.718
+        ],
+        "total_token_bbox": [
+          543.8154,
+          378.9373,
+          577.0355,
+          389.718
+        ]
+      },
+      "annex_node_id": "ib:p716:r14",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - IX",
+      "role": "office_control_echo",
+      "co_php": 580000000,
+      "total_php": 580000000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 138,
+        "printed_page": 128,
+        "bbox": [
+          91.2521,
+          401.5507,
+          592.9882,
+          412.6655
+        ],
+        "co_token_bbox": [
+          470.8513,
+          401.8849,
+          504.0714,
+          412.6655
+        ],
+        "total_token_bbox": [
+          543.8154,
+          401.8849,
+          577.0355,
+          412.6655
+        ]
+      },
+      "annex_node_id": "ib:p716:r14",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region X - Northern Mindanao",
+      "role": "region_control",
+      "co_php": 683400000,
+      "total_php": 683400000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 138,
+        "printed_page": 128,
+        "bbox": [
+          78.1074,
+          424.4981,
+          592.9882,
+          435.6129
+        ],
+        "co_token_bbox": [
+          470.8513,
+          424.8323,
+          504.0714,
+          435.6129
+        ],
+        "total_token_bbox": [
+          543.8154,
+          424.8323,
+          577.0355,
+          435.6129
+        ]
+      },
+      "annex_node_id": "ib:p718:r12",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - X",
+      "role": "office_control_echo",
+      "co_php": 683400000,
+      "total_php": 683400000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 138,
+        "printed_page": 128,
+        "bbox": [
+          91.2521,
+          447.4456,
+          592.9882,
+          458.5605
+        ],
+        "co_token_bbox": [
+          470.8513,
+          447.7798,
+          504.0714,
+          458.5605
+        ],
+        "total_token_bbox": [
+          543.8154,
+          447.7798,
+          577.0355,
+          458.5605
+        ]
+      },
+      "annex_node_id": "ib:p718:r12",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region XI - Davao",
+      "role": "region_control",
+      "co_php": 475000000,
+      "total_php": 475000000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 138,
+        "printed_page": 128,
+        "bbox": [
+          78.1074,
+          470.4117,
+          592.9882,
+          481.5266
+        ],
+        "co_token_bbox": [
+          470.8513,
+          470.7459,
+          504.0714,
+          481.5266
+        ],
+        "total_token_bbox": [
+          543.8154,
+          470.7459,
+          577.0355,
+          481.5266
+        ]
+      },
+      "annex_node_id": "ib:p720:r11",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - XI",
+      "role": "office_control_echo",
+      "co_php": 475000000,
+      "total_php": 475000000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 138,
+        "printed_page": 128,
+        "bbox": [
+          91.2521,
+          493.3593,
+          592.9882,
+          504.4741
+        ],
+        "co_token_bbox": [
+          470.8513,
+          493.6935,
+          504.0714,
+          504.4741
+        ],
+        "total_token_bbox": [
+          543.8154,
+          493.6935,
+          577.0355,
+          504.4741
+        ]
+      },
+      "annex_node_id": "ib:p720:r11",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region XII - SOCCSKSARGEN",
+      "role": "region_control",
+      "co_php": 425000000,
+      "total_php": 425000000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 138,
+        "printed_page": 128,
+        "bbox": [
+          78.1074,
+          516.3068,
+          592.9882,
+          527.4216
+        ],
+        "co_token_bbox": [
+          470.8513,
+          516.6409,
+          504.0714,
+          527.4216
+        ],
+        "total_token_bbox": [
+          543.8154,
+          516.6409,
+          577.0355,
+          527.4216
+        ]
+      },
+      "annex_node_id": "ib:p721:r15",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - XII",
+      "role": "office_control_echo",
+      "co_php": 425000000,
+      "total_php": 425000000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 138,
+        "printed_page": 128,
+        "bbox": [
+          91.2521,
+          539.2542,
+          592.9882,
+          550.3691
+        ],
+        "co_token_bbox": [
+          470.8513,
+          539.5884,
+          504.0714,
+          550.3691
+        ],
+        "total_token_bbox": [
+          543.8154,
+          539.5884,
+          577.0355,
+          550.3691
+        ]
+      },
+      "annex_node_id": "ib:p721:r15",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Region XIII - Caraga",
+      "role": "region_control",
+      "co_php": 938200000,
+      "total_php": 938200000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 138,
+        "printed_page": 128,
+        "bbox": [
+          78.1074,
+          562.2017,
+          592.9882,
+          573.3166
+        ],
+        "co_token_bbox": [
+          470.8513,
+          562.5359,
+          504.0714,
+          573.3166
+        ],
+        "total_token_bbox": [
+          543.8154,
+          562.5359,
+          577.0355,
+          573.3166
+        ]
+      },
+      "annex_node_id": "ib:p723:r12",
+      "difference_php": 0,
+      "passed": true
+    },
+    {
+      "label": "Regional Field Unit - XIII",
+      "role": "office_control_echo",
+      "co_php": 938200000,
+      "total_php": 938200000,
+      "source": {
+        "source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
+        "pdf_page": 138,
+        "printed_page": 128,
+        "bbox": [
+          91.2521,
+          585.1492,
+          592.9882,
+          596.2641
+        ],
+        "co_token_bbox": [
+          470.8513,
+          585.4835,
+          504.0714,
+          596.2641
+        ],
+        "total_token_bbox": [
+          543.8154,
+          585.4835,
+          577.0355,
+          596.2641
+        ]
+      },
+      "annex_node_id": "ib:p723:r12",
+      "difference_php": 0,
+      "passed": true
+    }
+  ],
+  "repeated_title_groups": [
+    {
+      "title": "Construction of Sitio Santiago to Sitio Gumpay, Brgy. Gabon to Brgy. Laon FMR, Brgy. Gabon, Abucay, Bataan",
+      "project_ids": [
+        "ib:p684:r5",
+        "ib:p684:r7"
+      ]
+    },
+    {
+      "title": "Construction of Sitio Ogpoy - Sitio Ariada, Brgy. Alangan FMR, Brgy. Alangan, Limay, Bataan",
+      "project_ids": [
+        "ib:p688:r9",
+        "ib:p689:r2"
+      ]
+    },
+    {
+      "title": "Construction of Brgy. Banyaga FMR, Brgy. Banyaga, Agoncillo, Batangas",
+      "project_ids": [
+        "ib:p695:r13",
+        "ib:p696:r6"
+      ]
+    },
+    {
+      "title": "Concreting of Brgy. Balibago FMR, Brgy. Balibago, Lobo, Batangas",
+      "project_ids": [
+        "ib:p698:r6",
+        "ib:p698:r10"
+      ]
+    }
+  ],
+  "source_evidence": {
+    "method": "native words assigned by centres to page-specific ruled cells",
+    "all_rows_individually_image_reviewed": false,
+    "geographic_coordinates_certified": false,
+    "comparison_ready": false
+  }
+}

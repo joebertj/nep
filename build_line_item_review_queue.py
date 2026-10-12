@@ -31,6 +31,12 @@ def build():
     ids = [r['hgab_id'] for r in rows]
     if len(set(ids)) != len(ids):
         raise ValueError('Repeated HGAB occurrence IDs cannot be ranked independently')
+    cost_source = OUT / 'cost_per_km.json'
+    cost_data = json.loads(cost_source.read_text())
+    source_hash = hashlib.sha256(source.read_bytes()).hexdigest()
+    if not any(s['file'] == source.name and s['sha256'] == source_hash for s in cost_data['sources']):
+        raise ValueError('Rebuild cost-per-meter data before ranking: HGAB source hash differs')
+    lengths = {r['id']: r for r in cost_data['projects']}
     prior26, prior25 = previous_rows()
     history = defaultdict(list)
     for year, records in [(2026, prior26), (2025, prior25)]:
@@ -48,6 +54,23 @@ def build():
             continue  # Foreign-assisted schedules have a separate comparison.
         title = row['projectName']
         flags = []
+        length = lengths.get(row['hgab_id'])
+        cautions = []
+        if length:
+            if length['projectName'] != title or length['amountPesos'] != row['amountPesos']:
+                raise ValueError('Cost-per-meter occurrence disagrees with native HGAB row')
+            if length['lengthMeters'] is None:
+                cautions.append('No usable extracted length; cannot calculate a defensible stated-meter rate. This is an evidence gap, not an extra ranking point.')
+            elif length['lengthMeters'] < 10:
+                cautions.append(f'Printed range implies {length["lengthMeters"]:g} meters; verify source notation and funded extent before interpreting a rate. No high-rate point awarded.')
+            elif length['highRateCandidate']:
+                flags.append({'id': 'high_meter_rate', 'label': 'High allocation per stated meter',
+                              'evidence': f'₱{length["allocationPerStatedMeter"]:,.2f}/stated meter; {length["peerRateMultiple"]:g}× the ₱{length["typicalPeerRate"]:,.2f} peer median among {length["peerRecords"]} same-category, same-PAP, same-length-band records ({length["peerBand"]}). Exceeds both 2× median and Q3 + 1.5× IQR; funded scope and quantities unverified.',
+                              'summaryFinding': 'cost-per-km'})
+                if length['graphExtreme']:
+                    cautions.append('Extreme rate excluded from rate charts; retained here for denominator and scope review. Not verified overpricing.')
+            elif length['typicalPeerRate'] is None:
+                cautions.append('Insufficient comparable peers; no high-rate conclusion or point.')
         if row['comparison'] == UNMATCHED:
             flags.append({'id': 'insertion', 'label': 'Potential HGAB insertion',
                           'evidence': 'No plausible NEP counterpart identified by current native matching; original-page review required.'})
@@ -85,6 +108,8 @@ def build():
         ranked.append({'hgabId': row['hgab_id'], 'projectName': title, 'program': row['pap3'],
                        'office': row['office'], 'region': row['region'], 'amountPesos': row['amountPesos'],
                        'flagCount': len(flags), 'flags': flags, 'historicalMatches': matches,
+                       'evidenceCautions': cautions,
+                       'lengthReview': ({k: length.get(k) for k in ['category', 'lengthMeters', 'lengthStatus', 'lengthMethod', 'allocationPerStatedMeter', 'typicalPeerRate', 'peerRateMultiple', 'peerRecords', 'peerBand', 'highRateCandidate', 'graphExtreme']} if length else None),
                        'sourceVolume': row['sourceVolume'], 'sourcePage': row['sourcePage'],
                        'nepStatus': row['comparison'], 'representatives': names.get('representatives', []),
                        'districts': names.get('districts', [])})
@@ -92,6 +117,7 @@ def build():
     for i, row in enumerate(ranked, 1):
         row['rank'] = i
     sources = [source, OUT / 'congress_geographic_attribution_db_3rd.json',
+               cost_source,
                ROOT.parent / 'open-data-visualization/data/parquet/parsed_dpwh_2026.parquet',
                ROOT.parent / 'open-data-visualization/data/parquet/budget_2025.parquet',
                ROOT / 'location_data/philippine_locations.sqlite']
@@ -102,6 +128,9 @@ def build():
                          'historicalYears': [2025, 2026],
                          'historicalMatch': 'Identical full normalized title after complete trailing metadata removal; same qualified municipality/province; direction/location/tranche conflict and disjoint stated chainage excluded.',
                          'weights': 'One point per flag type. Multiple historical years do not add points.',
+                         'highMeterRate': cost_data['highRateScreen']['method'],
+                         'evidenceGaps': 'Missing length, sub-10m printed ranges and insufficient peers are cautions, not points. Extreme rates require denominator/scope review and are omitted from rate charts.',
+                         'summaryCoverage': 'Nine summary findings are not nine independent line-item flags. RCS equal amounts use the amount-group flag; MPB is a program scope; INSPIRE is outside this DPWH queue. Length gaps and very short printed ranges are evidence cautions. Historical recurrence and overlap support the repeat finding.',
                          'dependence': 'Historical recurrence and chainage overlap are related indicators; scores are descriptive triage, not independent evidence or probabilities.',
                          'limitations': ['Uniform packages can be legitimate. Exact appropriation amounts are not unit costs.',
                                         'Strict historical matching misses paraphrased titles and unresolved locations; no flag means insufficient evidence, not clearance.',
@@ -109,6 +138,7 @@ def build():
                                         'Matching/parser errors can produce insertion flags. Top 25 overlap other findings; do not sum them as losses.',
                                         'Current office, representative, role and party do not contribute any points.']},
               'summary': {'sourceOccurrences': len(rows), 'flaggedOccurrences': len(ranked),
+                          'flagTypes': dict(Counter(f['id'] for r in ranked for f in r['flags'])),
                           'flagCountDistribution': dict(Counter(r['flagCount'] for r in ranked)),
                           'top25Occurrences': min(25, len(ranked))},
               'top25': ranked[:25], 'rankedOccurrences': ranked,
@@ -132,11 +162,22 @@ def render(data, table, esc):
         evidence = ' | '.join(f['label'] + ': ' + f['evidence'] for f in row['flags'])
         history = ' | '.join(f'GAA {m["year"]}: {m["title"]} · ₱{m["amountPesos"]:,} · {m["source"]}' + (f' · overlap {m["chainage"]["chainage_overlap"]}' if m['chainage']['overlaps'] else '') for m in row['historicalMatches'])
         rendered.append([row['rank'], row['projectName'], row['program'], row['office'], row['flagCount'],
-                         row['amountPesos'], evidence, history or 'No qualifying historical title link established',
+                         row['amountPesos'], evidence, ' | '.join(row['evidenceCautions']) or 'No additional length caution from this screen; source and scope review still required', history or 'No qualifying historical title link established',
                          row['sourceVolume'] + ' · p. ' + row['sourcePage']])
-    body = '<p>One row per domestic DPWH HGAB 3rd-reading allocation occurrence. More qualifying screening flags rank first; larger allocation breaks ties. This is an investigation queue, not a finding of wrongdoing. Other agency schedules do not yet have equivalent combined screen coverage.</p>'
-    body += graph + table(['Rank', 'HGAB project', 'Program', 'Implementing office', 'Screening flags', 'HGAB allocation pesos', 'Flag evidence', 'Historical counterpart evidence', 'HGAB source'], rendered)
+    body = '<p>One row per domestic DPWH HGAB 3rd-reading allocation occurrence. Five reproducible flag types now include the cost-per-meter screen. More qualifying flags rank first; larger allocation breaks ties. The nine summary findings are broader investigative themes, not nine points available to every project. Missing or suspect lengths are shown as evidence cautions. This is an investigation queue, not a finding of wrongdoing. Other agency schedules do not yet have equivalent combined screen coverage.</p>'
+    body += graph + table(['Rank', 'HGAB project', 'Program', 'Implementing office', 'Screening flags', 'HGAB allocation pesos', 'Flag evidence', 'Evidence cautions · no extra points', 'Historical counterpart evidence', 'HGAB source'], rendered)
     body += '<h3>How the ranking is calculated</h3><ol><li><strong>Potential insertion:</strong> the current matcher identifies no plausible NEP counterpart; ambiguous links and FAPs are excluded from this flag.</li><li><strong>Repeated allocation amount:</strong> the same exact positive amount occurs in the same PAP at least 10 times across at least 3 named implementing offices. This includes amounts such as ₱5M when the group qualifies; roundness alone adds no point.</li><li><strong>Historical title recurrence:</strong> a FY2025 or FY2026 GAA title agrees after case/punctuation normalization and removal of complete trailing station/coordinate metadata. A matching qualified municipality and province is required. Work descriptions, directions, packages and phases remain. Conflicting locations/tranches and disjoint stated chainages are excluded.</li><li><strong>Historical chainage overlap:</strong> an accepted historical counterpart has explicit, positive-length overlap of stated construction ranges. This adds one scope indicator, not proof of duplicate paid work.</li></ol><p>Each type contributes one point; multiple historical years do not increase the score. Historical recurrence and chainage overlap are related signals, so the count is not a statistical probability or independent-evidence score. Exact ranking ties use the source occurrence ID. Missing historical links can reflect conservative matching, incomplete local coverage or unresolved names.</p><p>Standard packages, phased work and legitimate amendments can produce these signals. Names, roles and party affiliations add no points. Input hashes and all ranked rows are available in <a href="line-item-review-queue.json" download>the full ranking JSON</a>. The CSV exports all 25 displayed rows with their evidence. Amounts overlap the findings above; do not add them as alleged losses.</p>'
+    body += '<h3>New cost-per-meter flag</h3><p>One additional point when allocation per stated meter exceeds both twice the peer median and Q3 + 1.5 × IQR. Peers share the work category, exact official PAP and a data-derived length band, with at least 20 records whose stated lengths are at least 10 meters. No fixed 100-meter cutoff is used. Extreme rates remain in this review table with a caution but are excluded from rate charts. Missing lengths, sub-10-meter printed ranges and insufficient peers add no point. This flag does not establish overpricing: width, terrain, structures, quantities and funded extent remain unverified. <a href="cost-per-km.html#length-density-groups">See full rate and grouping methodology</a>.</p>'
+    body += '<h3>How all nine summary findings relate to this queue</h3>' + table(['Summary finding', 'Treatment in the line-item ranking'], [
+        ['1 · Equal RCS packages', 'Repeated-amount flag if its existing thresholds qualify; no extra point for belonging to RCS. Needs weighting requires installation evidence.'],
+        ['2 · HGAB insertion candidates', 'Potential-insertion flag; matching uncertainty remains explicit.'],
+        ['3 · Multi-purpose buildings', 'MPB records qualify through the same flags as other work. Program membership earns no point.'],
+        ['4 · Recurring project titles', 'Historical title recurrence and explicit chainage overlap; related indicators, not independent evidence.'],
+        ['5 · Allocation clustering', 'Repeated-amount flag. The office-level road/flood association is not an additional individual-project flag.'],
+        ['6 · INSPIRE', 'Outside this domestic DPWH queue; investigated on its own agency page.'],
+        ['7 · Length and chainage gaps', 'Evidence caution only; no rate inferred and no ranking point for missing information.'],
+        ['8 · Allocation per stated meter', 'High relative-rate flag using category, PAP and length-band peers.'],
+        ['9 · Very short printed ranges', 'Evidence caution for sub-10-meter ranges; verify denominator before a high-rate conclusion. Shortness alone earns no point.']])
     return body
 
 

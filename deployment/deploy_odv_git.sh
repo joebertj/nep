@@ -117,7 +117,16 @@ files=(
   static/nep-preview/cost-per-km-data.json
   static/nep-preview/short-segment-audit.json
   static/nep-preview/length-density-groups.json
+  static/nep-preview/meter-rates-2026-comparison.json
   static/nep-preview/line-item-review-queue.json
+  static/nep-preview/within-stage-repeats.json
+  static/nep-preview/repeats.html
+  static/nep-preview/fmr-data.json
+  static/nep-preview/fmr-annex-equivalence.json
+  static/nep-preview/fmr-historical-repeats.json
+  static/nep-preview/fmr-historical-nep-2nd.json
+  static/nep-preview/nep-agency-baselines.json
+  static/nep-preview/nep-agency-stage-controls.json
 )
 health_files=(
   static/nep-preview/congress-benchmark.json
@@ -158,7 +167,16 @@ health_files=(
   static/nep-preview/cost-per-km-data.json
   static/nep-preview/short-segment-audit.json
   static/nep-preview/length-density-groups.json
+  static/nep-preview/meter-rates-2026-comparison.json
   static/nep-preview/line-item-review-queue.json
+  static/nep-preview/within-stage-repeats.json
+  static/nep-preview/repeats.html
+  static/nep-preview/fmr-data.json
+  static/nep-preview/fmr-annex-equivalence.json
+  static/nep-preview/fmr-historical-repeats.json
+  static/nep-preview/fmr-historical-nep-2nd.json
+  static/nep-preview/nep-agency-baselines.json
+  static/nep-preview/nep-agency-stage-controls.json
 )
 
 if [[ "$(git -C "$r" branch --show-current)" != "main" ]]; then

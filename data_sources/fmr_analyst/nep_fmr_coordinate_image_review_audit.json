@@ -1,0 +1,2134 @@
+{
+  "metadata": {
+    "schema_version": 1,
+    "source_tree": "data/nep_fmr_tree.json",
+    "source_tree_sha256": "182b67acb063cc0c3501bcbb2f56f0b8e2014105ecae2df3c1a87c4372cb3e62",
+    "source_pdf_sha256": "07355c115f45a84771b8a8ac22711992ea695ea28f0c9c1b2c71879d4a6dc4ba",
+    "normalizer_sha256": "a7d92f76928375297454b24801ce946caaff0bafdb8f2bd1fdd00f9ce9e26170",
+    "image_review_manifest": "nep_fmr_coordinate_reviews.json",
+    "image_review_manifest_sha256": "a7c0af67ccbced9c740bdec51046f8015ff6e26252a8b0196219075449548706",
+    "ocr_corrections": "exact rendered-cell transcription edits in derived coordinates_interpreted; original coordinates_raw and point source fragments remain immutable",
+    "coordinate_unit": "decimal degrees",
+    "coordinate_column_order": "longitude, latitude",
+    "coordinate_structure": "project.coordinates is an array of segments; each segment is an array of [longitude, latitude] pairs; unavailable points are null",
+    "source_crs": "not stated in the source; no datum transformation applied",
+    "scalar_project_columns": "filled only for one segment; multi-section endpoints remain in segment rows",
+    "amounts": "project CSV only; no allocation duplicated in point/segment CSVs",
+    "numeric_repair_candidates": "published with review flags, not accepted as verified source corrections"
+  },
+  "passed": true,
+  "summary": {
+    "reviewed_projects": 23,
+    "ocr_corrected_projects": 16,
+    "resolved_projects": 15,
+    "remaining_source_anomaly_projects": 8,
+    "hgab_context_rows": 19
+  },
+  "reviews": [
+    {
+      "project_id": "nep_fmr:p1:r7",
+      "title": "Construction of Brgy. Escoda - Brgy. Elizabeth FMR, Brgy. Escoda and Brgy. Elizabeth, Marcos, Ilocos Norte",
+      "review": {
+        "project_id": "nep_fmr:p1:r7",
+        "title": "Construction of Brgy. Escoda - Brgy. Elizabeth FMR, Brgy. Escoda and Brgy. Elizabeth, Marcos, Ilocos Norte",
+        "source": {
+          "source_pdf": "dbm-other-nep-line-data/FMR.pdf",
+          "row_id": "nep_fmr:p1:r7",
+          "pdf_page": 1,
+          "printed_page": 1511,
+          "table_row": 7,
+          "bbox": [
+            110.8208,
+            241.5,
+            606.4882,
+            295.4639
+          ],
+          "amount_cell_bbox": [
+            504.2402,
+            241.5,
+            606.4882,
+            295.4639
+          ]
+        },
+        "coordinates_raw": "START: 17.00918, 120.7245783\nEND: 17.9980347, 120.732015",
+        "coordinates_reviewed": "START: 17.00918, 120.7245783\nEND: 17.9980347, 120.732015",
+        "text_edits": [],
+        "finding": "printed_source_anomaly",
+        "note": "Image prints START latitude 17.00918 and END 17.9980347. The long distance is a printed-source finding also present in HGAB; no latitude replacement is established.",
+        "reviewed_date": "2026-10-12",
+        "review_method": "manual rendered NEP cell inspection at 216 dpi",
+        "rendered_evidence": {
+          "path": "data/nep_fmr_coordinate_review_images/nep_fmr_p1_r7.png",
+          "clip_bbox": [
+            108.8208,
+            239.5,
+            608.4882,
+            297.4639
+          ],
+          "scale": 3,
+          "sha256": "3995c92629532fc7668ea65c20581905f153e77f13dcee0ea79c1b9cb3d34f28"
+        },
+        "initial_review_flags": [
+          "endpoint_distance_over_100_km"
+        ],
+        "hgab_context": {
+          "project_id": "ib:p667:r7",
+          "title": "Construction of Brgy. Escoda - Brgy. Elizabeth FMR, Brgy. Escoda and Brgy. Elizabeth, Marcos, Ilocos Norte",
+          "coordinates_raw": "START: 17.00918, 120.7245783\nEND: 17.9980347, 120.732015",
+          "status": "needs_review",
+          "review_flags": [
+            "endpoint_distance_over_100_km"
+          ],
+          "source": {
+            "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
+            "row_id": "ib:p667:r7",
+            "pdf_page": 667,
+            "printed_page": 651,
+            "table_row": 7,
+            "bbox": [
+              64.0354,
+              238.6473,
+              595.8159,
+              287.9956
+            ],
+            "amount_cell_bbox": [
+              485.2928,
+              238.6473,
+              595.8159,
+              287.9956
+            ]
+          },
+          "basis": "reviewed title/location and coordinate agreement; contextual row correspondence, not a complete NEP/HGAB identity match"
+        }
+      },
+      "status_after_review": "needs_review",
+      "review_flags_after_review": [
+        "endpoint_distance_over_100_km"
+      ],
+      "coordinates_after_review": [
+        [
+          [
+            120.7245783,
+            17.00918
+          ],
+          [
+            120.732015,
+            17.9980347
+          ]
+        ]
+      ]
+    },
+    {
+      "project_id": "nep_fmr:p1:r17",
+      "title": "Construction of Brgy. Buenlag FMR, Brgy. Buenlag, Mangatarem, Pangasinan",
+      "review": {
+        "project_id": "nep_fmr:p1:r17",
+        "title": "Construction of Brgy. Buenlag FMR, Brgy. Buenlag, Mangatarem, Pangasinan",
+        "source": {
+          "source_pdf": "dbm-other-nep-line-data/FMR.pdf",
+          "row_id": "nep_fmr:p1:r17",
+          "pdf_page": 1,
+          "printed_page": 1511,
+          "table_row": 17,
+          "bbox": [
+            110.8208,
+            699.0465,
+            606.4882,
+            741.453
+          ],
+          "amount_cell_bbox": [
+            504.2402,
+            699.0465,
+            606.4882,
+            741.453
+          ]
+        },
+        "coordinates_raw": "START: 15.8047319, 120.2548345\n:\nEND: 15.8050199, 120.2610412",
+        "coordinates_reviewed": "START: 15.8047319, 120.2548345\nEND: 15.8050199, 120.2610412",
+        "text_edits": [
+          {
+            "raw": "\n:\n",
+            "reviewed": "\n",
+            "occurrences": 1
+          }
+        ],
+        "finding": "ocr_transcription_error",
+        "note": "Rendered NEP cell confirms the reviewed punctuation/section transcription; only OCR text is corrected in the derived layer.",
+        "reviewed_date": "2026-10-12",
+        "review_method": "manual rendered NEP cell inspection at 216 dpi",
+        "rendered_evidence": {
+          "path": "data/nep_fmr_coordinate_review_images/nep_fmr_p1_r17.png",
+          "clip_bbox": [
+            108.8208,
+            697.0465,
+            608.4882,
+            743.453
+          ],
+          "scale": 3,
+          "sha256": "56d7f480bfdbe362b14bb1f195b688bdec35a01f72c00ffdfedb03e0cc09f52b"
+        },
+        "initial_review_flags": [
+          "unparsed_coordinate_fragment"
+        ],
+        "hgab_context": {
+          "project_id": "ib:p667:r14",
+          "title": "Construction of Brgy. Buenlag FMR, Brgy. Buenlag, Mangatarem, Pangasinan",
+          "coordinates_raw": "START: 15.8047319, 120.2548345\nEND: 15.8050199, 120.2610412",
+          "status": "normalized",
+          "review_flags": [],
+          "source": {
+            "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
+            "row_id": "ib:p667:r14",
+            "pdf_page": 667,
+            "printed_page": 651,
+            "table_row": 14,
+            "bbox": [
+              64.0354,
+              522.307,
+              595.8159,
+              559.2904
+            ],
+            "amount_cell_bbox": [
+              485.2928,
+              522.307,
+              595.8159,
+              559.2904
+            ]
+          },
+          "basis": "reviewed title/location and coordinate agreement; contextual row correspondence, not a complete NEP/HGAB identity match"
+        }
+      },
+      "status_after_review": "normalized",
+      "review_flags_after_review": [],
+      "coordinates_after_review": [
+        [
+          [
+            120.2548345,
+            15.8047319
+          ],
+          [
+            120.2610412,
+            15.8050199
+          ]
+        ]
+      ]
+    },
+    {
+      "project_id": "nep_fmr:p4:r13",
+      "title": "Construction of Brgy. 41 Balacad FMR, Laoag City, Ilocos Norte",
+      "review": {
+        "project_id": "nep_fmr:p4:r13",
+        "title": "Construction of Brgy. 41 Balacad FMR, Laoag City, Ilocos Norte",
+        "source": {
+          "source_pdf": "dbm-other-nep-line-data/FMR.pdf",
+          "row_id": "nep_fmr:p4:r13",
+          "pdf_page": 4,
+          "printed_page": 1514,
+          "table_row": 13,
+          "bbox": [
+            103.1868,
+            575.5177,
+            596.4145,
+            619.7536
+          ],
+          "amount_cell_bbox": [
+            494.6895,
+            575.5177,
+            596.4145,
+            619.7536
+          ]
+        },
+        "coordinates_raw": "START: 120.540087, 18.152453\nEND: 120.153581, 120.53601",
+        "coordinates_reviewed": "START: 120.540087, 18.152453\nEND: 120.153581, 120.53601",
+        "text_edits": [],
+        "finding": "printed_source_anomaly",
+        "note": "Image prints END 120.153581, 120.53601: neither value can be latitude. HGAB repeats the same pair. START order can be normalized; END remains unavailable.",
+        "reviewed_date": "2026-10-12",
+        "review_method": "manual rendered NEP cell inspection at 216 dpi",
+        "rendered_evidence": {
+          "path": "data/nep_fmr_coordinate_review_images/nep_fmr_p4_r13.png",
+          "clip_bbox": [
+            101.1868,
+            573.5177,
+            598.4145,
+            621.7536
+          ],
+          "scale": 3,
+          "sha256": "d301f3b679f2abcc708bfeb91a811e6f7936e1a2e1f7fd2c7a0c2ba1a614663b"
+        },
+        "initial_review_flags": [
+          "invalid_coordinate_pair"
+        ],
+        "hgab_context": {
+          "project_id": "ib:p670:r4",
+          "title": "Construction of Brgy. 41 Balacad FMR, Laoag City, Ilocos Norte",
+          "coordinates_raw": "START: 120.540087, 18.152453\nEND: 120.153581, 120.53601",
+          "status": "needs_review",
+          "review_flags": [
+            "invalid_coordinate_pair"
+          ],
+          "source": {
+            "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
+            "row_id": "ib:p670:r4",
+            "pdf_page": 670,
+            "printed_page": 654,
+            "table_row": 4,
+            "bbox": [
+              50.5354,
+              166.8983,
+              582.3159,
+              203.8817
+            ],
+            "amount_cell_bbox": [
+              471.7929,
+              166.8983,
+              582.3159,
+              203.8817
+            ]
+          },
+          "basis": "reviewed title/location and coordinate agreement; contextual row correspondence, not a complete NEP/HGAB identity match"
+        }
+      },
+      "status_after_review": "needs_review",
+      "review_flags_after_review": [
+        "invalid_coordinate_pair"
+      ],
+      "coordinates_after_review": [
+        [
+          [
+            120.540087,
+            18.152453
+          ],
+          null
+        ]
+      ]
+    },
+    {
+      "project_id": "nep_fmr:p11:r11",
+      "title": "Construction of Brgy. Buyon FMR, Brgy. Buyon, Cauayan City, Isabela",
+      "review": {
+        "project_id": "nep_fmr:p11:r11",
+        "title": "Construction of Brgy. Buyon FMR, Brgy. Buyon, Cauayan City, Isabela",
+        "source": {
+          "source_pdf": "dbm-other-nep-line-data/FMR.pdf",
+          "row_id": "nep_fmr:p11:r11",
+          "pdf_page": 11,
+          "printed_page": 1521,
+          "table_row": 11,
+          "bbox": [
+            110.9116,
+            502.2237,
+            606.4129,
+            544.5
+          ],
+          "amount_cell_bbox": [
+            504.2179,
+            502.2237,
+            606.4129,
+            544.5
+          ]
+        },
+        "coordinates_raw": "START: 16.851721, 121.879510\nEND: 18.826792, 121.879302",
+        "coordinates_reviewed": "START: 16.851721, 121.879510\nEND: 18.826792, 121.879302",
+        "text_edits": [],
+        "finding": "printed_source_anomaly",
+        "note": "Image prints END latitude 18.826792 against START 16.851721. HGAB repeats it; the >100 km screen remains.",
+        "reviewed_date": "2026-10-12",
+        "review_method": "manual rendered NEP cell inspection at 216 dpi",
+        "rendered_evidence": {
+          "path": "data/nep_fmr_coordinate_review_images/nep_fmr_p11_r11.png",
+          "clip_bbox": [
+            108.9116,
+            500.2237,
+            608.4129,
+            546.5
+          ],
+          "scale": 3,
+          "sha256": "31604098c41acfd196fbe79f8dbfd94f5b7a034d4c53d128885e610345be5ffc"
+        },
+        "initial_review_flags": [
+          "endpoint_distance_over_100_km"
+        ],
+        "hgab_context": {
+          "project_id": "ib:p677:r5",
+          "title": "Construction of Brgy. Buyon FMR, Brgy. Buyon, Cauayan City, Isabela",
+          "coordinates_raw": "START: 16.851721, 121.879510\nEND: 18.826792, 121.879302",
+          "status": "needs_review",
+          "review_flags": [
+            "endpoint_distance_over_100_km"
+          ],
+          "source": {
+            "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
+            "row_id": "ib:p677:r5",
+            "pdf_page": 677,
+            "printed_page": 661,
+            "table_row": 5,
+            "bbox": [
+              64.0354,
+              191.5167,
+              595.8159,
+              228.5001
+            ],
+            "amount_cell_bbox": [
+              485.2928,
+              191.5167,
+              595.8159,
+              228.5001
+            ]
+          },
+          "basis": "reviewed title/location and coordinate agreement; contextual row correspondence, not a complete NEP/HGAB identity match"
+        }
+      },
+      "status_after_review": "needs_review",
+      "review_flags_after_review": [
+        "endpoint_distance_over_100_km"
+      ],
+      "coordinates_after_review": [
+        [
+          [
+            121.87951,
+            16.851721
+          ],
+          [
+            121.879302,
+            18.826792
+          ]
+        ]
+      ]
+    },
+    {
+      "project_id": "nep_fmr:p12:r4",
+      "title": "Construction of Brgy. Disimuray to Casalatan FMR, Brgy. Disimuray, Cauayan City, Isabela",
+      "review": {
+        "project_id": "nep_fmr:p12:r4",
+        "title": "Construction of Brgy. Disimuray to Casalatan FMR, Brgy. Disimuray, Cauayan City, Isabela",
+        "source": {
+          "source_pdf": "dbm-other-nep-line-data/FMR.pdf",
+          "row_id": "nep_fmr:p12:r4",
+          "pdf_page": 12,
+          "printed_page": 1522,
+          "table_row": 4,
+          "bbox": [
+            101.9736,
+            174.7059,
+            597.4759,
+            217.7012
+          ],
+          "amount_cell_bbox": [
+            495.2665,
+            174.7059,
+            597.4759,
+            217.7012
+          ]
+        },
+        "coordinates_raw": "START: 16.890453, 121.888710\n|END: 16.891079, 121.871920",
+        "coordinates_reviewed": "START: 16.890453, 121.888710\nEND: 16.891079, 121.871920",
+        "text_edits": [
+          {
+            "raw": "\n|END:",
+            "reviewed": "\nEND:",
+            "occurrences": 1
+          }
+        ],
+        "finding": "ocr_transcription_error",
+        "note": "Rendered NEP cell confirms the reviewed punctuation/section transcription; only OCR text is corrected in the derived layer.",
+        "reviewed_date": "2026-10-12",
+        "review_method": "manual rendered NEP cell inspection at 216 dpi",
+        "rendered_evidence": {
+          "path": "data/nep_fmr_coordinate_review_images/nep_fmr_p12_r4.png",
+          "clip_bbox": [
+            99.9736,
+            172.7059,
+            599.4759,
+            219.7012
+          ],
+          "scale": 3,
+          "sha256": "ee06d48ad2950536f41498117d14434186fa40a0def2168f4c826411a982b880"
+        },
+        "initial_review_flags": [
+          "unparsed_coordinate_fragment"
+        ],
+        "hgab_context": {
+          "project_id": "ib:p677:r13",
+          "title": "Construction of Brgy. Disimuray to Casalatan FMR, Brgy. Disimuray, Cauayan City, Isabela",
+          "coordinates_raw": "START: 16.890453, 121.888710\nEND: 16.891079, 121.871920",
+          "status": "normalized",
+          "review_flags": [],
+          "source": {
+            "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
+            "row_id": "ib:p677:r13",
+            "pdf_page": 677,
+            "printed_page": 661,
+            "table_row": 13,
+            "bbox": [
+              64.0354,
+              549.2545,
+              595.8159,
+              586.2379
+            ],
+            "amount_cell_bbox": [
+              485.2928,
+              549.2545,
+              595.8159,
+              586.2379
+            ]
+          },
+          "basis": "reviewed title/location and coordinate agreement; contextual row correspondence, not a complete NEP/HGAB identity match"
+        }
+      },
+      "status_after_review": "normalized",
+      "review_flags_after_review": [],
+      "coordinates_after_review": [
+        [
+          [
+            121.88871,
+            16.890453
+          ],
+          [
+            121.87192,
+            16.891079
+          ]
+        ]
+      ]
+    },
+    {
+      "project_id": "nep_fmr:p18:r15",
+      "title": "Construction of Brgy. Tampac I FMR, Brgy. Tampac I, Guimba, Nueva Ecija",
+      "review": {
+        "project_id": "nep_fmr:p18:r15",
+        "title": "Construction of Brgy. Tampac I FMR, Brgy. Tampac I, Guimba, Nueva Ecija",
+        "source": {
+          "source_pdf": "dbm-other-nep-line-data/FMR.pdf",
+          "row_id": "nep_fmr:p18:r15",
+          "pdf_page": 18,
+          "printed_page": 1528,
+          "table_row": 15,
+          "bbox": [
+            102.1897,
+            676.7173,
+            597.6971,
+            718.0
+          ],
+          "amount_cell_bbox": [
+            495.4808,
+            676.7173,
+            597.6971,
+            718.0
+          ]
+        },
+        "coordinates_raw": "START: 15.6352648, 120.7972783\nEND: 15.6377206, 129.8030109",
+        "coordinates_reviewed": "START: 15.6352648, 120.7972783\nEND: 15.6377206, 129.8030109",
+        "text_edits": [],
+        "finding": "printed_source_anomaly",
+        "note": "Image prints END longitude 129.8030109. HGAB repeats it; orientation and distance flags remain.",
+        "reviewed_date": "2026-10-12",
+        "review_method": "manual rendered NEP cell inspection at 216 dpi",
+        "rendered_evidence": {
+          "path": "data/nep_fmr_coordinate_review_images/nep_fmr_p18_r15.png",
+          "clip_bbox": [
+            100.1897,
+            674.7173,
+            599.6971,
+            720.0
+          ],
+          "scale": 3,
+          "sha256": "247cdfcb1cd184681440af3189e84fba8b97d0518dfbe1893c3d3dc326d6cbad"
+        },
+        "initial_review_flags": [
+          "endpoint_distance_over_100_km",
+          "outside_philippines_orientation_bounds"
+        ],
+        "hgab_context": {
+          "project_id": "ib:p685:r5",
+          "title": "Construction of Brgy. Tampac I FMR, Brgy. Tampac I, Guimba, Nueva Ecija",
+          "coordinates_raw": "START: 15.6352648, 120.7972783\nEND: 15.6377206, 129.8030109",
+          "status": "needs_review",
+          "review_flags": [
+            "endpoint_distance_over_100_km",
+            "outside_philippines_orientation_bounds"
+          ],
+          "source": {
+            "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
+            "row_id": "ib:p685:r5",
+            "pdf_page": 685,
+            "printed_page": 669,
+            "table_row": 5,
+            "bbox": [
+              64.0354,
+              191.5167,
+              595.8159,
+              228.5001
+            ],
+            "amount_cell_bbox": [
+              485.2928,
+              191.5167,
+              595.8159,
+              228.5001
+            ]
+          },
+          "basis": "reviewed title/location and coordinate agreement; contextual row correspondence, not a complete NEP/HGAB identity match"
+        }
+      },
+      "status_after_review": "needs_review",
+      "review_flags_after_review": [
+        "endpoint_distance_over_100_km",
+        "outside_philippines_orientation_bounds"
+      ],
+      "coordinates_after_review": [
+        [
+          [
+            120.7972783,
+            15.6352648
+          ],
+          [
+            129.8030109,
+            15.6377206
+          ]
+        ]
+      ]
+    },
+    {
+      "project_id": "nep_fmr:p20:r14",
+      "title": "Construction of Brgy. Valeriana FMR, Brgy. Valeriana, Zaragoza, Nueva Ecija",
+      "review": {
+        "project_id": "nep_fmr:p20:r14",
+        "title": "Construction of Brgy. Valeriana FMR, Brgy. Valeriana, Zaragoza, Nueva Ecija",
+        "source": {
+          "source_pdf": "dbm-other-nep-line-data/FMR.pdf",
+          "row_id": "nep_fmr:p20:r14",
+          "pdf_page": 20,
+          "printed_page": 1530,
+          "table_row": 14,
+          "bbox": [
+            102.226,
+            617.0,
+            597.7215,
+            661.475
+          ],
+          "amount_cell_bbox": [
+            495.5304,
+            617.0,
+            597.7215,
+            661.475
+          ]
+        },
+        "coordinates_raw": "START: 15°2426.21\"N 120°46'10.44\"E\nEND: 15°24'25.07\"N 120°45'44.83\"E",
+        "coordinates_reviewed": "START: 15°24'26.21\"N 120°46'10.44\"E\nEND: 15°24'25.07\"N 120°45'44.83\"E",
+        "text_edits": [
+          {
+            "raw": "15°2426.21",
+            "reviewed": "15°24'26.21",
+            "occurrences": 1
+          }
+        ],
+        "finding": "ocr_transcription_error",
+        "note": "Rendered NEP cell confirms the reviewed punctuation/section transcription; only OCR text is corrected in the derived layer.",
+        "reviewed_date": "2026-10-12",
+        "review_method": "manual rendered NEP cell inspection at 216 dpi",
+        "rendered_evidence": {
+          "path": "data/nep_fmr_coordinate_review_images/nep_fmr_p20_r14.png",
+          "clip_bbox": [
+            100.226,
+            615.0,
+            599.7215,
+            663.475
+          ],
+          "scale": 3,
+          "sha256": "72a2d5d2cf70ac6eb0fdd68d9954d7f8353cd41f4880e0c4c87771f0995c14e6"
+        },
+        "initial_review_flags": [
+          "unparsed_coordinate_fragment"
+        ],
+        "hgab_context": null
+      },
+      "status_after_review": "normalized",
+      "review_flags_after_review": [],
+      "coordinates_after_review": [
+        [
+          [
+            120.7695666667,
+            15.4072805556
+          ],
+          [
+            120.7624527778,
+            15.4069638889
+          ]
+        ]
+      ]
+    },
+    {
+      "project_id": "nep_fmr:p21:r10",
+      "title": "Construction of Brgy. Estrella FMR, Brgy. Estrella, Rizal, Nueva Ecija",
+      "review": {
+        "project_id": "nep_fmr:p21:r10",
+        "title": "Construction of Brgy. Estrella FMR, Brgy. Estrella, Rizal, Nueva Ecija",
+        "source": {
+          "source_pdf": "dbm-other-nep-line-data/FMR.pdf",
+          "row_id": "nep_fmr:p21:r10",
+          "pdf_page": 21,
+          "printed_page": 1531,
+          "table_row": 10,
+          "bbox": [
+            111.2235,
+            438.2479,
+            606.7226,
+            481.2411
+          ],
+          "amount_cell_bbox": [
+            504.5191,
+            438.2479,
+            606.7226,
+            481.2411
+          ]
+        },
+        "coordinates_raw": "START: 15.642379, 121.109276\nEND: 15.641148, 121.,120888",
+        "coordinates_reviewed": "START: 15.642379, 121.109276\nEND: 15.641148, 121.120888",
+        "text_edits": [
+          {
+            "raw": "121.,120888",
+            "reviewed": "121.120888",
+            "occurrences": 1
+          }
+        ],
+        "finding": "ocr_transcription_error",
+        "note": "Rendered NEP cell confirms the reviewed punctuation/section transcription; only OCR text is corrected in the derived layer.",
+        "reviewed_date": "2026-10-12",
+        "review_method": "manual rendered NEP cell inspection at 216 dpi",
+        "rendered_evidence": {
+          "path": "data/nep_fmr_coordinate_review_images/nep_fmr_p21_r10.png",
+          "clip_bbox": [
+            109.2235,
+            436.2479,
+            608.7226,
+            483.2411
+          ],
+          "scale": 3,
+          "sha256": "41946a21c21abeb35e4f0718e8220a3d1dce93d0880306028df276ab6ecb7722"
+        },
+        "initial_review_flags": [
+          "unparsed_coordinate_fragment"
+        ],
+        "hgab_context": {
+          "project_id": "ib:p687:r2",
+          "title": "Construction of Brgy. Estrella FMR, Brgy. Estrella, Rizal, Nueva Ecija",
+          "coordinates_raw": "START: 15.642379, 121.109276\nEND: 15.641148, 121.120888",
+          "status": "normalized",
+          "review_flags": [],
+          "source": {
+            "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
+            "row_id": "ib:p687:r2",
+            "pdf_page": 687,
+            "printed_page": 671,
+            "table_row": 2,
+            "bbox": [
+              64.0354,
+              68.1832,
+              595.8159,
+              105.1665
+            ],
+            "amount_cell_bbox": [
+              485.2928,
+              68.1832,
+              595.8159,
+              105.1665
+            ]
+          },
+          "basis": "reviewed title/location and coordinate agreement; contextual row correspondence, not a complete NEP/HGAB identity match"
+        }
+      },
+      "status_after_review": "normalized",
+      "review_flags_after_review": [],
+      "coordinates_after_review": [
+        [
+          [
+            121.109276,
+            15.642379
+          ],
+          [
+            121.120888,
+            15.641148
+          ]
+        ]
+      ]
+    },
+    {
+      "project_id": "nep_fmr:p24:r6",
+      "title": "Construction of Brgy. Sapangan FMR, Brgy. Sapangan, San Juan, Batangas",
+      "review": {
+        "project_id": "nep_fmr:p24:r6",
+        "title": "Construction of Brgy. Sapangan FMR, Brgy. Sapangan, San Juan, Batangas",
+        "source": {
+          "source_pdf": "dbm-other-nep-line-data/FMR.pdf",
+          "row_id": "nep_fmr:p24:r6",
+          "pdf_page": 24,
+          "printed_page": 1534,
+          "table_row": 6,
+          "bbox": [
+            102.4411,
+            259.4958,
+            597.8007,
+            328.9684
+          ],
+          "amount_cell_bbox": [
+            495.7569,
+            259.4958,
+            597.8007,
+            328.9684
+          ]
+        },
+        "coordinates_raw": "START: S1-13.7861519, 121.3636771\n$2-13.7059722, 121.3570456\nEND: S1-13.78862752, 121.3582386\n$2-13.7868393, 121.3552979",
+        "coordinates_reviewed": "START: S1-13.7861519, 121.3636771\nS2-13.7059722, 121.3570456\nEND: S1-13.78862752, 121.3582386\nS2-13.7868393, 121.3552979",
+        "text_edits": [
+          {
+            "raw": "$2-",
+            "reviewed": "S2-",
+            "occurrences": 2
+          }
+        ],
+        "finding": "ocr_transcription_error",
+        "note": "Rendered NEP cell confirms the reviewed punctuation/section transcription; only OCR text is corrected in the derived layer.",
+        "reviewed_date": "2026-10-12",
+        "review_method": "manual rendered NEP cell inspection at 216 dpi",
+        "rendered_evidence": {
+          "path": "data/nep_fmr_coordinate_review_images/nep_fmr_p24_r6.png",
+          "clip_bbox": [
+            100.4411,
+            257.4958,
+            599.8007,
+            330.9684
+          ],
+          "scale": 3,
+          "sha256": "92df4ce3b44c51ef4b3c921fe529fa9855b4b9c1381383cc09436cfee66e068d"
+        },
+        "initial_review_flags": [
+          "unparsed_coordinate_fragment"
+        ],
+        "hgab_context": {
+          "project_id": "ib:p692:r12",
+          "title": "Construction of Brgy. Sapangan FMR, Brgy. Sapangan, San Juan, Batangas",
+          "coordinates_raw": "START: S1-13.7861519, 121.3636771\nS2-13.7059722, 121.3570456\nEND: S1-13.78862752, 121.3582386\nS2-13.7868393, 121.3552979",
+          "status": "normalized",
+          "review_flags": [],
+          "source": {
+            "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
+            "row_id": "ib:p692:r12",
+            "pdf_page": 692,
+            "printed_page": 676,
+            "table_row": 12,
+            "bbox": [
+              50.5354,
+              499.9063,
+              582.3159,
+              561.6195
+            ],
+            "amount_cell_bbox": [
+              471.7929,
+              499.9063,
+              582.3159,
+              561.6195
+            ]
+          },
+          "basis": "reviewed title/location and coordinate agreement; contextual row correspondence, not a complete NEP/HGAB identity match"
+        }
+      },
+      "status_after_review": "normalized",
+      "review_flags_after_review": [],
+      "coordinates_after_review": [
+        [
+          [
+            121.3636771,
+            13.7861519
+          ],
+          [
+            121.3582386,
+            13.78862752
+          ]
+        ],
+        [
+          [
+            121.3570456,
+            13.7059722
+          ],
+          [
+            121.3552979,
+            13.7868393
+          ]
+        ]
+      ]
+    },
+    {
+      "project_id": "nep_fmr:p24:r10",
+      "title": "Construction of Brgy. Tagumpay FMR, Brgy. Tagumpay, Real, Quezon",
+      "review": {
+        "project_id": "nep_fmr:p24:r10",
+        "title": "Construction of Brgy. Tagumpay FMR, Brgy. Tagumpay, Real, Quezon",
+        "source": {
+          "source_pdf": "dbm-other-nep-line-data/FMR.pdf",
+          "row_id": "nep_fmr:p24:r10",
+          "pdf_page": 24,
+          "printed_page": 1534,
+          "table_row": 10,
+          "bbox": [
+            102.4411,
+            459.5,
+            597.8007,
+            503.9898
+          ],
+          "amount_cell_bbox": [
+            495.7569,
+            459.5,
+            597.8007,
+            503.9898
+          ]
+        },
+        "coordinates_raw": "START: S51-14.606378, 121.587138 S2-4.606488, 121.583412\nEND: S1- 4.606694, 121.583835 S2-14.606957, 121.579656",
+        "coordinates_reviewed": "START: S1-14.606378, 121.587138 S2-4.606488, 121.583412\nEND: S1- 4.606694, 121.583835 S2-14.606957, 121.579656",
+        "text_edits": [
+          {
+            "raw": "S51-",
+            "reviewed": "S1-",
+            "occurrences": 1
+          }
+        ],
+        "finding": "ocr_and_printed_source_anomaly",
+        "note": "Image prints section S1, not OCR S51. Its S2 START latitude 4.606488 and S1 END latitude 4.606694 are printed values, also present in HGAB. Restore section pairing while retaining those latitude anomalies.",
+        "reviewed_date": "2026-10-12",
+        "review_method": "manual rendered NEP cell inspection at 216 dpi",
+        "rendered_evidence": {
+          "path": "data/nep_fmr_coordinate_review_images/nep_fmr_p24_r10.png",
+          "clip_bbox": [
+            100.4411,
+            457.5,
+            599.8007,
+            505.9898
+          ],
+          "scale": 3,
+          "sha256": "140b65d345c9538227fb9969f79847259fb78cdbaa6438990b201ea100e08012"
+        },
+        "initial_review_flags": [
+          "endpoint_distance_over_100_km",
+          "missing_or_ambiguous_segment_endpoint"
+        ],
+        "hgab_context": {
+          "project_id": "ib:p692:r16",
+          "title": "Construction of Brgy. Tagumpay FMR, Brgy. Tagumpay, Real, Quezon",
+          "coordinates_raw": "START: S1-14.606378 121.587138,\nS2-4.606488 121.583412\nEND: S1- 4.606694 121.583835,\nS2-14.606957 121.579656",
+          "status": "needs_review",
+          "review_flags": [
+            "endpoint_distance_over_100_km"
+          ],
+          "source": {
+            "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
+            "row_id": "ib:p692:r16",
+            "pdf_page": 692,
+            "printed_page": 676,
+            "table_row": 16,
+            "bbox": [
+              50.5354,
+              672.5974,
+              582.3159,
+              734.3105
+            ],
+            "amount_cell_bbox": [
+              471.7929,
+              672.5974,
+              582.3159,
+              734.3105
+            ]
+          },
+          "basis": "reviewed title/location and coordinate agreement; contextual row correspondence, not a complete NEP/HGAB identity match"
+        }
+      },
+      "status_after_review": "needs_review",
+      "review_flags_after_review": [
+        "endpoint_distance_over_100_km"
+      ],
+      "coordinates_after_review": [
+        [
+          [
+            121.587138,
+            14.606378
+          ],
+          [
+            121.583835,
+            4.606694
+          ]
+        ],
+        [
+          [
+            121.583412,
+            4.606488
+          ],
+          [
+            121.579656,
+            14.606957
+          ]
+        ]
+      ]
+    },
+    {
+      "project_id": "nep_fmr:p25:r8",
+      "title": "Construction of Sitio Anilao to Brgy. Dambo FMR, Brgy. Dambo, Pangil, Laguna",
+      "review": {
+        "project_id": "nep_fmr:p25:r8",
+        "title": "Construction of Sitio Anilao to Brgy. Dambo FMR, Brgy. Dambo, Pangil, Laguna",
+        "source": {
+          "source_pdf": "dbm-other-nep-line-data/FMR.pdf",
+          "row_id": "nep_fmr:p25:r8",
+          "pdf_page": 25,
+          "printed_page": 1535,
+          "table_row": 8,
+          "bbox": [
+            111.2536,
+            344.5,
+            607.0953,
+            390.0
+          ],
+          "amount_cell_bbox": [
+            505.25,
+            344.5,
+            607.0953,
+            390.0
+          ]
+        },
+        "coordinates_raw": "START: 14.405743, 121,409858\nEND: 14.410607, 121.414010",
+        "coordinates_reviewed": "START: 14.405743, 121.409858\nEND: 14.410607, 121.414010",
+        "text_edits": [
+          {
+            "raw": "121,409858",
+            "reviewed": "121.409858",
+            "occurrences": 1
+          }
+        ],
+        "finding": "ocr_transcription_error",
+        "note": "Rendered NEP cell confirms the reviewed punctuation/section transcription; only OCR text is corrected in the derived layer.",
+        "reviewed_date": "2026-10-12",
+        "review_method": "manual rendered NEP cell inspection at 216 dpi",
+        "rendered_evidence": {
+          "path": "data/nep_fmr_coordinate_review_images/nep_fmr_p25_r8.png",
+          "clip_bbox": [
+            109.2536,
+            342.5,
+            609.0953,
+            392.0
+          ],
+          "scale": 3,
+          "sha256": "1c5d2b776ac0526c96657910b33376aeb35641196c42177f85e4902082bad7cd"
+        },
+        "initial_review_flags": [
+          "unparsed_coordinate_fragment"
+        ],
+        "hgab_context": {
+          "project_id": "ib:p693:r12",
+          "title": "Construction of Sitio Anilao to Brgy. Dambo FMR, Brgy. Dambo, Pangil, Laguna",
+          "coordinates_raw": "START: 14.405743, 121.409858\nEND: 14.410607, 121.414010",
+          "status": "normalized",
+          "review_flags": [],
+          "source": {
+            "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
+            "row_id": "ib:p693:r12",
+            "pdf_page": 693,
+            "printed_page": 677,
+            "table_row": 12,
+            "bbox": [
+              64.0354,
+              450.428,
+              595.8159,
+              487.43
+            ],
+            "amount_cell_bbox": [
+              485.2928,
+              450.428,
+              595.8159,
+              487.43
+            ]
+          },
+          "basis": "reviewed title/location and coordinate agreement; contextual row correspondence, not a complete NEP/HGAB identity match"
+        }
+      },
+      "status_after_review": "normalized",
+      "review_flags_after_review": [],
+      "coordinates_after_review": [
+        [
+          [
+            121.409858,
+            14.405743
+          ],
+          [
+            121.41401,
+            14.410607
+          ]
+        ]
+      ]
+    },
+    {
+      "project_id": "nep_fmr:p25:r14",
+      "title": "Construction of Brgy. Silangan Calutan FMR, Agdangan, Quezon",
+      "review": {
+        "project_id": "nep_fmr:p25:r14",
+        "title": "Construction of Brgy. Silangan Calutan FMR, Agdangan, Quezon",
+        "source": {
+          "source_pdf": "dbm-other-nep-line-data/FMR.pdf",
+          "row_id": "nep_fmr:p25:r14",
+          "pdf_page": 25,
+          "printed_page": 1535,
+          "table_row": 14,
+          "bbox": [
+            111.2536,
+            624.2785,
+            607.0953,
+            688.2276
+          ],
+          "amount_cell_bbox": [
+            505.25,
+            624.2785,
+            607.0953,
+            688.2276
+          ]
+        },
+        "coordinates_raw": "START: S1 - 13 51 '39.52\" 121 54'20.64\"\nS2- 13 5116.99\" 121 54'33.51 \"\nEND: S1 - 13 51 '29.05\" 121 54'15.37\"\nS2 - 13 5118.22\" 121 55'8.36\"",
+        "coordinates_reviewed": "START: S1 - 13 51 '39.52\" 121 54'20.64\"\nS2- 13 51'16.99\" 121 54'33.51 \"\nEND: S1 - 13 51 '29.05\" 121 54'15.37\"\nS2 - 13 51'18.22\" 121 55'8.36\"",
+        "text_edits": [
+          {
+            "raw": "13 5116.99",
+            "reviewed": "13 51'16.99",
+            "occurrences": 1
+          },
+          {
+            "raw": "13 5118.22",
+            "reviewed": "13 51'18.22",
+            "occurrences": 1
+          }
+        ],
+        "finding": "ocr_transcription_error",
+        "note": "Rendered NEP cell confirms the reviewed punctuation/section transcription; only OCR text is corrected in the derived layer.",
+        "reviewed_date": "2026-10-12",
+        "review_method": "manual rendered NEP cell inspection at 216 dpi",
+        "rendered_evidence": {
+          "path": "data/nep_fmr_coordinate_review_images/nep_fmr_p25_r14.png",
+          "clip_bbox": [
+            109.2536,
+            622.2785,
+            609.0953,
+            690.2276
+          ],
+          "scale": 3,
+          "sha256": "9ea6c306791851ef1674032b5de808824f9a6dbe40503a84ab178e10ed7160a0"
+        },
+        "initial_review_flags": [
+          "unparsed_coordinate_fragment"
+        ],
+        "hgab_context": {
+          "project_id": "ib:p693:r18",
+          "title": "Construction of Brgy. Silangan Calutan FMR, Agdangan, Quezon",
+          "coordinates_raw": "START: S1 - 13 51 '39.52\", 121 54'20.64\"\nS2- 13 51'16.99\", 121 54'33.51\"\nEND: S1 - 13 51 '29.05\", 121 54'15.37\"\nS2 - 13 51'18.22\", 121 55'8.36\"",
+          "status": "normalized",
+          "review_flags": [],
+          "source": {
+            "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
+            "row_id": "ib:p693:r18",
+            "pdf_page": 693,
+            "printed_page": 677,
+            "table_row": 18,
+            "bbox": [
+              64.0354,
+              684.7395,
+              595.8159,
+              747.0097
+            ],
+            "amount_cell_bbox": [
+              485.2928,
+              684.7395,
+              595.8159,
+              747.0097
+            ]
+          },
+          "basis": "reviewed title/location and coordinate agreement; contextual row correspondence, not a complete NEP/HGAB identity match"
+        }
+      },
+      "status_after_review": "normalized",
+      "review_flags_after_review": [],
+      "coordinates_after_review": [
+        [
+          [
+            121.9057333333,
+            13.8609777778
+          ],
+          [
+            121.9042694444,
+            13.8580694444
+          ]
+        ],
+        [
+          [
+            121.9093083333,
+            13.8547194444
+          ],
+          [
+            121.9189888889,
+            13.8550611111
+          ]
+        ]
+      ]
+    },
+    {
+      "project_id": "nep_fmr:p28:r6",
+      "title": "Construction of Brgy. Libertad FMR, Brgy. Libertad, Bongabong, Oriental Mindoro",
+      "review": {
+        "project_id": "nep_fmr:p28:r6",
+        "title": "Construction of Brgy. Libertad FMR, Brgy. Libertad, Bongabong, Oriental Mindoro",
+        "source": {
+          "source_pdf": "dbm-other-nep-line-data/FMR.pdf",
+          "row_id": "nep_fmr:p28:r6",
+          "pdf_page": 28,
+          "printed_page": 1538,
+          "table_row": 6,
+          "bbox": [
+            102.2843,
+            269.2012,
+            597.7698,
+            313.0
+          ],
+          "amount_cell_bbox": [
+            495.5942,
+            269.2012,
+            597.7698,
+            313.0
+          ]
+        },
+        "coordinates_raw": "START: 12.778815, 121.435163\nEND: 12.771163, 121,432678",
+        "coordinates_reviewed": "START: 12.778815, 121.435163\nEND: 12.771163, 121.432678",
+        "text_edits": [
+          {
+            "raw": "121,432678",
+            "reviewed": "121.432678",
+            "occurrences": 1
+          }
+        ],
+        "finding": "ocr_transcription_error",
+        "note": "Rendered NEP cell confirms the reviewed punctuation/section transcription; only OCR text is corrected in the derived layer.",
+        "reviewed_date": "2026-10-12",
+        "review_method": "manual rendered NEP cell inspection at 216 dpi",
+        "rendered_evidence": {
+          "path": "data/nep_fmr_coordinate_review_images/nep_fmr_p28_r6.png",
+          "clip_bbox": [
+            100.2843,
+            267.2012,
+            599.7698,
+            315.0
+          ],
+          "scale": 3,
+          "sha256": "78f149c4b80fbb8950619f01224339b3ff8215e9623fe8517160b5c5cf709e1e"
+        },
+        "initial_review_flags": [
+          "unparsed_coordinate_fragment"
+        ],
+        "hgab_context": {
+          "project_id": "ib:p700:r10",
+          "title": "Construction of Brgy. Libertad FMR, Brgy. Libertad, Bongabong, Oriental Mindoro",
+          "coordinates_raw": "START: 12.778815, 121.435163\nEND: 12.771163, 121.432678",
+          "status": "normalized",
+          "review_flags": [],
+          "source": {
+            "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
+            "row_id": "ib:p700:r10",
+            "pdf_page": 700,
+            "printed_page": 684,
+            "table_row": 10,
+            "bbox": [
+              50.5354,
+              376.4613,
+              582.3159,
+              413.4447
+            ],
+            "amount_cell_bbox": [
+              471.7929,
+              376.4613,
+              582.3159,
+              413.4447
+            ]
+          },
+          "basis": "reviewed title/location and coordinate agreement; contextual row correspondence, not a complete NEP/HGAB identity match"
+        }
+      },
+      "status_after_review": "normalized",
+      "review_flags_after_review": [],
+      "coordinates_after_review": [
+        [
+          [
+            121.435163,
+            12.778815
+          ],
+          [
+            121.432678,
+            12.771163
+          ]
+        ]
+      ]
+    },
+    {
+      "project_id": "nep_fmr:p30:r14",
+      "title": "Construction of Brgy. Luna to Brgy. San Isidro FMR, San Jacinto, Masbate",
+      "review": {
+        "project_id": "nep_fmr:p30:r14",
+        "title": "Construction of Brgy. Luna to Brgy. San Isidro FMR, San Jacinto, Masbate",
+        "source": {
+          "source_pdf": "dbm-other-nep-line-data/FMR.pdf",
+          "row_id": "nep_fmr:p30:r14",
+          "pdf_page": 30,
+          "printed_page": 1540,
+          "table_row": 14,
+          "bbox": [
+            102.2016,
+            642.7009,
+            597.7079,
+            686.0
+          ],
+          "amount_cell_bbox": [
+            495.5103,
+            642.7009,
+            597.7079,
+            686.0
+          ]
+        },
+        "coordinates_raw": "Start: 12.529293, 123.707502\nEnd: 12.528813, 123.691.92",
+        "coordinates_reviewed": "Start: 12.529293, 123.707502\nEnd: 12.528813, 123.691.92",
+        "text_edits": [],
+        "finding": "printed_source_anomaly",
+        "note": "Image really prints longitude 123.691.92, as does HGAB. Candidate 123.69192 remains a source-numeric repair candidate, not an accepted OCR correction.",
+        "reviewed_date": "2026-10-12",
+        "review_method": "manual rendered NEP cell inspection at 216 dpi",
+        "rendered_evidence": {
+          "path": "data/nep_fmr_coordinate_review_images/nep_fmr_p30_r14.png",
+          "clip_bbox": [
+            100.2016,
+            640.7009,
+            599.7079,
+            688.0
+          ],
+          "scale": 3,
+          "sha256": "edbc9b37f188f33578c766198b2b9f343c8e7cdff88cd7d7a6a5bf5284ae6435"
+        },
+        "initial_review_flags": [
+          "source_numeric_repair_candidate"
+        ],
+        "hgab_context": {
+          "project_id": "ib:p703:r11",
+          "title": "Construction of Brgy. Luna to Brgy. San Isidro FMR, San Jacinto, Masbate",
+          "coordinates_raw": "Start: 12.529293, 123.707502\nEnd: 12.528813, 123.691.92",
+          "status": "needs_review",
+          "review_flags": [
+            "source_numeric_repair_candidate"
+          ],
+          "source": {
+            "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
+            "row_id": "ib:p703:r11",
+            "pdf_page": 703,
+            "printed_page": 687,
+            "table_row": 11,
+            "bbox": [
+              64.0354,
+              450.5394,
+              595.8159,
+              487.5414
+            ],
+            "amount_cell_bbox": [
+              485.2928,
+              450.5394,
+              595.8159,
+              487.5414
+            ]
+          },
+          "basis": "reviewed title/location and coordinate agreement; contextual row correspondence, not a complete NEP/HGAB identity match"
+        }
+      },
+      "status_after_review": "needs_review",
+      "review_flags_after_review": [
+        "source_numeric_repair_candidate"
+      ],
+      "coordinates_after_review": [
+        [
+          [
+            123.707502,
+            12.529293
+          ],
+          [
+            123.69192,
+            12.528813
+          ]
+        ]
+      ]
+    },
+    {
+      "project_id": "nep_fmr:p31:r12",
+      "title": "Construction of Bigaa FMR, Legazpi City, Albay",
+      "review": {
+        "project_id": "nep_fmr:p31:r12",
+        "title": "Construction of Bigaa FMR, Legazpi City, Albay",
+        "source": {
+          "source_pdf": "dbm-other-nep-line-data/FMR.pdf",
+          "row_id": "nep_fmr:p31:r12",
+          "pdf_page": 31,
+          "printed_page": 1541,
+          "table_row": 12,
+          "bbox": [
+            111.1876,
+            563.5,
+            606.69,
+            605.2297
+          ],
+          "amount_cell_bbox": [
+            504.4583,
+            563.5,
+            606.69,
+            605.2297
+          ]
+        },
+        "coordinates_raw": "START: 13.192763, 123,753214\nEND: 13.196694, 123.749089",
+        "coordinates_reviewed": "START: 13.192763, 123.753214\nEND: 13.196694, 123.749089",
+        "text_edits": [
+          {
+            "raw": "123,753214",
+            "reviewed": "123.753214",
+            "occurrences": 1
+          }
+        ],
+        "finding": "ocr_transcription_error",
+        "note": "Rendered NEP cell confirms the reviewed punctuation/section transcription; only OCR text is corrected in the derived layer.",
+        "reviewed_date": "2026-10-12",
+        "review_method": "manual rendered NEP cell inspection at 216 dpi",
+        "rendered_evidence": {
+          "path": "data/nep_fmr_coordinate_review_images/nep_fmr_p31_r12.png",
+          "clip_bbox": [
+            109.1876,
+            561.5,
+            608.69,
+            607.2297
+          ],
+          "scale": 3,
+          "sha256": "33cbfc2e9e8dae44f9007639e44687e65a40ca9df47c29565ab067fd6ed159f1"
+        },
+        "initial_review_flags": [
+          "unparsed_coordinate_fragment"
+        ],
+        "hgab_context": {
+          "project_id": "ib:p704:r8",
+          "title": "Construction of Brgy. Bigaa FMR, Legazpi City, Albay",
+          "coordinates_raw": "START: 13.192763, 123.753214\nEND: 13.196694, 123.749089",
+          "status": "normalized",
+          "review_flags": [],
+          "source": {
+            "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
+            "row_id": "ib:p704:r8",
+            "pdf_page": 704,
+            "printed_page": 688,
+            "table_row": 8,
+            "bbox": [
+              50.5354,
+              314.8596,
+              582.3159,
+              351.8429
+            ],
+            "amount_cell_bbox": [
+              471.7929,
+              314.8596,
+              582.3159,
+              351.8429
+            ]
+          },
+          "basis": "reviewed title/location and coordinate agreement; contextual row correspondence, not a complete NEP/HGAB identity match"
+        }
+      },
+      "status_after_review": "normalized",
+      "review_flags_after_review": [],
+      "coordinates_after_review": [
+        [
+          [
+            123.753214,
+            13.192763
+          ],
+          [
+            123.749089,
+            13.196694
+          ]
+        ]
+      ]
+    },
+    {
+      "project_id": "nep_fmr:p33:r16",
+      "title": "Construction of Brgy. Malayu-an FMR, Brgy. Malayu-an, Ajuy, Iloilo",
+      "review": {
+        "project_id": "nep_fmr:p33:r16",
+        "title": "Construction of Brgy. Malayu-an FMR, Brgy. Malayu-an, Ajuy, Iloilo",
+        "source": {
+          "source_pdf": "dbm-other-nep-line-data/FMR.pdf",
+          "row_id": "nep_fmr:p33:r16",
+          "pdf_page": 33,
+          "printed_page": 1543,
+          "table_row": 16,
+          "bbox": [
+            112.1964,
+            740.189,
+            606.7741,
+            782.2065
+          ],
+          "amount_cell_bbox": [
+            504.7901,
+            740.189,
+            606.7741,
+            782.2065
+          ]
+        },
+        "coordinates_raw": "START: 11115153, 123.003638\nEND: 11.114053, 122.995354",
+        "coordinates_reviewed": "START: 11.115153, 123.003638\nEND: 11.114053, 122.995354",
+        "text_edits": [
+          {
+            "raw": "11115153",
+            "reviewed": "11.115153",
+            "occurrences": 1
+          }
+        ],
+        "finding": "ocr_transcription_error",
+        "note": "Rendered NEP cell confirms the reviewed punctuation/section transcription; only OCR text is corrected in the derived layer.",
+        "reviewed_date": "2026-10-12",
+        "review_method": "manual rendered NEP cell inspection at 216 dpi",
+        "rendered_evidence": {
+          "path": "data/nep_fmr_coordinate_review_images/nep_fmr_p33_r16.png",
+          "clip_bbox": [
+            110.1964,
+            738.189,
+            608.7741,
+            784.2065
+          ],
+          "scale": 3,
+          "sha256": "e37e147236dc956200701a6a61118c4aa7e50bc94e921d92ec17b38b2e2f18e9"
+        },
+        "initial_review_flags": [
+          "source_numeric_repair_candidate"
+        ],
+        "hgab_context": null
+      },
+      "status_after_review": "normalized",
+      "review_flags_after_review": [],
+      "coordinates_after_review": [
+        [
+          [
+            123.003638,
+            11.115153
+          ],
+          [
+            122.995354,
+            11.114053
+          ]
+        ]
+      ]
+    },
+    {
+      "project_id": "nep_fmr:p37:r6",
+      "title": "Construction of Brgy. Tutug-an to Sitio Nasunogan, Brgy. Tutug-an FMR, Brgy. Tutug-an, Barugo, Leyte",
+      "review": {
+        "project_id": "nep_fmr:p37:r6",
+        "title": "Construction of Brgy. Tutug-an to Sitio Nasunogan, Brgy. Tutug-an FMR, Brgy. Tutug-an, Barugo, Leyte",
+        "source": {
+          "source_pdf": "dbm-other-nep-line-data/FMR.pdf",
+          "row_id": "nep_fmr:p37:r6",
+          "pdf_page": 37,
+          "printed_page": 1547,
+          "table_row": 6,
+          "bbox": [
+            112.0715,
+            219.75,
+            607.5699,
+            272.2501
+          ],
+          "amount_cell_bbox": [
+            505.5037,
+            219.75,
+            607.5699,
+            272.2501
+          ]
+        },
+        "coordinates_raw": "START: 11,310222, 124.753556\nEND: 11.300222, 124.754861",
+        "coordinates_reviewed": "START: 11.310222, 124.753556\nEND: 11.300222, 124.754861",
+        "text_edits": [
+          {
+            "raw": "11,310222",
+            "reviewed": "11.310222",
+            "occurrences": 1
+          }
+        ],
+        "finding": "ocr_transcription_error",
+        "note": "Rendered NEP cell confirms the reviewed punctuation/section transcription; only OCR text is corrected in the derived layer.",
+        "reviewed_date": "2026-10-12",
+        "review_method": "manual rendered NEP cell inspection at 216 dpi",
+        "rendered_evidence": {
+          "path": "data/nep_fmr_coordinate_review_images/nep_fmr_p37_r6.png",
+          "clip_bbox": [
+            110.0715,
+            217.75,
+            609.5699,
+            274.2501
+          ],
+          "scale": 3,
+          "sha256": "445c499a28443fd460bc6770872ea237cc9200b350ef6082d1a880d614070a40"
+        },
+        "initial_review_flags": [
+          "unparsed_coordinate_fragment"
+        ],
+        "hgab_context": {
+          "project_id": "ib:p713:r10",
+          "title": "Construction of Brgy. Tutug-an to Sitio Nasunogan, Brgy. Tutug-an FMR, Brgy. Tutug-an, Barugo, Leyte",
+          "coordinates_raw": "START: 11.310222, 124.753556\nEND: 11.300222, 124.754861",
+          "status": "normalized",
+          "review_flags": [],
+          "source": {
+            "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
+            "row_id": "ib:p713:r10",
+            "pdf_page": 713,
+            "printed_page": 697,
+            "table_row": 10,
+            "bbox": [
+              64.0354,
+              364.3192,
+              595.8159,
+              413.6675
+            ],
+            "amount_cell_bbox": [
+              485.2928,
+              364.3192,
+              595.8159,
+              413.6675
+            ]
+          },
+          "basis": "reviewed title/location and coordinate agreement; contextual row correspondence, not a complete NEP/HGAB identity match"
+        }
+      },
+      "status_after_review": "normalized",
+      "review_flags_after_review": [],
+      "coordinates_after_review": [
+        [
+          [
+            124.753556,
+            11.310222
+          ],
+          [
+            124.754861,
+            11.300222
+          ]
+        ]
+      ]
+    },
+    {
+      "project_id": "nep_fmr:p37:r8",
+      "title": "Construction of Sitio Busay, Brgy. Apale FMR, Brgy. Apale, Isabel, Leyte",
+      "review": {
+        "project_id": "nep_fmr:p37:r8",
+        "title": "Construction of Sitio Busay, Brgy. Apale FMR, Brgy. Apale, Isabel, Leyte",
+        "source": {
+          "source_pdf": "dbm-other-nep-line-data/FMR.pdf",
+          "row_id": "nep_fmr:p37:r8",
+          "pdf_page": 37,
+          "printed_page": 1547,
+          "table_row": 8,
+          "bbox": [
+            112.0715,
+            325.25,
+            607.5699,
+            371.0
+          ],
+          "amount_cell_bbox": [
+            505.5037,
+            325.25,
+            607.5699,
+            371.0
+          ]
+        },
+        "coordinates_raw": "START: 11.871556, 124.488833\nEND: 10.878222, 124.485778",
+        "coordinates_reviewed": "START: 11.871556, 124.488833\nEND: 10.878222, 124.485778",
+        "text_edits": [],
+        "finding": "printed_source_anomaly",
+        "note": "Image prints START latitude 11.871556 and END 10.878222. HGAB repeats it; the distance flag remains.",
+        "reviewed_date": "2026-10-12",
+        "review_method": "manual rendered NEP cell inspection at 216 dpi",
+        "rendered_evidence": {
+          "path": "data/nep_fmr_coordinate_review_images/nep_fmr_p37_r8.png",
+          "clip_bbox": [
+            110.0715,
+            323.25,
+            609.5699,
+            373.0
+          ],
+          "scale": 3,
+          "sha256": "f5714efa519e0ed53196dc9f5bfedad16158a59a4f4d21d5434c442141a1dae6"
+        },
+        "initial_review_flags": [
+          "endpoint_distance_over_100_km"
+        ],
+        "hgab_context": {
+          "project_id": "ib:p713:r12",
+          "title": "Construction of Sitio Busay, Brgy. Apale FMR, Brgy. Apale, Isabel, Leyte",
+          "coordinates_raw": "START: 11.871556, 124.488833\nEND: 10.878222, 124.485778",
+          "status": "needs_review",
+          "review_flags": [
+            "endpoint_distance_over_100_km"
+          ],
+          "source": {
+            "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
+            "row_id": "ib:p713:r12",
+            "pdf_page": 713,
+            "printed_page": 697,
+            "table_row": 12,
+            "bbox": [
+              64.0354,
+              463.0157,
+              595.8159,
+              500.0177
+            ],
+            "amount_cell_bbox": [
+              485.2928,
+              463.0157,
+              595.8159,
+              500.0177
+            ]
+          },
+          "basis": "reviewed title/location and coordinate agreement; contextual row correspondence, not a complete NEP/HGAB identity match"
+        }
+      },
+      "status_after_review": "needs_review",
+      "review_flags_after_review": [
+        "endpoint_distance_over_100_km"
+      ],
+      "coordinates_after_review": [
+        [
+          [
+            124.488833,
+            11.871556
+          ],
+          [
+            124.485778,
+            10.878222
+          ]
+        ]
+      ]
+    },
+    {
+      "project_id": "nep_fmr:p42:r15",
+      "title": "Construction of Junction Panlaisan to Sitio Butay, Brgy. Pichon FMR, Brgy. Pichon, Caraga, Davao Oriental",
+      "review": {
+        "project_id": "nep_fmr:p42:r15",
+        "title": "Construction of Junction Panlaisan to Sitio Butay, Brgy. Pichon FMR, Brgy. Pichon, Caraga, Davao Oriental",
+        "source": {
+          "source_pdf": "dbm-other-nep-line-data/FMR.pdf",
+          "row_id": "nep_fmr:p42:r15",
+          "pdf_page": 42,
+          "printed_page": 1552,
+          "table_row": 15,
+          "bbox": [
+            102.925,
+            663.2752,
+            598.4237,
+            717.5199
+          ],
+          "amount_cell_bbox": [
+            496.2332,
+            663.2752,
+            598.4237,
+            717.5199
+          ]
+        },
+        "coordinates_raw": "START: 7 24'36.86\"N, 126 2024.35\"E\nEND: 7.392078N, 126.343261E",
+        "coordinates_reviewed": "START: 7 24'36.86\"N, 126 20'24.35\"E\nEND: 7.392078N, 126.343261E",
+        "text_edits": [
+          {
+            "raw": "126 2024.35",
+            "reviewed": "126 20'24.35",
+            "occurrences": 1
+          }
+        ],
+        "finding": "ocr_transcription_error",
+        "note": "Rendered NEP cell confirms the reviewed punctuation/section transcription; only OCR text is corrected in the derived layer.",
+        "reviewed_date": "2026-10-12",
+        "review_method": "manual rendered NEP cell inspection at 216 dpi",
+        "rendered_evidence": {
+          "path": "data/nep_fmr_coordinate_review_images/nep_fmr_p42_r15.png",
+          "clip_bbox": [
+            100.925,
+            661.2752,
+            600.4237,
+            719.5199
+          ],
+          "scale": 3,
+          "sha256": "9787a09348b3d5e8c6474516a9cfe5dbd8ecc0bfe45c9071ae71cfbb4ebf3629"
+        },
+        "initial_review_flags": [
+          "unparsed_coordinate_fragment"
+        ],
+        "hgab_context": null
+      },
+      "status_after_review": "normalized",
+      "review_flags_after_review": [],
+      "coordinates_after_review": [
+        [
+          [
+            126.3400972222,
+            7.4102388889
+          ],
+          [
+            126.343261,
+            7.392078
+          ]
+        ]
+      ]
+    },
+    {
+      "project_id": "nep_fmr:p43:r3",
+      "title": "Construction of Sitio Guia, Brgy. Polayagan to Sitio Sambacan, Brgy. Barangiran FMR Phase I, Brgy. Polayagan and Brgy. Barangiran, Alamada, Cotabato",
+      "review": {
+        "project_id": "nep_fmr:p43:r3",
+        "title": "Construction of Sitio Guia, Brgy. Polayagan to Sitio Sambacan, Brgy. Barangiran FMR Phase I, Brgy. Polayagan and Brgy. Barangiran, Alamada, Cotabato",
+        "source": {
+          "source_pdf": "dbm-other-nep-line-data/FMR.pdf",
+          "row_id": "nep_fmr:p43:r3",
+          "pdf_page": 43,
+          "printed_page": 1553,
+          "table_row": 3,
+          "bbox": [
+            111.0231,
+            102.0189,
+            606.2116,
+            159.5
+          ],
+          "amount_cell_bbox": [
+            504.0334,
+            102.0189,
+            606.2116,
+            159.5
+          ]
+        },
+        "coordinates_raw": "START: 7.41266016861049, 124,551231732243\nEND: 7.39095313952864, 124.561714405159",
+        "coordinates_reviewed": "START: 7.41266016861049, 124.551231732243\nEND: 7.39095313952864, 124.561714405159",
+        "text_edits": [
+          {
+            "raw": "124,551231732243",
+            "reviewed": "124.551231732243",
+            "occurrences": 1
+          }
+        ],
+        "finding": "ocr_transcription_error",
+        "note": "Rendered NEP cell confirms the reviewed punctuation/section transcription; only OCR text is corrected in the derived layer.",
+        "reviewed_date": "2026-10-12",
+        "review_method": "manual rendered NEP cell inspection at 216 dpi",
+        "rendered_evidence": {
+          "path": "data/nep_fmr_coordinate_review_images/nep_fmr_p43_r3.png",
+          "clip_bbox": [
+            109.0231,
+            100.0189,
+            608.2116,
+            161.5
+          ],
+          "scale": 3,
+          "sha256": "b2f3a70a1cd5ead894ed40e51bb700ef70446f159384a58930db079fbcc3314f"
+        },
+        "initial_review_flags": [
+          "unparsed_coordinate_fragment"
+        ],
+        "hgab_context": {
+          "project_id": "ib:p721:r16",
+          "title": "Construction of Sitio Guia, Brgy. Polayagan to Sitio Sambacan, Brgy. Barangiran FMR Phase I, Brgy. Polayagan and Brgy. Baranginan, Alamada, Cotabato",
+          "coordinates_raw": "START: 7.41266016861049, 124.551231732243\nEND: 7.39095313952864, 124.561714405159",
+          "status": "normalized",
+          "review_flags": [],
+          "source": {
+            "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
+            "row_id": "ib:p721:r16",
+            "pdf_page": 721,
+            "printed_page": 705,
+            "table_row": 16,
+            "bbox": [
+              64.0354,
+              573.873,
+              595.8159,
+              623.2212
+            ],
+            "amount_cell_bbox": [
+              485.2928,
+              573.873,
+              595.8159,
+              623.2212
+            ]
+          },
+          "basis": "reviewed title/location and coordinate agreement; contextual row correspondence, not a complete NEP/HGAB identity match"
+        }
+      },
+      "status_after_review": "normalized",
+      "review_flags_after_review": [],
+      "coordinates_after_review": [
+        [
+          [
+            124.5512317322,
+            7.4126601686
+          ],
+          [
+            124.5617144052,
+            7.3909531395
+          ]
+        ]
+      ]
+    },
+    {
+      "project_id": "nep_fmr:p43:r13",
+      "title": "Construction of Montapet, Brgy. Ambalgan FMR, Brgy. Ambalgan, Sto. Nifio, South Cotabato",
+      "review": {
+        "project_id": "nep_fmr:p43:r13",
+        "title": "Construction of Montapet, Brgy. Ambalgan FMR, Brgy. Ambalgan, Sto. Nifio, South Cotabato",
+        "source": {
+          "source_pdf": "dbm-other-nep-line-data/FMR.pdf",
+          "row_id": "nep_fmr:p43:r13",
+          "pdf_page": 43,
+          "printed_page": 1553,
+          "table_row": 13,
+          "bbox": [
+            111.0231,
+            631.75,
+            606.2116,
+            676.5
+          ],
+          "amount_cell_bbox": [
+            504.0334,
+            631.75,
+            606.2116,
+            676.5
+          ]
+        },
+        "coordinates_raw": "START: 6.42140815062562, 124.692822455377\nEND: 6.40745304849185, 124,703373012734",
+        "coordinates_reviewed": "START: 6.42140815062562, 124.692822455377\nEND: 6.40745304849185, 124.703373012734",
+        "text_edits": [
+          {
+            "raw": "124,703373012734",
+            "reviewed": "124.703373012734",
+            "occurrences": 1
+          }
+        ],
+        "finding": "ocr_transcription_error",
+        "note": "Rendered NEP cell confirms the reviewed punctuation/section transcription; only OCR text is corrected in the derived layer.",
+        "reviewed_date": "2026-10-12",
+        "review_method": "manual rendered NEP cell inspection at 216 dpi",
+        "rendered_evidence": {
+          "path": "data/nep_fmr_coordinate_review_images/nep_fmr_p43_r13.png",
+          "clip_bbox": [
+            109.0231,
+            629.75,
+            608.2116,
+            678.5
+          ],
+          "scale": 3,
+          "sha256": "98cb9bc90e9694fca2f1fd9819bb045ef6adce5b6e59e01456cb0f24c94287f6"
+        },
+        "initial_review_flags": [
+          "unparsed_coordinate_fragment"
+        ],
+        "hgab_context": {
+          "project_id": "ib:p722:r6",
+          "title": "Construction of Montapet, Brgy. Ambalgan FMR, Brgy. Ambalgan, Sto. Niño, South Cotabato",
+          "coordinates_raw": "START: 6.42140815062562, 124.692822455377\nEND: 6.40745304849185, 124.703373012734",
+          "status": "normalized",
+          "review_flags": [],
+          "source": {
+            "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
+            "row_id": "ib:p722:r6",
+            "pdf_page": 722,
+            "printed_page": 706,
+            "table_row": 6,
+            "bbox": [
+              50.5354,
+              265.5948,
+              582.3159,
+              302.5782
+            ],
+            "amount_cell_bbox": [
+              471.7929,
+              265.5948,
+              582.3159,
+              302.5782
+            ]
+          },
+          "basis": "reviewed title/location and coordinate agreement; contextual row correspondence, not a complete NEP/HGAB identity match"
+        }
+      },
+      "status_after_review": "normalized",
+      "review_flags_after_review": [],
+      "coordinates_after_review": [
+        [
+          [
+            124.6928224554,
+            6.4214081506
+          ],
+          [
+            124.7033730127,
+            6.4074530485
+          ]
+        ]
+      ]
+    },
+    {
+      "project_id": "nep_fmr:p43:r14",
+      "title": "Construction of Brgy. Lamfugon to Sitio Tabayung FMR Phase II, Brgy. Lamfugon, Lake Sebu, South Cotabato",
+      "review": {
+        "project_id": "nep_fmr:p43:r14",
+        "title": "Construction of Brgy. Lamfugon to Sitio Tabayung FMR Phase II, Brgy. Lamfugon, Lake Sebu, South Cotabato",
+        "source": {
+          "source_pdf": "dbm-other-nep-line-data/FMR.pdf",
+          "row_id": "nep_fmr:p43:r14",
+          "pdf_page": 43,
+          "printed_page": 1553,
+          "table_row": 14,
+          "bbox": [
+            111.0231,
+            676.5,
+            606.2116,
+            732.75
+          ],
+          "amount_cell_bbox": [
+            504.0334,
+            676.5,
+            606.2116,
+            732.75
+          ]
+        },
+        "coordinates_raw": "START: 6.25754333, 124,.66973333\nEND: 6.25487762128611, 124.673953016086",
+        "coordinates_reviewed": "START: 6.25754333, 124.66973333\nEND: 6.25487762128611, 124.673953016086",
+        "text_edits": [
+          {
+            "raw": "124,.66973333",
+            "reviewed": "124.66973333",
+            "occurrences": 1
+          }
+        ],
+        "finding": "ocr_transcription_error",
+        "note": "Rendered NEP cell confirms the reviewed punctuation/section transcription; only OCR text is corrected in the derived layer.",
+        "reviewed_date": "2026-10-12",
+        "review_method": "manual rendered NEP cell inspection at 216 dpi",
+        "rendered_evidence": {
+          "path": "data/nep_fmr_coordinate_review_images/nep_fmr_p43_r14.png",
+          "clip_bbox": [
+            109.0231,
+            674.5,
+            608.2116,
+            734.75
+          ],
+          "scale": 3,
+          "sha256": "399827a6fe021483f37de5b2f1abda81a2bdadb36cb470b263de493c8209003b"
+        },
+        "initial_review_flags": [
+          "unparsed_coordinate_fragment"
+        ],
+        "hgab_context": {
+          "project_id": "ib:p722:r7",
+          "title": "Construction of Brgy. Lamfugon to Sitio Tabayung FMR Phase II, Brgy. Lamfugon, Lake Sebu, South Cotabato",
+          "coordinates_raw": "START: 6.25754333, 124.66973333\nEND: 6.25487762128611, 124.673953016086",
+          "status": "normalized",
+          "review_flags": [],
+          "source": {
+            "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
+            "row_id": "ib:p722:r7",
+            "pdf_page": 722,
+            "printed_page": 706,
+            "table_row": 7,
+            "bbox": [
+              50.5354,
+              302.5782,
+              582.3159,
+              351.9543
+            ],
+            "amount_cell_bbox": [
+              471.7929,
+              302.5782,
+              582.3159,
+              351.9543
+            ]
+          },
+          "basis": "reviewed title/location and coordinate agreement; contextual row correspondence, not a complete NEP/HGAB identity match"
+        }
+      },
+      "status_after_review": "normalized",
+      "review_flags_after_review": [],
+      "coordinates_after_review": [
+        [
+          [
+            124.66973333,
+            6.25754333
+          ],
+          [
+            124.6739530161,
+            6.2548776213
+          ]
+        ]
+      ]
+    },
+    {
+      "project_id": "nep_fmr:p44:r10",
+      "title": "Construction of Brgy. Concepcion FMR, Brgy. Concepcion, Sta. Josefa, Agusan del Sur",
+      "review": {
+        "project_id": "nep_fmr:p44:r10",
+        "title": "Construction of Brgy. Concepcion FMR, Brgy. Concepcion, Sta. Josefa, Agusan del Sur",
+        "source": {
+          "source_pdf": "dbm-other-nep-line-data/FMR.pdf",
+          "row_id": "nep_fmr:p44:r10",
+          "pdf_page": 44,
+          "printed_page": 1554,
+          "table_row": 10,
+          "bbox": [
+            103.4439,
+            428.4906,
+            598.9488,
+            470.4898
+          ],
+          "amount_cell_bbox": [
+            496.7593,
+            428.4906,
+            598.9488,
+            470.4898
+          ]
+        },
+        "coordinates_raw": "START: 7.985605, 126.009391\nEND: 7.989994, 125.008575",
+        "coordinates_reviewed": "START: 7.985605, 126.009391\nEND: 7.989994, 125.008575",
+        "text_edits": [],
+        "finding": "printed_source_anomaly",
+        "note": "Image prints START longitude 126.009391 and END 125.008575. The >100 km screen remains. No corresponding HGAB row was established.",
+        "reviewed_date": "2026-10-12",
+        "review_method": "manual rendered NEP cell inspection at 216 dpi",
+        "rendered_evidence": {
+          "path": "data/nep_fmr_coordinate_review_images/nep_fmr_p44_r10.png",
+          "clip_bbox": [
+            101.4439,
+            426.4906,
+            600.9488,
+            472.4898
+          ],
+          "scale": 3,
+          "sha256": "6db4ff96bd3f6f895de1f7c76691a344369a751cb87aac7b833313d3e774c656"
+        },
+        "initial_review_flags": [
+          "endpoint_distance_over_100_km"
+        ],
+        "hgab_context": null
+      },
+      "status_after_review": "needs_review",
+      "review_flags_after_review": [
+        "endpoint_distance_over_100_km"
+      ],
+      "coordinates_after_review": [
+        [
+          [
+            126.009391,
+            7.985605
+          ],
+          [
+            125.008575,
+            7.989994
+          ]
+        ]
+      ]
+    }
+  ]
+}

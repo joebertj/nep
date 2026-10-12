@@ -150,6 +150,27 @@ def refresh(page_filter=None):
     root=Path(__file__).resolve().parent
     records=[]
     for page,card in make_heroes().items():
+        if page in ('nia-irrigation.html','deped.html'):
+            continue  # Scope-aware NEP/HGAB builder supplies these heroes.
+        if page in ('nia.html','hfep.html') and (STATIC/'nep-agency-baselines.json').exists():
+            baseline=read('nep-agency-baselines.json')
+            if page=='nia.html':
+                changed=[r for r in baseline['niaNamedComparisons'] if r['adjustmentPesos'] not in (None,0) and r['visibleHgabRowVerified']]
+                net=sum(r['adjustmentPesos'] for r in changed)
+                card=hero('Named NIA allocations · NEP → HGAB 3rd reading',str(len(changed)), 'exact named-title allocations changed',('−' if net<0 else '+')+peso(abs(net)), 'net adjustment across these matched rows only',[
+                    ('Named HGAB rows',str(len(baseline['niaNamedComparisons'])),'all checked against visible PDF title/amount rows'),
+                    ('Unresolved scope','Separate review','blank, zero and repeated-name entries are not interchangeable')],
+                    'This is a matched subset of NIA, not the agency’s total budget. Exact titles do not certify engineering-scope identity; earlier House reading comparisons are on the dedicated comparison page.')
+            else:
+                h=baseline['hfepStageComparison']
+                card=hero('HFEP programme · NEP → HGAB 3rd reading',peso(abs(h['capitalAdjustmentPesos'])), 'less in proposed Capital Outlays',peso(h['hgabCapitalPesos']), 'HGAB Capital Outlays · printed programme control',[
+                    ('NEP Capital Outlays',peso(h['nepCapitalPesos']),'workbook components grouped at programme level'),
+                    ('HGAB facility reconciliation',str(h['hgabFacilityRows'])+' rows','sum equals the printed Capital Outlays control')],
+                    'Programme allocation change, not evidence of misconduct or identified facility removals. Facility-level NEP comparisons need a detailed NEP annex. MOOE remains separate.')
+        if page == 'fmr.html' and (STATIC/'fmr-data.json').exists():
+            # The corrected FMR builder derives its NEP/HGAB hero from the
+            # audited ledgers; the legacy reading-only card omits that context.
+            continue
         if page_filter and page_filter!=page:continue
         path=STATIC/page
         before=path.read_text(encoding="utf-8")

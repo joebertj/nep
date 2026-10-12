@@ -109,10 +109,35 @@ costs. The page works locally without external chart frameworks.
 
 ## Top 25 line-item review queue
 
+### Within-stage line-item screen
+
+`repeats.html` collates DPWH historical GAA matches (including MPB through the
+program filter), NEP-repeat survival into HGAB, within-stage pairs, and existing
+FMR/NIA historical repeat tables. Original repeat tables move off their agency
+pages and leave links. Repeated allocation amount patterns stay on agency pages.
+`build_repeats_page.py` preserves original generated sections and their source
+evidence in `repeat_page_fragments.json`, refreshes sections when agency builders
+regenerate them, and runs through the shared editorial pipeline. The new shared
+menu contains 15 links; mobile height is 328px to fit all eight rows.
+
+`analyze_within_stage_repeats.py` compares distinct domestic DPWH NEP occurrences
+within NEP, and native HGAB 3rd-reading occurrences within HGAB. Results and full
+source evidence are in `within-stage-repeats.json`; the DPWH page displays paired
+counts, distinct occurrence counts, explicit chainage overlaps and the first 50
+pairs per stage with CSV exports. Summary regeneration refreshes this section.
+Official PAP and qualified town/province or implementing-office context must
+agree. Same base titles qualify; fuzzy titles require ≥0.94 text similarity,
+qualified town/province and identical distinctive scope-token sets. Changed named
+route endpoints cannot be overridden by a high text ratio. Disjoint chainage,
+direction, qualified-location and tranche conflicts veto. Generic and untrusted
+titles and FAP records are excluded. Missing chainage means funded-segment scope
+is unresolved. The queue does not establish duplicate contracts or payments;
+pair counts and allocation-occurrence counts must remain separate.
+
 `build_line_item_review_queue.py` ranks domestic DPWH HGAB 3rd-reading
 occurrences. One point per potential insertion, qualifying repeated amount group,
-qualified exact historical title recurrence, and explicit historical chainage
-overlap. Flag count is sorted descending, then HGAB allocation descending; source
+qualified exact historical title recurrence, explicit historical chainage
+overlap, and high allocation per stated meter. Flag count is sorted descending, then HGAB allocation descending; source
 occurrence ID breaks exact ties. Persons, offices' political affiliations and
 roles do not influence scores.
 
@@ -126,6 +151,20 @@ tranche conflicts veto historical recurrence. Amount groups require at least
 triage rules, not statistically calibrated risk levels. Related historical-title
 and chainage flags are disclosed as dependent indicators.
 
+The meter-rate flag reuses the current cost page's same-category, exact-PAP,
+data-derived length-band screen: at least 20 peers of length ≥10 meters, with
+rate above both twice the median and Q3 + 1.5 × IQR. A native HGAB input hash and
+occurrence title/amount checks prevent stale or mismatched rate joins. Extreme
+rates retain a denominator/scope caution; no missing length, sub-10-meter range
+or insufficient-peer case earns a rate point. These are relative allocation
+rates, not verified engineering unit costs or established overpricing.
+
+All nine summary themes are mapped visibly to their scoring or caution treatment.
+Missing lengths and very short printed ranges are evidence cautions, not extra
+points. MPB membership is a program scope, not a flag. Equal RCS amounts use the
+existing amount-group flag rather than a second point. INSPIRE is outside the
+domestic DPWH scope. Nine summary findings do not imply nine independent flags.
+
 The summary's final section shows 25 rows, paired flag-count/allocation graphics,
 a CSV export and all scoring methodology. `line-item-review-queue.json` includes
 all ranked occurrences, sources/input hashes, flags, accepted historical evidence
@@ -133,6 +172,94 @@ and exclusions. The scope is DPWH; other agency screens are not yet equally
 complete. Overlapping figures must not be summed as losses.
 
 ## Cost per stated kilometer
+
+### NEP workbook scope and non-DPWH stage comparisons (2026-10-12)
+
+Agency pages lead with NEP → HGAB 3rd reading. `standardize_nep_hgab_pages.py`
+renders DepEd and the NIA irrigation appendix as HGAB-only schedules with explicit
+"Not established" NEP counterpart/difference status until comparable baselines
+exist. It removes the legacy 2nd/3rd panels from named NIA and HFEP. Other-agency
+reading controls remain on `dpwh-hgab-comparison.html#other-agency-readings` with
+full reading data downloadable. Summary comparison coverage uses null for missing
+NEP totals/differences; those are not zero. Source provenance can still identify
+reading versions, without presenting that transition as the agency-page analysis.
+
+Existing NEP → HGAB 2nd-reading analyses are retained at the bottom of DPWH HGAB,
+FMR, NIA and HFEP pages by `retain_historical_nep_comparisons.py`. The helper moves
+existing sections or renders already published snapshot rows; it runs no matcher.
+FMR’s older 795-row envelope-only analysis is restored from published commit
+912c9a23e and explicitly marked as incomplete and superseded. Current 3rd-reading
+figures lead; archived totals are excluded from current claims. Pages without an
+existing NEP/2nd analysis do not get an invented one.
+
+Workbook schema 3 distinguishes blank, zero, positive and negative amounts,
+annotates programme-envelope versus named-candidate scope, and supplies a
+structural grouping key. `build_nep_agency_baselines.py` sums object/fund components
+by agency + PREXC + operating-unit code + region code and retains every source row.
+Grouped money must equal raw component money. NIA GOCC subsidy rows are MOOE in
+the workbook: a CO-only filter would miss project budgets. The full workbook still
+reconciles with its printed grand-total control at zero difference.
+
+The NIA workbook has 61 positive, 23 explicit-zero and 132 blank grouped entries
+(activities/envelopes as well as project candidates). Exact full titles establish
+27 named candidates: 20 same allocations and 7 changed. Five names remain
+unresolved; no arbitrary cross-location similarity turns them into matches.
+`audit_non_dpwh_stage_controls.py` checks all 32 HGAB title/amount rows within the
+visible PDF CropBox and supplies corrected physical page references. The seven
+changed rows have a combined net adjustment of −₱1.5B; this is a matched subset,
+not the entire NIA budget or verified engineering-scope identity.
+
+HFEP compares programme-level CO and MOOE separately. Its visible HGAB control
+is Vol I-A PDF p.1067 / printed p.1057: MOOE ₱67.173M, CO ₱10.021659B, total
+₱10.088832B. NEP workbook CO is ₱14.472659B, MOOE ₱67.173M; the CO and total
+adjustments are −₱4.451B. All 513 HGAB facility allocations sum to the printed CO
+control. No facility-level NEP insertion/removal claim is inferred from envelopes.
+NIA, HFEP and the irrigation scope note are updated by the editorial pipeline;
+their separate 2nd/3rd reading comparisons remain distinct. The new pages/data
+are copied to ODV for the user's next commit/push and deployment signal.
+
+### Corrected FMR annex import (2026-10-12)
+
+The 13 analyst files are private inputs in `data_sources/fmr_analyst/`; the supplied
+description is preserved as README.md. `build_fmr_dataset.py` validates imported
+counts, totals, CSV/JSON row identity, region controls and the House PDF hash.
+It independently compares all 60 FMR annex pages in the local 2nd/3rd copies;
+content agrees after excluding InDesign production-footer timestamps and
+normalizing whitespace. This bounded check does not authenticate the entire bill.
+The corrected ledger has 964 House rows / ₱19.6281B versus 704 NEP rows / ₱16B.
+The previous 795 / ₱14.035375B was incomplete extraction, not a budget-stage total.
+
+`build_corrected_fmr_page.py` replaces the old FMR page with audited controls,
+regional allocation changes, all counterpart statuses, provisional insertion and
+removal queues, selected allocation adjustments, coordinate anomalies and STA
+rate evidence. Source IDs and coordinate-review flags stay visible. Matching is
+our own one-to-one title/region screen; exact normalized coordinates strengthen
+scope evidence but do not certify funded work. Fuzzy geographic candidates stay
+outside insertion counts. NEP source cells cannot be independently re-extracted
+without its original standalone PDF; imported provenance remains explicit.
+
+Three House rows have usable printed STA lengths: 479.4m, 650m and 1050m.
+Cost coverage is therefore 3/964, with 99.69% without usable extracted length.
+Coordinate chords remain diagnostic and never supply cost-per-road-meter
+denominators. FMR remains too sparse for the high-rate peer/model screens.
+The summary/index, cost/density assets, FMR historical repeat section and reading
+revision data are refreshed. DPWH-only congressional allocations and its Top 25
+scores are not expanded with DA funding. FMR’s source builder and reading-page
+builder retain the corrected path on regeneration.
+
+### FY2026 GAA comparison
+
+`compare_meter_rates_2026.py` reuses the current category and length parser on
+positive domestic DPWH OPERATIONS column-J records in the local FY2026 parsed
+schedule. The cost-page generator rebuilds this comparison and copies
+`meter-rates-2026-comparison.json` to ODV. Official PAP matches require normalized
+full-label agreement. Within-program comparisons need 20 rate records per stage;
+length adjustment uses FY2026-derived quartile bands with 20 records per stage
+per band and FY2026-count-weighted band median ratios. Full records, input hashes,
+hierarchy context and band calculations are retained. Coverage and supporting
+calculations are visible on the page. This is not matched-contract price inflation:
+project mix, width, terrain, geography and quantity remain uncontrolled. DPWH
+column-J scope is a conservative subset; DA FMR is outside this comparison.
 
 `build_cost_per_km.py` writes `cost-per-km.html` and `cost-per-km-data.json`.
 The summary regeneration pipeline rebuilds the page, and the summary links to separate seventh and eighth findings for length coverage

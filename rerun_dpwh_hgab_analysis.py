@@ -25,7 +25,8 @@ def main():
         cmd=['extract_hb_projects.py','--pdf-dir',f'HB 10858 FOR {edition} READING','--out',file]
         if a.text_cache: cmd.extend(['--text-cache',a.text_cache])
         run(*cmd)
-        run('compare_hb_nep.py','--hb',file,'--official-nep-trace','analysis_output/stage_trace_2027.json','--out',f'analysis_output/{out}')
+        if edition=='3RD':
+            run('compare_hb_nep.py','--hb',file,'--official-nep-trace','analysis_output/stage_trace_2027.json','--out',f'analysis_output/{out}')
     run('compare_dpwh_hgab_readings.py','--second','hb10858_projects.json','--third','hb10858_3rd_dpwh_projects.json','--out','analysis_output/dpwh_hgab_2nd_vs_3rd.json')
     run('analysis_output/audit_hgab_parsing.py')
     run('analysis_output/summarize_nep_hgab_mapping_counts.py')

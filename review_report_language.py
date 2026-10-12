@@ -82,8 +82,15 @@ def apply():
     congress_link='<a href="congress.html">Congressional District Allocations</a>'
     nav=re.sub(r'<a\b[^>]*href="congress.html"[^>]*>.*?</a>', '', nav, flags=re.S)
     nav=nav.replace('</nav>',congress_link+'</nav>')
+    from standardize_nep_hgab_pages import apply as standardize_comparison_scope
+    standardize_comparison_scope()
+    if (STATIC/'nep-agency-baselines.json').exists():
+        from build_nep_stage_sections import apply as apply_nep_sections
+        apply_nep_sections(json.loads((STATIC/'nep-agency-baselines.json').read_text()))
     from build_report_heroes import refresh as refresh_heroes
     refresh_heroes()
+    from build_repeats_page import build as build_repeats_page
+    build_repeats_page()
     pages=[]
     for path in sorted(STATIC.glob('*.html')):
         if path.name == 'index.html':continue  # generated summary alias
@@ -118,6 +125,8 @@ def apply():
             'pages':pages,'reviewedPages':len(pages),'guarantee':False,
             'limitations':['This is an evidence/editorial review, not jurisdiction-specific legal advice or legal clearance.','Disclaimers do not cure a false or misleading statement. Source correctness and surrounding presentation remain material.','Identifiable-person allegations of unlawful conduct require corroborating records and qualified legal review before publication.'],
             'changes':['Removed unsupported 50/50 probability language.','Clarified geographic attribution and budget allocation versus payment or personal receipt.','Made methodology visible on HGAB page.','HGAB hero rebuilt from current native comparison; obsolete count must not be reused.']}
+    from retain_historical_nep_comparisons import apply as retain_historical_comparisons
+    retain_historical_comparisons()
     from format_report_currency import apply as apply_currency_format
     apply_currency_format()
     from uniform_report_menu import apply as apply_uniform_menu

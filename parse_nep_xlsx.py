@@ -122,6 +122,17 @@ def classify_record(record, amount):
     return 'entry_without_allocation' if str(record.get('PREXC_LEVEL'))=='7' else 'hierarchy'
 
 
+def narrative_scope(record):
+    """Describe the workbook grain; a PREXC leaf is not necessarily a site."""
+    title=re.sub(r'\s+',' ',str(record.get('DSC') or '')).strip()
+    if str(record.get('PREXC_LEVEL'))!='7':return 'hierarchy'
+    if re.search(r'health facilities enhancement\s+program|repair/rehabilitation and construction of farm.to.market roads in designated key production areas',title,re.I):
+        return 'program envelope; detailed annex needed'
+    if record.get('UACS_AGY_DSC')=='National Irrigation Administration' and re.search(r'\bproject\b|\b(?:SRIP|RIS|ARISEP)\b',title,re.I):
+        return 'named project candidate; source scope unverified'
+    return 'programme/activity allocation; site scope unverified'
+
+
 def sql_path(path: Path) -> str:
     return str(path.resolve()).replace("'", "''")
 
@@ -207,6 +218,11 @@ def main() -> int:
                 row_types[row_type]+=1
                 record['budgetRowType']=row_type
                 record['isBudgetAllocation']=row_type=='allocation'
+                record['allocationNarrativeScope']=narrative_scope(record)
+                record['amountPresence']='blank' if amount is None else 'zero' if amount==0 else 'positive' if amount>0 else 'negative'
+                record['projectGroupingRule']='Agency + PREXC + operating unit + region; retain component rows and fund/object breakdown. Never group by title alone.'
+                if level=='7' and record.get('departmentCode') is not None and record.get('agencyCode') is not None:
+                    record['projectGroupKey']=json.dumps([record.get(k) for k in ('departmentCode','agencyCode','PREXC_FPAP_ID','OPERUNIT','UACS_REG_ID')],separators=(',',':'))
                 if record.get('departmentCode') is not None and record.get('agencyCode') is not None:
                     record['agencyKey']=f"{record['departmentCode']}:{record['agencyCode']}"
                 if amount is not None:
@@ -265,7 +281,7 @@ def main() -> int:
     summary = {
         "sourceFile": args.workbook.name,
         "sourceSHA256":hashlib.sha256(args.workbook.read_bytes()).hexdigest(),
-        "schemaVersion":2,
+        "schemaVersion":3,
         "sourceSheet": args.sheet,
         "records": records,
         "rowsWithAmount": amount_records,
@@ -299,6 +315,9 @@ def main() -> int:
             raise SystemExit(result.stderr.strip() or result.stdout.strip())
         summary["parquet"] = str(parquet_path)
         summary_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        if fiscal_year==2027 and args.out_prefix.resolve()==(ROOT/'nep_fy2027_all').resolve() and (ROOT/'hgab_3rd_editions.json').exists():
+            from build_nep_agency_baselines import build as build_agency_baselines
+            build_agency_baselines()
 
     print(json.dumps({
         "records": records,
