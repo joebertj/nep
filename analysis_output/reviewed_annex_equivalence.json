@@ -1,0 +1,37 @@
+{
+  "pdfSha256": [
+    "a82800c4cc2684566a37f7780d8f9131d2e7b2c97444d335d94df012dec065b6",
+    "4cc0f17e472d1af380ea6d3972561f6bb241137826fd85ed7e7e70bcd92986b9"
+  ],
+  "sources": [
+    "HB 10858 FOR 2ND READING/2 - HB 10858 VOL IB.pdf",
+    "HB 10858 FOR 3RD READING/2- HB 10858 FOR 3RD READING VOL I-B.pdf"
+  ],
+  "annexes": {
+    "nia": {
+      "pdfPages": [
+        896,
+        941
+      ],
+      "normalizedTextSha256": [
+        "fb94b672d1fac20c3a139089f9b538d885561b4538f45a42169db7d735cec801",
+        "fb94b672d1fac20c3a139089f9b538d885561b4538f45a42169db7d735cec801"
+      ],
+      "equal": true
+    },
+    "hfep": {
+      "pdfPages": [
+        877,
+        893
+      ],
+      "normalizedTextSha256": [
+        "50fa570930e3529eabc577de20788f1e23fdb76316ee1e1ee7d15bf0241e3b89",
+        "50fa570930e3529eabc577de20788f1e23fdb76316ee1e1ee7d15bf0241e3b89"
+      ],
+      "equal": true
+    }
+  },
+  "allEqual": true,
+  "normalization": "Remove InDesign production footer lines containing .indd; collapse whitespace. No project rows removed.",
+  "limits": "Bounded reading equivalence only; source extraction retains the analyst’s manual decisions and unresolved flags."
+}

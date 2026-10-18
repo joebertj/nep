@@ -32,11 +32,17 @@ def main():
     mode.add_argument('--gaa',help='search original historical GAA titles (substring)')
     mode.add_argument('--review',help='search grouped location questions (substring)')
     mode.add_argument('--analyst',help='search imported analyst titles or native allocation IDs')
+    mode.add_argument('--inventory',help='search screened inventory asset context by exact ID or title substring')
     parser.add_argument('--level',choices=['region','province','city','municipality','locality','barangay'])
     parser.add_argument('--province');parser.add_argument('--municipality');parser.add_argument('--district');parser.add_argument('--limit',type=int,default=20)
     args=parser.parse_args();db=sqlite3.connect(args.database.resolve().as_uri()+'?mode=ro',uri=True);db.row_factory=sqlite3.Row
     if args.summary:
         out={'placesByClaimedLevel':dict(db.execute('SELECT level,COUNT(*) FROM places GROUP BY level').fetchall()),'issuesByKind':dict(db.execute('SELECT kind,COUNT(*) FROM issues GROUP BY kind').fetchall()),'warning':'Counts include source variants and disputed identities, not official administrative totals.'}
+    elif args.inventory:
+        records=[]
+        for row in db.execute('SELECT e.*,s.path,s.sha256 FROM inventory_location_contexts e JOIN sources s ON s.id=e.source_id WHERE instr(lower(e.original_title),lower(?))>0 ORDER BY e.original_title LIMIT ?',(args.inventory,max(0,args.limit))):
+            item=dict(row);item['evidence']=json.loads(item.pop('raw_json'));records.append(item)
+        out={'contexts':records,'warning':'Physical asset location screened against current local maps; not official boundary verification, funded quantities or historical officeholders.'}
     elif args.lineage:
         out={'transitions':[dict(r) for r in db.execute('SELECT t.*,p.name predecessor_name,c.name successor_name FROM administrative_transition_review t JOIN places p ON p.id=t.predecessor_id JOIN places c ON c.id=t.successor_id WHERE p.name_key=? OR c.name_key=? ORDER BY p.name,c.name',(norm(args.lineage),norm(args.lineage)))],
              'warning':'Candidate relations only. Unknown dates stay NULL; no alias, municipality transfer or LEG continuity is inferred.'}
@@ -72,6 +78,8 @@ def main():
         out={'candidates':[]}
         for row in rows:
             item=dict(row);item['legClaims']=[dict(x) for x in db.execute('SELECT c.*,d.jurisdiction,d.designation,s.path FROM deo_leg_claims c JOIN leg_districts d ON c.leg_id=d.id JOIN sources s ON c.source_id=s.id WHERE c.deo_id=?',(row['id'],))]
+            if db.execute("SELECT 1 FROM sqlite_master WHERE name='boundary_deo_leg_evidence'").fetchone():
+                item['boundaryEvidence']=[dict(x) for x in db.execute('SELECT leg_label,status,intersection_m2,deo_fraction,leg_fraction,valid_from,valid_to FROM boundary_deo_leg_evidence WHERE deo_id=? ORDER BY deo_fraction DESC',(row['id'],))]
             out['candidates'].append(item)
         out['warning']='DEO coverage and transcribed amounts are reference claims; no project allocation or ownership is inferred.'
     elif args.leg:

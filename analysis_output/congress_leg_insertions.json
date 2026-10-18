@@ -1,9 +1,9 @@
 {
   "method": "Domestic HGAB-only candidates intersected with uniquely assigned scope-reviewed LEG geography; unresolved/shared locations and FAP excluded.",
   "domesticCandidateLines": 5549,
-  "assignedCandidateLines": 3358,
-  "excludedCandidateLines": 2191,
-  "assignedCandidatePesos": 75043195000,
+  "assignedCandidateLines": 3383,
+  "excludedCandidateLines": 2166,
+  "assignedCandidatePesos": 76071098000,
   "districts": [
     {
       "district": "Ilocos Norte · 1st District",
@@ -5638,7 +5638,7 @@
       "representative": "John Geesnell Yap",
       "candidateLines": 95,
       "candidateAllocationPesos": 1649275000,
-      "acceptedDistrictLines": 103,
+      "acceptedDistrictLines": 104,
       "rows": [
         {
           "id": "HB10858-3-0646-010521",
@@ -6783,6 +6783,519 @@
       ]
     },
     {
+      "district": "La Union · 1st District",
+      "representative": "Paolo Ortega",
+      "candidateLines": 42,
+      "candidateAllocationPesos": 1569800000,
+      "acceptedDistrictLines": 80,
+      "rows": [
+        {
+          "id": "HB10858-3-0632-010284",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Construction of Multi-Purpose Building within the PGLU-Sevilla Government Property Complex, Barangay Sevilla, City of San Fernando, La Union",
+          "amountPesos": 500000000,
+          "office": "Central Office",
+          "closestNepTitle": "Rehabilitation of Multi-Purpose Building (City Prosecutors Office), Barangay Sevilla, City of San Fernando, La Union",
+          "similarityPct": 72.58,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "632"
+        },
+        {
+          "id": "HB10858-3-0632-010285",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Construction of 2 Units Multi-Purpose Building, Barangay Parian, San Fernando City, La Union",
+          "amountPesos": 257000000,
+          "office": "Central Office",
+          "closestNepTitle": "Construction of Multi-Storey Multi-Purpose Building, City of San Fernando, La Union",
+          "similarityPct": 77.65,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "632"
+        },
+        {
+          "id": "HB10858-3-0632-010286",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Rehabilitation of 2 Units Multi-purpose Building, Barangay Sevilla, City of San Fernando, La Union (16.5964, 120.321499)",
+          "amountPesos": 85000000,
+          "office": "Central Office",
+          "closestNepTitle": "Rehabilitation of Multi-Purpose Building (PGLU Main Building), Barangay Sevilla, City of San Fernando, La Union",
+          "similarityPct": 79.09,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "632"
+        },
+        {
+          "id": "HB10858-3-0139-000558",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Sn Juan-Sn Gabriel Rd - K0281 + 890 - K0284 + 386",
+          "amountPesos": 75000000,
+          "office": "Central Office",
+          "closestNepTitle": "Sta. Elena-Capalonga By Pass Coastal Rd - K0279 + 868 – K0281 + 893",
+          "similarityPct": 46.46,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "139"
+        },
+        {
+          "id": "HB10858-3-0129-000360",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Sn Fernando-Bagulin Rd - K0273 + 0001 - K0273 + 373, K0273 + 394 - K0274 + 000, K0274 + 104 - K0276 + 000, K0276 + 968 - K0277 + 142, K0277 + 438 - K0277 + 518, K0278 + 000 - K0279 + 000",
+          "amountPesos": 50000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "",
+          "similarityPct": 0.0,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "129"
+        },
+        {
+          "id": "HB10858-3-0332-004131",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Construction of Flood Mitigation Structure along Barangay Rising Creek, Bangar, La Union",
+          "amountPesos": 50000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Construction of Flood Mitigation Structure along Moonwalk Creek (South Side) (Sta. 0+000 - Sta. 0+443), Parañaque City",
+          "similarityPct": 64.97,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "332"
+        },
+        {
+          "id": "HB10858-3-0294-003426",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Tanqui Br. (B05143LZ) along San Fernando Bypass Rd",
+          "amountPesos": 40000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "",
+          "similarityPct": 0.0,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "294"
+        },
+        {
+          "id": "HB10858-3-0294-003427",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Biday Br. (B05142LZ) along San Fernando Bypass Rd",
+          "amountPesos": 40000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "",
+          "similarityPct": 0.0,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "294"
+        },
+        {
+          "id": "HB10858-3-0465-006734",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Construction of New Bridge along Alilem-Sugpon-Sudipen Rd., Barangay Old Poblacion, Sudipen, La Union",
+          "amountPesos": 30000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Construction of bridge, Barangay Gumot Nagcolaran Rosario, La Union",
+          "similarityPct": 58.54,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "465"
+        },
+        {
+          "id": "HB10858-3-0677-011105",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Rehabilitation of Multi-Purpose Building, Barangay Poblacion, San Gabriel, La Union (16.674523, 120.401585)",
+          "amountPesos": 30000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building (Covered Court), Mabalacat City, Pampanga (Cluster Barangays III) Poblacion - 15.223456, 120.571309 San Francisco - 15.220637, 120.577331 San Joaquin - 15.229945, 120.570738 Santa Ines - 15.223154, 120.577796 Santa Maria - 15.222317, 120.597289 Santo Rosario - 15.215123, 120.577959 Sapang Balen - 15.251419, 120.600537 Sapang Biabas - 15.196476, 120.599915 Tabun - 15.250252, 120.564428",
+          "similarityPct": 31.98,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "677"
+        },
+        {
+          "id": "HB10858-3-0677-011111",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Construction of Multi-Purpose Building, Barangay Poblacion, Bacnotan, La Union (16.725561, 120.350774)",
+          "amountPesos": 30000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building (Evacuation Center), Barangay Linong, Sto. Tomas, La Union",
+          "similarityPct": 67.38,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "677"
+        },
+        {
+          "id": "HB10858-3-0677-011116",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Completion of Multi-Purpose Building, Barangay Nagsabaran Norte, Balaoan, La Union",
+          "amountPesos": 30000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Hall (Barangay Hall), Barangay Ubagan, Sto Tomas, La Union",
+          "similarityPct": 67.9,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "677"
+        },
+        {
+          "id": "HB10858-3-0183-001340",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Sn Fernando-Bagulin Rd - K0284 + 770 - K0284 + 822",
+          "amountPesos": 26000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "",
+          "similarityPct": 0.0,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "183"
+        },
+        {
+          "id": "HB10858-3-0183-001339",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Sn Fernando-Bagulin Rd - K0276 + 139 - K0276 + 262",
+          "amountPesos": 21400000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "",
+          "similarityPct": 0.0,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "183"
+        },
+        {
+          "id": "HB10858-3-0677-011106",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Construction of Multi-Purpose Building, Barangay Sevilla, San Fernando City, La Union (16.60564, 120.322427)",
+          "amountPesos": 20000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Storey Multi-Purpose Building, City of San Fernando, La Union",
+          "similarityPct": 68.85,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "677"
+        },
+        {
+          "id": "HB10858-3-0677-011112",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Construction of Multi-Purpose Building at La Union Police Provincial Office, Barangay Carlatan, City of San Fernando, La Union (16.694328, 120.312733)",
+          "amountPesos": 20000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Storey Multi-Purpose Building, City of San Fernando, La Union",
+          "similarityPct": 60.44,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "677"
+        },
+        {
+          "id": "HB10858-3-0677-011120",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Construction of Multi-Purpose Building, Barangay Central West 1, Bangar, La Union",
+          "amountPesos": 20000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building (Evacuation Center), Barangay Linong, Sto. Tomas, La Union",
+          "similarityPct": 74.56,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "677"
+        },
+        {
+          "id": "HB10858-3-0678-011125",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Rehabilitation of Multi-Purpose Faciliteis along Barangay Catbangen and Barangay Poro, City of San Fernando, La Union",
+          "amountPesos": 20000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Rehabilitation of Multi-Purpose Building (PGLU Main Building), Barangay Sevilla, City of San Fernando, La Union",
+          "similarityPct": 73.3,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "678"
+        },
+        {
+          "id": "HB10858-3-0183-001338",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Sn Fernando-Bagulin Rd - K0275 + 372 - K0275 + 410",
+          "amountPesos": 17100000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "",
+          "similarityPct": 0.0,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "183"
+        },
+        {
+          "id": "HB10858-3-0252-002547",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Sn Juan-Sn Gabriel Rd - K0280 + 421 - K0280 + 751 (Road Safety: Roller Barrier)",
+          "amountPesos": 17000000,
+          "office": "Central Office",
+          "closestNepTitle": "Installation/Application of Road Safety Facilities (Roadway Lighting) along Tarlac - Guimba Road K0148±184 - K0151+650",
+          "similarityPct": 32.58,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "252"
+        },
+        {
+          "id": "HB10858-3-0677-011107",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Construction of Multi-Purpose Building, Barangay Carlatan, City of San Fernando, La Union",
+          "amountPesos": 16000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Storey Multi-Purpose Building, City of San Fernando, La Union",
+          "similarityPct": 81.44,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "677"
+        },
+        {
+          "id": "HB10858-3-0332-004130",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Construction of River Wall at Barangay Mamay (Purok I), Luna, La Union",
+          "amountPesos": 15000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Rehabilitation of Flood Mitigation Structure along Col. E. De Leon towards Parañaque River (Sta 0+000 - Sta 0+177), Barangay Sto. Niño, District I, Parañaque City",
+          "similarityPct": 33.94,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "332"
+        },
+        {
+          "id": "HB10858-3-0372-004877",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Rehabilitation/Improvement of Amburayan River Control, Barangay Mindoro, Bangar, La Union",
+          "amountPesos": 15000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "",
+          "similarityPct": 0.0,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "372"
+        },
+        {
+          "id": "HB10858-3-0332-004129",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Construction of Flood Mitigation Structure along Bambanay - Pacpacac Creek, Barangay Bambanay, San Juan, La Union Sta 0+000 to Sta 0+15",
+          "amountPesos": 13000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Construction of Flood Mitigation Structure along Moonwalk Creek (North Side) (Sta. 0+000 - Sta. 0+452), Parañaque City",
+          "similarityPct": 66.11,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "332"
+        },
+        {
+          "id": "HB10858-3-0677-011118",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Completion of Multi-Purpose Building, Barangay Poblacion, Sudipen, La Union",
+          "amountPesos": 12650000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building (Evacuation Center), Barangay Linong, Sto. Tomas, La Union",
+          "similarityPct": 69.94,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "677"
+        },
+        {
+          "id": "HB10858-3-0678-011126",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Construction/ Completion of Multi-Purpose Building in DMMMSU-MLUC, Barangay Catbangen, City of San Fernando, La Union",
+          "amountPesos": 11500000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Storey Multi-Purpose Building, City of San Fernando, La Union",
+          "similarityPct": 74.23,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "678"
+        },
+        {
+          "id": "HB10858-3-0252-002548",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Sn Juan-Sn Gabriel Rd - K0281 + 300 - K0281 + 510 (Road Safety: Roller Barrier)",
+          "amountPesos": 11000000,
+          "office": "Central Office",
+          "closestNepTitle": "Installation/Application of Road Safety Facilities (Roadway Lighting) along Tarlac - Guimba Road K0148±184 - K0151+650",
+          "similarityPct": 32.58,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "252"
+        },
+        {
+          "id": "HB10858-3-0332-004127",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Rehabilitation of Seawall, Barangay Taboc, San Juan, La Union",
+          "amountPesos": 10000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Construction of Seawall, Sitio Gabihan, Barangay San Agustin Kanluran Isla Verde, Batangas City",
+          "similarityPct": 52.0,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "332"
+        },
+        {
+          "id": "HB10858-3-0677-011115",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Rehabilitation of Multi-Purpose Building, Barangay Madayegdeg, City of San Fernando, La Union",
+          "amountPesos": 10000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Rehabilitation of Barangay Road, Barangay Masicong, City of San Fernando, La Union",
+          "similarityPct": 75.74,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "677"
+        },
+        {
+          "id": "HB10858-3-0678-011124",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Construction of Multi-Purpose Building, Sitio Paratong Barangay Poblacion, Bacnotan, La Union",
+          "amountPesos": 10000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building (Evacuation Center), Barangay Linong, Sto. Tomas, La Union",
+          "similarityPct": 76.24,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "678"
+        },
+        {
+          "id": "HB10858-3-0252-002549",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Sn Juan-Sn Gabriel Rd - K0281 + 354 - K0281 + 540 (Road Safety: Roller Barrier)",
+          "amountPesos": 9000000,
+          "office": "Central Office",
+          "closestNepTitle": "Installation/Application of Road Safety Facilities (Roadway Lighting) along Tarlac - Guimba Road K0148±184 - K0151+650",
+          "similarityPct": 32.58,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "252"
+        },
+        {
+          "id": "HB10858-3-0332-004128",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Rehabilitation of Slope Protection Structure along Carlatan Creek, Barangay Carlatan, City of San Fernando, La Union",
+          "amountPesos": 9000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Rehabilitation of Flood Mitigation Structure along Balihatar Creek, Barangay San Dionisio, District 1, Parañaque City",
+          "similarityPct": 65.2,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "332"
+        },
+        {
+          "id": "HB10858-3-0677-011110",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Construction of Multi-Purpose Building, Barangay Suyo, Luna, La Union",
+          "amountPesos": 8000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building (Evacuation Center), Barangay Linong, Sto. Tomas, La Union",
+          "similarityPct": 77.71,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "677"
+        },
+        {
+          "id": "HB10858-3-0677-011108",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Construction of Multi-Purpose Building, Barangay Sapilang, Bacnotan, La Union (16.725735, 120.3851)",
+          "amountPesos": 5000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Hall (Barangay Hall), Barangay Ubagan, Sto Tomas, La Union",
+          "similarityPct": 68.18,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "677"
+        },
+        {
+          "id": "HB10858-3-0677-011109",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Construction of Multi-Purpose Building, Barangay Nalvo, Luna, La Union (16.845386, 120.355071)",
+          "amountPesos": 5000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building (Evacuation Center), Barangay Linong, Sto. Tomas, La Union",
+          "similarityPct": 68.16,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "677"
+        },
+        {
+          "id": "HB10858-3-0677-011113",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Rehabilitation of Multi-Purpose Building, Barangay II, City of San Fernando, La Union (16.615073, 120.317211)",
+          "amountPesos": 5000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Rehabilitation of Barangay Road, Barangay Masicong, City of San Fernando, La Union",
+          "similarityPct": 68.13,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "677"
+        },
+        {
+          "id": "HB10858-3-0677-011114",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Construction of Multi-Purpose Building, Barangay Cabalitocan, Luna, La Union",
+          "amountPesos": 5000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building (Evacuation Center), Barangay Linong, Sto. Tomas, La Union",
+          "similarityPct": 75.61,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "677"
+        },
+        {
+          "id": "HB10858-3-0677-011119",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Completion of Multi-Purpose Building, Nagsimbaanan, Bacnotan, La Union",
+          "amountPesos": 5000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Construction (Completion) of Multi-Purpose Building Barangay Pandan, Bacnotan, La Union",
+          "similarityPct": 81.33,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "677"
+        },
+        {
+          "id": "HB10858-3-0677-011122",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Rehabilitation of Multi-Purpose Building, Barangay Lipay Este, San Gabriel, La Union",
+          "amountPesos": 5000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building (Evacuation Center), Barangay Linong, Sto. Tomas, La Union",
+          "similarityPct": 66.28,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "677"
+        },
+        {
+          "id": "HB10858-3-0677-011123",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Construction of Multi-Purpose Building, Barangay Lon-oy, San Gabriel, La Union",
+          "amountPesos": 5000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building (Evacuation Center), Barangay Linong, Sto. Tomas, La Union",
+          "similarityPct": 75.9,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "677"
+        },
+        {
+          "id": "HB10858-3-0678-011127",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Construction/ Completion of Multi-Purpose Building, Barangay Poro, City of San Fernando, La Union",
+          "amountPesos": 4150000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Storey Multi-Purpose Building, City of San Fernando, La Union",
+          "similarityPct": 82.76,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "678"
+        },
+        {
+          "id": "HB10858-3-0677-011117",
+          "district": "La Union · 1st District",
+          "representative": "Paolo Ortega",
+          "projectName": "Completion of Multi-Purpose Building, Barangay Castro, Sudipen, La Union",
+          "amountPesos": 2000000,
+          "office": "La Union 1st District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building (Evacuation Center), Barangay Linong, Sto. Tomas, La Union",
+          "similarityPct": 66.25,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "677"
+        }
+      ]
+    },
+    {
       "district": "Iloilo · 1st District",
       "representative": "Janette Garin",
       "candidateLines": 33,
@@ -7192,7 +7705,7 @@
       "representative": "Tonypet Albano",
       "candidateLines": 59,
       "candidateAllocationPesos": 1491015000,
-      "acceptedDistrictLines": 129,
+      "acceptedDistrictLines": 130,
       "rows": [
         {
           "id": "HB10858-3-0635-010345",
@@ -8491,7 +9004,7 @@
       "representative": "Jonathan Keith Flores",
       "candidateLines": 21,
       "candidateAllocationPesos": 1394000000,
-      "acceptedDistrictLines": 32,
+      "acceptedDistrictLines": 40,
       "rows": [
         {
           "id": "HB10858-3-0438-006222",
@@ -10815,399 +11328,6 @@
       ]
     },
     {
-      "district": "La Union · 1st District",
-      "representative": "Paolo Ortega",
-      "candidateLines": 32,
-      "candidateAllocationPesos": 1263300000,
-      "acceptedDistrictLines": 63,
-      "rows": [
-        {
-          "id": "HB10858-3-0632-010284",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Construction of Multi-Purpose Building within the PGLU-Sevilla Government Property Complex, Barangay Sevilla, City of San Fernando, La Union",
-          "amountPesos": 500000000,
-          "office": "Central Office",
-          "closestNepTitle": "Rehabilitation of Multi-Purpose Building (City Prosecutors Office), Barangay Sevilla, City of San Fernando, La Union",
-          "similarityPct": 72.58,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "632"
-        },
-        {
-          "id": "HB10858-3-0632-010285",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Construction of 2 Units Multi-Purpose Building, Barangay Parian, San Fernando City, La Union",
-          "amountPesos": 257000000,
-          "office": "Central Office",
-          "closestNepTitle": "Construction of Multi-Storey Multi-Purpose Building, City of San Fernando, La Union",
-          "similarityPct": 77.65,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "632"
-        },
-        {
-          "id": "HB10858-3-0632-010286",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Rehabilitation of 2 Units Multi-purpose Building, Barangay Sevilla, City of San Fernando, La Union (16.5964, 120.321499)",
-          "amountPesos": 85000000,
-          "office": "Central Office",
-          "closestNepTitle": "Rehabilitation of Multi-Purpose Building (PGLU Main Building), Barangay Sevilla, City of San Fernando, La Union",
-          "similarityPct": 79.09,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "632"
-        },
-        {
-          "id": "HB10858-3-0332-004131",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Construction of Flood Mitigation Structure along Barangay Rising Creek, Bangar, La Union",
-          "amountPesos": 50000000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Construction of Flood Mitigation Structure along Moonwalk Creek (South Side) (Sta. 0+000 - Sta. 0+443), Parañaque City",
-          "similarityPct": 64.97,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "332"
-        },
-        {
-          "id": "HB10858-3-0465-006734",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Construction of New Bridge along Alilem-Sugpon-Sudipen Rd., Barangay Old Poblacion, Sudipen, La Union",
-          "amountPesos": 30000000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Construction of bridge, Barangay Gumot Nagcolaran Rosario, La Union",
-          "similarityPct": 58.54,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "465"
-        },
-        {
-          "id": "HB10858-3-0677-011105",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Rehabilitation of Multi-Purpose Building, Barangay Poblacion, San Gabriel, La Union (16.674523, 120.401585)",
-          "amountPesos": 30000000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building (Covered Court), Mabalacat City, Pampanga (Cluster Barangays III) Poblacion - 15.223456, 120.571309 San Francisco - 15.220637, 120.577331 San Joaquin - 15.229945, 120.570738 Santa Ines - 15.223154, 120.577796 Santa Maria - 15.222317, 120.597289 Santo Rosario - 15.215123, 120.577959 Sapang Balen - 15.251419, 120.600537 Sapang Biabas - 15.196476, 120.599915 Tabun - 15.250252, 120.564428",
-          "similarityPct": 31.98,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "677"
-        },
-        {
-          "id": "HB10858-3-0677-011111",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Construction of Multi-Purpose Building, Barangay Poblacion, Bacnotan, La Union (16.725561, 120.350774)",
-          "amountPesos": 30000000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building (Evacuation Center), Barangay Linong, Sto. Tomas, La Union",
-          "similarityPct": 67.38,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "677"
-        },
-        {
-          "id": "HB10858-3-0677-011116",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Completion of Multi-Purpose Building, Barangay Nagsabaran Norte, Balaoan, La Union",
-          "amountPesos": 30000000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Hall (Barangay Hall), Barangay Ubagan, Sto Tomas, La Union",
-          "similarityPct": 67.9,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "677"
-        },
-        {
-          "id": "HB10858-3-0677-011106",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Construction of Multi-Purpose Building, Barangay Sevilla, San Fernando City, La Union (16.60564, 120.322427)",
-          "amountPesos": 20000000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Storey Multi-Purpose Building, City of San Fernando, La Union",
-          "similarityPct": 68.85,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "677"
-        },
-        {
-          "id": "HB10858-3-0677-011112",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Construction of Multi-Purpose Building at La Union Police Provincial Office, Barangay Carlatan, City of San Fernando, La Union (16.694328, 120.312733)",
-          "amountPesos": 20000000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Storey Multi-Purpose Building, City of San Fernando, La Union",
-          "similarityPct": 60.44,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "677"
-        },
-        {
-          "id": "HB10858-3-0677-011120",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Construction of Multi-Purpose Building, Barangay Central West 1, Bangar, La Union",
-          "amountPesos": 20000000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building (Evacuation Center), Barangay Linong, Sto. Tomas, La Union",
-          "similarityPct": 74.56,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "677"
-        },
-        {
-          "id": "HB10858-3-0678-011125",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Rehabilitation of Multi-Purpose Faciliteis along Barangay Catbangen and Barangay Poro, City of San Fernando, La Union",
-          "amountPesos": 20000000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Rehabilitation of Multi-Purpose Building (PGLU Main Building), Barangay Sevilla, City of San Fernando, La Union",
-          "similarityPct": 73.3,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "678"
-        },
-        {
-          "id": "HB10858-3-0677-011107",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Construction of Multi-Purpose Building, Barangay Carlatan, City of San Fernando, La Union",
-          "amountPesos": 16000000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Storey Multi-Purpose Building, City of San Fernando, La Union",
-          "similarityPct": 81.44,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "677"
-        },
-        {
-          "id": "HB10858-3-0332-004130",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Construction of River Wall at Barangay Mamay (Purok I), Luna, La Union",
-          "amountPesos": 15000000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Rehabilitation of Flood Mitigation Structure along Col. E. De Leon towards Parañaque River (Sta 0+000 - Sta 0+177), Barangay Sto. Niño, District I, Parañaque City",
-          "similarityPct": 33.94,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "332"
-        },
-        {
-          "id": "HB10858-3-0372-004877",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Rehabilitation/Improvement of Amburayan River Control, Barangay Mindoro, Bangar, La Union",
-          "amountPesos": 15000000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "",
-          "similarityPct": 0.0,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "372"
-        },
-        {
-          "id": "HB10858-3-0332-004129",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Construction of Flood Mitigation Structure along Bambanay - Pacpacac Creek, Barangay Bambanay, San Juan, La Union Sta 0+000 to Sta 0+15",
-          "amountPesos": 13000000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Construction of Flood Mitigation Structure along Moonwalk Creek (North Side) (Sta. 0+000 - Sta. 0+452), Parañaque City",
-          "similarityPct": 66.11,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "332"
-        },
-        {
-          "id": "HB10858-3-0677-011118",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Completion of Multi-Purpose Building, Barangay Poblacion, Sudipen, La Union",
-          "amountPesos": 12650000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building (Evacuation Center), Barangay Linong, Sto. Tomas, La Union",
-          "similarityPct": 69.94,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "677"
-        },
-        {
-          "id": "HB10858-3-0678-011126",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Construction/ Completion of Multi-Purpose Building in DMMMSU-MLUC, Barangay Catbangen, City of San Fernando, La Union",
-          "amountPesos": 11500000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Storey Multi-Purpose Building, City of San Fernando, La Union",
-          "similarityPct": 74.23,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "678"
-        },
-        {
-          "id": "HB10858-3-0332-004127",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Rehabilitation of Seawall, Barangay Taboc, San Juan, La Union",
-          "amountPesos": 10000000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Construction of Seawall, Sitio Gabihan, Barangay San Agustin Kanluran Isla Verde, Batangas City",
-          "similarityPct": 52.0,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "332"
-        },
-        {
-          "id": "HB10858-3-0677-011115",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Rehabilitation of Multi-Purpose Building, Barangay Madayegdeg, City of San Fernando, La Union",
-          "amountPesos": 10000000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Rehabilitation of Barangay Road, Barangay Masicong, City of San Fernando, La Union",
-          "similarityPct": 75.74,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "677"
-        },
-        {
-          "id": "HB10858-3-0678-011124",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Construction of Multi-Purpose Building, Sitio Paratong Barangay Poblacion, Bacnotan, La Union",
-          "amountPesos": 10000000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building (Evacuation Center), Barangay Linong, Sto. Tomas, La Union",
-          "similarityPct": 76.24,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "678"
-        },
-        {
-          "id": "HB10858-3-0332-004128",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Rehabilitation of Slope Protection Structure along Carlatan Creek, Barangay Carlatan, City of San Fernando, La Union",
-          "amountPesos": 9000000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Rehabilitation of Flood Mitigation Structure along Balihatar Creek, Barangay San Dionisio, District 1, Parañaque City",
-          "similarityPct": 65.2,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "332"
-        },
-        {
-          "id": "HB10858-3-0677-011110",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Construction of Multi-Purpose Building, Barangay Suyo, Luna, La Union",
-          "amountPesos": 8000000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building (Evacuation Center), Barangay Linong, Sto. Tomas, La Union",
-          "similarityPct": 77.71,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "677"
-        },
-        {
-          "id": "HB10858-3-0677-011108",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Construction of Multi-Purpose Building, Barangay Sapilang, Bacnotan, La Union (16.725735, 120.3851)",
-          "amountPesos": 5000000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Hall (Barangay Hall), Barangay Ubagan, Sto Tomas, La Union",
-          "similarityPct": 68.18,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "677"
-        },
-        {
-          "id": "HB10858-3-0677-011109",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Construction of Multi-Purpose Building, Barangay Nalvo, Luna, La Union (16.845386, 120.355071)",
-          "amountPesos": 5000000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building (Evacuation Center), Barangay Linong, Sto. Tomas, La Union",
-          "similarityPct": 68.16,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "677"
-        },
-        {
-          "id": "HB10858-3-0677-011113",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Rehabilitation of Multi-Purpose Building, Barangay II, City of San Fernando, La Union (16.615073, 120.317211)",
-          "amountPesos": 5000000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Rehabilitation of Barangay Road, Barangay Masicong, City of San Fernando, La Union",
-          "similarityPct": 68.13,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "677"
-        },
-        {
-          "id": "HB10858-3-0677-011114",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Construction of Multi-Purpose Building, Barangay Cabalitocan, Luna, La Union",
-          "amountPesos": 5000000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building (Evacuation Center), Barangay Linong, Sto. Tomas, La Union",
-          "similarityPct": 75.61,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "677"
-        },
-        {
-          "id": "HB10858-3-0677-011119",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Completion of Multi-Purpose Building, Nagsimbaanan, Bacnotan, La Union",
-          "amountPesos": 5000000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Construction (Completion) of Multi-Purpose Building Barangay Pandan, Bacnotan, La Union",
-          "similarityPct": 81.33,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "677"
-        },
-        {
-          "id": "HB10858-3-0677-011122",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Rehabilitation of Multi-Purpose Building, Barangay Lipay Este, San Gabriel, La Union",
-          "amountPesos": 5000000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building (Evacuation Center), Barangay Linong, Sto. Tomas, La Union",
-          "similarityPct": 66.28,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "677"
-        },
-        {
-          "id": "HB10858-3-0677-011123",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Construction of Multi-Purpose Building, Barangay Lon-oy, San Gabriel, La Union",
-          "amountPesos": 5000000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building (Evacuation Center), Barangay Linong, Sto. Tomas, La Union",
-          "similarityPct": 75.9,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "677"
-        },
-        {
-          "id": "HB10858-3-0678-011127",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Construction/ Completion of Multi-Purpose Building, Barangay Poro, City of San Fernando, La Union",
-          "amountPesos": 4150000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Storey Multi-Purpose Building, City of San Fernando, La Union",
-          "similarityPct": 82.76,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "678"
-        },
-        {
-          "id": "HB10858-3-0677-011117",
-          "district": "La Union · 1st District",
-          "representative": "Paolo Ortega",
-          "projectName": "Completion of Multi-Purpose Building, Barangay Castro, Sudipen, La Union",
-          "amountPesos": 2000000,
-          "office": "La Union 1st District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building (Evacuation Center), Barangay Linong, Sto. Tomas, La Union",
-          "similarityPct": 66.25,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "677"
-        }
-      ]
-    },
-    {
       "district": "Abra · Lone District",
       "representative": "Joseph Bernos",
       "candidateLines": 14,
@@ -12083,6 +12203,363 @@
           "similarityPct": 40.43,
           "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
           "sourcePage": "914"
+        }
+      ]
+    },
+    {
+      "district": "Quezon · 2nd District",
+      "representative": "David Suarez",
+      "candidateLines": 29,
+      "candidateAllocationPesos": 1174270000,
+      "acceptedDistrictLines": 67,
+      "rows": [
+        {
+          "id": "HB10858-3-0306-003638",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Construction of Drainage Structure, Barangay Paiisa - San Juan - Cabay - Del Rosario, Sta. 0 + 000 - Sta. 5 + 610, Tiaong, Quezon",
+          "amountPesos": 300000000,
+          "office": "Central Office",
+          "closestNepTitle": "Construction of Drainage Structure along Caraycaray - Lupa Rd (Sta. 0 + 000 - 0 + 211, Sta. 0 + 598 - Sta. 1 + 614)",
+          "similarityPct": 63.46,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "306"
+        },
+        {
+          "id": "HB10858-3-0202-001658",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Quezon-Batangas Road - K0097 + 620 - K0099 + 095, K0099 + 150 - K0100 + 511",
+          "amountPesos": 216200000,
+          "office": "Central Office",
+          "closestNepTitle": "Kabankalan Jct Salong-Tapi-Dacongcogon-Bantayan Rd - K0097 + 371 - K0098 + 100, K0099 + 1475 - K0101 + 551, K0103 + 000 - K0104 + 642",
+          "similarityPct": 46.63,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "202"
+        },
+        {
+          "id": "HB10858-3-0235-002288",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Quezon Industrial Highway, Sta. 1 + 195 - Sta. 2 + 060, Lucena City, Quezon",
+          "amountPesos": 122070000,
+          "office": "Central Office",
+          "closestNepTitle": "",
+          "similarityPct": 0.0,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "235"
+        },
+        {
+          "id": "HB10858-3-0235-002287",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Quezon Industrial Highway, Sta. 0 + 484 - Sta. 0 + 825, Sta. 0 + 995 - Sta. 1 + 136, Sta. 2 + 092 - Sta. 2 + 289, Sta. 3 + 882 - Sta. 4 + 138, Lucena City, Quezon",
+          "amountPesos": 91300000,
+          "office": "Central Office",
+          "closestNepTitle": "Alegria-Alcoy Road - Sta. 2 + 459 - Sta. 4 + 257",
+          "similarityPct": 28.4,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "235"
+        },
+        {
+          "id": "HB10858-3-0237-002314",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Quezon Eco - Tourism - Sariaya - Candelaria - Tiaong - San Antonio Road, Sta. 11 + 640 - Sta. 12 + 159, Tiaong, Quezon",
+          "amountPesos": 85000000,
+          "office": "Central Office",
+          "closestNepTitle": "Quezon Eco - Tourism - Sariaya - Candelaria - Tiaong - San Antonio Road, Section I: Sta. 10 + 305 - Sta. 11 + 381.46, Section II: Sta. 11 + 474.46 - Sta. 12 + 355, Tiaong, Quezon",
+          "similarityPct": 77.37,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "237"
+        },
+        {
+          "id": "HB10858-3-0236-002304",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Quezon Eco - Tourism - Sariaya - Candelaria - Tiaong - San Antonio Road, Sta. 0 + 000 - Sta. 0 + 520, San Antonio, Quezon",
+          "amountPesos": 84700000,
+          "office": "Central Office",
+          "closestNepTitle": "Quezon Eco - Tourism - Sariaya - Candelaria - Tiaong - San Antonio Road, Section I: Sta. 0 + 000 - Sta. 0 + 520, Section II: Sta. 6 + 992 - Sta. 7 + 156.2, Section III: Sta. 7 + 201.8 - Sta. 8 + 301, San Antonio, Quezon",
+          "similarityPct": 72.2,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "236"
+        },
+        {
+          "id": "HB10858-3-0548-008530",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Road Rehabilitation Barangay Mayao Silangan and Barangay Mayao Kanluran, Lucena City, Quezon, 13.959594, 121.643786",
+          "amountPesos": 25000000,
+          "office": "Quezon 2nd District Engineering Office",
+          "closestNepTitle": "Rehabilitation of Road at Rambutan St. Nayon Silangan, Barangay Dalig, Antipolo City",
+          "similarityPct": 52.04,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "548"
+        },
+        {
+          "id": "HB10858-3-0548-008524",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Construction of Road, Barangay Ibabang Iyam, Lucena City, Quezon",
+          "amountPesos": 20000000,
+          "office": "Quezon 2nd District Engineering Office",
+          "closestNepTitle": "Construction of Road at MWSS Compound, Barangay Matandang Balara, Quezon City",
+          "similarityPct": 66.18,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "548"
+        },
+        {
+          "id": "HB10858-3-0548-008539",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Construction of Bridge, Barangay Magsaysay, San Antonio, Quezon",
+          "amountPesos": 20000000,
+          "office": "Quezon 2nd District Engineering Office",
+          "closestNepTitle": "Construction of Road, Barangay Pulo to Balat Atis, San Antonio, Quezon",
+          "similarityPct": 77.17,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "548"
+        },
+        {
+          "id": "HB10858-3-0781-013236",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Rehabilition of Multi-Purpose Building, Barangay Poblacion, San Antonio, Quezon",
+          "amountPesos": 20000000,
+          "office": "Quezon 2nd District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building (Event Hall Complex) at Valley 5, Barangay San Antonio, Parañaque City",
+          "similarityPct": 61.88,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "781"
+        },
+        {
+          "id": "HB10858-3-0386-005145",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Construction of Water Supply System, Barangay Concepcion Banahaw, Sariaya, Quezon",
+          "amountPesos": 15000000,
+          "office": "Quezon 2nd District Engineering Office",
+          "closestNepTitle": "Construction (Completion) of Water Supply System, Barangay Cabong Sur Guinayangan, Quezon",
+          "similarityPct": 76.07,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "386"
+        },
+        {
+          "id": "HB10858-3-0548-008538",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Rehabilitation of Paved Road, Barangay Kinatihan 1, Candelaria, Quezon",
+          "amountPesos": 15000000,
+          "office": "Quezon 2nd District Engineering Office",
+          "closestNepTitle": "Construction of Road, Barangay Kinatihan 1, Candelaria, Quezon",
+          "similarityPct": 82.54,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "548"
+        },
+        {
+          "id": "HB10858-3-0781-013226",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Construction of Multi-Purpose Building (Community College Phase II), Barangay Bulakin 2, Dolores, Quezon, 14.0183333, 121.39963981",
+          "amountPesos": 15000000,
+          "office": "Quezon 2nd District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Buildingg, Barangay Bulakin 2, Dolores, Quezon",
+          "similarityPct": 74.49,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "781"
+        },
+        {
+          "id": "HB10858-3-0781-013233",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Construction of Multi-Purpose Building, Barangay San Andres, Candelaria, Quezon",
+          "amountPesos": 13000000,
+          "office": "Quezon 2nd District Engineering Office",
+          "closestNepTitle": "",
+          "similarityPct": 0.0,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "781"
+        },
+        {
+          "id": "HB10858-3-0781-013227",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Construction of Multi-Purpose Building, Barangay Putol, Dolores, Quezon, 14.009460, 121.355726",
+          "amountPesos": 12000000,
+          "office": "Quezon 2nd District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building at Barangay Sta. Lucia, Quezon City 14.70739, 121.05327",
+          "similarityPct": 76.67,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "781"
+        },
+        {
+          "id": "HB10858-3-0781-013229",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Construction of Multi-Purpose Building (Don Severo Felisimo Elementary School), Barangay Sta. Lucia, Dolores, Quezon, 14.033142, 121.426042",
+          "amountPesos": 12000000,
+          "office": "Quezon 2nd District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building at Palmera Homes, Barangay Sta. Monica, Quezon City, 14.710784, 121.047262",
+          "similarityPct": 70.29,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "781"
+        },
+        {
+          "id": "HB10858-3-0781-013231",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Construction of Multi-Purpose Building, Barangay Poblacion 1, Sariaya, Quezon, 13.964144, 121.521372",
+          "amountPesos": 12000000,
+          "office": "Quezon 2nd District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building at Barangay Sta. Lucia, Quezon City 14.70739, 121.05327",
+          "similarityPct": 76.34,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "781"
+        },
+        {
+          "id": "HB10858-3-0386-005144",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Construction of Water Supply System, Barangay Niing, San Antonio, Quezon",
+          "amountPesos": 10000000,
+          "office": "Quezon 2nd District Engineering Office",
+          "closestNepTitle": "Construction of Water Supply System Level II, Barangay Ungos, Real Quezon",
+          "similarityPct": 80.0,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "386"
+        },
+        {
+          "id": "HB10858-3-0548-008526",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Construction of Road, Barangay Bignay 2, Sariaya, Quezon",
+          "amountPesos": 10000000,
+          "office": "Quezon 2nd District Engineering Office",
+          "closestNepTitle": "Rehabilitation of Road, Barangay Quirino 2-A, Quezon City",
+          "similarityPct": 66.67,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "548"
+        },
+        {
+          "id": "HB10858-3-0548-008532",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Construction of Road, Barangay Tumbaga 2, Sariaya, Quezon",
+          "amountPesos": 10000000,
+          "office": "Quezon 2nd District Engineering Office",
+          "closestNepTitle": "Rehabilitation of Road, Barangay Quirino 2-A, Quezon City",
+          "similarityPct": 64.22,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "548"
+        },
+        {
+          "id": "HB10858-3-0548-008533",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Rehabilitation of Paved Road, Barangay Bula, Tiaong, Quezon",
+          "amountPesos": 10000000,
+          "office": "Quezon 2nd District Engineering Office",
+          "closestNepTitle": "Rehabilitation of Road, Barangay Ugong Norte Quezon City",
+          "similarityPct": 77.48,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "548"
+        },
+        {
+          "id": "HB10858-3-0781-013228",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Construction of Multi-Purpose Building (Sta. Lucia National High School), Barangay Sta. Lucia, Dolores, Quezon, 14.032425, 121.425425",
+          "amountPesos": 10000000,
+          "office": "Quezon 2nd District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building at Barangay Sta. Lucia, Quezon City 14.70739, 121.05327",
+          "similarityPct": 73.49,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "781"
+        },
+        {
+          "id": "HB10858-3-0781-013230",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Construction of Multi-Purpose Building (San Antonio Central School), Barangay Poblacion, San Antonio, Quezon, 13.891078, 121.287160",
+          "amountPesos": 10000000,
+          "office": "Quezon 2nd District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building at Welcome Village, Barangay San Antonio, Parañaque City (14.466670, 121.022711)",
+          "similarityPct": 67.23,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "781"
+        },
+        {
+          "id": "HB10858-3-0781-013232",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Construction of Multi-Purpose Building (Sariaya East Central Main - ILRC), Barangay Poblacion 4, Sariaya, Quezon, 13.961827, 121.527016",
+          "amountPesos": 10000000,
+          "office": "Quezon 2nd District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building (Disaster Operations Center) Del Nacia IV, Barangay Sauyo, Quezon City, 14.69012,121.04341",
+          "similarityPct": 70.4,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "781"
+        },
+        {
+          "id": "HB10858-3-0386-005142",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Construction of Water Supply System, Barangay Janagdong 2, Sariaya, Quezon",
+          "amountPesos": 7500000,
+          "office": "Quezon 2nd District Engineering Office",
+          "closestNepTitle": "Construction (Completion) of Water Supply System, Barangay Cabong Sur Guinayangan, Quezon",
+          "similarityPct": 79.49,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "386"
+        },
+        {
+          "id": "HB10858-3-0548-008528",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Construction of Road, Barangay Mamala 2, Sariaya, Quezon",
+          "amountPesos": 5500000,
+          "office": "Quezon 2nd District Engineering Office",
+          "closestNepTitle": "Rehabilitation of Road, Barangay Quirino 2-A, Quezon City",
+          "similarityPct": 62.96,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "548"
+        },
+        {
+          "id": "HB10858-3-0781-013224",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Construction of Multi-Purpose Building (Candelaria Elementary School-Main), Barangay Poblacion, Candelaria, Quezon, 13.93234624, 121.42635004",
+          "amountPesos": 5000000,
+          "office": "Quezon 2nd District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building (Completion) at Sitio Pajo, Barangay Baesa, Quezon City, 14.66249, 121.01425",
+          "similarityPct": 68.31,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "781"
+        },
+        {
+          "id": "HB10858-3-0781-013235",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Rehabilitation of Multi-Purpose Building, Sitio Centra 1A, Barangay Kinatihan 2, Candelaria, Quezon",
+          "amountPesos": 5000000,
+          "office": "Quezon 2nd District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building (Covered Court) at Sitio Central 2, Barangay Inarawan, Antipolo City",
+          "similarityPct": 64.65,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "781"
+        },
+        {
+          "id": "HB10858-3-0781-013225",
+          "district": "Quezon · 2nd District",
+          "representative": "David Suarez",
+          "projectName": "Construction of Multi-Purpose Building, Barangay Bayanihan, Dolores, Quezon, 14.017154, 121.399199",
+          "amountPesos": 3000000,
+          "office": "Quezon 2nd District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building at Barangay Sta. Lucia, Quezon City 14.70739, 121.05327",
+          "similarityPct": 75.0,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "781"
         }
       ]
     },
@@ -14743,7 +15220,7 @@
       "representative": "Rommel T. Angara",
       "candidateLines": 40,
       "candidateAllocationPesos": 1031000000,
-      "acceptedDistrictLines": 66,
+      "acceptedDistrictLines": 67,
       "rows": [
         {
           "id": "HB10858-3-0637-010390",
@@ -17490,351 +17967,6 @@
       ]
     },
     {
-      "district": "Quezon · 2nd District",
-      "representative": "David Suarez",
-      "candidateLines": 28,
-      "candidateAllocationPesos": 958070000,
-      "acceptedDistrictLines": 63,
-      "rows": [
-        {
-          "id": "HB10858-3-0306-003638",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Construction of Drainage Structure, Barangay Paiisa - San Juan - Cabay - Del Rosario, Sta. 0 + 000 - Sta. 5 + 610, Tiaong, Quezon",
-          "amountPesos": 300000000,
-          "office": "Central Office",
-          "closestNepTitle": "Construction of Drainage Structure along Caraycaray - Lupa Rd (Sta. 0 + 000 - 0 + 211, Sta. 0 + 598 - Sta. 1 + 614)",
-          "similarityPct": 63.46,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "306"
-        },
-        {
-          "id": "HB10858-3-0235-002288",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Quezon Industrial Highway, Sta. 1 + 195 - Sta. 2 + 060, Lucena City, Quezon",
-          "amountPesos": 122070000,
-          "office": "Central Office",
-          "closestNepTitle": "",
-          "similarityPct": 0.0,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "235"
-        },
-        {
-          "id": "HB10858-3-0235-002287",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Quezon Industrial Highway, Sta. 0 + 484 - Sta. 0 + 825, Sta. 0 + 995 - Sta. 1 + 136, Sta. 2 + 092 - Sta. 2 + 289, Sta. 3 + 882 - Sta. 4 + 138, Lucena City, Quezon",
-          "amountPesos": 91300000,
-          "office": "Central Office",
-          "closestNepTitle": "Alegria-Alcoy Road - Sta. 2 + 459 - Sta. 4 + 257",
-          "similarityPct": 28.4,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "235"
-        },
-        {
-          "id": "HB10858-3-0237-002314",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Quezon Eco - Tourism - Sariaya - Candelaria - Tiaong - San Antonio Road, Sta. 11 + 640 - Sta. 12 + 159, Tiaong, Quezon",
-          "amountPesos": 85000000,
-          "office": "Central Office",
-          "closestNepTitle": "Quezon Eco - Tourism - Sariaya - Candelaria - Tiaong - San Antonio Road, Section I: Sta. 10 + 305 - Sta. 11 + 381.46, Section II: Sta. 11 + 474.46 - Sta. 12 + 355, Tiaong, Quezon",
-          "similarityPct": 77.37,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "237"
-        },
-        {
-          "id": "HB10858-3-0236-002304",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Quezon Eco - Tourism - Sariaya - Candelaria - Tiaong - San Antonio Road, Sta. 0 + 000 - Sta. 0 + 520, San Antonio, Quezon",
-          "amountPesos": 84700000,
-          "office": "Central Office",
-          "closestNepTitle": "Quezon Eco - Tourism - Sariaya - Candelaria - Tiaong - San Antonio Road, Section I: Sta. 0 + 000 - Sta. 0 + 520, Section II: Sta. 6 + 992 - Sta. 7 + 156.2, Section III: Sta. 7 + 201.8 - Sta. 8 + 301, San Antonio, Quezon",
-          "similarityPct": 72.2,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "236"
-        },
-        {
-          "id": "HB10858-3-0548-008530",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Road Rehabilitation Barangay Mayao Silangan and Barangay Mayao Kanluran, Lucena City, Quezon, 13.959594, 121.643786",
-          "amountPesos": 25000000,
-          "office": "Quezon 2nd District Engineering Office",
-          "closestNepTitle": "Rehabilitation of Road at Rambutan St. Nayon Silangan, Barangay Dalig, Antipolo City",
-          "similarityPct": 52.04,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "548"
-        },
-        {
-          "id": "HB10858-3-0548-008524",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Construction of Road, Barangay Ibabang Iyam, Lucena City, Quezon",
-          "amountPesos": 20000000,
-          "office": "Quezon 2nd District Engineering Office",
-          "closestNepTitle": "Construction of Road at MWSS Compound, Barangay Matandang Balara, Quezon City",
-          "similarityPct": 66.18,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "548"
-        },
-        {
-          "id": "HB10858-3-0548-008539",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Construction of Bridge, Barangay Magsaysay, San Antonio, Quezon",
-          "amountPesos": 20000000,
-          "office": "Quezon 2nd District Engineering Office",
-          "closestNepTitle": "Construction of Road, Barangay Pulo to Balat Atis, San Antonio, Quezon",
-          "similarityPct": 77.17,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "548"
-        },
-        {
-          "id": "HB10858-3-0781-013236",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Rehabilition of Multi-Purpose Building, Barangay Poblacion, San Antonio, Quezon",
-          "amountPesos": 20000000,
-          "office": "Quezon 2nd District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building (Event Hall Complex) at Valley 5, Barangay San Antonio, Parañaque City",
-          "similarityPct": 61.88,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "781"
-        },
-        {
-          "id": "HB10858-3-0386-005145",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Construction of Water Supply System, Barangay Concepcion Banahaw, Sariaya, Quezon",
-          "amountPesos": 15000000,
-          "office": "Quezon 2nd District Engineering Office",
-          "closestNepTitle": "Construction (Completion) of Water Supply System, Barangay Cabong Sur Guinayangan, Quezon",
-          "similarityPct": 76.07,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "386"
-        },
-        {
-          "id": "HB10858-3-0548-008538",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Rehabilitation of Paved Road, Barangay Kinatihan 1, Candelaria, Quezon",
-          "amountPesos": 15000000,
-          "office": "Quezon 2nd District Engineering Office",
-          "closestNepTitle": "Construction of Road, Barangay Kinatihan 1, Candelaria, Quezon",
-          "similarityPct": 82.54,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "548"
-        },
-        {
-          "id": "HB10858-3-0781-013226",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Construction of Multi-Purpose Building (Community College Phase II), Barangay Bulakin 2, Dolores, Quezon, 14.0183333, 121.39963981",
-          "amountPesos": 15000000,
-          "office": "Quezon 2nd District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Buildingg, Barangay Bulakin 2, Dolores, Quezon",
-          "similarityPct": 74.49,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "781"
-        },
-        {
-          "id": "HB10858-3-0781-013233",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Construction of Multi-Purpose Building, Barangay San Andres, Candelaria, Quezon",
-          "amountPesos": 13000000,
-          "office": "Quezon 2nd District Engineering Office",
-          "closestNepTitle": "",
-          "similarityPct": 0.0,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "781"
-        },
-        {
-          "id": "HB10858-3-0781-013227",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Construction of Multi-Purpose Building, Barangay Putol, Dolores, Quezon, 14.009460, 121.355726",
-          "amountPesos": 12000000,
-          "office": "Quezon 2nd District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building at Barangay Sta. Lucia, Quezon City 14.70739, 121.05327",
-          "similarityPct": 76.67,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "781"
-        },
-        {
-          "id": "HB10858-3-0781-013229",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Construction of Multi-Purpose Building (Don Severo Felisimo Elementary School), Barangay Sta. Lucia, Dolores, Quezon, 14.033142, 121.426042",
-          "amountPesos": 12000000,
-          "office": "Quezon 2nd District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building at Palmera Homes, Barangay Sta. Monica, Quezon City, 14.710784, 121.047262",
-          "similarityPct": 70.29,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "781"
-        },
-        {
-          "id": "HB10858-3-0781-013231",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Construction of Multi-Purpose Building, Barangay Poblacion 1, Sariaya, Quezon, 13.964144, 121.521372",
-          "amountPesos": 12000000,
-          "office": "Quezon 2nd District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building at Barangay Sta. Lucia, Quezon City 14.70739, 121.05327",
-          "similarityPct": 76.34,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "781"
-        },
-        {
-          "id": "HB10858-3-0386-005144",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Construction of Water Supply System, Barangay Niing, San Antonio, Quezon",
-          "amountPesos": 10000000,
-          "office": "Quezon 2nd District Engineering Office",
-          "closestNepTitle": "Construction of Water Supply System Level II, Barangay Ungos, Real Quezon",
-          "similarityPct": 80.0,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "386"
-        },
-        {
-          "id": "HB10858-3-0548-008526",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Construction of Road, Barangay Bignay 2, Sariaya, Quezon",
-          "amountPesos": 10000000,
-          "office": "Quezon 2nd District Engineering Office",
-          "closestNepTitle": "Rehabilitation of Road, Barangay Quirino 2-A, Quezon City",
-          "similarityPct": 66.67,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "548"
-        },
-        {
-          "id": "HB10858-3-0548-008532",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Construction of Road, Barangay Tumbaga 2, Sariaya, Quezon",
-          "amountPesos": 10000000,
-          "office": "Quezon 2nd District Engineering Office",
-          "closestNepTitle": "Rehabilitation of Road, Barangay Quirino 2-A, Quezon City",
-          "similarityPct": 64.22,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "548"
-        },
-        {
-          "id": "HB10858-3-0548-008533",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Rehabilitation of Paved Road, Barangay Bula, Tiaong, Quezon",
-          "amountPesos": 10000000,
-          "office": "Quezon 2nd District Engineering Office",
-          "closestNepTitle": "Rehabilitation of Road, Barangay Ugong Norte Quezon City",
-          "similarityPct": 77.48,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "548"
-        },
-        {
-          "id": "HB10858-3-0781-013228",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Construction of Multi-Purpose Building (Sta. Lucia National High School), Barangay Sta. Lucia, Dolores, Quezon, 14.032425, 121.425425",
-          "amountPesos": 10000000,
-          "office": "Quezon 2nd District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building at Barangay Sta. Lucia, Quezon City 14.70739, 121.05327",
-          "similarityPct": 73.49,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "781"
-        },
-        {
-          "id": "HB10858-3-0781-013230",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Construction of Multi-Purpose Building (San Antonio Central School), Barangay Poblacion, San Antonio, Quezon, 13.891078, 121.287160",
-          "amountPesos": 10000000,
-          "office": "Quezon 2nd District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building at Welcome Village, Barangay San Antonio, Parañaque City (14.466670, 121.022711)",
-          "similarityPct": 67.23,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "781"
-        },
-        {
-          "id": "HB10858-3-0781-013232",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Construction of Multi-Purpose Building (Sariaya East Central Main - ILRC), Barangay Poblacion 4, Sariaya, Quezon, 13.961827, 121.527016",
-          "amountPesos": 10000000,
-          "office": "Quezon 2nd District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building (Disaster Operations Center) Del Nacia IV, Barangay Sauyo, Quezon City, 14.69012,121.04341",
-          "similarityPct": 70.4,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "781"
-        },
-        {
-          "id": "HB10858-3-0386-005142",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Construction of Water Supply System, Barangay Janagdong 2, Sariaya, Quezon",
-          "amountPesos": 7500000,
-          "office": "Quezon 2nd District Engineering Office",
-          "closestNepTitle": "Construction (Completion) of Water Supply System, Barangay Cabong Sur Guinayangan, Quezon",
-          "similarityPct": 79.49,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "386"
-        },
-        {
-          "id": "HB10858-3-0548-008528",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Construction of Road, Barangay Mamala 2, Sariaya, Quezon",
-          "amountPesos": 5500000,
-          "office": "Quezon 2nd District Engineering Office",
-          "closestNepTitle": "Rehabilitation of Road, Barangay Quirino 2-A, Quezon City",
-          "similarityPct": 62.96,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "548"
-        },
-        {
-          "id": "HB10858-3-0781-013224",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Construction of Multi-Purpose Building (Candelaria Elementary School-Main), Barangay Poblacion, Candelaria, Quezon, 13.93234624, 121.42635004",
-          "amountPesos": 5000000,
-          "office": "Quezon 2nd District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building (Completion) at Sitio Pajo, Barangay Baesa, Quezon City, 14.66249, 121.01425",
-          "similarityPct": 68.31,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "781"
-        },
-        {
-          "id": "HB10858-3-0781-013235",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Rehabilitation of Multi-Purpose Building, Sitio Centra 1A, Barangay Kinatihan 2, Candelaria, Quezon",
-          "amountPesos": 5000000,
-          "office": "Quezon 2nd District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building (Covered Court) at Sitio Central 2, Barangay Inarawan, Antipolo City",
-          "similarityPct": 64.65,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "781"
-        },
-        {
-          "id": "HB10858-3-0781-013225",
-          "district": "Quezon · 2nd District",
-          "representative": "David Suarez",
-          "projectName": "Construction of Multi-Purpose Building, Barangay Bayanihan, Dolores, Quezon, 14.017154, 121.399199",
-          "amountPesos": 3000000,
-          "office": "Quezon 2nd District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building at Barangay Sta. Lucia, Quezon City 14.70739, 121.05327",
-          "similarityPct": 75.0,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "781"
-        }
-      ]
-    },
-    {
       "district": "Davao del Norte · 1st District",
       "representative": "De Carlo Uy",
       "candidateLines": 16,
@@ -19671,296 +19803,11 @@
       ]
     },
     {
-      "district": "Misamis Oriental · 1st District",
-      "representative": "Karen Lagbas",
-      "candidateLines": 23,
-      "candidateAllocationPesos": 767882000,
-      "acceptedDistrictLines": 42,
-      "rows": [
-        {
-          "id": "HB10858-3-0438-006215",
-          "district": "Misamis Oriental · 1st District",
-          "representative": "Karen Lagbas",
-          "projectName": "Construction of Gingoog City-Medina Alternate Road, Sta. 0+000 - Sta. 3+500, Barangay Murallon to Barangay Agay-ayan, Gingoog, Misamis Oriental",
-          "amountPesos": 300000000,
-          "office": "Central Office",
-          "closestNepTitle": "Butuan City - Gingoog City Alternate Route, Sta. 0+000 - Sta. 1+714 , Butuan City",
-          "similarityPct": 53.14,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "438"
-        },
-        {
-          "id": "HB10858-3-0369-004834",
-          "district": "Misamis Oriental · 1st District",
-          "representative": "Karen Lagbas",
-          "projectName": "Construction of Flood Control Structure along Balatukan River, Barangay Mandangoa, Sta. 1+938.000 - Sta. 2+388, Balingasag, Misamis Oriental",
-          "amountPesos": 165000000,
-          "office": "Central Office",
-          "closestNepTitle": "Construction of Flood Control Structure, Mangangate River (Sta.1+400 - Sta. 2+619.93), Muntinlupa City",
-          "similarityPct": 66.96,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "369"
-        },
-        {
-          "id": "HB10858-3-0648-010550",
-          "district": "Misamis Oriental · 1st District",
-          "representative": "Karen Lagbas",
-          "projectName": "Construction of Multi-purpose Building, Barangay Waterfall, Balingasag, Misamis Oriental",
-          "amountPesos": 75000000,
-          "office": "Central Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building (Barangay Hall), Barangay Dansuli, Balingasag, Misamis Oriental 124.840932°,8.738102°)",
-          "similarityPct": 78.22,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "648"
-        },
-        {
-          "id": "HB10858-3-0615-009966",
-          "district": "Misamis Oriental · 1st District",
-          "representative": "Karen Lagbas",
-          "projectName": "Construction of Barangay Mintabon to Barangay Sindangan Road, Sta. 0+000 - Sta. 1+240, Talisayan, Misamis Oriental",
-          "amountPesos": 40000000,
-          "office": "Misamis Oriental 1st District Engineering Office",
-          "closestNepTitle": "Construction of Drainage Structure along Road, Barangay Mintabon, Sta. 0 + 000 - Sta. 0 + 680, Talisayan, Misamis Oriental",
-          "similarityPct": 70.97,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "615"
-        },
-        {
-          "id": "HB10858-3-0615-009961",
-          "district": "Misamis Oriental · 1st District",
-          "representative": "Karen Lagbas",
-          "projectName": "Construction of Barangay Calamcam to Barangay Magkarila Road, Sta. 0+000 - Sta. 0+850, Talisayan, Misamis Oriental",
-          "amountPesos": 22900000,
-          "office": "Misamis Oriental 1st District Engineering Office",
-          "closestNepTitle": "Construction of Drainage Structure along Road, Barangay Mintabon, Sta. 0 + 000 - Sta. 0 + 680, Talisayan, Misamis Oriental",
-          "similarityPct": 73.73,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "615"
-        },
-        {
-          "id": "HB10858-3-0615-009962",
-          "district": "Misamis Oriental · 1st District",
-          "representative": "Karen Lagbas",
-          "projectName": "Construction of Road, Barangay Lunao, Sta. 0 + 180 - Sta. 1 + 180 , Gingoog City, Misamis Oriental",
-          "amountPesos": 19500000,
-          "office": "Misamis Oriental 1st District Engineering Office",
-          "closestNepTitle": "Construction of Road, Barangay Langka , Municipality of Lupon - Barangay Poblacion, Municipality of Banaybanay, Davao Oriental - (Sta. 0+500.000 – Sta. 2+882.000)",
-          "similarityPct": 43.97,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "615"
-        },
-        {
-          "id": "HB10858-3-0883-015221",
-          "district": "Misamis Oriental · 1st District",
-          "representative": "Karen Lagbas",
-          "projectName": "Rehabilitation and Improvement of Multi-Purpose Building (People's Grandstand) at Barangay 22, Gingoog City, Misamis Oriental (8.822433, 125.104228)",
-          "amountPesos": 14000000,
-          "office": "Misamis Oriental 1st District Engineering Office",
-          "closestNepTitle": "Rehabilitation and Improvement of Multi-Purpose Building at Brgy. Mambuaya Cagayan de Oro City, Misamis Oriental",
-          "similarityPct": 75.29,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "883"
-        },
-        {
-          "id": "HB10858-3-0615-009960",
-          "district": "Misamis Oriental · 1st District",
-          "representative": "Karen Lagbas",
-          "projectName": "Construction of Road, Barangay Dahilig, Sta. 0 + 000 - Sta. 0 + 400, Balingoan, Misamis Oriental",
-          "amountPesos": 11500000,
-          "office": "Misamis Oriental 1st District Engineering Office",
-          "closestNepTitle": "Construction of Road, Barangay Pacalag, San Miguel. Bulacan Sta. 00+000 - 00+400",
-          "similarityPct": 63.29,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "615"
-        },
-        {
-          "id": "HB10858-3-0615-009963",
-          "district": "Misamis Oriental · 1st District",
-          "representative": "Karen Lagbas",
-          "projectName": "Construction of Road, Barangay Anakan, Gingoog City, Misamis Oriental",
-          "amountPesos": 11380000,
-          "office": "Misamis Oriental 1st District Engineering Office",
-          "closestNepTitle": "Construction of Laguindingan-Iligan City Alternate Road, Barangay Aya\u0002aya Section, Sta. 44+000 - Sta. 46+000, Lugait, Misamis Orienta",
-          "similarityPct": 57.29,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "615"
-        },
-        {
-          "id": "HB10858-3-0615-009964",
-          "district": "Misamis Oriental · 1st District",
-          "representative": "Karen Lagbas",
-          "projectName": "Construction of Road, Barangay 18-A, (Segment A: Sta. 0 + 000 - Sta. 0 + 280, Segment B: Sta. 0 + 000 - Sta. 0 + 350, Segment C: Sta. 0 + 000 - Sta. 0 + 074), Gingoog City, Misamis Oriental",
-          "amountPesos": 9602000,
-          "office": "Misamis Oriental 1st District Engineering Office",
-          "closestNepTitle": "Construction of Road at Permites Compound, Barangay San Miguel, Section A: Sta. 0+000 - Sta. 0+062, Section B: Sta. 0+000 -Sta. 0+047, Iligan City",
-          "similarityPct": 60.63,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "615"
-        },
-        {
-          "id": "HB10858-3-0883-015227",
-          "district": "Misamis Oriental · 1st District",
-          "representative": "Karen Lagbas",
-          "projectName": "Construction of Multi-Purpose Building, Barangay Alicomohan, Sugbongcogon, Misamis Oriental",
-          "amountPesos": 9000000,
-          "office": "Misamis Oriental 1st District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building Brgy. Dayawan (Sitio Lunong Covered Court) Villanueva, Misamis Oriental",
-          "similarityPct": 78.79,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "883"
-        },
-        {
-          "id": "HB10858-3-0883-015219",
-          "district": "Misamis Oriental · 1st District",
-          "representative": "Karen Lagbas",
-          "projectName": "Construction of Multi-Purpose Building at Barangay Baliwagan (Covered Court), Balingasag, Misamis Oriental (8.718559, 124.784073)",
-          "amountPesos": 8000000,
-          "office": "Misamis Oriental 1st District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building (Barangay Hall), Barangay Dansuli, Balingasag, Misamis Oriental 124.840932°,8.738102°)",
-          "similarityPct": 76.15,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "883"
-        },
-        {
-          "id": "HB10858-3-0883-015220",
-          "district": "Misamis Oriental · 1st District",
-          "representative": "Karen Lagbas",
-          "projectName": "Construction of Multi-Purpose Building at Barangay Mabini (Sitio Tinigbasan Covered Court), Binuangan, Misamis Oriental (8.931038, 124.793682)",
-          "amountPesos": 8000000,
-          "office": "Misamis Oriental 1st District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building Brgy. Dayawan (Sitio Lunong Covered Court) Villanueva, Misamis Oriental",
-          "similarityPct": 77.55,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "883"
-        },
-        {
-          "id": "HB10858-3-0883-015222",
-          "district": "Misamis Oriental · 1st District",
-          "representative": "Karen Lagbas",
-          "projectName": "Construction of Multi-Purpose Building at Barangay Poblacion (Covered Court), Kinoguitan, Misamis Oriental (8.983889, 124.791111)",
-          "amountPesos": 8000000,
-          "office": "Misamis Oriental 1st District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building Brgy. Dayawan (Sitio Lunong Covered Court) Villanueva, Misamis Oriental",
-          "similarityPct": 75.0,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "883"
-        },
-        {
-          "id": "HB10858-3-0883-015223",
-          "district": "Misamis Oriental · 1st District",
-          "representative": "Karen Lagbas",
-          "projectName": "Construction of Multi-Purpose Building at Barangay San Isidro (Covered Court), Magsaysay, Misamis Oriental (9.080112, 125.188458)",
-          "amountPesos": 8000000,
-          "office": "Misamis Oriental 1st District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building Brgy. Dayawan (Sitio Lunong Covered Court) Villanueva, Misamis Oriental",
-          "similarityPct": 75.86,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "883"
-        },
-        {
-          "id": "HB10858-3-0883-015224",
-          "district": "Misamis Oriental · 1st District",
-          "representative": "Karen Lagbas",
-          "projectName": "Construction of Multi-Purpose Building Barangay North Poblacion (Purok 6 Covered Court), Medina, Misamis Oriental (8.919339, 125.018531)",
-          "amountPesos": 8000000,
-          "office": "Misamis Oriental 1st District Engineering Office",
-          "closestNepTitle": "Construction (Completion) of Multi-Purpose Building, Brgy. Lunotan (Coverd Court), Gingoog City, Misamis Oriental (125.028223°, 8.720031°)",
-          "similarityPct": 73.64,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "883"
-        },
-        {
-          "id": "HB10858-3-0883-015225",
-          "district": "Misamis Oriental · 1st District",
-          "representative": "Karen Lagbas",
-          "projectName": "Construction of Multi-Purpose Building (Covered Court), Barangay Mintabon, Talisayan, Misamis Oriental (8.995942, 124.874178)",
-          "amountPesos": 8000000,
-          "office": "Misamis Oriental 1st District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building (Covered Court), Barangay Alipuaton, Salay, Misamis Oriental (124.809385°,8.856495°)",
-          "similarityPct": 82.25,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "883"
-        },
-        {
-          "id": "HB10858-3-0883-015228",
-          "district": "Misamis Oriental · 1st District",
-          "representative": "Karen Lagbas",
-          "projectName": "Construction of Multi-Purpose Building (Covered Court), Barangay Kidampas, Sugbongcogon, Misamis Oriental",
-          "amountPesos": 8000000,
-          "office": "Misamis Oriental 1st District Engineering Office",
-          "closestNepTitle": "Construction (Completion) of Multi-purpose Building (Covered Court), Barangay Silad, Sugbongcogon, Misamis Oriental (124.779068°, 8.975880°)",
-          "similarityPct": 82.46,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "883"
-        },
-        {
-          "id": "HB10858-3-0883-015229",
-          "district": "Misamis Oriental · 1st District",
-          "representative": "Karen Lagbas",
-          "projectName": "Construction of Multi-Purpose Building (Barangay Hall), Barangay Ampianga, Sugbongcogon, Misamis Oriental",
-          "amountPesos": 8000000,
-          "office": "Misamis Oriental 1st District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building (Barangay Hall), Barangay Gaston, Lagonglong, Misamis Oriental (24.813100°, 8.814558°)",
-          "similarityPct": 81.86,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "883"
-        },
-        {
-          "id": "HB10858-3-0884-015232",
-          "district": "Misamis Oriental · 1st District",
-          "representative": "Karen Lagbas",
-          "projectName": "Construction of Multi-Purpose Building (Barangay Hall), North Poblacion, Medina, Misamis Oriental",
-          "amountPesos": 8000000,
-          "office": "Misamis Oriental 1st District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building (Barangay Hall), Barangay Valdeconcha, Binuangan, Misamis Oriental (124.802442°, 8.911580°)",
-          "similarityPct": 75.47,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "884"
-        },
-        {
-          "id": "HB10858-3-0884-015233",
-          "district": "Misamis Oriental · 1st District",
-          "representative": "Karen Lagbas",
-          "projectName": "Construction of Multi-Purpose Building (Covered Court), Talisay Elementary School (School ID:128045), Barangay Talisay, Gingoog City, Misamis Oriental",
-          "amountPesos": 8000000,
-          "office": "Misamis Oriental 1st District Engineering Office",
-          "closestNepTitle": "Construction (Completion) of Multi-Purpose Building (Coverd Court), Barangay Kalipay, Gingoog City, Misamis Oriental (125.217200°, 8.769623°)",
-          "similarityPct": 70.85,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "884"
-        },
-        {
-          "id": "HB10858-3-0394-005290",
-          "district": "Misamis Oriental · 1st District",
-          "representative": "Karen Lagbas",
-          "projectName": "Construction of Public Water Supply System, Barangay Mintabon, Talisayan, Misamis Oriental",
-          "amountPesos": 5000000,
-          "office": "Misamis Oriental 1st District Engineering Office",
-          "closestNepTitle": "Construction (Completion) of Public Water Supply System, Barangay Monterico, Baybay City",
-          "similarityPct": 72.51,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "394"
-        },
-        {
-          "id": "HB10858-3-0615-009965",
-          "district": "Misamis Oriental · 1st District",
-          "representative": "Karen Lagbas",
-          "projectName": "Construction of Road, Purok - 3, Barangay 25, Gingoog City, Misamis Oriental",
-          "amountPesos": 5000000,
-          "office": "Misamis Oriental 1st District Engineering Office",
-          "closestNepTitle": "Construction of CDOC - Iligan Hinterland Road, Jct. CDO - Camp Kibaritan / Dansolihon - Jct. BCIR / Laguindingan Airport Road Extension, Brgy. Tugasnon-Brgy. Lourdes, Sta. 49+000 - Sta. 52+700, Misamis Oriental",
-          "similarityPct": 44.36,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "615"
-        }
-      ]
-    },
-    {
       "district": "Batangas · 2nd District",
       "representative": "Gerville Luistro",
-      "candidateLines": 43,
-      "candidateAllocationPesos": 760000000,
-      "acceptedDistrictLines": 116,
+      "candidateLines": 44,
+      "candidateAllocationPesos": 799875000,
+      "acceptedDistrictLines": 118,
       "rows": [
         {
           "id": "HB10858-3-0641-010417",
@@ -20009,6 +19856,18 @@
           "similarityPct": 72.31,
           "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
           "sourcePage": "537"
+        },
+        {
+          "id": "HB10858-3-0212-001857",
+          "district": "Batangas · 2nd District",
+          "representative": "Gerville Luistro",
+          "projectName": "Bauan-Mabini Rd - K0152 + 150 - K0152 + 649, K0152 + 667 - K0152 + 827",
+          "amountPesos": 39875000,
+          "office": "Batangas 2nd District Engineering Office",
+          "closestNepTitle": "",
+          "similarityPct": 0.0,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "212"
         },
         {
           "id": "HB10858-3-0343-004340",
@@ -20481,6 +20340,291 @@
       ]
     },
     {
+      "district": "Misamis Oriental · 1st District",
+      "representative": "Karen Lagbas",
+      "candidateLines": 23,
+      "candidateAllocationPesos": 767882000,
+      "acceptedDistrictLines": 42,
+      "rows": [
+        {
+          "id": "HB10858-3-0438-006215",
+          "district": "Misamis Oriental · 1st District",
+          "representative": "Karen Lagbas",
+          "projectName": "Construction of Gingoog City-Medina Alternate Road, Sta. 0+000 - Sta. 3+500, Barangay Murallon to Barangay Agay-ayan, Gingoog, Misamis Oriental",
+          "amountPesos": 300000000,
+          "office": "Central Office",
+          "closestNepTitle": "Butuan City - Gingoog City Alternate Route, Sta. 0+000 - Sta. 1+714 , Butuan City",
+          "similarityPct": 53.14,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "438"
+        },
+        {
+          "id": "HB10858-3-0369-004834",
+          "district": "Misamis Oriental · 1st District",
+          "representative": "Karen Lagbas",
+          "projectName": "Construction of Flood Control Structure along Balatukan River, Barangay Mandangoa, Sta. 1+938.000 - Sta. 2+388, Balingasag, Misamis Oriental",
+          "amountPesos": 165000000,
+          "office": "Central Office",
+          "closestNepTitle": "Construction of Flood Control Structure, Mangangate River (Sta.1+400 - Sta. 2+619.93), Muntinlupa City",
+          "similarityPct": 66.96,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "369"
+        },
+        {
+          "id": "HB10858-3-0648-010550",
+          "district": "Misamis Oriental · 1st District",
+          "representative": "Karen Lagbas",
+          "projectName": "Construction of Multi-purpose Building, Barangay Waterfall, Balingasag, Misamis Oriental",
+          "amountPesos": 75000000,
+          "office": "Central Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building (Barangay Hall), Barangay Dansuli, Balingasag, Misamis Oriental 124.840932°,8.738102°)",
+          "similarityPct": 78.22,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "648"
+        },
+        {
+          "id": "HB10858-3-0615-009966",
+          "district": "Misamis Oriental · 1st District",
+          "representative": "Karen Lagbas",
+          "projectName": "Construction of Barangay Mintabon to Barangay Sindangan Road, Sta. 0+000 - Sta. 1+240, Talisayan, Misamis Oriental",
+          "amountPesos": 40000000,
+          "office": "Misamis Oriental 1st District Engineering Office",
+          "closestNepTitle": "Construction of Drainage Structure along Road, Barangay Mintabon, Sta. 0 + 000 - Sta. 0 + 680, Talisayan, Misamis Oriental",
+          "similarityPct": 70.97,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "615"
+        },
+        {
+          "id": "HB10858-3-0615-009961",
+          "district": "Misamis Oriental · 1st District",
+          "representative": "Karen Lagbas",
+          "projectName": "Construction of Barangay Calamcam to Barangay Magkarila Road, Sta. 0+000 - Sta. 0+850, Talisayan, Misamis Oriental",
+          "amountPesos": 22900000,
+          "office": "Misamis Oriental 1st District Engineering Office",
+          "closestNepTitle": "Construction of Drainage Structure along Road, Barangay Mintabon, Sta. 0 + 000 - Sta. 0 + 680, Talisayan, Misamis Oriental",
+          "similarityPct": 73.73,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "615"
+        },
+        {
+          "id": "HB10858-3-0615-009962",
+          "district": "Misamis Oriental · 1st District",
+          "representative": "Karen Lagbas",
+          "projectName": "Construction of Road, Barangay Lunao, Sta. 0 + 180 - Sta. 1 + 180 , Gingoog City, Misamis Oriental",
+          "amountPesos": 19500000,
+          "office": "Misamis Oriental 1st District Engineering Office",
+          "closestNepTitle": "Construction of Road, Barangay Langka , Municipality of Lupon - Barangay Poblacion, Municipality of Banaybanay, Davao Oriental - (Sta. 0+500.000 – Sta. 2+882.000)",
+          "similarityPct": 43.97,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "615"
+        },
+        {
+          "id": "HB10858-3-0883-015221",
+          "district": "Misamis Oriental · 1st District",
+          "representative": "Karen Lagbas",
+          "projectName": "Rehabilitation and Improvement of Multi-Purpose Building (People's Grandstand) at Barangay 22, Gingoog City, Misamis Oriental (8.822433, 125.104228)",
+          "amountPesos": 14000000,
+          "office": "Misamis Oriental 1st District Engineering Office",
+          "closestNepTitle": "Rehabilitation and Improvement of Multi-Purpose Building at Brgy. Mambuaya Cagayan de Oro City, Misamis Oriental",
+          "similarityPct": 75.29,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "883"
+        },
+        {
+          "id": "HB10858-3-0615-009960",
+          "district": "Misamis Oriental · 1st District",
+          "representative": "Karen Lagbas",
+          "projectName": "Construction of Road, Barangay Dahilig, Sta. 0 + 000 - Sta. 0 + 400, Balingoan, Misamis Oriental",
+          "amountPesos": 11500000,
+          "office": "Misamis Oriental 1st District Engineering Office",
+          "closestNepTitle": "Construction of Road, Barangay Pacalag, San Miguel. Bulacan Sta. 00+000 - 00+400",
+          "similarityPct": 63.29,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "615"
+        },
+        {
+          "id": "HB10858-3-0615-009963",
+          "district": "Misamis Oriental · 1st District",
+          "representative": "Karen Lagbas",
+          "projectName": "Construction of Road, Barangay Anakan, Gingoog City, Misamis Oriental",
+          "amountPesos": 11380000,
+          "office": "Misamis Oriental 1st District Engineering Office",
+          "closestNepTitle": "Construction of Laguindingan-Iligan City Alternate Road, Barangay Aya\u0002aya Section, Sta. 44+000 - Sta. 46+000, Lugait, Misamis Orienta",
+          "similarityPct": 57.29,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "615"
+        },
+        {
+          "id": "HB10858-3-0615-009964",
+          "district": "Misamis Oriental · 1st District",
+          "representative": "Karen Lagbas",
+          "projectName": "Construction of Road, Barangay 18-A, (Segment A: Sta. 0 + 000 - Sta. 0 + 280, Segment B: Sta. 0 + 000 - Sta. 0 + 350, Segment C: Sta. 0 + 000 - Sta. 0 + 074), Gingoog City, Misamis Oriental",
+          "amountPesos": 9602000,
+          "office": "Misamis Oriental 1st District Engineering Office",
+          "closestNepTitle": "Construction of Road at Permites Compound, Barangay San Miguel, Section A: Sta. 0+000 - Sta. 0+062, Section B: Sta. 0+000 -Sta. 0+047, Iligan City",
+          "similarityPct": 60.63,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "615"
+        },
+        {
+          "id": "HB10858-3-0883-015227",
+          "district": "Misamis Oriental · 1st District",
+          "representative": "Karen Lagbas",
+          "projectName": "Construction of Multi-Purpose Building, Barangay Alicomohan, Sugbongcogon, Misamis Oriental",
+          "amountPesos": 9000000,
+          "office": "Misamis Oriental 1st District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building Brgy. Dayawan (Sitio Lunong Covered Court) Villanueva, Misamis Oriental",
+          "similarityPct": 78.79,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "883"
+        },
+        {
+          "id": "HB10858-3-0883-015219",
+          "district": "Misamis Oriental · 1st District",
+          "representative": "Karen Lagbas",
+          "projectName": "Construction of Multi-Purpose Building at Barangay Baliwagan (Covered Court), Balingasag, Misamis Oriental (8.718559, 124.784073)",
+          "amountPesos": 8000000,
+          "office": "Misamis Oriental 1st District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building (Barangay Hall), Barangay Dansuli, Balingasag, Misamis Oriental 124.840932°,8.738102°)",
+          "similarityPct": 76.15,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "883"
+        },
+        {
+          "id": "HB10858-3-0883-015220",
+          "district": "Misamis Oriental · 1st District",
+          "representative": "Karen Lagbas",
+          "projectName": "Construction of Multi-Purpose Building at Barangay Mabini (Sitio Tinigbasan Covered Court), Binuangan, Misamis Oriental (8.931038, 124.793682)",
+          "amountPesos": 8000000,
+          "office": "Misamis Oriental 1st District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building Brgy. Dayawan (Sitio Lunong Covered Court) Villanueva, Misamis Oriental",
+          "similarityPct": 77.55,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "883"
+        },
+        {
+          "id": "HB10858-3-0883-015222",
+          "district": "Misamis Oriental · 1st District",
+          "representative": "Karen Lagbas",
+          "projectName": "Construction of Multi-Purpose Building at Barangay Poblacion (Covered Court), Kinoguitan, Misamis Oriental (8.983889, 124.791111)",
+          "amountPesos": 8000000,
+          "office": "Misamis Oriental 1st District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building Brgy. Dayawan (Sitio Lunong Covered Court) Villanueva, Misamis Oriental",
+          "similarityPct": 75.0,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "883"
+        },
+        {
+          "id": "HB10858-3-0883-015223",
+          "district": "Misamis Oriental · 1st District",
+          "representative": "Karen Lagbas",
+          "projectName": "Construction of Multi-Purpose Building at Barangay San Isidro (Covered Court), Magsaysay, Misamis Oriental (9.080112, 125.188458)",
+          "amountPesos": 8000000,
+          "office": "Misamis Oriental 1st District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building Brgy. Dayawan (Sitio Lunong Covered Court) Villanueva, Misamis Oriental",
+          "similarityPct": 75.86,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "883"
+        },
+        {
+          "id": "HB10858-3-0883-015224",
+          "district": "Misamis Oriental · 1st District",
+          "representative": "Karen Lagbas",
+          "projectName": "Construction of Multi-Purpose Building Barangay North Poblacion (Purok 6 Covered Court), Medina, Misamis Oriental (8.919339, 125.018531)",
+          "amountPesos": 8000000,
+          "office": "Misamis Oriental 1st District Engineering Office",
+          "closestNepTitle": "Construction (Completion) of Multi-Purpose Building, Brgy. Lunotan (Coverd Court), Gingoog City, Misamis Oriental (125.028223°, 8.720031°)",
+          "similarityPct": 73.64,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "883"
+        },
+        {
+          "id": "HB10858-3-0883-015225",
+          "district": "Misamis Oriental · 1st District",
+          "representative": "Karen Lagbas",
+          "projectName": "Construction of Multi-Purpose Building (Covered Court), Barangay Mintabon, Talisayan, Misamis Oriental (8.995942, 124.874178)",
+          "amountPesos": 8000000,
+          "office": "Misamis Oriental 1st District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building (Covered Court), Barangay Alipuaton, Salay, Misamis Oriental (124.809385°,8.856495°)",
+          "similarityPct": 82.25,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "883"
+        },
+        {
+          "id": "HB10858-3-0883-015228",
+          "district": "Misamis Oriental · 1st District",
+          "representative": "Karen Lagbas",
+          "projectName": "Construction of Multi-Purpose Building (Covered Court), Barangay Kidampas, Sugbongcogon, Misamis Oriental",
+          "amountPesos": 8000000,
+          "office": "Misamis Oriental 1st District Engineering Office",
+          "closestNepTitle": "Construction (Completion) of Multi-purpose Building (Covered Court), Barangay Silad, Sugbongcogon, Misamis Oriental (124.779068°, 8.975880°)",
+          "similarityPct": 82.46,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "883"
+        },
+        {
+          "id": "HB10858-3-0883-015229",
+          "district": "Misamis Oriental · 1st District",
+          "representative": "Karen Lagbas",
+          "projectName": "Construction of Multi-Purpose Building (Barangay Hall), Barangay Ampianga, Sugbongcogon, Misamis Oriental",
+          "amountPesos": 8000000,
+          "office": "Misamis Oriental 1st District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building (Barangay Hall), Barangay Gaston, Lagonglong, Misamis Oriental (24.813100°, 8.814558°)",
+          "similarityPct": 81.86,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "883"
+        },
+        {
+          "id": "HB10858-3-0884-015232",
+          "district": "Misamis Oriental · 1st District",
+          "representative": "Karen Lagbas",
+          "projectName": "Construction of Multi-Purpose Building (Barangay Hall), North Poblacion, Medina, Misamis Oriental",
+          "amountPesos": 8000000,
+          "office": "Misamis Oriental 1st District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building (Barangay Hall), Barangay Valdeconcha, Binuangan, Misamis Oriental (124.802442°, 8.911580°)",
+          "similarityPct": 75.47,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "884"
+        },
+        {
+          "id": "HB10858-3-0884-015233",
+          "district": "Misamis Oriental · 1st District",
+          "representative": "Karen Lagbas",
+          "projectName": "Construction of Multi-Purpose Building (Covered Court), Talisay Elementary School (School ID:128045), Barangay Talisay, Gingoog City, Misamis Oriental",
+          "amountPesos": 8000000,
+          "office": "Misamis Oriental 1st District Engineering Office",
+          "closestNepTitle": "Construction (Completion) of Multi-Purpose Building (Coverd Court), Barangay Kalipay, Gingoog City, Misamis Oriental (125.217200°, 8.769623°)",
+          "similarityPct": 70.85,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "884"
+        },
+        {
+          "id": "HB10858-3-0394-005290",
+          "district": "Misamis Oriental · 1st District",
+          "representative": "Karen Lagbas",
+          "projectName": "Construction of Public Water Supply System, Barangay Mintabon, Talisayan, Misamis Oriental",
+          "amountPesos": 5000000,
+          "office": "Misamis Oriental 1st District Engineering Office",
+          "closestNepTitle": "Construction (Completion) of Public Water Supply System, Barangay Monterico, Baybay City",
+          "similarityPct": 72.51,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "394"
+        },
+        {
+          "id": "HB10858-3-0615-009965",
+          "district": "Misamis Oriental · 1st District",
+          "representative": "Karen Lagbas",
+          "projectName": "Construction of Road, Purok - 3, Barangay 25, Gingoog City, Misamis Oriental",
+          "amountPesos": 5000000,
+          "office": "Misamis Oriental 1st District Engineering Office",
+          "closestNepTitle": "Construction of CDOC - Iligan Hinterland Road, Jct. CDO - Camp Kibaritan / Dansolihon - Jct. BCIR / Laguindingan Airport Road Extension, Brgy. Tugasnon-Brgy. Lourdes, Sta. 49+000 - Sta. 52+700, Misamis Oriental",
+          "similarityPct": 44.36,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "615"
+        }
+      ]
+    },
+    {
       "district": "Kalinga · Lone District",
       "representative": "Caroline Agyao",
       "candidateLines": 25,
@@ -20786,6 +20930,195 @@
           "similarityPct": 68.87,
           "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
           "sourcePage": "698"
+        }
+      ]
+    },
+    {
+      "district": "Zambales · 1st District",
+      "representative": "Jay Khonghun",
+      "candidateLines": 15,
+      "candidateAllocationPesos": 748000000,
+      "acceptedDistrictLines": 43,
+      "rows": [
+        {
+          "id": "HB10858-3-0306-003632",
+          "district": "Zambales · 1st District",
+          "representative": "Jay Khonghun",
+          "projectName": "Rehabilitation of Concrete Slope Protection with Steel Sheet Pile at Kalaklan River, Sta. 1+620 - Sta. 1+975, Olongapo City, Zambales",
+          "amountPesos": 100000000,
+          "office": "Central Office",
+          "closestNepTitle": "Construction of Slope Protection along Dila-Dila River Tributary to Colo River, Dinalupihan Bataan, Sta. 0 + 500 - Sta. 6 + 000",
+          "similarityPct": 41.98,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "306"
+        },
+        {
+          "id": "HB10858-3-0636-010375",
+          "district": "Zambales · 1st District",
+          "representative": "Jay Khonghun",
+          "projectName": "Construction of Multi-Purpose Building 2, Subic, Zambales (14.89191422, 120.22725769)",
+          "amountPesos": 100000000,
+          "office": "Central Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building, Subic Fishing Port, Subic Zambales (14.8762, 120.2324)",
+          "similarityPct": 79.29,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "636"
+        },
+        {
+          "id": "HB10858-3-0638-010400",
+          "district": "Zambales · 1st District",
+          "representative": "Jay Khonghun",
+          "projectName": "Construction of Multi-Purpose Building Barangay Wawandue, Subic, Zambales (14.8773265, 120.2317407)",
+          "amountPesos": 80000000,
+          "office": "Central Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building DRRMO Barangay Baraca - Camachile, Subic Zambales (14.87694, 120.23416)",
+          "similarityPct": 81.82,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "638"
+        },
+        {
+          "id": "HB10858-3-0343-004336",
+          "district": "Zambales · 1st District",
+          "representative": "Jay Khonghun",
+          "projectName": "Rehabilitation of Concrete Slope Protection with Steel Sheet Pile at Cawag River, Sta. 2+817.20- Sta. 3+020, Subic, Zambales",
+          "amountPesos": 50000000,
+          "office": "Zambales 2nd District Engineering Office",
+          "closestNepTitle": "Construction of Slope Protection at Agusuhin Elementary School, Barangay Cawag, Subic, Zambales",
+          "similarityPct": 51.43,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "343"
+        },
+        {
+          "id": "HB10858-3-0343-004337",
+          "district": "Zambales · 1st District",
+          "representative": "Jay Khonghun",
+          "projectName": "Rehabilitation of Concrete Slope Protection with Steel Sheet Pile at Mangan-Vaca River, Sta. 1+420 - Sta. 1+620, Subic, Zambales",
+          "amountPesos": 50000000,
+          "office": "Zambales 2nd District Engineering Office",
+          "closestNepTitle": "Construction of Slope Protection at Agusuhin Elementary School, Barangay Cawag, Subic, Zambales",
+          "similarityPct": 49.77,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "343"
+        },
+        {
+          "id": "HB10858-3-0536-008247",
+          "district": "Zambales · 1st District",
+          "representative": "Jay Khonghun",
+          "projectName": "Construction of access road along Castillejos Market , Sta. 0+ 000 - Sta. 0+322,Sta. 0+ 000 - Sta. 0+350,Barangay San Agustin, Castillejos, Zambales",
+          "amountPesos": 50000000,
+          "office": "Zambales 2nd District Engineering Office",
+          "closestNepTitle": "Construction of Drainage along Washington Street, Sta. 0+000 - Sta. 0 + 360, Barangay San Kalaklan, Olongapo City",
+          "similarityPct": 57.98,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "536"
+        },
+        {
+          "id": "HB10858-3-0749-012566",
+          "district": "Zambales · 1st District",
+          "representative": "Jay Khonghun",
+          "projectName": "Construction of Multi-Purpose Building Barangay West Bajac-Bajac, Olongapo City, Zambales (14.843844 ,120.286676)",
+          "amountPesos": 50000000,
+          "office": "Zambales 2nd District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building (Barangay Hall), Barangay Old Cabalan, Olongapo City, Zambales (14.848771, 120.314869)",
+          "similarityPct": 82.67,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "749"
+        },
+        {
+          "id": "HB10858-3-0750-012588",
+          "district": "Zambales · 1st District",
+          "representative": "Jay Khonghun",
+          "projectName": "Construction of Multi-Purpose Building Barangay Consuelo Sur, San Marcelino, Zambales (14.98098,120.15019)",
+          "amountPesos": 50000000,
+          "office": "Zambales 2nd District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building (Barangay Hall), Barangay Linasin, San Marcelino, Zambales (14.974011, 120.149618)",
+          "similarityPct": 80.0,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "750"
+        },
+        {
+          "id": "HB10858-3-0749-012572",
+          "district": "Zambales · 1st District",
+          "representative": "Jay Khonghun",
+          "projectName": "Rehabilitation of 2 units of Multi-Purpose Building Barangay Wawandue, Subic, Zambales (14.877924, 120.232243), (14.8772965, 120.2319023)",
+          "amountPesos": 45000000,
+          "office": "Zambales 2nd District Engineering Office",
+          "closestNepTitle": "Rehabilitation of Multi-Purpose Building (Department of Agriculture) Barangay Wawandue, Subic, Zambales (14.8779011, 120.2313815)",
+          "similarityPct": 73.6,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "749"
+        },
+        {
+          "id": "HB10858-3-0130-000386",
+          "district": "Zambales · 1st District",
+          "representative": "Jay Khonghun",
+          "projectName": "Olongapo-Bugallon Rd - K0131 + 582 - K0132 + 168",
+          "amountPesos": 42000000,
+          "office": "Zambales 2nd District Engineering Office",
+          "closestNepTitle": "Batangas-Lobo Rd - K0131 + 925 - K0133 + 567, K0133 + 584 - K0133 + 684",
+          "similarityPct": 55.32,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "130"
+        },
+        {
+          "id": "HB10858-3-0267-002837",
+          "district": "Zambales · 1st District",
+          "representative": "Jay Khonghun",
+          "projectName": "Kalaklan Br. (B01634LZ) along Olongapo-Bugallon Rd",
+          "amountPesos": 40000000,
+          "office": "Zambales 2nd District Engineering Office",
+          "closestNepTitle": "",
+          "similarityPct": 0.0,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "267"
+        },
+        {
+          "id": "HB10858-3-0130-000384",
+          "district": "Zambales · 1st District",
+          "representative": "Jay Khonghun",
+          "projectName": "Olongapo-Bugallon Rd - K0128 + 922 - K0129 + 982",
+          "amountPesos": 34000000,
+          "office": "Zambales 2nd District Engineering Office",
+          "closestNepTitle": "Batangas-Quezon Rd - K0129 + 415 - K0129 + 705, K0129 + 855 - K0130 + 000, K0131 + 016 - K0131 + 088",
+          "similarityPct": 43.86,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "130"
+        },
+        {
+          "id": "HB10858-3-0750-012583",
+          "district": "Zambales · 1st District",
+          "representative": "Jay Khonghun",
+          "projectName": "Rehabilitation of Multi-Purpose Building, Barangay Baraca-Camachile, Subic, Zambales (14.87689366465417, 120.2330428208769)",
+          "amountPesos": 30000000,
+          "office": "Zambales 2nd District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building, Barangay Baraca-Camachile, Subic, Zambales (14.877165, 120.234107)",
+          "similarityPct": 82.03,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "750"
+        },
+        {
+          "id": "HB10858-3-0130-000385",
+          "district": "Zambales · 1st District",
+          "representative": "Jay Khonghun",
+          "projectName": "Olongapo-Bugallon Rd - K0130+000 - K0130+300",
+          "amountPesos": 17000000,
+          "office": "Zambales 2nd District Engineering Office",
+          "closestNepTitle": "Rosario-Sn Juan Rd - K0130 + 000 - K0130 + 439",
+          "similarityPct": 71.79,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "130"
+        },
+        {
+          "id": "HB10858-3-0750-012593",
+          "district": "Zambales · 1st District",
+          "representative": "Jay Khonghun",
+          "projectName": "Rehabilitation of Multi-Purpose Building and Site Development at DPWH Zambales 2nd District Engineering Office, Castillejos, Zambales (14.913787, 120.200074)",
+          "amountPesos": 10000000,
+          "office": "Zambales 2nd District Engineering Office",
+          "closestNepTitle": "Rehabilitation of Multi-Purpose Building, Pavillion, Barangay San Juan, Castillejos, Zambales (14.933128, 120.200506)",
+          "similarityPct": 64.12,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "750"
         }
       ]
     },
@@ -23037,152 +23370,11 @@
       ]
     },
     {
-      "district": "Zambales · 1st District",
-      "representative": "Jay Khonghun",
-      "candidateLines": 11,
-      "candidateAllocationPesos": 615000000,
-      "acceptedDistrictLines": 39,
-      "rows": [
-        {
-          "id": "HB10858-3-0306-003632",
-          "district": "Zambales · 1st District",
-          "representative": "Jay Khonghun",
-          "projectName": "Rehabilitation of Concrete Slope Protection with Steel Sheet Pile at Kalaklan River, Sta. 1+620 - Sta. 1+975, Olongapo City, Zambales",
-          "amountPesos": 100000000,
-          "office": "Central Office",
-          "closestNepTitle": "Construction of Slope Protection along Dila-Dila River Tributary to Colo River, Dinalupihan Bataan, Sta. 0 + 500 - Sta. 6 + 000",
-          "similarityPct": 41.98,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "306"
-        },
-        {
-          "id": "HB10858-3-0636-010375",
-          "district": "Zambales · 1st District",
-          "representative": "Jay Khonghun",
-          "projectName": "Construction of Multi-Purpose Building 2, Subic, Zambales (14.89191422, 120.22725769)",
-          "amountPesos": 100000000,
-          "office": "Central Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building, Subic Fishing Port, Subic Zambales (14.8762, 120.2324)",
-          "similarityPct": 79.29,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "636"
-        },
-        {
-          "id": "HB10858-3-0638-010400",
-          "district": "Zambales · 1st District",
-          "representative": "Jay Khonghun",
-          "projectName": "Construction of Multi-Purpose Building Barangay Wawandue, Subic, Zambales (14.8773265, 120.2317407)",
-          "amountPesos": 80000000,
-          "office": "Central Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building DRRMO Barangay Baraca - Camachile, Subic Zambales (14.87694, 120.23416)",
-          "similarityPct": 81.82,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "638"
-        },
-        {
-          "id": "HB10858-3-0343-004336",
-          "district": "Zambales · 1st District",
-          "representative": "Jay Khonghun",
-          "projectName": "Rehabilitation of Concrete Slope Protection with Steel Sheet Pile at Cawag River, Sta. 2+817.20- Sta. 3+020, Subic, Zambales",
-          "amountPesos": 50000000,
-          "office": "Zambales 2nd District Engineering Office",
-          "closestNepTitle": "Construction of Slope Protection at Agusuhin Elementary School, Barangay Cawag, Subic, Zambales",
-          "similarityPct": 51.43,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "343"
-        },
-        {
-          "id": "HB10858-3-0343-004337",
-          "district": "Zambales · 1st District",
-          "representative": "Jay Khonghun",
-          "projectName": "Rehabilitation of Concrete Slope Protection with Steel Sheet Pile at Mangan-Vaca River, Sta. 1+420 - Sta. 1+620, Subic, Zambales",
-          "amountPesos": 50000000,
-          "office": "Zambales 2nd District Engineering Office",
-          "closestNepTitle": "Construction of Slope Protection at Agusuhin Elementary School, Barangay Cawag, Subic, Zambales",
-          "similarityPct": 49.77,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "343"
-        },
-        {
-          "id": "HB10858-3-0536-008247",
-          "district": "Zambales · 1st District",
-          "representative": "Jay Khonghun",
-          "projectName": "Construction of access road along Castillejos Market , Sta. 0+ 000 - Sta. 0+322,Sta. 0+ 000 - Sta. 0+350,Barangay San Agustin, Castillejos, Zambales",
-          "amountPesos": 50000000,
-          "office": "Zambales 2nd District Engineering Office",
-          "closestNepTitle": "Construction of Drainage along Washington Street, Sta. 0+000 - Sta. 0 + 360, Barangay San Kalaklan, Olongapo City",
-          "similarityPct": 57.98,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "536"
-        },
-        {
-          "id": "HB10858-3-0749-012566",
-          "district": "Zambales · 1st District",
-          "representative": "Jay Khonghun",
-          "projectName": "Construction of Multi-Purpose Building Barangay West Bajac-Bajac, Olongapo City, Zambales (14.843844 ,120.286676)",
-          "amountPesos": 50000000,
-          "office": "Zambales 2nd District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building (Barangay Hall), Barangay Old Cabalan, Olongapo City, Zambales (14.848771, 120.314869)",
-          "similarityPct": 82.67,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "749"
-        },
-        {
-          "id": "HB10858-3-0750-012588",
-          "district": "Zambales · 1st District",
-          "representative": "Jay Khonghun",
-          "projectName": "Construction of Multi-Purpose Building Barangay Consuelo Sur, San Marcelino, Zambales (14.98098,120.15019)",
-          "amountPesos": 50000000,
-          "office": "Zambales 2nd District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building (Barangay Hall), Barangay Linasin, San Marcelino, Zambales (14.974011, 120.149618)",
-          "similarityPct": 80.0,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "750"
-        },
-        {
-          "id": "HB10858-3-0749-012572",
-          "district": "Zambales · 1st District",
-          "representative": "Jay Khonghun",
-          "projectName": "Rehabilitation of 2 units of Multi-Purpose Building Barangay Wawandue, Subic, Zambales (14.877924, 120.232243), (14.8772965, 120.2319023)",
-          "amountPesos": 45000000,
-          "office": "Zambales 2nd District Engineering Office",
-          "closestNepTitle": "Rehabilitation of Multi-Purpose Building (Department of Agriculture) Barangay Wawandue, Subic, Zambales (14.8779011, 120.2313815)",
-          "similarityPct": 73.6,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "749"
-        },
-        {
-          "id": "HB10858-3-0750-012583",
-          "district": "Zambales · 1st District",
-          "representative": "Jay Khonghun",
-          "projectName": "Rehabilitation of Multi-Purpose Building, Barangay Baraca-Camachile, Subic, Zambales (14.87689366465417, 120.2330428208769)",
-          "amountPesos": 30000000,
-          "office": "Zambales 2nd District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building, Barangay Baraca-Camachile, Subic, Zambales (14.877165, 120.234107)",
-          "similarityPct": 82.03,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "750"
-        },
-        {
-          "id": "HB10858-3-0750-012593",
-          "district": "Zambales · 1st District",
-          "representative": "Jay Khonghun",
-          "projectName": "Rehabilitation of Multi-Purpose Building and Site Development at DPWH Zambales 2nd District Engineering Office, Castillejos, Zambales (14.913787, 120.200074)",
-          "amountPesos": 10000000,
-          "office": "Zambales 2nd District Engineering Office",
-          "closestNepTitle": "Rehabilitation of Multi-Purpose Building, Pavillion, Barangay San Juan, Castillejos, Zambales (14.933128, 120.200506)",
-          "similarityPct": 64.12,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "750"
-        }
-      ]
-    },
-    {
       "district": "Camiguin · Lone District",
       "representative": "Jurdin Jesus Romualdo",
       "candidateLines": 8,
       "candidateAllocationPesos": 587000000,
-      "acceptedDistrictLines": 52,
+      "acceptedDistrictLines": 53,
       "rows": [
         {
           "id": "HB10858-3-0317-003835",
@@ -24292,7 +24484,7 @@
       "representative": "Emeng Pascual",
       "candidateLines": 9,
       "candidateAllocationPesos": 549000000,
-      "acceptedDistrictLines": 20,
+      "acceptedDistrictLines": 21,
       "rows": [
         {
           "id": "HB10858-3-0636-010372",
@@ -26851,7 +27043,7 @@
       "representative": "Gloria Macapagal Arroyo",
       "candidateLines": 39,
       "candidateAllocationPesos": 435000000,
-      "acceptedDistrictLines": 51,
+      "acceptedDistrictLines": 53,
       "rows": [
         {
           "id": "HB10858-3-0342-004312",
@@ -28456,7 +28648,7 @@
       "representative": "Dante Garcia",
       "candidateLines": 21,
       "candidateAllocationPesos": 384500000,
-      "acceptedDistrictLines": 78,
+      "acceptedDistrictLines": 80,
       "rows": [
         {
           "id": "HB10858-3-0414-005735",
@@ -28854,6 +29046,183 @@
       ]
     },
     {
+      "district": "Tarlac · 2nd District",
+      "representative": "Cristy Angeles",
+      "candidateLines": 14,
+      "candidateAllocationPesos": 364000000,
+      "acceptedDistrictLines": 22,
+      "rows": [
+        {
+          "id": "HB10858-3-0139-000569",
+          "district": "Tarlac · 2nd District",
+          "representative": "Cristy Angeles",
+          "projectName": "Victoria-Pura Rd - K0148 + 870 - K0150 + 300, K0151 + 562 - K0151 + 757",
+          "amountPesos": 100000000,
+          "office": "Central Office",
+          "closestNepTitle": "Paniqui-Ramos Rd - K0149 + 904 - K0150 + 562",
+          "similarityPct": 55.56,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "139"
+        },
+        {
+          "id": "HB10858-3-0119-000169",
+          "district": "Tarlac · 2nd District",
+          "representative": "Cristy Angeles",
+          "projectName": "Victoria-La Paz Rd - K0142 + 574 - K0143 + 773",
+          "amountPesos": 50000000,
+          "office": "Tarlac District Engineering Office",
+          "closestNepTitle": "",
+          "similarityPct": 0.0,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "119"
+        },
+        {
+          "id": "HB10858-3-0743-012457",
+          "district": "Tarlac · 2nd District",
+          "representative": "Cristy Angeles",
+          "projectName": "Construction (Completion) of Multi-Purpose Building, San Jose Municipal Plaza, San Jose, Tarlac, 15.326548, 120.655563",
+          "amountPesos": 50000000,
+          "office": "Tarlac District Engineering Office",
+          "closestNepTitle": "Construction (Completion) of Multi-Purpose Building, Barangay Poblacion Sur, Municipality of San Clemente, Province of Tarlac",
+          "similarityPct": 69.26,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "743"
+        },
+        {
+          "id": "HB10858-3-0119-000171",
+          "district": "Tarlac · 2nd District",
+          "representative": "Cristy Angeles",
+          "projectName": "Capas-San Jose-Mayantoc-Malacampa Rd - K0141 + 613 - K0142 + 814",
+          "amountPesos": 41000000,
+          "office": "Tarlac District Engineering Office",
+          "closestNepTitle": "",
+          "similarityPct": 0.0,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "119"
+        },
+        {
+          "id": "HB10858-3-0534-008211",
+          "district": "Tarlac · 2nd District",
+          "representative": "Cristy Angeles",
+          "projectName": "Construction (Completion) of Maluid - Cruz Diversion Road, Sta. 3+263 - Sta. 4+900, Victoria, Tarlac",
+          "amountPesos": 35000000,
+          "office": "Tarlac District Engineering Office",
+          "closestNepTitle": "Construction of Tingloy Circumferential Road, Tingloy, Batangas – Sta. 4+523 – Sta. 4+900",
+          "similarityPct": 49.41,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "534"
+        },
+        {
+          "id": "HB10858-3-0119-000170",
+          "district": "Tarlac · 2nd District",
+          "representative": "Cristy Angeles",
+          "projectName": "Capas-San Jose-Mayantoc-Malacampa Rd - K0141 + 000 - K0141 + 613",
+          "amountPesos": 24000000,
+          "office": "Tarlac District Engineering Office",
+          "closestNepTitle": "",
+          "similarityPct": 0.0,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "119"
+        },
+        {
+          "id": "HB10858-3-0743-012458",
+          "district": "Tarlac · 2nd District",
+          "representative": "Cristy Angeles",
+          "projectName": "Construction of Multi-Purpose Building at Barangay Poblacion 1, Gerona, Tarlac (15.608177, 120.595787)",
+          "amountPesos": 13000000,
+          "office": "Tarlac District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building at Municipality of Gerona, Tarlac",
+          "similarityPct": 71.43,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "743"
+        },
+        {
+          "id": "HB10858-3-0743-012459",
+          "district": "Tarlac · 2nd District",
+          "representative": "Cristy Angeles",
+          "projectName": "Construction of Multi-Purpose Building at Barangay Sta. Barbara, Victoria, Tarlac (15.578152, 120.690626)",
+          "amountPesos": 10000000,
+          "office": "Tarlac District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building at Municipality of Victoria, Tarlac",
+          "similarityPct": 70.93,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "743"
+        },
+        {
+          "id": "HB10858-3-0743-012462",
+          "district": "Tarlac · 2nd District",
+          "representative": "Cristy Angeles",
+          "projectName": "Construction of Multi-Purpose Building at Barangay Bantog, Victoria, Tarlac (15.619538, 120.68393)",
+          "amountPesos": 10000000,
+          "office": "Tarlac District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building at Municipality of Victoria, Tarlac",
+          "similarityPct": 74.7,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "743"
+        },
+        {
+          "id": "HB10858-3-0743-012461",
+          "district": "Tarlac · 2nd District",
+          "representative": "Cristy Angeles",
+          "projectName": "Construction of Multi-Purpose Building at Barangay Baculong, Victoria, Tarlac (15.543556, 120.640171)",
+          "amountPesos": 9000000,
+          "office": "Tarlac District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building at Municipality of Victoria, Tarlac",
+          "similarityPct": 73.37,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "743"
+        },
+        {
+          "id": "HB10858-3-0743-012463",
+          "district": "Tarlac · 2nd District",
+          "representative": "Cristy Angeles",
+          "projectName": "Construction of 2-Storey Multi-Purpose Building at Barangay Bangar, Victoria, Tarlac (15.59707, 120.664498)",
+          "amountPesos": 6000000,
+          "office": "Tarlac District Engineering Office",
+          "closestNepTitle": "Construction of 2-Storey Multi-Purpose Building at Barangay Sta. Lucia, Quezon City 14.70714, 121.05333",
+          "similarityPct": 76.24,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "743"
+        },
+        {
+          "id": "HB10858-3-0743-012465",
+          "district": "Tarlac · 2nd District",
+          "representative": "Cristy Angeles",
+          "projectName": "Construction of Multi-Purpose Building at Barangay San Jacinto, Victoria, Tarlac (15.54624, 120.661572)",
+          "amountPesos": 6000000,
+          "office": "Tarlac District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building, Barangay San Juan, San Narciso, Zambales 15.003452, 120.095337",
+          "similarityPct": 75.51,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "743"
+        },
+        {
+          "id": "HB10858-3-0743-012460",
+          "district": "Tarlac · 2nd District",
+          "representative": "Cristy Angeles",
+          "projectName": "Construction of Multi-Purpose Building at Barangay Masalasa, Victoria, Tarlac (15.617521, 120.736878)",
+          "amountPesos": 5000000,
+          "office": "Tarlac District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building at Municipality of Victoria, Tarlac",
+          "similarityPct": 72.19,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "743"
+        },
+        {
+          "id": "HB10858-3-0743-012464",
+          "district": "Tarlac · 2nd District",
+          "representative": "Cristy Angeles",
+          "projectName": "Rehabilitation of Multi-Purpose Building at San Francisco, Victoria, Tarlac (15.556631, 120.623518)",
+          "amountPesos": 5000000,
+          "office": "Tarlac District Engineering Office",
+          "closestNepTitle": "Construction of Multi-Purpose Building at Municipality of Victoria, Tarlac",
+          "similarityPct": 65.87,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "743"
+        }
+      ]
+    },
+    {
       "district": "Pampanga · 1st District",
       "representative": "Carmelo Lazatin Jr.",
       "candidateLines": 10,
@@ -28987,7 +29356,7 @@
       "representative": "Eulogio Rodriguez",
       "candidateLines": 16,
       "candidateAllocationPesos": 347500000,
-      "acceptedDistrictLines": 80,
+      "acceptedDistrictLines": 81,
       "rows": [
         {
           "id": "HB10858-3-0841-014409",
@@ -29188,7 +29557,7 @@
       "representative": "Kaka Bag-ao",
       "candidateLines": 19,
       "candidateAllocationPesos": 344000000,
-      "acceptedDistrictLines": 19,
+      "acceptedDistrictLines": 20,
       "rows": [
         {
           "id": "HB10858-3-0627-010193",
@@ -30287,9 +30656,9 @@
     {
       "district": "Capiz · 1st District",
       "representative": "Howard Guintu",
-      "candidateLines": 24,
-      "candidateAllocationPesos": 285000000,
-      "acceptedDistrictLines": 49,
+      "candidateLines": 25,
+      "candidateAllocationPesos": 300000000,
+      "acceptedDistrictLines": 51,
       "rows": [
         {
           "id": "HB10858-3-0928-016052",
@@ -30338,6 +30707,18 @@
           "similarityPct": 64.77,
           "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
           "sourcePage": "815"
+        },
+        {
+          "id": "HB10858-3-0276-003033",
+          "district": "Capiz · 1st District",
+          "representative": "Howard Guintu",
+          "projectName": "Capiz Br. (B00240PN) along Iloilo-Capiz Rd (New Route)",
+          "amountPesos": 15000000,
+          "office": "Capiz 1st District Engineering Office",
+          "closestNepTitle": "Aglalana Br. (B00195PN) along Iloilo-Capiz (New Route)",
+          "similarityPct": 79.63,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "276"
         },
         {
           "id": "HB10858-3-0814-013871",
@@ -31081,7 +31462,7 @@
       "representative": "Baby Alfonso",
       "candidateLines": 12,
       "candidateAllocationPesos": 270000000,
-      "acceptedDistrictLines": 35,
+      "acceptedDistrictLines": 36,
       "rows": [
         {
           "id": "HB10858-3-0302-003564",
@@ -31640,6 +32021,99 @@
           "similarityPct": 0.0,
           "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
           "sourcePage": "690"
+        }
+      ]
+    },
+    {
+      "district": "San Jose del Monte · Lone District",
+      "representative": "Arthur Robes",
+      "candidateLines": 7,
+      "candidateAllocationPesos": 261654000,
+      "acceptedDistrictLines": 22,
+      "rows": [
+        {
+          "id": "HB10858-3-0638-010395",
+          "district": "San Jose del Monte · Lone District",
+          "representative": "Arthur Robes",
+          "projectName": "Construction of CSJDM Hall of Justice (Phase II), Barangay Poblacion, City of San Jose del Monte, Bulacan",
+          "amountPesos": 100000000,
+          "office": "Central Office",
+          "closestNepTitle": "Construction (Completion) of Multi-Purpose Building, Villa San Jose, Barangay Graceville, City of San Jose del Monte, Bulacan (121.064263, 14.805020)",
+          "similarityPct": 65.0,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "638"
+        },
+        {
+          "id": "HB10858-3-0262-002736",
+          "district": "San Jose del Monte · Lone District",
+          "representative": "Arthur Robes",
+          "projectName": "Kay Tialo Br. (B00136LZ) along NCR/Bulacan Bdry-Bigte-Ipo Dam Rd",
+          "amountPesos": 41654000,
+          "office": "Bulacan 2nd District Engineering Office",
+          "closestNepTitle": "Maton Br. (B02263LZ) along Kabugao-Pudtol-Luna-Cagayan Bdry Rd",
+          "similarityPct": 60.61,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "262"
+        },
+        {
+          "id": "HB10858-3-0733-012242",
+          "district": "San Jose del Monte · Lone District",
+          "representative": "Arthur Robes",
+          "projectName": "Construction of Multi-Purpose Building (GAD Building Phase II), Barangay Poblacion, City of San Jose del Monte, Bulacan",
+          "amountPesos": 30000000,
+          "office": "Bulacan 2nd District Engineering Office",
+          "closestNepTitle": "Construction (Completion) of Multi-Purpose Building, Villa San Jose, Barangay Graceville, City of San Jose del Monte, Bulacan (121.064263, 14.805020)",
+          "similarityPct": 73.23,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "733"
+        },
+        {
+          "id": "HB10858-3-0733-012243",
+          "district": "San Jose del Monte · Lone District",
+          "representative": "Arthur Robes",
+          "projectName": "Construction of Multi-Purpose Building, Sapang Palay National High School (Phase II), Barangay Fatima V, San Jose del Monte, Bulacan",
+          "amountPesos": 30000000,
+          "office": "Bulacan 2nd District Engineering Office",
+          "closestNepTitle": "Construction (Completion) of Multi-Purpose Building, Villa San Jose, Barangay Graceville, City of San Jose del Monte, Bulacan (121.064263, 14.805020)",
+          "similarityPct": 63.16,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "733"
+        },
+        {
+          "id": "HB10858-3-0732-012239",
+          "district": "San Jose del Monte · Lone District",
+          "representative": "Arthur Robes",
+          "projectName": "Construction of Multi-purpose Building (Barangay Hall), Barangay Poblacion 1, City of San Jose del Monte, Bulacan",
+          "amountPesos": 20000000,
+          "office": "Bulacan 2nd District Engineering Office",
+          "closestNepTitle": "Construction (Completion) of Multi-Purpose Building, Villa San Jose, Barangay Graceville, City of San Jose del Monte, Bulacan (121.064263, 14.805020)",
+          "similarityPct": 73.39,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "732"
+        },
+        {
+          "id": "HB10858-3-0733-012240",
+          "district": "San Jose del Monte · Lone District",
+          "representative": "Arthur Robes",
+          "projectName": "Construction of Multi-purpose Building, Barangay Francisco Homes - Narra, City of San Jose del Monte, Bulacan",
+          "amountPesos": 20000000,
+          "office": "Bulacan 2nd District Engineering Office",
+          "closestNepTitle": "Construction (Completion) of Multi-Purpose Building, Villa San Jose, Barangay Graceville, City of San Jose del Monte, Bulacan (121.064263, 14.805020)",
+          "similarityPct": 72.13,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "733"
+        },
+        {
+          "id": "HB10858-3-0733-012241",
+          "district": "San Jose del Monte · Lone District",
+          "representative": "Arthur Robes",
+          "projectName": "Construction of Multi-purpose Building, Barangay Francisco Homes - Yakal, City of San Jose del Monte, Bulacan",
+          "amountPesos": 20000000,
+          "office": "Bulacan 2nd District Engineering Office",
+          "closestNepTitle": "Construction (Completion) of Multi-Purpose Building, Villa San Jose, Barangay Graceville, City of San Jose del Monte, Bulacan (121.064263, 14.805020)",
+          "similarityPct": 72.13,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "733"
         }
       ]
     },
@@ -32392,7 +32866,7 @@
       "representative": "Amben Amante",
       "candidateLines": 19,
       "candidateAllocationPesos": 235500000,
-      "acceptedDistrictLines": 73,
+      "acceptedDistrictLines": 74,
       "rows": [
         {
           "id": "HB10858-3-0774-013086",
@@ -33396,92 +33870,11 @@
       ]
     },
     {
-      "district": "San Jose del Monte · Lone District",
-      "representative": "Arthur Robes",
-      "candidateLines": 6,
-      "candidateAllocationPesos": 220000000,
-      "acceptedDistrictLines": 21,
-      "rows": [
-        {
-          "id": "HB10858-3-0638-010395",
-          "district": "San Jose del Monte · Lone District",
-          "representative": "Arthur Robes",
-          "projectName": "Construction of CSJDM Hall of Justice (Phase II), Barangay Poblacion, City of San Jose del Monte, Bulacan",
-          "amountPesos": 100000000,
-          "office": "Central Office",
-          "closestNepTitle": "Construction (Completion) of Multi-Purpose Building, Villa San Jose, Barangay Graceville, City of San Jose del Monte, Bulacan (121.064263, 14.805020)",
-          "similarityPct": 65.0,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "638"
-        },
-        {
-          "id": "HB10858-3-0733-012242",
-          "district": "San Jose del Monte · Lone District",
-          "representative": "Arthur Robes",
-          "projectName": "Construction of Multi-Purpose Building (GAD Building Phase II), Barangay Poblacion, City of San Jose del Monte, Bulacan",
-          "amountPesos": 30000000,
-          "office": "Bulacan 2nd District Engineering Office",
-          "closestNepTitle": "Construction (Completion) of Multi-Purpose Building, Villa San Jose, Barangay Graceville, City of San Jose del Monte, Bulacan (121.064263, 14.805020)",
-          "similarityPct": 73.23,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "733"
-        },
-        {
-          "id": "HB10858-3-0733-012243",
-          "district": "San Jose del Monte · Lone District",
-          "representative": "Arthur Robes",
-          "projectName": "Construction of Multi-Purpose Building, Sapang Palay National High School (Phase II), Barangay Fatima V, San Jose del Monte, Bulacan",
-          "amountPesos": 30000000,
-          "office": "Bulacan 2nd District Engineering Office",
-          "closestNepTitle": "Construction (Completion) of Multi-Purpose Building, Villa San Jose, Barangay Graceville, City of San Jose del Monte, Bulacan (121.064263, 14.805020)",
-          "similarityPct": 63.16,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "733"
-        },
-        {
-          "id": "HB10858-3-0732-012239",
-          "district": "San Jose del Monte · Lone District",
-          "representative": "Arthur Robes",
-          "projectName": "Construction of Multi-purpose Building (Barangay Hall), Barangay Poblacion 1, City of San Jose del Monte, Bulacan",
-          "amountPesos": 20000000,
-          "office": "Bulacan 2nd District Engineering Office",
-          "closestNepTitle": "Construction (Completion) of Multi-Purpose Building, Villa San Jose, Barangay Graceville, City of San Jose del Monte, Bulacan (121.064263, 14.805020)",
-          "similarityPct": 73.39,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "732"
-        },
-        {
-          "id": "HB10858-3-0733-012240",
-          "district": "San Jose del Monte · Lone District",
-          "representative": "Arthur Robes",
-          "projectName": "Construction of Multi-purpose Building, Barangay Francisco Homes - Narra, City of San Jose del Monte, Bulacan",
-          "amountPesos": 20000000,
-          "office": "Bulacan 2nd District Engineering Office",
-          "closestNepTitle": "Construction (Completion) of Multi-Purpose Building, Villa San Jose, Barangay Graceville, City of San Jose del Monte, Bulacan (121.064263, 14.805020)",
-          "similarityPct": 72.13,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "733"
-        },
-        {
-          "id": "HB10858-3-0733-012241",
-          "district": "San Jose del Monte · Lone District",
-          "representative": "Arthur Robes",
-          "projectName": "Construction of Multi-purpose Building, Barangay Francisco Homes - Yakal, City of San Jose del Monte, Bulacan",
-          "amountPesos": 20000000,
-          "office": "Bulacan 2nd District Engineering Office",
-          "closestNepTitle": "Construction (Completion) of Multi-Purpose Building, Villa San Jose, Barangay Graceville, City of San Jose del Monte, Bulacan (121.064263, 14.805020)",
-          "similarityPct": 72.13,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "733"
-        }
-      ]
-    },
-    {
       "district": "Cagayan · 1st District",
       "representative": "Ramon Nolasco",
       "candidateLines": 10,
       "candidateAllocationPesos": 210000000,
-      "acceptedDistrictLines": 102,
+      "acceptedDistrictLines": 104,
       "rows": [
         {
           "id": "HB10858-3-0366-004775",
@@ -34531,7 +34924,7 @@
       "representative": "Kokoy Salvador",
       "candidateLines": 22,
       "candidateAllocationPesos": 178000000,
-      "acceptedDistrictLines": 82,
+      "acceptedDistrictLines": 83,
       "rows": [
         {
           "id": "HB10858-3-0735-012300",
@@ -34804,7 +35197,7 @@
       "representative": "Aniela Tolentino",
       "candidateLines": 2,
       "candidateAllocationPesos": 175000000,
-      "acceptedDistrictLines": 15,
+      "acceptedDistrictLines": 24,
       "rows": [
         {
           "id": "HB10858-3-0641-010424",
@@ -35308,7 +35701,7 @@
       "representative": "Jess Marquez",
       "candidateLines": 25,
       "candidateAllocationPesos": 159950000,
-      "acceptedDistrictLines": 80,
+      "acceptedDistrictLines": 81,
       "rows": [
         {
           "id": "HB10858-3-0812-013825",
@@ -36094,7 +36487,7 @@
       "representative": "Julienne Baronda",
       "candidateLines": 7,
       "candidateAllocationPesos": 150000000,
-      "acceptedDistrictLines": 38,
+      "acceptedDistrictLines": 39,
       "rows": [
         {
           "id": "HB10858-3-0927-016041",
@@ -36400,7 +36793,7 @@
       "representative": "Jay Vergara",
       "candidateLines": 1,
       "candidateAllocationPesos": 150000000,
-      "acceptedDistrictLines": 4,
+      "acceptedDistrictLines": 5,
       "rows": [
         {
           "id": "HB10858-3-0304-003598",
@@ -36413,135 +36806,6 @@
           "similarityPct": 56.9,
           "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
           "sourcePage": "304"
-        }
-      ]
-    },
-    {
-      "district": "Tarlac · 2nd District",
-      "representative": "Cristy Angeles",
-      "candidateLines": 10,
-      "candidateAllocationPesos": 149000000,
-      "acceptedDistrictLines": 18,
-      "rows": [
-        {
-          "id": "HB10858-3-0743-012457",
-          "district": "Tarlac · 2nd District",
-          "representative": "Cristy Angeles",
-          "projectName": "Construction (Completion) of Multi-Purpose Building, San Jose Municipal Plaza, San Jose, Tarlac, 15.326548, 120.655563",
-          "amountPesos": 50000000,
-          "office": "Tarlac District Engineering Office",
-          "closestNepTitle": "Construction (Completion) of Multi-Purpose Building, Barangay Poblacion Sur, Municipality of San Clemente, Province of Tarlac",
-          "similarityPct": 69.26,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "743"
-        },
-        {
-          "id": "HB10858-3-0534-008211",
-          "district": "Tarlac · 2nd District",
-          "representative": "Cristy Angeles",
-          "projectName": "Construction (Completion) of Maluid - Cruz Diversion Road, Sta. 3+263 - Sta. 4+900, Victoria, Tarlac",
-          "amountPesos": 35000000,
-          "office": "Tarlac District Engineering Office",
-          "closestNepTitle": "Construction of Tingloy Circumferential Road, Tingloy, Batangas – Sta. 4+523 – Sta. 4+900",
-          "similarityPct": 49.41,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "534"
-        },
-        {
-          "id": "HB10858-3-0743-012458",
-          "district": "Tarlac · 2nd District",
-          "representative": "Cristy Angeles",
-          "projectName": "Construction of Multi-Purpose Building at Barangay Poblacion 1, Gerona, Tarlac (15.608177, 120.595787)",
-          "amountPesos": 13000000,
-          "office": "Tarlac District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building at Municipality of Gerona, Tarlac",
-          "similarityPct": 71.43,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "743"
-        },
-        {
-          "id": "HB10858-3-0743-012459",
-          "district": "Tarlac · 2nd District",
-          "representative": "Cristy Angeles",
-          "projectName": "Construction of Multi-Purpose Building at Barangay Sta. Barbara, Victoria, Tarlac (15.578152, 120.690626)",
-          "amountPesos": 10000000,
-          "office": "Tarlac District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building at Municipality of Victoria, Tarlac",
-          "similarityPct": 70.93,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "743"
-        },
-        {
-          "id": "HB10858-3-0743-012462",
-          "district": "Tarlac · 2nd District",
-          "representative": "Cristy Angeles",
-          "projectName": "Construction of Multi-Purpose Building at Barangay Bantog, Victoria, Tarlac (15.619538, 120.68393)",
-          "amountPesos": 10000000,
-          "office": "Tarlac District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building at Municipality of Victoria, Tarlac",
-          "similarityPct": 74.7,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "743"
-        },
-        {
-          "id": "HB10858-3-0743-012461",
-          "district": "Tarlac · 2nd District",
-          "representative": "Cristy Angeles",
-          "projectName": "Construction of Multi-Purpose Building at Barangay Baculong, Victoria, Tarlac (15.543556, 120.640171)",
-          "amountPesos": 9000000,
-          "office": "Tarlac District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building at Municipality of Victoria, Tarlac",
-          "similarityPct": 73.37,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "743"
-        },
-        {
-          "id": "HB10858-3-0743-012463",
-          "district": "Tarlac · 2nd District",
-          "representative": "Cristy Angeles",
-          "projectName": "Construction of 2-Storey Multi-Purpose Building at Barangay Bangar, Victoria, Tarlac (15.59707, 120.664498)",
-          "amountPesos": 6000000,
-          "office": "Tarlac District Engineering Office",
-          "closestNepTitle": "Construction of 2-Storey Multi-Purpose Building at Barangay Sta. Lucia, Quezon City 14.70714, 121.05333",
-          "similarityPct": 76.24,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "743"
-        },
-        {
-          "id": "HB10858-3-0743-012465",
-          "district": "Tarlac · 2nd District",
-          "representative": "Cristy Angeles",
-          "projectName": "Construction of Multi-Purpose Building at Barangay San Jacinto, Victoria, Tarlac (15.54624, 120.661572)",
-          "amountPesos": 6000000,
-          "office": "Tarlac District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building, Barangay San Juan, San Narciso, Zambales 15.003452, 120.095337",
-          "similarityPct": 75.51,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "743"
-        },
-        {
-          "id": "HB10858-3-0743-012460",
-          "district": "Tarlac · 2nd District",
-          "representative": "Cristy Angeles",
-          "projectName": "Construction of Multi-Purpose Building at Barangay Masalasa, Victoria, Tarlac (15.617521, 120.736878)",
-          "amountPesos": 5000000,
-          "office": "Tarlac District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building at Municipality of Victoria, Tarlac",
-          "similarityPct": 72.19,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "743"
-        },
-        {
-          "id": "HB10858-3-0743-012464",
-          "district": "Tarlac · 2nd District",
-          "representative": "Cristy Angeles",
-          "projectName": "Rehabilitation of Multi-Purpose Building at San Francisco, Victoria, Tarlac (15.556631, 120.623518)",
-          "amountPesos": 5000000,
-          "office": "Tarlac District Engineering Office",
-          "closestNepTitle": "Construction of Multi-Purpose Building at Municipality of Victoria, Tarlac",
-          "similarityPct": 65.87,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "743"
         }
       ]
     },
@@ -36631,7 +36895,7 @@
       "representative": "Samantha Santos",
       "candidateLines": 19,
       "candidateAllocationPesos": 141000000,
-      "acceptedDistrictLines": 67,
+      "acceptedDistrictLines": 72,
       "rows": [
         {
           "id": "HB10858-3-0373-004899",
@@ -38038,7 +38302,7 @@
       "representative": "Cha Hernandez",
       "candidateLines": 10,
       "candidateAllocationPesos": 111000000,
-      "acceptedDistrictLines": 23,
+      "acceptedDistrictLines": 24,
       "rows": [
         {
           "id": "HB10858-3-0546-008479",
@@ -39433,7 +39697,7 @@
       "representative": "Antonino Roman III",
       "candidateLines": 9,
       "candidateAllocationPesos": 84000000,
-      "acceptedDistrictLines": 73,
+      "acceptedDistrictLines": 75,
       "rows": [
         {
           "id": "HB10858-3-0505-007610",
@@ -40936,7 +41200,7 @@
       "representative": "Vanvan Aumentado",
       "candidateLines": 1,
       "candidateAllocationPesos": 50000000,
-      "acceptedDistrictLines": 5,
+      "acceptedDistrictLines": 6,
       "rows": [
         {
           "id": "HB10858-3-0926-016027",
@@ -41148,11 +41412,65 @@
       ]
     },
     {
+      "district": "Albay · 3rd District",
+      "representative": "Adrian Salceda",
+      "candidateLines": 2,
+      "candidateAllocationPesos": 38187000,
+      "acceptedDistrictLines": 3,
+      "rows": [
+        {
+          "id": "HB10858-3-0559-008777",
+          "district": "Albay · 3rd District",
+          "representative": "Adrian Salceda",
+          "projectName": "Construction of Road, Barangay Agol-Barangay Basicao Interior-Barangay Malapay- Barangay Nablangbulod Road including Drainage Facilities, Pio Duran, Albay. STA. 0+600-STA.1+300",
+          "amountPesos": 20000000,
+          "office": "Albay 3rd District Engineering Office",
+          "closestNepTitle": "Construction of Road leading to Pantao-Sitio Pentason-Cadawag, Libon and Oas, Albay. Sta 0+000.00 - Sta. 2+300.00",
+          "similarityPct": 46.93,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "559"
+        },
+        {
+          "id": "HB10858-3-0162-000962",
+          "district": "Albay · 3rd District",
+          "representative": "Adrian Salceda",
+          "projectName": "Albay West Coast Rd - K0545 + 568 - K0546 + 677",
+          "amountPesos": 18187000,
+          "office": "Albay 3rd District Engineering Office",
+          "closestNepTitle": "",
+          "similarityPct": 0.0,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "162"
+        }
+      ]
+    },
+    {
+      "district": "Masbate · 1st District",
+      "representative": "Antonio Kho",
+      "candidateLines": 1,
+      "candidateAllocationPesos": 36811000,
+      "acceptedDistrictLines": 5,
+      "rows": [
+        {
+          "id": "HB10858-3-0162-000978",
+          "district": "Masbate · 1st District",
+          "representative": "Antonio Kho",
+          "projectName": "Sn Fernando North Rd - K0003+185 - K0003 + 630, K0003 + 693 - K0003+800, K0003+1003 - K0004+024, K0004+123.5 - K0004+205",
+          "amountPesos": 36811000,
+          "office": "Masbate 1st District Engineering Office",
+          "closestNepTitle": "Sn Fernando North Rd - K0003 + 212 - K0003 + 624, K0003 + 710 - K0004 + 205",
+          "similarityPct": 68.39,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "162"
+        }
+      ]
+    },
+    {
       "district": "Cebu · 1st District",
       "representative": "Rhea Gullas",
       "candidateLines": 1,
       "candidateAllocationPesos": 35000000,
-      "acceptedDistrictLines": 9,
+      "acceptedDistrictLines": 10,
       "rows": [
         {
           "id": "HB10858-3-0849-014577",
@@ -41242,7 +41560,7 @@
       "representative": "Edwin Cruzado",
       "candidateLines": 4,
       "candidateAllocationPesos": 33000000,
-      "acceptedDistrictLines": 36,
+      "acceptedDistrictLines": 47,
       "rows": [
         {
           "id": "HB10858-3-0619-010042",
@@ -41332,7 +41650,7 @@
       "representative": "Gerardo Espina Jr.",
       "candidateLines": 3,
       "candidateAllocationPesos": 30200000,
-      "acceptedDistrictLines": 21,
+      "acceptedDistrictLines": 23,
       "rows": [
         {
           "id": "HB10858-3-0590-009460",
@@ -41419,7 +41737,7 @@
       "representative": "Maria Angela Garcia",
       "candidateLines": 1,
       "candidateAllocationPesos": 25000000,
-      "acceptedDistrictLines": 70,
+      "acceptedDistrictLines": 73,
       "rows": [
         {
           "id": "HB10858-3-0506-007637",
@@ -41440,7 +41758,7 @@
       "representative": "Audrey Zubiri",
       "candidateLines": 1,
       "candidateAllocationPesos": 22750000,
-      "acceptedDistrictLines": 23,
+      "acceptedDistrictLines": 24,
       "rows": [
         {
           "id": "HB10858-3-0872-015022",
@@ -41453,27 +41771,6 @@
           "similarityPct": 56.72,
           "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
           "sourcePage": "872"
-        }
-      ]
-    },
-    {
-      "district": "Albay · 3rd District",
-      "representative": "Adrian Salceda",
-      "candidateLines": 1,
-      "candidateAllocationPesos": 20000000,
-      "acceptedDistrictLines": 1,
-      "rows": [
-        {
-          "id": "HB10858-3-0559-008777",
-          "district": "Albay · 3rd District",
-          "representative": "Adrian Salceda",
-          "projectName": "Construction of Road, Barangay Agol-Barangay Basicao Interior-Barangay Malapay- Barangay Nablangbulod Road including Drainage Facilities, Pio Duran, Albay. STA. 0+600-STA.1+300",
-          "amountPesos": 20000000,
-          "office": "Albay 3rd District Engineering Office",
-          "closestNepTitle": "Construction of Road leading to Pantao-Sitio Pentason-Cadawag, Libon and Oas, Albay. Sta 0+000.00 - Sta. 2+300.00",
-          "similarityPct": 46.93,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "559"
         }
       ]
     },
@@ -41560,7 +41857,7 @@
       "representative": "Stephen James Tan",
       "candidateLines": 3,
       "candidateAllocationPesos": 17000000,
-      "acceptedDistrictLines": 40,
+      "acceptedDistrictLines": 48,
       "rows": [
         {
           "id": "HB10858-3-0598-009611",
@@ -41646,33 +41943,24 @@
       ]
     },
     {
-      "district": "Marinduque · Lone District",
-      "representative": "Reynaldo Salvacion",
-      "candidateLines": 1,
-      "candidateAllocationPesos": 14000000,
-      "acceptedDistrictLines": 16,
-      "rows": [
-        {
-          "id": "HB10858-3-0786-013337",
-          "district": "Marinduque · Lone District",
-          "representative": "Reynaldo Salvacion",
-          "projectName": "Construction of Multi-purpose Building (Covered Court), Barangay Puyog, Boac, Marinduque",
-          "amountPesos": 14000000,
-          "office": "Marinduque District Engineering Office",
-          "closestNepTitle": "",
-          "similarityPct": 0.0,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "786"
-        }
-      ]
-    },
-    {
       "district": "Bulacan · 6th District",
       "representative": "Salvador Pleyto",
-      "candidateLines": 2,
-      "candidateAllocationPesos": 10000000,
-      "acceptedDistrictLines": 18,
+      "candidateLines": 3,
+      "candidateAllocationPesos": 15676000,
+      "acceptedDistrictLines": 19,
       "rows": [
+        {
+          "id": "HB10858-3-0143-000652",
+          "district": "Bulacan · 6th District",
+          "representative": "Salvador Pleyto",
+          "projectName": "Sta Maria-Norzagaray Rd - K0033+849 - K0033+1008, K0034+000 - K0034+130",
+          "amountPesos": 5676000,
+          "office": "Bulacan 2nd District Engineering Office",
+          "closestNepTitle": "Sta Maria-Norzagaray Rd - K0032 + (-932) - K0035 + 408",
+          "similarityPct": 64.91,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "143"
+        },
         {
           "id": "HB10858-3-0732-012226",
           "district": "Bulacan · 6th District",
@@ -41696,6 +41984,27 @@
           "similarityPct": 73.33,
           "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
           "sourcePage": "732"
+        }
+      ]
+    },
+    {
+      "district": "Marinduque · Lone District",
+      "representative": "Reynaldo Salvacion",
+      "candidateLines": 1,
+      "candidateAllocationPesos": 14000000,
+      "acceptedDistrictLines": 16,
+      "rows": [
+        {
+          "id": "HB10858-3-0786-013337",
+          "district": "Marinduque · Lone District",
+          "representative": "Reynaldo Salvacion",
+          "projectName": "Construction of Multi-purpose Building (Covered Court), Barangay Puyog, Boac, Marinduque",
+          "amountPesos": 14000000,
+          "office": "Marinduque District Engineering Office",
+          "closestNepTitle": "",
+          "similarityPct": 0.0,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "786"
         }
       ]
     },
@@ -41800,7 +42109,7 @@
       "representative": "Rudy Caoagdan",
       "candidateLines": 1,
       "candidateAllocationPesos": 5000000,
-      "acceptedDistrictLines": 1,
+      "acceptedDistrictLines": 13,
       "rows": [
         {
           "id": "HB10858-3-0896-015467",
@@ -41935,7 +42244,7 @@
       "representative": "Alexie Tutor",
       "candidateLines": 0,
       "candidateAllocationPesos": 0,
-      "acceptedDistrictLines": 0,
+      "acceptedDistrictLines": 2,
       "rows": []
     },
     {
@@ -41943,7 +42252,7 @@
       "representative": "Laarni Roque",
       "candidateLines": 0,
       "candidateAllocationPesos": 0,
-      "acceptedDistrictLines": 2,
+      "acceptedDistrictLines": 5,
       "rows": []
     },
     {
@@ -42023,7 +42332,7 @@
       "representative": "Kiko Barzaga",
       "candidateLines": 0,
       "candidateAllocationPesos": 0,
-      "acceptedDistrictLines": 0,
+      "acceptedDistrictLines": 1,
       "rows": []
     },
     {
@@ -42047,7 +42356,7 @@
       "representative": "Karen Flores-Garcia",
       "candidateLines": 0,
       "candidateAllocationPesos": 0,
-      "acceptedDistrictLines": 7,
+      "acceptedDistrictLines": 8,
       "rows": []
     },
     {
@@ -42299,14 +42608,6 @@
       "rows": []
     },
     {
-      "district": "Masbate · 1st District",
-      "representative": "Antonio Kho",
-      "candidateLines": 0,
-      "candidateAllocationPesos": 0,
-      "acceptedDistrictLines": 3,
-      "rows": []
-    },
-    {
       "district": "Masbate · 2nd District",
       "representative": "Elisa Olga Kho",
       "candidateLines": 0,
@@ -42407,7 +42708,7 @@
       "representative": "Mia Ynares",
       "candidateLines": 0,
       "candidateAllocationPesos": 0,
-      "acceptedDistrictLines": 2,
+      "acceptedDistrictLines": 3,
       "rows": []
     },
     {
@@ -42514,7 +42815,7 @@
     },
     {
       "file": "congress_geographic_attribution_db_3rd.json",
-      "sha256": "c960abd238bb71e9cb449cd059d6ffb71d8fad1c4502d553fd85c2db8b8676be"
+      "sha256": "4f4f61a21529e58a286f7142dde35ee49024d549de427558e81c7c4bc9a918bb"
     }
   ]
 }

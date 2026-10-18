@@ -20,7 +20,7 @@
     ],
     "cross_volume_source_pdf": "HB_BUDGET/1 - HB 10858 VOL IA.pdf",
     "cross_volume_source_sha256": "6fffb251c2b98e9aefd5d3295e561780c6744e83f313507b8da0d3671cc9be13",
-    "extractor_sha256": "46b669fb56a14e1c8fc3fe2f222fe6009ef911078081cc8201011e591d273164",
+    "extractor_sha256": "bf66aff2741b1ce32efae04b34ed37532be6183467e1240e7407a550c0f1569f",
     "pymupdf_version": "1.28.2",
     "ids": "source-artifact-local page and ruled row identifiers; not cross-document project identities"
   },
@@ -47,7 +47,9 @@
     "cross_volume_control_checks": 17,
     "cross_volume_office_echo_checks": 16,
     "failed_cross_volume_checks": 0,
-    "coordinate_review_projects": 83
+    "coordinate_review_projects": 83,
+    "reading_comparison_identical_pages": 60,
+    "reading_comparison_total_pages": 60
   },
   "rollup_checks": [
     {
@@ -1296,6 +1298,254 @@
       "passed": true
     }
   ],
+  "reading_comparison": {
+    "method": "page.get_text() equality over PDF 667-726 of both I-B copies",
+    "identical_pages": 60,
+    "total_pages": 60,
+    "pages": [
+      {
+        "pdf_page": 667,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 668,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 669,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 670,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 671,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 672,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 673,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 674,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 675,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 676,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 677,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 678,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 679,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 680,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 681,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 682,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 683,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 684,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 685,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 686,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 687,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 688,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 689,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 690,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 691,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 692,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 693,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 694,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 695,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 696,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 697,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 698,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 699,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 700,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 701,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 702,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 703,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 704,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 705,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 706,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 707,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 708,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 709,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 710,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 711,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 712,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 713,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 714,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 715,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 716,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 717,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 718,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 719,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 720,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 721,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 722,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 723,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 724,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 725,
+        "native_text_identical": true
+      },
+      {
+        "pdf_page": 726,
+        "native_text_identical": true
+      }
+    ],
+    "note": "Textual identity does not authenticate the legislative stage of either supplied copy."
+  },
   "repeated_title_groups": [
     {
       "title": "Construction of Sitio Santiago to Sitio Gumpay, Brgy. Gabon to Brgy. Laon FMR, Brgy. Gabon, Abucay, Bataan",

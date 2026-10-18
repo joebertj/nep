@@ -1,0 +1,54 @@
+{
+  "maxActiveDownloads": 2,
+  "downloads": [
+    {
+      "profile": "bridge_inventory",
+      "script": "download_bridge_inventory.py"
+    },
+    {
+      "profile": "congressional_districts",
+      "script": "download_congressional_districts.py"
+    },
+    {
+      "profile": "city_municipal_boundaries",
+      "script": "download_city_municipal_boundaries.py"
+    },
+    {
+      "profile": "engineering_districts",
+      "script": "download_engineering_districts.py"
+    },
+    {
+      "profile": "da_fmr_fy2025",
+      "script": "download_da_fmr_fy2025.py"
+    },
+    {
+      "profile": "road_classification",
+      "script": "download_road_classification.py"
+    },
+    {
+      "profile": "national_road_network",
+      "script": "download_national_road_network.py"
+    },
+    {
+      "profile": "number_of_lanes",
+      "script": "download_number_of_lanes.py"
+    },
+    {
+      "profile": "ports",
+      "script": "download_ports.py"
+    },
+    {
+      "profile": "provincial_boundaries",
+      "script": "download_provincial_boundaries.py"
+    },
+    {
+      "profile": "road_condition",
+      "script": "download_road_condition.py"
+    },
+    {
+      "profile": "kilometer_posts",
+      "script": "download_kilometer_posts.py"
+    }
+  ],
+  "scope": "User-selected services only. Additional services require explicit selection."
+}

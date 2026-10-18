@@ -1,13 +1,13 @@
 {
   "databaseName": "PH location DB",
-  "databaseSha256": "d5da67fb29bea9b6227be68374133270cc48d983da24b194eb975ae0aa783dfb",
+  "databaseSha256": "90a45f2f8a98a25f11e0729454607eb0b48c201e9a9e4b7def8bddb20a9a981a",
   "counts": {
-    "rowsReviewed": 98821,
-    "rowsUnresolved": 83944,
-    "rowsWithNames": 14877,
-    "assignmentsChanged": 537
+    "rowsReviewed": 162421,
+    "rowsUnresolved": 137431,
+    "rowsWithNames": 24990,
+    "assignmentsChanged": 10040
   },
-  "catalogTitles": 27257,
+  "catalogTitles": 39199,
   "pages": [
     {
       "page": "budget-innovations.html",
@@ -17,51 +17,75 @@
     },
     {
       "page": "congress.html",
+      "tables": 11,
+      "embeddedDocuments": 5,
+      "tablesWithLocationColumns": 11
+    },
+    {
+      "page": "cost-matching.html",
       "tables": 7,
-      "embeddedDocuments": 1,
-      "tablesWithLocationColumns": 7
+      "embeddedDocuments": 3,
+      "tablesWithLocationColumns": 5
+    },
+    {
+      "page": "cost-per-km.html",
+      "tables": 9,
+      "embeddedDocuments": 3,
+      "tablesWithLocationColumns": 2
     },
     {
       "page": "deped.html",
       "tables": 1,
-      "embeddedDocuments": 1,
-      "tablesWithLocationColumns": 1
+      "embeddedDocuments": 4,
+      "tablesWithLocationColumns": 0
     },
     {
       "page": "dpwh-hgab-comparison.html",
-      "tables": 1,
+      "tables": 2,
       "embeddedDocuments": 1,
       "tablesWithLocationColumns": 1
     },
     {
       "page": "dpwh-hgab.html",
-      "tables": 18,
+      "tables": 19,
       "embeddedDocuments": 5,
-      "tablesWithLocationColumns": 17
+      "tablesWithLocationColumns": 18
     },
     {
       "page": "dpwh.html",
-      "tables": 17,
+      "tables": 0,
       "embeddedDocuments": 4,
-      "tablesWithLocationColumns": 14
+      "tablesWithLocationColumns": 0
     },
     {
       "page": "fmr.html",
-      "tables": 3,
-      "embeddedDocuments": 2,
-      "tablesWithLocationColumns": 3
+      "tables": 2,
+      "embeddedDocuments": 4,
+      "tablesWithLocationColumns": 1
     },
     {
       "page": "hfep.html",
-      "tables": 4,
+      "tables": 8,
       "embeddedDocuments": 1,
-      "tablesWithLocationColumns": 4
+      "tablesWithLocationColumns": 5
+    },
+    {
+      "page": "index.html",
+      "tables": 5,
+      "embeddedDocuments": 0,
+      "tablesWithLocationColumns": 2
+    },
+    {
+      "page": "mpb.html",
+      "tables": 2,
+      "embeddedDocuments": 2,
+      "tablesWithLocationColumns": 1
     },
     {
       "page": "nia-irrigation.html",
-      "tables": 2,
-      "embeddedDocuments": 0,
-      "tablesWithLocationColumns": 2
+      "tables": 3,
+      "embeddedDocuments": 4,
+      "tablesWithLocationColumns": 1
     },
     {
       "page": "nia.html",
@@ -76,10 +100,16 @@
       "tablesWithLocationColumns": 3
     },
     {
+      "page": "repeats.html",
+      "tables": 10,
+      "embeddedDocuments": 1,
+      "tablesWithLocationColumns": 8
+    },
+    {
       "page": "summary.html",
-      "tables": 3,
+      "tables": 5,
       "embeddedDocuments": 0,
-      "tablesWithLocationColumns": 1
+      "tablesWithLocationColumns": 2
     }
   ],
   "policy": "PH location DB; current 20th Congress geographic coverage, not sponsorship. Undated historic claims do not create new assignments. DEO numbers never establish legislative seats.",
@@ -88,5 +118,6 @@
     "School names, DEO aggregates, generic scheme titles and geographic terms alone cannot identify a legislative seat.",
     "Province-wide names are geographic context only; names for featured projects do not cover all projects in an aggregate.",
     "Row counts include repeated appearances across report data and embedded views; they are not distinct project counts."
-  ]
+  ],
+  "supportedInventoryIdTitles": 1437
 }

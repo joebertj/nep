@@ -5,9 +5,9 @@ END: 18.287494, 120.628232",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,1,151
 nep_fmr:p1:r6,Region I - ILOCOS,"Construction of San Lorenzo FMR, Brgy. San Lorenzo, Bangui, Ilocos Norte",15000000,1,2,"[[[120.620162,18.328793],[120.643061,18.31303]]]",120.620162,18.328793,120.643061,18.31303,,,normalized,,,,"START: 18.328793, 120.620162
 END: 18.313030, 120.643061","START: 18.328793, 120.620162
 END: 18.313030, 120.643061",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,1,1511
-nep_fmr:p1:r7,Region I - ILOCOS,"Construction of Brgy. Escoda - Brgy. Elizabeth FMR, Brgy. Escoda and Brgy. Elizabeth, Marcos, Ilocos Norte",30000000,1,2,"[[[120.7245783,17.00918],[120.732015,17.9980347]]]",120.7245783,17.00918,120.732015,17.9980347,,,needs_review,endpoint_distance_over_100_km,,,"START: 17.00918, 120.7245783
+nep_fmr:p1:r7,Region I - ILOCOS,"Construction of Brgy. Escoda - Brgy. Elizabeth FMR, Brgy. Escoda and Brgy. Elizabeth, Marcos, Ilocos Norte",30000000,1,2,"[[[120.7245783,18.00918],[120.732015,17.9980347]]]",120.7245783,18.00918,120.732015,17.9980347,,,normalized,,off_by_one_digit_repair_accepted,,"START: 17.00918, 120.7245783
 END: 17.9980347, 120.732015","START: 17.00918, 120.7245783
-END: 17.9980347, 120.732015",original_ocr,printed_source_anomaly,data/nep_fmr_coordinate_review_images/nep_fmr_p1_r7.png,dbm-other-nep-line-data/FMR.pdf,1,1511
+END: 17.9980347, 120.732015",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,1,1511
 nep_fmr:p1:r8,Region I - ILOCOS,"Construction of Brgy. Zapat-Brgy. Baracbac FMR, Brgy. Zapat and Brgy. Baracbac, Sinait, Tiocos Sur",15000000,1,2,"[[[120.480996,17.827154],[120.4835533,17.822475]]]",120.480996,17.827154,120.4835533,17.822475,,,normalized,,,,"START: 17.827154, 120.480996
 END: 17.822475, 120.4835533","START: 17.827154, 120.480996
 END: 17.822475, 120.4835533",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,1,1511
@@ -38,7 +38,7 @@ END: 15.846547, 120.346926",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,1,151
 nep_fmr:p1:r17,Region I - ILOCOS,"Construction of Brgy. Buenlag FMR, Brgy. Buenlag, Mangatarem, Pangasinan",15000000,1,2,"[[[120.2548345,15.8047319],[120.2610412,15.8050199]]]",120.2548345,15.8047319,120.2610412,15.8050199,,,normalized,,image_reviewed_ocr_transcription,coordinate_format_needs_review,"START: 15.8047319, 120.2548345
 :
 END: 15.8050199, 120.2610412","START: 15.8047319, 120.2548345
-END: 15.8050199, 120.2610412",image_reviewed_ocr_transcription,ocr_transcription_error,data/nep_fmr_coordinate_review_images/nep_fmr_p1_r17.png,dbm-other-nep-line-data/FMR.pdf,1,1511
+END: 15.8050199, 120.2610412",image_reviewed_ocr_transcription,,,dbm-other-nep-line-data/FMR.pdf,1,1511
 nep_fmr:p1:r18,Region I - ILOCOS,"Construction of Brgy. Tobor FMR, Brgy. Tobor, Malasiqui, Pangasinan",15000000,1,2,"[[[120.522945,15.879305],[120.51911,15.887629]]]",120.522945,15.879305,120.51911,15.887629,,,normalized,,,,"START: 15.879305, 120.522945
 END: 15.887629, 120.519110","START: 15.879305, 120.522945
 END: 15.887629, 120.519110",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,1,1511
@@ -174,9 +174,9 @@ Section 2: 120.609355, 18.194385",original_ocr,,,dbm-other-nep-line-data/FMR.pdf
 nep_fmr:p4:r12,Region I - ILOCOS,"Construction of Brgy. 40 Balatong FMR, Laoag City, Ilocos Norte",10000000,1,2,"[[[120.573241,18.169507],[120.56871,18.17286]]]",120.573241,18.169507,120.56871,18.17286,,,normalized,,longitude_first_reordered,out_of_range_or_reversed_decimal_pair,"START: 120.573241, 18.169507
 END: 120.56871, 18.17286","START: 120.573241, 18.169507
 END: 120.56871, 18.17286",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,4,1514
-nep_fmr:p4:r13,Region I - ILOCOS,"Construction of Brgy. 41 Balacad FMR, Laoag City, Ilocos Norte",10000000,1,2,"[[[120.540087,18.152453],null]]",120.540087,18.152453,,,,,needs_review,invalid_coordinate_pair,longitude_first_reordered,out_of_range_or_reversed_decimal_pair,"START: 120.540087, 18.152453
+nep_fmr:p4:r13,Region I - ILOCOS,"Construction of Brgy. 41 Balacad FMR, Laoag City, Ilocos Norte",10000000,1,2,"[[[120.540087,18.152453],[120.53601,18.153581]]]",120.540087,18.152453,120.53601,18.153581,,,normalized,,longitude_first_reordered | off_by_one_digit_repair_accepted,out_of_range_or_reversed_decimal_pair,"START: 120.540087, 18.152453
 END: 120.153581, 120.53601","START: 120.540087, 18.152453
-END: 120.153581, 120.53601",original_ocr,printed_source_anomaly,data/nep_fmr_coordinate_review_images/nep_fmr_p4_r13.png,dbm-other-nep-line-data/FMR.pdf,4,1514
+END: 120.153581, 120.53601",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,4,1514
 nep_fmr:p4:r14,Region I - ILOCOS,"Construction of Zamboanga - Cavit FMR, Brgy. Zamboanga and Brgy. Cavit, Laoag City, Ilocos Norte",7000000,1,2,"[[[120.553442,18.197739],[120.549464,18.197397]]]",120.553442,18.197739,120.549464,18.197397,,,normalized,,,,"START: 18.197739, 120.553442
 END: 18.197397, 120.549464","START: 18.197739, 120.553442
 END: 18.197397, 120.549464",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,4,1514
@@ -486,9 +486,9 @@ END: 16.744170, 121.571387",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,11,15
 nep_fmr:p11:r10,Region II - CAGAYAN VALLEY,"Construction of Brgy. Dianao FMR, Brgy. Dianao, Cauayan City, Isabela",22500000,1,2,"[[[121.856508,16.843175],[121.849495,16.84669]]]",121.856508,16.843175,121.849495,16.84669,,,normalized,,,,"START: 16.843175, 121.856508
 END: 16.846690, 121.849495","START: 16.843175, 121.856508
 END: 16.846690, 121.849495",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,11,1521
-nep_fmr:p11:r11,Region II - CAGAYAN VALLEY,"Construction of Brgy. Buyon FMR, Brgy. Buyon, Cauayan City, Isabela",15000000,1,2,"[[[121.87951,16.851721],[121.879302,18.826792]]]",121.87951,16.851721,121.879302,18.826792,,,needs_review,endpoint_distance_over_100_km,,,"START: 16.851721, 121.879510
+nep_fmr:p11:r11,Region II - CAGAYAN VALLEY,"Construction of Brgy. Buyon FMR, Brgy. Buyon, Cauayan City, Isabela",15000000,1,2,"[[[121.87951,16.851721],[121.879302,16.826792]]]",121.87951,16.851721,121.879302,16.826792,,,normalized,,off_by_one_digit_repair_accepted,,"START: 16.851721, 121.879510
 END: 18.826792, 121.879302","START: 16.851721, 121.879510
-END: 18.826792, 121.879302",original_ocr,printed_source_anomaly,data/nep_fmr_coordinate_review_images/nep_fmr_p11_r11.png,dbm-other-nep-line-data/FMR.pdf,11,1521
+END: 18.826792, 121.879302",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,11,1521
 nep_fmr:p11:r12,Region II - CAGAYAN VALLEY,"Construction of Brgy. San Antonio FMR, Brgy. San Antonio, Cauayan City, Isabela",18000000,1,2,"[[[121.794014,16.880751],[121.797378,16.866792]]]",121.794014,16.880751,121.797378,16.866792,,,normalized,,,,"START: 16.880751, 121.794014
 END: 16.866792, 121.797378","START: 16.880751, 121.794014
 END: 16.866792, 121.797378",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,11,1521
@@ -516,7 +516,7 @@ END: 16.6659776, 121.8676524","START: 16.6735730, 121.8729496
 END: 16.6659776, 121.8676524",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,12,1522
 nep_fmr:p12:r4,Region II - CAGAYAN VALLEY,"Construction of Brgy. Disimuray to Casalatan FMR, Brgy. Disimuray, Cauayan City, Isabela",30000000,1,2,"[[[121.88871,16.890453],[121.87192,16.891079]]]",121.88871,16.890453,121.87192,16.891079,,,normalized,,image_reviewed_ocr_transcription,coordinate_format_needs_review,"START: 16.890453, 121.888710
 |END: 16.891079, 121.871920","START: 16.890453, 121.888710
-END: 16.891079, 121.871920",image_reviewed_ocr_transcription,ocr_transcription_error,data/nep_fmr_coordinate_review_images/nep_fmr_p12_r4.png,dbm-other-nep-line-data/FMR.pdf,12,1522
+END: 16.891079, 121.871920",image_reviewed_ocr_transcription,,,dbm-other-nep-line-data/FMR.pdf,12,1522
 nep_fmr:p12:r5,Region II - CAGAYAN VALLEY,"Construction of Brgy. Gappal FMR 3, Brgy. Gappal, Cauayan City, Isabela",15000000,2,4,"[[[121.819837,16.838767],[121.815839,16.839646]],[[121.818317,16.839367],[121.818599,16.844298]]]",,,,,,,normalized,,,coordinate_format_needs_review,"START: (1) 16.838767, 121.819837, (2) 16.839367, 121.818317
 END: (1) 16.839646, 121.815839, (2) 16.844298, 121.818599","START: (1) 16.838767, 121.819837, (2) 16.839367, 121.818317
 END: (1) 16.839646, 121.815839, (2) 16.844298, 121.818599",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,12,1522
@@ -837,9 +837,9 @@ END: 15.602218, 120.907424",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,18,15
 nep_fmr:p18:r14,Region III - CENTRAL LUZON,"Construction of Brgy. San Isidro to Brgy. Sta. Cruz to Brgy. Pantoc FMR, Brgy. San Isidro, Zaragoza, Nueva Ecija",9212500,1,2,"[[[120.802403,15.443927],[120.810416,15.446089]]]",120.802403,15.443927,120.810416,15.446089,,,normalized,,,,"START: 15.443927, 120.802403
 END: 15.446089, 120.810416","START: 15.443927, 120.802403
 END: 15.446089, 120.810416",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,18,1528
-nep_fmr:p18:r15,Region III - CENTRAL LUZON,"Construction of Brgy. Tampac I FMR, Brgy. Tampac I, Guimba, Nueva Ecija",23375000,1,2,"[[[120.7972783,15.6352648],[129.8030109,15.6377206]]]",120.7972783,15.6352648,129.8030109,15.6377206,,,needs_review,endpoint_distance_over_100_km | outside_philippines_orientation_bounds,,outside_philippines_orientation_bounds,"START: 15.6352648, 120.7972783
+nep_fmr:p18:r15,Region III - CENTRAL LUZON,"Construction of Brgy. Tampac I FMR, Brgy. Tampac I, Guimba, Nueva Ecija",23375000,1,2,"[[[120.7972783,15.6352648],[120.8030109,15.6377206]]]",120.7972783,15.6352648,120.8030109,15.6377206,,,normalized,,off_by_one_digit_repair_accepted,outside_philippines_orientation_bounds,"START: 15.6352648, 120.7972783
 END: 15.6377206, 129.8030109","START: 15.6352648, 120.7972783
-END: 15.6377206, 129.8030109",original_ocr,printed_source_anomaly,data/nep_fmr_coordinate_review_images/nep_fmr_p18_r15.png,dbm-other-nep-line-data/FMR.pdf,18,1528
+END: 15.6377206, 129.8030109",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,18,1528
 nep_fmr:p19:r2,Region III - CENTRAL LUZON,"Construction of Brgy. Bulakid FMR, Brgy. Bulakid, Guimba, Nueva Ecija",16500000,1,2,"[[[120.730956,15.554519],[120.732246,15.54845]]]",120.730956,15.554519,120.732246,15.54845,,,normalized,,decimal_angle_unit_marker_removed,coordinate_format_needs_review,"START: 15.554519° 120.730956°
 END: 15.548450° 120.732246°","START: 15.554519° 120.730956°
 END: 15.548450° 120.732246°",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,19,1529
@@ -926,7 +926,7 @@ END: 15.818781, 120.547617","START: 15.822531, 120.652583
 END: 15.818781, 120.547617",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,20,1530
 nep_fmr:p20:r14,Region III - CENTRAL LUZON,"Construction of Brgy. Valeriana FMR, Brgy. Valeriana, Zaragoza, Nueva Ecija",34375000,1,2,"[[[120.7695666667,15.4072805556],[120.7624527778,15.4069638889]]]",120.7695666667,15.4072805556,120.7624527778,15.4069638889,,,normalized,,dms_to_decimal_degrees | hemisphere_interpreted | image_reviewed_ocr_transcription,coordinate_format_needs_review,"START: 15°2426.21""N 120°46'10.44""E
 END: 15°24'25.07""N 120°45'44.83""E","START: 15°24'26.21""N 120°46'10.44""E
-END: 15°24'25.07""N 120°45'44.83""E",image_reviewed_ocr_transcription,ocr_transcription_error,data/nep_fmr_coordinate_review_images/nep_fmr_p20_r14.png,dbm-other-nep-line-data/FMR.pdf,20,1530
+END: 15°24'25.07""N 120°45'44.83""E",image_reviewed_ocr_transcription,,,dbm-other-nep-line-data/FMR.pdf,20,1530
 nep_fmr:p20:r15,Region III - CENTRAL LUZON,"Construction of Brgy. Sto. Rosario Young to Brgy. Valeriana FMR, Brgy. Sto. Rosario Young, Zaragoza, Nueva Ecija",40000000,1,2,"[[[120.7582472222,15.4428444444],[120.7559472222,15.4014444444]]]",120.7582472222,15.4428444444,120.7559472222,15.4014444444,,,normalized,,dms_to_decimal_degrees | hemisphere_interpreted,coordinate_format_needs_review,"START: 15°26'34.24""N 120°45'29.69""E
 END: 15°24'5.20""N 120°45'21.41""E","START: 15°26'34.24""N 120°45'29.69""E
 END: 15°24'5.20""N 120°45'21.41""E",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,20,1530
@@ -962,7 +962,7 @@ END: 15.406668, 119.992371","START: 15.401517, 119.987085
 END: 15.406668, 119.992371",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,21,1531
 nep_fmr:p21:r10,Region III - CENTRAL LUZON,"Construction of Brgy. Estrella FMR, Brgy. Estrella, Rizal, Nueva Ecija",30000000,1,2,"[[[121.109276,15.642379],[121.120888,15.641148]]]",121.109276,15.642379,121.120888,15.641148,,,normalized,,image_reviewed_ocr_transcription,coordinate_format_needs_review,"START: 15.642379, 121.109276
 END: 15.641148, 121.,120888","START: 15.642379, 121.109276
-END: 15.641148, 121.120888",image_reviewed_ocr_transcription,ocr_transcription_error,data/nep_fmr_coordinate_review_images/nep_fmr_p21_r10.png,dbm-other-nep-line-data/FMR.pdf,21,1531
+END: 15.641148, 121.120888",image_reviewed_ocr_transcription,,,dbm-other-nep-line-data/FMR.pdf,21,1531
 nep_fmr:p21:r11,Region III - CENTRAL LUZON,"Construction of Sitio Kaitahan, Brgy. Villa Labrador FMR, Brgy. Villa Labrador, Rizal, Nueva Ecija",30000000,1,2,"[[[121.142411,15.719934],[121.15207,15.725663]]]",121.142411,15.719934,121.15207,15.725663,,,normalized,,,,"START: 15.719934, 121.142411
 END: 15.725663, 121.152070","START: 15.719934, 121.142411
 END: 15.725663, 121.152070",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,21,1531
@@ -1092,7 +1092,7 @@ END: S1-13.78862752, 121.3582386
 $2-13.7868393, 121.3552979","START: S1-13.7861519, 121.3636771
 S2-13.7059722, 121.3570456
 END: S1-13.78862752, 121.3582386
-S2-13.7868393, 121.3552979",image_reviewed_ocr_transcription,ocr_transcription_error,data/nep_fmr_coordinate_review_images/nep_fmr_p24_r6.png,dbm-other-nep-line-data/FMR.pdf,24,1534
+S2-13.7868393, 121.3552979",image_reviewed_ocr_transcription,,,dbm-other-nep-line-data/FMR.pdf,24,1534
 nep_fmr:p24:r7,Region IVA - CALABARZON,"Construction of Brgy. Anibawan FMR, Brgy. Anibawan, Burdeos, Quezon",15000000,1,2,"[[[121.583,14.573449],[121.582233,14.571243]]]",121.583,14.573449,121.582233,14.571243,,,normalized,,,,"START: 14.573449, 121.583000
 END: 14.571243, 121.582233","START: 14.573449, 121.583000
 END: 14.571243, 121.582233",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,24,1534
@@ -1102,9 +1102,9 @@ END: 14.7432072827559, 121.653184630645",original_ocr,,,dbm-other-nep-line-data/
 nep_fmr:p24:r9,Region IVA - CALABARZON,"Construction of Sitio Pandak, Brgy. Kalyaat FMR, Brgy. Kalyaat, Lucban, Quezon",15000000,1,2,"[[[121.529582,14.148655],[121.528729,14.144234]]]",121.529582,14.148655,121.528729,14.144234,,,normalized,,,,"START: 14.148655, 121.529582
 END: 14.144234, 121.528729","START: 14.148655, 121.529582
 END: 14.144234, 121.528729",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,24,1534
-nep_fmr:p24:r10,Region IVA - CALABARZON,"Construction of Brgy. Tagumpay FMR, Brgy. Tagumpay, Real, Quezon",55000000,2,4,"[[[121.587138,14.606378],[121.583835,4.606694]],[[121.583412,4.606488],[121.579656,14.606957]]]",,,,,,,needs_review,endpoint_distance_over_100_km,image_reviewed_ocr_transcription,coordinate_format_needs_review,"START: S51-14.606378, 121.587138 S2-4.606488, 121.583412
+nep_fmr:p24:r10,Region IVA - CALABARZON,"Construction of Brgy. Tagumpay FMR, Brgy. Tagumpay, Real, Quezon",55000000,2,4,"[[[121.587138,14.606378],[121.583835,14.606694]],[[121.583412,14.606488],[121.579656,14.606957]]]",,,,,,,normalized,,image_reviewed_ocr_transcription | off_by_one_digit_repair_accepted,coordinate_format_needs_review,"START: S51-14.606378, 121.587138 S2-4.606488, 121.583412
 END: S1- 4.606694, 121.583835 S2-14.606957, 121.579656","START: S1-14.606378, 121.587138 S2-4.606488, 121.583412
-END: S1- 4.606694, 121.583835 S2-14.606957, 121.579656",image_reviewed_ocr_transcription,ocr_and_printed_source_anomaly,data/nep_fmr_coordinate_review_images/nep_fmr_p24_r10.png,dbm-other-nep-line-data/FMR.pdf,24,1534
+END: S1- 4.606694, 121.583835 S2-14.606957, 121.579656",image_reviewed_ocr_transcription,,,dbm-other-nep-line-data/FMR.pdf,24,1534
 nep_fmr:p24:r11,Region IVA - CALABARZON,"Construction of Sitio Cagga, Brgy. Tagumpay FMR, Brgy. Tagumpay, Real, Quezon",30000000,1,2,"[[[121.585617,14.605767],[121.58496,14.592816]]]",121.585617,14.605767,121.58496,14.592816,,,normalized,,,,"START: 14.605767, 121.585617
 END: 14.592816, 121.584960","START: 14.605767, 121.585617
 END: 14.592816, 121.584960",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,24,1534
@@ -1143,7 +1143,7 @@ END: 14.175330, 120.753577","START: 14.164779, 120.748814
 END: 14.175330, 120.753577",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,25,1535
 nep_fmr:p25:r8,Region IVA - CALABARZON,"Construction of Sitio Anilao to Brgy. Dambo FMR, Brgy. Dambo, Pangil, Laguna",20000000,1,2,"[[[121.409858,14.405743],[121.41401,14.410607]]]",121.409858,14.405743,121.41401,14.410607,,,normalized,,image_reviewed_ocr_transcription,coordinate_format_needs_review,"START: 14.405743, 121,409858
 END: 14.410607, 121.414010","START: 14.405743, 121.409858
-END: 14.410607, 121.414010",image_reviewed_ocr_transcription,ocr_transcription_error,data/nep_fmr_coordinate_review_images/nep_fmr_p25_r8.png,dbm-other-nep-line-data/FMR.pdf,25,1535
+END: 14.410607, 121.414010",image_reviewed_ocr_transcription,,,dbm-other-nep-line-data/FMR.pdf,25,1535
 nep_fmr:p25:r9,Region IVA - CALABARZON,"Construction of Brgy. Anibong FMR, Brgy. Anibong, Pagsanjan, Laguna",30000000,1,2,"[[[121.464671,14.217207],[121.467087,14.208823]]]",121.464671,14.217207,121.467087,14.208823,,,normalized,,,,"START: 14.217207, 121.464671
 END: 14.208823, 121.467087","START: 14.217207, 121.464671
 END: 14.208823, 121.467087",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,25,1535
@@ -1165,7 +1165,7 @@ END: S1 - 13 51 '29.05"" 121 54'15.37""
 S2 - 13 5118.22"" 121 55'8.36""","START: S1 - 13 51 '39.52"" 121 54'20.64""
 S2- 13 51'16.99"" 121 54'33.51 ""
 END: S1 - 13 51 '29.05"" 121 54'15.37""
-S2 - 13 51'18.22"" 121 55'8.36""",image_reviewed_ocr_transcription,ocr_transcription_error,data/nep_fmr_coordinate_review_images/nep_fmr_p25_r14.png,dbm-other-nep-line-data/FMR.pdf,25,1535
+S2 - 13 51'18.22"" 121 55'8.36""",image_reviewed_ocr_transcription,,,dbm-other-nep-line-data/FMR.pdf,25,1535
 nep_fmr:p25:r15,Region IVA - CALABARZON,"Construction of Brgy. Kanlurang Calutan FMR, Agdangan, Quezon",15000000,1,2,"[[[121.891541,13.869225],[121.890002,13.876591]]]",121.891541,13.869225,121.890002,13.876591,,,normalized,,,,"START: 13.869225, 121.891541
 END: 13.876591, 121.890002","START: 13.869225, 121.891541
 END: 13.876591, 121.890002",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,25,1535
@@ -1283,7 +1283,7 @@ END: 12.6615966, 121.5393543","START: 12.6618182, 121.5303524
 END: 12.6615966, 121.5393543",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,28,1538
 nep_fmr:p28:r6,Region IVB - MIMAROPA,"Construction of Brgy. Libertad FMR, Brgy. Libertad, Bongabong, Oriental Mindoro",15000000,1,2,"[[[121.435163,12.778815],[121.432678,12.771163]]]",121.435163,12.778815,121.432678,12.771163,,,normalized,,image_reviewed_ocr_transcription,coordinate_format_needs_review,"START: 12.778815, 121.435163
 END: 12.771163, 121,432678","START: 12.778815, 121.435163
-END: 12.771163, 121.432678",image_reviewed_ocr_transcription,ocr_transcription_error,data/nep_fmr_coordinate_review_images/nep_fmr_p28_r6.png,dbm-other-nep-line-data/FMR.pdf,28,1538
+END: 12.771163, 121.432678",image_reviewed_ocr_transcription,,,dbm-other-nep-line-data/FMR.pdf,28,1538
 nep_fmr:p28:r7,Region IVB - MIMAROPA,"Construction of Sitio Pawikan - Sitio Upper Yunot, Brgy. Nasukob FMR, Bulalacao, Oriental Mindoro",20000000,1,2,"[[[121.3430906,12.40854806],[121.340581,12.416207]]]",121.3430906,12.40854806,121.340581,12.416207,,,normalized,,,,"START: 12.40854806, 121.3430906
 END: 12.416207, 121.340581","START: 12.40854806, 121.3430906
 END: 12.416207, 121.340581",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,28,1538
@@ -1395,9 +1395,9 @@ End: 13.7189527778; 124.2570722222",original_ocr,,,dbm-other-nep-line-data/FMR.p
 nep_fmr:p30:r13,Region V - BICOL,"Construction of Sitio Sto. Nifio, Pablacion 2 to Sitio Balete, Brgy. Imelda, Claveria FMR, Poblacion 2, Claveria, Masbate",15000000,1,2,"[[[123.2249072,12.9007193],[123.20727778,12.90284722]]]",123.2249072,12.9007193,123.20727778,12.90284722,,,normalized,,,,"START: 12.9007193, 123.2249072
 END: 12.90284722, 123.20727778","START: 12.9007193, 123.2249072
 END: 12.90284722, 123.20727778",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,30,1540
-nep_fmr:p30:r14,Region V - BICOL,"Construction of Brgy. Luna to Brgy. San Isidro FMR, San Jacinto, Masbate",15000000,1,2,"[[[123.707502,12.529293],[123.69192,12.528813]]]",123.707502,12.529293,123.69192,12.528813,,,needs_review,source_numeric_repair_candidate,extra_decimal_separator_candidate,coordinate_format_needs_review,"Start: 12.529293, 123.707502
+nep_fmr:p30:r14,Region V - BICOL,"Construction of Brgy. Luna to Brgy. San Isidro FMR, San Jacinto, Masbate",15000000,1,2,"[[[123.707502,12.529293],[123.69192,12.528813]]]",123.707502,12.529293,123.69192,12.528813,,,normalized,,extra_decimal_separator_candidate | source_numeric_repair_accepted,coordinate_format_needs_review,"Start: 12.529293, 123.707502
 End: 12.528813, 123.691.92","Start: 12.529293, 123.707502
-End: 12.528813, 123.691.92",original_ocr,printed_source_anomaly,data/nep_fmr_coordinate_review_images/nep_fmr_p30_r14.png,dbm-other-nep-line-data/FMR.pdf,30,1540
+End: 12.528813, 123.691.92",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,30,1540
 nep_fmr:p30:r15,Region V - BICOL,"Construction of Brgy. Don Pablo Dela Rosa FMR, Brgy. Don Pablo Dela Rosa, Aroroy, Masbate",15000000,1,2,"[[[123.332655,12.5448758],[123.3455767,12.5440274]]]",123.332655,12.5448758,123.3455767,12.5440274,,,normalized,,,,"START: 12.5448758, 123.332655
 END: 12.5440274, 123.3455767","START: 12.5448758, 123.332655
 END: 12.5440274, 123.3455767",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,30,1540
@@ -1436,7 +1436,7 @@ END: 13.0303339, 123.6771187","START: 13.0362425, 123.6773601
 END: 13.0303339, 123.6771187",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,31,1541
 nep_fmr:p31:r12,Region V - BICOL,"Construction of Bigaa FMR, Legazpi City, Albay",15000000,1,2,"[[[123.753214,13.192763],[123.749089,13.196694]]]",123.753214,13.192763,123.749089,13.196694,,,normalized,,image_reviewed_ocr_transcription,coordinate_format_needs_review,"START: 13.192763, 123,753214
 END: 13.196694, 123.749089","START: 13.192763, 123.753214
-END: 13.196694, 123.749089",image_reviewed_ocr_transcription,ocr_transcription_error,data/nep_fmr_coordinate_review_images/nep_fmr_p31_r12.png,dbm-other-nep-line-data/FMR.pdf,31,1541
+END: 13.196694, 123.749089",image_reviewed_ocr_transcription,,,dbm-other-nep-line-data/FMR.pdf,31,1541
 nep_fmr:p31:r13,Region V - BICOL,"Construction of Purok 2 to Purok 6 and 7 FMR, Brgy. Malipo, Camalig, Albay",15000000,1,2,"[[[123.5543186,13.1254462],[123.5520781,13.1031111]]]",123.5543186,13.1254462,123.5520781,13.1031111,,,normalized,,,,"START: 13.1254462, 123.5543186
 END: 13.1031111, 123.5520781","START: 13.1254462, 123.5543186
 END: 13.1031111, 123.5520781",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,31,1541
@@ -1538,7 +1538,7 @@ END: 10.977689, 122.741352","START: 10.982807, 122.748233
 END: 10.977689, 122.741352",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,33,1543
 nep_fmr:p33:r16,Region VI - WESTERN VISAYAS,"Construction of Brgy. Malayu-an FMR, Brgy. Malayu-an, Ajuy, Iloilo",15000000,1,2,"[[[123.003638,11.115153],[122.995354,11.114053]]]",123.003638,11.115153,122.995354,11.114053,,,normalized,,image_reviewed_ocr_transcription,coordinate_format_needs_review,"START: 11115153, 123.003638
 END: 11.114053, 122.995354","START: 11.115153, 123.003638
-END: 11.114053, 122.995354",image_reviewed_ocr_transcription,ocr_transcription_error,data/nep_fmr_coordinate_review_images/nep_fmr_p33_r16.png,dbm-other-nep-line-data/FMR.pdf,33,1543
+END: 11.114053, 122.995354",image_reviewed_ocr_transcription,,,dbm-other-nep-line-data/FMR.pdf,33,1543
 nep_fmr:p34:r2,Region VI - WESTERN VISAYAS,"Construction of Sitio Cabarawan, Brgy. Sto. Rosario FMR, Brgy. Sto. Rosario, Ajuy, Hoilo",15000000,1,2,"[[[122.956311,11.095008],[122.954331,11.102269]]]",122.956311,11.095008,122.954331,11.102269,,,normalized,,,,"START: 11.095008, 122.956311
 END: 11.102269, 122.954331","START: 11.095008, 122.956311
 END: 11.102269, 122.954331",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,34,1544
@@ -1685,13 +1685,13 @@ END: 11.384631, 124.948500","START: 11.390492, 124.954856
 END: 11.384631, 124.948500",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,37,1547
 nep_fmr:p37:r6,Region VIII - EASTERN VISAYAS,"Construction of Brgy. Tutug-an to Sitio Nasunogan, Brgy. Tutug-an FMR, Brgy. Tutug-an, Barugo, Leyte",15000000,1,2,"[[[124.753556,11.310222],[124.754861,11.300222]]]",124.753556,11.310222,124.754861,11.300222,,,normalized,,image_reviewed_ocr_transcription,coordinate_format_needs_review,"START: 11,310222, 124.753556
 END: 11.300222, 124.754861","START: 11.310222, 124.753556
-END: 11.300222, 124.754861",image_reviewed_ocr_transcription,ocr_transcription_error,data/nep_fmr_coordinate_review_images/nep_fmr_p37_r6.png,dbm-other-nep-line-data/FMR.pdf,37,1547
+END: 11.300222, 124.754861",image_reviewed_ocr_transcription,,,dbm-other-nep-line-data/FMR.pdf,37,1547
 nep_fmr:p37:r7,Region VIII - EASTERN VISAYAS,"Construction of Brgy. Ibag to Brgy. Sta. Rosa FMR, Brgy. Ibag and Brgy. Sta. Rosa, Barugo, Leyte",15000000,1,2,"[[[124.801833,11.321083],[124.805583,11.300472]]]",124.801833,11.321083,124.805583,11.300472,,,normalized,,,,"START: 11.321083, 124.801833
 END: 11.300472, 124.805583","START: 11.321083, 124.801833
 END: 11.300472, 124.805583",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,37,1547
-nep_fmr:p37:r8,Region VIII - EASTERN VISAYAS,"Construction of Sitio Busay, Brgy. Apale FMR, Brgy. Apale, Isabel, Leyte",15000000,1,2,"[[[124.488833,11.871556],[124.485778,10.878222]]]",124.488833,11.871556,124.485778,10.878222,,,needs_review,endpoint_distance_over_100_km,,,"START: 11.871556, 124.488833
+nep_fmr:p37:r8,Region VIII - EASTERN VISAYAS,"Construction of Sitio Busay, Brgy. Apale FMR, Brgy. Apale, Isabel, Leyte",15000000,1,2,"[[[124.488833,10.871556],[124.485778,10.878222]]]",124.488833,10.871556,124.485778,10.878222,,,normalized,,off_by_one_digit_repair_accepted,,"START: 11.871556, 124.488833
 END: 10.878222, 124.485778","START: 11.871556, 124.488833
-END: 10.878222, 124.485778",original_ocr,printed_source_anomaly,data/nep_fmr_coordinate_review_images/nep_fmr_p37_r8.png,dbm-other-nep-line-data/FMR.pdf,37,1547
+END: 10.878222, 124.485778",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,37,1547
 nep_fmr:p37:r9,Region VIII - EASTERN VISAYAS,"Construction of Sitio Kabaringan, Brgy. Apale FMR, Brgy. Apale, Isabel, Leyte",15000000,1,2,"[[[124.489556,11.874],[124.49175,11.883361]]]",124.489556,11.874,124.49175,11.883361,,,normalized,,,,"START: 11.874000, 124.489556
 END: 11.883361, 124.491750","START: 11.874000, 124.489556
 END: 11.883361, 124.491750",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,37,1547
@@ -1940,13 +1940,13 @@ END: 7.704479, 125.900317","START: 7.703980, 125.885439
 END: 7.704479, 125.900317",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,42,1552
 nep_fmr:p42:r15,Region XI - DAVAO,"Construction of Junction Panlaisan to Sitio Butay, Brgy. Pichon FMR, Brgy. Pichon, Caraga, Davao Oriental",100000000,1,2,"[[[126.3400972222,7.4102388889],[126.343261,7.392078]]]",126.3400972222,7.4102388889,126.343261,7.392078,,,normalized,,dms_to_decimal_degrees | hemisphere_interpreted | image_reviewed_ocr_transcription,coordinate_format_needs_review,"START: 7 24'36.86""N, 126 2024.35""E
 END: 7.392078N, 126.343261E","START: 7 24'36.86""N, 126 20'24.35""E
-END: 7.392078N, 126.343261E",image_reviewed_ocr_transcription,ocr_transcription_error,data/nep_fmr_coordinate_review_images/nep_fmr_p42_r15.png,dbm-other-nep-line-data/FMR.pdf,42,1552
+END: 7.392078N, 126.343261E",image_reviewed_ocr_transcription,,,dbm-other-nep-line-data/FMR.pdf,42,1552
 nep_fmr:p42:r16,Region XI - DAVAO,"Construction from Highway Junction to Brgy. Guza FMR, Brgy. Guza, Manay, Davao Oriental",30000000,1,2,"[[[126.480481,7.248668],[126.469821,7.258718]]]",126.480481,7.248668,126.469821,7.258718,,,normalized,,,,"START: 7.248668, 126.480481
 END: 7.258718, 126.469821","START: 7.248668, 126.480481
 END: 7.258718, 126.469821",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,42,1552
 nep_fmr:p43:r3,Region XII - SOCCSKSARGEN,"Construction of Sitio Guia, Brgy. Polayagan to Sitio Sambacan, Brgy. Barangiran FMR Phase I, Brgy. Polayagan and Brgy. Barangiran, Alamada, Cotabato",15000000,1,2,"[[[124.5512317322,7.4126601686],[124.5617144052,7.3909531395]]]",124.5512317322,7.4126601686,124.5617144052,7.3909531395,,,normalized,,image_reviewed_ocr_transcription,coordinate_format_needs_review,"START: 7.41266016861049, 124,551231732243
 END: 7.39095313952864, 124.561714405159","START: 7.41266016861049, 124.551231732243
-END: 7.39095313952864, 124.561714405159",image_reviewed_ocr_transcription,ocr_transcription_error,data/nep_fmr_coordinate_review_images/nep_fmr_p43_r3.png,dbm-other-nep-line-data/FMR.pdf,43,1553
+END: 7.39095313952864, 124.561714405159",image_reviewed_ocr_transcription,,,dbm-other-nep-line-data/FMR.pdf,43,1553
 nep_fmr:p43:r4,Region XII - SOCCSKSARGEN,"Construction of Brgy. Bitoka to Brgy. Milaya FMR, Brgy. Bitoka and Brgy. Milaya, Midsayap, Cotabato",15000000,1,2,"[[[124.5943017278,7.1896095394],[124.5908651743,7.2137854898]]]",124.5943017278,7.1896095394,124.5908651743,7.2137854898,,,normalized,,,,"START: 7.18960953944742, 124.594301727838
 END: 7.2137854897779, 124.590865174337","START: 7.18960953944742, 124.594301727838
 END: 7.2137854897779, 124.590865174337",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,43,1553
@@ -1976,10 +1976,10 @@ END: 6.452566017455089, 124.8991640862047","START: 6.444898359532583, 124.880324
 END: 6.452566017455089, 124.8991640862047",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,43,1553
 nep_fmr:p43:r13,Region XII - SOCCSKSARGEN,"Construction of Montapet, Brgy. Ambalgan FMR, Brgy. Ambalgan, Sto. Nifio, South Cotabato",15000000,1,2,"[[[124.6928224554,6.4214081506],[124.7033730127,6.4074530485]]]",124.6928224554,6.4214081506,124.7033730127,6.4074530485,,,normalized,,image_reviewed_ocr_transcription,coordinate_format_needs_review,"START: 6.42140815062562, 124.692822455377
 END: 6.40745304849185, 124,703373012734","START: 6.42140815062562, 124.692822455377
-END: 6.40745304849185, 124.703373012734",image_reviewed_ocr_transcription,ocr_transcription_error,data/nep_fmr_coordinate_review_images/nep_fmr_p43_r13.png,dbm-other-nep-line-data/FMR.pdf,43,1553
+END: 6.40745304849185, 124.703373012734",image_reviewed_ocr_transcription,,,dbm-other-nep-line-data/FMR.pdf,43,1553
 nep_fmr:p43:r14,Region XII - SOCCSKSARGEN,"Construction of Brgy. Lamfugon to Sitio Tabayung FMR Phase II, Brgy. Lamfugon, Lake Sebu, South Cotabato",15000000,1,2,"[[[124.66973333,6.25754333],[124.6739530161,6.2548776213]]]",124.66973333,6.25754333,124.6739530161,6.2548776213,,,normalized,,image_reviewed_ocr_transcription,coordinate_format_needs_review,"START: 6.25754333, 124,.66973333
 END: 6.25487762128611, 124.673953016086","START: 6.25754333, 124.66973333
-END: 6.25487762128611, 124.673953016086",image_reviewed_ocr_transcription,ocr_transcription_error,data/nep_fmr_coordinate_review_images/nep_fmr_p43_r14.png,dbm-other-nep-line-data/FMR.pdf,43,1553
+END: 6.25487762128611, 124.673953016086",image_reviewed_ocr_transcription,,,dbm-other-nep-line-data/FMR.pdf,43,1553
 nep_fmr:p43:r15,Region XII - SOCCSKSARGEN,"Construction of Purok Luyan, Brgy. Kalanawe 2 to Purok 2, Brgy. Tinaungan FMR, Brgy. Kalanawe 2 and Brgy. Tinaungan, Pres. Quirino, Sultan Kudarat",15000000,1,2,"[[[124.7184694719,6.7345784636],[124.7018900067,6.7277973581]]]",124.7184694719,6.7345784636,124.7018900067,6.7277973581,,,normalized,,,,"START: 6.73457846364301, 124.7184694719285
 END: 6.727797358076292, 124.7018900066749","START: 6.73457846364301, 124.7184694719285
 END: 6.727797358076292, 124.7018900066749",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,43,1553
@@ -2004,9 +2004,9 @@ END: 8.724818, 125.973933",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,44,155
 nep_fmr:p44:r9,Region XIII - CARAGA,"Construction of Brgy. Katipunan FMR, Brgy. Katipunan, Bayugan City, Agusan del Sur",15000000,1,2,"[[[125.802126,8.615822],[125.813951,8.60441]]]",125.802126,8.615822,125.813951,8.60441,,,normalized,,,,"START: 8.615822, 125.802126
 END: 8.60441, 125.813951","START: 8.615822, 125.802126
 END: 8.60441, 125.813951",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,44,1554
-nep_fmr:p44:r10,Region XIII - CARAGA,"Construction of Brgy. Concepcion FMR, Brgy. Concepcion, Sta. Josefa, Agusan del Sur",15000000,1,2,"[[[126.009391,7.985605],[125.008575,7.989994]]]",126.009391,7.985605,125.008575,7.989994,,,needs_review,endpoint_distance_over_100_km,,,"START: 7.985605, 126.009391
+nep_fmr:p44:r10,Region XIII - CARAGA,"Construction of Brgy. Concepcion FMR, Brgy. Concepcion, Sta. Josefa, Agusan del Sur",15000000,1,2,"[[[126.009391,7.985605],[126.008575,7.989994]]]",126.009391,7.985605,126.008575,7.989994,,,normalized,,off_by_one_digit_repair_accepted,,"START: 7.985605, 126.009391
 END: 7.989994, 125.008575","START: 7.985605, 126.009391
-END: 7.989994, 125.008575",original_ocr,printed_source_anomaly,data/nep_fmr_coordinate_review_images/nep_fmr_p44_r10.png,dbm-other-nep-line-data/FMR.pdf,44,1554
+END: 7.989994, 125.008575",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,44,1554
 nep_fmr:p44:r11,Region XIII - CARAGA,"Construction of Brgy. Candiis to Brgy. Sta. Emelia FMR, Brgy. Candiis, Veruela, Agusan del Sur",15000000,1,2,"[[[125.896085,7.920315],[125.903938,7.923298]]]",125.896085,7.920315,125.903938,7.923298,,,normalized,,,,"START: 7.920315, 125.896085
 END: 7.923298, 125.903938","START: 7.920315, 125.896085
 END: 7.923298, 125.903938",original_ocr,,,dbm-other-nep-line-data/FMR.pdf,44,1554

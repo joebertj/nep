@@ -1,0 +1,223 @@
+{
+  "boundarySummary": {
+    "pairs": 984,
+    "substantialPairs": 790,
+    "smallIntersectionPairs": 194,
+    "deosCoveringMultipleLegs": 182,
+    "legsCoveredByMultipleDeos": 210,
+    "deosWithoutSubstantialIntersection": [],
+    "legsWithoutSubstantialIntersection": [
+      "Misamis Occidental (First District)"
+    ],
+    "repairedDeoGeometries": 1,
+    "repairedLegGeometries": 1
+  },
+  "municipalLabels": 1668,
+  "uniqueExistingPlaceMatches": 390,
+  "unresolvedLegLabels": [
+    "Mindoro Occidental (Lone District)",
+    "Mindoro Oriental (First District)",
+    "Mindoro Oriental (Second District)",
+    "Mt Province (Lone District)",
+    "Taguig-Pateros (First District)"
+  ],
+  "referencePairsAlsoOverlapping": 69,
+  "referencePairsWithoutSubstantialBoundaryMatch": [
+    {
+      "deo": "Las Piñas-Muntinlupa DEO",
+      "jurisdiction": "Las Piñas",
+      "designation": "Lone District"
+    },
+    {
+      "deo": "Las Piñas-Muntinlupa DEO",
+      "jurisdiction": "Muntinlupa",
+      "designation": "Lone District"
+    },
+    {
+      "deo": "Malabon-Navotas DEO",
+      "jurisdiction": "Malabon",
+      "designation": "Lone District"
+    },
+    {
+      "deo": "Malabon-Navotas DEO",
+      "jurisdiction": "Navotas",
+      "designation": "Lone District"
+    },
+    {
+      "deo": "Metro Manila 1st DEO",
+      "jurisdiction": "Mandaluyong",
+      "designation": "Lone District"
+    },
+    {
+      "deo": "Metro Manila 1st DEO",
+      "jurisdiction": "Marikina",
+      "designation": "1st District"
+    },
+    {
+      "deo": "Metro Manila 1st DEO",
+      "jurisdiction": "Marikina",
+      "designation": "2nd District"
+    },
+    {
+      "deo": "Metro Manila 1st DEO",
+      "jurisdiction": "Pasig",
+      "designation": "Lone District"
+    },
+    {
+      "deo": "Metro Manila 1st DEO",
+      "jurisdiction": "San Juan",
+      "designation": "Lone District"
+    },
+    {
+      "deo": "Metro Manila 1st DEO",
+      "jurisdiction": "Taguig",
+      "designation": "1st District"
+    },
+    {
+      "deo": "Metro Manila 2nd DEO",
+      "jurisdiction": "Makati",
+      "designation": "1st District"
+    },
+    {
+      "deo": "Metro Manila 2nd DEO",
+      "jurisdiction": "Makati",
+      "designation": "2nd District"
+    },
+    {
+      "deo": "Metro Manila 2nd DEO",
+      "jurisdiction": "Parañaque",
+      "designation": "1st District"
+    },
+    {
+      "deo": "Metro Manila 2nd DEO",
+      "jurisdiction": "Parañaque",
+      "designation": "2nd District"
+    },
+    {
+      "deo": "Metro Manila 3rd DEO",
+      "jurisdiction": "Caloocan",
+      "designation": "1st District"
+    },
+    {
+      "deo": "Metro Manila 3rd DEO",
+      "jurisdiction": "Caloocan",
+      "designation": "2nd District"
+    },
+    {
+      "deo": "Metro Manila 3rd DEO",
+      "jurisdiction": "Caloocan",
+      "designation": "3rd District"
+    },
+    {
+      "deo": "Metro Manila 3rd DEO",
+      "jurisdiction": "Valenzuela",
+      "designation": "1st District"
+    },
+    {
+      "deo": "Metro Manila 3rd DEO",
+      "jurisdiction": "Valenzuela",
+      "designation": "2nd District"
+    },
+    {
+      "deo": "North Manila DEO",
+      "jurisdiction": "Manila",
+      "designation": "1st District"
+    },
+    {
+      "deo": "South Manila DEO",
+      "jurisdiction": "Pasay",
+      "designation": "Lone District"
+    },
+    {
+      "deo": "Bulacan 1st DEO",
+      "jurisdiction": "BULACAN",
+      "designation": "5th District"
+    },
+    {
+      "deo": "Bulacan 2nd DEO",
+      "jurisdiction": "BULACAN",
+      "designation": "6th District"
+    },
+    {
+      "deo": "Laguna 2nd DEO",
+      "jurisdiction": "Santa Rosa",
+      "designation": "Lone District"
+    },
+    {
+      "deo": "Rizal 1st DEO",
+      "jurisdiction": "Antipolo",
+      "designation": "1st District"
+    },
+    {
+      "deo": "Rizal 1st DEO",
+      "jurisdiction": "Antipolo",
+      "designation": "2nd District"
+    },
+    {
+      "deo": "Rizal 1st DEO",
+      "jurisdiction": "RIZAL",
+      "designation": "1st District"
+    },
+    {
+      "deo": "Rizal 2nd DEO",
+      "jurisdiction": "RIZAL",
+      "designation": "3rd District"
+    },
+    {
+      "deo": "Rizal 2nd DEO",
+      "jurisdiction": "RIZAL",
+      "designation": "4th District"
+    },
+    {
+      "deo": "BARMM",
+      "jurisdiction": "BASILAN",
+      "designation": "Lone District"
+    },
+    {
+      "deo": "BARMM",
+      "jurisdiction": "TAWI-TAWI",
+      "designation": "Lone District"
+    },
+    {
+      "deo": "BARMM",
+      "jurisdiction": "LANAO DEL SUR",
+      "designation": "1st District"
+    },
+    {
+      "deo": "BARMM",
+      "jurisdiction": "LANAO DEL SUR",
+      "designation": "2nd District"
+    },
+    {
+      "deo": "BARMM",
+      "jurisdiction": "Maguindanao del Norte",
+      "designation": "Lone District"
+    },
+    {
+      "deo": "BARMM",
+      "jurisdiction": "Maguindanao del Sur",
+      "designation": "Lone District"
+    },
+    {
+      "deo": "Cebu 6th DEO",
+      "jurisdiction": "Mandaue",
+      "designation": "Lone District"
+    },
+    {
+      "deo": "South Cotabato 1st DEO",
+      "jurisdiction": "General Santos City",
+      "designation": "Lone District"
+    },
+    {
+      "deo": "Mountain Province 1st DEO",
+      "jurisdiction": "MOUNTAIN PROVINCE",
+      "designation": "Lone District"
+    },
+    {
+      "deo": "Mountain Province 2nd DEO",
+      "jurisdiction": "MOUNTAIN PROVINCE",
+      "designation": "Lone District"
+    }
+  ],
+  "policy": "Evidence tables only. Existing memberships, project allocations and public rankings unchanged."
+}

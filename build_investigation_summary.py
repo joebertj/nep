@@ -67,6 +67,11 @@ def cumulative_graph(models):
     return '<svg class="evidence-graphic" viewBox="0 0 950 355" role="img" aria-label="Cumulative RCS budget units across offices ordered from lower to higher rainfall"><path d="M60 45 V245 H890" fill="none" stroke="#536873"/><text x="10" y="55">199</text><text x="25" y="245">0</text><text x="60" y="265">1st office</text><text x="760" y="265">199th office</text><text x="60" y="25">Cumulative budget units · offices ordered by rainfall proxy</text>'+''.join(lines)+'</svg>'
 
 def main():
+    if (ROOT/'data_sources/csiiiv/source_policy.json').exists():
+        from adopt_csiiiv_reference import adopt
+        adopt()
+        from build_corrected_fmr_page import generate as refresh_reviewed_fmr
+        refresh_reviewed_fmr()
     from build_cost_per_km import build as build_cost_per_km
     length_data=build_cost_per_km()
     from build_line_item_review_queue import build as build_review_queue, render as render_review_queue
@@ -199,7 +204,7 @@ def main():
 
     findings=[
         {'rank':1,'id':'rcs','title':'RCS: identical budget packages across unequal rainfall proxies','lead':f'199 offices × ₱4.2M = {peso(n*unit)}','basis':'Direct allocation observation; rainfall need remains a proxy','page':'rcs.html#rcs-statistical-evidence','question':'What policy or engineering design justifies one identical budget unit per office?','evidence':f'All district-office RCS lines have the same amount. Province/regional rainfall proxies differ by {max(mean)/min(mean):.2f}×. Alternative formulas move different numbers of budget units.','alternative':'Standard package costs or a minimum coverage policy may justify equal allocations. Rainfall alone does not measure demand.','next':'Obtain siting, design capacity, water demand, catchment area and existing RCS inventory.','caution':'DEO is not LEG; province rainfall is not a district observation. Returning FY2026 program.'},
-        {'rank':2,'id':'prices','title':'Exact ₱5M road and flood allocations cluster in the same offices','lead':f'{a} overlapping offices vs {road*flood/N:.1f} expected under independence','basis':'Exploratory statistical association','page':'dpwh.html#dpwh-investigation-evidence','question':'Does standard design, office workload or coordinated allocation explain the co-occurrence?','evidence':f'Office odds ratio {odds:.2f}; unadjusted exact p={p:.3g}. Region-controlled result is also unusual under its stated null.','alternative':'Common specifications, office workload and project mix can create clustering.','next':'Pre-specify work-type and workload controls; inspect quantities and comparable prior-year prices.','caution':'Threshold/category selection was post hoc. Association does not establish procurement splitting or intent.'},
+        {'rank':2,'id':'prices','title':'Exact ₱5M road and flood allocations cluster in the same offices','lead':f'{a} overlapping offices vs {road*flood/N:.1f} expected under independence','basis':'Exploratory statistical association','page':'repeats.html#dpwh-investigation-evidence','question':'Does standard design, office workload or coordinated allocation explain the co-occurrence?','evidence':f'Office odds ratio {odds:.2f}; unadjusted exact p={p:.3g}. Region-controlled result is also unusual under its stated null.','alternative':'Common specifications, office workload and project mix can create clustering.','next':'Pre-specify work-type and workload controls; inspect quantities and comparable prior-year prices.','caution':'Threshold/category selection was post hoc. Association does not establish procurement splitting or intent.'},
         {'rank':3,'id':'repeats','title':'Recurring project titles: inspect overlapping work before alleging duplication','lead':f'{clear_pairs} of {len(repeat)} NEP comparison pairs clearly retained in HGAB','basis':'Scope-screened comparison candidates','page':'repeats.html#repeat-hgab-survival','question':'Are new appropriations paying for already-funded components or legitimate continuation?','evidence':f'{clear_proposals} of {len(unique)} distinct NEP repeat-screen proposals have clear HGAB links. {repeat_stats["overlapUniqueProposals"]} proposals have explicit overlapping historical chainage. {peso(repeat_stats["uniqueCurrentPesos"])} is the unique NEP proposal allocation, not alleged loss.','alternative':'Multi-year implementation, rehabilitation and distinct components can share names and segments.','next':'Prioritize explicitly overlapping retained proposals and high amounts; compare contracts, quantities, tranche scopes and completion.','caution':'The 737 headline counts NEP–old GAA comparison pairs. Potential retention and missing counterparts remain separate.'},
         {'rank':4,'id':'insertions','title':'HGAB-only domestic candidates: verify the counterpart before calling an insertion','lead':f'{len(domestic):,} domestic review candidates · {peso(sum(int(r["amountPesos"]) for r in domestic))}','basis':'Parser- and matching-dependent screen','page':'dpwh-hgab.html#hgab-investigation-evidence','question':'Which candidates are genuinely absent from NEP after wording, scope and occurrence review?','evidence':'Native schedule totals reconcile; unmatched domestic records remain distinct from unpaired FAP review lines.','alternative':'Wrapped titles, OCR, changes in office or PAP, renaming and aggregated occurrences can hide counterparts.','next':'Stratified original-page adjudication; estimate false positives before extrapolating counts.','caution':'Do not adopt another analyst’s additions count as ground truth. FAPs take a separate review path.'},
         {'rank':5,'id':'inspire','title':'INSPIRE: a large returning named appropriation needs a whole-project ledger','lead':f'{peso(inspire["fy2027Pesos"])} proposed in FY2027','basis':'Direct appropriation history; scope unresolved','page':'budget-innovations.html#innovation-investigation-evidence','question':'What is the total approved cost and which unfinished components explain the new appropriation?','evidence':'Named GAA lines exist in FY2023 and FY2025; FY2027 is not a first appearance.','alternative':'A legitimate phased project can require multiple appropriations.','next':'Obtain total project cost, phases, progress, obligations, disbursements and procurement records.','caution':'Appropriations are not actual spending; stage/year sums do not prove duplication.'}]
@@ -216,7 +221,7 @@ def main():
     findings.append({'rank':7,'id':'length-coverage','title':'Length and chainage gaps limit budget scrutiny',
         'lead':length_lead+' without usable extracted length',
         'basis':'Extracted metadata coverage; original-document completeness unverified',
-        'page':'cost-per-km.html#cost-coverage',
+        'page':'cost-matching.html#cost-coverage',
         'question':'Can the funded segment and engineering length be established for every allocation?',
         'evidence':' · '.join(f'{name}: {length_groups[name]["withLength"]:,}/{length_groups[name]["lineItems"]:,} lines have derivable stated lengths' for name in ('Roads','Bridges','FMR'))+'. Official programs have separate denominators on the supporting page.',
         'alternative':'Lengths may be recorded in engineering schedules or continuation text not recovered by this extraction; incomplete metadata need not reflect deliberate omission.',
@@ -231,6 +236,12 @@ def main():
         'alternative':'Terrain, width, structures, approaches, rehabilitation scope and components outside the stated segment can explain large differences. Tiny printed ranges or parser errors can produce extreme ratios.',
         'next':'Verify station endpoints on original pages, then compare quantities, width, funded extent, designs and bill-of-quantity costs within the same work type. Investigate unusually short denominators before interpreting extreme ratios.',
         'caution':'These are appropriations per stated segment meter, not verified construction unit costs. Bridge chainage is not necessarily bridge span. No cross-category average, overpricing estimate or corruption probability is established.'})
+    lane_summary=length_data.get('laneCost',{}).get('summary',[])
+    lane_counts={k:sum(r[k] for r in lane_summary) for k in ['titleLaneRateRecords','inventoryProxyRateRecords','existingAssetLaneRateRecords']}
+    findings[-1]['evidence']+=f' Lane evidence now supports {lane_counts["titleLaneRateRecords"]:,} title-stated lane rates, {lane_counts["inventoryProxyRateRecords"]:,} stated-length inventory lane estimates, and {lane_counts["existingAssetLaneRateRecords"]:,} existing-bridge asset lane estimates. These bases are shown separately and are not pooled into the per-meter flags.'
+    findings[-1]['caution']+=' Inventory lanes are existing asset characteristics, not verified funded quantities; widening needs additional funded lanes. Overpasses, flyovers and viaducts use bridge peers.'
+    context=length_data['laneCost']['assetContext']
+    findings[-1]['evidence']+=f' Recorded-condition screening identifies {sum(r["rehabGoodFairCandidates"] for r in context["byCategory"].values())} rehabilitation lines on fully matched Good/Fair assessed road segments and {sum(r["recentSurfacingCandidates"] for r in context["byCategory"].values())} pavement-work lines within the disclosed five-budget-year surfacing window. These are review leads; later deterioration and different work scope may justify the allocations.'
     short_audit=json.loads((ROOT/'analysis_output/short_segment_audit.json').read_text())
     if short_audit.get('comparisonCsvSha256')!=hashlib.sha256(csvpath.read_bytes()).hexdigest():
         raise ValueError('Rerun audit_short_segments.py: native comparison changed')
@@ -239,7 +250,7 @@ def main():
         findings.append({'rank':9,'id':'short-printed-ranges','title':'Very short printed road ranges need engineering clarification',
             'lead':f'{len(verified_short)} checked road ranges imply less than 5 meters',
             'basis':'Original PDF text agreement; funded engineering extent unresolved',
-            'page':'cost-per-km.html#short-segment-evidence',
+            'page':'cost-matching.html#short-segment-evidence',
             'question':'Do the printed station endpoints correctly describe the funded segment, or do notation and scope need correction?',
             'evidence':'Original-page visible text agrees with sampled road titles whose station differences calculate to '+', '.join(f'{r["lengthMeters"]:g} meters' for r in verified_short)+'. Across all 3,175 known road lengths, only 204 (6.43%) are below 100 meters; high-rate sorting concentrates short denominators at the top.',
             'alternative':'A source-document typo, station convention, short component within a larger project, or broader funded scope can explain these values. A very short printed range does not establish the physical length actually funded.',
@@ -249,12 +260,16 @@ def main():
     for finding in findings:finding['rank']=priority[finding['id']]
     findings.sort(key=lambda r:r['rank'])
     coverage_rows=[[k,v['summary']['thirdRows'],int(v['summary']['thirdTotal']),sum(count for status,count in v['summary']['statusCounts'].items() if status!='Same allocation')] for k,v in revision.items()]
+    from summary_evidence_links import enrich_findings
+    enrich_findings(findings)
     document={'title':'Investigative talking points','rankingMethod':'Editorial triage by evidence strength, allocation scale and verifiable next question; not corruption likelihood or a statistical risk score. Amounts overlap; do not add them.','findings':findings,'statistics':{'rcs':rcs_stats,'repeats':repeat_stats,'fiveMillion':price_stats,'strictCoverage':s},'sources':SOURCES,'scope':'FY2027 NEP/HGAB 3rd reading; historical GAA comparisons where locally available. No GAB/GAA 2027 outcome inferred.'}
     document['budgetStages']=['NEP','HGAB (House)','GAB (Senate)','Bicam (House/Senate reconciliation)','GAA (enacted)']
     document['statistics']['repeatRetention']=survival['summary']
     document['statistics']['mpb']=mpb
     document['statistics']['lengthCoverage']=length_data['summary']
     document['statistics']['highRateScreen']=length_data['highRateScreen']
+    document['statistics']['laneCostCoverage']=lane_summary
+    document['statistics']['assetConditionContext']=context
     document['statistics']['shortSegments']=short_audit['categories']
     document['statistics']['lineItemReviewQueue']=review_queue['summary']
     document['lineItemReviewQueue']={'data':'line-item-review-queue.json','ranking':review_queue['ranking'],'scope':review_queue['scope'],'method':review_queue['method']}
@@ -284,6 +299,7 @@ def main():
     hero=f'<section class="repeat-hero"><div class="repeat-hero-primary"><span class="repeat-hero-kicker">FY2027 budget · investigative triage</span><div class="repeat-hero-total"><strong>{len(findings)}</strong><span>leads worth a closer look</span></div><p>Allocation patterns to question, explanations to check, and records to request.</p></div><div class="repeat-hero-detail"><div class="repeat-hero-breakdown"><div><span>Uniform RCS packages</span><strong>199 offices</strong></div><div><span>Repeat candidates</span><strong>686 proposals</strong></div></div><p>Evidence guides an investigation. None of these findings establishes corruption.</p></div></section>'
     filters='<div class="summary-controls"><input id="lead-search" type="search" placeholder="Search talking points" aria-label="Search talking points"><select id="lead-basis" aria-label="Filter evidence class"><option value="">All evidence classes</option>'+''.join(f'<option>{esc(r["basis"])}</option>' for r in findings)+'</select></div>'
     filterjs="""<script>const search=document.getElementById('lead-search'),basis=document.getElementById('lead-basis');function filter(){document.querySelectorAll('.finding').forEach(card=>card.hidden=!(card.textContent.toLowerCase().includes(search.value.toLowerCase())&&(!basis.value||card.dataset.basis===basis.value)))}search.addEventListener('input',filter);basis.addEventListener('change',filter);</script>"""
+    hero=hero.replace('686 proposals',f'{len(unique)} proposals')
     page='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Budget Summary · Investigative Talking Points</title><style>*{box-sizing:border-box}body{margin:0;font:16px/1.5 system-ui,sans-serif;background:#f3f6f5;color:#18303b}header{background:#123944;color:white;padding:30px clamp(16px,2vw,32px)}header h1{font-size:clamp(28px,4vw,48px);margin:0}main{width:100%;padding:24px clamp(16px,2vw,32px)}a{color:#087e78}header a{color:white}header p{max-width:1100px}</style>'+STYLE+CSS+'</head><body><header><h1>Budget Summary · Investigative Talking Points</h1><p>NEP patterns and NEP → HGAB screens, with parsing uncertainty and location limits alongside every claim. Priorities are editorial triage, not a corruption score. Figures overlap and must not be added together.</p>'+nav+'</header><main>'+hero+section('summary-stages','Follow the changes between budget stages',flow)+section('ranked-leads','Where to start',ranked)+filters+cards+section('summary-quality','Parsing and location gotchas',quality)+section('summary-neutral','Other schedules · no reading-stage change found',neutral)+section('summary-data-needs','Evidence needed to strengthen the claims',datasets)+section('summary-top-line-items','Top 25 line items · combined evidence for review',render_review_queue(review_queue,table,esc))+'</main>'+JS+filterjs+'</body></html>'
     (STATIC/'summary.html').write_text(page)
     (ROOT/'analysis_output/summary.html').write_text(page)
@@ -295,6 +311,8 @@ def main():
         t=re.sub(r'<style id="summary-nav-layout">.*?</style>','',t,flags=re.S).replace('</head>',navstyle+'</head>',1);p.write_text(t)
     (ROOT/'analysis_output/summary.html').write_text((STATIC/'summary.html').read_text())
     from review_report_language import apply as apply_evidence_wording
+    from location_data.build_inventory_location_review import build as build_inventory_location_review
+    build_inventory_location_review()
     apply_evidence_wording()
     (ROOT/'analysis_output/summary.html').write_text((STATIC/'summary.html').read_text())
     print(json.dumps({'findings':len(findings),'rcs':rcs_stats,'repeats':repeat_stats,'fiveMillion':price_stats,'domesticInsertionCandidates':len(domestic)},ensure_ascii=False,indent=2))

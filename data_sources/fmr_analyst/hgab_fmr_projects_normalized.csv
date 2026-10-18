@@ -3,7 +3,7 @@ ib:p667:r5,REGION I - ILOCOS,"Construction of Sitio Rango, Brgy. Tubburan FMR, B
 END: 18.287494, 120.628232",HB_BUDGET/2 - HB 10858 VOL IB.pdf,667,651
 ib:p667:r6,REGION I - ILOCOS,"Construction of San Lorenzo FMR, Brgy. San Lorenzo, Bangui, Ilocos Norte",15000000,1,2,"[[[120.620162,18.328793],[120.643061,18.31303]]]",120.620162,18.328793,120.643061,18.31303,,,normalized,,,,"START: 18.328793, 120.620162
 END: 18.313030, 120.643061",HB_BUDGET/2 - HB 10858 VOL IB.pdf,667,651
-ib:p667:r7,REGION I - ILOCOS,"Construction of Brgy. Escoda - Brgy. Elizabeth FMR, Brgy. Escoda and Brgy. Elizabeth, Marcos, Ilocos Norte",30000000,1,2,"[[[120.7245783,17.00918],[120.732015,17.9980347]]]",120.7245783,17.00918,120.732015,17.9980347,,,needs_review,endpoint_distance_over_100_km,,,"START: 17.00918, 120.7245783
+ib:p667:r7,REGION I - ILOCOS,"Construction of Brgy. Escoda - Brgy. Elizabeth FMR, Brgy. Escoda and Brgy. Elizabeth, Marcos, Ilocos Norte",30000000,1,2,"[[[120.7245783,18.00918],[120.732015,17.9980347]]]",120.7245783,18.00918,120.732015,17.9980347,,,normalized,,off_by_one_digit_repair_accepted,,"START: 17.00918, 120.7245783
 END: 17.9980347, 120.732015",HB_BUDGET/2 - HB 10858 VOL IB.pdf,667,651
 ib:p667:r8,REGION I - ILOCOS,"Construction of Sitio Sao, Brgy. Daking FMR, Brgy. Daking, San Gabriel, La Union",15000000,1,2,"[[[120.283898,16.690215],[120.478915,16.68641]]]",120.283898,16.690215,120.478915,16.68641,,,normalized,,,,"START: 16.690215, 120.283898
 END: 16.686410, 120.478915",HB_BUDGET/2 - HB 10858 VOL IB.pdf,667,651
@@ -101,7 +101,7 @@ END: Section 1: 120.605367, 18.186354,
 Section 2: 120.609355, 18.194385",HB_BUDGET/2 - HB 10858 VOL IB.pdf,670,654
 ib:p670:r3,REGION I - ILOCOS,"Construction of Brgy. 40 Balatong FMR, Laoag City, Ilocos Norte",10000000,1,2,"[[[120.573241,18.169507],[120.56871,18.17286]]]",120.573241,18.169507,120.56871,18.17286,,,normalized,,longitude_first_reordered,out_of_range_or_reversed_decimal_pair,"START: 120.573241, 18.169507
 END: 120.56871, 18.17286",HB_BUDGET/2 - HB 10858 VOL IB.pdf,670,654
-ib:p670:r4,REGION I - ILOCOS,"Construction of Brgy. 41 Balacad FMR, Laoag City, Ilocos Norte",10000000,1,2,"[[[120.540087,18.152453],null]]",120.540087,18.152453,,,,,needs_review,invalid_coordinate_pair,longitude_first_reordered,out_of_range_or_reversed_decimal_pair,"START: 120.540087, 18.152453
+ib:p670:r4,REGION I - ILOCOS,"Construction of Brgy. 41 Balacad FMR, Laoag City, Ilocos Norte",10000000,1,2,"[[[120.540087,18.152453],[120.53601,18.153581]]]",120.540087,18.152453,120.53601,18.153581,,,normalized,,longitude_first_reordered | off_by_one_digit_repair_accepted,out_of_range_or_reversed_decimal_pair,"START: 120.540087, 18.152453
 END: 120.153581, 120.53601",HB_BUDGET/2 - HB 10858 VOL IB.pdf,670,654
 ib:p670:r5,REGION I - ILOCOS,"Construction of Zamboanga - Cavit FMR, Brgy. Zamboanga and Brgy. Cavit, Laoag City, Ilocos Norte",7000000,1,2,"[[[120.553442,18.197739],[120.549464,18.197397]]]",120.553442,18.197739,120.549464,18.197397,,,normalized,,,,"START: 18.197739, 120.553442
 END: 18.197397, 120.549464",HB_BUDGET/2 - HB 10858 VOL IB.pdf,670,654
@@ -337,7 +337,7 @@ ib:p677:r3,REGION II - CAGAYAN VALLEY,"Construction of Rizal - Villa Marcos to S
 END: 16.744170, 121.571387",HB_BUDGET/2 - HB 10858 VOL IB.pdf,677,661
 ib:p677:r4,REGION II - CAGAYAN VALLEY,"Construction of Brgy. Dianao FMR, Brgy. Dianao, Cauayan City, Isabela",22500000,1,2,"[[[121.856508,16.843175],[121.849495,16.84669]]]",121.856508,16.843175,121.849495,16.84669,,,normalized,,,,"START: 16.843175, 121.856508
 END: 16.846690, 121.849495",HB_BUDGET/2 - HB 10858 VOL IB.pdf,677,661
-ib:p677:r5,REGION II - CAGAYAN VALLEY,"Construction of Brgy. Buyon FMR, Brgy. Buyon, Cauayan City, Isabela",15000000,1,2,"[[[121.87951,16.851721],[121.879302,18.826792]]]",121.87951,16.851721,121.879302,18.826792,,,needs_review,endpoint_distance_over_100_km,,,"START: 16.851721, 121.879510
+ib:p677:r5,REGION II - CAGAYAN VALLEY,"Construction of Brgy. Buyon FMR, Brgy. Buyon, Cauayan City, Isabela",15000000,1,2,"[[[121.87951,16.851721],[121.879302,16.826792]]]",121.87951,16.851721,121.879302,16.826792,,,normalized,,off_by_one_digit_repair_accepted,,"START: 16.851721, 121.879510
 END: 18.826792, 121.879302",HB_BUDGET/2 - HB 10858 VOL IB.pdf,677,661
 ib:p677:r6,REGION II - CAGAYAN VALLEY,"Construction of Brgy. San Antonio FMR, Brgy. San Antonio, Cauayan City, Isabela",18000000,1,2,"[[[121.794014,16.880751],[121.797378,16.866792]]]",121.794014,16.880751,121.797378,16.866792,,,normalized,,,,"START: 16.880751, 121.794014
 END: 16.866792, 121.797378",HB_BUDGET/2 - HB 10858 VOL IB.pdf,677,661
@@ -469,7 +469,7 @@ ib:p680:r17,REGION III - CENTRAL LUZON,"Construction of Taiben, Brgy. Parang FMR
 END: 14.656219, 120.438331",HB_BUDGET/2 - HB 10858 VOL IB.pdf,680,664
 ib:p680:r18,REGION III - CENTRAL LUZON,"Construction of Sitio Alapat , Brgy. Banawang FMR, Brgy. Banawang, Bagac, Bataan",15000000,1,2,"[[[120.396186,14.632764],[120.397806,14.638086]]]",120.396186,14.632764,120.397806,14.638086,,,normalized,,,,"START: 14.632764, 120.396186
 END: 14.638086, 120.397806",HB_BUDGET/2 - HB 10858 VOL IB.pdf,680,664
-ib:p680:r19,REGION III - CENTRAL LUZON,"Concreting of Sitio Linawan, Brgy. Dulong Bayan FMR, Brgy. Dulong Bayan, San Jose Del Monte City, Bulacan",15000000,1,2,"[[[121.033211,14.828381],[121.130642,14.829078]]]",121.033211,14.828381,121.130642,14.829078,,,needs_review,source_numeric_repair_candidate,missing_latitude_decimal_candidate,coordinate_format_needs_review,"START: 14828381, 121.033211
+ib:p680:r19,REGION III - CENTRAL LUZON,"Concreting of Sitio Linawan, Brgy. Dulong Bayan FMR, Brgy. Dulong Bayan, San Jose Del Monte City, Bulacan",15000000,1,2,"[[[121.033211,14.828381],[121.130642,14.829078]]]",121.033211,14.828381,121.130642,14.829078,,,normalized,,missing_latitude_decimal_candidate | source_numeric_repair_accepted,coordinate_format_needs_review,"START: 14828381, 121.033211
 END: 14.829078, 121.130642",HB_BUDGET/2 - HB 10858 VOL IB.pdf,680,664
 ib:p680:r20,REGION III - CENTRAL LUZON,"Construction of Sitio Karamuhi FMR, Brgy. San Isidro, San Jose del Monte, Bulacan",15000000,1,2,"[[[121.14185,14.821944],[121.130642,14.829078]]]",121.14185,14.821944,121.130642,14.829078,,,normalized,,,,"START: 14.821944, 121.141850
 END: 14.829078, 121.130642",HB_BUDGET/2 - HB 10858 VOL IB.pdf,680,664
@@ -618,7 +618,7 @@ ib:p685:r3,REGION III - CENTRAL LUZON,"Construction of Brgy. General Luna FMR, B
 END: 15.62661701, 120.84317636",HB_BUDGET/2 - HB 10858 VOL IB.pdf,685,669
 ib:p685:r4,REGION III - CENTRAL LUZON,"Construction of Brgy. San Agustin FMR, Brgy. San Agustin, Sto. Domingo, Nueva Ecija",18287500,1,2,"[[[120.905612,15.589751],[120.907424,15.602218]]]",120.905612,15.589751,120.907424,15.602218,,,normalized,,,,"START: 15.589751, 120.905612
 END: 15.602218, 120.907424",HB_BUDGET/2 - HB 10858 VOL IB.pdf,685,669
-ib:p685:r5,REGION III - CENTRAL LUZON,"Construction of Brgy. Tampac I FMR, Brgy. Tampac I, Guimba, Nueva Ecija",23375000,1,2,"[[[120.7972783,15.6352648],[129.8030109,15.6377206]]]",120.7972783,15.6352648,129.8030109,15.6377206,,,needs_review,endpoint_distance_over_100_km | outside_philippines_orientation_bounds,,outside_philippines_orientation_bounds,"START: 15.6352648, 120.7972783
+ib:p685:r5,REGION III - CENTRAL LUZON,"Construction of Brgy. Tampac I FMR, Brgy. Tampac I, Guimba, Nueva Ecija",23375000,1,2,"[[[120.7972783,15.6352648],[120.8030109,15.6377206]]]",120.7972783,15.6352648,120.8030109,15.6377206,,,normalized,,off_by_one_digit_repair_accepted,outside_philippines_orientation_bounds,"START: 15.6352648, 120.7972783
 END: 15.6377206, 129.8030109",HB_BUDGET/2 - HB 10858 VOL IB.pdf,685,669
 ib:p685:r6,REGION III - CENTRAL LUZON,"Construction of Brgy. San Casimiro to Brgy. Linao FMR, Brgy. San Casimiro, Licab, Nueva Ecija",35000000,1,2,"[[[120.790762,15.554848],[120.78885,15.5656]]]",120.790762,15.554848,120.78885,15.5656,,,normalized,,,,"START: 15.554848, 120.790762
 END: 15.565600, 120.788850",HB_BUDGET/2 - HB 10858 VOL IB.pdf,685,669
@@ -876,7 +876,7 @@ ib:p692:r14,REGION IVA - CALABARZON,"Construction of Brgy. Miswa FMR, Brgy. Misw
 END: 14.7432072827559, 121.653184630645",HB_BUDGET/2 - HB 10858 VOL IB.pdf,692,676
 ib:p692:r15,REGION IVA - CALABARZON,"Construction of Sitio Pandak, Brgy. Kalyaat FMR, Brgy. Kalyaat, Lucban, Quezon",15000000,1,2,"[[[121.529582,14.148655],[121.528729,14.144234]]]",121.529582,14.148655,121.528729,14.144234,,,normalized,,,,"START: 14.148655, 121.529582
 END: 14.144234, 121.528729",HB_BUDGET/2 - HB 10858 VOL IB.pdf,692,676
-ib:p692:r16,REGION IVA - CALABARZON,"Construction of Brgy. Tagumpay FMR, Brgy. Tagumpay, Real, Quezon",55000000,2,4,"[[[121.587138,14.606378],[121.583835,4.606694]],[[121.583412,4.606488],[121.579656,14.606957]]]",,,,,,,needs_review,endpoint_distance_over_100_km,,coordinate_format_needs_review,"START: S1-14.606378 121.587138,
+ib:p692:r16,REGION IVA - CALABARZON,"Construction of Brgy. Tagumpay FMR, Brgy. Tagumpay, Real, Quezon",55000000,2,4,"[[[121.587138,14.606378],[121.583835,14.606694]],[[121.583412,14.606488],[121.579656,14.606957]]]",,,,,,,normalized,,off_by_one_digit_repair_accepted,coordinate_format_needs_review,"START: S1-14.606378 121.587138,
 S2-4.606488 121.583412
 END: S1- 4.606694 121.583835,
 S2-14.606957 121.579656",HB_BUDGET/2 - HB 10858 VOL IB.pdf,692,676
@@ -1026,11 +1026,11 @@ ib:p696:r15,REGION IVA - CALABARZON,"Concreting of Brgy. San Pablo FMR, Brgy. Sa
 END: 13.805411, 120.915741",HB_BUDGET/2 - HB 10858 VOL IB.pdf,696,680
 ib:p696:r16,REGION IVA - CALABARZON,"Concreting of Brgy. Bulacan FMR, Brgy. Bulacan, Mabini Batangas",5000000,1,2,"[[[120.94526,13.746087],[120.945304,13.744892]]]",120.94526,13.746087,120.945304,13.744892,,,normalized,,,,"START: 13.746087, 120.94526
 END: 13.744892, 120.945304",HB_BUDGET/2 - HB 10858 VOL IB.pdf,696,680
-ib:p696:r17,REGION IVA - CALABARZON,"Concreting of Brgy. Balagtasin FMR, Brgy. Balagtasin, San Luis, Batangas",10000000,1,2,"[[[120.95877,13.840631],[121.917756,13.846302]]]",120.95877,13.840631,121.917756,13.846302,,,needs_review,endpoint_distance_over_100_km,,,"START: 13.840631, 120.95877
+ib:p696:r17,REGION IVA - CALABARZON,"Concreting of Brgy. Balagtasin FMR, Brgy. Balagtasin, San Luis, Batangas",10000000,1,2,"[[[120.95877,13.840631],[120.917756,13.846302]]]",120.95877,13.840631,120.917756,13.846302,,,normalized,,off_by_one_digit_repair_accepted,,"START: 13.840631, 120.95877
 END: 13.846302, 121.917756",HB_BUDGET/2 - HB 10858 VOL IB.pdf,696,680
 ib:p696:r18,REGION IVA - CALABARZON,"Concreting of Brgy. Sta Ana FMR, Brgy. Sta Ana, Mabini, Batangas",5000000,1,2,"[[[120.926195,13.746316],[120.925335,13.745853]]]",120.926195,13.746316,120.925335,13.745853,,,normalized,,,,"START: 13.746316, 120.926195
 END: 13.745853, 120.925335",HB_BUDGET/2 - HB 10858 VOL IB.pdf,696,680
-ib:p696:r19,REGION IVA - CALABARZON,"Concreting of Sitio 7, Brgy. Balite FMR, Sitio 7, Brgy. Balite, San Luis, Batangas",5000000,1,2,"[[[120.91245,13.825486],[121.914231,13.823398]]]",120.91245,13.825486,121.914231,13.823398,,,needs_review,endpoint_distance_over_100_km,,,"START: 13.825486, 120.91245
+ib:p696:r19,REGION IVA - CALABARZON,"Concreting of Sitio 7, Brgy. Balite FMR, Sitio 7, Brgy. Balite, San Luis, Batangas",5000000,1,2,"[[[120.91245,13.825486],[120.914231,13.823398]]]",120.91245,13.825486,120.914231,13.823398,,,normalized,,off_by_one_digit_repair_accepted,,"START: 13.825486, 120.91245
 END: 13.823398, 121.914231",HB_BUDGET/2 - HB 10858 VOL IB.pdf,696,680
 ib:p697:r2,REGION IVA - CALABARZON,"Concreting of Brgy. Calumpit FMR, Brgy. Calumpit, Lobo, Batangas",5000000,1,2,"[[[121.228371,13.697116],[121.2306,13.694767]]]",121.228371,13.697116,121.2306,13.694767,,,normalized,,,,"START: 13.697116, 121.228371
 END: 13.694767, 121.2306",HB_BUDGET/2 - HB 10858 VOL IB.pdf,697,681
@@ -1064,7 +1064,7 @@ Section 4 START: 13.603182, 121.266477
 END: 13.603403, 121.267242
 Section 5 START: 13.6041767, 121.268621
 END: 13.605585, 121.269842",HB_BUDGET/2 - HB 10858 VOL IB.pdf,697,681
-ib:p697:r12,REGION IVA - CALABARZON,"Concreting of Brgy. San Martin FMR, Brgy. San Martin, San Luis, Batangas",5000000,2,4,"[[[120.954358,13.842103],[121.953232,13.84248]],[[120.950735,13.843125],[120.950128,13.843681]]]",,,,,,,needs_review,endpoint_distance_over_100_km,,coordinate_format_needs_review,"START: S1-13.842103, 120.954358
+ib:p697:r12,REGION IVA - CALABARZON,"Concreting of Brgy. San Martin FMR, Brgy. San Martin, San Luis, Batangas",5000000,2,4,"[[[120.954358,13.842103],[120.953232,13.84248]],[[120.950735,13.843125],[120.950128,13.843681]]]",,,,,,,normalized,,off_by_one_digit_repair_accepted,coordinate_format_needs_review,"START: S1-13.842103, 120.954358
 S2-13.843125, 120.950735
 END: S1-13.84248, 121.953232
 S2-13.843681, 120.950128",HB_BUDGET/2 - HB 10858 VOL IB.pdf,697,681
@@ -1254,7 +1254,7 @@ ib:p703:r9,REGION V - BICOL,"Concreting of Brgy. Tobrehon to Brgy. JMA FMR, San 
 End : 13.729214°, 124.247219°",HB_BUDGET/2 - HB 10858 VOL IB.pdf,703,687
 ib:p703:r10,REGION V - BICOL,"Construction of Sitio Sto. Niño, Poblacion 2 to Sitio Balete, Brgy. Imelda, Claveria FMR, Poblacion 2, Claveria, Masbate",15000000,1,2,"[[[123.2249072,12.9007193],[123.20727778,12.90284722]]]",123.2249072,12.9007193,123.20727778,12.90284722,,,normalized,,,,"START: 12.9007193, 123.2249072
 END: 12.90284722, 123.20727778",HB_BUDGET/2 - HB 10858 VOL IB.pdf,703,687
-ib:p703:r11,REGION V - BICOL,"Construction of Brgy. Luna to Brgy. San Isidro FMR, San Jacinto, Masbate",15000000,1,2,"[[[123.707502,12.529293],[123.69192,12.528813]]]",123.707502,12.529293,123.69192,12.528813,,,needs_review,source_numeric_repair_candidate,extra_decimal_separator_candidate,coordinate_format_needs_review,"Start: 12.529293, 123.707502
+ib:p703:r11,REGION V - BICOL,"Construction of Brgy. Luna to Brgy. San Isidro FMR, San Jacinto, Masbate",15000000,1,2,"[[[123.707502,12.529293],[123.69192,12.528813]]]",123.707502,12.529293,123.69192,12.528813,,,normalized,,extra_decimal_separator_candidate | source_numeric_repair_accepted,coordinate_format_needs_review,"Start: 12.529293, 123.707502
 End: 12.528813, 123.691.92",HB_BUDGET/2 - HB 10858 VOL IB.pdf,703,687
 ib:p703:r12,REGION V - BICOL,"Construction of Brgy. Don Pablo Dela Rosa FMR, Brgy. Don Pablo Dela Rosa, Aroroy, Masbate",15000000,1,2,"[[[123.332655,12.5448758],[123.3455767,12.5440274]]]",123.332655,12.5448758,123.3455767,12.5440274,,,normalized,,,,"START: 12.5448758, 123.332655
 END: 12.5440274, 123.3455767",HB_BUDGET/2 - HB 10858 VOL IB.pdf,703,687
@@ -1565,7 +1565,7 @@ ib:p713:r2,REGION VII - CENTRAL VISAYAS,"Concreting of Brgy. Batadbatad - Brgy. 
 END: 9.941741, 123.444869
 Section 2 START: 9.941201, 123.445775
 END: 9.936061, 123.452527",HB_BUDGET/2 - HB 10858 VOL IB.pdf,713,697
-ib:p713:r3,REGION VII - CENTRAL VISAYAS,"Concreting of Brgy. Basiao - Brgy. Candiis FMR, Badian, Cebu",30000000,2,4,"[[[123.405993,9.812059],[123.406771,9.8052549]],[[123.406771,9.8052549],[123.4080266,1.8042275]]]",,,,,,,needs_review,endpoint_distance_over_100_km | outside_philippines_orientation_bounds,decimal_spacing_removed,coordinate_format_needs_review | endpoint_count_or_section_structure_needs_review | outside_philippines_orientation_bounds,"Section 1 START: 9.812059, 123. 405993
+ib:p713:r3,REGION VII - CENTRAL VISAYAS,"Concreting of Brgy. Basiao - Brgy. Candiis FMR, Badian, Cebu",30000000,2,4,"[[[123.405993,9.812059],[123.406771,9.8052549]],[[123.406771,9.8052549],[123.4080266,9.8042275]]]",,,,,,,normalized,,decimal_spacing_removed | off_by_one_digit_repair_accepted,coordinate_format_needs_review | endpoint_count_or_section_structure_needs_review | outside_philippines_orientation_bounds,"Section 1 START: 9.812059, 123. 405993
 END: 9.8052549, 123.406771
 Section 2 START: 9.8052549, 123.406771
 END: 1.8042275, 123.4080266",HB_BUDGET/2 - HB 10858 VOL IB.pdf,713,697
@@ -1581,7 +1581,7 @@ ib:p713:r10,REGION VIII - EASTERN VISAYAS,"Construction of Brgy. Tutug-an to Sit
 END: 11.300222, 124.754861",HB_BUDGET/2 - HB 10858 VOL IB.pdf,713,697
 ib:p713:r11,REGION VIII - EASTERN VISAYAS,"Construction of Brgy. Ibag to Brgy. Sta. Rosa FMR, Brgy. Ibag and Brgy. Sta. Rosa, Barugo, Leyte",15000000,1,2,"[[[124.801833,11.321083],[124.805583,11.300472]]]",124.801833,11.321083,124.805583,11.300472,,,normalized,,,,"START: 11.321083, 124.801833
 END: 11.300472, 124.805583",HB_BUDGET/2 - HB 10858 VOL IB.pdf,713,697
-ib:p713:r12,REGION VIII - EASTERN VISAYAS,"Construction of Sitio Busay, Brgy. Apale FMR, Brgy. Apale, Isabel, Leyte",15000000,1,2,"[[[124.488833,11.871556],[124.485778,10.878222]]]",124.488833,11.871556,124.485778,10.878222,,,needs_review,endpoint_distance_over_100_km,,,"START: 11.871556, 124.488833
+ib:p713:r12,REGION VIII - EASTERN VISAYAS,"Construction of Sitio Busay, Brgy. Apale FMR, Brgy. Apale, Isabel, Leyte",15000000,1,2,"[[[124.488833,10.871556],[124.485778,10.878222]]]",124.488833,10.871556,124.485778,10.878222,,,normalized,,off_by_one_digit_repair_accepted,,"START: 11.871556, 124.488833
 END: 10.878222, 124.485778",HB_BUDGET/2 - HB 10858 VOL IB.pdf,713,697
 ib:p713:r13,REGION VIII - EASTERN VISAYAS,"Construction of Sitio Kabaringan, Brgy. Apale FMR, Brgy. Apale, Isabel, Leyte",15000000,1,2,"[[[124.489556,11.874],[124.49175,11.883361]]]",124.489556,11.874,124.49175,11.883361,,,normalized,,,,"START: 11.874000, 124.489556
 END: 11.883361, 124.491750",HB_BUDGET/2 - HB 10858 VOL IB.pdf,713,697

@@ -4,9 +4,9 @@
     "source_tree": "data/nep_fmr_tree.json",
     "source_tree_sha256": "182b67acb063cc0c3501bcbb2f56f0b8e2014105ecae2df3c1a87c4372cb3e62",
     "source_pdf_sha256": "07355c115f45a84771b8a8ac22711992ea695ea28f0c9c1b2c71879d4a6dc4ba",
-    "normalizer_sha256": "a7d92f76928375297454b24801ce946caaff0bafdb8f2bd1fdd00f9ce9e26170",
+    "normalizer_sha256": "996be4bcc74f9fa76f32b2b7d36ee8afb9389aea191f6d7d032e915dbe72c968",
     "image_review_manifest": "nep_fmr_coordinate_reviews.json",
-    "image_review_manifest_sha256": "a7c0af67ccbced9c740bdec51046f8015ff6e26252a8b0196219075449548706",
+    "image_review_manifest_sha256": "a3f93a3c13789e4f64d3ddc93d34d4bbc7086f37acf41e14035116d60b9e47da",
     "ocr_corrections": "exact rendered-cell transcription edits in derived coordinates_interpreted; original coordinates_raw and point source fragments remain immutable",
     "coordinate_unit": "decimal degrees",
     "coordinate_column_order": "longitude, latitude",
@@ -14,7 +14,8 @@
     "source_crs": "not stated in the source; no datum transformation applied",
     "scalar_project_columns": "filled only for one segment; multi-section endpoints remain in segment rows",
     "amounts": "project CSV only; no allocation duplicated in point/segment CSVs",
-    "numeric_repair_candidates": "published with review flags, not accepted as verified source corrections"
+    "numeric_repair_candidates": "candidate readings may remain flagged; PSGC-supported off-by-one digit repairs are accepted into numeric arrays with rules off_by_one_digit_repair_accepted / source_numeric_repair_accepted; coordinates_raw stays immutable",
+    "digit_repairs_accepted": 9
   },
   "passed": true,
   "errors": [],
@@ -23,26 +24,176 @@
     "segments": 722,
     "points": 1444,
     "project_total_php": 16000000000,
-    "normalized_projects": 696,
-    "projects_needing_review": 8,
+    "normalized_projects": 704,
+    "projects_needing_review": 0,
     "multi_segment_projects": 13,
-    "fully_numeric_points": 1443,
-    "points_without_numeric_pair": 1,
-    "original_flagged_projects_resolved": 48,
-    "original_flagged_projects_still_needing_review": 4,
-    "new_review_projects": 4,
+    "fully_numeric_points": 1444,
+    "points_without_numeric_pair": 0,
+    "original_flagged_projects_resolved": 52,
+    "original_flagged_projects_still_needing_review": 0,
+    "new_review_projects": 0,
     "image_reviewed_projects": 23,
     "image_reviewed_ocr_corrected_projects": 16,
-    "image_reviewed_projects_resolved": 15,
-    "image_reviewed_projects_with_remaining_source_anomalies": 8
+    "image_reviewed_projects_resolved": 23,
+    "image_reviewed_projects_with_remaining_source_anomalies": 0,
+    "digit_repairs_accepted": 9,
+    "digit_repair_projects": [
+      "nep_fmr:p11:r11",
+      "nep_fmr:p18:r15",
+      "nep_fmr:p1:r7",
+      "nep_fmr:p24:r10",
+      "nep_fmr:p30:r14",
+      "nep_fmr:p37:r8",
+      "nep_fmr:p44:r10",
+      "nep_fmr:p4:r13"
+    ]
   },
-  "review_flag_project_counts": {
-    "endpoint_distance_over_100_km": 6,
-    "invalid_coordinate_pair": 1,
-    "outside_philippines_orientation_bounds": 1,
-    "source_numeric_repair_candidate": 1
-  },
+  "digit_repairs": [
+    {
+      "layer": "nep",
+      "project_id": "nep_fmr:p44:r10",
+      "point_id": "nep_fmr:p44:r10:point2",
+      "repair": "end longitude 125.008575 -> 126.008575",
+      "printed": [
+        125.008575,
+        7.989994
+      ],
+      "accepted": [
+        126.008575,
+        7.989994
+      ],
+      "rule": "off_by_one_digit_repair_accepted",
+      "geometry_changed": true
+    },
+    {
+      "layer": "nep",
+      "project_id": "nep_fmr:p1:r7",
+      "point_id": "nep_fmr:p1:r7:point1",
+      "repair": "start latitude 17.00918 -> 18.00918",
+      "printed": [
+        120.7245783,
+        17.00918
+      ],
+      "accepted": [
+        120.7245783,
+        18.00918
+      ],
+      "rule": "off_by_one_digit_repair_accepted",
+      "geometry_changed": true
+    },
+    {
+      "layer": "nep",
+      "project_id": "nep_fmr:p4:r13",
+      "point_id": "nep_fmr:p4:r13:point2",
+      "repair": "end pair re-read as lat 18.153581",
+      "printed": null,
+      "accepted": [
+        120.53601,
+        18.153581
+      ],
+      "rule": "off_by_one_digit_repair_accepted",
+      "geometry_changed": true
+    },
+    {
+      "layer": "nep",
+      "project_id": "nep_fmr:p11:r11",
+      "point_id": "nep_fmr:p11:r11:point2",
+      "repair": "end latitude 18.826792 -> 16.826792",
+      "printed": [
+        121.879302,
+        18.826792
+      ],
+      "accepted": [
+        121.879302,
+        16.826792
+      ],
+      "rule": "off_by_one_digit_repair_accepted",
+      "geometry_changed": true
+    },
+    {
+      "layer": "nep",
+      "project_id": "nep_fmr:p18:r15",
+      "point_id": "nep_fmr:p18:r15:point2",
+      "repair": "end longitude 129.8030109 -> 120.8030109",
+      "printed": [
+        129.8030109,
+        15.6377206
+      ],
+      "accepted": [
+        120.8030109,
+        15.6377206
+      ],
+      "rule": "off_by_one_digit_repair_accepted",
+      "geometry_changed": true
+    },
+    {
+      "layer": "nep",
+      "project_id": "nep_fmr:p24:r10",
+      "point_id": "nep_fmr:p24:r10:point2",
+      "repair": "S2 start latitude 4.606488 -> 14.606488",
+      "printed": [
+        121.583412,
+        4.606488
+      ],
+      "accepted": [
+        121.583412,
+        14.606488
+      ],
+      "rule": "off_by_one_digit_repair_accepted",
+      "geometry_changed": true
+    },
+    {
+      "layer": "nep",
+      "project_id": "nep_fmr:p24:r10",
+      "point_id": "nep_fmr:p24:r10:point3",
+      "repair": "S1 end latitude 4.606694 -> 14.606694",
+      "printed": [
+        121.583835,
+        4.606694
+      ],
+      "accepted": [
+        121.583835,
+        14.606694
+      ],
+      "rule": "off_by_one_digit_repair_accepted",
+      "geometry_changed": true
+    },
+    {
+      "layer": "nep",
+      "project_id": "nep_fmr:p30:r14",
+      "point_id": "nep_fmr:p30:r14:point2",
+      "repair": "printed 123.691.92 -> 123.69192",
+      "printed": [
+        123.69192,
+        12.528813
+      ],
+      "accepted": [
+        123.69192,
+        12.528813
+      ],
+      "rule": "source_numeric_repair_accepted",
+      "geometry_changed": false
+    },
+    {
+      "layer": "nep",
+      "project_id": "nep_fmr:p37:r8",
+      "point_id": "nep_fmr:p37:r8:point1",
+      "repair": "start latitude 11.871556 -> 10.871556",
+      "printed": [
+        124.488833,
+        11.871556
+      ],
+      "accepted": [
+        124.488833,
+        10.871556
+      ],
+      "rule": "off_by_one_digit_repair_accepted",
+      "geometry_changed": true
+    }
+  ],
+  "review_flag_project_counts": {},
   "normalization_rule_project_counts": {
+    "off_by_one_digit_repair_accepted": 7,
     "endpoint_marker_typo_normalized": 1,
     "image_reviewed_ocr_transcription": 16,
     "longitude_first_reordered": 7,
@@ -51,18 +202,19 @@
     "dms_to_decimal_degrees": 8,
     "decimal_spacing_removed": 2,
     "extra_decimal_separator_candidate": 1,
+    "source_numeric_repair_accepted": 1,
     "coordinate_axis_labels_removed": 1
   },
   "original_flag_outcomes": {
     "coordinate_format_needs_review": {
       "original_projects": 43,
-      "normalized_projects": 41,
-      "remaining_review_projects": 2
+      "normalized_projects": 43,
+      "remaining_review_projects": 0
     },
     "out_of_range_or_reversed_decimal_pair": {
       "original_projects": 6,
-      "normalized_projects": 5,
-      "remaining_review_projects": 1
+      "normalized_projects": 6,
+      "remaining_review_projects": 0
     },
     "endpoint_count_or_section_structure_needs_review": {
       "original_projects": 1,
@@ -76,8 +228,8 @@
     },
     "outside_philippines_orientation_bounds": {
       "original_projects": 1,
-      "normalized_projects": 0,
-      "remaining_review_projects": 1
+      "normalized_projects": 1,
+      "remaining_review_projects": 0
     },
     "no_explicit_start_end_markers": {
       "original_projects": 0,

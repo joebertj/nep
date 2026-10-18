@@ -8,7 +8,7 @@ from collections import Counter,defaultdict
 from difflib import SequenceMatcher
 from build_cost_per_km import ROOT,OUT,STATIC
 from hgab_matching import normalize,is_fap
-from chainage import compare_chainage,compare_tranche,has_directional_conflict
+from chainage import compare_chainage,compare_tranche,has_directional_conflict,has_structure_identity_conflict,has_bounded_nonoverlap
 from location_data.project_location_scope import qualified,location_conflict
 from location_data.location_text import geographic_title
 
@@ -48,6 +48,8 @@ def scan(rows,stage):
                     similarity=SequenceMatcher(None,a['base'],b['base'],autojunk=False).ratio()
                     if similarity<.94:continue
                 else:similarity=1.0
+                if has_bounded_nonoverlap(a['projectName'],b['projectName']):counts['boundedNonoverlapVeto']+=1;continue
+                if has_structure_identity_conflict(a['projectName'],b['projectName']):counts['differentBridgeNumberVeto']+=1;continue
                 if location_conflict(a['projectName'],b['projectName']) or has_directional_conflict(a['projectName'],b['projectName']):counts['locationOrDirectionVeto']+=1;continue
                 if compare_tranche(a['projectName'],b['projectName'])['tranche_conflict']:counts['trancheVeto']+=1;continue
                 chain=compare_chainage(a['projectName'],b['projectName'])
@@ -70,7 +72,7 @@ def build():
     summaries=[];pairs=[]
     for stage,rows in [('FY2027 NEP',nep),('FY2027 HGAB 3rd',hb)]:
         summary,found=scan(rows,stage);summaries.append(summary);pairs.extend(found)
-    data={'summary':summaries,'pairs':pairs,'method':'Compare distinct allocation occurrence IDs within each stage only. FAPs and untrusted NEP primary titles excluded. Same normalized official PAP and either qualified municipality/province or same implementing office required. At least three shared distinctive nonnumeric title tokens required. Same base title after trailing geographic metadata removal, or ≥0.94 SequenceMatcher similarity with qualified municipality/province AND identical distinctive token sets, produces a candidate. Changed route-endpoint or other distinctive scope tokens veto even when text similarity is high. Direction, qualified-location and tranche conflicts veto. Explicit disjoint ranges veto. No amount-equality requirement. Missing chainage never proves scope overlap.',
+    data={'summary':summaries,'pairs':pairs,'method':'Compare distinct allocation occurrence IDs within each stage only. FAPs and untrusted NEP primary titles excluded. Same normalized official PAP and either qualified municipality/province or same implementing office required. At least three shared distinctive nonnumeric title tokens required. Same base title after trailing geographic metadata removal, or ≥0.94 SequenceMatcher similarity with qualified municipality/province AND identical distinctive token sets, produces a candidate. Changed route-endpoint or other distinctive scope tokens veto even when text similarity is high. Different explicit bridge numbers identify different structures and veto a pair, even on the same bypass road. Direction, qualified-location and tranche conflicts veto. Explicit disjoint ranges veto. Printed range endpoints are assumed to be ordered min/max. Mixed bare/plus ranges retain an unknown endpoint: a known maximum at or below another range’s known minimum excludes positive overlap, without resolving length. Other mixed ranges remain incomplete; possible overlap is not certified overlap. No amount-equality requirement. Missing chainage never proves scope overlap.',
           'limits':['Matching allocation occurrences does not establish duplicate contracts, duplicate payment, fraud or authorship. Different engineering components and legitimate amendments can share titles.','Office-only agreement is weaker than site evidence. Unresolved locations are never inferred from similar names.','Pair counts are not project counts: three linked records produce three pairs. Distinct occurrence counts are shown separately; amounts are not summed as loss.','Exact official PAP blocking, trusted-title requirements and conservative location rules miss possible cross-program, paraphrased or unresolved duplicates. No flag is not clearance.','Tranche differences are excluded from this conservative queue, not certified as legitimate. Missing chainage requires source and engineering-scope review.','NEP baseline includes source records outside the API. Its documented source-title confidence limits remain applicable.'],
           'sources':[{'file':p.name,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in [baseline,house,ROOT/'location_data/philippine_locations.sqlite']]}
     text=json.dumps(data,ensure_ascii=False,indent=2)+'\n';(OUT/'within_stage_repeats.json').write_text(text);(STATIC/'within-stage-repeats.json').write_text(text)

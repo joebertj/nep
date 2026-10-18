@@ -29,7 +29,7 @@
   "comparisonPolicy": "Any district can be selected for comparison. Committee membership is a sourced classification, not a normal budget or evidence of misconduct.",
   "summary": {
     "districts": 254,
-    "totalStrictLines": 8558
+    "totalStrictLines": 8688
   },
   "rows": [
     {
@@ -92,11 +92,11 @@
     {
       "district": "Bukidnon · 3rd District",
       "representative": "Audrey Zubiri",
-      "strictHGABLines": 23,
-      "strictHGABPesos": 3637510000,
+      "strictHGABLines": 24,
+      "strictHGABPesos": 3657510000,
       "potentialInsertionLines": 1,
       "potentialInsertionPesos": 22750000,
-      "candidateShareOfAttributedHGAB": 0.006254278338753708,
+      "candidateShareOfAttributedHGAB": 0.006220078687413021,
       "retainedIncreaseLines": 0,
       "retainedIncreasePesos": 0,
       "committeeStatus": "member",
@@ -109,13 +109,30 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
+      "district": "Bukidnon · 2nd District",
+      "representative": "Jonathan Keith Flores",
+      "strictHGABLines": 40,
+      "strictHGABPesos": 3475000000,
+      "potentialInsertionLines": 21,
+      "potentialInsertionPesos": 1394000000,
+      "candidateShareOfAttributedHGAB": 0.4011510791366906,
+      "retainedIncreaseLines": 0,
+      "retainedIncreasePesos": 0,
+      "committeeStatus": "not-listed",
+      "committeeRole": "",
+      "committeeBloc": "unspecified",
+      "relevantRoles": "",
+      "roleSources": [],
+      "bicamStatus": "FY2027 appointment not verified"
+    },
+    {
       "district": "Isabela · 1st District",
       "representative": "Tonypet Albano",
-      "strictHGABLines": 129,
-      "strictHGABPesos": 3339505000,
+      "strictHGABLines": 130,
+      "strictHGABPesos": 3341216000,
       "potentialInsertionLines": 59,
       "potentialInsertionPesos": 1491015000,
-      "candidateShareOfAttributedHGAB": 0.4464778462676355,
+      "candidateShareOfAttributedHGAB": 0.44624920986850297,
       "retainedIncreaseLines": 1,
       "retainedIncreasePesos": 152000000,
       "committeeStatus": "member",
@@ -128,20 +145,22 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
-      "district": "Bukidnon · 2nd District",
-      "representative": "Jonathan Keith Flores",
-      "strictHGABLines": 32,
-      "strictHGABPesos": 3244000000,
-      "potentialInsertionLines": 21,
-      "potentialInsertionPesos": 1394000000,
-      "candidateShareOfAttributedHGAB": 0.42971639950678175,
+      "district": "La Union · 1st District",
+      "representative": "Paolo Ortega",
+      "strictHGABLines": 80,
+      "strictHGABPesos": 3245757000,
+      "potentialInsertionLines": 42,
+      "potentialInsertionPesos": 1569800000,
+      "candidateShareOfAttributedHGAB": 0.48364680411996336,
       "retainedIncreaseLines": 0,
       "retainedIncreasePesos": 0,
       "committeeStatus": "not-listed",
       "committeeRole": "",
       "committeeBloc": "unspecified",
-      "relevantRoles": "",
-      "roleSources": [],
+      "relevantRoles": "Deputy Speaker",
+      "roleSources": [
+        "https://congress.gov.ph/house-members/house-leaders"
+      ],
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
@@ -214,25 +233,6 @@
       "committeeBloc": "unspecified",
       "relevantRoles": "",
       "roleSources": [],
-      "bicamStatus": "FY2027 appointment not verified"
-    },
-    {
-      "district": "La Union · 1st District",
-      "representative": "Paolo Ortega",
-      "strictHGABLines": 63,
-      "strictHGABPesos": 2827189000,
-      "potentialInsertionLines": 32,
-      "potentialInsertionPesos": 1263300000,
-      "candidateShareOfAttributedHGAB": 0.4468395993334722,
-      "retainedIncreaseLines": 0,
-      "retainedIncreasePesos": 0,
-      "committeeStatus": "not-listed",
-      "committeeRole": "",
-      "committeeBloc": "unspecified",
-      "relevantRoles": "Deputy Speaker",
-      "roleSources": [
-        "https://congress.gov.ph/house-members/house-leaders"
-      ],
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
@@ -361,6 +361,25 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
+      "district": "Zambales · 1st District",
+      "representative": "Jay Khonghun",
+      "strictHGABLines": 43,
+      "strictHGABPesos": 2304764000,
+      "potentialInsertionLines": 15,
+      "potentialInsertionPesos": 748000000,
+      "candidateShareOfAttributedHGAB": 0.32454515950440044,
+      "retainedIncreaseLines": 13,
+      "retainedIncreasePesos": 335288000,
+      "committeeStatus": "not-listed",
+      "committeeRole": "",
+      "committeeBloc": "unspecified",
+      "relevantRoles": "Deputy Speaker",
+      "roleSources": [
+        "https://congress.gov.ph/house-members/house-leaders"
+      ],
+      "bicamStatus": "FY2027 appointment not verified"
+    },
+    {
       "district": "Bacolod · Lone District",
       "representative": "Albee Benitez",
       "strictHGABLines": 90,
@@ -414,6 +433,25 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
+      "district": "Quezon · 2nd District",
+      "representative": "David Suarez",
+      "strictHGABLines": 67,
+      "strictHGABPesos": 2260216000,
+      "potentialInsertionLines": 29,
+      "potentialInsertionPesos": 1174270000,
+      "candidateShareOfAttributedHGAB": 0.5195388405355948,
+      "retainedIncreaseLines": 1,
+      "retainedIncreasePesos": 55500000,
+      "committeeStatus": "not-listed",
+      "committeeRole": "",
+      "committeeBloc": "unspecified",
+      "relevantRoles": "Deputy Speaker",
+      "roleSources": [
+        "https://congress.gov.ph/house-members/house-leaders"
+      ],
+      "bicamStatus": "FY2027 appointment not verified"
+    },
+    {
       "district": "Nueva Ecija · 1st District",
       "representative": "Mika Suansing",
       "strictHGABLines": 179,
@@ -429,25 +467,6 @@
       "relevantRoles": "Chairperson",
       "roleSources": [
         "https://www.congress.gov.ph/committees/committee/view/0504"
-      ],
-      "bicamStatus": "FY2027 appointment not verified"
-    },
-    {
-      "district": "Zambales · 1st District",
-      "representative": "Jay Khonghun",
-      "strictHGABLines": 39,
-      "strictHGABPesos": 2171764000,
-      "potentialInsertionLines": 11,
-      "potentialInsertionPesos": 615000000,
-      "candidateShareOfAttributedHGAB": 0.28317994036184413,
-      "retainedIncreaseLines": 13,
-      "retainedIncreasePesos": 335288000,
-      "committeeStatus": "not-listed",
-      "committeeRole": "",
-      "committeeBloc": "unspecified",
-      "relevantRoles": "Deputy Speaker",
-      "roleSources": [
-        "https://congress.gov.ph/house-members/house-leaders"
       ],
       "bicamStatus": "FY2027 appointment not verified"
     },
@@ -503,6 +522,23 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
+      "district": "Batangas · 2nd District",
+      "representative": "Gerville Luistro",
+      "strictHGABLines": 118,
+      "strictHGABPesos": 2068875000,
+      "potentialInsertionLines": 44,
+      "potentialInsertionPesos": 799875000,
+      "candidateShareOfAttributedHGAB": 0.3866231647634584,
+      "retainedIncreaseLines": 5,
+      "retainedIncreasePesos": 43000000,
+      "committeeStatus": "not-listed",
+      "committeeRole": "",
+      "committeeBloc": "unspecified",
+      "relevantRoles": "",
+      "roleSources": [],
+      "bicamStatus": "FY2027 appointment not verified"
+    },
+    {
       "district": "Sultan Kudarat · 2nd District",
       "representative": "Bella Suansing",
       "strictHGABLines": 74,
@@ -531,23 +567,6 @@
       "candidateShareOfAttributedHGAB": 0.5236622769689382,
       "retainedIncreaseLines": 1,
       "retainedIncreasePesos": 20000000,
-      "committeeStatus": "not-listed",
-      "committeeRole": "",
-      "committeeBloc": "unspecified",
-      "relevantRoles": "",
-      "roleSources": [],
-      "bicamStatus": "FY2027 appointment not verified"
-    },
-    {
-      "district": "Batangas · 2nd District",
-      "representative": "Gerville Luistro",
-      "strictHGABLines": 116,
-      "strictHGABPesos": 1999000000,
-      "potentialInsertionLines": 43,
-      "potentialInsertionPesos": 760000000,
-      "candidateShareOfAttributedHGAB": 0.38019009504752377,
-      "retainedIncreaseLines": 5,
-      "retainedIncreasePesos": 43000000,
       "committeeStatus": "not-listed",
       "committeeRole": "",
       "committeeBloc": "unspecified",
@@ -596,11 +615,11 @@
     {
       "district": "Camiguin · Lone District",
       "representative": "Jurdin Jesus Romualdo",
-      "strictHGABLines": 52,
-      "strictHGABPesos": 1849000000,
+      "strictHGABLines": 53,
+      "strictHGABPesos": 1916729000,
       "potentialInsertionLines": 8,
       "potentialInsertionPesos": 587000000,
-      "candidateShareOfAttributedHGAB": 0.3174689021092482,
+      "candidateShareOfAttributedHGAB": 0.30625090975302194,
       "retainedIncreaseLines": 3,
       "retainedIncreasePesos": 50000000,
       "committeeStatus": "member",
@@ -632,6 +651,25 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
+      "district": "Bataan · 1st District",
+      "representative": "Antonino Roman III",
+      "strictHGABLines": 75,
+      "strictHGABPesos": 1821950000,
+      "potentialInsertionLines": 9,
+      "potentialInsertionPesos": 84000000,
+      "candidateShareOfAttributedHGAB": 0.0461044485304207,
+      "retainedIncreaseLines": 0,
+      "retainedIncreasePesos": 0,
+      "committeeStatus": "member",
+      "committeeRole": "Member for the Majority",
+      "committeeBloc": "majority",
+      "relevantRoles": "Member for the Majority",
+      "roleSources": [
+        "https://www.congress.gov.ph/committees/committee/view/0504"
+      ],
+      "bicamStatus": "FY2027 appointment not verified"
+    },
+    {
       "district": "Misamis Occidental · 1st District",
       "representative": "Jason Almonte",
       "strictHGABLines": 32,
@@ -649,21 +687,21 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
-      "district": "Quezon · 2nd District",
-      "representative": "David Suarez",
-      "strictHGABLines": 63,
-      "strictHGABPesos": 1790866000,
-      "potentialInsertionLines": 28,
-      "potentialInsertionPesos": 958070000,
-      "candidateShareOfAttributedHGAB": 0.5349758161693839,
-      "retainedIncreaseLines": 1,
-      "retainedIncreasePesos": 55500000,
-      "committeeStatus": "not-listed",
-      "committeeRole": "",
+      "district": "Bohol · 1st District",
+      "representative": "John Geesnell Yap",
+      "strictHGABLines": 104,
+      "strictHGABPesos": 1787275000,
+      "potentialInsertionLines": 95,
+      "potentialInsertionPesos": 1649275000,
+      "candidateShareOfAttributedHGAB": 0.9227874837392119,
+      "retainedIncreaseLines": 0,
+      "retainedIncreasePesos": 0,
+      "committeeStatus": "member",
+      "committeeRole": "Vice-Chairperson",
       "committeeBloc": "unspecified",
-      "relevantRoles": "Deputy Speaker",
+      "relevantRoles": "Vice-Chairperson",
       "roleSources": [
-        "https://congress.gov.ph/house-members/house-leaders"
+        "https://www.congress.gov.ph/committees/committee/view/0504"
       ],
       "bicamStatus": "FY2027 appointment not verified"
     },
@@ -723,25 +761,6 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
-      "district": "Bohol · 1st District",
-      "representative": "John Geesnell Yap",
-      "strictHGABLines": 103,
-      "strictHGABPesos": 1737275000,
-      "potentialInsertionLines": 95,
-      "potentialInsertionPesos": 1649275000,
-      "candidateShareOfAttributedHGAB": 0.949345958469442,
-      "retainedIncreaseLines": 0,
-      "retainedIncreasePesos": 0,
-      "committeeStatus": "member",
-      "committeeRole": "Vice-Chairperson",
-      "committeeBloc": "unspecified",
-      "relevantRoles": "Vice-Chairperson",
-      "roleSources": [
-        "https://www.congress.gov.ph/committees/committee/view/0504"
-      ],
-      "bicamStatus": "FY2027 appointment not verified"
-    },
-    {
       "district": "Apayao · Lone District",
       "representative": "Eleanor Begtang",
       "strictHGABLines": 33,
@@ -761,11 +780,11 @@
     {
       "district": "Aurora · Lone District",
       "representative": "Rommel T. Angara",
-      "strictHGABLines": 66,
-      "strictHGABPesos": 1705000000,
+      "strictHGABLines": 67,
+      "strictHGABPesos": 1710000000,
       "potentialInsertionLines": 40,
       "potentialInsertionPesos": 1031000000,
-      "candidateShareOfAttributedHGAB": 0.604692082111437,
+      "candidateShareOfAttributedHGAB": 0.6029239766081871,
       "retainedIncreaseLines": 0,
       "retainedIncreasePesos": 0,
       "committeeStatus": "member",
@@ -811,6 +830,23 @@
       "roleSources": [
         "https://www.congress.gov.ph/committees/committee/view/0504"
       ],
+      "bicamStatus": "FY2027 appointment not verified"
+    },
+    {
+      "district": "Cagayan · 1st District",
+      "representative": "Ramon Nolasco",
+      "strictHGABLines": 104,
+      "strictHGABPesos": 1621500000,
+      "potentialInsertionLines": 10,
+      "potentialInsertionPesos": 210000000,
+      "candidateShareOfAttributedHGAB": 0.12950971322849214,
+      "retainedIncreaseLines": 0,
+      "retainedIncreasePesos": 0,
+      "committeeStatus": "not-listed",
+      "committeeRole": "",
+      "committeeBloc": "unspecified",
+      "relevantRoles": "",
+      "roleSources": [],
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
@@ -888,11 +924,11 @@
     {
       "district": "Nueva Ecija · 4th District",
       "representative": "Emeng Pascual",
-      "strictHGABLines": 20,
-      "strictHGABPesos": 1550655000,
+      "strictHGABLines": 21,
+      "strictHGABPesos": 1572858000,
       "potentialInsertionLines": 9,
       "potentialInsertionPesos": 549000000,
-      "candidateShareOfAttributedHGAB": 0.35404393627209146,
+      "candidateShareOfAttributedHGAB": 0.34904613131001017,
       "retainedIncreaseLines": 0,
       "retainedIncreasePesos": 0,
       "committeeStatus": "not-listed",
@@ -937,6 +973,25 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
+      "district": "Iloilo City · Lone District",
+      "representative": "Julienne Baronda",
+      "strictHGABLines": 39,
+      "strictHGABPesos": 1501100000,
+      "potentialInsertionLines": 7,
+      "potentialInsertionPesos": 150000000,
+      "candidateShareOfAttributedHGAB": 0.0999267204050363,
+      "retainedIncreaseLines": 0,
+      "retainedIncreasePesos": 0,
+      "committeeStatus": "member",
+      "committeeRole": "Vice-Chairperson",
+      "committeeBloc": "unspecified",
+      "relevantRoles": "Vice-Chairperson",
+      "roleSources": [
+        "https://www.congress.gov.ph/committees/committee/view/0504"
+      ],
+      "bicamStatus": "FY2027 appointment not verified"
+    },
+    {
       "district": "Palawan · 1st District",
       "representative": "Rose Salvame",
       "strictHGABLines": 53,
@@ -951,25 +1006,6 @@
       "committeeBloc": "unspecified",
       "relevantRoles": "",
       "roleSources": [],
-      "bicamStatus": "FY2027 appointment not verified"
-    },
-    {
-      "district": "Iloilo City · Lone District",
-      "representative": "Julienne Baronda",
-      "strictHGABLines": 38,
-      "strictHGABPesos": 1494100000,
-      "potentialInsertionLines": 7,
-      "potentialInsertionPesos": 150000000,
-      "candidateShareOfAttributedHGAB": 0.10039488655377819,
-      "retainedIncreaseLines": 0,
-      "retainedIncreasePesos": 0,
-      "committeeStatus": "member",
-      "committeeRole": "Vice-Chairperson",
-      "committeeBloc": "unspecified",
-      "relevantRoles": "Vice-Chairperson",
-      "roleSources": [
-        "https://www.congress.gov.ph/committees/committee/view/0504"
-      ],
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
@@ -1024,30 +1060,13 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
-      "district": "Cagayan · 1st District",
-      "representative": "Ramon Nolasco",
-      "strictHGABLines": 102,
-      "strictHGABPesos": 1470000000,
-      "potentialInsertionLines": 10,
-      "potentialInsertionPesos": 210000000,
-      "candidateShareOfAttributedHGAB": 0.14285714285714285,
-      "retainedIncreaseLines": 0,
-      "retainedIncreasePesos": 0,
-      "committeeStatus": "not-listed",
-      "committeeRole": "",
-      "committeeBloc": "unspecified",
-      "relevantRoles": "",
-      "roleSources": [],
-      "bicamStatus": "FY2027 appointment not verified"
-    },
-    {
       "district": "Aklan · 1st District",
       "representative": "Jess Marquez",
-      "strictHGABLines": 80,
-      "strictHGABPesos": 1460950000,
+      "strictHGABLines": 81,
+      "strictHGABPesos": 1473602000,
       "potentialInsertionLines": 25,
       "potentialInsertionPesos": 159950000,
-      "candidateShareOfAttributedHGAB": 0.10948355522091789,
+      "candidateShareOfAttributedHGAB": 0.10854355517975682,
       "retainedIncreaseLines": 0,
       "retainedIncreasePesos": 0,
       "committeeStatus": "not-listed",
@@ -1077,11 +1096,11 @@
     {
       "district": "La Union · 2nd District",
       "representative": "Dante Garcia",
-      "strictHGABLines": 78,
-      "strictHGABPesos": 1439960000,
+      "strictHGABLines": 80,
+      "strictHGABPesos": 1453106000,
       "potentialInsertionLines": 21,
       "potentialInsertionPesos": 384500000,
-      "candidateShareOfAttributedHGAB": 0.267021306147393,
+      "candidateShareOfAttributedHGAB": 0.26460561032712,
       "retainedIncreaseLines": 0,
       "retainedIncreasePesos": 0,
       "committeeStatus": "member",
@@ -1223,22 +1242,20 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
-      "district": "Bataan · 1st District",
-      "representative": "Antonino Roman III",
-      "strictHGABLines": 73,
-      "strictHGABPesos": 1322000000,
-      "potentialInsertionLines": 9,
-      "potentialInsertionPesos": 84000000,
-      "candidateShareOfAttributedHGAB": 0.06354009077155824,
+      "district": "Cotabato · 3rd District",
+      "representative": "Samantha Santos",
+      "strictHGABLines": 72,
+      "strictHGABPesos": 1328618000,
+      "potentialInsertionLines": 19,
+      "potentialInsertionPesos": 141000000,
+      "candidateShareOfAttributedHGAB": 0.10612531216647675,
       "retainedIncreaseLines": 0,
       "retainedIncreasePesos": 0,
-      "committeeStatus": "member",
-      "committeeRole": "Member for the Majority",
-      "committeeBloc": "majority",
-      "relevantRoles": "Member for the Majority",
-      "roleSources": [
-        "https://www.congress.gov.ph/committees/committee/view/0504"
-      ],
+      "committeeStatus": "not-listed",
+      "committeeRole": "",
+      "committeeBloc": "unspecified",
+      "relevantRoles": "",
+      "roleSources": [],
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
@@ -1388,6 +1405,25 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
+      "district": "Cagayan · 2nd District",
+      "representative": "Baby Alfonso",
+      "strictHGABLines": 36,
+      "strictHGABPesos": 1242736000,
+      "potentialInsertionLines": 12,
+      "potentialInsertionPesos": 270000000,
+      "candidateShareOfAttributedHGAB": 0.21726255616639414,
+      "retainedIncreaseLines": 2,
+      "retainedIncreasePesos": 60000000,
+      "committeeStatus": "member",
+      "committeeRole": "Vice-Chairperson",
+      "committeeBloc": "unspecified",
+      "relevantRoles": "Vice-Chairperson",
+      "roleSources": [
+        "https://www.congress.gov.ph/committees/committee/view/0504"
+      ],
+      "bicamStatus": "FY2027 appointment not verified"
+    },
+    {
       "district": "Pangasinan · 3rd District",
       "representative": "Maria Rachel Arenas",
       "strictHGABLines": 67,
@@ -1408,22 +1444,20 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
-      "district": "Cagayan · 2nd District",
-      "representative": "Baby Alfonso",
-      "strictHGABLines": 35,
-      "strictHGABPesos": 1224000000,
-      "potentialInsertionLines": 12,
-      "potentialInsertionPesos": 270000000,
-      "candidateShareOfAttributedHGAB": 0.22058823529411764,
-      "retainedIncreaseLines": 2,
-      "retainedIncreasePesos": 60000000,
-      "committeeStatus": "member",
-      "committeeRole": "Vice-Chairperson",
+      "district": "Catanduanes · Lone District",
+      "representative": "Eulogio Rodriguez",
+      "strictHGABLines": 81,
+      "strictHGABPesos": 1194000000,
+      "potentialInsertionLines": 16,
+      "potentialInsertionPesos": 347500000,
+      "candidateShareOfAttributedHGAB": 0.29103852596314905,
+      "retainedIncreaseLines": 0,
+      "retainedIncreasePesos": 0,
+      "committeeStatus": "not-listed",
+      "committeeRole": "",
       "committeeBloc": "unspecified",
-      "relevantRoles": "Vice-Chairperson",
-      "roleSources": [
-        "https://www.congress.gov.ph/committees/committee/view/0504"
-      ],
+      "relevantRoles": "",
+      "roleSources": [],
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
@@ -1463,23 +1497,6 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
-      "district": "Catanduanes · Lone District",
-      "representative": "Eulogio Rodriguez",
-      "strictHGABLines": 80,
-      "strictHGABPesos": 1169000000,
-      "potentialInsertionLines": 16,
-      "potentialInsertionPesos": 347500000,
-      "candidateShareOfAttributedHGAB": 0.29726261762189904,
-      "retainedIncreaseLines": 0,
-      "retainedIncreasePesos": 0,
-      "committeeStatus": "not-listed",
-      "committeeRole": "",
-      "committeeBloc": "unspecified",
-      "relevantRoles": "",
-      "roleSources": [],
-      "bicamStatus": "FY2027 appointment not verified"
-    },
-    {
       "district": "Guimaras · Lone District",
       "representative": "JC Rahman Nava",
       "strictHGABLines": 39,
@@ -1496,6 +1513,23 @@
       "roleSources": [
         "https://www.congress.gov.ph/committees/committee/view/0504"
       ],
+      "bicamStatus": "FY2027 appointment not verified"
+    },
+    {
+      "district": "Nueva Ecija · 2nd District",
+      "representative": "Kokoy Salvador",
+      "strictHGABLines": 83,
+      "strictHGABPesos": 1158524000,
+      "potentialInsertionLines": 22,
+      "potentialInsertionPesos": 178000000,
+      "candidateShareOfAttributedHGAB": 0.15364377431973789,
+      "retainedIncreaseLines": 1,
+      "retainedIncreasePesos": 33000000,
+      "committeeStatus": "not-listed",
+      "committeeRole": "",
+      "committeeBloc": "unspecified",
+      "relevantRoles": "",
+      "roleSources": [],
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
@@ -1535,20 +1569,22 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
-      "district": "Nueva Ecija · 2nd District",
-      "representative": "Kokoy Salvador",
-      "strictHGABLines": 82,
-      "strictHGABPesos": 1149000000,
-      "potentialInsertionLines": 22,
-      "potentialInsertionPesos": 178000000,
-      "candidateShareOfAttributedHGAB": 0.15491731940818101,
+      "district": "Laguna · 3rd District",
+      "representative": "Amben Amante",
+      "strictHGABLines": 74,
+      "strictHGABPesos": 1136000000,
+      "potentialInsertionLines": 19,
+      "potentialInsertionPesos": 235500000,
+      "candidateShareOfAttributedHGAB": 0.207306338028169,
       "retainedIncreaseLines": 1,
-      "retainedIncreasePesos": 33000000,
-      "committeeStatus": "not-listed",
-      "committeeRole": "",
+      "retainedIncreasePesos": 3000000,
+      "committeeStatus": "member",
+      "committeeRole": "Vice-Chairperson",
       "committeeBloc": "unspecified",
-      "relevantRoles": "",
-      "roleSources": [],
+      "relevantRoles": "Vice-Chairperson",
+      "roleSources": [
+        "https://www.congress.gov.ph/committees/committee/view/0504"
+      ],
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
@@ -1607,25 +1643,6 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
-      "district": "Laguna · 3rd District",
-      "representative": "Amben Amante",
-      "strictHGABLines": 73,
-      "strictHGABPesos": 1118000000,
-      "potentialInsertionLines": 19,
-      "potentialInsertionPesos": 235500000,
-      "candidateShareOfAttributedHGAB": 0.21064400715563505,
-      "retainedIncreaseLines": 1,
-      "retainedIncreasePesos": 3000000,
-      "committeeStatus": "member",
-      "committeeRole": "Vice-Chairperson",
-      "committeeBloc": "unspecified",
-      "relevantRoles": "Vice-Chairperson",
-      "roleSources": [
-        "https://www.congress.gov.ph/committees/committee/view/0504"
-      ],
-      "bicamStatus": "FY2027 appointment not verified"
-    },
-    {
       "district": "Pangasinan · 1st District",
       "representative": "Arthur Celeste",
       "strictHGABLines": 62,
@@ -1642,6 +1659,23 @@
       "roleSources": [
         "https://www.congress.gov.ph/committees/committee/view/0504"
       ],
+      "bicamStatus": "FY2027 appointment not verified"
+    },
+    {
+      "district": "Capiz · 1st District",
+      "representative": "Howard Guintu",
+      "strictHGABLines": 51,
+      "strictHGABPesos": 1104500000,
+      "potentialInsertionLines": 25,
+      "potentialInsertionPesos": 300000000,
+      "candidateShareOfAttributedHGAB": 0.27161611588954276,
+      "retainedIncreaseLines": 0,
+      "retainedIncreasePesos": 0,
+      "committeeStatus": "not-listed",
+      "committeeRole": "",
+      "committeeBloc": "unspecified",
+      "relevantRoles": "",
+      "roleSources": [],
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
@@ -1702,15 +1736,15 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
-      "district": "Capiz · 1st District",
-      "representative": "Howard Guintu",
-      "strictHGABLines": 49,
-      "strictHGABPesos": 1063000000,
-      "potentialInsertionLines": 24,
-      "potentialInsertionPesos": 285000000,
-      "candidateShareOfAttributedHGAB": 0.2681091251175917,
-      "retainedIncreaseLines": 0,
-      "retainedIncreasePesos": 0,
+      "district": "Samar · 1st District",
+      "representative": "Stephen James Tan",
+      "strictHGABLines": 48,
+      "strictHGABPesos": 1049210000,
+      "potentialInsertionLines": 3,
+      "potentialInsertionPesos": 17000000,
+      "candidateShareOfAttributedHGAB": 0.01620266676833046,
+      "retainedIncreaseLines": 1,
+      "retainedIncreasePesos": 200000000,
       "committeeStatus": "not-listed",
       "committeeRole": "",
       "committeeBloc": "unspecified",
@@ -1776,11 +1810,11 @@
     {
       "district": "Calamba · Lone District",
       "representative": "Cha Hernandez",
-      "strictHGABLines": 23,
-      "strictHGABPesos": 988236000,
+      "strictHGABLines": 24,
+      "strictHGABPesos": 991320000,
       "potentialInsertionLines": 10,
       "potentialInsertionPesos": 111000000,
-      "candidateShareOfAttributedHGAB": 0.11232134834189404,
+      "candidateShareOfAttributedHGAB": 0.11197191623290159,
       "retainedIncreaseLines": 0,
       "retainedIncreasePesos": 0,
       "committeeStatus": "member",
@@ -1802,23 +1836,6 @@
       "candidateShareOfAttributedHGAB": 0.1272205067243671,
       "retainedIncreaseLines": 1,
       "retainedIncreasePesos": 70000000,
-      "committeeStatus": "not-listed",
-      "committeeRole": "",
-      "committeeBloc": "unspecified",
-      "relevantRoles": "",
-      "roleSources": [],
-      "bicamStatus": "FY2027 appointment not verified"
-    },
-    {
-      "district": "Cotabato · 3rd District",
-      "representative": "Samantha Santos",
-      "strictHGABLines": 67,
-      "strictHGABPesos": 966250000,
-      "potentialInsertionLines": 19,
-      "potentialInsertionPesos": 141000000,
-      "candidateShareOfAttributedHGAB": 0.1459249676584735,
-      "retainedIncreaseLines": 0,
-      "retainedIncreasePesos": 0,
       "committeeStatus": "not-listed",
       "committeeRole": "",
       "committeeBloc": "unspecified",
@@ -1988,6 +2005,25 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
+      "district": "Bataan · 3rd District",
+      "representative": "Maria Angela Garcia",
+      "strictHGABLines": 73,
+      "strictHGABPesos": 870740000,
+      "potentialInsertionLines": 1,
+      "potentialInsertionPesos": 25000000,
+      "candidateShareOfAttributedHGAB": 0.02871121115373131,
+      "retainedIncreaseLines": 0,
+      "retainedIncreasePesos": 0,
+      "committeeStatus": "member",
+      "committeeRole": "Vice-Chairperson",
+      "committeeBloc": "unspecified",
+      "relevantRoles": "Vice-Chairperson",
+      "roleSources": [
+        "https://www.congress.gov.ph/committees/committee/view/0504"
+      ],
+      "bicamStatus": "FY2027 appointment not verified"
+    },
+    {
       "district": "Pasig · Lone District",
       "representative": "Roman Romulo",
       "strictHGABLines": 11,
@@ -2022,6 +2058,23 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
+      "district": "Tarlac · 2nd District",
+      "representative": "Cristy Angeles",
+      "strictHGABLines": 22,
+      "strictHGABPesos": 844000000,
+      "potentialInsertionLines": 14,
+      "potentialInsertionPesos": 364000000,
+      "candidateShareOfAttributedHGAB": 0.4312796208530806,
+      "retainedIncreaseLines": 0,
+      "retainedIncreasePesos": 0,
+      "committeeStatus": "not-listed",
+      "committeeRole": "",
+      "committeeBloc": "unspecified",
+      "relevantRoles": "",
+      "roleSources": [],
+      "bicamStatus": "FY2027 appointment not verified"
+    },
+    {
       "district": "Camarines Sur · 2nd District",
       "representative": "Luigi Villafuerte",
       "strictHGABLines": 31,
@@ -2031,6 +2084,23 @@
       "candidateShareOfAttributedHGAB": 0.7448619347060157,
       "retainedIncreaseLines": 0,
       "retainedIncreasePesos": 0,
+      "committeeStatus": "not-listed",
+      "committeeRole": "",
+      "committeeBloc": "unspecified",
+      "relevantRoles": "",
+      "roleSources": [],
+      "bicamStatus": "FY2027 appointment not verified"
+    },
+    {
+      "district": "Cavite · 8th District",
+      "representative": "Aniela Tolentino",
+      "strictHGABLines": 24,
+      "strictHGABPesos": 838068000,
+      "potentialInsertionLines": 2,
+      "potentialInsertionPesos": 175000000,
+      "candidateShareOfAttributedHGAB": 0.20881360462396847,
+      "retainedIncreaseLines": 1,
+      "retainedIncreasePesos": 80000000,
       "committeeStatus": "not-listed",
       "committeeRole": "",
       "committeeBloc": "unspecified",
@@ -2075,25 +2145,6 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
-      "district": "Bataan · 3rd District",
-      "representative": "Maria Angela Garcia",
-      "strictHGABLines": 70,
-      "strictHGABPesos": 822240000,
-      "potentialInsertionLines": 1,
-      "potentialInsertionPesos": 25000000,
-      "candidateShareOfAttributedHGAB": 0.03040474800544853,
-      "retainedIncreaseLines": 0,
-      "retainedIncreasePesos": 0,
-      "committeeStatus": "member",
-      "committeeRole": "Vice-Chairperson",
-      "committeeBloc": "unspecified",
-      "relevantRoles": "Vice-Chairperson",
-      "roleSources": [
-        "https://www.congress.gov.ph/committees/committee/view/0504"
-      ],
-      "bicamStatus": "FY2027 appointment not verified"
-    },
-    {
       "district": "Zamboanga del Sur · 2nd District",
       "representative": "Victoria Yu",
       "strictHGABLines": 34,
@@ -2120,6 +2171,23 @@
       "candidateShareOfAttributedHGAB": 0.09146341463414634,
       "retainedIncreaseLines": 1,
       "retainedIncreasePesos": 50000000,
+      "committeeStatus": "not-listed",
+      "committeeRole": "",
+      "committeeBloc": "unspecified",
+      "relevantRoles": "",
+      "roleSources": [],
+      "bicamStatus": "FY2027 appointment not verified"
+    },
+    {
+      "district": "Cotabato · 1st District",
+      "representative": "Edwin Cruzado",
+      "strictHGABLines": 47,
+      "strictHGABPesos": 818491000,
+      "potentialInsertionLines": 4,
+      "potentialInsertionPesos": 33000000,
+      "candidateShareOfAttributedHGAB": 0.04031809757223965,
+      "retainedIncreaseLines": 0,
+      "retainedIncreasePesos": 0,
       "committeeStatus": "not-listed",
       "committeeRole": "",
       "committeeBloc": "unspecified",
@@ -2207,23 +2275,6 @@
       "candidateShareOfAttributedHGAB": 0.4489100817438692,
       "retainedIncreaseLines": 0,
       "retainedIncreasePesos": 0,
-      "committeeStatus": "not-listed",
-      "committeeRole": "",
-      "committeeBloc": "unspecified",
-      "relevantRoles": "",
-      "roleSources": [],
-      "bicamStatus": "FY2027 appointment not verified"
-    },
-    {
-      "district": "Samar · 1st District",
-      "representative": "Stephen James Tan",
-      "strictHGABLines": 40,
-      "strictHGABPesos": 734000000,
-      "potentialInsertionLines": 3,
-      "potentialInsertionPesos": 17000000,
-      "candidateShareOfAttributedHGAB": 0.02316076294277929,
-      "retainedIncreaseLines": 1,
-      "retainedIncreasePesos": 200000000,
       "committeeStatus": "not-listed",
       "committeeRole": "",
       "committeeBloc": "unspecified",
@@ -2378,6 +2429,25 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
+      "district": "Pampanga · 2nd District",
+      "representative": "Gloria Macapagal Arroyo",
+      "strictHGABLines": 53,
+      "strictHGABPesos": 691140000,
+      "potentialInsertionLines": 39,
+      "potentialInsertionPesos": 435000000,
+      "candidateShareOfAttributedHGAB": 0.6293949127528431,
+      "retainedIncreaseLines": 0,
+      "retainedIncreasePesos": 0,
+      "committeeStatus": "member",
+      "committeeRole": "Member for the Majority",
+      "committeeBloc": "majority",
+      "relevantRoles": "Member for the Majority",
+      "roleSources": [
+        "https://www.congress.gov.ph/committees/committee/view/0504"
+      ],
+      "bicamStatus": "FY2027 appointment not verified"
+    },
+    {
       "district": "Siquijor · Lone District",
       "representative": "Zaldy Villa",
       "strictHGABLines": 41,
@@ -2431,32 +2501,13 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
-      "district": "Pampanga · 2nd District",
-      "representative": "Gloria Macapagal Arroyo",
-      "strictHGABLines": 51,
-      "strictHGABPesos": 638000000,
-      "potentialInsertionLines": 39,
-      "potentialInsertionPesos": 435000000,
-      "candidateShareOfAttributedHGAB": 0.6818181818181818,
-      "retainedIncreaseLines": 0,
-      "retainedIncreasePesos": 0,
-      "committeeStatus": "member",
-      "committeeRole": "Member for the Majority",
-      "committeeBloc": "majority",
-      "relevantRoles": "Member for the Majority",
-      "roleSources": [
-        "https://www.congress.gov.ph/committees/committee/view/0504"
-      ],
-      "bicamStatus": "FY2027 appointment not verified"
-    },
-    {
-      "district": "Tarlac · 2nd District",
-      "representative": "Cristy Angeles",
-      "strictHGABLines": 18,
-      "strictHGABPesos": 629000000,
-      "potentialInsertionLines": 10,
-      "potentialInsertionPesos": 149000000,
-      "candidateShareOfAttributedHGAB": 0.2368839427662957,
+      "district": "San Jose del Monte · Lone District",
+      "representative": "Arthur Robes",
+      "strictHGABLines": 22,
+      "strictHGABPesos": 635654000,
+      "potentialInsertionLines": 7,
+      "potentialInsertionPesos": 261654000,
+      "candidateShareOfAttributedHGAB": 0.41162959723371517,
       "retainedIncreaseLines": 0,
       "retainedIncreasePesos": 0,
       "committeeStatus": "not-listed",
@@ -2467,15 +2518,15 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
-      "district": "Cavite · 8th District",
-      "representative": "Aniela Tolentino",
-      "strictHGABLines": 15,
+      "district": "Cebu · 1st District",
+      "representative": "Rhea Gullas",
+      "strictHGABLines": 10,
       "strictHGABPesos": 615000000,
-      "potentialInsertionLines": 2,
-      "potentialInsertionPesos": 175000000,
-      "candidateShareOfAttributedHGAB": 0.2845528455284553,
-      "retainedIncreaseLines": 1,
-      "retainedIncreasePesos": 80000000,
+      "potentialInsertionLines": 1,
+      "potentialInsertionPesos": 35000000,
+      "candidateShareOfAttributedHGAB": 0.056910569105691054,
+      "retainedIncreaseLines": 0,
+      "retainedIncreasePesos": 0,
       "committeeStatus": "not-listed",
       "committeeRole": "",
       "committeeBloc": "unspecified",
@@ -2493,23 +2544,6 @@
       "candidateShareOfAttributedHGAB": 0.10622650759928093,
       "retainedIncreaseLines": 2,
       "retainedIncreasePesos": 105000000,
-      "committeeStatus": "not-listed",
-      "committeeRole": "",
-      "committeeBloc": "unspecified",
-      "relevantRoles": "",
-      "roleSources": [],
-      "bicamStatus": "FY2027 appointment not verified"
-    },
-    {
-      "district": "San Jose del Monte · Lone District",
-      "representative": "Arthur Robes",
-      "strictHGABLines": 21,
-      "strictHGABPesos": 594000000,
-      "potentialInsertionLines": 6,
-      "potentialInsertionPesos": 220000000,
-      "candidateShareOfAttributedHGAB": 0.37037037037037035,
-      "retainedIncreaseLines": 0,
-      "retainedIncreasePesos": 0,
       "committeeStatus": "not-listed",
       "committeeRole": "",
       "committeeBloc": "unspecified",
@@ -2551,23 +2585,6 @@
       "roleSources": [
         "https://www.congress.gov.ph/committees/committee/view/0504"
       ],
-      "bicamStatus": "FY2027 appointment not verified"
-    },
-    {
-      "district": "Cebu · 1st District",
-      "representative": "Rhea Gullas",
-      "strictHGABLines": 9,
-      "strictHGABPesos": 530000000,
-      "potentialInsertionLines": 1,
-      "potentialInsertionPesos": 35000000,
-      "candidateShareOfAttributedHGAB": 0.0660377358490566,
-      "retainedIncreaseLines": 0,
-      "retainedIncreasePesos": 0,
-      "committeeStatus": "not-listed",
-      "committeeRole": "",
-      "committeeBloc": "unspecified",
-      "relevantRoles": "",
-      "roleSources": [],
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
@@ -2652,6 +2669,23 @@
       "potentialInsertionLines": 0,
       "potentialInsertionPesos": 0,
       "candidateShareOfAttributedHGAB": 0.0,
+      "retainedIncreaseLines": 0,
+      "retainedIncreasePesos": 0,
+      "committeeStatus": "not-listed",
+      "committeeRole": "",
+      "committeeBloc": "unspecified",
+      "relevantRoles": "",
+      "roleSources": [],
+      "bicamStatus": "FY2027 appointment not verified"
+    },
+    {
+      "district": "Nueva Ecija · 3rd District",
+      "representative": "Jay Vergara",
+      "strictHGABLines": 5,
+      "strictHGABPesos": 485399000,
+      "potentialInsertionLines": 1,
+      "potentialInsertionPesos": 150000000,
+      "candidateShareOfAttributedHGAB": 0.3090241224229963,
       "retainedIncreaseLines": 0,
       "retainedIncreasePesos": 0,
       "committeeStatus": "not-listed",
@@ -2753,6 +2787,25 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
+      "district": "Bukidnon · 4th District",
+      "representative": "Laarni Roque",
+      "strictHGABLines": 5,
+      "strictHGABPesos": 409507000,
+      "potentialInsertionLines": 0,
+      "potentialInsertionPesos": 0,
+      "candidateShareOfAttributedHGAB": 0.0,
+      "retainedIncreaseLines": 0,
+      "retainedIncreasePesos": 0,
+      "committeeStatus": "member",
+      "committeeRole": "Member for the Majority",
+      "committeeBloc": "majority",
+      "relevantRoles": "Member for the Majority",
+      "roleSources": [
+        "https://www.congress.gov.ph/committees/committee/view/0504"
+      ],
+      "bicamStatus": "FY2027 appointment not verified"
+    },
+    {
       "district": "Negros Occidental · 1st District",
       "representative": "Jules Ledesma",
       "strictHGABLines": 9,
@@ -2789,11 +2842,11 @@
     {
       "district": "Dinagat Islands · Lone District",
       "representative": "Kaka Bag-ao",
-      "strictHGABLines": 19,
-      "strictHGABPesos": 344000000,
+      "strictHGABLines": 20,
+      "strictHGABPesos": 383000000,
       "potentialInsertionLines": 19,
       "potentialInsertionPesos": 344000000,
-      "candidateShareOfAttributedHGAB": 1.0,
+      "candidateShareOfAttributedHGAB": 0.8981723237597912,
       "retainedIncreaseLines": 0,
       "retainedIncreasePesos": 0,
       "committeeStatus": "not-listed",
@@ -2804,13 +2857,13 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
-      "district": "Cotabato · 1st District",
-      "representative": "Edwin Cruzado",
-      "strictHGABLines": 36,
-      "strictHGABPesos": 338500000,
-      "potentialInsertionLines": 4,
-      "potentialInsertionPesos": 33000000,
-      "candidateShareOfAttributedHGAB": 0.09748892171344166,
+      "district": "Cotabato · 2nd District",
+      "representative": "Rudy Caoagdan",
+      "strictHGABLines": 13,
+      "strictHGABPesos": 376272000,
+      "potentialInsertionLines": 1,
+      "potentialInsertionPesos": 5000000,
+      "candidateShareOfAttributedHGAB": 0.013288259556916274,
       "retainedIncreaseLines": 0,
       "retainedIncreasePesos": 0,
       "committeeStatus": "not-listed",
@@ -2857,6 +2910,25 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
+      "district": "Biliran · Lone District",
+      "representative": "Gerardo Espina Jr.",
+      "strictHGABLines": 23,
+      "strictHGABPesos": 316200000,
+      "potentialInsertionLines": 3,
+      "potentialInsertionPesos": 30200000,
+      "candidateShareOfAttributedHGAB": 0.09550917141049968,
+      "retainedIncreaseLines": 0,
+      "retainedIncreasePesos": 0,
+      "committeeStatus": "member",
+      "committeeRole": "Vice-Chairperson",
+      "committeeBloc": "unspecified",
+      "relevantRoles": "Vice-Chairperson",
+      "roleSources": [
+        "https://www.congress.gov.ph/committees/committee/view/0504"
+      ],
+      "bicamStatus": "FY2027 appointment not verified"
+    },
+    {
       "district": "Masbate · 3rd District",
       "representative": "Wilton Kho",
       "strictHGABLines": 20,
@@ -2881,42 +2953,6 @@
       "potentialInsertionLines": 17,
       "potentialInsertionPesos": 246000000,
       "candidateShareOfAttributedHGAB": 0.831081081081081,
-      "retainedIncreaseLines": 0,
-      "retainedIncreasePesos": 0,
-      "committeeStatus": "not-listed",
-      "committeeRole": "",
-      "committeeBloc": "unspecified",
-      "relevantRoles": "",
-      "roleSources": [],
-      "bicamStatus": "FY2027 appointment not verified"
-    },
-    {
-      "district": "Biliran · Lone District",
-      "representative": "Gerardo Espina Jr.",
-      "strictHGABLines": 21,
-      "strictHGABPesos": 276200000,
-      "potentialInsertionLines": 3,
-      "potentialInsertionPesos": 30200000,
-      "candidateShareOfAttributedHGAB": 0.10934105720492397,
-      "retainedIncreaseLines": 0,
-      "retainedIncreasePesos": 0,
-      "committeeStatus": "member",
-      "committeeRole": "Vice-Chairperson",
-      "committeeBloc": "unspecified",
-      "relevantRoles": "Vice-Chairperson",
-      "roleSources": [
-        "https://www.congress.gov.ph/committees/committee/view/0504"
-      ],
-      "bicamStatus": "FY2027 appointment not verified"
-    },
-    {
-      "district": "Nueva Ecija · 3rd District",
-      "representative": "Jay Vergara",
-      "strictHGABLines": 4,
-      "strictHGABPesos": 257000000,
-      "potentialInsertionLines": 1,
-      "potentialInsertionPesos": 150000000,
-      "candidateShareOfAttributedHGAB": 0.5836575875486382,
       "retainedIncreaseLines": 0,
       "retainedIncreasePesos": 0,
       "committeeStatus": "not-listed",
@@ -2982,11 +3018,11 @@
     {
       "district": "Bulacan · 6th District",
       "representative": "Salvador Pleyto",
-      "strictHGABLines": 18,
-      "strictHGABPesos": 220000000,
-      "potentialInsertionLines": 2,
-      "potentialInsertionPesos": 10000000,
-      "candidateShareOfAttributedHGAB": 0.045454545454545456,
+      "strictHGABLines": 19,
+      "strictHGABPesos": 225676000,
+      "potentialInsertionLines": 3,
+      "potentialInsertionPesos": 15676000,
+      "candidateShareOfAttributedHGAB": 0.06946241514383453,
       "retainedIncreaseLines": 0,
       "retainedIncreasePesos": 0,
       "committeeStatus": "member",
@@ -2999,15 +3035,34 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
-      "district": "Bukidnon · 4th District",
-      "representative": "Laarni Roque",
-      "strictHGABLines": 2,
-      "strictHGABPesos": 214507000,
-      "potentialInsertionLines": 0,
-      "potentialInsertionPesos": 0,
-      "candidateShareOfAttributedHGAB": 0.0,
-      "retainedIncreaseLines": 0,
-      "retainedIncreasePesos": 0,
+      "district": "Bohol · 2nd District",
+      "representative": "Vanvan Aumentado",
+      "strictHGABLines": 6,
+      "strictHGABPesos": 221215000,
+      "potentialInsertionLines": 1,
+      "potentialInsertionPesos": 50000000,
+      "candidateShareOfAttributedHGAB": 0.22602445584612255,
+      "retainedIncreaseLines": 1,
+      "retainedIncreasePesos": 15000000,
+      "committeeStatus": "member",
+      "committeeRole": "Member for the Majority",
+      "committeeBloc": "majority",
+      "relevantRoles": "Member for the Majority",
+      "roleSources": [
+        "https://www.congress.gov.ph/committees/committee/view/0504"
+      ],
+      "bicamStatus": "FY2027 appointment not verified"
+    },
+    {
+      "district": "Masbate · 1st District",
+      "representative": "Antonio Kho",
+      "strictHGABLines": 5,
+      "strictHGABPesos": 206811000,
+      "potentialInsertionLines": 1,
+      "potentialInsertionPesos": 36811000,
+      "candidateShareOfAttributedHGAB": 0.17799343361813444,
+      "retainedIncreaseLines": 2,
+      "retainedIncreasePesos": 15000000,
       "committeeStatus": "member",
       "committeeRole": "Member for the Majority",
       "committeeBloc": "majority",
@@ -3090,25 +3145,6 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
-      "district": "Bohol · 2nd District",
-      "representative": "Vanvan Aumentado",
-      "strictHGABLines": 5,
-      "strictHGABPesos": 180000000,
-      "potentialInsertionLines": 1,
-      "potentialInsertionPesos": 50000000,
-      "candidateShareOfAttributedHGAB": 0.2777777777777778,
-      "retainedIncreaseLines": 1,
-      "retainedIncreasePesos": 15000000,
-      "committeeStatus": "member",
-      "committeeRole": "Member for the Majority",
-      "committeeBloc": "majority",
-      "relevantRoles": "Member for the Majority",
-      "roleSources": [
-        "https://www.congress.gov.ph/committees/committee/view/0504"
-      ],
-      "bicamStatus": "FY2027 appointment not verified"
-    },
-    {
       "district": "Albay · 1st District",
       "representative": "Krisel Lagman",
       "strictHGABLines": 6,
@@ -3145,25 +3181,6 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
-      "district": "Masbate · 1st District",
-      "representative": "Antonio Kho",
-      "strictHGABLines": 3,
-      "strictHGABPesos": 168000000,
-      "potentialInsertionLines": 0,
-      "potentialInsertionPesos": 0,
-      "candidateShareOfAttributedHGAB": 0.0,
-      "retainedIncreaseLines": 2,
-      "retainedIncreasePesos": 15000000,
-      "committeeStatus": "member",
-      "committeeRole": "Member for the Majority",
-      "committeeBloc": "majority",
-      "relevantRoles": "Member for the Majority",
-      "roleSources": [
-        "https://www.congress.gov.ph/committees/committee/view/0504"
-      ],
-      "bicamStatus": "FY2027 appointment not verified"
-    },
-    {
       "district": "Rizal · 3rd District",
       "representative": "Jose Arturo Garcia Jr.",
       "strictHGABLines": 1,
@@ -3181,6 +3198,42 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
+      "district": "Albay · 3rd District",
+      "representative": "Adrian Salceda",
+      "strictHGABLines": 3,
+      "strictHGABPesos": 148187000,
+      "potentialInsertionLines": 2,
+      "potentialInsertionPesos": 38187000,
+      "candidateShareOfAttributedHGAB": 0.2576946695729045,
+      "retainedIncreaseLines": 0,
+      "retainedIncreasePesos": 0,
+      "committeeStatus": "not-listed",
+      "committeeRole": "",
+      "committeeBloc": "unspecified",
+      "relevantRoles": "",
+      "roleSources": [],
+      "bicamStatus": "FY2027 appointment not verified"
+    },
+    {
+      "district": "Rizal · 1st District",
+      "representative": "Mia Ynares",
+      "strictHGABLines": 3,
+      "strictHGABPesos": 105000000,
+      "potentialInsertionLines": 0,
+      "potentialInsertionPesos": 0,
+      "candidateShareOfAttributedHGAB": 0.0,
+      "retainedIncreaseLines": 0,
+      "retainedIncreasePesos": 0,
+      "committeeStatus": "member",
+      "committeeRole": "Member for the Majority",
+      "committeeBloc": "majority",
+      "relevantRoles": "Member for the Majority",
+      "roleSources": [
+        "https://www.congress.gov.ph/committees/committee/view/0504"
+      ],
+      "bicamStatus": "FY2027 appointment not verified"
+    },
+    {
       "district": "Surigao del Norte · 1st District",
       "representative": "Francisco Matugas",
       "strictHGABLines": 12,
@@ -3194,25 +3247,6 @@
       "committeeRole": "Vice-Chairperson",
       "committeeBloc": "unspecified",
       "relevantRoles": "Vice-Chairperson",
-      "roleSources": [
-        "https://www.congress.gov.ph/committees/committee/view/0504"
-      ],
-      "bicamStatus": "FY2027 appointment not verified"
-    },
-    {
-      "district": "Rizal · 1st District",
-      "representative": "Mia Ynares",
-      "strictHGABLines": 2,
-      "strictHGABPesos": 100000000,
-      "potentialInsertionLines": 0,
-      "potentialInsertionPesos": 0,
-      "candidateShareOfAttributedHGAB": 0.0,
-      "retainedIncreaseLines": 0,
-      "retainedIncreasePesos": 0,
-      "committeeStatus": "member",
-      "committeeRole": "Member for the Majority",
-      "committeeBloc": "majority",
-      "relevantRoles": "Member for the Majority",
       "roleSources": [
         "https://www.congress.gov.ph/committees/committee/view/0504"
       ],
@@ -3344,6 +3378,23 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
+      "district": "Cebu · 3rd District",
+      "representative": "Karen Flores-Garcia",
+      "strictHGABLines": 8,
+      "strictHGABPesos": 50000000,
+      "potentialInsertionLines": 0,
+      "potentialInsertionPesos": 0,
+      "candidateShareOfAttributedHGAB": 0.0,
+      "retainedIncreaseLines": 0,
+      "retainedIncreasePesos": 0,
+      "committeeStatus": "not-listed",
+      "committeeRole": "",
+      "committeeBloc": "unspecified",
+      "relevantRoles": "",
+      "roleSources": [],
+      "bicamStatus": "FY2027 appointment not verified"
+    },
+    {
       "district": "Rizal · 2nd District",
       "representative": "Dino Tanjuatco",
       "strictHGABLines": 1,
@@ -3395,23 +3446,6 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
-      "district": "Cebu · 3rd District",
-      "representative": "Karen Flores-Garcia",
-      "strictHGABLines": 7,
-      "strictHGABPesos": 45000000,
-      "potentialInsertionLines": 0,
-      "potentialInsertionPesos": 0,
-      "candidateShareOfAttributedHGAB": 0.0,
-      "retainedIncreaseLines": 0,
-      "retainedIncreasePesos": 0,
-      "committeeStatus": "not-listed",
-      "committeeRole": "",
-      "committeeBloc": "unspecified",
-      "relevantRoles": "",
-      "roleSources": [],
-      "bicamStatus": "FY2027 appointment not verified"
-    },
-    {
       "district": "Davao Oriental · 1st District",
       "representative": "Nelson Dayanghirang Jr.",
       "strictHGABLines": 1,
@@ -3426,6 +3460,25 @@
       "committeeBloc": "unspecified",
       "relevantRoles": "",
       "roleSources": [],
+      "bicamStatus": "FY2027 appointment not verified"
+    },
+    {
+      "district": "Bohol · 3rd District",
+      "representative": "Alexie Tutor",
+      "strictHGABLines": 2,
+      "strictHGABPesos": 39123000,
+      "potentialInsertionLines": 0,
+      "potentialInsertionPesos": 0,
+      "candidateShareOfAttributedHGAB": 0.0,
+      "retainedIncreaseLines": 0,
+      "retainedIncreasePesos": 0,
+      "committeeStatus": "member",
+      "committeeRole": "Member for the Majority",
+      "committeeBloc": "majority",
+      "relevantRoles": "Member for the Majority",
+      "roleSources": [
+        "https://www.congress.gov.ph/committees/committee/view/0504"
+      ],
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
@@ -3503,13 +3556,13 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
-      "district": "Albay · 3rd District",
-      "representative": "Adrian Salceda",
+      "district": "Cavite · 4th District",
+      "representative": "Kiko Barzaga",
       "strictHGABLines": 1,
-      "strictHGABPesos": 20000000,
-      "potentialInsertionLines": 1,
-      "potentialInsertionPesos": 20000000,
-      "candidateShareOfAttributedHGAB": 1.0,
+      "strictHGABPesos": 22500000,
+      "potentialInsertionLines": 0,
+      "potentialInsertionPesos": 0,
+      "candidateShareOfAttributedHGAB": 0.0,
       "retainedIncreaseLines": 0,
       "retainedIncreasePesos": 0,
       "committeeStatus": "not-listed",
@@ -3563,23 +3616,6 @@
       "potentialInsertionLines": 0,
       "potentialInsertionPesos": 0,
       "candidateShareOfAttributedHGAB": 0.0,
-      "retainedIncreaseLines": 0,
-      "retainedIncreasePesos": 0,
-      "committeeStatus": "not-listed",
-      "committeeRole": "",
-      "committeeBloc": "unspecified",
-      "relevantRoles": "",
-      "roleSources": [],
-      "bicamStatus": "FY2027 appointment not verified"
-    },
-    {
-      "district": "Cotabato · 2nd District",
-      "representative": "Rudy Caoagdan",
-      "strictHGABLines": 1,
-      "strictHGABPesos": 5000000,
-      "potentialInsertionLines": 1,
-      "potentialInsertionPesos": 5000000,
-      "candidateShareOfAttributedHGAB": 1.0,
       "retainedIncreaseLines": 0,
       "retainedIncreasePesos": 0,
       "committeeStatus": "not-listed",
@@ -3751,25 +3787,6 @@
       "bicamStatus": "FY2027 appointment not verified"
     },
     {
-      "district": "Bohol · 3rd District",
-      "representative": "Alexie Tutor",
-      "strictHGABLines": 0,
-      "strictHGABPesos": 0,
-      "potentialInsertionLines": 0,
-      "potentialInsertionPesos": 0,
-      "candidateShareOfAttributedHGAB": null,
-      "retainedIncreaseLines": 0,
-      "retainedIncreasePesos": 0,
-      "committeeStatus": "member",
-      "committeeRole": "Member for the Majority",
-      "committeeBloc": "majority",
-      "relevantRoles": "Member for the Majority",
-      "roleSources": [
-        "https://www.congress.gov.ph/committees/committee/view/0504"
-      ],
-      "bicamStatus": "FY2027 appointment not verified"
-    },
-    {
       "district": "Bulacan · 2nd District",
       "representative": "Tina Pancho",
       "strictHGABLines": 0,
@@ -3897,23 +3914,6 @@
     {
       "district": "Caloocan · 3rd District",
       "representative": "Dean Asistio",
-      "strictHGABLines": 0,
-      "strictHGABPesos": 0,
-      "potentialInsertionLines": 0,
-      "potentialInsertionPesos": 0,
-      "candidateShareOfAttributedHGAB": null,
-      "retainedIncreaseLines": 0,
-      "retainedIncreasePesos": 0,
-      "committeeStatus": "not-listed",
-      "committeeRole": "",
-      "committeeBloc": "unspecified",
-      "relevantRoles": "",
-      "roleSources": [],
-      "bicamStatus": "FY2027 appointment not verified"
-    },
-    {
-      "district": "Cavite · 4th District",
-      "representative": "Kiko Barzaga",
       "strictHGABLines": 0,
       "strictHGABPesos": 0,
       "potentialInsertionLines": 0,
@@ -4589,15 +4589,15 @@
   "sources": [
     {
       "file": "congress-data.json",
-      "sha256": "7a9f4bfd9db42554622fd14b62af961f098d822350ce9ef624191638f98cee2f"
+      "sha256": "b758483c9d308392d43cd45d96375922231de2470e48510801ca1f2a015c91c5"
     },
     {
       "file": "congress_leg_insertions.json",
-      "sha256": "b9ee3e078fd868a93174b77a898163e8000cdbfe6c83bcc55f46e11c9b4648ae"
+      "sha256": "2a043b0a39a1711e7d40fa45a15b02c14196d0af5b31873b45ac4806b8995808"
     },
     {
       "file": "congress_geographic_attribution_db_3rd.json",
-      "sha256": "c960abd238bb71e9cb449cd059d6ffb71d8fad1c4502d553fd85c2db8b8676be"
+      "sha256": "4f4f61a21529e58a286f7142dde35ee49024d549de427558e81c7c4bc9a918bb"
     },
     {
       "file": "hb_nep_comparison_3rd.csv",

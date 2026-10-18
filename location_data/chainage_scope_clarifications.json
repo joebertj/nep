@@ -1,0 +1,15 @@
+{
+  "nonoverlappingPairs": [
+    {
+      "leftTitle": "Jolo Port-Bud Daho-Romadier Road (S00003SL), Chainage 3 + 500 to Chainage 7 + 000",
+      "rightTitle": "Jolo Port-Bud Daho-Romadier Road (S00003SL), Chainage 200 to Chainage 3 + 500",
+      "reviewBasis": "User clarification: bare Chainage 200 is incomplete; proposed maximum interpretation is 3+200, before the shared 3+500 boundary. Exclude this exact pair from repeat screening without supplying a complete length.",
+      "sourceIds": [
+        "HB10858-3-0158-000905",
+        "HB10858-3-0158-000904"
+      ],
+      "sourcePage": 158,
+      "verification": "User-reviewed scope clarification; no engineering length or missing kilometer component verified."
+    }
+  ]
+}

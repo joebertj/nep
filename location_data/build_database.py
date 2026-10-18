@@ -408,6 +408,10 @@ def main():
     refine(con)
     from import_analyst_candidates import ingest as ingest_analyst
     ingest_analyst(con)
+    from import_boundary_crosswalk import ingest as ingest_boundaries
+    ingest_boundaries(con)
+    from import_inventory_locations import ingest as ingest_inventory_locations
+    ingest_inventory_locations(con)
     b.finish();con.commit()
     # Integrity checks are part of the build; publication is atomic.
     if con.execute('PRAGMA foreign_key_check').fetchone():raise ValueError('Foreign key integrity failure')

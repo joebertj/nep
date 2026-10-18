@@ -1,7 +1,17 @@
 .DS_Store
+/data_sources/arcgis_dpwh/archive/
 __pycache__/
 HB 10858 FOR 2ND READING/
 HB 10858 FOR 3RD READING/
 nep_fy2027_all.json
 DPWH per district.pdf
 NEP-FY2027.xlsx
+
+# Pinned external analyst source snapshot; see retained manifest and review.
+/data_sources/csiiiv/snapshots/
+
+/data_sources/csiiiv/accepted/
+/data_sources/csiiiv/accepted_prior/
+/data_sources/report_archive/
+/data_sources/dpwh_project_documents/
+/.venv-documents/

@@ -5,7 +5,7 @@ import re
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 STATIC=ROOT.parent/'open-data-visualization/static/nep-preview'
-LINKS=[('summary.html', 'Summary · investigative leads'), ('congress.html', 'Congressional District Allocations'), ('dpwh.html', 'DPWH · NEP patterns'), ('repeats.html', 'Project repeat comparisons'), ('dpwh-hgab.html', 'DPWH · NEP → HGAB (3rd)'), ('dpwh-hgab-comparison.html', 'DPWH · HGAB 2nd vs 3rd'), ('mpb.html', 'MPB · Multi-purpose buildings'), ('cost-per-km.html', 'Cost per meter'), ('nia-irrigation.html', 'NIA irrigation'), ('deped.html', 'DepEd'), ('rcs.html', 'RCS · rainfall scenario'), ('fmr.html', 'FMR'), ('nia.html', 'NIA'), ('hfep.html', 'HFEP'), ('budget-innovations.html', 'Budget Innovations')]
+LINKS=[('summary.html', 'Summary · investigative leads'), ('congress.html', 'Congressional District Allocations'), ('dpwh.html', 'DPWH · project screens'), ('repeats.html', 'Project repeat comparisons'), ('dpwh-hgab.html', 'DPWH · NEP → HGAB (3rd)'), ('https://csiiiv.github.io/DPWH-NEP-HB-2027-ANALYSIS/app/#compare', 'Budget stage comparisons ↗'), ('mpb.html', 'MPB · Multi-purpose buildings'), ('cost-per-km.html', 'Cost per meter'), ('nia-irrigation.html', 'NIA irrigation'), ('deped.html', 'DepEd'), ('rcs.html', 'RCS · rainfall scenario'), ('fmr.html', 'FMR'), ('nia.html', 'NIA'), ('hfep.html', 'HFEP'), ('budget-innovations.html', 'Budget Innovations')]
 NAV='<nav class="report-nav" aria-label="Budget report pages">'+''.join(f'<a href="{url}">{label}</a>' for url,label in LINKS)+'</nav>'
 CSS='''<style id="uniform-report-menu-style">
 header{padding-left:clamp(16px,2vw,32px)!important;padding-right:clamp(16px,2vw,32px)!important}
@@ -15,9 +15,49 @@ header .report-nav a:hover{color:#fff!important;background:#ffffff12!important;b
 header .report-nav a:focus-visible{outline:2px solid #a7ddd1!important;outline-offset:2px!important}
 @media(max-width:900px){header .report-nav{grid-template-columns:repeat(3,minmax(0,1fr))!important;height:202px!important;min-height:202px!important}}
 @media(max-width:560px){header .report-nav{grid-template-columns:repeat(2,minmax(0,1fr))!important;height:328px!important;min-height:328px!important}}
+body.bettergov-research>header.uniform-report-header{box-sizing:border-box!important;display:grid!important;grid-template-rows:176px 118px!important;gap:16px!important;align-content:start!important;height:361px!important;min-height:361px!important;padding-top:24px!important;padding-bottom:24px!important;border-bottom:3px solid #66bca8!important}
+body.bettergov-research>header.uniform-report-header>.report-nav{margin:0!important;align-self:start!important}
+body.bettergov-research>header .report-header-heading{display:grid!important;grid-template-rows:20px 58px 1fr!important;gap:8px!important;min-width:0!important;min-height:0!important}
+body.bettergov-research>header .report-header-heading>.eyebrow{margin:0!important;font:11px/20px system-ui,sans-serif!important;letter-spacing:.08em!important;text-transform:uppercase!important;color:#b9dfd4!important}
+body.bettergov-research>header .report-header-heading>h1{margin:0!important;padding:0!important;font-size:clamp(25px,2.3vw,36px)!important;line-height:1.2!important;align-self:start!important}
+body.bettergov-research>header .report-header-heading>p{margin:0!important;padding:0!important;font-size:15px!important;line-height:1.55!important;max-width:none!important;align-self:start!important}
+@media(max-width:900px){body.bettergov-research>header.uniform-report-header{height:495px!important;min-height:495px!important;grid-template-rows:226px 202px!important}body.bettergov-research>header .report-header-heading{grid-template-rows:18px 66px 1fr!important}body.bettergov-research>header .report-header-heading>h1{font-size:26px!important;line-height:1.25!important}body.bettergov-research>header .report-header-heading>p{font-size:14px!important}}
+@media(max-width:560px){body.bettergov-research>header.uniform-report-header{height:647px!important;min-height:647px!important;padding-top:20px!important;padding-bottom:20px!important;grid-template-rows:260px 328px!important}body.bettergov-research>header .report-header-heading{grid-template-rows:18px 68px 1fr!important}body.bettergov-research>header .report-header-heading>h1{font-size:22px!important;line-height:1.2!important}body.bettergov-research>header .report-header-heading>p{font-size:13px!important;line-height:1.5!important}}
 </style>'''
 
-def apply_page(text):
+def normalize_header(text):
+    match=re.search(r'<header\b[^>]*>(.*?)</header>',text,re.S)
+    if not match:return text
+    content=re.sub(r'<nav\b[^>]*class="report-nav"[^>]*>.*?</nav>','',match[1],flags=re.S)
+    title=re.search(r'<h1\b[^>]*>.*?</h1>',content,re.S)
+    paragraphs=re.findall(r'<p\b[^>]*>.*?</p>',content,re.S)
+    eyebrow=re.search(r'<div\b[^>]*class="eyebrow"[^>]*>.*?</div>',content,re.S)
+    kicker=eyebrow[0] if eyebrow else '<div class="eyebrow">BetterGov · Budget research</div>'
+    extra_links=[]
+    def unlink(match):
+        extra_links.append(match[0])
+        return ''
+    teaser=re.sub(r'<a\b[^>]*>.*?</a>',unlink,paragraphs[0] if paragraphs else '<p></p>',flags=re.S)
+    teaser=re.sub(r'\s*(?:·|\|)\s*</p>','</p>',teaser)
+    kicker=re.sub(r'<a\b[^>]*>.*?</a>',unlink,kicker,flags=re.S)
+    heading='<div class="report-header-heading">'+kicker+(title[0] if title else '')+teaser+'</div>' 
+    text=text[:match.start()]+'<header class="uniform-report-header">'+heading+NAV+'</header>'+text[match.end():]
+    # Source notes and supplemental jumps remain accessible without changing header height.
+    previous=re.search(r'<div id="report-header-notes"[^>]*>(.*?)</div>',text,re.S)
+    notes=(previous[1] if previous else '')+''.join(paragraphs[1:])+('<p>'+ ' · '.join(extra_links)+'</p>' if extra_links else '')
+    text=re.sub(r'<div id="report-header-notes"[^>]*>.*?</div>','',text,flags=re.S)
+    if notes:
+        block='<div id="report-header-notes">'+notes+'</div>'
+        index=text.rfind('</footer>')
+        if index>=0:text=text[:index]+block+text[index:]
+        else:text=text.replace('</body>','<footer>'+block+'</footer></body>',1)
+    return text
+
+def apply_page(text,page=None):
+    if page:
+        from report_teasers import apply_page as apply_teaser
+        text=apply_teaser(text,page)
+    text=normalize_header(text)
     text=re.sub(r'<style id="(?:report-nav-layout|summary-nav-layout|uniform-report-menu-style)">.*?</style>','',text,flags=re.S)
     if re.search(r'<nav\b[^>]*class="report-nav"',text):
         text=re.sub(r'<nav\b[^>]*class="report-nav"[^>]*>.*?</nav>',lambda m:NAV,text,flags=re.S)
@@ -26,16 +66,20 @@ def apply_page(text):
     return text.replace('</head>',CSS+'</head>',1)
 
 def apply():
+    from summary_evidence_links import apply as link_summary_evidence
+    link_summary_evidence()
+    from report_table_presentation import publish_assets,apply_page as table_presentation
+    versions=publish_assets()
     results=[]
     for path in sorted(STATIC.glob('*.html')):
-        text=apply_page(path.read_text());path.write_text(text)
+        text=table_presentation(apply_page(path.read_text(),path.name),versions);path.write_text(text)
         mirror=ROOT/'analysis_output'/path.name
         if mirror.exists():mirror.write_text(text)
         navs=re.findall(r'<nav\b[^>]*class="report-nav"[^>]*>.*?</nav>',text,re.S)
         styles=re.findall(r'<style id="uniform-report-menu-style">.*?</style>',text,re.S)
         if navs!=[NAV] or styles!=[CSS]:raise ValueError('Menu differs: '+path.name)
         results.append({'page':path.name,'links':len(LINKS),'uniformMarkup':True,'uniformStyles':True})
-    report={'pages':results,'pageCount':len(results),'menuHeightsPx':{'desktop':118,'tablet':202,'mobile':328},'scope':'Generated markup and CSS audit; no browser rendering test.'}
+    report={'pages':results,'pageCount':len(results),'menuHeightsPx':{'desktop':118,'tablet':202,'mobile':328},'headerHeightsPx':{'desktop':361,'tablet':495,'mobile':647},'scope':'Generated markup and CSS audit; no browser rendering test.'}
     (ROOT/'analysis_output/report_menu_review.json').write_text(json.dumps(report,indent=2)+'\n')
     return report
 

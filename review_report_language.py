@@ -91,6 +91,11 @@ def apply():
     refresh_heroes()
     from build_repeats_page import build as build_repeats_page
     build_repeats_page()
+    # Keep the separately attributed source cross-check current on every rebuild.
+    from build_external_reference_review import apply_pages as apply_external_reference
+    apply_external_reference()
+    from build_reviewed_annex_sections import apply as apply_reviewed_annexes
+    apply_reviewed_annexes()
     pages=[]
     for path in sorted(STATIC.glob('*.html')):
         if path.name == 'index.html':continue  # generated summary alias
@@ -129,12 +134,20 @@ def apply():
     retain_historical_comparisons()
     from format_report_currency import apply as apply_currency_format
     apply_currency_format()
+    from add_chainage_overlap_dialog import build as add_overlap_dialog
+    add_overlap_dialog()
     from uniform_report_menu import apply as apply_uniform_menu
     apply_uniform_menu()
     from congress_source_credits import apply as apply_congress_source_credits
     apply_congress_source_credits()
     from location_data.refresh_table_asset import refresh as refresh_table_asset
     refresh_table_asset()
+    from build_project_document_view import build as refresh_project_document_view
+    refresh_project_document_view()
+    from uniform_report_menu import apply as refresh_document_page_menu
+    refresh_document_page_menu()
+    from archive_higher_level_analysis import apply as archive_duplicated_overviews
+    archive_duplicated_overviews()
     summary=(STATIC/'summary.html').read_text()
     (STATIC/'index.html').write_text(summary)
     (ROOT/'analysis_output/index.html').write_text(summary)

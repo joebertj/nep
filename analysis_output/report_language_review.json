@@ -3,7 +3,7 @@
   "pages": [
     {
       "page": "budget-innovations.html",
-      "sha256": "96a76e75d63acfa0ac2e7171e9372c37de13b23cf159b9e27da10fc004f559d5",
+      "sha256": "3bacc01915de572f7e1644a46310fc1fe19f7349975c292a049445e6b7250deb",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
@@ -14,7 +14,7 @@
     },
     {
       "page": "congress.html",
-      "sha256": "fc1944066e526cd3b2f368eedde11defd248a2722afa39fe1450d137bf0aaace",
+      "sha256": "0f90d5113c6e81894bcff1e26c9289e0d7189cdf782ccd8cc9a6a965764a5a93",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
@@ -28,14 +28,24 @@
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     },
     {
+      "page": "cost-matching.html",
+      "sha256": "67d4ffbb5c801aa9bced54959a75e55c68244b465e5ef59a3be1bc861b308fa1",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
       "page": "cost-per-km.html",
-      "sha256": "e95f564133bfe053d0f0d1e8f11885c04ffd001764694cce58c36014cdfbc964",
+      "sha256": "41452ae397344c619ebe1acedad59bf87d7c88f5107fad97266055a50f1b1d56",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
         "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un",
         "d budget. Quantile-band counts and 2×/BIC screens are editorial exploratory choices, not calibrated corruption thresholds. Models use total allocation rather than density to reduce the arithmetic-denominator trap. Bootstrap votes measure selection stability in this samp",
-        "otes and methodology . Patterns direct source and engineering review; there is no universal safe or suspicious length. Length extraction and coverage methodology Complete STA/K/KM plus-form ranges are converted to meters. Overlapping numerical intervals are merged, neve"
+        "otes and methodology . Patterns direct source and engineering review; there is no universal safe or suspicious length. Independent source cross-check · current snapshot Comparative source: csiiiv FY2027 budget analysis · GitHub snapshot 34ef5d8cbbac . Downloaded 2026-10"
       ],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     },
@@ -51,7 +61,7 @@
     },
     {
       "page": "dpwh-hgab-comparison.html",
-      "sha256": "5dd4cfa8466d0c08c4732c8122a1f6482c837126abef1aa67ffa3db88df7485e",
+      "sha256": "3e69ccb4fb942851a569ef7348b27f501876f9c1d20603e695fd76db0dbab9ae",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
@@ -61,7 +71,7 @@
     },
     {
       "page": "dpwh-hgab.html",
-      "sha256": "6801c49a478e0c8a7136e254a8111514372f8279a5e4ba2f262469e353ad498a",
+      "sha256": "6f1920348dc59c2fd0bc495f5edcd4dddff2eeb5c1f7624053d40cb0e4501167",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
@@ -70,26 +80,24 @@
         " local-map screening rules. Uncertain locations stay blank. Names describe geographic coverage, not sponsorship. All domestic programs All office categories All implementing offices All regions Largest allocation first Smallest allocation first Project name A–Z Closest N",
         "B allocation Adjustment Office / sources Previous Next Read this as a review list, not a finding of wrongdoing. Amounts are shown in pesos. NEP values and FY2025 GAA values are stored in thousands of pesos and multiplied by 1,000; the FY2026 DPWH enrolled-copy GAA alrea",
         "nt exact amounts Across all categories. Rounded figures recur often in budget proposals and are not suspicious by themselves. What this screen did not find Next useful data Physical scope (length, area, capacity), detailed cost breakdowns, implementation and completion ",
-        "nt exact amounts Across all categories. Rounded figures recur often in budget proposals and are not suspicious by themselves. Historical analysis · NEP → HGAB 2nd reading Retained pre-existing NEP → HGAB 2nd-reading candidate data. No matcher was run and no new old-stag"
+        "nt exact amounts Across all categories. Rounded figures recur often in budget proposals and are not suspicious by themselves. Independent source cross-check · current snapshot Comparative source: csiiiv FY2027 budget analysis · GitHub snapshot 34ef5d8cbbac . Downloaded "
       ],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     },
     {
       "page": "dpwh.html",
-      "sha256": "5ae0e270cd8898a78ae9a5ec41c463588bf4b343ba20ba2384e21e4d8b7aaf3f",
+      "sha256": "42c14dcb53fd6ae8b67d45d8cfb0184c40fd3caf60c3fae77f57590a8847128d",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
         "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un",
-        "epeat comparisons → Equal amounts and statistical associations are screening leads, not findings of wrongdoing. Most frequent exact amounts Across all categories. Rounded figures recur often in budget proposals and are not suspicious by themselves. What this screen did ",
-        "nt exact amounts Across all categories. Rounded figures recur often in budget proposals and are not suspicious by themselves. What this screen did not find Next useful data Physical scope (length, area, capacity), detailed cost breakdowns, implementation and completion ",
-        "nt exact amounts Across all categories. Rounded figures recur often in budget proposals and are not suspicious by themselves. Allocation clustering · exact ₱5M road/flood co-occurrence Null model: fix how many of the 199 offices have each type of ₱5M entry, then assign "
+        "epeat comparisons → Equal amounts and statistical associations are screening leads, not findings of wrongdoing. Project repeat comparisons and source evidence → Project repeat comparisons and source evidence → Independent source cross-check · current snapshot Comparativ"
       ],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     },
     {
       "page": "fmr.html",
-      "sha256": "75e55b13049124ed6cce98a2e8f2cea51f2caa2d7fce18e38a6ac38bf1c533ff",
+      "sha256": "cf20cde7c6694dd0ac66b6f2fca6b0f54c791480f90f4205e57d6e2bb71d41d6",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
@@ -99,7 +107,7 @@
     },
     {
       "page": "hfep.html",
-      "sha256": "6eb5051e5e5f2981309dafbd1a71b54338cc24c89be9ef3919ba10983fe71de1",
+      "sha256": "3d448b91bd665004ca7b7d2edf139bd41b69484c934565502f3a73e49ec9259e",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
@@ -109,18 +117,19 @@
     },
     {
       "page": "mpb.html",
-      "sha256": "cbff31a20879542a6ae5a15e4689b07f5c6f219c30ac6f8df19d90a6bf3f496f",
+      "sha256": "07cbd99c9b5722ea3af503a5b20171a2767e722303bc6c7e05cb39e28b6ce2b7",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
         "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un",
+        "etation but do not establish need. The 50/100/250/1000-meter bins are descriptive review bands, not corruption thresholds. Pairs are not distinct projects; a cluster of three items yields three pairs. Do not sum pair allocations as losses. Download every distance, raw c",
         " rows. Repeat graphs count all filtered comparison pairs by retention status. No hypothesis test or corruption probability is inferred from these descriptive plots. Request original-page adjudication, approved designs, floor areas, bills of quantities, contracts, projec"
       ],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     },
     {
       "page": "nia-irrigation.html",
-      "sha256": "03512c923eab4e9c10b03c500bd602a2d865c561a040400e3c8aa9b7d233f8aa",
+      "sha256": "9a2a4a28fa5b902a031a296376439d433196d5c03e6b122dd1fc8d798e6600f8",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
@@ -130,7 +139,7 @@
     },
     {
       "page": "nia.html",
-      "sha256": "bbabcaff97566f81e4eef7c3c0fefae13e894895bcdede650ad0112b94aadb46",
+      "sha256": "e5dc1ac8abe055f890cdbe0f31692f36a82d27b7b7b1fc1b1cca75fe29e3d1ab",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
@@ -140,7 +149,7 @@
     },
     {
       "page": "rcs.html",
-      "sha256": "3b15f71781435cbc23524f5dd23e3b232d97d34897fb77bf63c57dd8a26bc344",
+      "sha256": "00346b19a2dbe07c84ebe55c6240e8d18fa79b8cdc92fb995336e9bdac543674",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
@@ -150,33 +159,34 @@
     },
     {
       "page": "repeats.html",
-      "sha256": "0a5c450219569490559f216e0ef90d334c021f016b02cbed130c2e31953d4ea2",
+      "sha256": "73509fbc52179f0e7ed7954f34a420c0626612f3509b964f8fee03c396e73ebd",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
         "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un",
         " local-map screening rules. Uncertain locations stay blank. Names describe geographic coverage, not sponsorship. All DPWH programs Both GAA comparisons FY2027 NEP → FY2026 GAA FY2027 NEP → FY2025 GAA Export filtered rows to CSV Potential historical comparison pairs by en",
+        "etation but do not establish need. The 50/100/250/1000-meter bins are descriptive review bands, not corruption thresholds. Pairs are not distinct projects; a cluster of three items yields three pairs. Do not sum pair allocations as losses. Download every distance, raw c",
         "overlap. Matching allocation occurrences does not establish duplicate contracts, duplicate payment, fraud or authorship. Different engineering components and legitimate amendments can share titles. Office-only agreement is weaker than site evidence. Unresolved loca"
       ],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     },
     {
       "page": "summary.html",
-      "sha256": "4a3e3ed72b4e57362694a95b2a0a64a6d8e43d8e559c740f06997fc483281eb1",
+      "sha256": "d93a0145f23eaea2c60230e3816c3fe64dd1891428c9b705f47e15d0ef5e8bf7",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
         "rsing uncertainty and location limits alongside every claim. Priorities are editorial triage, not a corruption score. Figures overlap and must not be added together. Summary · investigative leads DPWH · NEP patterns Project repeat comparisons DPWH · NEP → HGAB (3rd) DPW",
         "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un",
-        "epeat candidates 686 proposals Evidence guides an investigation. None of these findings establishes corruption. Follow the changes between budget stages NEP → HGAB (House version) → GAB (Senate version) → Bicam (House/Senate reconciliation) → GAA (enacted). NEP and fina",
-        " Bridge chainage is not necessarily bridge span. No cross-category average, overpricing estimate or corruption probability is established. Supporting analysis and source tables → Investigation priority 9 · Original PDF text agreement; funded engineering extent unresolve",
-        "ankings cover only 37.7% of extracted allocation value. Names indicate geography, not authorship or sponsorship. Inspect congressional coverage limits → Other schedules · NEP → HGAB comparison coverage Compare the same budget hierarchy before calculating changes. Missing",
+        "epeat candidates 685 proposals Evidence guides an investigation. None of these findings establishes corruption. Follow the changes between budget stages NEP → HGAB (House version) → GAB (Senate version) → Bicam (House/Senate reconciliation) → GAA (enacted). NEP and fina",
+        " Bridge chainage is not necessarily bridge span. No cross-category average, overpricing estimate or corruption probability is established. Inventory lanes are existing asset characteristics, not verified funded quantities; widening needs additional funded lanes. Overpas",
+        "ankings cover only 38.6% of extracted allocation value. Names indicate geography, not authorship or sponsorship. Inspect congressional coverage limits → Other schedules · NEP → HGAB comparison coverage Compare the same budget hierarchy before calculating changes. Missing",
         "or suspect lengths are shown as evidence cautions. This is an investigation queue, not a finding of wrongdoing. Other agency schedules do not yet have equivalent combined screen coverage. Top 25 · flag count (teal) and allocation (orange); same ranked order in both pane"
       ],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     }
   ],
-  "reviewedPages": 15,
+  "reviewedPages": 16,
   "guarantee": false,
   "limitations": [
     "This is an evidence/editorial review, not jurisdiction-specific legal advice or legal clearance.",

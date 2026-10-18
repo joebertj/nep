@@ -329,3 +329,24 @@ at least 20 records and stated length ≥10 meters. Candidate rates exceed both
 sub-10-meter printed segments also stay off rate charts. All such rows remain
 in tables/CSV/JSON, with exclusions and maximum omitted rate described in words.
 These are relative-rate candidates, not certified overpricing findings.
+
+### Repeated station labels without a dash
+
+The shared chainage parser recognizes exactly two consecutive explicitly labeled
+STA/Station or K/KM points separated only by whitespace as a range. Unlabeled
+points, longer station lists and intervening scope/place text remain unresolved.
+Ranges touching only at an endpoint have zero positive-length overlap and are
+excluded by the disjoint-range veto. The historical flood-control screen now
+also applies this veto instead of discarding its chainage metadata.
+
+### Explicit Chainage meter offsets
+
+The shared chainage parser also recognizes explicitly labeled numeric meter offsets, such as `Chainage 1287 - Chainage 2288`. The Cabutagan-Haluban-Sooc ranges 287–1287 and 1287–2288 are adjacent, with zero positive overlap, and are excluded as a repeat pair. This syntax supplies stated segment length to the cost-density analysis; it does not verify physical construction scope. Unlabeled numbers are not interpreted as chainage.
+
+### Numbered bridge identity
+
+Different explicit bridge numbers (including No./Number labels and Roman numerals) veto a repeat comparison when both titles identify nonoverlapping sets of numbered bridges. Mauban Bypass Road Bridge 3, Bridge 4 and Bridge 5 identify different structures. A missing bridge number leaves identity unresolved; matching numbers alone do not establish the same structure without location and scope evidence. This veto applies to within-stage and historical DPWH screens, regardless of program category.
+
+### Mixed chainage endpoint notation and bounded nonoverlap
+
+Mixed bare/plus endpoint notation remains incomplete for length and cost-density calculations. Under the explicit assumption that printed endpoints are ordered min/max, a known upper endpoint at or below another range's known lower endpoint excludes positive overlap. Unknown endpoints are not filled. This general bounds rule excludes the Jolo pair without a project-specific exception. If bounds cannot exclude overlap, the comparison remains unresolved rather than establishing overlap. Isolated unconnected station points do not supply interval bounds. The earlier exact-title clarification is retained privately as review history, not used as an active matching override.

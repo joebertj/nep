@@ -1,5 +1,8 @@
 # NEP DuckDB analysis suite
 
+Research direction: [Source strategy and project-level investigations](SOURCE_STRATEGY.md).
+
+
 `analyze_budget.py` reads one or more Parquet files and writes separate CSVs for repeatable price, duplication, trend, and outlier screening. It uses DuckDB's Python package when available, or the DuckDB CLI (`brew install duckdb`) as a fallback. You do not need both.
 
 Run all analyses against the Parquet files in this directory:
@@ -201,3 +204,22 @@ The standalone report has district-level views for Rainwater Collector System, m
 The NEP page also has Annex A-1/A-4/A-5 duplicate and amendment analyses, insertion pivots, NEP-to-GAB comparisons, and cost-per-kilometer categories. Those need the underlying annex/amendment tables and, for unit-cost work, physical measurements. They are not inferred from this project extract.
 
 Treat any repeated price, matching name, or statistical outlier as a lead for source-document review. It is not, by itself, evidence of an improper allocation.
+
+## Shared report table presentation
+
+`uniform_report_menu.py` applies `report_table_presentation.py` after report generation.
+This publishes the shared theme, table styling, pagination and comparison-chart assets
+into NEP previews and ODV. Existing table renderers retain their filters, sorting and
+exports, with ten-row defaults. Static tables with more than ten rows receive page
+controls. Representative columns containing only unresolved values are hidden without
+changing physical cell indexes or source records. No table requires internal scrolling.
+
+For a rendered sweep (local Chrome and the isolated document environment required):
+
+```sh
+/private/tmp/nep-document-env/bin/python deployment/review_report_tables.py
+```
+
+The audit records visible table styling, row counts, horizontal overflow and JavaScript
+errors in `analysis_output/table_render_review.json`. This is a presentation check;
+it does not validate project matching, geographic attribution or budget calculations.

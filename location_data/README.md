@@ -6,6 +6,106 @@ rankings or deploy anything.
 
 ## Build and inspect
 
+### Matched inventory IDs on road/bridge tables
+
+The cost builder exports `matchedInventoryId` from supported lane/bridge
+matches. `matched_inventory_ids.py` combines those matches with screened
+physical-asset contexts using exact full titles; conflicting ID claims stay
+unresolved. The shared table asset adds an inventory ID column to other project
+tables with supported matches, including labelled current/prior IDs where both
+comparison sides match. Native cost columns are preserved. Filtered CSV exports
+include the same IDs. Identifiers are road `SECTION_ID` or `BRIDGE_ID`, not
+ArcGIS OBJECTIDs, HGAB occurrence IDs or evidence of funded quantities.
+
+### Road/bridge surface and condition context
+
+`road_asset_context.py` enriches the cost build from exact inventory asset and
+section-measure matches. `build_cost_per_km.py` calls it through the shared lane
+inventory reader, then refreshes the contextual peer groups and source exports.
+The condition inventory reports 2025 assessments. Last-surfacing years come from
+the older lane inventory; zero/missing years stay unknown. Methodology, matching
+IDs, coverage percentages and assessment years are published with each match.
+Fully assessed Good/Fair rehabilitation and full-range five-budget-year
+surfacing screens can add review flags to the combined queue. Undated bridge
+condition remains contextual, with no dated-condition point. None of these
+screens proves unnecessary work, overpricing or incorrect prioritization.
+
+### Inventory-assisted project locations
+
+```sh
+# Geometry build requires Shapely; no network access.
+python location_data/build_inventory_locations.py
+python3 location_data/import_inventory_locations.py
+python3 location_data/build_congress_db_review.py --write-scope-review
+python3 ../open-data-visualization/analysis/build_congress_allocation_data.py \
+  --write --geographic-decisions analysis_output/congress_location_db_review.json \
+  --audit analysis_output/congress_geographic_attribution_db_3rd.json
+python3 build_congress_leg_insertions.py
+python3 build_investigation_summary.py
+python3 location_data/enrich_report_tables.py
+```
+
+Exact bridge IDs and measured road alignment ranges can supply project-specific
+location context. Full measured alignment coverage is required, with one
+municipality and a 25-meter clearance. Bridge points need the full inventory
+span plus 25 meters of clearance, since the inventory point might be an endpoint.
+Bridge labels must agree with the containing municipality/province. Explicit
+source location contradictions, multiple places and unresolved current-map or
+PH location DB identities prevent assignment. Municipal geometry repairs also
+require manual review. Source geometry remains EPSG:32651 throughout this build.
+
+The resulting `inventory_location_contexts` DB table is project evidence, not a
+replacement administrative hierarchy or a whole-municipality LEG membership.
+The public `static/data/inventory_location_contexts.json` is consumed by the
+shared geography resolver. It rechecks current map consensus and disables the
+fallback if dependency hashes change. It never uses the polygon's old LEG label.
+The same resolver supplies report table names. Historical rows receive current
+geographic context, not historical representative claims. Existing scope holds
+continue to apply, including the multi-place Butuan/RTR project.
+
+`congress_inventory_location_update` JSON/CSV records every additional HGAB
+assignment against `congress_before_inventory_locations.json`. The builder
+rejects source ID/title/amount differences and changes to existing assignments.
+Its public method section explains coverage gains without attributing funding
+control, sponsorship or personal receipt.
+
+### Downloaded DEO–LEG boundary evidence
+
+```sh
+# Requires Shapely 2.2 in the chosen Python environment; reads cached JSON only.
+python location_data/build_boundary_crosswalk.py
+python3 location_data/import_boundary_crosswalk.py
+python3 location_data/query_locations.py --deo 'Bulacan 1st DEO'
+```
+
+The overlay writes `analysis_output/deo_leg_boundary_crosswalk.json` and CSV.
+It preserves all positive-area intersections; touching edges alone are excluded.
+Intersections below 10,000 square meters or 0.1% of either boundary are marked
+for small-intersection review, not silently dropped. Area fractions describe
+the polygons and must never be used to split project allocations. Geometry
+repair flags, hashes, source object IDs, CRS and copyright dates are retained.
+
+The importer adds `boundary_deo_leg_evidence` and `boundary_locality_evidence`
+to PH location DB. Exact qualified identities can link to existing IDs, while
+unmatched or conflicting names remain unresolved. Municipal source codes are
+preserved without declaring them current PSGC. All effective dates remain NULL.
+Existing accepted LEG memberships, representative assignments and public budget
+totals are not changed by this evidence import. The normal database rebuild
+also imports the generated evidence when present; it needs no geometry package.
+
+To assess whether boundary evidence can improve the existing Congress attribution:
+
+```sh
+python3 location_data/build_congress_db_review.py
+python3 location_data/assess_congress_boundary_evidence.py
+```
+
+The second command compares the native HGAB IDs, titles and amounts against the
+project attribution audit before generating `congress_boundary_accuracy_review`
+JSON and CSV. It separates matching labels, boundary disagreements, unresolved
+LEG identities and unassigned rows with candidates. It approves no assignment
+from legacy boundary labels alone and does not change public HTML or rankings.
+
 HGAB headline office/program counts and insertion filters are generated with:
 
 ```sh

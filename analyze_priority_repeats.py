@@ -14,7 +14,7 @@ import unicodedata
 from collections import Counter, defaultdict
 from difflib import SequenceMatcher
 from pathlib import Path
-from chainage import compare_chainage, compare_tranche, has_directional_conflict
+from chainage import compare_chainage, compare_tranche, has_directional_conflict, has_structure_identity_conflict, has_bounded_nonoverlap
 
 ROOT = Path(__file__).resolve().parent
 ODV = ROOT.parent / "open-data-visualization"
@@ -83,25 +83,28 @@ def rank_matches(targets: list[dict], prior: list[dict], year: int) -> list[dict
         current_text = informative(current["name"])
         current_tokens = set(current_text.split())
         counts = Counter(
-            i for token in current_tokens for i in token_index.get(token, ())
+            i for token in sorted(current_tokens) for i in token_index.get(token, ())
             if not has_directional_conflict(current["name"], prior[i]["name"])
         )
         shortlist = sorted(
             counts,
-            key=lambda i: counts[i],
-            reverse=True,
+            key=lambda i: (-counts[i], prior[i]['source'], prior[i]['name'], prior[i]['amount']),
         )[:50]
         scored = []
         for i in shortlist:
             old_text, old_tokens = indexed[i]
             old = prior[i]
+            if has_bounded_nonoverlap(current['name'], old['name']):
+                continue
+            if has_structure_identity_conflict(current['name'], old['name']):
+                continue
             chainage = compare_chainage(current["name"], old["name"])
             if current["category"] == "Bridge":
                 # Bridge titles alone are not enough: require an explicit
                 # positive-length chainage overlap.
                 if not chainage["overlaps"]:
                     continue
-            elif current["category"] == "Road":
+            elif current["category"] in {"Road", "Flood control"}:
                 # Exclude a road match when both ranges are stated but disjoint.
                 # Missing or point-only chainage remains visible as unverified.
                 if chainage["has_current_range"] and chainage["has_prior_range"] and not chainage["overlaps"]:
@@ -117,7 +120,7 @@ def rank_matches(targets: list[dict], prior: list[dict], year: int) -> list[dict
             tranche = compare_tranche(current["name"], old["name"])
             score = max(jac, seq * 0.92)
             scored.append((score, old, chainage, tranche))
-        scored.sort(key=lambda pair: pair[0], reverse=True)
+        scored.sort(key=lambda pair: (-pair[0], pair[1]['source'], pair[1]['name'], pair[1]['amount']))
         for rank, (score, old, chainage, tranche) in enumerate(scored[:3], 1):
             results.append({
                 **current,

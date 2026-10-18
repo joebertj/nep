@@ -55,6 +55,10 @@ def apply():
               ['HFEP programme total',h['nepTotalPesos'],h['hgabTotalPesos'],h['totalAdjustmentPesos'],'MOOE and Capital Outlays matched at programme level'],
               ['NIA irrigation appendix','Not established',irrigation_total,'Not established','Detailed NEP works baseline missing'],
               ['DepEd school operations','Not established',deped_total,'Not established','Comparable NEP school baseline not built']]
+    preferred_nep=ROOT/'data_sources/csiiiv/accepted/nep_nia_dataset.json'
+    if preferred_nep.exists():
+        nep_rows=json.loads(preferred_nep.read_text())['projects'];nep_total=sum(r['amount_php'] for r in nep_rows)
+        coverage[3]=['NIA irrigation annex',nep_total,irrigation_total,irrigation_total-nep_total,'Reviewed detailed annex controls; project identity remains separate']
     inject('summary.html','summary-neutral',section('summary-neutral','Other schedules · NEP → HGAB comparison coverage','<p>Compare the same budget hierarchy before calculating changes. Missing comparable NEP data is not zero. The schedules and matched subsets below overlap other findings and must not be summed.</p>'+table(['Scope','NEP allocation pesos','HGAB allocation pesos','Allocation adjustment pesos','Coverage limit'],coverage)))
     for p in [STATIC/'summary-data.json',OUT/'investigation_summary.json']:
         if p.exists():

@@ -128,7 +128,7 @@ def refresh():
     section+='<script type="application/json" id="hgab-headline-data">'+json.dumps(export_rows,ensure_ascii=False).replace('</','<\\/')+'</script>'
     page_path=STATIC/'dpwh-hgab.html';page=page_path.read_text()
     page=re.sub(r'<section class="card section" id="hgab-headline-breakdowns">.*?</section>\s*<script type="application/json" id="hgab-headline-data">.*?</script>','',page,flags=re.S)
-    page=re.sub(r'body\[data-page="insertions"\] main>[^{}]+\{display:none!important\}', 'body[data-page="insertions"] main>section:not(#hgab-insertion):not(#report-hero):not(#hgab-headline-breakdowns):not(#subtractions-domestic):not(#subtractions-fap):not(#allocation-adjustments-domestic):not(#foreign-assisted-review):not(#hgab-investigation-evidence):not(#report-evidence-notice):not(#supporting-methodology){display:none!important}', page)
+    page=re.sub(r'body\[data-page="insertions"\] main>[^{}]+\{display:none!important\}', 'body[data-page="insertions"] main>section:not(#hgab-insertion):not(#report-hero):not(#hgab-headline-breakdowns):not(#subtractions-domestic):not(#subtractions-fap):not(#allocation-adjustments-domestic):not(#foreign-assisted-review):not(#hgab-investigation-evidence):not(#report-evidence-notice):not(#supporting-methodology):not(#external-reference-review){display:none!important}', page)
     page=page.replace('<section id="hgab-insertion"',section+'\n<section id="hgab-insertion"',1)
     page=re.sub(r'<div class="toolbar"><input id="hbInsertionSearch".*?</figure>',lambda _:TOOLBAR,page,count=1,flags=re.S)
     page=page.replace('<th>Extracted HGAB record</th><th>District office</th>','<th>Extracted HGAB record</th><th>Program</th><th>Implementing office</th>')

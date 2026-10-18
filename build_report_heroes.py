@@ -79,12 +79,12 @@ def make_heroes() -> dict[str, str]:
         "dpwh-hgab-comparison.html": hero("DPWH · HB 10858 2nd vs 3rd Reading", str(comparison["statusCounts"].get("New in 3rd reading", 0)), "line items appear only in the 3rd-reading extraction", peso(comparison["thirdAllocationPesos"] - comparison["secondAllocationPesos"]), "net increase across the extracted schedules", [
             ("2nd-reading lines", f"{comparison['secondCandidateCount']:,}", peso(comparison["secondAllocationPesos"])), ("3rd-reading lines", f"{comparison['thirdCandidateCount']:,}", peso(comparison["thirdAllocationPesos"]))],
             "This is a document-stage comparison. A line appearing in one extraction does not by itself establish a policy insertion or deletion."),
-        "nia-irrigation.html": hero("NIA irrigation appendix · 3rd vs 2nd Reading", f"{ir['statusCounts'].get('Same allocation', 0):,}", "irrigation schedule lines retained at the same allocation", peso(ir["thirdTotal"]), "schedule total in the 3rd reading", [
-            ("2nd-reading total", peso(ir["secondTotal"]), f"{ir['secondRows']:,} lines"), ("Allocation changes", f"{ir['statusCounts'].get('Allocation changed', 0):,}", "between the two readings")],
-            "This appendix is separate from NIA named projects. Matching rows show extracted schedule stability, not repeat projects across fiscal years."),
-        "deped.html": hero("DepEd school operations · 3rd vs 2nd Reading", f"{deped['statusCounts'].get('Same allocation', 0):,}", "school allocation lines retained at the same amounts", peso(deped["thirdTotal"]), "schedule total in the 3rd reading", [
-            ("2nd-reading total", peso(deped["secondTotal"]), f"{deped['secondRows']:,} school lines"), ("Allocation changes", f"{deped['statusCounts'].get('Allocation changed', 0):,}", "between the two readings")],
-            "These are school operating allocations, not a school construction-project list. Compare schedule fields and source pages before interpreting the unchanged total."),
+        "nia-irrigation.html": hero("NIA irrigation · NEP → HGAB 3rd reading", "Not established", "comparable detailed NEP baseline", peso(ir["thirdTotal"]), "HGAB extracted irrigation allocation", [
+            ("HGAB occurrences", f"{ir['thirdRows']:,}", "detailed irrigation works"), ("NEP difference", "Not established", "a missing baseline is not zero")],
+            "The workbook has broader NIA entries. Detailed works need a comparable NEP baseline before insertion or allocation-change claims."),
+        "deped.html": hero("DepEd · NEP → HGAB 3rd reading", "Not established", "comparable NEP school baseline", peso(deped["thirdTotal"]), "HGAB extracted school operating allocations", [
+            ("HGAB occurrences", f"{deped['thirdRows']:,}", "school allocation rows"), ("NEP difference", "Not established", "a missing baseline is not zero")],
+            "These are school operating allocations. NEP differences require a comparable school-level baseline; missing comparisons are not zero changes."),
         "fmr.html": hero("Farm-to-market roads · 3rd vs 2nd Reading", f"{fmr['statusCounts'].get('Same allocation', 0):,}", "FMR lines retained at the same allocation", peso(fmr["thirdTotal"]), "schedule total in each reading", [
             ("2nd-reading total", peso(fmr["secondTotal"]), f"{fmr['secondRows']:,} lines"), ("Net allocation change", peso(fmr["thirdTotal"]-fmr["secondTotal"]), "between the two readings")],
             "This compares bill stages. Program envelopes and named lines may represent different levels; unchanged amounts do not establish year-on-year project repetition."),

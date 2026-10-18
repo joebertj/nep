@@ -50,7 +50,7 @@ printf '\n=== Homepage edits vs checkout ===\n'
 git -C "$r" diff --unified=3 -- templates/visualizations_home.html templates/mobile/visualizations_home.html | sed -n '1,180p'
 sha256sum "$r/templates/visualizations_home.html" "$r/templates/mobile/visualizations_home.html"
 printf '\n=== Nginx checks with the site Host header ===\n'
-for path in / /static/nep-preview/ /static/nep-preview/summary.html /static/nep-preview/budget-innovations.html /static/nep-preview/congress.html /static/nep-preview/deped.html /static/nep-preview/dpwh-hgab-comparison.html /static/nep-preview/dpwh-hgab.html /static/nep-preview/dpwh.html /static/nep-preview/fmr.html /static/nep-preview/hfep.html /static/nep-preview/nia-irrigation.html /static/nep-preview/nia.html /static/nep-preview/rcs.html /static/nep-preview/mpb.html /static/nep-preview/cost-per-km.html; do
+for path in / /static/nep-preview/ /static/nep-preview/summary.html /static/nep-preview/budget-innovations.html /static/nep-preview/congress.html /static/nep-preview/deped.html /static/nep-preview/dpwh-hgab-comparison.html /static/nep-preview/dpwh-hgab.html /static/nep-preview/dpwh.html /static/nep-preview/fmr.html /static/nep-preview/hfep.html /static/nep-preview/nia-irrigation.html /static/nep-preview/nia.html /static/nep-preview/rcs.html /static/nep-preview/mpb.html /static/nep-preview/cost-per-km.html /static/nep-preview/cost-matching.html; do
   status="$(curl --silent --show-error --location --max-time 8 --resolve 'research.bettergov.ph:443:127.0.0.1' --output /dev/null --write-out '%{http_code}' "http://research.bettergov.ph$path" 2>/dev/null || true)"
   printf '%s %s\n' "$status" "$path"
 done
@@ -62,7 +62,7 @@ curl --silent --show-error --max-time 5 --output /dev/null --write-out '%{http_c
 app_ip="$(ss -H -ltn 'sport = :8888' 2>/dev/null | awk 'NR==1 {sub(/:[0-9]+$/, "", $4); print $4}')"
 if [[ -n "$app_ip" ]]; then
   printf 'Direct Actix listener checks (%s):\n' "$app_ip"
-  for path in / /static/nep-preview/ /static/nep-preview/summary.html /static/nep-preview/budget-innovations.html /static/nep-preview/congress.html /static/nep-preview/deped.html /static/nep-preview/dpwh-hgab-comparison.html /static/nep-preview/dpwh-hgab.html /static/nep-preview/dpwh.html /static/nep-preview/fmr.html /static/nep-preview/hfep.html /static/nep-preview/nia-irrigation.html /static/nep-preview/nia.html /static/nep-preview/rcs.html /static/nep-preview/mpb.html /static/nep-preview/cost-per-km.html; do
+  for path in / /static/nep-preview/ /static/nep-preview/summary.html /static/nep-preview/budget-innovations.html /static/nep-preview/congress.html /static/nep-preview/deped.html /static/nep-preview/dpwh-hgab-comparison.html /static/nep-preview/dpwh-hgab.html /static/nep-preview/dpwh.html /static/nep-preview/fmr.html /static/nep-preview/hfep.html /static/nep-preview/nia-irrigation.html /static/nep-preview/nia.html /static/nep-preview/rcs.html /static/nep-preview/mpb.html /static/nep-preview/cost-per-km.html /static/nep-preview/cost-matching.html; do
     status="$(curl --silent --show-error --max-time 5 --output /dev/null --write-out '%{http_code}' "http://$app_ip:8888$path" 2>/dev/null || true)"
     printf '%s %s\n' "$status" "$path"
   done
@@ -79,6 +79,11 @@ REMOTE_INSPECT
 set -euo pipefail
 r="$REMOTE_DIR"
 files=(
+  static/nep-preview/research-theme.css
+  static/nep-preview/nep-hgab-comparison-graphs.css
+  static/nep-preview/nep-hgab-comparison-graphs.js
+  static/nep-preview/report-table-readability.css
+  static/nep-preview/report-table-readability.js
   static/nep-preview/congress-benchmark.json
   static/nep-preview/index.html
   static/nep-preview/summary.html
@@ -114,6 +119,18 @@ files=(
   static/nep-preview/mpb.html
   static/nep-preview/mpb-data.json
   static/nep-preview/cost-per-km.html
+  static/nep-preview/cost-matching.html
+  static/nep-preview/external-reference-review.json
+  static/nep-preview/reviewed-source-adoption.json
+  static/nep-preview/reviewed-annex-baselines.json
+  static/nep-preview/archive-higher-level.js
+  static/nep-preview/higher-level-archive.json
+  static/nep-preview/archive/index.html
+  static/nep-preview/project-documents.html
+  static/nep-preview/project-documents.js
+  static/nep-preview/project-document-index.json
+  static/nep-preview/project-document-links.js
+  static/nep-preview/burol-reviewed-pow-rows.json
   static/nep-preview/cost-per-km-data.json
   static/nep-preview/short-segment-audit.json
   static/nep-preview/length-density-groups.json
@@ -121,6 +138,8 @@ files=(
   static/nep-preview/line-item-review-queue.json
   static/nep-preview/within-stage-repeats.json
   static/nep-preview/repeats.html
+  static/nep-preview/chainage-overlap.js
+  static/nep-preview/mpb-proximity.json
   static/nep-preview/fmr-data.json
   static/nep-preview/fmr-annex-equivalence.json
   static/nep-preview/fmr-historical-repeats.json
@@ -129,6 +148,11 @@ files=(
   static/nep-preview/nep-agency-stage-controls.json
 )
 health_files=(
+  static/nep-preview/research-theme.css
+  static/nep-preview/nep-hgab-comparison-graphs.css
+  static/nep-preview/nep-hgab-comparison-graphs.js
+  static/nep-preview/report-table-readability.css
+  static/nep-preview/report-table-readability.js
   static/nep-preview/congress-benchmark.json
   static/nep-preview/rcs-stage-trace.json
   static/nep-preview/rcs-stage-trace.csv
@@ -164,6 +188,18 @@ health_files=(
   static/nep-preview/mpb.html
   static/nep-preview/mpb-data.json
   static/nep-preview/cost-per-km.html
+  static/nep-preview/cost-matching.html
+  static/nep-preview/external-reference-review.json
+  static/nep-preview/reviewed-source-adoption.json
+  static/nep-preview/reviewed-annex-baselines.json
+  static/nep-preview/archive-higher-level.js
+  static/nep-preview/higher-level-archive.json
+  static/nep-preview/archive/index.html
+  static/nep-preview/project-documents.html
+  static/nep-preview/project-documents.js
+  static/nep-preview/project-document-index.json
+  static/nep-preview/project-document-links.js
+  static/nep-preview/burol-reviewed-pow-rows.json
   static/nep-preview/cost-per-km-data.json
   static/nep-preview/short-segment-audit.json
   static/nep-preview/length-density-groups.json

@@ -28,14 +28,14 @@
     "hgabPesos": 19628100000,
     "netAdjustmentPesos": 3628100000,
     "matchStatuses": {
-      "Exact title/region and normalized coordinate agreement": 548,
-      "Exact title/region · segment evidence needs review": 8,
+      "Exact title/region and normalized coordinate agreement": 555,
       "Plausible title counterpart · scope review": 46,
-      "Potential insertion · no plausible NEP counterpart found": 362
+      "Potential insertion · no plausible NEP counterpart found": 362,
+      "Exact title/region · segment evidence needs review": 1
     },
     "unpairedNepProjects": 148,
-    "hgabCoordinateReview": 14,
-    "nepCoordinateReview": 8
+    "hgabCoordinateReview": 2,
+    "nepCoordinateReview": 0
   },
   "projects": [
     {
@@ -306,7 +306,7 @@
         [
           [
             120.7245783,
-            17.00918
+            18.00918
           ],
           [
             120.732015,
@@ -317,22 +317,24 @@
       "segment_count": 1,
       "point_count": 2,
       "start_longitude": 120.7245783,
-      "start_latitude": 17.00918,
+      "start_latitude": 18.00918,
       "end_longitude": 120.732015,
       "end_latitude": 17.9980347,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "endpoint_distance_over_100_km"
+      "status": "normalized",
+      "review_flags": [],
+      "normalization_rules": [
+        "off_by_one_digit_repair_accepted"
       ],
-      "normalization_rules": [],
       "points": [
         {
           "raw": " 17.00918, 120.7245783\n",
           "longitude": 120.7245783,
-          "latitude": 17.00918,
-          "rules": [],
+          "latitude": 18.00918,
+          "rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
@@ -343,7 +345,7 @@
           "id": "ib:p667:r7:point1",
           "coordinates": [
             120.7245783,
-            17.00918
+            18.00918
           ]
         },
         {
@@ -377,25 +379,25 @@
           ],
           "pairing_basis": "single_pair",
           "start_longitude": 120.7245783,
-          "start_latitude": 17.00918,
+          "start_latitude": 18.00918,
           "end_longitude": 120.732015,
           "end_latitude": 17.9980347,
-          "straight_line_distance_km": 109.958606,
-          "normalization_rules": [],
+          "straight_line_distance_km": 1.467771,
+          "normalization_rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "coordinates": [
             [
               120.7245783,
-              17.00918
+              18.00918
             ],
             [
               120.732015,
               17.9980347
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -6149,23 +6151,25 @@
             120.540087,
             18.152453
           ],
-          null
+          [
+            120.53601,
+            18.153581
+          ]
         ]
       ],
       "segment_count": 1,
       "point_count": 2,
       "start_longitude": 120.540087,
       "start_latitude": 18.152453,
-      "end_longitude": null,
-      "end_latitude": null,
+      "end_longitude": 120.53601,
+      "end_latitude": 18.153581,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "invalid_coordinate_pair"
-      ],
+      "status": "normalized",
+      "review_flags": [],
       "normalization_rules": [
-        "longitude_first_reordered"
+        "longitude_first_reordered",
+        "off_by_one_digit_repair_accepted"
       ],
       "points": [
         {
@@ -6190,12 +6194,12 @@
         },
         {
           "raw": " 120.153581, 120.53601",
-          "longitude": null,
-          "latitude": null,
-          "rules": [],
-          "issues": [
-            "invalid_coordinate_pair"
+          "longitude": 120.53601,
+          "latitude": 18.153581,
+          "rules": [
+            "off_by_one_digit_repair_accepted"
           ],
+          "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
           "role": "end",
@@ -6203,7 +6207,10 @@
           "source_fragment_raw": " 120.153581, 120.53601",
           "source_offset": 33,
           "id": "ib:p670:r4:point2",
-          "coordinates": null
+          "coordinates": [
+            120.53601,
+            18.153581
+          ]
         }
       ],
       "segments": [
@@ -6219,23 +6226,25 @@
           "pairing_basis": "single_pair",
           "start_longitude": 120.540087,
           "start_latitude": 18.152453,
-          "end_longitude": null,
-          "end_latitude": null,
-          "straight_line_distance_km": null,
+          "end_longitude": 120.53601,
+          "end_latitude": 18.153581,
+          "straight_line_distance_km": 0.448667,
           "normalization_rules": [
-            "longitude_first_reordered"
+            "longitude_first_reordered",
+            "off_by_one_digit_repair_accepted"
           ],
           "coordinates": [
             [
               120.540087,
               18.152453
             ],
-            null
+            [
+              120.53601,
+              18.153581
+            ]
           ],
-          "review_flags": [
-            "invalid_coordinate_pair"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -20285,7 +20294,7 @@
           ],
           [
             121.879302,
-            18.826792
+            16.826792
           ]
         ]
       ],
@@ -20294,14 +20303,14 @@
       "start_longitude": 121.87951,
       "start_latitude": 16.851721,
       "end_longitude": 121.879302,
-      "end_latitude": 18.826792,
+      "end_latitude": 16.826792,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "endpoint_distance_over_100_km"
+      "status": "normalized",
+      "review_flags": [],
+      "normalization_rules": [
+        "off_by_one_digit_repair_accepted"
       ],
-      "normalization_rules": [],
       "points": [
         {
           "raw": " 16.851721, 121.879510\n",
@@ -20324,8 +20333,10 @@
         {
           "raw": " 18.826792, 121.879302",
           "longitude": 121.879302,
-          "latitude": 18.826792,
-          "rules": [],
+          "latitude": 16.826792,
+          "rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
@@ -20336,7 +20347,7 @@
           "id": "ib:p677:r5:point2",
           "coordinates": [
             121.879302,
-            18.826792
+            16.826792
           ]
         }
       ],
@@ -20354,9 +20365,11 @@
           "start_longitude": 121.87951,
           "start_latitude": 16.851721,
           "end_longitude": 121.879302,
-          "end_latitude": 18.826792,
-          "straight_line_distance_km": 219.618179,
-          "normalization_rules": [],
+          "end_latitude": 16.826792,
+          "straight_line_distance_km": 2.772071,
+          "normalization_rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "coordinates": [
             [
               121.87951,
@@ -20364,13 +20377,11 @@
             ],
             [
               121.879302,
-              18.826792
+              16.826792
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -27832,12 +27843,11 @@
       "end_latitude": 14.829078,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "source_numeric_repair_candidate"
-      ],
+      "status": "normalized",
+      "review_flags": [],
       "normalization_rules": [
-        "missing_latitude_decimal_candidate"
+        "missing_latitude_decimal_candidate",
+        "source_numeric_repair_accepted"
       ],
       "points": [
         {
@@ -27845,11 +27855,10 @@
           "longitude": 121.033211,
           "latitude": 14.828381,
           "rules": [
-            "missing_latitude_decimal_candidate"
+            "missing_latitude_decimal_candidate",
+            "source_numeric_repair_accepted"
           ],
-          "issues": [
-            "source_numeric_repair_candidate"
-          ],
+          "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
           "role": "start",
@@ -27898,7 +27907,8 @@
           "end_latitude": 14.829078,
           "straight_line_distance_km": 10.473315,
           "normalization_rules": [
-            "missing_latitude_decimal_candidate"
+            "missing_latitude_decimal_candidate",
+            "source_numeric_repair_accepted"
           ],
           "coordinates": [
             [
@@ -27910,10 +27920,8 @@
               14.829078
             ]
           ],
-          "review_flags": [
-            "source_numeric_repair_candidate"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -36663,7 +36671,7 @@
             15.6352648
           ],
           [
-            129.8030109,
+            120.8030109,
             15.6377206
           ]
         ]
@@ -36672,16 +36680,15 @@
       "point_count": 2,
       "start_longitude": 120.7972783,
       "start_latitude": 15.6352648,
-      "end_longitude": 129.8030109,
+      "end_longitude": 120.8030109,
       "end_latitude": 15.6377206,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "endpoint_distance_over_100_km",
-        "outside_philippines_orientation_bounds"
+      "status": "normalized",
+      "review_flags": [],
+      "normalization_rules": [
+        "off_by_one_digit_repair_accepted"
       ],
-      "normalization_rules": [],
       "points": [
         {
           "raw": " 15.6352648, 120.7972783\n",
@@ -36703,12 +36710,12 @@
         },
         {
           "raw": " 15.6377206, 129.8030109",
-          "longitude": 129.8030109,
+          "longitude": 120.8030109,
           "latitude": 15.6377206,
-          "rules": [],
-          "issues": [
-            "outside_philippines_orientation_bounds"
+          "rules": [
+            "off_by_one_digit_repair_accepted"
           ],
+          "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
           "role": "end",
@@ -36717,7 +36724,7 @@
           "source_offset": 35,
           "id": "ib:p685:r5:point2",
           "coordinates": [
-            129.8030109,
+            120.8030109,
             15.6377206
           ]
         }
@@ -36735,25 +36742,24 @@
           "pairing_basis": "single_pair",
           "start_longitude": 120.7972783,
           "start_latitude": 15.6352648,
-          "end_longitude": 129.8030109,
+          "end_longitude": 120.8030109,
           "end_latitude": 15.6377206,
-          "straight_line_distance_km": 964.26045,
-          "normalization_rules": [],
+          "straight_line_distance_km": 0.671845,
+          "normalization_rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "coordinates": [
             [
               120.7972783,
               15.6352648
             ],
             [
-              129.8030109,
+              120.8030109,
               15.6377206
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km",
-            "outside_philippines_orientation_bounds"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -52189,13 +52195,13 @@
           ],
           [
             121.583835,
-            4.606694
+            14.606694
           ]
         ],
         [
           [
             121.583412,
-            4.606488
+            14.606488
           ],
           [
             121.579656,
@@ -52211,11 +52217,11 @@
       "end_latitude": null,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "endpoint_distance_over_100_km"
+      "status": "normalized",
+      "review_flags": [],
+      "normalization_rules": [
+        "off_by_one_digit_repair_accepted"
       ],
-      "normalization_rules": [],
       "points": [
         {
           "raw": "14.606378 121.587138,\n",
@@ -52238,8 +52244,10 @@
         {
           "raw": "4.606488 121.583412\n",
           "longitude": 121.583412,
-          "latitude": 4.606488,
-          "rules": [],
+          "latitude": 14.606488,
+          "rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
@@ -52250,14 +52258,16 @@
           "id": "ib:p692:r16:point2",
           "coordinates": [
             121.583412,
-            4.606488
+            14.606488
           ]
         },
         {
           "raw": " 4.606694 121.583835,\n",
           "longitude": 121.583835,
-          "latitude": 4.606694,
-          "rules": [],
+          "latitude": 14.606694,
+          "rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
@@ -52268,7 +52278,7 @@
           "id": "ib:p692:r16:point3",
           "coordinates": [
             121.583835,
-            4.606694
+            14.606694
           ]
         },
         {
@@ -52304,9 +52314,11 @@
           "start_longitude": 121.587138,
           "start_latitude": 14.606378,
           "end_longitude": 121.583835,
-          "end_latitude": 4.606694,
-          "straight_line_distance_km": 1111.915723,
-          "normalization_rules": [],
+          "end_latitude": 14.606694,
+          "straight_line_distance_km": 0.35714,
+          "normalization_rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "coordinates": [
             [
               121.587138,
@@ -52314,13 +52326,11 @@
             ],
             [
               121.583835,
-              4.606694
+              14.606694
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         },
         {
           "id": "ib:p692:r16:segment2",
@@ -52333,25 +52343,25 @@
           ],
           "pairing_basis": "explicit_section",
           "start_longitude": 121.583412,
-          "start_latitude": 4.606488,
+          "start_latitude": 14.606488,
           "end_longitude": 121.579656,
           "end_latitude": 14.606957,
-          "straight_line_distance_km": 1112.003029,
-          "normalization_rules": [],
+          "straight_line_distance_km": 0.407501,
+          "normalization_rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "coordinates": [
             [
               121.583412,
-              4.606488
+              14.606488
             ],
             [
               121.579656,
               14.606957
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -60757,7 +60767,7 @@
             13.840631
           ],
           [
-            121.917756,
+            120.917756,
             13.846302
           ]
         ]
@@ -60766,15 +60776,15 @@
       "point_count": 2,
       "start_longitude": 120.95877,
       "start_latitude": 13.840631,
-      "end_longitude": 121.917756,
+      "end_longitude": 120.917756,
       "end_latitude": 13.846302,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "endpoint_distance_over_100_km"
+      "status": "normalized",
+      "review_flags": [],
+      "normalization_rules": [
+        "off_by_one_digit_repair_accepted"
       ],
-      "normalization_rules": [],
       "points": [
         {
           "raw": " 13.840631, 120.95877\n",
@@ -60796,9 +60806,11 @@
         },
         {
           "raw": " 13.846302, 121.917756",
-          "longitude": 121.917756,
+          "longitude": 120.917756,
           "latitude": 13.846302,
-          "rules": [],
+          "rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
@@ -60808,7 +60820,7 @@
           "source_offset": 32,
           "id": "ib:p696:r17:point2",
           "coordinates": [
-            121.917756,
+            120.917756,
             13.846302
           ]
         }
@@ -60826,24 +60838,24 @@
           "pairing_basis": "single_pair",
           "start_longitude": 120.95877,
           "start_latitude": 13.840631,
-          "end_longitude": 121.917756,
+          "end_longitude": 120.917756,
           "end_latitude": 13.846302,
-          "straight_line_distance_km": 103.538968,
-          "normalization_rules": [],
+          "straight_line_distance_km": 4.472759,
+          "normalization_rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "coordinates": [
             [
               120.95877,
               13.840631
             ],
             [
-              121.917756,
+              120.917756,
               13.846302
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -60999,7 +61011,7 @@
             13.825486
           ],
           [
-            121.914231,
+            120.914231,
             13.823398
           ]
         ]
@@ -61008,15 +61020,15 @@
       "point_count": 2,
       "start_longitude": 120.91245,
       "start_latitude": 13.825486,
-      "end_longitude": 121.914231,
+      "end_longitude": 120.914231,
       "end_latitude": 13.823398,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "endpoint_distance_over_100_km"
+      "status": "normalized",
+      "review_flags": [],
+      "normalization_rules": [
+        "off_by_one_digit_repair_accepted"
       ],
-      "normalization_rules": [],
       "points": [
         {
           "raw": " 13.825486, 120.91245\n",
@@ -61038,9 +61050,11 @@
         },
         {
           "raw": " 13.823398, 121.914231",
-          "longitude": 121.914231,
+          "longitude": 120.914231,
           "latitude": 13.823398,
-          "rules": [],
+          "rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
@@ -61050,7 +61064,7 @@
           "source_offset": 32,
           "id": "ib:p696:r19:point2",
           "coordinates": [
-            121.914231,
+            120.914231,
             13.823398
           ]
         }
@@ -61068,24 +61082,24 @@
           "pairing_basis": "single_pair",
           "start_longitude": 120.91245,
           "start_latitude": 13.825486,
-          "end_longitude": 121.914231,
+          "end_longitude": 120.914231,
           "end_latitude": 13.823398,
-          "straight_line_distance_km": 108.166502,
-          "normalization_rules": [],
+          "straight_line_distance_km": 0.301472,
+          "normalization_rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "coordinates": [
             [
               120.91245,
               13.825486
             ],
             [
-              121.914231,
+              120.914231,
               13.823398
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -62785,7 +62799,7 @@
             13.842103
           ],
           [
-            121.953232,
+            120.953232,
             13.84248
           ]
         ],
@@ -62808,11 +62822,11 @@
       "end_latitude": null,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "endpoint_distance_over_100_km"
+      "status": "normalized",
+      "review_flags": [],
+      "normalization_rules": [
+        "off_by_one_digit_repair_accepted"
       ],
-      "normalization_rules": [],
       "points": [
         {
           "raw": "13.842103, 120.954358\n",
@@ -62852,9 +62866,11 @@
         },
         {
           "raw": "13.84248, 121.953232\n",
-          "longitude": 121.953232,
+          "longitude": 120.953232,
           "latitude": 13.84248,
-          "rules": [],
+          "rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
@@ -62864,7 +62880,7 @@
           "source_offset": 65,
           "id": "ib:p697:r12:point3",
           "coordinates": [
-            121.953232,
+            120.953232,
             13.84248
           ]
         },
@@ -62900,24 +62916,24 @@
           "pairing_basis": "explicit_section",
           "start_longitude": 120.954358,
           "start_latitude": 13.842103,
-          "end_longitude": 121.953232,
+          "end_longitude": 120.953232,
           "end_latitude": 13.84248,
-          "straight_line_distance_km": 107.844107,
-          "normalization_rules": [],
+          "straight_line_distance_km": 0.128594,
+          "normalization_rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "coordinates": [
             [
               120.954358,
               13.842103
             ],
             [
-              121.953232,
+              120.953232,
               13.84248
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         },
         {
           "id": "ib:p697:r12:segment2",
@@ -74071,12 +74087,11 @@
       "end_latitude": 12.528813,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "source_numeric_repair_candidate"
-      ],
+      "status": "normalized",
+      "review_flags": [],
       "normalization_rules": [
-        "extra_decimal_separator_candidate"
+        "extra_decimal_separator_candidate",
+        "source_numeric_repair_accepted"
       ],
       "points": [
         {
@@ -74102,11 +74117,10 @@
           "longitude": 123.69192,
           "latitude": 12.528813,
           "rules": [
-            "extra_decimal_separator_candidate"
+            "extra_decimal_separator_candidate",
+            "source_numeric_repair_accepted"
           ],
-          "issues": [
-            "source_numeric_repair_candidate"
-          ],
+          "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
           "role": "end",
@@ -74137,7 +74151,8 @@
           "end_latitude": 12.528813,
           "straight_line_distance_km": 1.692223,
           "normalization_rules": [
-            "extra_decimal_separator_candidate"
+            "extra_decimal_separator_candidate",
+            "source_numeric_repair_accepted"
           ],
           "coordinates": [
             [
@@ -74149,10 +74164,8 @@
               12.528813
             ]
           ],
-          "review_flags": [
-            "source_numeric_repair_candidate"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -92594,7 +92607,7 @@
           ],
           [
             123.4080266,
-            1.8042275
+            9.8042275
           ]
         ]
       ],
@@ -92606,13 +92619,11 @@
       "end_latitude": null,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "endpoint_distance_over_100_km",
-        "outside_philippines_orientation_bounds"
-      ],
+      "status": "normalized",
+      "review_flags": [],
       "normalization_rules": [
-        "decimal_spacing_removed"
+        "decimal_spacing_removed",
+        "off_by_one_digit_repair_accepted"
       ],
       "points": [
         {
@@ -92674,11 +92685,11 @@
         {
           "raw": " 1.8042275, 123.4080266",
           "longitude": 123.4080266,
-          "latitude": 1.8042275,
-          "rules": [],
-          "issues": [
-            "outside_philippines_orientation_bounds"
+          "latitude": 9.8042275,
+          "rules": [
+            "off_by_one_digit_repair_accepted"
           ],
+          "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
           "role": "end",
@@ -92688,7 +92699,7 @@
           "id": "ib:p713:r3:point4",
           "coordinates": [
             123.4080266,
-            1.8042275
+            9.8042275
           ]
         }
       ],
@@ -92737,9 +92748,11 @@
           "start_longitude": 123.406771,
           "start_latitude": 9.8052549,
           "end_longitude": 123.4080266,
-          "end_latitude": 1.8042275,
-          "straight_line_distance_km": 889.674895,
-          "normalization_rules": [],
+          "end_latitude": 9.8042275,
+          "straight_line_distance_km": 0.178826,
+          "normalization_rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "coordinates": [
             [
               123.406771,
@@ -92747,14 +92760,11 @@
             ],
             [
               123.4080266,
-              1.8042275
+              9.8042275
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km",
-            "outside_philippines_orientation_bounds"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -93502,7 +93512,7 @@
         [
           [
             124.488833,
-            11.871556
+            10.871556
           ],
           [
             124.485778,
@@ -93513,22 +93523,24 @@
       "segment_count": 1,
       "point_count": 2,
       "start_longitude": 124.488833,
-      "start_latitude": 11.871556,
+      "start_latitude": 10.871556,
       "end_longitude": 124.485778,
       "end_latitude": 10.878222,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "endpoint_distance_over_100_km"
+      "status": "normalized",
+      "review_flags": [],
+      "normalization_rules": [
+        "off_by_one_digit_repair_accepted"
       ],
-      "normalization_rules": [],
       "points": [
         {
           "raw": " 11.871556, 124.488833\n",
           "longitude": 124.488833,
-          "latitude": 11.871556,
-          "rules": [],
+          "latitude": 10.871556,
+          "rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
@@ -93539,7 +93551,7 @@
           "id": "ib:p713:r12:point1",
           "coordinates": [
             124.488833,
-            11.871556
+            10.871556
           ]
         },
         {
@@ -93573,25 +93585,25 @@
           ],
           "pairing_basis": "single_pair",
           "start_longitude": 124.488833,
-          "start_latitude": 11.871556,
+          "start_latitude": 10.871556,
           "end_longitude": 124.485778,
           "end_latitude": 10.878222,
-          "straight_line_distance_km": 110.454356,
-          "normalization_rules": [],
+          "straight_line_distance_km": 0.812838,
+          "normalization_rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "coordinates": [
             [
               124.488833,
-              11.871556
+              10.871556
             ],
             [
               124.485778,
               10.878222
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -119422,10 +119434,8 @@
           "project_id": "ib:p667:r7",
           "title": "Construction of Brgy. Escoda - Brgy. Elizabeth FMR, Brgy. Escoda and Brgy. Elizabeth, Marcos, Ilocos Norte",
           "coordinates_raw": "START: 17.00918, 120.7245783\nEND: 17.9980347, 120.732015",
-          "status": "needs_review",
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
+          "status": "normalized",
+          "review_flags": [],
           "source": {
             "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
             "row_id": "ib:p667:r7",
@@ -119452,7 +119462,7 @@
         [
           [
             120.7245783,
-            17.00918
+            18.00918
           ],
           [
             120.732015,
@@ -119463,22 +119473,24 @@
       "segment_count": 1,
       "point_count": 2,
       "start_longitude": 120.7245783,
-      "start_latitude": 17.00918,
+      "start_latitude": 18.00918,
       "end_longitude": 120.732015,
       "end_latitude": 17.9980347,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "endpoint_distance_over_100_km"
+      "status": "normalized",
+      "review_flags": [],
+      "normalization_rules": [
+        "off_by_one_digit_repair_accepted"
       ],
-      "normalization_rules": [],
       "points": [
         {
           "raw": " 17.00918, 120.7245783\n",
           "longitude": 120.7245783,
-          "latitude": 17.00918,
-          "rules": [],
+          "latitude": 18.00918,
+          "rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
@@ -119492,7 +119504,7 @@
           "id": "nep_fmr:p1:r7:point1",
           "coordinates": [
             120.7245783,
-            17.00918
+            18.00918
           ]
         },
         {
@@ -119529,25 +119541,25 @@
           ],
           "pairing_basis": "single_pair",
           "start_longitude": 120.7245783,
-          "start_latitude": 17.00918,
+          "start_latitude": 18.00918,
           "end_longitude": 120.732015,
           "end_latitude": 17.9980347,
-          "straight_line_distance_km": 109.958606,
-          "normalization_rules": [],
+          "straight_line_distance_km": 1.467771,
+          "normalization_rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "coordinates": [
             [
               120.7245783,
-              17.00918
+              18.00918
             ],
             [
               120.732015,
               17.9980347
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -126631,10 +126643,8 @@
           "project_id": "ib:p670:r4",
           "title": "Construction of Brgy. 41 Balacad FMR, Laoag City, Ilocos Norte",
           "coordinates_raw": "START: 120.540087, 18.152453\nEND: 120.153581, 120.53601",
-          "status": "needs_review",
-          "review_flags": [
-            "invalid_coordinate_pair"
-          ],
+          "status": "normalized",
+          "review_flags": [],
           "source": {
             "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
             "row_id": "ib:p670:r4",
@@ -126663,23 +126673,25 @@
             120.540087,
             18.152453
           ],
-          null
+          [
+            120.53601,
+            18.153581
+          ]
         ]
       ],
       "segment_count": 1,
       "point_count": 2,
       "start_longitude": 120.540087,
       "start_latitude": 18.152453,
-      "end_longitude": null,
-      "end_latitude": null,
+      "end_longitude": 120.53601,
+      "end_latitude": 18.153581,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "invalid_coordinate_pair"
-      ],
+      "status": "normalized",
+      "review_flags": [],
       "normalization_rules": [
-        "longitude_first_reordered"
+        "longitude_first_reordered",
+        "off_by_one_digit_repair_accepted"
       ],
       "points": [
         {
@@ -126707,12 +126719,12 @@
         },
         {
           "raw": " 120.153581, 120.53601",
-          "longitude": null,
-          "latitude": null,
-          "rules": [],
-          "issues": [
-            "invalid_coordinate_pair"
+          "longitude": 120.53601,
+          "latitude": 18.153581,
+          "rules": [
+            "off_by_one_digit_repair_accepted"
           ],
+          "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
           "role": "end",
@@ -126723,7 +126735,10 @@
           "interpreted_source_offset": 33,
           "source_end_offset": 55,
           "id": "nep_fmr:p4:r13:point2",
-          "coordinates": null
+          "coordinates": [
+            120.53601,
+            18.153581
+          ]
         }
       ],
       "segments": [
@@ -126739,23 +126754,25 @@
           "pairing_basis": "single_pair",
           "start_longitude": 120.540087,
           "start_latitude": 18.152453,
-          "end_longitude": null,
-          "end_latitude": null,
-          "straight_line_distance_km": null,
+          "end_longitude": 120.53601,
+          "end_latitude": 18.153581,
+          "straight_line_distance_km": 0.448667,
           "normalization_rules": [
-            "longitude_first_reordered"
+            "longitude_first_reordered",
+            "off_by_one_digit_repair_accepted"
           ],
           "coordinates": [
             [
               120.540087,
               18.152453
             ],
-            null
+            [
+              120.53601,
+              18.153581
+            ]
           ],
-          "review_flags": [
-            "invalid_coordinate_pair"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -140094,10 +140111,8 @@
           "project_id": "ib:p677:r5",
           "title": "Construction of Brgy. Buyon FMR, Brgy. Buyon, Cauayan City, Isabela",
           "coordinates_raw": "START: 16.851721, 121.879510\nEND: 18.826792, 121.879302",
-          "status": "needs_review",
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
+          "status": "normalized",
+          "review_flags": [],
           "source": {
             "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
             "row_id": "ib:p677:r5",
@@ -140128,7 +140143,7 @@
           ],
           [
             121.879302,
-            18.826792
+            16.826792
           ]
         ]
       ],
@@ -140137,14 +140152,14 @@
       "start_longitude": 121.87951,
       "start_latitude": 16.851721,
       "end_longitude": 121.879302,
-      "end_latitude": 18.826792,
+      "end_latitude": 16.826792,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "endpoint_distance_over_100_km"
+      "status": "normalized",
+      "review_flags": [],
+      "normalization_rules": [
+        "off_by_one_digit_repair_accepted"
       ],
-      "normalization_rules": [],
       "points": [
         {
           "raw": " 16.851721, 121.879510\n",
@@ -140170,8 +140185,10 @@
         {
           "raw": " 18.826792, 121.879302",
           "longitude": 121.879302,
-          "latitude": 18.826792,
-          "rules": [],
+          "latitude": 16.826792,
+          "rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
@@ -140185,7 +140202,7 @@
           "id": "nep_fmr:p11:r11:point2",
           "coordinates": [
             121.879302,
-            18.826792
+            16.826792
           ]
         }
       ],
@@ -140203,9 +140220,11 @@
           "start_longitude": 121.87951,
           "start_latitude": 16.851721,
           "end_longitude": 121.879302,
-          "end_latitude": 18.826792,
-          "straight_line_distance_km": 219.618179,
-          "normalization_rules": [],
+          "end_latitude": 16.826792,
+          "straight_line_distance_km": 2.772071,
+          "normalization_rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "coordinates": [
             [
               121.87951,
@@ -140213,13 +140232,11 @@
             ],
             [
               121.879302,
-              18.826792
+              16.826792
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -155507,11 +155524,8 @@
           "project_id": "ib:p685:r5",
           "title": "Construction of Brgy. Tampac I FMR, Brgy. Tampac I, Guimba, Nueva Ecija",
           "coordinates_raw": "START: 15.6352648, 120.7972783\nEND: 15.6377206, 129.8030109",
-          "status": "needs_review",
-          "review_flags": [
-            "endpoint_distance_over_100_km",
-            "outside_philippines_orientation_bounds"
-          ],
+          "status": "normalized",
+          "review_flags": [],
           "source": {
             "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
             "row_id": "ib:p685:r5",
@@ -155541,7 +155555,7 @@
             15.6352648
           ],
           [
-            129.8030109,
+            120.8030109,
             15.6377206
           ]
         ]
@@ -155550,16 +155564,15 @@
       "point_count": 2,
       "start_longitude": 120.7972783,
       "start_latitude": 15.6352648,
-      "end_longitude": 129.8030109,
+      "end_longitude": 120.8030109,
       "end_latitude": 15.6377206,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "endpoint_distance_over_100_km",
-        "outside_philippines_orientation_bounds"
+      "status": "normalized",
+      "review_flags": [],
+      "normalization_rules": [
+        "off_by_one_digit_repair_accepted"
       ],
-      "normalization_rules": [],
       "points": [
         {
           "raw": " 15.6352648, 120.7972783\n",
@@ -155584,12 +155597,12 @@
         },
         {
           "raw": " 15.6377206, 129.8030109",
-          "longitude": 129.8030109,
+          "longitude": 120.8030109,
           "latitude": 15.6377206,
-          "rules": [],
-          "issues": [
-            "outside_philippines_orientation_bounds"
+          "rules": [
+            "off_by_one_digit_repair_accepted"
           ],
+          "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
           "role": "end",
@@ -155601,7 +155614,7 @@
           "source_end_offset": 59,
           "id": "nep_fmr:p18:r15:point2",
           "coordinates": [
-            129.8030109,
+            120.8030109,
             15.6377206
           ]
         }
@@ -155619,25 +155632,24 @@
           "pairing_basis": "single_pair",
           "start_longitude": 120.7972783,
           "start_latitude": 15.6352648,
-          "end_longitude": 129.8030109,
+          "end_longitude": 120.8030109,
           "end_latitude": 15.6377206,
-          "straight_line_distance_km": 964.26045,
-          "normalization_rules": [],
+          "straight_line_distance_km": 0.671845,
+          "normalization_rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "coordinates": [
             [
               120.7972783,
               15.6352648
             ],
             [
-              129.8030109,
+              120.8030109,
               15.6377206
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km",
-            "outside_philippines_orientation_bounds"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -167141,10 +167153,8 @@
           "project_id": "ib:p692:r16",
           "title": "Construction of Brgy. Tagumpay FMR, Brgy. Tagumpay, Real, Quezon",
           "coordinates_raw": "START: S1-14.606378 121.587138,\nS2-4.606488 121.583412\nEND: S1- 4.606694 121.583835,\nS2-14.606957 121.579656",
-          "status": "needs_review",
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
+          "status": "normalized",
+          "review_flags": [],
           "source": {
             "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
             "row_id": "ib:p692:r16",
@@ -167175,13 +167185,13 @@
           ],
           [
             121.583835,
-            4.606694
+            14.606694
           ]
         ],
         [
           [
             121.583412,
-            4.606488
+            14.606488
           ],
           [
             121.579656,
@@ -167197,12 +167207,11 @@
       "end_latitude": null,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "endpoint_distance_over_100_km"
-      ],
+      "status": "normalized",
+      "review_flags": [],
       "normalization_rules": [
-        "image_reviewed_ocr_transcription"
+        "image_reviewed_ocr_transcription",
+        "off_by_one_digit_repair_accepted"
       ],
       "points": [
         {
@@ -167229,8 +167238,10 @@
         {
           "raw": "4.606488, 121.583412\n",
           "longitude": 121.583412,
-          "latitude": 4.606488,
-          "rules": [],
+          "latitude": 14.606488,
+          "rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
@@ -167244,14 +167255,16 @@
           "id": "nep_fmr:p24:r10:point2",
           "coordinates": [
             121.583412,
-            4.606488
+            14.606488
           ]
         },
         {
           "raw": " 4.606694, 121.583835 ",
           "longitude": 121.583835,
-          "latitude": 4.606694,
-          "rules": [],
+          "latitude": 14.606694,
+          "rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
@@ -167265,7 +167278,7 @@
           "id": "nep_fmr:p24:r10:point3",
           "coordinates": [
             121.583835,
-            4.606694
+            14.606694
           ]
         },
         {
@@ -167304,10 +167317,11 @@
           "start_longitude": 121.587138,
           "start_latitude": 14.606378,
           "end_longitude": 121.583835,
-          "end_latitude": 4.606694,
-          "straight_line_distance_km": 1111.915723,
+          "end_latitude": 14.606694,
+          "straight_line_distance_km": 0.35714,
           "normalization_rules": [
-            "image_reviewed_ocr_transcription"
+            "image_reviewed_ocr_transcription",
+            "off_by_one_digit_repair_accepted"
           ],
           "coordinates": [
             [
@@ -167316,13 +167330,11 @@
             ],
             [
               121.583835,
-              4.606694
+              14.606694
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         },
         {
           "id": "nep_fmr:p24:r10:segment2",
@@ -167335,27 +167347,26 @@
           ],
           "pairing_basis": "explicit_section",
           "start_longitude": 121.583412,
-          "start_latitude": 4.606488,
+          "start_latitude": 14.606488,
           "end_longitude": 121.579656,
           "end_latitude": 14.606957,
-          "straight_line_distance_km": 1112.003029,
+          "straight_line_distance_km": 0.407501,
           "normalization_rules": [
-            "image_reviewed_ocr_transcription"
+            "image_reviewed_ocr_transcription",
+            "off_by_one_digit_repair_accepted"
           ],
           "coordinates": [
             [
               121.583412,
-              4.606488
+              14.606488
             ],
             [
               121.579656,
               14.606957
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -180296,10 +180307,8 @@
           "project_id": "ib:p703:r11",
           "title": "Construction of Brgy. Luna to Brgy. San Isidro FMR, San Jacinto, Masbate",
           "coordinates_raw": "Start: 12.529293, 123.707502\nEnd: 12.528813, 123.691.92",
-          "status": "needs_review",
-          "review_flags": [
-            "source_numeric_repair_candidate"
-          ],
+          "status": "normalized",
+          "review_flags": [],
           "source": {
             "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
             "row_id": "ib:p703:r11",
@@ -180342,12 +180351,11 @@
       "end_latitude": 12.528813,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "source_numeric_repair_candidate"
-      ],
+      "status": "normalized",
+      "review_flags": [],
       "normalization_rules": [
-        "extra_decimal_separator_candidate"
+        "extra_decimal_separator_candidate",
+        "source_numeric_repair_accepted"
       ],
       "points": [
         {
@@ -180376,11 +180384,10 @@
           "longitude": 123.69192,
           "latitude": 12.528813,
           "rules": [
-            "extra_decimal_separator_candidate"
+            "extra_decimal_separator_candidate",
+            "source_numeric_repair_accepted"
           ],
-          "issues": [
-            "source_numeric_repair_candidate"
-          ],
+          "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
           "role": "end",
@@ -180414,7 +180421,8 @@
           "end_latitude": 12.528813,
           "straight_line_distance_km": 1.692223,
           "normalization_rules": [
-            "extra_decimal_separator_candidate"
+            "extra_decimal_separator_candidate",
+            "source_numeric_repair_accepted"
           ],
           "coordinates": [
             [
@@ -180426,10 +180434,8 @@
               12.528813
             ]
           ],
-          "review_flags": [
-            "source_numeric_repair_candidate"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -193166,10 +193172,8 @@
           "project_id": "ib:p713:r12",
           "title": "Construction of Sitio Busay, Brgy. Apale FMR, Brgy. Apale, Isabel, Leyte",
           "coordinates_raw": "START: 11.871556, 124.488833\nEND: 10.878222, 124.485778",
-          "status": "needs_review",
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
+          "status": "normalized",
+          "review_flags": [],
           "source": {
             "source_pdf": "HB_BUDGET/2 - HB 10858 VOL IB.pdf",
             "row_id": "ib:p713:r12",
@@ -193196,7 +193200,7 @@
         [
           [
             124.488833,
-            11.871556
+            10.871556
           ],
           [
             124.485778,
@@ -193207,22 +193211,24 @@
       "segment_count": 1,
       "point_count": 2,
       "start_longitude": 124.488833,
-      "start_latitude": 11.871556,
+      "start_latitude": 10.871556,
       "end_longitude": 124.485778,
       "end_latitude": 10.878222,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "endpoint_distance_over_100_km"
+      "status": "normalized",
+      "review_flags": [],
+      "normalization_rules": [
+        "off_by_one_digit_repair_accepted"
       ],
-      "normalization_rules": [],
       "points": [
         {
           "raw": " 11.871556, 124.488833\n",
           "longitude": 124.488833,
-          "latitude": 11.871556,
-          "rules": [],
+          "latitude": 10.871556,
+          "rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
@@ -193236,7 +193242,7 @@
           "id": "nep_fmr:p37:r8:point1",
           "coordinates": [
             124.488833,
-            11.871556
+            10.871556
           ]
         },
         {
@@ -193273,25 +193279,25 @@
           ],
           "pairing_basis": "single_pair",
           "start_longitude": 124.488833,
-          "start_latitude": 11.871556,
+          "start_latitude": 10.871556,
           "end_longitude": 124.485778,
           "end_latitude": 10.878222,
-          "straight_line_distance_km": 110.454356,
-          "normalization_rules": [],
+          "straight_line_distance_km": 0.812838,
+          "normalization_rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "coordinates": [
             [
               124.488833,
-              11.871556
+              10.871556
             ],
             [
               124.485778,
               10.878222
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -207019,7 +207025,7 @@
             7.985605
           ],
           [
-            125.008575,
+            126.008575,
             7.989994
           ]
         ]
@@ -207028,15 +207034,15 @@
       "point_count": 2,
       "start_longitude": 126.009391,
       "start_latitude": 7.985605,
-      "end_longitude": 125.008575,
+      "end_longitude": 126.008575,
       "end_latitude": 7.989994,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "endpoint_distance_over_100_km"
+      "status": "normalized",
+      "review_flags": [],
+      "normalization_rules": [
+        "off_by_one_digit_repair_accepted"
       ],
-      "normalization_rules": [],
       "points": [
         {
           "raw": " 7.985605, 126.009391\n",
@@ -207061,9 +207067,11 @@
         },
         {
           "raw": " 7.989994, 125.008575",
-          "longitude": 125.008575,
+          "longitude": 126.008575,
           "latitude": 7.989994,
-          "rules": [],
+          "rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
@@ -207076,7 +207084,7 @@
           "source_end_offset": 53,
           "id": "nep_fmr:p44:r10:point2",
           "coordinates": [
-            125.008575,
+            126.008575,
             7.989994
           ]
         }
@@ -207094,24 +207102,24 @@
           "pairing_basis": "single_pair",
           "start_longitude": 126.009391,
           "start_latitude": 7.985605,
-          "end_longitude": 125.008575,
+          "end_longitude": 126.008575,
           "end_latitude": 7.989994,
-          "straight_line_distance_km": 110.207139,
-          "normalization_rules": [],
+          "straight_line_distance_km": 0.496238,
+          "normalization_rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "coordinates": [
             [
               126.009391,
               7.985605
             ],
             [
-              125.008575,
+              126.008575,
               7.989994
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -212914,16 +212922,14 @@
       "projectName": "Construction of Brgy. Escoda - Brgy. Elizabeth FMR, Brgy. Escoda and Brgy. Elizabeth, Marcos, Ilocos Norte",
       "region": "REGION I - ILOCOS",
       "amountPesos": 30000000,
-      "status": "Exact title/region · segment evidence needs review",
+      "status": "Exact title/region and normalized coordinate agreement",
       "nepId": "nep_fmr:p1:r7",
       "nepTitle": "Construction of Brgy. Escoda - Brgy. Elizabeth FMR, Brgy. Escoda and Brgy. Elizabeth, Marcos, Ilocos Norte",
       "nepPesos": 30000000,
       "allocationAdjustmentPesos": 0,
       "plausibleCounterparts": [],
-      "coordinateStatus": "needs_review",
-      "coordinateReviewFlags": [
-        "endpoint_distance_over_100_km"
-      ],
+      "coordinateStatus": "normalized",
+      "coordinateReviewFlags": [],
       "sourcePage": 667,
       "printedPage": 651
     },
@@ -213702,16 +213708,14 @@
       "projectName": "Construction of Brgy. 41 Balacad FMR, Laoag City, Ilocos Norte",
       "region": "REGION I - ILOCOS",
       "amountPesos": 10000000,
-      "status": "Exact title/region · segment evidence needs review",
+      "status": "Exact title/region and normalized coordinate agreement",
       "nepId": "nep_fmr:p4:r13",
       "nepTitle": "Construction of Brgy. 41 Balacad FMR, Laoag City, Ilocos Norte",
       "nepPesos": 10000000,
       "allocationAdjustmentPesos": 0,
       "plausibleCounterparts": [],
-      "coordinateStatus": "needs_review",
-      "coordinateReviewFlags": [
-        "invalid_coordinate_pair"
-      ],
+      "coordinateStatus": "normalized",
+      "coordinateReviewFlags": [],
       "sourcePage": 670,
       "printedPage": 654
     },
@@ -215610,16 +215614,14 @@
       "projectName": "Construction of Brgy. Buyon FMR, Brgy. Buyon, Cauayan City, Isabela",
       "region": "REGION II - CAGAYAN VALLEY",
       "amountPesos": 15000000,
-      "status": "Exact title/region · segment evidence needs review",
+      "status": "Exact title/region and normalized coordinate agreement",
       "nepId": "nep_fmr:p11:r11",
       "nepTitle": "Construction of Brgy. Buyon FMR, Brgy. Buyon, Cauayan City, Isabela",
       "nepPesos": 15000000,
       "allocationAdjustmentPesos": 0,
       "plausibleCounterparts": [],
-      "coordinateStatus": "needs_review",
-      "coordinateReviewFlags": [
-        "endpoint_distance_over_100_km"
-      ],
+      "coordinateStatus": "normalized",
+      "coordinateReviewFlags": [],
       "sourcePage": 677,
       "printedPage": 661
     },
@@ -216542,10 +216544,8 @@
       "nepPesos": null,
       "allocationAdjustmentPesos": null,
       "plausibleCounterparts": [],
-      "coordinateStatus": "needs_review",
-      "coordinateReviewFlags": [
-        "source_numeric_repair_candidate"
-      ],
+      "coordinateStatus": "normalized",
+      "coordinateReviewFlags": [],
       "sourcePage": 680,
       "printedPage": 664
     },
@@ -217763,17 +217763,14 @@
       "projectName": "Construction of Brgy. Tampac I FMR, Brgy. Tampac I, Guimba, Nueva Ecija",
       "region": "REGION III - CENTRAL LUZON",
       "amountPesos": 23375000,
-      "status": "Exact title/region · segment evidence needs review",
+      "status": "Exact title/region and normalized coordinate agreement",
       "nepId": "nep_fmr:p18:r15",
       "nepTitle": "Construction of Brgy. Tampac I FMR, Brgy. Tampac I, Guimba, Nueva Ecija",
       "nepPesos": 23375000,
       "allocationAdjustmentPesos": 0,
       "plausibleCounterparts": [],
-      "coordinateStatus": "needs_review",
-      "coordinateReviewFlags": [
-        "endpoint_distance_over_100_km",
-        "outside_philippines_orientation_bounds"
-      ],
+      "coordinateStatus": "normalized",
+      "coordinateReviewFlags": [],
       "sourcePage": 685,
       "printedPage": 669
     },
@@ -219887,16 +219884,14 @@
       "projectName": "Construction of Brgy. Tagumpay FMR, Brgy. Tagumpay, Real, Quezon",
       "region": "REGION IVA - CALABARZON",
       "amountPesos": 55000000,
-      "status": "Exact title/region · segment evidence needs review",
+      "status": "Exact title/region and normalized coordinate agreement",
       "nepId": "nep_fmr:p24:r10",
       "nepTitle": "Construction of Brgy. Tagumpay FMR, Brgy. Tagumpay, Real, Quezon",
       "nepPesos": 55000000,
       "allocationAdjustmentPesos": 0,
       "plausibleCounterparts": [],
-      "coordinateStatus": "needs_review",
-      "coordinateReviewFlags": [
-        "endpoint_distance_over_100_km"
-      ],
+      "coordinateStatus": "normalized",
+      "coordinateReviewFlags": [],
       "sourcePage": 692,
       "printedPage": 676
     },
@@ -220863,10 +220858,8 @@
       "nepPesos": null,
       "allocationAdjustmentPesos": null,
       "plausibleCounterparts": [],
-      "coordinateStatus": "needs_review",
-      "coordinateReviewFlags": [
-        "endpoint_distance_over_100_km"
-      ],
+      "coordinateStatus": "normalized",
+      "coordinateReviewFlags": [],
       "sourcePage": 696,
       "printedPage": 680
     },
@@ -220897,10 +220890,8 @@
       "nepPesos": null,
       "allocationAdjustmentPesos": null,
       "plausibleCounterparts": [],
-      "coordinateStatus": "needs_review",
-      "coordinateReviewFlags": [
-        "endpoint_distance_over_100_km"
-      ],
+      "coordinateStatus": "normalized",
+      "coordinateReviewFlags": [],
       "sourcePage": 696,
       "printedPage": 680
     },
@@ -221081,10 +221072,8 @@
       "nepPesos": null,
       "allocationAdjustmentPesos": null,
       "plausibleCounterparts": [],
-      "coordinateStatus": "needs_review",
-      "coordinateReviewFlags": [
-        "endpoint_distance_over_100_km"
-      ],
+      "coordinateStatus": "normalized",
+      "coordinateReviewFlags": [],
       "sourcePage": 697,
       "printedPage": 681
     },
@@ -222573,16 +222562,14 @@
       "projectName": "Construction of Brgy. Luna to Brgy. San Isidro FMR, San Jacinto, Masbate",
       "region": "REGION V - BICOL",
       "amountPesos": 15000000,
-      "status": "Exact title/region · segment evidence needs review",
+      "status": "Exact title/region and normalized coordinate agreement",
       "nepId": "nep_fmr:p30:r14",
       "nepTitle": "Construction of Brgy. Luna to Brgy. San Isidro FMR, San Jacinto, Masbate",
       "nepPesos": 15000000,
       "allocationAdjustmentPesos": 0,
       "plausibleCounterparts": [],
-      "coordinateStatus": "needs_review",
-      "coordinateReviewFlags": [
-        "source_numeric_repair_candidate"
-      ],
+      "coordinateStatus": "normalized",
+      "coordinateReviewFlags": [],
       "sourcePage": 703,
       "printedPage": 687
     },
@@ -225075,11 +225062,8 @@
       "nepPesos": null,
       "allocationAdjustmentPesos": null,
       "plausibleCounterparts": [],
-      "coordinateStatus": "needs_review",
-      "coordinateReviewFlags": [
-        "endpoint_distance_over_100_km",
-        "outside_philippines_orientation_bounds"
-      ],
+      "coordinateStatus": "normalized",
+      "coordinateReviewFlags": [],
       "sourcePage": 713,
       "printedPage": 697
     },
@@ -225184,16 +225168,14 @@
       "projectName": "Construction of Sitio Busay, Brgy. Apale FMR, Brgy. Apale, Isabel, Leyte",
       "region": "REGION VIII - EASTERN VISAYAS",
       "amountPesos": 15000000,
-      "status": "Exact title/region · segment evidence needs review",
+      "status": "Exact title/region and normalized coordinate agreement",
       "nepId": "nep_fmr:p37:r8",
       "nepTitle": "Construction of Sitio Busay, Brgy. Apale FMR, Brgy. Apale, Isabel, Leyte",
       "nepPesos": 15000000,
       "allocationAdjustmentPesos": 0,
       "plausibleCounterparts": [],
-      "coordinateStatus": "needs_review",
-      "coordinateReviewFlags": [
-        "endpoint_distance_over_100_km"
-      ],
+      "coordinateStatus": "normalized",
+      "coordinateReviewFlags": [],
       "sourcePage": 713,
       "printedPage": 697
     },
@@ -247489,7 +247471,7 @@
             7.985605
           ],
           [
-            125.008575,
+            126.008575,
             7.989994
           ]
         ]
@@ -247498,15 +247480,15 @@
       "point_count": 2,
       "start_longitude": 126.009391,
       "start_latitude": 7.985605,
-      "end_longitude": 125.008575,
+      "end_longitude": 126.008575,
       "end_latitude": 7.989994,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "endpoint_distance_over_100_km"
+      "status": "normalized",
+      "review_flags": [],
+      "normalization_rules": [
+        "off_by_one_digit_repair_accepted"
       ],
-      "normalization_rules": [],
       "points": [
         {
           "raw": " 7.985605, 126.009391\n",
@@ -247531,9 +247513,11 @@
         },
         {
           "raw": " 7.989994, 125.008575",
-          "longitude": 125.008575,
+          "longitude": 126.008575,
           "latitude": 7.989994,
-          "rules": [],
+          "rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
@@ -247546,7 +247530,7 @@
           "source_end_offset": 53,
           "id": "nep_fmr:p44:r10:point2",
           "coordinates": [
-            125.008575,
+            126.008575,
             7.989994
           ]
         }
@@ -247564,24 +247548,24 @@
           "pairing_basis": "single_pair",
           "start_longitude": 126.009391,
           "start_latitude": 7.985605,
-          "end_longitude": 125.008575,
+          "end_longitude": 126.008575,
           "end_latitude": 7.989994,
-          "straight_line_distance_km": 110.207139,
-          "normalization_rules": [],
+          "straight_line_distance_km": 0.496238,
+          "normalization_rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "coordinates": [
             [
               126.009391,
               7.985605
             ],
             [
-              125.008575,
+              126.008575,
               7.989994
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -248484,7 +248468,7 @@
   ],
   "method": "One-to-one full normalized title plus printed-region join; normalized coordinate arrays (six decimal digits) strengthen segment evidence but never define road length. Free occurrences selected by coordinate agreement, then amount difference. Already-paired titles remain ambiguous. Fuzzy titles ≥90% with qualified town/province and no explicit location/direction/tranche conflict withhold an insertion claim; they do not establish retention. Missing counterparts are review candidates, not certified insertions/removals. Imported coordinate repairs and anomalies retain all original flags.",
   "limits": [
-    "Coordinates are endpoints, not measured road alignment length. Straight-line segment distances are diagnostics only and never supply cost-per-road-meter denominators.",
+    "Coordinates are endpoints, not measured road alignment length. Separately labeled approximate allocation-per-meter tables use endpoint chord distances; they do not supply stated road-length denominators or verified price-screening flags.",
     "The NEP standalone PDF is not available locally for independent cell extraction; imported source hash and audit provenance retained.",
     "Regional equality and title agreement do not certify funded engineering scope. No attribution to authors or beneficiaries.",
     "The annex text equivalence check excludes production-footer timestamps only and does not authenticate either full bill."
@@ -248496,27 +248480,27 @@
     },
     {
       "file": "data_sources/fmr_analyst/hgab_fmr_audit.json",
-      "sha256": "01937423755db88e20fe1aadef597a69f4dcf19f0b08cfb3f254de55e86b74c4"
+      "sha256": "0baf668185f83838fb9e4eab84a6ad40a16e55a2c2392ffb5440f25a506f9440"
     },
     {
       "file": "data_sources/fmr_analyst/hgab_fmr_coordinate_normalization_audit.json",
-      "sha256": "bf308f3c1c65883e75d899a48b53d801df2a8bc2b24fe1f8f321f6518ff7be33"
+      "sha256": "21a7c976dd81d07237bfddbbbdc57f92a697f1a6262c82c3c0513bac90d0d56c"
     },
     {
       "file": "data_sources/fmr_analyst/hgab_fmr_coordinates_normalized.json",
-      "sha256": "b2089edcd681c52fcb07ecef50332d01e6416f098ae5cce81996b1ef85515582"
+      "sha256": "c8c360514ad9ac908f435c7782bca879cfda01d26b102c97f2348f58dd7243c0"
     },
     {
       "file": "data_sources/fmr_analyst/hgab_fmr_points.csv",
-      "sha256": "3b3ccc0fb6436bf0c51cb5a460193a6512b621e8024eca4a9a4b4dfed2c17683"
+      "sha256": "e31ccdfaa98f648097b87407ac3df4b97a926b95991b8630e1aba270cdf0210e"
     },
     {
       "file": "data_sources/fmr_analyst/hgab_fmr_projects_normalized.csv",
-      "sha256": "a0aa2a2df83be2d166021db2077490d00111e682116637ba7c35568cfdb1fb5a"
+      "sha256": "dd030c870c9c852ba2feb68a9c8f41e932ad8211531edb9f96f2019a303419b4"
     },
     {
       "file": "data_sources/fmr_analyst/hgab_fmr_segments.csv",
-      "sha256": "d73cfa436ff9a6cab05642ba4f0f1ad4e7b3b20c4122944ecbae84ff6f5fbed7"
+      "sha256": "45470bd7da6d7916ad7ff75a6bf8ec8dbc4192249ba6341db5ce90c2570bdc1e"
     },
     {
       "file": "data_sources/fmr_analyst/nep_fmr_audit.json",
@@ -248528,23 +248512,23 @@
     },
     {
       "file": "data_sources/fmr_analyst/nep_fmr_coordinate_normalization_audit.json",
-      "sha256": "7242ba06bbca67bfc39aebb547c14c9969a893b9d691adcb9a9ad8b245b8ee18"
+      "sha256": "bf47aa3fa5713aaa1872c34e0a2092d28d57565c2b7932fdd9c894962de2f5d9"
     },
     {
       "file": "data_sources/fmr_analyst/nep_fmr_coordinates_normalized.json",
-      "sha256": "869f58b5cda1bc2d36d888a8ee74a0fbbe8cb1c16848b588d2c3eb802f0af774"
+      "sha256": "53d76f3a3bd928a355e9c25b641ed156820b4aeee4a4d3308ff6f951441ce2fc"
     },
     {
       "file": "data_sources/fmr_analyst/nep_fmr_points.csv",
-      "sha256": "c0405a4ba02def35b8fc5624edc337ba127f64189b4c10c531291db443601113"
+      "sha256": "035e64d767c6474eecca205730f5b6aab93f483383f661c179327dd5370d3eb8"
     },
     {
       "file": "data_sources/fmr_analyst/nep_fmr_projects_normalized.csv",
-      "sha256": "0652aa82235f6027d018c539361ea21040ccb23212b5751fa2f743e7cebe0e96"
+      "sha256": "f256489e56ef0931ee007833776420d7fb95c0a58b9968c8b096b86393e53c33"
     },
     {
       "file": "data_sources/fmr_analyst/nep_fmr_segments.csv",
-      "sha256": "a59501cd8d3f8cc768beb18ec85e70fcd11cf8d20aeb7fd2cabf93fcda669993"
+      "sha256": "78faa21dbf7d81f1d0374e7ac5315ef4cb320cc57da3a2c97623f6dd8cbfd547"
     }
   ]
 }

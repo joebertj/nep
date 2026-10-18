@@ -58,10 +58,8 @@
         "sourceVolume": "2- HB 10858 FOR 3RD READING VOL I-B.pdf",
         "sourcePage": 667,
         "sourceContext": "Construction of Brgy. Escoda - Brgy. Elizabeth FMR, Brgy. Escoda and Brgy. Elizabeth, Marcos, Ilocos Norte\nSTART: 17.00918, 120.7245783\nEND: 17.9980347, 120.732015",
-        "coordinateStatus": "needs_review",
-        "coordinateReviewFlags": [
-          "endpoint_distance_over_100_km"
-        ],
+        "coordinateStatus": "normalized",
+        "coordinateReviewFlags": [],
         "analystSourceId": "ib:p667:r7",
         "printedPage": 651
       },
@@ -1020,10 +1018,8 @@
         "sourceVolume": "2- HB 10858 FOR 3RD READING VOL I-B.pdf",
         "sourcePage": 670,
         "sourceContext": "Construction of Brgy. 41 Balacad FMR, Laoag City, Ilocos Norte\nSTART: 120.540087, 18.152453\nEND: 120.153581, 120.53601",
-        "coordinateStatus": "needs_review",
-        "coordinateReviewFlags": [
-          "invalid_coordinate_pair"
-        ],
+        "coordinateStatus": "normalized",
+        "coordinateReviewFlags": [],
         "analystSourceId": "ib:p670:r4",
         "printedPage": 654
       },
@@ -3382,10 +3378,8 @@
         "sourceVolume": "2- HB 10858 FOR 3RD READING VOL I-B.pdf",
         "sourcePage": 677,
         "sourceContext": "Construction of Brgy. Buyon FMR, Brgy. Buyon, Cauayan City, Isabela\nSTART: 16.851721, 121.879510\nEND: 18.826792, 121.879302",
-        "coordinateStatus": "needs_review",
-        "coordinateReviewFlags": [
-          "endpoint_distance_over_100_km"
-        ],
+        "coordinateStatus": "normalized",
+        "coordinateReviewFlags": [],
         "analystSourceId": "ib:p677:r5",
         "printedPage": 661
       },
@@ -4524,10 +4518,8 @@
         "sourceVolume": "2- HB 10858 FOR 3RD READING VOL I-B.pdf",
         "sourcePage": 680,
         "sourceContext": "Concreting of Sitio Linawan, Brgy. Dulong Bayan FMR, Brgy. Dulong Bayan, San Jose Del Monte City, Bulacan\nSTART: 14828381, 121.033211\nEND: 14.829078, 121.130642",
-        "coordinateStatus": "needs_review",
-        "coordinateReviewFlags": [
-          "source_numeric_repair_candidate"
-        ],
+        "coordinateStatus": "normalized",
+        "coordinateReviewFlags": [],
         "analystSourceId": "ib:p680:r19",
         "printedPage": 664
       },
@@ -6006,11 +5998,8 @@
         "sourceVolume": "2- HB 10858 FOR 3RD READING VOL I-B.pdf",
         "sourcePage": 685,
         "sourceContext": "Construction of Brgy. Tampac I FMR, Brgy. Tampac I, Guimba, Nueva Ecija\nSTART: 15.6352648, 120.7972783\nEND: 15.6377206, 129.8030109",
-        "coordinateStatus": "needs_review",
-        "coordinateReviewFlags": [
-          "endpoint_distance_over_100_km",
-          "outside_philippines_orientation_bounds"
-        ],
+        "coordinateStatus": "normalized",
+        "coordinateReviewFlags": [],
         "analystSourceId": "ib:p685:r5",
         "printedPage": 669
       },
@@ -8572,10 +8561,8 @@
         "sourceVolume": "2- HB 10858 FOR 3RD READING VOL I-B.pdf",
         "sourcePage": 692,
         "sourceContext": "Construction of Brgy. Tagumpay FMR, Brgy. Tagumpay, Real, Quezon\nSTART: S1-14.606378 121.587138,\nS2-4.606488 121.583412\nEND: S1- 4.606694 121.583835,\nS2-14.606957 121.579656",
-        "coordinateStatus": "needs_review",
-        "coordinateReviewFlags": [
-          "endpoint_distance_over_100_km"
-        ],
+        "coordinateStatus": "normalized",
+        "coordinateReviewFlags": [],
         "analystSourceId": "ib:p692:r16",
         "printedPage": 676
       },
@@ -9754,10 +9741,8 @@
         "sourceVolume": "2- HB 10858 FOR 3RD READING VOL I-B.pdf",
         "sourcePage": 696,
         "sourceContext": "Concreting of Brgy. Balagtasin FMR, Brgy. Balagtasin, San Luis, Batangas\nSTART: 13.840631, 120.95877\nEND: 13.846302, 121.917756",
-        "coordinateStatus": "needs_review",
-        "coordinateReviewFlags": [
-          "endpoint_distance_over_100_km"
-        ],
+        "coordinateStatus": "normalized",
+        "coordinateReviewFlags": [],
         "analystSourceId": "ib:p696:r17",
         "printedPage": 680
       },
@@ -9796,10 +9781,8 @@
         "sourceVolume": "2- HB 10858 FOR 3RD READING VOL I-B.pdf",
         "sourcePage": 696,
         "sourceContext": "Concreting of Sitio 7, Brgy. Balite FMR, Sitio 7, Brgy. Balite, San Luis, Batangas\nSTART: 13.825486, 120.91245\nEND: 13.823398, 121.914231",
-        "coordinateStatus": "needs_review",
-        "coordinateReviewFlags": [
-          "endpoint_distance_over_100_km"
-        ],
+        "coordinateStatus": "normalized",
+        "coordinateReviewFlags": [],
         "analystSourceId": "ib:p696:r19",
         "printedPage": 680
       },
@@ -10018,10 +10001,8 @@
         "sourceVolume": "2- HB 10858 FOR 3RD READING VOL I-B.pdf",
         "sourcePage": 697,
         "sourceContext": "Concreting of Brgy. San Martin FMR, Brgy. San Martin, San Luis, Batangas\nSTART: S1-13.842103, 120.954358\nS2-13.843125, 120.950735\nEND: S1-13.84248, 121.953232\nS2-13.843681, 120.950128",
-        "coordinateStatus": "needs_review",
-        "coordinateReviewFlags": [
-          "endpoint_distance_over_100_km"
-        ],
+        "coordinateStatus": "normalized",
+        "coordinateReviewFlags": [],
         "analystSourceId": "ib:p697:r12",
         "printedPage": 681
       },
@@ -11860,10 +11841,8 @@
         "sourceVolume": "2- HB 10858 FOR 3RD READING VOL I-B.pdf",
         "sourcePage": 703,
         "sourceContext": "Construction of Brgy. Luna to Brgy. San Isidro FMR, San Jacinto, Masbate\nStart: 12.529293, 123.707502\nEnd: 12.528813, 123.691.92",
-        "coordinateStatus": "needs_review",
-        "coordinateReviewFlags": [
-          "source_numeric_repair_candidate"
-        ],
+        "coordinateStatus": "normalized",
+        "coordinateReviewFlags": [],
         "analystSourceId": "ib:p703:r11",
         "printedPage": 687
       },
@@ -14942,11 +14921,8 @@
         "sourceVolume": "2- HB 10858 FOR 3RD READING VOL I-B.pdf",
         "sourcePage": 713,
         "sourceContext": "Concreting of Brgy. Basiao - Brgy. Candiis FMR, Badian, Cebu\nSection 1 START: 9.812059, 123. 405993\nEND: 9.8052549, 123.406771\nSection 2 START: 9.8052549, 123.406771\nEND: 1.8042275, 123.4080266",
-        "coordinateStatus": "needs_review",
-        "coordinateReviewFlags": [
-          "endpoint_distance_over_100_km",
-          "outside_philippines_orientation_bounds"
-        ],
+        "coordinateStatus": "normalized",
+        "coordinateReviewFlags": [],
         "analystSourceId": "ib:p713:r3",
         "printedPage": 697
       },
@@ -15085,10 +15061,8 @@
         "sourceVolume": "2- HB 10858 FOR 3RD READING VOL I-B.pdf",
         "sourcePage": 713,
         "sourceContext": "Construction of Sitio Busay, Brgy. Apale FMR, Brgy. Apale, Isabel, Leyte\nSTART: 11.871556, 124.488833\nEND: 10.878222, 124.485778",
-        "coordinateStatus": "needs_review",
-        "coordinateReviewFlags": [
-          "endpoint_distance_over_100_km"
-        ],
+        "coordinateStatus": "normalized",
+        "coordinateReviewFlags": [],
         "analystSourceId": "ib:p713:r12",
         "printedPage": 697
       },

@@ -20,6 +20,11 @@ for file in "$r"/static/nep-preview/*.html; do
   actual="$(curl --silent --show-error --fail "$base/static/nep-preview/$name" | sha256sum | cut -d ' ' -f1)"
   expected="$(sha256sum "$file" | cut -d ' ' -f1)"
   [[ "$actual" == "$expected" ]]
+  if [[ "$name" == "project-documents.html" ]]; then
+    grep -q 'project-documents.js' "$file"
+    echo "OK $name: served content matches checkout; internal document viewer present"
+    continue
+  fi
   grep -q 'id="uniform-report-menu-style"' "$file"
   python3 - "$file" <<'MENU_CHECK'
 import re,sys
@@ -45,7 +50,7 @@ if grep -q 'Rank all districts against the Bojie Dy' "$r/static/nep-preview/summ
 fi
 echo 'OK retired selected-district section and person-specific summary link removed'
 
-for path in / /static/nep-preview/ /static/nep-preview/congress.html /static/nep-preview/appropriations-roster.json /static/nep-preview/mpb.html /static/nep-preview/mpb-data.json /static/nep-preview/cost-per-km.html /static/nep-preview/cost-per-km-data.json; do
+for path in / /static/nep-preview/ /static/nep-preview/congress.html /static/nep-preview/appropriations-roster.json /static/nep-preview/mpb.html /static/nep-preview/mpb-data.json /static/nep-preview/cost-per-km.html /static/nep-preview/cost-matching.html /static/nep-preview/cost-per-km-data.json /static/nep-preview/project-documents.html /static/nep-preview/project-document-links.js /static/nep-preview/project-document-index.json /static/nep-preview/report-table-readability.css /static/nep-preview/report-table-readability.js /static/nep-preview/nep-hgab-comparison-graphs.css /static/nep-preview/nep-hgab-comparison-graphs.js /static/nep-preview/research-theme.css; do
   status="$(curl --silent --show-error --location --max-time 10 --resolve 'research.bettergov.ph:443:127.0.0.1' --output /dev/null --write-out '%{http_code}' "http://research.bettergov.ph$path")"
   [[ "$status" == 200 ]]
   echo "OK public proxy $path: $status"

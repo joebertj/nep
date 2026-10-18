@@ -15,6 +15,8 @@ CATEGORY = 'BIP - Multi-Purpose Buildings/ Facilities to support Social Services
 
 
 def build():
+    from analyze_mpb_proximity import build as build_proximity,render as render_proximity
+    proximity=build_proximity()
     inputs = ['hb_nep_comparison_3rd.csv', 'nep_dpwh_baseline.json',
               'dpwh_removals_3rd.json', 'repeat_nep_hgab_survival.json',
               'congress_geographic_attribution_db_3rd.json']
@@ -61,12 +63,15 @@ def build():
                'adjustedLines': len(adjustments)}
     data = {'category': CATEGORY, 'summary': summary, 'insertions': insertions, 'ambiguous': ambiguous,
             'adjustments': adjustments, 'removals': removals, 'repeats': repeats, 'prices': prices,
-            'distribution': distribution,
+            'distribution': distribution,'coordinateProximity':proximity,
             'sources': [{'file': name, 'sha256': hashlib.sha256((OUT / name).read_bytes()).hexdigest()} for name in inputs]}
     serialized = json.dumps(data, ensure_ascii=False, indent=2) + '\n'
     (OUT / 'mpb_analysis.json').write_text(serialized)
     (STATIC / 'mpb-data.json').write_text(serialized)
     html = PAGE.replace('__HERO_STYLE__', STYLE).replace('__DATA__', json.dumps(data, ensure_ascii=False).replace('</', '<\\/'))
+    html=html.replace('<div id="sections"></div>','<p><a href="repeats.html#mpb-coordinate-proximity">Historical MPB repeat-location distances →</a></p>'+render_proximity(proximity,keys=('current',))+'<div id="sections"></div>')
+    from build_investigation_summary import JS as evidence_exports
+    html=html.replace('</body>',evidence_exports+'</body>')
     (STATIC / 'mpb.html').write_text(html)
     (OUT / 'mpb.html').write_text(html)
     return data

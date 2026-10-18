@@ -1,0 +1,2426 @@
+{
+  "viewportWidth": 1440,
+  "pages": [
+    {
+      "page": "dpwh-hgab.html",
+      "errors": [],
+      "tables": [
+        {
+          "id": "hbInsertionBody",
+          "section": "Potential insertions \u00b7 domestic HGAB-only line items",
+          "headers": [
+            "Extracted HGAB record",
+            "Program",
+            "Implementing office",
+            "Representative(s) by named project location",
+            "Region",
+            "Extracted amount",
+            "Closest NEP title",
+            "Screen result",
+            "HB source page",
+            "DPWH transparency"
+          ],
+          "rows": 0,
+          "shownRows": 0,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "tablewrap report-table-scroll"
+        },
+        {
+          "id": "sub-body-domestic",
+          "section": "Potential removals \u00b7 domestic NEP-only line items",
+          "headers": [
+            "Status",
+            "NEP project",
+            "NEP allocation",
+            "Implementing office",
+            "NEP source",
+            "Representative(s) for listed locations",
+            "DPWH transparency"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "tablewrap report-table-scroll"
+        },
+        {
+          "id": "adjust-body",
+          "section": "Allocation adjustments \u00b7 retained domestic projects",
+          "headers": [
+            "Match basis",
+            "NEP project",
+            "HGAB project",
+            "NEP allocation",
+            "HGAB allocation",
+            "Adjustment",
+            "Office / sources",
+            "Representative(s) for listed locations",
+            "DPWH transparency"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "tablewrap report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Insertion candidates \u00b7 what the matching can establish",
+          "headers": [
+            "NEP counterpart screen",
+            "Native HGAB allocation records"
+          ],
+          "rows": 4,
+          "shownRows": 4,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Foreign assisted projects \u00b7 allocation adjustments and reconciliation",
+          "headers": [
+            "#",
+            "Unpaired FAP project",
+            "HGAB allocation",
+            "Closest NEP title \u00b7 not matched",
+            "Title similarity",
+            "HGAB source",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 4,
+          "shownRows": 4,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "tablewrap report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Foreign assisted projects \u00b7 allocation adjustments and reconciliation",
+          "headers": [
+            "Foreign assisted project",
+            "NEP match",
+            "NEP allocation",
+            "HGAB allocation",
+            "Change",
+            "Source",
+            "Representative(s) for listed locations",
+            "DPWH transparency"
+          ],
+          "rows": 25,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "tablewrap report-table-scroll"
+        },
+        {
+          "id": "sub-body-fap",
+          "section": "Potential removals \u00b7 foreign assisted NEP-only line items",
+          "headers": [
+            "Status",
+            "NEP project",
+            "NEP allocation",
+            "Implementing office",
+            "NEP source",
+            "Representative(s) for listed locations",
+            "DPWH transparency"
+          ],
+          "rows": 0,
+          "shownRows": 0,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "tablewrap report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Historical analysis \u00b7 NEP \u2192 HGAB 2nd reading",
+          "headers": [
+            "Archived HGAB 2nd-reading candidate",
+            "Archived allocation pesos",
+            "Recorded NEP candidate",
+            "Original comparison status",
+            "Original House source",
+            "Representative(s) for listed locations",
+            "DPWH transparency"
+          ],
+          "rows": 25,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        }
+      ],
+      "bodyOverflow": false
+    },
+    {
+      "page": "budget-innovations.html",
+      "errors": [],
+      "tables": [
+        {
+          "id": "keywordBody",
+          "section": "Potential and revived keywords",
+          "headers": [
+            "Rank \u00b7 keyword",
+            "Category",
+            "Kind",
+            "FY2027 total",
+            "Allocation pattern",
+            "Agencies",
+            "Example FY2027 line items",
+            "Prior GAA matches",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 32,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "tablewrap report-table-scroll"
+        },
+        {
+          "id": "body",
+          "section": "Terms to trace",
+          "headers": [
+            "Term / category",
+            "Status",
+            "FY2027 NEP records",
+            "FY2027 amount",
+            "FY2026 matched records",
+            "FY2026 amount",
+            "Assessment",
+            "Prior GAA term matches",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 5,
+          "shownRows": 5,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "tablewrap report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Returning labels \u00b7 INSPIRE funding history",
+          "headers": [
+            "Stage/year",
+            "Observed allocation pesos"
+          ],
+          "rows": 3,
+          "shownRows": 3,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        }
+      ],
+      "bodyOverflow": false
+    },
+    {
+      "page": "congress.html",
+      "errors": [],
+      "tables": [
+        {
+          "id": "strictBody",
+          "section": "Strict attribution \u00b7 one clearly located congressional district",
+          "headers": [
+            "Congressional district",
+            "Representative",
+            "Relevant roles",
+            "Accepted line items",
+            "Accepted allocation"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "tablewrap report-table-scroll"
+        },
+        {
+          "id": "leg-add-body",
+          "section": "Potential additions per legislative district (LEG)",
+          "headers": [
+            "Legislative district",
+            "Representative",
+            "Relevant roles",
+            "Potential addition line items",
+            "Potential addition HGAB allocation",
+            "All strictly assigned HGAB lines",
+            "Project details"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "tablewrap report-table-scroll"
+        },
+        {
+          "id": "leg-add-detail-body",
+          "section": "Potential additions per legislative district (LEG)",
+          "headers": [
+            "HGAB project",
+            "Implementing office",
+            "HGAB allocation",
+            "Closest NEP title (not a selected match)",
+            "Source",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 0,
+          "shownRows": 0,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "tablewrap report-table-scroll"
+        },
+        {
+          "id": "deoSpreadBody",
+          "section": "DEO and legislative-district allocation crosswalk",
+          "headers": [
+            "DEO",
+            "Legislative district allocations shown in PDF",
+            "Districts",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 30,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 651.203125,
+          "wrapper": "tablewrap report-table-scroll"
+        },
+        {
+          "id": "legSplitBody",
+          "section": "DEO and legislative-district allocation crosswalk",
+          "headers": [
+            "Legislative district",
+            "DEO allocations shown in PDF",
+            "DEOs",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 651.203125,
+          "wrapper": "tablewrap report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Ranking coverage and location exclusions",
+          "headers": [
+            "Attribution outcome",
+            "HGAB lines",
+            "Allocation pesos",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 2,
+          "shownRows": 2,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": "bench-body",
+          "section": "All districts \u00b7 estimated allocations, roles and reference comparisons",
+          "headers": [
+            "Filtered rank",
+            "Congressional district",
+            "Representative",
+            "Relevant roles \u00b7 sourced roster",
+            "Assigned projects",
+            "Estimated district budget",
+            "Possible added projects",
+            "Budget for possible added projects",
+            "Possible additions as % of assigned budget",
+            "Existing projects with increases \u00b7 count / added budget"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "All districts \u00b7 estimated allocations, roles and reference comparisons",
+          "headers": [
+            "Congressional district",
+            "Representative",
+            "Relevant roles",
+            "Official roster bloc",
+            "Assigned projects",
+            "Estimated district budget"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "All districts \u00b7 estimated allocations, roles and reference comparisons",
+          "headers": [
+            "Role classification",
+            "Mapped districts",
+            "No confident location matches",
+            "Middle district budget \u00b7 including unmatched districts",
+            "Middle district budget \u00b7 matched districts only",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 3,
+          "shownRows": 3,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": "pl-body",
+          "section": "Party-list representatives \u00b7 organizations and verified roles",
+          "headers": [
+            "Party-list organization",
+            "Representative \u00b7 official name",
+            "Relevant roles",
+            "Reported relatives in district seats",
+            "Membership status",
+            "Sources"
+          ],
+          "rows": 53,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "More projects located through inventory evidence",
+          "headers": [
+            "Congressional district",
+            "Representative \u00b7 geographic context",
+            "Newly located line items",
+            "Allocation newly attributed pesos"
+          ],
+          "rows": 44,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        }
+      ],
+      "bodyOverflow": false
+    },
+    {
+      "page": "cost-matching.html",
+      "errors": [],
+      "tables": [
+        {
+          "id": null,
+          "section": "How much allocation per lane-meter?",
+          "headers": [
+            "Category",
+            "Line items",
+            "Title-stated lane rates",
+            "Inventory matches",
+            "Stated-length inventory lane-rate estimates",
+            "Existing-asset lane-rate estimates",
+            "Without title lane rate (%)",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 4,
+          "shownRows": 4,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "How much allocation per lane-meter?",
+          "headers": [
+            "Category",
+            "Line items",
+            "Matched asset ID",
+            "Asset length recovered",
+            "Asset lanes recovered",
+            "Asset width recovered",
+            "Missing stated length, asset length available",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 4,
+          "shownRows": 4,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "How much allocation per lane-meter?",
+          "headers": [
+            "Category",
+            "Line items",
+            "Matched context \u00b7 can be partial",
+            "Fully assessed road ranges",
+            "Rehab on assessed Good/Fair",
+            "Recent surfacing \u00b7 five-year screen",
+            "Good/Fair bridges \u00b7 assessment date unknown",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 4,
+          "shownRows": 4,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "How much allocation per lane-meter?",
+          "headers": [
+            "Inventory",
+            "Rows",
+            "Source vintage statement"
+          ],
+          "rows": 4,
+          "shownRows": 4,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "130 more line items now have usable stated lengths",
+          "headers": [
+            "Category",
+            "Line items",
+            "Usable lengths \u00b7 earlier rules",
+            "Newly recovered lengths",
+            "Earlier lengths now withheld",
+            "Usable lengths \u00b7 current",
+            "Missing / unusable (%)",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 4,
+          "shownRows": 4,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Condition and recent-surfacing review candidates",
+          "headers": [
+            "Project",
+            "Matched inventory ID",
+            "Official program",
+            "Surface / material",
+            "Recorded condition / year",
+            "Last surfaced year",
+            "Allocation pesos",
+            "Review evidence",
+            "Source",
+            "Representative(s) for listed locations",
+            "DPWH transparency"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Roads \u00b7 recovered existing-asset dimensions",
+          "headers": [
+            "Project",
+            "Matched inventory ID",
+            "Official program",
+            "Surface / material",
+            "Recorded condition / year",
+            "Last surfaced year",
+            "Stated funded meters",
+            "Existing asset meters",
+            "Existing asset effective lanes",
+            "Existing asset width meters",
+            "Allocation pesos",
+            "Dimension evidence",
+            "Source",
+            "Representative(s) for listed locations",
+            "DPWH transparency"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Bridges \u00b7 recovered existing-asset dimensions",
+          "headers": [
+            "Project",
+            "Matched inventory ID",
+            "Official program",
+            "Surface / material",
+            "Recorded condition / year",
+            "Last surfaced year",
+            "Stated funded meters",
+            "Existing asset meters",
+            "Existing asset effective lanes",
+            "Existing asset width meters",
+            "Allocation pesos",
+            "Dimension evidence",
+            "Source",
+            "Representative(s) for listed locations",
+            "DPWH transparency"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Length coverage by category and official program",
+          "headers": [
+            "Category",
+            "Official program",
+            "Line items",
+            "Usable lengths",
+            "Without usable length",
+            "Missing / unusable (%)",
+            "Rate records",
+            "Allocation pesos",
+            "Allocation without usable length pesos",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Very short printed ranges \u00b7 original PDF text checks",
+          "headers": [
+            "Project",
+            "Calculated stated meters",
+            "HGAB allocation pesos",
+            "Original source",
+            "Representative(s) for listed locations",
+            "DPWH transparency"
+          ],
+          "rows": 6,
+          "shownRows": 6,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        }
+      ],
+      "bodyOverflow": false
+    },
+    {
+      "page": "cost-per-km.html",
+      "errors": [],
+      "tables": [
+        {
+          "id": null,
+          "section": "Roads \u00b7 title-stated allocation per lane-meter",
+          "headers": [
+            "Project",
+            "Matched inventory ID",
+            "Official program",
+            "Stated meters",
+            "Title lanes",
+            "Allocation pesos",
+            "Allocation pesos per title lane-meter",
+            "Lane-rate status",
+            "Inventory / station evidence",
+            "Source",
+            "DPWH transparency",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 3,
+          "shownRows": 3,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Roads \u00b7 inventory lane-meter estimate",
+          "headers": [
+            "Project",
+            "Matched inventory ID",
+            "Official program",
+            "Surface / material",
+            "Recorded condition / year",
+            "Last surfaced year",
+            "Stated meters",
+            "Inventory effective lanes",
+            "Allocation pesos",
+            "Estimated allocation pesos per inventory lane-meter",
+            "Lane-rate status",
+            "Inventory / station evidence",
+            "Source",
+            "DPWH transparency",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Bridges \u00b7 title-stated allocation per lane-meter",
+          "headers": [
+            "Project",
+            "Matched inventory ID",
+            "Official program",
+            "Stated meters",
+            "Title lanes",
+            "Allocation pesos",
+            "Allocation pesos per title lane-meter",
+            "Lane-rate status",
+            "Inventory / station evidence",
+            "Source",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 0,
+          "shownRows": 0,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Bridges \u00b7 inventory lane-meter estimate",
+          "headers": [
+            "Project",
+            "Matched inventory ID",
+            "Official program",
+            "Stated meters",
+            "Inventory effective lanes",
+            "Allocation pesos",
+            "Estimated allocation pesos per inventory lane-meter",
+            "Lane-rate status",
+            "Inventory / station evidence",
+            "Source",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 0,
+          "shownRows": 0,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Bridges \u00b7 allocation per existing-asset lane-meter",
+          "headers": [
+            "Project",
+            "Matched inventory ID",
+            "Official program",
+            "Surface / material",
+            "Recorded condition / year",
+            "Last surfaced year",
+            "Inventory bridge span meters",
+            "Inventory lanes",
+            "Allocation pesos",
+            "Estimated allocation pesos per existing-asset lane-meter",
+            "Inventory identity and evidence",
+            "Source",
+            "DPWH transparency",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Roads \u00b7 high-rate candidates",
+          "headers": [
+            "Project",
+            "Matched inventory ID",
+            "Official program",
+            "Surface / material",
+            "Recorded condition / year",
+            "Last surfaced year",
+            "Stated meters",
+            "Allocation pesos",
+            "Allocation per meter pesos",
+            "Typical peer rate pesos/meter",
+            "Times typical peer rate",
+            "Review status",
+            "Source",
+            "DPWH transparency",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Bridges \u00b7 high-rate candidates",
+          "headers": [
+            "Project",
+            "Matched inventory ID",
+            "Official program",
+            "Surface / material",
+            "Recorded condition / year",
+            "Last surfaced year",
+            "Stated meters",
+            "Allocation pesos",
+            "Allocation per meter pesos",
+            "Typical peer rate pesos/meter",
+            "Times typical peer rate",
+            "Review status",
+            "Source",
+            "DPWH transparency",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 2,
+          "shownRows": 2,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "FMR \u00b7 high-rate candidates",
+          "headers": [
+            "Project",
+            "Official program",
+            "Stated meters",
+            "Allocation pesos",
+            "Allocation per meter pesos",
+            "Typical peer rate pesos/meter",
+            "Times typical peer rate",
+            "Review status",
+            "Source",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Mixed roads / bridges \u00b7 high-rate candidates",
+          "headers": [
+            "Project",
+            "Matched inventory ID",
+            "Official program",
+            "Stated meters",
+            "Allocation pesos",
+            "Allocation per meter pesos",
+            "Typical peer rate pesos/meter",
+            "Times typical peer rate",
+            "Review status",
+            "Source",
+            "DPWH transparency",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Roads \u00b7 coordinate-distance APPROXIMATION",
+          "headers": [
+            "Project",
+            "Matched inventory ID",
+            "Official program",
+            "Approximate meters",
+            "Allocation pesos",
+            "Approximate allocation per meter pesos",
+            "Approximation status",
+            "Source",
+            "DPWH transparency",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Bridges \u00b7 coordinate-distance APPROXIMATION",
+          "headers": [
+            "Project",
+            "Matched inventory ID",
+            "Official program",
+            "Approximate meters",
+            "Allocation pesos",
+            "Approximate allocation per meter pesos",
+            "Approximation status",
+            "Source",
+            "DPWH transparency",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "FMR \u00b7 coordinate-distance APPROXIMATION",
+          "headers": [
+            "Project",
+            "Official program",
+            "Approximate meters",
+            "Allocation pesos",
+            "Approximate allocation per meter pesos",
+            "Approximation status",
+            "Source",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Mixed roads / bridges \u00b7 coordinate-distance APPROXIMATION",
+          "headers": [
+            "Project",
+            "Matched inventory ID",
+            "Official program",
+            "Approximate meters",
+            "Allocation pesos",
+            "Approximate allocation per meter pesos",
+            "Approximation status",
+            "Source",
+            "DPWH transparency",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 1,
+          "shownRows": 1,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Flood control \u00b7 coordinate-distance APPROXIMATION",
+          "headers": [
+            "Project",
+            "Official program",
+            "Approximate meters",
+            "Allocation pesos",
+            "Approximate allocation per meter pesos",
+            "Approximation status",
+            "Source",
+            "DPWH transparency",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 6,
+          "shownRows": 6,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Other non-MPB \u00b7 coordinate-distance APPROXIMATION",
+          "headers": [
+            "Project",
+            "Official program",
+            "Approximate meters",
+            "Allocation pesos",
+            "Approximate allocation per meter pesos",
+            "Approximation status",
+            "Source",
+            "DPWH transparency",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 1,
+          "shownRows": 1,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Are stated-meter allocations higher than FY2026 GAA?",
+          "headers": [
+            "Official program \u00b7 graph number",
+            "Category",
+            "Usable records \u00b7 2026 / 2027",
+            "2026 median pesos/meter",
+            "2027 median pesos/meter",
+            "Unadjusted change (%)",
+            "Length-adjusted change (%)"
+          ],
+          "rows": 17,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Are stated-meter allocations higher than FY2026 GAA?",
+          "headers": [
+            "Category",
+            "Budget stage",
+            "Selected line items",
+            "With stated lengths",
+            "Rate records \u226510 meters",
+            "Median pesos/meter \u00b7 project mix uncontrolled",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 6,
+          "shownRows": 6,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Are stated-meter allocations higher than FY2026 GAA?",
+          "headers": [
+            "Category",
+            "Official program",
+            "Length group \u00b7 meters",
+            "2026 / 2027 records",
+            "2026 median pesos/meter",
+            "2027 median pesos/meter",
+            "Rate change (%)"
+          ],
+          "rows": 44,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "At what stated lengths does allocation density change?",
+          "headers": [
+            "Category",
+            "Official program",
+            "Shorter band",
+            "Longer band",
+            "Shorter rows",
+            "Longer rows",
+            "Shorter median pesos/meter",
+            "Longer median pesos/meter",
+            "Density ratio \u00b7 shorter / longer",
+            "Allocation ratio \u00b7 shorter / longer"
+          ],
+          "rows": 6,
+          "shownRows": 6,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "At what stated lengths does allocation density change?",
+          "headers": [
+            "Category",
+            "Official program",
+            "Model rows",
+            "Candidate boundary meters",
+            "BIC improvement",
+            "Model conclusion",
+            "Bootstrap 10th\u201390th boundary meters",
+            "Bootstrap same-boundary %",
+            "Sensitivity \u226525m boundary meters",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 29,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "At what stated lengths does allocation density change?",
+          "headers": [
+            "Official program",
+            "Length band",
+            "Rows",
+            "Median meters",
+            "Median allocation pesos",
+            "Median pesos/meter",
+            "Sample below 20 rows"
+          ],
+          "rows": 84,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "At what stated lengths does allocation density change?",
+          "headers": [
+            "Official program",
+            "Length band",
+            "Rows",
+            "Median meters",
+            "Median allocation pesos",
+            "Median pesos/meter",
+            "Sample below 20 rows"
+          ],
+          "rows": 7,
+          "shownRows": 7,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "At what stated lengths does allocation density change?",
+          "headers": [
+            "Official program",
+            "Length band",
+            "Rows",
+            "Median meters",
+            "Median allocation pesos",
+            "Median pesos/meter",
+            "Sample below 20 rows"
+          ],
+          "rows": 1,
+          "shownRows": 1,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        }
+      ],
+      "bodyOverflow": false
+    },
+    {
+      "page": "deped.html",
+      "errors": [],
+      "tables": [
+        {
+          "id": null,
+          "section": "HGAB 3rd-reading allocation schedule",
+          "headers": [
+            "School",
+            "Region",
+            "Division",
+            "HGAB total pesos",
+            "Junior-high personnel pesos",
+            "Junior-high MOOE pesos",
+            "Senior-high MOOE pesos",
+            "NEP counterpart status",
+            "HGAB PDF page",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        }
+      ],
+      "bodyOverflow": false
+    },
+    {
+      "page": "dpwh-hgab-comparison.html",
+      "errors": [],
+      "tables": [
+        {
+          "id": "body",
+          "section": "Line item changes",
+          "headers": [
+            "Status",
+            "2nd reading line",
+            "3rd reading line",
+            "Representative(s) by named project location",
+            "2nd chainage",
+            "3rd chainage",
+            "2nd amount",
+            "3rd amount",
+            "Change",
+            "Range check",
+            "Office / source"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1293.625,
+          "wrapper": "tablewrap report-table-scroll"
+        }
+      ],
+      "bodyOverflow": false
+    },
+    {
+      "page": "dpwh.html",
+      "errors": [],
+      "tables": [],
+      "bodyOverflow": false
+    },
+    {
+      "page": "fmr.html",
+      "errors": [],
+      "tables": [
+        {
+          "id": null,
+          "section": "All HGAB-to-NEP counterpart statuses",
+          "headers": [
+            "HGAB project",
+            "Region",
+            "Allocation pesos",
+            "Source PDF page",
+            "NEP title",
+            "NEP allocation pesos",
+            "Match evidence",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Potential insertions \u00b7 no plausible NEP counterpart found",
+          "headers": [
+            "HGAB project",
+            "Region",
+            "Allocation pesos",
+            "Source PDF page",
+            "Counterpart status",
+            "Coordinate review",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Allocation adjustments \u00b7 selected NEP counterparts",
+          "headers": [
+            "HGAB project",
+            "Region",
+            "Allocation pesos",
+            "Source PDF page",
+            "NEP allocation pesos",
+            "Adjustment pesos",
+            "Match evidence",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 3,
+          "shownRows": 3,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Unpaired NEP rows \u00b7 removal review",
+          "headers": [
+            "HGAB project",
+            "Region",
+            "Allocation pesos",
+            "Source PDF page",
+            "Source row ID",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "All HGAB FMR project occurrences",
+          "headers": [
+            "HGAB project",
+            "Region",
+            "Allocation pesos",
+            "Source PDF page",
+            "Source row ID",
+            "Printed page",
+            "Coordinate status",
+            "Coordinate review flags",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Repeated allocation amounts",
+          "headers": [
+            "Allocation per occurrence pesos",
+            "Project occurrences",
+            "Combined allocation pesos",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Coordinate anomalies requiring source review",
+          "headers": [
+            "HGAB project",
+            "Region",
+            "Allocation pesos",
+            "Source PDF page",
+            "Source row ID",
+            "Review flags",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 2,
+          "shownRows": 2,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "FMR allocation per stated meter \u00b7 printed STA evidence only",
+          "headers": [
+            "HGAB project",
+            "Region",
+            "Allocation pesos",
+            "Source PDF page",
+            "Source row ID",
+            "Stated meters",
+            "Allocation per stated meter pesos",
+            "Printed length evidence",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 3,
+          "shownRows": 3,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Historical analysis \u00b7 NEP \u2192 HGAB 2nd reading",
+          "headers": [
+            "Archived HGAB 2nd-reading line",
+            "Archived allocation pesos",
+            "Source page as originally recorded",
+            "Original schedule context",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 25,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        }
+      ],
+      "bodyOverflow": false
+    },
+    {
+      "page": "hfep.html",
+      "errors": [],
+      "tables": [
+        {
+          "id": "hfepLargestTable",
+          "section": "Largest facility allocations",
+          "headers": [
+            "Facility candidate",
+            "Total",
+            "Infrastructure",
+            "Medical equipment",
+            "Vehicle",
+            "PDF page",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 20,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "tablewrap report-table-scroll"
+        },
+        {
+          "id": "hfepReviewTable",
+          "section": "HFEP facility candidate review",
+          "headers": [
+            "Facility candidate",
+            "Total",
+            "Infrastructure",
+            "Medical equipment",
+            "Vehicle",
+            "Page",
+            "Nearby source context",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "tablewrap report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Independent source cross-check \u00b7 current snapshot",
+          "headers": [
+            "HFEP annex ledger",
+            "Facilities",
+            "Allocation pesos"
+          ],
+          "rows": 3,
+          "shownRows": 3,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": "hfepNepTable",
+          "section": "NEP \u2192 HGAB facility-level itemization",
+          "headers": [
+            "HGAB facility line",
+            "HB allocation",
+            "HB page",
+            "NEP context",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1264.40625,
+          "wrapper": "tablewrap report-table-scroll"
+        }
+      ],
+      "bodyOverflow": false
+    },
+    {
+      "page": "index.html",
+      "errors": [],
+      "tables": [
+        {
+          "id": null,
+          "section": "Where to start",
+          "headers": [
+            "Priority",
+            "Investigative lead",
+            "Evidence class",
+            "Question to verify"
+          ],
+          "rows": 9,
+          "shownRows": 9,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Evidence needed to strengthen the claims",
+          "headers": [
+            "Investigative question",
+            "Dataset or documents needed",
+            "Current workspace limitation"
+          ],
+          "rows": 6,
+          "shownRows": 6,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Top 25 line items \u00b7 combined evidence for review",
+          "headers": [
+            "Rank",
+            "HGAB project",
+            "Program",
+            "Implementing office",
+            "Screening flags",
+            "HGAB allocation pesos",
+            "Flag evidence",
+            "Evidence cautions \u00b7 no extra points",
+            "Historical counterpart evidence",
+            "HGAB source",
+            "Matched inventory ID(s)",
+            "Representative(s) for listed locations",
+            "DPWH transparency"
+          ],
+          "rows": 25,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Top 25 line items \u00b7 combined evidence for review",
+          "headers": [
+            "Summary finding",
+            "Treatment in the line-item ranking",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 9,
+          "shownRows": 9,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        }
+      ],
+      "bodyOverflow": false
+    },
+    {
+      "page": "mpb.html",
+      "errors": [],
+      "tables": [
+        {
+          "id": null,
+          "section": "MPB locations \u00b7 same-site funding and separate-site review",
+          "headers": [
+            "First project \u00b7 source",
+            "Second project \u00b7 source",
+            "Straight-line meters",
+            "Site interpretation \u00b7 distance band",
+            "Barangay evidence",
+            "Funded-work review",
+            "Representative(s) for listed locations",
+            "DPWH transparency"
+          ],
+          "rows": 96,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Potential insertions \u00b7 no plausible NEP counterpart identified",
+          "headers": [
+            "Project",
+            "Office",
+            "LEG \u00b7 strict attribution",
+            "Representative \u00b7 geographic coverage",
+            "Building type",
+            "HGAB allocation pesos",
+            "Closest NEP title \u00b7 not necessarily a match",
+            "Matching basis",
+            "Source volume",
+            "HGAB page",
+            "DPWH transparency"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Ambiguous counterparts \u00b7 kept outside insertion totals",
+          "headers": [
+            "Project",
+            "Office",
+            "LEG \u00b7 strict attribution",
+            "Representative \u00b7 geographic coverage",
+            "Building type",
+            "HGAB allocation pesos",
+            "Closest NEP title \u00b7 not necessarily a match",
+            "Matching basis",
+            "Source volume",
+            "HGAB page",
+            "Counterpart status",
+            "DPWH transparency"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Allocation adjustments \u00b7 selected retained counterparts",
+          "headers": [
+            "HGAB project",
+            "NEP project",
+            "Office",
+            "Representative \u00b7 geographic coverage",
+            "NEP allocation pesos",
+            "HGAB allocation pesos",
+            "Adjustment pesos",
+            "Counterpart confidence",
+            "NEP page",
+            "HGAB page",
+            "DPWH transparency"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Potential removals \u00b7 unpaired NEP lines",
+          "headers": [
+            "NEP project",
+            "Office",
+            "NEP allocation pesos",
+            "Review basis",
+            "NEP page",
+            "Representative(s) for listed locations",
+            "DPWH transparency"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Allocation amounts by building type \u00b7 repeated amounts need scope context",
+          "headers": [
+            "Building type",
+            "Allocation per project pesos",
+            "Projects at this amount",
+            "Combined allocation pesos",
+            "Offices",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "MPB allocations by implementing office",
+          "headers": [
+            "Region",
+            "Office",
+            "HGAB projects",
+            "HGAB allocation pesos",
+            "Potential insertions",
+            "Potential insertion allocation pesos",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        }
+      ],
+      "bodyOverflow": false
+    },
+    {
+      "page": "nia-irrigation.html",
+      "errors": [],
+      "tables": [
+        {
+          "id": null,
+          "section": "HGAB 3rd-reading allocation schedule",
+          "headers": [
+            "HGAB irrigation work",
+            "HGAB allocation pesos",
+            "NEP counterpart status",
+            "HGAB PDF page",
+            "Source occurrence ID"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Independent source cross-check \u00b7 current snapshot",
+          "headers": [
+            "NIA scope",
+            "Project rows",
+            "Allocation pesos",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 3,
+          "shownRows": 3,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        }
+      ],
+      "bodyOverflow": false
+    },
+    {
+      "page": "nia.html",
+      "errors": [],
+      "tables": [
+        {
+          "id": "niaProjectTable",
+          "section": "NIA project candidate review",
+          "headers": [
+            "Project title candidate",
+            "Amount",
+            "PDF page",
+            "Nearby source context",
+            "Review note",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "tablewrap report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Named NIA allocations \u00b7 NEP \u2192 HGAB 3rd reading",
+          "headers": [
+            "Graph project",
+            "NIA named project",
+            "NEP allocation pesos",
+            "HGAB allocation pesos",
+            "Allocation adjustment pesos",
+            "Comparison evidence",
+            "NEP workbook rows",
+            "HGAB PDF page",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 32,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Independent source cross-check \u00b7 current snapshot",
+          "headers": [
+            "NIA scope",
+            "Project rows",
+            "Allocation pesos",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 3,
+          "shownRows": 3,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": "niaInsertionTable",
+          "section": "Historical analysis \u00b7 NEP \u2192 HGAB 2nd reading",
+          "headers": [
+            "HGAB project",
+            "Amount",
+            "PDF page",
+            "Review basis",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 2,
+          "shownRows": 2,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1276.40625,
+          "wrapper": "tablewrap report-table-scroll"
+        }
+      ],
+      "bodyOverflow": false
+    },
+    {
+      "page": "project-documents.html",
+      "errors": [],
+      "tables": [],
+      "bodyOverflow": false
+    },
+    {
+      "page": "rcs.html",
+      "errors": [],
+      "tables": [
+        {
+          "id": null,
+          "section": "Even distribution \u00b7 did any RCS allocation disappear in HGAB?",
+          "headers": [
+            "Stage check",
+            "DEO RCS lines"
+          ],
+          "rows": 3,
+          "shownRows": 3,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": "provinceBody",
+          "section": "Allocation by province",
+          "headers": [
+            "Province",
+            "Congressional representatives for province",
+            "Mean annual rain (mm)",
+            "DEOs",
+            "Current units",
+            "Expected units",
+            "Suggested whole units",
+            "Change"
+          ],
+          "rows": 78,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 594.203125,
+          "wrapper": "tablewrap report-table-scroll"
+        },
+        {
+          "id": "districtBody",
+          "section": "District engineering office allocation",
+          "headers": [
+            "Region",
+            "Province proxy",
+            "Geographic match",
+            "District Engineering Office",
+            "Representative(s), only when province has one seat",
+            "Mean annual rain (mm)",
+            "Current units",
+            "Expected units",
+            "Suggested whole units",
+            "Current allocation",
+            "Rainfall-only allocation",
+            "Change"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "tablewrap report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Uniform allocations \u00b7 formula sensitivity",
+          "headers": [
+            "Formula",
+            "Budget units moved from current allocation",
+            "Offices assigned zero units",
+            "Offices retaining one unit",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 4,
+          "shownRows": 4,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        }
+      ],
+      "bodyOverflow": false
+    },
+    {
+      "page": "repeats.html",
+      "errors": [],
+      "tables": [
+        {
+          "id": "priorityRepeatBody",
+          "section": "Potential repeated line items: FY2027 NEP \u2192 FY2026 GAA, then FY2025 GAA",
+          "headers": [
+            "Program",
+            "FY2027 NEP line item",
+            "NEP chainage",
+            "District office",
+            "Representative(s) by named project location",
+            "FY2027 NEP",
+            "GAA year",
+            "Enacted GAA line item",
+            "GAA chainage",
+            "Chainage / tranche check",
+            "GAA amount",
+            "Title match",
+            "GAA source",
+            "DPWH transparency"
+          ],
+          "rows": 10,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "tablewrap report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "MPB locations \u00b7 same-site funding and separate-site review",
+          "headers": [
+            "First project \u00b7 source",
+            "Second project \u00b7 source",
+            "Straight-line meters",
+            "Site interpretation \u00b7 distance band",
+            "Barangay evidence",
+            "Funded-work review",
+            "Representative(s) for listed locations",
+            "DPWH transparency"
+          ],
+          "rows": 22,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Of the NEP repeat candidates, how many survived into HGAB?",
+          "headers": [
+            "HGAB retention class",
+            "Original GAA comparison pairs",
+            "Distinct NEP proposals",
+            "Original NEP allocation pesos",
+            "Selected HGAB allocation pesos"
+          ],
+          "rows": 4,
+          "shownRows": 4,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Similar line items within NEP and within HGAB 3rd reading",
+          "headers": [
+            "Stage",
+            "Source occurrences",
+            "Screened occurrences",
+            "Candidate pairs",
+            "Distinct flagged occurrences",
+            "Pairs with explicit range overlap",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 2,
+          "shownRows": 2,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Similar line items within NEP and within HGAB 3rd reading",
+          "headers": [
+            "First project \u00b7 source",
+            "Second project \u00b7 source",
+            "Official program",
+            "Implementing offices",
+            "Individual allocations pesos \u00b7 first / second",
+            "Screening evidence",
+            "Stated segment evidence",
+            "Representative(s) for listed locations",
+            "DPWH transparency"
+          ],
+          "rows": 23,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Similar line items within NEP and within HGAB 3rd reading",
+          "headers": [
+            "First project \u00b7 source",
+            "Second project \u00b7 source",
+            "Official program",
+            "Implementing offices",
+            "Individual allocations pesos \u00b7 first / second",
+            "Screening evidence",
+            "Stated segment evidence",
+            "Matched inventory ID(s)",
+            "Representative(s) for listed locations",
+            "DPWH transparency"
+          ],
+          "rows": 50,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Similar line items within NEP and within HGAB 3rd reading",
+          "headers": [
+            "Stage",
+            "Excluded records or vetoed candidate comparisons",
+            "Count",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 17,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Potential FMR repeats: FY2027 HGAB vs FY2025 GAA",
+          "headers": [
+            "HGAB project",
+            "HGAB allocation pesos",
+            "FY2025 project",
+            "FY2025 allocation pesos",
+            "Title similarity",
+            "Chainage / tranche",
+            "HGAB PDF page",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 2,
+          "shownRows": 2,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": "niaRepeatTable",
+          "section": "Potential NIA irrigation repeats: FY2027 HGAB vs FY2025 GAA",
+          "headers": [
+            "FY2027 line item",
+            "FY2027 amount",
+            "Compared with",
+            "Closest prior-year line",
+            "FY2027 chainage",
+            "Prior chainage",
+            "Chainage / tranche check",
+            "Prior amount",
+            "Difference",
+            "Name match",
+            "Prior source",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 11,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1320.40625,
+          "wrapper": "report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Repeat denominators and allocation clustering",
+          "headers": [
+            "Chainage evidence",
+            "Comparison pairs"
+          ],
+          "rows": 4,
+          "shownRows": 4,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        }
+      ],
+      "bodyOverflow": false
+    },
+    {
+      "page": "summary.html",
+      "errors": [],
+      "tables": [
+        {
+          "id": null,
+          "section": "Where to start",
+          "headers": [
+            "Priority",
+            "Investigative lead",
+            "Evidence class",
+            "Question to verify"
+          ],
+          "rows": 9,
+          "shownRows": 9,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Evidence needed to strengthen the claims",
+          "headers": [
+            "Investigative question",
+            "Dataset or documents needed",
+            "Current workspace limitation"
+          ],
+          "rows": 6,
+          "shownRows": 6,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Top 25 line items \u00b7 combined evidence for review",
+          "headers": [
+            "Rank",
+            "HGAB project",
+            "Program",
+            "Implementing office",
+            "Screening flags",
+            "HGAB allocation pesos",
+            "Flag evidence",
+            "Evidence cautions \u00b7 no extra points",
+            "Historical counterpart evidence",
+            "HGAB source",
+            "Matched inventory ID(s)",
+            "Representative(s) for listed locations",
+            "DPWH transparency"
+          ],
+          "rows": 25,
+          "shownRows": 10,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        },
+        {
+          "id": null,
+          "section": "Top 25 line items \u00b7 combined evidence for review",
+          "headers": [
+            "Summary finding",
+            "Treatment in the line-item ranking",
+            "Representative(s) for listed locations"
+          ],
+          "rows": 9,
+          "shownRows": 9,
+          "styled": true,
+          "headerColor": "rgb(23, 62, 75)",
+          "needsPagination": false,
+          "horizontalOverflow": false,
+          "width": 1322.40625,
+          "wrapper": "evidence-table report-table-scroll"
+        }
+      ],
+      "bodyOverflow": false
+    }
+  ],
+  "summary": {
+    "pages": 18,
+    "visibleTables": 105,
+    "unstyledTables": 0,
+    "tablesOverTenVisibleRows": 0,
+    "horizontalTableOverflows": 0,
+    "pageErrors": 0
+  },
+  "scope": "Local Chrome at 1440px width, default table states. All pages swept; NIA rechecked after its final 15-to-10 row default fix. Not a source-data or all-filter validation."
+}

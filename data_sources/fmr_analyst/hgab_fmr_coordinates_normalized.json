@@ -2,16 +2,17 @@
   "metadata": {
     "schema_version": 1,
     "source_tree": "data/hgab_fmr_tree.json",
-    "source_tree_sha256": "a9e9271963ac4e7cb05209f44222475012a8ec7059822bb4f57d89b5a8a89be1",
+    "source_tree_sha256": "40907bb12528a76d955bda746e364ec8c28e14b19134eb6b2f90d07ead0bfdb5",
     "source_pdf_sha256": "a82800c4cc2684566a37f7780d8f9131d2e7b2c97444d335d94df012dec065b6",
-    "normalizer_sha256": "d73795fdea2a868391a8fb7e1aebfb296f96f68aaf86213df6a95e8da61706fb",
+    "normalizer_sha256": "ebde33f0f1d47aed522e643eccd29e4314b7c9b415437ebe9dfe2ba789a35244",
     "coordinate_unit": "decimal degrees",
     "coordinate_column_order": "longitude, latitude",
     "coordinate_structure": "project.coordinates is an array of segments; each segment is an array of [longitude, latitude] pairs; unavailable points are null",
     "source_crs": "not stated in the source; no datum transformation applied",
     "scalar_project_columns": "filled only for one segment; multi-section endpoints remain in segment rows",
     "amounts": "project CSV only; no allocation duplicated in point/segment CSVs",
-    "numeric_repair_candidates": "published with review flags, not accepted as verified source corrections"
+    "numeric_repair_candidates": "candidate readings may remain flagged; PSGC-supported off-by-one digit repairs are accepted into numeric arrays with rules off_by_one_digit_repair_accepted / source_numeric_repair_accepted; coordinates_raw stays immutable",
+    "digit_repairs_accepted": 13
   },
   "projects": [
     {
@@ -282,7 +283,7 @@
         [
           [
             120.7245783,
-            17.00918
+            18.00918
           ],
           [
             120.732015,
@@ -293,22 +294,24 @@
       "segment_count": 1,
       "point_count": 2,
       "start_longitude": 120.7245783,
-      "start_latitude": 17.00918,
+      "start_latitude": 18.00918,
       "end_longitude": 120.732015,
       "end_latitude": 17.9980347,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "endpoint_distance_over_100_km"
+      "status": "normalized",
+      "review_flags": [],
+      "normalization_rules": [
+        "off_by_one_digit_repair_accepted"
       ],
-      "normalization_rules": [],
       "points": [
         {
           "raw": " 17.00918, 120.7245783\n",
           "longitude": 120.7245783,
-          "latitude": 17.00918,
-          "rules": [],
+          "latitude": 18.00918,
+          "rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
@@ -319,7 +322,7 @@
           "id": "ib:p667:r7:point1",
           "coordinates": [
             120.7245783,
-            17.00918
+            18.00918
           ]
         },
         {
@@ -353,25 +356,25 @@
           ],
           "pairing_basis": "single_pair",
           "start_longitude": 120.7245783,
-          "start_latitude": 17.00918,
+          "start_latitude": 18.00918,
           "end_longitude": 120.732015,
           "end_latitude": 17.9980347,
-          "straight_line_distance_km": 109.958606,
-          "normalization_rules": [],
+          "straight_line_distance_km": 1.467771,
+          "normalization_rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "coordinates": [
             [
               120.7245783,
-              17.00918
+              18.00918
             ],
             [
               120.732015,
               17.9980347
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -6125,23 +6128,25 @@
             120.540087,
             18.152453
           ],
-          null
+          [
+            120.53601,
+            18.153581
+          ]
         ]
       ],
       "segment_count": 1,
       "point_count": 2,
       "start_longitude": 120.540087,
       "start_latitude": 18.152453,
-      "end_longitude": null,
-      "end_latitude": null,
+      "end_longitude": 120.53601,
+      "end_latitude": 18.153581,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "invalid_coordinate_pair"
-      ],
+      "status": "normalized",
+      "review_flags": [],
       "normalization_rules": [
-        "longitude_first_reordered"
+        "longitude_first_reordered",
+        "off_by_one_digit_repair_accepted"
       ],
       "points": [
         {
@@ -6166,12 +6171,12 @@
         },
         {
           "raw": " 120.153581, 120.53601",
-          "longitude": null,
-          "latitude": null,
-          "rules": [],
-          "issues": [
-            "invalid_coordinate_pair"
+          "longitude": 120.53601,
+          "latitude": 18.153581,
+          "rules": [
+            "off_by_one_digit_repair_accepted"
           ],
+          "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
           "role": "end",
@@ -6179,7 +6184,10 @@
           "source_fragment_raw": " 120.153581, 120.53601",
           "source_offset": 33,
           "id": "ib:p670:r4:point2",
-          "coordinates": null
+          "coordinates": [
+            120.53601,
+            18.153581
+          ]
         }
       ],
       "segments": [
@@ -6195,23 +6203,25 @@
           "pairing_basis": "single_pair",
           "start_longitude": 120.540087,
           "start_latitude": 18.152453,
-          "end_longitude": null,
-          "end_latitude": null,
-          "straight_line_distance_km": null,
+          "end_longitude": 120.53601,
+          "end_latitude": 18.153581,
+          "straight_line_distance_km": 0.448667,
           "normalization_rules": [
-            "longitude_first_reordered"
+            "longitude_first_reordered",
+            "off_by_one_digit_repair_accepted"
           ],
           "coordinates": [
             [
               120.540087,
               18.152453
             ],
-            null
+            [
+              120.53601,
+              18.153581
+            ]
           ],
-          "review_flags": [
-            "invalid_coordinate_pair"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -20261,7 +20271,7 @@
           ],
           [
             121.879302,
-            18.826792
+            16.826792
           ]
         ]
       ],
@@ -20270,14 +20280,14 @@
       "start_longitude": 121.87951,
       "start_latitude": 16.851721,
       "end_longitude": 121.879302,
-      "end_latitude": 18.826792,
+      "end_latitude": 16.826792,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "endpoint_distance_over_100_km"
+      "status": "normalized",
+      "review_flags": [],
+      "normalization_rules": [
+        "off_by_one_digit_repair_accepted"
       ],
-      "normalization_rules": [],
       "points": [
         {
           "raw": " 16.851721, 121.879510\n",
@@ -20300,8 +20310,10 @@
         {
           "raw": " 18.826792, 121.879302",
           "longitude": 121.879302,
-          "latitude": 18.826792,
-          "rules": [],
+          "latitude": 16.826792,
+          "rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
@@ -20312,7 +20324,7 @@
           "id": "ib:p677:r5:point2",
           "coordinates": [
             121.879302,
-            18.826792
+            16.826792
           ]
         }
       ],
@@ -20330,9 +20342,11 @@
           "start_longitude": 121.87951,
           "start_latitude": 16.851721,
           "end_longitude": 121.879302,
-          "end_latitude": 18.826792,
-          "straight_line_distance_km": 219.618179,
-          "normalization_rules": [],
+          "end_latitude": 16.826792,
+          "straight_line_distance_km": 2.772071,
+          "normalization_rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "coordinates": [
             [
               121.87951,
@@ -20340,13 +20354,11 @@
             ],
             [
               121.879302,
-              18.826792
+              16.826792
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -27808,12 +27820,11 @@
       "end_latitude": 14.829078,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "source_numeric_repair_candidate"
-      ],
+      "status": "normalized",
+      "review_flags": [],
       "normalization_rules": [
-        "missing_latitude_decimal_candidate"
+        "missing_latitude_decimal_candidate",
+        "source_numeric_repair_accepted"
       ],
       "points": [
         {
@@ -27821,11 +27832,10 @@
           "longitude": 121.033211,
           "latitude": 14.828381,
           "rules": [
-            "missing_latitude_decimal_candidate"
+            "missing_latitude_decimal_candidate",
+            "source_numeric_repair_accepted"
           ],
-          "issues": [
-            "source_numeric_repair_candidate"
-          ],
+          "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
           "role": "start",
@@ -27874,7 +27884,8 @@
           "end_latitude": 14.829078,
           "straight_line_distance_km": 10.473315,
           "normalization_rules": [
-            "missing_latitude_decimal_candidate"
+            "missing_latitude_decimal_candidate",
+            "source_numeric_repair_accepted"
           ],
           "coordinates": [
             [
@@ -27886,10 +27897,8 @@
               14.829078
             ]
           ],
-          "review_flags": [
-            "source_numeric_repair_candidate"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -36639,7 +36648,7 @@
             15.6352648
           ],
           [
-            129.8030109,
+            120.8030109,
             15.6377206
           ]
         ]
@@ -36648,16 +36657,15 @@
       "point_count": 2,
       "start_longitude": 120.7972783,
       "start_latitude": 15.6352648,
-      "end_longitude": 129.8030109,
+      "end_longitude": 120.8030109,
       "end_latitude": 15.6377206,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "endpoint_distance_over_100_km",
-        "outside_philippines_orientation_bounds"
+      "status": "normalized",
+      "review_flags": [],
+      "normalization_rules": [
+        "off_by_one_digit_repair_accepted"
       ],
-      "normalization_rules": [],
       "points": [
         {
           "raw": " 15.6352648, 120.7972783\n",
@@ -36679,12 +36687,12 @@
         },
         {
           "raw": " 15.6377206, 129.8030109",
-          "longitude": 129.8030109,
+          "longitude": 120.8030109,
           "latitude": 15.6377206,
-          "rules": [],
-          "issues": [
-            "outside_philippines_orientation_bounds"
+          "rules": [
+            "off_by_one_digit_repair_accepted"
           ],
+          "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
           "role": "end",
@@ -36693,7 +36701,7 @@
           "source_offset": 35,
           "id": "ib:p685:r5:point2",
           "coordinates": [
-            129.8030109,
+            120.8030109,
             15.6377206
           ]
         }
@@ -36711,25 +36719,24 @@
           "pairing_basis": "single_pair",
           "start_longitude": 120.7972783,
           "start_latitude": 15.6352648,
-          "end_longitude": 129.8030109,
+          "end_longitude": 120.8030109,
           "end_latitude": 15.6377206,
-          "straight_line_distance_km": 964.26045,
-          "normalization_rules": [],
+          "straight_line_distance_km": 0.671845,
+          "normalization_rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "coordinates": [
             [
               120.7972783,
               15.6352648
             ],
             [
-              129.8030109,
+              120.8030109,
               15.6377206
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km",
-            "outside_philippines_orientation_bounds"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -52165,13 +52172,13 @@
           ],
           [
             121.583835,
-            4.606694
+            14.606694
           ]
         ],
         [
           [
             121.583412,
-            4.606488
+            14.606488
           ],
           [
             121.579656,
@@ -52187,11 +52194,11 @@
       "end_latitude": null,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "endpoint_distance_over_100_km"
+      "status": "normalized",
+      "review_flags": [],
+      "normalization_rules": [
+        "off_by_one_digit_repair_accepted"
       ],
-      "normalization_rules": [],
       "points": [
         {
           "raw": "14.606378 121.587138,\n",
@@ -52214,8 +52221,10 @@
         {
           "raw": "4.606488 121.583412\n",
           "longitude": 121.583412,
-          "latitude": 4.606488,
-          "rules": [],
+          "latitude": 14.606488,
+          "rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
@@ -52226,14 +52235,16 @@
           "id": "ib:p692:r16:point2",
           "coordinates": [
             121.583412,
-            4.606488
+            14.606488
           ]
         },
         {
           "raw": " 4.606694 121.583835,\n",
           "longitude": 121.583835,
-          "latitude": 4.606694,
-          "rules": [],
+          "latitude": 14.606694,
+          "rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
@@ -52244,7 +52255,7 @@
           "id": "ib:p692:r16:point3",
           "coordinates": [
             121.583835,
-            4.606694
+            14.606694
           ]
         },
         {
@@ -52280,9 +52291,11 @@
           "start_longitude": 121.587138,
           "start_latitude": 14.606378,
           "end_longitude": 121.583835,
-          "end_latitude": 4.606694,
-          "straight_line_distance_km": 1111.915723,
-          "normalization_rules": [],
+          "end_latitude": 14.606694,
+          "straight_line_distance_km": 0.35714,
+          "normalization_rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "coordinates": [
             [
               121.587138,
@@ -52290,13 +52303,11 @@
             ],
             [
               121.583835,
-              4.606694
+              14.606694
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         },
         {
           "id": "ib:p692:r16:segment2",
@@ -52309,25 +52320,25 @@
           ],
           "pairing_basis": "explicit_section",
           "start_longitude": 121.583412,
-          "start_latitude": 4.606488,
+          "start_latitude": 14.606488,
           "end_longitude": 121.579656,
           "end_latitude": 14.606957,
-          "straight_line_distance_km": 1112.003029,
-          "normalization_rules": [],
+          "straight_line_distance_km": 0.407501,
+          "normalization_rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "coordinates": [
             [
               121.583412,
-              4.606488
+              14.606488
             ],
             [
               121.579656,
               14.606957
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -60733,7 +60744,7 @@
             13.840631
           ],
           [
-            121.917756,
+            120.917756,
             13.846302
           ]
         ]
@@ -60742,15 +60753,15 @@
       "point_count": 2,
       "start_longitude": 120.95877,
       "start_latitude": 13.840631,
-      "end_longitude": 121.917756,
+      "end_longitude": 120.917756,
       "end_latitude": 13.846302,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "endpoint_distance_over_100_km"
+      "status": "normalized",
+      "review_flags": [],
+      "normalization_rules": [
+        "off_by_one_digit_repair_accepted"
       ],
-      "normalization_rules": [],
       "points": [
         {
           "raw": " 13.840631, 120.95877\n",
@@ -60772,9 +60783,11 @@
         },
         {
           "raw": " 13.846302, 121.917756",
-          "longitude": 121.917756,
+          "longitude": 120.917756,
           "latitude": 13.846302,
-          "rules": [],
+          "rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
@@ -60784,7 +60797,7 @@
           "source_offset": 32,
           "id": "ib:p696:r17:point2",
           "coordinates": [
-            121.917756,
+            120.917756,
             13.846302
           ]
         }
@@ -60802,24 +60815,24 @@
           "pairing_basis": "single_pair",
           "start_longitude": 120.95877,
           "start_latitude": 13.840631,
-          "end_longitude": 121.917756,
+          "end_longitude": 120.917756,
           "end_latitude": 13.846302,
-          "straight_line_distance_km": 103.538968,
-          "normalization_rules": [],
+          "straight_line_distance_km": 4.472759,
+          "normalization_rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "coordinates": [
             [
               120.95877,
               13.840631
             ],
             [
-              121.917756,
+              120.917756,
               13.846302
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -60975,7 +60988,7 @@
             13.825486
           ],
           [
-            121.914231,
+            120.914231,
             13.823398
           ]
         ]
@@ -60984,15 +60997,15 @@
       "point_count": 2,
       "start_longitude": 120.91245,
       "start_latitude": 13.825486,
-      "end_longitude": 121.914231,
+      "end_longitude": 120.914231,
       "end_latitude": 13.823398,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "endpoint_distance_over_100_km"
+      "status": "normalized",
+      "review_flags": [],
+      "normalization_rules": [
+        "off_by_one_digit_repair_accepted"
       ],
-      "normalization_rules": [],
       "points": [
         {
           "raw": " 13.825486, 120.91245\n",
@@ -61014,9 +61027,11 @@
         },
         {
           "raw": " 13.823398, 121.914231",
-          "longitude": 121.914231,
+          "longitude": 120.914231,
           "latitude": 13.823398,
-          "rules": [],
+          "rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
@@ -61026,7 +61041,7 @@
           "source_offset": 32,
           "id": "ib:p696:r19:point2",
           "coordinates": [
-            121.914231,
+            120.914231,
             13.823398
           ]
         }
@@ -61044,24 +61059,24 @@
           "pairing_basis": "single_pair",
           "start_longitude": 120.91245,
           "start_latitude": 13.825486,
-          "end_longitude": 121.914231,
+          "end_longitude": 120.914231,
           "end_latitude": 13.823398,
-          "straight_line_distance_km": 108.166502,
-          "normalization_rules": [],
+          "straight_line_distance_km": 0.301472,
+          "normalization_rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "coordinates": [
             [
               120.91245,
               13.825486
             ],
             [
-              121.914231,
+              120.914231,
               13.823398
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -62761,7 +62776,7 @@
             13.842103
           ],
           [
-            121.953232,
+            120.953232,
             13.84248
           ]
         ],
@@ -62784,11 +62799,11 @@
       "end_latitude": null,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "endpoint_distance_over_100_km"
+      "status": "normalized",
+      "review_flags": [],
+      "normalization_rules": [
+        "off_by_one_digit_repair_accepted"
       ],
-      "normalization_rules": [],
       "points": [
         {
           "raw": "13.842103, 120.954358\n",
@@ -62828,9 +62843,11 @@
         },
         {
           "raw": "13.84248, 121.953232\n",
-          "longitude": 121.953232,
+          "longitude": 120.953232,
           "latitude": 13.84248,
-          "rules": [],
+          "rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
@@ -62840,7 +62857,7 @@
           "source_offset": 65,
           "id": "ib:p697:r12:point3",
           "coordinates": [
-            121.953232,
+            120.953232,
             13.84248
           ]
         },
@@ -62876,24 +62893,24 @@
           "pairing_basis": "explicit_section",
           "start_longitude": 120.954358,
           "start_latitude": 13.842103,
-          "end_longitude": 121.953232,
+          "end_longitude": 120.953232,
           "end_latitude": 13.84248,
-          "straight_line_distance_km": 107.844107,
-          "normalization_rules": [],
+          "straight_line_distance_km": 0.128594,
+          "normalization_rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "coordinates": [
             [
               120.954358,
               13.842103
             ],
             [
-              121.953232,
+              120.953232,
               13.84248
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         },
         {
           "id": "ib:p697:r12:segment2",
@@ -74047,12 +74064,11 @@
       "end_latitude": 12.528813,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "source_numeric_repair_candidate"
-      ],
+      "status": "normalized",
+      "review_flags": [],
       "normalization_rules": [
-        "extra_decimal_separator_candidate"
+        "extra_decimal_separator_candidate",
+        "source_numeric_repair_accepted"
       ],
       "points": [
         {
@@ -74078,11 +74094,10 @@
           "longitude": 123.69192,
           "latitude": 12.528813,
           "rules": [
-            "extra_decimal_separator_candidate"
+            "extra_decimal_separator_candidate",
+            "source_numeric_repair_accepted"
           ],
-          "issues": [
-            "source_numeric_repair_candidate"
-          ],
+          "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
           "role": "end",
@@ -74113,7 +74128,8 @@
           "end_latitude": 12.528813,
           "straight_line_distance_km": 1.692223,
           "normalization_rules": [
-            "extra_decimal_separator_candidate"
+            "extra_decimal_separator_candidate",
+            "source_numeric_repair_accepted"
           ],
           "coordinates": [
             [
@@ -74125,10 +74141,8 @@
               12.528813
             ]
           ],
-          "review_flags": [
-            "source_numeric_repair_candidate"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -92570,7 +92584,7 @@
           ],
           [
             123.4080266,
-            1.8042275
+            9.8042275
           ]
         ]
       ],
@@ -92582,13 +92596,11 @@
       "end_latitude": null,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "endpoint_distance_over_100_km",
-        "outside_philippines_orientation_bounds"
-      ],
+      "status": "normalized",
+      "review_flags": [],
       "normalization_rules": [
-        "decimal_spacing_removed"
+        "decimal_spacing_removed",
+        "off_by_one_digit_repair_accepted"
       ],
       "points": [
         {
@@ -92650,11 +92662,11 @@
         {
           "raw": " 1.8042275, 123.4080266",
           "longitude": 123.4080266,
-          "latitude": 1.8042275,
-          "rules": [],
-          "issues": [
-            "outside_philippines_orientation_bounds"
+          "latitude": 9.8042275,
+          "rules": [
+            "off_by_one_digit_repair_accepted"
           ],
+          "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
           "role": "end",
@@ -92664,7 +92676,7 @@
           "id": "ib:p713:r3:point4",
           "coordinates": [
             123.4080266,
-            1.8042275
+            9.8042275
           ]
         }
       ],
@@ -92713,9 +92725,11 @@
           "start_longitude": 123.406771,
           "start_latitude": 9.8052549,
           "end_longitude": 123.4080266,
-          "end_latitude": 1.8042275,
-          "straight_line_distance_km": 889.674895,
-          "normalization_rules": [],
+          "end_latitude": 9.8042275,
+          "straight_line_distance_km": 0.178826,
+          "normalization_rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "coordinates": [
             [
               123.406771,
@@ -92723,14 +92737,11 @@
             ],
             [
               123.4080266,
-              1.8042275
+              9.8042275
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km",
-            "outside_philippines_orientation_bounds"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },
@@ -93478,7 +93489,7 @@
         [
           [
             124.488833,
-            11.871556
+            10.871556
           ],
           [
             124.485778,
@@ -93489,22 +93500,24 @@
       "segment_count": 1,
       "point_count": 2,
       "start_longitude": 124.488833,
-      "start_latitude": 11.871556,
+      "start_latitude": 10.871556,
       "end_longitude": 124.485778,
       "end_latitude": 10.878222,
       "point_longitude": null,
       "point_latitude": null,
-      "status": "needs_review",
-      "review_flags": [
-        "endpoint_distance_over_100_km"
+      "status": "normalized",
+      "review_flags": [],
+      "normalization_rules": [
+        "off_by_one_digit_repair_accepted"
       ],
-      "normalization_rules": [],
       "points": [
         {
           "raw": " 11.871556, 124.488833\n",
           "longitude": 124.488833,
-          "latitude": 11.871556,
-          "rules": [],
+          "latitude": 10.871556,
+          "rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "issues": [],
           "unconsumed_text": "",
           "trailing_annotation_raw": "",
@@ -93515,7 +93528,7 @@
           "id": "ib:p713:r12:point1",
           "coordinates": [
             124.488833,
-            11.871556
+            10.871556
           ]
         },
         {
@@ -93549,25 +93562,25 @@
           ],
           "pairing_basis": "single_pair",
           "start_longitude": 124.488833,
-          "start_latitude": 11.871556,
+          "start_latitude": 10.871556,
           "end_longitude": 124.485778,
           "end_latitude": 10.878222,
-          "straight_line_distance_km": 110.454356,
-          "normalization_rules": [],
+          "straight_line_distance_km": 0.812838,
+          "normalization_rules": [
+            "off_by_one_digit_repair_accepted"
+          ],
           "coordinates": [
             [
               124.488833,
-              11.871556
+              10.871556
             ],
             [
               124.485778,
               10.878222
             ]
           ],
-          "review_flags": [
-            "endpoint_distance_over_100_km"
-          ],
-          "status": "needs_review"
+          "review_flags": [],
+          "status": "normalized"
         }
       ]
     },

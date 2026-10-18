@@ -12,6 +12,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parent.parent
 ODV=ROOT.parent/'open-data-visualization'
 STATIC=ODV/'static/nep-preview'
+sys.path.insert(0,str(ROOT))
 sys.path.insert(0,str(ODV/'analysis'))
 from strict_congress_geography import GeographicAttribution, text_key, place_key, seat_key
 
@@ -89,6 +90,8 @@ class PHLocations:
 
 def main():
     loc=PHLocations();catalog={};stats=Counter();pages=[]
+    from location_data.matched_inventory_ids import catalog as inventory_catalog
+    inventory_ids=inventory_catalog()
     def record(title):
         if not isinstance(title,str) or not title.strip():return []
         names=list(loc.project(title));catalog[text_key(title)]=names
@@ -103,6 +106,8 @@ def main():
             for title in value.get('examples',[]) if isinstance(value.get('examples'),list) else []:
                 record(title)
             for title in titles:record(title)
+            if titles and text_key(titles[0]) in inventory_ids:
+                value['matchedInventoryId']=inventory_ids[text_key(titles[0])]
             if titles or 'congressional_representatives' in value:
                 previous=value.get('congressional_representatives',[])
                 # Current/primary title only; never concatenate it with a prior-year title.
@@ -145,6 +150,7 @@ def main():
     for jurisdiction,seat in loc.members:
         payload['districts'][text_key(jurisdiction+' · '+seat+' District')]=list(loc.district(jurisdiction+' · '+seat))
         payload['provinces'][jurisdiction]=list(loc.province(jurisdiction))
+    payload['inventoryIds']=inventory_ids
     template=(ROOT/'location_data/table_representatives.js').read_text()
     asset=template.replace('__PH_LOCATION_PAYLOAD__',json.dumps(payload,ensure_ascii=False,separators=(',',':')).replace('</','<\\/'))
     (STATIC/'ph-location-representatives.js').write_text(asset)
@@ -157,7 +163,12 @@ def main():
            'counts':dict(stats),'catalogTitles':len(catalog),'pages':pages,'policy':payload['policy'],
            'limitations':['A blank name is unresolved coverage, not absence of funding.','School names, DEO aggregates, generic scheme titles and geographic terms alone cannot identify a legislative seat.','Province-wide names are geographic context only; names for featured projects do not cover all projects in an aggregate.']}
     audit['limitations'].append('Row counts include repeated appearances across report data and embedded views; they are not distinct project counts.')
+    audit['supportedInventoryIdTitles']=len(inventory_ids)
     (ROOT/'analysis_output/ph_location_representative_audit.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2)+'\n')
+    # Keep private previews byte-identical to the published static candidates.
+    for path in STATIC.glob('*.html'):
+        mirror=ROOT/'analysis_output'/path.name
+        if mirror.exists():mirror.write_bytes(path.read_bytes())
     print(json.dumps(audit,ensure_ascii=False,indent=2))
 
 

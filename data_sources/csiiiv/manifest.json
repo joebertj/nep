@@ -1,0 +1,2127 @@
+{
+  "repository": "https://github.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS",
+  "website": "https://csiiiv.github.io/DPWH-NEP-HB-2027-ANALYSIS/app/#overview",
+  "commit": "34ef5d8cbbacda92f6503ffd9a428569f157f64d",
+  "retrievedAtUtc": "2026-10-18T08:46:20Z",
+  "scope": "Current JSON and source methods/views; no PDFs, Git history, superseded archives or execution of downloaded code. Existing byte-identical local files referenced instead of duplicated.",
+  "files": [
+    {
+      "repositoryPath": "README.md",
+      "gitBlobSha": "c6e881bf19353eeeb59396a9699d61507fa299b7",
+      "sizeBytes": 6579,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/README.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/README.md",
+      "sha256": "4ede84a36ddbef546f9148cf6b135a83f00a97df7be3f09211c46d18858b62d8"
+    },
+    {
+      "repositoryPath": "analysis-hfep/HFEP_EXTRACTION.md",
+      "gitBlobSha": "90adf7cf0e775c02bc255b49287fdfff09d94357",
+      "sizeBytes": 11100,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/HFEP_EXTRACTION.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/HFEP_EXTRACTION.md",
+      "sha256": "0265bd4163d73546b2217d3f916275af38fcdeb5feb32a0bf706278860aba552"
+    },
+    {
+      "repositoryPath": "analysis-hfep/HFEP_HIGHLIGHTS_CANDIDATES.md",
+      "gitBlobSha": "8dbcf5e0c5d353e0637cc80d7f683d8d70e45aad",
+      "sizeBytes": 11792,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/HFEP_HIGHLIGHTS_CANDIDATES.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/HFEP_HIGHLIGHTS_CANDIDATES.md",
+      "sha256": "a2a4432cad48c8fc3c9cd594896a5e9e141b337aff24dd18d5e9b19a6b846dda"
+    },
+    {
+      "repositoryPath": "analysis-hfep/NEP_HFEP_EXTRACTION.md",
+      "gitBlobSha": "688fb3e23a72e37b48968551d68ff548ae4264f1",
+      "sizeBytes": 6183,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/NEP_HFEP_EXTRACTION.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/NEP_HFEP_EXTRACTION.md",
+      "sha256": "74b94260389343f759d6e6c78aee44aaa309c738f8bd8f21e4b323eba4673496"
+    },
+    {
+      "repositoryPath": "analysis-hfep/NEP_HFEP_WORKLOG.md",
+      "gitBlobSha": "d52ea1c69cb84119ea59d49b6b4565f5a88bac8f",
+      "sizeBytes": 13757,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/NEP_HFEP_WORKLOG.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/NEP_HFEP_WORKLOG.md",
+      "sha256": "eb41f9cb7816ff99484ea1dcf4797c39c2c1c3626122a11adc12172406d2abd0"
+    },
+    {
+      "repositoryPath": "analysis-hfep/README.md",
+      "gitBlobSha": "b725749f39e289d7a64813598dc501181b9d9a1c",
+      "sizeBytes": 4921,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/README.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/README.md",
+      "sha256": "c7d537090f61313ee8b4b8880118087a8a730d90553c835a75a10d7141065f6b"
+    },
+    {
+      "repositoryPath": "analysis-hfep/data/hgab_hfep_audit.json",
+      "gitBlobSha": "2fcfd13b32b59c0d093ec062d25afd5f0c331d18",
+      "sizeBytes": 157728,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/data/hgab_hfep_audit.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/data/hgab_hfep_audit.json",
+      "sha256": "74dc61536424e62030ed90e81d62073f2eb345235907a1de2448b01983498da7"
+    },
+    {
+      "repositoryPath": "analysis-hfep/data/hgab_hfep_data_list.json",
+      "gitBlobSha": "b5dac2c422b3d47045819b5b50a9a92cf8db572c",
+      "sizeBytes": 1113873,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/data/hgab_hfep_data_list.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/data/hgab_hfep_data_list.json",
+      "sha256": "0d8cfb9b7edd32805ec9c54981b6099d32301f0ca202c16a2b33a998dbde3277"
+    },
+    {
+      "repositoryPath": "analysis-hfep/data/hgab_hfep_source_rows.json",
+      "gitBlobSha": "9f3a396e07f45189dd1b0e06e239ec7dde5bbd1e",
+      "sizeBytes": 828724,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/data/hgab_hfep_source_rows.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/data/hgab_hfep_source_rows.json",
+      "sha256": "9a58627391eced58903c1b53ed9d5101de9372daf2461dac75fd779fb75119d5"
+    },
+    {
+      "repositoryPath": "analysis-hfep/data/hgab_hfep_tree.json",
+      "gitBlobSha": "4a32f009af4f30f7c634d682fc3b038bc06930de",
+      "sizeBytes": 1237917,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/data/hgab_hfep_tree.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/data/hgab_hfep_tree.json",
+      "sha256": "3d93535f64f01919fab729c37aee5b6181ad952bffe75af352be46574d0cef05"
+    },
+    {
+      "repositoryPath": "analysis-hfep/data/nep_hfep_audit.json",
+      "gitBlobSha": "ec5deded56288548a45c31b47a562e0845d30e8f",
+      "sizeBytes": 200393,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/data/nep_hfep_audit.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/data/nep_hfep_audit.json",
+      "sha256": "eefc2f35fd1022cc80c0906525b550c680c56fcfaa36ab77b01d7b8df55d9c10"
+    },
+    {
+      "repositoryPath": "analysis-hfep/data/nep_hfep_data_list.json",
+      "gitBlobSha": "134e3875b0a7f844b7eca29b513e2211dc08d157",
+      "sizeBytes": 1015317,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/data/nep_hfep_data_list.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/data/nep_hfep_data_list.json",
+      "sha256": "3edd1cdb8cc62c4ef4e17a9a18f93862222a3e01ad5c94cfffd0f66b0864b74d"
+    },
+    {
+      "repositoryPath": "analysis-hfep/data/nep_hfep_items_with_pages.md",
+      "gitBlobSha": "50fe331aa2a9aadec5dca62beba51c192a4075b9",
+      "sizeBytes": 65966,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/data/nep_hfep_items_with_pages.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/data/nep_hfep_items_with_pages.md",
+      "sha256": "2d70e9bfc3e3d82084f478cc4b79c7c441904b666ee27583f54ad390dece2b3f"
+    },
+    {
+      "repositoryPath": "analysis-hfep/data/nep_hfep_source_rows.json",
+      "gitBlobSha": "6564ee725725c727ae69a3bb5e97b5b15eaeb1d0",
+      "sizeBytes": 488978,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/data/nep_hfep_source_rows.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/data/nep_hfep_source_rows.json",
+      "sha256": "9339a859bc6d8774d3c83afe9ebecb775684d50edd56035168f8f5b32d447138"
+    },
+    {
+      "repositoryPath": "analysis-hfep/data/nep_hfep_tree.json",
+      "gitBlobSha": "6d966100bb34f75233742013ce05297533d8dcc0",
+      "sizeBytes": 1225053,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/data/nep_hfep_tree.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-hfep/data/nep_hfep_tree.json",
+      "sha256": "0e1fc837bf1f553fcba71ea941e4fae09fd4d8117f59cdf614e068cdc48dce7f"
+    },
+    {
+      "repositoryPath": "analysis-nia/HGAB_NIA_EXTRACTION_WORKLOG.md",
+      "gitBlobSha": "39262c0c295f329efbb8ca75b037d75a22e6846c",
+      "sizeBytes": 12154,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-nia/HGAB_NIA_EXTRACTION_WORKLOG.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-nia/HGAB_NIA_EXTRACTION_WORKLOG.md",
+      "sha256": "6abbada77597285857e366e981991dc11b9a0e74d6ecd5d5ff5c4d62dde53214"
+    },
+    {
+      "repositoryPath": "analysis-nia/NEP_NIA_EXTRACTION_FINDINGS.md",
+      "gitBlobSha": "8adce0e5ad5aaa20cec6b43e8711d1974885ac22",
+      "sizeBytes": 7197,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-nia/NEP_NIA_EXTRACTION_FINDINGS.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-nia/NEP_NIA_EXTRACTION_FINDINGS.md",
+      "sha256": "7f448ff24b776ab2fe8f734b5a944c031ff1db59431319b554022ef36bfa150b"
+    },
+    {
+      "repositoryPath": "analysis-nia/NEP_NIA_METHODOLOGY_AND_LESSONS.md",
+      "gitBlobSha": "8a8c0a70d3b1d1c40c1f41c997596814f000ae05",
+      "sizeBytes": 13072,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-nia/NEP_NIA_METHODOLOGY_AND_LESSONS.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-nia/NEP_NIA_METHODOLOGY_AND_LESSONS.md",
+      "sha256": "a5593d2191b2ad509a7376d759a711a3c2f4c642c5dab6669230f0c980b88f45"
+    },
+    {
+      "repositoryPath": "analysis-nia/NIA_WORKBENCH.md",
+      "gitBlobSha": "e00f2ca2098d13df06ff2a899d234c6665d69a64",
+      "sizeBytes": 12025,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-nia/NIA_WORKBENCH.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-nia/NIA_WORKBENCH.md",
+      "sha256": "ad0a0971a9cedf84217901dc470e1587e44b63dbd8e7961bb2872efac976b188"
+    },
+    {
+      "repositoryPath": "analysis-nia/README.md",
+      "gitBlobSha": "e4e34a0a2573f15eb64434855e0324cc4b41c59c",
+      "sizeBytes": 10923,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-nia/README.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-nia/README.md",
+      "sha256": "59fde4564c639a2291200a7f899f429f06f51ab4b9ef50b9ba3df91cc1da1ede"
+    },
+    {
+      "repositoryPath": "analysis-nia/data/hgab_nia_audit.json",
+      "gitBlobSha": "c2900fb6a6f55819700a7b1a940a7a3df68590ea",
+      "sizeBytes": 17831,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-nia/data/hgab_nia_audit.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-nia/data/hgab_nia_audit.json",
+      "sha256": "90c2bffadbbc899a126d282e86e3c80baa28be3284a62fdccdce86f35148b2b8"
+    },
+    {
+      "repositoryPath": "analysis-nia/data/hgab_nia_source_rows.json",
+      "gitBlobSha": "f46906aa62d13bd38c4b9fc3e2cc9cc8e35e28ef",
+      "sizeBytes": 1511442,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-nia/data/hgab_nia_source_rows.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-nia/data/hgab_nia_source_rows.json",
+      "sha256": "0947a3ab26f12fc273db0dbedd1303ffba59b75560814a186c108ff47ea04849"
+    },
+    {
+      "repositoryPath": "analysis-nia/data/hgab_nia_tree.json",
+      "gitBlobSha": "fe59f1c4c687ba533ba140f1259f2a886d4d1758",
+      "sizeBytes": 1022010,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-nia/data/hgab_nia_tree.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-nia/data/hgab_nia_tree.json",
+      "sha256": "5c4808b5e28745b405b5222b0b4a3c2fca536ee0d32a7bb20bf81051787cac4f"
+    },
+    {
+      "repositoryPath": "analysis-nia/data/nep_nia_audit.json",
+      "gitBlobSha": "cc16f260b6de3476fd9a3466d67d099051676d21",
+      "sizeBytes": 2490,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-nia/data/nep_nia_audit.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-nia/data/nep_nia_audit.json",
+      "sha256": "a52f7fd2d66540b23b660162f52453074a307d9d87ae3683452cf61986e96f8d"
+    },
+    {
+      "repositoryPath": "analysis-nia/data/nep_nia_dataset.json",
+      "gitBlobSha": "6816f5cf4e58007e4ef06c5336f5daf7bd3e619f",
+      "sizeBytes": 887664,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-nia/data/nep_nia_dataset.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-nia/data/nep_nia_dataset.json",
+      "sha256": "685dabfc819030a02d6e53b43a038bea59b11dd872e9a4bb262cf13e8a4aa50c"
+    },
+    {
+      "repositoryPath": "analysis-nia/data/nep_nia_source_rows.json",
+      "gitBlobSha": "830ccfad88a13f9ebb5282000cc12da66349b342",
+      "sizeBytes": 343749,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-nia/data/nep_nia_source_rows.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-nia/data/nep_nia_source_rows.json",
+      "sha256": "26d548d32d272dfb9dd92dcdc71261ba5c60833159f8e0b2b1212600db2586dd"
+    },
+    {
+      "repositoryPath": "analysis-nia/data/nep_nia_tree.json",
+      "gitBlobSha": "1c5a98459c4d85ca8103f0868b3c1f2988f61624",
+      "sizeBytes": 1723,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-nia/data/nep_nia_tree.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis-nia/data/nep_nia_tree.json",
+      "sha256": "23480eaf2eb742a7113d9a2f306822c13f62045cb503776086d3a4faf2bc3d1b"
+    },
+    {
+      "repositoryPath": "analysis/README.md",
+      "gitBlobSha": "a99b4ac44cf9adf74abefb51718f6f701046d845",
+      "sizeBytes": 12145,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/README.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/README.md",
+      "sha256": "9315e0f7eaad039cb70db830aaf5dda13f2ebaebc6069b1e203cdd98f9807cdf"
+    },
+    {
+      "repositoryPath": "analysis/builders/build_chainage_units.py",
+      "gitBlobSha": "2a67c102ff2b6c3159e0fb0ec6ff685c756f7db5",
+      "sizeBytes": 3692,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/build_chainage_units.py",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/build_chainage_units.py",
+      "sha256": "61344c0079543aaf803c8a8833480f606b16c512840779b9c7d6bfd396c29584"
+    },
+    {
+      "repositoryPath": "analysis/builders/build_current_pages.py",
+      "gitBlobSha": "9b6b14f09bdad0192cf8941057354fc6e1c71011",
+      "sizeBytes": 40049,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/build_current_pages.py",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/build_current_pages.py",
+      "sha256": "45c685cec5e83ceb924bbb57c325ee5d493a74d37489a1cda53f500239b53620"
+    },
+    {
+      "repositoryPath": "analysis/builders/build_dpwh_nep_api_tree.py",
+      "gitBlobSha": "925ea74ce2e8f632bbea0142bd61872749de9c99",
+      "sizeBytes": 7554,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/build_dpwh_nep_api_tree.py",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/build_dpwh_nep_api_tree.py",
+      "sha256": "06e7d85e077f54e23a16711c1a6584fcc258cb08bc5b769e89d991a115f47407"
+    },
+    {
+      "repositoryPath": "analysis/builders/build_house_readings.py",
+      "gitBlobSha": "28f8c8ad8e9e9f321a3b2d20bc101326eb7cc443",
+      "sizeBytes": 9624,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/build_house_readings.py",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/build_house_readings.py",
+      "sha256": "252ef7fd4f731529fc6b0d777ab8a2713a2f5f45244ae288ac7f7c24ef3f0040"
+    },
+    {
+      "repositoryPath": "analysis/builders/build_nep_tree.py",
+      "gitBlobSha": "7450cb85cddae04facd1a87a5d640efa476ca7ca",
+      "sizeBytes": 28389,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/build_nep_tree.py",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/build_nep_tree.py",
+      "sha256": "077c5798a26325068ed7e68add732470797a2acd46a218510cc7f405a0ad8dc7"
+    },
+    {
+      "repositoryPath": "analysis/builders/build_road_groups.py",
+      "gitBlobSha": "0351f1049ac4b5a36d853cec3c633996701502bc",
+      "sizeBytes": 17292,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/build_road_groups.py",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/build_road_groups.py",
+      "sha256": "4a58a13a8ec8f769472147734e85de98e7238201b80c66e74c1ce882c074f912"
+    },
+    {
+      "repositoryPath": "analysis/builders/build_source_review_evidence.py",
+      "gitBlobSha": "d13799b206dc7a11beb4db55c2bbf60f400381be",
+      "sizeBytes": 3448,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/build_source_review_evidence.py",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/build_source_review_evidence.py",
+      "sha256": "1ed54407039238917705cd28806b366ab38e841ff98773d0608ac286f74bf641"
+    },
+    {
+      "repositoryPath": "analysis/builders/build_source_verification.py",
+      "gitBlobSha": "294a2f91bed654d797539423d5694aed93f695cc",
+      "sizeBytes": 21366,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/build_source_verification.py",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/build_source_verification.py",
+      "sha256": "666865e2f871770611370777becd272b617fd0cc176e27ca921e38de78efff3e"
+    },
+    {
+      "repositoryPath": "analysis/builders/build_stage_trace.py",
+      "gitBlobSha": "a34b2d0a5f5a4a34051d4ad61550c9efffda92db",
+      "sizeBytes": 17386,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/build_stage_trace.py",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/build_stage_trace.py",
+      "sha256": "fd1792bac171e9d4e98eff9dd805237631ddefaf762f46a09ba2db15e148cce6"
+    },
+    {
+      "repositoryPath": "analysis/builders/chainage.py",
+      "gitBlobSha": "da50d0598236f5a642a7ec73b4175716eee59833",
+      "sizeBytes": 16591,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/chainage.py",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/chainage.py",
+      "sha256": "ec3582b3fd9898fc28e372ab29946ec9efcba60354250dc46ad2c14c51de59b8"
+    },
+    {
+      "repositoryPath": "analysis/builders/crosscheck_gab_reference.py",
+      "gitBlobSha": "f2dcc1dbe50c3a689f1baab9889828d43a90b98b",
+      "sizeBytes": 15134,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/crosscheck_gab_reference.py",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/crosscheck_gab_reference.py",
+      "sha256": "7ab136a71250dba65dccdb7e8e7b63317b25caeb17d545e8883585e6d3d3da75"
+    },
+    {
+      "repositoryPath": "analysis/builders/house_native.py",
+      "gitBlobSha": "9e368a55001e6ed67367a4c1ee083f2e69b6a285",
+      "sizeBytes": 11029,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/house_native.py",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/house_native.py",
+      "sha256": "67405d3561660c7e7c75e1073fc7381e5524dabd562b1a81054004867f9b161b"
+    },
+    {
+      "repositoryPath": "analysis/builders/mine_normalization_candidates.py",
+      "gitBlobSha": "09f0cd8f93a9ce6cdf389c86b1aacca54b492ed9",
+      "sizeBytes": 11887,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/mine_normalization_candidates.py",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/mine_normalization_candidates.py",
+      "sha256": "17a15d440d8c96f5c76a35babc0daf011ee31b91e886df359a1d76748d5665b9"
+    },
+    {
+      "repositoryPath": "analysis/builders/nep_amount_columns.py",
+      "gitBlobSha": "e7beaa74137b3cd055c3692098f3634bd7266344",
+      "sizeBytes": 4221,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/nep_amount_columns.py",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/nep_amount_columns.py",
+      "sha256": "831c35d57ec0364fb80d348f7b45d9c56d98df7c211cbd6394da2b5184018296"
+    },
+    {
+      "repositoryPath": "analysis/builders/normalize_labels.py",
+      "gitBlobSha": "4cc19cbfa31390648063981dc54dd538bc452f9f",
+      "sizeBytes": 44810,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/normalize_labels.py",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/normalize_labels.py",
+      "sha256": "eb8d8ba4119140c74a25327d7a28adc737f293156f0c94bb83f89badcf9826a8"
+    },
+    {
+      "repositoryPath": "analysis/builders/reconcile_nep_source.py",
+      "gitBlobSha": "dce8e63e0c75e43a3794732f2e5ca20ee7b91845",
+      "sizeBytes": 24714,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/reconcile_nep_source.py",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/reconcile_nep_source.py",
+      "sha256": "fbf440bc85aa5a72dadb7866074a62387677dd5c0f64cdf6589ffabe097e35e7"
+    },
+    {
+      "repositoryPath": "analysis/builders/repair_hb_known_defects.py",
+      "gitBlobSha": "32695a7aa7d0b835e048c0347b5caebd05144335",
+      "sizeBytes": 20913,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/repair_hb_known_defects.py",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/builders/repair_hb_known_defects.py",
+      "sha256": "5aa36f9b4d944b7985fa6dee3f8008068049c377015d36f6badfcc60977c6a23"
+    },
+    {
+      "repositoryPath": "analysis/data/chainage_units_2027.json",
+      "gitBlobSha": "c92b81e5f54cad7ea9288bdf4e7651b21af97fc9",
+      "sizeBytes": 10266223,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/chainage_units_2027.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/chainage_units_2027.json",
+      "sha256": "745397373b162fef4fd9ff3efb0a66cf96245f0d4e51366672272f6383e5b036"
+    },
+    {
+      "repositoryPath": "analysis/data/comparison_manifest.json",
+      "gitBlobSha": "bb4a8213286afa92f7439735a931fb2655afc54e",
+      "sizeBytes": 4586,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/comparison_manifest.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/comparison_manifest.json",
+      "sha256": "10cd7858cede7210b2f58c477868ff0761c902b74db6cfacf51db1ce9cabf75d"
+    },
+    {
+      "repositoryPath": "analysis/data/current_pap_controls.json",
+      "gitBlobSha": "ecea8582d35c8ceb14e8217f9fcd6dc0d35e4af5",
+      "sizeBytes": 143555,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/current_pap_controls.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/current_pap_controls.json",
+      "sha256": "bdc73ee299672845096f41571942cda37caf0c447d86bf3c6274973a779e114b"
+    },
+    {
+      "repositoryPath": "analysis/data/dpwh_transparency_nep_tree.json",
+      "gitBlobSha": "d8e4048d9b15aeadf60dcde04e1d9693a9b2c7f7",
+      "sizeBytes": 9530437,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/dpwh_transparency_nep_tree.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/dpwh_transparency_nep_tree.json",
+      "sha256": "bf526cfaf5e2270b5a539c9b292c1d9564741a062479ed545cafa7ec920ccbf6"
+    },
+    {
+      "repositoryPath": "analysis/data/dpwh_transparency_nep_tree_validation.json",
+      "gitBlobSha": "f67cb50417117e84fd8228da8190de9b2a94d95e",
+      "sizeBytes": 2466540,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/dpwh_transparency_nep_tree_validation.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/dpwh_transparency_nep_tree_validation.json",
+      "sha256": "4205af711d1ab25995e9e777f667e611a670eb18643b090cb32eac6fbb1550a2"
+    },
+    {
+      "repositoryPath": "analysis/data/gab_reference_crosscheck.json",
+      "gitBlobSha": "7f9e53e53a16a6492bc50af999da7f6004730af9",
+      "sizeBytes": 1611843,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/gab_reference_crosscheck.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/gab_reference_crosscheck.json",
+      "sha256": "a18f1b83445a80dc7f74fe9c97e5b2cee81a97c08381b08deb702ff7a30f08ee"
+    },
+    {
+      "repositoryPath": "analysis/data/hb_dpwh_native_ic_projects.json",
+      "gitBlobSha": "26112fc0869ad34001427e34d7d7a02297a797db",
+      "sizeBytes": 34712755,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/hb_dpwh_native_ic_projects.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/hb_dpwh_native_ic_projects.json",
+      "sha256": "7ca94948ba16fd46fabf3cd1061d1b04657f7d19e3c00c9891d7d2becf6ced51"
+    },
+    {
+      "repositoryPath": "analysis/data/hb_dpwh_native_ic_projects_3rd_reading.json",
+      "gitBlobSha": "7be5f1899f8daad3066af46977bc19bf7b88c607",
+      "sizeBytes": 34722137,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/hb_dpwh_native_ic_projects_3rd_reading.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/hb_dpwh_native_ic_projects_3rd_reading.json",
+      "sha256": "4ab63aea525784ce342d4911c7859f77380b8504eb5483d8e65d48be9377078c"
+    },
+    {
+      "repositoryPath": "analysis/data/hb_dpwh_native_ic_rollup_audit.json",
+      "gitBlobSha": "9dd11a3b4f6805af6948cc43dd8e64991b42fd66",
+      "sizeBytes": 81733,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/hb_dpwh_native_ic_rollup_audit.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/hb_dpwh_native_ic_rollup_audit.json",
+      "sha256": "b9842d01c6cbf5bb615b95085b1fcd3885c66caa08569b68f0871306a8ea2d39"
+    },
+    {
+      "repositoryPath": "analysis/data/hb_dpwh_native_ic_rollup_audit_3rd_reading.json",
+      "gitBlobSha": "02e493343320d07ce2fded5a803a692cf3acb990",
+      "sizeBytes": 81774,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/hb_dpwh_native_ic_rollup_audit_3rd_reading.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/hb_dpwh_native_ic_rollup_audit_3rd_reading.json",
+      "sha256": "bbf1b87745ec82fa40801686de9547205595a030909142b1036a824b18a3c57c"
+    },
+    {
+      "repositoryPath": "analysis/data/hb_dpwh_native_rollup.json",
+      "gitBlobSha": "fd619e011564fc6ff726f4da184d0151c144a7cc",
+      "sizeBytes": 3476119,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/hb_dpwh_native_rollup.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/hb_dpwh_native_rollup.json",
+      "sha256": "b3b12f43867a96600f803702f193f622e176ab7659325290d22410e4f8cf6c0c"
+    },
+    {
+      "repositoryPath": "analysis/data/hb_dpwh_native_rollup_3rd_reading.json",
+      "gitBlobSha": "76789c1ec44b9d34210188b36a9c0e9671d75968",
+      "sizeBytes": 3476147,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/hb_dpwh_native_rollup_3rd_reading.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/hb_dpwh_native_rollup_3rd_reading.json",
+      "sha256": "79d825795071577d02a55665280b9d1e0dd741b8fcb1bbb7908e3a20bc013635"
+    },
+    {
+      "repositoryPath": "analysis/data/hb_dpwh_native_tree.json",
+      "gitBlobSha": "29e27ed046748bb67ac2ff5079bbdf2c9889f5e0",
+      "sizeBytes": 504137,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/hb_dpwh_native_tree.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/hb_dpwh_native_tree.json",
+      "sha256": "2a5a18cb69805da44235960a0ed014cc79254359cbca9672aea3f58bb5ae4e24"
+    },
+    {
+      "repositoryPath": "analysis/data/hb_json_usability_audit.json",
+      "gitBlobSha": "ad66b3cd3220802adf07d94a1f228c9ed03a9a66",
+      "sizeBytes": 128467,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/hb_json_usability_audit.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/hb_json_usability_audit.json",
+      "sha256": "0d9042fae6a28abf8ca47b56fdbbc39b0f85bc85499c1994f3b564e3ff249045"
+    },
+    {
+      "repositoryPath": "analysis/data/hb_known_defect_repairs.json",
+      "gitBlobSha": "a76ac9296ed1babd216206aa003c82fc7fdd7129",
+      "sizeBytes": 3604563,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/hb_known_defect_repairs.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/hb_known_defect_repairs.json",
+      "sha256": "9b74951b393bbdf3f12aac9c1d49032c748a609814e5234f5266f435978b8670"
+    },
+    {
+      "repositoryPath": "analysis/data/hb_native_ib_rollup_audit.json",
+      "gitBlobSha": "2b0d0dda946167c4bb6e6e0c13e8aa1a235ce30e",
+      "sizeBytes": 929653,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/hb_native_ib_rollup_audit.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/hb_native_ib_rollup_audit.json",
+      "sha256": "b594e08040e96d35805d2841a71aaa2009957342a74125f75b5f146e41663c01"
+    },
+    {
+      "repositoryPath": "analysis/data/hb_native_ib_rollup_audit_3rd_reading.json",
+      "gitBlobSha": "55727c05d226275c016768d0dd91d3f3723ebea0",
+      "sizeBytes": 929681,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/hb_native_ib_rollup_audit_3rd_reading.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/hb_native_ib_rollup_audit_3rd_reading.json",
+      "sha256": "eea37267d3af47abb489ec5e15f6708535096a5da0ac18d8eb34d0845869f7cd"
+    },
+    {
+      "repositoryPath": "analysis/data/hb_native_outline_report.json",
+      "gitBlobSha": "9c25d1f9838510c3e39536fafc48168a455968e5",
+      "sizeBytes": 833,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/hb_native_outline_report.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/hb_native_outline_report.json",
+      "sha256": "1b314b99d54c7092a8443db79b69ad8fb1281a446a29fba0adcd4960b8735247"
+    },
+    {
+      "repositoryPath": "analysis/data/house_reading_changes_2027.json",
+      "gitBlobSha": "46b6288a4a9f8801e9a4bc28fb6b9db6bdae7715",
+      "sizeBytes": 39002191,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/house_reading_changes_2027.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/house_reading_changes_2027.json",
+      "sha256": "0e9f79d62b831ce88bbfa5bb01631c1829a87aa178aa02a756cd0aba7b5b78ea"
+    },
+    {
+      "repositoryPath": "analysis/data/nep_2027_amount_column_reassessment.json",
+      "gitBlobSha": "65e12dcc84a9a712fc475fc9ef15a600c5994ea5",
+      "sizeBytes": 4983898,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/nep_2027_amount_column_reassessment.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/nep_2027_amount_column_reassessment.json",
+      "sha256": "83b66c5177eb12c70facf2158662037c591254896828ca2f298a69f34e2fa4a9"
+    },
+    {
+      "repositoryPath": "analysis/data/nep_2027_api_reconciliation.json",
+      "gitBlobSha": "c03fce1cc9bd4e4a6ccad42224a24c1d4b171504",
+      "sizeBytes": 8369679,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/nep_2027_api_reconciliation.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/nep_2027_api_reconciliation.json",
+      "sha256": "fd8dfef9ba34062f81818b3510311678b774bdbc758abfe341d28b9302196a0f"
+    },
+    {
+      "repositoryPath": "analysis/data/nep_2027_budget_units.json",
+      "gitBlobSha": "52a7a8b883ac81a45db34bf49ba0ddf0d3b4a29b",
+      "sizeBytes": 14447508,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/nep_2027_budget_units.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/nep_2027_budget_units.json",
+      "sha256": "a3d3aa17095d4bdf7531b180e73504f6dbc8808b86495e843ae9fb56021250de"
+    },
+    {
+      "repositoryPath": "analysis/data/nep_2027_native_amount_audit.json",
+      "gitBlobSha": "cd514b6bc490012e00dda8a442b0ddf4d197502a",
+      "sizeBytes": 15802465,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/nep_2027_native_amount_audit.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/nep_2027_native_amount_audit.json",
+      "sha256": "362621533024a1e478981fbaf4d4e6a10aa04c6f7658a7228f82a87eaab4db5b"
+    },
+    {
+      "repositoryPath": "analysis/data/nep_2027_native_amount_review.json",
+      "gitBlobSha": "35364830d70471e48689268e4ac9c75df5402eb3",
+      "sizeBytes": 4505050,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/nep_2027_native_amount_review.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/nep_2027_native_amount_review.json",
+      "sha256": "9e4826c4541f272811de1b6e55df871825ddcca3cb59a4162667f13f65a95832"
+    },
+    {
+      "repositoryPath": "analysis/data/nep_2027_source_audit.json",
+      "gitBlobSha": "fee2c742e82fa67315a3b73f936ea399767b3acb",
+      "sizeBytes": 46105,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/nep_2027_source_audit.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/nep_2027_source_audit.json",
+      "sha256": "2def7a270b5bddaabbe195e4e38429917141c1194781d95cb124950e239660a5"
+    },
+    {
+      "repositoryPath": "analysis/data/nep_2027_source_projects.json",
+      "gitBlobSha": "3703e996fd5fe0a895bdcf0b584da09f60d9a739",
+      "sizeBytes": 5973002,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/nep_2027_source_projects.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/nep_2027_source_projects.json",
+      "sha256": "2d58683888ae697c4506544b48d30ed4b6f6cfa9e796f7328ca4e4b9075423cf"
+    },
+    {
+      "repositoryPath": "analysis/data/nep_2027_tree.json",
+      "gitBlobSha": "d2b4e0e529c17d9d62a467ab7091dc46c0de92ec",
+      "sizeBytes": 21315013,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/nep_2027_tree.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/nep_2027_tree.json",
+      "sha256": "ca064af3f8cdb6c73e074ef8347f9e65d5cfe66c25024e332a4438ebfae3766d"
+    },
+    {
+      "repositoryPath": "analysis/data/nep_2027_tree_validation.json",
+      "gitBlobSha": "cd2910f3666049f4402387f8e6bc79940c99eee1",
+      "sizeBytes": 677807,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/nep_2027_tree_validation.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/nep_2027_tree_validation.json",
+      "sha256": "8461f3c18746988bd1f61528bff5281be9fe852b23291b018261ed8df8494580"
+    },
+    {
+      "repositoryPath": "analysis/data/normalization_candidates.json",
+      "gitBlobSha": "0c3d9f292f8b3972753a7717696fcb0ef5c2befb",
+      "sizeBytes": 304994,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/normalization_candidates.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/normalization_candidates.json",
+      "sha256": "a37235d092a2997fecb6a36e8f7f6f429e98ce208146d20a95d14ddfa9ecafe8"
+    },
+    {
+      "repositoryPath": "analysis/data/reference_official_compilation.json",
+      "gitBlobSha": "b7ef2c89f369a20db9d146f7462d0ca36fd84d31",
+      "sizeBytes": 24061,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/reference_official_compilation.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/reference_official_compilation.json",
+      "sha256": "9dc44c8fb49d6822b3705e02c2209f09d7055ef51b7c8405e0ea83310d7225b9"
+    },
+    {
+      "repositoryPath": "analysis/data/road_group_candidates_2027.json",
+      "gitBlobSha": "555565ba926acaa54cce84a32823f15f4031aa3b",
+      "sizeBytes": 2093458,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/road_group_candidates_2027.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/road_group_candidates_2027.json",
+      "sha256": "7e0a2024823a178e549977eec92c9130bfd6682152b9ff1ad06f9ae09fef4ec7"
+    },
+    {
+      "repositoryPath": "analysis/data/source_comparison_2027.json",
+      "gitBlobSha": "153c2de31a3473a61389f329db0060f974f74393",
+      "sizeBytes": 44921273,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/source_comparison_2027.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/source_comparison_2027.json",
+      "sha256": "9f500eb12e682f9c1086fa113426dee02cc23ddb4b4b7a1a75c1a541010889c4"
+    },
+    {
+      "repositoryPath": "analysis/data/source_review_evidence.json",
+      "gitBlobSha": "e4dd69ca9e8f0527943f2854b5dca93ea3222d5e",
+      "sizeBytes": 1245170,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/source_review_evidence.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/source_review_evidence.json",
+      "sha256": "c64d1c1822ad89267f726dc7ff4c13421ef77d32690e5efe8252cfa73094848b"
+    },
+    {
+      "repositoryPath": "analysis/data/source_verification_manifest.json",
+      "gitBlobSha": "33d9ed7742377f5922e61db90b8d750d9e0c8037",
+      "sizeBytes": 404366,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/source_verification_manifest.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/source_verification_manifest.json",
+      "sha256": "1f047608ccb1c220736223f4a050a0159029a0a777488b1d0afcb79a9316fdb2"
+    },
+    {
+      "repositoryPath": "analysis/data/source_verification_overview.json",
+      "gitBlobSha": "250d79b5ec3d0b81fa251bbb312eac0456b7da19",
+      "sizeBytes": 4494,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/source_verification_overview.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/source_verification_overview.json",
+      "sha256": "3cd6c9a46a2fc563881d733b5e5ce336bb17d0b29ec78ab5467b5b1b080db3e9"
+    },
+    {
+      "repositoryPath": "analysis/data/stage_trace_2027.json",
+      "gitBlobSha": "0e485d2a342c2cb9d2f95598c9f4edfb91157bcb",
+      "sizeBytes": 56670082,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/stage_trace_2027.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/data/stage_trace_2027.json",
+      "sha256": "e37c1df09a2c893c9b380eae21ecc5fc8d903d3910a38de2580c718303555c51"
+    },
+    {
+      "repositoryPath": "analysis/docs/adr/0001-native-text-layer-house-controls.md",
+      "gitBlobSha": "026fde7839333ef73332e991447541e4fc3a2c7e",
+      "sizeBytes": 2455,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/adr/0001-native-text-layer-house-controls.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/adr/0001-native-text-layer-house-controls.md",
+      "sha256": "ed4567e3cf89b910f57af7552f018b43222916577df00965453e193583fbed13"
+    },
+    {
+      "repositoryPath": "analysis/docs/adr/0002-separate-controls-and-project-titles.md",
+      "gitBlobSha": "58aa59d4fa0d77c74e2ffb41cfdfaa011b82f04c",
+      "sizeBytes": 2779,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/adr/0002-separate-controls-and-project-titles.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/adr/0002-separate-controls-and-project-titles.md",
+      "sha256": "5fd23579460ed3c43f6582388a0063f03e8df767b796cb9004302fc0023903f2"
+    },
+    {
+      "repositoryPath": "analysis/docs/adr/0003-source-only-nep-tree.md",
+      "gitBlobSha": "a7b5219e32ede98ee90e705e787dc88e2975eaa0",
+      "sizeBytes": 2077,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/adr/0003-source-only-nep-tree.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/adr/0003-source-only-nep-tree.md",
+      "sha256": "3c50a858e4b3bef0e6b1aa96902e0eeb738c0d53edb57c75c4c4d0686f50b34e"
+    },
+    {
+      "repositoryPath": "analysis/docs/adr/0004-unmatched-rows-are-candidates.md",
+      "gitBlobSha": "20f3d352a2be76e8902911e2dfc8a1d4da433d7b",
+      "sizeBytes": 2056,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/adr/0004-unmatched-rows-are-candidates.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/adr/0004-unmatched-rows-are-candidates.md",
+      "sha256": "c9b8c4d1737a51d64e0ff3d277388b6d3e3764943602b70af424a43476b3fc61"
+    },
+    {
+      "repositoryPath": "analysis/docs/adr/0005-analysis-workbench-layout.md",
+      "gitBlobSha": "1da8a4d23a24b0e893a3e2aa549b2d021fca2fa8",
+      "sizeBytes": 2119,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/adr/0005-analysis-workbench-layout.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/adr/0005-analysis-workbench-layout.md",
+      "sha256": "97650ff905d61be9799db49939a7d8cd8605431b0817a588f0df23502e105902"
+    },
+    {
+      "repositoryPath": "analysis/docs/adr/0006-github-pages-packaging.md",
+      "gitBlobSha": "5411bfcffb979b5d86d5893f648eb630fffdd20d",
+      "sizeBytes": 2804,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/adr/0006-github-pages-packaging.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/adr/0006-github-pages-packaging.md",
+      "sha256": "2acbabdeefb81cd63f21aec67aae35a95ec2d3cc0e3b46a8c5befbc4a2031302"
+    },
+    {
+      "repositoryPath": "analysis/docs/adr/0007-verify-source-hierarchies-before-comparison.md",
+      "gitBlobSha": "e8b429d3fb05c836a43e1a930abfe360a432e0a5",
+      "sizeBytes": 2061,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/adr/0007-verify-source-hierarchies-before-comparison.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/adr/0007-verify-source-hierarchies-before-comparison.md",
+      "sha256": "e4ddd3eb472d250c411b22ce957a29ee37a2b6c48ed687541f857441005e41c2"
+    },
+    {
+      "repositoryPath": "analysis/docs/adr/0008-per-item-amount-columns-and-evidence.md",
+      "gitBlobSha": "5095c461b231d391bddf0064a1b7be43343e8c81",
+      "sizeBytes": 1725,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/adr/0008-per-item-amount-columns-and-evidence.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/adr/0008-per-item-amount-columns-and-evidence.md",
+      "sha256": "0addc0605443012f5017c801e05ce17a501bfec62082b72e4ba1507629301b6e"
+    },
+    {
+      "repositoryPath": "analysis/docs/adr/0009-navigable-source-review-workspace.md",
+      "gitBlobSha": "56cb414acd90fff62bc5b5852ab7b011295d92d8",
+      "sizeBytes": 1618,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/adr/0009-navigable-source-review-workspace.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/adr/0009-navigable-source-review-workspace.md",
+      "sha256": "5c7276683c6e8eac7add673166549f4c6bb78cf262dde29cdf1232607c507f65"
+    },
+    {
+      "repositoryPath": "analysis/docs/adr/0010-archive-superseded-analysis-work.md",
+      "gitBlobSha": "5ed66054c43686555c70c04ac498d1cee17c420f",
+      "sizeBytes": 1570,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/adr/0010-archive-superseded-analysis-work.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/adr/0010-archive-superseded-analysis-work.md",
+      "sha256": "1372df599b32249db3889ae742d7760ca9ac0e36d8891e5f40bd6623715405dd"
+    },
+    {
+      "repositoryPath": "analysis/docs/adr/0011-react-vite-migration.md",
+      "gitBlobSha": "6295a506dd0c827388769e266b2aa629a6891f0a",
+      "sizeBytes": 2442,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/adr/0011-react-vite-migration.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/adr/0011-react-vite-migration.md",
+      "sha256": "bbabdd2e5e3c43bd3f4a2235d8fc8bef60a446c8819af0ec353992a370e604ed"
+    },
+    {
+      "repositoryPath": "analysis/docs/adr/README.md",
+      "gitBlobSha": "22ec06f16f2cb4c60b5365a5d9e10accdfab04c6",
+      "sizeBytes": 2014,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/adr/README.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/adr/README.md",
+      "sha256": "8a63d24eb77133f9dc6f806db8a11187571e7dd5d3c1e7b89d2cacef75f41a81"
+    },
+    {
+      "repositoryPath": "analysis/docs/analysis_tabs_framework.md",
+      "gitBlobSha": "2c10c9ec9b995eaa3458efba22f1e2b0ed118d69",
+      "sizeBytes": 29244,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/analysis_tabs_framework.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/analysis_tabs_framework.md",
+      "sha256": "b1257fdcd74ef0cf7709ccf9c8c18edc3c3d31a3d9c474b894a5d2725918bad1"
+    },
+    {
+      "repositoryPath": "analysis/docs/analysis_tabs_rules.md",
+      "gitBlobSha": "1569f184b27802a394ddb506c5a4f51f74b6ffa7",
+      "sizeBytes": 38399,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/analysis_tabs_rules.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/analysis_tabs_rules.md",
+      "sha256": "0418b7ea92b8fa8b5c5a1cb18457f0da0a1d3494bec64b3f3587f3f315bce26b"
+    },
+    {
+      "repositoryPath": "analysis/docs/analysis_tabs_todo.md",
+      "gitBlobSha": "0a57a36387caf463ea0e9d8ae384451fccf53fe4",
+      "sizeBytes": 9764,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/analysis_tabs_todo.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/analysis_tabs_todo.md",
+      "sha256": "0ac00ebf1e0077779745fe4d408a14531815783bee3d3f96aaeb7e44ffb695b6"
+    },
+    {
+      "repositoryPath": "analysis/docs/codebase_reassessment.md",
+      "gitBlobSha": "ac42cd34d2479c6af5eac4e94f6472a40141d5f8",
+      "sizeBytes": 11192,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/codebase_reassessment.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/codebase_reassessment.md",
+      "sha256": "2eeb02f4f4f9592e43cae53857ff61ce3b480f5014ac4b2afc1c3c16b9598b05"
+    },
+    {
+      "repositoryPath": "analysis/docs/data_pipeline.md",
+      "gitBlobSha": "da167da74283c040c382753b2e1a5c0eb7e08967",
+      "sizeBytes": 15270,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/data_pipeline.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/data_pipeline.md",
+      "sha256": "5f0c42d7f7e558e4f174c866cc1058295d9d27393b100274509f1f0f5de2a7a3"
+    },
+    {
+      "repositoryPath": "analysis/docs/data_structure_and_crosscheck_design.md",
+      "gitBlobSha": "a5693bb4aa315e1358d17969075244f84dec9cc7",
+      "sizeBytes": 7748,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/data_structure_and_crosscheck_design.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/data_structure_and_crosscheck_design.md",
+      "sha256": "c5a0b76f11c666700c2d1597f2791768e32c26f23b1e10bb8e39e4023a3b84ec"
+    },
+    {
+      "repositoryPath": "analysis/docs/data_user_guide.md",
+      "gitBlobSha": "cf4eba1572cdd971b6ec2805d30d6ccf9efd4344",
+      "sizeBytes": 22188,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/data_user_guide.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/data_user_guide.md",
+      "sha256": "321e66a9eee9690859cec1307da8485b8d79758901cf2806f64fb938e7c61c66"
+    },
+    {
+      "repositoryPath": "analysis/docs/gab_fy2027_reference_crosscheck.md",
+      "gitBlobSha": "31d5fd51fbbe7abd8f199faa2c8e2998f81453c4",
+      "sizeBytes": 7383,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/gab_fy2027_reference_crosscheck.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/gab_fy2027_reference_crosscheck.md",
+      "sha256": "64a5aba25c7528b12d8a8c42883716233b5322b1e8177ae3003b745684edcf36"
+    },
+    {
+      "repositoryPath": "analysis/docs/hb_known_defect_repairs.md",
+      "gitBlobSha": "227068ddc24db0dbdd765c66d01dfa1a25ec4a18",
+      "sizeBytes": 9858,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/hb_known_defect_repairs.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/hb_known_defect_repairs.md",
+      "sha256": "977114365ed12a98616375c9c5a0a9d8f0abbbaeea98a71b2a2fc5c9827eaaf8"
+    },
+    {
+      "repositoryPath": "analysis/docs/hb_native_full_processing.md",
+      "gitBlobSha": "da19f1083fb4e78df5a8ed7de706827cf116809c",
+      "sizeBytes": 4842,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/hb_native_full_processing.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/hb_native_full_processing.md",
+      "sha256": "2dac4db9e5b9981e9597ec9c6bb8942e782e67e53e3a1bbbdcbb45d64cf2709f"
+    },
+    {
+      "repositoryPath": "analysis/docs/hb_native_ib_rollup_checks.md",
+      "gitBlobSha": "7eb10d832f0c2a3f0bedc52e693d1afe486447a0",
+      "sizeBytes": 6653,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/hb_native_ib_rollup_checks.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/hb_native_ib_rollup_checks.md",
+      "sha256": "a560bca9dc5065e95aa74577c61dac3744c45f84b2b8d7856d231e201739767a"
+    },
+    {
+      "repositoryPath": "analysis/docs/hb_native_ic_rollup_checks.md",
+      "gitBlobSha": "799f45f41f14cf8142c9a2f702bafab72a5d471f",
+      "sizeBytes": 8371,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/hb_native_ic_rollup_checks.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/hb_native_ic_rollup_checks.md",
+      "sha256": "66da17f1f0ee630f0b615ca81549cd1838c6c93f630974b870d1b1f0c2e58aa3"
+    },
+    {
+      "repositoryPath": "analysis/docs/hb_native_v5_reconciliation.md",
+      "gitBlobSha": "e8633e20a705a5068b59595e98729ebc35417691",
+      "sizeBytes": 6735,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/hb_native_v5_reconciliation.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/hb_native_v5_reconciliation.md",
+      "sha256": "9581e90bb0d296edb3133b81253562804232a4811f687a27c9360564f6b997f7"
+    },
+    {
+      "repositoryPath": "analysis/docs/hgab_reading_comparison.md",
+      "gitBlobSha": "4db91b4e6ef3493ae2210f7ebb20c37695b3e0ed",
+      "sizeBytes": 6049,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/hgab_reading_comparison.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/hgab_reading_comparison.md",
+      "sha256": "b84753e1ec5e0ed7d187bfa00ba768079ac6e834346424462738e308365166a7"
+    },
+    {
+      "repositoryPath": "analysis/docs/highlights_evidence_review.md",
+      "gitBlobSha": "1d7397d7eafa9daee6e0f92101fcae1e0d5e9819",
+      "sizeBytes": 11395,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/highlights_evidence_review.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/highlights_evidence_review.md",
+      "sha256": "d132f045a42c45dccd4a048e90d2ada475cfe479aefbc98ade74dbf503761b1c"
+    },
+    {
+      "repositoryPath": "analysis/docs/house_reading_comparison_checks.md",
+      "gitBlobSha": "2232b685d2199732b4c14fee82cfe71ea444c33b",
+      "sizeBytes": 9201,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/house_reading_comparison_checks.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/house_reading_comparison_checks.md",
+      "sha256": "4c5c5276f445f7a2d9f43662275fe33197bef538c341a5beb4287773c2dadbfb"
+    },
+    {
+      "repositoryPath": "analysis/docs/main_overview_page_plan.md",
+      "gitBlobSha": "8b47a32a2deea8d502eb63b4b75d892db30ae689",
+      "sizeBytes": 24574,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/main_overview_page_plan.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/main_overview_page_plan.md",
+      "sha256": "419fb3cba89d69e17062a303ff3e0865cd15b3fbf0424750fb2f254696c724d1"
+    },
+    {
+      "repositoryPath": "analysis/docs/native_house_migration_change_report_2026-10-09.md",
+      "gitBlobSha": "4ba833ce3c736d3945a7017f06ce014a7c0dc15c",
+      "sizeBytes": 17625,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/native_house_migration_change_report_2026-10-09.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/native_house_migration_change_report_2026-10-09.md",
+      "sha256": "3e07df14b70a633962150d64868b6d772b071ab3fd05887ac06ec54db47f3965"
+    },
+    {
+      "repositoryPath": "analysis/docs/nep_2027_api_reconciliation.md",
+      "gitBlobSha": "856369dc3c6791c5ca9f533cf0a3ccddb982a563",
+      "sizeBytes": 10921,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/nep_2027_api_reconciliation.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/nep_2027_api_reconciliation.md",
+      "sha256": "ed61b54c01b224bcbe0e551629e41bc27af9d6fe2081faadb5c0de42b8775ac7"
+    },
+    {
+      "repositoryPath": "analysis/docs/nep_2027_source_audit.md",
+      "gitBlobSha": "f49f8d04350a202e667709afe67994cf79d633ff",
+      "sizeBytes": 6812,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/nep_2027_source_audit.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/nep_2027_source_audit.md",
+      "sha256": "0720d691e167f22dfd79854e17a7358368ae54c1c98b2ad9ac08bfa855f0552e"
+    },
+    {
+      "repositoryPath": "analysis/docs/normalization_candidates.md",
+      "gitBlobSha": "027d0e27a5e0a1df8a2700f4eae0990e83c5768f",
+      "sizeBytes": 4437,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/normalization_candidates.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/normalization_candidates.md",
+      "sha256": "fda9f3310c304d4393a35c7f8c7cd43bff85294b16b713591fbe94b5da47da77"
+    },
+    {
+      "repositoryPath": "analysis/docs/overview_unchanged_population_plan.md",
+      "gitBlobSha": "2d4748dfb8c296663f92bcdd771f181a726719d1",
+      "sizeBytes": 8210,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/overview_unchanged_population_plan.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/overview_unchanged_population_plan.md",
+      "sha256": "cd0b0aff47b6a1003c9b640aa6493b44f14ca5507ee8e85097df992e6b439f00"
+    },
+    {
+      "repositoryPath": "analysis/docs/pages_update_assessment.md",
+      "gitBlobSha": "6c75857481dce74613e743baccf06eb5d4c70753",
+      "sizeBytes": 4789,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/pages_update_assessment.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/pages_update_assessment.md",
+      "sha256": "f8b1d5ce0e13c99eb5c8b3e0ce5efcc748d19d6864d2e455a864216a4ff73731"
+    },
+    {
+      "repositoryPath": "analysis/docs/pdf_budget_dataset_method.md",
+      "gitBlobSha": "4f325c81ca282d541bf0e6c0def07eae35644a50",
+      "sizeBytes": 41372,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/pdf_budget_dataset_method.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/pdf_budget_dataset_method.md",
+      "sha256": "16c14468918d41c0b3b876deb02ceafc1f8928e692837314672779b83834bc95"
+    },
+    {
+      "repositoryPath": "analysis/docs/react_vite_migration.md",
+      "gitBlobSha": "72fc197200bd87896473f35b70faceeb8875b7f2",
+      "sizeBytes": 16719,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/react_vite_migration.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/react_vite_migration.md",
+      "sha256": "68b42f3da94eb04869e6ae50c0023a33192dce7327af939326ceff7418814f5b"
+    },
+    {
+      "repositoryPath": "analysis/docs/shareable_datasets_by_page.md",
+      "gitBlobSha": "56523674eaa6e14a88dfd12ce9b1031d2dfcc75b",
+      "sizeBytes": 16293,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/shareable_datasets_by_page.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/shareable_datasets_by_page.md",
+      "sha256": "10399fc1fc36fc975d6442c62d7dd81a7ccf65a50960eb404cdac44af48c3971"
+    },
+    {
+      "repositoryPath": "analysis/docs/shareable_findings.md",
+      "gitBlobSha": "c627cc5e41fb07aef496d385d54f3b1386fa29cd",
+      "sizeBytes": 18244,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/shareable_findings.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/shareable_findings.md",
+      "sha256": "f9340ca91d85303d90234404562d72e6085a3622966fd00fcd0bd8efd6e33661"
+    },
+    {
+      "repositoryPath": "analysis/docs/source_hierarchy_verification.md",
+      "gitBlobSha": "024c26b87fab3295b29ddf2ae48f4b59e6561bee",
+      "sizeBytes": 14323,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/source_hierarchy_verification.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/source_hierarchy_verification.md",
+      "sha256": "9307d64c1dc9c5301978b92b4ab04c0e9708e0bbbdd30c88919dfa544ef2e270"
+    },
+    {
+      "repositoryPath": "analysis/docs/source_page_reference_checks.md",
+      "gitBlobSha": "0f2759f2d1b183d47e8c0258f570f6021b6f36a9",
+      "sizeBytes": 4274,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/source_page_reference_checks.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/docs/source_page_reference_checks.md",
+      "sha256": "2a42c77301b3fb8979e4403cff237e9abecc7a1022db9dc821195e68b38d5585"
+    },
+    {
+      "repositoryPath": "analysis/web/src/AboutApp.jsx",
+      "gitBlobSha": "c036f4e628acc10a2d9ba2fa4c1225957601c48d",
+      "sizeBytes": 8636,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/AboutApp.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/AboutApp.jsx",
+      "sha256": "5853af62ade77a282bad9d657dad8a94a7097700e88a7a3ce5c3e8ce89005bda"
+    },
+    {
+      "repositoryPath": "analysis/web/src/Analysis.jsx",
+      "gitBlobSha": "cf7b229662285c4001fae081b1329b55f9b0f7b7",
+      "sizeBytes": 83768,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/Analysis.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/Analysis.jsx",
+      "sha256": "cb553472589de5a185680b984ff4028df1b77219aba39435bcc82feaf25fded3"
+    },
+    {
+      "repositoryPath": "analysis/web/src/AnalysisValue.jsx",
+      "gitBlobSha": "48f2f593a11ace6551f1bb3965f65a47cfed9487",
+      "sizeBytes": 648,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/AnalysisValue.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/AnalysisValue.jsx",
+      "sha256": "f1a09dca0f6ad3609ade917daa57c9d6747de22514799a924cd714fac8a622ca"
+    },
+    {
+      "repositoryPath": "analysis/web/src/AnnexHighlightEvidence.jsx",
+      "gitBlobSha": "074c71a4916765269ce5605d498fe8c5c5260819",
+      "sizeBytes": 1132,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/AnnexHighlightEvidence.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/AnnexHighlightEvidence.jsx",
+      "sha256": "80e2a5a2e20fa831e4102625a8161dc103fff22cbec21aab86fda8bc7611a35a"
+    },
+    {
+      "repositoryPath": "analysis/web/src/CandidateDetails.jsx",
+      "gitBlobSha": "aebaf0710e402824c3dc7c824cd928c5780ec7db",
+      "sizeBytes": 5506,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/CandidateDetails.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/CandidateDetails.jsx",
+      "sha256": "4d9d9f5eb6a8a57fbdd090ca5dc2526a193f495ed70907165e62ae56a7bd865b"
+    },
+    {
+      "repositoryPath": "analysis/web/src/CardShare.jsx",
+      "gitBlobSha": "b029af1435edc743c9aa76468d84048020df8b32",
+      "sizeBytes": 4954,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/CardShare.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/CardShare.jsx",
+      "sha256": "816e83e7db0696b193148cdf34d6bb99792654fb5a604eb3b3a7fa304a5ce82b"
+    },
+    {
+      "repositoryPath": "analysis/web/src/ChainageGuide.jsx",
+      "gitBlobSha": "fae5a69298f766c1b465b1453d22c74d93143daa",
+      "sizeBytes": 9652,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/ChainageGuide.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/ChainageGuide.jsx",
+      "sha256": "e94305499218f38c7f55bd21b7c3c149e39739b07fc3712dd7475aeaab1ed6e7"
+    },
+    {
+      "repositoryPath": "analysis/web/src/Comparison.jsx",
+      "gitBlobSha": "1dcca3be27488a32ec770c7e5be4ca562600f816",
+      "sizeBytes": 40668,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/Comparison.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/Comparison.jsx",
+      "sha256": "8bd5cb87d07dfafe70d4261b8183276889a7f9ab2e0fd9415af0649393804606"
+    },
+    {
+      "repositoryPath": "analysis/web/src/DpwhApp.jsx",
+      "gitBlobSha": "fab8b2222988156d8b004c2ea9b9e8a98f7421d4",
+      "sizeBytes": 10631,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/DpwhApp.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/DpwhApp.jsx",
+      "sha256": "c77c8aeb18b8676d0e90f4a66196a5b9a0f7b198ef639fa9663d1812879d4dfa"
+    },
+    {
+      "repositoryPath": "analysis/web/src/FmrApp.jsx",
+      "gitBlobSha": "39e5bd11dd4c8af45e8728a5f2d512e63e6585b1",
+      "sizeBytes": 80570,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/FmrApp.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/FmrApp.jsx",
+      "sha256": "7a0a5414a36c956fef9c7e8a77c9883c62794ea68f8793d58609af8fed11eb3f"
+    },
+    {
+      "repositoryPath": "analysis/web/src/FmrMap.jsx",
+      "gitBlobSha": "54af5e86ee04d5d4f5a64cbd675744c22dd21dd0",
+      "sizeBytes": 43044,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/FmrMap.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/FmrMap.jsx",
+      "sha256": "c3e5bd626a3cb3173d41bdb968d0bb0be2254132084c006602a36c0e4b48e910"
+    },
+    {
+      "repositoryPath": "analysis/web/src/FmrProvenance.jsx",
+      "gitBlobSha": "f7d2251332a99eb0c460277591576599c412a691",
+      "sizeBytes": 4125,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/FmrProvenance.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/FmrProvenance.jsx",
+      "sha256": "581b12a402515ffc53aa732fc63f65df3c6a09ed5b62649911fc94bc530352df"
+    },
+    {
+      "repositoryPath": "analysis/web/src/FmrRedFlags.jsx",
+      "gitBlobSha": "6657ce0deaefdf7c9ab06fd33fc55d4fa2db4d7f",
+      "sizeBytes": 10890,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/FmrRedFlags.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/FmrRedFlags.jsx",
+      "sha256": "875d0707ac7c45e569fe59cb53ae09357dc5d41817516fad72d78a3b61b13f74"
+    },
+    {
+      "repositoryPath": "analysis/web/src/GeoApp.jsx",
+      "gitBlobSha": "9101db24961f2ce5140bd85b62ff6c6be34945d5",
+      "sizeBytes": 12603,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/GeoApp.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/GeoApp.jsx",
+      "sha256": "0bf2768cc343ffd55406b20e75ff54dab571be69c98de3760f81d212c8c4c08c"
+    },
+    {
+      "repositoryPath": "analysis/web/src/GeoMap.jsx",
+      "gitBlobSha": "1f71b2efa6d33168f292f3a39d09ce441eecfb23",
+      "sizeBytes": 37708,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/GeoMap.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/GeoMap.jsx",
+      "sha256": "375d0da0039faf0f032ecc29679f74ccfb108d57fd2f8b82672a1228013d1d7d"
+    },
+    {
+      "repositoryPath": "analysis/web/src/GroupProjectsModal.jsx",
+      "gitBlobSha": "473d49979c063b8d6ad9876847a85654b8c25d49",
+      "sizeBytes": 3951,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/GroupProjectsModal.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/GroupProjectsModal.jsx",
+      "sha256": "40e98c8e94226d007e2ff4b9d36f8ca201531788c998dd5f5180b2d8c3fd5a96"
+    },
+    {
+      "repositoryPath": "analysis/web/src/HfepApp.jsx",
+      "gitBlobSha": "d9501c32bb532119b4fd8d1a9b456b7ae06f9c44",
+      "sizeBytes": 104576,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/HfepApp.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/HfepApp.jsx",
+      "sha256": "a5a81cc1f7eeb44d4156cbc2027dce89868edfb05df12c4042f2b42308019a91"
+    },
+    {
+      "repositoryPath": "analysis/web/src/HighlightModal.jsx",
+      "gitBlobSha": "a1526c8622afba8e585cd0fbbe7b318a52ba48ce",
+      "sizeBytes": 27147,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/HighlightModal.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/HighlightModal.jsx",
+      "sha256": "5455c94f46c06870c318bd9664ca1081bb35765ea2e927b59bf0bd750bfe8e37"
+    },
+    {
+      "repositoryPath": "analysis/web/src/Highlights.jsx",
+      "gitBlobSha": "246c06db55205ee6d7ea2eccd20c6e8a42dcb813",
+      "sizeBytes": 21241,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/Highlights.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/Highlights.jsx",
+      "sha256": "f2e79bcd5e9564aad69b75da6caf6d93d025063f8e1bb764a35edd4a410fe25a"
+    },
+    {
+      "repositoryPath": "analysis/web/src/LoadingModal.jsx",
+      "gitBlobSha": "f70e132b966dd3dc2efd2576b1bdc94523f0d1e4",
+      "sizeBytes": 1339,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/LoadingModal.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/LoadingModal.jsx",
+      "sha256": "4da30073d1979ed2df7aeb5d89a104511ca6eea62a9581630670324419d0de1e"
+    },
+    {
+      "repositoryPath": "analysis/web/src/MainOverview.jsx",
+      "gitBlobSha": "ac3d02c734d8d7c4c4870dc50b7f1ba04bc7e3a1",
+      "sizeBytes": 29760,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/MainOverview.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/MainOverview.jsx",
+      "sha256": "96752a54edc7694afc251f912a051a1e735deec273898294d1efcd80d3e4acd1"
+    },
+    {
+      "repositoryPath": "analysis/web/src/NiaApp.jsx",
+      "gitBlobSha": "904323b9cb200ca9cc0bdcc34060d011f3f4a654",
+      "sizeBytes": 80926,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/NiaApp.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/NiaApp.jsx",
+      "sha256": "9d35178ab0042eb612b3d9cc84c14b0013c97b6d489b0ca05dcf261b29c916ca"
+    },
+    {
+      "repositoryPath": "analysis/web/src/PdfPreview.jsx",
+      "gitBlobSha": "1622edb76208ed20eacb492cf20a24eaf73b2c17",
+      "sizeBytes": 7395,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/PdfPreview.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/PdfPreview.jsx",
+      "sha256": "2e99d8342bef2e3e3791f97927061e29058bb04fbcfafe0e11ef1b8503e70d97"
+    },
+    {
+      "repositoryPath": "analysis/web/src/PdfSourceModal.jsx",
+      "gitBlobSha": "e5f61e925ba912307e1631740363248a12ab5266",
+      "sizeBytes": 2439,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/PdfSourceModal.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/PdfSourceModal.jsx",
+      "sha256": "a0e4f765d05122c19ff0ba78effc291fd72cd625f7a6aad4e157fd90ebac1739"
+    },
+    {
+      "repositoryPath": "analysis/web/src/ProjectAnalytics.jsx",
+      "gitBlobSha": "327c914132d5908b72e4f0ac37560065f7ef1369",
+      "sizeBytes": 11141,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/ProjectAnalytics.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/ProjectAnalytics.jsx",
+      "sha256": "5ecf18522307f3cfc6ccedd62d7612a080c9f8a93092d0522680f985c40dc46b"
+    },
+    {
+      "repositoryPath": "analysis/web/src/ProjectPaths.jsx",
+      "gitBlobSha": "bce1aacf1789a1e446d70956f8cd5a33dca7a4c1",
+      "sizeBytes": 1823,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/ProjectPaths.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/ProjectPaths.jsx",
+      "sha256": "4fc59fa5a38aa1db139e8e5e00ccd52373e0a5ed0e2f2afcfd98b08862a126a2"
+    },
+    {
+      "repositoryPath": "analysis/web/src/ShareLink.jsx",
+      "gitBlobSha": "9f7de761f73c3b8f4be4baed5081d8dfa7cfaa51",
+      "sizeBytes": 870,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/ShareLink.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/ShareLink.jsx",
+      "sha256": "d38a2bf7c6f93b67eb514c12eed4ac93c2e6faa94f361a92b1b700ff394bec27"
+    },
+    {
+      "repositoryPath": "analysis/web/src/SortableTable.jsx",
+      "gitBlobSha": "01e3e2d4bcbcbbaec064dda8615c8abb33d07a70",
+      "sizeBytes": 7721,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/SortableTable.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/SortableTable.jsx",
+      "sha256": "22fd145463777d8ea2b15766ddaeb97e27d12bac20154916522634a9dcb4e2a4"
+    },
+    {
+      "repositoryPath": "analysis/web/src/SourceWorkspace.jsx",
+      "gitBlobSha": "10d99d8ab4349f6b0d7c7dfc31691bd6fadcc7e6",
+      "sizeBytes": 11258,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/SourceWorkspace.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/SourceWorkspace.jsx",
+      "sha256": "d8248360ad47f04f2b543992060f7fa1afaa06d532c296a07c434ea291a7fa95"
+    },
+    {
+      "repositoryPath": "analysis/web/src/Sources.jsx",
+      "gitBlobSha": "c1ae5fee52d46c99262e29b194f13b208a2b226e",
+      "sizeBytes": 5856,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/Sources.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/Sources.jsx",
+      "sha256": "c8b91cf53b8b02817fbe26e43e8209b1d2c012206ccab87db1532cb39596b38c"
+    },
+    {
+      "repositoryPath": "analysis/web/src/Workbench.jsx",
+      "gitBlobSha": "de2fb973624cd90f2d83f69d8a18054660ddaf4b",
+      "sizeBytes": 1634,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/Workbench.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/Workbench.jsx",
+      "sha256": "ef05cf81ebf34c7970d6a127d369fb3670f4f665f338bd6fc77520c7bb215189"
+    },
+    {
+      "repositoryPath": "analysis/web/src/WorkbenchHeader.jsx",
+      "gitBlobSha": "26a74e2c4c5232ecf84ef7b124c190322cf2a578",
+      "sizeBytes": 1389,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/WorkbenchHeader.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/WorkbenchHeader.jsx",
+      "sha256": "6b02f2ac6303d5434b4fea23ef252f947e065546cb7e295fdb86e97288e25cb4"
+    },
+    {
+      "repositoryPath": "analysis/web/src/analysisStats.js",
+      "gitBlobSha": "5c2763b382bbb1d1314055f9104231709d2907aa",
+      "sizeBytes": 5093,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/analysisStats.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/analysisStats.js",
+      "sha256": "47485949bece68bbe60098b94f1b82d84e9b0f19239701e2ba7a8b9400db3836"
+    },
+    {
+      "repositoryPath": "analysis/web/src/analyticsStatusInfo.js",
+      "gitBlobSha": "65a030470d984983f4c87a3f4ec7caa2c1338dce",
+      "sizeBytes": 6627,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/analyticsStatusInfo.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/analyticsStatusInfo.js",
+      "sha256": "cc9610b89ebac5ec7e875f5946330d06be46c91bf094022bfcf507ff49e9afad"
+    },
+    {
+      "repositoryPath": "analysis/web/src/chainageAnalysis.js",
+      "gitBlobSha": "1de92edd095903db928231c9080616631a6ac90f",
+      "sizeBytes": 13303,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/chainageAnalysis.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/chainageAnalysis.js",
+      "sha256": "e3434052e5b037ebf0f24fadfa197a4313d84d4ad5da464eecbbb6deeb031bd7"
+    },
+    {
+      "repositoryPath": "analysis/web/src/chainageBenchmark.js",
+      "gitBlobSha": "98be2be78d54bfabb00d4f2c98cbb97a7036c6c1",
+      "sizeBytes": 7195,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/chainageBenchmark.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/chainageBenchmark.js",
+      "sha256": "f75f8ee38f099b4b80e0f776607cf7d4bec5ceab3afd07f5bf7bc016d58a6ef8"
+    },
+    {
+      "repositoryPath": "analysis/web/src/chainageDisplay.js",
+      "gitBlobSha": "47c0110b1ce9ba2900d64c630bbcfaae174893a6",
+      "sizeBytes": 4792,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/chainageDisplay.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/chainageDisplay.js",
+      "sha256": "8bb72747401275d176b71d573a75e92f3c9a10ee2d47bc2247079c81eeccf289"
+    },
+    {
+      "repositoryPath": "analysis/web/src/comparisonData.js",
+      "gitBlobSha": "8fc173df4dacc859c71a0629698110baa1e1bd63",
+      "sizeBytes": 325,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/comparisonData.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/comparisonData.js",
+      "sha256": "90be985c2b89157c0bccaa91c52a58bc311e0ee8395fb299b56d638559ed9f3a"
+    },
+    {
+      "repositoryPath": "analysis/web/src/comparisonExport.js",
+      "gitBlobSha": "e1ce26741404a344baecd7bb53653f36ed4fe53b",
+      "sizeBytes": 3936,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/comparisonExport.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/comparisonExport.js",
+      "sha256": "fa1defefdead801ad516e0d9185a119737eb4a03130e807533a587e417e1c585"
+    },
+    {
+      "repositoryPath": "analysis/web/src/data.js",
+      "gitBlobSha": "61ef5a81730cfd854e3118911a1dae1492873631",
+      "sizeBytes": 3913,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/data.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/data.js",
+      "sha256": "fdf09b23aaf33df2a252894cf55f98525e4a4e8e5094068b471a8cc47bc77edb"
+    },
+    {
+      "repositoryPath": "analysis/web/src/diffTags.js",
+      "gitBlobSha": "7e61d3f0fed7d83639820d958e61c38932043773",
+      "sizeBytes": 5553,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/diffTags.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/diffTags.js",
+      "sha256": "2aef22517d37cc739dfb8f2c320a7da9732a5d3f3bbec8b2410dcab165232c4b"
+    },
+    {
+      "repositoryPath": "analysis/web/src/findingRoutes.js",
+      "gitBlobSha": "bda7896acdd24fd41f71ff9f42be069ee013b9f4",
+      "sizeBytes": 4577,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/findingRoutes.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/findingRoutes.js",
+      "sha256": "b6d3896fb9ceee97fa947f2baaf2eeb41358971b55c1d0352590963d9bd69da5"
+    },
+    {
+      "repositoryPath": "analysis/web/src/fmrHighlights.js",
+      "gitBlobSha": "d8fb227680e6b36d5699b50b5a8d0aec23d14f60",
+      "sizeBytes": 7976,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/fmrHighlights.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/fmrHighlights.js",
+      "sha256": "1aab6a8d7f65f9bbb0fda70d9fdf6f023ea8affe8191c568b9a4a1cdba258f19"
+    },
+    {
+      "repositoryPath": "analysis/web/src/fmrMapModel.js",
+      "gitBlobSha": "ea95a81b5dafacfaba07aad6696454712718e9a0",
+      "sizeBytes": 21569,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/fmrMapModel.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/fmrMapModel.js",
+      "sha256": "c2db7ce57b369727eaa156c538765d145e33603ffcbc6436e804a63e8add3e5d"
+    },
+    {
+      "repositoryPath": "analysis/web/src/fmrMapRoute.js",
+      "gitBlobSha": "4db6dc5f3a323f794c12f754febfbbd0eb195849",
+      "sizeBytes": 1593,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/fmrMapRoute.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/fmrMapRoute.js",
+      "sha256": "9b2bc75eee862728fe97b55a4f6f89b5c87bcb7c6fb30b2f9b7cb3ea47fdf6c0"
+    },
+    {
+      "repositoryPath": "analysis/web/src/fmrModel.js",
+      "gitBlobSha": "3c201a7c2a1f2637f5b3b2eb59af0b8e11bb7aba",
+      "sizeBytes": 19748,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/fmrModel.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/fmrModel.js",
+      "sha256": "a8516d068b75941b37e13c9cc41e888b104339e71d76c3d8e03cb96464bd5ef4"
+    },
+    {
+      "repositoryPath": "analysis/web/src/fmrRedFlags.js",
+      "gitBlobSha": "7bd63054a4b284d740959c442c6ca52d7230825d",
+      "sizeBytes": 9283,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/fmrRedFlags.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/fmrRedFlags.js",
+      "sha256": "059a75f981c54901806448e3e8aaee1c9f8be453adf2aef35864820405301331"
+    },
+    {
+      "repositoryPath": "analysis/web/src/geoMapStyle.js",
+      "gitBlobSha": "daa60e78767750ac34ce6b7d7850c4242a224611",
+      "sizeBytes": 15404,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/geoMapStyle.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/geoMapStyle.js",
+      "sha256": "c78a09a50a94a09a4c3c68dd4b23be421a9124529c46ec813ed0852554bac193"
+    },
+    {
+      "repositoryPath": "analysis/web/src/geoModel.js",
+      "gitBlobSha": "38d00ed46d9e4859085b152e7a884c42feaadfd1",
+      "sizeBytes": 14835,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/geoModel.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/geoModel.js",
+      "sha256": "d986872c62dcb2369a7c43b51480c7a1929fdc284416940c5d29ccabd433d585"
+    },
+    {
+      "repositoryPath": "analysis/web/src/groupProjects.js",
+      "gitBlobSha": "6bd103919dc6c220b29e51f92c449983894db195",
+      "sizeBytes": 4204,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/groupProjects.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/groupProjects.js",
+      "sha256": "e8aa202f82c664493127466eded97e7a5d3fc45b31c2fb0b2bb26a303f328fb8"
+    },
+    {
+      "repositoryPath": "analysis/web/src/headlineStats.js",
+      "gitBlobSha": "96048efe5d30f32b7ab573676058f1e99515efe3",
+      "sizeBytes": 11663,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/headlineStats.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/headlineStats.js",
+      "sha256": "5e791e99a73203b7e62033266a107e0f134fee41694918fd5823bff66f4f4fc4"
+    },
+    {
+      "repositoryPath": "analysis/web/src/hfepHighlights.js",
+      "gitBlobSha": "1a16f28ba1ab91649f51e60a01f51206b08925cf",
+      "sizeBytes": 9224,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/hfepHighlights.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/hfepHighlights.js",
+      "sha256": "b223dedb492a9bd551767760782d7d1eb7aec265b425f800ff51562d147ea066"
+    },
+    {
+      "repositoryPath": "analysis/web/src/hfepModel.js",
+      "gitBlobSha": "a0819376124c6b5e84c0b132851420f3b6ccb81d",
+      "sizeBytes": 32193,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/hfepModel.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/hfepModel.js",
+      "sha256": "074d88abab55092f0639830cd7792b6a678ea04bbf617aa704065a04997266fe"
+    },
+    {
+      "repositoryPath": "analysis/web/src/highlightDetails.js",
+      "gitBlobSha": "98abc4d47722378e46506f9af588038de878f638",
+      "sizeBytes": 9624,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/highlightDetails.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/highlightDetails.js",
+      "sha256": "1550bdb42a74f9b10fb9c81d2b27574ec17004982954764d541ed824e2fe8d30"
+    },
+    {
+      "repositoryPath": "analysis/web/src/highlightsData.js",
+      "gitBlobSha": "a586dfa9bcd811b87c0fd8cf987f8b6979ed79c4",
+      "sizeBytes": 7311,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/highlightsData.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/highlightsData.js",
+      "sha256": "40477a52ffffbf681e271e138b94456c06dc6e6f5459a5807e1890a6bba14752"
+    },
+    {
+      "repositoryPath": "analysis/web/src/houseProjectTree.js",
+      "gitBlobSha": "43bdb72221704c2d48ee96f9378d3f2f669463cb",
+      "sizeBytes": 3817,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/houseProjectTree.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/houseProjectTree.js",
+      "sha256": "3d0ac3c63df3266590843c3f92cf081b3b610444b39f6553ab0c48f3fcf0c6b9"
+    },
+    {
+      "repositoryPath": "analysis/web/src/main.jsx",
+      "gitBlobSha": "867be361d9f4975ee57464e6212dcc16f5bc64c2",
+      "sizeBytes": 279,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/main.jsx",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/main.jsx",
+      "sha256": "82d313c91fbfa61ae404902b8b71d03f71a586ef6952844fa3e0f3e360ab0db2"
+    },
+    {
+      "repositoryPath": "analysis/web/src/mainOverviewModel.js",
+      "gitBlobSha": "51634b59bd56c341f37f6d9c2a2dfdb59ae08ef6",
+      "sizeBytes": 3589,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/mainOverviewModel.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/mainOverviewModel.js",
+      "sha256": "69442d27bbd163ab172719363954e7e0116cdef3ed6832ae151811c4776bc8b8"
+    },
+    {
+      "repositoryPath": "analysis/web/src/matchFilters.js",
+      "gitBlobSha": "3a6f10ce8d827f963da69fdd2d4dbd0ca136b59e",
+      "sizeBytes": 13445,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/matchFilters.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/matchFilters.js",
+      "sha256": "1ec447d3f924eb76be141ede60c19222db8fd981b76c8623fd38d3825a80f5e9"
+    },
+    {
+      "repositoryPath": "analysis/web/src/modalLifecycle.js",
+      "gitBlobSha": "8b6a962896c007644f789c38b9bfa50aa55a923e",
+      "sizeBytes": 729,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/modalLifecycle.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/modalLifecycle.js",
+      "sha256": "732041fd9aaab3249844b2e1c87c0913bd006e35979aba5b127f25f38b9b65dd"
+    },
+    {
+      "repositoryPath": "analysis/web/src/model.js",
+      "gitBlobSha": "703b130d561bdddd61ee38db8f35a636260d2d4e",
+      "sizeBytes": 6237,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/model.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/model.js",
+      "sha256": "9ecbb27b36c5b8e0ff5a82c820b55e291ea0df5781053ec66b3c7b79a5a60960"
+    },
+    {
+      "repositoryPath": "analysis/web/src/niaAnalysis.js",
+      "gitBlobSha": "54ee8cedc28e2839fdfa857b9a1e0fdfcde3a651",
+      "sizeBytes": 19461,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/niaAnalysis.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/niaAnalysis.js",
+      "sha256": "c885c9edff963b90474f2a4c4b2b0692e8e8f20f3b30442789093b5d3a201715"
+    },
+    {
+      "repositoryPath": "analysis/web/src/niaModel.js",
+      "gitBlobSha": "7f205ec43a400bed9aa96315ae1c5ee340dd10ba",
+      "sizeBytes": 15658,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/niaModel.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/niaModel.js",
+      "sha256": "a9bcd483c56b9b779d8f4b1606605db7288a5f8239af7fd6573cb2454f6dc57f"
+    },
+    {
+      "repositoryPath": "analysis/web/src/overviewSummary.js",
+      "gitBlobSha": "91629b0a6b2d1f879b3c5d43ef077004690bba75",
+      "sizeBytes": 18183,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/overviewSummary.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/overviewSummary.js",
+      "sha256": "6a0ca660620b25cfaf740dfb2b9654c1877f0173c262e2d00f297454d1ec03c6"
+    },
+    {
+      "repositoryPath": "analysis/web/src/pctChange.js",
+      "gitBlobSha": "d5e3ca28351dd79198b036c8c989f054de063ce9",
+      "sizeBytes": 665,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/pctChange.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/pctChange.js",
+      "sha256": "5eb5faf1d95188c91247cc90a453f53b1ccd89097c51e658acebff1a0b0c78cc"
+    },
+    {
+      "repositoryPath": "analysis/web/src/pdfLifecycle.js",
+      "gitBlobSha": "485a8b07ef8c91a9e59919dfd524e8a4d7da6aaa",
+      "sizeBytes": 1455,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/pdfLifecycle.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/pdfLifecycle.js",
+      "sha256": "9995d738dbec41dfa8432b5a9112816b1d4d86225b1ec0341a970cf0ee7abb64"
+    },
+    {
+      "repositoryPath": "analysis/web/src/projectAnalytics.js",
+      "gitBlobSha": "0e394be34c510ff3d2ffd2fa47a050b522f782fe",
+      "sizeBytes": 3525,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/projectAnalytics.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/projectAnalytics.js",
+      "sha256": "842308b2fe9c255be69ab720b6688f0903ed48e5052d372841e5fa0c596f8960"
+    },
+    {
+      "repositoryPath": "analysis/web/src/projectPaths.js",
+      "gitBlobSha": "69f65a3c0435102258395a1ac9fbef5a6262aa8a",
+      "sizeBytes": 2201,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/projectPaths.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/projectPaths.js",
+      "sha256": "1a54a6298364a05f26001eb1fc57bc8b05b6a4430882fe29fc3505b69ffbc0ec"
+    },
+    {
+      "repositoryPath": "analysis/web/src/rainwaterData.js",
+      "gitBlobSha": "dd78d96c4e1ec27f461059a714eee1e28efe50e5",
+      "sizeBytes": 856,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/rainwaterData.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/rainwaterData.js",
+      "sha256": "c93d5d57f990f311758edf44675fcdcac697b6e54aea76880e880cb0656f233c"
+    },
+    {
+      "repositoryPath": "analysis/web/src/regionCandidates.js",
+      "gitBlobSha": "5bf55ef5ede212aac5c99c19786f4c0fffb2629b",
+      "sizeBytes": 2020,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/regionCandidates.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/regionCandidates.js",
+      "sha256": "fc01a1ccca294dc0c2e4aaa2ca4d9669a6761fe611d851afdd15de4aca825120"
+    },
+    {
+      "repositoryPath": "analysis/web/src/regionNames.js",
+      "gitBlobSha": "6626b0e03c97787bb5da123c085118e517925ba7",
+      "sizeBytes": 1877,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/regionNames.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/regionNames.js",
+      "sha256": "21a53a9199a5cbcb8f5c242199190c5b08448302196c4b9ad209f7e935641c47"
+    },
+    {
+      "repositoryPath": "analysis/web/src/roadGroups.js",
+      "gitBlobSha": "aa8e2400f7ea9a15e7a89ae4540aade1aed896f1",
+      "sizeBytes": 1930,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/roadGroups.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/roadGroups.js",
+      "sha256": "13ac930efa7976c5df232bd28471bd9d3d3b4c92ac28e74fb91897d3b5db7cd8"
+    },
+    {
+      "repositoryPath": "analysis/web/src/routes.js",
+      "gitBlobSha": "a3dfd3485f675735bbab426395758f8fb5a871b7",
+      "sizeBytes": 6616,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/routes.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/routes.js",
+      "sha256": "86427a291815c70f54466cc75f72468102f7f13e931680ddaa9f449ff7240bd0"
+    },
+    {
+      "repositoryPath": "analysis/web/src/search.js",
+      "gitBlobSha": "2454ff0298bdbc2cbc970ba2b09316fea752b207",
+      "sizeBytes": 435,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/search.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/search.js",
+      "sha256": "8f68ffcada192b4f923e405d3a2bfdf09f9efac6c115c12e66b3a756bf492b4c"
+    },
+    {
+      "repositoryPath": "analysis/web/src/sourcesCatalog.js",
+      "gitBlobSha": "23a8710adf02f0efad4e9dfb53fc7c65acd05d2a",
+      "sizeBytes": 24763,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/sourcesCatalog.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/sourcesCatalog.js",
+      "sha256": "50ad0f1bed50bc8e3c94b7a9a3f05100a56c643a7f5b2e163994c3ad7430d790"
+    },
+    {
+      "repositoryPath": "analysis/web/src/suggestedCounterparts.js",
+      "gitBlobSha": "38c3f4a9c1a75a7e3fbf5815acaa10f739759d20",
+      "sizeBytes": 575,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/suggestedCounterparts.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/suggestedCounterparts.js",
+      "sha256": "8ec6a5545d978ece7913dbe34ff7fe3d8071ffb31f411d68655ec93cf37efb33"
+    },
+    {
+      "repositoryPath": "analysis/web/src/unifiedComparison.js",
+      "gitBlobSha": "f26c92928985f0b185e57e5b7f0c947fa4ed42e0",
+      "sizeBytes": 3144,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/unifiedComparison.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/unifiedComparison.js",
+      "sha256": "a5effc1cbd5678451966dfb1ff5b9031e9ea16d88d9f7d81ea97520fa44bf15e"
+    },
+    {
+      "repositoryPath": "analysis/web/src/useComparisonFinding.js",
+      "gitBlobSha": "89f2f815f8ab23914576def8da40ec93aeda2f46",
+      "sizeBytes": 958,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/useComparisonFinding.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/useComparisonFinding.js",
+      "sha256": "0b23bcebb586e1969ba08920a9c1707a299bfbad16cc47acd5e8d91421604dc2"
+    },
+    {
+      "repositoryPath": "analysis/web/src/useDebouncedSearch.js",
+      "gitBlobSha": "6e574e2f9fc4bc2484769957ab965a2eb2978a6e",
+      "sizeBytes": 602,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/useDebouncedSearch.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/useDebouncedSearch.js",
+      "sha256": "752c3bdd6fa23f8735c233383b6fed66db308a242bc76d5113a506b588dbe8e8"
+    },
+    {
+      "repositoryPath": "analysis/web/src/workspaces/budgetDisplay.js",
+      "gitBlobSha": "521913356a654a226c1a7f1693dd60e2719854ab",
+      "sizeBytes": 7100,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/workspaces/budgetDisplay.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/workspaces/budgetDisplay.js",
+      "sha256": "6a9fe44f688bc51c042661185b58c1cb384d07ccdc2cdb71060b57628163219a"
+    },
+    {
+      "repositoryPath": "analysis/web/src/workspaces/houseComparison.js",
+      "gitBlobSha": "50498673c680f3afba454e6e9ec3425be5ddf643",
+      "sizeBytes": 14492,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/workspaces/houseComparison.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/workspaces/houseComparison.js",
+      "sha256": "9fde30cbb1b083c119f3c53f0e6d22c124d7511edb2f25bd2ff8ad6f206fd5a3"
+    },
+    {
+      "repositoryPath": "analysis/web/src/workspaces/tree.js",
+      "gitBlobSha": "05e2eebbe0399eda3bcda99edbcd069616df5054",
+      "sizeBytes": 11915,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/workspaces/tree.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/workspaces/tree.js",
+      "sha256": "6598a90febd3c8567506dc46418476b2eff0356c443804b4c21e72aad7545cec"
+    },
+    {
+      "repositoryPath": "analysis/web/src/workspaces/verification.js",
+      "gitBlobSha": "b7aea8369b1926985db540344a69f1a1bb1121f9",
+      "sizeBytes": 27620,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/workspaces/verification.js",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/analysis/web/src/workspaces/verification.js",
+      "sha256": "8214cf2de38a24e67154fe5daaaa0cbfc469ef7957aa3229e2f4ea8dda53c5b9"
+    },
+    {
+      "repositoryPath": "gps-analysis/README.md",
+      "gitBlobSha": "7b94c6965e8f50f56e14b05a7d2bc2e3ecf5e121",
+      "sizeBytes": 12764,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/gps-analysis/README.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/gps-analysis/README.md",
+      "sha256": "51838cc211755a98bb15163ad5ff20ba71bb51743cfa3af88b885b2b768715ed"
+    },
+    {
+      "repositoryPath": "gps-analysis/data/gps_inventory.json",
+      "gitBlobSha": "fd3558b8def44d578afee69f8a16a9bde3d9691c",
+      "sizeBytes": 13472243,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/gps-analysis/data/gps_inventory.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/gps-analysis/data/gps_inventory.json",
+      "sha256": "71722b962b21dd36047e0f06a7a54039a677fda1b569baf46abaf886c7364073"
+    },
+    {
+      "repositoryPath": "gps-analysis/data/gps_inventory_summary.json",
+      "gitBlobSha": "b10d1ff3ece002affa4cd65df1ca8e7b6132935d",
+      "sizeBytes": 3003,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/gps-analysis/data/gps_inventory_summary.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/gps-analysis/data/gps_inventory_summary.json",
+      "sha256": "00553685a5eeeb931562e9e1d78bf3889ae18471c4de683b8f684d980ad21d4a"
+    },
+    {
+      "repositoryPath": "other-analysis/FMR_COORDINATE_REVIEW_FLAGS.md",
+      "gitBlobSha": "10b5b6713a9982385078dae48431d212a32a42e0",
+      "sizeBytes": 12903,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/FMR_COORDINATE_REVIEW_FLAGS.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/FMR_COORDINATE_REVIEW_FLAGS.md",
+      "sha256": "86622cf0db96127e5689904f1160bd0271483d909bc60f682321f78377dc37e6"
+    },
+    {
+      "repositoryPath": "other-analysis/FMR_DPWH_UI_UX_REVIEW.md",
+      "gitBlobSha": "eb0cab473145ae19069a5485bdacddbda8d15ece",
+      "sizeBytes": 17431,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/FMR_DPWH_UI_UX_REVIEW.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/FMR_DPWH_UI_UX_REVIEW.md",
+      "sha256": "95c7f3d14fba20a34d027e26b6e942a6f748bc13152b8d8cbd61bd8fadf11282"
+    },
+    {
+      "repositoryPath": "other-analysis/FMR_EXTRACTION.md",
+      "gitBlobSha": "62cf937c5ae3ee6eb9e7f497dbcda361d94547c3",
+      "sizeBytes": 12798,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/FMR_EXTRACTION.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/FMR_EXTRACTION.md",
+      "sha256": "c5cd19a0b4501590bcb70285b82b3aef8c103c62f397c2c88d01729be7f1225a"
+    },
+    {
+      "repositoryPath": "other-analysis/FMR_HOUSE_PRINTED_TOTALS_COMPARISON.md",
+      "gitBlobSha": "526d91eb427c9cc8751679aad5d452d636ad3976",
+      "sizeBytes": 4155,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/FMR_HOUSE_PRINTED_TOTALS_COMPARISON.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/FMR_HOUSE_PRINTED_TOTALS_COMPARISON.md",
+      "sha256": "78525768b7d418307f29763a977d1b01a3bb5a3ba183ff0065e9d89368577dc1"
+    },
+    {
+      "repositoryPath": "other-analysis/FMR_PSGC_VALIDATION_WORKLOG.md",
+      "gitBlobSha": "186ee24ce7ecab8dfc87f2a666c47a612586be5f",
+      "sizeBytes": 17288,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/FMR_PSGC_VALIDATION_WORKLOG.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/FMR_PSGC_VALIDATION_WORKLOG.md",
+      "sha256": "3bf09ae58383d555f2c5636a98652db49a2021634ae493fe02364ea3f39afb78"
+    },
+    {
+      "repositoryPath": "other-analysis/FMR_PUBLISHED_VS_LOCAL_ASSESSMENT.md",
+      "gitBlobSha": "9291d8e3a5524d5fceca55ed94a2f8f1f1abeb6e",
+      "sizeBytes": 8167,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/FMR_PUBLISHED_VS_LOCAL_ASSESSMENT.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/FMR_PUBLISHED_VS_LOCAL_ASSESSMENT.md",
+      "sha256": "6825d415a5a39a44869ce0651b4e0cb8e7933c3bd730dd831867dd2036a5da3f"
+    },
+    {
+      "repositoryPath": "other-analysis/FMR_WORKBENCH.md",
+      "gitBlobSha": "7f4beb0515c03bff054dc903f34782e5c172d826",
+      "sizeBytes": 7421,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/FMR_WORKBENCH.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/FMR_WORKBENCH.md",
+      "sha256": "7c963383082761351776d8f23e5034be6c95cf557bf92c3e74fcf5164959cda3"
+    },
+    {
+      "repositoryPath": "other-analysis/NEP_FMR_COORDINATE_REVIEW_FLAGS.md",
+      "gitBlobSha": "9fa8fe5b3cb2a56829187a0c3b3bf457a4e23827",
+      "sizeBytes": 12452,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/NEP_FMR_COORDINATE_REVIEW_FLAGS.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/NEP_FMR_COORDINATE_REVIEW_FLAGS.md",
+      "sha256": "7b242cf1ebb75ff0ca6890aa383cadc79700c29ec189d83b19c5e022d7e5235b"
+    },
+    {
+      "repositoryPath": "other-analysis/NEP_FMR_EXTRACTION.md",
+      "gitBlobSha": "d502d71dc813ae3f19b351ed5165462e6d4897a9",
+      "sizeBytes": 10856,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/NEP_FMR_EXTRACTION.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/NEP_FMR_EXTRACTION.md",
+      "sha256": "b733be997ea399e70d97bbe1915cdb8be7e3af08c3213fd190811c2fc6c7a8f1"
+    },
+    {
+      "repositoryPath": "other-analysis/README.md",
+      "gitBlobSha": "d556d6b31547dc45fde4ab012f8cfb768803e02d",
+      "sizeBytes": 19526,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/README.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/README.md",
+      "sha256": "e68b988576d56a7cd477d37270ed200d7b252502d91ddb6123f32d164206175a"
+    },
+    {
+      "repositoryPath": "other-analysis/UI_IMPLEMENTATION_REFERENCE.md",
+      "gitBlobSha": "73667434e7c08de708c8c003fdd41bff01a82055",
+      "sizeBytes": 33740,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/UI_IMPLEMENTATION_REFERENCE.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/UI_IMPLEMENTATION_REFERENCE.md",
+      "sha256": "c528c43ed0211afad74cc7ce5dffe9c36e2e8a8bfd325f41669243bbe6e3a0b2"
+    },
+    {
+      "repositoryPath": "other-analysis/data/fmr_psgc_validation.json",
+      "gitBlobSha": "736ed847e6636c04e428787c5e6d701c9e02f576",
+      "sizeBytes": 3061,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/fmr_psgc_validation.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/fmr_psgc_validation.json",
+      "sha256": "6f9291dd681248c500de97827d884a8152431d1e01508da2b88900fc0bde2329"
+    },
+    {
+      "repositoryPath": "other-analysis/data/fmr_summary.json",
+      "gitBlobSha": "72253c8c2a8a5c4af0eced9d74598833702548ea",
+      "sizeBytes": 276,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/fmr_summary.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/fmr_summary.json",
+      "sha256": "5295b3fe61f02527030329f4ea42f3a1372b8e00894ef74fae01ccc07b067600"
+    },
+    {
+      "repositoryPath": "other-analysis/data/hgab_fmr_audit.json",
+      "gitBlobSha": "bbf42626f9bbed23d91421ebca3500d6916e576b",
+      "sizeBytes": 37575,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/hgab_fmr_audit.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/hgab_fmr_audit.json",
+      "sha256": "0baf668185f83838fb9e4eab84a6ad40a16e55a2c2392ffb5440f25a506f9440"
+    },
+    {
+      "repositoryPath": "other-analysis/data/hgab_fmr_coordinate_normalization_audit.json",
+      "gitBlobSha": "a248de318de9ba9f897fcf1ee4ba3804ba917b02",
+      "sizeBytes": 8961,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/hgab_fmr_coordinate_normalization_audit.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/hgab_fmr_coordinate_normalization_audit.json",
+      "sha256": "21a7c976dd81d07237bfddbbbdc57f92a697f1a6262c82c3c0513bac90d0d56c"
+    },
+    {
+      "repositoryPath": "other-analysis/data/hgab_fmr_coordinates_normalized.json",
+      "gitBlobSha": "52685ee7c258bdaa527fbeeb12b5558ffdf8fc17",
+      "sizeBytes": 3238963,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/hgab_fmr_coordinates_normalized.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/hgab_fmr_coordinates_normalized.json",
+      "sha256": "c8c360514ad9ac908f435c7782bca879cfda01d26b102c97f2348f58dd7243c0"
+    },
+    {
+      "repositoryPath": "other-analysis/data/hgab_fmr_printed_control_comparison.json",
+      "gitBlobSha": "bd85908fffbb86e4efac993e9f9c4835c4ac11ad",
+      "sizeBytes": 101066,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/hgab_fmr_printed_control_comparison.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/hgab_fmr_printed_control_comparison.json",
+      "sha256": "028e3973a619209603899b6d5e950fe201cf3448c6c397e5af79df982d9764fa"
+    },
+    {
+      "repositoryPath": "other-analysis/data/hgab_fmr_source_rows.json",
+      "gitBlobSha": "1a94098a509357619c5bfa93834e8a1aa95e90f3",
+      "sizeBytes": 2449494,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/hgab_fmr_source_rows.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/hgab_fmr_source_rows.json",
+      "sha256": "f838b85f1464d691bffc824f867dcc3f18f56f6a877009b62ede9aa6ba5715d0"
+    },
+    {
+      "repositoryPath": "other-analysis/data/hgab_fmr_tree.json",
+      "gitBlobSha": "93a5f0317fccb69dcab5f00cbeefd35836f0f679",
+      "sizeBytes": 2299181,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/hgab_fmr_tree.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/hgab_fmr_tree.json",
+      "sha256": "40907bb12528a76d955bda746e364ec8c28e14b19134eb6b2f90d07ead0bfdb5"
+    },
+    {
+      "repositoryPath": "other-analysis/data/nep_fmr_audit.json",
+      "gitBlobSha": "f050ed14bc42c8e93daf5eb2d785e5824bfc1d76",
+      "sizeBytes": 41431,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/nep_fmr_audit.json",
+      "status": "already-present",
+      "localPath": "data_sources/fmr_analyst/nep_fmr_audit.json",
+      "sha256": "91b81d302590332b21490c4243b6ad3942945c6e53b7a21377f47b2de3880cc4"
+    },
+    {
+      "repositoryPath": "other-analysis/data/nep_fmr_coordinate_image_review_audit.json",
+      "gitBlobSha": "7324f05f8b813e9ea117b474887b8d10ea02b9ac",
+      "sizeBytes": 70566,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/nep_fmr_coordinate_image_review_audit.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/nep_fmr_coordinate_image_review_audit.json",
+      "sha256": "294b02d17129cb25b07fbdd288d4fd006e29520380b01411164aed578b7ffffb"
+    },
+    {
+      "repositoryPath": "other-analysis/data/nep_fmr_coordinate_normalization_audit.json",
+      "gitBlobSha": "372f8378f0a15c8f1902ceffa18a9ba5ad3fd7e6",
+      "sizeBytes": 7512,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/nep_fmr_coordinate_normalization_audit.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/nep_fmr_coordinate_normalization_audit.json",
+      "sha256": "bf47aa3fa5713aaa1872c34e0a2092d28d57565c2b7932fdd9c894962de2f5d9"
+    },
+    {
+      "repositoryPath": "other-analysis/data/nep_fmr_coordinates_normalized.json",
+      "gitBlobSha": "5fe3d948284cef0527cb0d93ed2f3da74c57ddf9",
+      "sizeBytes": 2734633,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/nep_fmr_coordinates_normalized.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/nep_fmr_coordinates_normalized.json",
+      "sha256": "53d76f3a3bd928a355e9c25b641ed156820b4aeee4a4d3308ff6f951441ce2fc"
+    },
+    {
+      "repositoryPath": "other-analysis/data/nep_fmr_source_rows.json",
+      "gitBlobSha": "fbd453685b7964c2f7a87dc2c77223f623e8bd14",
+      "sizeBytes": 1853738,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/nep_fmr_source_rows.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/nep_fmr_source_rows.json",
+      "sha256": "189b7ed263be9a028294dc483b63a79cb686f268ea6a7f95d0f25ddad6ebf446"
+    },
+    {
+      "repositoryPath": "other-analysis/data/nep_fmr_tree.json",
+      "gitBlobSha": "2e7439937ed55e59f99897f1c03e8342d2ab4519",
+      "sizeBytes": 1726914,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/nep_fmr_tree.json",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/nep_fmr_tree.json",
+      "sha256": "182b67acb063cc0c3501bcbb2f56f0b8e2014105ecae2df3c1a87c4372cb3e62"
+    },
+    {
+      "repositoryPath": "other-analysis/data/shareable/FMR_DATA_README.md",
+      "gitBlobSha": "b2b803d7ac1ccd32e7306121ffe402fbd74e353d",
+      "sizeBytes": 7019,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/shareable/FMR_DATA_README.md",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/other-analysis/data/shareable/FMR_DATA_README.md",
+      "sha256": "567b4c55f15f27c88aa6066023a654a0505c98828c73f1ba74a27d4a2164a8f5"
+    },
+    {
+      "repositoryPath": "scripts/build_pages.py",
+      "gitBlobSha": "a6818e76061af8c4d9e938d070c5ee6f27a13cc9",
+      "sizeBytes": 18712,
+      "sourceUrl": "https://raw.githubusercontent.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS/34ef5d8cbbacda92f6503ffd9a428569f157f64d/scripts/build_pages.py",
+      "status": "already-present",
+      "localPath": "data_sources/csiiiv/snapshots/34ef5d8cbbacda92f6503ffd9a428569f157f64d/scripts/build_pages.py",
+      "sha256": "02b31d234b8a6b7627824ce698a28fcf2054c8d326406a7fef08dc3f5b4ce114"
+    }
+  ],
+  "previousCommit": "34ef5d8cbbacda92f6503ffd9a428569f157f64d",
+  "changes": [],
+  "potentiallyAffectedPages": []
+}
