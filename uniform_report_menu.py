@@ -5,7 +5,7 @@ import re
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 STATIC=ROOT.parent/'open-data-visualization/static/nep-preview'
-LINKS=[('summary.html', 'Summary · investigative leads'), ('congress.html', 'Congressional District Allocations'), ('dpwh.html', 'DPWH · project screens'), ('repeats.html', 'Project repeat comparisons'), ('dpwh-hgab.html', 'DPWH · NEP → HGAB (3rd)'), ('https://csiiiv.github.io/DPWH-NEP-HB-2027-ANALYSIS/app/#compare', 'Budget stage comparisons ↗'), ('mpb.html', 'MPB · Multi-purpose buildings'), ('cost-per-km.html', 'Cost per meter'), ('nia-irrigation.html', 'NIA irrigation'), ('deped.html', 'DepEd'), ('rcs.html', 'RCS · rainfall scenario'), ('fmr.html', 'FMR'), ('nia.html', 'NIA'), ('hfep.html', 'HFEP'), ('budget-innovations.html', 'Budget Innovations')]
+LINKS=[('summary.html', 'Summary · investigative leads'), ('congress.html', 'Congressional District Allocations'), ('cost-per-km.html', 'Cost per meter'), ('repeats.html', 'Project repeat comparisons'), ('dpwh-hgab.html', 'DPWH · NEP → HGAB (3rd)'), ('rcs.html', 'RCS · rainfall scenario'), ('mpb.html', 'MPB · Multi-purpose buildings'), ('dpwh.html', 'DPWH Indepth'), ('nia.html', 'NIA · irrigation and named projects'), ('deped.html', 'DepEd'), ('fmr.html', 'FMR'), ('hfep.html', 'HFEP'), ('budget-innovations.html', 'Budget Innovations'), ('https://csiiiv.github.io/DPWH-NEP-HB-2027-ANALYSIS/app/#compare', 'Budget stage comparisons ↗')]
 NAV='<nav class="report-nav" aria-label="Budget report pages">'+''.join(f'<a href="{url}">{label}</a>' for url,label in LINKS)+'</nav>'
 CSS='''<style id="uniform-report-menu-style">
 header{padding-left:clamp(16px,2vw,32px)!important;padding-right:clamp(16px,2vw,32px)!important}
@@ -54,6 +54,8 @@ def normalize_header(text):
     return text
 
 def apply_page(text,page=None):
+    if page!='nia-irrigation.html':
+        text=re.sub(r'href="nia-irrigation\.html(?:#([^"]+))?"',lambda m:'href="nia.html#'+('nia-detail-'+m[1] if m[1] else 'nia-detailed-irrigation')+'"',text)
     if page:
         from report_teasers import apply_page as apply_teaser
         text=apply_teaser(text,page)
@@ -66,6 +68,8 @@ def apply_page(text,page=None):
     return text.replace('</head>',CSS+'</head>',1)
 
 def apply():
+    from merge_nia_pages import merge
+    merge()
     from summary_evidence_links import apply as link_summary_evidence
     link_summary_evidence()
     from report_table_presentation import publish_assets,apply_page as table_presentation

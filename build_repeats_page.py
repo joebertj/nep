@@ -24,7 +24,7 @@ def build():
             if found:
                 fragments[key]=found[0]
                 text=text[:found.start()]+f'<p class="repeat-page-link"><a href="repeats.html#{key}">Project repeat comparisons and source evidence →</a></p>'+text[found.end():]
-        if name=='dpwh.html':
+        if name=='dpwh.html' and ('fiveMillionBody' in text or 'priorityRepeatSearch' in text):
             # Keep allocation clustering here; move the repeat denominators.
             match=next((m for m in SECTION.finditer(text) if 'id="dpwh-investigation-evidence"' in m[0]),None)
             if match and 'Chainage evidence' in match[0] and '<h3>Exact ₱5M' in match[0]:
@@ -86,6 +86,8 @@ def build():
         p.write_text(text)
     for fname in ['summary-data.json']:
         p=STATIC/fname;p.write_text(p.read_text().replace('dpwh.html#repeat-hgab-survival','repeats.html#repeat-hgab-survival'))
+    from build_five_million_evidence import apply as restore_clustering
+    restore_clustering()
     return {'page':'repeats.html','historicalDpwhPairs':len(data),'collatedSections':sorted(required)}
 
 SCRIPT=r'''<script>(()=>{

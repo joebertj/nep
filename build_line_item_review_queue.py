@@ -3,6 +3,7 @@
 import csv
 import hashlib
 import json
+import unicodedata
 from collections import defaultdict, Counter
 from pathlib import Path
 from analyze_priority_repeats import previous_rows, classify
@@ -17,14 +18,34 @@ STATIC = ROOT.parent / 'open-data-visualization/static/nep-preview'
 GROUP_MIN = 10
 OFFICE_MIN = 3
 
+# One recognizable symbol per review trigger. These are queue markers, not
+# severity grades; the legend keeps their meanings explicit.
+FLAG_ICONS = {
+    'very_short_range': '📐',
+    'high_meter_rate': '📈',
+    'rehab_good_fair': '🛣️',
+    'recent_surfacing': '🛞',
+    'insertion': '🧩',
+    'missing_documents': '📂',
+    'missing_pow': '🧮',
+    'missing_photos': '📷',
+    'missing_rdc': '🏛️',
+    'amount_group': '🪙',
+    'historical_title': '🕰️',
+    'chainage_overlap': '📍',
+}
+
 
 def historical_key(title):
     # Strip only complete trailing station/coordinate metadata; retain all
     # place names, work descriptions, directions, packages and phases.
     return normalize(geographic_title(title)[0])
 
+def portal_title_key(title):
+    return ' '.join(unicodedata.normalize('NFKC', str(title or '')).split())
 
-def build():
+
+def build(indepth_data=None):
     source = OUT / 'hb_nep_comparison_3rd.csv'
     with source.open() as f:
         rows = list(csv.DictReader(f))
@@ -33,6 +54,15 @@ def build():
         raise ValueError('Repeated HGAB occurrence IDs cannot be ranked independently')
     cost_source = OUT / 'cost_per_km.json'
     cost_data = json.loads(cost_source.read_text())
+    portal = json.loads((OUT / 'dpwh_transparency_document_coverage.json').read_text())
+    portal_titles = portal.get('titles', {})
+    indepth = indepth_data or json.loads((OUT / 'dpwh-in-depth-data.json').read_text())
+    inspected_documents = {p['code']: p for p in indepth.get('projects', [])}
+    hgab_stage = json.loads((OUT / 'dpwh_hgab_2nd_vs_3rd.json').read_text())
+    project_occurrences = {r['third']['id'] for r in hgab_stage.get('rows', [])
+                          if r.get('third') and r['third'].get('allocationKind') == 'project'}
+    no_nep_counterpart_ids = {r.get('id') for r in json.loads((OUT / 'hb_nep_comparison_3rd_mapping.json').read_text()).get('hgabWithoutSelectedCounterpart', [])
+                              if r.get('allocationKind') == 'project'}
     source_hash = hashlib.sha256(source.read_bytes()).hexdigest()
     if not any(s['file'] == source.name and s['sha256'] == source_hash for s in cost_data['sources']):
         raise ValueError('Rebuild cost-per-meter data before ranking: HGAB source hash differs')
@@ -63,6 +93,8 @@ def build():
                 cautions.append('No usable extracted length; cannot calculate a defensible stated-meter rate. This is an evidence gap, not an extra ranking point.')
             elif length['lengthMeters'] < 10:
                 cautions.append(f'Printed range implies {length["lengthMeters"]:g} meters; verify source notation and funded extent before interpreting a rate. No high-rate point awarded.')
+                flags.append({'id': 'very_short_range', 'label': 'Very short printed project range',
+                              'evidence': f'Extracted printed range is {length["lengthMeters"]:g} meters. Verify notation and funded extent; the short range is a denominator warning, not evidence of an incorrect allocation.'})
             elif length['highRateCandidate']:
                 flags.append({'id': 'high_meter_rate', 'label': 'High allocation per stated meter',
                               'evidence': f'₱{length["allocationPerStatedMeter"]:,.2f}/stated meter; {length["peerRateMultiple"]:g}× the ₱{length["typicalPeerRate"]:,.2f} peer median among {length["peerRecords"]} same-category, same-structure ({length.get("rateStructureGroup",length["category"])}), same-PAP, same-surface/condition-context, same-length-band records ({length["peerBand"]}). Exceeds both 2× median and Q3 + 1.5× IQR; funded scope and quantities unverified.',
@@ -83,9 +115,32 @@ def build():
             flags.append({'id':'recent_surfacing','label':'Pavement work after recent recorded surfacing',
                 'evidence':f'Full matched range has recorded last-surfacing year(s) {length["surfacingYearDisplay"]}, within {context["recentSurfacingWindowYears"]} budget years of FY{context["budgetYear"]}. Screening threshold, not engineering service life; verify earlier and proposed quantities.',
                 'summaryFinding':'cost-per-km'})
-        if row['comparison'] == UNMATCHED:
-            flags.append({'id': 'insertion', 'label': 'Potential HGAB insertion',
-                          'evidence': 'No plausible NEP counterpart identified by current native matching; original-page review required.'})
+        portal_entry = portal_titles.get(portal_title_key(title))
+        has_listed_docs = bool(portal_entry and portal_entry.get('code')
+                               and portal_entry.get('status') not in {'not_found', 'no_verified_match', 'candidate_match', 'ambiguous_match', 'outside_snapshot_scope'}
+                               and (portal_entry.get('documentCount') or 0) > 0)
+        is_project_occurrence = row['hgab_id'] in project_occurrences
+        if ((is_project_occurrence and row['hgab_id'] in no_nep_counterpart_ids)
+                or (not is_project_occurrence and row['comparison'] == UNMATCHED)):
+            flags.append({'id': 'insertion', 'label': 'No selected NEP counterpart',
+                          'evidence': 'The one-to-one HGAB 3rd ↔ NEP comparison selected no counterpart for this occurrence. Unmatched or ambiguous matching is a review candidate, not proof the project is absent from NEP.'})
+        if is_project_occurrence and not has_listed_docs:
+            flags.append({'id': 'missing_documents', 'label': 'No listed DPWH Transparency documents',
+                          'evidence': 'No matched DPWH Transparency entry with one or more listed documents was found in the current snapshot. This is a snapshot disclosure gap, not proof that documents do not exist elsewhere.'})
+        inspected_project = inspected_documents.get(portal_entry.get('code')) if (portal_entry and portal_entry.get('code')
+                                and portal_entry.get('status') not in {'not_found', 'no_verified_match', 'candidate_match', 'ambiguous_match', 'outside_snapshot_scope'}) else None
+        if is_project_occurrence and inspected_project:
+            links = inspected_project.get('documentLinks', [])
+            kinds = {
+                'POW': any((str(d.get('type') or '').lower().strip() == 'pow' or 'program of work' in str(d.get('type') or '').lower()) for d in links),
+                'geotagged photos': any('geotagged' in str(d.get('type') or '').lower() and 'photo' in str(d.get('type') or '').lower() for d in links),
+                'RDC': any('rdc' in str(d.get('type') or '').lower() or 'regional development council' in str(d.get('type') or '').lower() for d in links),
+            }
+            ids = {'POW': 'missing_pow', 'geotagged photos': 'missing_photos', 'RDC': 'missing_rdc'}
+            for kind, present in kinds.items():
+                if not present:
+                    flags.append({'id': ids[kind], 'label': 'No listed '+kind,
+                                  'evidence': 'This locally inspected DPWH Transparency attachment list contains no '+kind+' entry. Verify against the source record; uninspected projects are unknown.'})
         group = groups[(row['pap3'], row['amountPesos'])]
         offices = sorted({r['office'] for r in group})
         if row['amountPesos'] > 0 and len(group) >= GROUP_MIN and len(offices) >= OFFICE_MIN:
@@ -135,7 +190,7 @@ def build():
                ROOT / 'location_data/philippine_locations.sqlite']
     result = {'scope': 'Domestic DPWH HGAB 3rd-reading occurrences only; not a ranking of the entire national budget.',
               'ranking': 'Flag count descending, allocation pesos descending, occurrence ID ascending for exact ties.',
-              'method': {'amountGroupMinimumOccurrences': GROUP_MIN, 'amountGroupMinimumNamedOffices': OFFICE_MIN,
+              'method': {'maximumPossibleFlags': 12, 'amountGroupMinimumOccurrences': GROUP_MIN, 'amountGroupMinimumNamedOffices': OFFICE_MIN,
                          'amountGroupScope': 'Identical PAP and positive exact peso amount; counts are allocation occurrences, not certified distinct construction contracts.',
                          'historicalYears': [2025, 2026],
                          'historicalMatch': 'Identical full normalized title after complete trailing metadata removal; same qualified municipality/province; direction/location/tranche conflict and disjoint stated chainage excluded.',
@@ -143,11 +198,11 @@ def build():
                          'highMeterRate': cost_data['highRateScreen']['method'],
                          'laneEvidence': 'Title lane rates, inventory lane estimates and existing-bridge asset estimates are separate contextual measures. None adds a ranking point or replaces a missing funded length. Lane and station evidence is retained in lengthReview.',
                          'conditionAndSurfacing': cost_data['laneCost']['assetContext'],
-                         'evidenceGaps': 'Missing length, sub-10m printed ranges and insufficient peers are cautions, not points. Extreme rates require denominator/scope review and are omitted from rate charts.',
-                         'summaryCoverage': 'Nine summary findings are not nine independent line-item flags. RCS equal amounts use the amount-group flag; MPB is a program scope; INSPIRE is outside this DPWH queue. Length gaps and very short printed ranges are evidence cautions. Historical recurrence and overlap support the repeat finding.',
+                         'evidenceGaps': 'Missing length and insufficient peers are cautions, not points. A sub-10m printed range gets a separate denominator-warning point and remains subject to source verification. Extreme rates require denominator/scope review and are omitted from rate charts.',
+                         'summaryCoverage': 'The queue has up to twelve possible flags: the prior nine screening types plus separate incomplete-documentation flags for missing POW, geotagged photos, and RDC among locally inspected attachment records. Potential NEP counterpart and no listed documents are separate flags; document-type flags are unknown outside inspected metadata.',
                          'dependence': 'Historical recurrence and chainage overlap are related indicators; scores are descriptive triage, not independent evidence or probabilities.',
                          'limitations': ['Uniform packages can be legitimate. Exact appropriation amounts are not unit costs.',
-                                        'Strict historical matching misses paraphrased titles and unresolved locations; no flag means insufficient evidence, not clearance.',
+                                        'Strict historical matching misses paraphrased titles and unresolved locations; no icon means this screen did not identify a review trigger, not that the project is verified.',
                                         'The prior-year search uses locally available DPWH road, bridge, building and flood records, not every agency/year.',
                                         'Matching/parser errors can produce insertion flags. Top 25 overlap other findings; do not sum them as losses.',
                                         'Current office, representative, role and party do not contribute any points.']},
@@ -176,24 +231,29 @@ def render(data, table, esc):
     for row in rows:
         evidence = ' | '.join(f['label'] + ': ' + f['evidence'] for f in row['flags'])
         history = ' | '.join(f'GAA {m["year"]}: {m["title"]} · ₱{m["amountPesos"]:,} · {m["source"]}' + (f' · overlap {m["chainage"]["chainage_overlap"]}' if m['chainage']['overlaps'] else '') for m in row['historicalMatches'])
-        rendered.append([row['rank'], row['projectName'], row['program'], row['office'], row['flagCount'],
+        icons = ''.join(FLAG_ICONS.get(flag['id'], '🔎') for flag in row['flags'])
+        rendered.append([row['rank'], row['projectName'], row['program'], row['office'], icons,
                          row['amountPesos'], evidence, ' | '.join(row['evidenceCautions']) or 'No additional length caution from this screen; source and scope review still required', history or 'No qualifying historical title link established',
                          row['sourceVolume'] + ' · p. ' + row['sourcePage']])
-    body = '<p>One row per domestic DPWH HGAB 3rd-reading allocation occurrence. Seven reproducible flag types include cost-per-meter, recorded condition and prior-surfacing screens. More qualifying flags rank first; larger allocation breaks ties. The nine summary findings are broader investigative themes, not nine points available to every project. Missing or suspect lengths are shown as evidence cautions. This is an investigation queue, not a finding of wrongdoing. Other agency schedules do not yet have equivalent combined screen coverage.</p>'
-    body += graph + table(['Rank', 'HGAB project', 'Program', 'Implementing office', 'Screening flags', 'HGAB allocation pesos', 'Flag evidence', 'Evidence cautions · no extra points', 'Historical counterpart evidence', 'HGAB source'], rendered)
-    body += '<h3>How the ranking is calculated</h3><ol><li><strong>Potential insertion:</strong> the current matcher identifies no plausible NEP counterpart; ambiguous links and FAPs are excluded from this flag.</li><li><strong>Repeated allocation amount:</strong> the same exact positive amount occurs in the same PAP at least 10 times across at least 3 named implementing offices. This includes amounts such as ₱5M when the group qualifies; roundness alone adds no point.</li><li><strong>Historical title recurrence:</strong> a FY2025 or FY2026 GAA title agrees after case/punctuation normalization and removal of complete trailing station/coordinate metadata. A matching qualified municipality and province is required. Work descriptions, directions, packages and phases remain. Conflicting locations/tranches and disjoint stated chainages are excluded.</li><li><strong>Historical chainage overlap:</strong> an accepted historical counterpart has explicit, positive-length overlap of stated construction ranges. This adds one scope indicator, not proof of duplicate paid work.</li></ol><p>Each type contributes one point; multiple historical years do not increase the score. Historical recurrence and chainage overlap are related signals, so the count is not a statistical probability or independent-evidence score. Exact ranking ties use the source occurrence ID. Missing historical links can reflect conservative matching, incomplete local coverage or unresolved names.</p><p>Standard packages, phased work and legitimate amendments can produce these signals. Names, roles and party affiliations add no points. Input hashes and all ranked rows are available in <a href="line-item-review-queue.json" download>the full ranking JSON</a>. The CSV exports all 25 displayed rows with their evidence. Amounts overlap the findings above; do not add them as alleged losses.</p>'
+    body = '<p>One row per domestic DPWH HGAB 3rd-reading allocation occurrence. Up to twelve review flags cover amount patterns, NEP counterparts, listed documents, POW/photos/RDC coverage, historical recurrence, chainage, rate, recorded condition, recent surfacing and very short printed ranges. Each icon marks a reason for a human to check the evidence. Icons do not represent findings or levels of guilt. More review triggers rank first and larger allocation breaks ties. Document-type flags apply only to locally inspected attachment metadata; unavailable or inapplicable evidence is not treated as verified.</p>'
+    body += '<p><strong>Icon key:</strong> '+ ' · '.join(f'{FLAG_ICONS[k]} {label}' for k,label in [('very_short_range','short range'),('high_meter_rate','relative rate'),('rehab_good_fair','recorded condition'),('recent_surfacing','recent surfacing'),('insertion','NEP match review'),('missing_documents','listed documents'),('missing_pow','POW'),('missing_photos','geotagged photos'),('missing_rdc','RDC'),('amount_group','repeated amount'),('historical_title','historical title'),('chainage_overlap','chainage overlap')]) + '</p>'
+    body += graph + table(['Rank', 'HGAB project', 'Program', 'Implementing office', 'Flags for human review', 'HGAB allocation pesos', 'Flag evidence', 'Evidence cautions · no extra points', 'Historical counterpart evidence', 'HGAB source'], rendered)
+    body += '<h3>How the ranking is calculated</h3><ol><li><strong>Potential insertion:</strong> the current matcher identifies no plausible NEP counterpart; ambiguous links and FAPs are excluded.</li><li><strong>No listed documents:</strong> no matched DPWH Transparency entry with listed documents exists in the current snapshot. This is independent of NEP counterpart status; documents may exist elsewhere.</li><li><strong>Incomplete documentation:</strong> each absent POW, geotagged-photo or RDC type earns one point only when that project attachment list was locally inspected. No type is inferred missing for uninspected projects.</li><li><strong>Repeated allocation amount:</strong> the same exact positive amount occurs in the same PAP at least 10 times across at least 3 named implementing offices. Roundness alone adds no point.</li><li><strong>Historical title recurrence:</strong> a FY2025 or FY2026 GAA title agrees after case/punctuation normalization and removal of complete trailing station/coordinate metadata, with qualified municipality and province agreement. Work descriptions, directions, packages and phases remain; conflicting locations/tranches and disjoint chainages are excluded.</li><li><strong>Historical chainage overlap:</strong> an accepted historical counterpart has explicit, positive-length overlap. This is a scope indicator, not proof of duplicate paid work.</li><li><strong>Very short range:</strong> a recovered printed project length under 10 meters earns a review flag. Verify notation and funded extent; it does not establish an unreasonable allocation.</li></ol><p>Each qualifying type contributes one point, up to twelve possible types. Multiple historical years do not increase points. Historical recurrence and chainage overlap are related signals, so the count is not a statistical probability or independent-evidence score. Missing historical links can reflect conservative matching, incomplete coverage or unresolved names. Standard packages and legitimate amendments can produce these signals. Amounts overlap other findings; do not add them as alleged losses. Names, roles and party affiliations add no points. Input hashes and all ranked rows are available in <a href="line-item-review-queue.json" download>the full ranking JSON</a>.</p>'
     body += '<h3>Condition and prior-surfacing flags</h3><p>One point for rehabilitation/reconstruction/major repair when the full matched road range was assessed Good/Fair in a known pre-budget year. One point for pavement work when the full matched range has a positive recorded last-surfacing year within five budget years. Widening, approaches, slope/drainage and off-carriageway scope are excluded. Unknowns and partial coverage add no point. The five-year window is a screening choice, not an engineering service-life standard. Bridge Good/Fair context without an assessment date remains a review lead and earns no dated-condition point. Later deterioration or different funded components may justify the work. Condition, recent surfacing and historical recurrence can be related; points are not independent evidence or probabilities.</p>'
-    body += '<h3>New cost-per-meter flag</h3><p>One additional point when allocation per stated meter exceeds both twice the peer median and Q3 + 1.5 × IQR. Peers share the work category, structure group, matched surface/condition/assessment-year context, exact official PAP and a data-derived length band, with at least 20 records whose stated lengths are at least 10 meters. No fixed 100-meter cutoff is used. Extreme rates remain in this review table with a caution but are excluded from rate charts. Missing lengths, sub-10-meter printed ranges and insufficient peers add no point. This flag does not establish overpricing: width, terrain, structures, quantities and funded extent remain unverified. <a href="cost-per-km.html#length-density-groups">See full rate and grouping methodology</a>.</p>'
-    body += '<h3>How all nine summary findings relate to this queue</h3>' + table(['Summary finding', 'Treatment in the line-item ranking'], [
+    body += '<h3>Cost-per-meter and short-range flags</h3><p>One point when allocation per stated meter exceeds both twice the peer median and Q3 + 1.5 × IQR. Peers share the work category, structure group, matched surface/condition/assessment-year context, exact official PAP and a data-derived length band, with at least 20 records whose stated lengths are at least 10 meters. No fixed 100-meter cutoff is used. Separately, a recovered printed length under 10 meters earns a denominator-warning point; verify the notation and funded extent. Extreme rates remain in this review table with a caution but are excluded from rate charts. Missing lengths and insufficient peers add no point. These flags do not establish overpricing: width, terrain, structures, quantities and funded extent remain unverified. <a href="cost-per-km.html#length-density-groups">See full rate and grouping methodology</a>.</p>'
+    body += '<h3>How all twelve summary findings relate to this queue</h3>' + table(['Summary finding', 'Treatment in the line-item ranking'], [
         ['1 · Equal RCS packages', 'Repeated-amount flag if its existing thresholds qualify; no extra point for belonging to RCS. Needs weighting requires installation evidence.'],
         ['2 · HGAB insertion candidates', 'Potential-insertion flag; matching uncertainty remains explicit.'],
         ['3 · Multi-purpose buildings', 'MPB records qualify through the same flags as other work. Program membership earns no point.'],
         ['4 · Recurring project titles', 'Historical title recurrence and explicit chainage overlap; related indicators, not independent evidence.'],
         ['5 · Allocation clustering', 'Repeated-amount flag. The office-level road/flood association is not an additional individual-project flag.'],
         ['6 · INSPIRE', 'Outside this domestic DPWH queue; investigated on its own agency page.'],
-        ['7 · Length and chainage gaps', 'Evidence caution only; no rate inferred and no ranking point for missing information.'],
+        ['7 · Length and chainage gaps', 'Missing lengths remain evidence cautions; recovered ranges under 10 meters receive a separate denominator-warning flag.'],
         ['8 · Allocation per stated meter', 'High relative-rate flag using category, PAP and length-band peers.'],
-        ['9 · Very short printed ranges', 'Evidence caution for sub-10-meter ranges; verify denominator before a high-rate conclusion. Shortness alone earns no point.']])
+        ['9 · Very short printed ranges', 'A recovered sub-10-meter range earns one denominator-warning flag; verify notation and funded extent.'],
+        ['10 · No selected NEP counterpart', 'Potential-insertion flag; the one-to-one screen is not proof that a project is absent from NEP.'],
+        ['11 · No listed DPWH Transparency documents', 'One flag when the current snapshot has no matched entry listing documents, regardless of NEP status.'],
+        ['12 · Incomplete documentation', 'One point for each missing POW, geotagged-photo or RDC type among locally inspected attachment lists; uninspected projects remain unknown.']])
     return body
 
 

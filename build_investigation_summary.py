@@ -74,8 +74,9 @@ def main():
         refresh_reviewed_fmr()
     from build_cost_per_km import build as build_cost_per_km
     length_data=build_cost_per_km()
+    dpwh_indepth_data=json.loads((ROOT/'analysis_output/dpwh-in-depth-data.json').read_text())
     from build_line_item_review_queue import build as build_review_queue, render as render_review_queue
-    review_queue=build_review_queue()
+    review_queue=build_review_queue(dpwh_indepth_data)
     from build_mpb_report import build as build_mpb
     mpb=build_mpb()['summary']
     dpwh=read('dpwh-data.json');rcs=read('rcs-data.json');congress=read('congress-data.json')
@@ -256,7 +257,37 @@ def main():
             'alternative':'A source-document typo, station convention, short component within a larger project, or broader funded scope can explain these values. A very short printed range does not establish the physical length actually funded.',
             'next':'Request corrected or certified station endpoints, funded-segment plans, engineering quantities and allocation scope; verify notation before interpreting extreme allocation-per-meter rates.',
             'caution':'This is a printed-range/denominator issue, not evidence that most road projects are short or overpriced. Sampled title agreement rules out a title-transcription mismatch for those examples, not source errors or engineering ambiguity. Bridge lengths require separate interpretation.'})
-    priority={'rcs':1,'insertions':2,'mpb':3,'repeats':4,'prices':5,'inspire':6,'length-coverage':7,'cost-per-km':8,'short-printed-ranges':9}
+    hgab_scope=dpwh_indepth_data['hgabCoverage']
+    findings.extend([
+        {'rank':10,'id':'hgab-no-nep-counterpart','title':'HGAB 3rd projects without a selected NEP counterpart',
+         'lead':f'{hgab_scope["noSelectedNepRows"]:,} / {hgab_scope["projectRows"]:,} project rows · {hgab_scope["noSelectedNepPct"]:.1f}%',
+         'basis':'One-to-one stage matching screen; unmatched rows require source review',
+         'page':'dpwh.html#hgab-coverage',
+         'question':'Which HGAB 3rd projects are genuinely absent from NEP after title, scope and occurrence review?',
+         'evidence':'The current one-to-one comparison selected no NEP counterpart for these project rows. The comparison uses title and scope signals; unresolved and unmatched cases are not proof of new projects.',
+         'alternative':'Renaming, title wrapping, scope changes, occurrence aggregation and parser errors can prevent counterpart selection.',
+         'next':'Review NEP and HGAB source pages side by side, then reconcile project scope, office, location and amount.',
+         'caution':'No selected counterpart means a review candidate, not a confirmed insertion.'},
+        {'rank':11,'id':'hgab-no-listed-documents','title':'HGAB 3rd projects with no listed DPWH Transparency documents',
+         'lead':f'{hgab_scope["missingListedDocumentsRows"]:,} / {hgab_scope["projectRows"]:,} project rows · {100*hgab_scope["missingListedDocumentsRows"]/hgab_scope["projectRows"]:.1f}%',
+         'basis':'DPWH Transparency FY2027 snapshot; local title reconciliation',
+         'page':'dpwh.html#hgab-coverage',
+         'question':'Are project documents available through another route, or should document links be added to the Transparency record?',
+         'evidence':'Rows without a matched transparency entry listing one or more documents are counted, including titles that do not match the snapshot.',
+         'alternative':'Documents may be available on another official page or not yet indexed in the captured snapshot.',
+         'next':'Verify the project identifier and query the responsible DPWH office for POW, geotagged photos and RDC records.',
+         'caution':'No listed document is a disclosure gap in this snapshot; it does not establish that no document exists.'},
+        {'rank':12,'id':'hgab-missing-document-types','title':'Incomplete documentation: missing POW, geotagged photos or RDC',
+         'lead':f'{hgab_scope["missingAnyTypeRows"]:,} / {hgab_scope["inspectedRows"]:,} inspected attachment lists · {hgab_scope["missingAnyTypePct"]:.1f}%',
+         'basis':'Locally inspected attachment metadata; HGAB 3rd title matches',
+         'page':'dpwh.html#hgab-coverage',
+         'question':'Which listed attachment types are absent, and can DPWH provide the missing POW, photos or RDC?',
+         'evidence':'Counts cover only title-matched HGAB projects whose attachment metadata is locally inspected. The supporting section breaks missing POW, photos and RDC out separately.',
+         'alternative':'The local snapshot may be incomplete, and an attachment may be indexed under another type or record.',
+         'next':'Review each project’s transparency entry and request missing categories from the implementing office.',
+         'caution':'Uninspected projects are unknown, not counted as missing; the missing-type groups can overlap.'}
+    ])
+    priority={'rcs':1,'insertions':2,'mpb':3,'repeats':4,'prices':5,'inspire':6,'length-coverage':7,'cost-per-km':8,'short-printed-ranges':9,'hgab-no-nep-counterpart':10,'hgab-no-listed-documents':11,'hgab-missing-document-types':12}
     for finding in findings:finding['rank']=priority[finding['id']]
     findings.sort(key=lambda r:r['rank'])
     coverage_rows=[[k,v['summary']['thirdRows'],int(v['summary']['thirdTotal']),sum(count for status,count in v['summary']['statusCounts'].items() if status!='Same allocation')] for k,v in revision.items()]

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Publish an auditable before/after account of inventory-assisted geography."""
+"""Retain the inventory-attribution audit without a public progress section."""
 import csv
 import hashlib
 import json
@@ -52,23 +52,11 @@ def build():
     writer.writerows({k:json.dumps(r.get(k),ensure_ascii=False) if isinstance(r.get(k),(dict,list)) else r.get(k) for k in fields} for r in added)
     (ROOT/'analysis_output/congress_inventory_location_update.csv').write_text(stream.getvalue())
     (STATIC/'congress-inventory-location-update.csv').write_text(stream.getvalue())
-    from build_investigation_summary import table,esc
-    s=doc['summary']
-    body=f'<section id="inventory-location-method" class="card"><h2>More projects located through inventory evidence</h2><p>{s["additionalLines"]:,} additional line items carrying ₱{s["additionalAttributedPesos"]:,} now have an estimated district location. These were already in the HGAB schedule; this update changes geographic attribution, not the budget. Strict allocation coverage increases from {s["previousCoveragePct"]}% to {s["currentCoveragePct"]}%. Existing assigned districts were preserved.</p>'
-    top=district_rows[:10];maximum=max([r['amountPesos'] for r in top] or [1])
-    body+='<figure><figcaption>Allocation newly attributed by district · ten largest changes, not a risk ranking</figcaption><svg viewBox="0 0 1200 390" role="img" aria-label="Newly located allocations by district">'
-    for i,row in enumerate(top):
-        x=30+i*115;height=210*row['amountPesos']/maximum
-        body+=f'<rect x="{x}" y="{240-height}" width="65" height="{height}" fill="#087e78"><title>{esc(row["district"])}: ₱{row["amountPesos"]:,}</title></rect><text x="{x}" y="{232-height}" font-size="12">₱{row["amountPesos"]/1e6:,.1f}M</text><text transform="translate({x},260) rotate(35)" font-size="12">{esc(row["district"])}</text>'
-    body+='</svg></figure>'
-    body+=table(['Congressional district','Representative · geographic context','Newly located line items','Allocation newly attributed pesos'],[[r['district'],'; '.join(r['representatives']),r['lineItems'],r['amountPesos']] for r in district_rows])
-    body+='<h3>Supporting method and limitations</h3><ul>'+''.join('<li>'+esc(v)+'</li>' for v in doc['methodology'])+'</ul><p><a href="congress-inventory-location-update.csv" download>Download every newly located project and evidence (CSV)</a> · <a href="congress-inventory-location-update.json" download>Download full before/after audit (JSON)</a> · <a href="../data/inventory_location_contexts.json" download>Screened asset contexts, source hashes and vintage</a></p>'
-    base='https://services1.arcgis.com/IwZZTMxZCmAmFYvF/ArcGIS/rest/services/'
-    body+='<p>Inventory sources: '+', '.join('<a href="'+base+service+'/FeatureServer">'+label+'</a>' for service,label in [('Detailed_Bridge_Inventory_Final','Detailed Bridge Inventory'),('Number_of_Lanes','Number of Lanes'),('Kilometer_Post','Kilometer Posts'),('City_Municipal_Boundaries','Municipal Boundaries')])+'. Municipality polygons supply physical location checks; their old congressional labels are excluded.</p></section>'
+    # Coverage improvements belong to the location DB audit, not the public
+    # budget findings. Keep source data and the attribution audit available.
     for path in [STATIC/'congress.html',ROOT/'analysis_output/congress.html']:
         page=path.read_text()
         page=re.sub(r'<section id="inventory-location-method".*?</section>','',page,flags=re.S)
-        page=page.replace('</main>',body+'</main>',1)
         page=re.sub(r'congress-data\.json\?attribution=[^\x27\"]+', 'congress-data.json?attribution=qualified-location-consensus-v6-inventory-asset-context',page)
         path.write_text(page)
     print(json.dumps(doc['summary'],indent=2))

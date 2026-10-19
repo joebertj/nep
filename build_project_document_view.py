@@ -27,7 +27,7 @@ def build():
             text=apply_page(text,publish_assets())
         (STATIC/dest).write_text(text);(OUT/dest).write_text(text)
     worker=ROOT.parent/'open-data-visualization/analysis/project_documents';worker.mkdir(parents=True,exist_ok=True)
-    for name in ['__init__.py','service.py','pow.py','requirements.txt','burol_reviewed_rows.json','ocr_vision.swift','browser_fetch.py']:shutil.copy2(ROOT/'project_documents'/name,worker/name)
+    for name in ['__init__.py','service.py','pow.py','requirements.txt','burol_reviewed_rows.json','ocr_vision.swift','browser_fetch.py','signatories.py','curl_fetch.py','cache_lock.py']:shutil.copy2(ROOT/'project_documents'/name,worker/name)
     links=(ROOT/'project_documents/table_links.js').read_text();(STATIC/'project-document-links.js').write_text(links);v=hashlib.sha256(links.encode()).hexdigest()[:12]
     for path in STATIC.glob('*.html'):
         if path.name in ['project-documents.html','index.html']:continue
@@ -35,5 +35,7 @@ def build():
         text=text.replace('</body>',f'<script src="project-document-links.js?v={v}"></script></body>',1);path.write_text(text)
         mirror=OUT/path.name
         if mirror.exists():mirror.write_text(text)
+    from build_dpwh_indepth import build as indepth
+    indepth()
     return {'linkedTitles':len(index),'documentCoverage':coverage['summary'],'documentsFetched':0}
 if __name__=='__main__':print(json.dumps(build(),indent=2))

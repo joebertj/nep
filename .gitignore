@@ -15,3 +15,6 @@ NEP-FY2027.xlsx
 /data_sources/report_archive/
 /data_sources/dpwh_project_documents/
 /.venv-documents/
+
+# External document cache symlink and raw source files
+/data_sources/dpwh_project_documents

@@ -1,0 +1,63 @@
+{
+  "projectCode": "2027DPWH-Proposal-03421",
+  "tlsVerified": true,
+  "retrieval": "Both original PDFs downloaded through standard HTTPS without TLS bypass or browser transport.",
+  "powPages": 5,
+  "itemRows": 14,
+  "directCostControls": [
+    {
+      "sourcePage": 2,
+      "basis": "as_submitted",
+      "amountBasis": "Itemized direct-cost subtotal only",
+      "printedPesos": 111386548.22,
+      "recoveredItemRows": 14,
+      "recoveredPesos": 111386548.22,
+      "differencePesos": 0.0,
+      "reconciled": true,
+      "sourceCells": [
+        "",
+        "GRAND TOTAL",
+        "",
+        "",
+        "",
+        "111,386,548.22",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    }
+  ],
+  "imageReferenceCrosscheck": [
+    {
+      "itemCode": "404(1)a",
+      "valuesAgree": true,
+      "sourcePage": 2
+    },
+    {
+      "itemCode": "405(1)b2",
+      "valuesAgree": true,
+      "sourcePage": 2
+    }
+  ],
+  "topTwoDirectCostPesos": 88294766.68,
+  "topTwoShareOfNepAllocationPct": 58.863177786666675,
+  "renderedPhotoPages": 1,
+  "documents": [
+    {
+      "kind": "photos",
+      "sourceUrl": "https://s3.infrawatch.ph/nep/fy2027/2027DPWH-Proposal-03421/2027DPWH-Proposal-03421_Geotagged%20Photos.pdf",
+      "sha256": "651c0dece3d25b2be3f3d0799bba8896535bc95ba57e5173fafb8fbc73e1a033",
+      "cachePdf": "data_sources/dpwh_project_documents/on_demand/2027DPWH-Proposal-03421/assets/02008bd9869e68f0/photos.pdf"
+    },
+    {
+      "kind": "pow",
+      "sourceUrl": "https://s3.infrawatch.ph/nep/fy2027/2027DPWH-Proposal-03421/2027DPWH-Proposal-03421_POW.pdf",
+      "sha256": "102f99643502ce31c50814c7158109f8eaacbc152feba7411edc00e3ff5a9c61",
+      "cachePdf": "data_sources/dpwh_project_documents/on_demand/2027DPWH-Proposal-03421/assets/fb5f0eace76962d4/pow.pdf"
+    }
+  ],
+  "scope": "Direct-cost bill subtotal only; full POW, engineering reasonableness and photo location/date are not certified."
+}

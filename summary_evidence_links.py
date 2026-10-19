@@ -12,6 +12,9 @@ TARGETS={
  'length-coverage':('cost-matching.html#cost-coverage','Missing-length coverage by category and program'),
  'cost-per-km':('cost-per-km.html#cost-roads','Road high-rate candidate table'),
  'short-printed-ranges':('cost-matching.html#short-segment-evidence','Original-source short-range examples'),
+ 'hgab-no-nep-counterpart':('dpwh.html#hgab-coverage','HGAB 3rd NEP-counterpart coverage'),
+ 'hgab-no-listed-documents':('dpwh.html#hgab-coverage','DPWH Transparency document coverage'),
+ 'hgab-missing-document-types':('dpwh.html#hgab-coverage','POW, photo and RDC attachment coverage'),
 }
 def enrich_findings(findings):
  for row in findings:

@@ -4,7 +4,7 @@ TEASERS={
  'summary.html':'Where should budget investigators look first?',
  'index.html':'Where should budget investigators look first?',
  'congress.html':'How many budget lines cannot be placed in one district?',
- 'dpwh.html':'Where do exact ₱5 million allocations cluster?',
+ 'dpwh.html':'What makes up a project’s cost?',
  'dpwh-hgab.html':'How many House budget lines lack a plausible NEP counterpart?',
  'dpwh-hgab-comparison.html':'What appears only in the House’s third-reading extraction?',
  'repeats.html':'How often do project titles and segments resurface?',
@@ -13,7 +13,7 @@ TEASERS={
  'cost-matching.html':'Can asset records recover missing length information?',
  'rcs.html':'Did 199 offices really get the same RCS package?',
  'fmr.html':'More farm roads in the House budget?',
- 'nia.html':'Which named irrigation allocations changed?',
+ 'nia.html':'What changed in irrigation and named-project allocations?',
  'nia-irrigation.html':'Did the detailed irrigation annex grow in the House?',
  'hfep.html':'What happened to the health-facility capital budget?',
  'deped.html':'Can we tell whether school allocations changed?',
@@ -22,7 +22,6 @@ TEASERS={
 }
 HEADLINES={
  'congress.html':'lines remain outside the strict district ranking',
- 'dpwh.html':'allocation clusters worth a closer look',
  'dpwh-hgab.html':'domestic candidates needing counterpart verification',
  'repeats.html':'NEP–GAA comparison pairs to verify',
  'budget-innovations.html':'budget terms flagged as potentially new or revived',

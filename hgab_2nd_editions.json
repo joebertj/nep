@@ -230013,7 +230013,20 @@
       "preferredExtraction": "csiiiv documented reviewed NIA/HFEP/FMR datasets",
       "source": "https://github.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS",
       "commit": "34ef5d8cbbacda92f6503ffd9a428569f157f64d",
-      "rule": "Documented human adjudication takes precedence over conflicting older local automated extraction. Preserve source/raw values, repair history and unresolved flags. This does not imply every row was manually reviewed. Project identity and geographic attribution remain separate from PDF extraction quality."
+      "rule": "Documented human adjudication takes precedence over conflicting older local automated extraction. Preserve source/raw values, repair history and unresolved flags. This does not imply every row was manually reviewed. Project identity and geographic attribution remain separate from PDF extraction quality.",
+      "mainStageDataProvider": "csiiiv/DPWH-NEP-HB-2027-ANALYSIS",
+      "preferredBudgetStages": [
+        "NEP",
+        "HGAB",
+        "GAB",
+        "Bicam",
+        "GAA"
+      ],
+      "documentaryAuthority": "Official budget documents remain the underlying evidence; csiiiv is the preferred working dataset provider.",
+      "researchFocus": "Complement upstream with reproducible project-level case files, asset/engineering context, strict geographic attribution, supporting and contrary evidence, and actionable verification steps.",
+      "reuseRule": "Consume upstream extraction, identifiers, stage comparisons and existing analyses where adequate; implement only a documented missing enrichment or source correction.",
+      "availabilityRule": "A stage not available upstream remains unavailable; do not substitute another stage or infer final appropriations.",
+      "migrationStatus": "NIA/HFEP/FMR reviewed annex inputs adopted; remaining DPWH source and general matching paths still require migration to upstream outputs."
     },
     "annexEquivalence": {
       "pdfSha256": [

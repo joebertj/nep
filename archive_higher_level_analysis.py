@@ -15,6 +15,7 @@ CONFIG={
  'fmr.html':{'titles':['Regional allocations · NEP versus HGAB']},
  'hfep.html':{'ids':['hfep-nep-stage-comparison','reviewed-hfep-annex'],'titles':['Allocation counts by facility type','HFEP component allocation mix']},
  'nia-irrigation.html':{'ids':['reviewed-nia-controls']},
+ 'nia.html':{'ids':['nia-detail-reviewed-nia-controls']},
  'summary.html':{'ids':['summary-neutral']},
 }
 SCRIPT=r'''(()=>{

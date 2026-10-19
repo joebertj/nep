@@ -1,0 +1,11 @@
+{
+  "errors": [],
+  "costRows": 14,
+  "topRows": [
+    "404(1)a\nReinforcing Steel, Grade 40\t988,328\tKilogram\t₱50,757,582.92\nDirect cost total; excludes markup, VAT and EAO\t33.84%\tPOW p. 2",
+    "405(1)b2\nStructural Concrete, 27.58MPa, Class A, 14 days\t3,896.83\tCubic Meter\t₱37,537,183.76\nDirect cost total; excludes markup, VAT and EAO\t25.02%\tPOW p. 2"
+  ],
+  "rowStatus": "14 recovered itemized direct-cost rows match the printed subtotal of ₱111,386,548.22 on POW page 2. Direct costs exclude markup, VAT and EAO. The complete POW total is not reconciled.",
+  "photoPages": 1,
+  "status": "Document preparation finished. Review extraction status and original pages."
+}

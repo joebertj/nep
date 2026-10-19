@@ -126,6 +126,8 @@ files=(
   static/nep-preview/archive-higher-level.js
   static/nep-preview/higher-level-archive.json
   static/nep-preview/archive/index.html
+  static/nep-preview/dpwh-in-depth-data.json
+  static/nep-preview/dpwh-in-depth.js
   static/nep-preview/project-documents.html
   static/nep-preview/project-documents.js
   static/nep-preview/project-document-index.json
@@ -195,6 +197,8 @@ health_files=(
   static/nep-preview/archive-higher-level.js
   static/nep-preview/higher-level-archive.json
   static/nep-preview/archive/index.html
+  static/nep-preview/dpwh-in-depth-data.json
+  static/nep-preview/dpwh-in-depth.js
   static/nep-preview/project-documents.html
   static/nep-preview/project-documents.js
   static/nep-preview/project-document-index.json

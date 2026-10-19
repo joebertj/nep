@@ -1,8 +1,8 @@
 # On-demand project documents
 
 BetterGov owns this project and supplies the project API/document mirror.
-There is no bulk replication or separate project listing scraper. The maintained
-csiiiv index supplies exact proposal IDs; BetterGov supplies live metadata.
+The maintained csiiiv index supplies exact proposal IDs; BetterGov supplies live metadata.
+The requested background queue caches selected POW and RDC PDFs, plus downloadable geotagged-photo files in their source formats, on T5 EVO. Tables keep the original photo URLs.
 
 ## Local use with a PH VPN
 
@@ -12,7 +12,7 @@ Connect the user's PH VPN on the local Mac, then run:
 bash deployment/run_project_documents_local.sh 2027DPWH-Proposal-03421
 ```
 
-Only the requested project's POW and geotagged-photo PDFs are fetched. An
+Only the requested project's POW and RDC PDFs are fetched; photos remain direct links. An
 isolated `.venv-documents` environment is created if needed. Original PDFs,
 OCR/table evidence, extracted candidates and rendered photo pages are cached
 under `data_sources/dpwh_project_documents/on_demand/<proposal-code>/`.
@@ -58,8 +58,7 @@ The page shows:
 - calculated shares of the explicitly named **NEP allocation** denominator;
 - printed unit cost versus calculated amount/quantity and arithmetic status;
 - CSV exports and original PDF-page links;
-- full photo-document page renders preserving captions/coordinates, or the
-  original PDF opened directly by a PH-connected browser on request.
+- direct source links to geotagged photo files; downloaded copies stay external and are not published.
 
 ## Evidence rules
 
@@ -74,22 +73,28 @@ The Burol seed contains exactly two rows from the user-supplied image:
 988,328 kg reinforcing steel / PHP 50,757,582.92 and 3,896.83 cubic meters of
 structural concrete / PHP 37,537,183.76. Their subtotal is PHP 88,294,766.68,
 58.8632% of the PHP 150M NEP allocation. The seed is clearly labeled as image-
-verified; the original PDF page has not yet been retrieved/identified. It is
+verified; the original PDF page is now identified and cross-checked as page 2. It is
 kept separate from machine-extracted rows, and does not establish the full POW.
 
 ## Current access status
 
-After the user switched the PH VPN, the isolated Chrome retry still returned
-`ERR_HTTP2_PROTOCOL_ERROR` for both Burol PDFs. With HTTP/2 disabled, both
-returned `ERR_EMPTY_RESPONSE`. The original DPWH portal returned HTTP 403 with
-a “Just a moment...” challenge page in the isolated Chrome session. Metadata
-access remains separate from PDF access. No original Burol PDF or photo page
-has yet been retrieved, so automatic extraction/photo rendering remains
-unverified. The two supplied-image rows are clearly identified separately.
+The latest Burol retest succeeded using standard HTTPS with TLS verification
+on. Both original PDFs are cached privately. The five-page POW contains an
+itemized bill on page 2: 14 as-submitted direct-cost rows sum exactly to its
+printed PHP 111,386,548.22 subtotal. Steel (988,328 kg / PHP 50,757,582.92)
+and structural concrete (3,896.83 cubic meters / PHP 37,537,183.76) agree
+with the supplied-image reference. The one-page geotagged photo PDF rendered.
+The audit is `analysis_output/burol_document_retest.json`.
 
-The archive release `20dc32fea` is deployed. This worker/UI integration is a
-new local change requiring the normal ODV commit/push and worker setup before
-publication. It has not been deployed.
+The mapped itemized layout separates submitted/evaluated quantities, direct
+cost totals, direct unit costs and inclusive unit costs. Inclusive unit cost
+must not be mistaken for a line total. Direct-cost reconciliation does not
+reconcile markup, VAT, EAO or the complete POW. Raw native table cells remain
+in `pow-native-tables.json` beside the cached PDF. The UI never adds submitted
+and evaluated versions together. No bulk document download was performed.
+
+The parser/UI changes are local; deploying static files does not install or
+start the optional document-processing worker.
 
 ## Explicit PDF-host TLS bypass
 
@@ -144,5 +149,80 @@ projects show unmatched if any project is unmatched, otherwise the lowest
 count, with individual details in the tooltip. Historical GAA rows are excluded.
 FAP records outside the domestic NEP listing are labelled outside scope.
 Five documents does not certify the document mix, availability or contents.
-Record links open metadata only while the PDF host is unavailable; preparing
+Record links open metadata and cached results; preparing
 POW/photos remains an explicit action within the popup.
+
+
+## External storage and background queue
+
+Raw documents, OCR evidence and intermediate results live on `/Volumes/T5 EVO/bettergov-research/nep/data_sources/dpwh_project_documents`.
+The repository's ignored `data_sources/dpwh_project_documents` path is a symlink there.
+Only curated parsed values belong in published assets; do not copy PDFs into ODV.
+
+`download_pow_rdc_queue.py` processes the existing indexed project queue sequentially,
+with a three-second pause between projects, checkpointing `queue-status.json`.
+It downloads POW/RDC only and resumes completed cached entries. Errors are counted;
+a later run retries failed projects. It refuses an unmounted external volume.
+Background logs and process IDs are in `/Volumes/T5 EVO/bettergov-research/jobs/`.
+
+`python3 storage/external_storage.py large` moves regular files of **100,000,000 bytes or larger**
+from both repositories to their corresponding external repository directories.
+It excludes Git internals and security/configuration directories, does not follow symlinks,
+and verifies SHA-256 before atomically replacing each original file with a symlink.
+The external `migration.jsonl` records the original path, destination, bytes and hash.
+Tracked large files may appear as file-to-symlink changes: review those before committing;
+the original data are retained on the external disk. Git history is unchanged.
+
+The external background queue stores downloadable geotagged-photo attachments as-is without format validation. Photo display remains a direct source link; no image assets or PDFs are copied into either public repository.
+
+
+## DPWH Indepth publication
+
+Run `python3 build_project_document_view.py` then `python3 uniform_report_menu.py`
+to refresh `dpwh.html`, its parsed-evidence JSON and the consistent site menu.
+The standalone generator is `build_dpwh_indepth.py`. It whitelists bill fields,
+source checksums/page references and signatory candidates; it never copies raw
+PDFs, image pages, OCR dumps or local cache paths into the public assets.
+
+The page works from static `dpwh-in-depth-data.json`, without an online worker.
+It has project/basis selection, cost-driver bars, search/sort, ten-project pagination,
+all-row detail dialogs and CSV exports. DE and RDC signatories occupy separate
+columns. All financial bases and reconciliation limits remain visible.
+
+The PH VPN retry on 2026-10-18 returned HTTP 200 for the Burol and proposal-00001
+POW PDFs via curl with standard TLS verification. The background queue now uses
+that same transport, runs sequentially, and stops on HTTP 429 or three consecutive
+failed projects. It does not automatically launch repeated Chrome retries.
+The running queue must be stopped before switching transport or storage.
+
+## Offline PDF watcher
+
+Run with the document environment:
+
+```sh
+/private/tmp/nep-document-env/bin/python watch_project_documents.py --interval 30
+```
+
+Use `--once` for a single processing/publication pass. The watcher has **no network
+requests**, does not commit or deploy, and runs as a single instance. It watches
+metadata-identified POW and RDC PDF files in the external
+cache; `.part` files and unrelated PDFs are excluded. A project being handled
+by the downloader is deferred, and project-level locks prevent concurrent writes
+with new worker instances.
+
+Completed downloader parsing is reused. A PDF without parsed evidence is hashed
+and parsed; unchanged files are skipped. Parser-code changes trigger a new parse
+on the next pass. Failed parsing is recorded once and retried when the file or
+parser changes, rather than on every poll. Photos are registered with their
+checksum and original source link, without rendering or publishing their PDF.
+
+Changes refresh only `dpwh.html`, `dpwh-in-depth-data.json` and
+`dpwh-in-depth.js` in `analysis_output` and ODV `static/nep-preview`, plus shared
+presentation assets used by the builder. Publication uses atomic file replacement.
+Raw evidence, watcher fingerprints and logs stay on T5 EVO. Git stages and the
+live site are untouched. Pause the watcher when freezing files for a commit if a
+stable publication snapshot is required.
+
+Progress: `data_sources/dpwh_project_documents/watcher-state.json` (ignored,
+external). Log: `/Volumes/T5 EVO/bettergov-research/jobs/indepth-watcher.log`.
+Unmounting T5 EVO stops work; there is no internal-disk fallback.
