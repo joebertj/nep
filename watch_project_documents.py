@@ -109,7 +109,7 @@ def scan(state):
     return {'parsed':changed,'reused':reused,'parseErrors':failed,'busyProjects':busy}
 
 def publication_signature():
-    source=[(str(p.relative_to(ROOT)),stamp(p)) for p in [ROOT/'build_dpwh_indepth.py',ROOT/'uniform_report_menu.py',ROOT/'report_teasers.py',ROOT/'project_documents/indepth.html',ROOT/'project_documents/indepth.js']]
+    source=[(str(p.relative_to(ROOT)),stamp(p)) for p in [ROOT/'build_dpwh_indepth.py',ROOT/'uniform_report_menu.py',ROOT/'report_teasers.py',ROOT/'project_documents/indepth.html',ROOT/'project_documents/indepth.js',ROOT/'project_documents/pow_reviewed_category_totals.json']]
     results=[(str(p.relative_to(CACHE)),stamp(p)) for p in sorted(CACHE.glob('*/result.json'))]
     return hashlib.sha256(json.dumps([source,results]).encode()).hexdigest()
 

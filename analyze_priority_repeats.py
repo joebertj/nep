@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Compare FY2027 DPWH NEP project lines with enacted FY2026 and FY2025 GAA.
+"""Compare FY2027 DPWH NEP project lines with all local enacted GAA data.
 
 Focuses on multi-purpose buildings, roads, bridges, and flood-control work.
 The output is a review queue; title similarity is not proof of duplicate scope.
@@ -154,48 +154,54 @@ def normalize_2027() -> list[dict]:
     return result
 
 
-def previous_rows() -> tuple[list[dict], list[dict]]:
-    path26 = "data/parquet/parsed_dpwh_2026.parquet"
-    path25 = "data/parquet/budget_2025.parquet"
+def previous_rows(years: list[int] | None = None) -> dict[int, list[dict]]:
     terms = "MULTI.?PURPOSE|ROAD|BRIDGE|FLOOD|DRAINAGE|DIKE|REVETMENT"
-    rows26 = query(f"""select _excel_row, col_J as name, amount from read_parquet('{path26}')
-        where col_J is not null and trim(col_J) <> ''
-        and regexp_matches(upper(col_J), '{terms}')""")
-    rows25 = query(f"""select id, description as name, amount, department_desc, agency_desc
-        from read_parquet('{path25}') where department_desc ilike '%Public Works%'
-        and regexp_matches(upper(coalesce(description,'')), '{terms}')""")
+    prior_by_year: dict[int, list[dict]] = {}
+    requested=set(years if years is not None else range(2020,2027))
 
-    def convert(rows: list[dict], year: int) -> list[dict]:
+    def convert(rows: list[dict], year: int, source_kind: str) -> list[dict]:
         result = []
         for row in rows:
             category = classify(row.get("name", ""))
             if not category:
                 continue
             amount = float(row.get("amount") or 0)
-            if year == 2025:
-                amount *= 1000  # GAA parquet amounts are in thousands of pesos.
+            if source_kind == "annual_gaa":
+                amount *= 1000  # ODV annual GAA parquet amounts are in thousands of pesos.
             result.append({
                 "category": category, "name": row.get("name", ""),
                 "amount": round(amount),
-                "source": (f"FY2026 DPWH GAA Details Enrolled Copy, row {row.get('_excel_row', '')}"
-                           if year == 2026 else f"GAA 2025 row {row.get('id', '')}"),
+                "source": (f"FY{year} DPWH GAA Details Enrolled Copy, row {row.get('_excel_row', '')}"
+                           if source_kind == "dpwh_enrolled" else
+                           f"FY{year} GAA · {row.get('source_file', 'ODV annual dataset')} · row {row.get('id', '')}"),
             })
         return result
 
-    return convert(rows26, 2026), convert(rows25, 2025)
+    if 2026 in requested:
+        path26 = "data/parquet/parsed_dpwh_2026.parquet"
+        rows26 = query(f"""select _excel_row, col_J as name, amount from read_parquet('{path26}')
+            where col_J is not null and trim(col_J) <> ''
+            and regexp_matches(upper(col_J), '{terms}')""")
+        prior_by_year[2026] = convert(rows26, 2026, "dpwh_enrolled")
+    for year in sorted(requested & set(range(2020,2026))):
+        path = f"data/parquet/budget_{year}.parquet"
+        rows = query(f"""select id, description as name, amount, source_file
+            from read_parquet('{path}') where department_desc ilike '%Public Works%'
+            and regexp_matches(upper(coalesce(description,'')), '{terms}')""")
+        prior_by_year[year] = convert(rows, year, "annual_gaa")
+    return prior_by_year
 
 
 def main() -> None:
     targets = normalize_2027()
-    prior26, prior25 = previous_rows()
+    prior_by_year = previous_rows()
     matches = []
     for category in CATEGORY_PATTERNS:
         current = [row for row in targets if row["category"] == category]
-        old26 = [row for row in prior26 if row["category"] == category]
-        old25 = [row for row in prior25 if row["category"] == category]
-        found = rank_matches(current, old26, 2026) + rank_matches(current, old25, 2025)
-        matches.extend(found)
-        for year, prior in ((2026, old26), (2025, old25)):
+        for year, prior_rows_for_year in sorted(prior_by_year.items()):
+            prior = [row for row in prior_rows_for_year if row["category"] == category]
+            found = rank_matches(current, prior, year)
+            matches.extend(found)
             best = [r for r in found if r["prior_year"] == year and r["rank"] == 1]
             threshold = [r for r in best if r["similarity"] >= 0.78]
             print(f"{category}: FY2027 NEP {len(current)}; FY{year} GAA source {len(prior)}; "

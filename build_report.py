@@ -43,7 +43,7 @@ hb_nep_cost = sum(int(float(row.get("amountPesos") or 0)) for row in hb_nep_inse
 hb_nep_near_matches = sum(row["comparison"] == "Multiple or already paired NEP counterparts; review scope" for row in hb_nep_insertions)
 
 priority_repeats = []
-priority_counts = {2026: set(), 2025: set()}
+priority_counts = defaultdict(set)
 for row in priority_candidates:
     if row["rank"] != "1" or float(row.get("similarity") or 0) < 0.90:
         continue
@@ -74,27 +74,33 @@ for row in priority_candidates:
 
 priority_repeats.sort(key=lambda row: (-row["similarity_pct"], row["category"], row["project"]))
 priority_repeat_total = len(priority_repeats)
-priority_repeat_sources_2026 = priority_counts[2026]
-priority_repeat_sources_2025 = priority_counts[2025]
-priority_repeat_unique_sources = len(priority_repeat_sources_2026 | priority_repeat_sources_2025)
-priority_repeat_both_years = len(priority_repeat_sources_2026 & priority_repeat_sources_2025)
+priority_repeat_years = sorted(priority_counts, reverse=True)
+priority_repeat_unique_sources = len(set().union(*priority_counts.values())) if priority_counts else 0
+priority_repeat_multiple_years = sum(1 for code in set().union(*priority_counts.values())
+                                     if sum(code in projects for projects in priority_counts.values()) > 1) if priority_counts else 0
 priority_repeat_unique_allocations = {}
-priority_prior_allocations = {2026: 0, 2025: 0}
+priority_prior_allocations = defaultdict(int)
 for row in priority_repeats:
     priority_repeat_unique_allocations.setdefault(row["source_code"], row["amount_2027"])
     priority_prior_allocations[row["comparison_year"]] += row["prior_amount"]
 priority_repeat_fy2027_amount = sum(priority_repeat_unique_allocations.values())
 priority_summary = (
-    f"The name screen found {len(priority_counts[2026]):,} FY2027 NEP lines with a 90% or higher "
-    f"title match in the FY2026 enacted GAA, and {len(priority_counts[2025]):,} with a 90% or higher title match in the FY2025 enacted GAA. "
+    "The name screen found 90% or higher title matches against enacted DPWH GAA data for "
+    + ", ".join(f"FY{year} ({len(priority_counts[year]):,} FY2027 NEP lines)" for year in priority_repeat_years)
+    + ". "
     "Bridge candidates require overlapping plus-form chainage. Road matches are excluded when both stated ranges are disjoint; missing chainage is flagged for review. Different package, phase, stage, lot or segment labels require scope review. They may identify legitimate separate work or changes in how the same work is described; overlapping chainage still signals shared extent. "
     "Explicit opposing directions are excluded. For all categories, verify location, scope, phase, and completion status before treating a row as the same project."
 )
+priority_year_options = ''.join(f'<option value="{year}">FY2027 NEP → FY{year} GAA</option>' for year in priority_repeat_years)
+priority_year_breakdown = ''.join(
+    f'<div><span>{len(priority_counts[year]):,} matches vs FY{year} GAA</span>'
+    f'<strong>₱{priority_prior_allocations[year] / 1_000_000_000:,.2f}B</strong><small>enacted allocations</small></div>'
+    for year in priority_repeat_years)
 priority_review_html = f'''<section class="card section">
-<div class="repeat-hero"><div class="repeat-hero-primary"><span class="repeat-hero-kicker">FY2027 NEP vs enacted DPWH GAA</span><div class="repeat-hero-total"><strong>{priority_repeat_total:,}</strong><span>potential repeat matches</span></div><div class="repeat-hero-cost"><strong>₱{priority_repeat_fy2027_amount / 1_000_000_000:,.2f}B</strong><span>FY2027 NEP allocation across {priority_repeat_unique_sources:,} distinct matched lines</span></div></div><div class="repeat-hero-detail"><div class="repeat-hero-breakdown"><div><span>{len(priority_repeat_sources_2026):,} matches vs FY2026 GAA</span><strong>₱{priority_prior_allocations[2026] / 1_000_000_000:,.2f}B</strong><small>enacted allocations</small></div><div><span>{len(priority_repeat_sources_2025):,} matches vs FY2025 GAA</span><strong>₱{priority_prior_allocations[2025] / 1_000_000_000:,.2f}B</strong><small>enacted allocations</small></div></div><p>{priority_repeat_both_years:,} FY2027 NEP lines match both GAA years. Totals are screened budget allocations, not confirmed duplicate costs. Bridges require overlapping chainage; roads with two non-overlapping ranges are excluded, while missing chainage stays flagged for review.</p></div></div>
-<h2>Potential repeated line items: FY2027 NEP → FY2026 GAA, then FY2025 GAA</h2>
+<div class="repeat-hero"><div class="repeat-hero-primary"><span class="repeat-hero-kicker">FY2027 NEP vs enacted DPWH GAA</span><div class="repeat-hero-total"><strong>{priority_repeat_total:,}</strong><span>potential repeat matches across {len(priority_repeat_years)} GAA years</span></div><div class="repeat-hero-cost"><strong>₱{priority_repeat_fy2027_amount / 1_000_000_000:,.2f}B</strong><span>FY2027 NEP allocation across {priority_repeat_unique_sources:,} distinct matched lines</span></div></div><div class="repeat-hero-detail"><div class="repeat-hero-breakdown">{priority_year_breakdown}</div><p>{priority_repeat_multiple_years:,} FY2027 NEP lines match more than one GAA year. Totals are screened budget allocations, not confirmed duplicate costs. Bridges require overlapping chainage; roads with two non-overlapping ranges are excluded, while missing chainage stays flagged for review.</p></div></div>
+<h2>Potential repeated line items: FY2027 NEP → enacted GAA, FY2020–FY2026</h2>
 <p class="sub">Multi-purpose buildings, roads, bridges, and flood-control projects. {escape(priority_summary)} Explicit opposing directions are excluded as location conflicts. Amounts are in pesos. Title similarity is a screening lead, not proof that two appropriations cover the same scope.</p>
-<div class="toolbar"><input id="priorityRepeatSearch" type="search" placeholder="Search title, district, or category"><select id="priorityRepeatYear"><option value="all">Both GAA comparisons</option><option value="2026">FY2027 NEP → FY2026 GAA</option><option value="2025">FY2027 NEP → FY2025 GAA</option></select></div>
+<div class="toolbar"><input id="priorityRepeatSearch" type="search" placeholder="Search title, district, or category"><select id="priorityRepeatYear"><option value="all">All available GAA years</option>{priority_year_options}</select></div>
 <div class="tablewrap"><table><thead><tr><th>Program</th><th>FY2027 NEP line item</th><th>NEP chainage</th><th>District office</th><th class="num">FY2027 NEP</th><th>GAA year</th><th>Enacted GAA line item</th><th>GAA chainage</th><th>Chainage / tranche check</th><th class="num">GAA amount</th><th class="num">Title match</th><th>GAA source</th></tr></thead><tbody id="priorityRepeatBody"></tbody></table></div>
 <div class="pagination" id="priorityRepeatPager"></div>
 </section>'''
@@ -175,7 +181,7 @@ html = r'''<!doctype html>
 <main class="wrap">
 __PRIORITY_REPEAT_SECTION__
 __HB_INSERTION_SECTION__
-<div class="notice"><strong>Read this as a review list, not a finding of wrongdoing.</strong> Amounts are shown in pesos. NEP values and FY2025 GAA values are stored in thousands of pesos and multiplied by 1,000; the FY2026 DPWH enrolled-copy GAA already stores pesos. Project descriptions do not include quantities, dimensions, engineering specifications, or bills of quantities.</div>
+<div class="notice"><strong>Read this as a review list, not a finding of wrongdoing.</strong> Amounts are shown in pesos. FY2020–FY2025 GAA and FY2027 NEP values are stored in thousands of pesos and multiplied by 1,000; the FY2026 DPWH enrolled-copy GAA already stores pesos. Project descriptions do not include quantities, dimensions, engineering specifications, or bills of quantities.</div>
 <div class="toolbar"><label for="yearSelect"><strong>Fiscal year:</strong></label><select id="yearSelect"></select></div>
 <section class="grid metrics" id="metrics"></section>
 <section class="card section"><h2>Projects by region</h2><p class="sub">Project counts by region for the selected fiscal year. This is not adjusted for population or need.</p><div class="barlist" id="regionChart"></div></section>
@@ -191,7 +197,7 @@ __HB_INSERTION_SECTION__
   <article class="card"><h2>Most frequent exact amounts</h2><p class="sub">Across all categories. Rounded figures recur often in budget proposals and are not suspicious by themselves.</p><div class="barlist" id="amountChart"></div></article>
   <article class="card"><h2>What this screen did not find</h2><p class="sub" id="limits"></p><div class="callout"><strong>Next useful data</strong> Physical scope (length, area, capacity), detailed cost breakdowns, implementation and completion status, and procurement outcomes would let us compare like with like and distinguish recurring programs from unusual pricing.</div></article>
 </section>
-<footer><p>Amounts are displayed in pesos. NEP FY2027 and GAA FY2025 source values are converted from thousands of pesos; DPWH GAA FY2026 enrolled-copy amounts are already in pesos. “Office” is the implementing office in this dataset, not a precise project location.</p><p class="footlinks">Source files: local <code>2027.json</code> / <code>2027.parquet</code>, DPWH FY2026 Details Enrolled Copy, and local FY2025 GAA parquet. Official references: <a href="https://www.dbm.gov.ph/index.php/2027/national-expenditure-program-fy-2027" target="_blank" rel="noreferrer">DBM FY 2027 NEP</a> · <a href="https://www.dbm.gov.ph/wp-content/uploads/GAA/GAA2026/DBM-OFFICIAL-GAZETTE-FY-2026_VOLUME-1-C.pdf" target="_blank" rel="noreferrer">FY 2026 GAA, DPWH projects</a>.</p><p>Generated from the DuckDB screening reports. Validate every lead against the original budget documents and project scope before presenting conclusions.</p></footer>
+<footer><p>Amounts are displayed in pesos. NEP FY2027 and ODV GAA FY2020–FY2025 source values are converted from thousands of pesos; DPWH GAA FY2026 enrolled-copy amounts are already in pesos. “Office” is the implementing office in this dataset, not a precise project location.</p><p class="footlinks">Source files: local <code>2027.json</code> / <code>2027.parquet</code>, DPWH FY2026 Details Enrolled Copy, and ODV annual GAA Parquet datasets FY2020–FY2025. Official references: <a href="https://www.dbm.gov.ph/index.php/2027/national-expenditure-program-fy-2027" target="_blank" rel="noreferrer">DBM FY 2027 NEP</a> · <a href="https://www.dbm.gov.ph/wp-content/uploads/GAA/GAA2026/DBM-OFFICIAL-GAZETTE-FY-2026_VOLUME-1-C.pdf" target="_blank" rel="noreferrer">FY 2026 GAA, DPWH projects</a>.</p><p>Generated from the DuckDB screening reports. Validate every lead against the original budget documents and project scope before presenting conclusions.</p></footer>
 </main>
 <script>
 const D = __DATA__;

@@ -1,0 +1,97 @@
+{
+  "description": "Manually reviewed printed POW cost-category totals supplied for parser calibration. These totals are distinct from itemized BOQ rows and must not be added to them.",
+  "projects": {
+    "2027DPWH-Proposal-02306": [
+      {
+        "label": "Reinforced concrete",
+        "sharePct": 39.04,
+        "amountPesos": 145794597.93,
+        "sourcePage": 1,
+        "extractionMethod": "Manual review of printed cost-category row on POW p. 1; matching item rows traced on POW pp. 2–3",
+        "verificationStatus": "POW p. 1 category total confirmed; submitted item rows on p. 2 sum to the category amount",
+        "manualReview": true
+      },
+      {
+        "label": "Finishing and other civil works",
+        "sharePct": 31.25,
+        "amountPesos": 116712943.63,
+        "sourcePage": 1,
+        "extractionMethod": "Manual review of printed cost-category row on POW p. 1; matching item rows traced on POW pp. 2–3",
+        "verificationStatus": "POW p. 1 category total confirmed; 34 submitted item rows recovered on pp. 2–3 sum to ₱113,037,376.76, leaving ₱3,675,566.87 unreconciled",
+        "manualReview": true
+      }
+    ],
+    "2027DPWH-Proposal-22663": [
+      {
+        "label": "Finishing and other civil works",
+        "sharePct": 37.99,
+        "amountPesos": 113256722.07,
+        "sourcePage": 1,
+        "extractionMethod": "Manual source verification: category summary row on POW p. 1; amount corroborated by Part E total on p. 4 and submitted summary on p. 5",
+        "verificationStatus": "Source page and category row located; values cross-checked against POW totals",
+        "manualReview": true
+      },
+      {
+        "label": "Reinforced concrete",
+        "sharePct": 27.08,
+        "amountPesos": 80733920.46,
+        "sourcePage": 1,
+        "extractionMethod": "Manual source verification: category summary row on POW p. 1; amount corroborated by Part D total on p. 5",
+        "verificationStatus": "Source page and category row located; values cross-checked against POW totals",
+        "manualReview": true
+      },
+      {
+        "label": "Mechanical",
+        "sharePct": 22.28,
+        "amountPesos": 66437644.16,
+        "sourcePage": 1,
+        "extractionMethod": "Manual source verification: category summary row on POW p. 1; amount corroborated by Part G total on p. 4 and submitted summary on p. 5",
+        "verificationStatus": "Source page and category row located; OCR amount checked against repeated total on POW pp. 4, 5 and 10",
+        "manualReview": true
+      }
+    ],
+    "2027DPWH-Proposal-22656": [
+      {
+        "label": "Finishing and other civil works",
+        "sharePct": 46.5051,
+        "amountPesos": 121166969.22,
+        "sourcePage": 1,
+        "extractionMethod": "Manual source check of printed category summary on POW p. 1; confirmed against TOTAL OF PART E on p. 3",
+        "verificationStatus": "Category share and amount confirmed on POW p. 1 and against Part E subtotal on p. 3",
+        "manualReview": true
+      },
+      {
+        "label": "Mechanical",
+        "sharePct": 31.823,
+        "amountPesos": 82913337.67,
+        "sourcePage": 1,
+        "extractionMethod": "Manual source check of printed category summary on POW p. 1; confirmed against TOTAL OF PART G on p. 4",
+        "verificationStatus": "Category share and amount confirmed on POW p. 1 and against Part G subtotal on p. 4",
+        "manualReview": true
+      }
+    ]
+  },
+  "reviewedRows": {
+    "2027DPWH-Proposal-22656": [
+      {
+        "itemCode": "1018(5)",
+        "sourcePage": 3,
+        "amountPesos": 37109274.84,
+        "directCostSharePct": 14.2429,
+        "description": "Glazed Tiles",
+        "verificationStatus": "Manually verified against Glazed Tiles row on POW p. 3; OCR amount/share corrected"
+      },
+      {
+        "itemCode": "1200(13)a",
+        "sourcePage": 4,
+        "amountPesos": 60345223.04,
+        "directCostSharePct": 23.1611,
+        "description": "Air Conditioning System, Package/Split Type",
+        "verificationStatus": "Manually verified against air-conditioning row on POW p. 4"
+      }
+    ]
+  },
+  "directCostTotalsPesos": {
+    "2027DPWH-Proposal-22656": 260545648.95
+  }
+}

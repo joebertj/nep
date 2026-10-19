@@ -2,6 +2,10 @@
   "policy": "Numeric cells under currency headers display \u20b1 and thousands separators. Decimal places, signs, source amounts, column units and CSV payloads are preserved. Counts and percentages are excluded.",
   "pages": [
     {
+      "page": "archive.html",
+      "formattedCurrencyCells": 0
+    },
+    {
       "page": "budget-innovations.html",
       "formattedCurrencyCells": 0
     },

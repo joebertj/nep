@@ -5,7 +5,7 @@ import re
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 STATIC=ROOT.parent/'open-data-visualization/static/nep-preview'
-LINKS=[('summary.html', 'Summary · investigative leads'), ('congress.html', 'Congressional District Allocations'), ('cost-per-km.html', 'Cost per meter'), ('repeats.html', 'Project repeat comparisons'), ('dpwh-hgab.html', 'DPWH · NEP → HGAB (3rd)'), ('rcs.html', 'RCS · rainfall scenario'), ('mpb.html', 'MPB · Multi-purpose buildings'), ('dpwh.html', 'DPWH Indepth'), ('nia.html', 'NIA · irrigation and named projects'), ('deped.html', 'DepEd'), ('fmr.html', 'FMR'), ('hfep.html', 'HFEP'), ('budget-innovations.html', 'Budget Innovations'), ('https://csiiiv.github.io/DPWH-NEP-HB-2027-ANALYSIS/app/#compare', 'Budget stage comparisons ↗')]
+LINKS=[('summary.html', 'Summary · investigative leads'), ('congress.html', 'Congressional District Allocations'), ('cost-per-km.html', 'Cost per meter'), ('repeats.html', 'Project repeat comparisons'), ('dpwh-hgab.html', 'DPWH · NEP → HGAB (3rd)'), ('rcs.html', 'RCS · POW scope review'), ('mpb.html', 'MPB · Multi-purpose buildings'), ('dpwh.html', 'DPWH Indepth'), ('nia.html', 'NIA · irrigation and named projects'), ('deped.html', 'DepEd'), ('fmr.html', 'FMR'), ('hfep.html', 'HFEP'), ('budget-innovations.html', 'Budget Innovations'), ('archive.html', 'Archive · earlier sections'), ('https://csiiiv.github.io/DPWH-NEP-HB-2027-ANALYSIS/app/#compare', 'Budget stage comparisons ↗')]
 NAV='<nav class="report-nav" aria-label="Budget report pages">'+''.join(f'<a href="{url}">{label}</a>' for url,label in LINKS)+'</nav>'
 CSS='''<style id="uniform-report-menu-style">
 header{padding-left:clamp(16px,2vw,32px)!important;padding-right:clamp(16px,2vw,32px)!important}
@@ -76,6 +76,7 @@ def apply():
     versions=publish_assets()
     results=[]
     for path in sorted(STATIC.glob('*.html')):
+        if path.name=='budget-trivia.html':continue  # secret quiz page intentionally has no shared menu
         text=table_presentation(apply_page(path.read_text(),path.name),versions);path.write_text(text)
         mirror=ROOT/'analysis_output'/path.name
         if mirror.exists():mirror.write_text(text)

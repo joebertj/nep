@@ -148,6 +148,9 @@ def apply():
     refresh_document_page_menu()
     from archive_higher_level_analysis import apply as archive_duplicated_overviews
     archive_duplicated_overviews()
+    # The archive page is generated after the document-view refresh; run the
+    # shared menu once more so its navigation matches every active report.
+    apply_uniform_menu()
     summary=(STATIC/'summary.html').read_text()
     (STATIC/'index.html').write_text(summary)
     (ROOT/'analysis_output/index.html').write_text(summary)

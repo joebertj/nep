@@ -244,6 +244,16 @@ def enrich(data):
     for row in data['projects']:
         inventory.enrich(row)
         context.enrich(row)
+        if row.get('category')=='Bridges' and not row.get('lengthMeters'):
+            row['costDensityReviewFlag']='🚩'
+            row['costDensityReviewReason']='Usable length unavailable; bridge cost density cannot be calculated.'
+        # Uniform two-lane minimum scenario for bridge-category rows with a
+        # usable stated segment length. It is a comparison assumption, not a
+        # source-verified lane count, and stays separate from flags/rates.
+        if row.get('category')=='Bridges' and isinstance(row.get('lengthMeters'),(int,float)) and row['lengthMeters']>0:
+            row['manualLaneEstimateLanes']=2
+            row['allocationPerManualLaneMeter']=round(row['amountPesos']/(row['lengthMeters']*2),2)
+            row['manualLaneEstimateBasis']='Uniform 2-lane minimum scenario applied to bridge-category projects with usable stated length; lane count is not source-verified. Printed chainage may include approaches or other scope.'
     summaries=[]
     for category in ['Roads','Bridges','FMR','Mixed roads / bridges']:
         selected=[r for r in data['projects'] if r['category']==category]

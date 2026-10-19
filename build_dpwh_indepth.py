@@ -9,6 +9,9 @@ STATIC=ROOT.parent/'open-data-visualization/static/nep-preview'
 CACHE=ROOT/'data_sources/dpwh_project_documents/on_demand'
 UNMATCHED={'not_found','no_verified_match','candidate_match','ambiguous_match','outside_snapshot_scope'}
 def title_key(value):return ' '.join(unicodedata.normalize('NFKC',str(value or '')).split())
+def category_key(value):
+    key=' '.join(unicodedata.normalize('NFKC',str(value or '')).casefold().split())
+    return key.replace('finishings and other civil works','finishing and other civil works')
 def has_kind(project,kind):
     for d in project.get('documentLinks',[]):
         t=' '.join(str(d.get('type') or '').lower().split())
@@ -87,6 +90,8 @@ def hgab_statistics():
     return coverage_data,peer_groups
 def collect():
     from project_documents.signatories import qualified_role
+    reviewed_path=ROOT/'project_documents/pow_reviewed_category_totals.json'
+    reviewed=json.loads(reviewed_path.read_text()).get('projects',{}) if reviewed_path.exists() else {}
     projects=[];attempted=failed=available=empty=0;errors={}
     for path in sorted(CACHE.glob('*/result.json')):
         try:
@@ -101,11 +106,17 @@ def collect():
                 else:
                     failed+=1;key=d.get('error','Unknown').split(':',1)[0];errors[key]=errors.get(key,0)+1
             parsed=d.get('pow',{})
-            rows=[{k:r.get(k) for k in ('itemCode','description','componentContext','componentContexts','quantity','unit','printedUnitCostPesos','calculatedUnitCostPesos','amountPesos','sourcePage','observedPages','extractionMethod','arithmeticStatus','verificationStatus','costBasis','amountBasis')} for r in parsed.get('rows',[])]
+            rows=[{k:r.get(k) for k in ('itemCode','description','componentContext','componentContexts','costCategory','quantity','unit','printedUnitCostPesos','calculatedUnitCostPesos','amountPesos','directCostSharePct','manualReview','sourcePage','observedPages','extractionMethod','arithmeticStatus','verificationStatus','costBasis','amountBasis')} for r in parsed.get('rows',[])]
             people=[{k:p.get(k) for k in ('name','roleText','kind','sourcePage','extractionMethod','verificationStatus')} for p in d.get('signatories',{}).get('people',[]) if qualified_role(p.get('roleText',''),d['kind'])]
             controls=[{k:c.get(k) for k in ('sourcePage','basis','amountBasis','printedPesos','recoveredItemRows','recoveredPesos','differencePesos','reconciled')} for c in parsed.get('itemizedDirectCostControls',[])]
+            categories=list(parsed.get('costCategoryBreakdown',[]))
+            for correction in reviewed.get(meta.get('code'),[]):
+                match=next((c for c in categories if category_key(c.get('label'))==category_key(correction.get('label'))),None)
+                if match:match.update(correction)
+                else:categories.append(correction)
             review_pages=[{'page':p.get('page'),'note':p.get('reviewNote')} for p in parsed.get('pages',[]) if p.get('status')=='needs_manual_review']
-            documents.append({'kind':d['kind'],'status':status,'url':d.get('metadata',{}).get('url'),'sha256':d.get('sha256'),'pageCount':parsed.get('pageCount',d.get('signatories',{}).get('sourcePages')),'rows':rows,'controls':controls,'reviewPages':review_pages,'people':people,'signatoryStatus':d.get('signatories',{}).get('status'),'errorType':d.get('error','').split(':',1)[0] or None})
+            categories.sort(key=lambda c:-float(c.get('amountPesos') or 0))
+            documents.append({'kind':d['kind'],'status':status,'url':d.get('metadata',{}).get('url'),'sha256':d.get('sha256'),'pageCount':parsed.get('pageCount',d.get('signatories',{}).get('sourcePages')),'rows':rows,'costCategoryBreakdown':categories,'controls':controls,'reviewPages':review_pages,'people':people,'signatoryStatus':d.get('signatories',{}).get('status'),'errorType':d.get('error','').split(':',1)[0] or None})
         if not documents:empty+=1
         projects.append({'code':meta['code'],'name':meta['projectName'],'office':meta.get('office'),'region':meta.get('region'),'allocationPesos':round(float(meta['amount'])*1000),'preparedAt':result.get('preparedAtUtc'),'documents':documents,'documentLinks':[{'type':d.get('documentType'),'url':d.get('url')} for d in meta.get('documents',[])]})
     prepared=[p for p in projects if any(d['rows'] for d in p['documents'])]

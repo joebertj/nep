@@ -96,6 +96,17 @@ and evaluated versions together. No bulk document download was performed.
 The parser/UI changes are local; deploying static files does not install or
 start the optional document-processing worker.
 
+POW parsing also retains printed cost-category summaries when OCR recovers a
+category label, percentage and peso amount together. These summaries stay
+separate from itemized bill rows and appear in the Indepth POW category
+summary column. `pow_reviewed_category_totals.json` stores manually checked
+category figures and page-specific row corrections when OCR has not recovered
+them accurately. Row shares from the printed direct-cost percentage column can
+also help repair a dropped decimal scale when they agree with the printed POW
+direct-cost total. A parser-code change is picked up by the existing watcher
+and causes cached POWs to be parsed again; the downloader is not restarted by
+this publication step.
+
 ## Explicit PDF-host TLS bypass
 
 At the user's request, the local command supports:
@@ -141,7 +152,9 @@ are needed. The public index carries matching provenance, retrieval timestamp,
 counts and methodology. The detailed audit is retained as
 `analysis_output/dpwh_transparency_document_coverage.json`.
 
-DPWH FY2027 project tables receive one `DPWH transparency` column. Unmatched
+DPWH FY2027 project tables receive one `DPWH transparency` column, except the
+summary line-item review queue, which keeps the table compact and shows that
+record in the flag dialog when NEP matching or document coverage is flagged. Unmatched
 has highest precedence, including unresolved candidate/ambiguous matches.
 Otherwise show the number of listed documents; fewer than five is incomplete
 under the requested screening threshold. Comparison rows with multiple FY2027
@@ -159,10 +172,15 @@ Raw documents, OCR evidence and intermediate results live on `/Volumes/T5 EVO/be
 The repository's ignored `data_sources/dpwh_project_documents` path is a symlink there.
 Only curated parsed values belong in published assets; do not copy PDFs into ODV.
 
-`download_pow_rdc_queue.py` processes the existing indexed project queue sequentially,
-with a three-second pause between projects, checkpointing `queue-status.json`.
-It downloads POW/RDC only and resumes completed cached entries. Errors are counted;
-a later run retries failed projects. It refuses an unmounted external volume.
+`download_pow_rdc_queue.py` continuously revisits the existing indexed project queue
+sequentially, refreshing each project's BetterGov metadata before deciding whether
+its selected document links changed. New or changed POW/RDC/photo links are fetched;
+unchanged completed entries are skipped. It waits six hours after each full pass by
+default, checkpoints `queue-status.json`, and resumes safely after interruption.
+After three consecutive failures or an HTTP 429 it ends that pass and retries from
+the start after the configured interval. This checks the indexed project set; adding
+new project codes still requires refreshing `queue.json`. It refuses an unmounted
+external volume.
 Background logs and process IDs are in `/Volumes/T5 EVO/bettergov-research/jobs/`.
 
 `python3 storage/external_storage.py large` moves regular files of **100,000,000 bytes or larger**
@@ -196,6 +214,21 @@ failed projects. It does not automatically launch repeated Chrome retries.
 The running queue must be stopped before switching transport or storage.
 
 ## Offline PDF watcher
+
+To immediately apply the current parser to one project whose PDF is already
+cached, run:
+
+```sh
+deployment/reparse_cached_project_pow.sh 2027DPWH-Proposal-22663
+```
+
+This reparses only that project's cached POW, updates its local parser result,
+and republishes the static Indepth snapshot. It makes no network requests and
+does not restart the downloader. The project lock prevents collision with an
+active download or watcher parse; if that project is busy, the command asks you
+to retry. The watcher remains in its loop and picks up parser changes on its
+next scan. Use `DOCUMENT_PYTHON` to select the parser
+environment when it is not at `.venv-documents/bin/python`.
 
 Run with the document environment:
 
