@@ -19,7 +19,7 @@
     "linkedExternalAllocationPesos": 165661113000,
     "reviewReasons": {
       "qualified_location_unresolved": 3548,
-      "leg_or_construction_scope_unresolved": 2371,
+      "leg_or_construction_scope_unresolved": 1954,
       "trailing_address_metadata_review": 214,
       "source_link_discrepancy": 5,
       "fap_separate_review": 4,
@@ -195,7 +195,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -1685,7 +1684,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -1725,7 +1723,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -2671,7 +2668,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -2691,7 +2687,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -2731,7 +2726,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -3235,7 +3229,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -3255,7 +3248,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -3404,7 +3396,6 @@
         "ecc3e8fcdd50d99cae33f2ed93d780fb"
       ],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -3660,9 +3651,7 @@
         "b3722bde46f2063dbbdc4c7cf4cdcd90",
         "e369fdcc2879f575d63fc098475113bd"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "893d00c23dd130ab7fc8052e063b6032",
@@ -3729,9 +3718,7 @@
         "6b341d0a9456b4c46d35291f047e44ec",
         "e369fdcc2879f575d63fc098475113bd"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "e1533f5a6a5651260c0af1145d552d61",
@@ -3752,9 +3739,7 @@
         "8a27ef21326c40fb34dabf963f92a8fb",
         "e369fdcc2879f575d63fc098475113bd"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "96f7bc8206d85f53880f9a39287ce424",
@@ -3775,9 +3760,7 @@
         "58743d5b3861aaf4fe2eabe89f1ef6c1",
         "e369fdcc2879f575d63fc098475113bd"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "127f7d28f0f4e3ba1981271f431b98dc",
@@ -3798,9 +3781,7 @@
         "49befe8b322749bc04bc9281784fdc70",
         "e369fdcc2879f575d63fc098475113bd"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "c15891fa80af29d4003e71665daaf836",
@@ -3821,9 +3802,7 @@
         "98e88bb85f6b85e1674eb7aa82d4a67d",
         "e369fdcc2879f575d63fc098475113bd"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "783936f085e9b4bc2dd9e54d79ca095c",
@@ -3844,9 +3823,7 @@
         "e369fdcc2879f575d63fc098475113bd",
         "e3c80885adfd449321539f714601fb5e"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "7cd603fc02f56ee57e46826b787a02a2",
@@ -3888,9 +3865,7 @@
         "49befe8b322749bc04bc9281784fdc70",
         "e369fdcc2879f575d63fc098475113bd"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "7a4c940192634aa12294483fb3b2d786",
@@ -3911,9 +3886,7 @@
         "792b26411ceae3110981c91c9c807291",
         "e369fdcc2879f575d63fc098475113bd"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "761e81a11388800fcf45b97810e33b25",
@@ -3955,9 +3928,7 @@
         "b6b9c59e77b4c77566ee17a8d29df217",
         "e369fdcc2879f575d63fc098475113bd"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "b8dffe293d966f938a83c367192f9eb3",
@@ -4068,9 +4039,7 @@
         "49befe8b322749bc04bc9281784fdc70",
         "e369fdcc2879f575d63fc098475113bd"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "811422f9473a6a6fbd5dc6a9ee6417e2",
@@ -4091,9 +4060,7 @@
         "cf78b34efb745ee1bd1cadd3e2ef3ce7",
         "e369fdcc2879f575d63fc098475113bd"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "a40932a4c4cbefd32530245c9e5934f4",
@@ -4114,9 +4081,7 @@
         "7392ddbc7a42a32c124a1623b15d011e",
         "e369fdcc2879f575d63fc098475113bd"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "dfd037cf5ee0aa37fd528072cc64a6d9",
@@ -4137,9 +4102,7 @@
         "8d2e7d880c9ff5f071720efb7efb45cf",
         "e369fdcc2879f575d63fc098475113bd"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "726e8a4c9b702af57c7bb21210e161a3",
@@ -4160,9 +4123,7 @@
         "49befe8b322749bc04bc9281784fdc70",
         "e369fdcc2879f575d63fc098475113bd"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "aca5cf029773f0f17f5789c469b49666",
@@ -4183,9 +4144,7 @@
         "e369fdcc2879f575d63fc098475113bd",
         "e7631fd912fea42d392606ebf6dedede"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "5a8f155fa95387b30056ae392452e2a7",
@@ -4293,9 +4252,7 @@
         "e369fdcc2879f575d63fc098475113bd",
         "fefc32f6b91ac93954e4e0a5c901691b"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "0f5222263ab34d013c057da618617349",
@@ -4316,9 +4273,7 @@
         "74ae4db09e5d5c00ff15a79053690192",
         "e369fdcc2879f575d63fc098475113bd"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "3b8c6fe6455dd730632b3c4d697468aa",
@@ -4764,7 +4719,6 @@
         "6350841ef5cfa49038b54ba53becce45"
       ],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -5384,9 +5338,7 @@
         "abdb0bebd981d38352aa3ec9c565f871",
         "bcbc3084266ca1fdb2526e99ce751958"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "9407217c56fe730f05cc0dc551638460",
@@ -5885,9 +5837,7 @@
         "3770796dfb6e3c227cbebf575a04f006",
         "e7d4f938c0b429fb1ca0ac57374d9818"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "d9a49ba268b6ebeaf1411b260419fada",
@@ -6770,7 +6720,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -7485,7 +7434,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -8933,7 +8881,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -9235,9 +9182,7 @@
         "2964978ff717d3c3ed38f19bb7bb6e02",
         "ad122b83b3fbf1923dd30b04c76dfdc3"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "fa600aab74d9b08b61dc3ff4e769cdaa",
@@ -9275,7 +9220,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -9487,7 +9431,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -9507,7 +9450,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -9527,7 +9469,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -10206,7 +10147,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -10826,7 +10766,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -10846,7 +10785,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -11859,9 +11797,7 @@
         "0c2c49578cd852d28796ef11375ce282",
         "ca4999a07658aae260a39186a97171d5"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "fc61aad399619cc83de0329b8a5f39c5",
@@ -12077,9 +12013,7 @@
         "ad122b83b3fbf1923dd30b04c76dfdc3",
         "ec6eaecf78297c2fd8947a060ad18d64"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "a8df1bb4263cd2fcc4d675a673fc65be",
@@ -12123,9 +12057,7 @@
         "ad122b83b3fbf1923dd30b04c76dfdc3",
         "ec6eaecf78297c2fd8947a060ad18d64"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "204b5b10dff6313d4e77a95338186e68",
@@ -12167,7 +12099,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -12189,7 +12120,6 @@
         "6acd9b2b9cbdfdf5dc7ffb791fc0f3e6"
       ],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -12665,9 +12595,7 @@
         "8ace330a248899e093ac12c303dd4de0",
         "e88a078138dd68d6c6f8794c0be9d592"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "daea2e9852b7dbf390b73e2cf06abe94",
@@ -13156,7 +13084,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -13972,7 +13899,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -14225,7 +14151,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -14245,7 +14170,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -14328,7 +14252,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -14684,7 +14607,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -14746,7 +14668,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -14792,9 +14713,7 @@
         "658b025f2612fea6ad7ae654876df4ac",
         "e7d4f938c0b429fb1ca0ac57374d9818"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "0e1c5cd4061e0e9c3b2283c74be8bfb3",
@@ -14875,7 +14794,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -14915,7 +14833,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -14960,9 +14877,7 @@
         "b5f6d4376f68dc22f6944cddd1e6b1b6",
         "d21f74747e04da47650271116173d57d"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "76596125a9120d567884ee9e5fae4813",
@@ -14983,9 +14898,7 @@
         "c5c185847524255a365eb6003f45b9f1",
         "e4196e19caa94547b84ed046e427a130"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "5aacc966565dbfb3286b840b68a4cba9",
@@ -15007,9 +14920,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "ceb4c93d78ad4a9cb4097b072619d96b"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "6b80b3aa7d4361673c431b4da8bd4988",
@@ -15030,9 +14941,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "b5f6d4376f68dc22f6944cddd1e6b1b6"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "8bf311e9777cac0faaa92f2e8a9b6908",
@@ -15054,9 +14963,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "d8d563d72c970a707651f5c5840e1233"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "391dd360413770e43a3724b1dd806cd0",
@@ -15078,9 +14985,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "b5f6d4376f68dc22f6944cddd1e6b1b6"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "a9ffe649185427f8e00b7adaea591c5c",
@@ -15102,9 +15007,7 @@
         "95701839a42122216bb5b4f1fdb772b9",
         "ee88e2085bcb4a4bb5a28523934f4170"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "e60d33cafb522af9239e76b08ab1818f",
@@ -15126,9 +15029,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "e6c572347435c29b8d8d60f09ca1a6ed"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "918f40849d3a51659454784ac17f33cd",
@@ -15173,9 +15074,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "b8a941d1cf418ac504994e9f98519b26"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "7ec29047064992bfa9a0be10511f97ae",
@@ -15197,9 +15096,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "b5f6d4376f68dc22f6944cddd1e6b1b6"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "2b99f5cdd35eace68ec2e5a407b784c6",
@@ -15242,9 +15139,7 @@
         "1a6be0bcefc34e1bbd66ba6024052bb9",
         "ac3acaa65fa0524177894ff952b3ca78"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "193f3c77a40d84e3d413f0fb3c465d4f",
@@ -15266,9 +15161,7 @@
         "96daa7a86d9f32ea73422c1db54e8577",
         "ac3acaa65fa0524177894ff952b3ca78"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "f344720cb73d909b20d9aedf46e7be27",
@@ -15337,9 +15230,7 @@
         "b5f6d4376f68dc22f6944cddd1e6b1b6",
         "bf3d7b50775e15a5918187cf7ab10b58"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "b091864f5a21219912410fb94c927f8b",
@@ -15361,9 +15252,7 @@
         "b5f6d4376f68dc22f6944cddd1e6b1b6",
         "f2ea522dd68a1d6c18dee10011725388"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "24102589b57b2b050fce617690853bfb",
@@ -15433,9 +15322,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "c2ce8a129ceec5ea5e9cf9d3e3385b92"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "fff2bae32c1f99e3e409e3721a98a450",
@@ -15652,9 +15539,7 @@
         "98e555c97951177953ec4657beeb9e28",
         "ad67b0951af539df5261c9a63c7991cb"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "d4e63928a3193877c1fd7711fcca5055",
@@ -15800,9 +15685,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "f87a394aee3320eb75ae43ada896ca90"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "e1b628ac94ffe29b21dab2ad64e039c0",
@@ -15844,9 +15727,7 @@
         "ad122b83b3fbf1923dd30b04c76dfdc3",
         "b1c4a626aee25bd5f45f4069a5113e97"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "074f7489a21c91a4a869cc4310f69edd",
@@ -15864,7 +15745,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -15952,9 +15832,7 @@
         "ad122b83b3fbf1923dd30b04c76dfdc3",
         "b1c4a626aee25bd5f45f4069a5113e97"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "de188d8ca064ff358dff4f177ef2dbbc",
@@ -15995,9 +15873,7 @@
         "ad122b83b3fbf1923dd30b04c76dfdc3",
         "b1c4a626aee25bd5f45f4069a5113e97"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "ac7642257eca17361aed9e598176b9ab",
@@ -16127,9 +16003,7 @@
         "ad122b83b3fbf1923dd30b04c76dfdc3",
         "b1c4a626aee25bd5f45f4069a5113e97"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "0e385c8e51329d5ca24a7d77c7b1ff33",
@@ -16352,7 +16226,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -16435,7 +16308,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -16480,9 +16352,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "af472fd1363089234adc8bd463bb735a"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "388bcd96e818a30b80c46a864e190c7f",
@@ -16503,9 +16373,7 @@
         "af472fd1363089234adc8bd463bb735a",
         "c14bfe48479709c78fc73d6160df0b51"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "e99f77cf34a7be4f6143d58d03f2a13f",
@@ -16594,9 +16462,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "eb42e5a1446aba56b3d750275acfde02"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "659f96671fb00abbd4bb1322d37138a8",
@@ -16662,9 +16528,7 @@
         "733db006a02e75a789162e342135f1e8",
         "ca4999a07658aae260a39186a97171d5"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "ea57639897a91b7e9bf03455e7f34b9f",
@@ -16770,9 +16634,7 @@
         "af472fd1363089234adc8bd463bb735a",
         "becb9cd69f883071b2f2bf7b7175b3b4"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "76365f435dd9f1a36fb995b3431869f3",
@@ -16794,9 +16656,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "da4bd2e56bb24c6c818ce20cb5a54f17"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "fb417068c8d6b70e3eb0fef8bdb3c191",
@@ -16840,9 +16700,7 @@
         "cd14bc2b09867a47227e9a04dd9dc526",
         "fa63d223510500758b9e88269af7e138"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "33c5efb9484ca83d9f97f08a4ed77f47",
@@ -16862,7 +16720,6 @@
         "7cee6a2a5f40aae3862bdf6bd3343bc4"
       ],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -16885,9 +16742,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "af472fd1363089234adc8bd463bb735a"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "35e5a989aefb57081806b3f56e0ed45b",
@@ -17147,9 +17002,7 @@
         "56d07a296693944245df7c63036db719",
         "ac3acaa65fa0524177894ff952b3ca78"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "de6462d8ed52540c10137db56dad3596",
@@ -17192,9 +17045,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "fa63d223510500758b9e88269af7e138"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "0fefa2323254cbda4d73b99856d32547",
@@ -17214,7 +17065,6 @@
         "7cee6a2a5f40aae3862bdf6bd3343bc4"
       ],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -17259,9 +17109,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "d990923c835b4719752187a249e6dc19"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "e739122b7279926d4ae6c1960d5c56d6",
@@ -17283,9 +17131,7 @@
         "7df049cd2a98d96fa1905158db0c9491",
         "ac3acaa65fa0524177894ff952b3ca78"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "a015cc903876f91c04ee12d48acd5d2b",
@@ -17418,9 +17264,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "f788d2f1f767bb76f0578e6f97a605ef"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "2afa7048a9d2a7619463e93e06788ef2",
@@ -17614,9 +17458,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "af472fd1363089234adc8bd463bb735a"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "407411a069bed78000a7d33d0bb021ad",
@@ -17701,7 +17543,6 @@
         "7cee6a2a5f40aae3862bdf6bd3343bc4"
       ],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -17892,7 +17733,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -17912,7 +17752,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -18002,9 +17841,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "bea9bf0a233c46fd317e221b1a1c7b3d"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "c104231049bf330c2087a379d5c797de",
@@ -18135,9 +17972,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "c9a1643ed1c90bcf36ccc18863b3716a"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "264544513bb7dbad4d2ca28d3e1ebcb3",
@@ -18398,9 +18233,7 @@
         "665907776a9c3baf0a30fcd3f8b158cc",
         "e88a078138dd68d6c6f8794c0be9d592"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "999f0d0622a4f10a56a641176033bf24",
@@ -18482,7 +18315,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -18637,9 +18469,7 @@
         "815710295660a8174a789b40f54ccaee",
         "ac3acaa65fa0524177894ff952b3ca78"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "ac8ea44f7223c39229dd1a1b0e6d8454",
@@ -18661,9 +18491,7 @@
         "393d16738a62c299b44d167f5c63f679",
         "ac3acaa65fa0524177894ff952b3ca78"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "7f28da9cde43c6eea72c8eac32a7a87e",
@@ -18685,9 +18513,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "ce2854e4e2ec587ae27c5248385575c7"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "c61ac792ad68086d29efe84349a93b1f",
@@ -18705,7 +18531,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -18729,9 +18554,7 @@
         "6f8edbf268f8ff80eae8959841b933b7",
         "c6d12522ee844f0525c7edba391f3378"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "2a20ab113c2369c89622809968c60b22",
@@ -18908,9 +18731,7 @@
         "a9755b76e553f9784c22ae923fb5a1a5",
         "ac3acaa65fa0524177894ff952b3ca78"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "18b47ab42e66abb2ee8971b3921c3260",
@@ -18928,7 +18749,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -19014,7 +18834,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -19082,9 +18901,7 @@
         "7ab4934031f53c6eb636f77d34f8e38d",
         "ac3acaa65fa0524177894ff952b3ca78"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "83de4c6b75fcd0388347ae532db6f523",
@@ -19127,9 +18944,7 @@
         "6f8edbf268f8ff80eae8959841b933b7",
         "c6d12522ee844f0525c7edba391f3378"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "91e3771f5e0df37514a074a87622968b",
@@ -19303,9 +19118,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "af472fd1363089234adc8bd463bb735a"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "145e08735835127d07fc266eaa11a232",
@@ -19347,7 +19160,6 @@
         "7cee6a2a5f40aae3862bdf6bd3343bc4"
       ],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -19455,9 +19267,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "af472fd1363089234adc8bd463bb735a"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "f624cb66e6a2fc8d826d8cb87cbbf550",
@@ -19519,7 +19329,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -19906,9 +19715,7 @@
         "bea9bf0a233c46fd317e221b1a1c7b3d",
         "f0eace9f9fa2fb80738989cc8f394bdc"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "e3e20b16d146c95283116369474a09a2",
@@ -20017,9 +19824,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "d1a32f31a24c61e4eb644dfede966e32"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "e25b4eb5ae0842fb8c64d52948b189c9",
@@ -20167,7 +19972,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -20230,7 +20034,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -20298,9 +20101,7 @@
         "815710295660a8174a789b40f54ccaee",
         "ac3acaa65fa0524177894ff952b3ca78"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "082e25ccbf8ac99073021e79b1538fcc",
@@ -20343,9 +20144,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "ce2854e4e2ec587ae27c5248385575c7"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "de7da4ee6cf0226e952b79cdd7e913b5",
@@ -20367,9 +20166,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "ce2854e4e2ec587ae27c5248385575c7"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "a29e4b249eb30d41f783e6413cf5340e",
@@ -20429,7 +20226,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -20581,9 +20377,7 @@
         "c15c9f3b0db52e74593bf0e64007435f",
         "fa63d223510500758b9e88269af7e138"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "f417fc5c2af2f2e6ab0b2cdcdb7f3e8c",
@@ -20673,9 +20467,7 @@
         "9012635d3d4918c8f79d05b5ae088647",
         "ac3acaa65fa0524177894ff952b3ca78"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "9aebd9e3f673d27ebe94550b286c4461",
@@ -20763,9 +20555,7 @@
         "e5e8baea11b99199d4a9a4e8b0f137b9",
         "fb438385551a03d975464fc76b176948"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "8a75a784e98f413af0c5e85c66ad1b20",
@@ -20941,9 +20731,7 @@
         "3dfff402dba1438fff7a1a1e97f30f10",
         "ac3acaa65fa0524177894ff952b3ca78"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "c43e3ef1818af5bdc9063534aca2d8be",
@@ -20965,9 +20753,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "d990923c835b4719752187a249e6dc19"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "1f0c50dc6570a95e0c4f8626b0d3baef",
@@ -21011,9 +20797,7 @@
         "81bf3171ab1ed87e8ce10bb2736f87aa",
         "ac3acaa65fa0524177894ff952b3ca78"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "dd9be7eeb8f8278f55ce51395c67766e",
@@ -21034,9 +20818,7 @@
         "af472fd1363089234adc8bd463bb735a",
         "f639ed417f98070d665bf67d9be4f071"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "cc63d423c4d4b4256ecbf91e1a5c213b",
@@ -21123,9 +20905,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "ecd3afaa1bdc698a41c488599e33956d"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "fcf8c2fa503f3f196bac57d0320dff96",
@@ -21168,9 +20948,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "bea9bf0a233c46fd317e221b1a1c7b3d"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "a328c39ab3ac9ee188fcf04788d4b67b",
@@ -21214,9 +20992,7 @@
         "d1774afb927680e54d8b466b9ec5e4e2",
         "ecd3afaa1bdc698a41c488599e33956d"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "0ae3a29c642184241e730db787b5d617",
@@ -21238,9 +21014,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "bf73e694d5e54e0742d7912a49b3780b"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "1e8e27bcf6fcc092b2354fc8aadbfeee",
@@ -21346,7 +21120,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -21392,9 +21165,7 @@
         "e00e1b6140e01dc8611cedc81be05477",
         "ed0ce4f26699f94b6d949b7da6a7a2b9"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "ddae456a08e53ddfe2e3a3c1d3ad3441",
@@ -21438,9 +21209,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "ed0ce4f26699f94b6d949b7da6a7a2b9"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "c35256906e763e7b1218ce94ae523119",
@@ -21660,9 +21429,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "fa63d223510500758b9e88269af7e138"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "89dcb8812fb021989f292e17ae5d1526",
@@ -21683,9 +21450,7 @@
         "815710295660a8174a789b40f54ccaee",
         "ac3acaa65fa0524177894ff952b3ca78"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "0f8af83a1ef38473e4742ecf8f72348e",
@@ -21751,9 +21516,7 @@
         "bea9bf0a233c46fd317e221b1a1c7b3d",
         "d540027014c2e93f1efbe62bd39e23d2"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "34f3f74745a3cc6b0bb831ece734e84d",
@@ -21796,9 +21559,7 @@
         "97b8b8fa2534c8f66be52c531d32865b",
         "ac3acaa65fa0524177894ff952b3ca78"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "7472ebdd9333694e437487f7b068d6d9",
@@ -22076,9 +21837,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "ed0ce4f26699f94b6d949b7da6a7a2b9"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "6bcb1b09682d9a77e2502b2355ab8f10",
@@ -22099,9 +21858,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "ed0ce4f26699f94b6d949b7da6a7a2b9"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "654abafccc8c0ce9c7cf49d9594ecd66",
@@ -22166,9 +21923,7 @@
         "aa5a42367051a86de4189f556c7e1778",
         "ac3acaa65fa0524177894ff952b3ca78"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "a12f2134f368b006a5efcc895341905f",
@@ -22254,9 +22009,7 @@
         "d990923c835b4719752187a249e6dc19",
         "fe0deab2efaa34d631ac928ca4d22fe5"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "c9335086ddf96acc17f70388cdde9fe2",
@@ -22278,9 +22031,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "bea9bf0a233c46fd317e221b1a1c7b3d"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "6f182add9d6808d268840cb94e9a4221",
@@ -22688,7 +22439,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -22711,7 +22461,6 @@
         "f0644f524b7829d67c466f56497daf69"
       ],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -22961,7 +22710,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -22984,9 +22732,7 @@
         "ad122b83b3fbf1923dd30b04c76dfdc3",
         "b1c4a626aee25bd5f45f4069a5113e97"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "33d23dade5bfb2304ac0cac4b4cfaff9",
@@ -23007,9 +22753,7 @@
         "815710295660a8174a789b40f54ccaee",
         "ac3acaa65fa0524177894ff952b3ca78"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "dbe79b5b050f9f50778c5372f1b01768",
@@ -23031,9 +22775,7 @@
         "56d07a296693944245df7c63036db719",
         "ac3acaa65fa0524177894ff952b3ca78"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "a5392e040d3136ca52455dcbf7d7a1aa",
@@ -23098,9 +22840,7 @@
         "ad122b83b3fbf1923dd30b04c76dfdc3",
         "b1c4a626aee25bd5f45f4069a5113e97"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "f45e070a0295f3793808ae76cae8809b",
@@ -23141,9 +22881,7 @@
         "ad122b83b3fbf1923dd30b04c76dfdc3",
         "b1c4a626aee25bd5f45f4069a5113e97"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "c5810e418e3c80d5b259c2e2a4c5e3ff",
@@ -23164,9 +22902,7 @@
         "ad122b83b3fbf1923dd30b04c76dfdc3",
         "b1c4a626aee25bd5f45f4069a5113e97"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "bcbf788f05019870fd777af3aa67a9e0",
@@ -23209,9 +22945,7 @@
         "ad122b83b3fbf1923dd30b04c76dfdc3",
         "b1c4a626aee25bd5f45f4069a5113e97"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "00c523b312fb91abe1c5f1efbf94c7ab",
@@ -23428,9 +23162,7 @@
         "ad122b83b3fbf1923dd30b04c76dfdc3",
         "b1c4a626aee25bd5f45f4069a5113e97"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "c3bc1a0b6c595def055e609c7cbaf54d",
@@ -23516,9 +23248,7 @@
         "9774498880eb7ff88666c9ed48b72879",
         "da46c7391612306117d92fd353c68fc8"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "7a040a8ae728b1371dd9647c3dd05f2e",
@@ -23558,7 +23288,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -23581,9 +23310,7 @@
         "ad122b83b3fbf1923dd30b04c76dfdc3",
         "b1c4a626aee25bd5f45f4069a5113e97"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "bcf0acf989dc8f46071650487fc583ba",
@@ -23732,9 +23459,7 @@
         "ad122b83b3fbf1923dd30b04c76dfdc3",
         "b1c4a626aee25bd5f45f4069a5113e97"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "e5333001a8486f38e2fc1dc15c754e5f",
@@ -23843,9 +23568,7 @@
         "ad122b83b3fbf1923dd30b04c76dfdc3",
         "b1c4a626aee25bd5f45f4069a5113e97"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "960ce08219fd964bee057bb5505b0186",
@@ -23931,9 +23654,7 @@
         "ad122b83b3fbf1923dd30b04c76dfdc3",
         "b1c4a626aee25bd5f45f4069a5113e97"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "01fec6cff1139f36b19cfd3cea92f445",
@@ -23996,9 +23717,7 @@
         "ad122b83b3fbf1923dd30b04c76dfdc3",
         "b1c4a626aee25bd5f45f4069a5113e97"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "72242a4629fcfcd90d3718d4e6255abf",
@@ -24063,9 +23782,7 @@
         "ad122b83b3fbf1923dd30b04c76dfdc3",
         "b1c4a626aee25bd5f45f4069a5113e97"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "839c5048382f4d523210dd44685e4de1",
@@ -24086,9 +23803,7 @@
         "ad122b83b3fbf1923dd30b04c76dfdc3",
         "b1c4a626aee25bd5f45f4069a5113e97"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "fc4b0d555cb235d4f64b6b651f7e4e3f",
@@ -24109,9 +23824,7 @@
         "d22d075ee5c64f5b54815dc99f86c07c",
         "e88a078138dd68d6c6f8794c0be9d592"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "7521cc66947d899fd22250d2de3b8d69",
@@ -24151,7 +23864,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -24218,9 +23930,7 @@
         "636533dbfaddf517bde574f77d90c087",
         "ac3acaa65fa0524177894ff952b3ca78"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "66ed179f13715a656a2bcb030905e44f",
@@ -24328,9 +24038,7 @@
         "ad122b83b3fbf1923dd30b04c76dfdc3",
         "b1c4a626aee25bd5f45f4069a5113e97"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "3b680fe2af2ff8d794362ae057d39b6b",
@@ -24626,9 +24334,7 @@
         "9ff32ba9532940fa2e2b1b8081bf534a",
         "e7d4f938c0b429fb1ca0ac57374d9818"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "3cf8757855aaa8c2c4df16d419a7fada",
@@ -24732,9 +24438,7 @@
         "ad122b83b3fbf1923dd30b04c76dfdc3",
         "b1c4a626aee25bd5f45f4069a5113e97"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "231ab01e3b4f9aef95dea001e2c3f06d",
@@ -24752,7 +24456,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -24949,9 +24652,7 @@
         "ad122b83b3fbf1923dd30b04c76dfdc3",
         "b1c4a626aee25bd5f45f4069a5113e97"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "bd8f129ed8aa4b767ab8b3ade7e24e14",
@@ -24992,9 +24693,7 @@
         "ad122b83b3fbf1923dd30b04c76dfdc3",
         "b1c4a626aee25bd5f45f4069a5113e97"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "21a64147834c3dbbe4af8528f13bc0c9",
@@ -25083,9 +24782,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "ed0ce4f26699f94b6d949b7da6a7a2b9"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "0634ffcc98d1cc61a785ccf4043778e0",
@@ -25129,9 +24826,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "ecd3afaa1bdc698a41c488599e33956d"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "9ea765397a5b7e2969a3383f70885efc",
@@ -25151,9 +24846,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "af472fd1363089234adc8bd463bb735a"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "0610d44ce6f36a80bb958719184be55d",
@@ -25383,7 +25076,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -25472,9 +25164,7 @@
         "ad122b83b3fbf1923dd30b04c76dfdc3",
         "b1c4a626aee25bd5f45f4069a5113e97"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "55e5a43a1d9f06a55fdea8e40c1b14fa",
@@ -25580,7 +25270,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -25666,9 +25355,7 @@
         "ad122b83b3fbf1923dd30b04c76dfdc3",
         "b1c4a626aee25bd5f45f4069a5113e97"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "5d63443b65b82f9907e088a74d913193",
@@ -25707,7 +25394,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -25886,9 +25572,7 @@
         "15510725a510876e2297aeed29b35f60",
         "e7d4f938c0b429fb1ca0ac57374d9818"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "709e361634cef78daea9f5214ef3f863",
@@ -26409,7 +26093,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -26451,7 +26134,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -26656,7 +26338,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -26807,7 +26488,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -26996,7 +26676,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -27039,7 +26718,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -27081,9 +26759,7 @@
         "e52931a8654f2523658190fe1c4401bc",
         "f809658f19e34b778c4f6c03be592203"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "89d8ccd58b016085f60da01e3072c1a0",
@@ -27254,9 +26930,7 @@
         "15510725a510876e2297aeed29b35f60",
         "e7d4f938c0b429fb1ca0ac57374d9818"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "aec663e7cffc85fbf6fe1b40a0b545de",
@@ -27274,7 +26948,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -27316,7 +26989,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -27507,7 +27179,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -28138,7 +27809,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -28288,9 +27958,7 @@
         "5ecd6f43653c7b3e9f0a945ce850c7cd",
         "ca4999a07658aae260a39186a97171d5"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "b97d29dad82abe99a9dec7c7c963204a",
@@ -29801,7 +29469,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -33930,9 +33597,7 @@
         "7219551b0d3fda1fa8aa2498e7b44763",
         "9525246dde570df0a1500edf2bedfc2c"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "923fbb0fd986bb021c8c7cd8e562af8c",
@@ -34797,7 +34462,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -34969,7 +34633,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -34989,7 +34652,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -41567,7 +41229,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -42503,7 +42164,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -42545,7 +42205,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -42606,7 +42265,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -42694,7 +42352,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -42821,7 +42478,6 @@
         "6684120f129bfaef92a19f9ea068b82d"
       ],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -43201,7 +42857,6 @@
         "6350841ef5cfa49038b54ba53becce45"
       ],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -43264,9 +42919,7 @@
         "215e986d53f54f3ab6bfea5cc8774c8a",
         "ad122b83b3fbf1923dd30b04c76dfdc3"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "c9e9533cab1a15c2cf5b49e7ed5de904",
@@ -43517,7 +43170,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -44040,9 +43692,7 @@
         "9ff32ba9532940fa2e2b1b8081bf534a",
         "e7d4f938c0b429fb1ca0ac57374d9818"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "b964876bac015c88c5fb39b65f28f452",
@@ -44109,9 +43759,7 @@
         "a496b801dec07abf22b21637c729710f",
         "be7a9392b36807d08190bd59b53fbd6e"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "45f5beb6b18b09142b5baeb950888aea",
@@ -44259,7 +43907,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -44639,7 +44286,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -45985,9 +45631,7 @@
         "4f2b31ea777de3044b70cfcb9f78d15a",
         "ed70d36a74113e0aa5b6bad75682a8b9"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "134725860cc47f8ffe94db05d29c6253",
@@ -46212,7 +45856,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -47138,7 +46781,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -47988,7 +47630,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -48344,7 +47985,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -48708,7 +48348,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -48776,9 +48415,7 @@
         "6684120f129bfaef92a19f9ea068b82d",
         "9c9448b7284f298097f0d8ad53c0f455"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "d2db2b4a00d409951aeced8b2fddf416",
@@ -48883,7 +48520,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -49111,7 +48747,6 @@
         "abdb0bebd981d38352aa3ec9c565f871"
       ],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -49494,7 +49129,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -49585,9 +49219,7 @@
         "aa35c1c44dc4cf9e72859415c51589a0",
         "c744948cb378d6c9bf974249a87ac713"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "5c9b883f834f804d34114a09e1c63b59",
@@ -49715,9 +49347,7 @@
         "73bad2156b7821df36d1e4bb932dde2d",
         "aa35c1c44dc4cf9e72859415c51589a0"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "5579676ac1bb6d01d8a3ab791fc7e102",
@@ -50195,9 +49825,7 @@
         "ca4999a07658aae260a39186a97171d5",
         "ea022559d068bfd977ed0dbe01cbe877"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "7736519e8e976a5ac8d674218f662454",
@@ -50409,9 +50037,7 @@
         "aa35c1c44dc4cf9e72859415c51589a0",
         "f7c284efa8bf5ac68b2cf1c5138973da"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "1e1137f0314e2d209b8264c4137bb0bd",
@@ -50776,9 +50402,7 @@
         "3f837c66ab2fb53ad21837ed32210ad6",
         "ca4999a07658aae260a39186a97171d5"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "0cff94d320e3d4f894d68c8c63caf51c",
@@ -51034,7 +50658,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -51057,9 +50680,7 @@
         "73bad2156b7821df36d1e4bb932dde2d",
         "aa35c1c44dc4cf9e72859415c51589a0"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "4ee10fe6035c2bf5b398d01427bdacb7",
@@ -51102,9 +50723,7 @@
         "d914f7d92143dbdd35813875b6cff0af",
         "e7d4f938c0b429fb1ca0ac57374d9818"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "0aa04dc9e76392ae265da9bd089bad6e",
@@ -51435,9 +51054,7 @@
         "658b025f2612fea6ad7ae654876df4ac",
         "e7d4f938c0b429fb1ca0ac57374d9818"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "dbc22fdc3a7deb5561211eeabb14ba5f",
@@ -51517,7 +51134,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -51659,7 +51275,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -51725,9 +51340,7 @@
         "9c1f7ed09945f9a1d9ec7a61e334d1be",
         "aa35c1c44dc4cf9e72859415c51589a0"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "e44d7ba9f138383c49deb8bb913114ef",
@@ -51812,9 +51425,7 @@
         "ded54dbe5278df5aaed7af9ce7c84812",
         "e7d4f938c0b429fb1ca0ac57374d9818"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "3b5621743542b5c1738555ada4d1e93d",
@@ -51892,7 +51503,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -52019,7 +51629,6 @@
         "ce11c30d66312ec85a587ac8290bf882"
       ],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -52041,7 +51650,6 @@
         "ce11c30d66312ec85a587ac8290bf882"
       ],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -52083,7 +51691,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -52169,7 +51776,6 @@
         "ce11c30d66312ec85a587ac8290bf882"
       ],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -52193,9 +51799,7 @@
         "c9211944718d87db537cf28cb759836b",
         "ca4999a07658aae260a39186a97171d5"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "530b5a26c6f845927f71c33fe1bf504f",
@@ -52216,9 +51820,7 @@
         "c948a12a2f7e6a2de55e893a416a495f",
         "ca4999a07658aae260a39186a97171d5"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "785324799d5b49ff1e3a59b09780d5d0",
@@ -52323,7 +51925,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -52365,7 +51966,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -52385,7 +51985,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -52446,7 +52045,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -52762,7 +52360,6 @@
         "6350841ef5cfa49038b54ba53becce45"
       ],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -52784,7 +52381,6 @@
         "6350841ef5cfa49038b54ba53becce45"
       ],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -53497,7 +53093,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -54690,7 +54285,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -55052,7 +54646,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -55271,9 +54864,7 @@
         "ca4999a07658aae260a39186a97171d5",
         "e7a6644ef2b5abb0bd48eab0f739cda7"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "f2c96a9926fbad56480927c39b1a97eb",
@@ -55488,7 +55079,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -55664,9 +55254,7 @@
         "dbe72a0037e35cd527512a7a71c3b402",
         "e7d4f938c0b429fb1ca0ac57374d9818"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "23240239c5001f1d66391c27db9c2b9b",
@@ -55730,9 +55318,7 @@
         "c4c2ea914c71fec71839a36269a6b6c5",
         "ca4999a07658aae260a39186a97171d5"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "41128cca38e53f39ec88e065a123425f",
@@ -56404,9 +55990,7 @@
         "944eb8e6bb28ffafec8f7a38d711b58a",
         "ca4999a07658aae260a39186a97171d5"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "845f2a3611b095f64808360883656d5b",
@@ -56472,9 +56056,7 @@
         "b80f68bcbb45339f9404ee749f07b3e2",
         "be7a9392b36807d08190bd59b53fbd6e"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "300493d2217a2512cf16df0059fd73c6",
@@ -56859,7 +56441,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -56901,7 +56482,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -57783,9 +57363,7 @@
         "a5582bafe5fd4a3ff8afa3edaaa685e5",
         "be7a9392b36807d08190bd59b53fbd6e"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "5705bb65f2237c7924c31225c754a320",
@@ -58075,7 +57653,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -58183,7 +57760,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -58636,7 +58212,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -58809,7 +58384,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -59692,7 +59266,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -59823,9 +59396,7 @@
         "25ef52782737cf777c6cef64820f0cf8",
         "bd3a3b7188d608f9ba12d2c21107ddec"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "938b7642f994950546982f73d6cbb078",
@@ -60302,9 +59873,7 @@
         "6684120f129bfaef92a19f9ea068b82d",
         "ec312366d3ea6dd0b85c30d2ae4e8db2"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "6df2501b95d744bff827ad110b734def",
@@ -60322,7 +59891,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -60642,7 +60210,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -60791,7 +60358,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -61070,7 +60636,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -61094,9 +60659,7 @@
         "b2f3141e66c666730449c0443939b974",
         "e7d4f938c0b429fb1ca0ac57374d9818"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "5e7af15fa920e3a85f36186dc522eec8",
@@ -61249,9 +60812,7 @@
         "ed98751433a9b9c15456364e0e06da51",
         "f616d24f29a3e4a6675514e87b4ffac5"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "bd562f30d21d6f871fdecc1ffa453ee1",
@@ -61488,9 +61049,7 @@
         "3f837c66ab2fb53ad21837ed32210ad6",
         "ca4999a07658aae260a39186a97171d5"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "52b7cbce65f96ddf54c3b36eb7b91b74",
@@ -61576,9 +61135,7 @@
         "c948a12a2f7e6a2de55e893a416a495f",
         "ca4999a07658aae260a39186a97171d5"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "9fe65e71725b46b757439a1482186992",
@@ -61621,9 +61178,7 @@
         "aba4e8c9be95d4611a93a3005832cc84",
         "ca4999a07658aae260a39186a97171d5"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "f390b187c9926b57fcf091833d09101b",
@@ -61791,7 +61346,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -62475,7 +62029,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -62647,9 +62200,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "ed0ce4f26699f94b6d949b7da6a7a2b9"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "fe5ce68151d85be49248341b6f77806b",
@@ -62710,7 +62261,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -63227,9 +62777,7 @@
         "62e742e468043e59484f2006ee07b38d",
         "ca4999a07658aae260a39186a97171d5"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "ab5b4ff989bc63357aef3d1f85c00cdf",
@@ -63338,9 +62886,7 @@
         "e7d4f938c0b429fb1ca0ac57374d9818",
         "f2dae1f7ba805d40c2ecfb26ffdd1550"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "666ccae1105252b1ed132d42d659bba0",
@@ -63358,7 +62904,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -63616,7 +63161,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -63763,7 +63307,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -63805,7 +63348,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -64062,7 +63604,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -64213,7 +63754,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -64234,7 +63774,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -64255,7 +63794,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -65087,9 +64625,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "e6ad9f607fefbae721554a475eefa518"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "f596d29bdecddbd85f050d9dedd89497",
@@ -65215,7 +64751,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -66003,7 +65538,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -66105,7 +65639,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -66146,7 +65679,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -66169,9 +65701,7 @@
         "47d73d60f7531dc03b6e2bb8f5e97bed",
         "ac3acaa65fa0524177894ff952b3ca78"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "fade6c071bdeedfe232783efe5ff1abe",
@@ -66863,7 +66393,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -66969,9 +66498,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "e6ad9f607fefbae721554a475eefa518"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "00796afabf734317ef6bf833953be14f",
@@ -67189,9 +66716,7 @@
         "4b72cf38dbae97922ec9fb04e0bd4bec",
         "61b31516fe881f77cfc431d8e2f73a61"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "ffb2cac691c2ce59bff7043898bd5554",
@@ -67485,9 +67010,7 @@
         "ca4999a07658aae260a39186a97171d5",
         "ce768bf0a676b0650fafdb4b62ec10dd"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "91f0ac2be39e11e8085c85d8963eb4dd",
@@ -67679,9 +67202,7 @@
         "d8c915bbd38d2741dc39dfde66695e33",
         "f8420b91f72ae28380fff825a7b4ee5c"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "a9570f6c3c903ad978f0ae7c75dd2dab",
@@ -67978,7 +67499,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -68020,7 +67540,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -68041,7 +67560,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -68084,9 +67602,7 @@
         "ca4999a07658aae260a39186a97171d5",
         "f169aca80a54b4767de4377a598c945f"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "fb973e462931f61d08916b41ea522d18",
@@ -68447,7 +67963,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -68814,9 +68329,7 @@
         "c4c2ea914c71fec71839a36269a6b6c5",
         "ca4999a07658aae260a39186a97171d5"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "836a605c4c469a14083efc27a5e5718c",
@@ -69072,9 +68585,7 @@
         "47d73d60f7531dc03b6e2bb8f5e97bed",
         "ac3acaa65fa0524177894ff952b3ca78"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "7c44ba5793f595d2ad93a44e4a8180a7",
@@ -69135,7 +68646,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -69263,7 +68773,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -69415,9 +68924,7 @@
         "ac3acaa65fa0524177894ff952b3ca78",
         "d5a9d97faf3a121713d6b60799a4ab42"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "52c2c27b131eaaca17e2ca33aed7c904",
@@ -69722,9 +69229,7 @@
         "38562914c8da02c870af5b238889782e",
         "ac3acaa65fa0524177894ff952b3ca78"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "2e5ccb8e77d8cf57605b3643af1386dc",
@@ -69788,9 +69293,7 @@
         "7c86182c747a9be1eacc3f6164f02836",
         "ac3acaa65fa0524177894ff952b3ca78"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "cc54e60a5cfe9888a635a5a5f9f70007",
@@ -69998,7 +69501,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -70292,9 +69794,7 @@
         "97e22f2bf7ce1c12eac9ed402293850a",
         "ac3acaa65fa0524177894ff952b3ca78"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "8fb81071d4819b63d647b9f0c560d0a6",
@@ -70316,9 +69816,7 @@
         "785bfc7dd5bfd5524700968f7d759f0e",
         "ac3acaa65fa0524177894ff952b3ca78"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "2a92f7632ad8f2c4000598d179cdf34d",
@@ -70448,7 +69946,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -70677,9 +70174,7 @@
         "da46c7391612306117d92fd353c68fc8",
         "e1bec91aab8fd2843fee0ca6d00c8dc1"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "49a4cc083175832b0571389ea3fa9426",
@@ -70930,9 +70425,7 @@
         "19c393fecb9d5153f995bdf1ffe579ec",
         "6684120f129bfaef92a19f9ea068b82d"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "8778fff1f0cff464e95f73aa5f6aac25",
@@ -71013,9 +70506,7 @@
         "b8546c9fff1b3f12b1856d62fe8a2bf1",
         "ca4999a07658aae260a39186a97171d5"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "13cb4f2906b62ac9c6b0455cb6bd1dec",
@@ -71327,7 +70818,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -71347,7 +70837,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -71429,7 +70918,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -80061,7 +79549,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -83538,7 +83025,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -83785,7 +83271,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -84865,9 +84350,7 @@
         "9ff32ba9532940fa2e2b1b8081bf534a",
         "e7d4f938c0b429fb1ca0ac57374d9818"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "8a393742f2fee0e12e1b4f56c73ad2cf",
@@ -87643,7 +87126,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -87705,7 +87187,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -89841,9 +89322,7 @@
         "4b72cf38dbae97922ec9fb04e0bd4bec",
         "ec1e3287266ef3b7b11373ffa6c7b15c"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "0f4906895a80dc497245d20952c26cef",
@@ -90679,7 +90158,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -91969,7 +91447,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -92506,7 +91983,6 @@
         "c86c84731ad02b57c405d5392c249c2e"
       ],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -92526,7 +92002,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -93028,7 +92503,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -93156,7 +92630,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -93954,7 +93427,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -94575,7 +94047,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -94701,7 +94172,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -94763,7 +94233,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -94784,7 +94253,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -94891,7 +94359,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -95186,7 +94653,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -95251,7 +94717,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -98046,7 +97511,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -98318,7 +97782,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -100289,7 +99752,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -100429,7 +99891,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -103544,7 +103005,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -103564,7 +103024,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -103584,7 +103043,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -105217,7 +104675,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -106285,7 +105742,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -107787,7 +107243,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -108079,7 +107534,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -108099,7 +107553,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -108119,7 +107572,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -108158,7 +107610,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -108218,7 +107669,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -108260,7 +107710,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -108280,7 +107729,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -108448,7 +107896,6 @@
         "6acd9b2b9cbdfdf5dc7ffb791fc0f3e6"
       ],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -108468,7 +107915,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -108488,7 +107934,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -108761,7 +108206,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -108868,7 +108312,6 @@
         "ecc3e8fcdd50d99cae33f2ed93d780fb"
       ],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -109102,9 +108545,7 @@
         "5f67b34182366487a925d8c60acd7a5d",
         "ea561e0aa183dfa8f92fd2c41d32ea4e"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "68c22f9d563a072fdb6dcf50fcdc15de",
@@ -109213,7 +108654,6 @@
         "ecc3e8fcdd50d99cae33f2ed93d780fb"
       ],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -109321,7 +108761,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -109404,7 +108843,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -109598,9 +109036,7 @@
         "4d81ccdfff4834bf1fc681f045def54b",
         "ca4999a07658aae260a39186a97171d5"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "829718e1546f2f52943ae888e0f48f22",
@@ -109618,7 +109054,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -109638,7 +109073,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -110385,9 +109819,7 @@
         "d914f7d92143dbdd35813875b6cff0af",
         "e7d4f938c0b429fb1ca0ac57374d9818"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "f62f75d09aa8d9c2277828abad249036",
@@ -110448,7 +109880,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -110790,9 +110221,7 @@
         "d5140010781e36439cbbb04636a36973",
         "ea022559d068bfd977ed0dbe01cbe877"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "d34f00bef7b50bfd613a88c77aad9b85",
@@ -110813,9 +110242,7 @@
         "d5140010781e36439cbbb04636a36973",
         "ea022559d068bfd977ed0dbe01cbe877"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "030fea77f7286803b313c16a9d600d34",
@@ -110961,7 +110388,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -111007,9 +110433,7 @@
         "8ea6b6db8684b89ac6cfedb16c116598",
         "ca4999a07658aae260a39186a97171d5"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "fe8b98968e14121b5864582cc8febd7e",
@@ -111139,9 +110563,7 @@
         "ca4999a07658aae260a39186a97171d5",
         "ea022559d068bfd977ed0dbe01cbe877"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "2c7c21b4a263b52d13d0038b9bbf0b7b",
@@ -111181,7 +110603,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -111502,7 +110923,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -111592,9 +111012,7 @@
         "945c45da58b29d5fa0963566bde7cc4a",
         "ca4999a07658aae260a39186a97171d5"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "51082bcd26048ef475072a6c6717f45a",
@@ -111679,7 +111097,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -111903,9 +111320,7 @@
         "8ea6b6db8684b89ac6cfedb16c116598",
         "ca4999a07658aae260a39186a97171d5"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "4278a7352c36816ad160f3fde003386f",
@@ -111949,9 +111364,7 @@
         "8ea6b6db8684b89ac6cfedb16c116598",
         "ca4999a07658aae260a39186a97171d5"
       ],
-      "reviewKinds": [
-        "leg_or_construction_scope_unresolved"
-      ]
+      "reviewKinds": []
     },
     {
       "evidenceId": "6826b8bf72597bde3f4e90049008a7f3",
@@ -111989,7 +111402,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -112095,7 +111507,6 @@
         "7f6c8c84c8c8a636e834b44449e710dd"
       ],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -112497,7 +111908,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -113831,7 +113241,6 @@
         "ecc3e8fcdd50d99cae33f2ed93d780fb"
       ],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -114121,7 +113530,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -114141,7 +113549,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -114659,7 +114066,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -115541,7 +114947,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -115944,7 +115349,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -116069,7 +115473,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -117592,7 +116995,6 @@
         "6350841ef5cfa49038b54ba53becce45"
       ],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -119438,7 +118840,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved",
         "trailing_address_metadata_review"
       ]
@@ -120713,7 +120114,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -120753,7 +120153,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -120773,7 +120172,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -120793,7 +120191,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -120813,7 +120210,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -120913,7 +120309,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -120933,7 +120328,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -120953,7 +120347,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -120973,7 +120366,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -121139,7 +120531,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -122116,7 +121507,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -122357,7 +121747,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },
@@ -122377,7 +121766,6 @@
       ],
       "placeCandidateIds": [],
       "reviewKinds": [
-        "leg_or_construction_scope_unresolved",
         "qualified_location_unresolved"
       ]
     },

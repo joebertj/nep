@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "database": "/Users/joebertj/nep/location_data/philippine_locations.sqlite",
   "placesByLevel": {
+    "administrative_district": 1,
     "barangay": 46619,
     "city": 249,
     "country": 1,
@@ -12,15 +13,15 @@
     "source_container": 4
   },
   "counts": {
-    "sources": 113,
-    "aliases": 56206,
+    "sources": 127,
+    "aliases": 58882,
     "leg_districts": 331,
-    "leg_memberships": 60305,
+    "leg_memberships": 60306,
     "representatives": 766,
     "representative_terms": 1761,
-    "deos": 205,
+    "deos": 224,
     "deo_leg_claims": 108,
-    "observations": 24765,
+    "observations": 36559,
     "issues": 11210
   },
   "issuesByKind": {
@@ -54,11 +55,53 @@
       "note": "Source of the existing transcription; no new OCR performed."
     },
     {
+      "path": "/Users/joebertj/nep/analysis_output/all_house_only_candidates.json",
+      "family": "external_analyst_export",
+      "kind": "comparison_rows",
+      "disposition": "imported",
+      "note": "External candidate labels are assertions, not verified insertion or LEG facts. Original records retained."
+    },
+    {
       "path": "/Users/joebertj/nep/analysis_output/butuan_congress_location_edge_cases.json",
       "family": "butuan_location_review",
       "kind": "derived_location_role_review",
       "disposition": "imported",
       "note": "Source-specific scope review; does not establish district boundaries or adjust public allocations."
+    },
+    {
+      "path": "/Users/joebertj/nep/analysis_output/congress_geographic_attribution_db_3rd.json",
+      "family": "local_strict_leg_audit",
+      "kind": "derived_geography",
+      "disposition": "imported",
+      "note": "Current strict audit; undated memberships are not promoted."
+    },
+    {
+      "path": "/Users/joebertj/nep/analysis_output/deo_leg_boundary_crosswalk.json",
+      "family": "dpwh_arcgis_boundaries",
+      "kind": "boundary_overlay",
+      "disposition": "imported",
+      "note": "Cached boundary overlap, effective dates unknown; not FY2027 attribution or allocation weights."
+    },
+    {
+      "path": "/Users/joebertj/nep/analysis_output/dpwh-projects-filtered.json",
+      "family": "external_analyst_export",
+      "kind": "comparison_rows",
+      "disposition": "imported",
+      "note": "External candidate labels are assertions, not verified insertion or LEG facts. Original records retained."
+    },
+    {
+      "path": "/Users/joebertj/nep/analysis_output/hb_nep_comparison_3rd.csv",
+      "family": "local_nep_hgab_comparison",
+      "kind": "derived_comparison",
+      "disposition": "imported",
+      "note": "Local matching output, not external insertion proof."
+    },
+    {
+      "path": "/Users/joebertj/nep/analysis_output/inventory_location_evidence.json",
+      "family": "dpwh_inventory_asset_locations",
+      "kind": "screened_physical_asset_context",
+      "disposition": "imported",
+      "note": "Exact assets and full municipal containment; current local-map screening. Not official boundary verification or historic officeholder evidence."
     },
     {
       "path": "/Users/joebertj/nep/build_rcs_analysis.py",
@@ -68,11 +111,60 @@
       "note": "Rainfall P-codes are source-specific legacy codes, not asserted current PSGC identifiers."
     },
     {
+      "path": "/Users/joebertj/nep/data_sources/arcgis_dpwh/archive/selected/city_municipal_boundaries/layers/City_Municipal_Boundaries_FeatureServer_0-0340fd6a/features.jsonl",
+      "family": "dpwh_arcgis_boundaries",
+      "kind": "boundary_municipal",
+      "disposition": "imported",
+      "note": "{\"path\": \"data_sources/arcgis_dpwh/archive/selected/city_municipal_boundaries/layers/City_Municipal_Boundaries_FeatureServer_0-0340fd6a/features.jsonl\", \"sha256\": \"567ff6f78664af741d035e7a93acb3868a637e86cd598724801a114815d480c2\", \"count\": 1668, \"crs\": \"EPSG:32651\", \"copyright\": \"Source: Original source from NAMRIA rectified digitally by the GIA Staff of Statistics Division, Planning Service, DPWH (As of March 2022).\\n\\nReferences/Resources : Open Street Map (basemap), Phil Statistics Authority\", \"effectiveFrom\": null, \"effectiveTo\": null, \"layerMetadata\": \"data_sources/arcgis_dpwh/archive/selected/city_municipal_boundaries/layers/City_Municipal_Boundaries_FeatureServer_0-0340fd6a/metadata.json\"}"
+    },
+    {
+      "path": "/Users/joebertj/nep/data_sources/arcgis_dpwh/archive/selected/congressional_districts/layers/Congressional_District_FeatureServer_0-277792f6/features.jsonl",
+      "family": "dpwh_arcgis_boundaries",
+      "kind": "boundary_leg",
+      "disposition": "imported",
+      "note": "{\"path\": \"data_sources/arcgis_dpwh/archive/selected/congressional_districts/layers/Congressional_District_FeatureServer_0-277792f6/features.jsonl\", \"sha256\": \"712eeb1509a90cc9488c4415901042b0c486ad23459874bd674d7b4a182c3a62\", \"count\": 245, \"crs\": \"EPSG:32651\", \"copyright\": \"Source: Original source from NAMRIA rectified digitally by the GIA Staff of Statistics Division, Planning Service, DPWH (As of March 2022).\", \"effectiveFrom\": null, \"effectiveTo\": null, \"layerMetadata\": \"data_sources/arcgis_dpwh/archive/selected/congressional_districts/layers/Congressional_District_FeatureServer_0-277792f6/metadata.json\"}"
+    },
+    {
+      "path": "/Users/joebertj/nep/data_sources/arcgis_dpwh/archive/selected/engineering_districts/layers/Engineering_District_FeatureServer_0-ac70a8f7/features.jsonl",
+      "family": "dpwh_arcgis_boundaries",
+      "kind": "boundary_deo",
+      "disposition": "imported",
+      "note": "{\"path\": \"data_sources/arcgis_dpwh/archive/selected/engineering_districts/layers/Engineering_District_FeatureServer_0-ac70a8f7/features.jsonl\", \"sha256\": \"49244b863a107c5263ed523058ea9318669e558dc174c4325ee0a2fc845629e6\", \"count\": 203, \"crs\": \"EPSG:32651\", \"copyright\": \"Source: Original source of City/Municipality boundary from Land Management Bureau (LMB) since 2014. Updates of Attribute data by the GIA Staff of Statistics Division, Planning Service, DPWH (As of December 2023).\\n\\nUpdates as of August 2024\\nUpdates of DEO for Southern Leyte and Zamboanga City as of May 2024\\n\\nReferences/Resources : Open Street Map (basemap), Phil Statistics Authority\\nEdited as of  September 2022\\nEdited as of  July 2022\\nEdited as of  May 2022, Camarines Norte Sub-DEO\\nEdited as of  May 2022, Davao del Norte Sub-DEO\\nEdited as of  January 2022, Southern Leyte and Southern Leyte Sub DEO\\nEdited as of  October 2021, Edits, Marawi, Cotabato City  to BARMM\\nEdited as of  April 22, 2021, Edits of Cavite 1st & 2nd DEO\\nEdited as of  March 25, 2021, Renaming of Compostela Valley to Davao de Oro DEO\\nEdited as of  February 23, 2021, Addition of Cebu 7th DEO\\nEdited as of  January 21, 2021, DEOs of Bukidnon returned to original DEO nos\\nEdited as of November 11, 2020: Suspension of Comp. Valley Sub-DEO, D.O. 86 s2020\\nEdited as of September 2020: Created Comp. Valley Sub-DEO, D.O. 66 s2020\\nEdited as of June 8, 2020: Created Negros Occ. Sub-DEO\\nEdited as of January 24, 2020: Updated boundary of Cotabato 1st, 2nd and new sub DEO\\nEdited as of November 11, 2019: Updated boundary of Quezon 2nd DEO, Batangas 3rd and 4th DEO\\nEdited as of November 12, 2019: Updated boundary of Laguna 3rd DEO, Batangas 1st DEO, Cavite 2nd DEO\", \"effectiveFrom\": null, \"effectiveTo\": null, \"layerMetadata\": \"data_sources/arcgis_dpwh/archive/selected/engineering_districts/layers/Engineering_District_FeatureServer_0-ac70a8f7/metadata.json\"}"
+    },
+    {
       "path": "/Users/joebertj/nep/hb10858_3rd_dpwh_projects.json",
-      "family": "HGAB_3rd_DPWH",
-      "kind": "budget_office_observations",
+      "family": "HGAB_3rd_native",
+      "kind": "allocation_extract",
       "disposition": "imported",
       "note": null
+    },
+    {
+      "path": "/Users/joebertj/nep/location_data/location_text.py",
+      "family": "PH_location_text_rules",
+      "kind": "shared_location_normalization",
+      "disposition": "imported",
+      "note": "Address lookup only; original titles, metadata and construction scope retained."
+    },
+    {
+      "path": "/Users/joebertj/nep/location_data/manual_location_decisions.json",
+      "family": "human_location_review",
+      "kind": "human_classification",
+      "disposition": "imported",
+      "note": "Title-scoped corrections; no global alias or boundary change."
+    },
+    {
+      "path": "/Users/joebertj/nep/location_data/name_spelling_decisions.json",
+      "family": "human_spelling_review",
+      "kind": "user_confirmed_name_variants",
+      "disposition": "imported",
+      "note": "Spelling equivalence only; no place merging, location inference or boundary assignment."
+    },
+    {
+      "path": "/Users/joebertj/nep/location_data/project_location_scope.py",
+      "family": "PH_project_location_scope",
+      "kind": "qualified_location_match_veto",
+      "disposition": "imported",
+      "note": "Rejects explicitly conflicting qualified location names; does not establish project or LEG identity."
     },
     {
       "path": "/Users/joebertj/open-data-visualization/city_barangays_mapping.json",
@@ -101,6 +193,13 @@
       "kind": "representative_roster",
       "disposition": "imported",
       "note": null
+    },
+    {
+      "path": "/Users/joebertj/open-data-visualization/static/data/administrative_locality_crosswalk.json",
+      "family": "administrative_locality_crosswalk",
+      "kind": "parent_qualified_locality_to_leg",
+      "disposition": "imported",
+      "note": "Explicit administrative-area crosswalk with linked source evidence; these records are not barangays."
     },
     {
       "path": "/Users/joebertj/open-data-visualization/static/data/barmm_overrides.json",
@@ -828,7 +927,7 @@
       "family": "dpwh_district_pdf_transcription",
       "kind": "deo_leg_crosswalk",
       "disposition": "imported",
-      "note": "Existing literal JavaScript transcription; fiscal year, stage and source pages unknown. Not project reallocation."
+      "note": "Existing literal JavaScript transcription of DPWH per district.pdf, provided by PCIJ per contributor confirmation on 2026-10-11; fiscal year, stage and source pages unverified. Not project reallocation."
     }
   ]
 }

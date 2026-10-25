@@ -47,7 +47,7 @@ def merge():
    text=re.sub(r'#'+re.escape(old)+r'(?=[\s{,:.#>\[\)\"\']|$)','#'+new,text)
   return text
  donor=prefix(donor);donor_scripts=prefix(native_scripts(detail))
- # Keep the detailed annex hero first, with named evidence directly below the annex.
+ # Keep the detailed annex hero first; place section jumps after all NIA evidence.
  navigation='<p class="nia-scope-links"><a href="#nia-detailed-irrigation">Detailed irrigation works ↓</a> · <a href="#nia-named-projects">Named NIA projects ↓</a></p>'
  donor='<div id="nia-detailed-irrigation">'+donor+'</div>'
  head=named.split('</head>',1)[0]+'</head>'
@@ -64,7 +64,7 @@ def merge():
   key=m[1].split('?')[0]
   if key not in seen:external.append(m[0]);seen.add(key)
  csv_handler=re.search(r'<script id="investigation-evidence-script"[^>]*>.*?</script>',named,re.S)
- page=head+body_tag+header+'<main class="wrap">'+navigation+donor+START+saved+END+'</main>'+SCRIPT_START+scripts+SCRIPT_END+donor_scripts+(csv_handler[0] if csv_handler else '')+''.join(external)+footer+'</body></html>'
+ page=head+body_tag+header+'<main class="wrap">'+donor+START+saved+END+navigation+'</main>'+SCRIPT_START+scripts+SCRIPT_END+donor_scripts+(csv_handler[0] if csv_handler else '')+''.join(external)+footer+'</body></html>'
  named_path.write_text(page);(OUT/'nia.html').write_text(page)
  (OUT/'nia_page_merge.json').write_text(json.dumps({'canonicalPage':'nia.html','detailSource':'nia-irrigation.html','namedSourcePreservedInMarkers':True,'namespacedIds':mapping,'sourceHashes':{'detail':hashlib.sha256(detail.encode()).hexdigest()},'scope':'Presentation merge; project records and allocations are unchanged; the two NIA scopes are not summed.'},indent=2)+'\n')
  return mapping

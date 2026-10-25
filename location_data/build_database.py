@@ -351,6 +351,25 @@ class Builder:
             prov=self.province(name,sid,code,reg)
             self.db.execute('INSERT OR IGNORE INTO place_codes VALUES(?,?,?,?,?)',(prov,'legacy_rainfall_pcode',code,sid,code))
 
+    def administrative_localities(self,path):
+        """Import explicit district localities separately from barangays."""
+        sid=self.source(path,'administrative_locality_crosswalk','parent_qualified_locality_to_leg',
+            note='Explicit administrative-area crosswalk with linked source evidence; these records are not barangays.')
+        for row in json.loads(path.read_text()).get('records',[]):
+            if row.get('level')!='administrative_district':
+                self.issue('unsupported_administrative_locality_level',row.get('locality'),sid,row.get('locality'),row)
+                continue
+            parents=self.find(row.get('parentCity',''),('city',))
+            if len(parents)!=1:
+                self.issue('administrative_locality_parent_ambiguous',row.get('locality'),sid,row.get('locality'),{'row':row,'parentCandidates':parents})
+                continue
+            pid=self.locality(row['locality'],parents[0],sid,row['jurisdiction']+'/'+row['locality'],'administrative_district')
+            leg_id=self.leg(row['jurisdiction'],row['districtLabel'],sid,row['jurisdiction']+'/'+row['districtLabel'])
+            self.membership([pid],leg_id,sid,row['jurisdiction']+'/'+row['locality'],row,
+                scope='explicit_administrative_locality')
+            for source_url in row.get('sources',[]):
+                self.observed(sid,source_url,'administrative_locality_source',{'locality':row['locality'],'jurisdiction':row['jurisdiction'],'url':source_url})
+
     def edge_cases(self,path):
         sid=self.source(path,'butuan_location_review','derived_location_role_review',note='Source-specific scope review; does not establish district boundaries or adjust public allocations.')
         data=json.loads(path.read_text())
@@ -389,6 +408,7 @@ def main():
     import_if(DATA/'20th_congress_representatives.json',b.roster)
     for name,family,generated in [('districts_generated.json','election_generated',True),('districts.json','compiled_districts',False),('districts.json.wiki-backup','compiled_districts',False),('districts.json.pre-cities-backup','compiled_districts',False),('barmm_overrides.json','manual_barmm_overrides',False)]:
         import_if(DATA/name,b.district_maps,family,generated)
+    import_if(DATA/'administrative_locality_crosswalk.json',b.administrative_localities)
     import_if(DATA/'congressmen_consolidated.json',b.historical_reps)
     import_if(ODV/'static/nep-preview/congress.html',b.deo_crosswalk,ROOT/'DPWH per district.pdf')
     import_if(ROOT/'hb10858_3rd_dpwh_projects.json',b.office_observations)

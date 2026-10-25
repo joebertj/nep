@@ -176,6 +176,11 @@ for an unchanged type, parent context and normalized identity.
 ## Identity and hierarchy
 
 - Names are lookup labels. IDs include geographic level and parent context.
+- Administrative areas that are named in project titles but are not barangays
+  use `static/data/administrative_locality_crosswalk.json`. Malate, Manila is
+  stored as a Manila administrative district and linked to the Fifth District;
+  the separate Malate barangay under Palayan remains unchanged. The strict
+  title resolver uses the parent-qualified entry when coordinates are absent.
 - Province **Quezon**, municipality **Quezon**, **Quezon City**, and barangays
   called **Quezon** are distinct candidates. Directions and punctuation remain.
 - Accent and case variants share a lookup key; accent folding does not force

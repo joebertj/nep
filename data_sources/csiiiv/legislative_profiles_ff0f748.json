@@ -1,0 +1,2573 @@
+{
+  "source": {
+    "repository": "https://github.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS",
+    "commit": "ff0f7485ec4b97f92fa627eb1128e9871cc980bf",
+    "file": "DEO2LEG/outputs/deo_leg_crosswalk.json",
+    "schemaVersion": "2.1.0",
+    "sourceNote": "Seat-to-member associations and official congress.gov.ph directory profile links/photos only. DEO-to-LEG allocations and amounts are not imported."
+  },
+  "districts": [
+    {
+      "districtId": "leg:abra:lone",
+      "jurisdiction": "ABRA",
+      "districtLabel": "lone",
+      "representative": "Bernos, JB",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/I098",
+      "photoFile": "bernos-jb.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:agusan-del-norte:lone",
+      "jurisdiction": "AGUSAN DEL NORTE",
+      "districtLabel": "lone",
+      "representative": "Corvera, Dale B.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K023",
+      "photoFile": "corvera-dale-b.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:agusan-del-sur:1st",
+      "jurisdiction": "AGUSAN DEL SUR",
+      "districtLabel": "1st",
+      "representative": "Bascug, Alfelito \"Alfel\" M.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J014",
+      "photoFile": "bascug-alfelito-alfel-m.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:agusan-del-sur:2nd",
+      "jurisdiction": "AGUSAN DEL SUR",
+      "districtLabel": "2nd",
+      "representative": "Plaza, Eddiebong G.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J057",
+      "photoFile": "plaza-eddiebong-g.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:aklan:1st",
+      "jurisdiction": "AKLAN",
+      "districtLabel": "1st",
+      "representative": "Marquez, Jesus \"Jess\" R.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L061",
+      "photoFile": "marquez-jesus-jess-r.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:aklan:2nd",
+      "jurisdiction": "AKLAN",
+      "districtLabel": "2nd",
+      "representative": "Miraflores, Florencio T.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/E048",
+      "photoFile": "miraflores-florencio-t.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:albay:1st",
+      "jurisdiction": "ALBAY",
+      "districtLabel": "1st",
+      "representative": "Lagman, Cielo Krisel",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/C065",
+      "photoFile": "lagman-cielo-krisel.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:albay:2nd",
+      "jurisdiction": "ALBAY",
+      "districtLabel": "2nd",
+      "representative": "Loria, Carlos Andes",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L057",
+      "photoFile": "loria-carlos-andes.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:albay:3rd",
+      "jurisdiction": "ALBAY",
+      "districtLabel": "3rd",
+      "representative": "Salceda, Adrian E.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L072",
+      "photoFile": "salceda-adrian-e.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:antipolo-city:1st",
+      "jurisdiction": "ANTIPOLO CITY",
+      "districtLabel": "1st",
+      "representative": "Puno, Ronaldo V.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/E052",
+      "photoFile": "puno-ronaldo-v.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:antipolo-city:2nd",
+      "jurisdiction": "ANTIPOLO CITY",
+      "districtLabel": "2nd",
+      "representative": null,
+      "resolutionStatus": "ambiguous_multiple_listed",
+      "detailUrl": null,
+      "photoFile": null,
+      "candidates": [
+        {
+          "name": "Acop, Philip Conrad \"Dok Bong\" M.",
+          "detailUrl": "https://www.congress.gov.ph/house-members/view/L104",
+          "photoFile": "acop-philip-conrad-dok-bong-m.jpg"
+        },
+        {
+          "name": "Acop, Romeo M.",
+          "detailUrl": "https://www.congress.gov.ph/house-members/view/G002",
+          "photoFile": "acop-romeo-m.jpg"
+        }
+      ]
+    },
+    {
+      "districtId": "leg:antique:lone",
+      "jurisdiction": "ANTIQUE",
+      "districtLabel": "lone",
+      "representative": "Legarda, Antonio Jr. B.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K047",
+      "photoFile": "legarda-antonio-jr-b.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:apayao:lone",
+      "jurisdiction": "APAYAO",
+      "districtLabel": "lone",
+      "representative": "Bulut-Begtang, Eleanor C.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/G013",
+      "photoFile": "bulut-begtang-eleanor-c.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:aurora:lone",
+      "jurisdiction": "AURORA",
+      "districtLabel": "lone",
+      "representative": "Angara, Rommel Rico T.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J009",
+      "photoFile": "angara-rommel-rico-t.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:bacolod-city:lone",
+      "jurisdiction": "BACOLOD CITY",
+      "districtLabel": "lone",
+      "representative": "Benitez, Alfredo \"Albee\" B.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/G015",
+      "photoFile": "benitez-alfredo-albee-b.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:baguio-city:lone",
+      "jurisdiction": "BAGUIO CITY",
+      "districtLabel": "lone",
+      "representative": "Domogan, Mauricio G.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/D024",
+      "photoFile": "domogan-mauricio-g.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:basilan:lone",
+      "jurisdiction": "BASILAN",
+      "districtLabel": "lone",
+      "representative": "Alano, Ustadz Yusop T.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L002",
+      "photoFile": "alano-ustadz-yusop-t.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:bataan:1st",
+      "jurisdiction": "BATAAN",
+      "districtLabel": "1st",
+      "representative": "Roman, Antonino III B.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L102",
+      "photoFile": "roman-antonino-iii-b.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:bataan:2nd",
+      "jurisdiction": "BATAAN",
+      "districtLabel": "2nd",
+      "representative": "Garcia, Albert S.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/E031",
+      "photoFile": "garcia-albert-s.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:bataan:3rd",
+      "jurisdiction": "BATAAN",
+      "districtLabel": "3rd",
+      "representative": "Garcia, Maria Angela S.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K037",
+      "photoFile": "garcia-maria-angela-s.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:batanes:lone",
+      "jurisdiction": "BATANES",
+      "districtLabel": "lone",
+      "representative": "Gato, Ciriaco Jr. B., M.D., FPSO-HNS",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J038",
+      "photoFile": "gato-ciriaco-jr-b-m-d-fpso-hns.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:batangas:1st",
+      "jurisdiction": "BATANGAS",
+      "districtLabel": "1st",
+      "representative": "Leviste, Leandro Legarda",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L054",
+      "photoFile": "leviste-leandro-legarda.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:batangas:2nd",
+      "jurisdiction": "BATANGAS",
+      "districtLabel": "2nd",
+      "representative": "Luistro, Atty. Gerville \"Jinky Bitrics\" R.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K048",
+      "photoFile": "luistro-atty-gerville-jinky-bitrics-r.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:batangas:3rd",
+      "jurisdiction": "BATANGAS",
+      "districtLabel": "3rd",
+      "representative": "Collantes, King",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L023",
+      "photoFile": "collantes-king.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:batangas:4th",
+      "jurisdiction": "BATANGAS",
+      "districtLabel": "4th",
+      "representative": "Bolilia, Amado Carlos IV A.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L014",
+      "photoFile": "bolilia-amado-carlos-iv-a.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:batangas:5th",
+      "jurisdiction": "BATANGAS",
+      "districtLabel": "5th",
+      "representative": "Dimacuha, Beverley Rose A.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L030",
+      "photoFile": "dimacuha-beverley-rose-a.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:batangas:6th",
+      "jurisdiction": "BATANGAS",
+      "districtLabel": "6th",
+      "representative": "Recto, Ryan S.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L078",
+      "photoFile": "recto-ryan-s.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:benguet:lone",
+      "jurisdiction": "BENGUET",
+      "districtLabel": "lone",
+      "representative": "Yap, Eric Go",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J118",
+      "photoFile": "yap-eric-go.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:biliran:lone",
+      "jurisdiction": "BILIRAN",
+      "districtLabel": "lone",
+      "representative": "Espina, Gerardo \"Gerryboy\" Jr. J.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/E036",
+      "photoFile": "espina-gerardo-gerryboy-jr-j.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:binan-city:lone",
+      "jurisdiction": "CITY OF BIÑAN",
+      "districtLabel": "lone",
+      "representative": "Dimaguila, Walfredo \"Arman\" Jr. R.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L031",
+      "photoFile": "dimaguila-walfredo-arman-jr-r.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:bohol:1st",
+      "jurisdiction": "BOHOL",
+      "districtLabel": "1st",
+      "representative": "Yap, John Geesnell \"Baba\"",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L091",
+      "photoFile": "yap-john-geesnell-baba.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:bohol:2nd",
+      "jurisdiction": "BOHOL",
+      "districtLabel": "2nd",
+      "representative": "Aumentado, Maria Vanessa \"Van-Van\" C., RN",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K014",
+      "photoFile": "aumentado-maria-vanessa-van-van-c-rn.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:bohol:3rd",
+      "jurisdiction": "BOHOL",
+      "districtLabel": "3rd",
+      "representative": "Tutor, Kristine Alexie B.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J075",
+      "photoFile": "tutor-kristine-alexie-b.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:bukidnon:1st",
+      "jurisdiction": "BUKIDNON",
+      "districtLabel": "1st",
+      "representative": "Alba, Jose Manuel F.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K005",
+      "photoFile": "alba-jose-manuel-f.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:bukidnon:2nd",
+      "jurisdiction": "BUKIDNON",
+      "districtLabel": "2nd",
+      "representative": "Flores, Jonathan Keith T.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J033",
+      "photoFile": "flores-jonathan-keith-t.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:bukidnon:3rd",
+      "jurisdiction": "BUKIDNON",
+      "districtLabel": "3rd",
+      "representative": "Zubiri, Audrey Kay T.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L094",
+      "photoFile": "zubiri-audrey-kay-t.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:bukidnon:4th",
+      "jurisdiction": "BUKIDNON",
+      "districtLabel": "4th",
+      "representative": "Roque, Laarni Lavin",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K074",
+      "photoFile": "roque-laarni-lavin.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:bulacan:1st",
+      "jurisdiction": "BULACAN",
+      "districtLabel": "1st",
+      "representative": "Domingo, Danilo \"Danny\" A.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K029",
+      "photoFile": "domingo-danilo-danny-a.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:bulacan:2nd",
+      "jurisdiction": "BULACAN",
+      "districtLabel": "2nd",
+      "representative": "Pancho, Augustina Dominique \"Ditse Tina\" C.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K063",
+      "photoFile": "pancho-augustina-dominique-ditse-tina-c.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:bulacan:3rd",
+      "jurisdiction": "BULACAN",
+      "districtLabel": "3rd",
+      "representative": "Violago, Mark Cholo I.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L090",
+      "photoFile": "violago-mark-cholo-i.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:bulacan:4th",
+      "jurisdiction": "BULACAN",
+      "districtLabel": "4th",
+      "representative": "Villarica, Linabelle Ruth R.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J082",
+      "photoFile": "villarica-linabelle-ruth-r.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:bulacan:5th",
+      "jurisdiction": "BULACAN",
+      "districtLabel": "5th",
+      "representative": "Cruz, Agatha \"Agay\"",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L025",
+      "photoFile": "cruz-agatha-agay.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:bulacan:6th",
+      "jurisdiction": "BULACAN",
+      "districtLabel": "6th",
+      "representative": "Pleyto, Salvador A.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K066",
+      "photoFile": "pleyto-salvador-a.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:butuan:lone",
+      "jurisdiction": "BUTUAN CITY",
+      "districtLabel": "lone",
+      "representative": "Aquino, Jose \"Joboy\" II S.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/F007",
+      "photoFile": "aquino-jose-joboy-ii-s.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:cagayan:1st",
+      "jurisdiction": "CAGAYAN",
+      "districtLabel": "1st",
+      "representative": "Nolasco, Ramon C.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/I045",
+      "photoFile": "nolasco-ramon-c.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:cagayan:2nd",
+      "jurisdiction": "CAGAYAN",
+      "districtLabel": "2nd",
+      "representative": "Vargas-Alfonso, Baby Aline",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/G125",
+      "photoFile": "vargas-alfonso-baby-aline.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:cagayan:3rd",
+      "jurisdiction": "CAGAYAN",
+      "districtLabel": "3rd",
+      "representative": "Lara, Joseph \"Jojo\" L.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J047",
+      "photoFile": "lara-joseph-jojo-l.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:cagayan-de-oro-city:1st",
+      "jurisdiction": "CAGAYAN DE ORO CITY",
+      "districtLabel": "1st",
+      "representative": "Suan, Lordan G.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K079",
+      "photoFile": "suan-lordan-g.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:cagayan-de-oro-city:2nd",
+      "jurisdiction": "CAGAYAN DE ORO CITY",
+      "districtLabel": "2nd",
+      "representative": "Rodriguez, Rufus B.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/F057",
+      "photoFile": "rodriguez-rufus-b.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:calamba-city:lone",
+      "jurisdiction": "CITY OF CALAMBA",
+      "districtLabel": "lone",
+      "representative": "Hernandez, Charisse Anne C.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K042",
+      "photoFile": "hernandez-charisse-anne-c.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:caloocan-city:1st",
+      "jurisdiction": "CALOOCAN CITY",
+      "districtLabel": "1st",
+      "representative": "Malapitan, Oscar G.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/E042",
+      "photoFile": "malapitan-oscar-g.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:caloocan-city:2nd",
+      "jurisdiction": "CALOOCAN CITY",
+      "districtLabel": "2nd",
+      "representative": "Erice, Edgar R.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/H025",
+      "photoFile": "erice-edgar-r.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:caloocan-city:3rd",
+      "jurisdiction": "CALOOCAN CITY",
+      "districtLabel": "3rd",
+      "representative": "Asistio, Dean",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K012",
+      "photoFile": "asistio-dean.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:camarines-norte:1st",
+      "jurisdiction": "CAMARINES NORTE",
+      "districtLabel": "1st",
+      "representative": "Tallado, Josefina B.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J070",
+      "photoFile": "tallado-josefina-b.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:camarines-norte:2nd",
+      "jurisdiction": "CAMARINES NORTE",
+      "districtLabel": "2nd",
+      "representative": "Panotes, Rosemarie Conejos",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K064",
+      "photoFile": "panotes-rosemarie-conejos.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:camarines-sur:1st",
+      "jurisdiction": "CAMARINES SUR",
+      "districtLabel": "1st",
+      "representative": "Horibata, Tsuyoshi Anthony \"Hori\" G.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K043",
+      "photoFile": "horibata-tsuyoshi-anthony-hori-g.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:camarines-sur:2nd",
+      "jurisdiction": "CAMARINES SUR",
+      "districtLabel": "2nd",
+      "representative": "Villafuerte, Vincenzo Renato Luigi R.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L089",
+      "photoFile": "villafuerte-vincenzo-renato-luigi-r.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:camarines-sur:3rd",
+      "jurisdiction": "CAMARINES SUR",
+      "districtLabel": "3rd",
+      "representative": "Legacion, Nelson S.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L052",
+      "photoFile": "legacion-nelson-s.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:camarines-sur:4th",
+      "jurisdiction": "CAMARINES SUR",
+      "districtLabel": "4th",
+      "representative": "Fuentebella, Arnie B.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J037",
+      "photoFile": "fuentebella-arnie-b.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:camarines-sur:5th",
+      "jurisdiction": "CAMARINES SUR",
+      "districtLabel": "5th",
+      "representative": "Villafuerte, Miguel Luis R.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K094",
+      "photoFile": "villafuerte-miguel-luis-r.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:camiguin:lone",
+      "jurisdiction": "CAMIGUIN",
+      "districtLabel": "lone",
+      "representative": "Romualdo, Jurdin Jesus M.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/C100",
+      "photoFile": "romualdo-jurdin-jesus-m.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:capiz:1st",
+      "jurisdiction": "CAPIZ",
+      "districtLabel": "1st",
+      "representative": "Guintu, Howard A.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K117",
+      "photoFile": "guintu-howard-a.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:capiz:2nd",
+      "jurisdiction": "CAPIZ",
+      "districtLabel": "2nd",
+      "representative": "Castro, Jane T.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/G021",
+      "photoFile": "castro-jane-t.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:catanduanes:lone",
+      "jurisdiction": "CATANDUANES",
+      "districtLabel": "lone",
+      "representative": "Rodriguez, Eulogio \"Leo\" R.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K073",
+      "photoFile": "rodriguez-eulogio-leo-r.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:cavite:1st",
+      "jurisdiction": "CAVITE",
+      "districtLabel": "1st",
+      "representative": "Revilla, Ramon Jolo III B.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K070",
+      "photoFile": "revilla-ramon-jolo-iii-b.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:cavite:2nd",
+      "jurisdiction": "CAVITE",
+      "districtLabel": "2nd",
+      "representative": "Mercado-Revilla, Lani",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/G078",
+      "photoFile": "mercado-revilla-lani.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:cavite:3rd",
+      "jurisdiction": "CAVITE",
+      "districtLabel": "3rd",
+      "representative": "Advincula, Adrian Jay C.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K003",
+      "photoFile": "advincula-adrian-jay-c.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:cavite:4th",
+      "jurisdiction": "CAVITE",
+      "districtLabel": "4th",
+      "representative": null,
+      "resolutionStatus": "ambiguous_multiple_listed",
+      "detailUrl": null,
+      "photoFile": null,
+      "candidates": [
+        {
+          "name": "Austria-Barzaga, Jennifer",
+          "detailUrl": "https://www.congress.gov.ph/house-members/view/I007",
+          "photoFile": "austria-barzaga-jennifer.jpg"
+        },
+        {
+          "name": "Barzaga, Francisco \"Kiko\" A.",
+          "detailUrl": "https://www.congress.gov.ph/house-members/view/L096",
+          "photoFile": "barzaga-francisco-kiko-a.jpg"
+        }
+      ]
+    },
+    {
+      "districtId": "leg:cavite:5th",
+      "jurisdiction": "CAVITE",
+      "districtLabel": "5th",
+      "representative": "Loyola, Roy M.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/G059",
+      "photoFile": "loyola-roy-m.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:cavite:6th",
+      "jurisdiction": "CAVITE",
+      "districtLabel": "6th",
+      "representative": "Ferrer, Antonio A.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K032",
+      "photoFile": "ferrer-antonio-a.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:cavite:7th",
+      "jurisdiction": "CAVITE",
+      "districtLabel": "7th",
+      "representative": "Remulla, Crispin Diego D.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K139",
+      "photoFile": "remulla-crispin-diego-d.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:cavite:8th",
+      "jurisdiction": "CAVITE",
+      "districtLabel": "8th",
+      "representative": "Tolentino, Aniela Bianca D.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K088",
+      "photoFile": "tolentino-aniela-bianca-d.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:cebu:1st",
+      "jurisdiction": "CEBU",
+      "districtLabel": "1st",
+      "representative": "Gullas, Rhea Mae A.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K040",
+      "photoFile": "gullas-rhea-mae-a.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:cebu:2nd",
+      "jurisdiction": "CEBU",
+      "districtLabel": "2nd",
+      "representative": "Galeos, Edsel A.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K035",
+      "photoFile": "galeos-edsel-a.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:cebu:3rd",
+      "jurisdiction": "CEBU",
+      "districtLabel": "3rd",
+      "representative": "Garcia, Karen Hope F.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L036",
+      "photoFile": "garcia-karen-hope-f.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:cebu:4th",
+      "jurisdiction": "CEBU",
+      "districtLabel": "4th",
+      "representative": "Shimura, Sun J.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L079",
+      "photoFile": "shimura-sun-j.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:cebu:5th",
+      "jurisdiction": "CEBU",
+      "districtLabel": "5th",
+      "representative": "Frasco, Vincent Franco \"Duke\" D.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J036",
+      "photoFile": "frasco-vincent-franco-duke-d.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:cebu:6th",
+      "jurisdiction": "CEBU",
+      "districtLabel": "6th",
+      "representative": "Lagon, Daphne A.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K046",
+      "photoFile": "lagon-daphne-a.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:cebu:7th",
+      "jurisdiction": "CEBU",
+      "districtLabel": "7th",
+      "representative": "Calderon, Patricia C.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L016",
+      "photoFile": "calderon-patricia-c.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:cebu-city:1st",
+      "jurisdiction": "CEBU CITY",
+      "districtLabel": "1st",
+      "representative": "Del Mar, Rachel Marguerite B.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/G031",
+      "photoFile": "del-mar-rachel-marguerite-b.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:cebu-city:2nd",
+      "jurisdiction": "CEBU CITY",
+      "districtLabel": "2nd",
+      "representative": "Rama, Eduardo Jr. R.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K068",
+      "photoFile": "rama-eduardo-jr-r.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:cotabato:1st",
+      "jurisdiction": "NORTH COTABATO",
+      "districtLabel": "1st",
+      "representative": "Cruzado, Edwin L., M.D.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L026",
+      "photoFile": "cruzado-edwin-l-m-d.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:cotabato:2nd",
+      "jurisdiction": "NORTH COTABATO",
+      "districtLabel": "2nd",
+      "representative": "Caoagdan, Rudy S., DPA",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J019",
+      "photoFile": "caoagdan-rudy-s-dpa.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:cotabato:3rd",
+      "jurisdiction": "NORTH COTABATO",
+      "districtLabel": "3rd",
+      "representative": "Santos, Ma. Alana Samantha Taliño",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K077",
+      "photoFile": "santos-ma-alana-samantha-tali-o.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:davao-city:1st",
+      "jurisdiction": "DAVAO CITY",
+      "districtLabel": "1st",
+      "representative": "Duterte, Paolo Z.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J026",
+      "photoFile": "duterte-paolo-z.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:davao-city:2nd",
+      "jurisdiction": "DAVAO CITY",
+      "districtLabel": "2nd",
+      "representative": "Duterte, Omar Vincent Sangkola",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L034",
+      "photoFile": "duterte-omar-vincent-sangkola.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:davao-city:3rd",
+      "jurisdiction": "DAVAO CITY",
+      "districtLabel": "3rd",
+      "representative": "Ungab, Isidro T.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/F073",
+      "photoFile": "ungab-isidro-t.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:davao-de-oro:1st",
+      "jurisdiction": "DAVAO DE ORO",
+      "districtLabel": "1st",
+      "representative": "Zamora, Maria Carmen S.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/H084",
+      "photoFile": "zamora-maria-carmen-s.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:davao-de-oro:2nd",
+      "jurisdiction": "DAVAO DE ORO",
+      "districtLabel": "2nd",
+      "representative": "Ceniza, Leonel \"Jhong\" D.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L018",
+      "photoFile": "ceniza-leonel-jhong-d.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:davao-del-norte:1st",
+      "jurisdiction": "DAVAO DEL NORTE",
+      "districtLabel": "1st",
+      "representative": "Uy, De Carlo L.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L085",
+      "photoFile": "uy-de-carlo-l.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:davao-del-norte:2nd",
+      "jurisdiction": "DAVAO DEL NORTE",
+      "districtLabel": "2nd",
+      "representative": "Lagdameo, Jose Manuel \"JM\" F.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L051",
+      "photoFile": "lagdameo-jose-manuel-jm-f.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:davao-del-sur:lone",
+      "jurisdiction": "DAVAO DEL SUR",
+      "districtLabel": "lone",
+      "representative": "Cagas, John Tracy F.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K018",
+      "photoFile": "cagas-john-tracy-f.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:davao-occidental:lone",
+      "jurisdiction": "DAVAO OCCIDENTAL",
+      "districtLabel": "lone",
+      "representative": "Bautista, Claude P.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K015",
+      "photoFile": "bautista-claude-p.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:davao-oriental:1st",
+      "jurisdiction": "DAVAO ORIENTAL",
+      "districtLabel": "1st",
+      "representative": "Dayanghirang, Nelson \"JR\"",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L101",
+      "photoFile": "dayanghirang-nelson-jr.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:davao-oriental:2nd",
+      "jurisdiction": "DAVAO ORIENTAL",
+      "districtLabel": "2nd",
+      "representative": "Almario, Cheeno Miguel D.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K006",
+      "photoFile": "almario-cheeno-miguel-d.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:dinagat-islands:lone",
+      "jurisdiction": "DINAGAT ISLANDS",
+      "districtLabel": "lone",
+      "representative": "Bag-ao, Kaka J.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/G009",
+      "photoFile": "bag-ao-kaka-j.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:eastern-samar:lone",
+      "jurisdiction": "EASTERN SAMAR",
+      "districtLabel": "lone",
+      "representative": "Gonzales, Christopher Sheen P.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L040",
+      "photoFile": "gonzales-christopher-sheen-p.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:general-santos-city:lone",
+      "jurisdiction": "GENERAL SANTOS CITY",
+      "districtLabel": "lone",
+      "representative": "Bañas-Nograles, Shirlyn L.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J123",
+      "photoFile": "ba-as-nograles-shirlyn-l.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:guimaras:lone",
+      "jurisdiction": "GUIMARAS",
+      "districtLabel": "lone",
+      "representative": "Nava, JC Rahman A., MD.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/F055",
+      "photoFile": "nava-jc-rahman-a-md.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:ifugao:lone",
+      "jurisdiction": "IFUGAO",
+      "districtLabel": "lone",
+      "representative": "Chungalao, Solomon R.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/D015",
+      "photoFile": "chungalao-solomon-r.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:iligan-city:lone",
+      "jurisdiction": "ILIGAN CITY",
+      "districtLabel": "lone",
+      "representative": "Regencia, Celso G.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K069",
+      "photoFile": "regencia-celso-g.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:ilocos-norte:1st",
+      "jurisdiction": "ILOCOS NORTE",
+      "districtLabel": "1st",
+      "representative": "Marcos, Ferdinand Alexander A.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K051",
+      "photoFile": "marcos-ferdinand-alexander-a.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:ilocos-norte:2nd",
+      "jurisdiction": "ILOCOS NORTE",
+      "districtLabel": "2nd",
+      "representative": "Barba, Angelo Marcos",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J012",
+      "photoFile": "barba-angelo-marcos.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:ilocos-sur:1st",
+      "jurisdiction": "ILOCOS SUR",
+      "districtLabel": "1st",
+      "representative": "Singson, Ronald V.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/F068",
+      "photoFile": "singson-ronald-v.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:ilocos-sur:2nd",
+      "jurisdiction": "ILOCOS SUR",
+      "districtLabel": "2nd",
+      "representative": "Singson-Meehan, Kristine",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J066",
+      "photoFile": "singson-meehan-kristine.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:iloilo:1st",
+      "jurisdiction": "ILOILO",
+      "districtLabel": "1st",
+      "representative": "Garin, Janette L.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/E032",
+      "photoFile": "garin-janette-l.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:iloilo:2nd",
+      "jurisdiction": "ILOILO",
+      "districtLabel": "2nd",
+      "representative": "Gorriceta, Kathryn Joyce F., MD",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L042",
+      "photoFile": "gorriceta-kathryn-joyce-f-md.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:iloilo:3rd",
+      "jurisdiction": "ILOILO",
+      "districtLabel": "3rd",
+      "representative": "Defensor, Lorenz R.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J119",
+      "photoFile": "defensor-lorenz-r.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:iloilo:4th",
+      "jurisdiction": "ILOILO",
+      "districtLabel": "4th",
+      "representative": "Biron, Ferjenel G., M.D.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/E018",
+      "photoFile": "biron-ferjenel-g-m-d.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:iloilo:5th",
+      "jurisdiction": "ILOILO",
+      "districtLabel": "5th",
+      "representative": "Tupas, Binky April M.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L084",
+      "photoFile": "tupas-binky-april-m.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:iloilo-city:lone",
+      "jurisdiction": "ILOILO CITY",
+      "districtLabel": "lone",
+      "representative": "Baronda, Julienne \"Jam\" L.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J013",
+      "photoFile": "baronda-julienne-jam-l.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:isabela:1st",
+      "jurisdiction": "ISABELA",
+      "districtLabel": "1st",
+      "representative": "Albano, Antonio \"Tonypet\" T.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J006",
+      "photoFile": "albano-antonio-tonypet-t.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:isabela:2nd",
+      "jurisdiction": "ISABELA",
+      "districtLabel": "2nd",
+      "representative": "Go, Ed Christopher S.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J039",
+      "photoFile": "go-ed-christopher-s.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:isabela:3rd",
+      "jurisdiction": "ISABELA",
+      "districtLabel": "3rd",
+      "representative": "Dy, Ian Paul L.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J029",
+      "photoFile": "dy-ian-paul-l.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:isabela:4th",
+      "jurisdiction": "ISABELA",
+      "districtLabel": "4th",
+      "representative": "Tan, Joseph S.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K083",
+      "photoFile": "tan-joseph-s.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:isabela:5th",
+      "jurisdiction": "ISABELA",
+      "districtLabel": "5th",
+      "representative": "Dy, Faustino Michael Carlos III T.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J027",
+      "photoFile": "dy-faustino-michael-carlos-iii-t.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:isabela:6th",
+      "jurisdiction": "ISABELA",
+      "districtLabel": "6th",
+      "representative": "Dy, Faustino \"Bojie\" III G.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/D027",
+      "photoFile": "dy-faustino-bojie-iii-g.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:kalinga:lone",
+      "jurisdiction": "KALINGA",
+      "districtLabel": "lone",
+      "representative": "Agyao, Caroline B., M.D.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L001",
+      "photoFile": "agyao-caroline-b-m-d.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:la-union:1st",
+      "jurisdiction": "LA UNION",
+      "districtLabel": "1st",
+      "representative": "Ortega, Francisco Paolo V P.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K059",
+      "photoFile": "ortega-francisco-paolo-v-p.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:la-union:2nd",
+      "jurisdiction": "LA UNION",
+      "districtLabel": "2nd",
+      "representative": "Garcia, Dante S.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K036",
+      "photoFile": "garcia-dante-s.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:laguna:1st",
+      "jurisdiction": "LAGUNA",
+      "districtLabel": "1st",
+      "representative": "Matibag, Ann",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K053",
+      "photoFile": "matibag-ann.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:laguna:2nd",
+      "jurisdiction": "LAGUNA",
+      "districtLabel": "2nd",
+      "representative": "Hernandez, Ramil L.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L044",
+      "photoFile": "hernandez-ramil-l.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:laguna:3rd",
+      "jurisdiction": "LAGUNA",
+      "districtLabel": "3rd",
+      "representative": "Amante, Loreto S.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K009",
+      "photoFile": "amante-loreto-s.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:laguna:4th",
+      "jurisdiction": "LAGUNA",
+      "districtLabel": "4th",
+      "representative": "Agarao, Benjamin Jr. C.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/E005",
+      "photoFile": "agarao-benjamin-jr-c.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:lanao-del-norte:1st",
+      "jurisdiction": "LANAO DEL NORTE",
+      "districtLabel": "1st",
+      "representative": "Dimaporo, Imelda Quibranza",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/G034",
+      "photoFile": "dimaporo-imelda-quibranza.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:lanao-del-norte:2nd",
+      "jurisdiction": "LANAO DEL NORTE",
+      "districtLabel": "2nd",
+      "representative": "Dimaporo, Sittie Aminah Q.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K027",
+      "photoFile": "dimaporo-sittie-aminah-q.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:lanao-del-sur:1st",
+      "jurisdiction": "LANAO DEL SUR",
+      "districtLabel": "1st",
+      "representative": "Adiong, Ziaur-Rahman \"Zia\" Alonto",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K002",
+      "photoFile": "adiong-ziaur-rahman-zia-alonto.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:lanao-del-sur:2nd",
+      "jurisdiction": "LANAO DEL SUR",
+      "districtLabel": "2nd",
+      "representative": "Balindong, Yasser Alonto",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J011",
+      "photoFile": "balindong-yasser-alonto.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:lapu-lapu-city:lone",
+      "jurisdiction": "LAPU-LAPU CITY",
+      "districtLabel": "lone",
+      "representative": "Chan, Junard \"Ahong\" Q.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L019",
+      "photoFile": "chan-junard-ahong-q.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:las-pinas-city:lone",
+      "jurisdiction": "CITY OF LAS PIÑAS",
+      "districtLabel": "lone",
+      "representative": "Santos, Mark Anthony G.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L077",
+      "photoFile": "santos-mark-anthony-g.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:leyte:1st",
+      "jurisdiction": "LEYTE",
+      "districtLabel": "1st",
+      "representative": "Romualdez, Ferdinand Martin G.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/F061",
+      "photoFile": "romualdez-ferdinand-martin-g.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:leyte:2nd",
+      "jurisdiction": "LEYTE",
+      "districtLabel": "2nd",
+      "representative": "Javier, Lolita T.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J044",
+      "photoFile": "javier-lolita-t.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:leyte:3rd",
+      "jurisdiction": "LEYTE",
+      "districtLabel": "3rd",
+      "representative": "Veloso-Tuazon, Anna Victoria",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K092",
+      "photoFile": "veloso-tuazon-anna-victoria.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:leyte:4th",
+      "jurisdiction": "LEYTE",
+      "districtLabel": "4th",
+      "representative": "Gomez, Richard I., DPA",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K039",
+      "photoFile": "gomez-richard-i-dpa.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:leyte:5th",
+      "jurisdiction": "LEYTE",
+      "districtLabel": "5th",
+      "representative": "Cari, Carl Nicolas C.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J020",
+      "photoFile": "cari-carl-nicolas-c.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:maguindanao-del-norte:lone",
+      "jurisdiction": "MAGUINDANAO DEL NORTE",
+      "districtLabel": "lone",
+      "representative": "Mastura, Sittie Shahara \"Bai Dimple\" I.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K052",
+      "photoFile": "mastura-sittie-shahara-bai-dimple-i.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:maguindanao-del-sur:lone",
+      "jurisdiction": "MAGUINDANAO DEL SUR",
+      "districtLabel": "lone",
+      "representative": "Mangudadatu, Esmael G.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J050",
+      "photoFile": "mangudadatu-esmael-g.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:makati-city:1st",
+      "jurisdiction": "CITY OF MAKATI",
+      "districtLabel": "1st",
+      "representative": "Lagdameo, Monique Yazmin Maria Q.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/G055",
+      "photoFile": "lagdameo-monique-yazmin-maria-q.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:makati-city:2nd",
+      "jurisdiction": "CITY OF MAKATI",
+      "districtLabel": "2nd",
+      "representative": "Almario, Dennis \"Alden\" B.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L003",
+      "photoFile": "almario-dennis-alden-b.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:malabon-city:lone",
+      "jurisdiction": "MALABON CITY",
+      "districtLabel": "lone",
+      "representative": "Oreta, Antolin III A.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L066",
+      "photoFile": "oreta-antolin-iii-a.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:mandaluyong-city:lone",
+      "jurisdiction": "CITY OF MANDALUYONG",
+      "districtLabel": "lone",
+      "representative": "Gonzales, Alexandria \"Queenie\"",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/I032",
+      "photoFile": "gonzales-alexandria-queenie.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:mandaue-city:lone",
+      "jurisdiction": "MANDAUE CITY",
+      "districtLabel": "lone",
+      "representative": "Ouano-Dizon, Emmarie \"Lolypop\"",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J055",
+      "photoFile": "ouano-dizon-emmarie-lolypop.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:manila:1st",
+      "jurisdiction": "MANILA CITY",
+      "districtLabel": "1st",
+      "representative": "Dionisio, Ernesto Jr. M.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K028",
+      "photoFile": "dionisio-ernesto-jr-m.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:manila:2nd",
+      "jurisdiction": "MANILA CITY",
+      "districtLabel": "2nd",
+      "representative": "Valeriano, Rolando M.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J078",
+      "photoFile": "valeriano-rolando-m.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:manila:3rd",
+      "jurisdiction": "MANILA CITY",
+      "districtLabel": "3rd",
+      "representative": "Chua, Joel R.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K020",
+      "photoFile": "chua-joel-r.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:manila:4th",
+      "jurisdiction": "MANILA CITY",
+      "districtLabel": "4th",
+      "representative": "Maceda, Giselle Mary L.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L059",
+      "photoFile": "maceda-giselle-mary-l.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:manila:5th",
+      "jurisdiction": "MANILA CITY",
+      "districtLabel": "5th",
+      "representative": "Tieng, Irwin C.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/F092",
+      "photoFile": "tieng-irwin-c.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:manila:6th",
+      "jurisdiction": "MANILA CITY",
+      "districtLabel": "6th",
+      "representative": "Abante, Bienvenido Jr. M.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/E003",
+      "photoFile": "abante-bienvenido-jr-m.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:marikina-city:1st",
+      "jurisdiction": "CITY OF MARIKINA",
+      "districtLabel": "1st",
+      "representative": "Teodoro, Marcelino \"Marcy\" R.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/F070",
+      "photoFile": "teodoro-marcelino-marcy-r.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:marikina-city:2nd",
+      "jurisdiction": "CITY OF MARIKINA",
+      "districtLabel": "2nd",
+      "representative": "Quimbo, Atty. Miro S.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/G073",
+      "photoFile": "quimbo-atty-miro-s.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:marinduque:lone",
+      "jurisdiction": "MARINDUQUE",
+      "districtLabel": "lone",
+      "representative": "Salvacion, Reynaldo P.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L073",
+      "photoFile": "salvacion-reynaldo-p.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:masbate:1st",
+      "jurisdiction": "MASBATE",
+      "districtLabel": "1st",
+      "representative": "Kho, Antonio T.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/A044",
+      "photoFile": "kho-antonio-t.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:masbate:2nd",
+      "jurisdiction": "MASBATE",
+      "districtLabel": "2nd",
+      "representative": "Kho, Elisa \"Olga\" T.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/H037",
+      "photoFile": "kho-elisa-olga-t.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:masbate:3rd",
+      "jurisdiction": "MASBATE",
+      "districtLabel": "3rd",
+      "representative": "Kho, Wilton \"Tonton\" T.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J046",
+      "photoFile": "kho-wilton-tonton-t.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:misamis-occidental:1st",
+      "jurisdiction": "MISAMIS OCCIDENTAL",
+      "districtLabel": "1st",
+      "representative": "Almonte, Jason P.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K007",
+      "photoFile": "almonte-jason-p.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:misamis-occidental:2nd",
+      "jurisdiction": "MISAMIS OCCIDENTAL",
+      "districtLabel": "2nd",
+      "representative": "Oaminal, Sancho Fernando \"Ando\" F.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K056",
+      "photoFile": "oaminal-sancho-fernando-ando-f.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:misamis-oriental:1st",
+      "jurisdiction": "MISAMIS ORIENTAL",
+      "districtLabel": "1st",
+      "representative": "Lagbas, Atty. Jennifer \"Karen\" A.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L050",
+      "photoFile": "lagbas-atty-jennifer-karen-a.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:misamis-oriental:2nd",
+      "jurisdiction": "MISAMIS ORIENTAL",
+      "districtLabel": "2nd",
+      "representative": "Emano, Yevgeny Vincente B.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/F027",
+      "photoFile": "emano-yevgeny-vincente-b.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:mountain-province:lone",
+      "jurisdiction": "MOUNTAIN PROVINCE",
+      "districtLabel": "lone",
+      "representative": "Dalog, Maximo Jr. Y.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J024",
+      "photoFile": "dalog-maximo-jr-y.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:muntinlupa-city:lone",
+      "jurisdiction": "CITY OF MUNTINLUPA",
+      "districtLabel": "lone",
+      "representative": "Fresnedi, Jaime R.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K034",
+      "photoFile": "fresnedi-jaime-r.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:navotas-city:lone",
+      "jurisdiction": "NAVOTAS CITY",
+      "districtLabel": "lone",
+      "representative": "Tiangco, Tobias \"Toby\" M.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/G090",
+      "photoFile": "tiangco-tobias-toby-m.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:negros-occidental:1st",
+      "jurisdiction": "NEGROS OCCIDENTAL",
+      "districtLabel": "1st",
+      "representative": "Ledesma, Julio IV A.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/B020",
+      "photoFile": "ledesma-julio-iv-a.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:negros-occidental:2nd",
+      "jurisdiction": "NEGROS OCCIDENTAL",
+      "districtLabel": "2nd",
+      "representative": "Marañon, Alfredo III D.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/E045",
+      "photoFile": "mara-on-alfredo-iii-d.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:negros-occidental:3rd",
+      "jurisdiction": "NEGROS OCCIDENTAL",
+      "districtLabel": "3rd",
+      "representative": "Benitez, Javier Miguel Lopez",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L012",
+      "photoFile": "benitez-javier-miguel-lopez.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:negros-occidental:4th",
+      "jurisdiction": "NEGROS OCCIDENTAL",
+      "districtLabel": "4th",
+      "representative": "Ferrer, Jeffrey P.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/F082",
+      "photoFile": "ferrer-jeffrey-p.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:negros-occidental:5th",
+      "jurisdiction": "NEGROS OCCIDENTAL",
+      "districtLabel": "5th",
+      "representative": "Yulo, Emilio Bernardino L.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K098",
+      "photoFile": "yulo-emilio-bernardino-l.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:negros-occidental:6th",
+      "jurisdiction": "NEGROS OCCIDENTAL",
+      "districtLabel": "6th",
+      "representative": "Alvarez, Mercedes K.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/G006",
+      "photoFile": "alvarez-mercedes-k.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:negros-oriental:1st",
+      "jurisdiction": "NEGROS ORIENTAL",
+      "districtLabel": "1st",
+      "representative": "Iway, Emmanuel L.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L099",
+      "photoFile": "iway-emmanuel-l.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:negros-oriental:2nd",
+      "jurisdiction": "NEGROS ORIENTAL",
+      "districtLabel": "2nd",
+      "representative": "Sagarbarria, Ma. Isabel L.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L070",
+      "photoFile": "sagarbarria-ma-isabel-l.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:negros-oriental:3rd",
+      "jurisdiction": "NEGROS ORIENTAL",
+      "districtLabel": "3rd",
+      "representative": "Degamo, Janice",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L029",
+      "photoFile": "degamo-janice.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:northern-samar:1st",
+      "jurisdiction": "NORTHERN SAMAR",
+      "districtLabel": "1st",
+      "representative": "Daza, Niko Raul S.J.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L027",
+      "photoFile": "daza-niko-raul-s-j.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:northern-samar:2nd",
+      "jurisdiction": "NORTHERN SAMAR",
+      "districtLabel": "2nd",
+      "representative": "Ongchuan, Edwin",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/I047",
+      "photoFile": "ongchuan-edwin.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:nueva-ecija:1st",
+      "jurisdiction": "NUEVA ECIJA",
+      "districtLabel": "1st",
+      "representative": "Suansing, Mikaela Angela B.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K080",
+      "photoFile": "suansing-mikaela-angela-b.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:nueva-ecija:2nd",
+      "jurisdiction": "NUEVA ECIJA",
+      "districtLabel": "2nd",
+      "representative": "Salvador, Mario \"Kokoy\" O.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L074",
+      "photoFile": "salvador-mario-kokoy-o.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:nueva-ecija:3rd",
+      "jurisdiction": "NUEVA ECIJA",
+      "districtLabel": "3rd",
+      "representative": "Vergara, Julius Cesar \"Jay\" V.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L088",
+      "photoFile": "vergara-julius-cesar-jay-v.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:nueva-ecija:4th",
+      "jurisdiction": "NUEVA ECIJA",
+      "districtLabel": "4th",
+      "representative": "Pascual, Emerson D.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K065",
+      "photoFile": "pascual-emerson-d.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:nueva-vizcaya:lone",
+      "jurisdiction": "NUEVA VIZCAYA",
+      "districtLabel": "lone",
+      "representative": "Cayton, Timothy Joseph E.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L017",
+      "photoFile": "cayton-timothy-joseph-e.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:occidental-mindoro:lone",
+      "jurisdiction": "OCCIDENTAL MINDORO",
+      "districtLabel": "lone",
+      "representative": "Tarriela, Leody \"Odie\" F.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K086",
+      "photoFile": "tarriela-leody-odie-f.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:oriental-mindoro:1st",
+      "jurisdiction": "ORIENTAL MINDORO",
+      "districtLabel": "1st",
+      "representative": "Panaligan, Arnan C.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K062",
+      "photoFile": "panaligan-arnan-c.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:oriental-mindoro:2nd",
+      "jurisdiction": "ORIENTAL MINDORO",
+      "districtLabel": "2nd",
+      "representative": "Umali, Alfonso Jr. V.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/D066",
+      "photoFile": "umali-alfonso-jr-v.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:palawan:1st",
+      "jurisdiction": "PALAWAN",
+      "districtLabel": "1st",
+      "representative": "Salvame, Rosalie Ang",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L075",
+      "photoFile": "salvame-rosalie-ang.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:palawan:2nd",
+      "jurisdiction": "PALAWAN",
+      "districtLabel": "2nd",
+      "representative": "Alvarez, Jose C.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K008",
+      "photoFile": "alvarez-jose-c.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:palawan:3rd",
+      "jurisdiction": "PALAWAN",
+      "districtLabel": "3rd",
+      "representative": "Acosta, Gil \"KabarangayJr\"",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J004",
+      "photoFile": "acosta-gil-kabarangayjr.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:pampanga:1st",
+      "jurisdiction": "PAMPANGA",
+      "districtLabel": "1st",
+      "representative": "Lazatin, Carmelo Jr. G.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L097",
+      "photoFile": "lazatin-carmelo-jr-g.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:pampanga:2nd",
+      "jurisdiction": "PAMPANGA",
+      "districtLabel": "2nd",
+      "representative": "Macapagal-Arroyo, Gloria",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/G060",
+      "photoFile": "macapagal-arroyo-gloria.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:pampanga:3rd",
+      "jurisdiction": "PAMPANGA",
+      "districtLabel": "3rd",
+      "representative": "Gonzales, Alyssa Michaela \"Mica\" M.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L039",
+      "photoFile": "gonzales-alyssa-michaela-mica-m.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:pampanga:4th",
+      "jurisdiction": "PAMPANGA",
+      "districtLabel": "4th",
+      "representative": "Bondoc, Anna York P., M.D.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/E019",
+      "photoFile": "bondoc-anna-york-p-m-d.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:pangasinan:1st",
+      "jurisdiction": "PANGASINAN",
+      "districtLabel": "1st",
+      "representative": "Celeste, Arthur F.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/D012",
+      "photoFile": "celeste-arthur-f.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:pangasinan:2nd",
+      "jurisdiction": "PANGASINAN",
+      "districtLabel": "2nd",
+      "representative": "Cojuangco, Mark O.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/D017",
+      "photoFile": "cojuangco-mark-o.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:pangasinan:3rd",
+      "jurisdiction": "PANGASINAN",
+      "districtLabel": "3rd",
+      "representative": "Arenas, Maria Rachel J.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/F008",
+      "photoFile": "arenas-maria-rachel-j.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:pangasinan:4th",
+      "jurisdiction": "PANGASINAN",
+      "districtLabel": "4th",
+      "representative": "de Venecia, Ma. Georgina P.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/G030",
+      "photoFile": "de-venecia-ma-georgina-p.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:pangasinan:5th",
+      "jurisdiction": "PANGASINAN",
+      "districtLabel": "5th",
+      "representative": "Guico, Ramon Jr. N.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J042",
+      "photoFile": "guico-ramon-jr-n.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:pangasinan:6th",
+      "jurisdiction": "PANGASINAN",
+      "districtLabel": "6th",
+      "representative": "Primicias-Agabas, Marlyn L.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/G072",
+      "photoFile": "primicias-agabas-marlyn-l.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:paranaque-city:1st",
+      "jurisdiction": "CITY OF PARAÑAQUE",
+      "districtLabel": "1st",
+      "representative": "Olivarez, Eric L.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/H046",
+      "photoFile": "olivarez-eric-l.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:paranaque-city:2nd",
+      "jurisdiction": "CITY OF PARAÑAQUE",
+      "districtLabel": "2nd",
+      "representative": "Yamsuan, Brian Raymund S.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K138",
+      "photoFile": "yamsuan-brian-raymund-s.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:pasay-city:lone",
+      "jurisdiction": "PASAY CITY",
+      "districtLabel": "lone",
+      "representative": "Calixto, Antonino G.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J018",
+      "photoFile": "calixto-antonino-g.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:pasig-city:lone",
+      "jurisdiction": "PASIG CITY",
+      "districtLabel": "lone",
+      "representative": "Romulo, Roman T.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/F062",
+      "photoFile": "romulo-roman-t.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:quezon:1st",
+      "jurisdiction": "QUEZON",
+      "districtLabel": "1st",
+      "representative": "Enverga, Wilfrido Mark M.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/F028",
+      "photoFile": "enverga-wilfrido-mark-m.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:quezon:2nd",
+      "jurisdiction": "QUEZON",
+      "districtLabel": "2nd",
+      "representative": "Suarez, David \"Jay-Jay\" C.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J068",
+      "photoFile": "suarez-david-jay-jay-c.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:quezon:3rd",
+      "jurisdiction": "QUEZON",
+      "districtLabel": "3rd",
+      "representative": "Arrogancia, Reynante U.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K011",
+      "photoFile": "arrogancia-reynante-u.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:quezon:4th",
+      "jurisdiction": "QUEZON",
+      "districtLabel": "4th",
+      "representative": "Tan, Keith Micah \"Atty. Mike\" D.L.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K134",
+      "photoFile": "tan-keith-micah-atty-mike-d-l.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:quezon-city:1st",
+      "jurisdiction": "QUEZON CITY",
+      "districtLabel": "1st",
+      "representative": "Atayde, Juan Carlos \"Arjo\" C.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K013",
+      "photoFile": "atayde-juan-carlos-arjo-c.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:quezon-city:2nd",
+      "jurisdiction": "QUEZON CITY",
+      "districtLabel": "2nd",
+      "representative": "Tulfo, Ralph Wendel P.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K089",
+      "photoFile": "tulfo-ralph-wendel-p.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:quezon-city:3rd",
+      "jurisdiction": "QUEZON CITY",
+      "districtLabel": "3rd",
+      "representative": "Pumaren, Franz S.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K067",
+      "photoFile": "pumaren-franz-s.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:quezon-city:4th",
+      "jurisdiction": "QUEZON CITY",
+      "districtLabel": "4th",
+      "representative": "Suntay, Jesus \"Bong\" C.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J069",
+      "photoFile": "suntay-jesus-bong-c.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:quezon-city:5th",
+      "jurisdiction": "QUEZON CITY",
+      "districtLabel": "5th",
+      "representative": "Vargas, Patrick Michael D.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K091",
+      "photoFile": "vargas-patrick-michael-d.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:quezon-city:6th",
+      "jurisdiction": "QUEZON CITY",
+      "districtLabel": "6th",
+      "representative": "Co-Pilar, Ma. Victoria",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K022",
+      "photoFile": "co-pilar-ma-victoria.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:quirino:lone",
+      "jurisdiction": "QUIRINO",
+      "districtLabel": "lone",
+      "representative": "Cua, Midy N.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K026",
+      "photoFile": "cua-midy-n.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:rizal:1st",
+      "jurisdiction": "RIZAL",
+      "districtLabel": "1st",
+      "representative": "Ynares, Rebecca Maria Alcantara",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L092",
+      "photoFile": "ynares-rebecca-maria-alcantara.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:rizal:2nd",
+      "jurisdiction": "RIZAL",
+      "districtLabel": "2nd",
+      "representative": "Tanjuatco, Emigdio III P.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K085",
+      "photoFile": "tanjuatco-emigdio-iii-p.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:rizal:3rd",
+      "jurisdiction": "RIZAL",
+      "districtLabel": "3rd",
+      "representative": "Garcia, Jose Arturo Jr. S.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K038",
+      "photoFile": "garcia-jose-arturo-jr-s.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:rizal:4th",
+      "jurisdiction": "RIZAL",
+      "districtLabel": "4th",
+      "representative": "Hernandez, Dennis \"Tom\" L.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L043",
+      "photoFile": "hernandez-dennis-tom-l.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:romblon:lone",
+      "jurisdiction": "ROMBLON",
+      "districtLabel": "lone",
+      "representative": "Madrona, Eleandro Jesus F.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/A054",
+      "photoFile": "madrona-eleandro-jesus-f.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:samar:1st",
+      "jurisdiction": "SAMAR",
+      "districtLabel": "1st",
+      "representative": "Tan, Stephen James T.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K082",
+      "photoFile": "tan-stephen-james-t.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:samar:2nd",
+      "jurisdiction": "SAMAR",
+      "districtLabel": "2nd",
+      "representative": "Tan, Reynolds Michael T.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K084",
+      "photoFile": "tan-reynolds-michael-t.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:san-jose-del-monte-city:lone",
+      "jurisdiction": "CITY OF SAN JOSE DEL MONTE",
+      "districtLabel": "lone",
+      "representative": "Robes, Arturo B.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/F056",
+      "photoFile": "robes-arturo-b.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:san-juan-city:lone",
+      "jurisdiction": "SAN JUAN CITY",
+      "districtLabel": "lone",
+      "representative": "Zamora, Ysabel Maria J.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K099",
+      "photoFile": "zamora-ysabel-maria-j.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:santa-rosa-city:lone",
+      "jurisdiction": "CITY OF STA. ROSA",
+      "districtLabel": "lone",
+      "representative": "Gonzales, Roy M.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L041",
+      "photoFile": "gonzales-roy-m.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:sarangani:lone",
+      "jurisdiction": "SARANGANI",
+      "districtLabel": "lone",
+      "representative": "Solon, Steve Chiongbian",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K078",
+      "photoFile": "solon-steve-chiongbian.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:siquijor:lone",
+      "jurisdiction": "SIQUIJOR",
+      "districtLabel": "lone",
+      "representative": "Villa, Zaldy S.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K137",
+      "photoFile": "villa-zaldy-s.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:sorsogon:1st",
+      "jurisdiction": "SORSOGON",
+      "districtLabel": "1st",
+      "representative": "Escudero, Bernadette G.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K030",
+      "photoFile": "escudero-bernadette-g.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:sorsogon:2nd",
+      "jurisdiction": "SORSOGON",
+      "districtLabel": "2nd",
+      "representative": "Fortes, Manuel \"Wowo\" Jr. L.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K033",
+      "photoFile": "fortes-manuel-wowo-jr-l.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:south-cotabato:1st",
+      "jurisdiction": "SOUTH COTABATO",
+      "districtLabel": "1st",
+      "representative": "Lumayag, Isidro D.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K049",
+      "photoFile": "lumayag-isidro-d.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:south-cotabato:2nd",
+      "jurisdiction": "SOUTH COTABATO",
+      "districtLabel": "2nd",
+      "representative": "Hernandez, Ferdinand L.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/H035",
+      "photoFile": "hernandez-ferdinand-l.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:south-cotabato:3rd",
+      "jurisdiction": "SOUTH COTABATO",
+      "districtLabel": "3rd",
+      "representative": "Tuan, Dibu S.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L083",
+      "photoFile": "tuan-dibu-s.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:southern-leyte:1st",
+      "jurisdiction": "SOUTHERN LEYTE",
+      "districtLabel": "1st",
+      "representative": "Mercado, Roger Gaviola",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/0118",
+      "photoFile": "mercado-roger-gaviola.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:southern-leyte:2nd",
+      "jurisdiction": "SOUTHERN LEYTE",
+      "districtLabel": "2nd",
+      "representative": "Yap, Christopherson \"Coco\" M.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K096",
+      "photoFile": "yap-christopherson-coco-m.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:sultan-kudarat:1st",
+      "jurisdiction": "SULTAN KUDARAT",
+      "districtLabel": "1st",
+      "representative": "Sakaluran, Ruth M.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L071",
+      "photoFile": "sakaluran-ruth-m.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:sultan-kudarat:2nd",
+      "jurisdiction": "SULTAN KUDARAT",
+      "districtLabel": "2nd",
+      "representative": "Suansing, Bella Vanessa B.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L080",
+      "photoFile": "suansing-bella-vanessa-b.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:sulu:1st",
+      "jurisdiction": "SULU",
+      "districtLabel": "1st",
+      "representative": "Tan, Samier A.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J073",
+      "photoFile": "tan-samier-a.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:sulu:2nd",
+      "jurisdiction": "SULU",
+      "districtLabel": "2nd",
+      "representative": "Arbison, Munir M.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/D004",
+      "photoFile": "arbison-munir-m.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:surigao-del-norte:1st",
+      "jurisdiction": "SURIGAO DEL NORTE",
+      "districtLabel": "1st",
+      "representative": "Matugas, Francisco \"Lalo\" T.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/F046",
+      "photoFile": "matugas-francisco-lalo-t.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:surigao-del-norte:2nd",
+      "jurisdiction": "SURIGAO DEL NORTE",
+      "districtLabel": "2nd",
+      "representative": "Barbers, Bernadette S.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L008",
+      "photoFile": "barbers-bernadette-s.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:surigao-del-sur:1st",
+      "jurisdiction": "SURIGAO DEL SUR",
+      "districtLabel": "1st",
+      "representative": "Momo, Romeo Sr. S.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/J105",
+      "photoFile": "momo-romeo-sr-s.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:surigao-del-sur:2nd",
+      "jurisdiction": "SURIGAO DEL SUR",
+      "districtLabel": "2nd",
+      "representative": "Pimentel, Alexander Ty",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L068",
+      "photoFile": "pimentel-alexander-ty.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:taguig-city:2nd",
+      "jurisdiction": "TAGUIG CITY",
+      "districtLabel": "2nd",
+      "representative": "Bocobo, Jorge Daniel S.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L013",
+      "photoFile": "bocobo-jorge-daniel-s.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:taguig-city-pateros:lone",
+      "jurisdiction": "TAGUIG CITY",
+      "districtLabel": "lone",
+      "representative": "Cruz, Ricardo Jr. S.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K024",
+      "photoFile": "cruz-ricardo-jr-s.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:tarlac:1st",
+      "jurisdiction": "TARLAC",
+      "districtLabel": "1st",
+      "representative": "Cojuangco, Jaime Eduardo Marc D.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K021",
+      "photoFile": "cojuangco-jaime-eduardo-marc-d.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:tarlac:2nd",
+      "jurisdiction": "TARLAC",
+      "districtLabel": "2nd",
+      "representative": "Angeles, Maria Cristina C.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L004",
+      "photoFile": "angeles-maria-cristina-c.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:tarlac:3rd",
+      "jurisdiction": "TARLAC",
+      "districtLabel": "3rd",
+      "representative": "Rivera, Noel \"Bong\" N.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K072",
+      "photoFile": "rivera-noel-bong-n.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:tawi-tawi:lone",
+      "jurisdiction": "TAWI-TAWI",
+      "districtLabel": "lone",
+      "representative": "Sali, Dimszar M.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K075",
+      "photoFile": "sali-dimszar-m.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:valenzuela-city:1st",
+      "jurisdiction": "VALENZUELA CITY",
+      "districtLabel": "1st",
+      "representative": "Gatchalian, Kenneth T.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L037",
+      "photoFile": "gatchalian-kenneth-t.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:valenzuela-city:2nd",
+      "jurisdiction": "VALENZUELA CITY",
+      "districtLabel": "2nd",
+      "representative": "Galang, Gerald Cloyd Alexis V.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L035",
+      "photoFile": "galang-gerald-cloyd-alexis-v.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:zambales:1st",
+      "jurisdiction": "ZAMBALES",
+      "districtLabel": "1st",
+      "representative": "Khonghun, Jefferson F.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/H038",
+      "photoFile": "khonghun-jefferson-f.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:zambales:2nd",
+      "jurisdiction": "ZAMBALES",
+      "districtLabel": "2nd",
+      "representative": "Maniquiz, Doris \"Nanay Bing\" E.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K050",
+      "photoFile": "maniquiz-doris-nanay-bing-e.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:zamboanga-city:1st",
+      "jurisdiction": "ZAMBOANGA CITY",
+      "districtLabel": "1st",
+      "representative": "Chua-Tai, Katrina Reiko",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L020",
+      "photoFile": "chua-tai-katrina-reiko.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:zamboanga-city:2nd",
+      "jurisdiction": "ZAMBOANGA CITY",
+      "districtLabel": "2nd",
+      "representative": "Perez, Jerry Evangelista",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L095",
+      "photoFile": "perez-jerry-evangelista.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:zamboanga-del-norte:1st",
+      "jurisdiction": "ZAMBOANGA DEL NORTE",
+      "districtLabel": "1st",
+      "representative": "Uy, Roberto \"Pinpin\" Jr. T.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K141",
+      "photoFile": "uy-roberto-pinpin-jr-t.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:zamboanga-del-norte:2nd",
+      "jurisdiction": "ZAMBOANGA DEL NORTE",
+      "districtLabel": "2nd",
+      "representative": "Labadlabad, Irene G.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L048",
+      "photoFile": "labadlabad-irene-g.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:zamboanga-del-norte:3rd",
+      "jurisdiction": "ZAMBOANGA DEL NORTE",
+      "districtLabel": "3rd",
+      "representative": "Amatong, Adrian Michael A.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K010",
+      "photoFile": "amatong-adrian-michael-a.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:zamboanga-del-sur:1st",
+      "jurisdiction": "ZAMBOANGA DEL SUR",
+      "districtLabel": "1st",
+      "representative": "Yu, Joseph Kim C.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L093",
+      "photoFile": "yu-joseph-kim-c.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:zamboanga-del-sur:2nd",
+      "jurisdiction": "ZAMBOANGA DEL SUR",
+      "districtLabel": "2nd",
+      "representative": "Yu, Jeyzel Victoria C.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/K097",
+      "photoFile": "yu-jeyzel-victoria-c.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:zamboanga-sibugay:1st",
+      "jurisdiction": "ZAMBOANGA SIBUGAY",
+      "districtLabel": "1st",
+      "representative": "Bancoro, Marlo C.",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L007",
+      "photoFile": "bancoro-marlo-c.jpg",
+      "candidates": []
+    },
+    {
+      "districtId": "leg:zamboanga-sibugay:2nd",
+      "jurisdiction": "ZAMBOANGA SIBUGAY",
+      "districtLabel": "2nd",
+      "representative": "Hofer-Hasim, Marlesa \"Doc Marly\"",
+      "resolutionStatus": "resolved",
+      "detailUrl": "https://www.congress.gov.ph/house-members/view/L045",
+      "photoFile": "hofer-hasim-marlesa-doc-marly.jpg",
+      "candidates": []
+    }
+  ]
+}

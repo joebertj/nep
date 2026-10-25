@@ -1,14 +1,20 @@
 {
   "databaseName": "PH location DB",
-  "databaseSha256": "90a45f2f8a98a25f11e0729454607eb0b48c201e9a9e4b7def8bddb20a9a981a",
+  "databaseSha256": "2270ba0190faad3cdd4add2a0208d43341a13d6c45675ff585d0fbc963545dbd",
   "counts": {
-    "rowsReviewed": 162421,
-    "rowsUnresolved": 137431,
-    "rowsWithNames": 24990,
-    "assignmentsChanged": 10040
+    "rowsReviewed": 205350,
+    "rowsUnresolved": 173794,
+    "rowsWithNames": 31556,
+    "assignmentsChanged": 16532
   },
-  "catalogTitles": 39199,
+  "catalogTitles": 40116,
   "pages": [
+    {
+      "page": "archive.html",
+      "tables": 2,
+      "embeddedDocuments": 0,
+      "tablesWithLocationColumns": 1
+    },
     {
       "page": "budget-innovations.html",
       "tables": 3,
@@ -16,10 +22,16 @@
       "tablesWithLocationColumns": 2
     },
     {
+      "page": "budget-trivia.html",
+      "tables": 0,
+      "embeddedDocuments": 0,
+      "tablesWithLocationColumns": 0
+    },
+    {
       "page": "congress.html",
-      "tables": 11,
+      "tables": 10,
       "embeddedDocuments": 5,
-      "tablesWithLocationColumns": 11
+      "tablesWithLocationColumns": 10
     },
     {
       "page": "cost-matching.html",
@@ -41,21 +53,21 @@
     },
     {
       "page": "dpwh-hgab-comparison.html",
-      "tables": 2,
+      "tables": 1,
       "embeddedDocuments": 1,
       "tablesWithLocationColumns": 1
     },
     {
       "page": "dpwh-hgab.html",
-      "tables": 19,
+      "tables": 18,
       "embeddedDocuments": 5,
-      "tablesWithLocationColumns": 18
+      "tablesWithLocationColumns": 17
     },
     {
       "page": "dpwh.html",
-      "tables": 0,
-      "embeddedDocuments": 4,
-      "tablesWithLocationColumns": 0
+      "tables": 3,
+      "embeddedDocuments": 0,
+      "tablesWithLocationColumns": 2
     },
     {
       "page": "fmr.html",
@@ -77,9 +89,9 @@
     },
     {
       "page": "mpb.html",
-      "tables": 2,
+      "tables": 3,
       "embeddedDocuments": 2,
-      "tablesWithLocationColumns": 1
+      "tablesWithLocationColumns": 2
     },
     {
       "page": "nia-irrigation.html",
@@ -89,21 +101,33 @@
     },
     {
       "page": "nia.html",
-      "tables": 4,
-      "embeddedDocuments": 1,
+      "tables": 6,
+      "embeddedDocuments": 5,
       "tablesWithLocationColumns": 4
     },
     {
-      "page": "rcs.html",
+      "page": "project-documents.html",
+      "tables": 1,
+      "embeddedDocuments": 0,
+      "tablesWithLocationColumns": 0
+    },
+    {
+      "page": "rcs-rainfall-archive.html",
       "tables": 4,
       "embeddedDocuments": 0,
       "tablesWithLocationColumns": 3
     },
     {
+      "page": "rcs.html",
+      "tables": 3,
+      "embeddedDocuments": 0,
+      "tablesWithLocationColumns": 2
+    },
+    {
       "page": "repeats.html",
-      "tables": 10,
+      "tables": 14,
       "embeddedDocuments": 1,
-      "tablesWithLocationColumns": 8
+      "tablesWithLocationColumns": 11
     },
     {
       "page": "summary.html",

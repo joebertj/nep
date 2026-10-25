@@ -97,6 +97,12 @@
       "uniformStyles": true
     },
     {
+      "page": "rcs-rainfall-archive.html",
+      "links": 15,
+      "uniformMarkup": true,
+      "uniformStyles": true
+    },
+    {
       "page": "rcs.html",
       "links": 15,
       "uniformMarkup": true,
@@ -115,7 +121,7 @@
       "uniformStyles": true
     }
   ],
-  "pageCount": 19,
+  "pageCount": 20,
   "menuHeightsPx": {
     "desktop": 118,
     "tablet": 202,

@@ -97,7 +97,7 @@ def cost_category_totals_from_words(words,width,page,method):
         if len(word)<5:continue
         try:x0,y0,x1,y1=map(float,word[:4])
         except (TypeError,ValueError):continue
-        tokens.append({'x':x0,'x1':x1,'y':(y0+y1)/2,'text':str(word[4]).strip()})
+        tokens.append({'x':x0,'x1':x1,'y':(y0+y1)/2,'y0':y0,'y1':y1,'text':str(word[4]).strip()})
     shares=[t for t in tokens if re.fullmatch(r'\d{1,4}(?:[.,]\d{1,4})?%',t['text']) and width*.42<=t['x']<=width*.72]
     found=[]
     for share_token in shares:
@@ -109,10 +109,14 @@ def cost_category_totals_from_words(words,width,page,method):
         try:share=float(share_value)
         except ValueError:continue
         if not 0<share<=100:continue
-        row_tokens=[t for t in tokens if abs(t['y']-share_token['y'])<=10]
+        # Summary rows on some native-text DPWH forms are only about 9 pt
+        # apart. A 10 pt band joins neighboring categories and can select the
+        # wrong amount; stay within the printed text height instead.
+        row_tolerance=max(3.5,min(5.0,(share_token['y1']-share_token['y0'])*.75))
+        row_tokens=[t for t in tokens if abs(t['y']-share_token['y'])<=row_tolerance]
         monetary=[]
         for token in row_tokens:
-            if token['x']<share_token['x']+width*.13:continue
+            if token['x']<share_token['x']+width*.08:continue
             parsed=amount(token['text'])
             if parsed is not None and parsed>0:monetary.append((token,parsed))
         # OCR may split cents into a neighboring token. Join adjacent words
@@ -490,8 +494,8 @@ def parse_pdf(path,output,allocation_pesos=None):
         # Percentages on DPWH-OMSP-13-15 bill pages are often the VAT rate.
         # Only read project-wide categories from the dedicated budget summary
         # page, which also carries the overall program/cost heading.
-        is_category_summary=bool(re.search(r'PROGRAM\s+OF\s+WORKS\s*/?\s*BUDGET\s+COST|BREAKDOWN\s+OF\s+EXPENDITURES',text,re.I))
-        if is_category_summary and method.startswith('OCR') and words:
+        is_category_summary=bool(re.search(r'PROGRAM\s+OF\s+WORKS?\s*/\s*BUDGET\s+COST|BREAKDOWN\s+OF\s+EXPENDITURES',text,re.I))
+        if is_category_summary and words:
             mapped=cost_category_totals_from_words(words,ocr_width,number+1,method)
             if mapped:
                 # A real printed category summary is a full allocation split.
@@ -500,7 +504,7 @@ def parse_pdf(path,output,allocation_pesos=None):
                 share_total=sum(row['sharePct'] for row in mapped)
                 if len(mapped)>=3 and 90<=share_total<=110:
                     cost_categories.extend(mapped)
-            else:
+            elif method.startswith('OCR'):
                 category_lines={}
                 for word in words:category_lines.setdefault(round(word[1]/5),[]).append(word)
                 category_text='\n'.join(' '.join(w[4] for w in sorted(line,key=lambda x:x[0]))

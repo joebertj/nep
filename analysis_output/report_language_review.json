@@ -3,7 +3,7 @@
   "pages": [
     {
       "page": "archive.html",
-      "sha256": "6ce30219b720548a272acddb965d31cece358b8f5d427cd7fde5b50dd91dc6b3",
+      "sha256": "9abeacde6691427686ba7aee1974870647bfecd7948d83d95f9100edaa9ee1c1",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
@@ -13,7 +13,7 @@
     },
     {
       "page": "budget-innovations.html",
-      "sha256": "ad77557ab155fae73854dd210acd032bde6de8254f7dd6dd8dff8f26125a7ae6",
+      "sha256": "b9aad03757c7cfe7c2960073e5fd47373160f6351abb8dd040d02e4d059a2e32",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
@@ -23,8 +23,18 @@
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     },
     {
+      "page": "budget-trivia.html",
+      "sha256": "0322ce596fcd2c26c3095646914799e13a9c7ea41e8929c5b435bf271e673806",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
       "page": "congress.html",
-      "sha256": "d2c224435dd751a1f7e1f6810575bc8ba40971765031b1ea093bef42c690e88a",
+      "sha256": "0358db74c16f234d34b45d3da42f6f55f76c6cc56cc2015e9bda620e44b5a3ab",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
@@ -39,7 +49,7 @@
     },
     {
       "page": "cost-matching.html",
-      "sha256": "cf598b30f75caf032cd070167e00d996af9f9cb50d86981c872381308dae992b",
+      "sha256": "9684b411d36fc4181ce17f0f465ccc388ca813de352d46468c672cf209bc0657",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
@@ -49,7 +59,7 @@
     },
     {
       "page": "cost-per-km.html",
-      "sha256": "ba4589a26ed4e9e84c26a7aa2d92f2735338a538ed19edb1899d7b972059640f",
+      "sha256": "eb17210b40fd54ea0835f426f11e9e8cce1ddbcecf1dcf585418e4f33a3f1983",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
@@ -61,7 +71,7 @@
     },
     {
       "page": "deped.html",
-      "sha256": "906a3effd961a2fbe9131025bb67c65c215e301523bef9bf5be19db0fb5992c1",
+      "sha256": "2b661c16df3815fec9e5cbb025e72922ab3c457fbfff7f31e0fb0a7165c44e85",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
@@ -71,7 +81,7 @@
     },
     {
       "page": "dpwh-hgab-comparison.html",
-      "sha256": "cde7c5e498c92d53e8970761e0fb5937ce414d341341a4142047e05dbf1259ac",
+      "sha256": "8fe930654cbae5d8e4db3fae3413b6aee77ab2bdf3aadcc3b0624151c83d902f",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
@@ -81,7 +91,7 @@
     },
     {
       "page": "dpwh-hgab.html",
-      "sha256": "98513ae8bdae871913387aef0a66d5f6a6b0632caad09f638b3923b58ead280e",
+      "sha256": "d91f4cd3387c165b8af8ed94d89769772e8b4a849f7a63b35c8fa1c6db2d8613",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
@@ -96,7 +106,7 @@
     },
     {
       "page": "dpwh.html",
-      "sha256": "eaf77980791198caa81717cbddc80206ebac71e243f673169ccac7e2ae5a9691",
+      "sha256": "61d2a12e6cd857a79f0c819f36a91996332fea188282f4eb5aec0087dbf5359c",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
@@ -107,7 +117,7 @@
     },
     {
       "page": "fmr.html",
-      "sha256": "aaeedb8c64e8d03a742c013833b51af53e8648c16fcd6a91bea382effb55107a",
+      "sha256": "3ef3b8478c0b43f1eff0434232d54eeb3756a5a1962c767d99ff7a9d6be9f8d7",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
@@ -117,7 +127,7 @@
     },
     {
       "page": "hfep.html",
-      "sha256": "2bbc808af3a5a149f3921cd15e3b917d5057e81eca2c98271846fac46ba214e7",
+      "sha256": "1b39665982d996b4783ea57ff6dfbf7c5a8857f2e8592e12f0bb29b66afeacd7",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
@@ -127,11 +137,13 @@
     },
     {
       "page": "mpb.html",
-      "sha256": "6ae5921fa4cd0c4ba130bc9ef01426ebd9efcd8c81ccc18438cf9c892568b7ea",
+      "sha256": "608d703c50296c7dfd2903017907e60b9d5ead9d4fe49679f441f38da3a0bdd7",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
         "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un",
+        "nst cited source pages. MPB review flags · overview These are different review queues, not a single corruption score. Bars show each count against its stated denominator; categories can overlap and should not be added together. A flag is a prompt for human review, not a",
+        "ows the project location in the PH location DB and describes geographic coverage; it does not imply sponsorship or control. Boundary layer source ↗ Printed coordinates outside the named municipality 145 of 1,215 coordinate-bearing entries with qualified title locations p",
         "etation but do not establish need. The 50/100/250/1000-meter bins are descriptive review bands, not corruption thresholds. Pairs are not distinct projects; a cluster of three items yields three pairs. Do not sum pair allocations as losses. Download every distance, raw c",
         " rows. Repeat graphs count all filtered comparison pairs by retention status. No hypothesis test or corruption probability is inferred from these descriptive plots. Request original-page adjudication, approved designs, floor areas, bills of quantities, contracts, projec"
       ],
@@ -139,7 +151,7 @@
     },
     {
       "page": "nia-irrigation.html",
-      "sha256": "1beb85cf75a41e286cf0afc2912712285b35d0d2c804216f224df96475b3ec54",
+      "sha256": "2c6f2c8d15aacb7db33ca0211e3c8dfa0acf6dbada6162a98c6dfd86c5473a8c",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
@@ -149,7 +161,7 @@
     },
     {
       "page": "nia.html",
-      "sha256": "554abfb0eeba2065a69ee22f58d321aa0e74e6bd403bd4a0af0f3b03406fdc7c",
+      "sha256": "fc4fb59c1c9ba77b5e5586952fb802c676d8fcc65844b25397e3709c5111838c",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
@@ -160,7 +172,17 @@
     },
     {
       "page": "project-documents.html",
-      "sha256": "e887fc4aee40557bde22c4582e13a3878873c18816948f6f8f5e75c7a42388b9",
+      "sha256": "f6c2b187de74e41685a2a56197c169b16d2693a354d90af89559223699085163",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "rcs-rainfall-archive.html",
+      "sha256": "2c85f941481279c01500400d6d52336c15cd9ee8159bfd4e3259ecf5eb17ebda",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
@@ -170,17 +192,18 @@
     },
     {
       "page": "rcs.html",
-      "sha256": "6ea22c9cfc13cf5a6c307f7f0139c4e001c1cdcb9c4c53d66da2454435ed6388",
+      "sha256": "aa272ef38cdafacfedc22a19bdc425107f5f80dc0db4e8c28784f5a1beb57323",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
-        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un"
+        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un",
+        " allocations create a reason to compare the engineering estimates; they do not establish padding or wrongdoing. Priority review lead Was each POW priced from its actual scope, or shaped around a fixed per-office amount? Six and fourteen named school sites both sit under"
       ],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     },
     {
       "page": "repeats.html",
-      "sha256": "f99e827ba5888e41f277cb4c3b9f78e0d58071853446ed7f57befbf513045434",
+      "sha256": "8b1caf7e4acb84e2461025a56bf7647a137a5f0bc38a6163e780702c29c4d571",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
@@ -192,20 +215,20 @@
     },
     {
       "page": "summary.html",
-      "sha256": "bdc81959dfbde06945efceaf6f741a3a40d5ac49ca49832b49452405cfd68e0a",
+      "sha256": "99941a0d026bc977db28417a378b4ff8e3ed99864f5b4d167df94f33f7236983",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
-        "rsing uncertainty and location limits alongside every claim. Priorities are editorial triage, not a corruption score. Figures overlap and must not be added together. Summary · investigative leads Cost per meter Project repeat comparisons DPWH · NEP → HGAB (3rd) RCS · ra",
+        "rsing uncertainty and location limits alongside every claim. Priorities are editorial triage, not a corruption score. Figures overlap and must not be added together. Summary · investigative leads Cost per meter Project repeat comparisons DPWH · NEP → HGAB (3rd) RCS · PO",
         "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un",
-        "peat candidates 1379 proposals Evidence guides an investigation. None of these findings establishes corruption. Follow the changes between budget stages NEP → HGAB (House version) → GAB (Senate version) → Bicam (House/Senate reconciliation) → GAA (enacted). NEP and fina",
+        "eat candidates 1,379 proposals Evidence guides an investigation. None of these findings establishes corruption. Full line-item review queue ↓ Follow the changes between budget stages NEP → HGAB (House version) → GAB (Senate version) → Bicam (House/Senate reconciliation)",
         " Bridge chainage is not necessarily bridge span. No cross-category average, overpricing estimate or corruption probability is established. Inventory lanes are existing asset characteristics, not verified funded quantities; widening needs additional funded lanes. Overpas",
-        "ankings cover only 38.6% of extracted allocation value. Names indicate geography, not authorship or sponsorship. Inspect congressional coverage limits → Other schedules · NEP → HGAB comparison coverage Compare the same budget hierarchy before calculating changes. Missing"
+        "ankings cover only 41.4% of extracted allocation value. Names indicate geography, not authorship or sponsorship. Inspect congressional coverage limits → Other schedules · NEP → HGAB comparison coverage Compare the same budget hierarchy before calculating changes. Missing"
       ],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     }
   ],
-  "reviewedPages": 18,
+  "reviewedPages": 20,
   "guarantee": false,
   "limitations": [
     "This is an evidence/editorial review, not jurisdiction-specific legal advice or legal clearance.",

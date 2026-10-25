@@ -44,6 +44,7 @@ class PHLocations:
                 if level=='city' and r['level']!='city':continue
                 if level=='municipality' and r['level'] not in {'city','municipality','locality'}:continue
                 if level=='barangay' and r['level']!='barangay':continue
+                if level=='administrative_district' and r['level']!='administrative_district':continue
                 if parent_name:
                     parent=self.db.execute('SELECT * FROM places WHERE id=?',(r['parent_id'],)).fetchone()
                     if not parent or place_key(parent['name'])!=place_key(parent_name):continue
@@ -60,6 +61,7 @@ class PHLocations:
             if level=='city':candidates=self.place_candidates(evidence['name'],'city')
             elif level=='municipality':candidates=self.place_candidates(evidence['name'],'municipality',evidence['province'])
             elif level=='barangay':candidates=self.place_candidates(evidence['name'],'barangay',evidence['city'])
+            elif level=='administrative_locality':candidates=self.place_candidates(evidence['name'],'administrative_district',evidence['city'])
             else:continue
             if len(candidates)!=1:return ()
         names=set()
