@@ -113,6 +113,10 @@ files=(
   static/nep-preview/dpwh-hgab-comparison.html
   static/nep-preview/dpwh-hgab-comparison.json
   static/nep-preview/dpwh-hgab.html
+  static/nep-preview/dpwh-deo-office-change-maps.json
+  static/nep-preview/dpwh-deo-office-changes.js
+  static/nep-preview/dpwh-office-change-share
+  static/nep-preview/dpwh-logo.svg
   static/nep-preview/dpwh.html
   static/nep-preview/fmr.html
   static/nep-preview/hfep.html
@@ -130,6 +134,7 @@ files=(
   static/nep-preview/out-of-place-share-card.png
   static/nep-preview/out-of-place-share
   static/nep-preview/ignorant.html
+  static/nep-preview/plotly-2.35.2.min.js
   static/nep-preview/cost-per-km.html
   static/nep-preview/cost-matching.html
   static/nep-preview/external-reference-review.json
@@ -189,6 +194,10 @@ health_files=(
   static/nep-preview/dpwh-hgab-comparison.html
   static/nep-preview/dpwh-hgab-comparison.json
   static/nep-preview/dpwh-hgab.html
+  static/nep-preview/dpwh-deo-office-change-maps.json
+  static/nep-preview/dpwh-deo-office-changes.js
+  static/nep-preview/dpwh-office-change-share
+  static/nep-preview/dpwh-logo.svg
   static/nep-preview/dpwh-data.json
   static/nep-preview/dpwh.html
   static/nep-preview/fmr.html
@@ -207,6 +216,7 @@ health_files=(
   static/nep-preview/out-of-place-share-card.png
   static/nep-preview/out-of-place-share/representative-13c17617ebbf9151.png
   static/nep-preview/ignorant.html
+  static/nep-preview/plotly-2.35.2.min.js
   static/nep-preview/cost-per-km.html
   static/nep-preview/cost-matching.html
   static/nep-preview/external-reference-review.json

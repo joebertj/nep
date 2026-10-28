@@ -58,7 +58,13 @@ def apply():
     body+=table(['Archived HGAB 2nd-reading line','Archived allocation pesos','Source page as originally recorded','Original schedule context'],[[r['name'],r['amount'],r['page'],r['context']] for r in rows[:25]])
     body+='<p>First 25 original rows shown; the CSV exports these displayed rows. <a href="fmr-historical-nep-2nd.json" download>Download all 795 archived rows and their original provenance</a>.</p>'
     s=s.replace('</main>',section('historical-nep-2nd','Historical analysis · NEP → HGAB 2nd reading',body)+'</main>',1);p.write_text(s)
-    p=STATIC/'dpwh-hgab.html';s=p.read_text().replace(':not(#supporting-methodology){display:none!important}',':not(#supporting-methodology):not(#historical-nep-2nd){display:none!important}');start=s.find('<section id="historical-nep-2nd"')
+    p=STATIC/'dpwh-hgab.html';s=p.read_text().replace(':not(#supporting-methodology){display:none!important}',':not(#supporting-methodology):not(#historical-nep-2nd){display:none!important}')
+    # The archive builder replaces the historical section with a reference
+    # card. Remove prior reference cards before appending the retained section
+    # so repeated rebuilds cannot accumulate duplicates at the page footer.
+    s=re.sub(r'<section\b(?=[^>]*\bid="historical-nep-2nd-archive-reference")[^>]*>.*?</section>\s*','',s,flags=re.S)
+    s=re.sub(r'<h3>Historical analysis · NEP → HGAB 2nd reading</h3>\s*<p>This historical section is now on .*?</p>\s*','',s,flags=re.S)
+    start=s.find('<section id="historical-nep-2nd"')
     if start>=0:
         end=End(s[start:],'section').end;s=s[:start]+s[start+end:]
     old=json.loads((STATIC/'dpwh-data.json').read_text());rows=old.get('hbInsertions2nd',[])

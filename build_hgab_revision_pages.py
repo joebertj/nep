@@ -214,8 +214,6 @@ def write_dpwh_comparison_page() -> None:
     html = hgab_page.read_text(encoding="utf-8")
     third_candidates = data["hbInsertions"]
     third_total = sum(int(row.get("amountPesos") or 0) for row in third_candidates)
-    old_candidates = data["hbInsertions2nd"]
-    old_total = sum(int(row.get("amountPesos") or 0) for row in old_candidates)
     html = html.replace(
         "<title>DPWH · HGAB insertions (FY2027)</title>",
         "<title>DPWH · NEP to HGAB review (FY2027)</title>",
@@ -264,22 +262,15 @@ def write_dpwh_comparison_page() -> None:
     html = html.replace("Unresolved records by title-screen result", "Unmatched HGAB line items after NEP title screening")
     html = html.replace("Candidate count and allocation for the current filters.", "Count and extracted allocation for the unmatched line items.")
     html = html.replace("Unresolved-record count and extracted allocations for the current filters.", "Count and extracted allocation for the unmatched line items.")
-    html = html.replace("<th>HB project line</th>", "<th>Extracted HGAB record</th>")
+    html = html.replace("<th>HB project line</th>", "<th>HGAB project</th>")
     html = html.replace("<th class=\"num\">HB allocation</th>", "<th class=\"num\">Extracted amount</th>")
     html = re.sub(
         r'(<h2>FY2027 HGAB line items unmatched to NEP</h2>\s*<p class="sub">).*?(</p>)',
         lambda m: m.group(1) + f'After removing exact-title matches and fuzzy title counterparts scoring at least 83%, <strong>{len(third_candidates):,} HGAB line items</strong> remain, carrying <strong>₱{third_total/1e9:,.2f}B</strong>. This shortlist is screened for project-title similarity; verify project scope and cited bill page before counting confirmed additions.' + m.group(2),
         html, count=1, flags=re.S,
     )
-    archive = f'''<details open class="card section" id="second-reading-archive"><summary><strong>Previous edition · HGAB 2nd Reading</strong></summary><p class="sub">The 2nd-reading edition has {len(old_candidates):,} unmatched records after the same 83% title screen, carrying ₱{old_total/1e9:,.2f}B in extracted allocations. These are candidates for review, not confirmed additions.</p><button class="export-btn" id="secondReadingCsv" type="button">Export 2nd-reading unmatched records to CSV</button><p class="sub"><a href="dpwh-hgab-comparison.html">Open DPWH 2nd vs 3rd Reading comparison</a></p></details>'''
     html = re.sub(r'<details open class="card section" id="second-reading-archive">.*?</details>', '', html, count=1, flags=re.S)
-    section_start = html.index('<section id="hgab-insertion"')
-    source_context = html.index('<p class="sub">Source: local HB 10858 Volume I-C', section_start)
-    section_end = html.index('</section>', source_context)
-    html = html[:section_end] + archive + html[section_end:]
-    second_csv_handler = "document.getElementById('secondReadingCsv').onclick=()=>downloadCsv('dpwh_hgab_2nd_reading_review_records.csv',D.hbInsertions2nd);"
-    html = html.replace(second_csv_handler, "")
-    html = html.replace("document.getElementById('insertionCsv').onclick=", second_csv_handler + "document.getElementById('insertionCsv').onclick=", 1)
+    html = re.sub(r"document\.getElementById\('secondReadingCsv'\)\.onclick=.*?;(?=document\.getElementById\('insertionCsv'\)\.onclick=)", '', html, count=1)
     html = html.replace("dpwh_hgab_insertion_candidates.csv", "dpwh_hgab_nep_review_records.csv")
     html = html.replace("Export filtered rows to CSV", "Export filtered review records to CSV")
     html = html.replace(

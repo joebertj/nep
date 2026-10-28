@@ -105,6 +105,10 @@ def apply():
                   f'<h2>{esc(item["title"])}</h2><p>This historical section is now on '
                   f'<a href="archive.html#{item["id"]}">the archive page</a>. Current budget-stage comparison is maintained on '
                   f'<a href="{SITE}#compare">csiiiv ↗</a>.</p></section>')
+        # Repeated archive builds must leave one reference at the former
+        # section location, even if an earlier build already replaced it.
+        text=re.sub(r'<section\b(?=[^>]*\bid="'+re.escape(item['id'])+r'-archive-reference")[^>]*>.*?</section>\s*','',text,flags=re.S)
+        text=re.sub(r'<h3>'+re.escape(item['title'])+r'</h3>\s*<p>This historical section is now on .*?</p>\s*','',text,flags=re.S)
         pattern=r'<section\b(?=[^>]*\bid="'+re.escape(item['id'])+r'")[^>]*>.*?</section>'
         text,n=re.subn(pattern,lambda _:reference,text,count=1,flags=re.S)
         if n:source.write_text(text)

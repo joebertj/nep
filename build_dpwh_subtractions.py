@@ -78,10 +78,10 @@ def section(key, group):
 
 SCRIPT=r'''<script id="subtractions-script">
 (()=>{const money=v=>v==null?'Unknown':'₱'+Number(v).toLocaleString('en-PH'),esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-fetch('dpwh-data.json').then(r=>{if(!r.ok)throw Error('Could not load removal data');return r.json()}).then(D=>{for(const key of ['domestic','fap']){const rows=D.removals[key].rows,search=document.getElementById('sub-search-'+key),filter=document.getElementById('sub-filter-'+key);let page=0;
+fetch('dpwh-data.json').then(r=>{if(!r.ok)throw Error('Could not load removal data');return r.json()}).then(D=>{for(const key of ['domestic','fap']){if(!document.getElementById('sub-search-'+key))continue;const rows=D.removals[key].rows,search=document.getElementById('sub-search-'+key),filter=document.getElementById('sub-filter-'+key);let page=0;
 const selected=()=>rows.filter(r=>Object.values(r).join(' ').toLowerCase().includes(search.value.trim().toLowerCase())).sort((a,b)=>filter.value==='name'?a.nepTitle.localeCompare(b.nepTitle):b.nepPesos-a.nepPesos);
 const draw=()=>{const data=selected(),pages=Math.max(1,Math.ceil(data.length/25));page=Math.max(0,Math.min(page,pages-1));document.getElementById('sub-body-'+key).innerHTML=data.slice(page*25,page*25+25).map(r=>`<tr><td>${esc(r.status)}</td><td>${esc(r.nepTitle)}</td><td>${money(r.nepPesos)}</td><td>${esc(r.office)}</td><td>NEP p.${esc(r.nepPage??'Unknown')}<br>${esc(r.nepId)}</td></tr>`).join('')||'<tr><td colspan="5">No records in this view.</td></tr>';document.getElementById('sub-page-'+key).textContent=`${data.length? page*25+1:0}–${Math.min(page*25+25,data.length)} of ${data.length}`;document.getElementById('sub-prev-'+key).disabled=page===0;document.getElementById('sub-next-'+key).disabled=page>=pages-1};
-search.oninput=filter.onchange=()=>{page=0;draw()};document.getElementById('sub-prev-'+key).onclick=()=>{page--;draw()};document.getElementById('sub-next-'+key).onclick=()=>{page++;draw()};document.getElementById('sub-csv-'+key).onclick=()=>{const cols=['status','basis','nepId','nepTitle','nepPesos','office','nepPage'],csv=[cols,...selected().map(r=>cols.map(k=>r[k]??''))].map(row=>row.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\r\n'),url=URL.createObjectURL(new Blob(['\ufeff',csv],{type:'text/csv;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download='dpwh_'+key+'_removals_3rd.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};draw()}}).catch(e=>{for(const key of ['domestic','fap'])document.getElementById('sub-body-'+key).innerHTML='<tr><td colspan="5">'+esc(e.message)+'</td></tr>'});})();
+search.oninput=filter.onchange=()=>{page=0;draw()};document.getElementById('sub-prev-'+key).onclick=()=>{page--;draw()};document.getElementById('sub-next-'+key).onclick=()=>{page++;draw()};document.getElementById('sub-csv-'+key).onclick=()=>{const cols=['status','basis','nepId','nepTitle','nepPesos','office','nepPage'],csv=[cols,...selected().map(r=>cols.map(k=>r[k]??''))].map(row=>row.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\r\n'),url=URL.createObjectURL(new Blob(['\ufeff',csv],{type:'text/csv;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download='dpwh_'+key+'_removals_3rd.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};draw()}}).catch(e=>{for(const key of ['domestic','fap']){const body=document.getElementById('sub-body-'+key);if(body)body.innerHTML='<tr><td colspan="5">'+esc(e.message)+'</td></tr>'}});})();
 </script>'''
 
 
@@ -95,12 +95,15 @@ def refresh():
     (ROOT/'analysis_output/dpwh_removals_held_out.json').write_text(json.dumps(hints,ensure_ascii=False,indent=2)+'\n')
     for name in ['dpwh.html','dpwh-hgab.html']:
         path=STATIC/name;page=path.read_text()
+        if '<section id="hgab-insertion"' not in page:
+            continue
         page=re.sub(r'<section class="card section" id="subtractions-(?:domestic|fap)">.*?</section>','',page,flags=re.S)
         page=re.sub(r'<script id="subtractions-script">.*?</script>','',page,flags=re.S)
         page,n=re.subn(r'(<section id="hgab-insertion".*?</section>)',lambda m:m[1]+section('domestic',groups['domestic']),page,count=1,flags=re.S)
         if n!=1:raise ValueError('Missing additions section: '+name)
-        page,n=re.subn(r'(<section class="card section" id="foreign-assisted-review">.*?</section>)',lambda m:m[1]+section('fap',groups['fap']),page,count=1,flags=re.S)
-        if n!=1:raise ValueError('Missing FAP section: '+name)
+        if groups['fap']['summary']['unpairedNepRows']>0:
+            page,n=re.subn(r'(<section class="card section" id="foreign-assisted-review">.*?</section>)',lambda m:m[1]+section('fap',groups['fap']),page,count=1,flags=re.S)
+            if n!=1:raise ValueError('Missing FAP section: '+name)
         path.write_text(page.replace('</body>',SCRIPT+'</body>',1))
     print(json.dumps({key:group['summary'] for key,group in groups.items()},indent=2))
     from build_dpwh_allocation_adjustments import refresh as refresh_adjustments

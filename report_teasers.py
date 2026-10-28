@@ -3,7 +3,7 @@ import html,re
 TEASERS={
  'summary.html':'Where should budget investigators look first?',
  'index.html':'Where should budget investigators look first?',
- 'congress.html':'How many budget lines cannot be placed in one district?',
+ 'congress.html':'Which flagged projects are tied to each district?',
  'dpwh.html':'What makes up a project’s cost?',
  'dpwh-hgab.html':'How many House budget lines lack a plausible NEP counterpart?',
  'dpwh-hgab-comparison.html':'What appears only in the House’s third-reading extraction?',
@@ -21,7 +21,7 @@ TEASERS={
  'project-documents.html':'',
 }
 HEADLINES={
- 'congress.html':'lines remain outside the strict district ranking',
+ 'congress.html':'mapped flagged projects to review',
  'dpwh-hgab.html':'domestic candidates needing counterpart verification',
  'repeats.html':'NEP–GAA comparison pairs to verify',
  'budget-innovations.html':'budget terms flagged as potentially new or revived',
