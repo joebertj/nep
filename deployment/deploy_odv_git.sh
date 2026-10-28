@@ -13,10 +13,11 @@ usage() {
 Usage: ./deployment/deploy_odv_git.sh [inspect|deploy]
 
   inspect  Read-only server checkout status (default)
-  deploy   Fetch origin/main, fast-forward the server checkout, and check the
+  deploy   Fetch origin/main, deploy it (or NEP_DEPLOY_COMMIT), and check the
            local frontend response. Rebuild and restart the frontend only when Rust source or Cargo files change.
 
-Overrides: NEP_DEPLOY_HOST, NEP_DEPLOY_USER, NEP_DEPLOY_DIR, NEP_SSH_IDENTITY
+Overrides: NEP_DEPLOY_HOST, NEP_DEPLOY_USER, NEP_DEPLOY_DIR, NEP_SSH_IDENTITY,
+           NEP_DEPLOY_COMMIT (a commit reachable from origin/main)
 EOF
 }
 
@@ -70,12 +71,17 @@ fi
 REMOTE_INSPECT
     ;;
   deploy)
-    printf 'This will fast-forward the server checkout to origin/main and check the local frontend response.\n'
+    DEPLOY_COMMIT="${NEP_DEPLOY_COMMIT:-origin/main}"
+    if [[ ! "$DEPLOY_COMMIT" =~ ^(origin/main|[0-9a-fA-F]{7,40})$ ]]; then
+      echo "Invalid NEP_DEPLOY_COMMIT: use origin/main or a full/short commit hash." >&2
+      exit 2
+    fi
+    printf 'This will deploy %s from origin/main history and check the local frontend response.\n' "$DEPLOY_COMMIT"
     printf 'Type DEPLOY ODV MAIN to continue: '
     read -r answer
     [[ "$answer" == "DEPLOY ODV MAIN" ]] || { echo "Cancelled."; exit 1; }
     "${SSH[@]}" "$REMOTE_USER@$REMOTE_HOST" \
-      "REMOTE_DIR='$REMOTE_DIR' bash -s" <<'REMOTE_DEPLOY'
+      "REMOTE_DIR='$REMOTE_DIR' DEPLOY_COMMIT='$DEPLOY_COMMIT' bash -s" <<'REMOTE_DEPLOY'
 set -euo pipefail
 r="$REMOTE_DIR"
 files=(
@@ -118,6 +124,12 @@ files=(
   static/nep-preview/rcs.html
   static/nep-preview/mpb.html
   static/nep-preview/mpb-data.json
+  static/nep-preview/out-of-place.html
+  static/nep-preview/out-of-place.js
+  static/nep-preview/out-of-place-data.json
+  static/nep-preview/out-of-place-share-card.png
+  static/nep-preview/out-of-place-share
+  static/nep-preview/ignorant.html
   static/nep-preview/cost-per-km.html
   static/nep-preview/cost-matching.html
   static/nep-preview/external-reference-review.json
@@ -189,6 +201,12 @@ health_files=(
   static/nep-preview/rcs.html
   static/nep-preview/mpb.html
   static/nep-preview/mpb-data.json
+  static/nep-preview/out-of-place.html
+  static/nep-preview/out-of-place.js
+  static/nep-preview/out-of-place-data.json
+  static/nep-preview/out-of-place-share-card.png
+  static/nep-preview/out-of-place-share/representative-13c17617ebbf9151.png
+  static/nep-preview/ignorant.html
   static/nep-preview/cost-per-km.html
   static/nep-preview/cost-matching.html
   static/nep-preview/external-reference-review.json
@@ -230,7 +248,15 @@ if ! git -C "$r" diff --cached --quiet; then
 fi
 previous="$(git -C "$r" rev-parse HEAD)"
 git -C "$r" fetch origin main
-target="$(git -C "$r" rev-parse FETCH_HEAD)"
+if [[ "$DEPLOY_COMMIT" == "origin/main" ]]; then
+  target="$(git -C "$r" rev-parse FETCH_HEAD)"
+else
+  target="$(git -C "$r" rev-parse "$DEPLOY_COMMIT^{commit}")"
+  if ! git -C "$r" merge-base --is-ancestor "$target" FETCH_HEAD; then
+    echo "Refusing deployment: requested commit is not in origin/main history." >&2
+    exit 2
+  fi
+fi
 
 # The direct publisher may have left the release files dirty in the checkout.
 # Keep server-only homepage edits when this commit does not change those
@@ -258,7 +284,7 @@ if [[ -n "$dirty_paths" ]]; then
         *)
         release_path=false
         for file in "${files[@]}"; do
-          if [[ "$path" == "$file" ]]; then release_path=true; break; fi
+          if [[ "$path" == "$file" || "$path" == "$file/"* ]]; then release_path=true; break; fi
         done
         if [[ "$release_path" != true ]]; then
           echo "Refusing deployment: unrelated server changes exist." >&2
@@ -269,12 +295,8 @@ if [[ -n "$dirty_paths" ]]; then
       esac
   done <<< "$dirty_paths"
 fi
-if ! git -C "$r" merge-base --is-ancestor "$previous" "$target"; then
-  echo "Refusing deployment: origin/main does not fast-forward the server commit." >&2
-  exit 2
-fi
 if [[ "$previous" == "$target" && -z "$dirty_paths" ]]; then
-  echo "Server is already at origin/main ($target); no deployment needed."
+  echo "Server is already at requested target ($target); no deployment needed."
   exit 0
 fi
 
@@ -319,7 +341,7 @@ rollback_release() {
       mkdir -p "$r/$(dirname "$file")"
       cp -a "$backup/$file" "$r/$file"
     else
-      rm -f "$r/$file"
+      rm -rf "$r/$file"
     fi
   done
   if [[ -f "$backup/frontend-binary" ]]; then

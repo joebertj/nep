@@ -115,8 +115,9 @@ def apply():
         text=text.replace(':not(#foreign-assisted-review){display:none!important}',':not(#foreign-assisted-review):not(#hgab-investigation-evidence):not(#report-evidence-notice){display:none!important}')
         text=re.sub(r'<aside id="report-evidence-notice".*?</aside>','',text,flags=re.S)
         text=re.sub(r'<style id="report-evidence-notice-style">.*?</style>','',text,flags=re.S)
-        text=re.sub(r'(<main\b[^>]*>)',lambda m:m[0]+NOTICE,text,count=1)
-        text=text.replace('</head>',CSS+'</head>',1)
+        if path.name != 'budget-trivia.html':
+            text=re.sub(r'(<main\b[^>]*>)',lambda m:m[0]+NOTICE,text,count=1)
+            text=text.replace('</head>',CSS+'</head>',1)
         path.write_text(text)
         visible=VisibleText();visible.feed(text)
         prose=re.sub(r'\s+',' ',' '.join(visible.parts))
@@ -124,9 +125,9 @@ def apply():
         for match in re.finditer(r'\b(?:corruption|theft|stolen|steal|fraud|illegal|suspicious|wrongdoing|sponsorship)\b',prose,re.I):
             terms.append(prose[max(0,match.start()-100):match.end()+160])
         pages.append({'page':path.name,'sha256':hashlib.sha256(text.encode()).hexdigest(),'changed':text!=original,
-                      'evidenceNotice':True,'remainingSensitiveContexts':terms,
+                      'evidenceNotice':path.name != 'budget-trivia.html','remainingSensitiveContexts':terms,
                       'reviewOutcome':'Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification.'})
-    report={'scope':'All static NEP preview HTML pages; generated labels also reviewed through source builders and embedded scripts. Source project titles are retained.',
+    report={'scope':'Static NEP preview report pages; the trivia game omits the evidence notice. Generated labels are also reviewed through source builders and embedded scripts. Source project titles are retained.',
             'pages':pages,'reviewedPages':len(pages),'guarantee':False,
             'limitations':['This is an evidence/editorial review, not jurisdiction-specific legal advice or legal clearance.','Disclaimers do not cure a false or misleading statement. Source correctness and surrounding presentation remain material.','Identifiable-person allegations of unlawful conduct require corroborating records and qualified legal review before publication.'],
             'changes':['Removed unsupported 50/50 probability language.','Clarified geographic attribution and budget allocation versus payment or personal receipt.','Made methodology visible on HGAB page.','HGAB hero rebuilt from current native comparison; obsolete count must not be reused.']}

@@ -1,0 +1,184 @@
+{
+  "groups": [
+    {
+      "canonical": "Drainage and Slope Protection Structures",
+      "variants": [
+        "Drainage And Slope Protection Structures",
+        "DRAINAGE AND SLOPE PROTECTION",
+        "Drainage And Slop",
+        "Drainage and Stope Protection Structures",
+        "Drainage and Slope Protection",
+        "Drainage and Slope Protection Structures",
+        "DRAINAGE AND SLOPR PROTECTION STRUCTURES"
+      ],
+      "reviewNote": "Manual override for spelling, truncation, and wording variants. Original printed labels remain in the evidence table. Approved bridge heading variant and clear OCR typo."
+    },
+    {
+      "canonical": "Surface Course",
+      "variants": [
+        "Surface Courses",
+        "SURFACE COURSE (GAD Related Activities)"
+      ],
+      "reviewNote": "Manual override for singular, plural, and GAD-labeled variants. Original printed labels remain in the evidence table."
+    },
+    {
+      "canonical": "Electrical Works",
+      "variants": [
+        "Electrical",
+        "Electrical Work"
+      ],
+      "reviewNote": "Previously requested merge: Electrical and Electrical Works."
+    },
+    {
+      "canonical": "Earthworks",
+      "variants": [
+        "Earthwork",
+        "Earth Work",
+        "Earth Works"
+      ],
+      "reviewNote": "Previously requested merge: Earthwork and Earthworks."
+    },
+    {
+      "canonical": "Mechanical Works",
+      "variants": [
+        "Mechanical",
+        "Mechanical Work"
+      ],
+      "reviewNote": "Previously applied category equivalence."
+    },
+    {
+      "canonical": "Plumbing and Sanitary Works",
+      "variants": [
+        "Plumbing",
+        "Plumbing Works",
+        "Plumbing Sanitary Works",
+        "Plumbing and Sanitary Work"
+      ],
+      "reviewNote": "Previously applied category equivalence."
+    },
+    {
+      "canonical": "Facilities for the Engineer",
+      "variants": [
+        "Facilities for Engineer",
+        "Facility for the Engineer",
+        "FACILITIES FOR THE ENGINEER (GAD Related Activities)",
+        "Facilities for Engineers",
+        "Facilities for the Engineers",
+        "Facilities of the Engineer",
+        "Facifties for the Engineer",
+        "FACILITIES FOR THE ENGINEERS",
+        "FACILITES FOR THE ENGINEER",
+        "A. FACILITIES FOR THE ENGINEER",
+        "Facilites for the Engineer",
+        "Faciities for the Engineer",
+        "IFACIUTIES FOR THE ENGINEER",
+        "Faclities for the Engineer",
+        "Facilties for the Engineer",
+        "Faciltes for the Engincel",
+        "Facillties for the Engineer",
+        "Facilites For The Engineer",
+        "Faciities For The Engineer",
+        "AFACILITIES FOR THE ENGINEER",
+        "A. Facilities For The Engineer"
+      ],
+      "reviewNote": "Previously applied singular and article variants. Approved manual merge for GAD suffix, plural/of wording, clear OCR misspellings, and A-section-prefix variants."
+    },
+    {
+      "canonical": "Other General Requirements",
+      "variants": [
+        "Other General Requirement",
+        "OTHER GENERAL REQUIREMENTS (GAD Related Activities)",
+        "B. OTHER GENERAL REQUIREMENTS",
+        "Other General Req",
+        "(Other General Requirement",
+        "Othiet General Requireiments",
+        "OTHER GENERAL REQUREMENT",
+        "Other General Reguirement",
+        "Olher General Requirements",
+        "Other General Reguirements",
+        "Other General Reguitements",
+        "Other General Reauirements",
+        "Other General Requirements (SEE FORM"
+      ],
+      "reviewNote": "Previously applied singular and plural variants. Approved manual merge for GAD suffix, B-section prefix, abbreviated labels, and clear OCR variants. Generic “General Requirements” remains separate."
+    },
+    {
+      "canonical": "Fire Protection Works",
+      "variants": [
+        "Fire Protection",
+        "Fire Protection Work"
+      ],
+      "reviewNote": "Previously applied category equivalence."
+    },
+    {
+      "canonical": "Reinforced Concrete",
+      "variants": [
+        "Reinforced Concrete Works",
+        "REINFORCED CONCRETE WORK",
+        "PLAIN AND REINFORCED CONCRETE WORKS",
+        "D. Plain and Reinforced Concrete Work",
+        "PLAIN AND REINFORCED CONCRETE WORK",
+        "Plain and Reinforced Concrete Works",
+        "Reinforced concrete",
+        "III: REINFORCED CONCRETE",
+        "VOL III - REINFORCED CONCRETE"
+      ],
+      "reviewNote": "Previously applied category equivalence. Approved manual merge for concrete-work wording and part-heading variants. Approved MPB merge for the printed label, Roman-numeral section heading, and volume-prefixed heading."
+    },
+    {
+      "canonical": "Finishing and Other Civil Works",
+      "variants": [
+        "Finishings and Other Civil Works",
+        "Finishing & Other Civil Works",
+        "E. Finishings and Other Civil Work",
+        "F. FINISHING AND OTHER CIVIL WORKS",
+        "PARTE Finishings And Other Civil Works",
+        "VOL. III FINISHING AND OTHER CIVIL WORKS",
+        "VOL III - FINISHING AND OTHER CIVIL WORKS",
+        "III: FINISHING AND OTHER CIVIL WORKS",
+        "III - FINISHING AND OTHER CIVIL WORKS",
+        "Finishings and other Qvil Works",
+        "Finishings and other Oivil Works",
+        "Finishings and other Civi Works"
+      ],
+      "reviewNote": "Previously applied singular and plural variants. Approved manual merge for punctuation, section/volume prefixes, and clear OCR variants. Labels adding sanitary or fabricated-material scope remain separate."
+    },
+    {
+      "canonical": "Subbase and Base Course",
+      "variants": [
+        "SUB BASE AND BASE COURSE",
+        "SUBBASE AND BASE COURSES",
+        "SUBBASE AND BASE COURSE 11Rev00)",
+        "D. SUBBASE AND BASE COURSE"
+      ],
+      "reviewNote": "Approved manual category merge for spacing, plural, section-prefix, and apparent source-footnote variants."
+    },
+    {
+      "canonical": "Miscellaneous Structures",
+      "variants": [
+        "MISCELLANEOUS STRUCTURE",
+        "MISCELLANEOUS STRUCTURES (Volume II)",
+        "ü Miscellaneous Structures"
+      ],
+      "reviewNote": "Approved manual merge for singular/plural, volume suffix, and clear OCR-prefix variants. Generic “Miscellaneous” remains separate."
+    },
+    {
+      "canonical": "Bridge Construction",
+      "variants": [
+        "Bridge Consruction",
+        "ш Bridge Construction",
+        "ü BRIDGE CONSTRUCTION",
+        "F. BRIDGE CONSTRUCTION"
+      ],
+      "reviewNote": "Approved manual merge for clear OCR and section-prefix variants. The Volume II shore-protection label remains separate."
+    },
+    {
+      "canonical": "Bank and Slope Protection Works",
+      "variants": [
+        "Bank And Slope Protection Works",
+        "L-B: Bank and Slope Protection Works"
+      ],
+      "reviewNote": "Approved bridge category merge for capitalization and L-B section-prefix variants. Original printed labels remain visible."
+    }
+  ]
+}

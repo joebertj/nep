@@ -23,7 +23,8 @@
           "page": "rcs.html#rcs-stage-evidence",
           "label": "All 199 NEP → HGAB allocation traces"
         }
-      ]
+      ],
+      "congressional_representatives": []
     },
     {
       "rank": 2,
@@ -42,7 +43,8 @@
           "page": "dpwh-hgab.html#hgab-insertion",
           "label": "Domestic insertion candidate table"
         }
-      ]
+      ],
+      "congressional_representatives": []
     },
     {
       "rank": 3,
@@ -61,7 +63,8 @@
           "page": "mpb.html#mpb-insertions",
           "label": "MPB insertion candidate table"
         }
-      ]
+      ],
+      "congressional_representatives": []
     },
     {
       "rank": 4,
@@ -80,7 +83,8 @@
           "page": "repeats.html#repeat-hgab-survival",
           "label": "Repeat-candidate HGAB retention evidence"
         }
-      ]
+      ],
+      "congressional_representatives": []
     },
     {
       "rank": 5,
@@ -99,7 +103,8 @@
           "page": "repeats.html#dpwh-investigation-evidence",
           "label": "Exact ₱5M clustering statistics"
         }
-      ]
+      ],
+      "congressional_representatives": []
     },
     {
       "rank": 6,
@@ -118,7 +123,8 @@
           "page": "budget-innovations.html#innovation-investigation-evidence",
           "label": "INSPIRE appropriation history"
         }
-      ]
+      ],
+      "congressional_representatives": []
     },
     {
       "rank": 7,
@@ -137,7 +143,8 @@
           "page": "cost-matching.html#cost-coverage",
           "label": "Missing-length coverage by category and program"
         }
-      ]
+      ],
+      "congressional_representatives": []
     },
     {
       "rank": 8,
@@ -164,7 +171,8 @@
           "page": "cost-per-km.html#length-density-groups",
           "label": "Peer groups and screening methodology"
         }
-      ]
+      ],
+      "congressional_representatives": []
     },
     {
       "rank": 9,
@@ -183,7 +191,8 @@
           "page": "cost-matching.html#short-segment-evidence",
           "label": "Original-source short-range examples"
         }
-      ]
+      ],
+      "congressional_representatives": []
     },
     {
       "rank": 10,
@@ -202,7 +211,8 @@
           "page": "dpwh.html#hgab-coverage",
           "label": "HGAB 3rd NEP-counterpart coverage"
         }
-      ]
+      ],
+      "congressional_representatives": []
     },
     {
       "rank": 11,
@@ -221,7 +231,8 @@
           "page": "dpwh.html#hgab-coverage",
           "label": "DPWH Transparency document coverage"
         }
-      ]
+      ],
+      "congressional_representatives": []
     },
     {
       "rank": 12,
@@ -240,7 +251,8 @@
           "page": "dpwh.html#hgab-coverage",
           "label": "POW, photo and RDC attachment coverage"
         }
-      ]
+      ],
+      "congressional_representatives": []
     }
   ],
   "statistics": {
@@ -765,5 +777,6 @@
       "adjustmentPesos": null,
       "limit": "Comparable NEP school baseline not built"
     }
-  ]
+  ],
+  "congressional_representatives": []
 }

@@ -14,7 +14,7 @@ STATIC=ROOT.parent/'open-data-visualization/static/nep-preview'
 
 def build():
     old_path=ROOT/'analysis_output/congress_before_inventory_locations.json'
-    new_path=ROOT/'analysis_output/congress_geographic_attribution_db_3rd.json'
+    new_path=ROOT/'analysis_output/congress_arcgis_bridge_audit.json'
     if not old_path.exists():return None
     old=json.loads(old_path.read_text());new=json.loads(new_path.read_text())
     previous={r['id']:r for r in old['projects']};current={r['id']:r for r in new['projects']}
@@ -36,9 +36,10 @@ def build():
         'additionalAttributedPesos':sum(r['amountPesos'] for r in added),'existingAssignedDistrictsChanged':len(changed),
         'previousCoveragePct':old['summary']['strictCoveragePct'],'currentCoveragePct':new['summary']['strictCoveragePct']},
         'methodology':['This is improved geographic attribution of already-extracted budget lines, not additional appropriations or newly discovered insertions.',
-            'Exact bridge IDs or full measured road alignments identify physical assets. Their checked extent must remain inside one municipal polygon, with a safety margin.',
+            'Exact bridge IDs can link a project to its ArcGIS row, which lists a DEO and CONG_DIST. The listed LEG is used only when title geography is unresolved and the current roster match is unique. Physical-location assignments require the checked extent to remain inside one municipal polygon, with a safety margin.',
             'Inventory municipality/province must agree with geometry. Current local district maps must agree, and PH location DB must resolve the qualified location uniquely.',
-            'Old CONG_DIST polygon labels, DEO numbers, similarly named places, representative names and political roles never determine an assignment.',
+            'For an exact bridge ID whose title geography is unresolved, the matched ArcGIS bridge record may supply its listed DEO and CONG_DIST if that district maps uniquely to the current LEG roster. If title geography resolves differently, the title-based result is retained and the disagreement is shown.',
+            'DEO is not treated as a one-to-one LEG lookup because a DEO can cover several legislative districts. Similarly named places, representative names and political roles never determine an assignment.',
             'Border-crossing assets, scope contradictions, ambiguous locations, unsupported chainage and the existing multi-place scope hold remain unresolved.',
             'Inventory geometry can be dated. These are screening estimates, not independent official verification of current district boundaries or construction scope.'],
         'districts':district_rows,'projects':added,
@@ -57,7 +58,7 @@ def build():
     for path in [STATIC/'congress.html',ROOT/'analysis_output/congress.html']:
         page=path.read_text()
         page=re.sub(r'<section id="inventory-location-method".*?</section>','',page,flags=re.S)
-        page=re.sub(r'congress-data\.json\?attribution=[^\x27\"]+', 'congress-data.json?attribution=qualified-location-consensus-v6-inventory-asset-context',page)
+        page=re.sub(r'congress-data\.json\?attribution=[^\x27\"]+', 'congress-data.json?attribution=qualified-location-consensus-v7-bridge-district-v1',page)
         path.write_text(page)
     print(json.dumps(doc['summary'],indent=2))
     return doc

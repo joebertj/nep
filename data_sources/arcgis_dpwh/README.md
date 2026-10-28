@@ -39,6 +39,9 @@ every advertised layer/table in that service:
 - `download_city_municipal_boundaries.py`
 - `download_engineering_districts.py`
 - `download_da_fmr_fy2025.py`
+- `download_da_fmr_fy2024.py`
+- `download_flood_control_projects.py`
+- `download_flood_control_completed.py`
 - `download_road_classification.py`
 - `download_national_road_network.py`
 - `download_number_of_lanes.py`
@@ -46,6 +49,12 @@ every advertised layer/table in that service:
 - `download_provincial_boundaries.py`
 - `download_road_condition.py`
 - `download_kilometer_posts.py`
+
+The queue includes the FY2024 DA farm-to-market-road live view to extend the
+existing FY2025 spatial coverage, plus the DPWH flood-control project and
+completed-project inventories for project-history comparison. These are
+separate sources and may contain overlapping records; do not count nearby or
+repeated entries as the same project without checking IDs, dates and scope.
 
 `python3 start_arcgis_downloads.py` starts the persistent queue. Check it with
 `python3 start_arcgis_downloads.py --status`. Completed selections are skipped;

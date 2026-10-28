@@ -2,7 +2,9 @@
 
 BetterGov owns this project and supplies the project API/document mirror.
 The maintained csiiiv index supplies exact proposal IDs; BetterGov supplies live metadata.
-The requested background queue caches selected POW and RDC PDFs, plus downloadable geotagged-photo files in their source formats, on T5 EVO. Tables keep the original photo URLs.
+The background archive retains every listed FY2027 NEP attachment in its original
+format on T5 EVO. The on-demand project view still prepares selected POW/RDC PDFs
+and keeps original source links for photos.
 
 ## Local use with a PH VPN
 
@@ -166,21 +168,43 @@ Record links open metadata and cached results; preparing
 POW/photos remains an explicit action within the popup.
 
 
-## External storage and background queue
+## External storage and NEP attachment archive
 
-Raw documents, OCR evidence and intermediate results live on `/Volumes/T5 EVO/bettergov-research/nep/data_sources/dpwh_project_documents`.
-The repository's ignored `data_sources/dpwh_project_documents` path is a symlink there.
-Only curated parsed values belong in published assets; do not copy PDFs into ODV.
+Raw documents, OCR evidence and intermediate results live on
+`/Volumes/T5 EVO/bettergov-research/nep/data_sources/dpwh_project_documents`.
+The repository's ignored `data_sources/dpwh_project_documents` path is a symlink
+there. Only curated parsed values belong in published assets; do not copy source
+attachments into ODV.
 
-`download_pow_rdc_queue.py` continuously revisits the existing indexed project queue
-sequentially, refreshing each project's BetterGov metadata before deciding whether
-its selected document links changed. New or changed POW/RDC/photo links are fetched;
-unchanged completed entries are skipped. It waits six hours after each full pass by
-default, checkpoints `queue-status.json`, and resumes safely after interruption.
-After three consecutive failures or an HTTP 429 it ends that pass and retries from
-the start after the configured interval. This checks the indexed project set; adding
-new project codes still requires refreshing `queue.json`. It refuses an unmounted
-external volume.
+Run `python3 download_dpwh_nep_attachments.py` (or the compatibility command
+`python3 download_pow_rdc_queue.py`) to archive every attachment for all 11,372
+projects in the retained FY2027 NEP transparency index, regardless of document
+type or file format. The October 18, 2026 snapshot lists 5,155 documents across
+1,275 projects; the downloader refreshes metadata for every project to discover
+later uploads too. It stores original files under `attachments/<proposal-code>/`
+on T5 EVO and preserves source filenames, URLs, content types, sizes and SHA-256 hashes,
+and checkpoints each completed file in `attachments/downloads.jsonl`. Previously
+cached POW, RDC and photo files are reused from the same external drive when their
+metadata matches. Interrupted and failed downloads can be resumed by rerunning the
+command; changed or newly listed attachments get a new content-version path.
+Every listed file format is retained as-is, with PDF signature and source-size
+checks where the metadata identifies a PDF. Do not execute downloaded content.
+
+The command refuses to fall back to local storage if T5 EVO is unavailable, and
+requires at least 2 GiB of free space beyond each file before downloading. It uses
+the existing PH VPN and verified HTTPS through curl. No non-attachment data is
+fetched. The archive is private and ignored by Git.
+
+The older queue status is a snapshot of the prior POW/RDC/photo-only worker and
+does not indicate coverage of other attachment types. The new all-attachment run
+has its own `attachments/status.json` progress file. Failures are recorded and
+retried on the next invocation.
+
+The prior POW/RDC-only worker stopped after three consecutive failures or an HTTP
+429. The all-attachment archive resumes completed files from its journal and
+retries failed entries on the next invocation. It uses the pinned 1,275-project
+queue; update `queue.json` from a refreshed DPWH NEP index to add newly listed
+projects. It refuses an unmounted external volume.
 Background logs and process IDs are in `/Volumes/T5 EVO/bettergov-research/jobs/`.
 
 `python3 storage/external_storage.py large` moves regular files of **100,000,000 bytes or larger**
@@ -191,7 +215,9 @@ The external `migration.jsonl` records the original path, destination, bytes and
 Tracked large files may appear as file-to-symlink changes: review those before committing;
 the original data are retained on the external disk. Git history is unchanged.
 
-The external background queue stores downloadable geotagged-photo attachments as-is without format validation. Photo display remains a direct source link; no image assets or PDFs are copied into either public repository.
+The external background archive stores source attachments as-is. Photo display
+remains a direct source link; no image assets, PDFs or other attachments are
+copied into either public repository.
 
 
 ## DPWH Indepth publication

@@ -33,19 +33,19 @@ func text(_ value: String, x: CGFloat, y: CGFloat, font: NSFont, foreground: NSC
     (value as NSString).draw(at: NSPoint(x: x, y: y), withAttributes: [.font: font, .foregroundColor: foreground])
 }
 
-let navy = color(0x102B39)
-let panel = color(0x173A49)
-let pale = color(0xDCEBE7)
-let muted = color(0xAFC6C5)
-let teal = color(0x53D6C2)
-let gold = color(0xFFC66D)
+let navy = color(0x00246A)
+let panel = color(0x0038A8)
+let pale = color(0xEAF0FF)
+let muted = color(0xB9C9E8)
+let blue = color(0x5B8DE8)
+let gold = color(0xFCD116)
 NSColor.white.setFill()
 NSBezierPath(rect: NSRect(x: 0, y: 0, width: width, height: height)).fill()
 navy.setFill()
 NSBezierPath(rect: NSRect(x: 0, y: 0, width: width, height: height)).fill()
 
 // Left panel carries the share message; right panel plots only project coordinates.
-text("BETTERGOV.PH  /  FY2027", x: 64, y: 550, font: .boldSystemFont(ofSize: 17), foreground: teal)
+text("BETTERGOV.PH  /  FY2027", x: 64, y: 550, font: .boldSystemFont(ofSize: 17), foreground: gold)
 text("DPWH multi-purpose", x: 64, y: 475, font: .boldSystemFont(ofSize: 39), foreground: pale)
 text("building locations", x: 64, y: 427, font: .boldSystemFont(ofSize: 39), foreground: pale)
 text("Where listed project coordinates cluster", x: 66, y: 373, font: .systemFont(ofSize: 19), foreground: muted)
@@ -53,7 +53,7 @@ text("\(points.count.formatted()) projects with printed coordinates", x: 66, y: 
 text("Same-site, proximity and boundary review", x: 66, y: 285, font: .systemFont(ofSize: 15), foreground: pale)
 text("Proposed allocations · review leads, not findings", x: 66, y: 72, font: .systemFont(ofSize: 14), foreground: muted)
 
-let plot = NSRect(x: 590, y: 90, width: 550, height: 440)
+let plot = NSRect(x: 570, y: 35, width: 590, height: 500)
 panel.setFill()
 NSBezierPath(roundedRect: plot, xRadius: 20, yRadius: 20).fill()
 // Grid lines make clear this is a coordinate plot, not a rendered basemap.
@@ -65,7 +65,7 @@ for i in 1...4 {
     grid.move(to: NSPoint(x: x, y: plot.minY + 12)); grid.line(to: NSPoint(x: x, y: plot.maxY - 12))
     grid.move(to: NSPoint(x: plot.minX + 12, y: y)); grid.line(to: NSPoint(x: plot.maxX - 12, y: y))
 }
-color(0x2C5360).setStroke(); grid.stroke()
+color(0x244782).setStroke(); grid.stroke()
 let minLon = 116.0, maxLon = 128.0, minLat = 4.0, maxLat = 22.0
 func mapPoint(_ lon: Double, _ lat: Double) -> NSPoint {
     NSPoint(x: plot.minX + 18 + (lon - minLon) / (maxLon - minLon) * (plot.width - 36),
@@ -87,18 +87,18 @@ for feature in features {
         islands.close()
     }
 }
-color(0x285460).setFill(); islands.fill()
-teal.withAlphaComponent(0.72).setStroke(); islands.lineWidth = 0.65; islands.stroke()
+color(0x4778C7).setFill(); islands.fill()
+blue.withAlphaComponent(0.8).setStroke(); islands.lineWidth = 0.65; islands.stroke()
 for (lon, lat) in points {
     guard lon >= minLon, lon <= maxLon, lat >= minLat, lat <= maxLat else { continue }
     let p = mapPoint(lon, lat)
     let x = p.x
     let y = p.y
     let dot = NSBezierPath(ovalIn: NSRect(x: x - 2.4, y: y - 2.4, width: 4.8, height: 4.8))
-    teal.withAlphaComponent(0.78).setFill(); dot.fill()
+    gold.withAlphaComponent(0.9).setFill(); dot.fill()
 }
 text("Listed coordinates · Philippines", x: 613, y: 548, font: .boldSystemFont(ofSize: 15), foreground: pale)
-text("Municipal boundaries · DPWH GIS", x: 613, y: 62, font: .systemFont(ofSize: 12), foreground: muted)
+text("Municipal boundaries · DPWH GIS", x: 593, y: 15, font: .systemFont(ofSize: 12), foreground: muted)
 
 image.unlockFocus()
 let rep = NSBitmapImageRep(data: image.tiffRepresentation!)!

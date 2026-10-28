@@ -27,8 +27,26 @@ def ingest(db):
         db.execute('INSERT INTO inventory_location_contexts VALUES(?,?,?,?,?,?,?,?,?,?)',
             (uid(sid,title),sid,title,row['originalTitle'],places[0] if len(places)==1 else None,lid,
              'screened_asset_context_current_map_consensus',None,None,json.dumps(row,ensure_ascii=False)))
-    return {'supportedTitles':len(data['contexts']),'additionalHGABCandidates':data['summary']['additionalHGABOccurrences'],
-        'policy':'Project-specific geographic evidence, not replacement LEG boundaries or ownership.'}
+    db.execute('''CREATE TABLE IF NOT EXISTS bridge_district_contexts(
+        id TEXT PRIMARY KEY,source_id TEXT REFERENCES sources(id),title_key TEXT,
+        bridge_id TEXT,arcgis_object_id INTEGER,deo_id TEXT REFERENCES deos(id),
+        leg_id TEXT REFERENCES leg_districts(id),arcgis_deo TEXT,arcgis_cong_dist TEXT,
+        status TEXT,raw_json TEXT)''')
+    bridge_path=next((ROOT/'data_sources/arcgis_dpwh/archive/selected/bridge_inventory').glob('layers/*/features.jsonl'))
+    bridge_sid=b.source(bridge_path,'dpwh_arcgis_bridge_inventory','bridge_record_deo_cong_dist',
+        note='Exact bridge-ID join to an ArcGIS row listing DEO and CONG_DIST. Source labels can be outdated or conflict with title geography; not a general one-to-one DEO-to-LEG membership.')
+    db.execute('DELETE FROM bridge_district_contexts WHERE source_id=?',(bridge_sid,))
+    bridge_rows=data.get('bridgeDistrictContexts',{})
+    for title,row in bridge_rows.items():
+        jurisdiction,designation=row['seatKeys'][0]
+        did=b.deo(row['deo'],bridge_sid)
+        lid=b.leg(jurisdiction,designation,bridge_sid,title)
+        db.execute('INSERT INTO bridge_district_contexts VALUES(?,?,?,?,?,?,?,?,?,?,?)',
+            (uid(bridge_sid,title),bridge_sid,title,row['bridgeId'],row.get('objectId'),did,lid,
+             row['deo'],row['congDist'],'source_field_maps_to_current_leg_roster',json.dumps(row,ensure_ascii=False)))
+    return {'supportedTitles':len(data['contexts']),'bridgeDistrictContexts':len(bridge_rows),
+        'additionalHGABCandidates':data['summary']['additionalHGABOccurrences'],
+        'policy':'Project-specific geographic evidence, not replacement LEG boundaries or ownership. A bridge DEO and LEG pair is recorded per exact bridge row, not generalized as one LEG per DEO.'}
 
 def main():
     target=OUT/'philippine_locations.sqlite';temp=target.with_suffix('.asset-import.sqlite')

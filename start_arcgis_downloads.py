@@ -26,8 +26,13 @@ def jobs():
 def directory(profile):return ARCHIVE if profile=='catalog' else ARCHIVE/'selected'/profile
 
 def process(pid,script):
-    result=subprocess.run(['ps','-p',str(pid),'-o','stat=,command='],capture_output=True,text=True)
-    return result.returncode==0 and not result.stdout.lstrip().startswith('Z') and str(ROOT/script) in result.stdout
+    # Avoid shelling out to `ps`: some managed runtimes deny subprocess
+    # inspection even though starting the worker itself is allowed. PID files
+    # are written only after this scheduler starts the named local script.
+    try:os.kill(pid,0)
+    except ProcessLookupError:return False
+    except PermissionError:return True
+    return True
 
 def active(root,script):
     path=root/'worker.pid'

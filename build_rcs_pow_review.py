@@ -35,6 +35,11 @@ def read_evidence():
                        if isinstance(x,dict) and str(x.get('type','')).strip().lower()=='pow' and x.get('url')),None)
         pow_url=(doc or {}).get('url') or pow_link
         rows=(doc or {}).get('rows',[])
+        facts=(doc or {}).get('summaryMetadata',{}).get('qualitativeFacts',[])
+        declared_site_count=next((int(f['value']) for f in facts
+                                  if f.get('kind')=='declared_count'
+                                  and str(f.get('label','')).lower().rstrip('s')=='site'
+                                  and str(f.get('value','')).isdigit()),None)
         submitted=[r for r in rows if r.get('costBasis')=='as_submitted' and r.get('amountPesos') is not None]
         contexts=set()
         for row in rows:
@@ -60,15 +65,16 @@ def read_evidence():
             'units':sorted(leading.get('units',set())),'rowCount':leading.get('rows',0),
             'pages':sorted(leading.get('pages',set())),'powUrl':pow_url,
             'unitMissing':not leading.get('units'),'powParsed':bool(submitted),
+            'declaredSiteCount':declared_site_count,
         })
-    return sorted(output,key=lambda row:(-len(row['contexts']),row['office'],row['code']))
+    return sorted(output,key=lambda row:(-max(len(row['contexts']),row['declaredSiteCount'] or 0),row['office'],row['code']))
 
 def render(rows):
     header='''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Rainwater Collector System · POW scope review</title>
 <style>
 *{box-sizing:border-box}body{margin:0}main{box-sizing:border-box;width:100%;max-width:none;margin:0;padding:24px clamp(16px,2vw,32px)}.card{background:#fff;border:1px solid #d9e3e1;border-radius:14px;padding:22px;margin:22px 0}.lead{border-left:5px solid #b65b09;background:#fff8e9}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:.94rem}th,td{text-align:left;vertical-align:top;padding:11px;border-bottom:1px solid #d9e3e1}th{background:#edf3f2}.money{white-space:nowrap;font-variant-numeric:tabular-nums}details{margin-top:7px}summary{cursor:pointer;color:#096f72;font-weight:700}.source a{font-weight:700}.note{color:#536873}.facility-list{margin:.5rem 0;padding-left:1.2rem}.tag{display:inline-block;padding:3px 8px;border-radius:999px;background:#fff0d4;color:#754500;font-weight:700;font-size:.82rem}@media(max-width:720px){main{padding:12px}table{min-width:720px}}
-</style></head><body class="bettergov-research"><header><div class="eyebrow">FY2027 NEP · DPWH · Rainwater Collector System</div><h1>Rainwater Collector System · POW scope review</h1><p>Same proposed allocation, differing documented schools, buildings, and leading POW items.</p></header><main>'''
+</style></head><body class="bettergov-research"><header><div class="eyebrow">FY2027 NEP · DPWH · Rainwater Collector System</div><h1>RCS · POW scope review</h1><p>Same proposed allocation, differing documented schools, buildings, and leading POW items.</p></header><main>'''
     from build_report_heroes import STYLE as HERO_STYLE,hero as shared_hero
     lead=shared_hero('FY2027 NEP · DPWH · RCS', '199', 'district-office projects share one scheduled allocation', '₱4.2M', 'per project in the schedule', [
         ('Davao City POW examples','6 vs 14','named school sites'),
@@ -80,6 +86,9 @@ def render(rows):
 <section class="card"><h2>POW buildings · same allocation, differing scopes and leading items</h2><p class="note">This exhaustive list covers every ₱4.2M Rainwater Collector System project in the in-depth dataset. Facility names and leading line items appear where extracted; “Not established” means the cached POW data does not currently support the detail. Open each POW link to review the source.</p><div class="tablewrap"><table><thead><tr><th>Project / office</th><th>Named schools or buildings</th><th>Leading extracted POW item</th><th>Project allocation</th><th>Evidence</th></tr></thead><tbody>'''
     for r in rows:
         scope=(f'<strong>{len(r["contexts"])} named facilities</strong>' if r['contexts'] else '<strong>Not established</strong><br><span class="note">No named facility contexts extracted</span>')
+        if not r['contexts'] and r.get('declaredSiteCount'):
+            scope=(f'<strong>No specific school/buildings mentioned in POW</strong><br>'
+                   f'<span class="note">POW states {r["declaredSiteCount"]} sites; no site breakdown</span>')
         if r['contexts']:
             scope+=f'<details><summary>Show {len(r["contexts"])} names</summary><ul class="facility-list">'+''.join(f'<li>{esc(x)}</li>' for x in r['contexts'])+'</ul></details>'
         if r['powParsed']:

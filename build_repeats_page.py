@@ -106,6 +106,11 @@ def build():
         if key=='history':content+=render_proximity(proximity,keys=('historical',))
     style='<style>*{box-sizing:border-box}body{margin:0;font:15px/1.55 system-ui,sans-serif;color:#18303b;background:#f3f6f5}header{background:#102f3e;color:#fff;padding:32px}h1{font-size:clamp(30px,4vw,48px)}main{width:100%;padding:24px clamp(16px,2vw,32px)}a{color:#087e78}section{margin:24px 0;padding:22px;border:1px solid #c6dbd6;border-radius:14px;background:white}.tablewrap{width:100%}table{width:100%;table-layout:fixed;border-collapse:collapse}th,td{padding:9px;vertical-align:top;border-bottom:1px solid #d9e3e1;overflow-wrap:anywhere;white-space:normal!important}th{background:#eef5f3}.toolbar,.pagination{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}input,select,button{font:inherit;padding:8px;border:1px solid #b6c9c4;border-radius:8px}input{flex:1;min-width:180px}svg{display:block;width:100%;height:auto;max-height:420px}.compare-track{background:#eef5f3;height:18px}.compare-track i{display:block;height:18px;background:#087e78}.comparison-graphic{margin:18px 0}</style>'
     page='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Project repeat comparisons · Budget analysis</title>'+style+STYLE+CSS+'</head><body><header><h1>Project repeat comparisons</h1><p>Past GAA, HGAB survival and possible repetition within the same budget stage.</p></header><main>'+content+'</main><script id="repeat-page-data" type="application/json">'+json.dumps(data,ensure_ascii=False).replace('</','<\\/')+'</script>'+SCRIPT+JS+'</body></html>'
+    from uniform_report_menu import apply_page as apply_uniform_menu
+    page=apply_uniform_menu(page,'repeats.html')
+    from review_report_language import NOTICE,CSS as EVIDENCE_CSS
+    page=re.sub(r'(<main\b[^>]*>)',lambda m:m[0]+NOTICE,page,count=1)
+    page=page.replace('</head>',EVIDENCE_CSS+'</head>',1)
     (STATIC/'repeats.html').write_text(page);(OUT/'repeats.html').write_text(page)
     # Update links to the corresponding moved section IDs on the new page.
     for p in STATIC.glob('*.html'):

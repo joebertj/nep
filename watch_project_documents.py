@@ -27,7 +27,7 @@ def digest(path):
     return result.hexdigest()
 
 def parser_version():
-    return hashlib.sha256(b''.join((ROOT/'project_documents'/name).read_bytes() for name in ('pow.py','signatories.py'))).hexdigest()
+    return hashlib.sha256(b''.join((ROOT/'project_documents'/name).read_bytes() for name in ('pow.py','signatories.py','ocr_vision.swift'))).hexdigest()
 
 def active_project():
     # Compatibility with the already-running downloader, started before cache locks.

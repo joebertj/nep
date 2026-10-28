@@ -3,16 +3,16 @@
   "detailSource": "nia-irrigation.html",
   "namedSourcePreservedInMarkers": true,
   "namespacedIds": {
-    "reviewed-nia-controls": "nia-detail-reviewed-nia-controls",
-    "sections": "nia-detail-sections",
-    "external-reference-review": "nia-detail-external-reference-review",
-    "nia-nep-scope": "nia-detail-nia-nep-scope",
-    "report-evidence-notice": "nia-detail-report-evidence-notice",
     "${esc(projectId)}": "nia-detail-${esc(projectId)}",
-    "report-hero": "nia-detail-report-hero"
+    "sections": "nia-detail-sections",
+    "nia-nep-scope": "nia-detail-nia-nep-scope",
+    "external-reference-review": "nia-detail-external-reference-review",
+    "report-hero": "nia-detail-report-hero",
+    "report-evidence-notice": "nia-detail-report-evidence-notice",
+    "reviewed-nia-controls": "nia-detail-reviewed-nia-controls"
   },
   "sourceHashes": {
-    "detail": "504a2f8df1d7a9c1697075a6bf4f1e1565ab600a8f27b9dc03082276b456f5e2"
+    "detail": "272e3a4b5c683d49c42a0b1d33667a26e190fb2de886e80ccb50b8fe8a7206a0"
   },
   "scope": "Presentation merge; project records and allocations are unchanged; the two NIA scopes are not summed."
 }

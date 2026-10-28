@@ -91,6 +91,12 @@
       "uniformStyles": true
     },
     {
+      "page": "out-of-place.html",
+      "links": 15,
+      "uniformMarkup": true,
+      "uniformStyles": true
+    },
+    {
       "page": "project-documents.html",
       "links": 15,
       "uniformMarkup": true,
@@ -121,7 +127,7 @@
       "uniformStyles": true
     }
   ],
-  "pageCount": 20,
+  "pageCount": 21,
   "menuHeightsPx": {
     "desktop": 118,
     "tablet": 202,

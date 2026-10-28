@@ -4,6 +4,7 @@ from decimal import Decimal,InvalidOperation
 from pathlib import Path
 NUMBER=re.compile(r'^(?:(?:₱|PHP|P)\s*)?-?\d[\d,]*(?:\.\d+)?\s*(?:₱|PHP|P)?$',re.I)
 ITEM=re.compile(r'^(?:\d{3,4}(?:\([^)]*\))*[a-z0-9]*|[A-Z]\.\d+(?:\([^)]*\))*[a-z0-9]*)$',re.I)
+SUMMARY_PAGE=re.compile(r'PROGRAM\s+OF\s+WORKS?\s*/\s*BUDGET\s+COST|BREAKDOWN\s+OF\s+EXPENDITURES|SUMMARY\s+OF\s+(?:THE\s+)?(?:PROGRAM\s+OF\s+WORKS?|PROJECT\s+COST|COST\s+ESTIMATE)',re.I)
 def normalized_item_code(value):
     code=re.sub(r'\s+','',str(value or '')).translate(str.maketrans({'[':'(',']':')','а':'a','А':'A'}))
     code=re.sub(r'(?<=\d)B(?=\()', '8', code)
@@ -12,6 +13,16 @@ def normalized_item_code(value):
     while code.count(')')>code.count('(') and code.endswith(')'):
         code=code[:-1]
     return code if ITEM.fullmatch(code) else None
+
+def item_code_at_anchor(tokens,anchor,width):
+    parts=[anchor['text']]
+    end=anchor.get('x1',anchor['x'])
+    for token in sorted((t for t in tokens if anchor['y']-5<=t['y']<=anchor['y']+5 and end<t['x']<width*.1),key=lambda t:t['x']):
+        if token['x']-end>width*.018:break
+        value=token['text'].strip()
+        if not (normalized_item_code(value) or re.fullmatch(r'\(?[A-Za-z0-9]{1,2}\)?',value)):break
+        parts.append(value);end=token.get('x1',token['x'])
+    return normalized_item_code(''.join(parts)) or normalized_item_code(anchor['text'])
 
 def amount(text):
     text=str(text or '').strip()
@@ -59,8 +70,59 @@ def component_contexts(text):
         value=value[:140]
         if re.match(r'^\d',value):continue
         if value and value not in contexts:contexts.append(value)
-    schools=[value for value in contexts if re.search(r'\bschool\b',value,re.I)]
-    return schools or contexts
+    # A component prefix or numbered schedule is not itself a school/site name.
+    # Retain only labels with an explicit physical or institutional entity.
+    entities=[value for value in contexts if re.search(
+        r'\b(?:school|building|barangay|municipal hall|town hall|health center|hospital|evacuation center|day care|classroom|site|facility|office|covered court|gymnasium|water tank|pump station|bridge|road segment|multi.?purpose building)\b',
+        value,re.I)]
+    return entities
+
+def summary_qualitative_facts(text,page,method,include_counts=False,words=None):
+    """Extract explicit project scale/context printed on summary pages."""
+    text=str(text or '')
+    facts=[]
+    if include_counts:
+        count_pattern=re.compile(r'(?<![\w/])\(?\s*(\d{1,4}(?:\.0+)?)\s+(sites?|schools?|buildings?|locations?|barangays?|components?|classrooms?|facilities?|tanks?|pumps?|sets?)\b\s*\)?',re.I)
+        for match in count_pattern.finditer(text):
+            label=match.group(2).lower().rstrip('s')
+            unit={'site':'sites','school':'schools','building':'buildings','location':'locations','barangay':'barangays','component':'components','classroom':'classrooms','facilitie':'facilities','tank':'tanks','pump':'pumps','set':'sets'}.get(label,match.group(2).lower())
+            count=float(match.group(1))
+            if not count.is_integer():continue
+            fact={'kind':'declared_count','label':unit,'value':int(count),'printedText':re.sub(r'\s+',' ',match.group(0)).strip(),
+                  'sourcePage':page,'extractionMethod':method,
+                  'verificationStatus':'Machine-extracted summary fact; verify the cited POW page'}
+            if not any(x['kind']==fact['kind'] and x['label']==fact['label'] and x['value']==fact['value'] for x in facts):facts.append(fact)
+    for value in component_contexts(text):
+        facts.append({'kind':'named_component','label':'Component / site','value':value,'printedText':value,
+                      'sourcePage':page,'extractionMethod':method,
+                      'verificationStatus':'Machine-extracted component label; verify the cited POW page'})
+    location_value=None
+    if include_counts and words:
+        tokens=[]
+        for word in words:
+            if len(word)<5:continue
+            try:x0,y0,x1,y1=map(float,word[:4])
+            except (TypeError,ValueError):continue
+            tokens.append({'x':x0,'x1':x1,'y':(y0+y1)/2,'text':str(word[4]).strip()})
+        for token in tokens:
+            if token['text'].casefold().strip(':')!='project':continue
+            label=next((t for t in tokens if t['text'].casefold().strip(':')=='location'
+                        and abs(t['y']-token['y'])<=4 and token['x1']<=t['x']<=token['x1']+40),None)
+            if not label:continue
+            value_tokens=sorted((t for t in tokens if t['x']>label['x1'] and abs(t['y']-label['y'])<=4),key=lambda t:t['x'])
+            if value_tokens:
+                location_value=' '.join(t['text'] for t in value_tokens).strip(' :;,.')
+                location_value=re.split(r'\s+(?:[a-c]\.?\s*(?:Sundays|Holidays|Rainy\s+days)|QTY\b|UNIT\b|ITEM\s+NO\.?|DESCRIPTION\b|FUND\s+SOURCE\b|ALLOT(?:T)?ED\s+AMOUNT\b)',location_value,flags=re.I)[0].strip(' :;,.')
+                break
+    if include_counts and not location_value:
+        location=re.search(r'\bPROJECT\s+LOCATION\s*:?\s*(.{4,180}?)(?=\s+(?:WORK\s+LOCATION|TARGET\s+START|TARGET\s+COMPLETION|DATE\s+PREPARED|FUND\s+SOURCE|PROJECT\s+ID|ITEM\s+NO\.?|DESCRIPTION\s+OF\s+WORKS)\b|$)',text,re.I)
+        if location:location_value=re.sub(r'\s+',' ',location.group(1)).strip(' :;,.')
+    if location_value:
+        value=location_value
+        if value:facts.append({'kind':'project_location','label':'Project location','value':value,'printedText':value,
+            'sourcePage':page,'extractionMethod':method,
+            'verificationStatus':'Machine-extracted printed project location; verify the cited POW page'})
+    return facts
 
 def cost_category_totals(text,page,method):
     """Read printed category share/amount summaries without treating them as bill rows."""
@@ -98,8 +160,19 @@ def cost_category_totals_from_words(words,width,page,method):
         try:x0,y0,x1,y1=map(float,word[:4])
         except (TypeError,ValueError):continue
         tokens.append({'x':x0,'x1':x1,'y':(y0+y1)/2,'y0':y0,'y1':y1,'text':str(word[4]).strip()})
-    shares=[t for t in tokens if re.fullmatch(r'\d{1,4}(?:[.,]\d{1,4})?%',t['text']) and width*.42<=t['x']<=width*.72]
-    found=[]
+    shares=[t for t in tokens if re.fullmatch(r'\d{1,4}(?:[.,]\d{1,4})?%',t['text']) and width*.32<=t['x']<=width*.9]
+    share_columns=[]
+    for token in sorted(shares,key=lambda t:t['x']):
+        if not share_columns or token['x']-share_columns[-1][-1]['x']>width*.03:share_columns.append([token])
+        else:share_columns[-1].append(token)
+    # A summary may also show unrelated percentages elsewhere on the page
+    # (for example EAO). Only repeated percentage columns form category rows.
+    retained_columns=[group for group in share_columns if len(group)>=3]
+    shares=[token for group in retained_columns for token in group]
+    shares.sort(key=lambda t:(t['y'],t['x']))
+    share_columns=retained_columns
+    column_centers=[sum(t['x'] for t in group)/len(group) for group in share_columns]
+    found_by_label={};used_label_bands={}
     for share_token in shares:
         share_value=re.sub(r'[^\d.]','',share_token['text'].replace(',','.'))
         # OCR sometimes drops the decimal point in a printed percentage
@@ -108,15 +181,19 @@ def cost_category_totals_from_words(words,width,page,method):
             share_value=share_value[:-2]+'.'+share_value[-2:]
         try:share=float(share_value)
         except ValueError:continue
-        if not 0<share<=100:continue
+        if not 0<=share<100:continue
         # Summary rows on some native-text DPWH forms are only about 9 pt
         # apart. A 10 pt band joins neighboring categories and can select the
         # wrong amount; stay within the printed text height instead.
-        row_tolerance=max(3.5,min(5.0,(share_token['y1']-share_token['y0'])*.75))
+        row_tolerance=(max(9.0,min(12.0,(share_token['y1']-share_token['y0'])*.8))
+                       if method.startswith('OCR') else max(3.5,min(5.0,(share_token['y1']-share_token['y0'])*.75)))
         row_tokens=[t for t in tokens if abs(t['y']-share_token['y'])<=row_tolerance]
+        column_index=min(range(len(column_centers)),key=lambda i:abs(column_centers[i]-share_token['x'])) if column_centers else 0
+        lower_x=share_token['x']+width*.045
+        upper_x=column_centers[column_index+1]-width*.035 if column_index+1<len(column_centers) else width*.96
         monetary=[]
         for token in row_tokens:
-            if token['x']<share_token['x']+width*.08:continue
+            if token['x']<lower_x or token['x']>=upper_x:continue
             parsed=amount(token['text'])
             if parsed is not None and parsed>0:monetary.append((token,parsed))
         # OCR may split cents into a neighboring token. Join adjacent words
@@ -131,22 +208,52 @@ def cost_category_totals_from_words(words,width,page,method):
                     continue
             joined.append((token,value))
         monetary=joined
-        if not monetary:continue
-        # The first amount column after the share is the printed category
-        # amount; later columns commonly contain taxes/markup or grand totals.
-        amount_token,amount_value=min(monetary,key=lambda pair:pair[0]['x'])
-        if amount_token['x']>width*.9:continue
+        if share>0:
+            if not monetary:continue
+            # Prefer vertical alignment before x proximity. OCR baselines can
+            # differ by several pixels across the same printed row.
+            amount_token,amount_value=min(monetary,key=lambda pair:(abs(pair[0]['y']-share_token['y']),abs(pair[0]['x']-(share_token['x']+width*.10))))
+            if amount_token['x']>width*.9:continue
+        else:amount_value=0.0
         label_tokens=[t for t in row_tokens if width*.07<=t['x']<width*.28
-                      and not re.fullmatch(r'(?:PART|DIVISION|[A-Z]:?|\|)',t['text'],re.I)
+                      and not re.fullmatch(r'DIVISION|\|',t['text'],re.I)
                       and not re.fullmatch(r'\d+(?:\.\d+)?',t['text'])]
+        if method.startswith('OCR') and label_tokens:
+            label_bands=[]
+            for token in sorted(label_tokens,key=lambda t:t['y']):
+                if not label_bands or token['y']-label_bands[-1][-1]['y']>3.5:label_bands.append([token])
+                else:label_bands[-1].append(token)
+            used=used_label_bands.setdefault(column_index,set())
+            available=[band for band in label_bands if round(sum(t['y'] for t in band)/len(band),1) not in used]
+            choices=available or label_bands
+            selected=min(choices,key=lambda band:abs(sum(t['y'] for t in band)/len(band)-share_token['y']))
+            used.add(round(sum(t['y'] for t in selected)/len(selected),1))
+            label_tokens=selected
         label=' '.join(t['text'] for t in sorted(label_tokens,key=lambda t:t['x']))
         label=re.sub(r'\s+',' ',label).strip(' .,:;|-')
-        if len(label)<4 or re.search(r'\b(?:TOTAL|SUBTOTAL|GRAND)\b',label,re.I):continue
-        row={'label':label,'sharePct':share,'amountPesos':float(amount_value),
+        if len(label)<4 or re.search(r'\b(?:TOTAL|SUBTOTAL|GRAND|SEE\s+DPWH|OCM)\b',label,re.I):continue
+        part_match=re.search(r'\bPART\s*([A-I])\b|^([A-I])\s*[.):]?\s+',label,re.I)
+        if part_match:
+            part=next(g for g in part_match.groups() if g).upper()
+            label=PART_CATEGORIES.get(part,label)
+        else:
+            normalized_label=re.sub(r'[^a-z]+',' ',label.casefold()).strip()
+            aliases=[('A','facilities for the engineer'),('B','other general requirements'),('C','earth works'),('D','reinforced concrete'),('E','finishing and other civil works'),('F','electrical'),('G','mechanical'),('H','plumbing and sanitary works'),('I','fire protection works')]
+            part=next((code for code,phrase in aliases if normalized_label==phrase or normalized_label.startswith(phrase)),None)
+            if part:label=PART_CATEGORIES[part]
+        key=label.casefold()
+        row=found_by_label.setdefault(key,{'label':label,'sharePct':share,'amountPesos':None,
              'sourcePage':page,'extractionMethod':method,
-             'verificationStatus':'Machine-extracted printed category total; verify cited POW page'}
-        if not any(r['label'].casefold()==label.casefold() and r['amountPesos']==row['amountPesos'] for r in found):found.append(row)
-    return found
+             'verificationStatus':'Machine-extracted printed category summary; verify cited POW page'})
+        if column_index==0:
+            row['submittedAmountPesos']=float(amount_value)
+            row['amountPesos']=float(amount_value)
+        elif len(column_centers)>1 and column_index==1:
+            row['evaluatedAmountPesos']=float(amount_value)
+            if row.get('amountPesos') is None:row['amountPesos']=float(amount_value)
+        elif row.get('amountPesos') is None:
+            row['amountPesos']=float(amount_value)
+    return list(found_by_label.values())
 
 PART_CATEGORIES={
     'A':'Facilities for the Engineer','B':'Other General Requirements',
@@ -154,6 +261,18 @@ PART_CATEGORIES={
     'E':'Finishing and other civil works','F':'Electrical','G':'Mechanical',
     'H':'Plumbing and sanitary works','I':'Fire protection works',
 }
+
+def category_from_heading(text):
+    text=str(text or '')
+    match=re.search(r'\bPART\s*([A-I])\b|\bPART([A-I])\b',text,re.I)
+    if match:return PART_CATEGORIES.get((match.group(1) or match.group(2)).upper())
+    normalized=re.sub(r'[^a-z]+',' ',text.casefold()).strip()
+    compact=normalized.replace(' ','')
+    for code,label in PART_CATEGORIES.items():
+        key=re.sub(r'[^a-z]+','',label.casefold())
+        if key and (key in compact or (code=='C' and 'earthworks' in compact)):
+            return label
+    return None
 
 def item_rows_from_words(words,width,page,method,current_category=None):
     """Recover submitted direct-cost item rows from scanned multi-column POWs."""
@@ -176,10 +295,9 @@ def item_rows_from_words(words,width,page,method,current_category=None):
     for band in bands:
         text=' '.join(t['text'] for t in sorted(band['tokens'],key=lambda t:t['x']))
         if re.search(r'TOTAL\s+OF\s+PART',text,re.I):part_total_y.append(band['y'])
-        match=re.search(r'\bPART\s*([A-I])\b',text,re.I)
-        if not match:match=re.search(r'\bPART([A-I])\b',text,re.I)
-        if match:
-            current_category=PART_CATEGORIES.get(match.group(1).upper(),current_category)
+        heading_category=category_from_heading(text)
+        if heading_category:
+            current_category=heading_category
             category_at.append((band['y'],current_category))
     anchors=sorted((t for t in tokens if t['x']<width*.18 and normalized_item_code(t['text'])),key=lambda t:t['y'])
     rows=[]
@@ -206,7 +324,7 @@ def item_rows_from_words(words,width,page,method,current_category=None):
             direct=next((amount(t['text']) for t in sorted(at,key=lambda t:t['x']) if width*.51<=t['x']<width*.58 and amount(t['text']) is not None),None)
             if direct is None or not desc:continue
             if quantity is not None and quantity<=0:continue
-            rows.append({'itemCode':normalized_item_code(anchor['text']),'description':desc,
+            rows.append({'itemCode':item_code_at_anchor(tokens,anchor,width),'description':desc,
                 'quantity':float(quantity) if quantity is not None else None,'unit':unit,
                 'printedUnitCostPesos':None,
                 'calculatedUnitCostPesos':float(direct/quantity) if quantity else None,
@@ -230,7 +348,7 @@ def summary_item_rows_from_words(words,width,page,method,current_category=None):
     has_direct_cost=(re.search(r'DIRECT\s+COST',text,re.I) or
                      (re.search(r'\bDIRECT\b',text,re.I) and len(re.findall(r'\bCOST\b',text,re.I))>=2))
     if not (re.search(r'ITEMIZED',text,re.I) and re.search(r'DESCRIPTION',text,re.I)
-            and re.search(r'QUANTITY',text,re.I) and has_direct_cost):
+            and re.search(r'(?:QUANTITY|\bQTY\b)',text,re.I) and has_direct_cost):
         return [],current_category
     prior_category=current_category
     tokens=[]
@@ -239,6 +357,10 @@ def summary_item_rows_from_words(words,width,page,method,current_category=None):
         try:x0,y0,x1,y1=map(float,word[:4])
         except (TypeError,ValueError):continue
         tokens.append({'x':x0,'x1':x1,'y':(y0+y1)/2,'text':str(word[4]).strip()})
+    # Use the printed UNIT heading when OCR keeps the unit just outside the
+    # usual normalized column band (common on rotated landscape scans).
+    unit_headers=[(t['x']+t['x1'])/2 for t in tokens if t['text'].strip().upper()=='UNIT']
+    unit_column=min(unit_headers,key=lambda x:abs(x-width*.46)) if unit_headers else None
     bands=[]
     for token in sorted((t for t in tokens if t['x']<width*.36),key=lambda t:t['y']):
         band=next((b for b in reversed(bands) if abs(b['y']-token['y'])<=10),None)
@@ -247,10 +369,9 @@ def summary_item_rows_from_words(words,width,page,method,current_category=None):
     category_at=[]
     for band in bands:
         line=' '.join(t['text'] for t in sorted(band['tokens'],key=lambda t:t['x']))
-        match=re.search(r'\bPART\s*([A-I])\b|\bPART([A-I])\b',line,re.I)
-        if match:
-            part=(match.group(1) or match.group(2)).upper()
-            current_category=PART_CATEGORIES.get(part,current_category)
+        heading_category=category_from_heading(line)
+        if heading_category:
+            current_category=heading_category
             category_at.append((band['y'],current_category))
     anchors=sorted((t for t in tokens if t['x']<width*.11 and normalized_item_code(t['text'])),key=lambda t:t['y'])
     rows=[]
@@ -258,11 +379,14 @@ def summary_item_rows_from_words(words,width,page,method,current_category=None):
         same=[t for t in tokens if abs(t['y']-anchor['y'])<=9]
         category=next((value for y,value in reversed(category_at) if y<=anchor['y']),None)
         if category is None:category=prior_category
-        description=' '.join(t['text'] for t in sorted(same,key=lambda t:t['x']) if width*.08<=t['x']<width*.29
+        description=' '.join(t['text'] for t in sorted(same,key=lambda t:t['x']) if width*.08<=t['x']<width*.315
                             and t['text'].upper() not in {'AS','SUBMITTED','EVALUATED'})
         description=re.sub(r'\s+',' ',description).strip(' .,:;-')
         quantity=next((amount(t['text']) for t in same if width*.28<=t['x']<width*.40 and amount(t['text']) is not None),None)
-        unit=next((t['text'] for t in same if width*.40<=t['x']<width*.46 and re.search(r'[A-Za-z]',t['text'])),None)
+        unit_tokens=[t for t in same if re.search(r'[A-Za-z]',t['text']) and
+                     ((unit_column is not None and abs((t['x']+t['x1'])/2-unit_column)<=width*.025)
+                      or (unit_column is None and width*.40<=t['x']<width*.49))]
+        unit=' '.join(t['text'] for t in sorted(unit_tokens,key=lambda t:t['x'])).strip(' :;,.') or None
         direct_tokens=sorted((t for t in same if width*.46<=t['x']<width*.57 and re.fullmatch(r'[\d,.]+',t['text'])),key=lambda t:t['x'])
         direct=None
         if direct_tokens:
@@ -283,7 +407,7 @@ def summary_item_rows_from_words(words,width,page,method,current_category=None):
                 if direct is None:
                     direct=next((amount(t['text']) for t in group if amount(t['text']) is not None and amount(t['text'])>=1000),None)
         if not description or direct is None:continue
-        share_tokens=sorted((t for t in same if t['x']>=width*.90 and re.fullmatch(r'[\d,.]+',t['text'])),key=lambda t:t['x'])
+        share_tokens=sorted((t for t in same if t['x']>=width*.88 and re.fullmatch(r'[\d,.]+%?',t['text'])),key=lambda t:t['x'])
         direct_share=None
         if share_tokens:
             share_groups=[]
@@ -298,7 +422,7 @@ def summary_item_rows_from_words(words,width,page,method,current_category=None):
                 candidate_share=float(share_text.replace(',','.'))
                 if 0<candidate_share<=100:direct_share=candidate_share
             except ValueError:pass
-        rows.append({'itemCode':normalized_item_code(anchor['text']),'description':description,
+        rows.append({'itemCode':item_code_at_anchor(tokens,anchor,width),'description':description,
             'quantity':float(quantity) if quantity is not None else None,'unit':unit,
             'directCostSharePct':direct_share,
             'printedUnitCostPesos':None,'calculatedUnitCostPesos':float(direct/quantity) if quantity else None,
@@ -313,29 +437,37 @@ def summary_item_rows_from_words(words,width,page,method,current_category=None):
 def itemized_rows(grid,page,bbox,context_text=''):
     """Recognize the submitted/evaluated DPWH itemized bill, not unit-price analyses."""
     clean=[[re.sub(r'\s+',' ',str(c or '')).strip() for c in row] for row in grid]
-    header=next((i for i,row in enumerate(clean) if 'DIRECT COST' in row and any('TOTAL UNIT COST' in c for c in row) and ((('ITEM NO.' in row and 'DESCRIPTION' in row) and ('QUANTITY' in row or 'QTY' in row)) or any('ITEM NO.' in r for r in clean[i+1:i+4]))),None)
+    header=next((i for i,row in enumerate(clean) if 'DIRECT COST' in row and any('TOTAL UNIT COST' in c for c in row) and ((('ITEM NO.' in row and 'DESCRIPTION' in row) and any(re.fullmatch(r'(?:QUANTITY|QTY)\.?',c) for c in row)) or any('ITEM NO.' in r for r in clean[i+1:i+4]))),None)
     if header is None:return None
     headings=clean[header]
     item_index=headings.index('ITEM NO.') if 'ITEM NO.' in headings else 1
     description_index=headings.index('DESCRIPTION') if 'DESCRIPTION' in headings else 2
-    q=headings.index('QUANTITY') if 'QUANTITY' in headings else headings.index('QTY') if 'QTY' in headings else 4
+    q=next((i for i,c in enumerate(headings) if re.fullmatch(r'(?:QUANTITY|QTY)\.?',c)),4)
     unit=headings.index('UNIT') if 'UNIT' in headings else 6
     direct=headings.index('DIRECT COST')
     following=clean[header+1:header+5]
-    sub=next((row for row in following if 'TOTAL' in row and 'UNIT COST' in row),None)
-    basis=next((row for row in following if 'AS SUBMITTED' in row and 'AS EVALUATED' in row),None)
+    sub=next((row for row in following if any(re.search(r'\bTOTAL\b',c) for c in row) and any(re.search(r'\bUNIT\s+COST\b',c) for c in row)),None)
+    basis=next((row for row in following if 'AS SUBMITTED' in row and 'AS EVALUATED' in row and not any('ITEM NO.' in c for c in row)),None)
     if not sub or not basis:return None
-    total=sub.index('TOTAL');price=sub.index('UNIT COST');indirect=next(i for i,c in enumerate(headings) if 'TOTAL UNIT COST' in c)
+    total=next(i for i,c in enumerate(sub) if re.search(r'\bTOTAL\b',c))
+    price=next(i for i,c in enumerate(sub) if re.search(r'\bUNIT\s+COST\b',c))
+    indirect=next(i for i,c in enumerate(headings) if 'TOTAL UNIT COST' in c)
     if not (q<unit<=direct<=total<price<indirect):return None
     records=[];controls=[]
     context_source=context_text or ' '.join(' '.join(r) for r in clean[:header])
     contexts=component_contexts(context_source)
     current_contexts=contexts
+    current_category=None
     def column(start,end,label):return next((i for i in range(start,min(end,len(basis))) if basis[i]==label),None)
     for label in ('AS SUBMITTED','AS EVALUATED'):
-        qi=column(q,unit,label);ai=column(total,price,label);pi=column(price,indirect,label)
+        qi=column(q,unit,label)
+        if qi is None:qi=q
+        ai=column(total,price,label);pi=column(price,indirect,label)
         if qi is None or ai is None:continue
         for cells in clean[header+1:]:
+            joined=' '.join(cells)
+            heading_category=category_from_heading(joined)
+            if heading_category:current_category=heading_category
             if len(cells)>max(item_index,description_index) and re.fullmatch(r'\d{1,3}',cells[item_index]) and re.search(r'\b(?:school|building|camp)\b',cells[description_index],re.I):
                 current_contexts=[cells[description_index].strip(' ,.;')]
                 continue
@@ -347,10 +479,14 @@ def itemized_rows(grid,page,bbox,context_text=''):
                 values.append(cells[ai]);row=candidate(values,page,'native DPWH itemized bill · mapped submitted/evaluated columns',bbox)
                 if not row:continue
                 context=current_contexts[0] if len(current_contexts)==1 else None
-                row.update({'sourceCells':cells,'costBasis':label.lower().replace(' ','_'),'amountBasis':'Direct cost total; excludes markup, VAT and EAO','componentContext':context,'componentContexts':current_contexts,'columnMapping':{'quantity':qi,'unit':unit,'directCostTotal':ai,'directUnitCost':pi}})
+                row.update({'sourceCells':cells,'costBasis':label.lower().replace(' ','_'),'amountBasis':'Direct cost total; excludes markup, VAT and EAO','componentContext':context,'componentContexts':current_contexts,'costCategory':current_category,'columnMapping':{'quantity':qi,'unit':unit,'directCostTotal':ai,'directUnitCost':pi}})
                 records.append(row)
-            elif 'GRAND TOTAL' in cells and amount(cells[ai]) is not None:
+            elif re.search(r'(?:GRAND\s+TOTAL|TOTAL\s+OF\s+PART\s+[A-I])',joined,re.I) and amount(cells[ai]) is not None:
                 printed=float(amount(cells[ai]));subset=[r for r in records if r['costBasis']==label.lower().replace(' ','_')]
+                part_total=re.search(r'TOTAL\s+OF\s+PART\s+([A-I])',joined,re.I)
+                if part_total:
+                    target_category=PART_CATEGORIES.get(part_total.group(1).upper())
+                    subset=[r for r in subset if r.get('costCategory')==target_category]
                 recovered=round(sum(r['amountPesos'] for r in subset),2)
                 controls.append({'sourcePage':page,'basis':label.lower().replace(' ','_'),'amountBasis':'Itemized direct-cost subtotal only','printedPesos':printed,'recoveredItemRows':len(subset),'recoveredPesos':recovered,'differencePesos':round(recovered-printed,2),'reconciled':bool(subset) and abs(recovered-printed)<=.01,'sourceCells':cells})
     return {'rows':records,'controls':controls}
@@ -444,27 +580,41 @@ def parse_pdf(path,output,allocation_pesos=None):
     except ImportError:return {'status':'parser_dependency_missing','message':'Install project_documents/requirements.txt in the document-service environment.','rows':[]}
     output.mkdir(parents=True,exist_ok=True);document=fitz.open(path);rows=[];pages=[];vision=None;itemized_controls=[];source_tables=[]
     vision_path=output/'pow-ocr-vision.json'
+    project_code=output.parents[1].name if len(output.parents)>1 else ''
+    reviewed_path=Path(__file__).with_name('pow_reviewed_category_totals.json')
+    try:
+        review_config=json.loads(reviewed_path.read_text())
+        preferred_rotations=review_config.get('pageRotationOverrides',{}).get(project_code,[])
+    except (OSError,ValueError,AttributeError):
+        preferred_rotations=[]
+    rotation_args=['--preferred-rotations='+','.join(map(str,preferred_rotations))] if preferred_rotations else []
+    module_cache=Path(os.environ.get('TMPDIR') or '/tmp')/'bettergov-pow-swift-module-cache'
+    try:module_cache.mkdir(parents=True,exist_ok=True)
+    except OSError:pass
+    swift_environment={**os.environ,'CLANG_MODULE_CACHE_PATH':str(module_cache),'SWIFT_MODULECACHE_PATH':str(module_cache)}
     # Reuse OCR already saved for this cached PDF. This also makes targeted
     # parser reruns work when the local OCR executable is temporarily absent.
     try:
-        if vision_path.is_file() and vision_path.stat().st_mtime_ns>=path.stat().st_mtime_ns:
+        if not preferred_rotations and vision_path.is_file() and vision_path.stat().st_mtime_ns>=path.stat().st_mtime_ns:
             cached_vision=json.loads(vision_path.read_text())
             if cached_vision.get('pages'):vision=cached_vision
     except (OSError,ValueError,AttributeError):
         vision=None
     if vision is None and sys.platform=='darwin' and shutil.which('swift') and any(len(p.get_text().strip())<40 for p in document):
         try:
-            environment={**os.environ,'CLANG_MODULE_CACHE_PATH':str(output/'swift-module-cache'),'SWIFT_MODULECACHE_PATH':str(output/'swift-module-cache')}
-            response=subprocess.run(['swift',str(Path(__file__).with_name('ocr_vision.swift')),str(path),'100'],capture_output=True,text=True,check=True,timeout=240,env=environment)
+            response=subprocess.run(['swift',str(Path(__file__).with_name('ocr_vision.swift')),str(path),'100',*rotation_args],capture_output=True,text=True,check=True,timeout=240,env=swift_environment)
             vision=json.loads(response.stdout)
             if isinstance(vision,dict):vision['pdfSha256']=hashlib.sha256(path.read_bytes()).hexdigest()
             vision_path.write_text(json.dumps(vision,ensure_ascii=False))
         except Exception:
             # Keep a valid current sidecar if a fresh OCR invocation fails.
             pass
-    current_context=None;current_cost_category=None;cost_categories=[]
+    current_context=None;current_cost_category=None;cost_categories=[];summary_pages=[];qualitative_facts=[]
     for number,page in enumerate(document):
         if number>=100:break
+        precomputed_orientation_candidates=[]
+        native_page_rotation=page.rotation
+        page_rect_orientation='landscape' if page.rect.width>page.rect.height else 'portrait' if page.rect.height>page.rect.width else 'square'
         text=page.get_text();words=page.get_text('words');method='native PDF text/table';ocr_width=page.rect.width
         if len(text.strip())<40:
             if shutil.which('tesseract'):
@@ -488,13 +638,37 @@ def parse_pdf(path,output,allocation_pesos=None):
                 else:text='';words=[]
             elif vision and any(p['page']==number+1 for p in vision['pages']):
                 record=next(p for p in vision['pages'] if p['page']==number+1);words=record['words'];text=' '.join(w[4] for w in words);ocr_width=record.get('width',page.rect.width);rotation=record.get('rotation',0);method='OCR · Apple Vision'+(' · rotated scan '+str(rotation)+'°' if rotation else '')+'; original boxes/confidence retained'
+            elif sys.platform=='darwin' and shutil.which('swift'):
+                try:
+                    response=subprocess.run(['swift',str(Path(__file__).with_name('ocr_vision.swift')),str(path),f'--page={number+1}','--all-candidates',*rotation_args],capture_output=True,text=True,check=True,timeout=240,env=swift_environment)
+                    retry_page=next((item for item in json.loads(response.stdout).get('pages',[]) if item.get('page')==number+1),None)
+                    if retry_page:
+                        precomputed_orientation_candidates=[candidate for candidate in retry_page.get('candidates',[]) if candidate.get('words')]
+                        if precomputed_orientation_candidates:
+                            best_orientation=precomputed_orientation_candidates[0]
+                            words=best_orientation['words'];ocr_width=best_orientation.get('width',page.rect.width)
+                            rotation=best_orientation.get('rotation',0);method='OCR · Apple Vision six-orientation retry; selected '+str(rotation)+'°'
+                            text=' '.join(str(w[4]) for w in words)
+                        else:
+                            pages.append({'page':number+1,'status':'needs_ocr','message':'Six orientation/resolution attempts returned no OCR words.'});continue
+                    else:
+                        pages.append({'page':number+1,'status':'needs_ocr','message':'Targeted orientation retry returned no page record.'});continue
+                except Exception:
+                    pages.append({'page':number+1,'status':'needs_ocr','message':'Image-only page; orientation retry could not run.'});continue
             else:
                 pages.append({'page':number+1,'status':'needs_ocr','message':'Image-only page; OCR required before ranking bill rows.'});continue
+        category_count_before=len(cost_categories)
         category_text=text
         # Percentages on DPWH-OMSP-13-15 bill pages are often the VAT rate.
         # Only read project-wide categories from the dedicated budget summary
         # page, which also carries the overall program/cost heading.
-        is_category_summary=bool(re.search(r'PROGRAM\s+OF\s+WORKS?\s*/\s*BUDGET\s+COST|BREAKDOWN\s+OF\s+EXPENDITURES',text,re.I))
+        is_category_summary=bool(SUMMARY_PAGE.search(text))
+        if is_category_summary:summary_pages.append(number+1)
+        qualitative_text=text
+        if is_category_summary:
+            try:qualitative_text+='\n'+' '.join(str(cell or '') for table in page.find_tables().tables for row in table.extract() for cell in row)
+            except Exception:pass
+        qualitative_facts.extend(summary_qualitative_facts(qualitative_text,number+1,method,include_counts=is_category_summary,words=words if method.startswith('OCR') else None))
         if is_category_summary and words:
             mapped=cost_category_totals_from_words(words,ocr_width,number+1,method)
             if mapped:
@@ -502,7 +676,7 @@ def parse_pdf(path,output,allocation_pesos=None):
                 # This prevents percentages inside a single unit-price/detail
                 # table from being misreported as project-wide cost categories.
                 share_total=sum(row['sharePct'] for row in mapped)
-                if len(mapped)>=3 and 90<=share_total<=110:
+                if len(mapped)>=3 and 98<=share_total<=102:
                     cost_categories.extend(mapped)
             elif method.startswith('OCR'):
                 category_lines={}
@@ -514,6 +688,7 @@ def parse_pdf(path,output,allocation_pesos=None):
             cost_categories.extend(cost_category_totals(category_text,number+1,method))
         page_rows=[]
         page_start_category=current_cost_category
+        is_component_cost_analysis=bool(re.search(r'DETAILED\s+BREAKDOWN\s+OF\s+COMPONENT\s+COST',text,re.I))
         current_context=component_context(text) or current_context
         if method.startswith('native'):
             try:
@@ -522,11 +697,11 @@ def parse_pdf(path,output,allocation_pesos=None):
                     itemized=itemized_rows(grid,number+1,list(table.bbox),text)
                     if itemized is not None:
                         page_rows.extend(itemized['rows']);itemized_controls.extend(itemized['controls']);continue
-                    continued=continuation_rows(grid,number+1,list(table.bbox),current_context)
+                    continued=[] if is_component_cost_analysis else continuation_rows(grid,number+1,list(table.bbox),current_context)
                     if continued:
                         page_rows.extend(continued);continue
                     context=' '.join(str(c or '') for r in grid[:4] for c in r)
-                    if not re.search(r'quantity',context,re.I) or not re.search(r'(?:amount|total\s+cost)',context,re.I):continue
+                    if is_component_cost_analysis or not re.search(r'quantity',context,re.I) or not re.search(r'(?:amount|total\s+cost)',context,re.I):continue
                     if re.search(r'detailed\s+(?:unit\s+price|cost)\s+analysis',text,re.I):continue
                     for cells in grid:
                         row=candidate(cells,number+1,method,list(table.bbox))
@@ -534,23 +709,84 @@ def parse_pdf(path,output,allocation_pesos=None):
             except Exception:pass
         review=False
         if not page_rows:
-            if method.startswith('OCR'):
+            if method.startswith('OCR') and not is_component_cost_analysis:
                 page_rows,current_cost_category=item_rows_from_words(words,ocr_width,number+1,method,current_cost_category)
-            if not page_rows:page_rows,review=word_rows(words,ocr_width,number+1,method)
-        if method.startswith('OCR'):
+            if not page_rows and not is_component_cost_analysis:page_rows,review=word_rows(words,ocr_width,number+1,method)
+        if method.startswith('OCR') and not is_component_cost_analysis:
             compact_rows,compact_category=summary_item_rows_from_words(words,ocr_width,number+1,method,page_start_category)
             if compact_rows:
                 compact_keys={(r.get('itemCode'),r.get('amountPesos')) for r in compact_rows}
                 page_rows=[r for r in page_rows if (r.get('itemCode'),r.get('amountPesos')) not in compact_keys]
                 page_rows.extend(compact_rows)
                 current_cost_category=compact_category
+        # Native extraction can return plenty of text while still failing to
+        # map a rotated table. Retry only pages with no recovered rows or
+        # summary totals, then choose the orientation that actually parses.
+        if not is_component_cost_analysis and not page_rows and len(cost_categories)==category_count_before:
+            page_hint=(text+' '+' '.join(str(w[4]) for w in words)).upper()
+            likely_pow_page=(bool(re.search(r'ITEM\s*(?:NO|NUMBER)|DESCRIPTION|QUANTITY|UNIT\s+OF\s+WORK|DIRECT\s+COST|TOTAL\s+COST|PROGRAM\s+OF\s+WORKS|BREAKDOWN\s+OF\s+EXPENDITURES',page_hint))
+                             or (method.startswith('OCR') and (len(words)>=12 or bool(page.get_images(full=True)))))
+            if likely_pow_page:
+                orientation_candidates=precomputed_orientation_candidates
+                if sys.platform=='darwin' and shutil.which('swift'):
+                    try:
+                        response=subprocess.run(['swift',str(Path(__file__).with_name('ocr_vision.swift')),str(path),f'--page={number+1}','--all-candidates',*rotation_args],capture_output=True,text=True,check=True,timeout=240,env=swift_environment)
+                        retry_data=json.loads(response.stdout)
+                        retry_page=next((item for item in retry_data.get('pages',[]) if item.get('page')==number+1),None)
+                        if retry_page:orientation_candidates=[candidate for candidate in retry_page.get('candidates',[]) if candidate.get('words')]
+                    except Exception:
+                        orientation_candidates=[]
+                if not orientation_candidates and shutil.which('tesseract'):
+                    original_rotation=page.rotation
+                    for rotation,dpi in [(0,250),(90,250),(180,250),(270,250),(90,350),(270,350)]:
+                        try:
+                            page.set_rotation(rotation)
+                            textpage=page.get_textpage_ocr(language='eng',dpi=dpi,full=True)
+                            candidate_words=page.get_text('words',textpage=textpage)
+                            orientation_candidates.append({'rotation':rotation,'width':page.rect.width,'words':candidate_words,'score':0,'method':f'OCR · Tesseract orientation retry {rotation}° at {dpi} dpi'})
+                        except Exception:continue
+                    page.set_rotation(original_rotation)
+                best_retry=None
+                for candidate_orientation in orientation_candidates:
+                    retry_words=candidate_orientation.get('words',[])
+                    retry_width=candidate_orientation.get('width') or ocr_width
+                    retry_method=candidate_orientation.get('method') or 'OCR · Apple Vision orientation retry (six attempts), selected '+str(candidate_orientation.get('rotation',0))+'°'
+                    retry_category=page_start_category
+                    retry_rows,retry_category=item_rows_from_words(retry_words,retry_width,number+1,retry_method,retry_category)
+                    retry_review=False
+                    if not retry_rows:retry_rows,retry_review=word_rows(retry_words,retry_width,number+1,retry_method)
+                    compact_retry,compact_category=summary_item_rows_from_words(retry_words,retry_width,number+1,retry_method,page_start_category)
+                    if compact_retry:
+                        retry_keys={(r.get('itemCode'),r.get('amountPesos')) for r in compact_retry}
+                        retry_rows=[r for r in retry_rows if (r.get('itemCode'),r.get('amountPesos')) not in retry_keys]+compact_retry
+                        retry_category=compact_category
+                    retry_lines={}
+                    for word in retry_words:retry_lines.setdefault(round(word[1]/5),[]).append(word)
+                    retry_text='\n'.join(' '.join(str(w[4]) for w in sorted(line,key=lambda x:x[0])) for _,line in sorted(retry_lines.items()))
+                    retry_summary=[]
+                    if re.search(r'PROGRAM\s+OF\s+WORKS?\s*/\s*BUDGET\s+COST|BREAKDOWN\s+OF\s+EXPENDITURES',retry_text,re.I):
+                        retry_summary=cost_category_totals_from_words(retry_words,retry_width,number+1,retry_method)
+                        if not retry_summary:retry_summary=cost_category_totals(retry_text,number+1,retry_method)
+                    retry_quality=(len(retry_rows)*1000+len(retry_summary)*100+int(candidate_orientation.get('score',0)))
+                    if retry_rows or len(retry_summary)>=3:
+                        if best_retry is None or retry_quality>best_retry[0]:
+                            best_retry=(retry_quality,retry_rows,retry_category,retry_review,retry_words,retry_width,retry_method,retry_summary,retry_text)
+                if best_retry:
+                    _,page_rows,current_cost_category,review,words,ocr_width,method,retry_summary,text=best_retry
+                    if retry_summary:
+                        share_total=sum(r['sharePct'] for r in retry_summary)
+                        if len(retry_summary)>=3 and 90<=share_total<=110:cost_categories.extend(retry_summary)
         if method.startswith('OCR') and page_rows:
             lines={}
             for w in words:lines.setdefault(round(w[1]/5),[]).append(w)
             page_context=component_context('\n'.join(' '.join(w[4] for w in sorted(line,key=lambda x:x[0])) for _,line in sorted(lines.items())))
             if page_context:
                 for row in page_rows:row['componentContext']=page_context
-        pages.append({'page':number+1,'status':'candidate_rows' if page_rows else 'needs_manual_review' if review else 'no_bill_rows_recovered','rows':len(page_rows),'method':method,'reviewNote':'Numeric columns could not be mapped safely; inspect the source page.' if review else None})
+        role='summary' if is_category_summary else 'itemized_detail' if re.search(r'ITEM\s*(?:NO\.?|NUMBER)|QUANTITY.{0,80}(?:UNIT|AMOUNT|COST)',text,re.I) else 'supporting_detail'
+        selected_rotation_match=re.search(r'rotated scan\s+(\d+)°',method)
+        pages.append({'page':number+1,'pageRole':role,'nativePageRotation':native_page_rotation,'pageRectOrientation':page_rect_orientation,
+                      'ocrSelectedRotationDegrees':int(selected_rotation_match.group(1)) if selected_rotation_match else None,
+                      'status':'candidate_rows' if page_rows else 'needs_manual_review' if review else 'no_bill_rows_recovered','rows':len(page_rows),'method':method,'reviewNote':'Numeric columns could not be mapped safely; inspect the source page.' if review else None})
         rows.extend(page_rows)
     # Retain repeated observations rather than summing duplicate page/table views.
     grouped={}
@@ -570,8 +806,9 @@ def parse_pdf(path,output,allocation_pesos=None):
         try:
             reviewed_data=json.loads(reviewed_path.read_text())
             reviewed_rows=reviewed_data.get('reviewedRows',{}).get(project_code,[])
+            reviewed_rows_to_add=reviewed_data.get('reviewedRowsToAdd',{}).get(project_code,[])
             direct_total=reviewed_data.get('directCostTotalsPesos',{}).get(project_code)
-        except (OSError,ValueError):reviewed_rows=[];direct_total=None
+        except (OSError,ValueError):reviewed_rows=[];reviewed_rows_to_add=[];direct_total=None
         if direct_total:
             # When OCR drops the decimal and grouping marks, the printed
             # percent-of-direct-cost column can identify the cents scale.
@@ -594,11 +831,40 @@ def parse_pdf(path,output,allocation_pesos=None):
             if target is None:continue
             target['amountPesos']=float(correction['amountPesos'])
             target['directCostSharePct']=correction.get('directCostSharePct')
+            if correction.get('quantity') is not None:target['quantity']=float(correction['quantity'])
+            if correction.get('unit') is not None:target['unit']=correction['unit']
             if target.get('quantity'):target['calculatedUnitCostPesos']=target['amountPesos']/target['quantity']
             target['description']=correction.get('description') or target.get('description')
             target['manualReview']=True
             target['verificationStatus']=correction.get('verificationStatus','Manually reviewed against source POW page')
             target['extractionMethod']+=' · source-page checked correction'
+        for seed in reviewed_rows_to_add:
+            quantity=float(seed['quantity']) if seed.get('quantity') is not None else None
+            amount_value=float(seed['amountPesos'])
+            basis=seed.get('costBasis','as_submitted')
+            normalized_description=' '.join(str(seed.get('description') or '').casefold().split())
+            target=next((row for row in result if row.get('sourcePage')==seed.get('sourcePage')
+                         and row.get('costBasis')==basis
+                         and abs(float(row.get('amountPesos') or 0)-amount_value)<=.01
+                         and (row.get('costCategory')==seed.get('costCategory') or not seed.get('costCategory'))),None)
+            reviewed_row={
+                'itemCode':seed.get('itemCode'),'description':seed.get('description'),
+                'quantity':quantity,'unit':seed.get('unit'),
+                'printedUnitCostPesos':float(seed['printedUnitCostPesos']) if seed.get('printedUnitCostPesos') is not None else None,
+                'inclusiveUnitCostPesos':float(seed['inclusiveUnitCostPesos']) if seed.get('inclusiveUnitCostPesos') is not None else None,
+                'calculatedUnitCostPesos':amount_value/quantity if quantity else None,
+                'amountPesos':amount_value,'directCostSharePct':float(seed['directCostSharePct']) if seed.get('directCostSharePct') is not None else round(100*amount_value/float(direct_total),4) if direct_total else None,
+                'sourcePage':seed.get('sourcePage'),'observedPages':[seed.get('sourcePage')],
+                'sourceCells':None,'sourceBbox':None,'componentContext':None,'componentContexts':[],
+                'extractionMethod':'Manual source transcription · reviewed POW page '+str(seed.get('sourcePage')),
+                'arithmeticStatus':'Manually transcribed; verify source arithmetic and columns',
+                'verificationStatus':seed.get('verificationStatus','Manually transcribed from the source POW page'),
+                'manualReview':True,'costBasis':basis,'amountBasis':'Direct cost total; excludes markup, VAT and EAO',
+                'costCategory':seed.get('costCategory')}
+            if target is not None:
+                target.update(reviewed_row)
+            else:
+                result.append(reviewed_row)
     for row in result:row['shareOfNepAllocationPct']=round(100*row['amountPesos']/allocation_pesos,4) if allocation_pesos else None
     for row in result:
         allocation_share=row.get('shareOfNepAllocationPct')
@@ -607,13 +873,21 @@ def parse_pdf(path,output,allocation_pesos=None):
     for row in cost_categories:
         p=row.get('sourcePage');group=page_category_totals.setdefault(p,[]);group.append(row)
     eligible_category_pages={p for p,group in page_category_totals.items()
-        if len(group)>=3 and 90<=sum(float(r.get('sharePct') or 0) for r in group)<=110}
+        if len(group)>=3 and 98<=sum(float(r.get('sharePct') or 0) for r in group)<=102}
     unique_categories=[]
     for row in cost_categories:
         if row.get('sourcePage') not in eligible_category_pages:continue
         if not any(r['label'].casefold()==row['label'].casefold() and r['amountPesos']==row['amountPesos'] for r in unique_categories):unique_categories.append(row)
     unique_categories.sort(key=lambda r:-r['amountPesos'])
-    return {'status':'candidate_rows' if result else 'needs_ocr' if any(p['status']=='needs_ocr' for p in pages) else 'needs_manual_review' if any(p['status']=='needs_manual_review' for p in pages) else 'no_bill_rows_recovered','pdfSha256':hashlib.sha256(path.read_bytes()).hexdigest(),'pageCount':len(document),'pagesProcessed':len(pages),'pages':pages,'rows':result,'costCategoryBreakdown':unique_categories,'rowObservations':len(rows),'uniqueCandidateRows':len(result),'sumOfUniqueCandidateAmountsPesos':sum(r['amountPesos'] for r in result),'reconciledPowTotal':False,'itemizedDirectCostControls':itemized_controls,'amountBasis':'Each item records its cost basis; direct costs are not inclusive project costs. Printed category shares are preserved as separate summary evidence and are not added to itemized rows.','limits':['Reconciled itemized direct-cost subtotals, when available, do not reconcile the complete POW including indirect costs, VAT and EAO. Candidate row extraction is not a complete or reconciled POW ledger. A largest recovered row is not necessarily the largest row in the full document.','Shares use the NEP allocation, not a confirmed POW grand total, contract payment or engineering valuation.','Quantities, material units, indirect costs and engineering scope require original-page verification. Structural concrete is not cement mass.','Printed category summaries and itemized bill rows are separate evidence and must not be summed together.','Repeated identical row observations are grouped with page references; no budget amount is inferred from a missing cell.']}
+    unique_facts=[]
+    for fact in qualitative_facts:
+        key=(fact['kind'],fact['label'],str(fact['value']).casefold())
+        if not any((x['kind'],x['label'],str(x['value']).casefold())==key for x in unique_facts):unique_facts.append(fact)
+    declared=[f for f in unique_facts if f['kind']=='declared_count']
+    named=[f for f in unique_facts if f['kind']=='named_component']
+    breakdown_status='named_components_detected' if named else 'count_only_no_named_breakdown_detected' if declared else 'component_breakdown_not_detected'
+    summary_metadata={'summaryPages':summary_pages,'qualitativeFacts':unique_facts,'componentBreakdownStatus':breakdown_status}
+    return {'status':'candidate_rows' if result else 'needs_ocr' if any(p['status']=='needs_ocr' for p in pages) else 'needs_manual_review' if any(p['status']=='needs_manual_review' for p in pages) else 'no_bill_rows_recovered','pdfSha256':hashlib.sha256(path.read_bytes()).hexdigest(),'pageCount':len(document),'pagesProcessed':len(pages),'pages':pages,'rows':result,'costCategoryBreakdown':unique_categories,'summaryMetadata':summary_metadata,'rowObservations':len(rows),'uniqueCandidateRows':len(result),'sumOfUniqueCandidateAmountsPesos':sum(r['amountPesos'] for r in result),'reconciledPowTotal':False,'itemizedDirectCostControls':itemized_controls,'amountBasis':'Each item records its cost basis; direct costs are not inclusive project costs. Printed category summaries are preserved as separate evidence and are not added to itemized rows.','limits':['Reconciled itemized direct-cost subtotals, when available, do not reconcile the complete POW including indirect costs, VAT and EAO. Candidate row extraction is not a complete or reconciled POW ledger. A largest recovered row is not necessarily the largest row in the full document.','Shares use the NEP allocation, not a confirmed POW grand total, contract payment or engineering valuation.','Quantities, material units, indirect costs and engineering scope require original-page verification. Structural concrete is not cement mass.','Printed category summaries and itemized bill rows are separate evidence and must not be summed together.','Repeated identical row observations are grouped with source pages rather than silently summed.']}
 
 def render_photos(path,output):
     try:import pymupdf as fitz

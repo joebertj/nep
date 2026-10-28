@@ -22,6 +22,18 @@
       "script": "download_da_fmr_fy2025.py"
     },
     {
+      "profile": "da_fmr_fy2024",
+      "script": "download_da_fmr_fy2024.py"
+    },
+    {
+      "profile": "flood_control_projects",
+      "script": "download_flood_control_projects.py"
+    },
+    {
+      "profile": "flood_control_completed",
+      "script": "download_flood_control_completed.py"
+    },
+    {
       "profile": "road_classification",
       "script": "download_road_classification.py"
     },

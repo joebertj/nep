@@ -1,5 +1,6 @@
 {
   "supportedTitles": 211,
+  "bridgeDistrictContexts": 737,
   "additionalHGABCandidates": 130,
-  "policy": "Project-specific geographic evidence, not replacement LEG boundaries or ownership."
+  "policy": "Project-specific geographic evidence, not replacement LEG boundaries or ownership. A bridge DEO and LEG pair is recorded per exact bridge row, not generalized as one LEG per DEO."
 }

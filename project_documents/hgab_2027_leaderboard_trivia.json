@@ -1,0 +1,19 @@
+{
+  "source": "https://budget.bettergov.ph/hgab/2027/leaderboard",
+  "builtAt": "2026-10-25T23:56:25.114Z",
+  "sourceCommit": "a0caa778442cdae5583f5a006ea7401dab00e5ac",
+  "scope": "DPWH district office budget leaderboard and House member principal-author bill-count leaderboard",
+  "districtOfficeCount": 190,
+  "topHouseBillOffice": {
+    "name": "Ilocos Norte 1st DEO",
+    "amountPesos": 4744932000,
+    "lineCount": 433,
+    "boardUrl": "https://budget.bettergov.ph/hgab/2027/leaderboard/house-bill-largest"
+  },
+  "topPrincipalAuthor": {
+    "name": "Rufus B. Rodriguez",
+    "billCount": 609,
+    "boardUrl": "https://budget.bettergov.ph/hgab/2027/leaderboard/bills",
+    "note": "The leaderboard says bills.juris.ph counts are not yet complete."
+  }
+}

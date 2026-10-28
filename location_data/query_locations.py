@@ -33,11 +33,21 @@ def main():
     mode.add_argument('--review',help='search grouped location questions (substring)')
     mode.add_argument('--analyst',help='search imported analyst titles or native allocation IDs')
     mode.add_argument('--inventory',help='search screened inventory asset context by exact ID or title substring')
+    mode.add_argument('--bridge',help='search exact bridge-ID → ArcGIS DEO / CONG_DIST → current LEG associations')
     parser.add_argument('--level',choices=['region','province','city','municipality','locality','barangay'])
     parser.add_argument('--province');parser.add_argument('--municipality');parser.add_argument('--district');parser.add_argument('--limit',type=int,default=20)
     args=parser.parse_args();db=sqlite3.connect(args.database.resolve().as_uri()+'?mode=ro',uri=True);db.row_factory=sqlite3.Row
     if args.summary:
         out={'placesByClaimedLevel':dict(db.execute('SELECT level,COUNT(*) FROM places GROUP BY level').fetchall()),'issuesByKind':dict(db.execute('SELECT kind,COUNT(*) FROM issues GROUP BY kind').fetchall()),'warning':'Counts include source variants and disputed identities, not official administrative totals.'}
+    elif args.bridge:
+        out={'bridgeDistrictContexts':[],'warning':'Source-listed bridge record association. A DEO may cover multiple LEGs; this per-bridge row is not proof of sponsorship or the funded work extent.'}
+        if db.execute("SELECT 1 FROM sqlite_master WHERE name='bridge_district_contexts'").fetchone():
+            out['bridgeDistrictContexts']=[dict(r) for r in db.execute('''SELECT b.*,d.name AS deo_name,l.jurisdiction,l.designation,s.path,s.sha256
+                FROM bridge_district_contexts b JOIN deos d ON d.id=b.deo_id
+                LEFT JOIN leg_districts l ON l.id=b.leg_id JOIN sources s ON s.id=b.source_id
+                WHERE instr(lower(b.bridge_id),lower(?))>0 OR instr(lower(b.title_key),lower(?))>0
+                   OR instr(lower(b.arcgis_deo),lower(?))>0 OR instr(lower(b.arcgis_cong_dist),lower(?))>0
+                ORDER BY b.bridge_id,b.title_key LIMIT ?''',(args.bridge,args.bridge,args.bridge,args.bridge,max(0,args.limit)))]
     elif args.inventory:
         records=[]
         for row in db.execute('SELECT e.*,s.path,s.sha256 FROM inventory_location_contexts e JOIN sources s ON s.id=e.source_id WHERE instr(lower(e.original_title),lower(?))>0 ORDER BY e.original_title LIMIT ?',(args.inventory,max(0,args.limit))):

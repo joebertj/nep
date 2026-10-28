@@ -3,6 +3,24 @@ import hashlib,re
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 
+BETTERGOV_COLOR_REPLACEMENTS={
+    '#087e78':'#0038A8', '#168277':'#0038A8', '#174b55':'#0038A8', '#123944':'#00246A', '#102f3e':'#00246A',
+    '#18303b':'#212121', '#28424c':'#212121', '#24434b':'#616161', '#536873':'#616161', '#526773':'#616161',
+    '#a7ddd1':'#FCD116', '#66bca8':'#FCD116', '#b9dfd4':'#FCD116', '#b8e5da':'#FCD116', '#e5b64b':'#FCD116', '#f2c968':'#FCD116',
+    '#eef5f3':'#EAF0FF', '#f7faf9':'#F5F5F5', '#f8fbfa':'#F5F5F5', '#f1f7f6':'#F5F5F5', '#e7f1ee':'#F5F5F5', '#eaf1ef':'#EAF0FF',
+    '#c6dbd6':'#E0E0E0', '#d9e3e1':'#E0E0E0', '#ccdcd8':'#E0E0E0', '#b6c9c4':'#BDBDBD', '#a8bbb6':'#BDBDBD', '#9bb7af':'#BDBDBD', '#9fbab3':'#BDBDBD',
+    '#d7e6e4':'#F5F5F5', '#e4efed':'#F5F5F5', '#c0d4d1':'#E0E0E0', '#e0ecea':'#F5F5F5',
+    '#28a745':'#0038A8', '#4caf50':'#0038A8', '#17a2b8':'#0038A8', '#007bff':'#0038A8',
+}
+
+def apply_bettergov_palette(text):
+    """Normalize legacy teal/green report accents to the shared BetterGov palette."""
+    if re.search(r'<body\b[^>]*\bclass=["\'][^"\']*\bout-of-place-theme\b',text,re.I):
+        return text
+    for old,new in BETTERGOV_COLOR_REPLACEMENTS.items():
+        text=re.sub(re.escape(old),new,text,flags=re.I)
+    return text
+
 def publish_assets():
     static=ROOT.parent/'open-data-visualization/static/nep-preview';out=ROOT/'analysis_output';versions={}
     for suffix in ('css','js'):
@@ -14,10 +32,20 @@ def publish_assets():
     raw=(ROOT/'report_assets/research_theme.css').read_bytes()
     (static/'research-theme.css').write_bytes(raw);(out/'research-theme.css').write_bytes(raw)
     versions['theme']=hashlib.sha256(raw).hexdigest()[:12]
+    tailwind=ROOT.parent/'open-data-visualization/static/css/tailwind.css'
+    if not tailwind.exists():raise FileNotFoundError(f'Tailwind stylesheet missing: {tailwind}')
+    versions['tailwind']=hashlib.sha256(tailwind.read_bytes()).hexdigest()[:12]
     return versions
 
+def apply_tailwind_link(text,href,version):
+    text=re.sub(r'<link\b[^>]*\bid="bettergov-tailwind-style"[^>]*>','',text)
+    link=f'<link id="bettergov-tailwind-style" rel="stylesheet" href="{href}?v={version}">'
+    return re.sub(r'<head\b[^>]*>',lambda m:m[0]+link,text,count=1)
+
 def apply_page(text,versions):
+    text=apply_bettergov_palette(text)
     text=normalize_table_pagination(text)
+    text=apply_tailwind_link(text,'../css/tailwind.css',versions['tailwind'])
     def body(match):
         tag=match[0]
         if re.search(r'\bclass="',tag):

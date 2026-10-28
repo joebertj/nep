@@ -18,6 +18,7 @@ sys.path.insert(0,str(ROOT))
 from location_data.build_boundary_crosswalk import cached, polygons
 from location_data.enrich_report_tables import PHLocations, STATIC, TITLE_KEYS
 from location_data.location_text import text_key,place_key,geographic_title
+from location_data.bridge_district_contexts import build_contexts as build_bridge_district_contexts
 from lane_cost_enrichment import Inventory, BRIDGE, SECTION, key
 from build_cost_per_km import lengths
 
@@ -71,13 +72,14 @@ def main():
                 if isinstance(child,(dict,list)):gather(child,source)
     for source in sorted(STATIC.glob('*.json')):
         gather(json.loads(source.read_text()),source.name)
-    review=[];accepted={};road_candidates={};stats=Counter();details={}
+    bridge_district_contexts,bridge_district_counts=build_bridge_district_contexts(projects,bridge_features,loc.seats)
+    review=[];accepted={};road_candidates={};stats=Counter(bridge_district_counts);details={}
     def qualify(row,geometry,bridge=None,evidence=None):
         if geometry.is_empty:return None,'Empty asset geometry'
         hits=[int(i) for i in tree.query(geometry,predicate='intersects')]
         details[text_key(row['projectName'])]={'municipalCandidates':[{'objectId':town_polygons[i][0]['OBJECTID'],
             'municipality':town_polygons[i][0].get('MUNICIPAL'),'province':town_polygons[i][0].get('PROVINCE')} for i in hits],
-            'inventoryEvidence':evidence,'bridgeInventory':{k:bridge.get(k) for k in ['BRIDGE_ID','BR_NAME','MUNICIPAL','PROVINCE','BRGY','BR_LENGTH']} if bridge else None}
+            'inventoryEvidence':evidence,'bridgeInventory':{k:bridge.get(k) for k in ['BRIDGE_ID','BR_NAME','DEO','CONG_DIST','MUNICIPAL','PROVINCE','BRGY','BR_LENGTH']} if bridge else None}
         if len(hits)!=1:return None,'Asset crosses or touches multiple municipal polygons, or none'
         a,g,repaired=town_polygons[hits[0]]
         if repaired:return None,'Municipal geometry required repair; manual review'
@@ -180,14 +182,17 @@ def main():
     map_hashes={name:hashlib.sha256((STATIC.parent/'data'/name).read_bytes()).hexdigest() for name in MAPS}
     for item in review:item['details']=details.get(text_key(item['projectName']))
     hierarchy=ROOT.parent/'open-data-visualization/city_barangays_mapping.json'
-    out={'schemaVersion':1,'mapHashes':map_hashes,'hierarchySha256':hashlib.sha256(hierarchy.read_bytes()).hexdigest(),'methodology':['Municipal polygons locate assets only. Their CONG_DIST and DEO labels are never used to assign a LEG.',
+    out={'schemaVersion':2,'mapHashes':map_hashes,'hierarchySha256':hashlib.sha256(hierarchy.read_bytes()).hexdigest(),'methodology':['Municipal polygons locate assets; an exact bridge ID can also link a project to the ArcGIS bridge record, which lists both DEO and CONG_DIST.',
+        'A bridge-record CONG_DIST is used only when title geography does not independently resolve and the label maps to exactly one current LEG roster entry. If the two sources disagree, the title-based result is retained and the disagreement remains visible in evidence.',
         'Exact bridge ID with unique inventory point and full-span-plus-25m municipal clearance, or full measured road alignment with 25m clearance.',
         'Single municipality, explicit qualified location agreement, current local crosswalk consensus and unique PH location DB identity required.',
+        'The DEO is retained as the bridge record’s source-listed office; it is not treated as a one-to-one LEG lookup because one DEO may cover several legislative districts.',
         'Old inventory positions and municipal boundaries require review if the asset moved or administrative coverage changed. No multi-place split is invented.'],
         'summary':{**dict(stats),'supportedTitles':len(accepted),'additionalHGABOccurrences':len(added),'additionalHGABPesos':sum(r['amountPesos'] for r in added)},
-        'sources':inventory.sources+[town_source,bridge_source], 'contexts':accepted,'review':review,'additionalHGAB':added,'origins':dict(origins)}
+        'sources':inventory.sources+[town_source,bridge_source], 'contexts':accepted,'bridgeDistrictContexts':bridge_district_contexts,
+        'review':review,'additionalHGAB':added,'origins':dict(origins)}
     path=ROOT/'analysis_output/inventory_location_evidence.json';path.write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n')
-    public={k:out[k] for k in ['schemaVersion','mapHashes','hierarchySha256','methodology','summary','sources','contexts']}
+    public={k:out[k] for k in ['schemaVersion','mapHashes','hierarchySha256','methodology','summary','sources','contexts','bridgeDistrictContexts']}
     (STATIC.parent/'data/inventory_location_contexts.json').write_text(json.dumps(public,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps(out['summary'],indent=2))
 

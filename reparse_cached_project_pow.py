@@ -43,7 +43,17 @@ def reparse(code):
         if pow_document is None:
             raise ValueError(f'{code} has no POW listed in cached metadata')
         version = hashlib.sha256(json.dumps(pow_document, sort_keys=True).encode()).hexdigest()[:16]
+        old = next((d for d in result.get('documents', [])
+                    if d.get('kind') == 'pow' and d.get('metadata', {}).get('url') == pow_document.get('url')), {})
         pdf = folder / 'assets' / version / 'pow.pdf'
+        # API metadata can change IDs/upload timestamps while the same source
+        # URL remains cached under its earlier ID. Reuse the exact-URL asset
+        # and compute a fresh checksum instead of downloading a second copy.
+        if not pdf.is_file() and old.get('version'):
+            cached_pdf = folder / 'assets' / old['version'] / 'pow.pdf'
+            if cached_pdf.is_file():
+                pdf = cached_pdf
+                version = old['version']
         if not pdf.is_file():
             raise FileNotFoundError(f'Cached POW PDF is missing: {pdf}')
         with pdf.open('rb') as stream:
@@ -51,19 +61,18 @@ def reparse(code):
                 raise ValueError('Cached POW file does not have a PDF header')
 
         allocation = round(float(metadata['amount']) * 1000)
-        old = next((d for d in result.get('documents', [])
-                    if d.get('kind') == 'pow' and d.get('metadata', {}).get('id') == pow_document.get('id')), {})
         row = {**old, 'kind': 'pow', 'metadata': pow_document, 'version': version,
                'pdfAsset': version + '/pow.pdf',
                'sha256': hashlib.sha256(pdf.read_bytes()).hexdigest(),
                'parsedBy': 'on_demand_reparse', 'parserVersion': hashlib.sha256(
-                   (ROOT / 'project_documents/pow.py').read_bytes()).hexdigest()}
+                   (ROOT / 'project_documents/pow.py').read_bytes() +
+                   (ROOT / 'project_documents/ocr_vision.swift').read_bytes()).hexdigest()}
         row['pow'] = pow_parser.parse_pdf(pdf, pdf.parent, allocation)
         row['signatories'] = old.get('signatories') or extract(pdf, 'pow', pdf.parent)
         row['status'] = 'available'
         row.pop('error', None)
         result['documents'] = [d for d in result.get('documents', [])
-                               if not (d.get('kind') == 'pow' and d.get('metadata', {}).get('id') == pow_document.get('id'))]
+                               if not (d.get('kind') == 'pow' and d.get('metadata', {}).get('url') == pow_document.get('url'))]
         result['documents'].append(row)
         result['updatedByOnDemandReparseAtUtc'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
         atomic_json(result_path, result)
