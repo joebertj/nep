@@ -7,6 +7,7 @@ ROOT=Path(__file__).resolve().parent
 STATIC=ROOT.parent/'open-data-visualization/static/nep-preview'
 LINKS=[('summary.html', 'Summary · investigative leads'), ('congress.html', 'Project flags by district'), ('cost-per-km.html', 'Cost per meter'), ('repeats.html', 'Project repeat comparisons'), ('dpwh-hgab.html', 'DPWH · NEP → HGAB (3rd)'), ('rcs.html', 'RCS · POW scope review'), ('mpb.html', 'MPB · Multi-purpose buildings'), ('dpwh.html', 'DPWH POWs'), ('nia.html', 'NIA · irrigation and named projects'), ('deped.html', 'DepEd'), ('fmr.html', 'FMR'), ('hfep.html', 'HFEP'), ('budget-innovations.html', 'Budget Innovations'), ('out-of-place.html', 'Out of Place'), ('https://csiiiv.github.io/DPWH-NEP-HB-2027-ANALYSIS/app/#compare', 'Budget stage comparisons ↗')]
 NAV='<nav class="report-nav" aria-label="Budget report pages">'+''.join(f'<a href="{url}">{label}</a>' for url,label in LINKS)+'</nav>'
+AI_CREDIT='<footer class="site-ai-credit"><p><strong>AI assistance:</strong> OpenAI Codex contributed to software implementation and data-processing workflows for this site. This credit does not represent independent verification of the underlying sources, calculations, or conclusions.</p></footer>'
 CSS='''<style id="uniform-report-menu-style">
 header{padding-left:clamp(16px,2vw,32px)!important;padding-right:clamp(16px,2vw,32px)!important}
 header .report-nav{box-sizing:border-box!important;display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;grid-auto-rows:34px!important;align-content:start!important;gap:8px 10px!important;width:100%!important;max-width:none!important;height:118px!important;min-height:118px!important;margin:16px 0 0!important;padding:0!important;font:12px/1.1 system-ui,sans-serif!important}
@@ -14,6 +15,7 @@ header .report-nav a,header .report-nav a:visited{box-sizing:border-box!importan
 header .report-nav a:hover{color:#fff!important;background:#ffffff12!important;border-color:#FCD116!important}
 header .report-nav a:focus-visible{outline:2px solid #FCD116!important;outline-offset:2px!important}
 .chart-legend-no-rank{list-style:none!important;padding-left:0!important}.chart-legend-no-rank li{grid-template-columns:minmax(0,1fr) auto!important}.chart-legend-no-rank li>span:first-child{overflow-wrap:anywhere}
+.site-ai-credit{box-sizing:border-box!important;width:100%!important;margin:36px 0 0!important;padding:14px clamp(16px,2vw,32px)!important;border-top:1px solid #BDBDBD!important;color:#5A6670!important;font:12px/1.55 system-ui,sans-serif!important}.site-ai-credit p{max-width:none!important;margin:0!important}
 @media(max-width:900px){header .report-nav{grid-template-columns:repeat(3,minmax(0,1fr))!important;height:202px!important;min-height:202px!important}}
 @media(max-width:560px){header .report-nav{grid-template-columns:repeat(2,minmax(0,1fr))!important;height:328px!important;min-height:328px!important}}
 body.bettergov-research>header.uniform-report-header{box-sizing:border-box!important;display:grid!important;grid-template-rows:176px 118px!important;gap:16px!important;align-content:start!important;height:361px!important;min-height:361px!important;padding-top:24px!important;padding-bottom:24px!important;border-bottom:3px solid #FCD116!important}
@@ -70,6 +72,8 @@ def apply_page(text,page=None):
         text=re.sub(r'<nav\b[^>]*class="report-nav"[^>]*>.*?</nav>',lambda m:NAV,text,flags=re.S)
     else:
         text=text.replace('</header>',NAV+'</header>',1)
+    if re.search(r'<nav\b[^>]*class="report-nav"',text) and 'class="site-ai-credit"' not in text:
+        text=text.replace('</body>',AI_CREDIT+'</body>',1)
     return text.replace('</head>',CSS+'</head>',1)
 
 def apply():
