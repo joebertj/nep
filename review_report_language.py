@@ -24,8 +24,31 @@ REPLACEMENTS={
     '3rd-reading candidate matches by confidence':'3rd-reading candidate matches by title-screen class',
     'allocation across the review shortlist':'HGAB allocation across the candidate shortlist; not alleged losses',
 }
-NOTICE='''<aside id="report-evidence-notice" role="note"><strong>Evidence limits.</strong> Amounts are extracted budget allocations or proposals, not verified payments, losses or personal receipts. Similar titles, repeated amounts and unmatched records are review leads; they do not establish unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope uncertainties must be checked against cited source pages.</aside>'''
-CSS='''<style id="report-evidence-notice-style">#report-evidence-notice{display:block!important;margin:0 0 20px;padding:12px 16px;border-left:4px solid #087e78;background:#eef5f3;color:#28424c;font:14px/1.5 system-ui,sans-serif;max-width:none}</style>'''
+GENERAL_DISCLAIMER=('This site is updated as additional source documents are ingested and reviewed. Its records and calculations are preliminary and open to correction. Additional documents, stakeholder input, and independent review can surface missing information, errors, or context and improve accuracy over time; they may support more complete calculations but do not by themselves verify a record. Inviting people to examine the underlying sources and share corrections is part of the purpose of this work. These are preliminary, document-based observations, not allegations or findings that any person, office, contractor or other entity acted unlawfully. A flag, unmatched record, repeated amount or title, price or location outlier, or missing document is a prompt for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect results. Verify cited primary records and seek relevant context before drawing or publishing conclusions.')
+UPDATE_NOTE='This site is updated as additional source documents are ingested and reviewed. Its records and calculations are preliminary and open to correction. Additional documents, stakeholder input, and independent review can surface missing information, errors, or context and improve accuracy over time; they may support more complete calculations but do not by themselves verify a record. Inviting people to examine the underlying sources and share corrections is part of the purpose of this work.'
+NOTICE=f'''<aside id="report-evidence-notice" class="report-disclaimer" role="note"><strong>Disclaimer.</strong> {GENERAL_DISCLAIMER}</aside>'''
+
+def standardize_disclaimer(text):
+    """Keep each report's scope text, add the common limit, and share one style."""
+    pattern=re.compile(r'(<aside\b[^>]*>)(.*?<strong>(?:Disclaimer|Evidence limits)\.</strong>.*?)(</aside>)',re.S)
+    match=pattern.search(text)
+    if match:
+        opening,body,closing=match.groups()
+        if not re.search(r'\bclass\s*=\s*["\'][^"\']*\breport-disclaimer\b',opening):
+            if re.search(r'\bclass\s*=',opening):
+                opening=re.sub(r'\bclass\s*=\s*(["\'])(.*?)\1',lambda m:'class='+m[1]+(m[2]+' report-disclaimer').strip()+m[1],opening,count=1)
+            else:opening=opening[:-1]+' class="report-disclaimer">'
+        body=body.replace('<strong>Evidence limits.</strong>','<strong>Disclaimer.</strong>',1)
+        if 'This site is updated as additional source documents are ingested' not in body and 'These are preliminary, document-based observations' in body:
+            body += '<p>'+UPDATE_NOTE+'</p>'
+        elif 'These are preliminary, document-based observations' not in body and 'These archived materials are preliminary, document-based observations' not in body:
+            body += '<p>'+GENERAL_DISCLAIMER+'</p>'
+        text=text[:match.start()]+opening+body+closing+text[match.end():]
+    else:
+        text=re.sub(r'(<main\b[^>]*>)',lambda m:m[0]+NOTICE,text,count=1)
+    link='<link rel="stylesheet" href="report-disclaimer.css?v=20261029-disclaimer1">'
+    if link not in text:text=text.replace('</head>',link+'</head>',1)
+    return text
 
 class VisibleText(HTMLParser):
     def __init__(self):super().__init__();self.hidden=0;self.parts=[]
@@ -113,11 +136,8 @@ def apply():
             text=re.sub(r'<title>.*?</title>', '<title>Estimated Allocations by Congressional District · HGAB 3rd Reading</title>', text, count=1, flags=re.S)
             text=re.sub(r'<h1\b[^>]*>.*?</h1>', '<h1>Estimated Allocations by Congressional District</h1>', text, count=1, flags=re.S)
         text=text.replace(':not(#foreign-assisted-review){display:none!important}',':not(#foreign-assisted-review):not(#hgab-investigation-evidence):not(#report-evidence-notice){display:none!important}')
-        text=re.sub(r'<aside id="report-evidence-notice".*?</aside>','',text,flags=re.S)
-        text=re.sub(r'<style id="report-evidence-notice-style">.*?</style>','',text,flags=re.S)
         if path.name != 'budget-trivia.html':
-            text=re.sub(r'(<main\b[^>]*>)',lambda m:m[0]+NOTICE,text,count=1)
-            text=text.replace('</head>',CSS+'</head>',1)
+            text=standardize_disclaimer(text)
         path.write_text(text)
         visible=VisibleText();visible.feed(text)
         prose=re.sub(r'\s+',' ',' '.join(visible.parts))

@@ -94,6 +94,31 @@ def build():
     rcs_scope_by_code = {row['code']: row for row in read_rcs_pow_evidence() if row.get('code')}
 
     insertion_rows = {r['hgab_id']: r for r in dpwh_data.get('hbInsertions', []) if r.get('hgab_id')}
+    def confirmed_cross_boundary(project_id):
+        row = geo.get(project_id) or {}
+        if row.get('status') == 'shared':
+            return True
+        reasons = row.get('reasons') or []
+        evidence = row.get('geographicEvidence') or []
+        return any(
+            'confirmed multi-place' in str(reason).lower()
+            or 'cross-boundary' in str(reason).lower()
+            for reason in reasons
+        ) or any(
+            'multi-place' in str(item.get('interpretation') or '').lower()
+            for item in evidence if isinstance(item, dict)
+        )
+
+    # Shared or explicitly confirmed multi-place projects cannot be presented
+    # as a representative's insertion. Keep their other review flags, but
+    # remove them from insertion counts and district insertion assignments.
+    cross_boundary_insertion_ids = {
+        project_id for project_id in insertion_rows if confirmed_cross_boundary(project_id)
+    }
+    representative_insertion_rows = {
+        project_id: row for project_id, row in insertion_rows.items()
+        if project_id not in cross_boundary_insertion_ids
+    }
     queue_by_id = {r['hgabId']: r for r in line_item_queue.get('rankedOccurrences', []) if r.get('hgabId')}
     assigned_insertions = {}
     for group in assignment.get('districts', []):
@@ -106,9 +131,10 @@ def build():
     # Congress.html still carries its separate flag-level project records, but
     # its full-district allocation statistic must match the archived ranking.
     allocation_data = read_json(STATIC / 'congress-data.json')
+    mixed_signal_ids = set(allocation_data.get('mixedSignalProjectIds') or [])
     attribution = str(allocation_data.get('attributionMethod') or '')
     allocation_summary = allocation_data.get('summary') or {}
-    required_rules = ('city-jurisdiction-preserved-v1', 'caloocan-numbered-barangay-crosswalk-v1')
+    required_rules = ('city-jurisdiction-preserved-v1', 'caloocan-numbered-barangay-crosswalk-v1', 'bridge-office-cong-dist-conflict-hold-v1', 'antipolo-ra9232-barangay-crosswalk-v1', 'camarines-sur-ra9716-municipality-crosswalk-v1', 'negros-occidental-senate-2026-sagay-crosswalk-v1')
     native_total = sum(int(row.get('amountPesos') or 0) for row in native)
     if not all(rule in attribution for rule in required_rules):
         raise ValueError(
@@ -280,7 +306,8 @@ def build():
             'amountPesos': nep_amount or None,
             'allocationDeltaPesos': delta if compare and compare.get('amount_delta_pesos') else None,
         }
-        if comparison == 'No plausible NEP title counterpart; review candidate':
+        is_cross_boundary = confirmed_cross_boundary(project_id)
+        if comparison == 'No plausible NEP title counterpart; review candidate' and not is_cross_boundary:
             detail = 'HGAB line has no plausible selected NEP title counterpart; this is a candidate, not a confirmed insertion.'
             if closest:
                 detail += f' Closest title: {closest} ({similarity:g}% text similarity).'
@@ -323,7 +350,7 @@ def build():
                 elif flag_id == 'missing_photos' or flag_id == 'missing_rdc' or flag_id == 'missing_pow' or flag_id == 'chainage_overlap' or flag_id == 'historical_title':
                     add_flag(project, label, evidence)
                 elif flag_id == 'insertion':
-                    if not any(x in existing_labels for x in ('Potential NEP insertion', 'NEP counterpart needs scope review', 'NEP counterpart pairing is ambiguous')):
+                    if not is_cross_boundary and not any(x in existing_labels for x in ('Potential NEP insertion', 'NEP counterpart needs scope review', 'NEP counterpart pairing is ambiguous')):
                         add_flag(project, label, evidence)
                 elif flag_id == 'amount_group':
                     if not any(x.startswith('Repeated allocation amount') for x in existing_labels):
@@ -390,7 +417,7 @@ def build():
             add_flag(project, 'Possible project doppelgänger · coordinates under 50 m apart', detail)
         for mpb_flag in mpb_project_details.get(project_id, {}).get('reviewFlags', []):
             label = mpb_flag.get('label') or ''
-            if label in {'Location boundary match unresolved', 'Location boundary review'}:
+            if label in {'Location boundary match unresolved', 'Location boundary review'} or label.startswith('Location boundary review ·'):
                 add_flag(project, 'MPB ' + label.lower(), mpb_flag.get('detail') or 'The printed coordinate needs boundary review.')
 
         office_change = office_changes.get(project_id)
@@ -422,7 +449,7 @@ def build():
 
         insertion = insertion_rows.get(project_id)
         assigned_group = assigned_insertions.get(project_id)
-        if insertion:
+        if insertion and not is_cross_boundary:
             project['insertionCandidate'] = True
             project['closestNepTitle'] = insertion.get('closest_nep_title') or ''
             project['titleSimilarityPct'] = float(insertion.get('title_similarity_pct') or 0)
@@ -455,7 +482,6 @@ def build():
         ):
             project['districts'] = ['Antipolo City · 1st District']
             project['reportDistrict'] = 'Antipolo City · 1st District'
-            project['representativeCards'] = [{'district': project['reportDistrict'], 'name': 'Puno, Ronaldo V.'}]
             project['geographicAssignmentStatus'] = 'manual statutory barangay crosswalk'
 
         caloocan_district = caloocan_district_from_title(title)
@@ -497,6 +523,16 @@ def build():
             add_flag(project, 'Out of Place map review · printed coordinate', 'This record appears in the Out of Place map screen. Check the project title, printed locality, coordinate, and office context; inclusion in the map is a review lead.')
             if not map_row.get('officeAssignmentChange'):
                 add_flag(project, 'Coordinate falls outside its named locality · map review', 'The project coordinate was included in the out-of-place map review. Open the map and verify the printed locality and boundary.')
+
+        if project_id in mixed_signal_ids:
+            project['districts'] = []
+            project.pop('reportDistrict', None)
+            project['representativeCards'] = []
+            project['geographicAssignmentStatus'] = 'irreconcilable · conflicting DEO and CONG_DIST'
+            if project.get('insertionCandidate'):
+                project['insertionDistrictAssigned'] = False
+            add_flag(project, 'Conflicting DEO and congressional district labels · irreconcilable',
+                     'The exact bridge record lists different districts for its DPWH DEO and CONG_DIST fields. This project is kept outside district totals as irreconcilable pending reconciliation.')
 
         if project['analysisFlags']:
             projects.append(project)
@@ -561,11 +597,11 @@ def build():
             ids.append(flag_ids[key])
         row['flagIds'] = ids
     assigned_insertion_count = sum(bool(row.get('insertionCandidate') and row.get('insertionDistrictAssigned')) for row in projects)
-    domestic_count = len(insertion_rows)
+    domestic_count = len(representative_insertion_rows)
     unassigned_insertion_count = domestic_count - assigned_insertion_count
     payload = {
             'source': 'HGAB 3rd vs NEP comparison, the project-level line-item review queue (DPWH transparency documents, POW, photos, RDC, historical/rate/chainage screens), geographic attribution, DPWH office changes, cost-per-meter and asset-condition screens, peer allocation screens, repeated GAA comparisons, close-coordinate project pairs, MPB location review, and out-of-place map review',
-            'method': 'Every listed row has at least one review flag. Close-coordinate doppelgänger candidates are pairs of distinct HGAB 3rd project titles with one unambiguous, sufficiently precise printed point less than 50 metres apart; proximity does not establish a shared site or duplicate work. A district is assigned only from a unique geographic attribution, the accepted LEG insertion-location review, documented statutory barangay crosswalks for Antipolo and explicitly numbered Caloocan barangays, or printed-coordinate matches to Quezon City district polygons. Quezon City is kept separate from Quezon Province. Unresolved/shared rows remain in the unassigned review bucket. Flags are evidence leads, not findings of wrongdoing or confirmed insertions.',
+            'method': 'Every listed row has at least one review flag. Close-coordinate doppelgänger candidates are pairs of distinct HGAB 3rd project titles with one unambiguous, sufficiently precise printed point less than 50 metres apart; proximity does not establish a shared site or duplicate work. A district is assigned only from a unique geographic attribution, the accepted LEG insertion-location review, documented statutory barangay crosswalks for Antipolo and explicitly numbered Caloocan barangays, or printed-coordinate matches to Quezon City district polygons. Quezon City is kept separate from Quezon Province. Unresolved/shared rows, including bridge records with conflicting DEO and CONG_DIST labels, remain in the unassigned review bucket. Flags are evidence leads, not findings of wrongdoing or confirmed insertions.',
         'summary': {
             'flaggedProjectRows': len(projects),
             'flaggedHgabProjectRows': sum(row.get('recordStage') != 'NEP' for row in projects),
@@ -575,7 +611,12 @@ def build():
             'domesticInsertionCandidates': domestic_count,
             'districtAssignedInsertionCandidates': assigned_insertion_count,
             'unassignedInsertionCandidates': unassigned_insertion_count,
-            'allPotentialInsertionRecords': sum(r.get('comparison') == 'No plausible NEP title counterpart; review candidate' for r in comparisons),
+            'crossBoundaryInsertionExclusions': len(cross_boundary_insertion_ids),
+            'allPotentialInsertionRecords': sum(
+                r.get('comparison') == 'No plausible NEP title counterpart; review candidate'
+                and r.get('hgab_id') not in cross_boundary_insertion_ids
+                for r in comparisons
+            ),
             'mappedFlagRows': len(mapped),
             'officeChangeRows': len(office_changes),
             'flagCounts': dict(sorted(flag_counts.items())),
@@ -594,7 +635,7 @@ def build():
     if roster_path.is_file() and report_page.is_file():
         version = hashlib.sha256(out.read_bytes() + roster_path.read_bytes()).hexdigest()[:12]
         page = report_page.read_text(encoding='utf-8')
-        for filename in ('congress-district-review-data.json', 'congress-district-roster.json'):
+        for filename in ('congress-district-review-data.json', 'congress-district-roster.json', 'congress-data.json'):
             page = re.sub(
                 rf"fetch\('{re.escape(filename)}(?:\?v=[^']*)?'\)",
                 f"fetch('{filename}?v={version}')",

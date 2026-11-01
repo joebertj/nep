@@ -688,13 +688,20 @@ def parse_pdf(path,output,allocation_pesos=None):
             cost_categories.extend(cost_category_totals(category_text,number+1,method))
         page_rows=[]
         page_start_category=current_cost_category
-        is_component_cost_analysis=bool(re.search(r'DETAILED\s+BREAKDOWN\s+OF\s+COMPONENT\s+COST',text,re.I))
+        # Detailed component-breakdown sheets repeat item codes and show
+        # materials/labour/equipment amounts plus mark-up and VAT. They are
+        # supporting cost analyses, not another set of direct-cost bill rows.
+        # Qualify the whole heading family (including "FOR EACH ITEM") before
+        # the native-table and OCR paths can mistake component columns for
+        # duplicate bill amounts.
+        component_heading=' '.join([text,*[str(w[4]) for w in words]])
+        is_component_cost_analysis=bool(re.search(r'DETAILED\s+BREAKDOWN\s+OF\s+COMPONENT\b',component_heading,re.I))
         current_context=component_context(text) or current_context
         if method.startswith('native'):
             try:
                 for table in page.find_tables().tables:
                     grid=table.extract();source_tables.append({'page':number+1,'bbox':list(table.bbox),'cells':grid})
-                    itemized=itemized_rows(grid,number+1,list(table.bbox),text)
+                    itemized=None if is_component_cost_analysis else itemized_rows(grid,number+1,list(table.bbox),text)
                     if itemized is not None:
                         page_rows.extend(itemized['rows']);itemized_controls.extend(itemized['controls']);continue
                     continued=[] if is_component_cost_analysis else continuation_rows(grid,number+1,list(table.bbox),current_context)
@@ -782,7 +789,7 @@ def parse_pdf(path,output,allocation_pesos=None):
             page_context=component_context('\n'.join(' '.join(w[4] for w in sorted(line,key=lambda x:x[0])) for _,line in sorted(lines.items())))
             if page_context:
                 for row in page_rows:row['componentContext']=page_context
-        role='summary' if is_category_summary else 'itemized_detail' if re.search(r'ITEM\s*(?:NO\.?|NUMBER)|QUANTITY.{0,80}(?:UNIT|AMOUNT|COST)',text,re.I) else 'supporting_detail'
+        role='supporting_detail' if is_component_cost_analysis else 'summary' if is_category_summary else 'itemized_detail' if re.search(r'ITEM\s*(?:NO\.?|NUMBER)|QUANTITY.{0,80}(?:UNIT|AMOUNT|COST)',text,re.I) else 'supporting_detail'
         selected_rotation_match=re.search(r'rotated scan\s+(\d+)°',method)
         pages.append({'page':number+1,'pageRole':role,'nativePageRotation':native_page_rotation,'pageRectOrientation':page_rect_orientation,
                       'ocrSelectedRotationDegrees':int(selected_rotation_match.group(1)) if selected_rotation_match else None,

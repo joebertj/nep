@@ -1,13 +1,79 @@
 {
-  "description": "Manually reviewed printed POW cost-category totals supplied for parser calibration. These totals are distinct from itemized BOQ rows and must not be added to them.",
+  "description": "Manually reviewed printed POW cost-category totals supplied for parser calibration. These totals are distinct from itemized BOQ rows and must not be added to them. Detailed component-breakdown pages are retained as source evidence but excluded from itemized bill rows when the same item quantities are shown with material/labour/equipment splits, mark-up and VAT.",
   "projects": {
     "2027DPWH-Proposal-00132": [
-      {"label":"Other General Requirements","sharePct":7.53,"amountPesos":237780.49,"submittedAmountPesos":237780.49,"evaluatedAmountPesos":237780.49,"sourcePage":1,"extractionMethod":"Manual transcription of printed POW summary supplied from page 1","verificationStatus":"Summary share and submitted/evaluated totals transcribed from source page 1","manualReview":true,"summaryOnly":true},
-      {"label":"Earthwork","sharePct":0.58,"amountPesos":18419.87,"submittedAmountPesos":18419.87,"evaluatedAmountPesos":18419.87,"sourcePage":1,"extractionMethod":"Manual transcription of printed POW summary supplied from page 1","verificationStatus":"Summary share and submitted/evaluated totals transcribed from source page 1","manualReview":true,"summaryOnly":true},
-      {"label":"Reinforced concrete","sharePct":33.21,"amountPesos":1048992.17,"submittedAmountPesos":1048992.17,"evaluatedAmountPesos":1048992.17,"sourcePage":1,"extractionMethod":"Manual transcription of printed POW summary supplied from page 1","verificationStatus":"Summary share and submitted/evaluated totals transcribed from source page 1","manualReview":true,"summaryOnly":true},
-      {"label":"Finishing and other civil works","sharePct":15.54,"amountPesos":490790.69,"submittedAmountPesos":490790.69,"evaluatedAmountPesos":490790.69,"sourcePage":1,"extractionMethod":"Manual transcription of printed POW summary supplied from page 1","verificationStatus":"Summary share and submitted/evaluated totals transcribed from source page 1","manualReview":true,"summaryOnly":true},
-      {"label":"Mechanical","sharePct":26.97,"amountPesos":852000.00,"submittedAmountPesos":852000.00,"evaluatedAmountPesos":852000.00,"sourcePage":1,"extractionMethod":"Manual transcription of printed POW summary supplied from page 1","verificationStatus":"Summary share and submitted/evaluated totals transcribed from source page 1","manualReview":true,"summaryOnly":true},
-      {"label":"GAD related items","sharePct":16.17,"amountPesos":510804.96,"submittedAmountPesos":510804.96,"evaluatedAmountPesos":510804.96,"sourcePage":1,"extractionMethod":"Manual transcription of printed POW summary supplied from page 1","verificationStatus":"Summary share and submitted/evaluated totals transcribed from source page 1","manualReview":true,"summaryOnly":true}
+      {
+        "label": "Other General Requirements",
+        "sharePct": 7.53,
+        "amountPesos": 237780.49,
+        "submittedAmountPesos": 237780.49,
+        "evaluatedAmountPesos": 237780.49,
+        "sourcePage": 1,
+        "extractionMethod": "Manual transcription of printed POW summary supplied from page 1",
+        "verificationStatus": "Summary share and submitted/evaluated totals transcribed from source page 1",
+        "manualReview": true,
+        "summaryOnly": true
+      },
+      {
+        "label": "Earthwork",
+        "sharePct": 0.58,
+        "amountPesos": 18419.87,
+        "submittedAmountPesos": 18419.87,
+        "evaluatedAmountPesos": 18419.87,
+        "sourcePage": 1,
+        "extractionMethod": "Manual transcription of printed POW summary supplied from page 1",
+        "verificationStatus": "Summary share and submitted/evaluated totals transcribed from source page 1",
+        "manualReview": true,
+        "summaryOnly": true
+      },
+      {
+        "label": "Reinforced concrete",
+        "sharePct": 33.21,
+        "amountPesos": 1048992.17,
+        "submittedAmountPesos": 1048992.17,
+        "evaluatedAmountPesos": 1048992.17,
+        "sourcePage": 1,
+        "extractionMethod": "Manual transcription of printed POW summary supplied from page 1",
+        "verificationStatus": "Summary share and submitted/evaluated totals transcribed from source page 1",
+        "manualReview": true,
+        "summaryOnly": true
+      },
+      {
+        "label": "Finishing and other civil works",
+        "sharePct": 15.54,
+        "amountPesos": 490790.69,
+        "submittedAmountPesos": 490790.69,
+        "evaluatedAmountPesos": 490790.69,
+        "sourcePage": 1,
+        "extractionMethod": "Manual transcription of printed POW summary supplied from page 1",
+        "verificationStatus": "Summary share and submitted/evaluated totals transcribed from source page 1",
+        "manualReview": true,
+        "summaryOnly": true
+      },
+      {
+        "label": "Mechanical",
+        "sharePct": 26.97,
+        "amountPesos": 852000.0,
+        "submittedAmountPesos": 852000.0,
+        "evaluatedAmountPesos": 852000.0,
+        "sourcePage": 1,
+        "extractionMethod": "Manual transcription of printed POW summary supplied from page 1",
+        "verificationStatus": "Summary share and submitted/evaluated totals transcribed from source page 1",
+        "manualReview": true,
+        "summaryOnly": true
+      },
+      {
+        "label": "GAD related items",
+        "sharePct": 16.17,
+        "amountPesos": 510804.96,
+        "submittedAmountPesos": 510804.96,
+        "evaluatedAmountPesos": 510804.96,
+        "sourcePage": 1,
+        "extractionMethod": "Manual transcription of printed POW summary supplied from page 1",
+        "verificationStatus": "Summary share and submitted/evaluated totals transcribed from source page 1",
+        "manualReview": true,
+        "summaryOnly": true
+      }
     ],
     "2027DPWH-Proposal-00131": [
       {
@@ -24,7 +90,7 @@
         "label": "Mechanical",
         "sharePct": 68.26,
         "amountPesos": null,
-        "submittedAmountPesos": 2016000.00,
+        "submittedAmountPesos": 2016000.0,
         "evaluatedAmountPesos": 515743.42,
         "sourcePage": 1,
         "extractionMethod": "Manual review of printed category row on POW p. 1",
@@ -101,6 +167,41 @@
         "verificationStatus": "Category share and amount confirmed on POW p. 1 and against Part G subtotal on p. 4",
         "manualReview": true
       }
+    ],
+    "2027DPWH-Proposal-03421": [
+      {
+        "label": "Other General Requirements",
+        "sharePct": 1.58,
+        "amountPesos": 1759028.91,
+        "submittedAmountPesos": 1759028.91,
+        "sourcePage": 1,
+        "extractionMethod": "POW p. 1 summary category cross-checked against the Part B direct-cost subtotal on p. 2",
+        "verificationStatus": "Manually reviewed against printed summary share and reconciled Part B itemized subtotal",
+        "manualReview": true,
+        "summaryOnly": true
+      },
+      {
+        "label": "Earthwork",
+        "sharePct": 12.22,
+        "amountPesos": 13612778.28,
+        "submittedAmountPesos": 13612778.28,
+        "sourcePage": 1,
+        "extractionMethod": "POW p. 1 summary category cross-checked against the Part C direct-cost subtotal on p. 2",
+        "verificationStatus": "Manually reviewed against printed summary share and reconciled Part C itemized subtotal",
+        "manualReview": true,
+        "summaryOnly": true
+      },
+      {
+        "label": "Bridge Construction",
+        "sharePct": 86.2,
+        "amountPesos": 96014741.03,
+        "submittedAmountPesos": 96014741.03,
+        "sourcePage": 1,
+        "extractionMethod": "POW p. 1 summary category cross-checked against the Part F direct-cost subtotal on p. 2",
+        "verificationStatus": "Manually reviewed against printed summary share and reconciled Part F itemized subtotal",
+        "manualReview": true,
+        "summaryOnly": true
+      }
     ]
   },
   "reviewedRows": {
@@ -144,32 +245,198 @@
     ]
   },
   "pageRotationOverrides": {
-    "2027DPWH-Proposal-00131": [270, 270, 270, 270, 270, 270, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    "2027DPWH-Proposal-00132": [270, 270, 270, 270, 0, 270, 270, 270]
+    "2027DPWH-Proposal-00131": [
+      270,
+      270,
+      270,
+      270,
+      270,
+      270,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "2027DPWH-Proposal-00132": [
+      270,
+      270,
+      270,
+      270,
+      0,
+      270,
+      270,
+      270
+    ]
   },
   "reviewedRowsToAdd": {
     "2027DPWH-Proposal-00132": [
-      {"description":"Structural Concrete (3000 psi, Class A, 28 days)","quantity":15.24,"unit":"cubic meter","amountPesos":102073.05,"printedUnitCostPesos":6697.71,"inclusiveUnitCostPesos":8790.74,"costCategory":"Reinforced concrete","costBasis":"as_submitted","sourcePage":2,"verificationStatus":"Manually transcribed from the user-provided page 2 row; submitted and evaluated values match"},
-      {"description":"Structural Concrete (3000 psi, Class A, 28 days)","quantity":15.24,"unit":"cubic meter","amountPesos":102073.05,"printedUnitCostPesos":6697.71,"inclusiveUnitCostPesos":8790.74,"costCategory":"Reinforced concrete","costBasis":"as_evaluated","sourcePage":2,"verificationStatus":"Manually transcribed from the user-provided page 2 row; submitted and evaluated values match"},
-      {"description":"Structural Concrete (Class A, 28 days)","quantity":19.92,"unit":"cubic meter","amountPesos":121364.54,"printedUnitCostPesos":6092.60,"inclusiveUnitCostPesos":7996.54,"costCategory":"Reinforced concrete","costBasis":"as_submitted","sourcePage":2,"verificationStatus":"Manually transcribed from the user-provided page 2 row; submitted and evaluated values match"},
-      {"description":"Structural Concrete (Class A, 28 days)","quantity":19.92,"unit":"cubic meter","amountPesos":121364.54,"printedUnitCostPesos":6092.60,"inclusiveUnitCostPesos":7996.54,"costCategory":"Reinforced concrete","costBasis":"as_evaluated","sourcePage":2,"verificationStatus":"Manually transcribed from the user-provided page 2 row; submitted and evaluated values match"},
-      {"description":"Reinforcing Steel (Deformed) (Grade 40)","quantity":9373.56,"unit":"kilogram","amountPesos":560571.36,"printedUnitCostPesos":59.80,"inclusiveUnitCostPesos":78.49,"costCategory":"Reinforced concrete","costBasis":"as_submitted","sourcePage":2,"verificationStatus":"Manually transcribed from the user-provided page 2 row; submitted and evaluated values match"},
-      {"description":"Reinforcing Steel (Deformed) (Grade 40)","quantity":9373.56,"unit":"kilogram","amountPesos":560571.36,"printedUnitCostPesos":59.80,"inclusiveUnitCostPesos":78.49,"costCategory":"Reinforced concrete","costBasis":"as_evaluated","sourcePage":2,"verificationStatus":"Manually transcribed from the user-provided page 2 row; submitted and evaluated values match"},
-      {"description":"Formworks and Falseworks","quantity":490.32,"unit":"square meter","amountPesos":264983.22,"printedUnitCostPesos":540.43,"inclusiveUnitCostPesos":709.31,"costCategory":"Reinforced concrete","costBasis":"as_submitted","sourcePage":2,"verificationStatus":"Manually transcribed from the user-provided page 2 row; submitted and evaluated values match"},
-      {"description":"Formworks and Falseworks","quantity":490.32,"unit":"square meter","amountPesos":264983.22,"printedUnitCostPesos":540.43,"inclusiveUnitCostPesos":709.31,"costCategory":"Reinforced concrete","costBasis":"as_evaluated","sourcePage":2,"verificationStatus":"Manually transcribed from the user-provided page 2 row; submitted and evaluated values match"}
+      {
+        "description": "Structural Concrete (3000 psi, Class A, 28 days)",
+        "quantity": 15.24,
+        "unit": "cubic meter",
+        "amountPesos": 102073.05,
+        "printedUnitCostPesos": 6697.71,
+        "inclusiveUnitCostPesos": 8790.74,
+        "costCategory": "Reinforced concrete",
+        "costBasis": "as_submitted",
+        "sourcePage": 2,
+        "verificationStatus": "Manually transcribed from the user-provided page 2 row; submitted and evaluated values match"
+      },
+      {
+        "description": "Structural Concrete (3000 psi, Class A, 28 days)",
+        "quantity": 15.24,
+        "unit": "cubic meter",
+        "amountPesos": 102073.05,
+        "printedUnitCostPesos": 6697.71,
+        "inclusiveUnitCostPesos": 8790.74,
+        "costCategory": "Reinforced concrete",
+        "costBasis": "as_evaluated",
+        "sourcePage": 2,
+        "verificationStatus": "Manually transcribed from the user-provided page 2 row; submitted and evaluated values match"
+      },
+      {
+        "description": "Structural Concrete (Class A, 28 days)",
+        "quantity": 19.92,
+        "unit": "cubic meter",
+        "amountPesos": 121364.54,
+        "printedUnitCostPesos": 6092.6,
+        "inclusiveUnitCostPesos": 7996.54,
+        "costCategory": "Reinforced concrete",
+        "costBasis": "as_submitted",
+        "sourcePage": 2,
+        "verificationStatus": "Manually transcribed from the user-provided page 2 row; submitted and evaluated values match"
+      },
+      {
+        "description": "Structural Concrete (Class A, 28 days)",
+        "quantity": 19.92,
+        "unit": "cubic meter",
+        "amountPesos": 121364.54,
+        "printedUnitCostPesos": 6092.6,
+        "inclusiveUnitCostPesos": 7996.54,
+        "costCategory": "Reinforced concrete",
+        "costBasis": "as_evaluated",
+        "sourcePage": 2,
+        "verificationStatus": "Manually transcribed from the user-provided page 2 row; submitted and evaluated values match"
+      },
+      {
+        "description": "Reinforcing Steel (Deformed) (Grade 40)",
+        "quantity": 9373.56,
+        "unit": "kilogram",
+        "amountPesos": 560571.36,
+        "printedUnitCostPesos": 59.8,
+        "inclusiveUnitCostPesos": 78.49,
+        "costCategory": "Reinforced concrete",
+        "costBasis": "as_submitted",
+        "sourcePage": 2,
+        "verificationStatus": "Manually transcribed from the user-provided page 2 row; submitted and evaluated values match"
+      },
+      {
+        "description": "Reinforcing Steel (Deformed) (Grade 40)",
+        "quantity": 9373.56,
+        "unit": "kilogram",
+        "amountPesos": 560571.36,
+        "printedUnitCostPesos": 59.8,
+        "inclusiveUnitCostPesos": 78.49,
+        "costCategory": "Reinforced concrete",
+        "costBasis": "as_evaluated",
+        "sourcePage": 2,
+        "verificationStatus": "Manually transcribed from the user-provided page 2 row; submitted and evaluated values match"
+      },
+      {
+        "description": "Formworks and Falseworks",
+        "quantity": 490.32,
+        "unit": "square meter",
+        "amountPesos": 264983.22,
+        "printedUnitCostPesos": 540.43,
+        "inclusiveUnitCostPesos": 709.31,
+        "costCategory": "Reinforced concrete",
+        "costBasis": "as_submitted",
+        "sourcePage": 2,
+        "verificationStatus": "Manually transcribed from the user-provided page 2 row; submitted and evaluated values match"
+      },
+      {
+        "description": "Formworks and Falseworks",
+        "quantity": 490.32,
+        "unit": "square meter",
+        "amountPesos": 264983.22,
+        "printedUnitCostPesos": 540.43,
+        "inclusiveUnitCostPesos": 709.31,
+        "costCategory": "Reinforced concrete",
+        "costBasis": "as_evaluated",
+        "sourcePage": 2,
+        "verificationStatus": "Manually transcribed from the user-provided page 2 row; submitted and evaluated values match"
+      }
     ],
     "2027DPWH-Proposal-00136": [
-      {"itemCode":"1201 (7)a","description":"Water Tank - Stainless","quantity":2,"unit":"Set","amountPesos":375204.17,"printedUnitCostPesos":187602.09,"costCategory":"Mechanical","costBasis":"as_submitted","sourcePage":6,"verificationStatus":"Manually transcribed from the user-provided page 6 row; matched against the Part G subtotal"}
+      {
+        "itemCode": "1201 (7)a",
+        "description": "Water Tank - Stainless",
+        "quantity": 2,
+        "unit": "Set",
+        "amountPesos": 375204.17,
+        "printedUnitCostPesos": 187602.09,
+        "costCategory": "Mechanical",
+        "costBasis": "as_submitted",
+        "sourcePage": 6,
+        "verificationStatus": "Manually transcribed from the user-provided page 6 row; matched against the Part G subtotal"
+      }
     ],
     "2027DPWH-Proposal-00137": [
-      {"itemCode":"900 (1)c","description":"Structural Concrete (3000 psi, Class A, 28 days)","quantity":14.29,"unit":"cu.m","amountPesos":94195.51,"directCostSharePct":29.15,"costCategory":"Reinforced concrete","costBasis":"as_submitted","sourcePage":2,"verificationStatus":"Manually transcribed from the user-provided page 2 row; verified against the printed amount and direct-cost share"},
-      {"itemCode":"902 (1)a1","description":"Reinforcing Steel (Deformed), Grade 40","quantity":1624.61,"unit":"kg","amountPesos":85929.60,"directCostSharePct":26.59,"costCategory":"Reinforced concrete","costBasis":"as_submitted","sourcePage":2,"verificationStatus":"Manually transcribed from the user-provided page 2 row; verified against the printed amount and direct-cost share"},
-      {"itemCode":"1002 (24)","description":"Cold Water Lines","quantity":1,"unit":"Lump sum","amountPesos":46147.57,"directCostSharePct":14.28,"costCategory":"Finishing and other civil works","costBasis":"as_submitted","sourcePage":2,"verificationStatus":"Manually transcribed from the user-provided page 2 row; verified against the printed amount and direct-cost share"}
+      {
+        "itemCode": "900 (1)c",
+        "description": "Structural Concrete (3000 psi, Class A, 28 days)",
+        "quantity": 14.29,
+        "unit": "cu.m",
+        "amountPesos": 94195.51,
+        "directCostSharePct": 29.15,
+        "costCategory": "Reinforced concrete",
+        "costBasis": "as_submitted",
+        "sourcePage": 2,
+        "verificationStatus": "Manually transcribed from the user-provided page 2 row; verified against the printed amount and direct-cost share"
+      },
+      {
+        "itemCode": "902 (1)a1",
+        "description": "Reinforcing Steel (Deformed), Grade 40",
+        "quantity": 1624.61,
+        "unit": "kg",
+        "amountPesos": 85929.6,
+        "directCostSharePct": 26.59,
+        "costCategory": "Reinforced concrete",
+        "costBasis": "as_submitted",
+        "sourcePage": 2,
+        "verificationStatus": "Manually transcribed from the user-provided page 2 row; verified against the printed amount and direct-cost share"
+      },
+      {
+        "itemCode": "1002 (24)",
+        "description": "Cold Water Lines",
+        "quantity": 1,
+        "unit": "Lump sum",
+        "amountPesos": 46147.57,
+        "directCostSharePct": 14.28,
+        "costCategory": "Finishing and other civil works",
+        "costBasis": "as_submitted",
+        "sourcePage": 2,
+        "verificationStatus": "Manually transcribed from the user-provided page 2 row; verified against the printed amount and direct-cost share"
+      }
     ]
   },
   "directCostTotalsPesos": {
     "2027DPWH-Proposal-00132": 3158788.18,
     "2027DPWH-Proposal-00136": 2954061.75,
     "2027DPWH-Proposal-22656": 260545648.95
+  },
+  "excludedComponentBreakdownPages": {
+    "2027DPWH-Proposal-03421": [
+      3,
+      4
+    ]
   }
 }

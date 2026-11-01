@@ -173,7 +173,8 @@ def collect():
                 else:
                     failed+=1;key=d.get('error','Unknown').split(':',1)[0];errors[key]=errors.get(key,0)+1
             parsed=d.get('pow',{})
-            rows=[{k:r.get(k) for k in ('itemCode','description','componentContext','componentContexts','costCategory','quantity','unit','printedUnitCostPesos','inclusiveUnitCostPesos','calculatedUnitCostPesos','amountPesos','directCostSharePct','manualReview','sourcePage','observedPages','extractionMethod','arithmeticStatus','verificationStatus','costBasis','amountBasis')} for r in parsed.get('rows',[])]
+            excluded_component_pages=set(reviewed_config.get('excludedComponentBreakdownPages',{}).get(meta.get('code'),[])) if d['kind']=='pow' else set()
+            rows=[{k:r.get(k) for k in ('itemCode','description','componentContext','componentContexts','costCategory','quantity','unit','printedUnitCostPesos','inclusiveUnitCostPesos','calculatedUnitCostPesos','amountPesos','directCostSharePct','manualReview','sourcePage','observedPages','extractionMethod','arithmeticStatus','verificationStatus','costBasis','amountBasis')} for r in parsed.get('rows',[]) if int(r.get('sourcePage') or 0) not in excluded_component_pages]
             people=[{k:p.get(k) for k in ('name','roleText','kind','sourcePage','extractionMethod','verificationStatus')} for p in d.get('signatories',{}).get('people',[]) if qualified_role(p.get('roleText',''),d['kind'])]
             controls=[{k:c.get(k) for k in ('sourcePage','basis','amountBasis','printedPesos','recoveredItemRows','recoveredPesos','differencePesos','reconciled')} for c in parsed.get('itemizedDirectCostControls',[])]
             categories=list(parsed.get('costCategoryBreakdown',[]))
@@ -189,7 +190,12 @@ def collect():
             has_named=any(f.get('kind')=='named_component' for f in summary_metadata.get('qualitativeFacts',[]))
             generated_scope_note=('The POW states '+', '.join(f.get('printedText','') for f in declared)+'; no named school/building/site breakdown was detected in the parsed pages.' if declared and not has_named else None)
             scope_note=(reviewed_config.get('projectScopeNotes',{}).get(meta.get('code')) or generated_scope_note) if d['kind']=='pow' else None
-            documents.append({'kind':d['kind'],'status':status,'url':d.get('metadata',{}).get('url'),'sha256':d.get('sha256'),'pageCount':parsed.get('pageCount',d.get('signatories',{}).get('sourcePages')),'pages':parsed.get('pages',[]),'rows':rows,'costCategoryBreakdown':categories,'summaryMetadata':summary_metadata,'scopeNote':scope_note,'controls':controls,'reviewPages':review_pages,'people':people,'signatoryStatus':d.get('signatories',{}).get('status'),'errorType':d.get('error','').split(':',1)[0] or None})
+            parsed_pages=[dict(page) for page in parsed.get('pages',[])]
+            for page in parsed_pages:
+                if int(page.get('page') or 0) in excluded_component_pages:
+                    page.update({'pageRole':'supporting_detail','status':'no_bill_rows_recovered','rows':0,'reviewNote':None})
+                    page['method']=(page.get('method') or 'source table')+' · detailed component breakdown; supporting cost analysis excluded from bill rows'
+            documents.append({'kind':d['kind'],'status':status,'url':d.get('metadata',{}).get('url'),'sha256':d.get('sha256'),'pageCount':parsed.get('pageCount',d.get('signatories',{}).get('sourcePages')),'pages':parsed_pages,'rows':rows,'costCategoryBreakdown':categories,'summaryMetadata':summary_metadata,'scopeNote':scope_note,'controls':controls,'reviewPages':review_pages,'people':people,'signatoryStatus':d.get('signatories',{}).get('status'),'errorType':d.get('error','').split(':',1)[0] or None})
         if not documents:empty+=1
         projects.append({'code':meta['code'],'name':meta['projectName'],'office':meta.get('office'),'region':meta.get('region'),'allocationPesos':round(float(meta['amount'])*1000),'preparedAt':result.get('preparedAtUtc'),'documents':documents,'documentLinks':[{'type':d.get('documentType'),'url':d.get('url')} for d in meta.get('documents',[])]})
     prepared=[p for p in projects if any(d['rows'] for d in p['documents'])]

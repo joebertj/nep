@@ -5,7 +5,7 @@ import re
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 STATIC=ROOT.parent/'open-data-visualization/static/nep-preview'
-LINKS=[('summary.html', 'Summary · investigative leads'), ('congress.html', 'Project flags by district'), ('cost-per-km.html', 'Cost per meter'), ('repeats.html', 'Project repeat comparisons'), ('dpwh-hgab.html', 'DPWH · NEP → HGAB (3rd)'), ('rcs.html', 'RCS · POW scope review'), ('mpb.html', 'MPB · Multi-purpose buildings'), ('dpwh.html', 'DPWH POWs'), ('nia.html', 'NIA · irrigation and named projects'), ('deped.html', 'DepEd'), ('fmr.html', 'FMR'), ('hfep.html', 'HFEP'), ('budget-innovations.html', 'Budget Innovations'), ('out-of-place.html', 'Out of Place'), ('https://csiiiv.github.io/DPWH-NEP-HB-2027-ANALYSIS/app/#compare', 'Budget stage comparisons ↗')]
+LINKS=[('summary.html', 'Summary · investigative leads'), ('flood-control.html', 'Flood-control pattern review'), ('archive/congress-district-allocations.html', 'District allocations · HGAB 3rd'), ('congress.html', 'Project flags by district'), ('cost-per-km.html', 'Cost per meter'), ('repeats.html', 'Project repeat comparisons'), ('dpwh-hgab.html', 'DPWH · NEP → HGAB (3rd)'), ('out-of-place.html', 'Out of Place'), ('rcs.html', 'RCS · POW scope review'), ('mpb.html', 'MPB · Multi-purpose buildings'), ('dpwh.html', 'DPWH POWs'), ('barangay.html', 'Barangay allocations'), ('integrated-district-allocations.html', 'Integrated · District allocations'), ('integrated.html', 'Integrated · Project records'), ('archive.html', 'Archive')]
 NAV='<nav class="report-nav" aria-label="Budget report pages">'+''.join(f'<a href="{url}">{label}</a>' for url,label in LINKS)+'</nav>'
 AI_CREDIT='<footer class="site-ai-credit"><p><strong>AI assistance:</strong> OpenAI Codex contributed to software implementation and data-processing workflows for this site. This credit does not represent independent verification of the underlying sources, calculations, or conclusions.</p></footer>'
 CSS='''<style id="uniform-report-menu-style">
@@ -67,6 +67,7 @@ def apply_page(text,page=None):
         text=apply_teaser(text,page)
     text=text.replace('const legend=`<ol class="chart-legend">${points.map((p,i)=>`<li><span class="chart-legend-number">${i+1}</span><span>${esc(p.label)}</span><strong>${fmt(p.value)}</strong></li>`).join(\'\')}</ol>`;', 'const legend=`<ol class="chart-legend chart-legend-no-rank">${points.map(p=>`<li><span>${esc(p.label)}</span><strong>${fmt(p.value)}</strong></li>`).join(\'\')}</ol>`;')
     text=normalize_header(text)
+    text=re.sub(r'<body(?![^>]*\bclass=)([^>]*)>',r'<body class="bettergov-research"\1>',text,count=1)
     text=re.sub(r'<style id="(?:report-nav-layout|summary-nav-layout|uniform-report-menu-style)">.*?</style>','',text,flags=re.S)
     if re.search(r'<nav\b[^>]*class="report-nav"',text):
         text=re.sub(r'<nav\b[^>]*class="report-nav"[^>]*>.*?</nav>',lambda m:NAV,text,flags=re.S)
@@ -93,7 +94,7 @@ def apply():
         styles=re.findall(r'<style id="uniform-report-menu-style">.*?</style>',text,re.S)
         if navs!=[NAV] or styles!=[CSS]:raise ValueError('Menu differs: '+path.name)
         results.append({'page':path.name,'links':len(LINKS),'uniformMarkup':True,'uniformStyles':True})
-    report={'pages':results,'pageCount':len(results),'menuHeightsPx':{'desktop':118,'tablet':202,'mobile':328},'headerHeightsPx':{'desktop':361,'tablet':495,'mobile':647},'scope':'Generated markup and CSS audit; no browser rendering test.'}
+    report={'pages':results,'pageCount':len(results),'menuHeightsPx':{'desktop':118,'tablet':202,'mobile':286},'headerHeightsPx':{'desktop':361,'tablet':495,'mobile':605},'scope':'Generated markup and CSS audit; no browser rendering test.'}
     (ROOT/'analysis_output/report_menu_review.json').write_text(json.dumps(report,indent=2)+'\n')
     return report
 
