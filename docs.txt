@@ -1,0 +1,79 @@
+DPWH NEP ↔ HGAB document talking point
+Last reviewed: 2026-11-02
+
+Simple talking-point flow
+
+DPWH NEP projects
+
+11,420 NEP projects
+→ 10,166 have a matching HGAB project
+→ Of those 10,166 matches, 9,844 (96.8%) have at least one DPWH Transparency document found through the NEP project
+→ 322 (3.2%) have no document found through the NEP project at this stage
+
+    Top document types found among the 10,166 matched projects:
+    → BP 202: 8,446 (83.1%)
+    → POW: 8,166 (80.3%)
+    → Certificate of Implementability: 8,128 (80.0%)
+    → Geotagged Photos: 7,190 (70.7%)
+
+HGAB projects
+
+15,979 HGAB projects
+→ 8,763 have DPWH Transparency documents found by matching the HGAB project title
+→ 9,577 have documents found through the matched NEP project
+→ 9,601 (60.1%) have at least one document found through either search
+→ 6,378 (39.9%) have no document found through either search at this stage
+
+    Top document types found among the 8,763 projects matched by HGAB title:
+    → BP 202: 8,763 (100%)
+    → POW: 8,721 (99.5%)
+    → Certificate of Implementability: 8,670 (98.9%)
+    → Geotagged Photos: 7,528 (85.9%)
+
+“Found” means the project could be matched to documents in the DPWH Transparency portal. It does not mean the documents are attached to the HGAB record.
+
+For reconciliation, use **11,420 DPWH FY2027 NEP source rows** as the single project baseline. **11,372** is the number of portal project codes represented in the retained NEP–Transparency crosswalk, not a second NEP total. In that crosswalk, 11,199 NEP rows have an exact title-and-amount portal match, 173 have a provisional title/OCR candidate match, 23 are explicitly not found, and 25 are outside the retained domestic portal snapshot's scope. Keep the 173 candidate matches marked provisional. A separate portal inventory snapshot lists 11,371 project records; that one-record difference is a snapshot/counting discrepancy and does not change the 11,420 NEP denominator.
+
+Of the 11,420 DPWH NEP project rows, 10,166 (89.0%) are paired with an HGAB project row: 9,626 exact normalized-title pairs and 540 plausible pairs requiring scope review. A project pairing does not mean its documents are attached to HGAB.
+
+In the current project-level document-link snapshot, **11,034 of 11,420 NEP rows (96.6%) map to at least one listed document link**. The remaining 386 have no link in this snapshot; this is a coverage gap, not evidence that the documents do not exist. The portal inventory separately lists 53,801 document records across 11,371 project records. Those inventory totals are not interchangeable with NEP-row link coverage, and document links do not confirm that a file is accessible or complete.
+
+Among those 10,166 pairs, current type-level metadata confirms at least:
+- 8,446 with BP 202 (83.1%)
+- 8,166 with a POW (80.3%)
+- 8,128 with a Certificate of Implementability (80.0%)
+- 7,190 with geotagged photos (70.7%)
+- 947 with an RDC Endorsement (9.3%)
+- 540 with an LDC Endorsement (5.3%)
+
+Type-level metadata is available for 8,447 matched pairs, so these document counts and percentages of all 10,166 pairs are minimums. A project may have multiple document types.
+
+For HGAB document coverage, the current reconciliation counts a direct link on the HGAB title match and links on a selected NEP counterpart as separate routes. Of 15,979 HGAB project rows, 8,763 have at least one direct HGAB-title link; 9,577 have a selected NEP counterpart with links; and 9,601 have documents available through either route. **6,378 (39.9%) have no document link through either route** in this snapshot. This does not establish that the projects have no documents elsewhere, or that a paired NEP document has identical scope to the HGAB row.
+
+Across the selected NEP–HGAB pair set, 9,844 of 10,166 pairs have at least one project-level document link on the NEP side. The earlier 15,228 “no documents” figure used an older direct-only `documentCount` field and should not be used as the current no-link total. The OO2-adjusted 5,491 HGAB-only candidates are a separate, narrower project-matching baseline and are not the denominator for document coverage.
+
+The current document-record reconciliation snapshot (generated 2026-11-02) shows 6,026 of 53,801 Transparency document records unmatched to the unique union of selected-pair and directly linked HGAB records. The residual includes 1,182 BP 202 records, 1,157 Certificates of Implementability, 1,170 POW records, and 1,056 geotagged-photo records. These are document records, not project rows. A residual does not establish that a document was literally wasted.
+
+Sources:
+- analysis_output/hb_nep_comparison_3rd_mapping.json (NEP–HGAB pair counts)
+- analysis_output/dpwh-in-depth-data.json (current project-level links, type-level metadata, and HGAB attachment coverage)
+- static/nep-preview/dpwh-document-stage-summary.json (document-record residual; generated 2026-11-01)
+- analysis_output/dpwh_transparency_document_coverage.json (NEP/Transparency project baseline)
+- static/nep-preview/dpwh-portal-document-catalog.json (portal inventory snapshot; generated 2026-11-01)
+
+OO2 amendments · domestic HGAB-only baseline
+Last reviewed: 2026-11-02
+
+The pre-OO2 domestic HGAB-only screen contained 5,549 candidate records carrying ₱158,363,325,000. Cross-checking the OO2 amendment workbook against these records found 58 unique high-confidence candidate correspondences. Subtracting those 58 leaves 5,491 domestic HGAB-only candidates carrying ₱149,558,895,000 (about ₱149.56B).
+
+Nine additional amendment rows point to distinct HGAB-only records but remain under manual review. They are still included in the conservative 5,491 count. If all nine are later confirmed, the count would be 5,482; this is a review-inclusive lower bound, not the current headline. Three amendment rows remain unresolved and are not subtracted.
+
+A high-confidence candidate required normalized-title token Jaccard similarity of at least 0.75 and either an exact amount match, or (for a title change) an HGAB amount matching the increase over the named prior line within ₱1,000. These are investigative correspondences, not official determinations that the records were incorporated into the NEP or that their scope is identical. “HGAB-only” in the adjusted analysis therefore means no selected NEP counterpart after excluding the 58 high-confidence OO2 candidates; it does not mean a verified new insertion.
+
+The amendment workbook has an unresolved total mismatch: its reported “to” total is ₱8,276,558,559.90, while the sum parsed from the 70 amendment rows is ₱10,283,758,559.90. The comparison above uses candidate-level title and amount checks and does not treat the workbook aggregate as reconciled. The nine review candidates and three unresolved rows require source-level verification.
+
+Sources:
+- data_sources/OO2 amendments.xlsx and data_sources/OO2 amendments.json
+- analysis_output/dpwh_oo2_hgab_impact.json (candidate-level links, statuses and method)
+- analysis_output/dpwh-OO2-hgab.html (OO2-adjusted review page)
+- analysis_output/dpwh-OO2-hgab-data.json

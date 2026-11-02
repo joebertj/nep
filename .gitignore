@@ -15,6 +15,10 @@ NEP-FY2027.xlsx
 /data_sources/report_archive/
 /data_sources/dpwh_project_documents/
 /.venv-documents/
+/.dpwh-page-data-refresh-status.json
 
 # External document cache symlink and raw source files
 /data_sources/dpwh_project_documents
+
+# Full local DPWH parser snapshot; only split static shards are published.
+/analysis_output/dpwh-in-depth-data.json

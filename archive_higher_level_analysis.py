@@ -23,6 +23,7 @@ MOVED_HGAB_SECTIONS=[
  {'page':'dpwh-hgab-comparison.html','id':'other-agency-readings','title':'Other agency schedules · HGAB 2nd versus 3rd'},
 ]
 ADDITIONAL_REPORTS=[
+ ('dpwh-hgab.html','DPWH · NEP → HGAB (pre-OO2 baseline)','Archived baseline comparison before OO2 amendment matches were excluded'),
  ('nia.html','NIA · irrigation and named projects','NIA project and irrigation analyses'),
  ('deped.html','DepEd','DepEd budget and project analyses'),
  ('fmr.html','FMR','Farm-to-market road analyses'),
@@ -140,7 +141,7 @@ def apply():
     page=apply_report_menu(page,'archive.html')
     (STATIC/'archive.html').write_text(page)
     (OUT/'archive.html').write_text(page)
-    source_links='<div id="report-source-links"><p><strong>Sources and research records</strong> · <a href="'+SITE+'">csiiiv source workbench ↗</a> · <a href="archive.html">Archived earlier sections</a></p><p><a href="reviewed-annex-baselines.json" download>Reviewed annex source rows</a> · <a href="reviewed-source-adoption.json" download>Adoption and source-equivalence methodology</a>. Local pages retain project-level records, engineering and location evidence, and reproducible investigation leads.</p></div>'
+    source_links='<div id="report-source-links"><p><strong>Sources and research records</strong> · <a href="'+SITE+'">csiiiv source workbench ↗</a> · <a href="archive.html">Archive</a></p><p><a href="reviewed-annex-baselines.json" download>Reviewed annex source rows</a> · <a href="reviewed-source-adoption.json" download>Adoption and source-equivalence methodology</a>. Local pages retain project-level records, engineering and location evidence, and reproducible investigation leads.</p></div>'
     for path in STATIC.glob('*.html'):
         if path.name=='index.html':continue
         text=path.read_text();text=re.sub(r'<aside id="upstream-budget-analysis".*?</aside>','',text,flags=re.S)

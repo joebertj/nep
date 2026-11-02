@@ -51,7 +51,7 @@ printf '\n=== Homepage edits vs checkout ===\n'
 git -C "$r" diff --unified=3 -- templates/visualizations_home.html templates/mobile/visualizations_home.html | sed -n '1,180p'
 sha256sum "$r/templates/visualizations_home.html" "$r/templates/mobile/visualizations_home.html"
 printf '\n=== Nginx checks with the site Host header ===\n'
-for path in / /static/nep-preview/ /static/nep-preview/summary.html /static/nep-preview/budget-innovations.html /static/nep-preview/congress.html /static/nep-preview/deped.html /static/nep-preview/dpwh-hgab-comparison.html /static/nep-preview/dpwh-hgab.html /static/nep-preview/dpwh.html /static/nep-preview/fmr.html /static/nep-preview/hfep.html /static/nep-preview/nia-irrigation.html /static/nep-preview/nia.html /static/nep-preview/rcs.html /static/nep-preview/mpb.html /static/nep-preview/cost-per-km.html /static/nep-preview/cost-matching.html; do
+for path in / /static/nep-preview/ /static/nep-preview/summary.html /static/nep-preview/budget-innovations.html /static/nep-preview/congress.html /static/nep-preview/deped.html /static/nep-preview/dpwh-hgab-comparison.html /static/nep-preview/dpwh-hgab.html /static/nep-preview/dpwh.html /static/nep-preview/fmr.html /static/nep-preview/hfep.html /static/nep-preview/nia-irrigation.html /static/nep-preview/nia.html /static/nep-preview/rcs.html /static/nep-preview/mpb.html /static/nep-preview/mpb-barangay.html /static/nep-preview/cost-per-km.html /static/nep-preview/cost-matching.html; do
   status="$(curl --silent --show-error --location --max-time 8 --resolve 'research.bettergov.ph:443:127.0.0.1' --output /dev/null --write-out '%{http_code}' "http://research.bettergov.ph$path" 2>/dev/null || true)"
   printf '%s %s\n' "$status" "$path"
 done
@@ -63,7 +63,7 @@ curl --silent --show-error --max-time 5 --output /dev/null --write-out '%{http_c
 app_ip="$(ss -H -ltn 'sport = :8888' 2>/dev/null | awk 'NR==1 {sub(/:[0-9]+$/, "", $4); print $4}')"
 if [[ -n "$app_ip" ]]; then
   printf 'Direct Actix listener checks (%s):\n' "$app_ip"
-  for path in / /static/nep-preview/ /static/nep-preview/summary.html /static/nep-preview/budget-innovations.html /static/nep-preview/congress.html /static/nep-preview/deped.html /static/nep-preview/dpwh-hgab-comparison.html /static/nep-preview/dpwh-hgab.html /static/nep-preview/dpwh.html /static/nep-preview/fmr.html /static/nep-preview/hfep.html /static/nep-preview/nia-irrigation.html /static/nep-preview/nia.html /static/nep-preview/rcs.html /static/nep-preview/mpb.html /static/nep-preview/cost-per-km.html /static/nep-preview/cost-matching.html; do
+  for path in / /static/nep-preview/ /static/nep-preview/summary.html /static/nep-preview/budget-innovations.html /static/nep-preview/congress.html /static/nep-preview/deped.html /static/nep-preview/dpwh-hgab-comparison.html /static/nep-preview/dpwh-hgab.html /static/nep-preview/fmr.html /static/nep-preview/hfep.html /static/nep-preview/nia-irrigation.html /static/nep-preview/nia.html /static/nep-preview/rcs.html /static/nep-preview/mpb.html /static/nep-preview/mpb-barangay.html /static/nep-preview/cost-per-km.html /static/nep-preview/cost-matching.html; do
     status="$(curl --silent --show-error --max-time 5 --output /dev/null --write-out '%{http_code}' "http://$app_ip:8888$path" 2>/dev/null || true)"
     printf '%s %s\n' "$status" "$path"
   done
@@ -86,12 +86,21 @@ set -euo pipefail
 r="$REMOTE_DIR"
 files=(
   static/nep-preview/research-theme.css
+  static/nep-preview/research-status.js
+  static/nep-preview/site-build-info.json
   static/nep-preview/nep-hgab-comparison-graphs.css
   static/nep-preview/nep-hgab-comparison-graphs.js
   static/nep-preview/report-table-readability.css
   static/nep-preview/report-table-readability.js
   static/nep-preview/congress-benchmark.json
   static/nep-preview/index.html
+  static/nep-preview/archive.html
+  static/nep-preview/barangay.html
+  static/nep-preview/flood-control.html
+  static/nep-preview/integrated.html
+  static/nep-preview/integrated-district-allocations.html
+  static/nep-preview/outside.html
+  static/nep-preview/rcs-rainfall-archive.html
   static/nep-preview/summary.html
   static/nep-preview/summary-data.json
   static/nep-preview/rcs-stage-trace.json
@@ -128,6 +137,9 @@ files=(
   static/nep-preview/rcs.html
   static/nep-preview/mpb.html
   static/nep-preview/mpb-data.json
+  static/nep-preview/mpb-barangay.html
+  static/nep-preview/mpb-barangay-data.json
+  static/nep-preview/mpb-map-share
   static/nep-preview/out-of-place.html
   static/nep-preview/out-of-place.js
   static/nep-preview/out-of-place-data.json
@@ -144,6 +156,8 @@ files=(
   static/nep-preview/higher-level-archive.json
   static/nep-preview/archive/index.html
   static/nep-preview/dpwh-in-depth-data.json
+  static/nep-preview/dpwh-in-depth-shards
+  static/nep-preview/dpwh-data-loader.js
   static/nep-preview/dpwh-in-depth.js
   static/nep-preview/project-documents.html
   static/nep-preview/project-documents.js
@@ -168,6 +182,8 @@ files=(
 )
 health_files=(
   static/nep-preview/research-theme.css
+  static/nep-preview/research-status.js
+  static/nep-preview/site-build-info.json
   static/nep-preview/nep-hgab-comparison-graphs.css
   static/nep-preview/nep-hgab-comparison-graphs.js
   static/nep-preview/report-table-readability.css
@@ -176,6 +192,13 @@ health_files=(
   static/nep-preview/rcs-stage-trace.json
   static/nep-preview/rcs-stage-trace.csv
   static/nep-preview/index.html
+  static/nep-preview/archive.html
+  static/nep-preview/barangay.html
+  static/nep-preview/flood-control.html
+  static/nep-preview/integrated.html
+  static/nep-preview/integrated-district-allocations.html
+  static/nep-preview/outside.html
+  static/nep-preview/rcs-rainfall-archive.html
   static/nep-preview/summary.html
   static/nep-preview/summary-data.json
   static/nep-preview/repeat-nep-hgab-survival.json
@@ -226,6 +249,7 @@ health_files=(
   static/nep-preview/higher-level-archive.json
   static/nep-preview/archive/index.html
   static/nep-preview/dpwh-in-depth-data.json
+  static/nep-preview/dpwh-data-loader.js
   static/nep-preview/dpwh-in-depth.js
   static/nep-preview/project-documents.html
   static/nep-preview/project-documents.js
@@ -239,6 +263,9 @@ health_files=(
   static/nep-preview/line-item-review-queue.json
   static/nep-preview/within-stage-repeats.json
   static/nep-preview/repeats.html
+  static/nep-preview/mpb-barangay.html
+  static/nep-preview/mpb-barangay-data.json
+  static/nep-preview/mpb-map-share
   static/nep-preview/fmr-data.json
   static/nep-preview/fmr-annex-equivalence.json
   static/nep-preview/fmr-historical-repeats.json
@@ -246,6 +273,39 @@ health_files=(
   static/nep-preview/nep-agency-baselines.json
   static/nep-preview/nep-agency-stage-controls.json
 )
+
+ensure_build_info_ignored() {
+  local exclude_file
+  if git -C "$r" check-ignore -q -- static/nep-preview/site-build-info.json; then
+    return 0
+  fi
+  # A no-op metadata repair may run against a server whose current commit
+  # predates the committed .gitignore rule. Keep that checkout clean meanwhile.
+  exclude_file="$r/.git/info/exclude"
+  if ! grep -Fqx '/static/nep-preview/site-build-info.json' "$exclude_file"; then
+    printf '\n/static/nep-preview/site-build-info.json\n' >> "$exclude_file"
+  fi
+  git -C "$r" check-ignore -q -- static/nep-preview/site-build-info.json
+}
+
+write_build_info() {
+  local build_commit build_timestamp build_info
+  build_commit="$(git -C "$r" rev-parse HEAD)"
+  build_timestamp="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+  build_info="$r/static/nep-preview/site-build-info.json"
+  if ! ensure_build_info_ignored; then
+    echo "Unable to ignore site-build-info.json in this checkout." >&2
+    return 1
+  fi
+  printf '{"commit":"%s","deployedAtUtc":"%s"}\n' "$build_commit" "$build_timestamp" > "$build_info"
+}
+
+build_info_matches_head() {
+  local build_commit build_info
+  build_commit="$(git -C "$r" rev-parse HEAD)"
+  build_info="$r/static/nep-preview/site-build-info.json"
+  [[ -f "$build_info" ]] && grep -Eq "\"commit\":\"$build_commit\".*\"deployedAtUtc\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z\"" "$build_info"
+}
 
 if [[ "$(git -C "$r" branch --show-current)" != "main" ]]; then
   echo "Refusing deployment: server checkout is not on main." >&2
@@ -306,7 +366,12 @@ if [[ -n "$dirty_paths" ]]; then
   done <<< "$dirty_paths"
 fi
 if [[ "$previous" == "$target" && -z "$dirty_paths" ]]; then
-  echo "Server is already at requested target ($target); no deployment needed."
+  if ! build_info_matches_head; then
+    echo "Checkout is already at $target; repairing the ignored deployment metadata."
+    write_build_info
+  else
+    echo "Server is already at requested target ($target); deployment metadata is current."
+  fi
   exit 0
 fi
 
@@ -366,6 +431,26 @@ git -C "$r" reset --hard "$target"
 for file in "${preserve_templates[@]}"; do
   cp -a "$backup/$file" "$r/$file"
 done
+
+# The DPWH data loader reconstructs each logical array from these committed
+# shards; check every referenced file during release health validation.
+while IFS= read -r shard; do
+  health_files+=("static/nep-preview/$shard")
+done < <(python3 - "$r/static/nep-preview/dpwh-in-depth-data.json" <<'PY'
+import json, sys
+from pathlib import Path
+index = json.loads(Path(sys.argv[1]).read_text())
+for shards in index.get('arrayShards', {}).values():
+    for shard in shards:
+        print(shard['path'])
+for shard in index.get('projectShards', []):
+    print(shard['path'])
+PY
+)
+
+# The revision marker is intentionally ignored by Git. Capture the actual
+# deployed target only after reset so alternate deployment targets are exact.
+write_build_info
 
 if [[ "$needs_build" == true ]]; then
   echo "Building the frontend for the route change."

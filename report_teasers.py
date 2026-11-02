@@ -5,7 +5,8 @@ TEASERS={
  'index.html':'Where should budget investigators look first?',
  'congress.html':'Which flagged projects are tied to each district?',
  'dpwh.html':'What makes up a project’s cost?',
- 'dpwh-hgab.html':'How many House budget lines lack a plausible NEP counterpart?',
+ 'dpwh-hgab.html':'Archived pre-OO2 baseline; use the OO2-adjusted comparison for current HGAB-only counts.',
+ 'dpwh-OO2-hgab.html':'How many domestic HGAB-only candidates remain after accounting for OO2 amendments?',
  'dpwh-hgab-comparison.html':'What appears only in the House’s third-reading extraction?',
  'repeats.html':'How often do project titles and segments resurface?',
  'mpb.html':'How many building allocations lack a plausible NEP counterpart?',
@@ -22,7 +23,8 @@ TEASERS={
 }
 HEADLINES={
  'congress.html':'mapped flagged projects to review',
- 'dpwh-hgab.html':'domestic candidates needing counterpart verification',
+ 'dpwh-hgab.html':'archived domestic candidates before OO2 adjustment',
+ 'dpwh-OO2-hgab.html':'domestic HGAB-only candidates after OO2 adjustment',
  'repeats.html':'NEP–GAA comparison pairs to verify',
  'budget-innovations.html':'budget terms flagged as potentially new or revived',
 }

@@ -4,7 +4,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parent;STATIC=ROOT.parent/'open-data-visualization/static/nep-preview';OUT=ROOT/'analysis_output'
 TARGETS={
  'rcs':('rcs.html#rcs-statistical-evidence','Uniform allocation and rainfall evidence'),
- 'insertions':('dpwh-hgab.html#hgab-insertion','Domestic insertion candidate table'),
+ 'insertions':('dpwh-OO2-hgab.html#hgab-insertion','OO2-adjusted domestic HGAB-only candidate table'),
  'mpb':('mpb.html#mpb-insertions','MPB insertion candidate table'),
  'repeats':('repeats.html#repeat-hgab-survival','Repeat-candidate HGAB retention evidence'),
  'prices':('repeats.html#dpwh-investigation-evidence','Exact ₱5M clustering statistics'),

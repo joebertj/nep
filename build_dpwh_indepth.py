@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """Publish whitelisted parsed document evidence; never publish raw cache files."""
-import json,html,shutil,hashlib,uuid,re,unicodedata,statistics
+import json,html,shutil,hashlib,uuid,re,unicodedata,statistics,subprocess,sys
 from datetime import datetime,timezone
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 OUT=ROOT/'analysis_output'
 STATIC=ROOT.parent/'open-data-visualization/static/nep-preview'
 CACHE=ROOT/'data_sources/dpwh_project_documents/on_demand'
+BULK_CACHE=ROOT/'data_sources/dpwh_project_documents/parsed_pow'
 UNMATCHED={'not_found','no_verified_match','candidate_match','ambiguous_match','outside_snapshot_scope'}
 PRIMARY_POW_PROJECT_GROUPS=('Bridges','Roads','Irrigation','Multi-Purpose Buildings (MPB)')
 def title_key(value):return ' '.join(unicodedata.normalize('NFKC',str(value or '')).split())
@@ -24,6 +25,16 @@ for group in CATEGORY_MERGE_DATA.get('groups',[]):
     CATEGORY_MERGES[canonical]=canonical
     for variant in group.get('variants',[]):CATEGORY_MERGES[category_base_key(variant)]=canonical
 
+BILL_MERGE_DATA=json.loads((ROOT/'project_documents/pow_bill_merges.json').read_text())
+BILL_MERGES={}
+BILL_LABELS={}
+for group in BILL_MERGE_DATA.get('groups',[]):
+    canonical=category_base_key(group.get('canonical'))
+    if not canonical:continue
+    BILL_LABELS[canonical]=str(group.get('canonical'))
+    BILL_MERGES[canonical]=canonical
+    for variant in group.get('variants',[]):BILL_MERGES[category_base_key(variant)]=canonical
+
 def category_key(value):
     base=category_base_key(value)
     return CATEGORY_MERGES.get(base,base)
@@ -34,6 +45,8 @@ def has_kind(project,kind):
         if kind=='pow' and (t=='pow' or 'program of work' in t):return True
         if kind=='photos' and 'geotagged' in t and 'photo' in t:return True
         if kind=='rdc' and ('rdc' in t or 'regional development council' in t):return True
+        if kind=='bp202' and re.search(r'(?<!\w)bp\s*202(?!\w)',t):return True
+        if kind=='implementability' and 'certificate of implementability' in t:return True
     return False
 def unit_key(value):
     s=unicodedata.normalize('NFKC',str(value or '')).lower().strip().replace('²','2').replace('³','3')
@@ -90,38 +103,59 @@ def summary_peer_groups(projects):
                             'projectCount':0,'summaryProjectCount':0,'detailProjectCount':0,'projects':[],'observations':[]})
     return sorted(results,key=lambda g:(-g['projectCount'],g['family'].casefold()))
 
-def hgab_statistics():
+def hgab_statistics(document_projects):
     stage=json.loads((OUT/'dpwh_hgab_2nd_vs_3rd.json').read_text())
     coverage=json.loads((OUT/'dpwh_transparency_document_coverage.json').read_text())
     nep_map=json.loads((OUT/'hb_nep_comparison_3rd_mapping.json').read_text())
-    snapshot=json.loads((OUT/'dpwh-in-depth-data.json').read_text())
     projects=[r['third'] for r in stage['rows'] if r.get('third') and r['third'].get('allocationKind')=='project']
     unpaired_ids={r.get('id') for r in nep_map.get('hgabWithoutSelectedCounterpart',[]) if r.get('allocationKind')=='project'}
     titles=coverage.get('titles',{});linked=[];status_counts={}
+    by_code={p['code']:p for p in document_projects if p.get('code')}
+    source_rows={r['sourceId']:r for r in coverage.get('rows',[]) if r.get('sourceId')}
+    pair_by_hgab={p.get('hgabId'):p for p in nep_map.get('pairs',[]) if p.get('hgabId')}
     unpaired=missing_listed=double_flag=0
+    direct_listed=paired_listed=listed_any=0
+    document_urls=set()
     for row in projects:
         entry=titles.get(title_key(row.get('projectName')))
         status=entry.get('status','unmapped') if entry else 'unmapped'
         status_counts[status]=status_counts.get(status,0)+1
         no_selected_nep=row.get('id') in unpaired_ids
-        docs_listed=bool(entry and entry.get('code') and status not in UNMATCHED and (entry.get('documentCount') or 0)>0)
+        direct_project=by_code.get(entry.get('code')) if entry and entry.get('code') and status not in UNMATCHED else None
+        direct_links=direct_project.get('documentLinks',[]) if direct_project else []
+        pair=pair_by_hgab.get(row.get('id'))
+        nep_row=source_rows.get((pair.get('nep') or {}).get('id')) if pair else None
+        paired_project=by_code.get(nep_row.get('code')) if nep_row and nep_row.get('code') else None
+        paired_links=paired_project.get('documentLinks',[]) if paired_project else []
+        direct_has_docs=bool(direct_links)
+        paired_has_docs=bool(paired_links)
+        linked_docs={str(d.get('url')):d for d in [*direct_links,*paired_links] if d.get('url')}
+        docs_listed=bool(linked_docs)
+        direct_listed+=direct_has_docs
+        paired_listed+=paired_has_docs
+        listed_any+=docs_listed
+        document_urls.update(linked_docs)
         unpaired+=no_selected_nep
         missing_listed+=not docs_listed
         double_flag+=no_selected_nep and not docs_listed
         if entry and entry.get('code') and status not in UNMATCHED:
             linked.append((row,entry))
-    by_code={p['code']:p for p in snapshot['projects']}
-    inspected=[(row,entry,by_code[entry['code']]) for row,entry in linked if entry['code'] in by_code]
-    types={k:sum(has_kind(p,k) for _,_,p in inspected) for k in ('pow','photos','rdc')}
-    missing_any=sum(not all(has_kind(p,k) for k in ('pow','photos','rdc')) for _,_,p in inspected)
+    inspected=[(row,entry,by_code[entry['code']]) for row,entry in linked
+               if entry['code'] in by_code and by_code[entry['code']].get('documentLinks')]
+    required_types=('bp202','implementability','pow','photos','rdc')
+    types={k:sum(has_kind(p,k) for _,_,p in inspected) for k in required_types}
+    missing_any=sum(not all(has_kind(p,k) for k in required_types) for _,_,p in inspected)
     coverage_data={'stage':'HGAB 3rd reading','projectRows':len(projects),'linkedRows':len(linked),'linkedPct':round(100*len(linked)/len(projects),1) if projects else 0,
-      'listedAnyRows':sum((entry.get('documentCount') or 0)>0 for _,entry in linked),'listedAnyPct':round(100*sum((entry.get('documentCount') or 0)>0 for _,entry in linked)/len(linked),1) if linked else 0,
+      'directListedRows':direct_listed,'pairedNepRowsWithListedDocuments':paired_listed,
+      'listedAnyRows':listed_any,'listedAnyPct':round(100*listed_any/len(projects),1) if projects else 0,
+      'listedDocumentRecords':len(document_urls),
       'inspectedRows':len(inspected),'inspectedPct':round(100*len(inspected)/len(linked),1) if linked else 0,
       'missingAnyTypeRows':missing_any,'missingAnyTypePct':round(100*missing_any/len(inspected),1) if inspected else 0,
       'noSelectedNepRows':unpaired,'noSelectedNepPct':round(100*unpaired/len(projects),1) if projects else 0,
       'missingListedDocumentsRows':missing_listed,'doubleRedFlagRows':double_flag,'doubleRedFlagPct':round(100*double_flag/len(projects),1) if projects else 0,
       'missingTypes':{k:{'count':len(inspected)-v,'pct':round(100*(len(inspected)-v)/len(inspected),1) if inspected else 0} for k,v in types.items()},
-      'statusCounts':status_counts,'sourceCommit':coverage.get('sourceCommit'),'snapshotRetrievedAtUtc':coverage.get('snapshotRetrievedAtUtc')}
+      'statusCounts':status_counts,'sourceCommit':coverage.get('sourceCommit'),'snapshotRetrievedAtUtc':coverage.get('snapshotRetrievedAtUtc'),
+      'documentCoverageMethod':'A document link is counted when listed directly on the HGAB title match or on that row’s selected NEP counterpart. Paired NEP links indicate available project documents, not proof that identical files are attached to or scoped to the HGAB row.'}
     grouped={};display_names={}
     for row,entry,project in inspected:
         docs=[d for d in project.get('documents',[]) if d.get('kind')=='pow']
@@ -154,17 +188,98 @@ def hgab_statistics():
           'unit':unit,'basis':basis,'count':len(obs),'min':min(rates),'q1':q1,'median':med,'q3':q3,'max':max(rates),'fenceLow':low,'fenceHigh':high,'observations':sorted(obs,key=lambda o:o['ratePesos'])})
     peer_groups.sort(key=lambda g:(-g['count'],g['description'].lower(),g['unit'],g['basis']))
     return coverage_data,peer_groups
+
+def merge_pow_results(existing,bulk):
+    """Merge bulk extraction evidence without discarding richer saved fields."""
+    def norm(value):return re.sub(r'[^a-z0-9]+',' ',unicodedata.normalize('NFKC',str(value or '')).casefold()).strip()
+    def blank(value):return value is None or value=='' or value==[] or value=={}
+    def merge_list(old_rows,new_rows,key):
+        merged=[dict(row) for row in old_rows or []]
+        for incoming in new_rows or []:
+            incoming=dict(incoming);identity=key(incoming)
+            match=next((row for row in merged if key(row)==identity),None)
+            if match is None and identity[0] is not None and len(identity)>1 and identity[1]:
+                match=next((row for row in merged if key(row)[:2]==identity[:2]),None)
+            if match is None:
+                merged.append(incoming);continue
+            for field,value in incoming.items():
+                if blank(match.get(field)) and not blank(value):match[field]=value
+        return merged
+    def row_key(row):
+        return (row.get('sourcePage'),str(row.get('itemCode') or ''),norm(row.get('description')),
+                str(row.get('quantity') or ''),str(row.get('amountPesos') or ''))
+    def category_key(row):return (row.get('sourcePage'),norm(row.get('label')))
+    def page_key(row):return (row.get('page'),)
+    def control_key(row):return (row.get('sourcePage'),norm(row.get('basis')),norm(row.get('amountBasis')))
+    merged=dict(existing)
+    merged['rows']=merge_list(existing.get('rows'),bulk.get('rows'),row_key)
+    merged['costCategoryBreakdown']=merge_list(existing.get('costCategoryBreakdown'),bulk.get('costCategoryBreakdown'),category_key)
+    merged['pages']=merge_list(existing.get('pages'),bulk.get('pages'),page_key)
+    merged['itemizedDirectCostControls']=merge_list(existing.get('itemizedDirectCostControls'),bulk.get('itemizedDirectCostControls'),control_key)
+    for field,value in bulk.items():
+        if field in {'rows','costCategoryBreakdown','pages','itemizedDirectCostControls'}:continue
+        if blank(merged.get(field)) and not blank(value):merged[field]=value
+    return merged
+
 def collect():
     from project_documents.signatories import qualified_role
     reviewed_path=ROOT/'project_documents/pow_reviewed_category_totals.json'
     reviewed_config=json.loads(reviewed_path.read_text()) if reviewed_path.exists() else {}
     reviewed=reviewed_config.get('projects',{})
     projects=[];attempted=failed=available=empty=0;errors={}
+    bulk_by_code={}
+    for bulk_path in sorted(BULK_CACHE.glob('2027DPWH-Proposal-*/*/result.json')):
+        try:
+            bulk=json.loads(bulk_path.read_text())
+            marker=json.loads((bulk_path.parent/'status.json').read_text())
+        except (OSError,ValueError):continue
+        code=bulk.get('projectCode');doc_id=str(bulk.get('documentId',''))
+        if (bulk.get('documentType') or '').strip().casefold()!='pow':continue
+        if marker.get('status')!='parsed' or marker.get('parseStatus')=='parser_dependency_missing':continue
+        if marker.get('parserVersion')!=bulk.get('parserVersion') or marker.get('sourceSha256')!=bulk.get('sourceSha256'):continue
+        if not re.fullmatch(r'2027DPWH-Proposal-\d{5}',str(code or '')) or not doc_id.isdigit():continue
+        bulk_by_code.setdefault(code,{})[doc_id]=bulk
+
+    source_projects={}
     for path in sorted(CACHE.glob('*/result.json')):
         try:
             result=json.loads(path.read_text());meta=json.loads((path.parent/'metadata.json').read_text())
         except (OSError,ValueError):continue
+        source_projects[meta.get('code')]=(result,meta)
+    for code in bulk_by_code:
+        if code in source_projects:continue
+        try:meta=json.loads((CACHE/code/'metadata.json').read_text())
+        except (OSError,ValueError):continue
+        source_projects[code]=({'projectCode':code,'documents':[]},meta)
+
+    for code,(result,meta) in sorted(source_projects.items()):
         documents=[]
+        source_docs=result.setdefault('documents',[])
+        metadata_docs={str(d.get('id')):d for d in meta.get('documents',[]) if d.get('id') is not None}
+        for doc_id,bulk in bulk_by_code.get(code,{}).items():
+            current_metadata=metadata_docs.get(doc_id)
+            if not current_metadata or current_metadata.get('url')!=bulk.get('sourceUrl'):continue
+            existing=next((d for d in source_docs if d.get('kind')=='pow' and
+                           str((d.get('metadata') or {}).get('id'))==doc_id),None)
+            if existing:
+                old_sha=existing.get('sha256')
+                if old_sha==bulk.get('sourceSha256'):
+                    existing['pow']=merge_pow_results(existing.get('pow') or {},bulk)
+                    if bulk.get('rows'):
+                        existing.pop('previousVersionPow',None)
+                else:
+                    old_pow=existing.get('pow') or {}
+                    if old_pow.get('rows') and not bulk.get('rows'):
+                        existing['previousVersionPow']={'sha256':old_sha,'version':existing.get('version'),
+                                                        'parsedAtUtc':old_pow.get('parsedAtUtc'),
+                                                        'pow':old_pow}
+                    existing.update({'status':'available','metadata':current_metadata,
+                                     'sha256':bulk.get('sourceSha256'),'pow':bulk,'signatories':{}})
+                    if bulk.get('rows'):
+                        existing.pop('previousVersionPow',None)
+            else:
+                source_docs.append({'kind':'pow','status':'available','metadata':current_metadata,
+                                    'sha256':bulk.get('sourceSha256'),'pow':bulk,'signatories':{}})
         for d in result.get('documents',[]):
             status=d['status']
             if status not in ('link_only',):
@@ -173,11 +288,20 @@ def collect():
                 else:
                     failed+=1;key=d.get('error','Unknown').split(':',1)[0];errors[key]=errors.get(key,0)+1
             parsed=d.get('pow',{})
+            previous=d.get('previousVersionPow') or {}
+            previous_parsed=previous.get('pow') or {}
+            row_source_status='current_source_version'
+            row_source_sha=d.get('sha256')
+            parsed_for_rows=parsed
+            if not parsed.get('rows') and previous_parsed.get('rows'):
+                parsed_for_rows=previous_parsed
+                row_source_status='prior_source_version_retained_current_parse_empty'
+                row_source_sha=previous.get('sha256')
             excluded_component_pages=set(reviewed_config.get('excludedComponentBreakdownPages',{}).get(meta.get('code'),[])) if d['kind']=='pow' else set()
-            rows=[{k:r.get(k) for k in ('itemCode','description','componentContext','componentContexts','costCategory','quantity','unit','printedUnitCostPesos','inclusiveUnitCostPesos','calculatedUnitCostPesos','amountPesos','directCostSharePct','manualReview','sourcePage','observedPages','extractionMethod','arithmeticStatus','verificationStatus','costBasis','amountBasis')} for r in parsed.get('rows',[]) if int(r.get('sourcePage') or 0) not in excluded_component_pages]
+            rows=[{k:r.get(k) for k in ('itemCode','description','componentContext','componentContexts','costCategory','quantity','unit','printedUnitCostPesos','inclusiveUnitCostPesos','calculatedUnitCostPesos','amountPesos','directCostSharePct','manualReview','sourcePage','observedPages','extractionMethod','arithmeticStatus','verificationStatus','costBasis','amountBasis')} for r in parsed_for_rows.get('rows',[]) if int(r.get('sourcePage') or 0) not in excluded_component_pages]
             people=[{k:p.get(k) for k in ('name','roleText','kind','sourcePage','extractionMethod','verificationStatus')} for p in d.get('signatories',{}).get('people',[]) if qualified_role(p.get('roleText',''),d['kind'])]
-            controls=[{k:c.get(k) for k in ('sourcePage','basis','amountBasis','printedPesos','recoveredItemRows','recoveredPesos','differencePesos','reconciled')} for c in parsed.get('itemizedDirectCostControls',[])]
-            categories=list(parsed.get('costCategoryBreakdown',[]))
+            controls=[{k:c.get(k) for k in ('sourcePage','basis','amountBasis','printedPesos','recoveredItemRows','recoveredPesos','differencePesos','reconciled')} for c in parsed_for_rows.get('itemizedDirectCostControls',[])]
+            categories=list(parsed_for_rows.get('costCategoryBreakdown',[]))
             if d['kind']=='pow':
                 for correction in reviewed.get(meta.get('code'),[]):
                     match=next((c for c in categories if category_key(c.get('label'))==category_key(correction.get('label'))),None)
@@ -185,7 +309,7 @@ def collect():
                     else:categories.append(correction)
             review_pages=[{'page':p.get('page'),'note':p.get('reviewNote')} for p in parsed.get('pages',[]) if p.get('status')=='needs_manual_review']
             categories.sort(key=lambda c:-float(c.get('amountPesos') or 0))
-            summary_metadata=parsed.get('summaryMetadata',{}) if d['kind']=='pow' else {}
+            summary_metadata=parsed_for_rows.get('summaryMetadata',{}) if d['kind']=='pow' else {}
             declared=[f for f in summary_metadata.get('qualitativeFacts',[]) if f.get('kind')=='declared_count']
             has_named=any(f.get('kind')=='named_component' for f in summary_metadata.get('qualitativeFacts',[]))
             generated_scope_note=('The POW states '+', '.join(f.get('printedText','') for f in declared)+'; no named school/building/site breakdown was detected in the parsed pages.' if declared and not has_named else None)
@@ -195,36 +319,173 @@ def collect():
                 if int(page.get('page') or 0) in excluded_component_pages:
                     page.update({'pageRole':'supporting_detail','status':'no_bill_rows_recovered','rows':0,'reviewNote':None})
                     page['method']=(page.get('method') or 'source table')+' · detailed component breakdown; supporting cost analysis excluded from bill rows'
-            documents.append({'kind':d['kind'],'status':status,'url':d.get('metadata',{}).get('url'),'sha256':d.get('sha256'),'pageCount':parsed.get('pageCount',d.get('signatories',{}).get('sourcePages')),'pages':parsed_pages,'rows':rows,'costCategoryBreakdown':categories,'summaryMetadata':summary_metadata,'scopeNote':scope_note,'controls':controls,'reviewPages':review_pages,'people':people,'signatoryStatus':d.get('signatories',{}).get('status'),'errorType':d.get('error','').split(':',1)[0] or None})
+            documents.append({'kind':d['kind'],'status':status,'url':d.get('metadata',{}).get('url'),'sha256':d.get('sha256'),'rowSourceSha256':row_source_sha,'rowSourceStatus':row_source_status,'currentParseStatus':parsed.get('status'),'pageCount':parsed.get('pageCount',d.get('signatories',{}).get('sourcePages')),'pages':parsed_pages,'rows':rows,'costCategoryBreakdown':categories,'summaryMetadata':summary_metadata,'scopeNote':scope_note,'controls':controls,'reviewPages':review_pages,'people':people,'signatoryStatus':d.get('signatories',{}).get('status'),'errorType':d.get('error','').split(':',1)[0] or None})
         if not documents:empty+=1
         projects.append({'code':meta['code'],'name':meta['projectName'],'office':meta.get('office'),'region':meta.get('region'),'allocationPesos':round(float(meta['amount'])*1000),'preparedAt':result.get('preparedAtUtc'),'documents':documents,'documentLinks':[{'type':d.get('documentType'),'url':d.get('url')} for d in meta.get('documents',[])]})
     prepared=[p for p in projects if any(d['rows'] for d in p['documents'])]
-    return {'generatedAtUtc':datetime.now(timezone.utc).isoformat(),'stage':'NEP FY2027 proposal documents','projects':projects,'summary':{'projectsWithParsedPow':len(prepared),'parsedPowRows':sum(len(d['rows']) for p in projects for d in p['documents'] if d['kind']=='pow'),'projectsWithSavedResults':len(projects),'projectsWithoutSelectedAttachments':empty,'availableDocuments':available,'failedDocuments':failed,'attemptedDocuments':attempted,'errorTypes':errors},'source':'https://api.dpwh.bettergov.ph','scope':'Static snapshot of locally cached documents. Not whole-program coverage. Raw PDFs and photos are excluded from this publication.'}
+    retained_projects=sum(1 for p in projects if any(d['kind']=='pow' and d['rows'] and d.get('rowSourceStatus')=='prior_source_version_retained_current_parse_empty' for d in p['documents']))
+    return {'generatedAtUtc':datetime.now(timezone.utc).isoformat(),'stage':'NEP FY2027 proposal documents','projects':projects,'summary':{'projectsWithParsedPow':len(prepared),'projectsWithRetainedPriorPowRows':retained_projects,'parsedPowRows':sum(len(d['rows']) for p in projects for d in p['documents'] if d['kind']=='pow'),'projectsWithSavedResults':len(projects),'projectsWithoutSelectedAttachments':empty,'availableDocuments':available,'failedDocuments':failed,'attemptedDocuments':attempted,'errorTypes':errors},'source':'https://api.dpwh.bettergov.ph','scope':'This snapshot covers linked DPWH project-document records available for review; it is not a whole-program inventory. Original files remain available through cited sources.'}
 def atomic_write(path,text):
     temporary=path.with_name(path.name+"."+uuid.uuid4().hex+".tmp")
     temporary.write_text(text);temporary.replace(path)
+
+def publish_split_data():
+    # The data refresh watcher consumes this command's stdout as one JSON
+    # summary. Keep the splitter's own report from becoming a second JSON value.
+    subprocess.run([sys.executable,str(ROOT/'split_dpwh_indepth_data.py')],cwd=ROOT,
+                   check=True,capture_output=True,text=True)
+
+def build_data():
+    data=collect();data['powCategoryMerges']=CATEGORY_MERGES;data['powCategoryLabels']=CATEGORY_LABELS;data['powBillMerges']=BILL_MERGES;data['powBillLabels']=BILL_LABELS;data['hgabCoverage'],data['powPeers']=hgab_statistics(data['projects'])
+    data['summaryPeerGroups']=summary_peer_groups(data['projects'])
+    data['documentReconciliation']=document_reconciliation(data['projects'])
+    return data
+
+def public_data(data):
+    """Publish evidence values and source links without internal processing state."""
+    public=dict(data)
+    summary=data.get('summary',{})
+    public['summary']={'projectsWithBillRows':int(summary.get('projectsWithParsedPow') or 0),
+                       'billRowCount':int(summary.get('parsedPowRows') or 0),
+                       'projectsInReviewSet':int(summary.get('projectsWithSavedResults') or 0),
+                       'powCategoryCount':sum(len(doc.get('costCategoryBreakdown') or []) for project in data.get('projects',[]) for doc in project.get('documents',[]) if doc.get('kind')=='pow')}
+    row_fields=('itemCode','description','componentContext','componentContexts','costCategory','quantity','unit',
+                'printedUnitCostPesos','inclusiveUnitCostPesos','calculatedUnitCostPesos','amountPesos',
+                'directCostSharePct','manualReview','sourcePage','observedPages','arithmeticStatus','costBasis','amountBasis')
+    category_fields=('label','sharePct','amountPesos','submittedAmountPesos','evaluatedAmountPesos',
+                     'sourcePage','manualReview','basis','costBasis','amountBasis')
+    public_projects=[]
+    for project in data.get('projects',[]):
+        docs=[]
+        for doc in project.get('documents',[]):
+            docs.append({'kind':doc.get('kind'),'status':doc.get('status'),'url':doc.get('url'),'pageCount':doc.get('pageCount'),
+                         'pages':[{'page':page.get('page'),'pageRole':page.get('pageRole')} for page in doc.get('pages',[]) if page.get('pageRole')],
+                         'rows':[{k:row.get(k) for k in row_fields if k in row} for row in doc.get('rows',[])],
+                         'costCategoryBreakdown':[{k:item.get(k) for k in category_fields if k in item} for item in doc.get('costCategoryBreakdown',[])],
+                         'summaryMetadata':doc.get('summaryMetadata',{}),'scopeNote':doc.get('scopeNote'),
+                         'controls':doc.get('controls',[]),'reviewPages':doc.get('reviewPages',[]),
+                         'people':[{k:person.get(k) for k in ('name','roleText','kind','sourcePage') if k in person} for person in doc.get('people',[])]})
+        public_projects.append({'code':project.get('code'),'name':project.get('name'),'office':project.get('office'),
+                                'region':project.get('region'),'allocationPesos':project.get('allocationPesos'),
+                                'documents':docs,'documentLinks':project.get('documentLinks',[])})
+    public['projects']=public_projects
+    public['projectDirectory']=[{k:project.get(k) for k in ('code','name','office','region')} for project in public_projects]
+    public['scope']='This snapshot covers linked DPWH project-document records available for review; it is not a whole-program inventory. Original files remain available through cited sources.'
+    return public
+
+def document_reconciliation(projects):
+    """Build public aggregate document counts from portal and stage snapshots."""
+    catalog=json.loads((STATIC/'dpwh-portal-document-catalog.json').read_text())
+    coverage=json.loads((OUT/'dpwh_transparency_document_coverage.json').read_text())
+    mapping=json.loads((OUT/'hb_nep_comparison_3rd_mapping.json').read_text())
+    stage=json.loads((OUT/'dpwh_hgab_2nd_vs_3rd.json').read_text())
+    links_by_code={p.get('code'):p.get('documentLinks',[]) for p in projects if p.get('code')}
+    portal_rows={r.get('sourceId'):r for r in coverage.get('rows',[]) if r.get('sourceId') and r.get('code')}
+    selected_codes={portal_rows[p.get('nep',{}).get('id')]['code'] for p in mapping.get('pairs',[])
+                    if p.get('nep',{}).get('id') in portal_rows}
+    direct_codes=set()
+    for row in stage.get('rows',[]):
+        project=row.get('third')
+        if not project or project.get('allocationKind')!='project':continue
+        title=title_key(project.get('projectName'))
+        entry=coverage.get('titles',{}).get(title)
+        if entry and entry.get('code') and entry.get('status') not in UNMATCHED:
+            direct_codes.add(entry['code'])
+
+    portal_types={str(row.get('type') or 'Unknown'):int(row.get('records') or 0)
+                  for row in catalog.get('documentTypes',[])}
+    top_types=[name for name,_ in sorted(portal_types.items(),key=lambda item:(-item[1],item[0].casefold()))[:10]]
+    def url_sets(codes,excluded=False):
+        result={}
+        for code in codes:
+            for record in links_by_code.get(code,[]):
+                label=str(record.get('type') or 'Unknown')
+                url=record.get('url')
+                if not url or (label in top_types)==excluded:continue
+                result.setdefault(label,set()).add(url)
+        return result
+    selected=url_sets(selected_codes)
+    direct=url_sets(direct_codes)
+    selected_other=url_sets(selected_codes,excluded=True)
+    direct_other=url_sets(direct_codes,excluded=True)
+    rows=[]
+    def append_row(label,portal,selected_set,direct_set):
+        unique=selected_set|direct_set
+        rows.append({'type':label,'transparencyRecords':int(portal),'selectedPairRecords':len(selected_set),
+                     'directHgabRecords':len(direct_set),'uniqueMatchedRecords':len(unique),
+                     'wastedRecords':int(portal)-len(unique)})
+    for label in top_types:
+        append_row(label,portal_types.get(label,0),selected.get(label,set()),direct.get(label,set()))
+    other_portal=sum(count for label,count in portal_types.items() if label not in top_types)
+    append_row('Other document types',other_portal,
+               set().union(*selected_other.values()) if selected_other else set(),
+               set().union(*direct_other.values()) if direct_other else set())
+    transparency=catalog.get('summary',{})
+    pair_summary=mapping.get('summary',{})
+    return {'transparencyProjects':int(transparency.get('projectsInMetadataSnapshot') or 0),
+            'transparencyRecords':int(transparency.get('documentRecords') or 0),
+            'projectsWithDocumentLinksInLoadedSnapshot':sum(bool(p.get('documentLinks')) for p in projects),
+            'loadedProjectRecords':len(projects),
+            'nepProjectRecords':int(pair_summary.get('nepRecords') or 0),
+            'nepTransparencyRecords':int(pair_summary.get('transparencyNepRecords') or 0),
+            'selectedPairs':len(mapping.get('pairs',[])),
+            'selectedPairPortalProjects':len(selected_codes),
+            'selectedPairProjectsWithLoadedDocuments':sum(bool(links_by_code.get(code)) for code in selected_codes),
+            'selectedPairDocumentRecords':sum(len(values) for values in selected.values()),
+            'directHgabProjectsWithLoadedDocuments':sum(bool(links_by_code.get(code)) for code in direct_codes),
+            'directHgabDocumentRecords':sum(len(values) for values in direct.values()),
+            'uniqueMatchedDocumentRecords':sum(row['uniqueMatchedRecords'] for row in rows),
+            'wastedDocumentRecords':sum(row['wastedRecords'] for row in rows),
+            'rows':rows,
+            'note':'Portal counts come from the full DPWH Transparency metadata inventory. Selected-pair and direct-HGAB counts use project-level document links present in the loaded snapshot and deduplicate by source URL. Direct HGAB records can overlap selected-pair records; wasted records are the inventory residual after taking their unique union. This residual is not proof of literal waste.'}
+
+def refresh_data_only():
+    """Refresh whitelisted project JSON while preserving the hand-maintained page HTML."""
+    data=build_data()
+    serialized=json.dumps(public_data(data),ensure_ascii=False,indent=2)+'\n'
+    atomic_write(OUT/'dpwh-in-depth-data.json',serialized)
+    publish_split_data()
+    return data['summary']
 
 def build():
     from build_report_heroes import hero,STYLE
     from uniform_report_menu import apply_page
     from report_table_presentation import apply_page as tables,publish_assets
-    data=collect();s=data['summary'];data['powCategoryMerges']=CATEGORY_MERGES;data['powCategoryLabels']=CATEGORY_LABELS;data['hgabCoverage'],data['powPeers']=hgab_statistics()
-    data['summaryPeerGroups']=summary_peer_groups(data['projects'])
+    data=build_data();s=data['summary']
     coverage=data['hgabCoverage']
     hero_stats=[
         ('No selected NEP counterpart',f"{coverage['noSelectedNepRows']:,}",f"{coverage['noSelectedNepPct']:.1f}% of project rows"),
-        ('No listed DPWH documents',f"{coverage['missingListedDocumentsRows']:,}",f"{coverage['missingListedDocumentsRows']/coverage['projectRows']:.1%} of project rows"),
+        ('No document links · HGAB or selected NEP',f"{coverage['missingListedDocumentsRows']:,}",f"{coverage['missingListedDocumentsRows']/coverage['projectRows']:.1%} of project rows"),
         ('DPWH transparency links',f"{coverage['linkedRows']:,}",f"{coverage['linkedPct']:.1f}% of project rows"),
-        ('Double red flag · no selected NEP counterpart + no listed docs',f"{coverage['doubleRedFlagRows']:,}",f"{coverage['doubleRedFlagPct']:.1f}% of project rows"),
+        ('Double red flag · no selected NEP counterpart + no document link',f"{coverage['doubleRedFlagRows']:,}",f"{coverage['doubleRedFlagPct']:.1f}% of project rows"),
     ]
-    lead=hero('DPWH POWs · cached proposal documents',str(s['parsedPowRows']),'bill rows reveal the cost drivers',str(s['projectsWithParsedPow']),'projects with recovered POW bill rows', hero_stats, 'The statistics summarize HGAB 3rd-reading rows and their DPWH Transparency coverage. Coverage gaps are review flags; they do not establish that documents do not exist elsewhere.')
+    lead=hero('DPWH POWs · proposal document evidence',str(s['parsedPowRows']),'bill rows reveal the cost drivers',str(s['projectsWithParsedPow']),'projects with recovered POW bill rows', hero_stats, 'The statistics summarize HGAB 3rd-reading rows and their DPWH Transparency coverage. Coverage gaps are review flags; they do not establish that documents do not exist elsewhere.')
     text=(ROOT/'project_documents/indepth.html').read_text().replace('<!--HERO_STYLE-->',STYLE).replace('<!--HERO-->',lead)
     version=hashlib.sha256((ROOT/'project_documents/indepth.js').read_bytes()).hexdigest()[:12]
     text=text.replace('src="dpwh-in-depth.js"',f'src="dpwh-in-depth.js?v={version}"')
     text=tables(apply_page(text,'dpwh.html'),publish_assets())
+    cost_text=(ROOT/'project_documents/cost-per-unit.html').read_text()
+    cost_js=(ROOT/'project_documents/cost-per-unit.js').read_text()
+    cost_version=hashlib.sha256(cost_js.encode()).hexdigest()[:12]
+    indepth_js=(ROOT/'project_documents/indepth.js').read_text()
+    indepth_version=hashlib.sha256(indepth_js.encode()).hexdigest()[:12]
+    loader=(ROOT/'project_documents/dpwh-data-loader.js').read_text()
+    loader_version=hashlib.sha256(loader.encode()).hexdigest()[:12]
+    cost_text=cost_text.replace('src="cost-per-unit.js"',f'src="cost-per-unit.js?v={cost_version}"')
+    cost_text=re.sub(r'src="dpwh-in-depth\.js(?:\?v=[^"]*)?"',f'src="dpwh-in-depth.js?v={indepth_version}"',cost_text,count=1)
+    cost_text=cost_text.replace('src="dpwh-data-loader.js"',f'src="dpwh-data-loader.js?v={loader_version}"')
+    cost_text=apply_page(cost_text,'cost-per-unit.html')
+    atomic_write(OUT/'dpwh-in-depth-data.json',json.dumps(public_data(data),ensure_ascii=False,indent=2)+'\n')
+    publish_split_data()
+    text=re.sub(r'src="dpwh-data-loader\.js(?:\?v=[^"]*)?"',f'src="dpwh-data-loader.js?v={loader_version}"',text)
     for target in (OUT,STATIC):
-        atomic_write(target/'dpwh-in-depth-data.json',json.dumps(data,ensure_ascii=False,indent=2)+'\n')
         atomic_write(target/'dpwh-in-depth.js',(ROOT/'project_documents/indepth.js').read_text())
+        atomic_write(target/'dpwh-data-loader.js',loader)
         atomic_write(target/'dpwh.html',text)
+        atomic_write(target/'cost-per-unit.js',cost_js)
+        atomic_write(target/'cost-per-unit.html',cost_text)
     return s
-if __name__=='__main__':print(json.dumps(build(),indent=2))
+if __name__=='__main__':
+    import argparse
+    parser=argparse.ArgumentParser();parser.add_argument('--data-only',action='store_true');args=parser.parse_args()
+    print(json.dumps(refresh_data_only() if args.data_only else build(),indent=2))

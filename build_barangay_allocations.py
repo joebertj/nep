@@ -11,6 +11,7 @@ STATIC = ROOT.parent / 'open-data-visualization' / 'static' / 'nep-preview'
 OUT = ROOT / 'analysis_output'
 SOURCE = ROOT / 'hb10858_3rd_dpwh_projects.json'
 BARANGAY = re.compile(r'\b(?:barangay|brgy\.?)\s+(.+?)(?=,|;|\(|\b(?:barangay|brgy\.?)\b|\s+(?:section|road|rd\.?|fmr|sta\.?|station|chainage|km\.?|bridge|phase)\b|$)', re.I)
+MPB_DATA = STATIC / 'mpb-barangay-data.json'
 GENERIC = {
     'health station', 'health center', 'health centre', 'health station bhs',
     'barangay health station', 'health station with birthing home', 'health center bhs',
@@ -71,6 +72,8 @@ def context_for(title, matches, names, region, office):
 
 def main():
     raw = json.loads(SOURCE.read_text())['data']['data']
+    mpb_data = json.loads(MPB_DATA.read_text())
+    mpb_2027 = next((period for period in mpb_data.get('periods', []) if period.get('year') == 2027), {})
     grouped = {}
     project_places = defaultdict(list)
     source_projects = [r for r in raw if r.get('allocationKind') == 'project' and isinstance(r.get('amountPesos'), (int, float)) and r['amountPesos'] > 0]
@@ -104,6 +107,38 @@ def main():
                 item['sourcePages'].add(row['sourcePage'])
             project_places[row['id']].append(name)
             mentioned_projects.add(row['id'])
+    # Include FY2027 MPB rows that the shared official-location matcher resolves
+    # even when their printed titles omit the literal Barangay/Brgy prefix.
+    explicit_project_count = len(mentioned_projects)
+    source_by_id = {str(row['id']): row for row in source_projects}
+    names_by_project = defaultdict(set)
+    for item in grouped.values():
+        normalized_name = re.sub(r'[^a-z0-9]+', ' ', item['barangay'].casefold()).strip()
+        for project_id in item['projects']:
+            names_by_project[str(project_id)].add(normalized_name)
+    mpb_added_projects = set()
+    for place in mpb_data.get('barangays', []):
+        locality = ', '.join(x for x in (place.get('municipality'), place.get('province')) if x)
+        for project in place.get('projects', []):
+            if int(project.get('year') or 0) != 2027:
+                continue
+            project_id = str(project.get('sourceId') or '')
+            source_row = source_by_id.get(project_id)
+            barangay_name = str(place.get('barangay') or '').strip()
+            normalized_name = re.sub(r'[^a-z0-9]+', ' ', barangay_name.casefold()).strip()
+            if not source_row or not normalized_name or normalized_name in names_by_project[project_id]:
+                continue
+            key = (normalized_name, re.sub(r'[^a-z0-9]+', ' ', locality.casefold()).strip())
+            item = grouped.setdefault(key, {'barangay': barangay_name, 'localityContext': locality,
+                'region': place.get('region', ''), 'officeExamples': set(), 'projects': {}, 'sourcePages': set()})
+            item['projects'][source_row['id']] = source_row
+            if source_row.get('office'):
+                item['officeExamples'].add(source_row['office'])
+            for page in source_row.get('sourcePages') or ([source_row['sourcePage']] if source_row.get('sourcePage') else []):
+                item['sourcePages'].add(page)
+            names_by_project[project_id].add(normalized_name)
+            mentioned_projects.add(source_row['id'])
+            mpb_added_projects.add(project_id)
     places = []
     for item in grouped.values():
         projects = sorted(item['projects'].values(), key=lambda r: (-r['amountPesos'], r['projectName']))
@@ -120,9 +155,13 @@ def main():
         'source': 'House Bill No. 10858, General Appropriations Bill FY 2027, 3rd-reading DPWH project rows',
         'sourceFile': SOURCE.name,
         'generatedFromProjectRows': len(source_projects), 'projectsWithBarangayMentions': len(mentioned_projects),
+        'projectsWithExplicitBarangayMarker': explicit_project_count,
+        'mpbProjectsAddedFromOfficialLocationMatch': len(mpb_added_projects),
+        'mpb2027LinkedProjectRows': int(mpb_2027.get('linkedRows') or 0),
+        'mpb2027LinkedAllocationPesos': int(mpb_2027.get('allocationPesos') or 0),
         'barangayPlaceCount': len(places), 'allocationAcrossMentionedProjectsPesos': project_total,
         'placeAllocationTotalPesos': sum(x['allocationPesos'] for x in places),
-        'countingNote': 'A project allocation is associated with each distinct barangay name printed in its title. If one project names multiple barangays, its full amount appears under each named place; place totals must not be added together as a program total. Locality context is taken from the printed title where recoverable; ambiguous titles remain separated by their available context and office.',
+        'countingNote': 'Project rows explicitly naming a barangay are associated with each distinct title name. For FY2027 MPB PAP rows only, the shared MPB matcher also supplies official-barangay matches where the title omits the Barangay/Brgy prefix. If a project names multiple barangays, its full amount appears under each named place; place totals must not be added together as a program total. Locality context is taken from the printed title or the ODV unified location list; ambiguous title contexts remain separate.',
         'places': places
     }
     for path in [OUT / 'barangay-allocation-data.json', STATIC / 'barangay-allocation-data.json']:

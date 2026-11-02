@@ -7,6 +7,12 @@
       "uniformStyles": true
     },
     {
+      "page": "barangay.html",
+      "links": 15,
+      "uniformMarkup": true,
+      "uniformStyles": true
+    },
+    {
       "page": "budget-innovations.html",
       "links": 15,
       "uniformMarkup": true,
@@ -31,7 +37,19 @@
       "uniformStyles": true
     },
     {
+      "page": "cost-per-unit.html",
+      "links": 15,
+      "uniformMarkup": true,
+      "uniformStyles": true
+    },
+    {
       "page": "deped.html",
+      "links": 15,
+      "uniformMarkup": true,
+      "uniformStyles": true
+    },
+    {
+      "page": "dpwh-OO2-hgab.html",
       "links": 15,
       "uniformMarkup": true,
       "uniformStyles": true
@@ -55,6 +73,12 @@
       "uniformStyles": true
     },
     {
+      "page": "flood-control.html",
+      "links": 15,
+      "uniformMarkup": true,
+      "uniformStyles": true
+    },
+    {
       "page": "fmr.html",
       "links": 15,
       "uniformMarkup": true,
@@ -68,6 +92,30 @@
     },
     {
       "page": "index.html",
+      "links": 15,
+      "uniformMarkup": true,
+      "uniformStyles": true
+    },
+    {
+      "page": "integrated-district-allocations.html",
+      "links": 15,
+      "uniformMarkup": true,
+      "uniformStyles": true
+    },
+    {
+      "page": "integrated.html",
+      "links": 15,
+      "uniformMarkup": true,
+      "uniformStyles": true
+    },
+    {
+      "page": "mpb-barangay.html",
+      "links": 15,
+      "uniformMarkup": true,
+      "uniformStyles": true
+    },
+    {
+      "page": "mpb-base.html",
       "links": 15,
       "uniformMarkup": true,
       "uniformStyles": true
@@ -92,6 +140,12 @@
     },
     {
       "page": "out-of-place.html",
+      "links": 15,
+      "uniformMarkup": true,
+      "uniformStyles": true
+    },
+    {
+      "page": "outside.html",
       "links": 15,
       "uniformMarkup": true,
       "uniformStyles": true
@@ -127,7 +181,7 @@
       "uniformStyles": true
     }
   ],
-  "pageCount": 21,
+  "pageCount": 30,
   "menuHeightsPx": {
     "desktop": 118,
     "tablet": 202,

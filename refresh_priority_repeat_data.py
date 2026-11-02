@@ -14,6 +14,25 @@ def build():
             x['tranche_conflict']=r.get('tranche_conflict','False').lower()=='true'
             previous=old.get((x['source_code'],x['comparison_year'],x['prior_project']),{})
             x['congressional_representatives']=previous.get('congressional_representatives',[]);out.append(x)
+    # The older Explorer extract is a distinct source layer. Add its
+    # FY2016–FY2018 comparisons while preserving the existing FY2020–FY2026
+    # candidate rows and their enriched representative metadata.
+    from analyze_priority_repeats import normalize_2027, previous_rows, rank_matches
+    current_rows=normalize_2027()
+    historical=previous_rows([2016,2017,2018])
+    for year,prior_rows in sorted(historical.items()):
+        for category in sorted({r['category'] for r in current_rows}):
+            current=[r for r in current_rows if r['category']==category]
+            prior=[r for r in prior_rows if r['category']==category]
+            for r in rank_matches(current,prior,year):
+                if r['rank']!=1 or r['similarity']<0.90:continue
+                if category=='Bridge' and r['chainage_status']!='overlap':continue
+                x={'category':r['category'],'project':r['name'],'source_code':r['source'],'office':r['office'],'region':r['region'],'amount_2027':r['amount'],'comparison_year':year,'prior_project':r['prior_name'],'prior_amount':r['prior_amount'],'prior_source':r['prior_source'],'similarity_pct':round(r['similarity']*100)}
+                for k in ['current_chainage','prior_chainage','chainage_overlap','chainage_status','tranche_status','tranche_detail']:x[k]=r.get(k,'')
+                x['tranche_conflict']=bool(r.get('tranche_conflict'))
+                previous=old.get((x['source_code'],x['comparison_year'],x['prior_project']),{})
+                x['congressional_representatives']=previous.get('congressional_representatives',[])
+                out.append(x)
     out.sort(key=lambda r:(-r['similarity_pct'],r['category'],r['project']))
     d['priorityRepeats']=out;p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
     return {'beforePairs':len(old),'afterPairs':len(out)}

@@ -1,7 +1,45 @@
 """Conservative POW bill-row candidates with exact page/row evidence."""
-import hashlib,json,os,re,shutil,subprocess,sys
+import hashlib,json,os,re,shutil,subprocess,sys,tempfile
 from decimal import Decimal,InvalidOperation
 from pathlib import Path
+_PADDLE_OCR=None
+
+def paddle_words(page,dpi=170):
+    """Run PaddleOCR through quarter-turn and high-resolution retries."""
+    global _PADDLE_OCR
+    try:
+        import numpy as np
+        os.environ['PADDLE_PDX_CACHE_HOME']=str(Path(tempfile.gettempdir())/'paddleocr-cache')
+        from paddleocr import PaddleOCR
+        from PIL import Image
+        import io,pymupdf as fitz
+    except ImportError:return None
+    if _PADDLE_OCR is None:
+        try:_PADDLE_OCR=PaddleOCR(lang='en',ocr_version='PP-OCRv6',use_doc_orientation_classify=False,use_doc_unwarping=False,use_textline_orientation=False)
+        except Exception:_PADDLE_OCR=False
+    if _PADDLE_OCR is False:return None
+    attempts=[]
+    for rotation,resolution in [(0,dpi),(90,dpi),(180,dpi),(270,dpi),(90,350),(270,350)]:
+        try:
+            pix=page.get_pixmap(matrix=fitz.Matrix(resolution/72,resolution/72),alpha=False)
+            image=Image.open(io.BytesIO(pix.tobytes('png'))).convert('RGB')
+            rotated=image.rotate(rotation,expand=True) if rotation else image
+            result=_PADDLE_OCR.predict(np.asarray(rotated))[0]
+            words=[]
+            for box,text,confidence in zip(result.get('rec_boxes',[]),result.get('rec_texts',[]),result.get('rec_scores',[])):
+                text=str(text).strip()
+                if not text:continue
+                x0,y0,x1,y1=map(float,box);words.append((x0,y0,x1,y1,text,float(confidence)))
+            joined=' '.join(w[4] for w in words)
+            structure=(4*len(re.findall(r'\b(?:ITEM\s*NO|DESCRIPTION|QUANTITY|AMOUNT|TOTAL\s+COST|AS\s+SUBMITTED)\b',joined,re.I))
+                +3*sum(bool(ITEM.fullmatch(w[4])) for w in words)+sum(bool(amount(w[4])) for w in words))
+            confidence=sum(w[5] for w in words)/len(words) if words else 0
+            attempts.append({'words':[(*w[:5],0,int(round((w[1]+w[3])/16)),0) for w in words],
+                'width':rotated.width,'text':joined,'rotation':rotation,'dpi':resolution,
+                'structureScore':structure,'meanConfidence':round(confidence,4),'wordCount':len(words),
+                'method':f'OCR · PaddleOCR PP-OCRv6 · rotated scan {rotation}° at {resolution} dpi'})
+        except Exception:continue
+    return {'attempts':attempts} if attempts else None
 NUMBER=re.compile(r'^(?:(?:₱|PHP|P)\s*)?-?\d[\d,]*(?:\.\d+)?\s*(?:₱|PHP|P)?$',re.I)
 ITEM=re.compile(r'^(?:\d{3,4}(?:\([^)]*\))*[a-z0-9]*|[A-Z]\.\d+(?:\([^)]*\))*[a-z0-9]*)$',re.I)
 SUMMARY_PAGE=re.compile(r'PROGRAM\s+OF\s+WORKS?\s*/\s*BUDGET\s+COST|BREAKDOWN\s+OF\s+EXPENDITURES|SUMMARY\s+OF\s+(?:THE\s+)?(?:PROGRAM\s+OF\s+WORKS?|PROJECT\s+COST|COST\s+ESTIMATE)',re.I)
@@ -783,6 +821,47 @@ def parse_pdf(path,output,allocation_pesos=None):
                     if retry_summary:
                         share_total=sum(r['sharePct'] for r in retry_summary)
                         if len(retry_summary)>=3 and 90<=share_total<=110:cost_categories.extend(retry_summary)
+        paddle_record=None
+        scanned_page=method.startswith('OCR') or (len(text.strip())<40 and bool(page.get_images(full=True)))
+        if not is_component_cost_analysis and scanned_page:
+            paddle=paddle_words(page)
+            if paddle:
+                paddle_candidates=[]
+                for attempt in paddle['attempts']:
+                    candidate_words=attempt['words'];candidate_method=attempt['method'];candidate_width=attempt['width']
+                    candidate_rows,candidate_category=item_rows_from_words(candidate_words,candidate_width,number+1,candidate_method,page_start_category)
+                    candidate_review=False
+                    if not candidate_rows:candidate_rows,candidate_review=word_rows(candidate_words,candidate_width,number+1,candidate_method)
+                    compact_rows,compact_category=summary_item_rows_from_words(candidate_words,candidate_width,number+1,candidate_method,page_start_category)
+                    if compact_rows:
+                        compact_keys={(r.get('itemCode'),r.get('amountPesos')) for r in compact_rows}
+                        candidate_rows=[r for r in candidate_rows if (r.get('itemCode'),r.get('amountPesos')) not in compact_keys]+compact_rows
+                        candidate_category=compact_category
+                    paddle_candidates.append((candidate_rows,candidate_review,candidate_category,attempt))
+                if paddle_candidates:
+                    paddle_rows,paddle_review,paddle_category,paddle_best=max(paddle_candidates,key=lambda candidate:(
+                        len(candidate[0]),sum(bool(row.get('itemCode')) for row in candidate[0]),not candidate[1],
+                        candidate[3]['structureScore'],candidate[3]['meanConfidence'],candidate[3]['wordCount']))
+                    existing_codes={row.get('itemCode') for row in page_rows if row.get('itemCode')}
+                    conflicts=[];original_page_row_count=len(page_rows)
+                    existing_keys={(row.get('itemCode'),row.get('amountPesos'),row.get('quantity')) for row in page_rows}
+                    for row in paddle_rows:
+                        code=row.get('itemCode');key=(code,row.get('amountPesos'),row.get('quantity'))
+                        if code and code in existing_codes:
+                            prior=next((saved for saved in page_rows if saved.get('itemCode')==code),None)
+                            if prior and (prior.get('amountPesos'),prior.get('quantity'))!=(row.get('amountPesos'),row.get('quantity')):conflicts.append(code)
+                            continue
+                        if key not in existing_keys:
+                            page_rows.append(row);existing_keys.add(key)
+                            if code:existing_codes.add(code)
+                    if paddle_category is not None:current_cost_category=paddle_category
+                    paddle_record={'method':paddle_best['method'],'rotation':paddle_best['rotation'],'dpi':paddle_best['dpi'],
+                        'meanConfidence':paddle_best['meanConfidence'],'candidateRows':len(paddle_rows),
+                        'addedRows':len(page_rows)-original_page_row_count,
+                        'conflictingItemCodes':sorted(set(conflicts))}
+                    if not method.startswith('OCR') or not words:
+                        words=paddle_best['words'];ocr_width=paddle_best['width'];text=paddle_best['text'];method=paddle_best['method']
+                    if not page_rows and paddle_review:review=True
         if method.startswith('OCR') and page_rows:
             lines={}
             for w in words:lines.setdefault(round(w[1]/5),[]).append(w)
@@ -791,9 +870,15 @@ def parse_pdf(path,output,allocation_pesos=None):
                 for row in page_rows:row['componentContext']=page_context
         role='supporting_detail' if is_component_cost_analysis else 'summary' if is_category_summary else 'itemized_detail' if re.search(r'ITEM\s*(?:NO\.?|NUMBER)|QUANTITY.{0,80}(?:UNIT|AMOUNT|COST)',text,re.I) else 'supporting_detail'
         selected_rotation_match=re.search(r'rotated scan\s+(\d+)°',method)
-        pages.append({'page':number+1,'pageRole':role,'nativePageRotation':native_page_rotation,'pageRectOrientation':page_rect_orientation,
+        page_record={'page':number+1,'pageRole':role,'nativePageRotation':native_page_rotation,'pageRectOrientation':page_rect_orientation,
                       'ocrSelectedRotationDegrees':int(selected_rotation_match.group(1)) if selected_rotation_match else None,
-                      'status':'candidate_rows' if page_rows else 'needs_manual_review' if review else 'no_bill_rows_recovered','rows':len(page_rows),'method':method,'reviewNote':'Numeric columns could not be mapped safely; inspect the source page.' if review else None})
+                      'status':'candidate_rows' if page_rows else 'needs_manual_review' if review else 'no_bill_rows_recovered','rows':len(page_rows),'method':method,'reviewNote':'Numeric columns could not be mapped safely; inspect the source page.' if review else None}
+        if paddle_record:
+            page_record.update({'paddleMethod':paddle_record['method'],'paddleSelectedRotationDegrees':paddle_record['rotation'],
+                'paddleSelectedDpi':paddle_record['dpi'],'paddleMeanConfidence':paddle_record['meanConfidence'],
+                'paddleCandidateRows':paddle_record['candidateRows'],'paddleAddedRows':paddle_record['addedRows']})
+            if paddle_record['conflictingItemCodes']:page_record['paddleConflictingItemCodes']=paddle_record['conflictingItemCodes']
+        pages.append(page_record)
         rows.extend(page_rows)
     # Retain repeated observations rather than summing duplicate page/table views.
     grouped={}

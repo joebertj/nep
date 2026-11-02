@@ -25,6 +25,7 @@ def reparse(code):
     from storage.external_storage import guard
     from project_documents.cache_lock import project_lock
     from project_documents import pow as pow_parser
+    from project_documents.parse_preservation import retain_prior_pow_rows
     from project_documents.service import kinds
     from project_documents.signatories import extract
 
@@ -71,6 +72,7 @@ def reparse(code):
         row['signatories'] = old.get('signatories') or extract(pdf, 'pow', pdf.parent)
         row['status'] = 'available'
         row.pop('error', None)
+        row = retain_prior_pow_rows(old, row)
         result['documents'] = [d for d in result.get('documents', [])
                                if not (d.get('kind') == 'pow' and d.get('metadata', {}).get('url') == pow_document.get('url'))]
         result['documents'].append(row)

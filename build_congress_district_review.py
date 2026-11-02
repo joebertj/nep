@@ -80,6 +80,9 @@ def build():
     with (ROOT / 'analysis_output/hb_nep_comparison_3rd.csv').open(encoding='utf-8-sig', newline='') as f:
         comparisons = list(csv.DictReader(f))
     comparison_by_id = {r['hgab_id']: r for r in comparisons if r.get('hgab_id')}
+    oo2_impact=json.loads((ROOT/'analysis_output/dpwh_oo2_hgab_impact.json').read_text())
+    oo2_matched_ids={r['hgabCandidate']['id'] for r in oo2_impact['records']
+                     if r.get('status')=='High-confidence candidate' and r.get('hgabCandidate')}
     geo = {r['id']: r for r in read_json(ROOT / 'analysis_output/congress_geographic_attribution_db_3rd.json')['projects']}
     office_changes = {r['hgabProjectId']: r for r in read_json(ROOT / 'analysis_output/dpwh_deo_office_changes.json')['records']}
     mapped = {r['id']: r for r in read_json(ROOT / 'analysis_output/out_of_place_projects.json')['projects']}
@@ -293,6 +296,8 @@ def build():
         }
 
         comparison = (compare or {}).get('comparison') or (queue_row or {}).get('nepStatus', '')
+        if project_id in oo2_matched_ids:
+            comparison = 'OO2 amendment match; excluded from current HGAB-only candidates'
         closest = (compare or {}).get('closest_nep_title') or ''
         similarity = float((compare or {}).get('title_similarity_pct') or 0)
         try:
@@ -615,6 +620,7 @@ def build():
             'allPotentialInsertionRecords': sum(
                 r.get('comparison') == 'No plausible NEP title counterpart; review candidate'
                 and r.get('hgab_id') not in cross_boundary_insertion_ids
+                and r.get('hgab_id') not in oo2_matched_ids
                 for r in comparisons
             ),
             'mappedFlagRows': len(mapped),

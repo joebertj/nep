@@ -55,4 +55,20 @@ for path in / /static/nep-preview/ /static/nep-preview/congress.html /static/nep
   [[ "$status" == 200 ]]
   echo "OK public proxy $path: $status"
 done
+while IFS= read -r shard; do
+  path="/static/nep-preview/$shard"
+  status="$(curl --silent --show-error --location --max-time 20 --resolve 'research.bettergov.ph:443:127.0.0.1' --output /dev/null --write-out '%{http_code}' "http://research.bettergov.ph$path")"
+  [[ "$status" == 200 ]]
+  echo "OK public proxy DPWH data shard $path: $status"
+done < <(python3 - "$r/static/nep-preview/dpwh-in-depth-data.json" <<'PY'
+import json, sys
+from pathlib import Path
+index = json.loads(Path(sys.argv[1]).read_text())
+for shards in index.get('arrayShards', {}).values():
+    for shard in shards:
+        print(shard['path'])
+for shard in index.get('projectShards', []):
+    print(shard['path'])
+PY
+)
 REMOTE_VERIFY

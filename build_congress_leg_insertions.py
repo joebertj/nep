@@ -38,7 +38,11 @@ def main():
     comparison_path=ROOT/'analysis_output/hb_nep_comparison_3rd.csv'
     audit=json.loads(audit_path.read_text());decisions={r['id']:r for r in audit['projects']}
     with comparison_path.open(newline='') as f:comparison=list(csv.DictReader(f))
-    domestic=[r for r in comparison if r['comparison']==UNMATCHED and not is_fap(r)]
+    oo2=json.loads((ROOT/'analysis_output/dpwh_oo2_hgab_impact.json').read_text())
+    oo2_ids={r['hgabCandidate']['id'] for r in oo2['records']
+             if r.get('status')=='High-confidence candidate' and r.get('hgabCandidate')}
+    domestic=[r for r in comparison if r['comparison']==UNMATCHED and not is_fap(r)
+              and r.get('hgab_id') not in oo2_ids]
     groups=defaultdict(list)
     for r in domestic:
         g=decisions[r['hgab_id']]

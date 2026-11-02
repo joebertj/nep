@@ -20,6 +20,7 @@ ROOT = Path(__file__).resolve().parent
 ODV = ROOT.parent / "open-data-visualization"
 REPORTS = ROOT / "analysis_output"
 OUT = REPORTS / "priority_program_year_on_year_candidates.csv"
+HISTORICAL_GAA = ROOT / "data_sources" / "gaa-dpwh-project-families-2016-2018.json"
 
 CATEGORY_PATTERNS = {
     "Multi-purpose building": re.compile(r"multi[\s-]*purpose.{0,40}building|building.{0,40}multi[\s-]*purpose", re.I),
@@ -157,7 +158,7 @@ def normalize_2027() -> list[dict]:
 def previous_rows(years: list[int] | None = None) -> dict[int, list[dict]]:
     terms = "MULTI.?PURPOSE|ROAD|BRIDGE|FLOOD|DRAINAGE|DIKE|REVETMENT"
     prior_by_year: dict[int, list[dict]] = {}
-    requested=set(years if years is not None else range(2020,2027))
+    requested=set(years if years is not None else range(2016,2027))
 
     def convert(rows: list[dict], year: int, source_kind: str) -> list[dict]:
         result = []
@@ -165,17 +166,24 @@ def previous_rows(years: list[int] | None = None) -> dict[int, list[dict]]:
             category = classify(row.get("name", ""))
             if not category:
                 continue
-            amount = float(row.get("amount") or 0)
+            amount = float((row.get("amountPesos") if source_kind == "historical_extract" else row.get("amount")) or 0)
             if source_kind == "annual_gaa":
                 amount *= 1000  # ODV annual GAA parquet amounts are in thousands of pesos.
             result.append({
                 "category": category, "name": row.get("name", ""),
                 "amount": round(amount),
-                "source": (f"FY{year} DPWH GAA Details Enrolled Copy, row {row.get('_excel_row', '')}"
+                "source": (row.get("source") if source_kind == "historical_extract" else
+                           f"FY{year} DPWH GAA Details Enrolled Copy, row {row.get('_excel_row', '')}"
                            if source_kind == "dpwh_enrolled" else
                            f"FY{year} GAA · {row.get('source_file', 'ODV annual dataset')} · row {row.get('id', '')}"),
             })
         return result
+
+    if requested & {2016, 2017, 2018}:
+        historical = json.loads(HISTORICAL_GAA.read_text(encoding="utf-8"))
+        for year in sorted(requested & {2016, 2017, 2018}):
+            rows = [row for row in historical.get("records", []) if int(row.get("year") or 0) == year]
+            prior_by_year[year] = convert(rows, year, "historical_extract")
 
     if 2026 in requested:
         path26 = "data/parquet/parsed_dpwh_2026.parquet"

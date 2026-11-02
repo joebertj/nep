@@ -36,6 +36,7 @@ def main():
     from storage.external_storage import guard
     from project_documents.cache_lock import project_lock
     from project_documents import pow as pow_parser
+    from project_documents.parse_preservation import retain_prior_pow_rows
     from project_documents.signatories import extract
 
     guard()
@@ -89,6 +90,7 @@ def main():
                 parsed_doc['signatories'] = previous.get('signatories') or extract(pdf, 'pow', pdf.parent)
                 parsed_doc['status'] = 'available'
                 parsed_doc.pop('error', None)
+                parsed_doc = retain_prior_pow_rows(previous, parsed_doc)
                 result['documents'] = [doc for doc in result.get('documents', [])
                                        if not (doc.get('kind') == 'pow' and
                                                doc.get('metadata', {}).get('id') == source.get('id'))]

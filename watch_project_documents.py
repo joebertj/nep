@@ -5,6 +5,7 @@ No network requests, Git commands or deployment. Photos stay source links.
 import argparse,fcntl,hashlib,json,os,time,importlib
 from pathlib import Path
 from storage.external_storage import BASE,guard
+from project_documents.parse_preservation import retain_prior_pow_rows
 ROOT=Path(__file__).resolve().parent
 CACHE=BASE/'nep/data_sources/dpwh_project_documents/on_demand'
 STATE=CACHE.parent/'watcher-state.json'
@@ -93,6 +94,7 @@ def scan(state):
                         else:
                             row['directLink']=document['url'];row['displayPolicy']='direct_source_link; externally cached PDF only'
                         row['status']='available';row.pop('error',None)
+                        row=retain_prior_pow_rows(old,row)
                         result['documents']=[d for d in result.get('documents',[]) if not (d.get('kind')==kind and d.get('metadata',{}).get('id')==document.get('id'))]+[row]
                         ledger[key]={'signature':signature,'sha256':sha,'status':'parsed'};changed_result=True;changed+=1
                     except Exception as exc:

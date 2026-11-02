@@ -9,6 +9,7 @@ from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import unquote,urlsplit
 from .pow import parse_pdf
+from .parse_preservation import retain_prior_pow_rows
 CODE=re.compile(r'^2027DPWH-Proposal-\d{5}$')
 MODULE=Path(__file__).resolve().parent
 CACHE=Path(os.environ.get('DPWH_DOCUMENT_CACHE',str(MODULE.parent/'data_sources/dpwh_project_documents/on_demand'))).resolve()
@@ -77,6 +78,8 @@ def _process(code,refresh=False):
     output={'projectCode':code,'documents':[],'preparedAtUtc':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())}
     try:
         storage_guard()
+        previous_path=CACHE/code/'result.json'
+        previous_result=json.loads(previous_path.read_text()) if previous_path.is_file() else {}
         project=metadata(code,refresh);allocation=round(float(project['amount'])*1000)
         docs=[(d,kinds(d)) for d in project.get('documents',[]) if kinds(d)]
         for document,kind in docs:
@@ -134,6 +137,11 @@ def _process(code,refresh=False):
             except Exception as exc:
                 if kind=='photos':row.update({'status':'link_only','downloadStatus':'failed','downloadError':type(exc).__name__+': '+str(exc)[:220]})
                 else:row.update({'status':'access_or_processing_error','error':type(exc).__name__+': '+str(exc)[:220]})
+            if kind=='pow':
+                previous=next((d for d in previous_result.get('documents',[]) if d.get('kind')=='pow' and
+                               (d.get('metadata',{}).get('url')==document.get('url') or
+                                d.get('metadata',{}).get('id')==document.get('id'))),None)
+                row=retain_prior_pow_rows(previous,row)
             output['documents'].append(row)
         save(CACHE/code/'result.json',output)
         with LOCK:JOBS[code]={'status':'ready','hasErrors':any(d['status'] not in ('available','link_only') for d in output['documents'])}

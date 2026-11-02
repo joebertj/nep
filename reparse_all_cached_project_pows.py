@@ -17,6 +17,7 @@ def main():
     from project_documents.cache_lock import project_lock
     from project_documents import pow as parser
     from project_documents.service import kinds
+    from project_documents.parse_preservation import retain_prior_pow_rows
     from project_documents.signatories import extract
     guard()
     version=hashlib.sha256((ROOT/'project_documents/pow.py').read_bytes()+(ROOT/'project_documents/ocr_vision.swift').read_bytes()).hexdigest()
@@ -58,6 +59,7 @@ def main():
                 doc={**old,'kind':'pow','metadata':source,'version':asset_version,'pdfAsset':asset_version+'/pow.pdf','sha256':hashlib.sha256(pdf.read_bytes()).hexdigest(),'parsedBy':'all_cached_pow_batch_reparse','parserVersion':version}
                 doc['pow']=parser.parse_pdf(pdf,pdf.parent,round(float(metadata['amount'])*1000))
                 doc['signatories']=old.get('signatories') or extract(pdf,'pow',pdf.parent);doc['status']='available';doc.pop('error',None)
+                doc=retain_prior_pow_rows(old,doc)
                 result['documents']=[d for d in result.get('documents',[]) if not(d.get('kind')=='pow' and d.get('metadata',{}).get('url')==source.get('url'))]
                 result['documents'].append(doc);result['updatedByAllCachedPowReparseAtUtc']=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())
                 atomic_json(folder/'result.json',result)

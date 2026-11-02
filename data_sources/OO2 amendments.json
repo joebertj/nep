@@ -1,0 +1,753 @@
+{
+  "source": {
+    "file": "OO2 amendments.xlsx",
+    "sha256": "e7026a77b12004602f31fab5c45c9def99da800ff99dfa4fbe741e546c4c8edb",
+    "sheet": "002-A",
+    "usedRows": 1019,
+    "parsedAtUtc": "2026-11-02T08:01:56.828193+00:00"
+  },
+  "columns": {
+    "projectTitle": "B · Project title (as it will appear in the NEP)",
+    "fromExistingLine": "C · From (if existing line item for amendment)",
+    "toAmountPesos": "D · To amount",
+    "justification": "E · Justification",
+    "supportingFilesReference": "F · GDrive reference (may be URL or text)"
+  },
+  "sections": [
+    {
+      "name": "Changes In Project Title",
+      "sourceRow": 3,
+      "subtotal": {
+        "cell": "D3",
+        "formula": "SUM(D9, D8:D15)",
+        "cachedRaw": "1489200000",
+        "cachedAmountPesos": 1489200000
+      }
+    },
+    {
+      "name": "New Projects",
+      "sourceRow": 17
+    }
+  ],
+  "summary": {
+    "amendmentRows": 70,
+    "rowsBySection": {
+      "Changes In Project Title": 13,
+      "New Projects": 57
+    },
+    "sumOfParsedToAmountsPesos": 10283758559.9,
+    "workbookReportedTotal": {
+      "cell": "D1",
+      "formula": "(SUM(D17:D74)+(D7-98000000))",
+      "cachedRaw": "8276558559.9000006",
+      "cachedAmountPesos": 8276558559.9
+    },
+    "workbookTotalMatchesParsedRowSum": false,
+    "sumOfParsedToAmountsPesosBySection": {
+      "Changes In Project Title": 2002026155.18,
+      "New Projects": 8281732404.72
+    }
+  },
+  "amendments": [
+    {
+      "sourceRow": 4,
+      "section": "Changes In Project Title",
+      "projectTitle": "Rehabilitation of Road and Drainage System along Sto. Domingo Avenue (Chainage 0+000 - Chainage 1+115.50), District I, Quezon City",
+      "fromExistingLine": "Construction of Matalahib Creek Pumping Station, Quezon City - Php 410,000,000.00",
+      "toAmountPesos": 333000000,
+      "toAmountRaw": "333000000",
+      "justification": "The project is intended to safely manage surface runoff, prevent waterlogging, anf maintain structural integrity of the pavement. Also, the project was proposed by the QC Local Government Unit (QC-LGU) to address flooding ni Barangay Sto. Domingo and help alleviate flooding along G. Araneta Avenue and its surrounding areas.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1GbGUpT6sWzMT_Jfzwxa-OV23RqP7-Dez"
+    },
+    {
+      "sourceRow": 5,
+      "section": "Changes In Project Title",
+      "projectTitle": "Rehabilitation of Road and Drainage System along Del Monte Avenue (Chainage 0+000 - Chainage 0+236), District I, Quezon City",
+      "fromExistingLine": null,
+      "toAmountPesos": 55000000,
+      "toAmountRaw": "55000000",
+      "justification": "The project is intended to safely manage surface runoff, prevent waterlogging, anf maintain structural integrity of the pavement. Also, the project was proposed by the QC Local Government Unit (QC-LGU) to address flooding ni Barangay Sto. Domingo and help alleviate flooding along G. Araneta Avenue and its surrounding areas.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1Zz_4D0BeHoF6Ecj1WeCkBal9ypjj4gCB"
+    },
+    {
+      "sourceRow": 6,
+      "section": "Changes In Project Title",
+      "projectTitle": "Rehabilitation of Road and Drainage System (Talayan Flood Interceptor) Chainage 0+000 to Chainage 0+070, District I, Quezon City",
+      "fromExistingLine": null,
+      "toAmountPesos": 22000000,
+      "toAmountRaw": "22000000",
+      "justification": "The project is intended to safely manage surface runoff, prevent waterlogging, anf maintain structural integrity of the pavement. Also, the project was proposed by the QC Local Government Unit (QC-LGU) to address flooding ni Barangay Sto. Domingo and help alleviate flooding along G. Araneta Avenue and its surrounding areas.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1xd0WGm3Et6adxyOXsPSkMAyno4fEdwB2"
+    },
+    {
+      "sourceRow": 7,
+      "section": "Changes In Project Title",
+      "projectTitle": "Improvement of Balanti Creek, Second District, Barangay Concepcion Dos, Marikina City (Sta 0+000 - Sta.126.80, Sta. 280 - Sta. 837.60)",
+      "fromExistingLine": "Improvement of Balanti Creek, Second District, Barangay Concepcion Dos, Marikina City - Php 98,000,000.00",
+      "toAmountPesos": 142826155.18,
+      "toAmountRaw": "142826155.18000001",
+      "justification": "The proposed “Improvement of Balanti Creek, Second District, Barangay Concepcion Dos, Marikina City (STA 0+000 – STA 0+837.60 with exemptions)” is necessary to address the existing hydraulic and structural deficiencies of the creek and improve its capacity to convey floodwater within the drainage catchment. The proposed works will provide the required channel improvement and bank protection to ensure a stable and unobstructed flow path.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1cPL8Nrj3AgaCTTx1QKrwe1ntod_vanA1"
+    },
+    {
+      "sourceRow": 8,
+      "section": "Changes In Project Title",
+      "projectTitle": "Construction of Retarding Basin, Barangay Cararayan, Naga City, Camarines Sur",
+      "fromExistingLine": "Construction of Retarding Basin in Barangay Balatas",
+      "toAmountPesos": 300000000,
+      "toAmountRaw": "300000000",
+      "justification": "Located near the junction of Naga River and Yabu River to provide additional flood storage and attenuate peak flows entering the downstream reach of Naga River toward Bicol River, thereby reducing downstream flood pressure.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1Y--nXjCAQ53qKD8J57aE_UyDiqDRMgD3"
+    },
+    {
+      "sourceRow": 9,
+      "section": "Changes In Project Title",
+      "projectTitle": "Construction of Pumping Station with Detention Pond and Flood Gate, Brgy. Looc, Mandaue City, Cebu (10.3217024,123.9549925)",
+      "fromExistingLine": "Construction of Detention Pond, Barangay Looc, Mandaue City, Cebu",
+      "toAmountPesos": 60000000,
+      "toAmountRaw": "60000000",
+      "justification": "The project is proposed for renamin since pumping station to collect and discharge surface and drainage runoff while preventing tidal backwater from entering the drainage system.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1KLiKUdKAcljcWRL0Iju_eAEwzs62qbHm?usp=sharing"
+    },
+    {
+      "sourceRow": 10,
+      "section": "Changes In Project Title",
+      "projectTitle": "Construction of Low Height Dam in Panay River Watershed, Capiz",
+      "fromExistingLine": "Consultancy Services for the conduct of Feasibility Study of Low Height Dam along Panay River Watershed, Capiz",
+      "toAmountPesos": 10800000,
+      "toAmountRaw": "10800000",
+      "justification": "To maximize the utilization of floodwaters by impounding excess flows, thereby increasing water storage, improving water availability, and reducing downstream flood impacts.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1qdPxJoHqqVNYT3tx5nCumaFo5kB58Ljh?usp=sharing"
+    },
+    {
+      "sourceRow": 11,
+      "section": "Changes In Project Title",
+      "projectTitle": "Construction of Low Height Dam in Jalaur River Watershed, Iloilo",
+      "fromExistingLine": "Consultancy Services for the conduct of Feasibility Study of Low Height Dam along Jalaur River Watershed, Iloilo",
+      "toAmountPesos": 8400000,
+      "toAmountRaw": "8400000",
+      "justification": "The project was identified and endorsed by DENR as a water storage measure intended to temporarily impound runoff and reduce downstream flood peaks. The structure may also provide supplemental water storage for other beneficial uses.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1DaxQ6R9p7uGnh0LonaLBLkl0eRj7qDju"
+    },
+    {
+      "sourceRow": 12,
+      "section": "Changes In Project Title",
+      "projectTitle": "Construction of Water Impounding Structure along Mananga River, Cebu",
+      "fromExistingLine": "Construction of Mananga River System, Cebu",
+      "toAmountPesos": 300000000,
+      "toAmountRaw": "300000000",
+      "justification": "The change in the project title is to accurately reflect the nature and function of the structure, which is primarily intended to temporarily impound and regulate excess water to reduce peak runoff and mitigate downstream flooding. The said change is limited to the project title and does not involve any change in the project location, scope, intended beneficiaries, or overall flood mitigation objective.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1BPSsp7Feu07xESAg-P5pl9G-RUzVow11?usp=sharing"
+    },
+    {
+      "sourceRow": 13,
+      "section": "Changes In Project Title",
+      "projectTitle": "Construction of Water Impounding Structure along Cotcot River, Liloan, Cebu",
+      "fromExistingLine": "Construction of Flood Control Structure along Cotcot River (Upstream), Liloan, Cebu",
+      "toAmountPesos": 300000000,
+      "toAmountRaw": "300000000",
+      "justification": "The change in the project title is to accurately reflect the nature and function of the structure, which is primarily intended to temporarily impound and regulate excess water to reduce peak runoff and mitigate downstream flooding. The said change is limited to the project title and does not involve any change in the project location, scope, intended beneficiaries, or overall flood mitigation objective.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1U_71rbBb2OSLQs-l0zXtgTO1CU3n2WTa?usp=drive_link"
+    },
+    {
+      "sourceRow": 14,
+      "section": "Changes In Project Title",
+      "projectTitle": "Construction of Water Impounding Structure along Cotcot River, Compostela, Cebu",
+      "fromExistingLine": "Construction of Flood Control Structure along Cotcot River (Upstream), Compostela, Cebu",
+      "toAmountPesos": 300000000,
+      "toAmountRaw": "300000000",
+      "justification": "The change in the project title is to accurately reflect the nature and function of the structure, which is primarily intended to temporarily impound and regulate excess water to reduce peak runoff and mitigate downstream flooding. The said change is limited to the project title and does not involve any change in the project location, scope, intended beneficiaries, or overall flood mitigation objective.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1XexFIus3pc4XZkukhf7HlNR2wXF17RAq?usp=drive_link"
+    },
+    {
+      "sourceRow": 15,
+      "section": "Changes In Project Title",
+      "projectTitle": "Construction of Water Impounding Structure along Bulacao River, Cebu City",
+      "fromExistingLine": "Construction of Flood Mitigation Structure and Drainage System, Barangay Bulacao, Talisay City, Cebu",
+      "toAmountPesos": 150000000,
+      "toAmountRaw": "150000000",
+      "justification": "The change in the project title is to accurately reflect the nature and function of the structure, which is primarily intended to temporarily impound and regulate excess water to reduced peak runoff and mitigate downstream flooding. The said change is limited to the project title and does not involve any change in the project location, scope, intended beneficiaries, or overall flood mitigation objective.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1uGds0RExCuxxpQ0kyI_g4sUhFeOUMZN9?usp=drive_link"
+    },
+    {
+      "sourceRow": 16,
+      "section": "Changes In Project Title",
+      "projectTitle": "Construction of Low Height Dam in Pagsangahan River Watershed, Ormoc City, Leyte",
+      "fromExistingLine": "Consultancy Services for the conduct of Feasibility Study of low height dams along Pagsangahan River Watershed",
+      "toAmountPesos": 20000000,
+      "toAmountRaw": "20000000",
+      "justification": "The project was identified and endorsed by DENR as a water storage measure intended to temporarily impound runoff and reduce downstream flood peaks. The structure may also provide supplemental water storage for other beneficial uses.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/15i5BbpkNZFghgMdwBOTJzzsoNmbcFIs0?usp=drive_link"
+    },
+    {
+      "sourceRow": 18,
+      "section": "New Projects",
+      "projectTitle": "Construction of Flood Control and Land Development of City Camp Lagoon, 16.410157N, 120.586109E, Baguio City",
+      "fromExistingLine": null,
+      "toAmountPesos": 180000000,
+      "toAmountRaw": "180000000",
+      "justification": "The proposed project is necessary to address recurring flooding, inadequate drainage capacity, and water management concerns within and around the City Camp Lagoon area. During periods of heavy rainfall, insufficient drainage and flood control facilities can result in water accumulation, damage to properties and public infrastructure, disruption of transportation and community activities, and risks to public health and safety.\nThe project will provide comprehensive flood mitigation through the construction and improvement of drainage and flood control structures, together with appropriate land development works. These interventions will improve the conveyance and management of stormwater, reduce flood risks, protect lives and properties, and enhance the safety and functionality of the area. Implementing a coordinated and long-term flood control solution will help reduce potential future losses, strengthen climate and disaster resilience, and support the orderly and sustainable development of the City Camp Lagoon area and strongly recommended by the Local Government of Baguio City.\n",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/12TwzwbKmrJk1VWhfBd9nPudO2LvBeh6n?usp=drive_link"
+    },
+    {
+      "sourceRow": 19,
+      "section": "New Projects",
+      "projectTitle": "Construction of Drainage Structure along Pico-Lamtang Road K0255 + (-168) to Balili River, La Trinidad, Benguet",
+      "fromExistingLine": null,
+      "toAmountPesos": 170000000,
+      "toAmountRaw": "170000000",
+      "justification": "The project will improve the conveyance of runoff toward Balili River and reduce water accumulation affecting the Strawberry Fields. It will address limited drainage capacity within the surrounding drainage system.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1cegI0IpzXRsVCsOaAJkyj2OjN2t7Ql6u"
+    },
+    {
+      "sourceRow": 20,
+      "section": "New Projects",
+      "projectTitle": "Construction of Drainage Structure - Strawberry Fields (Sta. 1+115) to Balili River, La Trinidad, Benguet",
+      "fromExistingLine": null,
+      "toAmountPesos": 252000000,
+      "toAmountRaw": "252000000",
+      "justification": "The project will provide an improved drainage outlet from the Strawberry Fields toward Balili River. This will facilitate the discharge of accumulated stormwater and reduce flooding within the agricultural area. The project will also help prevent backflow from Bolo Creek into drainage channels serving the Strawberry Fields. It will help reduce flooding and facilitate the removal of accumulated water from the agricultural area.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1ejUWw5H9DeFopgDn2IPjcMtf14b15gmH"
+    },
+    {
+      "sourceRow": 21,
+      "section": "New Projects",
+      "projectTitle": "Construction/Improvement of Drainage Structure along Puguis Road (Sta. 0+140) to Wangal-Motorpool Road (Sta. 0+712), La Trinidad, Benguet",
+      "fromExistingLine": null,
+      "toAmountPesos": 50000000,
+      "toAmountRaw": "50000000",
+      "justification": "The project will improve the collection and conveyance of runoff from the surrounding developed areas. This will help reduce water accumulation and runoff contributing to flooding in the lower-lying Strawberry Fields.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1iyGJHpB4aibtpPb-iL9OZcY4RbmGAOIj"
+    },
+    {
+      "sourceRow": 22,
+      "section": "New Projects",
+      "projectTitle": "Construction/Rehabilitation of Drainage along National Roads - Secondary Roads - Baguio-Bontoc Road – K0253+229 - K0253+449, La Trinidad, Benguet",
+      "fromExistingLine": null,
+      "toAmountPesos": 25000000,
+      "toAmountRaw": "25000000",
+      "justification": "The project will improve drainage along the national road and facilitate the proper conveyance of stormwater. This will help reduce surface-water accumulation and runoff toward the lower-lying Strawberry Fields.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1tN_EC3Jw3m1VIjsR65ETHmUZttLW3hlw"
+    },
+    {
+      "sourceRow": 23,
+      "section": "New Projects",
+      "projectTitle": "Construction/ Upgrading/ Rehabilitation of Drainage along National Roads - Secondary Roads - G. Araneta Avenue (S05617LZ) - K0009 + 346 - K0009 + 684, Quezon City",
+      "fromExistingLine": null,
+      "toAmountPesos": 107000000,
+      "toAmountRaw": "107000000",
+      "justification": "\nThis is necessary to address the recurring flooding affecting G. Araneta Avenue and its surrounding areas by improving the stormwater conveyance capacity along the identified road section. The project involves the installation of High-Density Polyethylene (HDPE) pipes to provide an efficient drainage system for collecting and conveying stormwater toward the appropriate downstream facility.\n\nThe proposed drainage improvement will form an integral part of the existing drainage network along G. Araneta Avenue. The installation of HDPE pipes will improve drainage capacity and continuity, allowing stormwater runoff from the roadway and adjacent areas to be more effectively conveyed and reducing water accumulation during moderate to heavy rainfall.\n",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/17F1gqFJinoTmNepjwqYHEuwClQj0ohJ8?usp=drive_link"
+    },
+    {
+      "sourceRow": 24,
+      "section": "New Projects",
+      "projectTitle": "Construction/ Upgrading/ Rehabilitation of Drainage along National Roads - Secondary Roads - South Ave. (Timog Ave.) - (S05269LZ) - K0010 +957 - K0009 + 073, Quezon City",
+      "fromExistingLine": null,
+      "toAmountPesos": 100000000,
+      "toAmountRaw": "100000000",
+      "justification": "Completion of this segment is essential to establish a more continuous and functional drainage system and to maximize the effectiveness of the drainage improvements already undertaken along the area. The project will likewise provide an additional and higher-capacity drainage conveyance facility connected to the existing drainage outfall, allowing stormwater collected within the drainage network to be discharged more efficiently. The proposed multi-barrel HDPE pipe system is intended to increase the available flow capacity toward the outfall and address the possible bottleneck in the existing drainage network that may be contributing to the persistence of flooding in the surrounding area.\n",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/10mWjrgk3z7NdUUBp0Anzm1bsFw1wEWpP?usp=drive_link"
+    },
+    {
+      "sourceRow": 25,
+      "section": "New Projects",
+      "projectTitle": "Construction/ Upgrading/ Rehabilitation of Drainage along National Roads - Tertiary Roads - Mother Ignacia Ave. (S05365LZ) - K0010 +203 - K0010 + 436, Quezon City",
+      "fromExistingLine": null,
+      "toAmountPesos": 110000000,
+      "toAmountRaw": "110000000",
+      "justification": "This is necessary to address the flooding problem affecting the area by providing an improved and continuous drainage facility capable of conveying stormwater along the affected road section. The project will provide a reinforced concrete box culvert integrated within the roadway to improve the collection and conveyance of surface runoff and provide a more reliable drainage pathway for the surrounding area. The proposed drainage improvement is a critical component of the planned drainage network for the vicinity. It will serve as the upstream drainage facility that will connect to the proposed box culvert along Sgt. Esguerra Avenue, which will in turn provide the necessary connection toward the existing box culvert system along Panay Avenue. This interconnected drainage arrangement is necessary to establish continuity within the drainage network and allow stormwater collected along Mother Ignacia Avenue to be conveyed toward the existing downstream drainage facility.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1tvAx_Zz9_JZA658j1K0ycZRwBXsr_eD4?usp=drive_link"
+    },
+    {
+      "sourceRow": 26,
+      "section": "New Projects",
+      "projectTitle": "Construction / Upgrading / Rehabilitation of Drainage along National Roads - Tertiary Roads - Sgt. Esguerra Ave. (S05376LZ) - K0010 + (-070) - K0010 + 060, Quezon City",
+      "fromExistingLine": null,
+      "toAmountPesos": 85000000,
+      "toAmountRaw": "85000000",
+      "justification": "This is necessary to address the flooding problem affecting the Mother Ignacia Avenue area and surrounding vicinity by providing a continuous drainage connection between the proposed box culvert along Mother Ignacia Avenue and the existing box culvert system along Panay Avenue. The proposed drainage improvement along Sgt. Esguerra Avenue will serve as a critical link within the drainage network, allowing stormwater from the affected area to be conveyed toward the existing downstream drainage facility.\n",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1pyzUdtRegTnyHeGlWDirpe1VzZDSFpdO?usp=drive_link"
+    },
+    {
+      "sourceRow": 27,
+      "section": "New Projects",
+      "projectTitle": "Construction/ Upgrading/ Rehabilitation of Drainage along National Roads - Tertiary Roads, Mother Ignacia Ave. (S05365LZ) - K0009 + 223 - K0009 +523, Quezon City",
+      "fromExistingLine": null,
+      "toAmountPesos": 130000000,
+      "toAmountRaw": "130000000",
+      "justification": "This is necessary to address the persistent and severe flooding occurring along the section between Timog Avenue and Scout Borromeo Street, Quezon City. During heavy rainfall, floodwaters in the area reach significant depths, resulting in the submergence of parked vehicles and causing disruption to road users, nearby establishments, properties, and surrounding infrastructure. The recurring nature and severity of the flooding indicate the need for a permanent and adequately designed drainage improvement rather than continued reliance on existing drainage facilities.\n\nThe proposed project will provide an improved drainage system along the affected section of Mother Ignacia Avenue to enhance the collection and conveyance of stormwater. The proposed drainage facilities, including large-capacity pipe drainage, manholes, and water interceptors, are designed to provide a more efficient pathway for stormwater runoff and improve the overall drainage performance of the roadway. The project alignment extends from the vicinity of Timog Avenue toward Scout Borromeo Street, directly covering the identified flood-prone section.\n",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1baRSNu_c0Mn29Oq8ceuROdiu0h9Xp8so?usp=drive_link"
+    },
+    {
+      "sourceRow": 28,
+      "section": "New Projects",
+      "projectTitle": "Construction of Interceptor along Toctocan Road, Brgys. Manresa (Sta. 0+004.00P - Sta. 0+130.00P), Masambong (Sta. 0+005.30 - Sta. 0+016.00, Sta. 0+210.00 - Sta. 261.60, Sta. 0+410.00 - Sta. 0+484.10A, Sta. 0+450.00 - Sta. 0+460.00B), and Apolonio Samson (Sta. 0+460.00B-Sta.0+484.10B), Quezon City",
+      "fromExistingLine": null,
+      "toAmountPesos": 166328404.72,
+      "toAmountRaw": "166328404.72",
+      "justification": "This is necessary to improve the existing drainage system and address the collection and conveyance of stormwater along the identified sections of Toctocan Road. The project covers critical sections within the affected barangays, where inadequate drainage capacity may result in the accumulation of surface water and localized flooding during periods of heavy rainfall. The construction of an interceptor will provide an additional drainage facility to efficiently collect and convey runoff, thereby improving the overall performance of the existing drainage network.\n\nThe proposed interceptor will enhance the capacity of the drainage system by intercepting surface runoff before it accumulates along the roadway and adjacent areas. The facility will facilitate the proper conveyance of stormwater toward the appropriate drainage outfall, reducing water accumulation along the road and minimizing the potential for flooding. The project will also help preserve the condition and serviceability of the roadway by reducing prolonged exposure to standing water and improving the overall drainage of the affected sections.\n\nFurthermore, the construction of the interceptor will contribute to the improvement of flood mitigation measures within the surrounding communities of Barangays Manresa, Masambong, and Apolonio Samson. By improving the collection and conveyance of stormwater, the project will help reduce the occurrence and duration of localized flooding, improve road accessibility during rainfall events, and protect nearby properties and public infrastructure. The project will likewise support the efficient functioning of the existing drainage network and enhance the resilience of the affected communities against heavy rainfall and flooding.\n\n",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1pvQKB2755gMxhV1zMaJu0PiWB-YhVyam"
+    },
+    {
+      "sourceRow": 29,
+      "section": "New Projects",
+      "projectTitle": "Rehabilitation of Drainage System, Lirio St. (Sta. 0+000.00 - Sta. 0+156.70), Lirio Ext. (Sta. 0+000.00 - Sta. 0+039.80), Camia Ext. I (Sta. 0+000.00 - Sta. 0+121.10), Camia Ext. II (Sta. 0+000.00 - Sta. 0+052.30), Camia Ext. III (Sta. 0+000.00 - Sta. 0+028.00) and Alley 4 (Sta. 0+000.00 - Sta. 0+069.00), Barangay Old Capitol Site, Quezon City",
+      "fromExistingLine": null,
+      "toAmountPesos": 25000000,
+      "toAmountRaw": "25000000",
+      "justification": "The proposed project aims to rehabilitate the existing undersized and deteriorated drainage system to improve stormwater conveyance, address persistent flooding during heavy rainfall, and provide a proper conduit for roadway runoff toward the nearest outfall. The identified areas are flood-prone based on Project NOAH, underscoring the need for improved drainage infrastructure to mitigate flooding and protect affected residents.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1A3Qq3cZIjorDKN2NyjQbLHiclEiLdNUb"
+    },
+    {
+      "sourceRow": 30,
+      "section": "New Projects",
+      "projectTitle": "Rehabilitation of Drainage System, Matimyas St. (Sta. 0+000.00 - Sta. 0+305.60), Lourdes Castillo St. (Sta. 0+000.00 - Sta. 0+467.40), Data St. (Sta. 0+000.00 - Sta. 0+552.00), Barangay Don Manuel, Quezon City",
+      "fromExistingLine": null,
+      "toAmountPesos": 80000000,
+      "toAmountRaw": "80000000",
+      "justification": "The proposed project aims to construct an additional box culvert along Matimyas Street to supplement the capacity of the existing box culvert and improve stormwater conveyance. Drainage improvements along Lourdes Castillo St. and Data St. will complement the Matimyas Street drainage system to improve overall drainage and address persistent flooding in the area. The project is necessary as the identified area is flood-prone based on the Project NOAH flood hazard map.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1bVvZp3idrue79d05GdrueDXmY5AmFhue"
+    },
+    {
+      "sourceRow": 31,
+      "section": "New Projects",
+      "projectTitle": "Rehabilitation of Drainage System, Bayani St. (Sta. 0+000.00 - Sta. 0+353.60), Barangay Doña Imelda, Quezon City",
+      "fromExistingLine": null,
+      "toAmountPesos": 50000000,
+      "toAmountRaw": "50000000",
+      "justification": "The proposed project is part of the Quezon City Drainage Masterplan and aims to improve stormwater conveyance and address recurring flooding along Bayani St. The area is identified as severely flood-prone based on the Project NOAH flood hazard map, underscoring the need for improved drainage infrastructure.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1k6lsh50COjaxtQwoweDjS7hnAO2Azcr1"
+    },
+    {
+      "sourceRow": 32,
+      "section": "New Projects",
+      "projectTitle": "Rehabilitation of Drainage System, 11th St. (Sta. 0+000.00 - Sta. 0+605.80), Barangay Damayang Lagi, Quezon City",
+      "fromExistingLine": null,
+      "toAmountPesos": 38000000,
+      "toAmountRaw": "38000000",
+      "justification": "The proposed drainage rehabilitation along 11th St. is included in the Quezon City Drainage Master Plan and is located in an area identified as flood-prone by Project NOAH. The project aims to address recurring flooding through the construction of a 3-barrel pipe culvert along the roadway, improving drainage capacity and stormwater conveyance in the area.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1Odr0vcrcMO4_VQKDnXtv-gVaidsloMGl"
+    },
+    {
+      "sourceRow": 33,
+      "section": "New Projects",
+      "projectTitle": "Rehabilitation of Drainage System, Sct. Fernandez St. (Sta. 1+168.60 - Sta. 1+389.90), Barangay Laging Handa, Quezon City",
+      "fromExistingLine": null,
+      "toAmountPesos": 60000000,
+      "toAmountRaw": "60000000",
+      "justification": "The proposed rehabilitation of the drainage system along Sct. Fernandez St. is part of the Quezon City Drainage Master Plan and aims to address recurring flooding in the area. The project will improve drainage capacity through the installation of a 3-barrel, 1-meter-diameter HDPE pipe culvert, providing more efficient stormwater conveyance and reducing flood impacts on residents and properties.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1Y5rQbzRNH2358DvabiZEdw5Tp5aKPROI"
+    },
+    {
+      "sourceRow": 34,
+      "section": "New Projects",
+      "projectTitle": "Rehabilitation of Drainage System, Forestry Area (Sta. 0+000.00 - Sta. 0+112.50), Lagoon Area (Sta. 0+000.00 - Sta. 0+279.30), Everlasting (Sta 0+000.00 - Sta. 0+310.00) and Orchid St. (Sta. 0+000.00 - Sta. 0+154.70), Barangay Central, Quezon City",
+      "fromExistingLine": null,
+      "toAmountPesos": 15000000,
+      "toAmountRaw": "15000000",
+      "justification": "The proposed project aims to address the lack of a proper drainage system in the area, resulting in the accumulation of floodwater due to inadequate discharge. The project will construct a drainage system to collect and convey rainwater to a proper outfall, thereby mitigating persistent flooding and addressing the long-standing concern of residents in the area.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1Z-wJEJAJ__uUm-CbvoV1v0ydKbSsxko-"
+    },
+    {
+      "sourceRow": 35,
+      "section": "New Projects",
+      "projectTitle": "Rehabilitation of Drainage System, Justice Lourdes Paredes San Diego Ave. (Sta. 0+035.00 - Sta. 0+199.80), Barangay Bagong Lipunan ng Crame, Quezon City",
+      "fromExistingLine": null,
+      "toAmountPesos": 13000000,
+      "toAmountRaw": "13000000",
+      "justification": "The proposed drainage rehabilitation along Justice Lourdes Paredes San Diego Ave. is included in the Quezon City Drainage Master Plan and is located in an area identified as severely flood-prone by Project NOAH. The project aims to improve drainage efficiency and mitigate persistent flooding affecting residents and properties in the area.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/15Yg9IPpMCMuPj3_wNqHT_Z9SJ0fbdpO_"
+    },
+    {
+      "sourceRow": 36,
+      "section": "New Projects",
+      "projectTitle": "Rehabilitation of Drainage System, Bagong Buhay St. (Sta. 0+000.00 - Sta. 0+116.50 and Tomas Pin Pin St. (Sta. 0+000.00 - Sta. 0+155.30), Barangay Sto. Niño, Quezon City",
+      "fromExistingLine": null,
+      "toAmountPesos": 27000000,
+      "toAmountRaw": "27000000",
+      "justification": "The proposed rehabilitation of the drainage system along Bagong Buhay St. and Tomas Pin Pin St. is part of the Quezon City Drainage Master Plan and aims to address recurring flooding in the area. The project will involve the installation of a 3-barrel pipe culvert along the roadway to improve drainage capacity and stormwater conveyance, thereby mitigating flooding and improving the safety and living conditions of residents.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1WsZEVn9Pvlbgh8ymodcFqLrHeMmDciux"
+    },
+    {
+      "sourceRow": 37,
+      "section": "New Projects",
+      "projectTitle": "Construction of Drainage along Tayuman St. (going to Tayuman Pumping Station), Manila City, K0007+(-594.60) to K0007+(-389.20) & K0007+(-091.20) to K0007+124.50, Manila City",
+      "fromExistingLine": null,
+      "toAmountPesos": 110000000,
+      "toAmountRaw": "110000000",
+      "justification": "The proposed drainage project is intended to improve the conveyance and discharge of stormwater runoff along Tayuman Street towards the Tayuman Pumping Station. Its implementation is expected to help address and mitigate the recurring flooding condition in the area, particularly along Tayuman Street corner Abad Santos Avenue.\n\nThe project is likewise a continuation of the drainage improvement works undertaken along Tayuman Street funded under the General Appropriation Act (GAA) 2025. The implementation of the remaining sections is necessary to provide a continuous and integrated drainage system leading towards the Tayuman Pumping Station. The completion of the proposed drainage facilities will improve the overall effectiveness of the existing and previously constructed drainage infrastructure and help ensure the efficient conveyance of stormwater runoff from the affected areas.\n",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1czTgBbhSmIJdh9vFNiQL1-A_7uf-rchL?usp=drive_link"
+    },
+    {
+      "sourceRow": 38,
+      "section": "New Projects",
+      "projectTitle": "Construction of Detention Basin at NPDC Compound, M. Orosa St. Cor T.M Kalaw St. Ermita, Manila, 14.582155, 120.980347",
+      "fromExistingLine": null,
+      "toAmountPesos": 360000000,
+      "toAmountRaw": "360000000",
+      "justification": "The project will provide the community an effective stormwater management facility that temporarily stores excess runoff and releases it at a controlled rate. The project will help reduce flooding, protect homes, roads and public infrastructure, minimize erosion, and improve the community's resilience to heavy rainfall and other flood-related hazards.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1RjkP8O56Vyqs_2jNgv5xHtWdPDBw2JKV"
+    },
+    {
+      "sourceRow": 39,
+      "section": "New Projects",
+      "projectTitle": "Construction of Detention Basin at Harbor View, South Drive Ermita, Manila, 14.578644, 120.974859",
+      "fromExistingLine": null,
+      "toAmountPesos": 380000000,
+      "toAmountRaw": "380000000",
+      "justification": "The project will provide the community an effective stormwater management facility that temporarily stores excess runoff and releases it at a controlled rate. The project will help reduce flooding, protect homes, roads and public infrastructure, minimize erosion, and improve the community's resilience to heavy rainfall and other flood-related hazards.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1N-48psEKAoXq5y5babbutZ2X4dqBWTQm"
+    },
+    {
+      "sourceRow": 40,
+      "section": "New Projects",
+      "projectTitle": "Construction (Completion) of Catch Basin at Rajah Sulayman Plaza, Brgy. 700, Zone 77, Malate, Manila, 14.569025, 120.984068",
+      "fromExistingLine": null,
+      "toAmountPesos": 50000000,
+      "toAmountRaw": "50000000",
+      "justification": "The project will provide the community an effective stormwater management facility that temporarily stores excess runoff and releases it at a controlled rate. The project will help reduce flooding, protect homes, roads and public infrastructure, minimize erosion, and improve the community's resilience to heavy rainfall and other flood-related hazards.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1TrvmGsuv4FATf9iCl1ReFyZXY77qu4kr"
+    },
+    {
+      "sourceRow": 41,
+      "section": "New Projects",
+      "projectTitle": "Completion of Pumping Station (Pumphouse No. 2) along Navotas Coastal Dike, Brgy. Daanghari, Navotas City (14.664966, 120.938371)",
+      "fromExistingLine": null,
+      "toAmountPesos": 194000000,
+      "toAmountRaw": "194000000",
+      "justification": "The completion of Pumphouse No. 2 along the Navotas Coastal Dike is necessary to fully operationalize the facility and strengthen flood mitigation and drainage services in Brgy. Daanghari and surrounding areas. Completing the remaining works will improve pumping efficiency and reliability, facilitate the timely discharge of excess water, and reduce the extent and duration of localized flooding. The project is therefore recommended to maximize the existing infrastructure, ensure long-term functionality, and provide sustained protection to nearby communities, properties, roads, and public infrastructure.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1a77HkXv-cs1gq8Q7JcNfvIJANkzbc945?usp=drive_link"
+    },
+    {
+      "sourceRow": 42,
+      "section": "New Projects",
+      "projectTitle": "Construction of Retarding Basin at Pumphouse No. 2, Brgy. Daanghari including drainage laterals, Navotas City (14.664966, 120.938371)",
+      "fromExistingLine": null,
+      "toAmountPesos": 75000000,
+      "toAmountRaw": "75000000",
+      "justification": "The construction of the Retarding Basin and Drainage Laterals at Pumphouse No. 2 is necessary to complete and enhance the existing flood mitigation and drainage system in Brgy. Daanghari. The retarding basin will provide temporary stormwater storage, while the drainage laterals will improve runoff collection and conveyance. The project is urgent as the pumphouse is already being utilized without the basin, limiting its efficiency during heavy rainfall. Its implementation will improve flood protection and safeguard nearby communities, properties, and infrastructure.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1sE1CukM61CbpZ66PWBwpyoH_Fx4UZJF1?usp=drive_link"
+    },
+    {
+      "sourceRow": 43,
+      "section": "New Projects",
+      "projectTitle": "Construction of Pumping Stations with Retarding Basin along Navotas Coastal Dike (Completion), Navotas City",
+      "fromExistingLine": null,
+      "toAmountPesos": 200000000,
+      "toAmountRaw": "200000000",
+      "justification": "This is to mitigate damages brought by flooding to the majority of commercial and residential establishments and communities within Navotas City. The provision of the necessary electro-mechanical components for the completion of this pumping station is essential to ensure that the pumping station will be fully utilized in its full effectiveness serving its purpose as a way to manage and control the flow of water in and out of the city. The increase in drainage capacity that will be brought by the construction of retarding basin is beneficial in reducing flooding experienced within the city during heavy rainfall events and typhoons. Providing this essential control points along the coastal dike ensures protection from sudden and uncontrolled flow of water entering the city of Navotas.\n",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1BxX4wmUCvEgpDt3fcj9iP2kVgdqv5XBx"
+    },
+    {
+      "sourceRow": 44,
+      "section": "New Projects",
+      "projectTitle": "Improvement of Road Dike leading to Navotas Pumping Station No. 1 (C0+000 - C0+385) along Navotas Coastal Dike, Navotas City",
+      "fromExistingLine": null,
+      "toAmountPesos": 204000000,
+      "toAmountRaw": "204000000",
+      "justification": "The Road Dike leading to Navotas Pumping Station No. 1 along Navotas Coastal Dike, Navotas City requires improvement to enhance its structural condition, accessibility, and overall functionality as part of the flood protection and drainage infrastructure serving the surrounding communities. The existing road dike serves as an important access route to the pumping station and forms part of the coastal flood protection system. Improvement of the facility is necessary to ensure its reliability and continued functionality, particularly during periods of heavy rainfall, high tide, and other conditions that may affect the operation and maintenance of the pumping station.\n\nThe proposed improvement will enhance the condition and serviceability of the road dike, providing safer and more reliable access to Navotas Pumping Station No. 1 for operation, maintenance, inspection, and emergency response activities. The improvement will also help protect the integrity of the dike and its associated facilities against deterioration and other factors that may compromise its effectiveness as part of the flood mitigation system. Ensuring adequate access to the pumping station is essential for the timely deployment of personnel, equipment, and materials, particularly during critical flooding events.\n\nFurthermore, the improvement of the road dike will contribute to the overall effectiveness of the flood management system in Navotas City by supporting the continuous operation and maintenance of the pumping station. A reliable access route will facilitate immediate response to equipment failures, drainage concerns, and other operational requirements, thereby helping minimize flood risks, protect nearby communities and properties, and strengthen the resilience of the surrounding area against flooding and other climate-related hazards.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/15kkJYGQSFuQRWF0Wsh0bKa3h3Y5S4mrx?usp=drive_link"
+    },
+    {
+      "sourceRow": 45,
+      "section": "New Projects",
+      "projectTitle": "Construction of Dupinga Sabo Dam, Gabaldon, Nueva Ecija",
+      "fromExistingLine": null,
+      "toAmountPesos": 400000000,
+      "toAmountRaw": "400000000",
+      "justification": "The proposed project is necessary due to the continuing sedimentation and erosion risks affecting the Dupinga River and the downstream Coronel-Santur River system. The Master Plan identifies Dupinga River as one of the priority tributaries originating from the Sierra Madre where a Sabo Dam is proposed to address the continuous supply of unstable sediments from landslides and highly erodible upstream riverbanks.\n\nTo address this condition and preserve the hydraulic capacity of the downstream river system, the proposed Sabo Dam will intercept and retain unstable sediment and debris transported from the upstream watershed, thereby reducing the sediment load reaching the Coronel-Santur River. This intervention will help minimize progressive riverbed aggradation and sediment deposition, which can reduce the conveyance capacity of downstream channels and compromise the effectiveness of existing and planned flood-control infrastructure. The Master Plan recognizes Sabo Dams as structural countermeasures for river-system erosion and sediment management, complementing downstream flood-control measures.\n\nConsidering the continuing sediment supply from the upstream Sierra Madre watershed and the strategic role of Dupinga River in the Coronel-Santur River system, the proposed Dupinga River Sabo Dam is strongly recommended ",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1HdmPXHxuI5kk6hqq4WrDNg9k2hysXged"
+    },
+    {
+      "sourceRow": 46,
+      "section": "New Projects",
+      "projectTitle": "Construction of Inasan Sabo Dam, Gabaldon, Nueva Ecija",
+      "fromExistingLine": null,
+      "toAmountPesos": 250000000,
+      "toAmountRaw": "250000000",
+      "justification": "The proposed project is necessary due to the continuing sedimentation and erosion risks affecting the Inasan River and the downstream Coronel-Santur River system. The Master Plan identifies Inasan River as one of the priority tributaries originating from the Sierra Madre where a Sabo Dam is proposed to address the continuous supply of unstable sediments from landslides and highly erodible upstream riverbanks.\n\nTo address this condition and preserve the hydraulic capacity of the downstream river system, the proposed Sabo Dam will intercept and retain unstable sediment and debris transported from the upstream watershed, thereby reducing the sediment load reaching the Coronel-Santur River. Inasan River has a preliminary drainage area of approximately 50.39 km², forming part of the tributary network contributing flows and sediment to the Coronel-Santur system. This intervention will help minimize progressive riverbed aggradation and sediment deposition, which can reduce the conveyance capacity of downstream channels and compromise the effectiveness of existing and planned flood-control infrastructure.\n\nConsidering the continuing sediment supply from the upstream Sierra Madre watershed and the strategic role of Inasan River as a tributary of the Coronel-Santur River system, the proposed Inasan River Sabo Dam is strongly recommended.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1AyG-VkqpRGSon9wd6fteD8nNTg6iLxyz"
+    },
+    {
+      "sourceRow": 47,
+      "section": "New Projects",
+      "projectTitle": "Construction of Digmala Sabo Dam, Bongabon, Nueva Ecija",
+      "fromExistingLine": null,
+      "toAmountPesos": 150000000,
+      "toAmountRaw": "150000000",
+      "justification": "The proposed project is necessary due to the continuing sedimentation and erosion risks affecting the Digmala River and the downstream Pantabangan River system. The Master Plan identifies Digmala River as a priority tributary where a Sabo Dam is proposed to address the continuous supply of unstable sediments from landslides and highly erodible upstream riverbanks.\n\nTo address this condition and preserve the hydraulic capacity of the downstream river system, the proposed Sabo Dam will intercept and retain unstable sediment and debris transported from the upstream watershed, thereby reducing the sediment load reaching the Pantabangan River. Digmala River has a preliminary drainage area of approximately 89.51 km² and is identified as a tributary of the Pantabangan River, making sediment management in its upstream reaches important to maintaining the conveyance capacity of the receiving river system. This intervention will help minimize progressive riverbed aggradation and sediment deposition, which can reduce downstream channel capacity and compromise the effectiveness of existing and planned flood-control infrastructure.\n\nConsidering the continuing sediment supply from the upstream watershed and the strategic role of Digmala River in the Pantabangan River system, the proposed Digmala River Sabo Dam is strongly recommended.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1ZV7rZ-zM1ZtDshdzAWa0CjYv1rY1A5yh"
+    },
+    {
+      "sourceRow": 48,
+      "section": "New Projects",
+      "projectTitle": "Construction of Bugnan Sabo Dam, Gabaldon, Nueva Ecija",
+      "fromExistingLine": null,
+      "toAmountPesos": 300000000,
+      "toAmountRaw": "300000000",
+      "justification": "The proposed project is necessary due to the continuing sedimentation and erosion risks affecting the Digmala River and the downstream Pantabangan River system. The Master Plan identifies Digmala River as a priority tributary where a Sabo Dam is proposed to address the continuous supply of unstable sediments from landslides and highly erodible upstream riverbanks.\n\nTo address this condition and preserve the hydraulic capacity of the downstream river system, the proposed Sabo Dam will intercept and retain unstable sediment and debris transported from the upstream watershed, thereby reducing the sediment load reaching the Pantabangan River. Digmala River has a preliminary drainage area of approximately 89.51 km² and is identified as a tributary of the Pantabangan River, making sediment management in its upstream reaches important to maintaining the conveyance capacity of the receiving river system. This intervention will help minimize progressive riverbed aggradation and sediment deposition, which can reduce downstream channel capacity and compromise the effectiveness of existing and planned flood-control infrastructure.\n\nConsidering the continuing sediment supply from the upstream Sierra Madre and the strategic role of Bugnan River as a tributary of the Colonel-Santur River system, the proposed Bugnan River Sabo Dam is strongly recommended",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1A5c9BUeVB2KuGvpgt8u0HDO0Bt_Q6dsI"
+    },
+    {
+      "sourceRow": 49,
+      "section": "New Projects",
+      "projectTitle": "Construction of Anipa Sabo Dam, Gabaldon, Nueva Ecija",
+      "fromExistingLine": null,
+      "toAmountPesos": 200000000,
+      "toAmountRaw": "200000000",
+      "justification": "The proposed project is necessary due to the continuing sedimentation and erosion risks affecting the Anipa River and the downstream Coronel-Santur River system. The Master Plan identifies Anipa River as one of the priority tributaries originating from the Sierra Madre where a Sabo Dam is proposed to address the continuous supply of unstable sediments from landslides and highly erodible upstream riverbanks.\n\nTo address this condition and preserve the hydraulic capacity of the downstream river system, the proposed Sabo Dam will intercept and retain unstable sediment and debris transported from the upstream watershed, thereby reducing the sediment load reaching the Coronel-Santur River. This intervention will help minimize progressive riverbed aggradation and sediment deposition, which can reduce the conveyance capacity of downstream channels and compromise the effectiveness of existing and planned flood-control infrastructure. The Master Plan recognizes Sabo Dams as structural countermeasures for river-system erosion and sediment management, complementing downstream flood-control measures.\n\nConsidering the continuing sediment supply from the upstream Sierra Madre watershed and the strategic role of Anipa River as a tributary of the Coronel-Santur River system, the proposed Anipa River Sabo Dam is strongly recommended for funding under the FY 2027 infrastructure program. Its implementation will advance the priority measures identified in the Pampanga River Basin Master Plan and help protect the long-term capacity and performance of downstream flood-control infrastructure.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1OMrX2C-skwxCJNJxudt9sfbb7Vh5B5Am"
+    },
+    {
+      "sourceRow": 50,
+      "section": "New Projects",
+      "projectTitle": "Construction of Flood Mitigation Structure along Pampanga River and Bagbag River, Brgy. Frances - Gatbuca - Bulusan - Sta.Lucia, Calumpit Bulacan (Sta. 0+000 - Sta. 1+900, Sta. 0+000 - Sta. 1+738)",
+      "fromExistingLine": null,
+      "toAmountPesos": 160090000,
+      "toAmountRaw": "160090000",
+      "justification": "Barangays Frances, Gatbuca, Bulusan, and Sta. Lucia sit within the natural floodplain of the Pampanga and Bagbag River system, where the existing riverbanks have limited freeboard and channel capacity relative to peak flood discharge. During heavy or prolonged rainfall, particularly during typhoons and the southwest monsoon, river flow can exceed what the natural banks can hold, causing water to spill over into nearby homes, farmlands, and roads. Because the banks were never engineered to handle this volume of flow, even moderate storms can trigger flooding in these areas.The proposed structure will effectively raise the flood-carrying capacity of the river at these critical points by reinforcing and elevating the containment along the banks. This means a higher volume of floodwater can pass through or be held within the river system before it overflows, directly reducing how often and how badly these communities get flooded. In short, the project fixes the actual weak point, the undersized channel capacity, rather than just dealing with the floodwater after it has already spread into the community.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/149qK6HF4_uo2i9gK8Lqosjh2wFYzpak1"
+    },
+    {
+      "sourceRow": 51,
+      "section": "New Projects",
+      "projectTitle": "Construction of Flood Mitigation Structure along Halang River, Hagonoy, Bulacan (Sta. 0+000 - Sta. 2+708, Sta. 0+000 - Sta. 2+418)",
+      "fromExistingLine": null,
+      "toAmountPesos": 480000000,
+      "toAmountRaw": "480000000",
+      "justification": "Hagonoy is a low-lying coastal municipality where the Halang and Hagonoy River system discharges into Manila Bay, making it subject to a compound flooding problem driven by two simultaneous forces. First, during high tide, seawater from Manila Bay pushes back into the river mouth and inland waterways, reducing the hydraulic gradient available for the river to drain and effectively narrowing its usable conveyance capacity at that moment. Second, during heavy rainfall events, the river system also receives backflooding from the Pampanga River, adding volume that the channel must accommodate on top of local runoff. When these two conditions occur together, typically during typhoons or intense monsoon rainfall coinciding with high tide, the combined water level in the river exceeds what the existing channel and banks can carry, causing water to spill into adjacent residential and agricultural areas for extended periods.\n\nThe proposed flood mitigation structure will increase the effective conveyance capacity of the river at the affected reaches, allowing the channel to accommodate a higher combined volume from tidal backwater and river backflow before overtopping occurs. By raising this threshold, the structure reduces the frequency and depth of inundation even when both flood drivers occur simultaneously, and shortens the time it takes for the river to eventually clear the excess water once tide levels recede. This gives Hagonoy a meaningfully higher level of flood protection against the specific compound tidal-fluvial condition that drives its recurring flooding.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1G97SD4SKfAhaXqHft_IaMy4Odd0p2Ipt"
+    },
+    {
+      "sourceRow": 52,
+      "section": "New Projects",
+      "projectTitle": "Construction of Retarding Basin at South Central School Open Grounds, Brgy. Santo Cristo, Baliwag, Bulacan (14.95626, 120.8967)",
+      "fromExistingLine": null,
+      "toAmountPesos": 205000000,
+      "toAmountRaw": "205000000",
+      "justification": "The project is a crucial flood-mitigation intervention engineered to address severe localized stormwater runoff and inundation risks in the surrounding area. Utilizing the available open grounds at Baliwag South Central School provides a strategic, dual-purpose spatial footprint to capture, temporarily store, and attenuate peak flood volumes during intense rainfall events and typhoons. Hydrologically, the retarding basin acts as a discharge-control mechanism, preventing surrounding municipal drainage systems from becoming surcharged and gradually releasing stored water at a safe, controlled rate.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1JvHuUiOt5KRoloCZU2PtrsPAk4jVVpIX"
+    },
+    {
+      "sourceRow": 53,
+      "section": "New Projects",
+      "projectTitle": "Construction of Retarding Basin at Brgy. Bulihan, Malolos City, Bulacan (14.859608, 120.810933)",
+      "fromExistingLine": null,
+      "toAmountPesos": 66600000,
+      "toAmountRaw": "66600000",
+      "justification": "The implementation of this project is a vital civil engineering intervention designed to address severe, recurring localized flooding along major urban arterial corridors and residential areas in Malolos City. Barangay Bulihan serves as a critical commercial, institutional, and transport hub—notably traversed by the MacArthur Highway and hosting major educational institutions such as Bulacan State University—making it highly susceptible to significant surface runoff accumulation during heavy monsoon rains and typhoon events. Due to dense urban development, high ground impermeability, and low-elevation topography, existing drainage conduits rapidly become surcharged, leading to prolonged waterlogging that disrupts traffic, damages property, and poses severe safety risks to thousands of commuters, students, and residents daily.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1Kh0Cyp3kZ5-Ej6KOBz-TA7Or_7H8wHds"
+    },
+    {
+      "sourceRow": 54,
+      "section": "New Projects",
+      "projectTitle": "Construction of Retarding Basin along Sampaguita Road, Brgy. Santo Rosario, City of Malolos, Bulacan (14.839380, 120.814731)",
+      "fromExistingLine": null,
+      "toAmountPesos": 132000000,
+      "toAmountRaw": "132000000",
+      "justification": "The construction of a retarding basin along Sampaguita Road, Barangay Santa Rosario, City of Malolos, Bulacan, is an essential infrastructure project designed to mitigate severe localized flooding, severe runoff accumulation, and drainage bottlenecks along a major arterial corridor. Sampaguita Road serves as a critical local access route, but its low elevation and dense surrounding development leave it highly vulnerable to rapid stormwater accumulation during intense rainfall and typhoons. Installing an engineered retarding basin along this roadway provides indispensable temporary detention capacity, intercepting heavy surface runoff before it can submerge the road network and surrounding residential structures. By systematically controlling the discharge rate of impounded floodwaters into the main municipal drainage outlets, the facility effectively lowers peak flood levels and shortens inundation times.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1qeUY0enceXpN2SdpqNXLhd9HH94uCCp4?usp=drive_link "
+    },
+    {
+      "sourceRow": 55,
+      "section": "New Projects",
+      "projectTitle": "Rehabilitation of Road with Slope Protection along Sto. Tomas - Minalin Tail Dike (Minalin Section), including Revetment Works, Sta. 9+860 - Sta. 10+340, Brgy. Sta. Catalina, Minalin, Pampanga",
+      "fromExistingLine": null,
+      "toAmountPesos": 120000000,
+      "toAmountRaw": "120000000",
+      "justification": "Funding is requested to rehabilitate the Sto. Tomas-Minalin Tail Dike in Barangay Sta. Catalina, Minalin, Pampanga, where the dike has been breached, resulting in a gap in the existing structure. The project will restore the damaged section, provide slope protection, and rehabilitate the road to help prevent further deterioration. This will restore the dike’s protective function and ensure safer and more reliable access for residents, motorists, and commuters. ",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1TJkTWv7Zszbdt_S7MBDuqZxRhZGADRYI"
+    },
+    {
+      "sourceRow": 56,
+      "section": "New Projects",
+      "projectTitle": "Construction of Detention Basin at Brgy. Sapa, Sto. Tomas, Pampanga\n(15.001468,120.708807)",
+      "fromExistingLine": null,
+      "toAmountPesos": 300000000,
+      "toAmountRaw": "300000000",
+      "justification": "The project aims to mitigate flooding by providing temporary storage for excess runoff during heavy rainfall and controlling the flow of water to downstream areas. It will help reduce flood risks to nearby communities, properties, roads and infrastructure and improve the area’s resilience to flooding and other water-related hazards.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/11zygwlmhWqCh5kR3T_wgl3bmwn3BNk4S"
+    },
+    {
+      "sourceRow": 57,
+      "section": "New Projects",
+      "projectTitle": "Construction of Detention Basin (15.030810, 120.732303), Mexico and San Simon, Pampanga",
+      "fromExistingLine": null,
+      "toAmountPesos": 350000000,
+      "toAmountRaw": "350000000",
+      "justification": "The project is intended to reduce flooding by temporarily storing excess rainwater and regulating its discharge into downstream drainage and waterways.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1tm4n1Thl1hedOum0G117nLBQgktxssF2"
+    },
+    {
+      "sourceRow": 58,
+      "section": "New Projects",
+      "projectTitle": "Construction of Detention Basins, Beside Sagop Creek, Brgy, Triangulo (Magtoto), Naga City, Camarines Sur",
+      "fromExistingLine": null,
+      "toAmountPesos": 126200000,
+      "toAmountRaw": "126200000",
+      "justification": "To provide flood storage along Sagop Creek, reducing the volume and peak flow conveyed downstream and preventing the creek from reaching capacity rapidly, particularly during high runoff from Concepcion Pequeña that can cause backwater effects and severe flooding in the area.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1Tk1Z7lJiSC7YYsTZRp90x8NjlTG8kHe9"
+    },
+    {
+      "sourceRow": 59,
+      "section": "New Projects",
+      "projectTitle": "Construction of Detention Basins, Almeda Avenue at the back of Villa Concepcion, Naga City, Camarines Sur",
+      "fromExistingLine": null,
+      "toAmountPesos": 76200000,
+      "toAmountRaw": "76200000",
+      "justification": "Located along the upstream portion of Sagop Creek to intercept and store runoff before it reaches Concepcion Pequeña, regulating downstream discharge and reducing the volume and peak flow contributing to flooding along the creek.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1_NP70V-9iiH1KO31SIP6VZpHMAjzFhh-"
+    },
+    {
+      "sourceRow": 60,
+      "section": "New Projects",
+      "projectTitle": "Construction of Water Impounding Structure along Butuanon River, Cebu",
+      "fromExistingLine": null,
+      "toAmountPesos": 100000000,
+      "toAmountRaw": "100000000",
+      "justification": "The project is urgently needed as a strategic and long-term flood mitigation measure following the severe flooding caused by the overflow of the Butuanon River during Typhoon Tino on 04 November 2025. The proposed water impounding structure will help regulate and temporarily store excess runoff during heavy rainfall, reducing the risk of downstream flooding and protecting lives, properties, and critical infrastructure from similar future events.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1HUkGvzG6pXOIyXN6ahDvevVtMC5K93wj?usp=drive_link"
+    },
+    {
+      "sourceRow": 61,
+      "section": "New Projects",
+      "projectTitle": "Construction of Drainage Structure and Drainage Facilities along A.S. Fortuna St. and Tipolo Creek, Mandaue City, Cebu",
+      "fromExistingLine": null,
+      "toAmountPesos": 150000000,
+      "toAmountRaw": "150000000",
+      "justification": "This project is already supported with an RDC 7 endorsement and was actually funded under the FY2025 General Appropriations Act (GAA). The SAA however, still have to be released, to date.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1PWgl31lHhdUkwK7eJUroRt_6Ia5ygneM?role=writer"
+    },
+    {
+      "sourceRow": 62,
+      "section": "New Projects",
+      "projectTitle": "Construction/Maintenance of Flood Mitigation Structures and Drainage Systems, Construction of Parian Urban Drainage System, Cebu City (Section 1: Sta. 0+000.00 - Sta. 0+205.00, Section 2: Sta. 0+000.00 - Sta. 0+220.00, Section 3: Sta. 0+000.00 - Sta. 0+273.00, Section 4: Sta. 0+000.00 - Sta. 0+932.00, Section 5: Sta. 0+000.00 - Sta. 1+110.00)",
+      "fromExistingLine": null,
+      "toAmountPesos": 300000000,
+      "toAmountRaw": "300000000",
+      "justification": "This project is included in the FY2027 Regional Budget Proposal (RBP) but was not reflected in the FY2027 National Expenditure Program (NEP). The proposed site was also among the locations briefed by Regional Director Simon N. Arias to Undersecretary Charles T. Calima as an area experiencing frequent and recurring flooding, highlighting the need for the timely implementation of appropriate flood mitigation measures.",
+      "supportingFilesReference": "FC Structure_Pari-an, Cebu City"
+    },
+    {
+      "sourceRow": 63,
+      "section": "New Projects",
+      "projectTitle": "Construction of Cabayongan River Multi-Purpose Project Small River Impounding System, Cabayongan River, Jaro, Leyte (RS: 11.1599635,124.7438226, LS: 11.1590763,124.7442043)",
+      "fromExistingLine": null,
+      "toAmountPesos": 170000000,
+      "toAmountRaw": "170000000",
+      "justification": "This project is identified as a water storage measure intended to temporarily impound runoff and reduce downstream flood peaks. The structure may also provide supplemental water storage for other beneficial uses",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/11o-F3Gab8Ujt3AMwGzmUsPCnYSK4Avem?usp=drive_link"
+    },
+    {
+      "sourceRow": 64,
+      "section": "New Projects",
+      "projectTitle": "Construction/Rehabilitation of Talomo Flood Mitigation Structure along Talomo River Sta. 1519+000.00 to Sta. 1519+200.00 (Right Bank) and Sta. 1519+780.00 to Sta. 1519+846.60 (Left Bank), Talomo, Davao City",
+      "fromExistingLine": null,
+      "toAmountPesos": 41400000,
+      "toAmountRaw": "41400000",
+      "justification": "THE ENTIRE LENGTH OF TALOMO RIVER WAS AFFECTED DURING THE SOUTHWEST MONSOON LAST JULY 2026, DURING INSPECTION, IT WAS FOUND THAT THERE ARE SECTIONS WITH DAMAGED EXISTING RIVER BANK PROTECTION AND THERE ARE SECTIONS WITH GAPS.\n\nTHE PROJECT IS PROPOSED IN ORDER TO RAISE THE EXISTING GABION STRUCTURES WHERE ADDITIONAL ELEVATION WAS NECESSARY TO ENHANCE FLOOD PROTECTION AND MINIMIZE THE RISK OF OVERTOPPING DURING HEAVY RAINFALL EVENTS THAT MAY CAUSE OVERFLOWING OF FLOOD WATER TOWARDS THE LOW-LYING AREAS ADJACENT TO THE RIVER.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1OsUBrRh7kzFkkDm2kfiTxzfQVWqixTHF"
+    },
+    {
+      "sourceRow": 65,
+      "section": "New Projects",
+      "projectTitle": "Construction/Rehabilitation of Talomo Flood Mitigation Structure along Talomo River Sta. 1519+320.00 to Sta. 1519+580.00, Talomo, Davao City",
+      "fromExistingLine": null,
+      "toAmountPesos": 63000000,
+      "toAmountRaw": "63000000",
+      "justification": null,
+      "supportingFilesReference": null
+    },
+    {
+      "sourceRow": 66,
+      "section": "New Projects",
+      "projectTitle": "Construction/Rehabilitation of Talomo Flood Mitigation Structure along Talomo River Sta. 1519+000.00 to 1519+320.00, Talomo, Davao City",
+      "fromExistingLine": null,
+      "toAmountPesos": 108000000,
+      "toAmountRaw": "108000000",
+      "justification": null,
+      "supportingFilesReference": null
+    },
+    {
+      "sourceRow": 68,
+      "section": "New Projects",
+      "projectTitle": "Construction of Nature Based Solution Coastal Defense in Barangay Masukol, Paombong, Bulacan (14.762244, 120.770711)",
+      "fromExistingLine": null,
+      "toAmountPesos": 96494000,
+      "toAmountRaw": "96494000",
+      "justification": "The implementation of the Construction of Nature-Based Solution Coastal Defense in Barangay Masukol, Paombong, Bulacan is technically essential to mitigate severe coastal erosion, storm surges, and tidal flooding that threaten vulnerable coastal communities along Manila Bay. Traditional grey infrastructure often suffers from long-term degradation and high maintenance costs in dynamic marine environments, whereas a nature-based coastal defense—such as mangrove restoration, living breakwaters, or bio-engineered revetments—provides adaptive, self-sustaining shore stabilization. By trapping sediments, dissipating wave energy, and enhancing natural ecosystems, this sustainable intervention delivers long-term disaster risk reduction, restores aquatic biodiversity, and protects vital local livelihoods and infrastructure against accelerating climate change impacts.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/10EFYs3grMiyzhKHdum_o3lOtpxzHU3o5"
+    },
+    {
+      "sourceRow": 69,
+      "section": "New Projects",
+      "projectTitle": "Construction of Nature Based Solution Coastal Defense in Barangay Sta. Cruz, Paombong, Bulacan (14.758897, 120.792747)",
+      "fromExistingLine": null,
+      "toAmountPesos": 80411000,
+      "toAmountRaw": "80411000",
+      "justification": "The implementation of the Construction of Nature-Based Solution Coastal Defense in Barangay Sta. Cruz, Paombong, Bulacan is technically essential to mitigate severe coastal erosion, tidal inundation, and storm surge vulnerabilities along the low-lying Manila Bay coastline. Traditional concrete seawalls are prone to structural undermining and high lifecycle maintenance costs in dynamic wetland conditions, whereas a nature-based coastal defense—incorporating elements like mangrove greenbelts, sediment-trapping permeable brushwood dams, or living breakwaters—offers an adaptive, self-reinforcing buffer. By attenuating wave energy, capturing natural sediment to combat land subsidence, and reinforcing shoreline integrity, this sustainable engineering approach provides long-term flood resilience, safeguards local coastal communities, and enhances estuarine ecosystems without disrupting natural hydrologic functions.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1YjTuE6L6N_LNw2tblyeZRtqtfcqnEX_p"
+    },
+    {
+      "sourceRow": 70,
+      "section": "New Projects",
+      "projectTitle": "Construction of Nature Based Solution Coastal Defense in Barangay Tibaguin, Hagonoy, Bulacan (14.772167, 120.752300)",
+      "fromExistingLine": null,
+      "toAmountPesos": 80409000,
+      "toAmountRaw": "80409000",
+      "justification": "The implementation of the Construction of Nature-Based Solution Coastal Defense in Barangay Tibaguin, Hagonoy, Bulacan is technically essential to mitigate severe coastal erosion, high-tide inundation, and extreme storm surge risks along the vulnerable shoreline of Manila Bay. Traditional concrete seawalls often face structural failures, scouring, and exorbitant maintenance costs due to rapid land subsidence and shifting coastal dynamics in Hagonoy. By contrast, a nature-based coastal defense—such as integrated mangrove vegetation belts, mudflat restoration, or permeable wave-attenuating structures—provides an adaptive, self-sustaining barrier. This eco-engineering solution absorbs wave energy, promotes natural sediment deposition to raise ground elevation, and strengthens shoreline resilience while preserving local estuarine ecosystems and safeguarding the lives, homes, and aquaculture livelihoods of Barangay Tibaguin.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1AKQEI900iJ-BHE1LKPLJ7hO5uJHIGBLX"
+    },
+    {
+      "sourceRow": 71,
+      "section": "New Projects",
+      "projectTitle": "Construction of Retarding Basin at Engr. Virgilio V. Dionisio Memorial Highschool, Brgy. Poblacion, Pulilan, Bulacan \n(14.8999, 120.8472)",
+      "fromExistingLine": null,
+      "toAmountPesos": 105600000,
+      "toAmountRaw": "105600000",
+      "justification": "The construction of a retarding basin at Engr. Virgilio V. Dionisio Memorial High School in Brgy. Poblacion, Pulilan, Bulacan is a critical civil engineering intervention designed to attenuate excessive stormwater runoff and mitigate acute localized flooding within school grounds and surrounding low-lying communities. By temporarily impounding peak runoff volumes during intense precipitation events and releasing them at a controlled rate into the municipal drainage network, the basin relieves hydraulic pressure on existing conveyance structures, prevents surface inundation, and reduces soil erosion. Implementing this infrastructure safeguards vital academic facilities and administrative assets, minimizes flood-related disruptions to instructional operations, and guarantees a secure, resilient learning environment for students and personnel during heavy rains.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/18aOuetDscNIhA8SK3oeLdSFgxmjdpTN4"
+    },
+    {
+      "sourceRow": 72,
+      "section": "New Projects",
+      "projectTitle": "Construction of Retarding Basin at Government Center, Barangay Peñabatan, Pulilan, Bulacan (14.9274, 120.8415)",
+      "fromExistingLine": null,
+      "toAmountPesos": 264000000,
+      "toAmountRaw": "264000000",
+      "justification": "The construction of a retarding basin at the Government Center in Barangay Peñabatan, Pulilan, Bulacan is technically necessary to mitigate acute localized flooding and manage peak stormwater runoff generated during extreme rainfall events. By providing temporary off-stream or in-line volume storage, the basin will effectively lower peak discharge rates into the surrounding drainage network, alleviating hydraulic pressure on downstream channels and preventing inundation of critical municipal administrative infrastructure. Furthermore, controlled attenuation and gradual release of floodwaters protect surrounding public facilities and residential zones from soil erosion, structural water damage, and severe operational disruptions, thereby ensuring climate resilience and continuous delivery of essential civic services. During dry season, water impounded will be served as irrigation water in farmland.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1zxfDF984cWCp358RCbWWkT9HQsB4mzsj"
+    },
+    {
+      "sourceRow": 73,
+      "section": "New Projects",
+      "projectTitle": "Construction of Flood Control Structure along Sibuguey River, Siay, Zamboanga Sibugay 0 + 000 to 0 + 245",
+      "fromExistingLine": null,
+      "toAmountPesos": 50000000,
+      "toAmountRaw": "50000000",
+      "justification": "To provide continued protection against riverbank erosion as it forms part of the Sibuguey River Master Plan (MP). The proposed segment is designed to complete, extend, and strengthen the existing riverbank protection works in accordance with the overall flood mitigation and river management strategy established under the MP, thereby ensuring continuity and functional integration with the existing system.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1fZ2gSEhQgiHIMV4Mte1rlm8ES-33gACW"
+    },
+    {
+      "sourceRow": 74,
+      "section": "New Projects",
+      "projectTitle": "Construction of River Wall along the Sibuguey River, Barangay Minsulao to Barangay Paruk, Siay, Zamboanga Sibugay\n0 + 000 to 0 + 228",
+      "fromExistingLine": null,
+      "toAmountPesos": 50000000,
+      "toAmountRaw": "50000000",
+      "justification": "To provide continued protection against riverbank erosion as it forms part of the Sibuguey River Master Plan (MP). The proposed segment is designed to complete, extend, and strengthen the existing riverbank protection works in accordance with the overall flood mitigation and river management strategy established under the MP, thereby ensuring continuity and functional integration with the existing system.",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1OWYroYTq0LPOGt1auWMEygiao5E-59kN"
+    },
+    {
+      "sourceRow": 75,
+      "section": "New Projects",
+      "projectTitle": "Repair/Maintenance of Porac River Revetment 5, Sta. 0+000 - Sta. 0+240, Sto. Cristo, Lubao, Pampanga",
+      "fromExistingLine": null,
+      "toAmountPesos": 50000000,
+      "toAmountRaw": "50000000",
+      "justification": "The proposed project has been identified as necessary, urgent, and vital to address the extensive structural collapse of the existing river dike revetment caused by the recent typhoons Luis, Maymay, Neneng and Pilandok, and the enhanced Southwest Moonsoon (Habagat). \n\nThe structural integrity of the riverbank embankment is severely compromised and at risk of total failure without immediate intervention. The river corridor serves as a critical natural drainage channel subjected to intense seasonal runoff and high-velocity flood flows during heavy rainfall events. \n\nThe current riverbank collapse and localized erosion directly expose adjacent residential structures, public utilities, and nearby agricultural land to imminent flooding, land loss, and structural destruction. Reconstructing the damaged slope protection is essential to provide the high erosion resistance, hydraulic stability, and long-term durability required to withstand scouring, thereby protecting community lives and properties.\n",
+      "supportingFilesReference": "https://drive.google.com/drive/folders/1ZGTFHsMqWH6KfBhG9nSt7ikcmpvRV9X0"
+    }
+  ]
+}
