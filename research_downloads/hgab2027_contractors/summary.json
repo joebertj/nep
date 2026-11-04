@@ -1,0 +1,271 @@
+{
+ "schema": 1,
+ "built_at": "2026-11-03T02:48:15+00:00",
+ "source": {
+  "api": "https://api.dpwh.bettergov.ph/projects",
+  "downloaded_from": "2026-11-03T00:03:59+00:00",
+  "downloaded_to": "2026-11-03T00:20:17+00:00",
+  "contracts": 267292,
+  "api_summary": {
+   "totalProjects": 267292,
+   "completed": 215660,
+   "ongoing": 31543,
+   "notStarted": 2466,
+   "forProcurement": 16560,
+   "terminated": 1063,
+   "totalBudget": 6619647704687.88
+  }
+ },
+ "totals": {
+  "contractors": 6728,
+  "contracts_with_contractor": 250722,
+  "contracts_without_contractor": 16570,
+  "amount_php": 6619631324009.84,
+  "joint_venture_contracts": 11804,
+  "revoked_contractors": 9,
+  "map_lines_with_contract": 39436,
+  "map_lines_fy2020_2026": 49376,
+  "years": [
+   2016,
+   2026
+  ]
+ },
+ "gaa_links": {
+  "years": [
+   {
+    "fy": 2020,
+    "lines": 21055,
+    "gaa_php": 558014622000,
+    "contracts_funded": 21152,
+    "contracts_funded_php": 474270583723.94,
+    "contracts_linked": 15751,
+    "contracts_linked_php": 310306327557.31,
+    "one_to_one": {
+     "lines": 15682,
+     "gaa_php": 323286464000
+    },
+    "bundle": {
+     "lines": 233,
+     "gaa_php": 2000264000
+    },
+    "none": {
+     "lines": 5140,
+     "gaa_php": 232727894000
+    }
+   },
+   {
+    "fy": 2021,
+    "lines": 28422,
+    "gaa_php": 675353163000,
+    "contracts_funded": 22769,
+    "contracts_funded_php": 466732540841.16,
+    "contracts_linked": 17287,
+    "contracts_linked_php": 325488442491.96,
+    "one_to_one": {
+     "lines": 17196,
+     "gaa_php": 336974535500
+    },
+    "bundle": {
+     "lines": 287,
+     "gaa_php": 2485777000
+    },
+    "none": {
+     "lines": 10939,
+     "gaa_php": 335892850500
+    }
+   },
+   {
+    "fy": 2022,
+    "lines": 22866,
+    "gaa_php": 770681351000,
+    "contracts_funded": 22808,
+    "contracts_funded_php": 727114267799.27,
+    "contracts_linked": 17052,
+    "contracts_linked_php": 503511801207.7,
+    "one_to_one": {
+     "lines": 17003,
+     "gaa_php": 519853136000
+    },
+    "bundle": {
+     "lines": 129,
+     "gaa_php": 3908424000
+    },
+    "none": {
+     "lines": 5734,
+     "gaa_php": 246919791000
+    }
+   },
+   {
+    "fy": 2023,
+    "lines": 23263,
+    "gaa_php": 874608971000,
+    "contracts_funded": 24528,
+    "contracts_funded_php": 838567320823.99,
+    "contracts_linked": 17119,
+    "contracts_linked_php": 574619941529.11,
+    "one_to_one": {
+     "lines": 17066,
+     "gaa_php": 592276620000
+    },
+    "bundle": {
+     "lines": 168,
+     "gaa_php": 3313954000
+    },
+    "none": {
+     "lines": 6029,
+     "gaa_php": 279018397000
+    }
+   },
+   {
+    "fy": 2024,
+    "lines": 24955,
+    "gaa_php": 977731546000,
+    "contracts_funded": 26894,
+    "contracts_funded_php": 962111057782.4,
+    "contracts_linked": 18704,
+    "contracts_linked_php": 666920861458.63,
+    "one_to_one": {
+     "lines": 18665,
+     "gaa_php": 680977371000
+    },
+    "bundle": {
+     "lines": 127,
+     "gaa_php": 3788628000
+    },
+    "none": {
+     "lines": 6163,
+     "gaa_php": 292965547000
+    }
+   },
+   {
+    "fy": 2025,
+    "lines": 25596,
+    "gaa_php": 1068689040000,
+    "contracts_funded": 24434,
+    "contracts_funded_php": 863250927748.49,
+    "contracts_linked": 18359,
+    "contracts_linked_php": 641360981675.19,
+    "one_to_one": {
+     "lines": 18325,
+     "gaa_php": 667464849000
+    },
+    "bundle": {
+     "lines": 122,
+     "gaa_php": 3067146000
+    },
+    "none": {
+     "lines": 7149,
+     "gaa_php": 398157045000
+    }
+   },
+   {
+    "fy": 2026,
+    "lines": 18132,
+    "gaa_php": 496927726000,
+    "contracts_funded": 5868,
+    "contracts_funded_php": 132730211162.56,
+    "contracts_linked": 4596,
+    "contracts_linked_php": 100288766797.55,
+    "one_to_one": {
+     "lines": 4594,
+     "gaa_php": 105272425000
+    },
+    "bundle": {
+     "lines": 5,
+     "gaa_php": 19000000
+    },
+    "none": {
+     "lines": 13533,
+     "gaa_php": 391636301000
+    }
+   }
+  ],
+  "rules": {
+   "title_min": 90,
+   "region_title_min": 95,
+   "amount_ratio": [
+    0.5,
+    1.02
+   ]
+  },
+  "built_at": "2026-11-03T00:37:10+00:00"
+ },
+ "shards": 64,
+ "checks": {
+  "every_contract_with_a_contractor_is_listed": true,
+  "contract_amounts_add_up": true,
+  "index_counts_equal_shards": true,
+  "keys_unique": true,
+  "every_linked_contract_has_a_contractor": true,
+  "map_lines_are_map_lines": true
+ },
+ "outputs": {
+  "c/00.json": "fcc801528b1bd3bbedcd0dcb5723072f07027c2d76ccf723c4d6556ca441cc49",
+  "c/01.json": "03dc2442be0e0989f2943f22fb9888588e698c17de8e7b47894f06b8a6bdfade",
+  "c/02.json": "1fcb132f12f3b4b51955446c723d2e7ba4534f4ed0927a24d200b92043bd9ec7",
+  "c/03.json": "50615b4be7d422d0f6f85b33185b4dcb326647c9f3bc308865931052e79e2eb0",
+  "c/04.json": "943d668d1c184115028bbe4219db9de6397bac938abcfa53fce9def6f1b00651",
+  "c/05.json": "1094108caf241900bee2b2d63ce682f9891be2886e2cbfd08d2c67f1446b8406",
+  "c/06.json": "bd5e110bd3664aeee176882dd042d81a3910c855d90a0d71b36828d0a83f2425",
+  "c/07.json": "7bb35a3fdbfbe55b871ac02981df15125b6bda1be309b2188bc5932a760c33e0",
+  "c/08.json": "3bc7a5bf587aa3eb2cc539876502e6aaf339a7a057517578e1777de5af10109b",
+  "c/09.json": "583542670ebcaa9da8f8d67112666cb24ad3c8308720c3f8f25e83ec931752b4",
+  "c/10.json": "11eb46ef073af4ac64743c582f4b0315bfec6830e070864711446330b0b375bb",
+  "c/11.json": "70923496ad98e46cc9370d7f67c0144e063f5fd19717e988571e7220309135c4",
+  "c/12.json": "ffd2037eb4fd59fc88245022a258254a38e9eb1b2c0e70e27c2309c3a75c5b76",
+  "c/13.json": "1a5b74be0d345bb5eef9d4bbd0630c94bf9324bb855efc5fd41381cf573469f5",
+  "c/14.json": "dc7f82f578f7eabe5cd7d42e23842bd73b654f76b51b84628f8c70444c058f38",
+  "c/15.json": "860e89d3d028a48d0e146fd153a4e4f290b1c478a2115ea624ee57e0f0ce0bed",
+  "c/16.json": "89061ec1e05be840c6011e0736feb437792a1eef62d1a3526f7696d084c65517",
+  "c/17.json": "e7ae203e84091eec99c94fed7cfa940ca5b57bc3b72b30a07700d5e2d588fdde",
+  "c/18.json": "158e19c88f2542e985d381695186cabbd7ab3dfe827b00d483de545931b514be",
+  "c/19.json": "f14882dea5c411f177d3f7992ddc758b0958a889cf6a9bca5f46aeb4cb9a4bb4",
+  "c/20.json": "26f930892f35afa944b75da32517cfe11d8485f7b688661a6b1799ad837e273b",
+  "c/21.json": "6f6fdf223e92e21276c2c54acb79baacb0b4d037beeed23c646d93ff92edbdf0",
+  "c/22.json": "eabc3193ac76b492dc682e8d784343a7cd94d19896c05a92246e8a7468a918e7",
+  "c/23.json": "9ce68211cc2ddd445d147c84275dced924ce0b277b310a1af56b6b0eaf88646c",
+  "c/24.json": "d7ed17c6e030897bfa501830fa74bed456568b37aac4d99cbcd5dbb7cce79a88",
+  "c/25.json": "6def6e65c5ca4010ca6e60139f799495bca11a78f666299fa9a99a48f5a0e49b",
+  "c/26.json": "e98a6f00223f1500f33caaa0fa3ef4d928b58228c86551f1b1706b0276e5eddd",
+  "c/27.json": "67bc8b6c1be36c6a0c26abac87509a8ca4ba7205f5b2309e65f8bc06df0e0d54",
+  "c/28.json": "d20072827d166a96b0e0992ee7815dd326848206a2c7b333f16f10a92a49989b",
+  "c/29.json": "1b5e9bb04b25ecb9ac010fec2268d355f7ace520985b8aae0e8894299883b8be",
+  "c/30.json": "766e9fe90c1a9c143824a4ca5cca8f7e8d085a1dad2e5a44e3ec7a11d6458cfd",
+  "c/31.json": "53caa34055c65865b26105dad133893e9ab50489863a33fa5d1c56bc13f310f2",
+  "c/32.json": "4010723343b7b0d2096b00dd4199348d032f7f656be2aa2aaa0e8e1ed13d9313",
+  "c/33.json": "a20b39bd09d4739cd15d379941f6f070cbca2a4ef8b6c6f5589b228d695d9c90",
+  "c/34.json": "bf82117ac60119657110cf6c1cfa2d1807c8c04707e68950cec89da16ab934d0",
+  "c/35.json": "2b940f12c6f16376c1b1d405d0f3eec4ecf013992aa44ff0ac8eae5aa0815596",
+  "c/36.json": "aa41987b06f53607eae6a3b88b7b08b3128a1a1799ac3e79f110d82a838ad44d",
+  "c/37.json": "a180623e78da962160d6cacb5f358660eaed1bb487b43df90ad0ce46509e3bef",
+  "c/38.json": "ed0686f5425bab3c4f58d592392fdce4b2d589879cb709da10d4272233bcfc49",
+  "c/39.json": "5d27ff7b4ba9cfbd211c8336af2ce1ccb55b304d78eaf7ffc78e22ae1bd9881b",
+  "c/40.json": "a5fb2ac7b9b5c3dc0b0a991547b8bcce0ec918a26434dbe3021ff9bdf76e8188",
+  "c/41.json": "d6aff9e95a586b48504c59ed54b2716770d985c38c54e4c4e20c0f566bb9859c",
+  "c/42.json": "fcaa6d8d36e497a73c748626d3a9963878f77539d9c8f6e817208a7202df3380",
+  "c/43.json": "a2df9684f9426765637b2b18b07f7b3a42096e574a738d7dc6763ad6e0e63b82",
+  "c/44.json": "781ae817f23044580ff4eb6a5a0ed6c9a5ddca24aacf20a47238bf887ad0721c",
+  "c/45.json": "0f39287472430ec910d9e875f73102d5040572ced5f2359ee71c60e12f670f0a",
+  "c/46.json": "44336df719bb252624c7d78a2f72e6573acf9acdd92c07daf07db8652f86184f",
+  "c/47.json": "fa6ebbe470be5b1dee81cd895b209ebf5d664739e271280ed3453496fd50e17a",
+  "c/48.json": "5fbc35c09427bf87c6a2459ff4f1d3f8125be87c29b2901cbb55f8ffaca5a207",
+  "c/49.json": "54debd96704dff29a1d9624dce8dc367c22287f3c23e89bc609542de92dcd283",
+  "c/50.json": "68ec1f5fdba562fbdf6782a9f6872a44342ab74dc47cdc70e0f1e89f7686e474",
+  "c/51.json": "96ef2e4e29897db05fd1c9c2629ff3da278c9620bdf40031f781e72ca3a6f47f",
+  "c/52.json": "6c4f61c5d9a3fe8952d21f9df46f31c073d6d07a4e827705a5237dc0bb6d9dba",
+  "c/53.json": "4ac1c8d155149c6a19ce4d9a87bf98b2a2568ea7158c96af7c291a3dbe80de47",
+  "c/54.json": "15668350824ee2cdfc952b776c903523ddcf1b1f628f74c8af041fd5249b8e26",
+  "c/55.json": "31075be19eb4676e79f91e9f96793c6223a602174ea4feef16ca128e8b8880f0",
+  "c/56.json": "ae2a56d9c3a1dacc60efd4b67fc780184ffce63665e1fc53352a032b9bf846f5",
+  "c/57.json": "7530837b9de8d66ce23d11cee95d68a1943b6470414fc3b817a652dd1d2b8662",
+  "c/58.json": "e46aac5bee2d97c4b6ad9c5d84e41aa4c39556cd25c4919065f32c9ff48b4c6a",
+  "c/59.json": "0c06c2ab64d0eea278e405df78fcc8b8bfaa14bef8bb3863a238d0a20ab0bff2",
+  "c/60.json": "e01463a1dabe1aa75a6a599171ac1e9b3da8283d0a5d20e99bdbece94e52aac7",
+  "c/61.json": "2ebe82c84619c35948f67704b2a3e1665444fdbf33279e4cbb9acbcd369778f9",
+  "c/62.json": "f668beb4e04257dbdffc38765b1c7175cec2e0c2f9eb26f208b0f823d6dc5791",
+  "c/63.json": "44e1f8e78b51f277bcba2e26c327dec449db9c4b0d648f30577d433711e92009",
+  "contractors.csv": "298abf4f7c9297fdc2c68dc2d0c3672da700be822a382fdf8c09e190801827e0",
+  "index.json": "0d36a79942fa05cf2e2817c4b9bfbc98e7983a541123a72027a0d4de4bf1d13b",
+  "mpb-links.json": "5f43e889f617762354ab8e2bfd167415ab9d7faeb9533a3b8e613dac21d418a2"
+ }
+}

@@ -1,0 +1,492 @@
+{
+ "schema": 1,
+ "built_at": "2026-11-03T07:20:36Z",
+ "title": "DPWH contractors and the GAA lines their contracts carry, FY2016–FY2026",
+ "base_url": "https://budget-assets.bettergov.ph/hgab/2027/contractors/downloads",
+ "pipeline_commit": "d4356a3e4e1b6543e392dc363049dacc699a067d",
+ "pipeline": {
+  "repo": "https://github.com/bettergovph/ai-budget",
+  "scripts": "scripts/dpwh-contracts/",
+  "build": "npm run build:hgab-contractors",
+  "verify": "npm run verify:hgab (contractors/ section)",
+  "docs": "docs/dpwh-contracts.md"
+ },
+ "notice": "Independent and unofficial: our reading of DPWH’s contract list and the GAA, not an official record. Contractor names, license numbers, amounts and statuses are as DPWH’s list publishes them; amounts are contract amounts, not payments. DPWH does not publish which GAA line a contract carries: the links are our match by title, office and amount, and may be wrong. A contract, a total or a ranking alone does not establish irregularity or wrongdoing by any contractor, office or official.",
+ "sources": [
+  {
+   "name": "DPWH contract list",
+   "url": "https://api.dpwh.bettergov.ph/projects",
+   "via": "bettergovph/api.dpwh (cached proxy over DPWH’s transparency portal)",
+   "portal": "https://transparency.dpwh.gov.ph",
+   "downloaded_from": "2026-11-03T00:03:59+00:00",
+   "downloaded_to": "2026-11-03T00:20:17+00:00",
+   "contracts": 267292,
+   "api_summary": {
+    "totalProjects": 267292,
+    "completed": 215660,
+    "ongoing": 31543,
+    "notStarted": 2466,
+    "forProcurement": 16560,
+    "terminated": 1063,
+    "totalBudget": 6619647704687.88
+   }
+  },
+  {
+   "name": "GAA FY2020–FY2026, DPWH capital outlays",
+   "file": "data/18/full_extract.csv (the site’s GAA extract)",
+   "explorer": "https://budget.bettergov.ph/gaa"
+  }
+ ],
+ "method": {
+  "match": {
+   "title_min": 90,
+   "region_title_min": 95,
+   "amount_ratio": [
+    0.5,
+    1.02
+   ]
+  },
+  "kinds": {
+   "one_to_one": "one contract for the line",
+   "bundle": "one contract for several lines"
+  },
+  "same_year": "a line is compared only with contracts funded from the same year’s GAA",
+  "left_out": "several contracts for one line (splits): a sample check found a third right"
+ },
+ "totals": {
+  "contracts": 267292,
+  "contracts_with_contractor": 250722,
+  "contractors": 6728,
+  "contract_amount_php": 6619631324009.84,
+  "joint_venture_contracts": 11804,
+  "gaa_lines": 164289,
+  "gaa_lines_matched": 109602,
+  "by_year": [
+   {
+    "fy": 2020,
+    "lines": 21055,
+    "gaa_php": 558014622000,
+    "contracts_funded": 21152,
+    "contracts_funded_php": 474270583723.94,
+    "contracts_linked": 15751,
+    "contracts_linked_php": 310306327557.31,
+    "one_to_one": {
+     "lines": 15682,
+     "gaa_php": 323286464000
+    },
+    "bundle": {
+     "lines": 233,
+     "gaa_php": 2000264000
+    },
+    "none": {
+     "lines": 5140,
+     "gaa_php": 232727894000
+    }
+   },
+   {
+    "fy": 2021,
+    "lines": 28422,
+    "gaa_php": 675353163000,
+    "contracts_funded": 22769,
+    "contracts_funded_php": 466732540841.16,
+    "contracts_linked": 17287,
+    "contracts_linked_php": 325488442491.96,
+    "one_to_one": {
+     "lines": 17196,
+     "gaa_php": 336974535500
+    },
+    "bundle": {
+     "lines": 287,
+     "gaa_php": 2485777000
+    },
+    "none": {
+     "lines": 10939,
+     "gaa_php": 335892850500
+    }
+   },
+   {
+    "fy": 2022,
+    "lines": 22866,
+    "gaa_php": 770681351000,
+    "contracts_funded": 22808,
+    "contracts_funded_php": 727114267799.27,
+    "contracts_linked": 17052,
+    "contracts_linked_php": 503511801207.7,
+    "one_to_one": {
+     "lines": 17003,
+     "gaa_php": 519853136000
+    },
+    "bundle": {
+     "lines": 129,
+     "gaa_php": 3908424000
+    },
+    "none": {
+     "lines": 5734,
+     "gaa_php": 246919791000
+    }
+   },
+   {
+    "fy": 2023,
+    "lines": 23263,
+    "gaa_php": 874608971000,
+    "contracts_funded": 24528,
+    "contracts_funded_php": 838567320823.99,
+    "contracts_linked": 17119,
+    "contracts_linked_php": 574619941529.11,
+    "one_to_one": {
+     "lines": 17066,
+     "gaa_php": 592276620000
+    },
+    "bundle": {
+     "lines": 168,
+     "gaa_php": 3313954000
+    },
+    "none": {
+     "lines": 6029,
+     "gaa_php": 279018397000
+    }
+   },
+   {
+    "fy": 2024,
+    "lines": 24955,
+    "gaa_php": 977731546000,
+    "contracts_funded": 26894,
+    "contracts_funded_php": 962111057782.4,
+    "contracts_linked": 18704,
+    "contracts_linked_php": 666920861458.63,
+    "one_to_one": {
+     "lines": 18665,
+     "gaa_php": 680977371000
+    },
+    "bundle": {
+     "lines": 127,
+     "gaa_php": 3788628000
+    },
+    "none": {
+     "lines": 6163,
+     "gaa_php": 292965547000
+    }
+   },
+   {
+    "fy": 2025,
+    "lines": 25596,
+    "gaa_php": 1068689040000,
+    "contracts_funded": 24434,
+    "contracts_funded_php": 863250927748.49,
+    "contracts_linked": 18359,
+    "contracts_linked_php": 641360981675.19,
+    "one_to_one": {
+     "lines": 18325,
+     "gaa_php": 667464849000
+    },
+    "bundle": {
+     "lines": 122,
+     "gaa_php": 3067146000
+    },
+    "none": {
+     "lines": 7149,
+     "gaa_php": 398157045000
+    }
+   },
+   {
+    "fy": 2026,
+    "lines": 18132,
+    "gaa_php": 496927726000,
+    "contracts_funded": 5868,
+    "contracts_funded_php": 132730211162.56,
+    "contracts_linked": 4596,
+    "contracts_linked_php": 100288766797.55,
+    "one_to_one": {
+     "lines": 4594,
+     "gaa_php": 105272425000
+    },
+    "bundle": {
+     "lines": 5,
+     "gaa_php": 19000000
+    },
+    "none": {
+     "lines": 13533,
+     "gaa_php": 391636301000
+    }
+   }
+  ]
+ },
+ "accuracy": {
+  "sampled": 299,
+  "confirmed": 284,
+  "by_kind": {
+   "bundle": {
+    "sampled": 59,
+    "fetched": 59,
+    "confirmed": 51,
+    "share": 0.864,
+    "links_in_stratum": 1071
+   },
+   "one_to_one, all offices, several candidates": {
+    "sampled": 40,
+    "fetched": 40,
+    "confirmed": 39,
+    "share": 0.975,
+    "links_in_stratum": 6777
+   },
+   "one_to_one, all offices, sole candidate": {
+    "sampled": 40,
+    "fetched": 40,
+    "confirmed": 39,
+    "share": 0.975,
+    "links_in_stratum": 17989
+   },
+   "one_to_one, same office, several candidates": {
+    "sampled": 40,
+    "fetched": 40,
+    "confirmed": 39,
+    "share": 0.975,
+    "links_in_stratum": 27429
+   },
+   "one_to_one, same office, sole candidate": {
+    "sampled": 40,
+    "fetched": 40,
+    "confirmed": 40,
+    "share": 1.0,
+    "links_in_stratum": 50192
+   },
+   "one_to_one, same region, several candidates": {
+    "sampled": 40,
+    "fetched": 40,
+    "confirmed": 36,
+    "share": 0.9,
+    "links_in_stratum": 737
+   },
+   "one_to_one, same region, sole candidate": {
+    "sampled": 40,
+    "fetched": 40,
+    "confirmed": 40,
+    "share": 1.0,
+    "links_in_stratum": 5407
+   }
+  },
+  "note": "Confirmed = a component title of the fetched contract equals the line’s (ratio ≥ 90). Most of the rest are the same project worded differently; by hand about 1 in 100 one-to-one links is wrong."
+ },
+ "readme": {
+  "file": "README.md",
+  "bytes": 5071,
+  "sha256": "29b4ede5a802d0827c8a59c1d373cc44c61c72f9824437ea05e21f4e6726d250",
+  "url": "https://budget-assets.bettergov.ph/hgab/2027/contractors/downloads/README.md?v=29b4ede5a802"
+ },
+ "zip": {
+  "file": "dpwh-contractors-gaa-2020-2026.zip",
+  "bytes": 26204748,
+  "sha256": "bb56db787c33476638987240ec547a6a89da9255ba1004f4f42f3b2802e0006a",
+  "url": "https://budget-assets.bettergov.ph/hgab/2027/contractors/downloads/dpwh-contractors-gaa-2020-2026.zip?v=bb56db787c33"
+ },
+ "accuracy_sample": {
+  "file": "match-accuracy-sample.json",
+  "bytes": 8537,
+  "sha256": "3758030fa2cc6829b7e6dfffacc05e9e936f910040ae8b53223a48d06ec2d24c",
+  "url": "https://budget-assets.bettergov.ph/hgab/2027/contractors/downloads/match-accuracy-sample.json?v=3758030fa2cc"
+ },
+ "files": [
+  {
+   "key": "dpwh-contracts-2016-2026",
+   "title": "DPWH’s contract list, FY2016–FY2026",
+   "about": "Every contract in DPWH’s list as downloaded, all its list fields, one row per contract; with DPWH’s page for each.",
+   "rows": 267292,
+   "csv": {
+    "file": "dpwh-contracts-2016-2026.csv.gz",
+    "bytes": 15640064,
+    "sha256": "110287e2cac013122077a01df90b9a38cb472b89de841ac7a81e6f692ebf4914",
+    "url": "https://budget-assets.bettergov.ph/hgab/2027/contractors/downloads/dpwh-contracts-2016-2026.csv.gz?v=110287e2cac0"
+   },
+   "parquet": {
+    "file": "dpwh-contracts-2016-2026.parquet",
+    "bytes": 13080895,
+    "sha256": "cf5b390712ba1581527f7c98bb9b002fc40b0974e3fff2ec458d04ca1ff8dd6e",
+    "url": "https://budget-assets.bettergov.ph/hgab/2027/contractors/downloads/dpwh-contracts-2016-2026.parquet?v=cf5b390712ba"
+   },
+   "columns": {
+    "contract_id": "DPWH contract ID, as its contract list has it (e.g. 23AE0052).",
+    "dpwh_url": "DPWH’s own page for the contract on its transparency portal.",
+    "description": "Contract description, as listed (DPWH cuts it at 255 characters).",
+    "category": "Infrastructure type, as listed.",
+    "component_categories": "Infrastructure types of the contract’s components, as listed.",
+    "status": "Completed, On-Going, Not Yet Started, Terminated or For Procurement.",
+    "contract_php": "Contract amount in pesos, as listed (centavos kept). Not a payment.",
+    "amount_paid_php": "Amount paid, as listed (mostly 0 in the list).",
+    "progress_percent": "Physical progress, percent, as listed.",
+    "dpwh_office": "The DPWH office holding the contract (\"La Union 1st DEO\", \"Region V\").",
+    "region": "Region, as listed.",
+    "contractor": "Contractor(s) with license numbers in brackets; joint-venture partners separated by \" / \"; some licenses tagged \"[REVOKED]\". Empty for contracts not yet awarded.",
+    "start_date": "Start date, as listed.",
+    "completion_date": "Completion date, as listed.",
+    "infra_year": "DPWH’s year for the contract.",
+    "program_name": "Regular Infra or Outside Infra, as listed.",
+    "source_of_funds": "Fund source, as listed (\"Regular Infra - GAA 2023 SSP\").",
+    "gaa_year": "The GAA year named in source_of_funds; empty when it names none.",
+    "latitude": "Latitude, as listed.",
+    "longitude": "Longitude, as listed.",
+    "report_count": "Reports on the contract in DPWH’s portal, as listed.",
+    "has_satellite_image": "Whether DPWH’s portal has a satellite image, as listed.",
+    "is_live": "Whether DPWH’s portal shows a live stream, as listed.",
+    "livestream_url": "Live stream address, as listed.",
+    "livestream_video_id": "Live stream video ID, as listed.",
+    "livestream_detected_at": "When the live stream was detected, as listed."
+   }
+  },
+  {
+   "key": "dpwh-contractors-2016-2026",
+   "title": "Every DPWH contractor, with its figures",
+   "about": "One row per contractor (by license number): contracts, amounts by year, joint ventures, offices, GAA lines matched.",
+   "rows": 6728,
+   "csv": {
+    "file": "dpwh-contractors-2016-2026.csv",
+    "bytes": 1814691,
+    "sha256": "1b486790a47e82ce93d553d01739dc456036f8dd45047a8c0aa717d50e66e1ca",
+    "url": "https://budget-assets.bettergov.ph/hgab/2027/contractors/downloads/dpwh-contractors-2016-2026.csv?v=1b486790a47e"
+   },
+   "parquet": {
+    "file": "dpwh-contractors-2016-2026.parquet",
+    "bytes": 555981,
+    "sha256": "b5516711b6566ab3a233a8b9923b2019029b3a408530ab464a2c98e266e80373",
+    "url": "https://budget-assets.bettergov.ph/hgab/2027/contractors/downloads/dpwh-contractors-2016-2026.parquet?v=b5516711b656"
+   },
+   "columns": {
+    "contractor": "Contractor name: the one most of its contracts list.",
+    "license_id": "License number as DPWH lists it (OECO_… for a foreign contractor); empty when none is given.",
+    "marked_revoked_in_dpwh_list": "\"yes\" when DPWH’s list tags the license \"[REVOKED]\".",
+    "contracts": "Contracts naming the contractor, FY2016–FY2026.",
+    "contract_amount_php": "Their contract amount. A joint-venture contract counts in full for each partner.",
+    "joint_venture_contracts": "Of those, contracts naming another contractor too.",
+    "joint_venture_amount_php": "Their contract amount.",
+    "completed": "Contracts completed.",
+    "ongoing": "Contracts ongoing.",
+    "not_yet_started": "Contracts not yet started.",
+    "terminated": "Contracts terminated.",
+    "first_year": "First year with a contract (DPWH’s year).",
+    "last_year": "Last year with a contract.",
+    "amount_2016_php": "Contract amount in 2016.",
+    "amount_2017_php": "Contract amount in 2017.",
+    "amount_2018_php": "Contract amount in 2018.",
+    "amount_2019_php": "Contract amount in 2019.",
+    "amount_2020_php": "Contract amount in 2020.",
+    "amount_2021_php": "Contract amount in 2021.",
+    "amount_2022_php": "Contract amount in 2022.",
+    "amount_2023_php": "Contract amount in 2023.",
+    "amount_2024_php": "Contract amount in 2024.",
+    "amount_2025_php": "Contract amount in 2025.",
+    "amount_2026_php": "Contract amount in 2026.",
+    "dpwh_offices": "DPWH offices that awarded its contracts.",
+    "main_office": "The office with the largest amount.",
+    "main_office_amount_php": "That office’s amount.",
+    "regions": "Regions with a contract.",
+    "contracts_linked_to_gaa_lines": "Contracts matched to a GAA line, FY2020–FY2026.",
+    "gaa_lines_linked_2020_2026": "GAA lines those contracts carry.",
+    "gaa_lines_amount_php": "Those lines’ GAA amount.",
+    "other_names": "Other names its contracts list, up to five.",
+    "page": "Its page on budget.bettergov.ph."
+   }
+  },
+  {
+   "key": "gaa-2020-2026-dpwh-line-contracts",
+   "title": "GAA lines and the contracts matched to them, FY2020–FY2026",
+   "about": "One row per GAA line and matched contract, with how it was matched. Our match, not DPWH’s record.",
+   "rows": 109602,
+   "csv": {
+    "file": "gaa-2020-2026-dpwh-line-contracts.csv",
+    "bytes": 64975439,
+    "sha256": "306ed5eea96ded97b2c0697adcd30fab183935b46b971c1a0793a15a09404869",
+    "url": "https://budget-assets.bettergov.ph/hgab/2027/contractors/downloads/gaa-2020-2026-dpwh-line-contracts.csv?v=306ed5eea96d"
+   },
+   "parquet": {
+    "file": "gaa-2020-2026-dpwh-line-contracts.parquet",
+    "bytes": 7302956,
+    "sha256": "6b407cf81d2c6ad951ca3ffe3286a5b2f8d58e6074acd91e56dd8078cf676c84",
+    "url": "https://budget-assets.bettergov.ph/hgab/2027/contractors/downloads/gaa-2020-2026-dpwh-line-contracts.parquet?v=6b407cf81d2c"
+   },
+   "columns": {
+    "fiscal_year": "GAA year of the line.",
+    "line_id": "\"gaa:<year>:<UACS code>\" (\":<office>\" added for the 2 codes split over two offices); the same IDs as the multi-purpose buildings map.",
+    "gaa_title": "The line’s title in the GAA.",
+    "gaa_office": "The office the GAA lists for the line.",
+    "gaa_php": "The line’s GAA amount, pesos.",
+    "contract_id": "The DPWH contract matched to the line.",
+    "dpwh_url": "DPWH’s own page for that contract.",
+    "contractor": "Contractor(s), as listed.",
+    "contractor_names": "Contractor names, \"; \" between partners.",
+    "contractor_pcab_ids": "License numbers, \"; \" between partners.",
+    "contract_php": "Contract amount; for a cluster, the whole contract, shared with its other lines.",
+    "contract_description": "Contract description, as listed.",
+    "contract_office": "The office holding the contract.",
+    "contract_region": "Region, as listed.",
+    "status": "Contract status, as listed.",
+    "progress_percent": "Physical progress, as listed.",
+    "start_date": "Start date.",
+    "completion_date": "Completion date.",
+    "source_of_funds": "Fund source; its GAA year is the line’s year.",
+    "method": "one_to_one (one contract for the line) or bundle (one contract for several lines, a DPWH \"cluster\").",
+    "searched": "Where the contract was found: same office, same region, or all offices (Central Office lines).",
+    "title_score": "Title agreement, rapidfuzz token-set ratio (90 or more; 95 within the region).",
+    "amount_ratio": "Contract amount over the line’s (over the lines’ together for a cluster), 0.5 to 1.02.",
+    "candidates": "Contracts that qualified for the line; 1 means it was the only one."
+   }
+  },
+  {
+   "key": "gaa-2020-2026-dpwh-lines",
+   "title": "Every DPWH GAA line, FY2020–FY2026, matched or not",
+   "about": "One row per DPWH capital-outlay line of the GAA, with its match status, contract and contractor.",
+   "rows": 164289,
+   "csv": {
+    "file": "gaa-2020-2026-dpwh-lines.csv",
+    "bytes": 41449646,
+    "sha256": "6ac3a0b053d432e43d6650cb2f30ec4d05fdf0c7bbee47628a6c9e2f51a45a88",
+    "url": "https://budget-assets.bettergov.ph/hgab/2027/contractors/downloads/gaa-2020-2026-dpwh-lines.csv?v=6ac3a0b053d4"
+   },
+   "parquet": {
+    "file": "gaa-2020-2026-dpwh-lines.parquet",
+    "bytes": 5250110,
+    "sha256": "ba66e989a33beaf8aa098bcaaf8cec9f623e028d6a1677506f9baef0457e70ce",
+    "url": "https://budget-assets.bettergov.ph/hgab/2027/contractors/downloads/gaa-2020-2026-dpwh-lines.parquet?v=ba66e989a33b"
+   },
+   "columns": {
+    "fiscal_year": "GAA year.",
+    "line_id": "Line ID, as in the line-contracts table.",
+    "pap": "UACS program, activity or project code.",
+    "gaa_title": "Title in the GAA.",
+    "gaa_office": "The office the GAA lists.",
+    "region": "Region of the GAA operating unit.",
+    "gaa_php": "GAA amount, pesos (capital outlays).",
+    "match": "one_to_one, bundle or none: whether a contract was matched, and how.",
+    "contracts": "Contracts matched (0 or 1).",
+    "contract_ids": "The contract ID, if any.",
+    "contractors": "Its contractor(s), \"; \" between partners.",
+    "contract_php": "The contract amount; for a cluster, the whole contract."
+   }
+  }
+ ],
+ "site_data": [
+  {
+   "path": "hgab/2027/contractors/index.json",
+   "about": "Every contractor with its figures (cols + rows), for /hgab/2027/contractors.",
+   "url": "https://budget-assets.bettergov.ph/hgab/2027/contractors/index.json"
+  },
+  {
+   "path": "hgab/2027/contractors/c/NN.json",
+   "about": "Each contractor’s contracts, in 64 files by FNV-1a(key) % 64 (src/lib/hgab-contractors.ts shardOf).",
+   "url": "https://budget-assets.bettergov.ph/hgab/2027/contractors/c/NN.json"
+  },
+  {
+   "path": "hgab/2027/contractors/mpb-links.json",
+   "about": "The matched contract, contractors and awarding office of each multi-purpose building map line.",
+   "url": "https://budget-assets.bettergov.ph/hgab/2027/contractors/mpb-links.json"
+  },
+  {
+   "path": "hgab/2027/contractors/summary.json",
+   "about": "Totals, the match table by year, the builder’s checks and every site file’s SHA-256.",
+   "url": "https://budget-assets.bettergov.ph/hgab/2027/contractors/summary.json"
+  },
+  {
+   "path": "hgab/2027/mpb-boards/boards.json",
+   "about": "The four multi-purpose building leaderboards (src/lib/hgab-leaderboard.ts decodeMpbBoards).",
+   "url": "https://budget-assets.bettergov.ph/hgab/2027/mpb-boards/boards.json"
+  }
+ ]
+}

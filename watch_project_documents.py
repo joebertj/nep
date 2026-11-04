@@ -28,7 +28,7 @@ def digest(path):
     return result.hexdigest()
 
 def parser_version():
-    return hashlib.sha256(b''.join((ROOT/'project_documents'/name).read_bytes() for name in ('pow.py','signatories.py','ocr_vision.swift'))).hexdigest()
+    return hashlib.sha256(b''.join((ROOT/'project_documents'/name).read_bytes() for name in ('pow.py','signatories.py','service.py','ocr_vision.swift'))).hexdigest()
 
 def active_project():
     # Compatibility with the already-running downloader, started before cache locks.
@@ -43,10 +43,10 @@ def active_project():
 
 def scan(state):
     from project_documents.cache_lock import project_lock
-    from project_documents import pow as pow_parser,signatories
+    from project_documents import pow as pow_parser,signatories,service
     version=parser_version()
     if state.get('loadedParserVersion')!=version:
-        importlib.reload(pow_parser);importlib.reload(signatories);state['loadedParserVersion']=version
+        importlib.reload(pow_parser);importlib.reload(signatories);importlib.reload(service);state['loadedParserVersion']=version
     parse_pdf=pow_parser.parse_pdf;extract=signatories.extract
     active=active_project();changed=0;reused=0;failed=0;busy=0
     ledger=state.setdefault('pdfs',{})
@@ -55,7 +55,7 @@ def scan(state):
         if code==active:busy+=1;continue
         metadata=read(metadata_path,{})
         if not metadata.get('code')==code:continue
-        from project_documents.service import kinds
+        kinds=service.kinds
         candidates=[]
         for document in metadata.get('documents',[]):
             kind=kinds(document)
@@ -90,7 +90,7 @@ def scan(state):
                         if kind=='pow':
                             row['pow']=parse_pdf(pdf,pdf.parent,round(float(metadata['amount'])*1000))
                             row['signatories']=extract(pdf,'pow',pdf.parent)
-                        elif kind=='rdc':row['signatories']=extract(pdf,'rdc',pdf.parent)
+                        elif kind in ('rdc','pdc','ldc'):row['signatories']=extract(pdf,kind,pdf.parent)
                         else:
                             row['directLink']=document['url'];row['displayPolicy']='direct_source_link; externally cached PDF only'
                         row['status']='available';row.pop('error',None)

@@ -22,6 +22,8 @@ BASE_DATA_NAME = 'mpb-barangay-base-data.json'
 BASE_PAGE_NAME = 'mpb-base.html'
 LEGACY_MPB = ROOT / 'data_sources' / 'mpb-historical-2017-2018.json'
 HISTORICAL_GAA = ROOT / 'data_sources' / 'gaa-dpwh-project-families-2016-2018.json'
+TECHNICAL_GAA_2019_MPB = ROOT / 'data_sources' / 'mpb-historical-2019.json'
+TECHNICAL_GAA_2015_MPB = ROOT / 'data_sources' / 'mpb-historical-2015.json'
 BASE_ASSETS = ROOT / 'report_assets' / 'mpb-assets'
 
 MARKER = re.compile(r'\b(?:barangay|brgy\.?|bgy\.?)\s+([^,;()]+)', re.I)
@@ -94,6 +96,10 @@ def main():
         'sourceId': row.get('sourceId') or '',
     } for row in historical_gaa.get('records', [])
         if int(row.get('year') or 0) == 2016 and row.get('category') == 'Multi-purpose building')
+    technical_2019 = json.loads(TECHNICAL_GAA_2019_MPB.read_text(encoding='utf-8'))
+    projects.extend(technical_2019.get('records', []))
+    technical_2015 = json.loads(TECHNICAL_GAA_2015_MPB.read_text(encoding='utf-8'))
+    projects.extend(technical_2015.get('records', []))
     hgab = json.loads(HGAB_PROJECTS.read_text(encoding='utf-8'))['data']['data']
     for row in hgab:
         if row.get('pap3') != 'BIP - Multi-Purpose Buildings/ Facilities to support Social Services':
@@ -211,7 +217,7 @@ def main():
     result = {
         'title': 'MPB allocations by official barangay',
         'generatedAtUtc': datetime.now(timezone.utc).isoformat(),
-        'source': 'ODV unified location hierarchy; FY2016 DPWH family extract and FY2017–FY2018 BetterGov GAA Explorer DPWH title rows; FY2020–FY2026 integrated GAA project records; exact FY2027 HGAB MPB PAP rows',
+        'source': 'ODV unified location hierarchy; FY2015 DBM DPWH GAA capital-outlay PAP title candidates; FY2016 DPWH family extract; FY2017–FY2018 BetterGov GAA Explorer DPWH title rows; FY2019 DBM DPWH Technical GAA UACS-coded MPB title candidates; FY2020–FY2026 integrated GAA project records; exact FY2027 HGAB MPB PAP rows',
         'periods': years_summary,
         'summary': {
             'officialBarangays': len(barangays), 'barangaysWithMpb': sum(bool(x['projectRows']) for x in barangays),
@@ -223,9 +229,9 @@ def main():
             'caveat': 'Allocation records are not expenditures or verified construction costs. Repeat levels use matching normalized titles and official barangay identity, never proximity; they are review signals, not proof that physical construction occurred. A line naming multiple barangays is associated with each named barangay at its full amount, so barangay totals overlap and must not be added together.'
         },
         'repeatMethod': 'Same normalized MPB project title in the same official barangay across distinct fiscal years. Coordinate text is removed and proximity is never used. Identical titles duplicated within one year are kept separate and marked unresolved.',
-        'periodScope': 'Eleven fiscal-year slices with project-level MPB data: FY2016–FY2018 GAA Explorer title-classified DPWH rows and FY2020–FY2026 GAA plus FY2027 HGAB 3rd-reading rows. FY2019 is omitted because the manifest snapshot does not provide named DPWH project rows. FY2016–FY2018 are a separate published-source baseline; earlier unobserved repeats are not implied to be the first physical construction.',
+        'periodScope': 'Thirteen fiscal-year slices with project-level MPB data: FY2015 DBM DPWH GAA capital-outlay PAP title candidates; FY2016–FY2018 GAA Explorer title-classified DPWH rows; FY2019 DBM DPWH Technical GAA rows selected by specific UACS PAP code and MPB title; FY2020–FY2026 GAA plus FY2027 HGAB 3rd-reading rows. FY2015 PAP codes are not unique project IDs; the FY2019 GAA Explorer manifest snapshot lacks named DPWH lines, so the separate official technical GAA PDF supplies those titles. Earlier unobserved repeats are not implied to be the first physical construction.',
         'historicalSource': {'manifestUrl': legacy.get('manifestUrl'), 'periods': legacy.get('periods'), 'classification': legacy.get('classification'), 'gaps': legacy.get('gaps')},
-        'historicalGaaBaseline': {'manifestUrl': 'https://budget-assets.bettergov.ph/gaa-explorer/manifest.json', 'years': [2016, 2017, 2018], 'scope': 'DPWH current-new-appropriation project-family rows classified from PAP titles; a separate historical layer, assigned to current barangay identities where the title names one.'},
+        'historicalGaaBaseline': {'manifestUrl': 'https://budget-assets.bettergov.ph/gaa-explorer/manifest.json', 'years': [2015, 2016, 2017, 2018, 2019], 'scope': 'FY2015 DBM DPWH GAA capital-outlay rows classified from PAP titles; FY2016–FY2018 DPWH current-new-appropriation project-family rows classified from PAP titles; FY2019 uses the DBM technical DPWH GAA UACS-coded schedule. These historical layers are assigned to current barangay identities where titles name a location.'},
         'barangays': barangays,
     }
     payload = json.dumps(result, ensure_ascii=False, separators=(',', ':')) + '\n'

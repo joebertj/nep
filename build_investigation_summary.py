@@ -318,9 +318,7 @@ def main():
         item['sha256']=hashlib.sha256((ROOT.parent/'open-data-visualization'/item['file']).read_bytes()).hexdigest()
     (STATIC/'summary-data.json').write_text(json.dumps(document,ensure_ascii=False,indent=2)+'\n')
     (ROOT/'analysis_output/investigation_summary.json').write_text(json.dumps(document,ensure_ascii=False,indent=2)+'\n')
-    nav=re.search(r'<nav class="report-nav".*?</nav>',(STATIC/'rcs.html').read_text(),re.S).group(0)
-    if 'href="congress.html"' not in nav:nav=nav.replace('</nav>','<a href="congress.html">Congressional District Allocations</a></nav>')
-    if 'href="summary.html"' not in nav:nav=nav.replace('</nav>','<a href="summary.html">Summary · investigative leads</a></nav>')
+    from uniform_report_menu import NAV as nav, apply_page as apply_report_menu
     cards=''.join(f'<article class="finding" id="lead-{r["id"]}" data-basis="{esc(r["basis"])}"><span class="rank">Investigation priority {r["rank"]} · {esc(r["basis"])}</span><h2>{esc(r["title"])}</h2><p class="lead">{esc(r["lead"])}</p><dl>'+''.join(f'<dt>{label}</dt><dd>{esc(r[key])}</dd>' for label,key in [('Talking point','question'),('Observed evidence','evidence'),('Plausible explanation','alternative'),('What investigators need next','next'),('Parsing/location caution','caution')])+f'</dl><p><a href="{esc(r["page"])}">Supporting analysis and source tables →</a></p></article>' for r in findings)
     ranked=table(['Priority','Investigative lead','Evidence class','Question to verify'],[[r['rank'],r['title'],r['basis'],r['question']] for r in findings])
     neutral=table(['Schedule','HGAB 3rd lines','HGAB 3rd pesos','Changed between 2nd and 3rd'],coverage_rows)
@@ -336,14 +334,12 @@ def main():
     filterjs="""<script>const search=document.getElementById('lead-search'),basis=document.getElementById('lead-basis');function filter(){document.querySelectorAll('.finding').forEach(card=>card.hidden=!(card.textContent.toLowerCase().includes(search.value.toLowerCase())&&(!basis.value||card.dataset.basis===basis.value)))}search.addEventListener('input',filter);basis.addEventListener('change',filter);</script>"""
     hero=hero.replace('686 proposals',f'{len(unique):,} proposals')
     page='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Budget Summary · Investigative Talking Points</title><style>*{box-sizing:border-box}body{margin:0;font:16px/1.5 system-ui,sans-serif;background:#f3f6f5;color:#18303b}header{background:#123944;color:white;padding:30px clamp(16px,2vw,32px)}header h1{font-size:clamp(28px,4vw,48px);margin:0}main{width:100%;padding:24px clamp(16px,2vw,32px)}a{color:#087e78}header a{color:white}header p{max-width:1100px}</style>'+STYLE+CSS+'</head><body><header><h1>Budget Summary · Investigative Talking Points</h1><p>NEP patterns and NEP → HGAB screens, with parsing uncertainty and location limits alongside every claim. Priorities are editorial triage, not a corruption score. Figures overlap and must not be added together.</p>'+nav+'</header><main>'+hero+'<p class="summary-queue-jump"><a href="#summary-top-line-items">Full line-item review queue ↓</a></p>'+section('summary-stages','Follow the changes between budget stages',flow)+section('ranked-leads','Where to start',ranked)+filters+cards+section('summary-quality','Parsing and location gotchas',quality)+section('summary-neutral','Other schedules · no reading-stage change found',neutral)+section('summary-data-needs','Evidence needed to strengthen the claims',datasets)+section('summary-top-line-items','Full line-item review queue',render_review_queue(review_queue,table,esc))+'</main>'+JS+filterjs+'</body></html>'
+    # Normalize only the newly generated summary page. Other report builders
+    # retain their own content while using the shared menu transformer when they
+    # write their pages; never copy one page's navigation onto every page.
+    page=apply_report_menu(page,'summary.html')
     (STATIC/'summary.html').write_text(page)
     (ROOT/'analysis_output/summary.html').write_text(page)
-    # Fifteen links occupy three desktop rows; preserve equal menu height on
-    # every page and enough rows for smaller screens.
-    navstyle='<style id="summary-nav-layout">header .report-nav{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr));grid-auto-rows:34px;align-content:start;gap:8px 10px!important;height:118px!important;min-height:118px!important;margin-top:16px!important}header .report-nav a{display:flex;align-items:center;justify-content:center;height:34px;padding:4px 7px;border:1px solid #ffffff55;border-radius:8px;text-align:center;text-decoration:none;font-size:12px;line-height:1.1;overflow-wrap:anywhere}@media(max-width:900px){header .report-nav{grid-template-columns:repeat(3,minmax(0,1fr));height:160px!important;min-height:160px!important}}@media(max-width:560px){header .report-nav{grid-template-columns:repeat(2,minmax(0,1fr));height:244px!important;min-height:244px!important}}</style>'
-    for p in STATIC.glob('*.html'):
-        t=p.read_text();t=re.sub(r'<nav class="report-nav".*?</nav>',lambda m:nav,t,flags=re.S)
-        t=re.sub(r'<style id="summary-nav-layout">.*?</style>','',t,flags=re.S).replace('</head>',navstyle+'</head>',1);p.write_text(t)
     (ROOT/'analysis_output/summary.html').write_text((STATIC/'summary.html').read_text())
     from review_report_language import apply as apply_evidence_wording
     from location_data.build_inventory_location_review import build as build_inventory_location_review

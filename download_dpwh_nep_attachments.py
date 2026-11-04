@@ -23,10 +23,18 @@ from project_documents.service import API, CACHE, metadata, request
 ROOT = BASE / 'nep/data_sources/dpwh_project_documents/attachments'
 JOURNAL = ROOT / 'downloads.jsonl'
 STATUS = ROOT / 'status.json'
+REPO = Path(__file__).resolve().parent
+EXPECTED_COUNTS = REPO / 'analysis_output/dpwh-in-depth-data.json'
 MAX_BYTES = int(os.environ.get('DPWH_DOCUMENT_MAX_BYTES', str(2 * 1024**3)))
 HOSTS = {'s3.infrawatch.ph', 'transparency.dpwh.gov.ph'}
 API_PAGE_LIMIT = 500
 STATUS_LOCK = threading.RLock()
+TARGET_DOCUMENT_TYPES = {
+    'POW': 'POW',
+    'RDC Endorsement': 'RDC',
+    'PDC Endorsement': 'PDC',
+    'LDC Endorsement': 'LDC',
+}
 
 
 def stamp():
@@ -44,6 +52,63 @@ def digest(path):
 def signature(document):
     identity = {k: document.get(k) for k in ('id', 'fileName', 'url', 'sizeBytes', 'contentType', 'uploadedAt')}
     return hashlib.sha256(json.dumps(identity, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
+
+
+def target_document_type(document):
+    """Canonicalize the four attachment classes tracked by the DPWH inventory."""
+    label = re.sub(r'[^a-z0-9]+', ' ', str(document.get('documentType') or '').lower()).strip()
+    if label == 'pow' or 'program of work' in label:
+        return 'POW'
+    if re.search(r'\brdc\b', label) or 'regional development council' in label:
+        return 'RDC'
+    if re.search(r'\bpdc\b', label) or 'provincial development council' in label:
+        return 'PDC'
+    if re.search(r'\bldc\b', label) or 'local development council' in label:
+        return 'LDC'
+    return None
+
+
+def expected_document_counts():
+    """Load the known DPWH Transparency attachment totals used for reconciliation."""
+    data = json.loads(EXPECTED_COUNTS.read_text(encoding='utf-8'))
+    rows = data.get('documentReconciliation', {}).get('rows', [])
+    expected = {}
+    for row in rows:
+        kind = TARGET_DOCUMENT_TYPES.get(row.get('type'))
+        if kind:
+            expected[kind] = int(row['transparencyRecords'])
+    missing = set(TARGET_DOCUMENT_TYPES.values()) - set(expected)
+    if missing:
+        raise RuntimeError('Expected document inventory is missing types: ' + ', '.join(sorted(missing)))
+    return expected, data.get('generatedAtUtc')
+
+
+def downloaded_asset(done, document_signature):
+    """Return a journaled file only when its recorded byte count still matches."""
+    row = done.get(document_signature)
+    if not row or not row.get('path'):
+        return None
+    path = ROOT / row['path']
+    try:
+        return path if path.is_file() and path.stat().st_size == row.get('bytes') else None
+    except OSError:
+        return None
+
+
+def project_priority(project, done):
+    """Rank cached projects with the most missing target documents first.
+
+    Projects without cached metadata come next so new/changed projects are
+    discovered before projects whose target documents already reconcile.
+    """
+    path = CACHE / project['projectCode'] / 'metadata.json'
+    try:
+        docs = json.loads(path.read_text(encoding='utf-8')).get('documents', [])
+    except (OSError, json.JSONDecodeError):
+        return (1, 0, project['projectCode'])
+    missing = sum(1 for doc in docs if target_document_type(doc)
+                  and not downloaded_asset(done, signature(doc)))
+    return (0, -missing, project['projectCode']) if missing else (2, 0, project['projectCode'])
 
 
 def filename(document):
@@ -197,9 +262,17 @@ def increment_status(status, key, amount=1):
 
 def run(delay, interval_hours, once, project_codes=None):
     done = load_journal()
+    expected_by_type, expected_data_generated = expected_document_counts()
     status = {'status': 'starting', 'mode': 'daily_live_catalog_poll',
               'startedAt': stamp(), 'pollIntervalHours': interval_hours,
-              'attachmentsDownloaded': len(done), 'errors': 0}
+              'attachmentsDownloaded': len(done), 'errors': 0,
+              'documentReconciliation': {
+                  'expectedSourceCounts': expected_by_type,
+                  'expectedSourceGeneratedAtUtc': expected_data_generated,
+                  'currentListedCounts': {kind: 0 for kind in expected_by_type},
+                  'verifiedDownloadedCounts': {kind: 0 for kind in expected_by_type},
+                  'missingCounts': dict(expected_by_type), 'reconciled': False,
+              }}
     heartbeat_stop = threading.Event()
     heartbeat = threading.Thread(target=status_heartbeat, args=(heartbeat_stop, status), daemon=True)
     heartbeat.start()
@@ -235,6 +308,9 @@ def run(delay, interval_hours, once, project_codes=None):
                 if unknown:
                     raise ValueError('Unknown proposal code(s): ' + ', '.join(sorted(unknown)))
                 projects = [project for project in catalog if project['projectCode'] in wanted]
+            # Cached inventory lets us download known gaps first. Uncached
+            # projects follow so newly listed/changed attachments are surfaced.
+            projects = sorted(projects, key=lambda project: project_priority(project, done))
             started_at = status.get('startedAt') or stamp()
             with STATUS_LOCK:
                 status.clear()
@@ -245,8 +321,18 @@ def run(delay, interval_hours, once, project_codes=None):
                                'projectsWithAttachments': 0, 'attachmentsListed': 0,
                                'attachmentsDownloaded': len(done), 'errors': 0,
                                'documentCountMismatches': 0, 'pollIntervalHours': interval_hours,
-                               'startedAt': started_at})
+                               'startedAt': started_at,
+                               'documentReconciliation': {
+                                   'expectedSourceCounts': expected_by_type,
+                                   'expectedSourceGeneratedAtUtc': expected_data_generated,
+                                   'currentListedCounts': {kind: 0 for kind in expected_by_type},
+                                   'verifiedDownloadedCounts': {kind: 0 for kind in expected_by_type},
+                                   'missingCounts': dict(expected_by_type), 'reconciled': False,
+                               }})
             write_status(status)
+
+            listed_signatures = {kind: set() for kind in expected_by_type}
+            downloaded_signatures = {kind: set() for kind in expected_by_type}
 
             for index, entry in enumerate(projects, 1):
                 guard()
@@ -260,6 +346,22 @@ def run(delay, interval_hours, once, project_codes=None):
                     if docs:
                         increment_status(status, 'projectsWithAttachments')
                     increment_status(status, 'attachmentsListed', len(docs))
+                    for document in docs:
+                        kind = target_document_type(document)
+                        if kind:
+                            sig = signature(document)
+                            listed_signatures[kind].add(sig)
+                            if downloaded_asset(done, sig):
+                                downloaded_signatures[kind].add(sig)
+                    with STATUS_LOCK:
+                        reconciliation = status['documentReconciliation']
+                        reconciliation['currentListedCounts'] = {
+                            kind: len(values) for kind, values in listed_signatures.items()}
+                        reconciliation['verifiedDownloadedCounts'] = {
+                            kind: len(values) for kind, values in downloaded_signatures.items()}
+                        reconciliation['missingCounts'] = {
+                            kind: max(0, len(listed_signatures[kind]) - len(downloaded_signatures[kind]))
+                            for kind in expected_by_type}
                     for number, document in enumerate(docs, 1):
                         guard()
                         update_status(status, currentDocument=document.get('fileName') or document.get('id'),
@@ -275,6 +377,9 @@ def run(delay, interval_hours, once, project_codes=None):
                             target = ROOT / relative
                             if prior and target.is_file() and target.stat().st_size == prior.get('bytes'):
                                 if digest(target) == prior.get('sha256'):
+                                    kind = target_document_type(document)
+                                    if kind:
+                                        downloaded_signatures[kind].add(sig)
                                     continue
                             source = cached_asset(code, document)
                             if source and not target.exists():
@@ -295,6 +400,9 @@ def run(delay, interval_hours, once, project_codes=None):
                                     append(row)
                                     done[sig] = row
                                     increment_status(status, 'attachmentsDownloaded')
+                                    kind = target_document_type(document)
+                                    if kind:
+                                        downloaded_signatures[kind].add(sig)
                                     continue
                             size, sha = download(url, target, document.get('sizeBytes'), document.get('contentType'))
                             row = {'at': stamp(), 'projectCode': code, 'documentId': document.get('id'),
@@ -304,6 +412,9 @@ def run(delay, interval_hours, once, project_codes=None):
                             append(row)
                             done[sig] = row
                             increment_status(status, 'attachmentsDownloaded')
+                            kind = target_document_type(document)
+                            if kind:
+                                downloaded_signatures[kind].add(sig)
                             print(json.dumps({'project': code, 'attachment': number, 'total': len(docs),
                                               'file': document.get('fileName'), 'status': 'downloaded'}, ensure_ascii=False), flush=True)
                         except Exception as exc:
@@ -322,10 +433,49 @@ def run(delay, interval_hours, once, project_codes=None):
                             'error': type(exc).__name__ + ': ' + str(exc)[:300]})
                     print(json.dumps({'project': code, 'status': 'error', 'error': str(exc)[:300]}, ensure_ascii=False), flush=True)
                 update_status(status, projectsDone=index, currentProject=None, currentDocument=None)
+                with STATUS_LOCK:
+                    reconciliation = status['documentReconciliation']
+                    reconciliation['currentListedCounts'] = {
+                        kind: len(values) for kind, values in listed_signatures.items()}
+                    reconciliation['verifiedDownloadedCounts'] = {
+                        kind: len(values) for kind, values in downloaded_signatures.items()}
+                    reconciliation['missingCounts'] = {
+                        kind: max(0, len(listed_signatures[kind]) - len(downloaded_signatures[kind]))
+                        for kind in expected_by_type}
                 write_status(status)
                 time.sleep(delay)
 
             finished = stamp()
+            listed_counts = {kind: len(values) for kind, values in listed_signatures.items()}
+            downloaded_counts = {kind: len(values) for kind, values in downloaded_signatures.items()}
+            missing_counts = {kind: max(0, listed_counts[kind] - downloaded_counts[kind])
+                              for kind in expected_by_type}
+            reconciled = all(downloaded_counts[kind] >= expected_by_type[kind]
+                             and downloaded_counts[kind] == listed_counts[kind]
+                             for kind in expected_by_type)
+            with STATUS_LOCK:
+                status['documentReconciliation'].update(
+                    currentListedCounts=listed_counts,
+                    verifiedDownloadedCounts=downloaded_counts,
+                    missingCounts=missing_counts,
+                    sourceCountDelta={kind: listed_counts[kind] - expected_by_type[kind]
+                                      for kind in expected_by_type},
+                    reconciled=reconciled,
+                )
+            if not reconciled and not project_codes and not once:
+                retry_at = time.time() + 60
+                update_status(status, status='retrying_missing_target_documents',
+                              currentProject=None, currentDocument=None,
+                              lastCycleFinishedAt=finished,
+                              nextReconciliationRetryAt=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(retry_at)))
+                write_status(status)
+                print(json.dumps({'status': 'retrying_missing_target_documents',
+                                  'expected': expected_by_type, 'listed': listed_counts,
+                                  'downloaded': downloaded_counts, 'missing': missing_counts},
+                                 ensure_ascii=False), flush=True)
+                while time.time() < retry_at:
+                    time.sleep(min(10, retry_at - time.time()))
+                continue
             next_cycle = time.time() + interval_hours * 3600
             update_status(status, status='waiting', currentProject=None, currentDocument=None,
                           lastCycleFinishedAt=finished, lastCycleProjects=len(projects),

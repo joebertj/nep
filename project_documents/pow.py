@@ -15,7 +15,7 @@ def paddle_words(page,dpi=170):
         import io,pymupdf as fitz
     except ImportError:return None
     if _PADDLE_OCR is None:
-        try:_PADDLE_OCR=PaddleOCR(lang='en',ocr_version='PP-OCRv6',use_doc_orientation_classify=False,use_doc_unwarping=False,use_textline_orientation=False)
+        try:_PADDLE_OCR=PaddleOCR(lang='en',ocr_version='PP-OCRv5',use_doc_orientation_classify=False,use_doc_unwarping=False,use_textline_orientation=False)
         except Exception:_PADDLE_OCR=False
     if _PADDLE_OCR is False:return None
     attempts=[]
@@ -37,7 +37,7 @@ def paddle_words(page,dpi=170):
             attempts.append({'words':[(*w[:5],0,int(round((w[1]+w[3])/16)),0) for w in words],
                 'width':rotated.width,'text':joined,'rotation':rotation,'dpi':resolution,
                 'structureScore':structure,'meanConfidence':round(confidence,4),'wordCount':len(words),
-                'method':f'OCR · PaddleOCR PP-OCRv6 · rotated scan {rotation}° at {resolution} dpi'})
+                'method':f'OCR · PaddleOCR PP-OCRv5 · rotated scan {rotation}° at {resolution} dpi'})
         except Exception:continue
     return {'attempts':attempts} if attempts else None
 NUMBER=re.compile(r'^(?:(?:₱|PHP|P)\s*)?-?\d[\d,]*(?:\.\d+)?\s*(?:₱|PHP|P)?$',re.I)
@@ -242,7 +242,13 @@ def cost_category_totals_from_words(words,width,page,method):
                 previous=joined[-1][0]
                 combined=amount(str(previous['text'])+'.'+str(token['text']))
                 if combined is not None:
-                    joined[-1]=({'x':previous['x'],'x1':token['x1'],'text':str(previous['text'])+'.'+str(token['text'])},combined)
+                    # Keep the previous token geometry when merging OCR-split
+                    # cents. The row-ranking step below needs its y coordinate
+                    # to align the amount with the printed percentage row.
+                    joined[-1]=({**previous,'x1':token['x1'],'y0':min(previous['y0'],token['y0']),
+                                 'y1':max(previous['y1'],token['y1']),
+                                 'y':(min(previous['y0'],token['y0'])+max(previous['y1'],token['y1']))/2,
+                                 'text':str(previous['text'])+'.'+str(token['text'])},combined)
                     continue
             joined.append((token,value))
         monetary=joined

@@ -95,6 +95,11 @@ for path in [ANALYSIS/'dpwh_oo2_hgab_impact.json', SITE/'dpwh-OO2-hgab-data.json
     path.write_text(json.dumps(output, ensure_ascii=False, indent=2)+'\n')
 
 base = source_page.read_text()
+base = base.replace(
+    '<tr><th>Project</th><th>Program / category</th><th>Office</th><th class="num">Amount*</th>',
+    '<tr><th>Fiscal year</th><th>Project</th><th>Program / category</th><th>Office</th><th class="num">Amount*</th>',
+)
+base = base.replace('colspan="12" class="empty">No matching potential repeats', 'colspan="13" class="empty">No matching potential repeats')
 base = re.sub(r'<aside\b[^>]*class="[^"]*archived-page-alert[^"]*"[^>]*>.*?</aside>', '', base, flags=re.S)
 base = base.replace(':not(#deo-office-changes){display:none!important}', ':not(#deo-office-changes):not(#oo2-impact){display:none!important}')
 base = re.sub(r'<title>.*?</title>', '<title>DPWH · OO2-adjusted HGAB-only projects</title>', base, count=1, flags=re.S)

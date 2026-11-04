@@ -33,6 +33,8 @@ def main() -> None:
     import build_congress_district_review
 
     review_summary = build_congress_district_review.build()
+    from sync_current_congress_context import sync
+    sync()
     print(json.dumps({
         'allocationData': str(
             ROOT.parent / 'open-data-visualization/static/nep-preview/congress-data.json'

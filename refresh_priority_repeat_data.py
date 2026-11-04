@@ -14,12 +14,12 @@ def build():
             x['tranche_conflict']=r.get('tranche_conflict','False').lower()=='true'
             previous=old.get((x['source_code'],x['comparison_year'],x['prior_project']),{})
             x['congressional_representatives']=previous.get('congressional_representatives',[]);out.append(x)
-    # The older Explorer extract is a distinct source layer. Add its
-    # FY2016–FY2018 comparisons while preserving the existing FY2020–FY2026
+    # The older DBM CSV and Explorer extracts are distinct source layers. Add
+    # FY2015–FY2019 comparisons while preserving the existing FY2020–FY2026
     # candidate rows and their enriched representative metadata.
     from analyze_priority_repeats import normalize_2027, previous_rows, rank_matches
     current_rows=normalize_2027()
-    historical=previous_rows([2016,2017,2018])
+    historical=previous_rows([2015,2016,2017,2018,2019])
     for year,prior_rows in sorted(historical.items()):
         for category in sorted({r['category'] for r in current_rows}):
             current=[r for r in current_rows if r['category']==category]

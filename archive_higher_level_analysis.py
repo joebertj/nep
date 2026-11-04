@@ -23,6 +23,8 @@ MOVED_HGAB_SECTIONS=[
  {'page':'dpwh-hgab-comparison.html','id':'other-agency-readings','title':'Other agency schedules · HGAB 2nd versus 3rd'},
 ]
 ADDITIONAL_REPORTS=[
+ ('dpwh-OO2-hgab.html','DPWH NEP','FY2027 DPWH NEP review, moved out of the active menu'),
+ ('cost-matching.html','Cost matching','Cost-matching analysis, moved out of the active menu'),
  ('dpwh-hgab.html','DPWH · NEP → HGAB (pre-OO2 baseline)','Archived baseline comparison before OO2 amendment matches were excluded'),
  ('nia.html','NIA · irrigation and named projects','NIA project and irrigation analyses'),
  ('deped.html','DepEd','DepEd budget and project analyses'),

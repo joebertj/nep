@@ -1,0 +1,176 @@
+{
+ "method": "component title of the fetched contract vs the GAA title, rapidfuzz ratio >= 90",
+ "strata": {
+  "bundle": {
+   "sampled": 59,
+   "fetched": 59,
+   "confirmed": 51,
+   "share": 0.864,
+   "links_in_stratum": 1071
+  },
+  "one_to_one, all offices, several candidates": {
+   "sampled": 40,
+   "fetched": 40,
+   "confirmed": 39,
+   "share": 0.975,
+   "links_in_stratum": 6777
+  },
+  "one_to_one, all offices, sole candidate": {
+   "sampled": 40,
+   "fetched": 40,
+   "confirmed": 39,
+   "share": 0.975,
+   "links_in_stratum": 17989
+  },
+  "one_to_one, same office, several candidates": {
+   "sampled": 40,
+   "fetched": 40,
+   "confirmed": 39,
+   "share": 0.975,
+   "links_in_stratum": 27429
+  },
+  "one_to_one, same office, sole candidate": {
+   "sampled": 40,
+   "fetched": 40,
+   "confirmed": 40,
+   "share": 1.0,
+   "links_in_stratum": 50192
+  },
+  "one_to_one, same region, several candidates": {
+   "sampled": 40,
+   "fetched": 40,
+   "confirmed": 36,
+   "share": 0.9,
+   "links_in_stratum": 737
+  },
+  "one_to_one, same region, sole candidate": {
+   "sampled": 40,
+   "fetched": 40,
+   "confirmed": 40,
+   "share": 1.0,
+   "links_in_stratum": 5407
+  }
+ },
+ "misses": [
+  {
+   "stratum": "one_to_one, same region, several candidates",
+   "line_id": "gaa:2025:300226120197000",
+   "gaa_title": "Construction of Multi Purpose Bldg. (Covered Court) at Brgy. Toclong 1B, City of Imus, Cavite",
+   "contract_id": "25DF0246",
+   "contract_description": "CONVERGENCE AND SPECIAL SUPPORT PROGRAM  BASIC INFRASTRUCTURE PROGRAM (BIP)  BIP - MULTI-PURPOSE BUILDINGS/ FACILITIES TO SUPPORT SOCIAL SERVICES  CONSTRUCTION OF MULTI PURPOSE BLDG. (COVERED COURT) AT BRGY. TOCLONG, CITY OF IMUS, CAVITE",
+   "component_score": 0.0
+  },
+  {
+   "stratum": "one_to_one, all offices, several candidates",
+   "line_id": "gaa:2022:300215100505000",
+   "gaa_title": "Construction of Kasyawa Bridge, Matanao, Davao del Sur",
+   "contract_id": "22LD0044",
+   "contract_description": "CONSTRUCTION OF REVETMENT ALONG MATANAO RIVER (KASYAWA BRIDGE SECTION), MATANAO, DAVAO DEL SUR",
+   "component_score": 73.23943661971832
+  },
+  {
+   "stratum": "bundle",
+   "line_id": "gaa:2023:300221102589000",
+   "gaa_title": "Construction of Road, Poblacion, Labrador, Pangasinan",
+   "contract_id": "23AH0144",
+   "contract_description": "CLUSTER NO. V - BASIC INFRASTRUCTURE PROGRAM; 1. CONSTRUCTION OF MULTI-PURPOSE BUILDING, BARANGAY POBLACION, LABRADOR, PANGASINAN; 2. CONSTRUCTION (COMPLETION) OF MULTI-PURPOSE BUILDING (COVERED COURT), BARANGAY MANIBOC, LINGAYEN, PANGASINAN; 3. CONSTRUCT",
+   "component_score": 77.16535433070865
+  },
+  {
+   "stratum": "bundle",
+   "line_id": "gaa:2025:300226121185000",
+   "gaa_title": "Construction of Multi-Purpose Building, Casiguran, Sorsogon",
+   "contract_id": "25FK0098",
+   "contract_description": "CLUSTER XXX-CONVERGENCE AND SPECIAL SUPPORT PROGRAM (CSSP)-BASIC INFRASTRUCTURE PROGRAM (BIP)-MULTI PURPOSE BUILDINGS/FACILITEIS TO SUPPORT SOCIAL SERVICES-1.) CONSTRUCTION OF MULTI-PURPOSE BUILDING (BARANGAY HALL), BRGY. SAN ISIDRO, CASIGURAN, SORSOGON 2",
+   "component_score": 82.01438848920863
+  },
+  {
+   "stratum": "bundle",
+   "line_id": "gaa:2021:310204100741000",
+   "gaa_title": "Barcelona-Casiguran Diversion Road, Casiguran Section, (Package 2), Sorsogon",
+   "contract_id": "21F00024",
+   "contract_description": "OO1: ENSURE SAFE AND RELIABLE NATIONAL ROAD SYSTEM-NETWORK DEVELOPMENT PROGRAM-CONSTRUCTION OF BY-PASS AND DIVERSION ROADS-CLUSTER II:I-BARCELONA-CASIGURAN DIVERSION ROAD,BARCELONA SECTION,SORSOGON;II-JUBAN-BULAN DIVERSION ROAD,BULAN SECTION,SORSOGON;III-",
+   "component_score": 83.33333333333334
+  },
+  {
+   "stratum": "one_to_one, same region, several candidates",
+   "line_id": "gaa:2022:300215102268000",
+   "gaa_title": "Construction of Road Golden Valley to Anitapan, Maskarig, Mabini, Davao de Oro",
+   "contract_id": "22LA0058",
+   "contract_description": "CONSTRUCTION OF ROAD, ANITAPAN TO MASKARIG, MABINI, DAVAO DE ORO",
+   "component_score": 85.29411764705883
+  },
+  {
+   "stratum": "bundle",
+   "line_id": "gaa:2025:300226121167000",
+   "gaa_title": "Construction of Multi-Purpose Building at Brgy. San Pascual, Casiguran, Sorsogon ",
+   "contract_id": "25FK0098",
+   "contract_description": "CLUSTER XXX-CONVERGENCE AND SPECIAL SUPPORT PROGRAM (CSSP)-BASIC INFRASTRUCTURE PROGRAM (BIP)-MULTI PURPOSE BUILDINGS/FACILITEIS TO SUPPORT SOCIAL SERVICES-1.) CONSTRUCTION OF MULTI-PURPOSE BUILDING (BARANGAY HALL), BRGY. SAN ISIDRO, CASIGURAN, SORSOGON 2",
+   "component_score": 85.36585365853658
+  },
+  {
+   "stratum": "bundle",
+   "line_id": "gaa:2025:300226121169000",
+   "gaa_title": "Construction of Multi-Purpose Building at Brgy. Cawit, Casiguran, Sorsogon",
+   "contract_id": "25FK0098",
+   "contract_description": "CLUSTER XXX-CONVERGENCE AND SPECIAL SUPPORT PROGRAM (CSSP)-BASIC INFRASTRUCTURE PROGRAM (BIP)-MULTI PURPOSE BUILDINGS/FACILITEIS TO SUPPORT SOCIAL SERVICES-1.) CONSTRUCTION OF MULTI-PURPOSE BUILDING (BARANGAY HALL), BRGY. SAN ISIDRO, CASIGURAN, SORSOGON 2",
+   "component_score": 86.45161290322581
+  },
+  {
+   "stratum": "bundle",
+   "line_id": "gaa:2025:300226121168000",
+   "gaa_title": "Construction of Multi-Purpose Building at Brgy. Tulay, Casiguran, Sorsogon",
+   "contract_id": "25FK0098",
+   "contract_description": "CLUSTER XXX-CONVERGENCE AND SPECIAL SUPPORT PROGRAM (CSSP)-BASIC INFRASTRUCTURE PROGRAM (BIP)-MULTI PURPOSE BUILDINGS/FACILITEIS TO SUPPORT SOCIAL SERVICES-1.) CONSTRUCTION OF MULTI-PURPOSE BUILDING (BARANGAY HALL), BRGY. SAN ISIDRO, CASIGURAN, SORSOGON 2",
+   "component_score": 86.45161290322581
+  },
+  {
+   "stratum": "bundle",
+   "line_id": "gaa:2023:300226105258000",
+   "gaa_title": "Construction of Multi-Purpose Building, Quibaol, Lingayen Pangasinan",
+   "contract_id": "23AH0144",
+   "contract_description": "CLUSTER NO. V - BASIC INFRASTRUCTURE PROGRAM; 1. CONSTRUCTION OF MULTI-PURPOSE BUILDING, BARANGAY POBLACION, LABRADOR, PANGASINAN; 2. CONSTRUCTION (COMPLETION) OF MULTI-PURPOSE BUILDING (COVERED COURT), BARANGAY MANIBOC, LINGAYEN, PANGASINAN; 3. CONSTRUCT",
+   "component_score": 87.02290076335878
+  },
+  {
+   "stratum": "one_to_one, same office, several candidates",
+   "line_id": "gaa:2021:300104221211000",
+   "gaa_title": "Construction of Multi-Purpose Building, Brgy. Poblacion, San Nicolas, Batangas",
+   "contract_id": "21DC0212",
+   "contract_description": "LOCAL PROGRAM, BUILDINGS AND OTHER STRUCTURES - MULTIPURPOSE/FACILITIES - LOCAL INFRASTRUCTURE PROGRAM, CONSTRUCTION/ REHABILITATION OF MULTI-PURPOSE BUILDING IN BARANGAY POBLACION, SAN NICOLAS, BATANGAS",
+   "component_score": 87.05882352941177
+  },
+  {
+   "stratum": "one_to_one, all offices, sole candidate",
+   "line_id": "gaa:2022:320101107758000",
+   "gaa_title": "Construction of Revetment along Manat River (Downstream), Sta. 19+110 - Sta. 19+900 (LS), Sta. 19+500 - Sta. 21+500 (RS), Brgy. Mainit, Nabunturan, Davao de Oro",
+   "contract_id": "22LA0102",
+   "contract_description": "CONSTRUCTION OF REVETMENT ALONG MANAT RIVER (DOWNSTREAM) STA. 19+110 - STA. 19+900 (LS), STA. 20+115.73 - STA. 21+007.73 (RS), STA. 21+028.00 - STA. 21+500 (RS), BRGY. MAINIT, NABUNTURAN, DAVAO DE ORO",
+   "component_score": 87.06624605678233
+  },
+  {
+   "stratum": "bundle",
+   "line_id": "gaa:2025:300226121249000",
+   "gaa_title": "Construction of Multi-Purpose Building (Barangay Hall), Brgy. San Vicente, Sorsogon City, Sorsogon",
+   "contract_id": "25FK0098",
+   "contract_description": "CLUSTER XXX-CONVERGENCE AND SPECIAL SUPPORT PROGRAM (CSSP)-BASIC INFRASTRUCTURE PROGRAM (BIP)-MULTI PURPOSE BUILDINGS/FACILITEIS TO SUPPORT SOCIAL SERVICES-1.) CONSTRUCTION OF MULTI-PURPOSE BUILDING (BARANGAY HALL), BRGY. SAN ISIDRO, CASIGURAN, SORSOGON 2",
+   "component_score": 87.15083798882681
+  },
+  {
+   "stratum": "one_to_one, same region, several candidates",
+   "line_id": "gaa:2023:300226104796000",
+   "gaa_title": "Construction Of Multi Purpose Bldg., Talon 3, Las Pinas City ",
+   "contract_id": "23OI0088",
+   "contract_description": "CONSTRUCTION / REHABILITATION OF MULTI  PURPOSE BLDG., TALON 3, LAS PINAS CITY",
+   "component_score": 88.37209302325581
+  },
+  {
+   "stratum": "one_to_one, same region, several candidates",
+   "line_id": "gaa:2023:300220101582000",
+   "gaa_title": "Construction of Multi-Purpose Building, Molino II, Bacoor, Cavite",
+   "contract_id": "23DQ0135",
+   "contract_description": "CONSTRUCTION OF MULTI-PURPOSE BUILDING, BARANGAY MOLINO II, BACOOR CITY, CAVITE",
+   "component_score": 89.85507246376811
+  }
+ ]
+}

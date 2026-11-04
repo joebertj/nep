@@ -290,7 +290,7 @@ renderRoadBridge3D();window.addEventListener('resize',()=>{if(window.Plotly){Plo
     historical=year_comparison.replace('<h2>Are stated-meter allocations higher than FY2026 GAA?</h2>','<h2>2. Historical comparison · are stated-meter allocations higher than FY2026 GAA?</h2>',1)
     lane_block='<section id="lane-meter-analysis"><h2>3. Lane-meter analysis</h2>'+lane_note+'<div id="lane-sections"></div>'+spatial_chart+'</section>'
     exploratory=render_density(density).replace('<h2>At what stated lengths does allocation density change?</h2>','<h2>4. Length and allocation-density exploration</h2>',1)
-    support_block='<section id="coverage-approximations-methods"><h2>5. Coverage, approximations, and methods</h2><p>Coordinate-distance estimates stay separate from stated-meter rates. Missing-length and asset-matching evidence, extraction rules, and source checks are detailed in the supporting page linked below.</p>'+approximation_note+'<div id="support-sections"></div>'+length_overview(data)+methods+links+'</section>'
+    support_block='<section id="coordinate-approximations"><h2>5. Coordinate-distance approximations</h2><p>Coordinate-distance estimates stay separate from stated-meter rates and high-rate flags. Detailed asset matching, recovered dimensions, length coverage and extraction methods are on <a href="cost-matching.html">Asset matching and length coverage</a>.</p>'+approximation_note+'<div id="support-sections"></div></section>'
     page=head+'<body class="bettergov-research"><header><div class="eyebrow">BetterGov · Budget research</div><h1>Cost per meter and lane-meter</h1><p>HGAB 3rd reading · calculations and peer comparisons</p></header><main>'+evidence_limits+hero+rate_block+historical+lane_block+exploratory+support_block+'</main>'+data_script+chart_data_script+'<script src="plotly-2.35.2.min.js?v='+plotly_version+'"></script><script>'+computation_start+controls+'</script><script>'+spatial_script+'</script></body></html>'
     from build_report_heroes import STYLE,hero as lead_card
     page=page.replace('__HERO_STYLE__',STYLE)
@@ -298,6 +298,7 @@ renderRoadBridge3D();window.addEventListener('resize',()=>{if(window.Plotly){Plo
     page=apply_uniform_menu_page(page,'cost-per-km.html')
     from report_table_presentation import publish_assets,apply_page as apply_report_styles
     page=apply_report_styles(page,publish_assets())
+    page='\n'.join(line.rstrip() for line in page.splitlines())+'\n'
     (STATIC/'cost-per-km.html').write_text(page);(OUT/'cost-per-km.html').write_text(page)
     recovered=sum(r['assetLengthRecords'] for r in data['laneCost']['summary'])
     evidence_hero=lead_card('HGAB 3rd reading · matching and coverage',f'{recovered:,}',
@@ -313,6 +314,7 @@ renderRoadBridge3D();window.addEventListener('resize',()=>{if(window.Plotly){Plo
     if 'id="report-hero-style"' not in evidence_page:evidence_page=evidence_page.replace('</head>',STYLE+'</head>',1)
     evidence_page=apply_uniform_menu_page(evidence_page,evidence_name)
     evidence_page=apply_report_styles(evidence_page,publish_assets())
+    evidence_page='\n'.join(line.rstrip() for line in evidence_page.splitlines())+'\n'
     (STATIC/evidence_name).write_text(evidence_page);(OUT/evidence_name).write_text(evidence_page)
 
 

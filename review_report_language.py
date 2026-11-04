@@ -101,10 +101,6 @@ def apply():
     headline=ROOT/'build_dpwh_hgab_headlines.py'
     text=headline.read_text().replace(':not(#foreign-assisted-review){display:none!important}',':not(#foreign-assisted-review):not(#hgab-investigation-evidence):not(#report-evidence-notice){display:none!important}')
     headline.write_text(text)
-    nav=re.search(r'<nav class="report-nav".*?</nav>', (STATIC/'rcs.html').read_text(), re.S)[0]
-    congress_link='<a href="congress.html">Congressional District Allocations</a>'
-    nav=re.sub(r'<a\b[^>]*href="congress.html"[^>]*>.*?</a>', '', nav, flags=re.S)
-    nav=nav.replace('</nav>',congress_link+'</nav>')
     from standardize_nep_hgab_pages import apply as standardize_comparison_scope
     standardize_comparison_scope()
     if (STATIC/'nep-agency-baselines.json').exists():
@@ -126,10 +122,6 @@ def apply():
             from build_appropriations_comparison import apply_roles_page
             apply_roles_page(path)
         original=text=path.read_text()
-        if re.search(r'<nav class="report-nav"', text):
-            text=re.sub(r'<nav class="report-nav".*?</nav>', lambda m:nav, text, flags=re.S)
-        else:
-            text=text.replace('</header>',nav+'</header>',1)
         for old,new in REPLACEMENTS.items():text=text.replace(old,new)
         text=expose_methodology(text)
         if path.name=='congress.html':
@@ -138,6 +130,9 @@ def apply():
         text=text.replace(':not(#foreign-assisted-review){display:none!important}',':not(#foreign-assisted-review):not(#hgab-investigation-evidence):not(#report-evidence-notice){display:none!important}')
         if path.name != 'budget-trivia.html':
             text=standardize_disclaimer(text)
+        if path.name not in {'budget-trivia.html','pow.html'}:
+            from uniform_report_menu import apply_page as apply_shared_menu
+            text=apply_shared_menu(text,path.name)
         path.write_text(text)
         visible=VisibleText();visible.feed(text)
         prose=re.sub(r'\s+',' ',' '.join(visible.parts))

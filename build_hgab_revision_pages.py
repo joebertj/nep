@@ -212,6 +212,11 @@ def write_dpwh_comparison_page() -> None:
 
     hgab_page = STATIC / "dpwh-hgab.html"
     html = hgab_page.read_text(encoding="utf-8")
+    html = html.replace(
+        '<tr><th>Project</th><th>Program / category</th><th>Office</th><th class="num">Amount*</th>',
+        '<tr><th>Fiscal year</th><th>Project</th><th>Program / category</th><th>Office</th><th class="num">Amount*</th>',
+    )
+    html = html.replace('colspan="12" class="empty">No matching potential repeats', 'colspan="13" class="empty">No matching potential repeats')
     third_candidates = data["hbInsertions"]
     third_total = sum(int(row.get("amountPesos") or 0) for row in third_candidates)
     html = html.replace(

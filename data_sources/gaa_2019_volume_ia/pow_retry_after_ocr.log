@@ -1,0 +1,25 @@
+GAA OCR reached all source pages; rebuilding line labels.
+Checking connectivity to the model hosters, this may take a while. To bypass this check, set `DISABLE_MODEL_SOURCE_CHECK` to `True`.
+No model hoster is available! Please check your network connection to one of the following model hoster: HuggingFace (https://huggingface.co), ModelScope (https://modelscope.cn), AIStudio (https://aistudio.baidu.com), or BOS (https://paddle-model-ecology.bj.bcebos.com). Otherwise, only local models can be used.
+Updated searchable line fields in /Users/joebertj/nep/data_sources/gaa_2019_volume_ia/pages.jsonl
+Starting cached POW retry batch with one worker.
+Traceback (most recent call last):
+  File "/Users/joebertj/nep/reparse_failed_project_pows.py", line 169, in <module>
+    main()
+    ~~~~^^
+  File "/Users/joebertj/nep/reparse_failed_project_pows.py", line 128, in main
+    atomic_json(PROGRESS, progress)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joebertj/nep/reparse_failed_project_pows.py", line 23, in atomic_json
+    temporary.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py", line 555, in write_text
+    return PathBase.write_text(self, data, encoding, errors, newline)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_abc.py", line 651, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted: '/Users/joebertj/nep/data_sources/dpwh_project_documents/.reparse-failed-pow-progress.json.aa17a59da4da493cb1774ced58e11376.tmp'

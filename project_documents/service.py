@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """On-demand project-document worker, bound to localhost behind ODV.
 GET metadata does not fetch documents. POST prepare fetches this project's selected
-POW/RDC PDFs and, when enabled, photo attachments as-is. Photo tables retain source links.
+POW and Development Council PDFs (RDC/PDC/LDC) and, when enabled, photo attachments as-is. Photo tables retain source links.
 Set HTTPS_PROXY on the worker to a PH egress proxy if required.
 """
 import argparse,concurrent.futures,hashlib,json,os,re,ssl,threading,time,urllib.request,uuid
@@ -15,7 +15,7 @@ MODULE=Path(__file__).resolve().parent
 CACHE=Path(os.environ.get('DPWH_DOCUMENT_CACHE',str(MODULE.parent/'data_sources/dpwh_project_documents/on_demand'))).resolve()
 MAX_DOCUMENT_BYTES=int(os.environ.get('DPWH_DOCUMENT_MAX_BYTES',str(512*1024*1024)))
 API=os.environ.get('DPWH_METADATA_API','https://api.dpwh.bettergov.ph/nep/projects').rstrip('/')
-JOBS={};LOCK=threading.Lock();POOL=concurrent.futures.ThreadPoolExecutor(max_workers=2)
+JOBS={};LOCK=threading.Lock();POOL=concurrent.futures.ThreadPoolExecutor(max_workers=1)
 
 def storage_guard():
     volume=os.environ.get("DPWH_EXTERNAL_VOLUME") or ("/Volumes/T5 EVO" if str(CACHE).startswith("/Volumes/T5 EVO/") else None)
@@ -44,7 +44,11 @@ def metadata(code,refresh=False):
     data=payload['data'];save(path,data);return data
 def kinds(doc):
     text=re.sub(r'[^a-z]+',' ',doc.get('documentType','').lower()).strip()
-    return 'pow' if text=='pow' or 'program of work' in text else 'photos' if 'geotagged' in text and 'photo' in text else 'rdc' if 'rdc' in text or 'regional development council' in text else None
+    return ('pow' if text=='pow' or 'program of work' in text else
+            'photos' if 'geotagged' in text and 'photo' in text else
+            'rdc' if 'rdc' in text or 'regional development council' in text else
+            'pdc' if 'pdc' in text or 'provincial development council' in text else
+            'ldc' if 'ldc' in text or 'local development council' in text else None)
 
 def photo_extension(url):
     extension=Path(unquote(urlsplit(url).path)).suffix.lower()
@@ -127,9 +131,9 @@ def _process(code,refresh=False):
                     asset.parent.mkdir(parents=True,exist_ok=True);part.replace(asset)
                 row['sha256']=hashlib.sha256(asset.read_bytes()).hexdigest()
                 if kind=='pow':row['pow']=parse_pdf(asset,folder,allocation)
-                elif kind=='rdc':
+                elif kind in ('rdc','pdc','ldc'):
                     from .signatories import extract
-                    row['signatories']=extract(asset,'rdc',folder)
+                    row['signatories']=extract(asset,kind,folder)
                 if kind=='pow':
                     from .signatories import extract
                     row['signatories']=extract(asset,'pow',folder)

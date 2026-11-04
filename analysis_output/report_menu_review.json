@@ -2,195 +2,307 @@
   "pages": [
     {
       "page": "archive.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
+      "uniformMarkup": true,
+      "uniformStyles": true
+    },
+    {
+      "page": "barangay-historical.html",
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "barangay.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "budget-innovations.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "congress.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
+      "uniformMarkup": true,
+      "uniformStyles": true
+    },
+    {
+      "page": "contractors.html",
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "cost-matching.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "cost-per-km.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "cost-per-unit.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "deped.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "dpwh-OO2-hgab.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "dpwh-hgab-comparison.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "dpwh-hgab.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "dpwh.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
+      "uniformMarkup": true,
+      "uniformStyles": true
+    },
+    {
+      "page": "flags.html",
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "flood-control.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "fmr.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
+      "uniformMarkup": true,
+      "uniformStyles": true
+    },
+    {
+      "page": "gaa-2015-dpwh-technical.html",
+      "groups": 3,
+      "links": 20,
+      "uniformMarkup": true,
+      "uniformStyles": true
+    },
+    {
+      "page": "gaa-2019-dpwh-technical.html",
+      "groups": 3,
+      "links": 20,
+      "uniformMarkup": true,
+      "uniformStyles": true
+    },
+    {
+      "page": "gaa-2019-volume-ia.html",
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "hfep.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "index.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "integrated-district-allocations.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
+      "uniformMarkup": true,
+      "uniformStyles": true
+    },
+    {
+      "page": "integrated-district-totals.html",
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "integrated.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "mpb-barangay.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "mpb-base.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
+      "uniformMarkup": true,
+      "uniformStyles": true
+    },
+    {
+      "page": "mpb-historical.html",
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "mpb.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "nia-irrigation.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "nia.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "out-of-place.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "outside.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
+      "uniformMarkup": true,
+      "uniformStyles": true
+    },
+    {
+      "page": "pccp-cost-per-unit.html",
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "project-documents.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "rcs-rainfall-archive.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "rcs.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
+      "uniformMarkup": true,
+      "uniformStyles": true
+    },
+    {
+      "page": "repeats-historical.html",
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "repeats.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     },
     {
       "page": "summary.html",
-      "links": 15,
+      "groups": 3,
+      "links": 20,
+      "uniformMarkup": true,
+      "uniformStyles": true
+    },
+    {
+      "page": "undocumented-hgab.html",
+      "groups": 3,
+      "links": 20,
       "uniformMarkup": true,
       "uniformStyles": true
     }
   ],
-  "pageCount": 30,
-  "menuHeightsPx": {
-    "desktop": 118,
-    "tablet": 202,
-    "mobile": 328
-  },
-  "headerHeightsPx": {
-    "desktop": 361,
-    "tablet": 495,
-    "mobile": 647
-  },
-  "scope": "Generated markup and CSS audit; no browser rendering test."
+  "pageCount": 41,
+  "menuGroups": [
+    {
+      "label": "Summary",
+      "links": 1
+    },
+    {
+      "label": "Budget 2027",
+      "links": 12
+    },
+    {
+      "label": "Historical",
+      "links": 7
+    }
+  ],
+  "menuBehavior": "Mutually exclusive native collapsible groups; opening one closes the other; panels are scrollable and responsive.",
+  "scope": "Generated markup and CSS audit; all static report menus checked against the shared menu source."
 }

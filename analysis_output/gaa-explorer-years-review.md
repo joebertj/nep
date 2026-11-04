@@ -62,6 +62,42 @@ The MPB barangay page now covers ten available fiscal-year slices: FY2017, FY201
 
 Repository snapshots checked: BetterGov open-data-visualization `0ed79131520e`, BetterGov open-budget-data `db1b6c28b30b`, and csiiiv `1bfd187c9089`. Source-data commit ids and the GAA manifest/file checksums are retained in the extraction metadata where applicable.
 
+## FY2019 DPWH source correction · 2026-11-03
+
+The FY2019 GAA Explorer baseline is still edition-differ and aggregate-only for
+DPWH project titles. That does not mean the enacted FY2019 GAA lacks a named
+DPWH schedule. DBM's Technical GAA DPWH PDF was downloaded from the official
+site and parsed from its selectable text layer:
+
+- `research_downloads/philgeps_dime_2019gaa/fy2019-gaa-dpwh-technical.pdf`
+- `data_sources/gaa_2019_dpwh_technical/lines.json`
+- SHA-256: `2a2e5dc4271394777ba9fbe6fbc8a2fc344c7a25fb7b7fd02d22a207912693fe`
+
+The 1,527-page PDF yields 21,751 unique UACS-coded lines, including overlapping
+program controls and detailed rows. Its printed DPWH new-appropriation total
+is ₱454,016,273,000. Do not sum all extracted rows: parent/group amounts and
+their detailed lines overlap. The source has been added to the historical
+district project series using 13,254 specific-code title-classified lines
+(road, bridge, flood control, and MPB). Existing geographic rules uniquely
+assign 10,253 lines (₱107,965,359,000); 3,001 lines (₱97,592,654,000) remain
+unresolved. Those figures cover the four classified families, not the full
+DPWH GAA.
+
+The MPB title filter yields 6,598 specific PAP lines totaling ₱24,006,119,000
+before location assignment. 3,973 lines link to barangay identities
+(₱12,029,712,000); 2,625 remain unlinked. The contractor MPB inventory now
+includes all 6,598 FY2019 lines regardless of location resolution. These are
+GAA allocations, not contractor awards or expenditures; DIME and PhilGEPS
+evidence remains separate and only matches by the existing title/year rules.
+
+Historical project records, district allocations, flood-control family
+comparisons, repeats, MPB/MPB Barangay, and the contractors MPB baseline now
+include FY2019 where their title/location scope allows. Cost-per-meter remains
+limited to its FY2026 GAA versus FY2027 HGAB model; the full FY2019 schedule is
+available as a separate searchable dataset for future length review. The earlier
+FY2019 exclusion notes in this review referred to the Explorer snapshot and
+are superseded for DBM's technical DPWH schedule.
+
 ## GAA page year coverage rollout · 2026-11-02
 
 The available full DPWH annual project data remains FY2020–FY2025, with FY2026 enrolled-copy rows on the pages that use that source. The only pre-2020 project extract currently present in this workspace is the title-classified MPB subset for FY2017 and FY2018 used by MPB RTS. A request for the public GAA Explorer all-years Parquet returned HTTP 403, so no new general DPWH annual rows could be imported during this update.
@@ -75,3 +111,9 @@ Unavailable years now appear as disabled placeholders in the GAA-year filters on
 - FY2019 is excluded because published editions differ and the inspected snapshot contains no named DPWH project titles.
 
 The new placeholders document coverage gaps; they do not add fabricated zero-value observations. Existing FY2020–FY2027 values and computations remain scoped to their actual loaded data.
+
+## FY2015 source correction · 2026-11-03
+
+DBM's official FY2015 archive contains `GAA2015/DPWH.csv`, a structured account-detail export. The member was extracted by HTTP byte ranges, preserving the 8.77 MB raw CSV and its SHA-256 in `data_sources/gaa_2015_dpwh_technical/`. The source has 29,091 DPWH account rows. Capital-outlay object rows sum to ₱283,461,895,000; all DPWH account classes sum to ₱303,164,052,000. The parsed output groups capital-outlay rows by PAP title, implementing office, region, and fund source. PAP codes are not unique project IDs.
+
+FY2015 title classification identifies 8,080 road, bridge, flood/drainage, or multi-purpose-building PAP groups. These are research candidates, not a count of unique physical projects. The historical district dataset now includes 8,080 classified rows (725 uniquely assigned; 7,355 unresolved). The MPB subset has 3,477 rows totaling ₱10,013,638,000 before location assignment; 1,783 are linked to barangays with ₱4,585,730,000. The contractors inventory retains all 3,477 FY2015 MPB candidates. Repeat matching does not yet include FY2015: the broad PAP title and non-unique code structure needs a separate exact-title reconciliation before it can enter repeat counts. The FY2015 source page is `gaa-2015-dpwh-technical.html`; the separate data JSON is linked from that page.

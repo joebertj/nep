@@ -21,6 +21,8 @@ ODV = ROOT.parent / "open-data-visualization"
 REPORTS = ROOT / "analysis_output"
 OUT = REPORTS / "priority_program_year_on_year_candidates.csv"
 HISTORICAL_GAA = ROOT / "data_sources" / "gaa-dpwh-project-families-2016-2018.json"
+TECHNICAL_GAA_2019 = ROOT / "data_sources" / "gaa_2019_dpwh_technical" / "lines.json"
+TECHNICAL_GAA_2015 = ROOT / "data_sources" / "gaa_2015_dpwh_technical" / "lines.json"
 
 CATEGORY_PATTERNS = {
     "Multi-purpose building": re.compile(r"multi[\s-]*purpose.{0,40}building|building.{0,40}multi[\s-]*purpose", re.I),
@@ -158,7 +160,7 @@ def normalize_2027() -> list[dict]:
 def previous_rows(years: list[int] | None = None) -> dict[int, list[dict]]:
     terms = "MULTI.?PURPOSE|ROAD|BRIDGE|FLOOD|DRAINAGE|DIKE|REVETMENT"
     prior_by_year: dict[int, list[dict]] = {}
-    requested=set(years if years is not None else range(2016,2027))
+    requested=set(years if years is not None else range(2015,2027))
 
     def convert(rows: list[dict], year: int, source_kind: str) -> list[dict]:
         result = []
@@ -184,6 +186,42 @@ def previous_rows(years: list[int] | None = None) -> dict[int, list[dict]]:
         for year in sorted(requested & {2016, 2017, 2018}):
             rows = [row for row in historical.get("records", []) if int(row.get("year") or 0) == year]
             prior_by_year[year] = convert(rows, year, "historical_extract")
+
+    if 2015 in requested:
+        technical = json.loads(TECHNICAL_GAA_2015.read_text(encoding="utf-8"))
+        rows_2015 = []
+        for index, row in enumerate(technical.get("rows", []), 1):
+            title = str(row.get("title") or "")
+            if not row.get("categoryCandidate") or not classify(title):
+                continue
+            rows_2015.append({
+                "name": title,
+                "amountPesos": row["amountPesos"],
+                "source": (f"FY2015 DBM DPWH GAA · PAP {row['papCode']} · "
+                           f"{row['implementingOffice']} · candidate {index}"),
+            })
+        prior_by_year[2015] = convert(rows_2015, 2015, "historical_extract")
+
+    if 2019 in requested:
+        technical = json.loads(TECHNICAL_GAA_2019.read_text(encoding="utf-8"))
+        rows_2019 = []
+        for row in technical.get("rows", []):
+            code = str(row.get("uacs") or "")
+            title = str(row.get("title") or "")
+            if (not code.startswith(("30", "31", "32"))
+                    or len(code.rstrip("0")) < 12
+                    or row.get("amountPesos") is None
+                    or not classify(title)):
+                continue
+            pdf_page = (row.get("sourcePages") or [None])[0]
+            printed_page = pdf_page + 1465 if pdf_page else "not resolved"
+            rows_2019.append({
+                "name": title,
+                "amountPesos": row["amountPesos"],
+                "source": (f"FY2019 DPWH Technical GAA · UACS {code} · "
+                           f"PDF p. {pdf_page or 'not resolved'} · printed p. {printed_page}"),
+            })
+        prior_by_year[2019] = convert(rows_2019, 2019, "historical_extract")
 
     if 2026 in requested:
         path26 = "data/parquet/parsed_dpwh_2026.parquet"

@@ -299,7 +299,7 @@ def collect():
                 row_source_sha=previous.get('sha256')
             excluded_component_pages=set(reviewed_config.get('excludedComponentBreakdownPages',{}).get(meta.get('code'),[])) if d['kind']=='pow' else set()
             rows=[{k:r.get(k) for k in ('itemCode','description','componentContext','componentContexts','costCategory','quantity','unit','printedUnitCostPesos','inclusiveUnitCostPesos','calculatedUnitCostPesos','amountPesos','directCostSharePct','manualReview','sourcePage','observedPages','extractionMethod','arithmeticStatus','verificationStatus','costBasis','amountBasis')} for r in parsed_for_rows.get('rows',[]) if int(r.get('sourcePage') or 0) not in excluded_component_pages]
-            people=[{k:p.get(k) for k in ('name','roleText','kind','sourcePage','extractionMethod','verificationStatus')} for p in d.get('signatories',{}).get('people',[]) if qualified_role(p.get('roleText',''),d['kind'])]
+            people=[{k:p.get(k) for k in ('name','roleText','kind','sourcePage','extractionMethod','verificationStatus','designationRegistry')} for p in d.get('signatories',{}).get('people',[]) if qualified_role(p.get('roleText',''),d['kind'])]
             controls=[{k:c.get(k) for k in ('sourcePage','basis','amountBasis','printedPesos','recoveredItemRows','recoveredPesos','differencePesos','reconciled')} for c in parsed_for_rows.get('itemizedDirectCostControls',[])]
             categories=list(parsed_for_rows.get('costCategoryBreakdown',[]))
             if d['kind']=='pow':
@@ -335,6 +335,27 @@ def publish_split_data():
     subprocess.run([sys.executable,str(ROOT/'split_dpwh_indepth_data.py')],cwd=ROOT,
                    check=True,capture_output=True,text=True)
 
+def publish_pccp_price_reference():
+    """Publish the separately parsed regional price-list rows as standalone JSON."""
+    source=OUT/'pccp_price_list_parse.json'
+    if not source.is_file():return
+    try:parsed=json.loads(source.read_text())
+    except (OSError,ValueError):return
+    rows=[]
+    for row in parsed.get('rows',[]):
+        rows.append({key:row.get(key) for key in (
+            'section','surfaceType','scope','assumption','unit',
+            'regionalUnitCostsPesos','sourcePage','verificationStatus')})
+    payload={
+        'title':'DPWH cost estimates for work items of projects · Table 10',
+        'sourceNote':'The source notes material prices from 2022 and road data as of 14 October 2022; it labels rates per kilometer or per linear meter. Verify each row and assumption in the original PDF.',
+        'sourceSha256':parsed.get('sourceSha256'),
+        'parserStatus':parsed.get('status'),
+        'rows':rows,
+    }
+    serialized=json.dumps(payload,ensure_ascii=False,indent=2)+'\n'
+    for target in (OUT,STATIC):atomic_write(target/'pccp-price-reference.json',serialized)
+
 def build_data():
     data=collect();data['powCategoryMerges']=CATEGORY_MERGES;data['powCategoryLabels']=CATEGORY_LABELS;data['powBillMerges']=BILL_MERGES;data['powBillLabels']=BILL_LABELS;data['hgabCoverage'],data['powPeers']=hgab_statistics(data['projects'])
     data['summaryPeerGroups']=summary_peer_groups(data['projects'])
@@ -364,7 +385,7 @@ def public_data(data):
                          'costCategoryBreakdown':[{k:item.get(k) for k in category_fields if k in item} for item in doc.get('costCategoryBreakdown',[])],
                          'summaryMetadata':doc.get('summaryMetadata',{}),'scopeNote':doc.get('scopeNote'),
                          'controls':doc.get('controls',[]),'reviewPages':doc.get('reviewPages',[]),
-                         'people':[{k:person.get(k) for k in ('name','roleText','kind','sourcePage') if k in person} for person in doc.get('people',[])]})
+                         'people':[{k:person.get(k) for k in ('name','roleText','kind','sourcePage','verificationStatus','designationRegistry') if k in person} for person in doc.get('people',[])]})
         public_projects.append({'code':project.get('code'),'name':project.get('name'),'office':project.get('office'),
                                 'region':project.get('region'),'allocationPesos':project.get('allocationPesos'),
                                 'documents':docs,'documentLinks':project.get('documentLinks',[])})
@@ -420,6 +441,23 @@ def document_reconciliation(projects):
     append_row('Other document types',other_portal,
                set().union(*selected_other.values()) if selected_other else set(),
                set().union(*direct_other.values()) if direct_other else set())
+    council_types=('RDC Endorsement','PDC Endorsement','LDC Endorsement')
+    council_portal=sum(portal_types.get(label,0) for label in council_types)
+    council_selected=set().union(*(selected.get(label,set()) for label in council_types))
+    council_direct=set().union(*(direct.get(label,set()) for label in council_types))
+    council_unique=council_selected|council_direct
+    development_council={
+        'portalRecords':council_portal,
+        'selectedPairRecords':len(council_selected),
+        'directHgabRecords':len(council_direct),
+        'uniqueMatchedRecords':len(council_unique),
+        'wastedRecords':council_portal-len(council_unique),
+        'byType':{
+            'RDC':next((row for row in rows if row['type']=='RDC Endorsement'),{}),
+            'PDC':next((row for row in rows if row['type']=='PDC Endorsement'),{}),
+            'LDC':next((row for row in rows if row['type']=='LDC Endorsement'),{}),
+        },
+    }
     transparency=catalog.get('summary',{})
     pair_summary=mapping.get('summary',{})
     return {'transparencyProjects':int(transparency.get('projectsInMetadataSnapshot') or 0),
@@ -436,6 +474,7 @@ def document_reconciliation(projects):
             'directHgabDocumentRecords':sum(len(values) for values in direct.values()),
             'uniqueMatchedDocumentRecords':sum(row['uniqueMatchedRecords'] for row in rows),
             'wastedDocumentRecords':sum(row['wastedRecords'] for row in rows),
+            'developmentCouncil':development_council,
             'rows':rows,
             'note':'Portal counts come from the full DPWH Transparency metadata inventory. Selected-pair and direct-HGAB counts use project-level document links present in the loaded snapshot and deduplicate by source URL. Direct HGAB records can overlap selected-pair records; wasted records are the inventory residual after taking their unique union. This residual is not proof of literal waste.'}
 
@@ -445,11 +484,19 @@ def refresh_data_only():
     serialized=json.dumps(public_data(data),ensure_ascii=False,indent=2)+'\n'
     atomic_write(OUT/'dpwh-in-depth-data.json',serialized)
     publish_split_data()
+    publish_pccp_price_reference()
     return data['summary']
 
 def build():
+    import importlib
     from build_report_heroes import hero,STYLE
-    from uniform_report_menu import apply_page
+    import uniform_report_menu
+    # This builder also runs inside the long-lived document watcher. Reload the
+    # shared page normalizer so regenerated DPWH pages cannot retain stale menus
+    # or stale shared header/hero styling from the watcher's startup import.
+    importlib.invalidate_caches()
+    uniform_report_menu=importlib.reload(uniform_report_menu)
+    apply_page=uniform_report_menu.apply_page
     from report_table_presentation import apply_page as tables,publish_assets
     data=build_data();s=data['summary']
     coverage=data['hgabCoverage']
@@ -465,6 +512,7 @@ def build():
     text=text.replace('src="dpwh-in-depth.js"',f'src="dpwh-in-depth.js?v={version}"')
     text=tables(apply_page(text,'dpwh.html'),publish_assets())
     cost_text=(ROOT/'project_documents/cost-per-unit.html').read_text()
+    pccp_text=(ROOT/'project_documents/pccp-cost-per-unit.html').read_text()
     cost_js=(ROOT/'project_documents/cost-per-unit.js').read_text()
     cost_version=hashlib.sha256(cost_js.encode()).hexdigest()[:12]
     indepth_js=(ROOT/'project_documents/indepth.js').read_text()
@@ -475,15 +523,26 @@ def build():
     cost_text=re.sub(r'src="dpwh-in-depth\.js(?:\?v=[^"]*)?"',f'src="dpwh-in-depth.js?v={indepth_version}"',cost_text,count=1)
     cost_text=cost_text.replace('src="dpwh-data-loader.js"',f'src="dpwh-data-loader.js?v={loader_version}"')
     cost_text=apply_page(cost_text,'cost-per-unit.html')
+    pccp_text=pccp_text.replace('src="cost-per-unit.js"',f'src="cost-per-unit.js?v={cost_version}"')
+    pccp_text=re.sub(r'src="dpwh-in-depth\.js(?:\?v=[^"]*)?"',f'src="dpwh-in-depth.js?v={indepth_version}"',pccp_text,count=1)
+    pccp_text=pccp_text.replace('src="dpwh-data-loader.js"',f'src="dpwh-data-loader.js?v={loader_version}"')
+    pccp_text=apply_page(pccp_text,'pccp-cost-per-unit.html')
     atomic_write(OUT/'dpwh-in-depth-data.json',json.dumps(public_data(data),ensure_ascii=False,indent=2)+'\n')
     publish_split_data()
     text=re.sub(r'src="dpwh-data-loader\.js(?:\?v=[^"]*)?"',f'src="dpwh-data-loader.js?v={loader_version}"',text)
+    # Table presentation can touch report chrome; keep the shared navigation as
+    # the last HTML transformation before publishing these DPWH report pages.
+    text=apply_page(text,'dpwh.html')
+    cost_text=apply_page(cost_text,'cost-per-unit.html')
+    pccp_text=apply_page(pccp_text,'pccp-cost-per-unit.html')
     for target in (OUT,STATIC):
         atomic_write(target/'dpwh-in-depth.js',(ROOT/'project_documents/indepth.js').read_text())
         atomic_write(target/'dpwh-data-loader.js',loader)
         atomic_write(target/'dpwh.html',text)
         atomic_write(target/'cost-per-unit.js',cost_js)
         atomic_write(target/'cost-per-unit.html',cost_text)
+        atomic_write(target/'pccp-cost-per-unit.html',pccp_text)
+    publish_pccp_price_reference()
     return s
 if __name__=='__main__':
     import argparse

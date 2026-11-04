@@ -1,0 +1,191 @@
+{
+  "description": "Local ODV /integrated party-list cache rows compared with the GAA project inventory embedded for integrated.html. Exact normalized title + year candidate matching only; caches can overlap sources and project values are not official party-list budget allocations.",
+  "partyListCacheCount": 13,
+  "cacheSummaries": [
+    {
+      "representative": "Bernadette Herrera",
+      "cache": "available",
+      "projects": 0,
+      "cost": 0,
+      "sourceCounts": {
+        "ssp": 0,
+        "dime": 0,
+        "philgeps": 0,
+        "microsite": 0,
+        "transparency": 0
+      },
+      "exactGaaTitleYearHits": 0
+    },
+    {
+      "representative": "Conrado Estrella III",
+      "cache": "available",
+      "projects": 0,
+      "cost": 0,
+      "sourceCounts": {
+        "ssp": 0,
+        "dime": 0,
+        "philgeps": 0,
+        "microsite": 0,
+        "transparency": 0
+      },
+      "exactGaaTitleYearHits": 0
+    },
+    {
+      "representative": "Eddie Villanueva",
+      "cache": "available",
+      "projects": 0,
+      "cost": 0,
+      "sourceCounts": {
+        "ssp": 0,
+        "dime": 0,
+        "philgeps": 0,
+        "microsite": 0,
+        "transparency": 0
+      },
+      "exactGaaTitleYearHits": 0
+    },
+    {
+      "representative": "Elizaldy Salcedo Co",
+      "cache": "available",
+      "projects": 2058,
+      "cost": 180403804254.1704,
+      "sourceCounts": {
+        "ssp": 0,
+        "dime": 220,
+        "philgeps": 585,
+        "microsite": 1545,
+        "transparency": 1756
+      },
+      "exactGaaTitleYearHits": 138
+    },
+    {
+      "representative": "Lito Atienza",
+      "cache": "available",
+      "projects": 0,
+      "cost": 0,
+      "sourceCounts": {
+        "ssp": 0,
+        "dime": 0,
+        "philgeps": 0,
+        "microsite": 0,
+        "transparency": 0
+      },
+      "exactGaaTitleYearHits": 0
+    },
+    {
+      "representative": "Mikee Romero",
+      "cache": "available",
+      "projects": 0,
+      "cost": 0,
+      "sourceCounts": {
+        "ssp": 0,
+        "dime": 0,
+        "philgeps": 0,
+        "microsite": 0,
+        "transparency": 0
+      },
+      "exactGaaTitleYearHits": 0
+    },
+    {
+      "representative": "Raymond Mendoza",
+      "cache": "available",
+      "projects": 0,
+      "cost": 0,
+      "sourceCounts": {
+        "ssp": 0,
+        "dime": 0,
+        "philgeps": 0,
+        "microsite": 0,
+        "transparency": 0
+      },
+      "exactGaaTitleYearHits": 0
+    },
+    {
+      "representative": "Rodante Marcoleta",
+      "cache": "available",
+      "projects": 0,
+      "cost": 0,
+      "sourceCounts": {
+        "ssp": 0,
+        "dime": 0,
+        "philgeps": 0,
+        "microsite": 0,
+        "transparency": 0
+      },
+      "exactGaaTitleYearHits": 0
+    },
+    {
+      "representative": "Sharon Garin",
+      "cache": "available",
+      "projects": 0,
+      "cost": 0,
+      "sourceCounts": {
+        "ssp": 0,
+        "dime": 0,
+        "philgeps": 0,
+        "microsite": 0,
+        "transparency": 0
+      },
+      "exactGaaTitleYearHits": 0
+    },
+    {
+      "representative": "Tirso Edwin Loleng Gardiola",
+      "cache": "available",
+      "projects": 1217,
+      "cost": 78408807737.01994,
+      "sourceCounts": {
+        "ssp": 0,
+        "dime": 98,
+        "philgeps": 345,
+        "microsite": 909,
+        "transparency": 1035
+      },
+      "exactGaaTitleYearHits": 55
+    },
+    {
+      "representative": "Bryan Revilla",
+      "cache": "available",
+      "projects": 85,
+      "cost": 6469101760.640003,
+      "sourceCounts": {
+        "ssp": 0,
+        "dime": 21,
+        "philgeps": 57,
+        "microsite": 57,
+        "transparency": 43
+      },
+      "exactGaaTitleYearHits": 17
+    },
+    {
+      "representative": "Ramon Rodrigo Gutierrez",
+      "cache": "available",
+      "projects": 92,
+      "cost": 5815952644.430001,
+      "sourceCounts": {
+        "ssp": 0,
+        "dime": 12,
+        "philgeps": 42,
+        "microsite": 69,
+        "transparency": 80
+      },
+      "exactGaaTitleYearHits": 7
+    },
+    {
+      "representative": "Jernie Jett Nisay",
+      "cache": "available",
+      "projects": 151,
+      "cost": 2850006053.18,
+      "sourceCounts": {
+        "ssp": 0,
+        "dime": 8,
+        "philgeps": 100,
+        "microsite": 67,
+        "transparency": 63
+      },
+      "exactGaaTitleYearHits": 4
+    }
+  ],
+  "exportedCacheProjectRows": 3603,
+  "exactGaaTitleYearMatchedRows": 221,
+  "outputCsv": "partylist-integrated-gaa-reconciliation.csv"
+}

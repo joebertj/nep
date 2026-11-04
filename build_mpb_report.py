@@ -188,6 +188,40 @@ def _render_mpb_flag_chart(summary):
             f'<div class="mpb-flag-group"><h3>Bill-stage comparison</h3>{_render_metric_rows(metrics)}</div></section>')
 
 
+def _publish_mpb_historical_page(periods=None):
+    """Publish classified historical DPWH allocations for four project types."""
+    source = STATIC / 'integrated-project-data.json'
+    integrated = json.loads(source.read_text(encoding='utf-8'))
+    category_map = {'Flood control': 'Flood Control', 'Multi-purpose building': 'MPB', 'Road': 'Roads', 'Bridge': 'Bridges'}
+    grouped = defaultdict(lambda: {'projectCount': 0, 'allocationPesos': 0})
+    for row in integrated.get('projects', []):
+        if row.get('stage') != 'GAA' or row.get('category') not in category_map: continue
+        try: year, amount = int(row.get('year') or 0), int(float(row.get('amountPesos') or 0))
+        except (TypeError, ValueError): continue
+        if not year: continue
+        key = (year, category_map[row['category']])
+        grouped[key]['projectCount'] += 1
+        grouped[key]['allocationPesos'] += amount
+    categories = ['Flood Control', 'MPB', 'Roads', 'Bridges']
+    years = sorted({year for year, _ in grouped})
+    payload = {'source': 'integrated-project-data.json', 'method': 'GAA-stage classified DPWH project rows grouped by fiscal year and source category.', 'years': years, 'categories': categories,
+        'rows': [{'year': year, 'projectType': category, **grouped.get((year, category), {'projectCount': 0, 'allocationPesos': 0})} for year in years for category in categories]}
+    serialized = json.dumps(payload, ensure_ascii=False, separators=(',', ':')) + '\n'
+    version = hashlib.sha256(serialized.encode('utf-8')).hexdigest()[:12]
+    for path in (STATIC / 'historical-allocations-data.json', OUT / 'historical-allocations-data.json'): path.write_text(serialized, encoding='utf-8')
+    page = f'''<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Historical allocations · BetterGov</title>
+<style>body{{margin:0;background:#eef3f4;color:#18303b;font:16px/1.5 system-ui,sans-serif}}header{{background:#142e3b;color:white;padding:24px 2vw}}h1{{margin:0;font-size:30px}}main{{padding:24px 2vw;max-width:none}}section.card{{background:white;border:1px solid #ccdcd8;border-radius:14px;padding:24px;margin:24px 0}}h2{{margin-top:0}}a{{color:#087e78}}.controls{{display:flex;align-items:center;gap:10px;margin:16px 0}}select{{font:inherit;padding:8px;border:1px solid #aebdca;border-radius:8px;background:white}}.chart{{display:grid;gap:8px;margin:16px 0 22px}}.bar-row{{display:grid;grid-template-columns:70px minmax(80px,1fr) minmax(130px,auto);align-items:center;gap:10px}}.track{{height:13px;background:#e7edf2;border-radius:20px;overflow:hidden}}.fill{{height:100%;background:linear-gradient(90deg,#0038a8,#168c86)}}table{{width:100%;border-collapse:collapse;table-layout:fixed}}th,td{{padding:10px;text-align:left;vertical-align:top;border-bottom:1px solid #d9e3e1;overflow-wrap:anywhere}}th{{background:#edf4f2}}.num{{text-align:right;white-space:nowrap}}.note{{color:#526773}}@media(max-width:650px){{th,td{{font-size:12px;padding:6px}}section.card{{padding:14px}}.bar-row{{grid-template-columns:52px minmax(50px,1fr) minmax(95px,auto);font-size:12px}}}}</style></head><body><header><h1>Historical DPWH allocations</h1><p>Classified GAA allocations for Flood Control, MPB, Roads and Bridges</p></header><main>
+<section class=\"card\"><h2>Annual allocation by project type</h2><p>Counts and listed allocations use the integrated DPWH GAA project dataset. Categories follow that dataset's classification; this is not a complete account of every DPWH budget line. Allocations are not spending.</p><div class=\"controls\"><label for=\"type\">Project type</label><select id=\"type\"><option>Flood Control</option><option>MPB</option><option>Roads</option><option>Bridges</option></select></div><div id=\"chart\" class=\"chart\" aria-label=\"Annual allocation chart\"></div><div class=\"table-wrap\"><table><thead><tr><th>Fiscal year</th><th>Project type</th><th class=\"num\">Classified project rows</th><th class=\"num\">Listed allocation</th></tr></thead><tbody id=\"rows\"><tr><td colspan=\"4\">Loading historical allocations…</td></tr></tbody></table></div><p><a href=\"contractors.html?type=MPB\">Browse MPB contractors →</a></p><p class=\"note\">Source: integrated-project-data.json · GAA-stage DPWH rows · <a href=\"historical-allocations-data.json\" download>Download grouped data</a>.</p></section>
+</main><script>fetch('historical-allocations-data.json?v={version}').then(r=>{{if(!r.ok)throw Error(r.status);return r.json()}}).then(d=>{{const n=x=>Number(x||0).toLocaleString('en-PH'),peso=x=>'₱'+n(x),type=document.getElementById('type'),rows=document.getElementById('rows'),chart=document.getElementById('chart');function draw(){{const items=d.rows.filter(x=>x.projectType===type.value),max=Math.max(1,...items.map(x=>Number(x.allocationPesos||0)));rows.innerHTML=items.map(x=>'<tr><td>FY'+Number(x.year)+'</td><td>'+x.projectType+'</td><td class=\"num\">'+n(x.projectCount)+'</td><td class=\"num\">'+peso(x.allocationPesos)+'</td></tr>').join('')||'<tr><td colspan=\"4\">No rows for this category.</td></tr>';chart.innerHTML=items.map(x=>'<div class=\"bar-row\"><strong>FY'+Number(x.year)+'</strong><span class=\"track\"><span class=\"fill\" style=\"display:block;width:'+Math.max(0,Math.min(100,100*Number(x.allocationPesos||0)/max))+'%\"></span></span><span class=\"num\">'+peso(x.allocationPesos)+'</span></div>').join('')||'<p class=\"note\">No allocation values available.</p>'}}type.addEventListener('change',draw);draw()}}).catch(e=>{{document.getElementById('rows').innerHTML='<tr><td colspan=\"4\">Historical allocation data unavailable: '+String(e.message)+'</td></tr>'}});</script></body></html>'''
+    from review_report_language import NOTICE
+    from build_investigation_summary import CSS as EVIDENCE_CSS
+    page = page.replace('<main>', '<main>' + NOTICE, 1).replace('</head>', EVIDENCE_CSS + '</head>', 1)
+    from uniform_report_menu import apply_page as apply_uniform_menu_page
+    page = apply_uniform_menu_page(page, 'mpb-historical.html')
+    from report_table_presentation import publish_assets, apply_page as apply_report_styles
+    page = apply_report_styles(page, publish_assets())
+    for path in (STATIC / 'mpb-historical.html', OUT / 'mpb-historical.html'): path.write_text(page, encoding='utf-8')
+
 def _render_location_checks(proximity):
     location = proximity.get('summary', {})
     boundary_denominator = int(location.get('coordinateAuditQualifiedMatched', 0))
@@ -335,6 +369,9 @@ def build():
     profile_source, profile_index = _leg_profile_index()
     survival = json.loads((OUT / inputs[3]).read_text())
     repeats = [r for r in survival['comparisonPairs'] if r['category'] == 'Multi-purpose building']
+    base_data_path = OUT / 'mpb-barangay-data.json'
+    barangay_periods = json.loads(base_data_path.read_text()).get('periods', []) if base_data_path.exists() else []
+    historical_gaa_baseline = [p for p in barangay_periods if int(p.get('year') or 0) in (2015, 2016, 2017, 2018, 2019)]
     repeat_years = defaultdict(set)
     for repeat in repeats:
         repeat_years[repeat.get('source_code')].add(str(repeat.get('comparison_year')))
@@ -470,14 +507,19 @@ def build():
                                                       for flag in detail['reviewFlags'])),
                'removalCandidates': len(removals), 'removalPesos': sum(r['nepPesos'] for r in removals),
                'adjustedLines': len(adjustments)}
-    data = {'category': CATEGORY, 'summary': summary, 'insertions': insertions, 'ambiguous': ambiguous,
+    data = {'category': CATEGORY, 'summary': summary,
+            'insertions': insertions, 'ambiguous': ambiguous,
             'adjustments': adjustments, 'removals': removals, 'repeats': repeats, 'prices': prices,
             'distribution': distribution,'coordinateProximity':proximity,
             'sources': [{'file': name, 'sha256': hashlib.sha256((OUT / name).read_bytes()).hexdigest()} for name in inputs] +
+                       ([{'file': str(base_data_path.name),
+                          'sha256': hashlib.sha256(base_data_path.read_bytes()).hexdigest()}]
+                        if base_data_path.exists() else []) +
                        [{'file': str(LEG_PROFILE_SOURCE.relative_to(ROOT)), 'sha256': hashlib.sha256(LEG_PROFILE_SOURCE.read_bytes()).hexdigest()}]}
     serialized = json.dumps(data, ensure_ascii=False, indent=2) + '\n'
     (OUT / 'mpb_analysis.json').write_text(serialized)
     (STATIC / 'mpb-data.json').write_text(serialized)
+    _publish_mpb_historical_page(historical_gaa_baseline)
     html = PAGE.replace('__HERO_STYLE__', STYLE).replace('__DATA__', json.dumps(data, ensure_ascii=False).replace('</', '<\\/'))
     proximity_section=render_proximity(proximity,keys=('current',))
     share_controls='''<div id="mpbMapActions" class="mpb-map-actions"><a id="mpbMapFacebook" aria-label="Share this map on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fresearch.bettergov.ph%2Fstatic%2Fnep-preview%2Fmpb.html%23mpb-coordinate-proximity" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#1877F2" d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.018 10.125 11.927v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.979h-1.513c-1.49 0-1.955.93-1.955 1.884v2.261h3.328l-.532 3.49h-2.796V24C19.612 23.091 24 18.092 24 12.073Z"/></svg><span>FB</span></a><a id="mpbMapDownload" href="#" download aria-label="Download locality map image"><span>PNG</span></a><button id="mpbMapNativeShare" type="button" aria-label="Share locality map image" hidden><span>Share</span></button><button id="mpbMapCopyLink" type="button" aria-label="Copy map share link"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M10.59 13.41a1.996 1.996 0 0 0 2.82 0l3-3a2 2 0 0 0-2.82-2.82l-1.72 1.72-1.41-1.41 1.72-1.72a4 4 0 1 1 5.66 5.66l-3 3a4 4 0 0 1-5.66 0l-.59-.59 1.41-1.41.59.57ZM13.41 10.59a1.996 1.996 0 0 0-2.82 0l-3 3a2 2 0 1 0 2.82 2.82l1.72-1.72 1.41 1.41-1.72 1.72a4 4 0 1 1-5.66-5.66l3-3a4 4 0 0 1 5.66 0l.59.59-1.41 1.41-.59-.57Z"/></svg><span>Copy</span></button><span id="mpbMapShareStatus" aria-live="polite"></span></div>'''
@@ -486,10 +528,11 @@ def build():
     proximity_section=proximity_section.replace('</div><div class="mpb-map-legend">','</div>'+share_controls+'<div class="mpb-map-legend">',1)
     flagged_overview=_render_mpb_flag_chart(summary)
     location_checks=_render_location_checks(proximity)
-    html=html.replace('<div id="hero"></div>','<div id="hero"></div>'+flagged_overview+location_checks+proximity_section+'<p><a href="out-of-place.html">Map all coordinate-bearing DEO/LEG project entries →</a></p><p><a href="repeats.html#hgab-historical-gaa">HGAB projects with historical GAA title matches →</a></p>')
+    html=html.replace('<div id="hero"></div>','<div id="hero"></div>'+flagged_overview+location_checks+proximity_section+'<p><a href="mpb-historical.html">Compare historical DPWH allocations by project type →</a></p><p><a href="out-of-place.html">Map all coordinate-bearing DEO/LEG project entries →</a></p><p><a href="repeats.html#hgab-historical-gaa">HGAB projects with historical GAA title matches →</a></p>')
     html=html.replace('</head>','<link rel="stylesheet" href="mpb-location-map.css?v=20261027-native-share-27"></head>')
     html=html.replace('<meta name="viewport" content="width=device-width,initial-scale=1">','<meta name="viewport" content="width=device-width,initial-scale=1"><meta property="og:type" content="website"><meta property="og:url" content="https://research.bettergov.ph/static/nep-preview/mpb.html"><meta property="og:title" content="DPWH multi-purpose building locations and funding"><meta property="og:description" content="Explore FY2027 multi-purpose building locations, same-site comparisons, project details, and geographic legislative district associations."><meta property="og:image" content="'+share_image_url+'"><meta property="og:image:secure_url" content="'+share_image_url+'"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Map of listed FY2027 multi-purpose building project coordinates across Philippine municipal boundaries"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="DPWH multi-purpose building locations and funding"><meta name="twitter:description" content="Explore FY2027 multi-purpose building locations, same-site comparisons, and project details."><meta name="twitter:image" content="'+share_image_url+'">')
-    html=html.replace('</body>','<script src="mpb-location-map.js?v=20261027-public-share-27"></script></body>')
+    map_version=hashlib.sha256((STATIC/'mpb-location-map.js').read_bytes()).hexdigest()[:12]
+    html=html.replace('</body>',f'<script src="mpb-location-map.js?v={map_version}"></script></body>')
     from review_report_language import NOTICE
     from build_investigation_summary import CSS as EVIDENCE_CSS
     html=re.sub(r'(<main\b[^>]*>)',lambda m:m[0]+NOTICE,html,count=1)
@@ -505,8 +548,8 @@ def build():
     return data
 
 
-PAGE = r'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MPB · Multi-purpose building allocations</title>
-<style>body{margin:0;background:#eef3f4;color:#18303b;font:16px/1.5 system-ui,sans-serif}header{background:#142e3b;color:white;padding:24px 2vw}h1{margin:0;font-size:30px}main{padding:24px 2vw;max-width:none}section.card{background:white;border:1px solid #ccdcd8;border-radius:14px;padding:24px;margin:24px 0}h2{margin-top:0}a{color:#087e78}.controls{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}.controls input,.controls select,.controls button{font:inherit;padding:8px;border:1px solid #a8bbb6;border-radius:8px}.export{background:#b65b09;color:white;font-weight:700}.controls input{flex:1;min-width:180px}table{width:100%;table-layout:fixed;border-collapse:collapse}th,td{padding:10px;text-align:left;vertical-align:top;border-bottom:1px solid #d9e3e1;overflow-wrap:anywhere;white-space:normal}th{background:#edf4f2}figure{margin:16px 0}svg{display:block;width:100%;height:auto;max-height:420px}.note{color:#526773}.caution{padding:14px;background:#fff4dd;border-left:4px solid #ba7800}@media(max-width:650px){th,td{font-size:12px;padding:6px}section.card{padding:14px}}</style>__HERO_STYLE__</head><body><header><h1>MPB · Multi-purpose building allocations</h1><p>FY2027 NEP → HGAB 3rd reading · historical enacted GAA comparisons</p></header><main>
+PAGE = r'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MPB · Multi-purpose building allocations · FY2027</title>
+<style>body{margin:0;background:#eef3f4;color:#18303b;font:16px/1.5 system-ui,sans-serif}header{background:#142e3b;color:white;padding:24px 2vw}h1{margin:0;font-size:30px}main{padding:24px 2vw;max-width:none}section.card{background:white;border:1px solid #ccdcd8;border-radius:14px;padding:24px;margin:24px 0}h2{margin-top:0}a{color:#087e78}.controls{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}.controls input,.controls select,.controls button{font:inherit;padding:8px;border:1px solid #a8bbb6;border-radius:8px}.export{background:#b65b09;color:white;font-weight:700}.controls input{flex:1;min-width:180px}table{width:100%;table-layout:fixed;border-collapse:collapse}th,td{padding:10px;text-align:left;vertical-align:top;border-bottom:1px solid #d9e3e1;overflow-wrap:anywhere;white-space:normal}th{background:#edf4f2}figure{margin:16px 0}svg{display:block;width:100%;height:auto;max-height:420px}.note{color:#526773}.caution{padding:14px;background:#fff4dd;border-left:4px solid #ba7800}@media(max-width:650px){th,td{font-size:12px;padding:6px}section.card{padding:14px}}</style>__HERO_STYLE__</head><body><header><h1>MPB · Multi-purpose building allocations</h1><p>FY2027 NEP → HGAB 3rd reading</p></header><main>
 <div id="hero"></div>
 <section class="card"><h2>What this page measures</h2><p>This page covers the BIP multi-purpose buildings/facilities PAP, including records named as evacuation centers. Category membership follows the parsed PAP, not a keyword search across every DPWH program. Titles, pages and amounts are retained from the current comparison.</p><p class="caution">Potential insertions have no plausible NEP counterpart identified by the current matching. They are review candidates, not certified new amendments. Ambiguous matches are separate. Budget amounts are appropriations, not expenditures or personal receipts; no finding establishes misconduct.</p><p><a href="mpb-data.json" download>Download complete analysis JSON</a> · <a href="dpwh-hgab.html">Full DPWH comparison and matching methodology</a></p></section>
 <div id="sections"></div>

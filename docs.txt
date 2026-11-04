@@ -43,16 +43,18 @@ Among those 10,166 pairs, current type-level metadata confirms at least:
 - 8,166 with a POW (80.3%)
 - 8,128 with a Certificate of Implementability (80.0%)
 - 7,190 with geotagged photos (70.7%)
-- 947 with an RDC Endorsement (9.3%)
-- 540 with an LDC Endorsement (5.3%)
+- 3,102 with at least one Development Council endorsement (RDC, PDC or LDC; 30.5%)
+  - RDC Endorsement: 1,186 pairs (11.7%)
+  - PDC Endorsement: 1,348 pairs (13.3%)
+  - LDC Endorsement: 654 pairs (6.4%)
 
-Type-level metadata is available for 8,447 matched pairs, so these document counts and percentages of all 10,166 pairs are minimums. A project may have multiple document types.
+These counts use listed document links in the current loaded snapshot. The three individual types overlap when a pair has more than one endorsement; the combined 3,102 counts each selected pair once.
 
 For HGAB document coverage, the current reconciliation counts a direct link on the HGAB title match and links on a selected NEP counterpart as separate routes. Of 15,979 HGAB project rows, 8,763 have at least one direct HGAB-title link; 9,577 have a selected NEP counterpart with links; and 9,601 have documents available through either route. **6,378 (39.9%) have no document link through either route** in this snapshot. This does not establish that the projects have no documents elsewhere, or that a paired NEP document has identical scope to the HGAB row.
 
 Across the selected NEP–HGAB pair set, 9,844 of 10,166 pairs have at least one project-level document link on the NEP side. The earlier 15,228 “no documents” figure used an older direct-only `documentCount` field and should not be used as the current no-link total. The OO2-adjusted 5,491 HGAB-only candidates are a separate, narrower project-matching baseline and are not the denominator for document coverage.
 
-The current document-record reconciliation snapshot (generated 2026-11-02) shows 6,026 of 53,801 Transparency document records unmatched to the unique union of selected-pair and directly linked HGAB records. The residual includes 1,182 BP 202 records, 1,157 Certificates of Implementability, 1,170 POW records, and 1,056 geotagged-photo records. These are document records, not project rows. A residual does not establish that a document was literally wasted.
+The current document-record reconciliation snapshot (generated 2026-11-02) shows 6,026 of 53,801 Transparency document records unmatched to the unique union of selected-pair and directly linked HGAB records. The residual includes 1,182 BP 202 records, 1,157 Certificates of Implementability, 1,170 POW records, and 1,056 geotagged-photo records. RDC, PDC and LDC form one Development Council endorsement class: 4,099 portal records in total (RDC 1,650; PDC 1,601; LDC 848), with 3,313 unique matched records and 786 residual records. These are document records, not project rows. A residual does not establish that a document was literally wasted.
 
 Sources:
 - analysis_output/hb_nep_comparison_3rd_mapping.json (NEP–HGAB pair counts)

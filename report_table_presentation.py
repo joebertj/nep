@@ -23,8 +23,13 @@ def apply_bettergov_palette(text):
 
 def publish_assets():
     static=ROOT.parent/'open-data-visualization/static/nep-preview';out=ROOT/'analysis_output';versions={}
+    evidence=(ROOT/'report_assets/project_evidence_details.js').read_bytes()
+    for target in (static,out):
+        (target/'project-evidence-details.js').write_bytes(evidence)
+    evidence_version=hashlib.sha256(evidence).hexdigest()[:12]
     for suffix in ('css','js'):
         raw=(ROOT/f'report_assets/table_readability.{suffix}').read_bytes();name=f'report-table-readability.{suffix}'
+        if suffix=='js':raw=raw.replace(b'__EVIDENCE_READER_VERSION__',evidence_version.encode())
         (static/name).write_bytes(raw);(out/name).write_bytes(raw);versions[suffix]=hashlib.sha256(raw).hexdigest()[:12]
     for suffix in ('css','js'):
         raw=(ROOT/f'report_assets/stage_comparison.{suffix}').read_bytes();name=f'nep-hgab-comparison-graphs.{suffix}'
@@ -56,6 +61,7 @@ def apply_page(text,versions):
     text=text.replace('</head>',f'<link id="research-theme-style" rel="stylesheet" href="research-theme.css?v={versions["theme"]}"></head>',1)
     text=re.sub(r'<link\b[^>]*\bid="report-table-readability-style"[^>]*>','',text)
     text=re.sub(r'<script\b[^>]*\bid="report-table-readability-script"[^>]*>.*?</script>','',text,flags=re.S)
+    text=re.sub(r'<script\b[^>]*\bsrc=["\'][^"\']*report-table-readability\.js(?:\?[^"\']*)?["\'][^>]*>\s*</script>','',text,flags=re.S)
     text=text.replace('</head>',f'<link id="report-table-readability-style" rel="stylesheet" href="report-table-readability.css?v={versions["css"]}"></head>',1)
     text=re.sub(r'<link\b[^>]*\bid="nep-hgab-comparison-style"[^>]*>','',text)
     text=re.sub(r'<script\b[^>]*\bid="nep-hgab-comparison-script"[^>]*>.*?</script>','',text,flags=re.S)

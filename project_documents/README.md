@@ -3,7 +3,7 @@
 BetterGov owns this project and supplies the project API/document mirror.
 The maintained csiiiv index supplies exact proposal IDs; BetterGov supplies live metadata.
 The background archive retains every listed FY2027 NEP attachment in its original
-format on T5 EVO. The on-demand project view still prepares selected POW/RDC PDFs
+format on T5 EVO. The on-demand project view still prepares selected POW and Development Council PDFs (RDC/PDC/LDC)
 and keeps original source links for photos.
 
 ## Local use with a PH VPN
@@ -14,7 +14,7 @@ Connect the user's PH VPN on the local Mac, then run:
 bash deployment/run_project_documents_local.sh 2027DPWH-Proposal-03421
 ```
 
-Only the requested project's POW and RDC PDFs are fetched; photos remain direct links. An
+Only the requested project's POW and Development Council PDFs (RDC/PDC/LDC) are fetched; photos remain direct links. An
 isolated `.venv-documents` environment is created if needed. Original PDFs,
 OCR/table evidence, extracted candidates and rendered photo pages are cached
 under `data_sources/dpwh_project_documents/on_demand/<proposal-code>/`.
@@ -143,8 +143,7 @@ requests only the selected project's POW/photos. Opening the view with just a
 project code loads metadata and any cached results. No other documents are
 queued. Popup blocking falls back to the normal link.
 
-RDC signatory extraction (DE and Governor) is deferred until POW extraction
-and photo rendering have been demonstrated with original PDFs.
+Signatory extraction covers explicit DE/ADE roles in POWs and Governor/Mayor roles in RDC/PDC/LDC documents. Exact full-name and designation matches use ODV political-dynasty roster records; their year and locality provide historical context, not proof of current office or project responsibility.
 
 ## Transparency document coverage column
 
@@ -230,8 +229,7 @@ PDFs, image pages, OCR dumps or local cache paths into the public assets.
 
 The page works from static `dpwh-in-depth-data.json`, without an online worker.
 It has project/basis selection, cost-driver bars, search/sort, ten-project pagination,
-all-row detail dialogs and CSV exports. DE and RDC signatories occupy separate
-columns. All financial bases and reconciliation limits remain visible.
+all-row detail dialogs and CSV exports. DE/ADE and Development Council signatories occupy separate columns, with exact-name ODV designation context when available. All financial bases and reconciliation limits remain visible.
 
 The PH VPN retry on 2026-10-18 returned HTTP 200 for the Burol and proposal-00001
 POW PDFs via curl with standard TLS verification. The background queue now uses
@@ -264,7 +262,7 @@ Run with the document environment:
 
 Use `--once` for a single processing/publication pass. The watcher has **no network
 requests**, does not commit or deploy, and runs as a single instance. It watches
-metadata-identified POW and RDC PDF files in the external
+metadata-identified POW and RDC/PDC/LDC PDF files in the external
 cache; `.part` files and unrelated PDFs are excluded. A project being handled
 by the downloader is deferred, and project-level locks prevent concurrent writes
 with new worker instances.
