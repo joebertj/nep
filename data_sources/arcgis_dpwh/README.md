@@ -2,9 +2,11 @@
 
 Collection policy: download and preserve JSON now. Parquet conversion is
 deferred until separately requested. The downloader performs no Parquet conversion.
-Current scope is **user-selected services only**. The whole-directory job has
-been removed from `selections.json`. Candidate metadata inspections do not
-download feature rows or add services to the queue.
+Current scope is every FeatureServer service listed in the public DPWH ArcGIS
+REST services directory (catalog version 12; 67 services in the current
+snapshot). Each service job visits every advertised queryable layer and table.
+Restricted, unavailable, and unsupported layers are recorded in status rather
+than treated as downloaded.
 
 Priority: `Detailed_Bridge_Inventory_Final/FeatureServer/1` in the public
 `services1.arcgis.com/IwZZTMxZCmAmFYvF` directory.
@@ -31,10 +33,11 @@ at least three seconds between requests, even with multiple workers. Existing
 raw batches are reused through immutable cache files. Attributes, native
 geometry, metadata, attachments and export checksums are retained as before.
 
-### Selected-service queue: maximum two active downloaders
+### Service queue: maximum two active downloaders
 
-The queue now also includes these dedicated service launchers, each archiving
-every advertised layer/table in that service:
+The queue includes dedicated launchers for previously selected services and a
+generic service launcher for the complete catalog. Every service entry is in
+`selections.json`; each archives every advertised layer/table in that service:
 
 - `download_city_municipal_boundaries.py`
 - `download_engineering_districts.py`
@@ -60,7 +63,7 @@ repeated entries as the same project without checking IDs, dates and scope.
 `python3 start_arcgis_downloads.py --status`. Completed selections are skipped;
 remaining selected services run in selection order. No more than two downloader processes are active, excluding the idle
 scheduler itself. Two global slot locks also enforce the limit on manual launches.
-The selected jobs are listed in `selections.json`; the scheduler rereads it each
+The jobs are listed in `selections.json`; the scheduler rereads it each
 cycle, allowing more selections to be added without interrupting active downloads.
 `--reload-queue` upgrades the scheduler process while leaving downloaders running.
 The shared network lock still serializes HTTP requests with three-second gaps.
@@ -73,16 +76,16 @@ marked as successful. Check profile logs/status before retrying a failed job.
 
 `python3 start_arcgis_downloads.py --restart-bulk` checkpoints older workers
 and adopts the two-worker queue and shared pacing engine.
-Only selected services run. New selections should get
-their own small `download_<feature>.py` launcher using the shared engine.
+New services can use the generic `--service` launcher through the same shared
+engine.
 
 The congressional service describes 238 districts and cites March 2019 at
 service level, while layer 0 cites March 2022. Preserve this conflicting vintage
 metadata; do not treat it as validated FY2027 legislative boundaries. Polygon
 coordinates are native EPSG:32651, and population fields refer to 2010/2015.
 
-Only selected services are queued. The legacy whole-catalog mode is disabled.
-Within each selected service, every advertised queryable layer/table is visited.
+All catalog services are queued. Within each selected service, every advertised
+queryable layer/table is visited.
 Cached batches
 resume on the next run. Restricted or unsupported services are recorded; no
 authentication or bypass is attempted. Attachments are downloaded when advertised.

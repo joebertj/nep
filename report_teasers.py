@@ -14,6 +14,7 @@ TEASERS={
  'cost-matching.html':'Can asset records recover missing length information?',
  'rcs.html':'Did 199 offices really get the same RCS package?',
  'fmr.html':'More farm roads in the House budget?',
+ 'connectivity.html':'Do FY2027 FMR endpoints meet an existing road? Compare distance bands at 100 m, 500 m and 1 km.',
  'nia.html':'What changed in irrigation and named-project allocations?',
  'nia-irrigation.html':'Did the detailed irrigation annex grow in the House?',
  'hfep.html':'What happened to the health-facility capital budget?',

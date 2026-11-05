@@ -15,11 +15,13 @@ SELECTIONS=ROOT/'data_sources/arcgis_dpwh/selections.json'
 
 def jobs():
     records=read(SELECTIONS)['downloads']
-    result=[(r['profile'],r['script']) for r in records]
+    result=[(r['profile'],r['script'],r.get('service')) for r in records]
     if len({r[0] for r in result})!=len(result):raise ValueError('Duplicate download profile')
-    for profile,script in result:
+    for profile,script,service in result:
         if not profile.replace('_','').isalnum() or Path(script).name!=script or not script.startswith('download_') or not (ROOT/script).is_file():
             raise ValueError('Invalid selected downloader')
+        if service is not None and (script!='download_arcgis_inventory.py' or not all(c.isalnum() or c in '_-' for c in service)):
+            raise ValueError('Invalid generic ArcGIS service selection')
     return result
 
 
@@ -43,17 +45,18 @@ def completed(root):
     path=root/'status.json'
     return path.exists() and bool(read(path).get('finishedAt'))
 
-def launch(profile,script):
+def launch(profile,script,service=None):
     root=directory(profile);root.mkdir(parents=True,exist_ok=True)
+    extra=['--service',service,'--output',str(root)] if service else (['all'] if profile=='catalog' else [])
     with (root/'worker.log').open('a') as log:
-        child=subprocess.Popen([sys.executable,'-u',str(ROOT/script),*(['all'] if profile=='catalog' else []),'--delay','3','--batch-size','200'],cwd=ROOT,stdin=subprocess.DEVNULL,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+        child=subprocess.Popen([sys.executable,'-u',str(ROOT/script),*extra,'--delay','3','--batch-size','200'],cwd=ROOT,stdin=subprocess.DEVNULL,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
     (root/'worker.pid').write_text(str(child.pid)+'\n')
     print(now(),'Started',profile,'PID',child.pid,flush=True)
     return child
 
 def stop_workers():
     pending=[]
-    for profile,script in jobs():
+    for profile,script,_service in jobs():
         pid=active(directory(profile),script)
         if pid:os.kill(pid,signal.SIGINT);pending.append((pid,script))
     for _ in range(50):
@@ -74,17 +77,17 @@ def supervise():
                 if code is not None:
                     if code:failures[profile]=f'Worker exited {code}; inspect worker.log'
                     del children[profile]
-            running={profile:active(directory(profile),script) for profile,script in jobs()}
+            running={profile:active(directory(profile),script) for profile,script,_service in jobs()}
             running={k:v for k,v in running.items() if v}
             running.update({k:v.pid for k,v in children.items()})
-            for profile,script in jobs():
+            for profile,script,service in jobs():
                 if len(running)>=2:break
                 root=directory(profile)
                 if profile in running or completed(root) or profile in attempted:continue
-                child=launch(profile,script);children[profile]=child;attempted.add(profile);running[profile]=child.pid
-            queued=[profile for profile,script in jobs() if profile not in running and not completed(directory(profile)) and profile not in attempted]
+                child=launch(profile,script,service);children[profile]=child;attempted.add(profile);running[profile]=child.pid
+            queued=[profile for profile,script,_service in jobs() if profile not in running and not completed(directory(profile)) and profile not in attempted]
             report={'updatedAt':now(),'maxActiveDownloads':2,'running':running,'queued':queued,
-                'finished':[profile for profile,_ in jobs() if completed(directory(profile))], 'workerFailures':failures,
+                'finished':[profile for profile,_,_service in jobs() if completed(directory(profile))], 'workerFailures':failures,
                 'note':'Layer-level failed/unavailable records remain in each profile status.json; finished does not guarantee every endpoint was accessible.'}
             write(ARCHIVE/'scheduler-status.json',report)
             if not running and not queued:return
@@ -94,7 +97,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--foreground',action='store_true');parser.add_argument('--status',action='store_true');parser.add_argument('--reload-queue',action='store_true',help='Restart only the scheduler; active downloads continue')
     parser.add_argument('--restart-bulk',action='store_true',help='Gracefully checkpoint existing workers before adopting the two-worker queue')
-    parser.add_argument('--include-bulk',action='store_true',help='Compatibility option; catalog is already included last')
+    parser.add_argument('--include-bulk',action='store_true',help='Legacy compatibility flag; all catalog services are selected in selections.json')
     args=parser.parse_args()
     if args.status:
         path=ARCHIVE/'scheduler-status.json';print(json.dumps(read(path) if path.exists() else {},indent=2));return

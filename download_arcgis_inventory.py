@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Paced, resumable read-only archive of the user-selected ArcGIS directory."""
+"""Paced, resumable read-only archive of public DPWH ArcGIS services."""
 import argparse
 from contextlib import contextmanager
 import datetime as dt
@@ -239,11 +239,13 @@ class Downloader:
         self.status['services'][relative]['state']='visited';self.save()
 
 def main(selected_layer=None,profile=None,selected_service=None):
-    selected=selected_layer or selected_service
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('mode',nargs='?',default='priority',choices=['priority','status'] if selected else ['priority','all','status'])
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('mode',nargs='?',default='priority',choices=['priority','all','status'])
+    parser.add_argument('--service',help='Download every advertised layer/table in one service')
     parser.add_argument('--delay',type=float,default=3);parser.add_argument('--batch-size',type=int,default=200);parser.add_argument('--output',type=Path,default=ARCHIVE/'selected'/profile if profile else ARCHIVE)
     args=parser.parse_args()
-    if args.mode=='all':parser.error('Whole-catalog downloads are disabled by the selected-only collection policy. Use start_arcgis_downloads.py.')
+    selected_service=selected_service or args.service
+    selected=selected_layer or selected_service
+    if args.mode=='all' and selected:parser.error('Choose either a whole-catalog download or a single service.')
     if args.mode=='status':
         status=read(args.output/'status.json') if (args.output/'status.json').exists() else {}
         print(json.dumps(status,indent=2));return

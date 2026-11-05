@@ -57,7 +57,8 @@ def main():
             version = old['version']
         if not pdf.is_file():
             missing.append(project['code'])
-        elif old.get('parserVersion') == parser_version:
+        elif (old.get('parserVersion') == parser_version and
+              (old.get('pow') or {}).get('status') != 'parser_dependency_missing'):
             current.append(project['code'])
         else:
             codes.append(project['code'])

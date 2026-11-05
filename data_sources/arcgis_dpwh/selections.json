@@ -60,7 +60,344 @@
     {
       "profile": "kilometer_posts",
       "script": "download_kilometer_posts.py"
+    },
+    {
+      "profile": "site_denr_bmb",
+      "script": "download_arcgis_inventory.py",
+      "service": "DENR_BMB"
+    },
+    {
+      "profile": "site_active_faults",
+      "script": "download_arcgis_inventory.py",
+      "service": "Active_Faults"
+    },
+    {
+      "profile": "site_asian_and_nautical_highway_layers",
+      "script": "download_arcgis_inventory.py",
+      "service": "ASIAN_and_Nautical_Highway_Layers"
+    },
+    {
+      "profile": "site_base_surge",
+      "script": "download_arcgis_inventory.py",
+      "service": "Base_Surge"
+    },
+    {
+      "profile": "site_bridge",
+      "script": "download_arcgis_inventory.py",
+      "service": "Bridge"
+    },
+    {
+      "profile": "site_bridge_age",
+      "script": "download_arcgis_inventory.py",
+      "service": "Bridge_Age"
+    },
+    {
+      "profile": "site_bridge_condition",
+      "script": "download_arcgis_inventory.py",
+      "service": "Bridge_Condition"
+    },
+    {
+      "profile": "site_carriageway_width",
+      "script": "download_arcgis_inventory.py",
+      "service": "Carriageway_Width"
+    },
+    {
+      "profile": "site_city_municipal_boundaries",
+      "script": "download_arcgis_inventory.py",
+      "service": "City_Municipal_Boundaries"
+    },
+    {
+      "profile": "site_congressional_district",
+      "script": "download_arcgis_inventory.py",
+      "service": "Congressional_District"
+    },
+    {
+      "profile": "site_da_fmr_fy2021_liveview",
+      "script": "download_arcgis_inventory.py",
+      "service": "DA_FMR_FY2021_LiveView"
+    },
+    {
+      "profile": "site_da_fmr_fy2021_v2_view",
+      "script": "download_arcgis_inventory.py",
+      "service": "DA_FMR_FY2021_V2_view"
+    },
+    {
+      "profile": "site_da_fmr_fy2021_view",
+      "script": "download_arcgis_inventory.py",
+      "service": "DA_FMR_FY2021_view"
+    },
+    {
+      "profile": "site_da_fmr_fy2022_liveview",
+      "script": "download_arcgis_inventory.py",
+      "service": "DA_FMR_FY2022_LiveView"
+    },
+    {
+      "profile": "site_da_fmr_fy2022_v2_view",
+      "script": "download_arcgis_inventory.py",
+      "service": "DA_FMR_FY2022_v2_view"
+    },
+    {
+      "profile": "site_da_fmr_fy2022_view",
+      "script": "download_arcgis_inventory.py",
+      "service": "DA_FMR_FY2022_view"
+    },
+    {
+      "profile": "site_da_fmr_fy2023_liveview",
+      "script": "download_arcgis_inventory.py",
+      "service": "DA_FMR_FY2023_LiveView"
+    },
+    {
+      "profile": "site_da_fmr_fy2023_v2_view",
+      "script": "download_arcgis_inventory.py",
+      "service": "DA_FMR_FY2023_v2_view"
+    },
+    {
+      "profile": "site_da_fmr_fy2023_view",
+      "script": "download_arcgis_inventory.py",
+      "service": "DA_FMR_FY2023_view"
+    },
+    {
+      "profile": "site_da_fmr_fy2024_liveview",
+      "script": "download_arcgis_inventory.py",
+      "service": "DA_FMR_FY2024_LiveView"
+    },
+    {
+      "profile": "site_da_fmr_r2view",
+      "script": "download_arcgis_inventory.py",
+      "service": "DA_FMR_R2view"
+    },
+    {
+      "profile": "site_detailed_bridge_inventory",
+      "script": "download_arcgis_inventory.py",
+      "service": "Detailed_Bridge_Inventory"
+    },
+    {
+      "profile": "site_detailed_bridge_inventory_side_walk",
+      "script": "download_arcgis_inventory.py",
+      "service": "Detailed_Bridge_Inventory_Side_Walk"
+    },
+    {
+      "profile": "site_dpwh_flood_control_projects",
+      "script": "download_arcgis_inventory.py",
+      "service": "DPWH_Flood_Control_Projects"
+    },
+    {
+      "profile": "site_earthquake_induced_landslide",
+      "script": "download_arcgis_inventory.py",
+      "service": "Earthquake_induced_Landslide"
+    },
+    {
+      "profile": "site_engineering_district",
+      "script": "download_arcgis_inventory.py",
+      "service": "Engineering_District"
+    },
+    {
+      "profile": "site_flood_control_25_year",
+      "script": "download_arcgis_inventory.py",
+      "service": "Flood_Control_25_Year"
+    },
+    {
+      "profile": "site_flood_control_5_year",
+      "script": "download_arcgis_inventory.py",
+      "service": "Flood_Control_5_Year"
+    },
+    {
+      "profile": "site_floodcontrol_data_20250802_v6_corrected_coordinates_for_uploading",
+      "script": "download_arcgis_inventory.py",
+      "service": "FloodControl_Data_20250802_v6_corrected_coordinates_for_uploading"
+    },
+    {
+      "profile": "site_floodcontrol_pms_embed",
+      "script": "download_arcgis_inventory.py",
+      "service": "FloodControl_PMS_Embed"
+    },
+    {
+      "profile": "site_ground_shaking",
+      "script": "download_arcgis_inventory.py",
+      "service": "Ground_Shaking"
+    },
+    {
+      "profile": "site_lahar",
+      "script": "download_arcgis_inventory.py",
+      "service": "Lahar"
+    },
+    {
+      "profile": "site_lava",
+      "script": "download_arcgis_inventory.py",
+      "service": "Lava"
+    },
+    {
+      "profile": "site_liquefaction",
+      "script": "download_arcgis_inventory.py",
+      "service": "Liquefaction"
+    },
+    {
+      "profile": "site_national_road_network",
+      "script": "download_arcgis_inventory.py",
+      "service": "National_Road_Network"
+    },
+    {
+      "profile": "site_noah_flood_control_25_year",
+      "script": "download_arcgis_inventory.py",
+      "service": "NOAH_Flood_Control_25_Year"
+    },
+    {
+      "profile": "site_number_of_lanes",
+      "script": "download_arcgis_inventory.py",
+      "service": "Number_of_Lanes"
+    },
+    {
+      "profile": "site_port",
+      "script": "download_arcgis_inventory.py",
+      "service": "Port"
+    },
+    {
+      "profile": "site_provincial_boundary",
+      "script": "download_arcgis_inventory.py",
+      "service": "Provincial_Boundary"
+    },
+    {
+      "profile": "site_pyroclastic_flow",
+      "script": "download_arcgis_inventory.py",
+      "service": "Pyroclastic_Flow"
+    },
+    {
+      "profile": "site_region_v",
+      "script": "download_arcgis_inventory.py",
+      "service": "Region_V"
+    },
+    {
+      "profile": "site_regional_boundary",
+      "script": "download_arcgis_inventory.py",
+      "service": "Regional_Boundary"
+    },
+    {
+      "profile": "site_regional_boundary_for_ia_validation",
+      "script": "download_arcgis_inventory.py",
+      "service": "Regional_Boundary_for_IA_Validation"
+    },
+    {
+      "profile": "site_regional_boundary_region_x_and_barmm_merge",
+      "script": "download_arcgis_inventory.py",
+      "service": "Regional_Boundary_Region_X_and_BARMM_Merge"
+    },
+    {
+      "profile": "site_road_condition_2021",
+      "script": "download_arcgis_inventory.py",
+      "service": "Road_Condition_2021"
+    },
+    {
+      "profile": "site_road_network_classification",
+      "script": "download_arcgis_inventory.py",
+      "service": "Road_Network_Classification"
+    },
+    {
+      "profile": "site_road_shoulders",
+      "script": "download_arcgis_inventory.py",
+      "service": "Road_Shoulders"
+    },
+    {
+      "profile": "site_service_f24e3d0929094aa89f6998cdb60eb06b",
+      "script": "download_arcgis_inventory.py",
+      "service": "service_f24e3d0929094aa89f6998cdb60eb06b"
+    },
+    {
+      "profile": "site_storm_surge_hazard_map",
+      "script": "download_arcgis_inventory.py",
+      "service": "Storm_Surge_Hazard_Map"
+    },
+    {
+      "profile": "site_tsunami",
+      "script": "download_arcgis_inventory.py",
+      "service": "Tsunami"
+    },
+    {
+      "profile": "site_volcano_location",
+      "script": "download_arcgis_inventory.py",
+      "service": "Volcano_Location"
+    },
+    {
+      "profile": "site_year_of_last_surfacing",
+      "script": "download_arcgis_inventory.py",
+      "service": "Year_of_Last_Surfacing"
+    },
+    {
+      "profile": "site_da_fmr_fy2025_liveview",
+      "script": "download_arcgis_inventory.py",
+      "service": "DA_FMR_FY2025_LiveView"
+    },
+    {
+      "profile": "site_floodcontrol_data_completed",
+      "script": "download_arcgis_inventory.py",
+      "service": "FloodControl_Data_Completed"
+    },
+    {
+      "profile": "site_volcano_lahar",
+      "script": "download_arcgis_inventory.py",
+      "service": "Volcano_Lahar"
+    },
+    {
+      "profile": "site_road_condition_with_no_assessment",
+      "script": "download_arcgis_inventory.py",
+      "service": "Road_Condition_with_No_Assessment"
+    },
+    {
+      "profile": "site_surface_type",
+      "script": "download_arcgis_inventory.py",
+      "service": "Surface_Type"
+    },
+    {
+      "profile": "site_barmm_national_roads",
+      "script": "download_arcgis_inventory.py",
+      "service": "BARMM_National_Roads"
+    },
+    {
+      "profile": "site_mindanao_entire_road_network",
+      "script": "download_arcgis_inventory.py",
+      "service": "Mindanao_Entire_Road_Network"
+    },
+    {
+      "profile": "site_possible_flooded_areas_in_eastern_visayas_and_mindanao_following_typhoon_inday",
+      "script": "download_arcgis_inventory.py",
+      "service": "Possible_Flooded_Areas_in_Eastern_Visayas_and_Mindanao_Following_Typhoon_Inday"
+    },
+    {
+      "profile": "site_possible_flooded_areas_in_eastern_visayas_and_mindanao_following_typhoon_inday_04132026",
+      "script": "download_arcgis_inventory.py",
+      "service": "Possible_Flooded_Areas_in_Eastern_Visayas_and_Mindanao_Following_Typhoon_Inday_-_04132026"
+    },
+    {
+      "profile": "site_possible_flooded_areas_in_region_1_as_of_06_august_2026_and_region_2_and_car_as_of_09_august_2026",
+      "script": "download_arcgis_inventory.py",
+      "service": "Possible_Flooded_Areas_in_Region_1_as_of_06_August_2026_and_Region_2_and_CAR_as_of_09_August_2026"
+    },
+    {
+      "profile": "site_philsa_datasets_august_2026",
+      "script": "download_arcgis_inventory.py",
+      "service": "PhilSA_Datasets_August_2026"
+    },
+    {
+      "profile": "site_kilometer_post",
+      "script": "download_arcgis_inventory.py",
+      "service": "Kilometer_Post"
+    },
+    {
+      "profile": "site_road_classification",
+      "script": "download_arcgis_inventory.py",
+      "service": "Road_Classification"
+    },
+    {
+      "profile": "site_philsa_data_august_to_september",
+      "script": "download_arcgis_inventory.py",
+      "service": "PhilSA_Data_August_to_September"
+    },
+    {
+      "profile": "site_detailed_bridge_inventory_final",
+      "script": "download_arcgis_inventory.py",
+      "service": "Detailed_Bridge_Inventory_Final"
     }
   ],
-  "scope": "User-selected services only. Additional services require explicit selection."
+  "scope": "All FeatureServer services in the public DPWH ArcGIS REST services directory snapshot. Each selected service job visits every advertised layer and table; restricted or unavailable layers are recorded in status.",
+  "catalogVersion": 12,
+  "catalogUrl": "https://services1.arcgis.com/IwZZTMxZCmAmFYvF/ArcGIS/rest/services"
 }
