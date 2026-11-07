@@ -37,7 +37,7 @@ def history(data):
 
 def generate():
     from build_investigation_summary import table,CSS,JS
-    from build_report_heroes import STYLE
+    from report_hero_module import STYLE
     data=build();s=data['summary'];historical=history(data);(OUT/'fmr_historical_repeats_corrected.json').write_text(json.dumps(historical,ensure_ascii=False,indent=2)+'\n')
     (STATIC/'fmr-historical-repeats.json').write_text(json.dumps(historical,ensure_ascii=False,indent=2)+'\n')
     connectivity=json.loads((STATIC/'connectivity-data.json').read_text())

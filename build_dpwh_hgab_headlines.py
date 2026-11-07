@@ -7,6 +7,7 @@ import re
 from collections import defaultdict
 from pathlib import Path
 from hgab_matching import UNMATCHED, is_fap
+from report_hero_module import STYLE as HERO_STYLE, hero, peso
 
 ROOT = Path(__file__).resolve().parent
 STATIC = ROOT.parent / 'open-data-visualization/static/nep-preview'
@@ -155,7 +156,37 @@ def refresh():
     page=page.replace('</body>',EXPORT_SCRIPT+'\n</body>',1)
     page=re.sub(r'<script id="domestic-insertion-bootstrap">.*?</script>','',page,flags=re.S)
     page=page.replace('</body>',INSERTION_BOOTSTRAP+'\n</body>',1)
+    # This page owns its NEP-to-HGAB hero. Keep its headline scoped to domestic
+    # unmatched candidates and separate foreign-assisted records.
+    with (ROOT/'analysis_output/hb_nep_comparison_3rd.csv').open(encoding='utf-8-sig', newline='') as source:
+        current_comparison=list(csv.DictReader(source))
+    domestic=[r for r in current_comparison if r.get('comparison')==UNMATCHED and not is_fap(r)]
+    fap_rows=[r for r in current_comparison if r.get('comparison')==UNMATCHED and is_fap(r)]
+    ambiguous=sum(r.get('comparison')=='Multiple or already paired NEP counterparts; review scope' for r in current_comparison)
+    full_total=sum(int(float(r.get('amountPesos') or 0)) for r in current_comparison)
+    domestic_total=sum(int(float(r.get('amountPesos') or 0)) for r in domestic)
+    lead=hero('DPWH · FY2027 NEP to 3rd-reading HGAB',f'{len(domestic):,}',
+        'potential domestic insertion candidates',peso(domestic_total),
+        'HGAB allocation across domestic candidates · not alleged losses',[
+            ('Full 3rd-reading DPWH allocation',peso(full_total),f'{len(current_comparison):,} extracted allocation records'),
+            ('Ambiguous / already paired',f'{ambiguous:,}','held out of the insertion shortlist')],
+        f'This excludes {len(fap_rows):,} unmatched FAP records carrying {peso(sum(int(float(r.get("amountPesos") or 0)) for r in fap_rows))}; they are reviewed separately. Unmatched titles are review leads, not confirmed legislative insertions. Inspect source pages, scope and plausible counterpart links.')
+    page=re.sub(r'<section\b[^>]*id="report-hero"[^>]*>.*?</section>','<section id="report-hero">'+lead+'</section>',page,count=1,flags=re.S)
+    if 'id="report-hero"' not in page:
+        page=re.sub(r'(<main\b[^>]*>)',r'\1<section id="report-hero">'+lead+'</section>',page,count=1)
+    page=re.sub(r'<section\b[^>]*class="impact-teaser"[^>]*>.*?</section>','',page,flags=re.S)
+    if 'id="report-hero-style"' not in page:
+        page=page.replace('</head>',HERO_STYLE+'</head>',1)
+    from chainage_overlap_module import build_asset, publish_asset, attach_viewer
+    overlap_asset,overlap_count=build_asset()
+    overlap_version=publish_asset(overlap_asset)
+    page=attach_viewer(page,overlap_version)
+    from report_currency_module import format_tables
+    page,_=format_tables(page)
+    from report_page_table_checks import check_page_table_contract
+    check_page_table_contract('dpwh-hgab.html',page)
     page_path.write_text(page)
+    (ROOT/'analysis_output/dpwh-hgab.html').write_text(page,encoding='utf-8')
     print(json.dumps(data['hgabHeadline'],indent=2))
 
 if __name__=='__main__':refresh()

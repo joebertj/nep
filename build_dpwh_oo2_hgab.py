@@ -186,6 +186,16 @@ base = base.replace('</body>', js+'</body>', 1)
 base = re.sub(r'href=(["\'])dpwh-hgab\.html(#[^"\']*)?\1', lambda m:'href='+m[1]+'dpwh-OO2-hgab.html'+(m[2] or '')+m[1], base)
 from uniform_report_menu import NAV
 base = re.sub(r'<nav\b[^>]*class="report-nav"[^>]*>.*?</nav>', lambda _:NAV, base, flags=re.S)
+from chainage_overlap_module import build_asset as build_chainage_asset, publish_asset, attach_viewer
+chainage_asset,chainage_count=build_chainage_asset()
+chainage_version=publish_asset(chainage_asset)
+base=attach_viewer(base,chainage_version)
+from report_currency_module import format_tables
+base,_=format_tables(base)
+from investigation_page_sections import apply_owned_sections
+base=apply_owned_sections(base,'dpwh-OO2-hgab.html')
+from report_page_table_checks import check_page_table_contract
+check_page_table_contract('dpwh-OO2-hgab.html',base)
 (SITE/'dpwh-OO2-hgab.html').write_text(base)
 (ANALYSIS/'dpwh-OO2-hgab.html').write_text(base)
 print(json.dumps(summary, indent=2))

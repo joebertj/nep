@@ -22,6 +22,8 @@ FLAG_GROUPS = {
 
 
 def build():
+    from build_line_item_review_queue import QUEUE_CSS, build as build_review_queue, render as render_review_queue
+    from html import escape as esc
     congress = json.loads(CONGRESS.read_text())
     allocation = json.loads(CONGRESS_ALLOCATION.read_text())
     catalog = congress.get('flagCatalog', [])
@@ -167,6 +169,17 @@ def build():
     }
     serialized = json.dumps(data, ensure_ascii=False, separators=(',', ':')) + '\n'
     html = (ROOT / 'project_documents/flags.html').read_text()
+    queue_data = build_review_queue()
+    queue_section = (
+        '<section id="summary-top-line-items" class="investigation-evidence">'
+        '<h2>Full line-item review queue</h2>'
+        + render_review_queue(queue_data, esc)
+        + '</section>'
+    )
+    if 'id="summary-top-line-items"' not in html:
+        html = html.replace('</main>', queue_section + '</main>', 1)
+    if 'id="line-item-queue-style"' not in html:
+        html = html.replace('</head>', QUEUE_CSS + '</head>', 1)
     from uniform_report_menu import apply_page
     html = apply_page(html, 'flags.html')
     for directory in (OUT, STATIC):

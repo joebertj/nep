@@ -14,7 +14,7 @@ HGAB_GAA_DATA=STATIC/'repeat-hgab-historical-gaa.json'
 SPLIT_GAA_DATA=STATIC/'repeats-historical-data.json'
 
 def build():
-    from build_report_heroes import STYLE
+    from report_hero_module import STYLE
     from build_investigation_summary import CSS, JS
     fragments=json.loads(CACHE.read_text()) if CACHE.exists() else {}
     sources={'dpwh.html':[('within','id="within-stage-repeats"'),('survival','id="repeat-hgab-survival"')],
@@ -107,6 +107,14 @@ def build():
     EVIDENCE_CSS = CSS
     page=re.sub(r'(<main\b[^>]*>)',lambda m:m[0]+NOTICE,page,count=1)
     page=page.replace('</head>',EVIDENCE_CSS+'</head>',1)
+    from chainage_overlap_module import build_asset, publish_asset, attach_viewer
+    overlap_asset,overlap_count=build_asset()
+    overlap_version=publish_asset(overlap_asset)
+    page=attach_viewer(page,overlap_version)
+    from report_currency_module import format_tables
+    page,_=format_tables(page)
+    from report_page_table_checks import check_page_table_contract
+    check_page_table_contract('repeats.html',page)
     (STATIC/'repeats.html').write_text(page)
     (OUT/'repeats.html').write_text(page)
     from build_repeats_split import build_split_pages

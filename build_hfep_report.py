@@ -5,11 +5,13 @@ import csv
 import json
 from pathlib import Path
 from report_styles import fit_tables
+from report_hero_module import STYLE, hero, peso
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "analysis_output" / "hb_agencies"
 SOURCE = ROOT / "hb10858_hfep_projects.json"
 DEST = ROOT / "analysis_output" / "hfep.html"
+STATIC = ROOT.parent / "open-data-visualization/static/nep-preview"
 INSERTION_SUMMARY = ROOT / "analysis_output" / "hgab_non_dpwh_insertion_summary.json"
 
 
@@ -130,6 +132,25 @@ function draw(){const q=search.value.trim().toLowerCase();let list=D.candidates.
 search.oninput=()=>{page=0;draw()};sort.onchange=()=>{page=0;draw()};draw();
 </script></body></html>'''.replace("__DATA__", data).replace("__INSERTION_METRICS__", insertion_metrics).replace("__INSERTION_TABLE__", insertion_table).replace("{len(candidates):,}", f"{len(candidates):,}")
 
+baseline_path=STATIC/'nep-agency-baselines.json'
+if baseline_path.exists():
+    h=json.loads(baseline_path.read_text(encoding='utf-8'))['hfepStageComparison']
+    card=hero('HFEP programme · NEP → HGAB 3rd reading',peso(abs(h['capitalAdjustmentPesos'])),'less in proposed Capital Outlays',peso(h['hgabCapitalPesos']),'HGAB Capital Outlays · printed programme control',[
+        ('NEP Capital Outlays',peso(h['nepCapitalPesos']),'workbook components grouped at programme level'),
+        ('HGAB facility reconciliation',str(h['hgabFacilityRows'])+' rows','sum equals the printed Capital Outlays control')],
+        'Programme allocation change, not evidence of misconduct or identified facility removals. Facility-level NEP comparisons need a detailed NEP annex. MOOE remains separate.')
+else:
+    revision=json.loads((STATIC/'hgab-revision-data.json').read_text(encoding='utf-8'))['hfep']['summary']
+    card=hero('HFEP · 3rd vs 2nd Reading',f"{revision['statusCounts'].get('Same allocation',0):,}",'health-facility lines retained at the same allocation',peso(revision['thirdTotal']),'schedule total in each reading',[
+        ('2nd-reading total',peso(revision['secondTotal']),f"{revision['secondRows']:,} lines"),
+        ('Net allocation change',peso(revision['thirdTotal']-revision['secondTotal']),'between the two readings')],
+        'This compares bill stages. Program envelopes and named facility lines can sit at different budget hierarchy levels.')
+html=html.replace('<main class="wrap">','<main class="wrap"><section id="report-hero">'+card+'</section>',1)
+html=html.replace('</head>',STYLE+'</head>',1)
+
 DEST.parent.mkdir(parents=True, exist_ok=True)
-DEST.write_text(fit_tables(html), encoding="utf-8")
+html=fit_tables(html)
+DEST.write_text(html, encoding="utf-8")
+STATIC.mkdir(parents=True,exist_ok=True)
+(STATIC/'hfep.html').write_text(html,encoding='utf-8')
 print(f"Wrote standalone HFEP report: {DEST}")

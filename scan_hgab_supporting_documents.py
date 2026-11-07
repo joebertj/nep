@@ -11,6 +11,7 @@ import subprocess
 import sys
 import time
 import unicodedata
+from urllib.parse import unquote
 from collections import Counter, defaultdict
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from datetime import datetime, timezone
@@ -21,6 +22,7 @@ from scan_hgab_only_pow_titles import relaxed_match_extracted_title
 
 ROOT = Path(__file__).resolve().parent
 ATTACHMENTS = BASE / 'nep/data_sources/dpwh_project_documents/attachments'
+T5_SOURCE = BASE / 'nep/data_sources/OneDrive_2026-11-05/Supporting Documents (IO)'
 ALL_DOWNLOADS = ATTACHMENTS / 'cloudflare-file-downloads.jsonl'
 POW_DOWNLOADS = ATTACHMENTS / 'downloads-hgab.jsonl'
 MAPPING = ROOT / 'analysis_output/hb_nep_comparison_3rd_mapping.json'
@@ -29,6 +31,7 @@ STATUS = ROOT / 'analysis_output/senate_supporting_document_scan_status.json'
 CSV_OUT = ROOT / 'analysis_output/senate_supporting_documents_hgab_only_scan.csv'
 CODE = re.compile(r'(?:2027[-_\s]*)?DPWH[-_\s]*HGAB[-_\s-]*(\d{5})', re.I)
 SIGNATORY_PARSER_VERSION = 2
+T5_AUDIT = ROOT / 'analysis_output/t5-cloudflare-manifest-audit.json'
 EXTENSIONS = {'.pdf'}
 GENERIC = set('construction rehabilitation improvement widening reconstruction completion road roads bridge bridges multi purpose building barangay city province municipality access along of the and at in to for near project new concreting preventive maintenance repair upgrading existing drainage development works site station sta covered court multipurpose'.split())
 WORKER_TITLE_INDEX = {}
@@ -40,6 +43,10 @@ WORKER_BY_TITLE = {}
 def key(value):
     value = unicodedata.normalize('NFKC', str(value or '')).casefold()
     return re.sub(r'\s+', ' ', re.sub(r'[^a-z0-9]+', ' ', value)).strip()
+
+
+def path_key(value):
+    return unicodedata.normalize('NFKC', unquote(str(value or ''))).replace('\\', '/').strip('/').casefold()
 
 
 def classify(path: Path):
@@ -161,9 +168,13 @@ def downloaded_pdf_tasks():
                     row = json.loads(line)
                 except json.JSONDecodeError:
                     continue
-                if row.get('status') != 'downloaded' or not row.get('path') or not row.get('sourcePath'):
+                if row.get('status') not in {'downloaded', 'present_verified_on_t5'} or not row.get('path') or not row.get('sourcePath'):
                     continue
-                if Path(row['sourcePath']).suffix.casefold() != '.pdf':
+                suffix = Path(row['sourcePath']).suffix.casefold()
+                if suffix not in {'', '.pdf'} and row.get('contentType') != 'application/pdf':
+                    continue
+                if (not suffix and row.get('contentType') != 'application/pdf'
+                        and row.get('documentType') not in {'POW', 'BP 202', 'Development Council', 'Certificate of Implementability'}):
                     continue
                 key = (row['sourcePath'], row.get('manifestSha256') or row.get('sha256'))
                 latest[key] = row
@@ -174,7 +185,10 @@ def downloaded_pdf_tasks():
         try:
             source.relative_to(ATTACHMENTS.resolve())
         except ValueError:
-            continue
+            try:
+                source.relative_to(T5_SOURCE.resolve())
+            except ValueError:
+                continue
         if not source.is_file():
             continue
         path = Path(rel)
@@ -202,18 +216,103 @@ def cloudflare_inventory():
     files_by_code = defaultdict(list)
     types_by_code = defaultdict(Counter)
     by_type = Counter()
+    pdf_by_type = Counter()
+    manifest_rows = []
+    audit = read_json(T5_AUDIT, {})
+    audit_by_key = {(path_key(item.get('sourcePath')), item.get('manifestSha256')): item
+                    for item in audit.get('items', [])}
     for row in rows:
         kind = row['documentType']
         by_type[kind] += 1
+        audit_item = audit_by_key.get((path_key(row['sourcePath']), row['sha256']), {})
+        is_pdf = bool(row.get('isPdf') or audit_item.get('isPdfBySignature'))
+        if is_pdf:
+            pdf_by_type[kind] += 1
+        manifest_rows.append({'sourcePath': row['sourcePath'], 'sha256': row['sha256'],
+                              'bytes': row['bytes'], 'projectCode': row['projectCode'],
+                              'documentType': kind, 'isPdf': is_pdf})
         if row.get('projectCode'):
             files_by_code[row['projectCode']].append(row['sourcePath'])
             types_by_code[row['projectCode']][kind] += 1
     return {
-        'available': True, 'source': 'Cloudflare-file-links.jsonl; no live T5 inventory scan',
+        'available': True, 'source': 'Cloudflare-file-links.jsonl; reconciled to the T5 hash audit and verified intake journal',
         'files': len(rows), 'projectCodes': len(files_by_code), 'byType': dict(by_type),
+        'pdfFiles': sum(pdf_by_type.values()), 'pdfByType': dict(pdf_by_type),
         'filesByCode': {key: len(set(value)) for key, value in files_by_code.items()},
         'typesByCode': {key: dict(value) for key, value in types_by_code.items()},
+        'manifestRows': manifest_rows,
     }
+
+
+def reconciled_t5_inventory(cloudflare):
+    audit = read_json(T5_AUDIT, {})
+    present_keys = set()
+    source_audit_counts = Counter(item.get('status') for item in audit.get('items', []))
+    for item in audit.get('items', []):
+        if item.get('status') in {'verified', 'verified_alternate_path', 'verified_attachment_cache'}:
+            present_keys.add((path_key(item.get('sourcePath')), item.get('manifestSha256')))
+    downloaded_keys = set()
+    for journal in (ALL_DOWNLOADS, POW_DOWNLOADS):
+        if not journal.is_file():
+            continue
+        with journal.open(encoding='utf-8') as stream:
+            for line in stream:
+                try:
+                    row = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                if (row.get('status') in {'downloaded', 'present_verified_on_t5'}
+                        and row.get('sourcePath') and row.get('manifestSha256')):
+                    pair = (path_key(row['sourcePath']), row['manifestSha256'])
+                    present_keys.add(pair)
+                    downloaded_keys.add(pair)
+    files = 0
+    codes = set()
+    by_type = Counter()
+    types_by_code = defaultdict(Counter)
+    pdf_by_type = Counter()
+    pdf_paths = {}
+    for row in cloudflare.get('manifestRows', []):
+        pair = (path_key(row['sourcePath']), row['sha256'])
+        if pair not in present_keys:
+            continue
+        files += 1
+        kind = row['documentType']
+        by_type[kind] += 1
+        if row.get('projectCode'):
+            codes.add(row['projectCode'])
+            types_by_code[row['projectCode']][kind] += 1
+        if row.get('isPdf'):
+            pdf_by_type[kind] += 1
+            pdf_paths[path_key(row['sourcePath'])] = row['sha256']
+    for row in cloudflare.get('manifestRows', []):
+        if row.get('isPdf'):
+            pdf_paths.setdefault(path_key(row['sourcePath']), None)
+    expected_by_type = cloudflare.get('byType', {})
+    return ({
+        'available': bool(audit),
+        'source': 'T5 hash audit plus verified Cloudflare intake journal; exact manifest paths/hashes deduplicated',
+        'auditGeneratedAtUtc': audit.get('generatedAtUtc'),
+        'manifestEntries': len(cloudflare.get('manifestRows', [])),
+        'manifestFilesPresentOnT5': files,
+        'manifestFilesNotPresentOnT5': max(0, len(cloudflare.get('manifestRows', [])) - files),
+        'verifiedOriginalT5Entries': source_audit_counts.get('verified', 0),
+        'verifiedAlternateT5Entries': source_audit_counts.get('verified_alternate_path', 0),
+        'downloadedIntoAttachmentCache': len(downloaded_keys - {
+            (path_key(item.get('sourcePath')), item.get('manifestSha256'))
+            for item in audit.get('items', [])
+            if item.get('status') in {'verified', 'verified_alternate_path'}
+        }),
+        'sizeMismatchAtAudit': source_audit_counts.get('size_mismatch', 0),
+        'hashMismatchAtAudit': source_audit_counts.get('hash_mismatch', 0),
+        'missingAtAuditBeforeIntake': source_audit_counts.get('missing', 0),
+        'extraT5FilesOutsideManifest': audit.get('extraT5Files', 0),
+        'files': files, 'projectCodes': len(codes), 'byType': dict(by_type),
+        'expectedByType': expected_by_type, 'pdfFilesAvailable': sum(pdf_by_type.values()),
+        'pdfFilesExpected': cloudflare.get('pdfFiles', 0),
+        'pdfByType': dict(pdf_by_type), 'pdfExpectedByType': cloudflare.get('pdfByType', {}),
+        'pdfPaths': pdf_paths,
+    }, {code: dict(counts) for code, counts in types_by_code.items()})
 
 
 def atomic_json(path, value):
@@ -243,14 +342,18 @@ def saved_title_scans():
     return records
 
 
-def consolidate(hgab_only, records, inventory, cloudflare=None):
+def consolidate(hgab_only, records, inventory, cloudflare=None, current_pdf_sources=None):
+    current_pdf_sources = current_pdf_sources or {}
+    current_records = [record for record in records
+                       if path_key(record.get('file')) in current_pdf_sources
+                       and record.get('sourceSha256') == current_pdf_sources[path_key(record.get('file'))]]
     by_id = {row['id']: row for row in hgab_only}
     # A five-digit T5 HGAB file code groups the project's attachments. Propagate
     # a title match only when a POW/BP/other sibling file uniquely resolves that
     # code to one House row; conflicting code-to-row evidence is left unassigned.
     ids_by_code = defaultdict(set)
     evidence_by_code = defaultdict(list)
-    for record in records:
+    for record in current_records:
         if record.get('matchStatus') in {'exact_title_match', 'relaxed_title_match'} and record.get('projectCode'):
             ids = set(record.get('matchedHgabIds', [])) & by_id.keys()
             if len(ids) == 1:
@@ -258,7 +361,7 @@ def consolidate(hgab_only, records, inventory, cloudflare=None):
                 evidence_by_code[record['projectCode']].append(record.get('file'))
             elif len(ids) > 1:
                 ids_by_code[record['projectCode']].update(ids)
-    for record in records:
+    for record in current_records:
         code = record.get('projectCode')
         ids = ids_by_code.get(code, set()) if code else set()
         if len(ids) == 1 and record.get('matchStatus') not in {'exact_title_match', 'relaxed_title_match'}:
@@ -271,7 +374,7 @@ def consolidate(hgab_only, records, inventory, cloudflare=None):
     by_type = defaultdict(lambda: {'projectIds': set(), 'files': 0, 'exactFiles': 0, 'relaxedFiles': 0})
     signatory_types = Counter()
     signatory_types_by_document = defaultdict(Counter)
-    for record in records:
+    for record in current_records:
         if record.get('matchStatus') not in {'exact_title_match', 'relaxed_title_match', 'same_code_sibling_file_match'}:
             continue
         kind = record['documentType']
@@ -331,22 +434,25 @@ def consolidate(hgab_only, records, inventory, cloudflare=None):
         project['t5FilePresenceByType'] = dict(totals)
     all_types = ('POW', 'BP 202', 'Development Council', 'Geotagged photos',
                  'Certificate of Implementability', 'Other')
-    scanned_by_type = Counter(record.get('documentType') for record in records)
-    errors_by_type = Counter(record.get('documentType') for record in records if record.get('scanError') or record.get('matchStatus') == 'scan_error')
-    no_text_by_type = Counter(record.get('documentType') for record in records if not record.get('nativeText'))
-    bp_report = read_json(ROOT / 'analysis_output/senate_bp202_hgab_only_title_scan.json', {})
+    scanned_by_type = Counter(record.get('documentType') for record in current_records)
+    errors_by_type = Counter(record.get('documentType') for record in current_records if record.get('scanError') or record.get('matchStatus') == 'scan_error')
+    no_text_by_type = Counter(record.get('documentType') for record in current_records if not record.get('nativeText'))
+    expected_pdf_by_type = (cloudflare or {}).get('pdfByType', {})
+    available_pdf_by_type = (inventory.get('t5CloudflareReconciliation') or {}).get('pdfByType', {})
     type_summary = {}
     for kind in all_types:
         value = by_type.get(kind, {'projectIds': set(), 'files': 0, 'exactFiles': 0, 'relaxedFiles': 0, 'siblingFiles': 0})
         scanned = scanned_by_type.get(kind, 0)
-        if kind == 'BP 202':
-            scanned = int(bp_report.get('senateDocumentsScanned') or scanned)
-            errors_by_type[kind] = int(bp_report.get('documentsWithScanErrors') or 0)
-            no_text_by_type[kind] = int(bp_report.get('documentsWithNoNativeFirstPageText') or 0)
+        expected = int(expected_pdf_by_type.get(kind, 0))
+        available = int(available_pdf_by_type.get(kind, 0))
         type_summary[kind] = {
             'filesScanned': scanned, 'matchedProjectRows': len(value['projectIds']),
             'matchedFileRecords': value['files'], 'exactTitleMatchedFiles': value['exactFiles'],
             'relaxedTitleMatchedFiles': value['relaxedFiles'], 'uniqueCodeSiblingFileMatches': value.get('siblingFiles', 0),
+            'pdfFilesExpectedFromManifest': expected,
+            'pdfFilesPresentOnT5': available,
+            'pdfFilesAvailableButNotScanned': max(0, available - scanned),
+            'pdfFilesMissingFromT5': max(0, expected - available),
             'scanErrors': errors_by_type.get(kind, 0),
             'filesWithoutNativeText': no_text_by_type.get(kind, 0),
         }
@@ -360,14 +466,15 @@ def consolidate(hgab_only, records, inventory, cloudflare=None):
         'projectRowsWithoutMatchedDocument': len(hgab_only) - len(matched_ids),
         'matchedFileRecords': sum(v['matchedFileRecords'] for v in type_summary.values()),
         'byType': type_summary,
-        'localT5Inventory': inventory.get('previousLocalT5Inventory', {}),
+        'localT5Inventory': inventory.get('localT5Inventory', {}),
         'cloudflareFileInventory': {k: v for k, v in (cloudflare or {}).items()
-                                    if k not in {'filesByCode', 'typesByCode'}},
+                                    if k not in {'filesByCode', 'typesByCode', 'manifestRows'}},
+        't5CloudflareReconciliation': inventory.get('t5CloudflareReconciliation', {}),
         'signatoryCandidateCounts': dict(signatory_types),
         'signatoryCandidatesByDocumentType': {kind: dict(counter) for kind, counter in signatory_types_by_document.items()},
         'deduplication': 'Project counts use distinct House HGAB row IDs. File counts are distinct source paths within a project and type; byte-identical copies at different paths are not removed. T5 file-type counts inherit only from uniquely resolved HGAB file codes.',
         'projects': project_rows,
-        'documents': records,
+        'documents': current_records,
     }
 
 
@@ -404,8 +511,10 @@ def _run():
         old_records.setdefault(file, record)
 
     while True:
+        all_tasks = downloaded_pdf_tasks()
+        current_pdf_sources = {path_key(task['file']): task.get('sourceSha256') for task in all_tasks}
         paths = []
-        for task in downloaded_pdf_tasks():
+        for task in all_tasks:
             previous = old_records.get(task['file'])
             if (previous and previous.get('sourceSha256') == task.get('sourceSha256')
                     and (not task.get('roleKind') or previous.get('signatoryParserVersion') == SIGNATORY_PARSER_VERSION)):
@@ -425,7 +534,9 @@ def _run():
                 for future in as_completed(futures):
                     result = future.result()
                     previous = old_records.get(result['file'])
-                    if previous and previous.get('matchStatus') in {'exact_title_match', 'relaxed_title_match'} and result.get('matchStatus') not in {'exact_title_match', 'relaxed_title_match'}:
+                    if (previous and previous.get('sourceSha256') == result.get('sourceSha256')
+                            and previous.get('matchStatus') in {'exact_title_match', 'relaxed_title_match'}
+                            and result.get('matchStatus') not in {'exact_title_match', 'relaxed_title_match'}):
                         for field in ('matchStatus', 'matchedHgabIds', 'matchedHgabTitles', 'extractedTitle'):
                             result[field] = previous.get(field)
                         result['matchedVia'] = previous.get('matchedVia') or 'retained from the earlier dedicated title scan'
@@ -438,22 +549,25 @@ def _run():
                             print(json.dumps({'completed': done, 'total': len(paths), 'file': result['file'], 'matchStatus': result.get('matchStatus')}), flush=True)
         if paths or args.once:
             cloudflare = cloudflare_inventory()
-            previous_t5_types = {}
-            for project in old.get('projects', []):
-                for code in project.get('t5FileCodes', []):
-                    previous_t5_types[code] = project.get('t5FilePresenceByType', {})
-            inventory = {'typesByCode': previous_t5_types,
+            inventory_counts, types_by_code = reconciled_t5_inventory(cloudflare)
+            compact_reconciliation = {k: v for k, v in inventory_counts.items() if k != 'pdfPaths'}
+            inventory = {'typesByCode': types_by_code, 'localT5Inventory': compact_reconciliation,
+                         't5CloudflareReconciliation': compact_reconciliation,
                          'previousLocalT5Inventory': old.get('localT5Inventory', {})}
-            report = consolidate(hgab_only, list(old_records.values()), inventory, cloudflare)
+            report = consolidate(hgab_only, list(old_records.values()), inventory,
+                                 cloudflare, current_pdf_sources)
             atomic_json(OUT, report)
             with CSV_OUT.open('w', encoding='utf-8-sig', newline='') as stream:
                 fields = ['hgabId', 'title', 'office', 'region', 'amountPesos', 'hasAtLeastOneTitleMatchedDocument', 'matchedDocumentFileRecords', 'documentTypes', 't5FileCodes', 't5FileCount', 't5FilePresenceByType', 'signatories']
                 writer = csv.DictWriter(stream, fieldnames=fields); writer.writeheader()
                 for row in report['projects']:
                     writer.writerow({**row, 'documentTypes': json.dumps(row['documentTypes'], ensure_ascii=False), 't5FileCodes': json.dumps(row['t5FileCodes'], ensure_ascii=False), 't5FilePresenceByType': json.dumps(row['t5FilePresenceByType'], ensure_ascii=False), 'signatories': json.dumps(row['signatories'], ensure_ascii=False)})
-            status.update({'status': 'complete', 'completedThisPass': len(paths),
+            status.update({'status': 'complete' if not paths else 'scanning_downloaded_manifest_files', 'completedThisPass': len(paths),
                            'projectsWithAtLeastOneMatchedDocument': report['projectsWithAtLeastOneMatchedDocument'],
                            'matchedDocuments': report['matchedFileRecords'],
+                           'pdfFilesAvailableFromManifest': inventory_counts.get('pdfFilesAvailable'),
+                           'pdfFilesExpectedFromManifest': inventory_counts.get('pdfFilesExpected'),
+                           'pdfFilesRemainingToScan': sum(max(0, int(v.get('pdfFilesAvailableButNotScanned', 0))) for v in report['byType'].values()),
                            'pageRefreshStatus': 'running',
                            'heartbeatAtUtc': datetime.now(timezone.utc).isoformat()})
             atomic_json(STATUS, status)

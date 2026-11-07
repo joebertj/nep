@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Apply the shared lead finding card to all local NEP preview reports."""
+"""OBSOLETE: former multi-page hero writer; page builders now own their heroes."""
 
 from __future__ import annotations
 
@@ -147,6 +147,11 @@ def replace_lead(html: str, page: str, card: str) -> str:
 
 
 def refresh(page_filter=None):
+    raise RuntimeError(
+        "build_report_heroes.py is obsolete; report heroes must be rendered by "
+        "the owning page builder. This multi-page writer is disabled."
+    )
+    # Historical implementation retained below for provenance only.
     root=Path(__file__).resolve().parent
     records=[]
     for page,card in make_heroes().items():
@@ -186,9 +191,6 @@ def refresh(page_filter=None):
     return report
 
 def main() -> None:
-    parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--page',help='refresh one report instead of all reports')
-    args=parser.parse_args()
-    print(json.dumps(refresh(args.page),indent=2))
+    print(json.dumps({'status':'obsolete','reason':'page-owned builders now render heroes; no pages were changed'}))
 
 if __name__ == '__main__':main()

@@ -75,7 +75,7 @@ def render(rows):
 <style>
 *{box-sizing:border-box}body{margin:0}main{box-sizing:border-box;width:100%;max-width:none;margin:0;padding:24px clamp(16px,2vw,32px)}.card{background:#fff;border:1px solid #d9e3e1;border-radius:14px;padding:22px;margin:22px 0}.lead{border-left:5px solid #b65b09;background:#fff8e9}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:.94rem}th,td{text-align:left;vertical-align:top;padding:11px;border-bottom:1px solid #d9e3e1}th{background:#edf3f2}.money{white-space:nowrap;font-variant-numeric:tabular-nums}details{margin-top:7px}summary{cursor:pointer;color:#096f72;font-weight:700}.source a{font-weight:700}.note{color:#536873}.facility-list{margin:.5rem 0;padding-left:1.2rem}.tag{display:inline-block;padding:3px 8px;border-radius:999px;background:#fff0d4;color:#754500;font-weight:700;font-size:.82rem}@media(max-width:720px){main{padding:12px}table{min-width:720px}}
 </style></head><body class="bettergov-research"><header><div class="eyebrow">FY2027 NEP · DPWH · Rainwater Collector System</div><h1>RCS · POW scope review</h1><p>Same proposed allocation, differing documented schools, buildings, and leading POW items.</p></header><main>'''
-    from build_report_heroes import STYLE as HERO_STYLE,hero as shared_hero
+    from report_hero_module import STYLE as HERO_STYLE,hero as shared_hero
     lead=shared_hero('FY2027 NEP · DPWH · RCS', '199', 'district-office projects share one scheduled allocation', '₱4.2M', 'per project in the schedule', [
         ('Davao City POW examples','6 vs 14','named school sites'),
         ('Davao del Sur POW','₱3.89M','parsed tank line · 92.7% of allocation'),
@@ -112,8 +112,8 @@ def render(rows):
 <section class="card"><h2>What to verify</h2><ul><li>Whether the same ₱4.2M is a standard design package, a planning ceiling, or independently costed for each site.</li><li>Whether facilities, tanks, quantities, units, and item totals in each POW reconcile to the signed engineering estimate.</li><li>Whether the listed locations and delivery scope match the project implementation records.</li></ul><p><a href="dpwh.html">Open the DPWH in-depth POW review queue ↗</a> · <a href="rcs-rainfall-archive.html">Open the archived rainfall-only scenario ↗</a></p></section></main><footer style="text-align:center;padding:18px;color:#536873">A review lead for human verification, not a finding.</footer></body></html>'''
     body=body.replace('</aside>', '</aside>'+lead, 1)
     page=header.replace('</head>',HERO_STYLE+'</head>')+body
-    from report_page_modules import apply_page_modules
-    page=apply_page_modules(page,'rcs.html')
+    from investigation_page_sections import apply_owned_sections
+    page=apply_owned_sections(page,'rcs.html')
     from uniform_report_menu import apply_page as apply_uniform_menu_page
     page=apply_uniform_menu_page(page,'rcs.html')
     from report_table_presentation import publish_assets,apply_page as apply_report_styles

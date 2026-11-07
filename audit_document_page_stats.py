@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit PDF/document statistics and page-builder ownership without scanning T5."""
+"""Audit PDF/document statistics against the Cloudflare manifest and T5 hash reconciliation."""
 from __future__ import annotations
 
 import argparse
@@ -72,6 +72,31 @@ def audit():
             if signatory_facts(copy_row) != signatory_facts(source_row):
                 fail(errors, 'scan-project-signatories-diverged', project_id)
     checks['senateScan'] = {**counts, 'generatedAtUtc': scan.get('generatedAtUtc'), 'uniqueProjectIds': len(set(ids))}
+
+    t5_audit = read_json(OUT / 't5-cloudflare-manifest-audit.json')
+    t5_status = t5_audit.get('statusCounts') or {}
+    t5_present = sum(int(t5_status.get(key, 0)) for key in
+                     ('verified', 'verified_alternate_path', 'verified_attachment_cache'))
+    t5_reconciliation = scan.get('t5CloudflareReconciliation') or {}
+    if t5_reconciliation.get('manifestEntries') != t5_audit.get('manifestEntries'):
+        fail(errors, 't5-manifest-count-mismatch',
+             f"scan={t5_reconciliation.get('manifestEntries')}, audit={t5_audit.get('manifestEntries')}")
+    if t5_reconciliation.get('manifestFilesPresentOnT5') != t5_present:
+        fail(errors, 't5-present-count-mismatch',
+             f"scan={t5_reconciliation.get('manifestFilesPresentOnT5')}, hash-audit={t5_present}")
+    scanned_pdfs = sum(int(item.get('filesScanned') or 0) for item in scan.get('byType', {}).values())
+    available_pdfs = int(t5_reconciliation.get('pdfFilesAvailable') or 0)
+    if scanned_pdfs != available_pdfs:
+        fail(errors, 'manifest-pdf-parse-count-mismatch',
+             f'parsed={scanned_pdfs}, present-on-T5={available_pdfs}')
+    checks['t5CloudflareManifest'] = {
+        'manifestEntries': t5_audit.get('manifestEntries'),
+        'presentAndHashVerified': t5_present,
+        'missingFromT5': t5_status.get('missing', 0),
+        'attachmentCacheCopies': t5_status.get('verified_attachment_cache', 0),
+        'pdfFilesPresentOnT5': available_pdfs,
+        'pdfFilesScanned': scanned_pdfs,
+    }
 
     status_path = OUT / 'senate_supporting_document_scan_status.json'
     status = read_json(status_path) if status_path.exists() else {}
@@ -163,6 +188,9 @@ def audit():
         columns = [re.sub(r'<[^>]+>', '', x).strip() for x in re.findall(r'<th\b[^>]*>(.*?)</th>', header.group(1), re.S)] if header else []
         if columns != expected_columns:
             fail(errors, 'coverage-table-columns', f'{page_name}: {columns!r}')
+        if 'data-report-table-exempt="true"' not in section:
+            fail(errors, 'coverage-table-column-compaction',
+                 f'{page_name}: shared table script is not instructed to preserve all seven columns')
         if 'hgab-only-document-coverage.json' not in html and page_name == 'undocumented-hgab.html':
             fail(errors, 'undocumented-export-link-missing', page_name)
         source = ('hgab-document-coverage.json' if page_name == 'dpwh.html'
@@ -209,7 +237,7 @@ def audit():
                                'pagesExpected': len(relevant_pages), 'stalePages': stale_pages}
 
     result = {'status': 'failed' if errors else 'ok_with_warnings' if warnings else 'ok', 'checkedAtUtc': datetime.now().astimezone().isoformat(),
-              'source': 'Consolidated Cloudflare-download parser artifacts and page outputs; no T5 directory scan performed.',
+              'source': 'Cloudflare manifest SHA-256 reconciliation across the T5 source folder and parser attachment cache, plus page outputs.',
               'checks': checks, 'pages': pages, 'warnings': warnings, 'errors': errors}
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / 'document-page-stats-audit.json').write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

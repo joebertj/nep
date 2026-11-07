@@ -48,6 +48,10 @@ def apply_tailwind_link(text,href,version):
     return re.sub(r'<head\b[^>]*>',lambda m:m[0]+link,text,count=1)
 
 def apply_page(text,versions,page=None):
+    from report_currency_module import format_tables
+    text,_=format_tables(text)
+    if page not in {'dpwh-hgab.html','dpwh-OO2-hgab.html','repeats.html'}:
+        text=re.sub(r'<script\b[^>]*id="chainage-overlap-viewer"[^>]*>.*?</script>','',text,flags=re.S)
     text=apply_bettergov_palette(text)
     text=normalize_table_pagination(text,page)
     text=apply_tailwind_link(text,'../css/tailwind.css',versions['tailwind'])

@@ -57,6 +57,8 @@ def validate_page_outputs():
                    for cell in re.findall(r"<th\b[^>]*>(.*?)</th>", head.group(1), re.S)] if head else []
         if headers != expected_headers:
             raise RuntimeError(f"{name} coverage columns changed: {headers!r}")
+        if 'data-report-table-exempt="true"' not in section:
+            raise RuntimeError(f"{name} coverage table must be exempt from shared 3-column project-card compaction")
         checks[name] = {"coverageColumns": len(headers)}
 
     dpwh = (STATIC / "dpwh.html").read_text()
@@ -66,6 +68,13 @@ def validate_page_outputs():
     if not final_sections or final_sections[-1] != "all-hgab-document-coverage":
         raise RuntimeError(f"DPWH final section must be all-hgab-document-coverage; found {final_sections[-1:]!r}")
     checks["dpwh.html"]["finalSection"] = final_sections[-1]
+    for section_id in ("senate-title-match-coverage", "senate-supporting-document-coverage"):
+        start = dpwh.find(f'id="{section_id}"')
+        end = dpwh.find("</section>", start)
+        section = dpwh[start:end] if start >= 0 and end >= 0 else ""
+        if not section or "All HGAB projects" not in section or "HGAB-only" in section:
+            raise RuntimeError(f"DPWH {section_id} must report the all-HGAB cohort")
+    checks["dpwh.html"]["documentCoverageScope"] = "all-HGAB"
 
     coverage_js = (STATIC / "hgab-document-coverage.js").read_text()
     if "<td>'+signatoryCell+'</td></tr>'" not in coverage_js or "colspan=\"7\"" not in coverage_js:
@@ -73,11 +82,14 @@ def validate_page_outputs():
 
     summary = (STATIC / "summary.html").read_text()
     summary_data = json.loads((STATIC / "summary-data.json").read_text())
-    cards = summary.count('<article class="finding"')
+    cards = summary.count('<article class="priority-card"')
     agencies = len(summary_data.get("agencyComparisonCoverage", []))
     if cards != 8 or len(summary_data.get("findings", [])) != 8 or agencies != 5:
         raise RuntimeError(f"Summary contract changed: {cards} cards, {agencies} agency comparisons")
-    checks["summary.html"] = {"cards": cards, "agencyComparisons": agencies}
+    if '<h1>Budget Summary · Priority Review Leads</h1>' not in summary:
+        raise RuntimeError("Summary lost the restored Git-history hero")
+    checks["summary.html"] = {"cards": cards, "agencyComparisons": agencies,
+                               "restoredFrom": "open-data-visualization:72f9346cc"}
 
     unit_page = (STATIC / "cost-per-unit.html").read_text()
     selector = re.search(r'<select\b[^>]*id="unit-page-size"[^>]*>(.*?)</select>', unit_page, re.S)

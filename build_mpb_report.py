@@ -9,7 +9,7 @@ import unicodedata
 from urllib.parse import quote
 from collections import Counter, defaultdict
 from pathlib import Path
-from build_report_heroes import STYLE
+from report_hero_module import STYLE
 from hgab_matching import UNMATCHED, is_fap
 from uniform_report_menu import apply_share_build_meta
 

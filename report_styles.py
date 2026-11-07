@@ -46,6 +46,8 @@ td.num,th.num{white-space:nowrap;font-size:11px;padding-left:6px;padding-right:6
 
 def fit_tables(page: str) -> str:
     """Use available page width and wrap table content instead of scrolling."""
+    from report_currency_module import format_tables
+    page,_=format_tables(page)
     if "</style>" not in page:
         raise ValueError("Report page has no style block to apply table layout")
     return page.replace("</style>", TABLE_FIT_CSS + "</style>", 1)

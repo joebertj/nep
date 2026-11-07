@@ -90,12 +90,13 @@ verification step beyond the upstream analysis.
 
 ## Higher-level overview archive
 
-`archive_higher_level_analysis.py` records the existing committed report revision
+`archive_higher_level_analysis.py` was a one-time archive migration. It recorded the existing committed report revision
 and HTML checksums, retains private byte-for-byte HTML snapshots, and generates
 `static/nep-preview/archive/index.html` with immutable Git source links. The
 archived Git revision includes the matching datasets and assets. This avoids
 publishing another large, duplicate copy of the same datasets.
 
+That migration is complete; the script is now disabled and must not be rerun.
 Current pages replace the named duplicate overview panels with links to
 csiiiv. A small display adapter retires these panels after legacy page scripts
 initialize, allowing their project-level tables and controls to keep working.

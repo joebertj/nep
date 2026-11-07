@@ -189,6 +189,10 @@ def normalize_header(text):
 def apply_page(text,page=None,status=None):
     # Shared edits are composed in memory. The page builder that supplied this
     # HTML remains the only component that writes the final page.
+    from report_currency_module import format_tables
+    text,_=format_tables(text)
+    if page not in {'dpwh-hgab.html','dpwh-OO2-hgab.html','repeats.html'}:
+        text=re.sub(r'<script\b[^>]*id="chainage-overlap-viewer"[^>]*>.*?</script>','',text,flags=re.S)
     from review_report_language import apply_page_editorial
     text=apply_page_editorial(text,page or '')
     if page!='nia-irrigation.html':

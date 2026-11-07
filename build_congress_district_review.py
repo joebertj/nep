@@ -7,6 +7,7 @@ import math
 import re
 from collections import Counter, defaultdict
 from pathlib import Path
+from report_hero_module import STYLE, hero, peso
 from analyze_mpb_proximity import coordinates as parse_coordinates
 from build_rcs_pow_review import read_evidence as read_rcs_pow_evidence
 
@@ -648,6 +649,20 @@ def build():
                 page,
                 count=1,
             )
+        s=payload['summary']
+        card=hero('HGAB 3rd Reading · strict congressional location attribution',
+            f"{s['strictExcludedLines']:,} lines",'remain outside the strict district ranking',
+            peso(s['strictExcludedAmountPesos']),'unresolved or shared project allocations',[
+                ('Accepted allocations',peso(s['strictAssignedPesos']),f"{s['uniquelyAssignedLines']:,} lines mapped to one district"),
+                ('Allocation coverage',f"{s['strictCoveragePct']:.2f}%",'of the extracted schedule passes the location rules')],
+            'The ranking covers accepted location matches, not complete district budgets. Conflicting maps, incomplete locations and shared lines are excluded. No accepted match does not mean no allocation; location attribution does not establish sponsorship by a representative.')
+        page=re.sub(r'<section\b[^>]*id="report-hero"[^>]*>.*?</section>','<section id="report-hero">'+card+'</section>',page,count=1,flags=re.S)
+        if 'id="report-hero"' not in page:
+            page=re.sub(r'(<main\b[^>]*>)',r'\1<section id="report-hero">'+card+'</section>',page,count=1)
+        if 'id="report-hero-style"' not in page:
+            page=page.replace('</head>',STYLE+'</head>',1)
+        from investigation_page_sections import apply_owned_sections
+        page=apply_owned_sections(page,'congress.html')
         report_page.write_text(page, encoding='utf-8')
     return payload['summary']
 

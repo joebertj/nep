@@ -27,7 +27,7 @@ These are accepted matches under local map agreement, not complete district budg
 
 ```sh
 python3 ../open-data-visualization/analysis/build_congress_allocation_data.py --write --audit analysis_output/congress_geographic_attribution_3rd.json
-python3 build_report_heroes.py --page congress.html
+python3 build_congress_district_review.py
 ```
 
 The private JSON and CSV audit retain each source project ID, literal title, amount, source volume/page, accepted seat or unresolved reason, and geographic evidence. JSON also includes input and script SHA-256 digests.

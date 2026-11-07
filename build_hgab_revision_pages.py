@@ -140,7 +140,7 @@ def gaa25_nia() -> list[dict]:
     return json.loads(result.stdout or "[]")
 
 
-def write_dpwh_comparison_page() -> None:
+def prepare_dpwh_comparison_data() -> None:
     data_path = STATIC / "dpwh-data.json"
     data = json.loads(data_path.read_text(encoding="utf-8"))
     data["hbInsertions2nd"] = hgab_insertions(OUT / "hb_nep_comparison.csv")
@@ -174,81 +174,10 @@ def write_dpwh_comparison_page() -> None:
         })
     write_json(STATIC / "dpwh-hgab-comparison.json", {"summary": comparison["summary"], "rows": thin_rows})
 
-    hgab_page = STATIC / "dpwh-hgab.html"
-    html = hgab_page.read_text(encoding="utf-8")
-    html = html.replace(
-        '<tr><th>Project</th><th>Program / category</th><th>Office</th><th class="num">Amount*</th>',
-        '<tr><th>Fiscal year</th><th>Project</th><th>Program / category</th><th>Office</th><th class="num">Amount*</th>',
-    )
-    html = html.replace('colspan="12" class="empty">No matching potential repeats', 'colspan="13" class="empty">No matching potential repeats')
-    third_candidates = data["hbInsertions"]
-    third_total = sum(int(row.get("amountPesos") or 0) for row in third_candidates)
-    html = html.replace(
-        "<title>DPWH · HGAB insertions (FY2027)</title>",
-        "<title>DPWH · NEP to HGAB review (FY2027)</title>",
-    )
-    html = re.sub(
-        r'<meta name="description" content="[^"]*">',
-        '<meta name="description" content="FY2027 DPWH NEP to HGAB review queue. Unmatched title records are unresolved until checked against project scope and bill pages; they are not confirmed insertions.">',
-        html, count=1,
-    )
-    html = html.replace("(HB 10858, second reading)", "(HB 10858, third reading)")
-    html = html.replace(
-        "without an exact normalized project-title match in the FY2027 NEP extract. These are insertion candidates",
-        "that remain unmatched after exact-title, embedded-source-title, and fuzzy title screening against the FY2027 NEP",
-    )
-    html = html.replace(
-        "<h1>DPWH: additions in HGAB after the NEP</h1>",
-        "<h1>DPWH: NEP to HGAB review</h1>",
-    )
-    html = re.sub(
-        r'(<h1>DPWH: NEP to HGAB review</h1>)<p>.*?</p>',
-        r'\1<p>Only records with no exact or plausible fuzzy project-title counterpart in the FY2027 NEP remain in this shortlist. They are title-screen candidates for additions and still need project-scope verification.</p>',
-        html, count=1, flags=re.S,
-    )
-    html = re.sub(
-        r'<section class="impact-teaser" aria-label="(?:Key finding|NEP to HGAB review status|NEP to HGAB unmatched shortlist)">.*?</section>',
-        f'''<section class="impact-teaser" aria-label="NEP to HGAB unmatched shortlist"><div><span class="impact-teaser-kicker">DPWH · FY2027 NEP to 3rd-reading HGAB</span><div class="impact-teaser-headline">{len(third_candidates):,}</div><div class="impact-teaser-title">HGAB line items without a plausible NEP title counterpart</div><p class="impact-teaser-copy">Exact titles and fuzzy title counterparts scoring at least 83% are removed from this shortlist.</p></div><div class="impact-teaser-side"><div class="impact-teaser-stat"><strong>₱{third_total/1e9:,.2f}B</strong><span>allocation across the unmatched shortlist</span></div><p class="impact-teaser-foot">The 83% title screen is a triage rule. Confirm project location, chainage, scope, and the cited bill page before treating a line as a true addition.</p></div></section>''',
-        html, count=1, flags=re.S,
-    )
-    html = html.replace(
-        "<h2>Potential insertions in FY2027 HGAB relative to NEP</h2>",
-        "<h2>FY2027 HGAB line items unmatched to NEP</h2>",
-    )
-    html = html.replace(
-        "<h2>FY2027 HGAB records needing NEP scope review</h2>",
-        "<h2>FY2027 HGAB line items unmatched to NEP</h2>",
-    )
-    html = html.replace("All potential insertions", "All unmatched line items")
-    html = html.replace("All unresolved records", "All unmatched line items")
-    html = html.replace("No close title counterpart; review candidate", "No plausible NEP title counterpart; review candidate")
-    html = html.replace("Possible title counterpart; review scope", "Plausible NEP title counterpart; review scope")
-    html = html.replace("No close title counterpart", "No plausible NEP title counterpart")
-    html = html.replace("Possible title counterpart", "Plausible NEP title counterpart")
-    html = html.replace('<option value="all">All unresolved records</option><option value="novel">No close title counterpart</option><option value="near">Possible title counterpart</option>', '<option value="all">All unmatched line items</option><option value="novel">No plausible NEP title counterpart</option>')
-    html = html.replace('<option value="near">Plausible NEP title counterpart</option>', '')
-    html = html.replace("HB candidates by title screen", "Unmatched HGAB line items after NEP title screening")
-    html = html.replace("Unresolved records by title-screen result", "Unmatched HGAB line items after NEP title screening")
-    html = html.replace("Candidate count and allocation for the current filters.", "Count and extracted allocation for the unmatched line items.")
-    html = html.replace("Unresolved-record count and extracted allocations for the current filters.", "Count and extracted allocation for the unmatched line items.")
-    html = html.replace("<th>HB project line</th>", "<th>HGAB project</th>")
-    html = html.replace("<th class=\"num\">HB allocation</th>", "<th class=\"num\">Extracted amount</th>")
-    html = re.sub(
-        r'(<h2>FY2027 HGAB line items unmatched to NEP</h2>\s*<p class="sub">).*?(</p>)',
-        lambda m: m.group(1) + f'After removing exact-title matches and fuzzy title counterparts scoring at least 83%, <strong>{len(third_candidates):,} HGAB line items</strong> remain, carrying <strong>₱{third_total/1e9:,.2f}B</strong>. This shortlist is screened for project-title similarity; verify project scope and cited bill page before counting confirmed additions.' + m.group(2),
-        html, count=1, flags=re.S,
-    )
-    html = re.sub(r'<details open class="card section" id="second-reading-archive">.*?</details>', '', html, count=1, flags=re.S)
-    html = re.sub(r"document\.getElementById\('secondReadingCsv'\)\.onclick=.*?;(?=document\.getElementById\('insertionCsv'\)\.onclick=)", '', html, count=1)
-    html = html.replace("dpwh_hgab_insertion_candidates.csv", "dpwh_hgab_nep_review_records.csv")
-    html = html.replace("Export filtered rows to CSV", "Export filtered review records to CSV")
-    html = html.replace(
-        "The extractor is heuristic and requires checking against the original bill page;",
-        "The corrected native-text parser reconciles the printed program totals; still check each project against the original bill page;",
-    )
-    html = html.replace('<a href="dpwh-hgab.html">DPWH · HGAB insertions</a>', '<a href="dpwh-hgab.html">NEP → HGAB (3rd)</a><a href="dpwh-hgab-comparison.html">DPWH 2nd vs 3rd</a><a href="nia-irrigation.html">NIA irrigation</a><a href="deped.html">DepEd</a>', 1)
-    hgab_page.write_text(html, encoding="utf-8")
 
+
+def render_dpwh_comparison_page() -> str:
+    comparison = json.loads((STATIC / "dpwh-hgab-comparison.json").read_text(encoding="utf-8"))
     page = r'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>DPWH HGAB · 2nd vs 3rd Reading</title><script src="/static/js/chart.js"></script><style>
 :root{--ink:#172b3a;--muted:#637381;--paper:#f4f6f5;--card:#fff;--line:#dce3e1;--teal:#087e78;--amber:#a65b08}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}header{background:#102f3e;color:#fff;padding:30px clamp(16px,3vw,44px)}h1{margin:8px 0;font-size:clamp(30px,4vw,46px)}header p{max-width:900px;color:#d1dfde}.report-nav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-auto-rows:34px;align-content:start;gap:8px 10px;height:76px;min-height:76px;margin-top:16px}.report-nav a{box-sizing:border-box;display:flex;min-width:0;height:34px;align-items:center;justify-content:center;padding:4px 7px;border:1px solid #ffffff55;border-radius:8px;color:#a7ddd1;text-align:center;text-decoration:none;font-size:12px;line-height:1.1;overflow-wrap:anywhere}@media(max-width:900px){.report-nav{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:34px;height:160px;min-height:160px}}@media(max-width:560px){.report-nav{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:34px;height:202px;min-height:202px}}.wrap{width:100%;max-width:none;margin:0;padding:24px clamp(16px,3vw,44px)}.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:22px}.metric,.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}.label{color:var(--muted);font-size:13px}.value{font-size:30px;line-height:1.15;font-weight:750;letter-spacing:-.03em;margin-top:7px}.charts{display:grid;grid-template-columns:1.5fr 1fr;gap:16px;margin-bottom:16px}.chart{min-width:0}.chart-canvas{position:relative;width:100%;height:280px;max-height:280px}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.toolbar input,.toolbar select,button{font:inherit;padding:9px 11px;border:1px solid var(--line);border-radius:7px;background:#fff}.export{background:#087e78;color:#fff;border-color:#087e78}table{width:100%;table-layout:fixed;border-collapse:collapse;font-size:12px}th,td{padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere;text-align:left}th{background:#eff4f2;position:sticky;top:0}.num{font-variant-numeric:tabular-nums;text-align:right}.tablewrap{max-height:68vh;overflow:auto}.note{color:var(--muted);font-size:13px}.pagination{display:flex;justify-content:space-between;align-items:center;margin:12px 0}.pagination button{cursor:pointer}.danger{color:#8c4c06}@media(max-width:800px){.charts{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.wrap{padding:14px}table{font-size:11px}}
@@ -264,9 +193,7 @@ fetch('dpwh-hgab-comparison.json').then(r=>r.json()).then(D=>{const rows=D.rows,
         f'<strong>line items listed in 3rd reading without a selected 2nd-reading counterpart</strong>'
         f'<p>Those lines total ₱{new_total/1_000_000:,.0f}M. {len(removed_rows):,} 2nd-reading lines have no selected 3rd-reading counterpart. These are extraction and title-screen results for document review.</p></section>')
     page = page.replace("__READING_TEASER__", teaser)
-    (STATIC / "dpwh-hgab-comparison.html").write_text(page, encoding="utf-8")
-    from build_dpwh_fap_review import refresh
-    refresh()
+    return page
 
 
 def main() -> None:
@@ -277,6 +204,7 @@ def main() -> None:
         summaries[group] = compare_rows(second[group], third[group], "deped" if group == "deped" else group)
     write_json(OUT / "hgab_reading_revision_summary.json", {k: v["summary"] for k, v in summaries.items()})
     write_json(STATIC / "hgab-revision-data.json", summaries)
+    prepare_dpwh_comparison_data()
 
     # Historical GAA screen for the newly found NIA irrigation appendix.
     nia_now = [fields(row, 2027, "nia") for row in third["nia_irrigation"]]
@@ -294,69 +222,9 @@ def main() -> None:
     })
     write_json(STATIC / "deped-data.json", summaries["deped"])
 
-    write_dpwh_comparison_page()
-    update_existing_pages(summaries)
-    write_nia_page()
-    write_deped_page()
-    print("Built 3rd-reading comparison data and pages under ODV static/nep-preview")
-
-
-def update_existing_pages(summaries: dict) -> None:
-    # Put a live 3rd-reading summary before each retained 2nd-reading report.
-    mapping = {"fmr.html": "fmr", "nia.html": "nia_named", "hfep.html": "hfep"}
-    for filename, key in mapping.items():
-        if key in ('nia_named','hfep') and (STATIC/'nep-agency-baselines.json').exists():
-            continue
-        if key == 'fmr' and (ROOT/'data_sources/fmr_analyst/hgab_fmr_coordinates_normalized.json').exists():
-            from build_corrected_fmr_page import generate as generate_corrected_fmr
-            generate_corrected_fmr()
-            continue
-        path = STATIC / filename
-        html = path.read_text(encoding="utf-8")
-        if 'id="edition-current"' in html:
-            continue
-        label = {"fmr": "FMR", "nia_named": "NIA named projects", "hfep": "HFEP"}[key]
-        card = f'''<section id="edition-current" class="card section"><h2>{label}: 3rd Reading vs 2nd Reading</h2><p class="sub">3rd-reading allocations lead this page. The retained analysis below uses the 2nd-reading schedule and is marked as historical.</p><div class="grid metrics" id="editionMetrics"></div><figure class="comparison-graphic"><figcaption><strong>Schedule allocations by reading</strong><span>Totals and line counts from extracted schedules.</span></figcaption><div class="odv-chart"><canvas id="editionChart"></canvas></div></figure><div class="toolbar"><input id="editionSearch" type="search" placeholder="Filter title, status, or page"><select id="editionFilter"><option value="all">All rows</option><option>Allocation changed</option><option>Only in 3rd reading</option><option>Only in 2nd reading</option></select><button class="export-btn" id="editionCsv">Export filtered CSV</button></div><div class="tablewrap"><table><thead><tr><th>Status</th><th>Project / facility</th><th class="num">2nd reading</th><th class="num">3rd reading</th><th class="num">Change</th><th>Source pages</th></tr></thead><tbody id="editionBody"></tbody></table></div><p class="sub">FMR and HFEP NEP amounts are program envelopes; their named HGAB lines can itemize those envelopes and are not automatically new money. NIA titles indicate potential identity matches only; inspect phase, location, and scope.</p></section><h2 class="edition-archive-heading">Previous analysis · HGAB 2nd Reading</h2>'''
-        html = html.replace('<main class="wrap">', '<main class="wrap">\n' + card, 1)
-        html = html.replace('</body>', f'''<script>
-fetch('hgab-revision-data.json').then(r=>r.json()).then(D=>{{const A=D.{key},s=A.summary,rows=A.rows;const fmt=n=>Number(n||0).toLocaleString('en-PH'),peso=n=>'₱'+fmt(n);document.getElementById('editionMetrics').innerHTML=[['2nd reading lines',fmt(s.secondRows)],['3rd reading lines',fmt(s.thirdRows)],['2nd schedule total',peso(s.secondTotal)],['3rd schedule total',peso(s.thirdTotal)]].map(x=>`<article class="card"><div class="metric-label">${{x[0]}}</div><div class="metric-value">${{x[1]}}</div></article>`).join('');const chart=new Chart(document.getElementById('editionChart'),{{type:'bar',data:{{labels:['2nd Reading','3rd Reading'],datasets:[{{label:'Schedule total (₱)',data:[s.secondTotal,s.thirdTotal],backgroundColor:['#355b92','#087e78']}}]}},options:{{responsive:true,maintainAspectRatio:false,scales:{{y:{{beginAtZero:true}}}}}}}});const body=document.getElementById('editionBody'),search=document.getElementById('editionSearch'),filter=document.getElementById('editionFilter');function draw(){{const q=search.value.toLowerCase(),f=filter.value,list=rows.filter(x=>(f==='all'||x.status===f)&&[x.status,x.name,x.secondPage,x.thirdPage].some(v=>String(v||'').toLowerCase().includes(q)));body.innerHTML=list.slice(0,400).map(x=>`<tr><td>${{x.status}}</td><td>${{x.name}}</td><td class="num">${{peso(x.secondAmount)}}</td><td class="num">${{peso(x.thirdAmount)}}</td><td class="num">${{peso(x.delta)}}</td><td>2nd p.${{x.secondPage||'—'}} · 3rd p.${{x.thirdPage||'—'}}</td></tr>`).join('')||'<tr><td colspan="6">No rows for this filter.</td></tr>'}}search.oninput=draw;filter.onchange=draw;document.getElementById('editionCsv').onclick=()=>{{const cols=['status','name','secondAmount','thirdAmount','delta','secondPage','thirdPage'];const list=rows.filter(x=>(filter.value==='all'||x.status===filter.value)&&[x.status,x.name,x.secondPage,x.thirdPage].some(v=>String(v||'').toLowerCase().includes(search.value.toLowerCase())));const csv=[cols,...list.map(x=>cols.map(k=>x[k]??''))].map(a=>a.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\\r\\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\\ufeff'+csv],{{type:'text/csv'}}));a.download='{key}_2nd_vs_3rd.csv';a.click();URL.revokeObjectURL(a.href)}};draw()}}).catch(e=>console.error(e));
-</script></body>''', 1)
-        html = html.replace('<a href="dpwh-hgab.html">DPWH · HGAB insertions</a>', '<a href="dpwh-hgab.html">NEP → HGAB (3rd)</a><a href="dpwh-hgab-comparison.html">DPWH 2nd vs 3rd</a><a href="nia-irrigation.html">NIA irrigation</a><a href="deped.html">DepEd</a>', 1)
-        html = html.replace('FY 2027 · HB 10858 (HGAB)', 'FY 2027 · HB 10858 (3rd Reading)', 1)
-        html = html.replace('Repeat screen: FY2027 HGAB against available FY2025 GAA.', 'Historical 2nd-reading repeat screen: FY2027 HGAB against available FY2025 GAA.', 1)
-        if '/static/js/chart.js' not in html:
-            html = html.replace('</head>', '<script src="/static/js/chart.js"></script></head>', 1)
-        path.write_text(html, encoding="utf-8")
-
-
-def common_page(title: str, h1: str, intro: str, data_file: str, nav: str, content: str, js: str) -> str:
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{intro}"><title>{title}</title><script src="/static/js/chart.js"></script><style>
-:root{{--ink:#172b3a;--muted:#637381;--paper:#f4f6f5;--card:#fff;--line:#dce3e1;--teal:#087e78;--blue:#355b92}}*{{box-sizing:border-box}}body{{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}}header{{background:#102f3e;color:#fff;padding:30px clamp(16px,3vw,44px)}}h1{{font-size:clamp(30px,4vw,46px);margin:8px 0}}header p{{color:#d1dfde;max-width:900px}}nav{{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-auto-rows:34px;align-content:start;gap:8px 10px;height:76px;min-height:76px;margin-top:16px}}nav a{{box-sizing:border-box;display:flex;min-width:0;height:34px;align-items:center;justify-content:center;padding:4px 7px;border:1px solid #ffffff55;border-radius:8px;color:#a7ddd1;text-align:center;text-decoration:none;font-size:12px;line-height:1.1;overflow-wrap:anywhere}}main{{width:100%;max-width:none;margin:0;padding:22px clamp(16px,3vw,44px)}}.card{{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 30px #213d4b0b;padding:20px;margin-bottom:16px}}.metrics .card{{margin:0}}.metrics{{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:22px}}.metric-label{{font-size:13px;color:var(--muted)}}.metric-value{{font-size:30px;line-height:1.15;font-weight:750;letter-spacing:-.03em;margin-top:7px}}.charts{{display:grid;grid-template-columns:1fr 1fr;gap:16px}}.chart{{min-width:0}}.chart-canvas{{position:relative;width:100%;height:280px;max-height:280px}}.toolbar{{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}}input,select,button{{font:inherit;padding:9px;border:1px solid var(--line);border-radius:6px}}button{{background:var(--teal);color:#fff;cursor:pointer}}table{{width:100%;table-layout:fixed;border-collapse:collapse;font-size:12px}}th,td{{padding:7px 6px;text-align:left;border-bottom:1px solid var(--line);overflow-wrap:anywhere;vertical-align:top}}th{{background:#eff4f2}}.num{{text-align:right;font-variant-numeric:tabular-nums}}.tablewrap{{max-height:70vh;overflow:auto}}.note{{font-size:13px;color:var(--muted)}}@media(max-width:900px){{nav{{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:34px;height:160px;min-height:160px}}}}@media(max-width:800px){{.charts{{grid-template-columns:1fr}}.metrics{{grid-template-columns:repeat(2,minmax(0,1fr))}}main{{padding:16px}}}}@media(max-width:560px){{nav{{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:34px;height:202px;min-height:202px}}}}
-</style></head><body><header><div>FY 2027 · HB 10858 · 2nd and 3rd Reading schedules</div><h1>{h1}</h1><p>{intro}</p><nav class="report-nav" aria-label="Budget report pages">{nav}</nav></header><main>{content}</main><script>
-fetch('{data_file}').then(r=>r.json()).then(D=>{{{js}}}).catch(e=>{{console.error(e);document.querySelector('main').insertAdjacentHTML('afterbegin','<p class="card">Could not load local comparison data.</p>')}});
-</script></body></html>'''
-
-
-def write_nia_page() -> None:
-    from standardize_nep_hgab_pages import make_page
-    make_page('nia-irrigation.html')
-    return
-    nav = '<a href="dpwh.html">DPWH · NEP patterns</a><a href="dpwh-hgab.html">DPWH · NEP → HGAB (3rd)</a><a href="dpwh-hgab-comparison.html">DPWH · HGAB 2nd vs 3rd</a><a href="nia-irrigation.html">NIA irrigation</a><a href="deped.html">DepEd</a><a href="rcs.html">RCS · POW scope review</a><a href="fmr.html">FMR</a><a href="nia.html">NIA</a><a href="hfep.html">HFEP</a><a href="budget-innovations.html">Budget Innovations</a>'
-    content = '''<section class="card"><div class="metrics" id="metrics"></div><p class="note">This is a separate 423-row NIA irrigation-program appendix, apart from the 32-item named-project schedule in the main NIA report. It is a candidate extraction; verify title and amount on the cited page. Potential GAA matches are review leads, not confirmed repeats.</p></section><section class="charts"><article class="card chart"><h2>2nd vs 3rd reading allocations</h2><div class="chart-canvas"><canvas id="scatter"></canvas></div></article><article class="card chart"><h2>3rd-reading candidate matches by title-screen class</h2><div class="chart-canvas"><canvas id="repeatChart"></canvas></div></article></section><section class="card"><h2>Potential year-on-year matches · 3rd HGAB vs 2025 GAA</h2><div class="toolbar"><input id="repeatSearch" placeholder="Filter project or prior title"><button id="repeatCsv">Export CSV</button></div><div class="tablewrap"><table><thead><tr><th>NIA project line</th><th class="num">3rd HGAB</th><th>FY2025 GAA candidate</th><th class="num">2025 GAA</th><th>Match</th><th>Chainage</th><th>Tranche</th><th>Source pages</th></tr></thead><tbody id="repeatBody"></tbody></table></div></section><section class="card"><h2>Full irrigation-program line list</h2><div class="toolbar"><input id="allSearch" placeholder="Filter NIA project, station, or page"><select id="allEdition"><option value="3rd">3rd Reading</option><option value="2nd">2nd Reading</option></select><button id="allCsv">Export filtered lines</button></div><div class="tablewrap"><table><thead><tr><th>Project / work</th><th>Station / chainage</th><th class="num">Amount</th><th>Edition / page</th><th>2nd to 3rd change</th></tr></thead><tbody id="allBody"></tbody></table></div></section>'''
-    js = r'''const peso=n=>'₱'+Number(n||0).toLocaleString('en-PH'),fmt=n=>Number(n||0).toLocaleString('en-PH'),rev=D.revision,rows=rev.rows,projects=D.projects,repeats=D.repeatCandidates;document.getElementById('metrics').innerHTML=[['3rd-reading line items',fmt(rev.summary.thirdRows)],['3rd-reading allocation',peso(rev.summary.thirdTotal)],['2nd-reading allocation',peso(rev.summary.secondTotal)],['Potential 2025 GAA title matches',fmt(repeats.length)]].map(x=>`<article class="card"><div class="metric-label">${x[0]}</div><div class="metric-value">${x[1]}</div></article>`).join('');const matched=rows.filter(x=>x.secondAmount&&x.thirdAmount);new Chart(document.getElementById('scatter'),{type:'scatter',data:{datasets:[{label:'Matched project titles',data:matched.map(x=>({x:x.secondAmount,y:x.thirdAmount})),backgroundColor:'#087e78'}]},options:{responsive:true,maintainAspectRatio:false,scales:{x:{title:{display:true,text:'2nd Reading (₱)'}},y:{title:{display:true,text:'3rd Reading (₱)'}}}}});new Chart(document.getElementById('repeatChart'),{type:'doughnut',data:{labels:['≥80% title similarity','62–79% title similarity'],datasets:[{data:[repeats.filter(x=>x.similarity>=.8).length,repeats.filter(x=>x.similarity<.8).length],backgroundColor:['#087e78','#e3a23b']}]},options:{responsive:true,maintainAspectRatio:false}});const repBody=document.getElementById('repeatBody'),repSearch=document.getElementById('repeatSearch');function drawRepeats(){const q=repSearch.value.toLowerCase(),list=repeats.filter(x=>(x.name+' '+x.prior_name).toLowerCase().includes(q)).slice(0,500);repBody.innerHTML=list.map(x=>`<tr><td>${x.name}</td><td class="num">${peso(x.amount)}</td><td>${x.prior_name}</td><td class="num">${peso(x.prior_amount)}</td><td>${Math.round(x.similarity*100)}%</td><td>${x.chainage_status||'not stated'}${x.chainage_overlap?'<br>'+x.chainage_overlap:''}</td><td>${x.tranche_status||'not stated'} ${x.tranche_detail||''}</td><td>${x.source}<br>${x.prior_source}</td></tr>`).join('')||'<tr><td colspan="8">No title candidates at the current filter.</td></tr>'}repSearch.oninput=drawRepeats;document.getElementById('repeatCsv').onclick=()=>exportRows(repeats.filter(x=>(x.name+' '+x.prior_name).toLowerCase().includes(repSearch.value.toLowerCase())),['name','amount','prior_name','prior_amount','similarity','chainage_status','chainage_overlap','tranche_status','tranche_detail','source','prior_source'],'nia_irrigation_2027_vs_2025_gaa.csv');const allSearch=document.getElementById('allSearch'),edition=document.getElementById('allEdition'),allBody=document.getElementById('allBody');function drawAll(){const q=allSearch.value.toLowerCase(),list=projects.filter(x=>(x.edition===edition.value)&&x.projectName.toLowerCase().includes(q));allBody.innerHTML=list.slice(0,500).map(x=>{const match=rows.find(r=>r.name===x.projectName);return `<tr><td>${x.projectName}</td><td>${(x.projectName.match(/(?:sta\.?|km)\s*\d[^)]*/gi)||[]).join('; ')||'—'}</td><td class="num">${peso(x.amountPesos)}</td><td>${x.edition} · p.${x.sourcePage}</td><td>${match?.status||'—'} · ${peso(match?.delta||0)}</td></tr>`}).join('')}allSearch.oninput=drawAll;edition.onchange=drawAll;document.getElementById('allCsv').onclick=()=>exportRows(projects.filter(x=>x.edition===edition.value&&x.projectName.toLowerCase().includes(allSearch.value.toLowerCase())),['edition','projectName','amountPesos','sourcePage','sourceText'],'nia_irrigation_schedule_'+edition.value+'.csv');function exportRows(rows,cols,name){const csv=[cols,...rows.map(r=>cols.map(k=>r[k]??''))].map(a=>a.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\r\n'),a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv'}));a.download=name;a.click();URL.revokeObjectURL(a.href)}drawRepeats();drawAll();'''
-    page = common_page("NIA Irrigation Program · 2nd vs 3rd Reading", "NIA FY2027 Irrigation Program", "Review the detailed NIA irrigation works schedule, compare 2nd and 3rd readings, and inspect title matches against 2025 GAA. Amounts and titles require source-page verification.", "nia-irrigation-data.json", nav, content, js)
-    (STATIC / "nia-irrigation.html").write_text(page, encoding="utf-8")
-
-
-def write_deped_page() -> None:
-    from standardize_nep_hgab_pages import make_page
-    make_page('deped.html')
-    return
-    nav = '<a href="dpwh.html">DPWH · NEP patterns</a><a href="dpwh-hgab.html">DPWH · NEP → HGAB (3rd)</a><a href="dpwh-hgab-comparison.html">DPWH · HGAB 2nd vs 3rd</a><a href="nia-irrigation.html">NIA irrigation</a><a href="deped.html">DepEd</a><a href="rcs.html">RCS · POW scope review</a><a href="fmr.html">FMR</a><a href="nia.html">NIA</a><a href="hfep.html">HFEP</a><a href="budget-innovations.html">Budget Innovations</a>'
-    content = '''<section class="card"><div class="metrics" id="metrics"></div><p class="note">This schedule allocates school operating budgets (junior-high personnel services, junior-high MOOE, junior-high total, and senior-high MOOE). It is not a school construction-project list. Compare bill-stage changes by school and verify table rows in Volume I-B before interpreting a change.</p></section><section class="charts"><article class="card chart"><h2>Allocation by region · 2nd vs 3rd</h2><div class="chart-canvas"><canvas id="regionChart"></canvas></div></article><article class="card chart"><h2>Largest school allocation changes</h2><div class="chart-canvas"><canvas id="changeChart"></canvas></div></article></section><section class="card"><h2>School-level allocation changes</h2><div class="toolbar"><input id="search" placeholder="Filter school, division, or region"><select id="region"><option value="all">All regions</option></select><select id="status"><option value="all">All change status</option></select><button id="csv">Export filtered CSV</button></div><div class="tablewrap"><table><thead><tr><th>Status</th><th>Region</th><th>School division / SDO</th><th>Secondary school</th><th class="num">2nd total</th><th class="num">3rd total</th><th class="num">Change</th><th>Page</th></tr></thead><tbody id="body"></tbody></table></div><p class="note">Showing up to 500 filtered schools at a time; CSV exports all filtered rows.</p></section>'''
-    js = r'''const rows=D.rows,s=D.summary,peso=n=>'₱'+Number(n||0).toLocaleString('en-PH'),fmt=n=>Number(n||0).toLocaleString('en-PH');document.getElementById('metrics').innerHTML=[['Schools / allocation rows',fmt(s.thirdRows)],['2nd reading total',peso(s.secondTotal)],['3rd reading total',peso(s.thirdTotal)],['Net change',peso(s.thirdTotal-s.secondTotal)]].map(x=>`<article class="card"><div class="metric-label">${x[0]}</div><div class="metric-value">${x[1]}</div></article>`).join('');const regions=[...new Set(rows.map(r=>r.region).filter(Boolean))].sort(),regionSelect=document.getElementById('region'),statusSelect=document.getElementById('status');regionSelect.innerHTML+='<option value="__blank">Unclassified / missing</option>'+regions.map(r=>`<option>${r}</option>`).join('');statusSelect.innerHTML+=Object.keys(s.statusCounts).map(x=>`<option>${x}</option>`).join('');const byRegion={};for(const x of rows){const key=x.region||'Unclassified';byRegion[key]??={second:0,third:0};byRegion[key].second+=x.secondTotal;byRegion[key].third+=x.thirdTotal}new Chart(document.getElementById('regionChart'),{type:'bar',data:{labels:Object.keys(byRegion),datasets:[{label:'2nd Reading',data:Object.values(byRegion).map(x=>x.second),backgroundColor:'#355b92'},{label:'3rd Reading',data:Object.values(byRegion).map(x=>x.third),backgroundColor:'#087e78'}]},options:{responsive:true,maintainAspectRatio:false,indexAxis:'y'}});const largest=[...rows].sort((a,b)=>Math.abs(b.delta)-Math.abs(a.delta)).slice(0,15);new Chart(document.getElementById('changeChart'),{type:'bar',data:{labels:largest.map(x=>x.name),datasets:[{label:'3rd minus 2nd (₱)',data:largest.map(x=>x.delta),backgroundColor:largest.map(x=>x.delta<0?'#bc604a':'#087e78')}]},options:{responsive:true,maintainAspectRatio:false,indexAxis:'y'}});const search=document.getElementById('search'),body=document.getElementById('body');function filtered(){let q=search.value.toLowerCase(),reg=regionSelect.value,st=statusSelect.value;return rows.filter(x=>(reg==='all'||(reg==='__blank'&&!x.region)||x.region===reg)&&(st==='all'||x.status===st)&&[x.name,x.region,x.division,x.status].some(v=>String(v||'').toLowerCase().includes(q)))}function draw(){const list=filtered();body.innerHTML=list.slice(0,500).map(x=>`<tr><td>${x.status}</td><td>${x.region||'—'}</td><td>${x.division||'—'}</td><td>${x.name}</td><td class="num">${peso(x.secondTotal)}</td><td class="num">${peso(x.thirdTotal)}</td><td class="num">${peso(x.delta)}</td><td>p.${x.sourcePage||'—'}</td></tr>`).join('')}for(const el of [search,regionSelect,statusSelect])el.addEventListener(el===search?'input':'change',draw);document.getElementById('csv').onclick=()=>{const cols=['status','region','division','name','secondTotal','thirdTotal','delta','secondJhsPs','thirdJhsPs','secondJhsMooe','thirdJhsMooe','secondShsMooe','thirdShsMooe','sourcePage'],data=filtered(),csv=[cols,...data.map(x=>cols.map(k=>x[k]??''))].map(a=>a.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\r\n'),a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv'}));a.download='deped_school_allocation_2nd_vs_3rd.csv';a.click();URL.revokeObjectURL(a.href)};draw();'''
-    page = common_page("DepEd school allocations · 2nd vs 3rd Reading", "DepEd secondary-school allocations", "Compare the HGAB 2nd and 3rd reading school operating allocations by region, school division, and school. This schedule covers operating budgets, not construction projects.", "deped-data.json", nav, content, js)
-    (STATIC / "deped.html").write_text(page, encoding="utf-8")
+    # HTML output is deliberately delegated to one-page builders. This script
+    # only prepares shared schedule and comparison JSON inputs.
+    print("Built HGAB reading-revision data; run the owning page builders to render HTML")
 
 
 if __name__ == "__main__":

@@ -250,7 +250,7 @@ python3 location_data/build_congress_db_review.py --write-scope-review
 python3 ../open-data-visualization/analysis/build_congress_allocation_data.py \
   --write --geographic-decisions analysis_output/congress_location_db_review.json \
   --audit analysis_output/congress_geographic_attribution_db_3rd.json
-python3 build_report_heroes.py --page congress.html
+python3 build_congress_district_review.py
 ```
 
 The private audit matches full adjacent municipality/city + province fields

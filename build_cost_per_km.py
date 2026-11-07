@@ -292,7 +292,7 @@ renderRoadBridge3D();window.addEventListener('resize',()=>{if(window.Plotly){Plo
     exploratory=render_density(density).replace('<h2>At what stated lengths does allocation density change?</h2>','<h2>4. Length and allocation-density exploration</h2>',1)
     support_block='<section id="coordinate-approximations"><h2>5. Coordinate-distance approximations</h2><p>Coordinate-distance estimates stay separate from stated-meter rates and high-rate flags. Detailed asset matching, recovered dimensions, length coverage and extraction methods are on <a href="cost-matching.html">Asset matching and length coverage</a>.</p>'+approximation_note+'<div id="support-sections"></div></section>'
     page=head+'<body class="bettergov-research"><header><div class="eyebrow">BetterGov · Budget research</div><h1>Cost per meter and lane-meter</h1><p>HGAB 3rd reading · calculations and peer comparisons</p></header><main>'+evidence_limits+hero+rate_block+historical+lane_block+exploratory+support_block+'</main>'+data_script+chart_data_script+'<script src="plotly-2.35.2.min.js?v='+plotly_version+'"></script><script>'+computation_start+controls+'</script><script>'+spatial_script+'</script></body></html>'
-    from build_report_heroes import STYLE,hero as lead_card
+    from report_hero_module import STYLE,hero as lead_card
     page=page.replace('__HERO_STYLE__',STYLE)
     from uniform_report_menu import apply_page as apply_uniform_menu_page
     page=apply_uniform_menu_page(page,'cost-per-km.html')

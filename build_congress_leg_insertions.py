@@ -76,8 +76,6 @@ def main():
     if marker not in page:raise ValueError('Crosswalk insertion anchor missing')
     payload=json.dumps(document,ensure_ascii=False,separators=(',',':')).replace('</','<\\/')
     page=page.replace(marker,BLOCK+marker,1).replace('</body>',SCRIPT.replace('__DATA__',payload)+'</body>',1)
-    from report_page_modules import apply_page_modules
-    page=apply_page_modules(page,'congress.html')
     path.write_text(page)
     print(json.dumps({k:v for k,v in document.items() if k not in ['districts','sources']},indent=2))
 

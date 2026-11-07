@@ -330,7 +330,7 @@ fi
 
 # The summary is the editorial entry point. Refuse to deploy an older builder
 # output that drops the eight allocation-exposure-ranked investigation cards.
-summary_cards="$(git -C "$r" show "$target:static/nep-preview/summary.html" | python3 -c 'import re,sys; print(len(re.findall(r"<article class=\"finding\"", sys.stdin.read())))')"
+summary_cards="$(git -C "$r" show "$target:static/nep-preview/summary.html" | python3 -c 'import re,sys; print(len(re.findall(r"<article\b[^>]*\bclass=\"[^\"]*\bpriority-card\b[^\"]*\"[^>]*>", sys.stdin.read())))')"
 if [[ "$summary_cards" != "8" ]]; then
   echo "Refusing deployment: target summary has $summary_cards investigation cards; expected 8." >&2
   exit 2

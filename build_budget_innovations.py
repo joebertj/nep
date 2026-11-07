@@ -300,6 +300,8 @@ def main() -> None:
     }
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "budget-innovations-data.json").write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n")
+    from build_budget_innovations_page import build as build_page
+    build_page()
 
 
 if __name__ == "__main__":

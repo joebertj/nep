@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Archive duplicated overviews while keeping every project-level table usable.
-Immutable original reports remain in the committed release and private snapshots.
-The display adapter waits for legacy report initialization before retiring only
-named overview panels; this preserves the old scripts' project-level controls.
+"""OBSOLETE: one-time archive migration, retained for provenance only.
+
+The migration has already been applied. Do not rerun: it rewrites many report
+pages. Ongoing page changes now belong in each page's builder.
 """
 import hashlib,json,re,subprocess
 from pathlib import Path
@@ -66,6 +66,13 @@ const observer=new MutationObserver(()=>{if(!scheduled){scheduled=true;requestAn
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',scan,{once:true});else scan();
 })();'''
 def apply():
+    raise RuntimeError(
+        "archive_higher_level_analysis.py is obsolete; its one-time migration "
+        "has already run and this script is disabled to prevent site-wide rewrites."
+    )
+
+    # Historical implementation retained below for provenance. It is
+    # intentionally unreachable; do not reactivate it as a routine builder.
     from build_investigation_summary import esc
     manifest_path=OUT/'higher_level_archive.json'
     if manifest_path.exists():manifest=json.loads(manifest_path.read_text())
@@ -162,4 +169,5 @@ def apply():
         mirror=OUT/path.name
         if mirror.exists():mirror.write_text(text)
     return {'archivedSourceRevision':manifest['sourceRevision'],'pagesWithRetiredOverviews':list(CONFIG),'allProjectLevelTablesRetained':True}
-if __name__=='__main__':print(json.dumps(apply(),indent=2))
+if __name__=='__main__':
+    print(json.dumps({'status':'obsolete','reason':'one-time archive migration already applied; no pages were changed'}))

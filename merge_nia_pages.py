@@ -1,6 +1,7 @@
 """Combine detailed irrigation and named NIA project evidence in one public page."""
 import hashlib,json,re
 from pathlib import Path
+from report_hero_module import STYLE,hero,peso
 ROOT=Path(__file__).resolve().parent;STATIC=ROOT.parent/'open-data-visualization/static/nep-preview';OUT=ROOT/'analysis_output'
 START='<!-- nia-named-content:start -->';END='<!-- nia-named-content:end -->'
 SCRIPT_START='<!-- nia-named-scripts:start -->';SCRIPT_END='<!-- nia-named-scripts:end -->'
@@ -47,7 +48,7 @@ def merge():
    text=re.sub(r'#'+re.escape(old)+r'(?=[\s{,:.#>\[\)\"\']|$)','#'+new,text)
   return text
  donor=prefix(donor);donor_scripts=prefix(native_scripts(detail))
- # Keep the detailed annex hero first; place section jumps after all NIA evidence.
+ # The canonical NIA page builder owns its stage-comparison hero.
  navigation='<p class="nia-scope-links"><a href="#nia-detailed-irrigation">Detailed irrigation works ↓</a> · <a href="#nia-named-projects">Named NIA projects ↓</a></p>'
  donor='<div id="nia-detailed-irrigation">'+donor+'</div>'
  head=named.split('</head>',1)[0]+'</head>'
@@ -65,6 +66,24 @@ def merge():
   if key not in seen:external.append(m[0]);seen.add(key)
  csv_handler=re.search(r'<script id="investigation-evidence-script"[^>]*>.*?</script>',named,re.S)
  page=head+body_tag+header+'<main class="wrap">'+donor+START+saved+END+navigation+'</main>'+SCRIPT_START+scripts+SCRIPT_END+donor_scripts+(csv_handler[0] if csv_handler else '')+''.join(external)+footer+'</body></html>'
+ baseline_path=STATIC/'nep-agency-baselines.json'
+ if baseline_path.exists():
+  baseline=json.loads(baseline_path.read_text())
+  changed=[r for r in baseline['niaNamedComparisons'] if r['adjustmentPesos'] not in (None,0) and r['visibleHgabRowVerified']]
+  net=sum(r['adjustmentPesos'] for r in changed)
+  card=hero('Named NIA allocations · NEP → HGAB 3rd reading',str(len(changed)),'exact named-title allocations changed',('−' if net<0 else '+')+peso(abs(net)),'net adjustment across these matched rows only',[
+   ('Named HGAB rows',str(len(baseline['niaNamedComparisons'])), 'all checked against visible PDF title/amount rows'),
+   ('Unresolved scope','Separate review','blank, zero and repeated-name entries are not interchangeable')],
+   'This is a matched subset of NIA, not the agency’s total budget. Exact titles do not certify engineering-scope identity; earlier House reading comparisons are on the dedicated comparison page.')
+ else:
+  revision=json.loads((STATIC/'hgab-revision-data.json').read_text())['nia_named']['summary']
+  card=hero('NIA named projects · 3rd vs 2nd Reading',f"{revision['statusCounts'].get('Same allocation',0):,}",'named-project lines retained at the same allocation',peso(revision['thirdTotal']),'schedule total in each reading',[
+   ('2nd-reading total',peso(revision['secondTotal']),f"{revision['secondRows']:,} lines"),
+   ('Net allocation change',peso(revision['thirdTotal']-revision['secondTotal']),'between the two readings')],
+   'This page covers NIA named projects. The separate NIA irrigation appendix is reported independently; bill-stage stability is not a repeat-project finding.')
+ page=re.sub(r'<section\b[^>]*id="(?:report-hero|nia-detail-report-hero)"[^>]*>.*?</section>','',page,count=1,flags=re.S)
+ page=page.replace('<main class="wrap">','<main class="wrap"><section id="report-hero">'+card+'</section>',1)
+ if 'id="report-hero-style"' not in page:page=page.replace('</head>',STYLE+'</head>',1)
  named_path.write_text(page);(OUT/'nia.html').write_text(page)
  (OUT/'nia_page_merge.json').write_text(json.dumps({'canonicalPage':'nia.html','detailSource':'nia-irrigation.html','namedSourcePreservedInMarkers':True,'namespacedIds':mapping,'sourceHashes':{'detail':hashlib.sha256(detail.encode()).hexdigest()},'scope':'Presentation merge; project records and allocations are unchanged; the two NIA scopes are not summed.'},indent=2)+'\n')
  return mapping

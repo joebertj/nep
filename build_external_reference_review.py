@@ -136,7 +136,7 @@ def apply_pages(data=None):
     text=text.replace('Not established · comparable detailed NEP baseline missing','Detailed external NEP annex available · counterpart not yet reconciled locally')
     text=text.replace('A comparable detailed NEP baseline is not established.','A detailed external NEP annex is now available; local row-level counterpart reconciliation remains incomplete.')
     text=text.replace('NEP columns remain unestablished until a comparable baseline is verified.','A detailed external NEP annex is available; NEP counterparts remain unestablished until local row-level reconciliation.')
-    from build_report_heroes import hero,peso
+    from report_hero_module import hero,peso
     n=data['nia']
     if n['localHouseRows']==n['referenceHouseRows'] and n['localHousePesos']==n['referenceHousePesos']:
         delta=n['localHousePesos']-n['nepPesos']

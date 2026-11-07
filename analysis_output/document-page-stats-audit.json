@@ -1,38 +1,46 @@
 {
   "status": "ok",
-  "checkedAtUtc": "2026-11-07T17:58:03.238333+01:00",
-  "source": "Consolidated Cloudflare-download parser artifacts and page outputs; no T5 directory scan performed.",
+  "checkedAtUtc": "2026-11-07T19:54:05.447586+01:00",
+  "source": "Cloudflare manifest SHA-256 reconciliation across the T5 source folder and parser attachment cache, plus page outputs.",
   "checks": {
     "senateScan": {
       "denominatorProjectRows": 6105,
-      "projectsWithAtLeastOneMatchedDocument": 4034,
-      "projectRowsWithoutMatchedDocument": 2071,
-      "matchedFileRecords": 21214,
-      "generatedAtUtc": "2026-11-07T16:40:16.058551+00:00",
+      "projectsWithAtLeastOneMatchedDocument": 3777,
+      "projectRowsWithoutMatchedDocument": 2328,
+      "matchedFileRecords": 19734,
+      "generatedAtUtc": "2026-11-07T18:11:08.771602+00:00",
       "uniqueProjectIds": 6105
     },
+    "t5CloudflareManifest": {
+      "manifestEntries": 34420,
+      "presentAndHashVerified": 34418,
+      "missingFromT5": 2,
+      "attachmentCacheCopies": 4469,
+      "pdfFilesPresentOnT5": 34317,
+      "pdfFilesScanned": 34317
+    },
     "scannerStatus": {
-      "status": "complete",
-      "matchedProjectRows": 4034,
+      "status": "idle",
+      "matchedProjectRows": 3777,
       "matchesConsolidatedOutput": true
     },
     "allHgabCoverage": {
       "rows": 15979,
-      "withProposal": 9601,
-      "withSenate": 4098,
-      "union": 13632,
-      "generatedAtUtc": "2026-11-07T16:57:34.752578+00:00"
+      "withProposal": 9577,
+      "withSenate": 4102,
+      "union": 13617,
+      "generatedAtUtc": "2026-11-07T18:53:38.414654+00:00"
     },
     "parsedPow": {
       "parsedDocuments": 6259,
       "titleScanDocuments": 5508,
       "titleMatchAssessedFiles": 5508,
-      "titleMatchesHGABOnly": 3287,
-      "titleMatchDenominator": 6105
+      "titleMatchesHGABOnly": null,
+      "titleMatchDenominator": null
     },
     "undocumented": {
-      "queueRows": 1933,
-      "uniqueRows": 1933,
+      "queueRows": 1929,
+      "uniqueRows": 1929,
       "allRowsHgabOnly": true,
       "coverageExportRows": 6105
     },
@@ -51,7 +59,7 @@
       "summary.html": "build_investigation_summary.py"
     },
     "pageFreshness": {
-      "sourceScanGeneratedAtUtc": "2026-11-07T16:40:16.058551+00:00",
+      "sourceScanGeneratedAtUtc": "2026-11-07T18:11:08.771602+00:00",
       "pagesAtOrAfterScan": 7,
       "pagesExpected": 7,
       "stalePages": []
@@ -63,38 +71,38 @@
       "loadsCoverageRenderer": true,
       "coverageSource": "hgab-document-coverage.json",
       "builder": "build_dpwh_indepth.py",
-      "builtAtUtc": "2026-11-07T17:57:47.018713+01:00"
+      "builtAtUtc": "2026-11-07T19:53:48.517181+01:00"
     },
     "undocumented-hgab.html": {
       "coverageColumns": 7,
       "loadsCoverageRenderer": true,
       "coverageSource": "hgab-only-document-coverage.json",
       "builder": "build_undocumented_hgab.py",
-      "builtAtUtc": "2026-11-07T17:57:50.494123+01:00"
+      "builtAtUtc": "2026-11-07T19:48:12.034117+01:00"
     },
     "dpwh-transparency.html": {
       "builder": "build_dpwh_transparency_page.py",
-      "builtAtUtc": "2026-11-07T17:57:47.168148+01:00"
+      "builtAtUtc": "2026-11-07T19:15:52.554634+01:00"
     },
     "cost-per-unit.html": {
       "builder": "build_cost_per_unit_page.py",
-      "builtAtUtc": "2026-11-07T17:57:47.080151+01:00"
+      "builtAtUtc": "2026-11-07T19:15:52.509553+01:00"
     },
     "pccp-cost-per-unit.html": {
       "builder": "build_pccp_cost_per_unit_page.py",
-      "builtAtUtc": "2026-11-07T17:57:47.014831+01:00"
+      "builtAtUtc": "2026-11-07T19:15:52.484937+01:00"
     },
     "expectation-vs-reality.html": {
       "builder": "build_expectation_vs_reality.py",
-      "builtAtUtc": "2026-11-07T17:57:47.165426+01:00"
+      "builtAtUtc": "2026-11-07T19:49:38.370975+01:00"
     },
     "development-council.html": {
       "builder": "build_development_council.py",
-      "builtAtUtc": "2026-11-07T17:57:47.006007+01:00"
+      "builtAtUtc": "2026-11-07T19:15:52.484033+01:00"
     },
     "summary.html": {
       "builder": "build_investigation_summary.py",
-      "builtAtUtc": "2026-11-07T17:58:01.495608+01:00"
+      "builtAtUtc": "2026-11-07T19:24:24.845575+01:00"
     }
   },
   "warnings": [],

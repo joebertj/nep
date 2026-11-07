@@ -10,7 +10,7 @@ import re
 import statistics
 from collections import Counter
 from pathlib import Path
-from build_report_heroes import STYLE
+from report_hero_module import STYLE
 from hgab_matching import UNMATCHED, is_fap
 from build_repeat_stage_survival import build as build_survival
 from build_rcs_stage_trace import build as build_rcs_trace
@@ -31,29 +31,75 @@ def table(headers,rows):
     csvbuffer=io.StringIO();writer=csv.writer(csvbuffer,lineterminator='\n');writer.writerow(headers);writer.writerows(rows)
     # Each export is self-contained and works on file:// previews.
     encoded=esc(csvbuffer.getvalue())
-    from format_report_currency import format_cell
+    from report_currency_module import format_cell
     return f'<button class="export-btn" type="button" data-csv="{encoded}">Export CSV</button><div class="evidence-table"><table><thead><tr>'+''.join(f'<th>{esc(v)}</th>' for v in headers)+'</tr></thead><tbody>'+''.join('<tr>'+''.join(f'<td>{esc(format_cell(headers[i],v))}</td>' for i,v in enumerate(row))+'</tr>' for row in rows)+'</tbody></table></div>'
 
 CSS='''<style id="investigation-evidence-style">.investigation-evidence{margin:24px 0;padding:24px;border:1px solid #c6dbd6;border-radius:14px;background:#fff;color:#18303b}.investigation-evidence h2{margin:0 0 12px}.investigation-evidence p{max-width:1100px}.evidence-table{width:100%;overflow-wrap:anywhere}.evidence-table table{width:100%;border-collapse:collapse;table-layout:fixed}.evidence-table th,.evidence-table td{position:static!important;text-align:left!important;white-space:normal!important;padding:12px;border-bottom:1px solid #d9e3e1;vertical-align:top}.evidence-table th{background:#eef5f3}.evidence-graphic{display:block;width:100%;height:auto;max-height:360px;margin:16px 0}.export-btn{background:#b65b09!important;color:#fff!important;border:1px solid #914600!important;border-radius:8px;padding:9px 14px;margin:10px 0;font-weight:700;cursor:pointer}.queue-controls{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:14px 0}.queue-controls button:not(.export-btn){padding:8px 12px}.queue-flag-button{border:0;background:transparent;font-size:1.05rem;letter-spacing:.03em;cursor:pointer}.queue-flag-button:focus-visible,.queue-controls button:focus-visible{outline:3px solid #087e78;outline-offset:2px}.flag-evidence-dialog{width:min(720px,calc(100% - 32px));max-height:80vh;overflow:auto;border:1px solid #9bb7af;border-radius:14px;padding:22px;color:#18303b}.flag-evidence-dialog::backdrop{background:#102f3e99}.flag-evidence-dialog form{display:flex;justify-content:flex-end}.flag-evidence-dialog li{margin:12px 0}.flag-evidence-dialog li p{margin:4px 0}.investigation-evidence .caution{padding:14px;background:#fff4dd;border-left:4px solid #ba7800}.finding{padding:24px;border-radius:14px;border:1px solid #d9e3e1;background:#fff;margin:18px 0}.finding h2{margin:0 0 8px}.finding .rank{color:#087e78;font-weight:800}.finding .lead{font-size:1.4rem;font-weight:750}.finding dt{font-weight:750;margin-top:12px}.finding dd{margin:4px 0}.finding a{color:#087e78;font-weight:700}.finding[hidden],tr[hidden]{display:none}.summary-controls{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}.summary-controls input,.summary-controls select{padding:10px;border:1px solid #b6c9c4;border-radius:8px;font:inherit}.summary-controls input{flex:1;min-width:200px}@media(max-width:650px){.evidence-table th,.evidence-table td{padding:7px;font-size:12px}.finding,.investigation-evidence{padding:16px}}</style>'''
+SUMMARY_CARD_CSS='''<style id="summary-priority-cards-style">.summary-lead-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:18px 0}.summary-priority-card{display:flex;flex-direction:column;min-height:190px;padding:20px;border:1px solid #c6dbd6;border-top:5px solid #087e78;border-radius:14px;background:#fff;color:#18303b;text-decoration:none;box-shadow:0 3px 12px #18303b0b;transition:transform .15s ease,box-shadow .15s ease}.summary-priority-card:hover{transform:translateY(-2px);box-shadow:0 8px 20px #18303b18}.summary-priority-card:focus-visible{outline:3px solid #087e78;outline-offset:3px}.summary-priority-card .summary-card-rank{font-size:.78rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#087e78}.summary-priority-card h3{margin:8px 0;font-size:1.16rem;line-height:1.3}.summary-priority-card .summary-card-lead{margin:0 0 12px;font-size:1.02rem;font-weight:700}.summary-priority-card .summary-card-exposure{margin:auto 0 0;padding-top:12px;border-top:1px solid #d9e3e1;font-size:.9rem;color:#405762}.summary-priority-card .summary-card-exposure strong{color:#18303b}@media(max-width:720px){.summary-lead-grid{grid-template-columns:1fr}.summary-priority-card{min-height:0}}</style>'''
 JS='''<script id="investigation-evidence-script">document.addEventListener('click',e=>{const b=e.target.closest('[data-csv]');if(!b)return;const url=URL.createObjectURL(new Blob(['\ufeff'+b.dataset.csv],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=(document.title.toLowerCase().replace(/[^a-z0-9]+/g,'-')+'-evidence.csv');a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)});</script>'''
 
 def section(identifier,title,body):
     return f'<section id="{identifier}" class="investigation-evidence"><h2>{esc(title)}</h2>{body}</section>'
 
-def inject(page,identifier,body):
-    if page != 'summary.html':
-        from report_page_modules import queue_page_section
-        queue_page_section(page, identifier, body)
-        return
-    p=STATIC/page;t=p.read_text()
-    pattern=rf'<section id="{re.escape(identifier)}".*?</section>'
-    if re.search(pattern,t,re.S):t=re.sub(pattern,lambda m:body,t,flags=re.S)
-    else:t=t.replace('</main>',body+'</main>',1)
-    if 'id="investigation-evidence-style"' not in t:t=t.replace('</head>',CSS+'</head>',1)
-    if 'id="investigation-evidence-script"' not in t:t=t.replace('</body>',JS+'</body>',1)
-    p.write_text(t)
-    mirror=ROOT/'analysis_output'/page
-    if mirror.exists():mirror.write_text(t)
+def remove_section(page, identifier):
+    """Remove one complete section, including nested section elements."""
+    start_match=re.search(rf'<section\b(?=[^>]*\bid=["\']{re.escape(identifier)}["\'])[^>]*>',page,re.I)
+    if not start_match:
+        return page
+    token=re.compile(r'</?section\b[^>]*>',re.I)
+    depth=0
+    for match in token.finditer(page,start_match.start()):
+        if match.group(0).lower().startswith('</'):
+            depth-=1
+            if depth==0:
+                return page[:start_match.start()]+page[match.end():]
+        else:
+            depth+=1
+    return page
+
+def remove_line_item_queue(page):
+    page=remove_section(page,'summary-top-line-items')
+    return re.sub(r'<p\b[^>]*class=["\'][^"\']*summary-queue-jump[^"\']*["\'][^>]*>.*?</p>', '', page, flags=re.I|re.S)
+
+def refresh_undocumented_hgab_card(page):
+    """Refresh the restored summary card from the consolidated all-HGAB table."""
+    coverage_path=STATIC/'hgab-document-coverage.json'
+    stats_path=STATIC/'dpwh-in-depth-data.json'
+    coverage=json.loads(coverage_path.read_text(encoding='utf-8'))
+    stats=json.loads(stats_path.read_text(encoding='utf-8'))['senateSupportingDocumentCoverageAllHgab']
+    rows=coverage.get('projects',[])
+    expected=int(stats['denominatorProjectRows'])
+    if len(rows)!=expected or len(rows)!=int(coverage.get('denominatorProjectRows',-1)):
+        raise ValueError(f'All-HGAB document coverage mismatch: {len(rows)} project rows, expected {expected}')
+    missing=[row for row in rows if not row.get('proposalDocumentsMatched') and not row.get('senateHgabDocumentsMatched')]
+    missing_count=len(missing)
+    missing_pesos=sum(int(row.get('amountPesos') or 0) for row in missing)
+    expected_missing=int(stats['rowsWithoutProposalOrSenateMatch'])
+    if missing_count!=expected_missing:
+        raise ValueError(f'All-HGAB unmatched count mismatch: table has {missing_count}, summary stats have {expected_missing}')
+    total_pesos=sum(int(row.get('amountPesos') or 0) for row in rows)
+    matched_count=expected-missing_count
+    matched_pct=100*matched_count/expected if expected else 0
+    display_amount=(f'₱{missing_pesos/1e9:,.2f}B' if missing_pesos>=1_000_000_000
+                    else f'₱{missing_pesos/1e6:,.2f}M')
+    card_copy=(f'Across all {expected:,} HGAB rows, {matched_count:,} ({matched_pct:.2f}%) have a Proposal or Senate HGAB document match. '
+               f'{missing_count:,} rows worth {display_amount} currently have no matched document from either source. '
+               'The reported Senate/GAB removals (295 items; ₱8.836B) remain aggregate-only and cannot be assigned to individual rows from the available data.')
+    card_pattern=r'<article class="priority-card">(?:(?!</article>).)*?<h3>Undocumented HGAB</h3>.*?</article>'
+    match=re.search(card_pattern,page,re.S)
+    if not match:
+        raise ValueError('Restored summary is missing the Undocumented HGAB priority card')
+    card=match[0]
+    card=re.sub(r'(<strong class="priority-metric">).*?(</strong>)',
+                lambda m:m[1]+f'{missing_count:,} remain · {display_amount}'+m[2],card,count=1,flags=re.S)
+    card=re.sub(r'<p>.*?</p>',lambda _m:'<p>'+html.escape(card_copy)+'</p>',card,count=1,flags=re.S)
+    page=page[:match.start()]+card+page[match.end():]
+    page=re.sub(r'(<div><span>Undocumented HGAB projects</span><strong>).*?(</strong></div>)',
+                lambda m:m[1]+f'{missing_count:,} · {display_amount}'+m[2],page,count=1,flags=re.S)
+    page=re.sub(r'<p>Of the ₱183\.926806B no-document inventory,.*?</p>',
+                lambda _m:'<p>'+html.escape(card_copy)+'</p>',page,count=1,flags=re.S)
+    return page,{'rows':missing_count,'allocationPesos':missing_pesos,'matchedRows':matched_count,
+                 'denominatorRows':expected,'matchedPct':round(matched_pct,2),'totalAllocationPesos':total_pesos}
 
 def integer_units(weights,total,ids):
     shares=[total*w/sum(weights) for w in weights];rounded=[math.floor(v) for v in shares]
@@ -62,32 +108,16 @@ def integer_units(weights,total,ids):
     if sum(rounded)!=total:raise ValueError('RCS scenario does not conserve units')
     return shares,rounded
 
-def cumulative_graph(models):
-    colors=['#355b92','#087e78','#b65b09'];n=len(models[0][1]);maximum=sum(models[0][1])
-    lines=[]
-    for (label,values),color in zip(models,colors):
-        cumulative=[0];
-        for value in values:cumulative.append(cumulative[-1]+value)
-        points=' '.join(f'{60+830*i/n:.2f},{245-190*v/maximum:.2f}' for i,v in enumerate(cumulative))
-        lines.append(f'<polyline fill="none" stroke="{color}" stroke-width="3" points="{points}"/><text x="65" y="{285+len(lines)*22}" fill="{color}" font-size="14">{esc(label)}</text>')
-    return '<svg class="evidence-graphic" viewBox="0 0 950 355" role="img" aria-label="Cumulative RCS budget units across offices ordered from lower to higher rainfall"><path d="M60 45 V245 H890" fill="none" stroke="#536873"/><text x="10" y="55">199</text><text x="25" y="245">0</text><text x="60" y="265">1st office</text><text x="760" y="265">199th office</text><text x="60" y="25">Cumulative budget units · offices ordered by rainfall proxy</text>'+''.join(lines)+'</svg>'
-
 def main():
-    # Shared evidence fragments are queued as modules for each page's owner;
-    # this builder writes summary.html only.
-    from report_page_modules import reset_page_modules
-    reset_page_modules()
     # Consume the latest data products. A summary build owns summary.html and
     # must not invoke other page builders as a side effect.
     length_data=json.loads((ROOT/'analysis_output/cost_per_km.json').read_text())
     dpwh_indepth_data=json.loads((ROOT/'analysis_output/dpwh-in-depth-data.json').read_text())
-    from build_line_item_review_queue import build as build_review_queue, render as render_review_queue
-    review_queue=build_review_queue(dpwh_indepth_data)
     mpb=json.loads((ROOT/'analysis_output/mpb_analysis.json').read_text())['summary']
     dpwh=read('dpwh-data.json');rcs=read('rcs-data.json');congress=read('congress-data.json')
     innovations=read('budget-innovations-data.json');reading=read('dpwh-hgab-comparison.json');revision=read('hgab-revision-data.json')
     survival=build_survival()
-    rcs_trace=build_rcs_trace()
+    trace=build_rcs_trace()['summary']
     clear_pairs=survival['summary']['pairStatuses'].get('Clear retained link',0)
     clear_proposals=survival['summary']['uniqueStatuses'].get('Clear retained link',0)
     districts=rcs['districts'];n=len(districts);pool=rcs['summary']['wholeUnits'];unit=4200000
@@ -107,23 +137,7 @@ def main():
                'meanMedianDifferentOfficeUnits':sum(a!=b for a,b in zip(whole,median_whole)),
                'regionalFallbackOffices':sum(r['rainfallArea'] not in rain_by_name for r in districts),
                'correlation':'Undefined: allocation variance is zero; no correlation p-value reported.'}
-    rows=[['Equal allocation (observed)',0,0,n],
-          ['Province mean, then split among DEOs (existing scenario)',int(shifts(province)),sum(v==0 for v in province),sum(v==1 for v in province)],
-          ['Each DEO weighted by province mean (alternative)',int(shifts(whole)),sum(v==0 for v in whole),sum(v==1 for v in whole)],
-          ['Each DEO weighted by province median (sensitivity)',int(shifts(median_whole)),sum(v==0 for v in median_whole),sum(v==1 for v in median_whole)]]
-    order=sorted(range(n),key=lambda i:(mean[i],ids[i]))
-    graph=cumulative_graph([('Observed equal units',[current[i] for i in order]),('Province-first scenario',[province[i] for i in order]),('Per-office rainfall scenario',[whole[i] for i in order])])
-    body=f'<p>All {n} district-office lines receive one ₱4.2M budget unit, while their rainfall proxies span {min(mean):,.0f}–{max(mean):,.0f} mm/year ({max(mean)/min(mean):.2f}×). Allocation coefficient of variation is 0%; rainfall-proxy variation is {rcs_stats["rainfallProxyCV"]:.1%}. This establishes uniformity despite variable rainfall; it does not establish that planners ignored every factor.</p>'+graph+table(['Formula','Budget units moved from current allocation','Offices assigned zero units','Offices retaining one unit'],rows)
-    body+='<p>Units moved = half the sum of absolute changes; all scenarios conserve 199 budget units. Largest-remainder rounding uses office name to break ties. A budget unit is not a verified count of installed collectors. Province means are shared proxies, not 199 independent rainfall observations.</p><p class="caution">Hypothesis for investigators: the flat amount is a standard package rather than a needs-based allocation. Alternatives include a minimum-coverage policy or common construction specification. Pearson correlation is undefined because every allocation is identical; a p-value against an invented random-allocation process would be misleading. Neither rainfall formula is a recommended final budget, and a model assigning zero units is not evidence an office needs none.</p>'
-    body+=f'<p>Mean versus median weighting changes whole-unit recommendations for {rcs_stats["meanMedianDifferentOfficeUnits"]} offices. {rcs_stats["regionalFallbackOffices"]} office uses a regional rainfall fallback. Establish the actual site/catchment area, design capacity, water demand, storage, access and existing assets before making a needs claim.</p>'
-    body+='<p class="caution">The direct per-office rainfall formula rounds to one whole budget unit for every office, even though fractional shares differ. Equal whole units therefore do not, by themselves, refute rainfall weighting at this budget-unit resolution. The existing province-first scenario moves 44 units because provinces receive a share before it is divided among offices. That structural choice must be justified before claiming it is a better allocation.</p>'
-    inject('rcs.html','rcs-statistical-evidence',section('rcs-statistical-evidence','Uniform allocations · formula sensitivity',body))
-    trace=rcs_trace['summary']
-    body='<p><strong>The observed budget pattern is identical distribution: 199 DEO lines at ₱4.2M each. No differentiated needs weighting is visible in those line amounts.</strong> Whether planners considered need outside the schedule requires policy/design records; equal figures alone cannot establish what they thought.</p>'
-    body+='<svg class="evidence-graphic" viewBox="0 0 900 110" role="img" aria-label="199 NEP RCS office lines remain unchanged in HGAB"><rect x="10" y="15" width="330" height="70" rx="10" fill="#355b92"/><text x="30" y="58" fill="white" font-size="22">NEP: 199 × ₱4.2M</text><path d="M355 50 H510" stroke="#18303b" stroke-width="4"/><path d="M495 40 L515 50 L495 60" fill="none" stroke="#18303b" stroke-width="4"/><rect x="530" y="15" width="350" height="70" rx="10" fill="#087e78"/><text x="550" y="58" fill="white" font-size="22">HGAB: 199 × ₱4.2M</text></svg>'
-    body+=table(['Stage check','DEO RCS lines'],[['Retained unchanged in HGAB',trace['unchangedInHGAB']],['No selected HGAB counterpart',trace['withoutSelectedCounterpart']],['Allocation decreases in HGAB',trace['allocationDecreases']]])
-    body+='<p><a class="export-btn" href="rcs-stage-trace.csv" download>Export all 199 RCS stage/scenario lines CSV</a> · <a href="rcs-stage-trace.json">Source and LEG reference evidence JSON</a></p><p class="caution">No DEO RCS line was lost in the current HGAB trace. A named LEG cannot be declared a recipient or loser without the installation locations, applicable boundaries and evidence of the funded service area.</p>'
-    inject('rcs.html','rcs-stage-evidence',section('rcs-stage-evidence','Even distribution · did any RCS allocation disappear in HGAB?',body))
+    # RCS evidence sections are rendered by build_rcs_pow_review.py.
 
     repeat=dpwh['priorityRepeats'];unique={}
     for row in repeat:
@@ -132,35 +146,15 @@ def main():
         unique[key]=row
     strata=Counter(r['chainage_status'] for r in repeat)
     repeat_stats={'comparisonPairs':len(repeat),'uniqueCurrentProposals':len(unique),'uniqueCurrentPesos':sum(r['amount_2027'] for r in unique.values()),'chainageStatuses':dict(strata),'overlapUniqueProposals':len({r['source_code'] for r in repeat if r['chainage_status']=='overlap'}),'trancheStatuses':dict(Counter(r['tranche_status'] for r in repeat))}
-    bar='';position=0;colors=['#087e78','#355b92','#b65b09','#777']
-    for (status,count),color in zip(strata.items(),colors):
-        width=900*count/len(repeat);bar+=f'<rect x="{position:.2f}" y="10" width="{width:.2f}" height="35" fill="{color}"><title>{esc(status)}: {count} comparison pairs</title></rect>';position+=width
-    graph='<svg class="evidence-graphic" viewBox="0 0 900 55" role="img" aria-label="Repeat comparison pairs grouped by chainage evidence">'+bar+'</svg>'
-    body=f'<p>{len(repeat):,} comparison pairs represent {len(unique):,} distinct FY2027 proposals carrying {peso(repeat_stats["uniqueCurrentPesos"])}. The current allocation is counted once per proposal; it is not a loss estimate and is not summed across prior years.</p>'+graph+table(['Chainage evidence','Comparison pairs'],sorted(strata.items(),key=lambda r:-r[1]))
-    body+=f'<p>{repeat_stats["overlapUniqueProposals"]} distinct proposals have at least one explicitly overlapping stated segment. Overlap is a strong reason to inspect work descriptions, but widening, rehabilitation, bridge approaches or different components can legitimately use the same chainage. {repeat_stats["trancheStatuses"].get("one side stated",0)} pairs state a tranche on only one side.</p><p class="caution">Name similarity is a screening result. Missing chainage does not imply overlapping work. Different barangays, municipalities, provinces, directions and packages must remain distinct. Retrieve contracts, quantities, completion reports and maps before alleging duplicate funding.</p>'
     test=dpwh['fiveMillionStats']['results'][0];N=test['district_offices'];a=test['overlap_offices'];road=test['road_offices'];flood=test['flood_offices'];b=road-a;c=flood-a;d=N-a-b-c
     p=sum(math.comb(road,k)*math.comb(N-road,flood-k)/math.comb(N,flood) for k in range(a,min(road,flood)+1) if 0<=flood-k<=N-road)
     odds=a*d/(b*c);se=math.sqrt(sum(1/v for v in [a,b,c,d]));ci=[math.exp(math.log(odds)-1.96*se),math.exp(math.log(odds)+1.96*se)]
     price_stats={'N':N,'roadOffices':road,'floodOffices':flood,'overlap':a,'expectedOverlap':road*flood/N,'hypergeometricP':p,'oddsRatio':odds,'wald95CI':ci,'regionalPermutationP':test['region_controlled_simulated_p_value'],'regionalPermutationRepetitions':test['simulation_repetitions'],'postSelectionAdjusted':False}
-    body+='<h3>Exact ₱5M road/flood co-occurrence · exploratory office test</h3>'+table(['Statistic','Result'],[['Offices with both exact ₱5M road and flood entries',a],['Expected overlap under independent office assignment',f'{road*flood/N:.2f}'],['One-sided hypergeometric p-value (recomputed)',f'{p:.6g}'],['Odds ratio; approximate 95% interval',f'{odds:.2f}; {ci[0]:.2f}–{ci[1]:.2f}'],['Region-controlled permutation p-value (existing analysis)',f'{test["region_controlled_simulated_p_value"]:.6g}']])
-    body+='<p>Null model: fix how many of the 199 offices have each type of ₱5M entry, then assign flood-office membership independently of road-office membership. The exact test rejects this simple independence model. The existing region-controlled test preserves regional membership counts.</p><p class="caution">The ₱5M threshold and project categories were selected after observing patterns. P-values and the Wald interval are exploratory, unadjusted for that selection or multiple comparisons. Office workload, project mix and common standard designs can explain co-occurrence. Next test: a pre-specified model controlling project count, work type, region and prior-year price distributions; request engineering quantities to assess price plausibility.</p>'
     # Repeat-analysis sections are owned by repeats.html. Do not inject them
     # into dpwh.html: this builder runs during document refreshes and used to
     # append sections after the consolidated HGAB coverage table.
     from analyze_within_stage_repeats import build as build_within_stage, render as render_within_stage
     # Keep the within-stage comparison on repeats.html only.
-    rows=[[r['status'],r['comparisonPairs'],r['uniqueNEPProposals'],r['nepPesos'],r['selectedHgabPesos'] if r['selectedHgabPesos'] is not None else 'No selected allocation'] for r in survival['groups']]
-    rectangles=[];legend=[]
-    for i,(group,color) in enumerate(zip(survival['groups'],['#087e78','#b65b09','#777','#355b92'])):
-        legend.append(f'<text x="380" y="{80+i*35}" fill="{color}" font-size="14">{esc(group["status"])}</text>')
-    for j,key in enumerate(['comparisonPairs','uniqueNEPProposals']):
-        y=280
-        for group,color in zip(survival['groups'],['#087e78','#b65b09','#777','#355b92']):
-            height=230*group[key]/len(repeat);y-=height
-            rectangles.append(f'<rect x="{90+j*150}" y="{y:.2f}" width="85" height="{height:.2f}" fill="{color}"><title>{esc(group["status"])}: {group[key]}</title></rect>')
-    retention_graph='<svg class="evidence-graphic" viewBox="0 0 850 340" role="img" aria-label="Stacked vertical bars show HGAB retention classes for 737 comparison pairs and 686 distinct proposals"><path d="M60 40 V280 H350" fill="none" stroke="#536873"/><text x="15" y="55">737</text><text x="90" y="305">Comparison pairs</text><text x="240" y="325">Distinct proposals</text>'+''.join(rectangles+legend)+'</svg>'
-    body=f'<p>The 737 headline is a NEP-level comparison with old enacted GAA. Tracing the same proposal codes into HGAB 3rd reading gives <strong>{clear_pairs} clearly retained comparison pairs, representing {clear_proposals} distinct proposals</strong>. Potential links remain separate.</p>'+retention_graph+table(['HGAB retention class','Original GAA comparison pairs','Distinct NEP proposals','Original NEP allocation pesos','Selected HGAB allocation pesos'],rows)
-    body+='<p>A proposal matched to two historical years counts twice in the pair column but once in the proposal column. Clear retention means a selected, scope-compatible normalized-title link in our current parser, not a certified work-scope audit. A potential retained link is a provisional selected counterpart. Missing links do not establish that HGAB removed the project.</p><p><a class="export-btn" href="repeat-nep-hgab-proposals.csv" download>Export all 686 proposal traces CSV</a> · <a href="repeat-nep-hgab-survival.json">Full pair and proposal evidence JSON</a></p><p class="caution">For retained proposals, investigate whether old appropriations and HGAB fund the same component. For unmatched proposals, check renaming, segmentation, parser fragments and original pages before claiming removal. Amount changes on retained lines are allocation adjustments, not automatically insertion or removal.</p>'
     # Keep HGAB survival analysis on repeats.html only.
 
     csvpath=ROOT/'analysis_output/hb_nep_comparison_3rd.csv';SOURCES.append({'file':csvpath.name,'sha256':hashlib.sha256(csvpath.read_bytes()).hexdigest()})
@@ -170,16 +164,11 @@ def main():
                      if r.get('status')=='High-confidence candidate' and r.get('hgabCandidate')}
     domestic=[r for r in comparison if r['comparison']==UNMATCHED and not is_fap(r)
               and r.get('hgab_id') not in oo2_matched_ids]
-    fap=[r for r in comparison if r['comparison']==UNMATCHED and is_fap(r)]
-    status_counts=Counter(r['comparison'] for r in comparison)
-    body='<p>These four statuses partition native HGAB rows; they are not four certified outcomes. Schedule totals can reconcile while individual titles, offices or occurrence links remain wrong.</p>'+table(['NEP counterpart screen','Native HGAB allocation records'],status_counts.items())
-    body+=f'<p>{len(domestic):,} domestic candidate lines carry {peso(sum(int(r["amountPesos"]) for r in domestic))}. The {len(fap)} unpaired FAP lines carrying {peso(sum(int(r["amountPesos"]) for r in fap))} remain a separate review. Neither bucket is proof of insertion; new wording, combined occurrences or parser fragments can hide existing NEP projects.</p><p class="caution">Investigators should manually audit a stratified sample by program, office class and amount band, oversampling high-value candidates, and review original NEP/HGAB pages. Report adjudicated false-positive rates with uncertainty before extrapolating. The supplied analyst export has 5,797 comparison rows, not 5,837 certified added projects; grouped rows and non-project headers use different count units.</p>'
-    inject('dpwh-hgab.html','hgab-investigation-evidence',section('hgab-investigation-evidence','Insertion candidates · what the matching can establish',body))
+    # DPWH HGAB page owner renders its insertion evidence section.
 
     s=congress['summary'];coverage=s['strictAssignedPesos']/s['sourceTotalPesos']
-    body=f'<p>Strict attribution covers {s["uniquelyAssignedLines"]:,}/{s["sourceLineItems"]:,} source lines ({s["uniquelyAssignedLines"]/s["sourceLineItems"]:.1%}) and {coverage:.1%} of extracted allocation value. The remaining money is excluded from strict LEG rankings, not missing from the budget.</p>'+table(['Attribution outcome','HGAB lines','Allocation pesos'],[['Strict single LEG',s['uniquelyAssignedLines'],s['strictAssignedPesos']],['Shared or unresolved',s['strictExcludedLines'],s['strictExcludedAmountPesos']]])
-    body+='<p class="caution">District totals are evidence-supported lower coverage totals, not complete receipts or amounts sponsored by representatives. Offices are not legislative seats. Homonymous places require parent and geographic level; multi-place routes cannot be allocated to one LEG without segment evidence. The ₱1.2B Butuan/RTR project is a confirmed multi-place exclusion, not a Butuan-only allocation.</p><p>Before comparing districts, measure each district’s unresolved coverage using project locations and dated boundaries. Province splits, current versus historical names, shared DEOs and school names can all change eligibility for attribution. No concentration test is reliable while missing attribution differs by district.</p>'
-    inject('congress.html','congress-investigation-evidence',section('congress-investigation-evidence','Ranking coverage and location exclusions',body))
+    # Congress page owner renders attribution coverage from congress-data.json.
+    # Congress page owner renders attribution coverage from congress-data.json.
     try:
         benchmark=build_benchmark()
     except ValueError as exc:
@@ -190,10 +179,7 @@ def main():
         benchmark=json.loads(cached_benchmark.read_text())
 
     inspire=next(r for r in innovations['candidates'] if r['id']=='inspire')
-    historical=[r for r in inspire['historical'] if r['n']]
-    body='<p>INSPIRE is a returning named project, not a keyword appearing for the first time. Separate history of wording from history of funded scope.</p>'+table(['Stage/year','Observed allocation pesos'],[[f'GAA {r["year"]}',int(r['pesos'])] for r in historical]+[['NEP 2027',inspire['fy2027Pesos']]])
-    body+='<p class="caution">Past enacted allocations plus a new proposal do not establish duplicate spending, actual release or disbursement. Ask for approved total project cost, component scope, procurement phases, progress, obligations and remaining balance. A newly seen phrase can also name a long-negotiated foreign-assisted project; keyword novelty is not an insertion finding.</p>'
-    inject('budget-innovations.html','innovation-investigation-evidence',section('innovation-investigation-evidence','Returning labels · INSPIRE funding history',body))
+    # Budget innovations page owner renders the INSPIRE history section.
 
     findings=[
         {'rank':1,'id':'rcs','title':'RCS: identical budget packages across unequal rainfall proxies','lead':f'199 offices × ₱4.2M = {peso(n*unit)}','basis':'Direct allocation observation; rainfall need remains a proxy','page':'rcs.html#rcs-statistical-evidence','question':'What policy or engineering design justifies one identical budget unit per office?','evidence':f'All district-office RCS lines have the same amount. Province/regional rainfall proxies differ by {max(mean)/min(mean):.2f}×. Alternative formulas move different numbers of budget units.','alternative':'Standard package costs or a minimum coverage policy may justify equal allocations. Rainfall alone does not measure demand.','next':'Obtain siting, design capacity, water demand, catchment area and existing RCS inventory.','caution':'DEO is not LEG; province rainfall is not a district observation. Returning FY2026 program.'},
@@ -321,8 +307,6 @@ def main():
     document['statistics']['laneCostCoverage']=lane_summary
     document['statistics']['assetConditionContext']=context
     document['statistics']['shortSegments']=short_audit['categories']
-    document['statistics']['lineItemReviewQueue']=review_queue['summary']
-    document['lineItemReviewQueue']={'data':'line-item-review-queue.json','ranking':review_queue['ranking'],'scope':review_queue['scope'],'method':review_queue['method']}
     document['statistics']['rcsStageTrace']=trace
     document['districtComparisonPolicy']={'scope':'All district rows are available for reader selection in the all-district ranking. No selected-district section or person-specific defaults.','data':'congress-benchmark.json'}
     document['allDistrictComparison']=benchmark['summary']
@@ -331,11 +315,15 @@ def main():
                                        {'file':'static/data/flood_summary.json','coverage':'2016–2024 projects','use':'Historical project reference; not a current flood-exposure or FY2027 needs denominator.'}]
     for item in document['localDatasetInventory']:
         item['sha256']=hashlib.sha256((ROOT.parent/'open-data-visualization'/item['file']).read_bytes()).hexdigest()
+    from standardize_nep_hgab_pages import agency_summary_coverage
+    document['agencyComparisonCoverage']=agency_summary_coverage()
     (STATIC/'summary-data.json').write_text(json.dumps(document,ensure_ascii=False,indent=2)+'\n')
     (ROOT/'analysis_output/investigation_summary.json').write_text(json.dumps(document,ensure_ascii=False,indent=2)+'\n')
     from uniform_report_menu import NAV as nav, apply_page as apply_report_menu
     cards=''.join(f'<article class="finding" id="lead-{r["id"]}" data-basis="{esc(r["basis"])}"><span class="rank">Allocation exposure order {r["rank"]} · {esc(r["basis"])}</span><h2>{esc(r["title"])}</h2><p class="lead">{esc(r["lead"])}</p><p class="cost-exposure">Allocation exposure in this review scope: {peso(r["costExposurePesos"]) if r.get("costExposurePesos") is not None else "Not available for comparison"} · {esc(r["costExposureBasis"])}</p><dl>'+''.join(f'<dt>{label}</dt><dd>{esc(r[key])}</dd>' for label,key in [('Talking point','question'),('Observed evidence','evidence'),('Plausible explanation','alternative'),('What investigators need next','next'),('Parsing/location caution','caution')])+f'</dl><p><a href="{esc(r["page"])}">Supporting analysis and source tables →</a></p></article>' for r in findings)
-    ranked=table(['Priority','Investigative lead','Evidence class','Question to verify'],[[r['rank'],r['title'],r['basis'],r['question']] for r in findings])
+    ranked='<div class="summary-lead-grid" role="list" aria-label="Eight investigative leads ranked by allocation exposure">'+''.join(
+        f'<a class="summary-priority-card" role="listitem" href="#lead-{esc(r["id"])}"><span class="summary-card-rank">Priority {r["rank"]} · {esc(r["basis"])}</span><h3>{esc(r["title"])}</h3><p class="summary-card-lead">{esc(r["lead"])}</p><p class="summary-card-exposure"><strong>Allocation exposure: {peso(r["costExposurePesos"]) if r.get("costExposurePesos") is not None else "Not available"}</strong><br>{esc(r["costExposureBasis"])}</p></a>'
+        for r in findings)+'</div>'
     neutral=table(['Schedule','HGAB 3rd lines','HGAB 3rd pesos','Changed between 2nd and 3rd'],coverage_rows)
     neutral+='<p>These extracted FMR, NIA, HFEP and DepEd schedules have no allocation changes between the two readings. Stability is not itself a red flag. No year-on-year repetition or NEP insertion claim follows from unchanged bill-stage totals. NIA named projects and the irrigation appendix are separate schedule slices; do not add their totals without reconciling hierarchy.</p>'
     quality='<p>NEP → HGAB → GAB/GAA are different stages; prior-year GAA is enacted, current proposals are not. Match allocation records at the same hierarchy before comparing money.</p><ul><li>Printed-total reconciliation catches amount/hierarchy errors but cannot certify title identity or location.</li><li>Preserve source pages and occurrence counts. One comparison row may group multiple allocations; headers are not projects.</li><li>Require barangay → town/city → province context. DEO numbers do not identify legislative districts.</li><li>Keep directional names, tranches, province splits and construction chainage distinct. The confirmed multi-place Butuan/RTR line stays outside strict LEG totals.</li><li>Strict congressional rankings cover only '+f'{coverage:.1%}'+' of extracted allocation value. Names indicate geography, not authorship or sponsorship.</li></ul><p><a href="congress.html#congress-investigation-evidence">Inspect congressional coverage limits →</a></p>'
@@ -348,28 +336,40 @@ def main():
     filters='<div class="summary-controls"><input id="lead-search" type="search" placeholder="Search talking points" aria-label="Search talking points"><select id="lead-basis" aria-label="Filter evidence class"><option value="">All evidence classes</option>'+''.join(f'<option>{esc(r["basis"])}</option>' for r in findings)+'</select></div>'
     filterjs="""<script>const search=document.getElementById('lead-search'),basis=document.getElementById('lead-basis');function filter(){document.querySelectorAll('.finding').forEach(card=>card.hidden=!(card.textContent.toLowerCase().includes(search.value.toLowerCase())&&(!basis.value||card.dataset.basis===basis.value)))}search.addEventListener('input',filter);basis.addEventListener('change',filter);</script>"""
     hero=hero.replace('686 proposals',f'{len(unique):,} proposals')
-    page='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Budget Summary · Investigative Talking Points</title><style>*{box-sizing:border-box}body{margin:0;font:16px/1.5 system-ui,sans-serif;background:#f3f6f5;color:#18303b}header{background:#123944;color:white;padding:30px clamp(16px,2vw,32px)}header h1{font-size:clamp(28px,4vw,48px);margin:0}main{width:100%;padding:24px clamp(16px,2vw,32px)}a{color:#087e78}header a{color:white}header p{max-width:1100px}</style>'+STYLE+CSS+'</head><body><header><h1>Budget Summary · Investigative Talking Points</h1><p>NEP patterns and NEP → HGAB screens, with parsing uncertainty and location limits alongside every claim. Priorities are editorial triage, not a corruption score. Figures overlap and must not be added together.</p>'+nav+'</header><main>'+hero+'<p class="summary-queue-jump"><a href="#summary-top-line-items">Full line-item review queue ↓</a></p>'+section('summary-stages','Follow the changes between budget stages',flow)+section('ranked-leads','Where to start',ranked)+filters+cards+section('summary-quality','Parsing and location gotchas',quality)+section('summary-neutral','Other schedules · no reading-stage change found',neutral)+section('summary-data-needs','Evidence needed to strengthen the claims',datasets)+section('summary-top-line-items','Full line-item review queue',render_review_queue(review_queue,esc))+'</main>'+JS+filterjs+'</body></html>'
+    page='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Budget Summary · Investigative Talking Points</title><style>*{box-sizing:border-box}body{margin:0;font:16px/1.5 system-ui,sans-serif;background:#f3f6f5;color:#18303b}header{background:#123944;color:white;padding:30px clamp(16px,2vw,32px)}header h1{font-size:clamp(28px,4vw,48px);margin:0}main{width:100%;padding:24px clamp(16px,2vw,32px)}a{color:#087e78}header a{color:white}header p{max-width:1100px}</style>'+STYLE+CSS+SUMMARY_CARD_CSS+'</head><body><header><h1>Budget Summary · Investigative Talking Points</h1><p>NEP patterns and NEP → HGAB screens, with parsing uncertainty and location limits alongside every claim. Priorities are editorial triage, not a corruption score. Figures overlap and must not be added together.</p>'+nav+'</header><main>'+hero+section('summary-stages','Follow the changes between budget stages',flow)+section('ranked-leads','Where to start',ranked)+filters+cards+section('summary-quality','Parsing and location gotchas',quality)+section('summary-neutral','Other schedules · no reading-stage change found',neutral)+section('summary-data-needs','Evidence needed to strengthen the claims',datasets)+'</main>'+JS+filterjs+'</body></html>'
     # Normalize only the newly generated summary page. Other report builders
     # retain their own content while using the shared menu transformer when they
     # write their pages; never copy one page's navigation onto every page.
-    page=apply_report_menu(page,'summary.html')
+    restored_summary=ROOT/'project_documents/summary_priority_leads.html'
+    if restored_summary.is_file():
+        page=restored_summary.read_text(encoding='utf-8')
+    else:
+        page=apply_report_menu(page,'summary.html')
     (STATIC/'summary.html').write_text(page)
     (ROOT/'analysis_output/summary.html').write_text(page)
     (ROOT/'analysis_output/summary.html').write_text((STATIC/'summary.html').read_text())
     # This formerly ran only inside the site-wide finalizer. Keep the summary
     # comparison current without touching any other report page.
-    from standardize_nep_hgab_pages import apply_summary_coverage
-    apply_summary_coverage()
-    final_summary=(STATIC/'summary.html').read_text()
+    # summary_priority_leads.html is the recovered, version-controlled page
+    # from open-data-visualization commit 72f9346cc. Keep the historical hero,
+    # exposure-ranked cards and page structure authoritative after builders run.
+    final_summary=(restored_summary.read_text(encoding='utf-8') if restored_summary.is_file()
+                   else (STATIC/'summary.html').read_text())
+    if restored_summary.is_file():
+        final_summary,document_gap_stats=refresh_undocumented_hgab_card(final_summary)
+        final_summary=remove_line_item_queue(final_summary)
+        (STATIC/'summary.html').write_text(final_summary,encoding='utf-8')
+    else:
+        document_gap_stats=None
     final_data=json.loads((STATIC/'summary-data.json').read_text())
-    card_count=len(re.findall(r'<article class="finding"',final_summary))
+    card_count=len(re.findall(r'<article class="priority-card"',final_summary)) if restored_summary.is_file() else len(re.findall(r'<article class="finding"',final_summary))
     if card_count != 8 or len(final_data.get('findings',[])) != 8:
         raise RuntimeError(
             'Summary output drifted during finalization: '
-            f'{card_count} HTML cards, {len(final_data.get("findings",[]))} JSON findings; expected eight of each'
+            f'{card_count} restored HTML cards, {len(final_data.get("findings",[]))} JSON findings; expected eight of each'
         )
     (ROOT/'analysis_output/summary.html').write_text(final_summary)
-    print(json.dumps({'findings':len(findings),'rcs':rcs_stats,'repeats':repeat_stats,'fiveMillion':price_stats,'domesticInsertionCandidates':len(domestic)},ensure_ascii=False,indent=2))
+    print(json.dumps({'findings':len(findings),'rcs':rcs_stats,'repeats':repeat_stats,'fiveMillion':price_stats,'domesticInsertionCandidates':len(domestic),'allHgabDocumentGap':document_gap_stats},ensure_ascii=False,indent=2))
 
 if __name__=='__main__':
     main()

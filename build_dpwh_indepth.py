@@ -482,15 +482,14 @@ def build_data():
       'hgabTitle':doc.get('hgabTitle'),'rows':[{k:r.get(k) for k in cost_row_fields if k in r} for r in doc.get('rows',[])],
       'costCategoryBreakdown':[{k:r.get(k) for k in cost_category_fields if k in r} for r in doc.get('costCategoryBreakdown',[])]}
       for doc in data['hgabPowResults'] if doc.get('rows') or doc.get('costCategoryBreakdown')]
-    from project_documents.senate_document_title_coverage import load_coverage
-    data['senateDocumentTitleCoverage']=load_coverage(OUT)
     supporting_scan_path=OUT/'senate_supporting_documents_hgab_only_scan.json'
     supporting_scan=json.loads(supporting_scan_path.read_text()) if supporting_scan_path.is_file() else {}
     data['senateSupportingDocumentCoverage']={k:supporting_scan.get(k) for k in (
       'denominatorProjectRows','projectsWithAtLeastOneMatchedDocument',
       'projectsWithAtLeastOneMatchedDocumentPct','projectRowsWithoutMatchedDocument',
       'matchedFileRecords','byType','signatoryCandidateCounts',
-      'signatoryCandidatesByDocumentType','deduplication','matchingMethod') if k in supporting_scan}
+      'signatoryCandidatesByDocumentType','deduplication','matchingMethod',
+      'localT5Inventory','cloudflareFileInventory','t5CloudflareReconciliation') if k in supporting_scan}
     title_scan_path=OUT/'senate_pow_hgab_only_title_scan.json'
     title_scan=json.loads(title_scan_path.read_text()) if title_scan_path.is_file() else {}
     data['hgabPowSummary']={'parsedDocuments':len(data['hgabPowResults']),
@@ -797,25 +796,16 @@ def build_all_hgab_document_coverage(indepth=None):
 
     rows=[]
     for hid,h in projects.items():
-        prior=old_by_id.get(hid,{})
         proposal=proposal_matches.get(hid,{})
-        if prior:
-            # Keep the established HGAB-only table's match decisions and metadata.
-            proposal_matched=bool(prior.get('proposalDocumentsMatched'))
-            proposal_sources=list(prior.get('proposalDocumentSources') or [])
-            proposal_types=set(prior.get('proposalDocumentTypes') or [])
-            senate_types=set(prior.get('senateDocumentTypes') or [])
-            senate_matched=bool(prior.get('senateHgabDocumentsMatched'))
-            senate_count=max(int(prior.get('senateMatchedFileRecords') or 0),len(senate_files[hid]))
-            for sig in prior.get('signatories',[]):
-                for source in sig.get('sources',[]):add_signatory(hid,sig.get('name'),sig.get('role'),source)
-        else:
-            proposal_matched=bool(proposal)
-            proposal_sources=sorted(set(proposal.values()))
-            proposal_types={str(d.get('type')) for code in proposal for d in proposal_by_code[code].get('documentLinks',[]) if d.get('type')}
-            senate_types={str(d.get('documentType') or 'Other') for d in senate_files[hid].values()}
-            senate_matched=bool(senate_files[hid])
-            senate_count=len(senate_files[hid])
+        # Recompute both source flags from the current Proposal index and scan.
+        # Carrying forward the previous HGAB-only export made this all-HGAB
+        # table one refresh behind whenever the Senate scan added matches.
+        proposal_matched=bool(proposal)
+        proposal_sources=sorted(set(proposal.values()))
+        proposal_types={str(d.get('type')) for code in proposal for d in proposal_by_code[code].get('documentLinks',[]) if d.get('type')}
+        senate_types={str(d.get('documentType') or 'Other') for d in senate_files[hid].values()}
+        senate_matched=bool(senate_files[hid])
+        senate_count=len(senate_files[hid])
         for doc in senate_files[hid].values():
             senate_types.add(str(doc.get('documentType') or 'Other'))
         sig_rows=[{'name':v['name'],'role':v['role'],'sources':sorted(v['sources'])}
@@ -832,7 +822,8 @@ def build_all_hgab_document_coverage(indepth=None):
             'proposalDocumentsMatched':proposal_matched,'proposalDocumentSources':proposal_sources,
             'proposalDocumentTypes':sorted(proposal_types),'proposalMatchedFileRecords':len(proposal_file_records),
             'senateHgabDocumentsMatched':senate_matched,'senateDocumentTypes':sorted(senate_types),
-            'senateMatchedFileRecords':senate_count,'signatoryCandidateCount':len(sig_rows),
+            'senateMatchedFileRecords':senate_count,
+            'signatoryCandidateCount':len(sig_rows),
             'signatories':sig_rows})
     rows.sort(key=lambda r:(-r['amountPesos'],str(r['title']).casefold(),r['hgabId']))
     return {'generatedAtUtc':datetime.now(timezone.utc).isoformat(),
@@ -843,7 +834,7 @@ def build_all_hgab_document_coverage(indepth=None):
 
 def build():
     import importlib
-    from build_report_heroes import hero,STYLE
+    from report_hero_module import hero,STYLE
     import uniform_report_menu
     # This builder also runs inside the long-lived document watcher. Reload the
     # shared page normalizer so regenerated DPWH pages cannot retain stale menus
@@ -858,8 +849,6 @@ def build():
     all_hgab_coverage_version=hashlib.sha256(all_hgab_coverage_json.encode('utf-8')).hexdigest()[:12]
     all_hgab_coverage_js=(ROOT/'project_documents/hgab-document-coverage.js').read_text().replace('__COVERAGE_VERSION__',all_hgab_coverage_version)
     all_hgab_coverage_js_version=hashlib.sha256(all_hgab_coverage_js.encode('utf-8')).hexdigest()[:12]
-    public_data_json=json.dumps(public_data(data),ensure_ascii=False,indent=2)+'\n'
-    public_data_version=hashlib.sha256(public_data_json.encode('utf-8')).hexdigest()[:12]
     coverage=data['hgabCoverage']
     all_rows=all_hgab_coverage['projects']
     all_denominator=len(all_rows)
@@ -875,14 +864,87 @@ def build():
     proposal_pct=100*proposal_count/all_denominator if all_denominator else 0
     senate_pct=100*senate_count/all_denominator if all_denominator else 0
     any_document_pct=100*any_document_count/all_denominator if all_denominator else 0
-    senate_title=data.get('senateDocumentTitleCoverage') or {}
-    senate_types=senate_title.get('byType',{})
-    senate_pow=senate_types.get('pow',{})
-    senate_bp=senate_types.get('bp202',{})
+    # Recompute Senate section totals from the all-HGAB export. The separate
+    # scanner report is limited to HGAB-only rows and belongs on that page.
+    all_document_types={}
+    all_pow_bp_ids=set()
+    complete_document_types={'POW','BP 202','Development Council','Geotagged photos','Certificate of Implementability'}
+    complete_document_project_rows=0
+    all_senate_file_records=0
+    all_proposal_rows=sum(bool(row.get('proposalDocumentsMatched')) for row in all_rows)
+    all_proposal_or_senate_rows=sum(bool(row.get('proposalDocumentsMatched') or row.get('senateHgabDocumentsMatched')) for row in all_rows)
+    all_both_source_rows=sum(bool(row.get('proposalDocumentsMatched') and row.get('senateHgabDocumentsMatched')) for row in all_rows)
+    def named_document_types(values):
+        normalized=set()
+        for value in values:
+            key=str(value or '').strip().casefold()
+            if key in {'pow','program of works','program of work'}: normalized.add('POW')
+            elif key in {'bp 202','bp202'}: normalized.add('BP 202')
+            elif key in {'development council','rdc endorsement','pdc endorsement','ldc endorsement','development council endorsement'}: normalized.add('Development Council')
+            elif key in {'geotagged photos','geotagged photo','geotegged photo','g.photo','photo','photos'}: normalized.add('Geotagged photos')
+            elif key in {'certificate of implementability','implementability certificate'}: normalized.add('Certificate of Implementability')
+        return normalized
+    def chart_document_types(values):
+        named=named_document_types(values)
+        recognized={'POW','BP 202','Development Council','Geotagged photos','Certificate of Implementability'}
+        return named | ({'Other'} if any(str(value or '').strip() and
+            str(value or '').strip().casefold() not in {
+                'pow','program of works','program of work','bp 202','bp202',
+                'development council','rdc endorsement','pdc endorsement','ldc endorsement','development council endorsement',
+                'geotagged photos','geotagged photo','geotegged photo','g.photo','photo','photos',
+                'certificate of implementability','implementability certificate'} for value in values) else set())
+    for row in all_rows:
+        hid=row['hgabId']
+        senate_raw=row.get('senateDocumentTypes') or []
+        proposal_raw=row.get('proposalDocumentTypes') or []
+        kinds=named_document_types(senate_raw)
+        combined_kinds=kinds | named_document_types(proposal_raw)
+        if len(combined_kinds & complete_document_types) >= 4:
+            complete_document_project_rows+=1
+        for source,values in (('proposal',proposal_raw),('senate',senate_raw)):
+            for kind in chart_document_types(values):
+                all_document_types.setdefault(kind,{'proposal':set(),'senate':set()})[source].add(hid)
+        if {'POW','BP 202'} & kinds:
+            all_pow_bp_ids.add(hid)
+        all_senate_file_records+=int(row.get('senateMatchedFileRecords') or 0)
+    all_hgab_supporting_coverage={
+      'denominatorProjectRows':all_denominator,
+      'projectsWithAtLeastOneMatchedDocument':sum(bool(row.get('senateHgabDocumentsMatched')) for row in all_rows),
+      'matchedFileRecords':all_senate_file_records,
+      'projectsWithAtLeastOneMatchedDocumentPct':round(100*sum(bool(row.get('senateHgabDocumentsMatched')) for row in all_rows)/all_denominator,2) if all_denominator else 0,
+      'proposalMatchedProjectRows':all_proposal_rows,
+      'senateMatchedProjectRows':sum(bool(row.get('senateHgabDocumentsMatched')) for row in all_rows),
+      'proposalAndSenateMatchedProjectRows':all_both_source_rows,
+      'proposalOrSenateMatchedProjectRows':all_proposal_or_senate_rows,
+      'proposalOrSenateMatchedProjectRowsPct':round(100*all_proposal_or_senate_rows/all_denominator,2) if all_denominator else 0,
+      'rowsWithoutProposalOrSenateMatch':all_denominator-all_proposal_or_senate_rows,
+      'bp202PowCombinedMatchedProjectRows':len(all_pow_bp_ids),
+      'completeDocumentTypeNames':sorted(complete_document_types),
+      'completeDocumentTypeThreshold':4,
+      'completeDocumentProjectRows':complete_document_project_rows,
+      'completeDocumentProjectRowsPct':round(100*complete_document_project_rows/all_denominator,2) if all_denominator else 0,
+      'completeDocumentProjectRowsBasis':'Combined Proposal and Senate document types; rows count once when at least four of five named document types are present across either source.',
+      'byType':{kind:{'proposalMatchedProjectRows':len(counts['proposal']),
+                      'senateMatchedProjectRows':len(counts['senate']),
+                      'matchedProjectRows':len(counts['proposal'] | counts['senate'])}
+                for kind,counts in all_document_types.items()},
+    }
+    data['senateSupportingDocumentCoverageAllHgab']=all_hgab_supporting_coverage
+    public_data_json=json.dumps(public_data(data),ensure_ascii=False,indent=2)+'\n'
+    public_data_version=hashlib.sha256(public_data_json.encode('utf-8')).hexdigest()[:12]
     supporting=data.get('senateSupportingDocumentCoverage') or {}
-    hgab_only_denominator=int(senate_title.get('denominatorProjectRows') or supporting.get('denominatorProjectRows') or 0)
-    HERO_STYLE='''<style id="hgab-coverage-hero-style">.hgab-coverage-hero{margin:20px 0 24px;padding:clamp(22px,3vw,36px);border-left:8px solid #FCD116;border-radius:16px;background:linear-gradient(120deg,#00246A,#0038A8);color:#fff;box-shadow:0 14px 34px #00246a20}.hgab-coverage-kicker{display:block;margin-bottom:14px;color:#FCD116;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.hgab-coverage-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.hgab-coverage-metric{display:flex;min-height:132px;flex-direction:column;justify-content:center;gap:7px;padding:18px;border:1px solid #ffffff45;border-radius:12px;background:#ffffff12}.hgab-coverage-metric strong{color:#FCD116;font-size:clamp(32px,4vw,52px);line-height:1;letter-spacing:-.04em;font-variant-numeric:tabular-nums}.hgab-coverage-metric span{font-size:clamp(15px,1.6vw,18px);font-weight:700;line-height:1.3}.hgab-coverage-metric small,.hgab-coverage-note{color:#e8eef8;font-size:13px;line-height:1.45}.hgab-coverage-note{margin:14px 0 0}@media(max-width:850px){.hgab-coverage-metrics{grid-template-columns:1fr}.hgab-coverage-metric{min-height:100px}}</style>'''+'''<style id="all-hgab-document-table-style">#all-hgab-document-coverage .tablewrap{overflow-x:auto;max-height:none}#all-hgab-document-coverage table{width:100%;min-width:1180px;table-layout:fixed}#all-hgab-document-coverage th:nth-child(1),#all-hgab-document-coverage td:nth-child(1){width:11%}#all-hgab-document-coverage th:nth-child(2),#all-hgab-document-coverage td:nth-child(2){width:23%}#all-hgab-document-coverage th:nth-child(3),#all-hgab-document-coverage td:nth-child(3){width:15%}#all-hgab-document-coverage th:nth-child(4),#all-hgab-document-coverage td:nth-child(4){width:12%}#all-hgab-document-coverage th:nth-child(5),#all-hgab-document-coverage td:nth-child(5){width:13%}#all-hgab-document-coverage th:nth-child(6),#all-hgab-document-coverage td:nth-child(6){width:13%}#all-hgab-document-coverage th:nth-child(7),#all-hgab-document-coverage td:nth-child(7){width:13%}#all-hgab-document-coverage th,#all-hgab-document-coverage td{padding:9px;vertical-align:top;overflow-wrap:anywhere}#all-hgab-document-coverage td small{display:block;color:#526c78;font-size:12px}#all-hgab-document-coverage .coverage-controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:12px 0}#all-hgab-document-coverage .coverage-controls input{flex:1;min-width:240px}#all-hgab-document-coverage .coverage-pagination{display:flex;gap:10px;align-items:center;justify-content:flex-end;margin-top:10px}@media(max-width:650px){#all-hgab-document-coverage{padding:14px}}</style>'''
-    lead=f'''<section class="hgab-coverage-hero" aria-label="All HGAB document reconciliation"><span class="hgab-coverage-kicker">All HGAB project rows · Proposal and Senate HGAB document reconciliation</span><div class="hgab-coverage-metrics"><div class="hgab-coverage-metric"><strong>{any_document_count:,}</strong><span>have at least one Proposal or Senate HGAB document</span><small>{any_document_pct:.2f}% of {all_denominator:,} HGAB project rows · deduplicated</small></div><div class="hgab-coverage-metric"><strong>{proposal_count:,}</strong><span>have linked Proposal documents</span><small>{proposal_pct:.2f}% of all HGAB project rows</small></div><div class="hgab-coverage-metric"><strong>{senate_count:,}</strong><span>have matched Senate HGAB documents</span><small>{senate_pct:.2f}% of all HGAB project rows</small></div></div><p class="hgab-coverage-note">The union counts rows once; {overlap_count:,} rows match both sources and {all_denominator-any_document_count:,} have no current match in either. Proposal links use direct title matches or selected NEP counterparts; Senate matches use title-linked support files and uniquely resolved file-code siblings. File presence does not verify document contents.</p></section>'''
+    t5_reconciliation=supporting.get('t5CloudflareReconciliation') or {}
+    parsed_supporting_pdfs=sum(int(item.get('filesScanned') or 0) for item in supporting.get('byType',{}).values())
+    t5_reconciliation_note=''
+    if t5_reconciliation.get('manifestEntries'):
+        t5_reconciliation_note=(
+          f" <b>T5 / Cloudflare file check:</b> {int(t5_reconciliation.get('manifestFilesPresentOnT5') or 0):,} of "
+          f"{int(t5_reconciliation.get('manifestEntries') or 0):,} manifest files are SHA-256 verified across the source folder and parser cache; "
+          f"{parsed_supporting_pdfs:,} of {int(t5_reconciliation.get('pdfFilesAvailable') or 0):,} available PDFs have scan records; "
+          f"{int(t5_reconciliation.get('manifestFilesNotPresentOnT5') or 0):,} manifest entries are currently unavailable on T5."
+        )
+    HERO_STYLE='''<style id="hgab-coverage-hero-style">.hgab-coverage-hero{margin:20px 0 24px;padding:clamp(22px,3vw,36px);border-left:8px solid #FCD116;border-radius:16px;background:linear-gradient(120deg,#00246A,#0038A8);color:#fff;box-shadow:0 14px 34px #00246a20}.hgab-coverage-kicker{display:block;margin-bottom:14px;color:#FCD116;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.hgab-coverage-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.hgab-coverage-metric{display:flex;min-height:132px;flex-direction:column;justify-content:center;gap:7px;padding:18px;border:1px solid #ffffff45;border-radius:12px;background:#ffffff12}.hgab-coverage-metric strong{color:#FCD116;font-size:clamp(32px,4vw,52px);line-height:1;letter-spacing:-.04em;font-variant-numeric:tabular-nums}.hgab-coverage-metric span{font-size:clamp(15px,1.6vw,18px);font-weight:700;line-height:1.3}.hgab-coverage-metric small,.hgab-coverage-note{color:#e8eef8;font-size:13px;line-height:1.45}.hgab-coverage-note{margin:14px 0 0}@media(max-width:850px){.hgab-coverage-metrics{grid-template-columns:1fr}.hgab-coverage-metric{min-height:100px}}</style>'''+'''<style id="all-hgab-document-table-style">#all-hgab-document-coverage th.report-card-hidden-column,#all-hgab-document-coverage td.report-card-hidden-column{display:table-cell!important}#all-hgab-document-coverage col.report-card-hidden-column{display:table-column!important}#all-hgab-document-coverage .tablewrap{overflow-x:auto;max-height:none}#all-hgab-document-coverage table{width:100%;min-width:1180px;table-layout:fixed}#all-hgab-document-coverage th:nth-child(1),#all-hgab-document-coverage td:nth-child(1){width:11%}#all-hgab-document-coverage th:nth-child(2),#all-hgab-document-coverage td:nth-child(2){width:23%}#all-hgab-document-coverage th:nth-child(3),#all-hgab-document-coverage td:nth-child(3){width:15%}#all-hgab-document-coverage th:nth-child(4),#all-hgab-document-coverage td:nth-child(4){width:12%}#all-hgab-document-coverage th:nth-child(5),#all-hgab-document-coverage td:nth-child(5){width:13%}#all-hgab-document-coverage th:nth-child(6),#all-hgab-document-coverage td:nth-child(6){width:13%}#all-hgab-document-coverage th:nth-child(7),#all-hgab-document-coverage td:nth-child(7){width:13%}#all-hgab-document-coverage th,#all-hgab-document-coverage td{padding:9px;vertical-align:top;overflow-wrap:anywhere}#all-hgab-document-coverage td small{display:block;color:#526c78;font-size:12px}#all-hgab-document-coverage .coverage-controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:12px 0}#all-hgab-document-coverage .coverage-controls input{flex:1;min-width:240px}#all-hgab-document-coverage .coverage-pagination{display:flex;gap:10px;align-items:center;justify-content:flex-end;margin-top:10px}@media(max-width:650px){#all-hgab-document-coverage{padding:14px}}</style>'''
+    lead=f'''<section class="hgab-coverage-hero" aria-label="All HGAB document reconciliation"><span class="hgab-coverage-kicker">All HGAB project rows · Proposal and Senate HGAB document reconciliation</span><div class="hgab-coverage-metrics"><div class="hgab-coverage-metric"><strong>{any_document_count:,}</strong><span>have at least one Proposal or Senate HGAB document</span><small>{any_document_pct:.2f}% of {all_denominator:,} HGAB project rows · deduplicated</small></div><div class="hgab-coverage-metric"><strong>{proposal_count:,}</strong><span>have linked Proposal documents</span><small>{proposal_pct:.2f}% of all HGAB project rows</small></div><div class="hgab-coverage-metric"><strong>{senate_count:,}</strong><span>have matched Senate HGAB documents</span><small>{senate_pct:.2f}% of all HGAB project rows</small></div></div><p class="hgab-coverage-note">The union counts rows once; {overlap_count:,} rows match both sources and {all_denominator-any_document_count:,} have no current match in either. Proposal links use direct title matches or selected NEP counterparts; Senate matches use title-linked support files and uniquely resolved file-code siblings. File presence does not verify document contents.{t5_reconciliation_note}</p></section>'''
     text=(ROOT/'project_documents/indepth.html').read_text().replace('<!--HERO_STYLE-->',STYLE+HERO_STYLE).replace('<!--HERO-->',lead)
     version=hashlib.sha256((ROOT/'project_documents/indepth.js').read_bytes()).hexdigest()[:12]
     text=text.replace('src="dpwh-in-depth.js"',f'src="dpwh-in-depth.js?v={version}"')
@@ -908,6 +970,13 @@ def build():
     expected_coverage_headers=['HGAB code','Project','Office · region','HGAB allocation','Proposal docs','Senate HGAB docs','Signatories in related documents']
     if coverage_headers != expected_coverage_headers or not all_rows or not main_sections or main_sections[-1] != 'all-hgab-document-coverage':
         raise RuntimeError(f'All-HGAB coverage table validation failed: headers={coverage_headers!r}, {len(all_rows)} rows, final section={main_sections[-1:]!r}')
+    for section_id in ('senate-title-match-coverage','senate-supporting-document-coverage'):
+        section=re.search(r'<section[^>]*id="'+section_id+r'"[^>]*>.*?</section>',text,re.S)
+        markup=section.group(0) if section else ''
+        if not markup or 'All HGAB projects' not in markup or 'HGAB-only' in markup:
+            raise RuntimeError(f'{section_id} must report the all-HGAB cohort')
+    if data['senateSupportingDocumentCoverageAllHgab'].get('denominatorProjectRows') != all_denominator:
+        raise RuntimeError('All-HGAB Senate document section denominator does not match the HGAB project ledger')
     for target in (OUT,STATIC):
         atomic_write(target/'dpwh-in-depth.js',(ROOT/'project_documents/indepth.js').read_text())
         atomic_write(target/'dpwh-data-loader.js',loader)

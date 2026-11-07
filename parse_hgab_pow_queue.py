@@ -29,6 +29,7 @@ CODE = re.compile(r'^2027DPWH-HGAB-\d{5}$')
 VERSION = hashlib.sha256(
     (Path(__file__).resolve().parent / 'project_documents/pow.py').read_bytes()
     + (Path(__file__).resolve().parent / 'project_documents/ocr_vision.swift').read_bytes()
+    + Path(__file__).resolve().read_bytes()
 ).hexdigest()
 STATE_LOCK = threading.RLock()
 
@@ -70,7 +71,7 @@ def journal_rows():
                 except json.JSONDecodeError:
                     continue
                 code, digest = row.get('projectCode'), row.get('sha256')
-                if (row.get('status') == 'downloaded' and isinstance(code, str)
+                if (row.get('status') in {'downloaded', 'present_verified_on_t5'} and isinstance(code, str)
                         and CODE.fullmatch(code) and isinstance(digest, str)):
                     rows[(code, digest)] = row
     return rows
@@ -85,19 +86,25 @@ def marker_for(row):
     code, digest = row['projectCode'], row['sha256']
     target = OUTPUT / code / (row['documentId'] + '-' + digest[:16])
     marker = read_json(target / 'status.json')
-    if marker.get('sourceSha256') == digest and marker.get('status') in {'parsed', 'error'}:
+    if marker.get('sourceSha256') == digest and marker.get('status') in {
+            'parsed', 'error', 'skipped_missing_source'}:
         return marker
     return None
 
 
 def pending_items(rows, retry_after):
-    pending, retries, skipped, errors = [], 0, 0, 0
+    pending, retries, skipped, errors, skipped_missing = [], 0, 0, 0, 0
     retry_cutoff = time.time() - retry_after
     for key, row in sorted(rows.items()):
         marker = marker_for(row)
         if marker and marker.get('status') == 'parsed':
             skipped += 1
             continue
+        if marker and marker.get('status') == 'skipped_missing_source':
+            source = (ATTACHMENTS / row['path']).resolve()
+            if not source.is_file():
+                skipped_missing += 1
+                continue
         if marker and marker.get('status') == 'error':
             errors += 1
             try:
@@ -109,7 +116,7 @@ def pending_items(rows, retry_after):
                 retries += 1
                 continue
         pending.append(row)
-    return pending, skipped, retries, errors
+    return pending, skipped, retries, errors, skipped_missing
 
 
 def output_result(row, parsed, target):
@@ -188,12 +195,13 @@ def parse_one(row):
 
 def run_once(state, retry_after, workers):
     rows = journal_rows()
-    pending, skipped, retries, prior_errors = pending_items(rows, retry_after)
+    pending, skipped, retries, prior_errors, skipped_missing = pending_items(rows, retry_after)
     with STATE_LOCK:
         state.update({
             'parserVersion': VERSION,
             'totalDownloadedPow': total_downloaded_pow(rows, state),
             'skippedCurrent': skipped,
+            'skippedMissingSource': skipped_missing,
             'pending': len(pending) + retries,
             'pendingNewDownloads': len(pending),
             'pendingWithoutParseResult': len(pending),
@@ -254,12 +262,23 @@ def run_once(state, retry_after, workers):
                 except Exception as exc:
                     target.mkdir(parents=True, exist_ok=True)
                     message = f'{type(exc).__name__}: {str(exc)[:500]}'
-                    write_json(marker_path, {'parserVersion': VERSION, 'sourceSha256': digest,
-                                             'status': 'error', 'atUtc': now(), 'error': message})
+                    missing_source = (isinstance(exc, FileNotFoundError)
+                                      and message.startswith('FileNotFoundError: Journaled POW is missing:'))
+                    write_json(marker_path, {
+                        'parserVersion': VERSION, 'sourceSha256': digest,
+                        'status': 'skipped_missing_source' if missing_source else 'error',
+                        'atUtc': now(), 'error': message,
+                    })
                     with STATE_LOCK:
-                        state['errors'] = int(state.get('errors', 0)) + 1
-                        state['lastError'] = f'{code}: {message[:300]}'
-                    print(json.dumps({'code': code, 'status': 'error', 'error': message}), flush=True)
+                        if missing_source:
+                            state['skippedMissingSource'] = int(state.get('skippedMissingSource', 0)) + 1
+                            state['lastError'] = None
+                        else:
+                            state['errors'] = int(state.get('errors', 0)) + 1
+                            state['lastError'] = f'{code}: {message[:300]}'
+                    print(json.dumps({'code': code,
+                                      'status': 'skipped_missing_source' if missing_source else 'error',
+                                      'error': message}), flush=True)
                 completed += 1
                 with STATE_LOCK:
                     remaining = len(pending) - completed
@@ -273,10 +292,11 @@ def run_once(state, retry_after, workers):
                                   'heartbeatAtUtc': now()})
                     write_json(STATUS, state)
 
-    pending, skipped, retries, errors = pending_items(journal_rows(), retry_after)
+    pending, skipped, retries, errors, skipped_missing = pending_items(journal_rows(), retry_after)
     final_rows = journal_rows()
     with STATE_LOCK:
         state.update({'totalDownloadedPow': total_downloaded_pow(final_rows, state), 'skippedCurrent': skipped,
+                      'skippedMissingSource': skipped_missing,
                       'pending': len(pending) + retries, 'pendingNewDownloads': len(pending),
                       'pendingWithoutParseResult': len(pending), 'pendingRetry': retries,
                       'totalPendingIncludingActive': len(pending) + retries,
@@ -302,6 +322,8 @@ def main():
         import pymupdf  # noqa: F401
     except ImportError as exc:
         raise SystemExit('PyMuPDF is required. Install project_documents/requirements.txt in the parser environment.') from exc
+    import importlib.util
+    paddle_available = importlib.util.find_spec('paddleocr') is not None
     LOCK.parent.mkdir(parents=True, exist_ok=True)
     with LOCK.open('a+') as lock:
         try:
@@ -313,7 +335,7 @@ def main():
             existing_hgab_statuses = 0
             for marker_path in OUTPUT.glob('2027DPWH-HGAB-*/*/status.json'):
                 marker = read_json(marker_path)
-                if marker.get('status') in {'parsed', 'error'}:
+                if marker.get('status') in {'parsed', 'error', 'skipped_missing_source'}:
                     existing_hgab_statuses += 1
             previous['portalPowBaseline'] = max(
                 0, int(previous.get('totalDownloadedPow', 0)) - existing_hgab_statuses)
@@ -322,9 +344,15 @@ def main():
             'parserVersion': VERSION,
             'startedAtUtc': previous.get('startedAtUtc') or now(),
             'workers': args.workers, 'coordinatorWorkers': 1,
-            'primaryOcrEngine': 'Apple Vision and native PDF text',
-            'paddleFallbackWorkers': 0, 'queuePolicy': 'New manually journaled HGAB POW files first; retry parser errors later.',
+            'primaryOcrEngine': ('Apple Vision and native PDF text with PaddleOCR PP-OCRv5 scanned-page fallback'
+                                 if sys.platform == 'darwin' and paddle_available else
+                                 'native PDF text with PaddleOCR PP-OCRv5 scanned-page fallback'
+                                 if paddle_available else
+                                 'Apple Vision and native PDF text' if sys.platform == 'darwin' else 'native PDF text'),
+            'paddleFallbackWorkers': args.workers if paddle_available else 0,
+            'queuePolicy': 'Process available POW files; terminally skip missing journaled source PDFs, and requeue if the source later appears.',
             'status': 'starting', 'active': [], 'activeCount': 0, 'current': None,
+            'skippedMissingSource': int(previous.get('skippedMissingSource', 0)),
             'heartbeatAtUtc': now(), 'parserPid': os.getpid(),
         }
         stop = threading.Event()
