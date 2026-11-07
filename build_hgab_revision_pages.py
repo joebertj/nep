@@ -156,45 +156,9 @@ def write_dpwh_comparison_page() -> None:
     data["hbInsertions2ndSummary"] = summary
     write_json(data_path, data)
 
-    # Refresh the insertion section on the DPWH home page as well as the
-    # dedicated page below. This section deliberately shows only HGAB rows
-    # without a plausible NEP title counterpart; ambiguous rows remain in the
-    # separate review export and are not counted as clear additions.
-    dpwh_path = STATIC / "dpwh.html"
-    dpwh_html = dpwh_path.read_text(encoding="utf-8")
-    third_total = sum(int(row.get("amountPesos") or 0) for row in data["hbInsertions"])
-    insertion_intro = (
-        f'The 3rd-reading title screen leaves <strong>{len(data["hbInsertions"]):,} HGAB lines</strong> '
-        f'without a plausible FY2027 NEP title counterpart, carrying '
-        f'<strong>₱{third_total / 1_000_000_000:,.2f}B</strong>. '
-        f'The full comparison also has {third_summary["counts"].get("Multiple or already paired NEP counterparts; review scope", 0):,} '
-        f'ambiguous or already-paired rows. These are review leads, not confirmed additions.'
-    )
-    dpwh_html = re.sub(
-        r'(<section id="hgab-insertion".*?<h2>).*?(</h2>\s*<p class="sub">).*?(</p>)',
-        lambda m: m.group(1) + "FY2027 3rd-reading HGAB lines without a plausible NEP title match" + m.group(2) + insertion_intro + m.group(3),
-        dpwh_html, count=1, flags=re.S,
-    )
-    dpwh_html = dpwh_html.replace("All potential insertions", "All lines without a plausible NEP title match")
-    dpwh_html = dpwh_html.replace("No close title counterpart", "No plausible NEP title counterpart")
-    dpwh_html = dpwh_html.replace("Possible title counterpart", "Plausible NEP title counterpart")
-    dpwh_html = dpwh_html.replace("No close title counterpart; review candidate", "No plausible NEP title counterpart; review candidate")
-    dpwh_html = dpwh_html.replace("Possible title counterpart; review scope", "Plausible NEP title counterpart; review scope")
-    dpwh_html = dpwh_html.replace("<th>HB project line</th>", "<th>3rd-reading HGAB line</th>")
-    dpwh_html = dpwh_html.replace(
-        '<option value="all">All lines without a plausible NEP title match</option><option value="novel">No plausible NEP title counterpart</option><option value="near">Plausible NEP title counterpart</option>',
-        '<option value="all">All lines without a plausible NEP title match</option>',
-    )
-    dpwh_html = dpwh_html.replace(
-        '<strong>HB candidates by title screen</strong><span>Candidate count and allocation for the current filters.</span>',
-        '<strong>DPWH line items by NEP title-screen result</strong><span>Counts across all 3rd-reading DPWH records; the table below lists only lines without a plausible NEP title counterpart.</span>',
-    ).replace('aria-label="HB candidates by title screen"', 'aria-label="DPWH line items by NEP title-screen result"')
-    old_screen_groups = "const insertionGroups=[['Plausible NEP title counterpart; review scope','Plausible NEP title counterpart · review scope',true],['No plausible NEP title counterpart; review candidate','No plausible NEP title counterpart',false]].map(([key,label,candidate])=>{const group=rows.filter(r=>r.comparison===key);return{label,value:group.reduce((t,r)=>t+Number(r.amountPesos||0),0),count:group.length,candidate}});renderDonut('insertionGraph',insertionGroups,v=>peso(v));"
-    new_screen_groups = "const screenCounts=(D.hbInsertions3rdSummary||{}).counts||{},insertionGroups=[['Exact normalized title found in NEP','Exact title match'],['Plausible NEP title counterpart; review scope','Plausible title match'],['No plausible NEP title counterpart; review candidate','No plausible title match'],['Multiple or already paired NEP counterparts; review scope','Ambiguous / already paired']].map(([key,label])=>({label,count:Number(screenCounts[key]||0),value:Number(screenCounts[key]||0)}));renderDonut('insertionGraph',insertionGroups,v=>fmt(v));"
-    dpwh_html = dpwh_html.replace(old_screen_groups, new_screen_groups)
-    dpwh_html = dpwh_html.replace("dpwh_hgab_insertion_candidates.csv", "dpwh_hgab_nep_review_records.csv")
-    dpwh_html = dpwh_html.replace("The extractor is heuristic and requires checking against the original bill page;", "The corrected native-text parser reconciles the printed program totals; still check each project against the original bill page;")
-    dpwh_path.write_text(dpwh_html, encoding="utf-8")
+    # The DPWH home page is owned by build_dpwh_indepth.py. Keep the
+    # insertion comparison data in dpwh-data.json for its dedicated analysis
+    # consumers, but do not patch dpwh.html from this reading-stage builder.
 
     comparison = json.loads((OUT / "dpwh_hgab_2nd_vs_3rd.json").read_text(encoding="utf-8"))
     thin_rows = []
@@ -334,8 +298,6 @@ def main() -> None:
     update_existing_pages(summaries)
     write_nia_page()
     write_deped_page()
-    from build_report_heroes import main as apply_report_heroes
-    apply_report_heroes()
     print("Built 3rd-reading comparison data and pages under ODV static/nep-preview")
 
 

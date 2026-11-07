@@ -451,16 +451,27 @@ def _run():
                 writer = csv.DictWriter(stream, fieldnames=fields); writer.writeheader()
                 for row in report['projects']:
                     writer.writerow({**row, 'documentTypes': json.dumps(row['documentTypes'], ensure_ascii=False), 't5FileCodes': json.dumps(row['t5FileCodes'], ensure_ascii=False), 't5FilePresenceByType': json.dumps(row['t5FilePresenceByType'], ensure_ascii=False), 'signatories': json.dumps(row['signatories'], ensure_ascii=False)})
-            if paths or args.once:
-                # One ordered refresh keeps all parser-derived page data in sync,
-                # including one-shot scans and scans that only consolidate cached rows.
-                subprocess.run([sys.executable, str(ROOT / 'refresh_parsed_document_pages.py'),
-                                'senate-supporting-document-scan'], cwd=ROOT, check=True)
             status.update({'status': 'complete', 'completedThisPass': len(paths),
                            'projectsWithAtLeastOneMatchedDocument': report['projectsWithAtLeastOneMatchedDocument'],
                            'matchedDocuments': report['matchedFileRecords'],
+                           'pageRefreshStatus': 'running',
                            'heartbeatAtUtc': datetime.now(timezone.utc).isoformat()})
             atomic_json(STATUS, status)
+            if paths or args.once:
+                # Publish completed scan totals before refreshing pages so
+                # concurrent status readers and the audit see the same snapshot.
+                try:
+                    subprocess.run([sys.executable, str(ROOT / 'refresh_parsed_document_pages.py'),
+                                    'senate-supporting-document-scan'], cwd=ROOT, check=True)
+                except Exception as exc:
+                    status.update({'status': 'error', 'pageRefreshStatus': 'error',
+                                   'lastError': f'{type(exc).__name__}: {str(exc)[:500]}',
+                                   'heartbeatAtUtc': datetime.now(timezone.utc).isoformat()})
+                    atomic_json(STATUS, status)
+                    raise
+                status.update({'pageRefreshStatus': 'complete',
+                               'heartbeatAtUtc': datetime.now(timezone.utc).isoformat()})
+                atomic_json(STATUS, status)
         else:
             # A one-shot scan or another worker may have refreshed the report
             # since this loop started. Read the published report for status so

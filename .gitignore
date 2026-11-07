@@ -23,6 +23,9 @@ NEP-FY2027.xlsx
 # Full local DPWH parser snapshot; only split static shards are published.
 /analysis_output/dpwh-in-depth-data.json
 
+# Internal Cloudflare attachment inventory; retain locally, never publish.
+/analysis_output/Cloudflare-file-links.jsonl
+
 # Public bulk raster tiles are reproducible from their checked-in manifest/downloader.
 /data_sources/esa_worldcover_2021/*.tif
 /data_sources/esa_worldcover_2021/*.part

@@ -1,0 +1,102 @@
+{
+  "status": "ok",
+  "checkedAtUtc": "2026-11-07T17:58:03.238333+01:00",
+  "source": "Consolidated Cloudflare-download parser artifacts and page outputs; no T5 directory scan performed.",
+  "checks": {
+    "senateScan": {
+      "denominatorProjectRows": 6105,
+      "projectsWithAtLeastOneMatchedDocument": 4034,
+      "projectRowsWithoutMatchedDocument": 2071,
+      "matchedFileRecords": 21214,
+      "generatedAtUtc": "2026-11-07T16:40:16.058551+00:00",
+      "uniqueProjectIds": 6105
+    },
+    "scannerStatus": {
+      "status": "complete",
+      "matchedProjectRows": 4034,
+      "matchesConsolidatedOutput": true
+    },
+    "allHgabCoverage": {
+      "rows": 15979,
+      "withProposal": 9601,
+      "withSenate": 4098,
+      "union": 13632,
+      "generatedAtUtc": "2026-11-07T16:57:34.752578+00:00"
+    },
+    "parsedPow": {
+      "parsedDocuments": 6259,
+      "titleScanDocuments": 5508,
+      "titleMatchAssessedFiles": 5508,
+      "titleMatchesHGABOnly": 3287,
+      "titleMatchDenominator": 6105
+    },
+    "undocumented": {
+      "queueRows": 1933,
+      "uniqueRows": 1933,
+      "allRowsHgabOnly": true,
+      "coverageExportRows": 6105
+    },
+    "encapsulation": {
+      "summaryWritesOnlyOwnPage": true,
+      "sharedSectionsQueuedForOwners": true
+    },
+    "pageOwnership": {
+      "dpwh.html": "build_dpwh_indepth.py",
+      "dpwh-transparency.html": "build_dpwh_transparency_page.py",
+      "cost-per-unit.html": "build_cost_per_unit_page.py",
+      "pccp-cost-per-unit.html": "build_pccp_cost_per_unit_page.py",
+      "expectation-vs-reality.html": "build_expectation_vs_reality.py",
+      "development-council.html": "build_development_council.py",
+      "undocumented-hgab.html": "build_undocumented_hgab.py",
+      "summary.html": "build_investigation_summary.py"
+    },
+    "pageFreshness": {
+      "sourceScanGeneratedAtUtc": "2026-11-07T16:40:16.058551+00:00",
+      "pagesAtOrAfterScan": 7,
+      "pagesExpected": 7,
+      "stalePages": []
+    }
+  },
+  "pages": {
+    "dpwh.html": {
+      "coverageColumns": 7,
+      "loadsCoverageRenderer": true,
+      "coverageSource": "hgab-document-coverage.json",
+      "builder": "build_dpwh_indepth.py",
+      "builtAtUtc": "2026-11-07T17:57:47.018713+01:00"
+    },
+    "undocumented-hgab.html": {
+      "coverageColumns": 7,
+      "loadsCoverageRenderer": true,
+      "coverageSource": "hgab-only-document-coverage.json",
+      "builder": "build_undocumented_hgab.py",
+      "builtAtUtc": "2026-11-07T17:57:50.494123+01:00"
+    },
+    "dpwh-transparency.html": {
+      "builder": "build_dpwh_transparency_page.py",
+      "builtAtUtc": "2026-11-07T17:57:47.168148+01:00"
+    },
+    "cost-per-unit.html": {
+      "builder": "build_cost_per_unit_page.py",
+      "builtAtUtc": "2026-11-07T17:57:47.080151+01:00"
+    },
+    "pccp-cost-per-unit.html": {
+      "builder": "build_pccp_cost_per_unit_page.py",
+      "builtAtUtc": "2026-11-07T17:57:47.014831+01:00"
+    },
+    "expectation-vs-reality.html": {
+      "builder": "build_expectation_vs_reality.py",
+      "builtAtUtc": "2026-11-07T17:57:47.165426+01:00"
+    },
+    "development-council.html": {
+      "builder": "build_development_council.py",
+      "builtAtUtc": "2026-11-07T17:57:47.006007+01:00"
+    },
+    "summary.html": {
+      "builder": "build_investigation_summary.py",
+      "builtAtUtc": "2026-11-07T17:58:01.495608+01:00"
+    }
+  },
+  "warnings": [],
+  "errors": []
+}

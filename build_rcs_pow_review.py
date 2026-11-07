@@ -112,6 +112,8 @@ def render(rows):
 <section class="card"><h2>What to verify</h2><ul><li>Whether the same ₱4.2M is a standard design package, a planning ceiling, or independently costed for each site.</li><li>Whether facilities, tanks, quantities, units, and item totals in each POW reconcile to the signed engineering estimate.</li><li>Whether the listed locations and delivery scope match the project implementation records.</li></ul><p><a href="dpwh.html">Open the DPWH in-depth POW review queue ↗</a> · <a href="rcs-rainfall-archive.html">Open the archived rainfall-only scenario ↗</a></p></section></main><footer style="text-align:center;padding:18px;color:#536873">A review lead for human verification, not a finding.</footer></body></html>'''
     body=body.replace('</aside>', '</aside>'+lead, 1)
     page=header.replace('</head>',HERO_STYLE+'</head>')+body
+    from report_page_modules import apply_page_modules
+    page=apply_page_modules(page,'rcs.html')
     from uniform_report_menu import apply_page as apply_uniform_menu_page
     page=apply_uniform_menu_page(page,'rcs.html')
     from report_table_presentation import publish_assets,apply_page as apply_report_styles

@@ -41,6 +41,10 @@ def section(identifier,title,body):
     return f'<section id="{identifier}" class="investigation-evidence"><h2>{esc(title)}</h2>{body}</section>'
 
 def inject(page,identifier,body):
+    if page != 'summary.html':
+        from report_page_modules import queue_page_section
+        queue_page_section(page, identifier, body)
+        return
     p=STATIC/page;t=p.read_text()
     pattern=rf'<section id="{re.escape(identifier)}".*?</section>'
     if re.search(pattern,t,re.S):t=re.sub(pattern,lambda m:body,t,flags=re.S)
@@ -68,19 +72,18 @@ def cumulative_graph(models):
         lines.append(f'<polyline fill="none" stroke="{color}" stroke-width="3" points="{points}"/><text x="65" y="{285+len(lines)*22}" fill="{color}" font-size="14">{esc(label)}</text>')
     return '<svg class="evidence-graphic" viewBox="0 0 950 355" role="img" aria-label="Cumulative RCS budget units across offices ordered from lower to higher rainfall"><path d="M60 45 V245 H890" fill="none" stroke="#536873"/><text x="10" y="55">199</text><text x="25" y="245">0</text><text x="60" y="265">1st office</text><text x="760" y="265">199th office</text><text x="60" y="25">Cumulative budget units · offices ordered by rainfall proxy</text>'+''.join(lines)+'</svg>'
 
-def main(apply_sitewide_editorial=False):
-    if (ROOT/'data_sources/csiiiv/source_policy.json').exists():
-        from adopt_csiiiv_reference import adopt
-        adopt()
-        from build_corrected_fmr_page import generate as refresh_reviewed_fmr
-        refresh_reviewed_fmr()
-    from build_cost_per_km import build as build_cost_per_km
-    length_data=build_cost_per_km()
+def main():
+    # Shared evidence fragments are queued as modules for each page's owner;
+    # this builder writes summary.html only.
+    from report_page_modules import reset_page_modules
+    reset_page_modules()
+    # Consume the latest data products. A summary build owns summary.html and
+    # must not invoke other page builders as a side effect.
+    length_data=json.loads((ROOT/'analysis_output/cost_per_km.json').read_text())
     dpwh_indepth_data=json.loads((ROOT/'analysis_output/dpwh-in-depth-data.json').read_text())
     from build_line_item_review_queue import build as build_review_queue, render as render_review_queue
     review_queue=build_review_queue(dpwh_indepth_data)
-    from build_mpb_report import build as build_mpb
-    mpb=build_mpb()['summary']
+    mpb=json.loads((ROOT/'analysis_output/mpb_analysis.json').read_text())['summary']
     dpwh=read('dpwh-data.json');rcs=read('rcs-data.json');congress=read('congress-data.json')
     innovations=read('budget-innovations-data.json');reading=read('dpwh-hgab-comparison.json');revision=read('hgab-revision-data.json')
     survival=build_survival()
@@ -121,16 +124,6 @@ def main(apply_sitewide_editorial=False):
     body+=table(['Stage check','DEO RCS lines'],[['Retained unchanged in HGAB',trace['unchangedInHGAB']],['No selected HGAB counterpart',trace['withoutSelectedCounterpart']],['Allocation decreases in HGAB',trace['allocationDecreases']]])
     body+='<p><a class="export-btn" href="rcs-stage-trace.csv" download>Export all 199 RCS stage/scenario lines CSV</a> · <a href="rcs-stage-trace.json">Source and LEG reference evidence JSON</a></p><p class="caution">No DEO RCS line was lost in the current HGAB trace. A named LEG cannot be declared a recipient or loser without the installation locations, applicable boundaries and evidence of the funded service area.</p>'
     inject('rcs.html','rcs-stage-evidence',section('rcs-stage-evidence','Even distribution · did any RCS allocation disappear in HGAB?',body))
-    path=STATIC/'rcs.html';page=path.read_text()
-    page=page.replace('<h1>What would RCS allocation look like if rainfall were the only input?</h1>','<h1>199 offices. One identical RCS allocation.</h1>')
-    page=re.sub(r'(<h1>199 offices\. One identical RCS allocation\.</h1>)<p>.*?</p>',lambda m:m[1]+'<p>Each DEO receives ₱4.2M in NEP, and all 199 allocations remain unchanged in HGAB 3rd reading. No differentiated needs weighting is visible in those amounts. The stage trace appears first; rainfall data and alternative allocation formulas follow.</p>',page,count=1,flags=re.S)
-    block=re.search(r'<section id="rcs-stage-evidence".*?</section>',page,re.S)
-    if block:
-        text=block.group(0);page=page[:block.start()]+page[block.end():]
-        hero_end=re.search(r'<section[^>]*id="report-hero".*?</section>',page,re.S)
-        if hero_end:page=page[:hero_end.end()]+text+page[hero_end.end():]
-        else:page=re.sub(r'(<main\b[^>]*>)',lambda m:m[0]+text,page,count=1)
-    path.write_text(page)
 
     repeat=dpwh['priorityRepeats'];unique={}
     for row in repeat:
@@ -187,15 +180,6 @@ def main(apply_sitewide_editorial=False):
     body=f'<p>Strict attribution covers {s["uniquelyAssignedLines"]:,}/{s["sourceLineItems"]:,} source lines ({s["uniquelyAssignedLines"]/s["sourceLineItems"]:.1%}) and {coverage:.1%} of extracted allocation value. The remaining money is excluded from strict LEG rankings, not missing from the budget.</p>'+table(['Attribution outcome','HGAB lines','Allocation pesos'],[['Strict single LEG',s['uniquelyAssignedLines'],s['strictAssignedPesos']],['Shared or unresolved',s['strictExcludedLines'],s['strictExcludedAmountPesos']]])
     body+='<p class="caution">District totals are evidence-supported lower coverage totals, not complete receipts or amounts sponsored by representatives. Offices are not legislative seats. Homonymous places require parent and geographic level; multi-place routes cannot be allocated to one LEG without segment evidence. The ₱1.2B Butuan/RTR project is a confirmed multi-place exclusion, not a Butuan-only allocation.</p><p>Before comparing districts, measure each district’s unresolved coverage using project locations and dated boundaries. Province splits, current versus historical names, shared DEOs and school names can all change eligibility for attribution. No concentration test is reliable while missing attribution differs by district.</p>'
     inject('congress.html','congress-investigation-evidence',section('congress-investigation-evidence','Ranking coverage and location exclusions',body))
-    additions_path=ROOT/'analysis_output/congress_leg_insertions.json'
-    additions=json.loads(additions_path.read_text())
-    audit_path=ROOT/'analysis_output/congress_geographic_attribution_db_3rd.json'
-    audit=json.loads(audit_path.read_text())['projects']
-    comparison_by_id={r['hgab_id']:r for r in comparison}
-    # Remove the retired selected-district section when updating existing HTML.
-    path=STATIC/'congress.html'
-    page=re.sub(r'<section\b[^>]*id="selected-district-scrutiny"[^>]*>.*?</section>', '', path.read_text(), flags=re.S)
-    path.write_text(page)
     try:
         benchmark=build_benchmark()
     except ValueError as exc:
@@ -204,13 +188,6 @@ def main(apply_sitewide_editorial=False):
             raise
         print(f'Congress benchmark refresh skipped ({exc}); retaining the last reconciled benchmark.')
         benchmark=json.loads(cached_benchmark.read_text())
-    benchmark_body,benchmark_script=render_benchmark(benchmark)
-    inject('congress.html','congress-all-representatives',section('congress-all-representatives','All districts · estimated allocations, roles and reference comparisons',benchmark_body))
-    from build_house_party_list_roster import build as build_party_list, render as render_party_list
-    inject('congress.html','congress-party-list-roster',section('congress-party-list-roster','Party-list representatives · organizations and verified roles',render_party_list(build_party_list())))
-    path=STATIC/'congress.html';page=path.read_text()
-    page=re.sub(r'<script id="congress-benchmark-script">.*?</script>','',page,flags=re.S)
-    page=page.replace('</body>',benchmark_script+'</body>',1);path.write_text(page)
 
     inspire=next(r for r in innovations['candidates'] if r['id']=='inspire')
     historical=[r for r in inspire['historical'] if r['n']]
@@ -383,14 +360,6 @@ def main(apply_sitewide_editorial=False):
     # comparison current without touching any other report page.
     from standardize_nep_hgab_pages import apply_summary_coverage
     apply_summary_coverage()
-    # A summary-data rebuild must not rewrite every other report page. The
-    # all-pages editorial pass is available only as an explicit maintenance
-    # action, separate from parser and watcher refreshes.
-    if apply_sitewide_editorial:
-        from review_report_language import apply as apply_evidence_wording
-        from location_data.build_inventory_location_review import build as build_inventory_location_review
-        build_inventory_location_review()
-        apply_evidence_wording()
     final_summary=(STATIC/'summary.html').read_text()
     final_data=json.loads((STATIC/'summary-data.json').read_text())
     card_count=len(re.findall(r'<article class="finding"',final_summary))
@@ -403,8 +372,4 @@ def main(apply_sitewide_editorial=False):
     print(json.dumps({'findings':len(findings),'rcs':rcs_stats,'repeats':repeat_stats,'fiveMillion':price_stats,'domesticInsertionCandidates':len(domestic)},ensure_ascii=False,indent=2))
 
 if __name__=='__main__':
-    import argparse
-    parser=argparse.ArgumentParser(description='Rebuild the eight-card investigative summary.')
-    parser.add_argument('--sitewide-editorial-refresh',action='store_true',
-                        help='also run the separate all-report editorial and menu rewrite')
-    main(apply_sitewide_editorial=parser.parse_args().sitewide_editorial_refresh)
+    main()

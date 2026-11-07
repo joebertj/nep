@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
-"""Refresh every published view that consumes parsed DPWH/HGAB documents.
+"""Refresh each parsed-document report through its owning page builder.
 
-Run after a parser, file-inventory scan, or cached-document watcher changes its
-source data. The order matters: DPWH builds the shared data and dependent cost,
-expectation, and development-council views; undocumented and summary consume
-those freshly generated outputs.
+This is an orchestrator only: it calls one-page builders in dependency order
+and never writes report HTML itself.
 """
 import fcntl
 import json
@@ -86,6 +84,13 @@ def validate_page_outputs():
     if not selector or not re.search(r'<option\b[^>]*value="20"[^>]*selected', selector.group(1)):
         raise RuntimeError("Cost per unit Projects with this bill page size must remain 20")
 
+    from audit_document_page_stats import audit as audit_document_stats
+    audit = audit_document_stats()
+    if audit['errors']:
+        raise RuntimeError('Parsed-document statistics audit failed: ' + '; '.join(
+            f"{item['code']}: {item['detail']}" for item in audit['errors']))
+    checks['documentPageStatsAudit'] = {'status': audit['status'], 'checkedPages': len(audit['pages'])}
+
     # The published ODV copies receive site navigation, attribution and
     # cache-busting transforms, so byte equality with the analysis mirrors is
     # not a valid contract. Validate the actual published structures above.
@@ -102,8 +107,16 @@ def refresh(source="unspecified"):
                   "builders": {}}
         write_status(status)
         try:
-            for script in ("build_dpwh_indepth.py", "build_undocumented_hgab.py",
-                           "build_investigation_summary.py"):
+            for script in (
+                "build_dpwh_indepth.py",
+                "build_dpwh_transparency_page.py",
+                "build_cost_per_unit_page.py",
+                "build_pccp_cost_per_unit_page.py",
+                "build_expectation_vs_reality.py",
+                "build_development_council.py",
+                "build_undocumented_hgab.py",
+                "build_investigation_summary.py",
+            ):
                 status["activeBuilder"] = script
                 status["heartbeatAtUtc"] = now()
                 write_status(status)

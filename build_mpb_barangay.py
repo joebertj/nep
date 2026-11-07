@@ -276,7 +276,7 @@ def main():
     base_template = (ROOT / 'report_assets' / BASE_PAGE_NAME).read_bytes()
     base_page_version = hashlib.sha256(base_template + base_payload.encode('utf-8')).hexdigest()[:12]
     html = html.replace('mpb-base.html?v=1&amp;place=', f'mpb-base.html?v={base_page_version}&amp;place=')
-    from uniform_report_menu import NAV, apply_page
+    from uniform_report_menu import apply_page
     if 'report-disclaimer.css' not in html:
         html = html.replace('</head>', '<link rel="stylesheet" href="report-disclaimer.css?v=20261029-01"></head>', 1)
     html = apply_page(html, PAGE_NAME)
@@ -296,17 +296,7 @@ def main():
     base_html = apply_share_build_meta(base_html)
     for path in (STATIC / BASE_PAGE_NAME, OUT / BASE_PAGE_NAME):
         path.write_text(base_html, encoding='utf-8')
-    # Keep the shared top-level report menu in sync, and mirror generated pages locally.
-    for path in STATIC.glob('*.html'):
-        if path.name in {'budget-trivia.html', PAGE_NAME}:
-            continue
-        text = path.read_text(encoding='utf-8')
-        updated = re.sub(r'<nav\b[^>]*class="report-nav"[^>]*>.*?</nav>', lambda _: NAV, text, flags=re.S)
-        if updated != text:
-            path.write_text(updated, encoding='utf-8')
-            mirror = OUT / path.name
-            if mirror.exists():
-                mirror.write_text(updated, encoding='utf-8')
+    # This builder owns the MPB barangay pages only. Other reports get shared menu markup from their own builders.
     print(json.dumps({**result['summary'], 'dataBytes': len(payload.encode()), 'topByBudget': [
         {'barangay': b['barangay'], 'municipality': b['municipality'], 'province': b['province'], 'pesos': b['allocationPesos']}
         for b in sorted(barangays, key=lambda x: -x['allocationPesos'])[:5]

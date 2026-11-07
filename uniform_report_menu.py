@@ -47,36 +47,9 @@ NAV='<nav class="report-nav" aria-label="Budget report sections">'+''.join(
     render_menu_group(group, links) for group,links in MENU_GROUPS)+'</nav>'
 
 def apply_navigation_only():
-    """Refresh only shared navigation markup, preserving every page body and style."""
-    labels=[label for _,links in MENU_GROUPS for _,label in links]
-    if any('pow' in label.lower() for label in labels):
-        raise ValueError('Shared navigation labels must describe document coverage without POW-specific wording')
-    changed=[]
-    for path in sorted(STATIC.rglob('*.html')):
-        relative=path.relative_to(STATIC)
-        page=relative.as_posix()
-        if page=='budget-trivia.html':
-            continue
-        text=path.read_text(errors='ignore')
-        nav_pattern=r'<nav\b[^>]*class=["\'][^"\']*\breport-nav\b[^"\']*["\'][^>]*>.*?</nav>'
-        if re.search(nav_pattern,text,re.S):
-            text=re.sub(nav_pattern,lambda _m:page_nav(page),text,count=1,flags=re.S)
-        elif relative.parent!=Path('.'):
-            # Nested project detail pages are intentionally standalone. Update
-            # nested report pages only when they already carry shared navigation.
-            continue
-        elif re.search(r'<header\b',text,re.S):
-            text=text.replace('</header>',page_nav(page)+'</header>',1)
-        else:
-            continue
-        text=apply_menu_behavior(text)
-        path.write_text(text)
-        mirror=ROOT/'analysis_output'/relative
-        if mirror.exists():
-            mirror.write_text(text)
-        changed.append(page)
-    return {'updatedPages':changed,'pageCount':len(changed),'menuLabels':labels,
-            'scope':'Navigation markup only; page content, styles, data and other generated assets were preserved.'}
+    """Compatibility entry point; shared chrome is a per-page module."""
+    return {'mode':'module-only','pageWrites':0,
+            'instruction':'Call apply_page(html, page) from the owning page builder.'}
 MENU_BEHAVIOR_SCRIPT='''<script id="report-menu-exclusive-groups">(()=>{const groups=[...document.querySelectorAll('header .report-nav-group')];groups.forEach(group=>group.addEventListener('toggle',()=>{if(group.open)groups.forEach(other=>{if(other!==group)other.open=false})}))})();</script>'''
 def apply_menu_behavior(text):
     text=re.sub(r'<script id="report-menu-exclusive-groups">.*?</script>','',text,flags=re.S)
@@ -214,6 +187,10 @@ def normalize_header(text):
     return text
 
 def apply_page(text,page=None,status=None):
+    # Shared edits are composed in memory. The page builder that supplied this
+    # HTML remains the only component that writes the final page.
+    from review_report_language import apply_page_editorial
+    text=apply_page_editorial(text,page or '')
     if page!='nia-irrigation.html':
         text=re.sub(r'href="nia-irrigation\.html(?:#([^"]+))?"',lambda m:'href="nia.html#'+('nia-detail-'+m[1] if m[1] else 'nia-detailed-irrigation')+'"',text)
     if page:
@@ -259,46 +236,9 @@ def apply_page(text,page=None,status=None):
     return apply_menu_behavior(apply_research_status(text,status))
 
 def apply():
-    labels=[label for _,links in MENU_GROUPS for _,label in links]
-    if any('pow' in label.lower() for label in labels):
-        raise ValueError('Shared navigation labels must describe document coverage without POW-specific wording')
-    from merge_nia_pages import merge
-    merge()
-    from summary_evidence_links import apply as link_summary_evidence
-    link_summary_evidence()
-    from report_table_presentation import publish_assets,apply_page as table_presentation
-    versions=publish_assets()
-    results=[]
-    status=build_status()
-    for path in sorted(STATIC.glob('*.html')):
-        if path.name in {'budget-trivia.html','pow.html'}:continue  # game and forensic pages intentionally use bespoke layouts; POW stays off-menu by request
-        text=table_presentation(apply_page(path.read_text(),path.name,status),versions,path.name);path.write_text(text)
-        if not re.search(r'<header\b',text) and re.search(r'<meta\s+http-equiv=["\']refresh',text,re.I):continue
-        mirror=ROOT/'analysis_output'/path.name
-        if mirror.exists():mirror.write_text(text)
-        navs=re.findall(r'<nav\b[^>]*class="report-nav"[^>]*>.*?</nav>',text,re.S)
-        styles=re.findall(r'<style id="uniform-report-menu-style">.*?</style>',text,re.S)
-        if navs!=[NAV] or styles!=[CSS]:raise ValueError('Menu differs: '+path.name)
-        results.append({'page':path.name,'groups':len(MENU_GROUPS),'links':sum(len(items) for _,items in MENU_GROUPS),'uniformMarkup':True,'uniformStyles':True})
-    for path in STATIC.rglob('*.html'):
-        if path.parent==STATIC or path.name=='budget-trivia.html':continue
-        text=path.read_text(errors='ignore')
-        if 'class="report-nav"' not in text:continue
-        text=normalize_header(text)
-        text=re.sub(r'<nav\b[^>]*class="report-nav"[^>]*>.*?</nav>',lambda m:page_nav(path.relative_to(STATIC)),text,flags=re.S)
-        theme_link=f'<link id="research-theme-style" rel="stylesheet" href="research-theme.css?v={RESEARCH_THEME_VERSION}">'
-        if 'research-theme.css' not in text:text=text.replace('</head>',theme_link+'</head>',1)
-        else:text=re.sub(r'<link\b(?=[^>]*research-theme\.css)[^>]*>',theme_link,text,count=1)
-        text=re.sub(r'<style id="uniform-report-menu-style">.*?</style>','',text,flags=re.S)
-        text=text.replace('</head>',CSS+'</head>',1)
-        path.write_text(apply_menu_behavior(apply_research_status(text,status)))
-    pow=STATIC/'pow.html'
-    if pow.exists():
-        text=apply_page(pow.read_text(errors='ignore'),'pow.html',status)
-        pow.write_text(text)
-    report={'pages':results,'pageCount':len(results),'menuGroups':[{'label':label,'links':len(items)} for label,items in MENU_GROUPS],'menuBehavior':'Mutually exclusive native collapsible groups; opening one closes the other; panels are scrollable and responsive.','scope':'Generated markup and CSS audit; no browser rendering test.'}
-    (ROOT/'analysis_output/report_menu_review.json').write_text(json.dumps(report,indent=2)+'\n')
-    return report
+    """Compatibility entry point; never rewrite multiple report pages."""
+    return {'mode':'module-only','pageWrites':0,
+            'instruction':'Call apply_page(html, page) from each owning page builder.'}
 
 if __name__=='__main__':
     import argparse

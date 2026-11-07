@@ -99,6 +99,8 @@ def build():
     content+=historical_script
     style='<style>*{box-sizing:border-box}body{margin:0;font:15px/1.55 system-ui,sans-serif;color:#18303b;background:#f3f6f5}header{background:#102f3e;color:#fff;padding:32px}h1{font-size:clamp(30px,4vw,48px)}main{width:100%;padding:24px clamp(16px,2vw,32px)}a{color:#087e78}section{margin:24px 0;padding:22px;border:1px solid #c6dbd6;border-radius:14px;background:white}.tablewrap{width:100%}table{width:100%;table-layout:fixed;border-collapse:collapse}th,td{padding:9px;vertical-align:top;border-bottom:1px solid #d9e3e1;overflow-wrap:anywhere;white-space:normal!important}th{background:#eef5f3}.toolbar,.pagination{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}input,select,button{font:inherit;padding:8px;border:1px solid #b6c9c4;border-radius:8px}input{flex:1;min-width:180px}svg{display:block;width:100%;height:auto;max-height:420px}.repeat-hero{margin:0 0 20px;padding:22px;border-radius:14px;color:white;background:#123b48}.repeat-hero-total strong{font-size:28px;display:block}.repeat-hero p{margin-bottom:0}</style>'
     page='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Project repeat comparisons · Budget analysis</title>'+style+STYLE+CSS+'</head><body><header><h1>Project repeat comparisons</h1><p>Potentially repeated project lines within HGAB and across GAA years.</p></header><main>'+content+'</main></body></html>'
+    from report_page_modules import apply_page_modules
+    page=apply_page_modules(page,'repeats.html')
     from uniform_report_menu import apply_page as apply_uniform_menu
     page=apply_uniform_menu(page,'repeats.html')
     from review_report_language import NOTICE

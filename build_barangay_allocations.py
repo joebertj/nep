@@ -166,23 +166,14 @@ def main():
     }
     for path in [OUT / 'barangay-allocation-data.json', STATIC / 'barangay-allocation-data.json']:
         path.write_text(json.dumps(result, ensure_ascii=False, separators=(',', ':')) + '\n')
-    from uniform_report_menu import NAV, apply_page
+    from uniform_report_menu import apply_page
     template = (ROOT / 'report_assets' / 'barangay.html').read_text()
     data_version = hashlib.sha256((STATIC / 'barangay-allocation-data.json').read_bytes()).hexdigest()[:12]
     page = apply_page(template, 'barangay.html').replace('barangay-allocation-data.json?v=1', f'barangay-allocation-data.json?v={data_version}')
     page = page.replace('</head>', '<link rel=\"stylesheet\" href=\"report-disclaimer.css?v=20261031-01\"></head>', 1) if 'report-disclaimer.css' not in page else page
     for path in [STATIC / 'barangay.html', OUT / 'barangay.html']:
         path.write_text(page)
-    # Add the new page consistently to existing top-level report navigation.
-    for path in STATIC.glob('*.html'):
-        if path.name in {'budget-trivia.html', 'barangay.html'}:
-            continue
-        text = path.read_text()
-        updated = re.sub(r'<nav\b[^>]*class=\"report-nav\"[^>]*>.*?</nav>', lambda m: NAV, text, flags=re.S)
-        if updated != text:
-            path.write_text(updated)
-            mirror = OUT / path.name
-            if mirror.exists(): mirror.write_text(updated)
+    # This builder owns barangay.html only. Other pages receive shared menu markup from their own builders.
     print(json.dumps({k: result[k] for k in ['generatedFromProjectRows','projectsWithBarangayMentions','barangayPlaceCount','allocationAcrossMentionedProjectsPesos','placeAllocationTotalPesos']}, indent=2))
     print('top 15:')
     for x in places[:15]: print(x['barangay'], '|', x['localityContext'], '|', x['projectCount'], '|', x['allocationPesos'])

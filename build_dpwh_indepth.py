@@ -693,9 +693,6 @@ def refresh_data_only():
     serialized=json.dumps(public_data(data),ensure_ascii=False,indent=2)+'\n'
     atomic_write(OUT/'dpwh-in-depth-data.json',serialized)
     publish_split_data()
-    publish_pccp_price_reference()
-    subprocess.run([sys.executable,str(ROOT/'build_expectation_vs_reality.py')],cwd=ROOT,
-                   check=True,capture_output=True,text=True)
     return data['summary']
 
 
@@ -890,25 +887,11 @@ def build():
     version=hashlib.sha256((ROOT/'project_documents/indepth.js').read_bytes()).hexdigest()[:12]
     text=text.replace('src="dpwh-in-depth.js"',f'src="dpwh-in-depth.js?v={version}"')
     text=tables(apply_page(text,'dpwh.html'),publish_assets())
-    cost_text=(ROOT/'project_documents/cost-per-unit.html').read_text()
-    pccp_text=(ROOT/'project_documents/pccp-cost-per-unit.html').read_text()
-    cost_js=(ROOT/'project_documents/cost-per-unit.js').read_text()
-    cost_version=hashlib.sha256(cost_js.encode()).hexdigest()[:12]
-    indepth_js=(ROOT/'project_documents/indepth.js').read_text()
-    indepth_version=hashlib.sha256(indepth_js.encode()).hexdigest()[:12]
     loader=(ROOT/'project_documents/dpwh-data-loader.js').read_text()
     loader_version=hashlib.sha256((loader+'\n'+public_data_version).encode()).hexdigest()[:12]
     text=text.replace('src="hgab-document-coverage.js"',f'src="hgab-document-coverage.js?v={all_hgab_coverage_js_version}"')
-    transparency_text=(ROOT/'project_documents/transparency.html').read_text()
-    transparency_text=re.sub(r'src="dpwh-in-depth\.js(?:\?v=[^"]*)?"',f'src="dpwh-in-depth.js?v={version}"',transparency_text,count=1)
-    transparency_text=re.sub(r'src="dpwh-data-loader\.js(?:\?v=[^"]*)?"',f'src="dpwh-data-loader.js?v={loader_version}"',transparency_text,count=1)
-    transparency_text=tables(apply_page(transparency_text,'dpwh-transparency.html'),publish_assets())
-    cost_text=cost_text.replace('src="cost-per-unit.js"',f'src="cost-per-unit.js?v={cost_version}"')
-    cost_text=re.sub(r'src="dpwh-in-depth\.js(?:\?v=[^"]*)?"',f'src="dpwh-in-depth.js?v={indepth_version}"',cost_text,count=1)
-    cost_text=cost_text.replace('src="dpwh-data-loader.js"',f'src="dpwh-data-loader.js?v={loader_version}"')
-    pccp_text=pccp_text.replace('src="cost-per-unit.js"',f'src="cost-per-unit.js?v={cost_version}"')
-    pccp_text=re.sub(r'src="dpwh-in-depth\.js(?:\?v=[^"]*)?"',f'src="dpwh-in-depth.js?v={indepth_version}"',pccp_text,count=1)
-    pccp_text=pccp_text.replace('src="dpwh-data-loader.js"',f'src="dpwh-data-loader.js?v={loader_version}"')
+    text=text.replace('__COVERAGE_VERSION__',all_hgab_coverage_version)
+    indepth_js=(ROOT/'project_documents/indepth.js').read_text()
     atomic_write(OUT/'dpwh-in-depth-data.json',public_data_json)
     publish_split_data()
     text=re.sub(r'src="dpwh-data-loader\.js(?:\?v=[^"]*)?"',f'src="dpwh-data-loader.js?v={loader_version}"',text)
@@ -925,26 +908,12 @@ def build():
     expected_coverage_headers=['HGAB code','Project','Office · region','HGAB allocation','Proposal docs','Senate HGAB docs','Signatories in related documents']
     if coverage_headers != expected_coverage_headers or not all_rows or not main_sections or main_sections[-1] != 'all-hgab-document-coverage':
         raise RuntimeError(f'All-HGAB coverage table validation failed: headers={coverage_headers!r}, {len(all_rows)} rows, final section={main_sections[-1:]!r}')
-    cost_text=apply_page(cost_text,'cost-per-unit.html')
-    pccp_text=apply_page(pccp_text,'pccp-cost-per-unit.html')
     for target in (OUT,STATIC):
         atomic_write(target/'dpwh-in-depth.js',(ROOT/'project_documents/indepth.js').read_text())
         atomic_write(target/'dpwh-data-loader.js',loader)
         atomic_write(target/'hgab-document-coverage.js',all_hgab_coverage_js)
         atomic_write(target/'hgab-document-coverage.json',all_hgab_coverage_json)
         atomic_write(target/'dpwh.html',text)
-        atomic_write(target/'dpwh-transparency.html',transparency_text)
-        atomic_write(target/'cost-per-unit.js',cost_js)
-        atomic_write(target/'cost-per-unit.html',cost_text)
-        atomic_write(target/'pccp-cost-per-unit.html',pccp_text)
-    publish_pccp_price_reference()
-    subprocess.run([sys.executable,str(ROOT/'build_expectation_vs_reality.py')],cwd=ROOT,
-                   check=True,capture_output=True,text=True)
-    # This page is a join over the published Proposal + Senate HGAB coverage
-    # export above. Keep it in the same build transaction so any parser, cache
-    # watcher, or direct DPWH rebuild refreshes its generated HTML and data.
-    subprocess.run([sys.executable,str(ROOT/'build_development_council.py')],cwd=ROOT,
-                   check=True,capture_output=True,text=True)
     return s
 if __name__=='__main__':
     import argparse

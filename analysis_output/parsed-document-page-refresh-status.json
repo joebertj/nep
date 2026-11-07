@@ -1,8 +1,8 @@
 {
-  "status": "refreshing",
-  "startedAtUtc": "2026-11-07T15:59:42.912746+00:00",
-  "pid": 61129,
-  "source": "senate-supporting-document-scan",
+  "status": "complete",
+  "startedAtUtc": "2026-11-07T16:57:12.384122+00:00",
+  "pid": 68355,
+  "source": "individual-builder-stat-check",
   "builders": {
     "build_dpwh_indepth.py": {
       "projectsWithParsedPow": 7225,
@@ -15,12 +15,87 @@
       "attemptedDocuments": 12130,
       "errorTypes": {}
     },
+    "build_dpwh_transparency_page.py": {
+      "page": "dpwh-transparency.html",
+      "dataVersion": "f2c5a8bb8351"
+    },
+    "build_cost_per_unit_page.py": {
+      "page": "cost-per-unit.html"
+    },
+    "build_pccp_cost_per_unit_page.py": {
+      "page": "pccp-cost-per-unit.html"
+    },
+    "build_expectation_vs_reality.py": {
+      "matchedProjectsWithPowRecords": 2178,
+      "projectsWithComparableEstimate": 1668,
+      "projectsWithMultiplePowFiles": 11,
+      "projectsWithConflictingParseResults": 2,
+      "projectsWithItemizedSubtotalOnly": 400,
+      "projectsWithoutRecoveredEstimate": 97,
+      "allocationPesos": 43927896000,
+      "powEstimatePesos": 32719784010,
+      "differencePesos": -11208111990,
+      "differencePct": -25.51,
+      "estimateBelowAllocationMoreThan5Pct": 1658,
+      "estimateAboveAllocationMoreThan5Pct": 8,
+      "within5Pct": 2
+    },
+    "build_development_council.py": {
+      "projectsWithParsedRoleCandidates": 2973,
+      "projectsWithRoleCandidates": 2973,
+      "candidateProjectRows": 5374,
+      "uniqueCandidates": 335,
+      "byRole": {
+        "Governor": {
+          "uniquePeople": 13,
+          "candidateProjectRows": 206,
+          "distinctProjects": 204,
+          "projectAllocationPesos": 9611741000
+        },
+        "Mayor": {
+          "uniquePeople": 6,
+          "candidateProjectRows": 20,
+          "distinctProjects": 14,
+          "projectAllocationPesos": 339323000
+        },
+        "District Engineer": {
+          "uniquePeople": 119,
+          "candidateProjectRows": 2492,
+          "distinctProjects": 2459,
+          "projectAllocationPesos": 60672450000
+        },
+        "Assistant District Engineer": {
+          "uniquePeople": 108,
+          "candidateProjectRows": 1707,
+          "distinctProjects": 1703,
+          "projectAllocationPesos": 45641037000
+        },
+        "Engineer": {
+          "uniquePeople": 86,
+          "candidateProjectRows": 680,
+          "distinctProjects": 403,
+          "projectAllocationPesos": 7469747000
+        },
+        "Development Council Chair": {
+          "uniquePeople": 20,
+          "candidateProjectRows": 269,
+          "distinctProjects": 263,
+          "projectAllocationPesos": 9700691000
+        }
+      },
+      "sourceProjectRows": {
+        "Proposal · Development Council": 107,
+        "Proposal · parsed POW": 209,
+        "Senate HGAB · Development Council": 172,
+        "Senate HGAB · parsed POW": 2661
+      }
+    },
     "build_undocumented_hgab.py": {
-      "noDocumentProjects": 2230,
-      "amountPesos": 68024958000,
-      "withReviewFlags": 2230,
+      "noDocumentProjects": 1933,
+      "amountPesos": 53787749000,
+      "withReviewFlags": 1933,
       "withNoSelectedNep": 1933,
-      "withinStageRepeatCandidates": 38,
+      "withinStageRepeatCandidates": 36,
       "gabRemovedItemsReported": 295,
       "gabRemovedPesosReported": 8836000000,
       "senateTitleMatchAllocation": {
@@ -33,7 +108,7 @@
       "portalOnlyGapProjects": 6378,
       "portalOnlyGapPesos": 183926806000,
       "advanceCopyMatchedRows": 3307,
-      "advanceCopyNewlyCoveredProjects": 4148,
+      "advanceCopyNewlyCoveredProjects": 4445,
       "advanceCopyFilesInPortalOnlyGap": 120,
       "advanceCopyParsedBillRowsInPortalOnlyGap": 60029,
       "advanceCopyPowMatchedProjects": 0,
@@ -176,8 +251,30 @@
         "deduplication": "Project counts use distinct House HGAB row IDs. File counts are distinct source paths within a project and type; byte-identical copies at different paths are not removed. T5 file-type counts inherit only from uniquely resolved HGAB file codes.",
         "matchingMethod": "Native text from the first PDF page. Exact normalized full-title matches and conservative relaxed title candidates are counted. Other files inherit a match only when they share a five-digit HGAB file code with a title-matched sibling and that code resolves to one House row. Image-only documents without extracted text and without a matched sibling remain unassigned."
       }
+    },
+    "build_investigation_summary.py": {
+      "output": "{\n  \"comparisonPairs\": 2598,\n  \"uniqueNEPProposals\": 1576,\n  \"pairStatuses\": {\n    \"Potential retained link\": 143,\n    \"Clear retained link\": 2263,\n    \"No selected or cited counterpart\": 192\n  },\n  \"uniqueStatuses\": {\n    \"Potential retained link\": 84,\n    \"Clear retained link\": 1370,\n    \"No selected or cited counterpart\": 122\n  }\n}\nCongress benchmark refresh skipped (Benchmark attribution does not reconcile); retaining the last reconciled benchmark.\n{\n  \"findings\": 8,\n  \"rcs\": {\n    \"offices\": 199,\n    \"poolPesos\": 835800000,\n    \"allocationCV\": 0,\n    \"rainfallProxyCV\": 0.19125774992682673,\n    \"minimumRainMm\": 1564.0,\n    \"maximumRainMm\": 4045.0,\n    \"wettestToDriestRatio\": 2.586317135549872,\n    \"officeMeanUnitsMoved\": 0.0,\n    \"provinceMeanUnitsMoved\": 44.0,\n    \"officeMedianUnitsMoved\": 0.0,\n    \"meanMedianDifferentOfficeUnits\": 0,\n    \"regionalFallbackOffices\": 1,\n    \"correlation\": \"Undefined: allocation variance is zero; no correlation p-value reported.\"\n  },\n  \"repeats\": {\n    \"comparisonPairs\": 2598,\n    \"uniqueCurrentProposals\": 1576,\n    \"uniqueCurrentPesos\": 51293004750,\n    \"chainageStatuses\": {\n      \"overlap\": 27,\n      \"not stated\": 827,\n      \"incomplete\": 738,\n      \"not applicable\": 1006\n    },\n    \"overlapUniqueProposals\": 26,\n    \"trancheStatuses\": {\n      \"not stated\": 2572,\n      \"same tranche\": 9,\n      \"one side stated\": 17\n    }\n  },\n  \"fiveMillion\": {\n    \"N\": 199,\n    \"roadOffices\": 96,\n    \"floodOffices\": 45,\n    \"overlap\": 35,\n    \"expectedOverlap\": 21.70854271356784,\n    \"hypergeometricP\": 5.067002321181279e-06,\n    \"oddsRatio\": 5.336065573770492,\n    \"wald95CI\": [\n      2.4621913292960116,\n      11.56433111789073\n    ],\n    \"regionalPermutationP\": 0.0003199968000319997,\n    \"regionalPermutationRepetitions\": 100000,\n    \"postSelectionAdjusted\": false\n  },\n  \"domesticInsertionCandidates\": 5491\n}\n"
     }
   },
-  "activeBuilder": "build_investigation_summary.py",
-  "heartbeatAtUtc": "2026-11-07T16:00:17.021347+00:00"
+  "activeBuilder": null,
+  "heartbeatAtUtc": "2026-11-07T16:57:50.630741+00:00",
+  "outputContracts": {
+    "dpwh.html": {
+      "coverageColumns": 7,
+      "finalSection": "all-hgab-document-coverage"
+    },
+    "undocumented-hgab.html": {
+      "coverageColumns": 7
+    },
+    "summary.html": {
+      "cards": 8,
+      "agencyComparisons": 5
+    },
+    "documentPageStatsAudit": {
+      "status": "ok",
+      "checkedPages": 8
+    }
+  },
+  "completedAtUtc": "2026-11-07T16:58:03.317434+00:00",
+  "lastError": null
 }

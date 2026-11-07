@@ -90,87 +90,24 @@ def expose_methodology(text):
     text=re.sub(r'<details\b([^>]*)>',lambda m:'<details'+m[1]+('' if re.search(r'\bopen\b',m[1]) else ' open')+'>',text)
     return text
 
-def apply():
-    # Exact editorial phrases only. Never replace source project names,
-    # numeric data, matching IDs, or geographic identities.
-    builder_paths = sorted(set(ROOT.glob('build_*.py')) | {ROOT/'analyze_fmr_nia_repeats.py', ROOT/'compare_hgab_non_dpwh_nep.py'})
-    for path in builder_paths:
-        text=path.read_text();updated=text
-        for old,new in REPLACEMENTS.items():updated=updated.replace(old,new)
-        if updated!=text:path.write_text(updated)
-    headline=ROOT/'build_dpwh_hgab_headlines.py'
-    text=headline.read_text().replace(':not(#foreign-assisted-review){display:none!important}',':not(#foreign-assisted-review):not(#hgab-investigation-evidence):not(#report-evidence-notice){display:none!important}')
-    headline.write_text(text)
-    from standardize_nep_hgab_pages import apply as standardize_comparison_scope
-    standardize_comparison_scope()
-    if (STATIC/'nep-agency-baselines.json').exists():
-        from build_nep_stage_sections import apply as apply_nep_sections
-        apply_nep_sections(json.loads((STATIC/'nep-agency-baselines.json').read_text()))
-    from build_report_heroes import refresh as refresh_heroes
-    refresh_heroes()
-    from build_repeats_page import build as build_repeats_page
-    build_repeats_page()
-    # Keep the separately attributed source cross-check current on every rebuild.
-    from build_external_reference_review import apply_pages as apply_external_reference
-    apply_external_reference()
-    from build_reviewed_annex_sections import apply as apply_reviewed_annexes
-    apply_reviewed_annexes()
-    pages=[]
-    for path in sorted(STATIC.glob('*.html')):
-        if path.name == 'index.html':continue  # generated summary alias
-        if path.name=='congress.html':
-            from build_appropriations_comparison import apply_roles_page
-            apply_roles_page(path)
-        original=text=path.read_text()
-        for old,new in REPLACEMENTS.items():text=text.replace(old,new)
-        text=expose_methodology(text)
-        if path.name=='congress.html':
-            text=re.sub(r'<title>.*?</title>', '<title>Estimated Allocations by Congressional District · HGAB 3rd Reading</title>', text, count=1, flags=re.S)
-            text=re.sub(r'<h1\b[^>]*>.*?</h1>', '<h1>Estimated Allocations by Congressional District</h1>', text, count=1, flags=re.S)
-        text=text.replace(':not(#foreign-assisted-review){display:none!important}',':not(#foreign-assisted-review):not(#hgab-investigation-evidence):not(#report-evidence-notice){display:none!important}')
-        if path.name != 'budget-trivia.html':
-            text=standardize_disclaimer(text)
-        if path.name not in {'budget-trivia.html','pow.html'}:
-            from uniform_report_menu import apply_page as apply_shared_menu
-            text=apply_shared_menu(text,path.name)
-        path.write_text(text)
-        visible=VisibleText();visible.feed(text)
-        prose=re.sub(r'\s+',' ',' '.join(visible.parts))
-        terms=[]
-        for match in re.finditer(r'\b(?:corruption|theft|stolen|steal|fraud|illegal|suspicious|wrongdoing|sponsorship)\b',prose,re.I):
-            terms.append(prose[max(0,match.start()-100):match.end()+160])
-        pages.append({'page':path.name,'sha256':hashlib.sha256(text.encode()).hexdigest(),'changed':text!=original,
-                      'evidenceNotice':path.name != 'budget-trivia.html','remainingSensitiveContexts':terms,
-                      'reviewOutcome':'Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification.'})
-    report={'scope':'Static NEP preview report pages; the trivia game omits the evidence notice. Generated labels are also reviewed through source builders and embedded scripts. Source project titles are retained.',
-            'pages':pages,'reviewedPages':len(pages),'guarantee':False,
-            'limitations':['This is an evidence/editorial review, not jurisdiction-specific legal advice or legal clearance.','Disclaimers do not cure a false or misleading statement. Source correctness and surrounding presentation remain material.','Identifiable-person allegations of unlawful conduct require corroborating records and qualified legal review before publication.'],
-            'changes':['Removed unsupported 50/50 probability language.','Clarified geographic attribution and budget allocation versus payment or personal receipt.','Made methodology visible on HGAB page.','HGAB hero rebuilt from current native comparison; obsolete count must not be reused.']}
-    from retain_historical_nep_comparisons import apply as retain_historical_comparisons
-    retain_historical_comparisons()
-    from format_report_currency import apply as apply_currency_format
-    apply_currency_format()
-    from add_chainage_overlap_dialog import build as add_overlap_dialog
-    add_overlap_dialog()
-    from uniform_report_menu import apply as apply_uniform_menu
-    apply_uniform_menu()
-    from congress_source_credits import apply as apply_congress_source_credits
-    apply_congress_source_credits()
-    from location_data.refresh_table_asset import refresh as refresh_table_asset
-    refresh_table_asset()
-    from build_project_document_view import build as refresh_project_document_view
-    refresh_project_document_view()
-    from uniform_report_menu import apply as refresh_document_page_menu
-    refresh_document_page_menu()
-    from archive_higher_level_analysis import apply as archive_duplicated_overviews
-    archive_duplicated_overviews()
-    # The archive page is generated after the document-view refresh; run the
-    # shared menu once more so its navigation matches every active report.
-    apply_uniform_menu()
-    summary=(STATIC/'summary.html').read_text()
-    (STATIC/'index.html').write_text(summary)
-    (ROOT/'analysis_output/index.html').write_text(summary)
-    (ROOT/'analysis_output/report_language_review.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
-    return report
+def apply_page_editorial(text,page):
+    """Apply shared editorial language to HTML in memory for one page build."""
+    for old,new in REPLACEMENTS.items():
+        text=text.replace(old,new)
+    text=expose_methodology(text)
+    if page=='congress.html':
+        text=re.sub(r'<title>.*?</title>', '<title>Estimated Allocations by Congressional District · HGAB 3rd Reading</title>', text, count=1, flags=re.S)
+        text=re.sub(r'<h1\b[^>]*>.*?</h1>', '<h1>Estimated Allocations by Congressional District</h1>', text, count=1, flags=re.S)
+    text=text.replace(':not(#foreign-assisted-review){display:none!important}',
+                      ':not(#foreign-assisted-review):not(#hgab-investigation-evidence):not(#report-evidence-notice){display:none!important}')
+    if page!='budget-trivia.html':
+        text=standardize_disclaimer(text)
+    return text
 
-if __name__=='__main__':print(json.dumps({'reviewedPages':apply()['reviewedPages'],'legalGuarantee':False},indent=2))
+
+def apply():
+    """Compatibility entry point; use apply_page_editorial inside page builders."""
+    return {'mode':'module-only','pageWrites':0,
+            'instruction':'The owning page builder should pass its HTML through apply_page_editorial.'}
+
+if __name__=='__main__':print(json.dumps(apply(),indent=2))
