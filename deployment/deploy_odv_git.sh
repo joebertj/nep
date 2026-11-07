@@ -328,6 +328,23 @@ else
   fi
 fi
 
+# The summary is the editorial entry point. Refuse to deploy an older builder
+# output that drops the eight allocation-exposure-ranked investigation cards.
+summary_cards="$(git -C "$r" show "$target:static/nep-preview/summary.html" | python3 -c 'import re,sys; print(len(re.findall(r"<article class=\"finding\"", sys.stdin.read())))')"
+if [[ "$summary_cards" != "8" ]]; then
+  echo "Refusing deployment: target summary has $summary_cards investigation cards; expected 8." >&2
+  exit 2
+fi
+
+# Keep the consolidated Proposal/Senate-document tables present in both reports.
+for coverage_page in dpwh.html undocumented-hgab.html; do
+  coverage_columns="$(git -C "$r" show "$target:static/nep-preview/$coverage_page" | python3 -c 'import re,sys; s=sys.stdin.read(); m=re.search(r"<section[^>]*id=\"all-hgab-document-coverage\"[^>]*>(.*?)</section>", s, re.S); h=re.search(r"<thead>(.*?)</thead>", m.group(1), re.S) if m else None; print(len(re.findall(r"<th\b", h.group(1))) if h else 0)')"
+  if [[ "$coverage_columns" != "7" ]]; then
+    echo "Refusing deployment: $coverage_page has $coverage_columns columns in its consolidated HGAB document table; expected 7." >&2
+    exit 2
+  fi
+done
+
 # The direct publisher may have left the release files dirty in the checkout.
 # Keep server-only homepage edits when this commit does not change those
 # templates. Replace the report files with the committed versions after

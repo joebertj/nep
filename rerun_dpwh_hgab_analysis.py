@@ -35,7 +35,9 @@ def main():
     run('build_fmr_report.py')
     run('build_nia_report.py')
     run('build_hfep_report.py')
-    run('build_report.py')
+    # build_report.py is the retired NEP-only overview generator. Its former
+    # output name collided with the Senate HGAB DPWH page in analysis_output.
+    run('refresh_parsed_document_pages.py', 'dpwh-hgab-analysis-refresh')
 
 
 if __name__=='__main__': main()

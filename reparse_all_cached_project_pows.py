@@ -72,7 +72,8 @@ def main():
         print(json.dumps({'current':index,'total':len(progress['codes']),'code':code,'result':progress['processed'].get(code,'busy' if code in progress['skippedBusy'] else progress['errors'].get(code,'missing'))},ensure_ascii=False),flush=True)
     progress['completedAtUtc']=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime());progress['completed']=not progress['skippedBusy'] and len(progress['processed'])>=len(progress['codes'])
     atomic_json(PROGRESS,progress);guard()
-    import build_dpwh_indepth
-    summary=build_dpwh_indepth.build()
+    from refresh_parsed_document_pages import refresh
+    publication=refresh('all-cached-pow-reparse')
+    summary=publication['builders']['build_dpwh_indepth.py']
     print(json.dumps({'complete':progress['completed'],'scheduled':len(progress['codes']),'processed':len(progress['processed']),'missing':len(progress['missing']),'busy':len(progress['skippedBusy']),'errors':progress['errors'],'publishedPowProjects':summary.get('projectsWithParsedPow'),'progressFile':str(PROGRESS)},ensure_ascii=False),flush=True)
 if __name__=='__main__':main()

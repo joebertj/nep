@@ -28,7 +28,7 @@ def esc(v):return html.escape(str(v),quote=True)
 def peso(v):return '₱'+f'{v/1e9:,.3f}B' if v>=1e9 else '₱'+f'{v/1e6:,.3f}M'
 
 def table(headers,rows):
-    csvbuffer=io.StringIO();writer=csv.writer(csvbuffer);writer.writerow(headers);writer.writerows(rows)
+    csvbuffer=io.StringIO();writer=csv.writer(csvbuffer,lineterminator='\n');writer.writerow(headers);writer.writerows(rows)
     # Each export is self-contained and works on file:// previews.
     encoded=esc(csvbuffer.getvalue())
     from format_report_currency import format_cell
@@ -48,6 +48,8 @@ def inject(page,identifier,body):
     if 'id="investigation-evidence-style"' not in t:t=t.replace('</head>',CSS+'</head>',1)
     if 'id="investigation-evidence-script"' not in t:t=t.replace('</body>',JS+'</body>',1)
     p.write_text(t)
+    mirror=ROOT/'analysis_output'/page
+    if mirror.exists():mirror.write_text(t)
 
 def integer_units(weights,total,ids):
     shares=[total*w/sum(weights) for w in weights];rounded=[math.floor(v) for v in shares]
@@ -66,7 +68,7 @@ def cumulative_graph(models):
         lines.append(f'<polyline fill="none" stroke="{color}" stroke-width="3" points="{points}"/><text x="65" y="{285+len(lines)*22}" fill="{color}" font-size="14">{esc(label)}</text>')
     return '<svg class="evidence-graphic" viewBox="0 0 950 355" role="img" aria-label="Cumulative RCS budget units across offices ordered from lower to higher rainfall"><path d="M60 45 V245 H890" fill="none" stroke="#536873"/><text x="10" y="55">199</text><text x="25" y="245">0</text><text x="60" y="265">1st office</text><text x="760" y="265">199th office</text><text x="60" y="25">Cumulative budget units · offices ordered by rainfall proxy</text>'+''.join(lines)+'</svg>'
 
-def main():
+def main(apply_sitewide_editorial=False):
     if (ROOT/'data_sources/csiiiv/source_policy.json').exists():
         from adopt_csiiiv_reference import adopt
         adopt()
@@ -149,9 +151,11 @@ def main():
     price_stats={'N':N,'roadOffices':road,'floodOffices':flood,'overlap':a,'expectedOverlap':road*flood/N,'hypergeometricP':p,'oddsRatio':odds,'wald95CI':ci,'regionalPermutationP':test['region_controlled_simulated_p_value'],'regionalPermutationRepetitions':test['simulation_repetitions'],'postSelectionAdjusted':False}
     body+='<h3>Exact ₱5M road/flood co-occurrence · exploratory office test</h3>'+table(['Statistic','Result'],[['Offices with both exact ₱5M road and flood entries',a],['Expected overlap under independent office assignment',f'{road*flood/N:.2f}'],['One-sided hypergeometric p-value (recomputed)',f'{p:.6g}'],['Odds ratio; approximate 95% interval',f'{odds:.2f}; {ci[0]:.2f}–{ci[1]:.2f}'],['Region-controlled permutation p-value (existing analysis)',f'{test["region_controlled_simulated_p_value"]:.6g}']])
     body+='<p>Null model: fix how many of the 199 offices have each type of ₱5M entry, then assign flood-office membership independently of road-office membership. The exact test rejects this simple independence model. The existing region-controlled test preserves regional membership counts.</p><p class="caution">The ₱5M threshold and project categories were selected after observing patterns. P-values and the Wald interval are exploratory, unadjusted for that selection or multiple comparisons. Office workload, project mix and common standard designs can explain co-occurrence. Next test: a pre-specified model controlling project count, work type, region and prior-year price distributions; request engineering quantities to assess price plausibility.</p>'
-    inject('dpwh.html','dpwh-investigation-evidence',section('dpwh-investigation-evidence','Repeat denominators and allocation clustering',body))
+    # Repeat-analysis sections are owned by repeats.html. Do not inject them
+    # into dpwh.html: this builder runs during document refreshes and used to
+    # append sections after the consolidated HGAB coverage table.
     from analyze_within_stage_repeats import build as build_within_stage, render as render_within_stage
-    inject('dpwh.html','within-stage-repeats',section('within-stage-repeats','Similar line items within NEP and within HGAB 3rd reading',render_within_stage(build_within_stage())))
+    # Keep the within-stage comparison on repeats.html only.
     rows=[[r['status'],r['comparisonPairs'],r['uniqueNEPProposals'],r['nepPesos'],r['selectedHgabPesos'] if r['selectedHgabPesos'] is not None else 'No selected allocation'] for r in survival['groups']]
     rectangles=[];legend=[]
     for i,(group,color) in enumerate(zip(survival['groups'],['#087e78','#b65b09','#777','#355b92'])):
@@ -164,7 +168,7 @@ def main():
     retention_graph='<svg class="evidence-graphic" viewBox="0 0 850 340" role="img" aria-label="Stacked vertical bars show HGAB retention classes for 737 comparison pairs and 686 distinct proposals"><path d="M60 40 V280 H350" fill="none" stroke="#536873"/><text x="15" y="55">737</text><text x="90" y="305">Comparison pairs</text><text x="240" y="325">Distinct proposals</text>'+''.join(rectangles+legend)+'</svg>'
     body=f'<p>The 737 headline is a NEP-level comparison with old enacted GAA. Tracing the same proposal codes into HGAB 3rd reading gives <strong>{clear_pairs} clearly retained comparison pairs, representing {clear_proposals} distinct proposals</strong>. Potential links remain separate.</p>'+retention_graph+table(['HGAB retention class','Original GAA comparison pairs','Distinct NEP proposals','Original NEP allocation pesos','Selected HGAB allocation pesos'],rows)
     body+='<p>A proposal matched to two historical years counts twice in the pair column but once in the proposal column. Clear retention means a selected, scope-compatible normalized-title link in our current parser, not a certified work-scope audit. A potential retained link is a provisional selected counterpart. Missing links do not establish that HGAB removed the project.</p><p><a class="export-btn" href="repeat-nep-hgab-proposals.csv" download>Export all 686 proposal traces CSV</a> · <a href="repeat-nep-hgab-survival.json">Full pair and proposal evidence JSON</a></p><p class="caution">For retained proposals, investigate whether old appropriations and HGAB fund the same component. For unmatched proposals, check renaming, segmentation, parser fragments and original pages before claiming removal. Amount changes on retained lines are allocation adjustments, not automatically insertion or removal.</p>'
-    inject('dpwh.html','repeat-hgab-survival',section('repeat-hgab-survival','Of the NEP repeat candidates, how many survived into HGAB?',body))
+    # Keep HGAB survival analysis on repeats.html only.
 
     csvpath=ROOT/'analysis_output/hb_nep_comparison_3rd.csv';SOURCES.append({'file':csvpath.name,'sha256':hashlib.sha256(csvpath.read_bytes()).hexdigest()})
     with csvpath.open() as f:comparison=list(csv.DictReader(f))
@@ -321,6 +325,12 @@ def main():
         finding['costExposureBasis']=exposure[1] if exposure else 'No comparable allocation total in the current Proposal attachment-list extract'
     findings.sort(key=lambda r:(r['costExposurePesos'] is None,-(r['costExposurePesos'] or 0),r['id']))
     findings=findings[:8]
+    if len(findings) != 8:
+        raise RuntimeError(f'Summary must contain exactly eight investigation cards; found {len(findings)}')
+    exposures=[r['costExposurePesos'] for r in findings]
+    ranked_exposures=[v for v in exposures if v is not None]
+    if ranked_exposures != sorted(ranked_exposures, reverse=True):
+        raise RuntimeError('Summary cards are not sorted by descending allocation exposure')
     for rank,finding in enumerate(findings,1):finding['rank']=rank
     coverage_rows=[[k,v['summary']['thirdRows'],int(v['summary']['thirdTotal']),sum(count for status,count in v['summary']['statusCounts'].items() if status!='Same allocation')] for k,v in revision.items()]
     from summary_evidence_links import enrich_findings
@@ -369,11 +379,32 @@ def main():
     (STATIC/'summary.html').write_text(page)
     (ROOT/'analysis_output/summary.html').write_text(page)
     (ROOT/'analysis_output/summary.html').write_text((STATIC/'summary.html').read_text())
-    from review_report_language import apply as apply_evidence_wording
-    from location_data.build_inventory_location_review import build as build_inventory_location_review
-    build_inventory_location_review()
-    apply_evidence_wording()
-    (ROOT/'analysis_output/summary.html').write_text((STATIC/'summary.html').read_text())
+    # This formerly ran only inside the site-wide finalizer. Keep the summary
+    # comparison current without touching any other report page.
+    from standardize_nep_hgab_pages import apply_summary_coverage
+    apply_summary_coverage()
+    # A summary-data rebuild must not rewrite every other report page. The
+    # all-pages editorial pass is available only as an explicit maintenance
+    # action, separate from parser and watcher refreshes.
+    if apply_sitewide_editorial:
+        from review_report_language import apply as apply_evidence_wording
+        from location_data.build_inventory_location_review import build as build_inventory_location_review
+        build_inventory_location_review()
+        apply_evidence_wording()
+    final_summary=(STATIC/'summary.html').read_text()
+    final_data=json.loads((STATIC/'summary-data.json').read_text())
+    card_count=len(re.findall(r'<article class="finding"',final_summary))
+    if card_count != 8 or len(final_data.get('findings',[])) != 8:
+        raise RuntimeError(
+            'Summary output drifted during finalization: '
+            f'{card_count} HTML cards, {len(final_data.get("findings",[]))} JSON findings; expected eight of each'
+        )
+    (ROOT/'analysis_output/summary.html').write_text(final_summary)
     print(json.dumps({'findings':len(findings),'rcs':rcs_stats,'repeats':repeat_stats,'fiveMillion':price_stats,'domesticInsertionCandidates':len(domestic)},ensure_ascii=False,indent=2))
 
-if __name__=='__main__':main()
+if __name__=='__main__':
+    import argparse
+    parser=argparse.ArgumentParser(description='Rebuild the eight-card investigative summary.')
+    parser.add_argument('--sitewide-editorial-refresh',action='store_true',
+                        help='also run the separate all-report editorial and menu rewrite')
+    main(apply_sitewide_editorial=parser.parse_args().sitewide_editorial_refresh)

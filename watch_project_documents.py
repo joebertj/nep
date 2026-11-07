@@ -2,7 +2,7 @@
 """Watch external cached PDFs, enrich parsed evidence, and publish DPWH Indepth.
 No network requests, Git commands or deployment. Photos stay source links.
 """
-import argparse,fcntl,hashlib,json,os,time,importlib
+import argparse,fcntl,hashlib,json,os,time,subprocess,sys
 from pathlib import Path
 from storage.external_storage import BASE,guard
 from project_documents.parse_preservation import retain_prior_pow_rows
@@ -111,7 +111,7 @@ def scan(state):
     return {'parsed':changed,'reused':reused,'parseErrors':failed,'busyProjects':busy}
 
 def publication_signature():
-    source=[(str(p.relative_to(ROOT)),stamp(p)) for p in [ROOT/'build_dpwh_indepth.py',ROOT/'build_development_council.py',ROOT/'project_documents/development_council_name_merges.json',ROOT/'uniform_report_menu.py',ROOT/'report_teasers.py',ROOT/'project_documents/indepth.html',ROOT/'project_documents/indepth.js',ROOT/'project_documents/pow_reviewed_category_totals.json']]
+    source=[(str(p.relative_to(ROOT)),stamp(p)) for p in [ROOT/'refresh_parsed_document_pages.py',ROOT/'build_dpwh_indepth.py',ROOT/'build_undocumented_hgab.py',ROOT/'build_investigation_summary.py',ROOT/'build_development_council.py',ROOT/'build_expectation_vs_reality.py',ROOT/'project_documents/development_council_name_merges.json',ROOT/'uniform_report_menu.py',ROOT/'report_teasers.py',ROOT/'project_documents/indepth.html',ROOT/'project_documents/indepth.js',ROOT/'project_documents/pow_reviewed_category_totals.json']]
     results=[(str(p.relative_to(CACHE)),stamp(p)) for p in sorted(CACHE.glob('*/result.json'))]
     return hashlib.sha256(json.dumps([source,results]).encode()).hexdigest()
 
@@ -125,9 +125,8 @@ def main():
             guard();state.update(running=True,pid=os.getpid(),lastScanStarted=time.time())
             summary=scan(state);current=publication_signature()
             if current!=state.get('publicationSignature'):
-                import build_dpwh_indepth
-                importlib.reload(build_dpwh_indepth)
-                state['publishedSummary']=build_dpwh_indepth.build();state['publicationSignature']=current;state['lastPublishedAt']=time.time()
+                published=subprocess.run([sys.executable,str(ROOT/'refresh_parsed_document_pages.py'),'cached-document-watcher'],cwd=ROOT,capture_output=True,text=True,check=True)
+                state['publishedSummary']=json.loads(published.stdout);state['publicationSignature']=current;state['lastPublishedAt']=time.time()
             state.update(lastScanFinished=time.time(),lastScan=summary);save(STATE,state)
             print(json.dumps({k:v for k,v in state.items() if k!='pdfs'},ensure_ascii=False),flush=True)
             if args.once:break

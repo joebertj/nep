@@ -31,6 +31,33 @@ def make_page(name):
     page=page.replace('__HERO_STYLE__',STYLE);(STATIC/name).write_text(page);(OUT/name).write_text(page)
     return {'page':name,'hgabRows':len(rows),'hgabPesos':total,'nepDifference':None}
 
+def apply_summary_coverage():
+    """Refresh only the NEP-to-HGAB agency coverage section in the summary."""
+    from build_investigation_summary import inject,section,table
+    fmr=json.loads((STATIC/'fmr-data.json').read_text())['summary']
+    baseline=json.loads((STATIC/'nep-agency-baselines.json').read_text())
+    hfep=baseline['hfepStageComparison']
+    matched=[r for r in baseline['niaNamedComparisons'] if r['nepPesos'] is not None]
+    irrigation_total=sum(r['amountPesos'] for r in json.loads((ROOT/'hgab_3rd_editions.json').read_text())['nia_irrigation'])
+    deped_total=json.loads((STATIC/'deped-data.json').read_text())['summary']['thirdTotal']
+    coverage=[['FMR annex',fmr['nepPesos'],fmr['hgabPesos'],fmr['netAdjustmentPesos'],'Programme controls; individual counterpart confidence stays separate'],
+              ['NIA exact named-title subset',sum(r['nepPesos'] for r in matched),sum(r['hgabPesos'] for r in matched),sum(r['adjustmentPesos'] for r in matched),'Matched subset only; not the whole NIA budget'],
+              ['HFEP programme total',hfep['nepTotalPesos'],hfep['hgabTotalPesos'],hfep['totalAdjustmentPesos'],'MOOE and Capital Outlays matched at programme level'],
+              ['NIA irrigation appendix','Not established',irrigation_total,'Not established','Detailed NEP works baseline missing'],
+              ['DepEd school operations','Not established',deped_total,'Not established','Comparable NEP school baseline not built']]
+    preferred_nep=ROOT/'data_sources/csiiiv/accepted/nep_nia_dataset.json'
+    if preferred_nep.exists():
+        nep_rows=json.loads(preferred_nep.read_text())['projects'];nep_total=sum(r['amount_php'] for r in nep_rows)
+        coverage[3]=['NIA irrigation annex',nep_total,irrigation_total,irrigation_total-nep_total,'Reviewed detailed annex controls; project identity remains separate']
+    body='<p>Compare the same budget hierarchy before calculating changes. Missing comparable NEP data is not zero. The schedules and matched subsets below overlap other findings and must not be summed.</p>'+table(['Scope','NEP allocation pesos','HGAB allocation pesos','Allocation adjustment pesos','Coverage limit'],coverage)
+    inject('summary.html','summary-neutral',section('summary-neutral','Other schedules · NEP → HGAB comparison coverage',body))
+    record=[{'scope':r[0],'nepPesos':r[1] if isinstance(r[1],int) else None,'hgabPesos':r[2],'adjustmentPesos':r[3] if isinstance(r[3],int) else None,'limit':r[4]} for r in coverage]
+    for path in [STATIC/'summary-data.json',OUT/'investigation_summary.json']:
+        if path.exists():
+            payload=json.loads(path.read_text());payload['agencyComparisonCoverage']=record
+            path.write_text(json.dumps(payload,ensure_ascii=False,indent=2)+'\n')
+    return record
+
 def apply():
     from build_investigation_summary import inject,section,table
     for name in ['nia-irrigation.html','deped.html']:make_page(name)
@@ -46,22 +73,6 @@ def apply():
         s=revision[k]['summary'];rendered.append([label,s['secondRows'],s['thirdRows'],s['secondTotal'],s['thirdTotal'],s['thirdTotal']-s['secondTotal'],s['statusCounts'].get('Allocation changed',0)])
     body='<p>Reading-to-reading results belong here. These compare the two House versions, not NEP with HGAB. Zero below is an observed extraction result for this specific transition; it is not used as a substitute for missing NEP data.</p>'+table(['Schedule','2nd rows','3rd rows','2nd allocation pesos','3rd allocation pesos','Reading adjustment pesos','Changed allocation rows'],rendered)+'<p><a href="hgab-revision-data.json" download>Download complete reading-stage rows and source references</a></p>'
     inject('dpwh-hgab-comparison.html','other-agency-readings',section('other-agency-readings','Other agency schedules · HGAB 2nd versus 3rd',body))
-    fmr=json.loads((STATIC/'fmr-data.json').read_text())['summary'];baseline=json.loads((STATIC/'nep-agency-baselines.json').read_text());h=baseline['hfepStageComparison']
-    matched=[r for r in baseline['niaNamedComparisons'] if r['nepPesos'] is not None]
-    irrigation_total=sum(r['amountPesos'] for r in json.loads((ROOT/'hgab_3rd_editions.json').read_text())['nia_irrigation'])
-    deped_total=json.loads((STATIC/'deped-data.json').read_text())['summary']['thirdTotal']
-    coverage=[['FMR annex',fmr['nepPesos'],fmr['hgabPesos'],fmr['netAdjustmentPesos'],'Programme controls; individual counterpart confidence stays separate'],
-              ['NIA exact named-title subset',sum(r['nepPesos'] for r in matched),sum(r['hgabPesos'] for r in matched),sum(r['adjustmentPesos'] for r in matched),'Matched subset only; not the whole NIA budget'],
-              ['HFEP programme total',h['nepTotalPesos'],h['hgabTotalPesos'],h['totalAdjustmentPesos'],'MOOE and Capital Outlays matched at programme level'],
-              ['NIA irrigation appendix','Not established',irrigation_total,'Not established','Detailed NEP works baseline missing'],
-              ['DepEd school operations','Not established',deped_total,'Not established','Comparable NEP school baseline not built']]
-    preferred_nep=ROOT/'data_sources/csiiiv/accepted/nep_nia_dataset.json'
-    if preferred_nep.exists():
-        nep_rows=json.loads(preferred_nep.read_text())['projects'];nep_total=sum(r['amount_php'] for r in nep_rows)
-        coverage[3]=['NIA irrigation annex',nep_total,irrigation_total,irrigation_total-nep_total,'Reviewed detailed annex controls; project identity remains separate']
-    inject('summary.html','summary-neutral',section('summary-neutral','Other schedules · NEP → HGAB comparison coverage','<p>Compare the same budget hierarchy before calculating changes. Missing comparable NEP data is not zero. The schedules and matched subsets below overlap other findings and must not be summed.</p>'+table(['Scope','NEP allocation pesos','HGAB allocation pesos','Allocation adjustment pesos','Coverage limit'],coverage)))
-    for p in [STATIC/'summary-data.json',OUT/'investigation_summary.json']:
-        if p.exists():
-            payload=json.loads(p.read_text());payload['agencyComparisonCoverage']=[{'scope':r[0],'nepPesos':r[1] if isinstance(r[1],int) else None,'hgabPesos':r[2],'adjustmentPesos':r[3] if isinstance(r[3],int) else None,'limit':r[4]} for r in coverage];p.write_text(json.dumps(payload,ensure_ascii=False,indent=2)+'\n')
+    apply_summary_coverage()
     return {'agencyPages':'NEP → HGAB 3rd','readingComparisons':'dpwh-hgab-comparison.html'}
 if __name__=='__main__':print(json.dumps(apply(),indent=2))

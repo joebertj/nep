@@ -47,9 +47,9 @@ def apply_tailwind_link(text,href,version):
     link=f'<link id="bettergov-tailwind-style" rel="stylesheet" href="{href}?v={version}">'
     return re.sub(r'<head\b[^>]*>',lambda m:m[0]+link,text,count=1)
 
-def apply_page(text,versions):
+def apply_page(text,versions,page=None):
     text=apply_bettergov_palette(text)
-    text=normalize_table_pagination(text)
+    text=normalize_table_pagination(text,page)
     text=apply_tailwind_link(text,'../css/tailwind.css',versions['tailwind'])
     def body(match):
         tag=match[0]
@@ -70,12 +70,15 @@ def apply_page(text,versions):
     return text.replace('</body>',f'<script id="report-table-readability-script" src="report-table-readability.js?v={versions["js"]}"></script></body>',1)
 
 
-def normalize_table_pagination(text):
+def normalize_table_pagination(text,page=None):
     """Use ten-row defaults in existing table renderers, retaining their controls.
 
     Restrict changes to executable inline scripts containing pagination logic;
     chart limits, JSON records, source coordinates and exports stay untouched.
     """
+    if page=='cost-per-unit.html':
+        return text
+
     def script(match):
         opening,code,closing=match.groups()
         if re.search(r'\b(?:src|type)\s*=',opening) or not re.search(r'\bpage\b|\bpageSize\b|\bnepSize\b',code,re.I):return match[0]

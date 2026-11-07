@@ -12,14 +12,14 @@ PANEL = '''<!-- connectivity-place-inventory:start -->
 <p class="note"><strong>These matches use coordinate-backed FMR project routes.</strong> The road-project list below contains title and allocation records, but the integrated GAA road rows have no usable coordinates or alignments to match to venues. A route is a remote-area candidate only when both source endpoints fall inside DPWH municipality boundaries. The 100 m check uses a straight segment between printed coordinates; it is a proximity lead, not proof of the actual alignment or usable access.</p>
 <p class="note"><strong>Spatial exemptions:</strong> FY2027 rows display the same project-level exemption reasons as Section 1. For other coordinate-backed years, mapped public-service sites within 500 m of the source segment and more than two mapped visitor venues within 100 m qualify as positive exemptions; a single venue match is evidence only. A private-property cue is review evidence, never an exemption by itself. If source endpoints are more than 20 km apart, suppress the distance and all exemption calculations pending coordinate review.</p>
 <p><a href="connectivity-remote-fmr-venues.csv" download>Download matched FMR–venue rows (CSV)</a> · <a href="connectivity-remote-fmr-venues.json" download>Matched FMR–venue data (JSON)</a></p>
-<div class="filters"><label>Search route or venue <input id="fmr-venue-query" type="search" placeholder="Project, venue, municipality, province"></label><label>Fiscal year <select id="fmr-venue-year"><option value="">All available years</option></select></label></div>
+<div class="filters"><label>Search route or venue <input id="fmr-venue-query" type="search" placeholder="Project, venue, municipality, province"></label><label>Fiscal year <select id="fmr-venue-year"><option value="">All available years</option></select></label><button id="fmr-venue-json-export" type="button">Export filtered venue matches as JSON</button></div>
 <div class="table-wrap"><table data-report-table-exempt="true"><thead><tr><th>Year / source</th><th>FMR project route</th><th>Mapped venue</th><th>Location / type</th><th class="num">Distance</th><th>Map</th><th>Exemption / review</th><th>Source evidence</th></tr></thead><tbody id="fmr-venue-rows"></tbody></table></div>
 <div class="controls"><button id="fmr-venue-prev" type="button">Previous</button><span id="fmr-venue-page"></span><button id="fmr-venue-next" type="button">Next</button><label>Rows <select id="fmr-venue-size"><option>10</option><option selected>25</option><option>50</option><option>100</option></select></label></div>
 <h3>FMR routes near mapped private-property cues</h3>
 <p id="fmr-property-summary" aria-live="polite">Loading route–property proximity matches…</p>
 <p>Distances use the mapped property footprint where a usable polygon exists, or the source point otherwise. Restricted-access tags and large footprints are review cues. Verify ownership and an actual entrance before identifying a road connection or beneficiary.</p>
 <p><a href="connectivity-remote-fmr-properties.csv" download>Route–property matches CSV</a> · <a href="connectivity-remote-fmr-properties.json" download>Route–property matches JSON</a></p>
-<div class="filters"><label>Search route or property cue <input id="fmr-property-query" type="search" placeholder="Project, property type, municipality, province"></label><label>Fiscal year <select id="fmr-property-year"><option value="">All available years</option></select></label></div>
+<div class="filters"><label>Search route or property cue <input id="fmr-property-query" type="search" placeholder="Project, property type, municipality, province"></label><label>Fiscal year <select id="fmr-property-year"><option value="">All available years</option></select></label><button id="fmr-property-json-export" type="button">Export filtered property matches as JSON</button></div>
 <div class="table-wrap"><table data-report-table-exempt="true"><thead><tr><th>Year / source</th><th>FMR project route</th><th>Mapped property cue</th><th>Location / type</th><th class="num">Distance / basis</th><th>Map</th><th>Exemption / review</th><th>Source evidence</th></tr></thead><tbody id="fmr-property-rows"></tbody></table></div>
 <div class="controls"><button id="fmr-property-prev" type="button">Previous</button><span id="fmr-property-page"></span><button id="fmr-property-next" type="button">Next</button><label>Rows <select id="fmr-property-size"><option>10</option><option selected>25</option><option>50</option><option>100</option></select></label></div>
 <details id="connectivity-places-inventory"><summary>Visitor venues, subdivisions and private-property evidence</summary>
@@ -83,5 +83,7 @@ def apply_page(text):
 
 
 if __name__ == '__main__':
-    page = STATIC / 'connectivity.html'
-    page.write_text(apply_page(page.read_text()))
+    # Never patch the last generated HTML copy directly. Delegate to the
+    # canonical connectivity builder, which renders the full page from source.
+    from build_connectivity_report import build
+    build()

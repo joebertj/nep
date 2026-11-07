@@ -185,8 +185,9 @@ def main():
     summary = None
     if not args.no_publish:
         guard()
-        import build_dpwh_indepth
-        summary = build_dpwh_indepth.build()
+        from refresh_parsed_document_pages import refresh
+        publication = refresh('failed-pow-reparse')
+        summary = publication['builders']['build_dpwh_indepth.py']
     print(json.dumps({'complete': progress['completed'], 'processed': len(progress['processed']),
                       'remainingBusy': len(progress['skippedBusy']), 'missing': len(progress['missing']),
                       'errors': len(progress['errors']),

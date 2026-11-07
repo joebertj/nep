@@ -13,7 +13,7 @@ python3 compute_five_million_stats.py
 python3 build_report.py
 ```
 
-The third command builds `analysis_output/dpwh.html`, a self-contained DPWH/NEP presentation page with embedded charts and searchable tables. The report menu links to the standalone FMR, NIA, and HFEP pages. You can open each HTML file without a local server; rerun its build script after regenerating the CSV reports.
+The third command builds `analysis_output/dpwh-nep-legacy.html`, a self-contained DPWH/NEP presentation page with embedded charts and searchable tables. It intentionally uses a separate filename so it cannot replace the current Senate HGAB page at `dpwh.html`. The report menu links to the standalone FMR, NIA, and HFEP pages. You can open each HTML file without a local server; rerun its build script after regenerating the CSV reports.
 
 Or provide files explicitly, filter to one year, or run one report:
 

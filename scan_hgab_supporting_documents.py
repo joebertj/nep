@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import fcntl
 import json
 import re
 import subprocess
@@ -370,7 +371,7 @@ def consolidate(hgab_only, records, inventory, cloudflare=None):
     }
 
 
-def main():
+def _run():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--workers', type=int, default=4)
     parser.add_argument('--interval', type=int, default=60)
@@ -450,23 +451,38 @@ def main():
                 writer = csv.DictWriter(stream, fieldnames=fields); writer.writeheader()
                 for row in report['projects']:
                     writer.writerow({**row, 'documentTypes': json.dumps(row['documentTypes'], ensure_ascii=False), 't5FileCodes': json.dumps(row['t5FileCodes'], ensure_ascii=False), 't5FilePresenceByType': json.dumps(row['t5FilePresenceByType'], ensure_ascii=False), 'signatories': json.dumps(row['signatories'], ensure_ascii=False)})
-            if paths and not args.once:
-                # Keep all published document-coverage views synchronized with new files.
-                for builder in ('build_dpwh_indepth.py', 'build_undocumented_hgab.py',
-                                'build_investigation_summary.py'):
-                    subprocess.run([sys.executable, str(ROOT / builder)], cwd=ROOT, check=True)
+            if paths or args.once:
+                # One ordered refresh keeps all parser-derived page data in sync,
+                # including one-shot scans and scans that only consolidate cached rows.
+                subprocess.run([sys.executable, str(ROOT / 'refresh_parsed_document_pages.py'),
+                                'senate-supporting-document-scan'], cwd=ROOT, check=True)
             status.update({'status': 'complete', 'completedThisPass': len(paths),
                            'projectsWithAtLeastOneMatchedDocument': report['projectsWithAtLeastOneMatchedDocument'],
                            'matchedDocuments': report['matchedFileRecords'],
                            'heartbeatAtUtc': datetime.now(timezone.utc).isoformat()})
             atomic_json(STATUS, status)
         else:
-            status.update({'status': 'idle', 'projectsWithAtLeastOneMatchedDocument': old.get('projectsWithAtLeastOneMatchedDocument', 0),
+            # A one-shot scan or another worker may have refreshed the report
+            # since this loop started. Read the published report for status so
+            # a long-running process cannot keep advertising stale totals.
+            latest = json.loads(OUT.read_text()) if OUT.is_file() else old
+            status.update({'status': 'idle', 'projectsWithAtLeastOneMatchedDocument': latest.get('projectsWithAtLeastOneMatchedDocument', 0),
                            'heartbeatAtUtc': datetime.now(timezone.utc).isoformat()})
             atomic_json(STATUS, status)
         if args.once:
             break
         time.sleep(args.interval)
+
+
+def main():
+    lock_path = STATUS.with_suffix('.lock')
+    lock_path.parent.mkdir(parents=True, exist_ok=True)
+    with lock_path.open('a') as lock:
+        try:
+            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError as exc:
+            raise SystemExit('Another supporting-document scanner is already running') from exc
+        _run()
 
 
 if __name__ == '__main__':

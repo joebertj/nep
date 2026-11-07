@@ -35,7 +35,7 @@ def build():
         text=text.replace('</body>',f'<script src="project-document-links.js?v={v}"></script></body>',1);path.write_text(text)
         mirror=OUT/path.name
         if mirror.exists():mirror.write_text(text)
-    from build_dpwh_indepth import build as indepth
-    indepth()
+    from refresh_parsed_document_pages import refresh
+    refresh('project-document-view-build')
     return {'linkedTitles':len(index),'documentCoverage':coverage['summary'],'documentsFetched':0}
 if __name__=='__main__':print(json.dumps(build(),indent=2))

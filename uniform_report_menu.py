@@ -11,17 +11,16 @@ RESEARCH_STATUS_VERSION=hashlib.sha256((STATIC/'research-status.js').read_bytes(
 MENU_GROUPS=[
     ('Summary',[('summary.html','Summary · investigative leads')]),
     ('Budget 2027',[
-        ('dpwh.html','Senate HGAB POWs'),('pow.html','POW PDF forensics'),
+        ('dpwh.html','Senate HGAB documents'),
         ('dpwh-transparency.html','DPWH Transparency inventory'),
         ('congress.html','Project flags + district allocations'),
-        ('development-council.html','POW + Development Council signatories'),
         ('flags.html','Flags'),
         ('undocumented-hgab.html','Undocumented HGAB'),('repeats.html','Project repeats'),
         ('out-of-place.html','Out of Place'),('cost-per-km.html','Cost per meter'),
         ('pccp-cost-per-unit.html','Cost Per Unit · DPWH Atlas'),
         ('cost-per-unit.html','Cost per Unit · peer comparison'),
         ('expectation-vs-reality.html','Costing vs proposed allocation'),
-        ('rcs.html','RCS · POW scope'),('mpb.html','MPB Flags'),('barangay.html','Barangay allocations'),
+        ('rcs.html','RCS project scope'),('mpb.html','MPB Flags'),('barangay.html','Barangay allocations'),
     ]),
     ('Historical',[
         ('flood-control.html','Flood-control pattern'),('repeats-historical.html','Project repeats'),
@@ -46,6 +45,38 @@ def page_nav(page):
 
 NAV='<nav class="report-nav" aria-label="Budget report sections">'+''.join(
     render_menu_group(group, links) for group,links in MENU_GROUPS)+'</nav>'
+
+def apply_navigation_only():
+    """Refresh only shared navigation markup, preserving every page body and style."""
+    labels=[label for _,links in MENU_GROUPS for _,label in links]
+    if any('pow' in label.lower() for label in labels):
+        raise ValueError('Shared navigation labels must describe document coverage without POW-specific wording')
+    changed=[]
+    for path in sorted(STATIC.rglob('*.html')):
+        relative=path.relative_to(STATIC)
+        page=relative.as_posix()
+        if page=='budget-trivia.html':
+            continue
+        text=path.read_text(errors='ignore')
+        nav_pattern=r'<nav\b[^>]*class=["\'][^"\']*\breport-nav\b[^"\']*["\'][^>]*>.*?</nav>'
+        if re.search(nav_pattern,text,re.S):
+            text=re.sub(nav_pattern,lambda _m:page_nav(page),text,count=1,flags=re.S)
+        elif relative.parent!=Path('.'):
+            # Nested project detail pages are intentionally standalone. Update
+            # nested report pages only when they already carry shared navigation.
+            continue
+        elif re.search(r'<header\b',text,re.S):
+            text=text.replace('</header>',page_nav(page)+'</header>',1)
+        else:
+            continue
+        text=apply_menu_behavior(text)
+        path.write_text(text)
+        mirror=ROOT/'analysis_output'/relative
+        if mirror.exists():
+            mirror.write_text(text)
+        changed.append(page)
+    return {'updatedPages':changed,'pageCount':len(changed),'menuLabels':labels,
+            'scope':'Navigation markup only; page content, styles, data and other generated assets were preserved.'}
 MENU_BEHAVIOR_SCRIPT='''<script id="report-menu-exclusive-groups">(()=>{const groups=[...document.querySelectorAll('header .report-nav-group')];groups.forEach(group=>group.addEventListener('toggle',()=>{if(group.open)groups.forEach(other=>{if(other!==group)other.open=false})}))})();</script>'''
 def apply_menu_behavior(text):
     text=re.sub(r'<script id="report-menu-exclusive-groups">.*?</script>','',text,flags=re.S)
@@ -228,6 +259,9 @@ def apply_page(text,page=None,status=None):
     return apply_menu_behavior(apply_research_status(text,status))
 
 def apply():
+    labels=[label for _,links in MENU_GROUPS for _,label in links]
+    if any('pow' in label.lower() for label in labels):
+        raise ValueError('Shared navigation labels must describe document coverage without POW-specific wording')
     from merge_nia_pages import merge
     merge()
     from summary_evidence_links import apply as link_summary_evidence
@@ -238,7 +272,7 @@ def apply():
     status=build_status()
     for path in sorted(STATIC.glob('*.html')):
         if path.name in {'budget-trivia.html','pow.html'}:continue  # game and forensic pages intentionally use bespoke layouts; POW stays off-menu by request
-        text=table_presentation(apply_page(path.read_text(),path.name,status),versions);path.write_text(text)
+        text=table_presentation(apply_page(path.read_text(),path.name,status),versions,path.name);path.write_text(text)
         if not re.search(r'<header\b',text) and re.search(r'<meta\s+http-equiv=["\']refresh',text,re.I):continue
         mirror=ROOT/'analysis_output'/path.name
         if mirror.exists():mirror.write_text(text)
@@ -266,4 +300,11 @@ def apply():
     (ROOT/'analysis_output/report_menu_review.json').write_text(json.dumps(report,indent=2)+'\n')
     return report
 
-if __name__=='__main__':print(json.dumps(apply(),indent=2))
+if __name__=='__main__':
+    import argparse
+    parser=argparse.ArgumentParser(description='Refresh the shared BetterGov report menu.')
+    parser.add_argument('--navigation-only',action='store_true',
+                        help='update only menu markup and behavior, preserving page content and styles')
+    args=parser.parse_args()
+    result=apply_navigation_only() if args.navigation_only else apply()
+    print(json.dumps(result,indent=2,ensure_ascii=False))

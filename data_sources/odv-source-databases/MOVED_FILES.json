@@ -61,6 +61,96 @@
       "storedPath": "data_sources/odv-source-databases/philgeps_merchant_info_with_sec.parquet",
       "bytes": 65274479,
       "sha256": "2cdad2a99870c7ff8df2b530aa7892ce6f6f3f9b66468c26305e98753a486d95"
+    },
+    {
+      "originalPath": "data/parquet/integrated_projects_matched.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/integrated_projects_matched.parquet",
+      "bytes": 38100341,
+      "sha256": "43d3fa14574c396f9ad55ab989df3a4023fda9589487428b655e5afbf9a3e457"
+    },
+    {
+      "originalPath": "data/parquet/infrawatch_projects_enriched.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/infrawatch_projects_enriched.parquet",
+      "bytes": 34179552,
+      "sha256": "decc694f5dc45a70ab1d663dd27835bf16f22e17a6df85eb4c5fab8fada5150a"
+    },
+    {
+      "originalPath": "data/parquet/infrawatch_projects_enriched_20251128_214756.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/infrawatch_projects_enriched.parquet",
+      "bytes": 34179552,
+      "sha256": "decc694f5dc45a70ab1d663dd27835bf16f22e17a6df85eb4c5fab8fada5150a"
+    },
+    {
+      "originalPath": "data/parquet/infrawatch_projects_backup.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/infrawatch_projects_backup.parquet",
+      "bytes": 25654322,
+      "sha256": "c2bda14474ba701ed5b1e1df208d042ae279ee34d5d15427f52c5c049d12ae8d"
+    },
+    {
+      "originalPath": "data/parquet/infrawatch_projects.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/infrawatch_projects.parquet",
+      "bytes": 25648093,
+      "sha256": "bd00561a71a224973ece1923c3b9f78c19443fdbbb82e90a23fe260043eaf3ac"
+    },
+    {
+      "originalPath": "data/parquet/microsite_projects.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/microsite_projects.parquet",
+      "bytes": 15824522,
+      "sha256": "0fa3079108deed2f9bbec9d993c13047b18f4caf34d71621358138bb5b4dcf0a"
+    },
+    {
+      "originalPath": "data/parquet/dynasty_data.duckdb",
+      "storedPath": "data_sources/odv-source-databases/parquet/dynasty_data.duckdb",
+      "bytes": 14168064,
+      "sha256": "7e5a3c5b58fb1734cff1cafe52a1022b8bf698b73ada7c569cebcd7bbaaaa382"
+    },
+    {
+      "originalPath": "data/parquet/philgeps_contracts.parquet.backup",
+      "storedPath": "data_sources/odv-source-databases/parquet/philgeps_contracts.parquet.backup",
+      "bytes": 11129492,
+      "sha256": "1b97b9ac698cf83040ccfdfb6ee9c47a97d538789c27c786d230a9b1beaff486"
+    },
+    {
+      "originalPath": "static/data/parquet/integrated_projects_matched.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/integrated_projects_matched.parquet",
+      "bytes": 38100341,
+      "sha256": "43d3fa14574c396f9ad55ab989df3a4023fda9589487428b655e5afbf9a3e457"
+    },
+    {
+      "originalPath": "static/data/parquet/infrawatch_projects_enriched.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/infrawatch_projects_enriched.parquet",
+      "bytes": 34179552,
+      "sha256": "decc694f5dc45a70ab1d663dd27835bf16f22e17a6df85eb4c5fab8fada5150a"
+    },
+    {
+      "originalPath": "static/data/parquet/infrawatch_projects_enriched_20251128_214756.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/infrawatch_projects_enriched.parquet",
+      "bytes": 34179552,
+      "sha256": "decc694f5dc45a70ab1d663dd27835bf16f22e17a6df85eb4c5fab8fada5150a"
+    },
+    {
+      "originalPath": "static/data/parquet/infrawatch_projects_backup.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/infrawatch_projects_backup.parquet",
+      "bytes": 25654322,
+      "sha256": "c2bda14474ba701ed5b1e1df208d042ae279ee34d5d15427f52c5c049d12ae8d"
+    },
+    {
+      "originalPath": "static/data/parquet/infrawatch_projects.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/infrawatch_projects.parquet",
+      "bytes": 25648093,
+      "sha256": "bd00561a71a224973ece1923c3b9f78c19443fdbbb82e90a23fe260043eaf3ac"
+    },
+    {
+      "originalPath": "static/data/parquet/microsite_projects.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/microsite_projects.parquet",
+      "bytes": 15824522,
+      "sha256": "0fa3079108deed2f9bbec9d993c13047b18f4caf34d71621358138bb5b4dcf0a"
+    },
+    {
+      "originalPath": "static/data/duplicates_a5_2026.json.backup",
+      "storedPath": "data_sources/odv-source-databases/duplicates_a5_2026.json.backup",
+      "bytes": 30284187,
+      "sha256": "64f25e6b6fb7a1a074488164fbad7d7ed72755afbe666192739d628fb4937b66"
     }
   ]
 }

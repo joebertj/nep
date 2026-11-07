@@ -81,8 +81,9 @@ def reparse(code):
         parsed = row['pow']
 
     guard()
-    import build_dpwh_indepth
-    summary = build_dpwh_indepth.build()
+    from refresh_parsed_document_pages import refresh
+    publication = refresh('single-pow-reparse')
+    summary = publication['builders']['build_dpwh_indepth.py']
     return {'projectCode': code, 'status': parsed.get('status'),
             'pages': parsed.get('pagesProcessed'), 'itemRows': len(parsed.get('rows', [])),
             'categoryRows': len(parsed.get('costCategoryBreakdown', [])),

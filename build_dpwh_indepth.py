@@ -917,6 +917,14 @@ def build():
     text=apply_page(text,'dpwh.html')
     # Keep the initial coverage script cache-busted after shared page transforms.
     text=re.sub(r'src="dpwh-in-depth\.js(?:\?v=[^"]*)?"',f'src="dpwh-in-depth.js?v={version}"',text,count=1)
+    coverage_section=re.search(r'<section[^>]*id="all-hgab-document-coverage"[^>]*>.*?</section>',text,re.S)
+    main_match=re.search(r'<main\b[^>]*>(.*?)</main>',text,re.S)
+    main_sections=re.findall(r'<section\b[^>]*id="([^"]+)"[^>]*>',main_match.group(1),re.S) if main_match else []
+    coverage_head= re.search(r'<thead>(.*?)</thead>',coverage_section.group(0),re.S) if coverage_section else None
+    coverage_headers=[re.sub(r'<[^>]+>','',header).strip() for header in re.findall(r'<th\b[^>]*>(.*?)</th>',coverage_head.group(1),re.S)] if coverage_head else []
+    expected_coverage_headers=['HGAB code','Project','Office · region','HGAB allocation','Proposal docs','Senate HGAB docs','Signatories in related documents']
+    if coverage_headers != expected_coverage_headers or not all_rows or not main_sections or main_sections[-1] != 'all-hgab-document-coverage':
+        raise RuntimeError(f'All-HGAB coverage table validation failed: headers={coverage_headers!r}, {len(all_rows)} rows, final section={main_sections[-1:]!r}')
     cost_text=apply_page(cost_text,'cost-per-unit.html')
     pccp_text=apply_page(pccp_text,'pccp-cost-per-unit.html')
     for target in (OUT,STATIC):

@@ -27,3 +27,5 @@ NEP-FY2027.xlsx
 /data_sources/esa_worldcover_2021/*.tif
 /data_sources/esa_worldcover_2021/*.part
 /data_sources/odv_dynasty/*.part
+
+/analysis_output/.parsed-document-page-refresh.lock

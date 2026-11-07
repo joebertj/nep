@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Rebuild DPWH reports after the POW parser settles on new results."""
 import argparse
+import fcntl
 import hashlib
 import json
 import os
@@ -38,7 +39,7 @@ def write_status(value):
 
 
 def supporting_inventory_fingerprint():
-    """Hash the file-presence summary that feeds undocumented-hgab.html."""
+    """Hash the Cloudflare-indexed file-presence summary; this never walks T5."""
     from build_undocumented_hgab import supporting_file_presence
 
     presence = supporting_file_presence()
@@ -53,6 +54,32 @@ def supporting_inventory_fingerprint():
     return hashlib.sha256(serialized.encode("utf-8")).hexdigest()
 
 
+def scan_output_fingerprint():
+    """Notice a fresh supporting-document scan even if parser counts did not move."""
+    path = ROOT / "analysis_output/senate_supporting_documents_hgab_only_scan.json"
+    try:
+        stat = path.stat()
+    except OSError:
+        return None
+    return f"{stat.st_size}:{stat.st_mtime_ns}"
+
+
+def supporting_scan_summary():
+    report = read_json(ROOT / "analysis_output/senate_supporting_documents_hgab_only_scan.json")
+    return {
+        "generatedAtUtc": report.get("generatedAtUtc"),
+        "projectsWithAtLeastOneMatchedDocument": report.get("projectsWithAtLeastOneMatchedDocument"),
+        "matchedFileRecords": report.get("matchedFileRecords"),
+    }
+
+
+def refresh_pages(reason):
+    result = subprocess.run(
+        [sys.executable, str(ROOT / "refresh_parsed_document_pages.py"), reason],
+        cwd=ROOT, capture_output=True, text=True, check=True)
+    return json.loads(result.stdout)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--batch-size", type=int, default=1)
@@ -64,6 +91,11 @@ def main():
     args = parser.parse_args()
     if args.supporting_check_seconds < 15:
         parser.error("--supporting-check-seconds must be at least 15 seconds")
+    watcher_lock = (ROOT / ".dpwh-page-data-refresh.lock").open("a")
+    try:
+        fcntl.flock(watcher_lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except BlockingIOError:
+        parser.error("another DPWH page-data watcher is already running")
     state = read_json(REFRESH_STATUS)
     last_built = state.get("lastBuiltProcessed")
     if not isinstance(last_built, int):
@@ -71,6 +103,7 @@ def main():
         last_built = int(read_json(PARSER_STATUS).get("processed", 0))
     last_built_downloaded = state.get("lastBuiltDownloaded")
     last_built_supporting_inventory = state.get("lastBuiltSupportingInventory")
+    last_built_scan = state.get("lastBuiltSupportingScan")
     last_supporting_check = 0.0
     current_supporting_inventory = None
     while True:
@@ -90,28 +123,31 @@ def main():
             current_supporting_inventory is not None
             and current_supporting_inventory != last_built_supporting_inventory
         )
-        if parsed_batch_ready or intake_changed:
+        current_scan = scan_output_fingerprint()
+        supporting_scan_changed = current_scan is not None and current_scan != last_built_scan
+        if parsed_batch_ready or intake_changed or supporting_scan_changed:
+            reason = ("parser" if parsed_batch_ready else "download-intake" if intake_changed
+                      else "supporting-document-scan")
             state.update({"status": "refreshing", "startedAtUtc": now,
                           "parserProcessed": processed,
-                          "lastBuiltProcessed": last_built})
+                          "lastBuiltProcessed": last_built,
+                          "refreshReason": reason})
             write_status(state)
             try:
-                report = subprocess.run(
-                    [sys.executable, str(ROOT / "build_dpwh_indepth.py")],
-                    cwd=ROOT, capture_output=True, text=True, check=True)
-                summary = json.loads(report.stdout)
-                undocumented = subprocess.run(
-                    [sys.executable, str(ROOT / "build_undocumented_hgab.py")],
-                    cwd=ROOT, capture_output=True, text=True, check=True)
-                undocumented_summary = json.loads(undocumented.stdout)
+                refreshed = refresh_pages(reason)
                 last_built = processed
                 last_built_downloaded = downloaded
+                last_built_scan = current_scan
+                last_built_supporting_inventory = current_supporting_inventory
                 state.update({"status": "idle", "updatedAtUtc": utc_now(),
                               "lastBuiltProcessed": last_built,
                               "lastBuiltDownloaded": last_built_downloaded,
+                              "lastBuiltSupportingScan": last_built_scan,
                               "lastBuiltSupportingInventory": current_supporting_inventory,
-                              "summary": summary,
-                              "undocumentedHgabSummary": undocumented_summary,
+                              "supportingScanSummary": supporting_scan_summary(),
+                              "pageRefresh": refreshed,
+                              "summary": refreshed.get("builders", {}).get("build_dpwh_indepth.py"),
+                              "undocumentedHgabSummary": refreshed.get("builders", {}).get("build_undocumented_hgab.py"),
                               "lastError": None})
                 write_status(state)
             except (subprocess.CalledProcessError, ValueError) as exc:
@@ -129,14 +165,14 @@ def main():
                           "supportingInventoryChanged": True})
             write_status(state)
             try:
-                undocumented = subprocess.run(
-                    [sys.executable, str(ROOT / "build_undocumented_hgab.py")],
-                    cwd=ROOT, capture_output=True, text=True, check=True)
-                undocumented_summary = json.loads(undocumented.stdout)
+                refreshed = refresh_pages("cloudflare-file-inventory")
                 last_built_supporting_inventory = current_supporting_inventory
                 state.update({"status": "idle", "updatedAtUtc": utc_now(),
                               "lastBuiltSupportingInventory": last_built_supporting_inventory,
-                              "undocumentedHgabSummary": undocumented_summary,
+                              "supportingScanSummary": supporting_scan_summary(),
+                              "pageRefresh": refreshed,
+                              "summary": refreshed.get("builders", {}).get("build_dpwh_indepth.py"),
+                              "undocumentedHgabSummary": refreshed.get("builders", {}).get("build_undocumented_hgab.py"),
                               "lastError": None})
                 write_status(state)
             except (subprocess.CalledProcessError, ValueError) as exc:

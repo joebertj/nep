@@ -250,9 +250,9 @@ update();
 </script>
 </body></html>'''.replace("__DATA__", data_json).replace("__PRIORITY_REPEAT_SECTION__", priority_review_html).replace("__HB_INSERTION_SECTION__", hb_insertion_html)
 
-destination = REPORTS / "dpwh.html"
+destination = REPORTS / "dpwh-nep-legacy.html"
 html = fit_tables(html)
 from uniform_report_menu import apply_page as apply_uniform_menu
 html = apply_uniform_menu(html, "dpwh.html")
 destination.write_text(html, encoding="utf-8")
-print(f"Wrote standalone report: {destination}")
+print(f"Wrote legacy NEP overview: {destination}")

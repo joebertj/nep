@@ -1,0 +1,183 @@
+{
+  "status": "refreshing",
+  "startedAtUtc": "2026-11-07T15:59:42.912746+00:00",
+  "pid": 61129,
+  "source": "senate-supporting-document-scan",
+  "builders": {
+    "build_dpwh_indepth.py": {
+      "projectsWithParsedPow": 7225,
+      "projectsWithRetainedPriorPowRows": 89,
+      "parsedPowRows": 175741,
+      "projectsWithSavedResults": 11034,
+      "projectsWithoutSelectedAttachments": 280,
+      "availableDocuments": 12130,
+      "failedDocuments": 0,
+      "attemptedDocuments": 12130,
+      "errorTypes": {}
+    },
+    "build_undocumented_hgab.py": {
+      "noDocumentProjects": 2230,
+      "amountPesos": 68024958000,
+      "withReviewFlags": 2230,
+      "withNoSelectedNep": 1933,
+      "withinStageRepeatCandidates": 38,
+      "gabRemovedItemsReported": 295,
+      "gabRemovedPesosReported": 8836000000,
+      "senateTitleMatchAllocation": {
+        "totalPesos": 170494419000,
+        "matchedPesos": 94671084000,
+        "unmatchedPesos": 75823335000,
+        "matchedProjectRows": 3287,
+        "unmatchedProjectRows": 2818
+      },
+      "portalOnlyGapProjects": 6378,
+      "portalOnlyGapPesos": 183926806000,
+      "advanceCopyMatchedRows": 3307,
+      "advanceCopyNewlyCoveredProjects": 4148,
+      "advanceCopyFilesInPortalOnlyGap": 120,
+      "advanceCopyParsedBillRowsInPortalOnlyGap": 60029,
+      "advanceCopyPowMatchedProjects": 0,
+      "advanceCopyPowMatchedFiles": 0,
+      "advanceCopyPowBillRows": 0,
+      "localFilePresence": {
+        "available": true,
+        "source": "Cloudflare-file-links.jsonl; no live T5 folder scan",
+        "files": 34420,
+        "projectCodes": 6673,
+        "byType": {
+          "POW": 6683,
+          "Development Council": 3384,
+          "Geotagged photos": 5923,
+          "BP": 6611,
+          "Certificate of Implementability": 6693,
+          "Other": 5126
+        }
+      },
+      "senateDocumentTitleCoverage": {
+        "denominatorProjectRows": 6105,
+        "byType": {
+          "pow": {
+            "documentsScanned": 5508,
+            "exactMatchedDocuments": 2476,
+            "relaxedMatchedDocuments": 103,
+            "matchedProjectRows": 2504,
+            "exactMatchedProjectRows": 2415,
+            "coveragePct": 41.02,
+            "generatedAtUtc": "2026-11-06T21:57:03.334073+00:00"
+          },
+          "bp202": {
+            "documentsScanned": 5588,
+            "exactMatchedDocuments": 2888,
+            "relaxedMatchedDocuments": 0,
+            "matchedProjectRows": 2802,
+            "exactMatchedProjectRows": 2802,
+            "coveragePct": 45.9,
+            "generatedAtUtc": "2026-11-06T14:49:27.628591+00:00"
+          }
+        },
+        "combinedMatchedProjectRows": 3287,
+        "combinedExactMatchedProjectRows": 3228,
+        "combinedCoveragePct": 53.84,
+        "combinedExactCoveragePct": 52.87,
+        "method": "Read-only first-page native PDF title scan. Counts distinct HGAB-only project rows; BP 202 and POW source sets are deduplicated in the combined figure. Exact normalized title matches and conservative relaxed POW-title candidates are counted; this is a preliminary file-presence signal, not content verification."
+      },
+      "senateSupportingDocumentCoverage": {
+        "denominatorProjectRows": 6105,
+        "projectsWithAtLeastOneMatchedDocument": 4034,
+        "projectsWithAtLeastOneMatchedDocumentPct": 66.08,
+        "projectRowsWithoutMatchedDocument": 2071,
+        "matchedFileRecords": 21214,
+        "byType": {
+          "POW": {
+            "filesScanned": 6688,
+            "matchedProjectRows": 3858,
+            "matchedFileRecords": 4114,
+            "exactTitleMatchedFiles": 793,
+            "relaxedTitleMatchedFiles": 141,
+            "uniqueCodeSiblingFileMatches": 3180,
+            "scanErrors": 3,
+            "filesWithoutNativeText": 1343
+          },
+          "BP 202": {
+            "filesScanned": 5588,
+            "matchedProjectRows": 3869,
+            "matchedFileRecords": 4155,
+            "exactTitleMatchedFiles": 3245,
+            "relaxedTitleMatchedFiles": 0,
+            "uniqueCodeSiblingFileMatches": 910,
+            "scanErrors": 0,
+            "filesWithoutNativeText": 787
+          },
+          "Development Council": {
+            "filesScanned": 3381,
+            "matchedProjectRows": 1792,
+            "matchedFileRecords": 1995,
+            "exactTitleMatchedFiles": 9,
+            "relaxedTitleMatchedFiles": 0,
+            "uniqueCodeSiblingFileMatches": 1986,
+            "scanErrors": 0,
+            "filesWithoutNativeText": 2769
+          },
+          "Geotagged photos": {
+            "filesScanned": 5933,
+            "matchedProjectRows": 3385,
+            "matchedFileRecords": 3673,
+            "exactTitleMatchedFiles": 2073,
+            "relaxedTitleMatchedFiles": 333,
+            "uniqueCodeSiblingFileMatches": 1267,
+            "scanErrors": 1,
+            "filesWithoutNativeText": 943
+          },
+          "Certificate of Implementability": {
+            "filesScanned": 6700,
+            "matchedProjectRows": 3815,
+            "matchedFileRecords": 4099,
+            "exactTitleMatchedFiles": 1151,
+            "relaxedTitleMatchedFiles": 0,
+            "uniqueCodeSiblingFileMatches": 2948,
+            "scanErrors": 0,
+            "filesWithoutNativeText": 1625
+          },
+          "Other": {
+            "filesScanned": 5044,
+            "matchedProjectRows": 2209,
+            "matchedFileRecords": 3178,
+            "exactTitleMatchedFiles": 650,
+            "relaxedTitleMatchedFiles": 51,
+            "uniqueCodeSiblingFileMatches": 2477,
+            "scanErrors": 0,
+            "filesWithoutNativeText": 2759
+          }
+        },
+        "signatoryCandidateCounts": {
+          "assistant_district_engineer": 2968,
+          "district_engineer": 3957,
+          "engineer": 3395,
+          "rdc_chair": 72,
+          "governor": 106,
+          "pdc_chair": 90,
+          "mayor": 17,
+          "ldc_chair": 5
+        },
+        "signatoryCandidatesByDocumentType": {
+          "POW": {
+            "assistant_district_engineer": 2968,
+            "district_engineer": 3957,
+            "engineer": 3395
+          },
+          "Development Council": {
+            "rdc_chair": 72,
+            "governor": 106,
+            "pdc_chair": 90,
+            "mayor": 17,
+            "ldc_chair": 5
+          }
+        },
+        "deduplication": "Project counts use distinct House HGAB row IDs. File counts are distinct source paths within a project and type; byte-identical copies at different paths are not removed. T5 file-type counts inherit only from uniquely resolved HGAB file codes.",
+        "matchingMethod": "Native text from the first PDF page. Exact normalized full-title matches and conservative relaxed title candidates are counted. Other files inherit a match only when they share a five-digit HGAB file code with a title-matched sibling and that code resolves to one House row. Image-only documents without extracted text and without a matched sibling remain unassigned."
+      }
+    }
+  },
+  "activeBuilder": "build_investigation_summary.py",
+  "heartbeatAtUtc": "2026-11-07T16:00:17.021347+00:00"
+}

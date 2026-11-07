@@ -128,8 +128,9 @@ def main():
     progress['completed'] = not progress['skippedBusy']
     atomic_json(PROGRESS, progress)
     guard()
-    import build_dpwh_indepth
-    summary = build_dpwh_indepth.build()
+    from refresh_parsed_document_pages import refresh
+    publication = refresh('rcs-pow-reparse')
+    summary = publication['builders']['build_dpwh_indepth.py']
     print(json.dumps({'complete': progress['completed'],
                       'rcsProjects': len(projects), 'reparsed': len(progress['processed']),
                       'alreadyCurrent': len(current), 'missingPowAssets': len(missing),
