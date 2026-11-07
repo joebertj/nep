@@ -100,7 +100,7 @@ def main():
                 'projectName': row.get('name') or '', 'category': 'Multi-purpose building',
                 'amountPesos': int(row.get('amountPesos') or 0),
                 'office': row.get('office') or '', 'source': row.get('source') or f'FY{year} DPWH GAA MPB candidate',
-                'districtId': '', 'locationBasis': 'ODV official barangay matcher',
+                'districtId': '', 'locationBasis': 'official barangay matcher',
             }
             add(str(place.get('barangay') or ''), locality, str(place.get('region') or ''), record)
             mpb_links += 1

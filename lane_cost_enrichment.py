@@ -36,7 +36,7 @@ def rows(profile,sources):
                 yield json.loads(line)['attributes']
         if count!=state['expected']:raise ValueError('Inventory count differs from manifest')
         sources.append({'profile':profile,'layer':relative,'file':str(path.relative_to(ROOT)),
-            'url':'https://services1.arcgis.com/IwZZTMxZCmAmFYvF/ArcGIS/rest/services/'+relative,
+            'source':'offline DPWH shapefiles',
             'sha256':digest.hexdigest(),'rows':count,'copyright':metadata.get('copyrightText'),
             'note':'Inventory vintage, not proof of FY2027 funded work quantities.'})
 

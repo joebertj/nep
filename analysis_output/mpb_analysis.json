@@ -142908,7 +142908,7 @@
       "tranche_detail": "",
       "tranche_conflict": false,
       "congressional_representatives": [
-        "Jun Gato"
+        "—"
       ],
       "distanceMeters": null,
       "distanceBand": "Unknown distance",
@@ -193322,7 +193322,7 @@
         "tranche_detail": "",
         "tranche_conflict": false,
         "congressional_representatives": [
-          "Jun Gato"
+          "—"
         ],
         "distanceMeters": null,
         "distanceBand": "Unknown distance",
@@ -438667,7 +438667,7 @@
     },
     {
       "file": "repeat_nep_hgab_survival.json",
-      "sha256": "2a37d4b54e8f45e5e097491c3b36cdbd97c208f12f90a7e0dba6b13e7010714b"
+      "sha256": "060ad0a28c673701b9f78fcefb60bb06527f8e5f292529b2d3cad7319e9ca484"
     },
     {
       "file": "congress_geographic_attribution_db_3rd.json",
@@ -438675,11 +438675,11 @@
     },
     {
       "file": "dpwh-in-depth-data.json",
-      "sha256": "446ad9e66323541267fe7ad17cf28a1b90250d6fa1d9ef3f098b745f279e8b35"
+      "sha256": "55a345523f63a147083e567c6c8b78d66e346edf03df4fad23ccae839e50699b"
     },
     {
       "file": "mpb-barangay-data.json",
-      "sha256": "bef415f799818961dd73e13aea90d63abc9719bb770795caff7fb6e4714e08cc"
+      "sha256": "a5e913259797b81730ed19c70f24dc89c53c3a8dc690bbc18f6213a7d7898134"
     },
     {
       "file": "data_sources/csiiiv/legislative_profiles_ff0f748.json",

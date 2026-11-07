@@ -98,7 +98,8 @@ def generate():
     page=page.replace('__HERO_STYLE__',STYLE).replace('</head>',connectivity_style+CSS+'</head>')
     from uniform_report_menu import apply_page as apply_uniform_menu
     page=apply_uniform_menu(page,'fmr.html')
-    from review_report_language import NOTICE,CSS as EVIDENCE_CSS
+    from review_report_language import NOTICE
+    from build_investigation_summary import CSS as EVIDENCE_CSS
     page=re.sub(r'(<main\b[^>]*>)',lambda m:m[0]+NOTICE,page,count=1)
     page=page.replace('</head>',EVIDENCE_CSS+'<style id="fmr-chart-legend-style">.chart-legend-no-rank li{grid-template-columns:minmax(0,1fr) auto!important}</style></head>',1)
     (OUT/'fmr.html').write_text(page);(STATIC/'fmr.html').write_text(page)

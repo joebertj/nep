@@ -1,0 +1,259 @@
+{
+  "capturedAtUtc": "2026-11-05T07:53:13.512276+00:00",
+  "page": "https://research.bettergov.ph/dynasty#table",
+  "localSource": "open-data-visualization/data/parquet/political_dynasties.parquet",
+  "tableSource": "visualization.py dynasty_data_api; PostgreSQL dynasty.political_dynasties",
+  "captures": [
+    {
+      "filter": "governor",
+      "records": 6400,
+      "pages": 7,
+      "url": "https://research.bettergov.ph/api/dynasty?position=governor&limit=1000"
+    },
+    {
+      "filter": "mayor",
+      "records": 35740,
+      "pages": 36,
+      "url": "https://research.bettergov.ph/api/dynasty?position=mayor&limit=1000"
+    },
+    {
+      "filter": "engineer",
+      "records": 1149,
+      "pages": 2,
+      "url": "https://research.bettergov.ph/api/dynasty?position=engineer&limit=1000"
+    }
+  ],
+  "files": [
+    {
+      "path": "engineer-page-001.json",
+      "bytes": 241111,
+      "sha256": "5969a8462b6705b12e9c51439bee62e8ef617d1a54e4fb31c0e62d360a5d8091"
+    },
+    {
+      "path": "engineer-page-002.json",
+      "bytes": 35243,
+      "sha256": "cf402ca567bcbedd5693f773e32fe74410fe085aec68eb87eef7130ec1da3899"
+    },
+    {
+      "path": "governor-page-001.json",
+      "bytes": 207410,
+      "sha256": "982f9b9778c2599144d91629422729bef805797bed6f1a6c02f3afa7253e4434"
+    },
+    {
+      "path": "governor-page-002.json",
+      "bytes": 207963,
+      "sha256": "14f062901091a1ad30f80595b663ff9331b87cb7352c9429929189866839cf2e"
+    },
+    {
+      "path": "governor-page-003.json",
+      "bytes": 207845,
+      "sha256": "998ab6247bea7a9b47f5fd17098466e299a73e7cf05a31645922041a33a1a6db"
+    },
+    {
+      "path": "governor-page-004.json",
+      "bytes": 204131,
+      "sha256": "9e9998a857f5b85c3513ccc76bc85c1d956d67f09ca7213a0c0645b4d7a4eab8"
+    },
+    {
+      "path": "governor-page-005.json",
+      "bytes": 206283,
+      "sha256": "bf614d0e89ba3f544954c181933f9251495705270de71f6079e64aba72c3ef29"
+    },
+    {
+      "path": "governor-page-006.json",
+      "bytes": 208219,
+      "sha256": "3dce870c37cf459514cd2b845fc2d2a1a04be46c8c16415a0cb7ebc27e2513d0"
+    },
+    {
+      "path": "governor-page-007.json",
+      "bytes": 84701,
+      "sha256": "5255452a2990ed9a0cc92ee14cd4e294bde4382d1bdf3392c44c6e929ec052d9"
+    },
+    {
+      "path": "mayor-page-001.json",
+      "bytes": 204028,
+      "sha256": "1a63c84c08bf76bcaa70222904f3942dab6ff1d85f65c9dad7c301877382f38b"
+    },
+    {
+      "path": "mayor-page-002.json",
+      "bytes": 209323,
+      "sha256": "b6deae8dd8ffec387aca9f091949f72ba6fbea362d454220b6d89579f178e9bc"
+    },
+    {
+      "path": "mayor-page-003.json",
+      "bytes": 207116,
+      "sha256": "27b3503dd300e147ce0918086ef20b6970aaed43b0e1bb61b80bd62fad9b79e4"
+    },
+    {
+      "path": "mayor-page-004.json",
+      "bytes": 205283,
+      "sha256": "b2bb94cba886999c13452eec8a5c5d8a0f3b77cdfdd3fc34a6c2be9038592f7f"
+    },
+    {
+      "path": "mayor-page-005.json",
+      "bytes": 203070,
+      "sha256": "54b6526ed570bf6a59602bd669a0df745943e5dc9f060444f3a2ea6051726be1"
+    },
+    {
+      "path": "mayor-page-006.json",
+      "bytes": 215828,
+      "sha256": "fe4d16623e06567c336fc85dbec8184d983be41653928db8d33e31e72e837b3b"
+    },
+    {
+      "path": "mayor-page-007.json",
+      "bytes": 230411,
+      "sha256": "08c6ca07b9df204fb24b4229cacf821748fd91be1cf52e856bcae21557addb0e"
+    },
+    {
+      "path": "mayor-page-008.json",
+      "bytes": 230979,
+      "sha256": "066f2ee1fc2ed41d7a5ae025ea4b59456e25cfbfb4e4ceb2189e363d711fa84e"
+    },
+    {
+      "path": "mayor-page-009.json",
+      "bytes": 231575,
+      "sha256": "a498a77ad5f3feba3f476433a0235b876635982e7a396e86ac11062e5f62f33e"
+    },
+    {
+      "path": "mayor-page-010.json",
+      "bytes": 230762,
+      "sha256": "4543f475a96f569116fdcc65eced8e08a458caa99116881abbf4be88d9107262"
+    },
+    {
+      "path": "mayor-page-011.json",
+      "bytes": 229348,
+      "sha256": "0f482a144468df26583422e7c5bbbe3ec03b74d6d7597fb1bf94624b5a54c486"
+    },
+    {
+      "path": "mayor-page-012.json",
+      "bytes": 214420,
+      "sha256": "133c80f2a25f1b664edf18e09c55d4da162e33ac99fe014410e7add5877fac76"
+    },
+    {
+      "path": "mayor-page-013.json",
+      "bytes": 210319,
+      "sha256": "f80636a1d0f3db3a8299b4fe47d7a31852995992db59c19c8ad2affd5adfaba1"
+    },
+    {
+      "path": "mayor-page-014.json",
+      "bytes": 209684,
+      "sha256": "e232bcda4db9f8956fbd534da206b92337cfd4c65e2adc263a4702b4df46cce0"
+    },
+    {
+      "path": "mayor-page-015.json",
+      "bytes": 211586,
+      "sha256": "2901ad0cf323676c2d824af2f8a40972430f28a233628c7ca8b1c5958b3ac818"
+    },
+    {
+      "path": "mayor-page-016.json",
+      "bytes": 208863,
+      "sha256": "5e63185f7535e2633731554f74cb4e8d01e6f20abae5d8072368346bda0f317d"
+    },
+    {
+      "path": "mayor-page-017.json",
+      "bytes": 204262,
+      "sha256": "50ff41fa0175483f82cd2f67795652b6b8e4683b25d865e66ea7a3c25f7ff728"
+    },
+    {
+      "path": "mayor-page-018.json",
+      "bytes": 204446,
+      "sha256": "1d7976063c75829dd002430ea033484880579aa0f7dd6787637c8a424d90808c"
+    },
+    {
+      "path": "mayor-page-019.json",
+      "bytes": 203466,
+      "sha256": "b181ba6557b5fda9d2f71647b3147e8c053bf046c20988dc1abd8e5dfd530b1a"
+    },
+    {
+      "path": "mayor-page-020.json",
+      "bytes": 205343,
+      "sha256": "3600eb487e541c66d475577539a1ac2c6ede34477a19ed3708fd8933a61b5e19"
+    },
+    {
+      "path": "mayor-page-021.json",
+      "bytes": 202597,
+      "sha256": "25447d9f540bf71d23e912b4a7d43abec5049f0921e4582011b20de09fc28172"
+    },
+    {
+      "path": "mayor-page-022.json",
+      "bytes": 213730,
+      "sha256": "439efd938e13dfed47a7615b6700191ccab5fbcd27685db4aa565c303d568807"
+    },
+    {
+      "path": "mayor-page-023.json",
+      "bytes": 214793,
+      "sha256": "4ad3b681bed903daa572abfd418b8eb1d7369f2c595f6eabe8ce3f5806783270"
+    },
+    {
+      "path": "mayor-page-024.json",
+      "bytes": 214449,
+      "sha256": "e0385d3567f47dc59079248691abc37ba94f64c7d29e76140887ec9e587b3304"
+    },
+    {
+      "path": "mayor-page-025.json",
+      "bytes": 216064,
+      "sha256": "4b00a1f8b70e9d8052f493cec12314741b993508b9f4ee0bf8004864f7573c7f"
+    },
+    {
+      "path": "mayor-page-026.json",
+      "bytes": 213717,
+      "sha256": "fe69319129b15af416899589c2d15eb57346b6423feaec58eb0687f9aa2b0e87"
+    },
+    {
+      "path": "mayor-page-027.json",
+      "bytes": 216213,
+      "sha256": "f83e8241bfd9b8826cbfc3067bc3078eb213bfa54a4ac48c39cf233742134a53"
+    },
+    {
+      "path": "mayor-page-028.json",
+      "bytes": 216373,
+      "sha256": "ebea20d616ebd7e8b9e9f41857229147fe217c3511892a7c338c8d7f68523e2a"
+    },
+    {
+      "path": "mayor-page-029.json",
+      "bytes": 216110,
+      "sha256": "0ca0ec5603e840ce2882680fb30a342b21de2fd513efb940de452e9735d1932b"
+    },
+    {
+      "path": "mayor-page-030.json",
+      "bytes": 216196,
+      "sha256": "dd4787025239c53cd3f87e65bc91440df2ea99c074f01758c7359a792fd34311"
+    },
+    {
+      "path": "mayor-page-031.json",
+      "bytes": 215865,
+      "sha256": "1356379e693c58ead92d419e993176d9ff9a2cc3749eb6a65fd5c033df68902b"
+    },
+    {
+      "path": "mayor-page-032.json",
+      "bytes": 217516,
+      "sha256": "4e624d0e5915b20341d840f68bc4174a5af29112459fefa5feef2da485ea351f"
+    },
+    {
+      "path": "mayor-page-033.json",
+      "bytes": 216577,
+      "sha256": "881f951296d2a658dc697e325eedb60abc48f3fb7211325fad8604264b02330a"
+    },
+    {
+      "path": "mayor-page-034.json",
+      "bytes": 218617,
+      "sha256": "ea016621b4b21288be70b5eff20870f2584a39914d41983c07c8783d85d9af65"
+    },
+    {
+      "path": "mayor-page-035.json",
+      "bytes": 216009,
+      "sha256": "b5cb8d256dd050badb1fe37f79f65fc12a08c7b617c79d5e352e24446944781b"
+    },
+    {
+      "path": "mayor-page-036.json",
+      "bytes": 160428,
+      "sha256": "84280e2a0456e5740aa665e695d5f4a3229ed541c182d7f08cadffcb54cbeef8"
+    },
+    {
+      "path": "political_dynasties.parquet",
+      "bytes": 2033096,
+      "sha256": "ba95fd52fe39ac4e5c9a89284d567b78dde1a2fdce939d71040c9ba2eb78b2d8"
+    }
+  ],
+  "limits": "API table applies its own elected/BAC/engineer position screen; local Parquet preserves additional source rows. Source years are historical records, not current appointment verification."
+}

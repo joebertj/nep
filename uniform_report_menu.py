@@ -11,13 +11,16 @@ RESEARCH_STATUS_VERSION=hashlib.sha256((STATIC/'research-status.js').read_bytes(
 MENU_GROUPS=[
     ('Summary',[('summary.html','Summary · investigative leads')]),
     ('Budget 2027',[
-        ('dpwh.html','DPWH Transparency'),
+        ('dpwh.html','Senate HGAB POWs'),('pow.html','POW PDF forensics'),
+        ('dpwh-transparency.html','DPWH Transparency inventory'),
         ('congress.html','Project flags + district allocations'),
+        ('development-council.html','POW + Development Council signatories'),
         ('flags.html','Flags'),
         ('undocumented-hgab.html','Undocumented HGAB'),('repeats.html','Project repeats'),
         ('out-of-place.html','Out of Place'),('cost-per-km.html','Cost per meter'),
         ('pccp-cost-per-unit.html','Cost Per Unit · DPWH Atlas'),
         ('cost-per-unit.html','Cost per Unit · peer comparison'),
+        ('expectation-vs-reality.html','Costing vs proposed allocation'),
         ('rcs.html','RCS · POW scope'),('mpb.html','MPB Flags'),('barangay.html','Barangay allocations'),
     ]),
     ('Historical',[
@@ -26,6 +29,7 @@ MENU_GROUPS=[
         ('mpb-barangay.html','MPB'),('mpb-historical.html','DPWH'),
         ('barangay-historical.html','Barangay'),('contractors.html','Contractors'),('connectivity.html','Road connectivity'),
     ]),
+    ('Vote 2028',[('vote-2028.html','Vote 2028')]),
 ]
 def render_menu_group(group, links):
     if len(links) == 1:
@@ -106,7 +110,13 @@ def build_status():
 
 def apply_research_status(text,status=None):
     status=status or build_status()
-    text=re.sub(r'<aside\b[^>]*class="research-status"[^>]*>.*?</aside>','',text,flags=re.S)
+    # Match the class as a token: disclaimer processing may add another class
+    # to the shared status aside, and exact-value matching made each later
+    # build append another copy.
+    def remove_existing_status(match):
+        classes=re.search(r'\bclass="([^"]*)"',match.group(1))
+        return '' if classes and 'research-status' in classes.group(1).split() else match.group(0)
+    text=re.sub(r'<aside\b([^>]*)>.*?</aside>',remove_existing_status,text,flags=re.S)
     text=re.sub(r'<style id="research-status-style">.*?</style>','',text,flags=re.S)
     text=re.sub(r'<script\b[^>]*id="research-status-script"[^>]*>\s*</script>','',text,flags=re.S)
     script=f'<script id="research-status-script" defer src="/static/nep-preview/research-status.js?v={RESEARCH_STATUS_VERSION}"></script>'
@@ -203,6 +213,15 @@ def apply_page(text,page=None,status=None):
             else:
                 credit=AI_CREDIT.replace('__BUDGET_TRIVIA_HREF__',trivia_href)
                 text=text.replace('</body>',credit+'</body>',1)
+    if page in {'dpwh.html','undocumented-hgab.html'}:
+        text=re.sub(r'<p id="related-pow-forensics">.*?</p>','',text,flags=re.S)
+        link='<p id="related-pow-forensics"><strong>Related analysis:</strong> <a href="pow.html">POW PDF forensics · software, image and document-assembly signals</a>.</p>'
+        footer=re.search(r'<footer\b[^>]*class="site-ai-credit"[^>]*>.*?</footer>',text,re.S)
+        if footer:
+            replacement=footer.group(0).replace('</footer>',link+'</footer>',1)
+            text=text[:footer.start()]+replacement+text[footer.end():]
+        else:
+            text=text.replace('</body>','<footer class="site-ai-credit">'+link+'</footer></body>',1)
     if page in {'mpb.html','mpb-barangay.html','mpb-base.html'}:
         text=apply_mpb_source_footer(text)
     text=text.replace('</head>',CSS+'</head>',1)
@@ -241,14 +260,8 @@ def apply():
         path.write_text(apply_menu_behavior(apply_research_status(text,status)))
     pow=STATIC/'pow.html'
     if pow.exists():
-        text=pow.read_text(errors='ignore')
-        if 'class="report-header-brand"' not in text:
-            brand='<a class="report-header-brand" href="https://bettergov.ph/" aria-label="BetterGov home"><img src="https://assets.bettergov.ph/logos/webp/horizontal-black.webp" alt="BetterGov"></a>'
-            text=text.replace('<header>', '<header>'+brand,1)
-        theme_link=f'<link id="research-theme-style" rel="stylesheet" href="research-theme.css?v={RESEARCH_THEME_VERSION}">'
-        if 'research-theme.css' not in text:text=text.replace('</head>',theme_link+'</head>',1)
-        else:text=re.sub(r'<link\b(?=[^>]*research-theme\.css)[^>]*>',theme_link,text,count=1)
-        pow.write_text(apply_research_status(text,status))
+        text=apply_page(pow.read_text(errors='ignore'),'pow.html',status)
+        pow.write_text(text)
     report={'pages':results,'pageCount':len(results),'menuGroups':[{'label':label,'links':len(items)} for label,items in MENU_GROUPS],'menuBehavior':'Mutually exclusive native collapsible groups; opening one closes the other; panels are scrollable and responsive.','scope':'Generated markup and CSS audit; no browser rendering test.'}
     (ROOT/'analysis_output/report_menu_review.json').write_text(json.dumps(report,indent=2)+'\n')
     return report

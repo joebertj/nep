@@ -46,20 +46,32 @@ def read_json(path: Path):
 
 def build() -> dict:
     connectivity = read_json(CONNECTIVITY)
+    coordinate_review_ids = {str(row.get('id')) for row in connectivity.get('projects', []) if row.get('coordinateQualityFlag')}
     links = read_json(VENUE_LINKS)
     venue_by_url = {row.get('sourceUrl'): row for row in read_json(VENUES).get('rows', [])}
+    property_links = OUT.with_name('connectivity-remote-fmr-properties.json')
+    if property_links.exists():
+        links['rows'] += read_json(property_links).get('rows', [])
+        venue_by_url.update({row.get('sourceUrl'): row for row in read_json(OUT.with_name('connectivity-property-indicators-data.json')).get('rows', [])})
     venues_by_route: dict[str, list[dict]] = {}
     venue_match_counts: dict[str, int] = {}
     for row in links.get('rows', []):
         route_id = str(row.get('roadId'))
+        if route_id in coordinate_review_ids:
+            continue
         venue_match_counts[route_id] = venue_match_counts.get(route_id, 0) + 1
         venue = venue_by_url.get(row.get('venueSourceUrl'))
         if not venue or venue.get('latitude') is None or venue.get('longitude') is None:
             continue
-        venues_by_route.setdefault(route_id, []).append({
+        target = venues_by_route.setdefault(route_id, [])
+        if any(item['sourceUrl'] == row.get('venueSourceUrl') for item in target):
+            continue
+        target.append({
             'name': venue.get('name'), 'type': venue.get('type'),
             'latitude': venue.get('latitude'), 'longitude': venue.get('longitude'),
             'distanceMeters': row.get('distanceMeters'), 'sourceUrl': row.get('venueSourceUrl'),
+            'recordKind': venue.get('recordKind'), 'distanceBasis': row.get('distanceBasis'),
+            'propertyGeometry': venue.get('geometry') if venue.get('recordKind') == 'Private-property cue' and 'footprint' in (row.get('distanceBasis') or '') else None,
         })
 
     projects = {}
@@ -71,10 +83,13 @@ def build() -> dict:
             'id': project_id, 'title': row.get('title'), 'region': row.get('region'),
             'start': [row.get('startLongitude'), row.get('startLatitude')],
             'end': [row.get('endLongitude'), row.get('endLatitude')],
+            'routeParts': row.get('routeParts') or [],
+            'coordinateQualityFlag': bool(row.get('coordinateQualityFlag')),
             'roadSection': row.get('roadSection'), 'roadName': row.get('roadName'),
-            'roadClass': row.get('roadClass'), 'nearestDistanceMeters': row.get('nearestDistanceMeters'),
-            'closestEnd': row.get('closestEnd'), 'venues': venues_by_route.get(project_id, []),
-            'venueMatchCount': venue_match_counts.get(project_id, 0),
+            'roadClass': row.get('roadClass'), 'nearestDistanceMeters': row.get('endpointNearestDistanceMeters', row.get('nearestDistanceMeters')),
+            'routeNetworkDistanceMeters': row.get('routeNetworkDistanceMeters'),
+            'closestEnd': row.get('closestEnd'), 'venues': [] if row.get('coordinateQualityFlag') else venues_by_route.get(project_id, []),
+            'venueMatchCount': 0 if row.get('coordinateQualityFlag') else venue_match_counts.get(project_id, 0),
         }
 
     # Section 2 also includes FY2024/FY2025 coordinate-backed DA tracker rows.
@@ -123,12 +138,19 @@ def build() -> dict:
                 'roadId': attrs.get('ROAD_ID'), 'pathsUtm51': paths,
             }
 
+    from connectivity_farm_enrichment import load_measurements, apply_measurement
+    farm_cache = load_measurements()
+    if farm_cache:
+        for project in projects.values():
+            apply_measurement(project, farm_cache)
     payload = {
-        'source': 'DPWH Road Classification FeatureServer layer 1; FY2027 HGAB FMR endpoint rows; DA FMR ArcGIS FY2024/FY2025; OSM visitor venues.',
+        'source': 'DPWH Road Classification FeatureServer layer 1; FY2027 HGAB FMR endpoint rows; DA FMR ArcGIS FY2024/FY2025; OSM visitor venues and property cues.',
         'roadSpatialReference': 'EPSG:32651',
         'municipalityBoundaries': 'out-of-place-boundaries.json (DPWH City-Municipal Boundaries, WGS84 rings)',
-        'routeGeometryBasis': 'Straight line between the source start/end coordinates; not a surveyed alignment.',
-        'farmLocationAvailable': False,
+        'routeGeometryBasis': 'Printed source-coordinate legs where available; otherwise straight line between source endpoints. Not a surveyed alignment or Google driving route.',
+        'farmLocationAvailable': bool(farm_cache),
+        'farmSource': farm_cache['source'] if farm_cache else None,
+        'farmDataAudit': 'connectivity-farm-status.json',
         'projects': projects,
         'roads': roads,
     }

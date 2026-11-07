@@ -11,6 +11,8 @@ TEASERS={
  'repeats.html':'How often do project titles and segments resurface?',
  'mpb.html':'How many building allocations lack a plausible NEP counterpart?',
  'cost-per-km.html':'Which projects stand out on cost per meter?',
+ 'cost-per-unit.html':'Compare unit costs by bill and unit, with source pages available for review.',
+ 'expectation-vs-reality.html':'Costing vs proposed allocation',
  'cost-matching.html':'Can asset records recover missing length information?',
  'rcs.html':'Did 199 offices really get the same RCS package?',
  'fmr.html':'More farm roads in the House budget?',
@@ -21,6 +23,7 @@ TEASERS={
  'deped.html':'Can we tell whether school allocations changed?',
  # This is a utility view, not a finding. Keep its teaser slot reserved.
  'project-documents.html':'',
+ 'vote-2028.html':'Which linked families held overlapping elected offices?',
 }
 HEADLINES={
  'congress.html':'mapped flagged projects to review',

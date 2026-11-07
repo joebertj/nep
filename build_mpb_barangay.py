@@ -217,7 +217,7 @@ def main():
     result = {
         'title': 'MPB allocations by official barangay',
         'generatedAtUtc': datetime.now(timezone.utc).isoformat(),
-        'source': 'ODV unified location hierarchy; FY2015 DBM DPWH GAA capital-outlay PAP title candidates; FY2016 DPWH family extract; FY2017–FY2018 BetterGov GAA Explorer DPWH title rows; FY2019 DBM DPWH Technical GAA UACS-coded MPB title candidates; FY2020–FY2026 integrated GAA project records; exact FY2027 HGAB MPB PAP rows',
+        'source': 'the unified geographic reference list; FY2015 DBM DPWH GAA capital-outlay PAP title candidates; FY2016 DPWH family extract; FY2017–FY2018 BetterGov GAA Explorer DPWH title rows; FY2019 DBM DPWH Technical GAA UACS-coded MPB title candidates; FY2020–FY2026 integrated GAA project records; exact FY2027 HGAB MPB PAP rows',
         'periods': years_summary,
         'summary': {
             'officialBarangays': len(barangays), 'barangaysWithMpb': sum(bool(x['projectRows']) for x in barangays),

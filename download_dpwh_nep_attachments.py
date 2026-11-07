@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Continuously archive newly listed FY2027 DPWH Transparency attachments."""
+"""Download missing Senate HGAB POW PDFs from the Cloudflare link index.
+
+The manifest is the sole inventory source. This worker does not walk or scan
+T5 source folders; it reads the parser download journal for SHA-256 deduplication
+and writes newly fetched PDFs plus journal rows to the existing parser intake.
+CAR and NIR are processed first because those folders were being redownloaded.
+"""
 import argparse
 import fcntl
 import hashlib
@@ -7,517 +13,376 @@ import json
 import os
 from pathlib import Path
 import re
-import shutil
-import subprocess
-import threading
+import unicodedata
 import time
-from urllib.parse import unquote, urlencode, urlsplit
+from urllib.error import HTTPError, URLError
+from urllib.parse import unquote, urlsplit
+from urllib.request import HTTPRedirectHandler, Request, build_opener, HTTPSHandler
+import ssl
 
 from storage.external_storage import BASE, guard
 
-guard()
-os.environ['DPWH_EXTERNAL_VOLUME'] = '/Volumes/T5 EVO'
-os.environ['DPWH_DOCUMENT_CACHE'] = str(BASE / 'nep/data_sources/dpwh_project_documents/on_demand')
-from project_documents.service import API, CACHE, metadata, request
-
-ROOT = BASE / 'nep/data_sources/dpwh_project_documents/attachments'
-JOURNAL = ROOT / 'downloads.jsonl'
-STATUS = ROOT / 'status.json'
-REPO = Path(__file__).resolve().parent
-EXPECTED_COUNTS = REPO / 'analysis_output/dpwh-in-depth-data.json'
-MAX_BYTES = int(os.environ.get('DPWH_DOCUMENT_MAX_BYTES', str(2 * 1024**3)))
-HOSTS = {'s3.infrawatch.ph', 'transparency.dpwh.gov.ph'}
-API_PAGE_LIMIT = 500
-STATUS_LOCK = threading.RLock()
-TARGET_DOCUMENT_TYPES = {
-    'POW': 'POW',
-    'RDC Endorsement': 'RDC',
-    'PDC Endorsement': 'PDC',
-    'LDC Endorsement': 'LDC',
-}
+ROOT = Path(__file__).resolve().parent
+MANIFEST = ROOT / 'analysis_output' / 'Cloudflare-file-links.jsonl'
+ATTACHMENTS = BASE / 'nep/data_sources/dpwh_project_documents/attachments'
+JOURNAL = ATTACHMENTS / 'downloads-hgab.jsonl'
+STATUS = ATTACHMENTS / 'cloudflare-hgab-intake-status.json'
+ALL_JOURNAL = ATTACHMENTS / 'cloudflare-file-downloads.jsonl'
+SCAN_SNAPSHOT = ROOT / 'analysis_output' / 'senate_supporting_documents_hgab_only_scan.json'
+CODE_PATTERN = re.compile(r'(?:2027[-_\s]*)?DPWH[-_\s]*HGAB[-_\s-]*(\d{5})', re.I)
+ALLOWED_HOST = 'budget-assets.bettergov.ph'
+ALLOWED_PATH = '/hgab/2027/dpwh/supporting-documents/'
+PRIORITY_REGIONS = {'CAR', 'NIR'}
+EMPTY_SHA256 = hashlib.sha256(b'').hexdigest()
 
 
 def stamp():
     return time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
 
 
-def digest(path):
-    h = hashlib.sha256()
-    with path.open('rb') as stream:
-        while chunk := stream.read(1024 * 1024):
-            h.update(chunk)
-    return h.hexdigest()
+def write_json(path, value):
+    guard()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temp = path.with_name(path.name + '.tmp')
+    temp.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    temp.replace(path)
 
 
-def signature(document):
-    identity = {k: document.get(k) for k in ('id', 'fileName', 'url', 'sizeBytes', 'contentType', 'uploadedAt')}
-    return hashlib.sha256(json.dumps(identity, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
-
-
-def target_document_type(document):
-    """Canonicalize the four attachment classes tracked by the DPWH inventory."""
-    label = re.sub(r'[^a-z0-9]+', ' ', str(document.get('documentType') or '').lower()).strip()
-    if label == 'pow' or 'program of work' in label:
-        return 'POW'
-    if re.search(r'\brdc\b', label) or 'regional development council' in label:
-        return 'RDC'
-    if re.search(r'\bpdc\b', label) or 'provincial development council' in label:
-        return 'PDC'
-    if re.search(r'\bldc\b', label) or 'local development council' in label:
-        return 'LDC'
-    return None
-
-
-def expected_document_counts():
-    """Load the known DPWH Transparency attachment totals used for reconciliation."""
-    data = json.loads(EXPECTED_COUNTS.read_text(encoding='utf-8'))
-    rows = data.get('documentReconciliation', {}).get('rows', [])
-    expected = {}
-    for row in rows:
-        kind = TARGET_DOCUMENT_TYPES.get(row.get('type'))
-        if kind:
-            expected[kind] = int(row['transparencyRecords'])
-    missing = set(TARGET_DOCUMENT_TYPES.values()) - set(expected)
-    if missing:
-        raise RuntimeError('Expected document inventory is missing types: ' + ', '.join(sorted(missing)))
-    return expected, data.get('generatedAtUtc')
-
-
-def downloaded_asset(done, document_signature):
-    """Return a journaled file only when its recorded byte count still matches."""
-    row = done.get(document_signature)
-    if not row or not row.get('path'):
-        return None
-    path = ROOT / row['path']
-    try:
-        return path if path.is_file() and path.stat().st_size == row.get('bytes') else None
-    except OSError:
-        return None
-
-
-def project_priority(project, done):
-    """Rank cached projects with the most missing target documents first.
-
-    Projects without cached metadata come next so new/changed projects are
-    discovered before projects whose target documents already reconcile.
-    """
-    path = CACHE / project['projectCode'] / 'metadata.json'
-    try:
-        docs = json.loads(path.read_text(encoding='utf-8')).get('documents', [])
-    except (OSError, json.JSONDecodeError):
-        return (1, 0, project['projectCode'])
-    missing = sum(1 for doc in docs if target_document_type(doc)
-                  and not downloaded_asset(done, signature(doc)))
-    return (0, -missing, project['projectCode']) if missing else (2, 0, project['projectCode'])
-
-
-def filename(document):
-    name = unquote(str(document.get('fileName') or Path(urlsplit(document['url']).path).name))
-    name = name.replace('\\', '_').replace('/', '_')
-    name = ''.join(c if c.isprintable() and c not in '<>:"|?*' else '_' for c in name).strip(' .')
-    return name[:240] or 'attachment.bin'
-
-
-def load_journal():
-    found = {}
-    if JOURNAL.exists():
+def journaled_versions():
+    """Read the append-only parser journal; never enumerate its PDF folders."""
+    versions = set()
+    if JOURNAL.is_file():
         with JOURNAL.open(encoding='utf-8') as stream:
             for line in stream:
                 try:
                     row = json.loads(line)
-                    if row.get('status') == 'downloaded':
-                        found[row['signature']] = row
-                except (json.JSONDecodeError, KeyError):
+                except json.JSONDecodeError:
                     continue
-    return found
+                if row.get('status') == 'downloaded' and row.get('projectCode') and row.get('sha256'):
+                    versions.add((row['projectCode'], row['sha256']))
+    return versions
 
 
-def append(row):
-    ROOT.mkdir(parents=True, exist_ok=True)
+def is_pow(row):
+    path = unquote(str(row.get('path') or '').rsplit('/', 1)[-1]).casefold()
+    return bool(re.search(r'(?:^|[^a-z])pow(?:[^a-z]|$)|program\s+of\s+works?', path))
+
+
+def classify(row):
+    name = unquote(str(row.get('path') or '').rsplit('/', 1)[-1]).upper()
+    if is_pow(row):
+        return 'POW'
+    if re.search(r'(?:^|[^A-Z0-9])BP\s*202(?:[^0-9]|$)', name):
+        return 'BP 202'
+    if re.search(r'GEOTAG|GEO.?TAG|PHOTO|PICTURE', name):
+        return 'Geotagged photos'
+    if 'IMPLEMENTABILITY' in name:
+        return 'Certificate of Implementability'
+    if re.search(r'(?:^|[^A-Z0-9])(?:RDC|PDC|LDC|CDC|DC)(?:[^A-Z0-9]|$)|DEVELOPMENT.?COUNCIL', name):
+        return 'Development Council'
+    return 'Other'
+
+
+def path_key(value):
+    value = unicodedata.normalize('NFKC', unquote(str(value or ''))).replace('\\', '/')
+    return re.sub(r'/+', '/', value).strip('/').casefold()
+
+
+def safe_manifest_row(row):
+    path = str(row.get('path') or '')
+    parts = path.replace('\\', '/').split('/')
+    # Underscore-prefixed files/folders are known error artifacts and excluded.
+    if any(part.startswith('_') for part in parts):
+        return None
+    match = CODE_PATTERN.search(path)
+    digest = str(row.get('sha256') or '').lower()
+    url = str(row.get('url') or '')
+    parsed = urlsplit(url)
+    if not re.fullmatch(r'[a-f0-9]{64}', digest):
+        return None
+    if parsed.scheme != 'https' or parsed.hostname != ALLOWED_HOST or not parsed.path.startswith(ALLOWED_PATH):
+        return None
+    try:
+        size = int(row.get('bytes') or 0)
+    except (TypeError, ValueError):
+        return None
+    malformed = size == 0 and digest == EMPTY_SHA256
+    if size < 0 or (size == 0 and not malformed):
+        return None
+    code = f'2027DPWH-HGAB-{match.group(1)}' if match else None
+    return {
+        'projectCode': code,
+        'documentId': match.group(1) if match else None,
+        'fileName': Path(unquote(parts[-1])).name,
+        'region': str(row.get('region') or (parts[0] if parts else '')).strip(),
+        'sourcePath': path,
+        'url': url,
+        'bytes': size,
+        'sha256': digest,
+        'malformedManifestPdf': malformed,
+        'isPdf': Path(parts[-1]).suffix.casefold() == '.pdf',
+        'documentType': classify(row),
+        'manifestId': str(row.get('id') or ''),
+        'objectKey': str(row.get('object_key') or ''),
+    }
+
+
+def manifest_rows():
+    if not MANIFEST.is_file():
+        raise FileNotFoundError(f'Cloudflare inventory is missing: {MANIFEST}')
+    rows = {}
+    rejected = 0
+    with MANIFEST.open(encoding='utf-8') as stream:
+        for line_number, line in enumerate(stream, 1):
+            try:
+                raw = json.loads(line)
+            except json.JSONDecodeError as exc:
+                raise ValueError(f'Malformed JSONL row {line_number}: {exc}') from exc
+            item = safe_manifest_row(raw)
+            if item is None:
+                rejected += 1
+                continue
+            rows[(item['sourcePath'], item['sha256'])] = item
+    return list(rows.values()), rejected
+
+
+class SameHostRedirect(HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        parsed = urlsplit(newurl)
+        if parsed.scheme != 'https' or parsed.hostname != ALLOWED_HOST or not parsed.path.startswith(ALLOWED_PATH):
+            raise ValueError('Cloudflare redirect left the approved HGAB asset location')
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+def fetch(item, destination):
+    guard()
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    if shutil_free_bytes() < item['bytes'] + 2_000_000_000:
+        raise RuntimeError('Insufficient T5 space for download plus 2 GB reserve')
+    part = destination.with_name(destination.name + '.part')
+    request = Request(item['url'], headers={'User-Agent': 'BetterGov-HGAB-manifest-downloader/1.0'})
+    opener = build_opener(SameHostRedirect(), HTTPSHandler(context=ssl.create_default_context()))
+    digest = hashlib.sha256()
+    total = 0
+    try:
+        with opener.open(request, timeout=60) as response, part.open('wb') as out:
+            first = response.read(1024)
+            if item['isPdf'] and b'%PDF-' not in first:
+                raise ValueError('Cloudflare object does not begin with a PDF header')
+            digest.update(first)
+            total += len(first)
+            out.write(first)
+            while True:
+                chunk = response.read(1024 * 1024)
+                if not chunk:
+                    break
+                out.write(chunk)
+                digest.update(chunk)
+                total += len(chunk)
+            out.flush()
+            os.fsync(out.fileno())
+        allow_replacement = item['isPdf'] and (item['malformedManifestPdf'] or item.get('brokenCandidate'))
+        if not allow_replacement and total != item['bytes']:
+            raise ValueError(f'Byte count mismatch: expected {item["bytes"]}, got {total}')
+        actual_sha = digest.hexdigest()
+        if not allow_replacement and actual_sha != item['sha256']:
+            raise ValueError('SHA-256 does not match Cloudflare inventory')
+        guard()
+        part.replace(destination)
+        return total, actual_sha
+    except Exception:
+        part.unlink(missing_ok=True)
+        raise
+
+
+def shutil_free_bytes():
+    import shutil
+    return shutil.disk_usage(ATTACHMENTS).free
+
+
+def append_journal(row):
+    guard()
+    ATTACHMENTS.mkdir(parents=True, exist_ok=True)
     with JOURNAL.open('a', encoding='utf-8') as stream:
+        fcntl.flock(stream.fileno(), fcntl.LOCK_EX)
         stream.write(json.dumps(row, ensure_ascii=False) + '\n')
         stream.flush()
         os.fsync(stream.fileno())
 
 
-def write_status(status):
-    with STATUS_LOCK:
-        snapshot = dict(status)
-        snapshot['updatedAt'] = stamp()
-        temporary = STATUS.with_suffix('.json.tmp')
-        temporary.write_text(json.dumps(snapshot, ensure_ascii=False, indent=2) + '\n')
-        temporary.replace(STATUS)
-
-
-def status_heartbeat(stop, status):
-    while not stop.wait(30):
-        with STATUS_LOCK:
-            status['heartbeatAt'] = stamp()
-        write_status(status)
-
-
-def live_projects():
-    """Read every page of the current Transparency project listing."""
-    projects = []
-    expected_count = None
-    total_pages = None
-    for page in range(1, 100000):
-        query = urlencode({'page': page, 'limit': API_PAGE_LIMIT})
-        with request(f'{API}?{query}') as response:
-            payload = json.load(response)
-        if payload.get('status') != 200 or not isinstance(payload.get('data'), dict):
-            raise RuntimeError('Live DPWH project listing returned an unexpected response')
-        body = payload['data']
-        rows, pagination = body.get('data'), body.get('pagination')
-        if not isinstance(rows, list) or not isinstance(pagination, dict):
-            raise RuntimeError('Live DPWH project listing is missing pagination data')
-        count, pages = pagination.get('totalCount'), pagination.get('totalPages')
-        if not isinstance(count, int) or not isinstance(pages, int) or pages < 1:
-            raise RuntimeError('Live DPWH project listing has invalid totals')
-        if expected_count is None:
-            expected_count, total_pages = count, pages
-        elif count != expected_count or pages != total_pages:
-            raise RuntimeError('Live DPWH project listing changed during pagination; retry next cycle')
-        for row in rows:
-            code = row.get('code')
-            if not isinstance(code, str) or not re.fullmatch(r'2027DPWH-Proposal-\d{5}', code):
-                raise RuntimeError('Live DPWH project listing contains an invalid project code')
-            projects.append({'projectCode': code, 'projectName': row.get('projectName'),
-                             'indexedDocumentCount': row.get('documentCount') or 0})
-        if page >= total_pages:
-            break
-        if not rows:
-            raise RuntimeError(f'Live DPWH project listing ended early at page {page}')
-    if expected_count is None or len(projects) != expected_count:
-        raise RuntimeError(f'Live DPWH project listing incomplete: got {len(projects)} of {expected_count}')
-    if len({project['projectCode'] for project in projects}) != len(projects):
-        raise RuntimeError('Live DPWH project listing contains duplicate project codes')
-    return sorted(projects, key=lambda project: project['projectCode'])
-
-
-def cached_asset(code, document):
-    result_path = CACHE / code / 'result.json'
-    if not result_path.exists():
-        return None
+def snapshot_inventory():
+    """Use the last already-published T5 scan snapshot; never reread T5 folders."""
     try:
-        result = json.loads(result_path.read_text())
-    except (OSError, json.JSONDecodeError):
-        return None
-    for row in result.get('documents', []):
-        if row.get('metadata') != document:
+        old = json.loads(SCAN_SNAPSHOT.read_text(encoding='utf-8'))
+    except (OSError, ValueError):
+        return {}
+    result = {}
+    for row in old.get('documents', []):
+        path = path_key(row.get('file'))
+        if path:
+            result[path] = row
+    return result
+
+
+def downloaded_manifest_keys():
+    keys = set()
+    for journal in (ALL_JOURNAL, JOURNAL):
+        if not journal.is_file():
             continue
-        rel = row.get('pdfAsset') or row.get('cachedAsset')
-        if rel:
-            path = CACHE / code / 'assets' / rel
-            if path.is_file():
-                return path
-    return None
-
-
-def download(url, target, expected_size, content_type):
-    parsed = urlsplit(url)
-    if parsed.scheme != 'https' or parsed.hostname not in HOSTS:
-        raise ValueError('Attachment URL is outside the approved HTTPS source hosts')
-    if expected_size is not None and expected_size > MAX_BYTES:
-        raise ValueError(f'Attachment exceeds configured {MAX_BYTES}-byte limit')
-    guard()
-    if shutil.disk_usage(ROOT).free < (expected_size or 0) + 2 * 1024**3:
-        raise OSError('External drive has less than expected attachment size plus 2 GiB free')
-    part = target.with_name(target.name + '.part')
-    part.parent.mkdir(parents=True, exist_ok=True)
-    if part.exists():
-        part.unlink()
-    command = [
-        'curl', '--silent', '--show-error', '--fail', '--proto', '=https',
-        '--connect-timeout', '30', '--max-time', '1800', '--retry', '3', '--retry-delay', '3',
-        '--retry-all-errors', '--max-filesize', str(MAX_BYTES),
-        '--output', str(part), '--write-out', '%{http_code}', url,
-    ]
-    result = subprocess.run(command, capture_output=True, text=True)
-    if result.returncode or result.stdout.strip() != '200':
-        part.unlink(missing_ok=True)
-        raise RuntimeError(f'curl HTTP {result.stdout.strip() or "?"} exit {result.returncode}: {result.stderr.strip()[:240]}')
-    size = part.stat().st_size
-    if expected_size is not None and size != expected_size:
-        part.unlink(missing_ok=True)
-        raise ValueError(f'Downloaded {size} bytes; metadata lists {expected_size}')
-    if (content_type or '').lower().split(';')[0] == 'application/pdf':
-        with part.open('rb') as stream:
-            if b'%PDF-' not in stream.read(1024):
-                part.unlink(missing_ok=True)
-                raise ValueError('Metadata says PDF but file signature is missing')
-    part.replace(target)
-    return size, digest(target)
-
-
-def update_status(state, **values):
-    with STATUS_LOCK:
-        state.update(values)
-
-
-def increment_status(status, key, amount=1):
-    with STATUS_LOCK:
-        status[key] = status.get(key, 0) + amount
-
-
-def run(delay, interval_hours, once, project_codes=None):
-    done = load_journal()
-    expected_by_type, expected_data_generated = expected_document_counts()
-    status = {'status': 'starting', 'mode': 'daily_live_catalog_poll',
-              'startedAt': stamp(), 'pollIntervalHours': interval_hours,
-              'attachmentsDownloaded': len(done), 'errors': 0,
-              'documentReconciliation': {
-                  'expectedSourceCounts': expected_by_type,
-                  'expectedSourceGeneratedAtUtc': expected_data_generated,
-                  'currentListedCounts': {kind: 0 for kind in expected_by_type},
-                  'verifiedDownloadedCounts': {kind: 0 for kind in expected_by_type},
-                  'missingCounts': dict(expected_by_type), 'reconciled': False,
-              }}
-    heartbeat_stop = threading.Event()
-    heartbeat = threading.Thread(target=status_heartbeat, args=(heartbeat_stop, status), daemon=True)
-    heartbeat.start()
-    cycle = 0
-    try:
-        while True:
-            cycle += 1
-            update_status(status, status='checking_catalog', cycle=cycle,
-                          catalogAttemptAt=stamp(), lastCatalogError=None)
-            write_status(status)
-            try:
-                catalog = live_projects()
-            except Exception as exc:
-                update_status(status, status='catalog_error', currentProject=None,
-                              lastCatalogError=f'{type(exc).__name__}: {str(exc)[:300]}')
-                write_status(status)
-                if once:
-                    raise
-                retry_seconds = min(300, max(30, interval_hours * 36))
-                retry_at = time.time() + retry_seconds
-                update_status(status, nextCatalogRetryAt=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(retry_at)))
-                write_status(status)
-                while time.time() < retry_at:
-                    time.sleep(min(30, retry_at - time.time()))
-                continue
-
-            source_total = len(catalog)
-            projects = catalog
-            if project_codes:
-                wanted = set(project_codes)
-                known = {project['projectCode'] for project in catalog}
-                unknown = wanted - known
-                if unknown:
-                    raise ValueError('Unknown proposal code(s): ' + ', '.join(sorted(unknown)))
-                projects = [project for project in catalog if project['projectCode'] in wanted]
-            # Cached inventory lets us download known gaps first. Uncached
-            # projects follow so newly listed/changed attachments are surfaced.
-            projects = sorted(projects, key=lambda project: project_priority(project, done))
-            started_at = status.get('startedAt') or stamp()
-            with STATUS_LOCK:
-                status.clear()
-                status.update({'status': 'running', 'mode': 'daily_live_catalog_poll',
-                               'cycle': cycle, 'cycleStartedAt': stamp(), 'catalogCheckedAt': stamp(),
-                               'source': 'live_dpwh_transparency_api', 'projectsTotal': len(projects),
-                               'sourceProjectsTotal': source_total, 'projectsDone': 0,
-                               'projectsWithAttachments': 0, 'attachmentsListed': 0,
-                               'attachmentsDownloaded': len(done), 'errors': 0,
-                               'documentCountMismatches': 0, 'pollIntervalHours': interval_hours,
-                               'startedAt': started_at,
-                               'documentReconciliation': {
-                                   'expectedSourceCounts': expected_by_type,
-                                   'expectedSourceGeneratedAtUtc': expected_data_generated,
-                                   'currentListedCounts': {kind: 0 for kind in expected_by_type},
-                                   'verifiedDownloadedCounts': {kind: 0 for kind in expected_by_type},
-                                   'missingCounts': dict(expected_by_type), 'reconciled': False,
-                               }})
-            write_status(status)
-
-            listed_signatures = {kind: set() for kind in expected_by_type}
-            downloaded_signatures = {kind: set() for kind in expected_by_type}
-
-            for index, entry in enumerate(projects, 1):
-                guard()
-                code = entry['projectCode']
-                update_status(status, currentProject=code, currentDocument=None, projectsDone=index - 1)
+        with journal.open(encoding='utf-8') as stream:
+            for line in stream:
                 try:
-                    project = metadata(code, refresh=True)
-                    docs = project.get('documents', [])
-                    if len(docs) != entry['indexedDocumentCount']:
-                        increment_status(status, 'documentCountMismatches')
-                    if docs:
-                        increment_status(status, 'projectsWithAttachments')
-                    increment_status(status, 'attachmentsListed', len(docs))
-                    for document in docs:
-                        kind = target_document_type(document)
-                        if kind:
-                            sig = signature(document)
-                            listed_signatures[kind].add(sig)
-                            if downloaded_asset(done, sig):
-                                downloaded_signatures[kind].add(sig)
-                    with STATUS_LOCK:
-                        reconciliation = status['documentReconciliation']
-                        reconciliation['currentListedCounts'] = {
-                            kind: len(values) for kind, values in listed_signatures.items()}
-                        reconciliation['verifiedDownloadedCounts'] = {
-                            kind: len(values) for kind, values in downloaded_signatures.items()}
-                        reconciliation['missingCounts'] = {
-                            kind: max(0, len(listed_signatures[kind]) - len(downloaded_signatures[kind]))
-                            for kind in expected_by_type}
-                    for number, document in enumerate(docs, 1):
-                        guard()
-                        update_status(status, currentDocument=document.get('fileName') or document.get('id'),
-                                      currentAttachment=number, currentProjectAttachments=len(docs))
-                        write_status(status)
-                        try:
-                            url = document.get('url')
-                            if not url:
-                                raise ValueError(f'Attachment {document.get("id", number)} has no source URL')
-                            sig = signature(document)
-                            prior = done.get(sig)
-                            relative = Path(code) / f'{document.get("id", number)}-{sig[:16]}' / filename(document)
-                            target = ROOT / relative
-                            if prior and target.is_file() and target.stat().st_size == prior.get('bytes'):
-                                if digest(target) == prior.get('sha256'):
-                                    kind = target_document_type(document)
-                                    if kind:
-                                        downloaded_signatures[kind].add(sig)
-                                    continue
-                            source = cached_asset(code, document)
-                            if source and not target.exists():
-                                target.parent.mkdir(parents=True, exist_ok=True)
-                                try:
-                                    os.link(source, target)
-                                except OSError:
-                                    shutil.copy2(source, target)
-                                actual_size = target.stat().st_size
-                                sha = digest(target)
-                                if document.get('sizeBytes') is not None and actual_size != document['sizeBytes']:
-                                    target.unlink(missing_ok=True)
-                                else:
-                                    row = {'at': stamp(), 'projectCode': code, 'documentId': document.get('id'),
-                                           'documentType': document.get('documentType'), 'fileName': document.get('fileName'),
-                                           'url': url, 'signature': sig, 'path': str(relative), 'bytes': actual_size,
-                                           'sha256': sha, 'status': 'downloaded', 'source': 'reused_external_cache'}
-                                    append(row)
-                                    done[sig] = row
-                                    increment_status(status, 'attachmentsDownloaded')
-                                    kind = target_document_type(document)
-                                    if kind:
-                                        downloaded_signatures[kind].add(sig)
-                                    continue
-                            size, sha = download(url, target, document.get('sizeBytes'), document.get('contentType'))
-                            row = {'at': stamp(), 'projectCode': code, 'documentId': document.get('id'),
-                                   'documentType': document.get('documentType'), 'fileName': document.get('fileName'),
-                                   'contentType': document.get('contentType'), 'url': url, 'signature': sig,
-                                   'path': str(relative), 'bytes': size, 'sha256': sha, 'status': 'downloaded'}
-                            append(row)
-                            done[sig] = row
-                            increment_status(status, 'attachmentsDownloaded')
-                            kind = target_document_type(document)
-                            if kind:
-                                downloaded_signatures[kind].add(sig)
-                            print(json.dumps({'project': code, 'attachment': number, 'total': len(docs),
-                                              'file': document.get('fileName'), 'status': 'downloaded'}, ensure_ascii=False), flush=True)
-                        except Exception as exc:
-                            increment_status(status, 'errors')
-                            append({'at': stamp(), 'projectCode': code, 'documentId': document.get('id'),
-                                    'documentType': document.get('documentType'), 'fileName': document.get('fileName'),
-                                    'url': document.get('url'), 'status': 'error',
-                                    'error': type(exc).__name__ + ': ' + str(exc)[:300]})
-                            print(json.dumps({'project': code, 'attachment': number, 'file': document.get('fileName'),
-                                              'status': 'error', 'error': str(exc)[:300]}, ensure_ascii=False), flush=True)
-                        write_status(status)
-                        time.sleep(delay)
-                except Exception as exc:
-                    increment_status(status, 'errors')
-                    append({'at': stamp(), 'projectCode': code, 'status': 'error',
-                            'error': type(exc).__name__ + ': ' + str(exc)[:300]})
-                    print(json.dumps({'project': code, 'status': 'error', 'error': str(exc)[:300]}, ensure_ascii=False), flush=True)
-                update_status(status, projectsDone=index, currentProject=None, currentDocument=None)
-                with STATUS_LOCK:
-                    reconciliation = status['documentReconciliation']
-                    reconciliation['currentListedCounts'] = {
-                        kind: len(values) for kind, values in listed_signatures.items()}
-                    reconciliation['verifiedDownloadedCounts'] = {
-                        kind: len(values) for kind, values in downloaded_signatures.items()}
-                    reconciliation['missingCounts'] = {
-                        kind: max(0, len(listed_signatures[kind]) - len(downloaded_signatures[kind]))
-                        for kind in expected_by_type}
-                write_status(status)
-                time.sleep(delay)
+                    row = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                if row.get('status') in {'downloaded', 'malformed_source'} and row.get('sourcePath') and row.get('manifestSha256'):
+                    keys.add((path_key(row['sourcePath']), row['manifestSha256']))
+    return keys
 
-            finished = stamp()
-            listed_counts = {kind: len(values) for kind, values in listed_signatures.items()}
-            downloaded_counts = {kind: len(values) for kind, values in downloaded_signatures.items()}
-            missing_counts = {kind: max(0, listed_counts[kind] - downloaded_counts[kind])
-                              for kind in expected_by_type}
-            reconciled = all(downloaded_counts[kind] >= expected_by_type[kind]
-                             and downloaded_counts[kind] == listed_counts[kind]
-                             for kind in expected_by_type)
-            with STATUS_LOCK:
-                status['documentReconciliation'].update(
-                    currentListedCounts=listed_counts,
-                    verifiedDownloadedCounts=downloaded_counts,
-                    missingCounts=missing_counts,
-                    sourceCountDelta={kind: listed_counts[kind] - expected_by_type[kind]
-                                      for kind in expected_by_type},
-                    reconciled=reconciled,
-                )
-            if not reconciled and not project_codes and not once:
-                retry_at = time.time() + 60
-                update_status(status, status='retrying_missing_target_documents',
-                              currentProject=None, currentDocument=None,
-                              lastCycleFinishedAt=finished,
-                              nextReconciliationRetryAt=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(retry_at)))
-                write_status(status)
-                print(json.dumps({'status': 'retrying_missing_target_documents',
-                                  'expected': expected_by_type, 'listed': listed_counts,
-                                  'downloaded': downloaded_counts, 'missing': missing_counts},
-                                 ensure_ascii=False), flush=True)
-                while time.time() < retry_at:
-                    time.sleep(min(10, retry_at - time.time()))
-                continue
-            next_cycle = time.time() + interval_hours * 3600
-            update_status(status, status='waiting', currentProject=None, currentDocument=None,
-                          lastCycleFinishedAt=finished, lastCycleProjects=len(projects),
-                          lastCycleAttachmentsListed=status['attachmentsListed'],
-                          lastCycleErrors=status['errors'],
-                          nextCycleAt=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(next_cycle)))
-            if once:
-                update_status(status, status='complete', complete=True, finishedAt=finished)
-                write_status(status)
-                print(json.dumps(status, ensure_ascii=False, indent=2), flush=True)
-                return
-            write_status(status)
-            while time.time() < next_cycle:
-                time.sleep(min(30, next_cycle - time.time()))
-    finally:
-        heartbeat_stop.set()
-        heartbeat.join(timeout=2)
+
+def append_download_journals(item, relative, actual_bytes, actual_sha):
+    at = stamp()
+    row = {
+        'at': at, 'manifestId': item['manifestId'],
+        'projectCode': item['projectCode'], 'documentId': item['documentId'],
+        'documentType': item['documentType'], 'fileName': item['fileName'],
+        'contentType': 'application/pdf' if item['isPdf'] else None,
+        'path': relative.as_posix(), 'bytes': actual_bytes, 'sha256': actual_sha,
+        'signature': actual_sha, 'status': 'downloaded',
+        'sourceArchive': 'Cloudflare-file-links.jsonl', 'sourcePath': item['sourcePath'],
+        'objectKey': item['objectKey'], 'sourceUrl': item['url'],
+        'manifestSha256': item['sha256'], 'manifestBytes': item['bytes'],
+        'recoveredMalformedManifestPdf': item['malformedManifestPdf'],
+    }
+    guard()
+    ATTACHMENTS.mkdir(parents=True, exist_ok=True)
+    with ALL_JOURNAL.open('a', encoding='utf-8') as stream:
+        fcntl.flock(stream.fileno(), fcntl.LOCK_EX)
+        stream.write(json.dumps(row, ensure_ascii=False) + '\n')
+        stream.flush()
+        os.fsync(stream.fileno())
+    if item['documentType'] == 'POW' and item['projectCode']:
+        append_journal({
+            **row, 'documentType': 'POW',
+            'sourceArchive': 'Cloudflare-file-links.jsonl',
+        })
+
+
+def index_files(dry_run=False, max_downloads=0):
+    guard()
+    inventory, rejected = manifest_rows()
+    baseline = snapshot_inventory()
+    journaled = downloaded_manifest_keys()
+    missing = []
+    for row in inventory:
+        old = baseline.get(path_key(row['sourcePath']))
+        broken = bool(row['malformedManifestPdf'] or (old and (
+            old.get('scanError') or old.get('matchStatus') == 'scan_error'
+            or int(old.get('sourceSize') or 0) != row['bytes'])))
+        absent = old is None
+        row['brokenCandidate'] = broken
+        row['missingCandidate'] = absent
+        if not (absent or broken):
+            continue
+        if (path_key(row['sourcePath']), row['sha256']) in journaled:
+            continue
+        missing.append(row)
+    missing.sort(key=lambda row: (not row['brokenCandidate'],
+                                  not row['malformedManifestPdf'],
+                                  not (row['isPdf'] and row['documentType'] == 'POW'),
+                                  row['region'].upper() not in PRIORITY_REGIONS,
+                                  row['region'].upper(), row['projectCode'] or '', row['fileName']))
+    priority_total = sum(row['region'].upper() in PRIORITY_REGIONS for row in missing)
+    malformed_total = sum(row['brokenCandidate'] for row in missing)
+    missing_pow = sum(row['documentType'] == 'POW' for row in missing)
+    missing_pdf = sum(row['isPdf'] for row in missing)
+    selected = missing[:max_downloads] if max_downloads else missing
+    downloaded = failed = 0
+    failures = []
+    if not dry_run:
+        for index, item in enumerate(selected, 1):
+            safe_name = re.sub(r'[^A-Za-z0-9._ -]+', '_', item['fileName']).strip(' .') or 'document.bin'
+            safe_region = re.sub(r'[^A-Za-z0-9._ -]+', '_', item['region']).strip(' .') or 'unknown-region'
+            relative = Path('cloudflare-files') / safe_region / (item['projectCode'] or 'unmatched-code') / (item['sha256'][:16] + '-' + safe_name)
+            target = ATTACHMENTS / relative
+            try:
+                actual_bytes, actual_sha = fetch(item, target)
+                append_download_journals(item, relative, actual_bytes, actual_sha)
+                downloaded += 1
+            except (OSError, ValueError, RuntimeError, HTTPError, URLError) as exc:
+                failed += 1
+                failure = {'at': stamp(), 'manifestId': item['manifestId'],
+                           'projectCode': item['projectCode'], 'fileName': item['fileName'],
+                           'sourcePath': item['sourcePath'], 'manifestSha256': item['sha256'],
+                           'brokenCandidate': item['brokenCandidate'],
+                           'error': f'{type(exc).__name__}: {str(exc)[:250]}'}
+                failures.append(failure)
+                if item['isPdf'] and (item['malformedManifestPdf'] or item['brokenCandidate']) and isinstance(exc, ValueError):
+                    failure['status'] = 'malformed_source'
+                    with ALL_JOURNAL.open('a', encoding='utf-8') as stream:
+                        fcntl.flock(stream.fileno(), fcntl.LOCK_EX)
+                        stream.write(json.dumps(failure, ensure_ascii=False) + '\n')
+                        stream.flush()
+                        os.fsync(stream.fileno())
+            if index % 25 == 0 or index == len(selected):
+                write_json(STATUS, {
+                    'status': 'downloading', 'pid': os.getpid(),
+                    'processed': index, 'totalCandidates': len(selected),
+                    'downloaded': downloaded, 'failed': failed,
+                    'currentFile': item['sourcePath'], 'heartbeatAtUtc': stamp(),
+                })
+    return {
+        'status': 'dry_run' if dry_run else 'downloaded',
+        'inventory': str(MANIFEST), 'indexedFiles': len(inventory),
+        'excludedRows': rejected, 'journaledVersions': len(journaled),
+        'missingManifestVersions': len(missing),
+        'missingManifestBytes': sum(row['bytes'] for row in missing),
+        'missingPowFiles': missing_pow, 'missingPdfFiles': missing_pdf,
+        'priorityRegions': sorted(PRIORITY_REGIONS),
+        'brokenOrMalformedFiles': malformed_total,
+        'priorityRegionMissing': priority_total,
+        'downloadAttempted': 0 if dry_run else len(selected),
+        'downloaded': downloaded, 'failed': failed, 'failureSample': failures[:10],
+        'remainingAfterLimit': max(0, len(missing) - len(selected)),
+        'journal': str(JOURNAL),
+        'filesystemPolicy': 'No T5 folder traversal or source archive scan; Cloudflare manifest plus parser journal only.',
+    }
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--delay', type=float, default=1.0, help='seconds between attachment downloads')
-    parser.add_argument('--interval-hours', type=float, default=24.0,
-                        help='hours between completed live catalog scans')
-    parser.add_argument('--once', action='store_true', help='run one live catalog scan and exit')
-    parser.add_argument('--project', action='append', dest='project_codes',
-                        help='limit a one-time retry to these proposal codes; may be repeated')
+    parser.add_argument('--interval', type=int, default=60, help='seconds between manifest checks (default: 60)')
+    parser.add_argument('--once', action='store_true', help='check/download once and exit')
+    parser.add_argument('--dry-run', action='store_true', help='compare manifest and journal without downloading')
+    parser.add_argument('--max-downloads', type=int, default=0, help='cap downloads per pass; 0 means all missing POWs')
     args = parser.parse_args()
-    if args.delay < 0.2:
-        parser.error('Use a delay of at least 0.2 seconds')
-    if args.interval_hours < 1:
-        parser.error('Use an interval of at least one hour')
-    if args.project_codes and not args.once:
-        parser.error('--project requires --once; continuous mode scans the complete live catalog')
-    guard()
-    ROOT.mkdir(parents=True, exist_ok=True)
-    with (ROOT / 'download.lock').open('a+') as lock:
+    if args.interval < 10:
+        parser.error('Use an interval of at least 10 seconds')
+    if args.max_downloads < 0:
+        parser.error('--max-downloads cannot be negative')
+    if args.dry_run:
+        args.once = True
+    while True:
         try:
-            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-        except BlockingIOError:
-            raise RuntimeError('Another NEP attachment archive process is already running')
-        run(args.delay, args.interval_hours, args.once, args.project_codes)
+            result = index_files(args.dry_run, args.max_downloads)
+            if not args.dry_run:
+                result['pid'] = os.getpid()
+                result['heartbeatAtUtc'] = stamp()
+                write_json(STATUS, result)
+            print(json.dumps(result, ensure_ascii=False), flush=True)
+        except Exception as exc:
+            failure = {'status': 'error', 'pid': os.getpid(),
+                       'error': f'{type(exc).__name__}: {str(exc)[:500]}',
+                       'heartbeatAtUtc': stamp(),
+                       'filesystemPolicy': 'No T5 folder traversal or source archive scan.'}
+            if not args.dry_run:
+                write_json(STATUS, failure)
+            print(json.dumps(failure, ensure_ascii=False), flush=True)
+            if args.once:
+                raise
+        if args.once:
+            return
+        time.sleep(args.interval)
 
 
 if __name__ == '__main__':

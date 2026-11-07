@@ -10,7 +10,10 @@
         "(1) Project Billboard/Signboard",
         "(1) Project Billboard/ Signboard",
         "(1) Project Billboard / Signboard",
-        "Project Billboard / Sign Board"
+        "Project Billboard / Sign Board",
+        "Billboard / Signboard",
+        "Billboard/Signboard",
+        "Billboard / Sign Board"
       ],
       "reviewNote": "Spacing and slash variants; row numbers are excluded from the displayed item. Original printed labels remain available."
     },
@@ -56,9 +59,10 @@
         "Painting Works, Masonry/Concrete",
         "Painting Works, (Masonry/Concrete)",
         "Painting Works (Masonry / Concrete)",
-        "Painting Works - Masonry/Concrete"
+        "Painting Works - Masonry/Concrete",
+        "Painting Works (Concrete)"
       ],
-      "reviewNote": "Punctuation and spacing variants with the same masonry/concrete scope. Original printed labels remain available."
+      "reviewNote": "Punctuation and spacing variants with the same masonry/concrete scope. Original printed labels remain available. Approved merge: Painting Works (Concrete) is grouped with Masonry/Concrete; original printed labels remain available."
     },
     {
       "canonical": "Structural Steel, Trusses",
@@ -113,9 +117,74 @@
     {
       "canonical": "Metal Structure Accessories, Tumbuckle",
       "variants": [
-        "Metal Structure Accessories (Tumbuckle)"
+        "Metal Structure Accessories (Tumbuckle)",
+        "Metal Structure Accessories, Turnbuckle",
+        "Metal Structure Accessories (Turnbuckle)",
+        "Metal Structure Accessories, Turn Buckle"
       ],
       "reviewNote": "Punctuation variant. Original printed labels remain available."
+    },
+    {
+      "canonical": "Wires and Wiring Devices",
+      "variants": [
+        "Wires & Wiring Devices",
+        "(33) Wires and Wiring Devices",
+        "and Wiring Wires Devices",
+        "1101 (33) Wires and Wiring Devices",
+        "Wires Devices and Wiring",
+        "(33) Wires Devices and Wiring",
+        "1101(33) Wires and Wiring Devices",
+        "Wires and Wirings Devices",
+        "Wires and Wiring Device",
+        "Wires and Wring Devices",
+        "Wires and Wiring Davices (33)",
+        "Wires and Wiring Davices",
+        "Wires and Wiring Devices (33)",
+        "1101(33) Wires Devices & Wiring",
+        "Wires and Wiring Devices 1101(33)",
+        "Wires and Wiring 1101 (33) Devices",
+        "Devices Wiring 1101 (33) and Wires",
+        "1101 (33) Wires Devices and Wiring",
+        "and Wiring Wires Devices (33)",
+        "Wires Devices and Wiring (33)",
+        "and Wiring Wires Devices 1101(33)",
+        "1101(33) and Wiring Wires Devices",
+        "Wires Devices 1101(33) and Wiring",
+        "Wires Devices and Wiring 1101(33)",
+        "1101 Devices (33) Wires and Wiring",
+        "Wire and Wiring Devices",
+        "Wires Devices & Wiring 1101(33)",
+        "Wires & Wiring Devices 1101(33)",
+        "1101(33) |Wires and Wiring Devices",
+        "1101(33) Wires Devices and Wiring",
+        "Wires and Wiring Devices 1.00",
+        "1101(33) Wires and Wrieg Devices",
+        "Wires And Wiring Devices",
+        "1101 (33) Wires and Wirng Devices",
+        "1101(33) Wires and Wiring Device",
+        "Wires and Wirino Devices",
+        "Wires and Wirng Devices",
+        "Wires Devices, and Wiring",
+        "Wires and Wiring Devices, 1101(33)",
+        "Wires and Wiring Devioos",
+        "Wires ard Wiring Devices,",
+        "(18) Wires and Wiring Devices",
+        "and Wining Wires Devices",
+        "end Wiring Wires Devices",
+        "and Wring Wires Devices",
+        "& Wiring Wires Devices 1101(33)",
+        "1101(33) Wires & Wiring Devices",
+        "Wiring and Wiring Devices"
+      ],
+      "reviewNote": "Common row-number, OCR spelling, punctuation and word-order variants of the same electrical bill category. Descriptions that combine this category with additional named work remain separate; original printed labels remain available."
+    },
+    {
+      "canonical": "Occupational Safety and Health Program",
+      "variants": [
+        "Occupational Safety and Health",
+        "Occupational Safety & Health Program"
+      ],
+      "reviewNote": "Shortened label used for the same recurring Occupational Safety and Health bill item; original printed labels remain available."
     }
   ]
 }

@@ -1,0 +1,42 @@
+{
+  "capturedAtUtc": "2026-11-05T08:13:22.014996+00:00",
+  "sourceTable": "PostgreSQL public.political_dynasties",
+  "sourceDump": "open-data-visualization/database/dynasty_dump.sql.gz",
+  "sourceDumpSha256": "5678175340fe1f21c096bcd481a31f284d56489876ec560684c361766c025d91",
+  "sourcePage": "https://research.bettergov.ph/dynasty#table",
+  "records": 312761,
+  "fields": [
+    "id",
+    "first_name",
+    "middle_name",
+    "last_name",
+    "suffix",
+    "nickname",
+    "position",
+    "year",
+    "fat",
+    "region",
+    "province",
+    "municipality_city",
+    "district",
+    "party",
+    "government_branch",
+    "position_category",
+    "appointment_type",
+    "government_level",
+    "department",
+    "organization",
+    "winner"
+  ],
+  "files": {
+    "source_officials.csv.gz": {
+      "bytes": 3518477,
+      "sha256": "2f98747d6c22d5c976ec38b29356b6967be053d01efb5a25b1555f2bcf089e2a"
+    },
+    "source_officials.parquet": {
+      "bytes": 3026107,
+      "sha256": "a4d65e99e10b2b6153de8c549dc8fc4089fd9a86b7cf574e34fc7f3def04ce14"
+    }
+  },
+  "scope": "All positions in the source table. Only whitelisted public official/designation fields are captured. Source years and winner flags are preserved as source claims; no current tenure is inferred."
+}

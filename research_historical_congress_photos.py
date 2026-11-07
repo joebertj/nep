@@ -140,8 +140,15 @@ def read_photos(cache):
 
 def score_name(aliases, photo):
     candidate = name_tokens(photo['nameFromFile'])
+    suffixes = {'jr', 'sr', 'ii', 'iii', 'iv', 'v'}
+    def suffix(value):
+        return next((word for word in norm(value).split() if word in suffixes), None)
+    candidate_suffix = suffix(photo['nameFromFile'])
     scores = []
     for alias in aliases:
+        alias_suffix = suffix(alias)
+        if candidate_suffix and alias_suffix and candidate_suffix != alias_suffix:
+            continue
         tokens = name_tokens(alias)
         if len(tokens) < 2 or len(candidate) < 2:
             continue

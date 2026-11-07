@@ -1,0 +1,40 @@
+{
+  "retrievedAtUtc": "2026-11-07T11:10:31.210773+00:00",
+  "sourcePage": "https://laging.pasulong.cc/budget-2027/district_infra_2027.html",
+  "pageHttpStatus": 200,
+  "extraction": "Parsed the inline `const D = {...}` object from the downloaded HTML and saved it as district_infra_2027_data.json.",
+  "inlineDataCounts": {
+    "districts": 254,
+    "checks": 9,
+    "unknown": 35
+  },
+  "inlineDataKeys": [
+    "districts",
+    "checks",
+    "unknown",
+    "disclaimer",
+    "proposal",
+    "evidence",
+    "acct",
+    "counts",
+    "hf_equipment_only",
+    "not_placed_co"
+  ],
+  "staticReferences": [
+    "Comparison/district_infra_2027_districts.csv",
+    "Comparison/district_infra_2027_projects.csv"
+  ],
+  "csvStatus": "The two CSV names occur as footer code text, not hyperlinks. Tested likely public URLs under /budget-2027/Comparison/ and they returned HTTP 404; no downloadable CSVs were found at those paths.",
+  "files": [
+    {
+      "file": "district_infra_2027.html",
+      "bytes": 214630,
+      "sha256": "0054c52f3208151f4899cb7a4d91c8a8c2ce7124181ecefedfbb5b36fa57ea9d"
+    },
+    {
+      "file": "district_infra_2027_data.json",
+      "bytes": 232686,
+      "sha256": "e9623aebb21bfba67969c9507a2b2573ce9f4208066c5cd447a20b628c52bf40"
+    }
+  ]
+}

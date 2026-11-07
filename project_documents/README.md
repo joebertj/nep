@@ -175,36 +175,45 @@ The repository's ignored `data_sources/dpwh_project_documents` path is a symlink
 there. Only curated parsed values belong in published assets; do not copy source
 attachments into ODV.
 
-Run `python3 download_dpwh_nep_attachments.py` (or the compatibility command
-`python3 download_pow_rdc_queue.py`) to archive every attachment for all 11,372
-projects in the retained FY2027 NEP transparency index, regardless of document
-type or file format. The October 18, 2026 snapshot lists 5,155 documents across
-1,275 projects; the downloader refreshes metadata for every project to discover
-later uploads too. It stores original files under `attachments/<proposal-code>/`
-on T5 EVO and preserves source filenames, URLs, content types, sizes and SHA-256 hashes,
-and checkpoints each completed file in `attachments/downloads.jsonl`. Previously
-cached POW, RDC and photo files are reused from the same external drive when their
-metadata matches. Interrupted and failed downloads can be resumed by rerunning the
-command; changed or newly listed attachments get a new content-version path.
-Every listed file format is retained as-is, with PDF signature and source-size
-checks where the metadata identifies a PDF. Do not execute downloaded content.
+`download_dpwh_nep_attachments.py` and its compatibility command
+`download_pow_rdc_queue.py` now use `analysis_output/Cloudflare-file-links.jsonl`
+and the last published document-scan inventory to identify missing, changed, or
+previously unreadable files. They do not walk or scan T5 source folders and do
+not contact the DPWH Transparency Server. Files are fetched from the approved
+Cloudflare asset host, checked against manifest SHA-256 and byte count, and
+recorded in `attachments/cloudflare-file-downloads.jsonl`; POW PDFs also enter
+`attachments/downloads-hgab.jsonl` for the POW parser. Previously malformed
+files are prioritized first, followed by POW PDFs, then other file types.
+Underscore-prefixed paths are excluded. A zero-byte PDF is treated as a
+malformed manifest candidate and prioritized; if Cloudflare now serves a valid
+PDF, its observed hash and size are recorded alongside the stale manifest
+values. Use `--dry-run` to compare the index, prior scan snapshot and journals,
+`--once` for one pass, or `--max-downloads N` to cap a pass. The default loop
+checks the manifest every 60 seconds. `scan_hgab_supporting_documents.py` parses
+only downloaded PDF paths from those journals; it does not traverse T5.
 
-The command refuses to fall back to local storage if T5 EVO is unavailable, and
-requires at least 2 GiB of free space beyond each file before downloading. It uses
-the existing PH VPN and verified HTTPS through curl. No non-attachment data is
-fetched. The archive is private and ignored by Git.
+Run `parse_hgab_pow_queue.py` in the isolated document Python environment to keep
+the offline parser polling `downloads-hgab.jsonl` every 30 seconds. The current
+loop uses five isolated parser processes and one coordinator. It validates each
+PDF hash before parsing, records results under `parsed_pow/`, and retries failed
+files after the configured delay. It does not contact the Transparency Server.
+`refresh_dpwh_data_watch.py` publishes incrementally while parsing continues:
+it rebuilds `dpwh.html` and `undocumented-hgab.html` after each parsed item or
+intake-count change, on a 15-second polling interval. HGAB POW results are
+published as data shards so the page index stays below its size limit.
 
-The older queue status is a snapshot of the prior POW/RDC/photo-only worker and
-does not indicate coverage of other attachment types. The new all-attachment run
-has its own `attachments/status.json` progress file. Failures are recorded and
-retried on the next invocation.
+The former DPWH Transparency download behavior is disabled. Its previous
+`attachments/downloads.jsonl` and status files are retained as historical archive
+records; invoking the indexer will not refresh or extend that portal archive.
+Background process records and logs are in
+`/Volumes/T5 EVO/bettergov-research/jobs/`.
 
-The prior POW/RDC-only worker stopped after three consecutive failures or an HTTP
-429. The all-attachment archive resumes completed files from its journal and
-retries failed entries on the next invocation. It uses the pinned 1,275-project
-queue; update `queue.json` from a refreshed DPWH NEP index to add newly listed
-projects. It refuses an unmounted external volume.
-Background logs and process IDs are in `/Volumes/T5 EVO/bettergov-research/jobs/`.
+Senate-provided FY2027 HGAB supporting files are retained in the external
+research archive and parsed separately from NEP `Proposal` documents. Their
+HGAB identifiers are linked to Proposal records only through exact title matches
+or the selected NEP–HGAB counterpart mapping. Source paths and file links are
+not published. RDC/PDC/LDC and other supporting files remain archived for later
+review.
 
 `python3 storage/external_storage.py large` moves regular files of **100,000,000 bytes or larger**
 from both repositories to their corresponding external repository directories.
@@ -232,10 +241,8 @@ It has project/basis selection, cost-driver bars, search/sort, ten-project pagin
 all-row detail dialogs and CSV exports. DE/ADE and Development Council signatories occupy separate columns, with exact-name ODV designation context when available. All financial bases and reconciliation limits remain visible.
 
 The PH VPN retry on 2026-10-18 returned HTTP 200 for the Burol and proposal-00001
-POW PDFs via curl with standard TLS verification. The background queue now uses
-that same transport, runs sequentially, and stops on HTTP 429 or three consecutive
-failed projects. It does not automatically launch repeated Chrome retries.
-The running queue must be stopped before switching transport or storage.
+POW PDFs via curl with standard TLS verification. The bulk Transparency downloader
+is now disabled. The local HGAB intake loop and parser do not use that transport.
 
 ## Offline PDF watcher
 
@@ -254,10 +261,10 @@ to retry. The watcher remains in its loop and picks up parser changes on its
 next scan. Use `DOCUMENT_PYTHON` to select the parser
 environment when it is not at `.venv-documents/bin/python`.
 
-Run with the document environment:
+Run with the isolated document environment:
 
 ```sh
-/private/tmp/nep-document-env/bin/python watch_project_documents.py --interval 30
+python3.14 watch_project_documents.py --interval 30
 ```
 
 Use `--once` for a single processing/publication pass. The watcher has **no network
@@ -267,10 +274,10 @@ cache; `.part` files and unrelated PDFs are excluded. A project being handled
 by the downloader is deferred, and project-level locks prevent concurrent writes
 with new worker instances.
 
-Completed downloader parsing is reused. A PDF without parsed evidence is hashed
-and parsed; unchanged files are skipped. Parser-code changes trigger a new parse
-on the next pass. Failed parsing is recorded once and retried when the file or
-parser changes, rather than on every poll. Photos are registered with their
+Completed document-service parsing is reused. A PDF without parsed evidence is
+hashed and parsed; unchanged files are skipped. Parser-code changes trigger a new
+parse on the next pass. Failed parsing is recorded once and retried when the file
+or parser changes, rather than on every poll. Photos are registered with their
 checksum and original source link, without rendering or publishing their PDF.
 
 Changes refresh only `dpwh.html`, `dpwh-in-depth-data.json` and

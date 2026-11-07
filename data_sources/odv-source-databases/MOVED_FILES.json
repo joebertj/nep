@@ -1,0 +1,66 @@
+{
+  "purpose": "Offline ODV source databases and source datasets moved out of the open-data-visualization repository. Rust routes and browser pages do not load these files directly.",
+  "originalRepository": "open-data-visualization",
+  "files": [
+    {
+      "originalPath": "database/philgeps_dump.sql",
+      "storedPath": "data_sources/odv-source-databases/philgeps_dump.sql",
+      "bytes": 38719641,
+      "sha256": "4844b5f3a88e371e16aae10d7cbc886b62ddcba988c17a9b7d6e25495577696a"
+    },
+    {
+      "originalPath": "database/philgeps_dump.sql.gz",
+      "storedPath": "data_sources/odv-source-databases/philgeps_dump.sql.gz",
+      "bytes": 8156440,
+      "sha256": "f17206a8cc7e0d7df697209f550ff6339cd2521177d0b21e636e309213a3a4ab"
+    },
+    {
+      "originalPath": "database/flood_dump.sql",
+      "storedPath": "data_sources/odv-source-databases/flood_dump.sql",
+      "bytes": 28665779,
+      "sha256": "d6064d4733ec6948abd86c97442eefe5ca3a90c68a4ea31cc2100fdc4097c62e"
+    },
+    {
+      "originalPath": "database/dime_dump.sql",
+      "storedPath": "data_sources/odv-source-databases/dime_dump.sql",
+      "bytes": 10624208,
+      "sha256": "d3e27305087cb404a37a160eba49449a0ee5658ac9a7b67763d7dd095b15ff87"
+    },
+    {
+      "originalPath": "database/infrawatch_dump.sql.gz",
+      "storedPath": "data_sources/odv-source-databases/infrawatch_dump.sql.gz",
+      "bytes": 15079887,
+      "sha256": "fbfc50df1ed61297615202608154a50375990ecbb890792d9da2afc2a0a2caec"
+    },
+    {
+      "originalPath": "database/dynasty_dump.sql.gz",
+      "storedPath": "data_sources/odv-source-databases/dynasty_dump.sql.gz",
+      "bytes": 8128049,
+      "sha256": "5678175340fe1f21c096bcd481a31f284d56489876ec560684c361766c025d91"
+    },
+    {
+      "originalPath": "database/sec_dump.sql",
+      "storedPath": "data_sources/odv-source-databases/sec_dump.sql",
+      "bytes": 1549068,
+      "sha256": "379f370f1064798b16866f160d2f1704c7844e39b011201618f6bc315e20dadf"
+    },
+    {
+      "originalPath": "database/ASoG-POLITICAL-DYNASTIES-DATASET-V2016.xlsx",
+      "storedPath": "data_sources/odv-source-databases/ASoG-POLITICAL-DYNASTIES-DATASET-V2016.xlsx",
+      "bytes": 4067703,
+      "sha256": "cedad546422e789a0776dfe3e727b53efa3d878775d7a582936da380beb4aa29"
+    },
+    {
+      "originalPath": "database/philgeps_merchant_info.parquet.backup",
+      "storedPath": "data_sources/odv-source-databases/philgeps_merchant_info.parquet.backup",
+      "bytes": 65274479,
+      "sha256": "2cdad2a99870c7ff8df2b530aa7892ce6f6f3f9b66468c26305e98753a486d95"
+    },
+    {
+      "originalPath": "database/philgeps_merchant_info_with_sec.parquet",
+      "storedPath": "data_sources/odv-source-databases/philgeps_merchant_info_with_sec.parquet",
+      "bytes": 65274479,
+      "sha256": "2cdad2a99870c7ff8df2b530aa7892ce6f6f3f9b66468c26305e98753a486d95"
+    }
+  ]
+}

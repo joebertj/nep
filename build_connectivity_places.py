@@ -31,12 +31,17 @@ SOURCES = (
     ('osm-additional-venues', 'https://overpass-api.de/api/interpreter'),
     ('osm-private-properties', 'https://overpass-api.de/api/interpreter'),
     ('osm-large-residential', 'https://overpass-api.de/api/interpreter'),
+    ('osm-expanded-venues', 'https://overpass-api.de/api/interpreter'),
+    ('osm-private-access-properties', 'https://overpass-api.de/api/interpreter'),
+    ('osm-public-services', 'https://download.geofabrik.de/asia/philippines-261104.osm.pbf'),
 )
 QUERIES = {
     'osm-visitor-venues': '[out:json][timeout:180];area["ISO3166-1"="PH"][admin_level=2]->.ph;(nwr["tourism"~"^(hotel|motel|guest_house|chalet|hostel|resort)$"](area.ph);nwr["leisure"="resort"](area.ph);nwr["amenity"="events_venue"](area.ph););out body geom;',
     'osm-additional-venues': '[out:json][timeout:120];area["ISO3166-1"="PH"][admin_level=2]->.ph;(nwr["tourism"~"^(rest_house|resthouse|holiday_home|holiday_house|villa|pension|inn)$"](area.ph);nwr["amenity"~"^(event_venue|conference_centre)$"](area.ph);nwr["name"~"rest[ -]?house|events? (place|venue|center|centre)|function hall",i](area.ph););out center tags;',
     'osm-private-properties': '[out:json][timeout:180];area["ISO3166-1"="PH"][admin_level=2]->.ph;(nwr["building"~"^(villa|mansion)$"](area.ph);nwr["landuse"="residential"]["name"~"subdivision|subd[.]?|estate|hacienda|village",i](area.ph);nwr["residential"~"^(gated|gated_community|mansions|subdivision)$"](area.ph););out body geom;',
     'osm-large-residential': '[out:json][timeout:180];area["ISO3166-1"="PH"][admin_level=2]->.ph;(way["building"~"^(house|detached|villa|mansion|residential)$"](area.ph)(if:length()>110););out body geom;',
+    'osm-expanded-venues': '[out:json][timeout:180];area["ISO3166-1"="PH"][admin_level=2]->.ph;(nwr["tourism"~"^(apartment|camp_site|caravan_site|holiday_home|holiday_house|villa|alpine_hut|wilderness_hut)$"](area.ph);nwr["leisure"~"^(beach_resort|spa_resort|water_park|golf_course)$"](area.ph);nwr["amenity"~"^(event_venue|events_place|conference_centre)$"](area.ph););out body geom;',
+    'osm-private-access-properties': '[out:json][timeout:180];area["ISO3166-1"="PH"][admin_level=2]->.ph;(nwr["landuse"="residential"]["access"~"^(private|residents|permit)$"](area.ph);nwr["residential"~"^(gated|gated_community|private|apartments|apartment_complex)$"](area.ph);nwr["leisure"~"^(garden|swimming_pool|sports_centre|pitch)$"]["access"~"^(private|members)$"](area.ph););out body geom;',
 }
 PUBLIC_OPERATOR = re.compile(r'government|municipal|barangay|\bLGU\b|\bTIEZA\b|tourism infrastructure|department of|provincial capitol|city hall', re.I)
 PROPERTY_CUE = re.compile(r'\b(subdivision|subd\.?|estate|hacienda|village)\b', re.I)
@@ -246,13 +251,16 @@ def excluded(tags):
 def venue_type(tags):
     name = tags.get('name', '')
     tourism, leisure, amenity = (tags.get(k, '') for k in ('tourism', 'leisure', 'amenity'))
-    if tourism == 'apartment' or (tags.get('building') in SMALL_HOME and not (leisure in {'resort', 'beach_resort'} or tourism in {'hotel', 'resort'} or amenity in {'events_venue', 'event_venue'})):
+    if tags.get('building') in SMALL_HOME and not (leisure in {'resort', 'beach_resort', 'spa_resort'} or tourism in {'hotel', 'resort', 'apartment', 'holiday_home', 'holiday_house', 'villa'} or amenity in {'events_venue', 'event_venue'}):
         return None
+    if leisure in {'water_park', 'golf_course'}:
+        return {'water_park': 'Water park', 'golf_course': 'Golf course'}[leisure]
     if leisure in {'resort', 'beach_resort', 'spa_resort'} or tourism == 'resort':
         return 'Resort'
     if amenity in {'events_venue', 'event_venue', 'events_place', 'conference_centre'}:
         return 'Event venue'
-    mapped_lodging = {'hotel': 'Hotel', 'motel': 'Motel', 'hostel': 'Hostel', 'guest_house': 'Guest house', 'chalet': 'Rest house / chalet', 'rest_house': 'Rest house / chalet', 'resthouse': 'Rest house / chalet', 'inn': 'Guest house', 'pension': 'Guest house'}
+    mapped_lodging = {'hotel': 'Hotel', 'motel': 'Motel', 'hostel': 'Hostel', 'guest_house': 'Guest house', 'chalet': 'Rest house / chalet', 'rest_house': 'Rest house / chalet', 'resthouse': 'Rest house / chalet', 'inn': 'Guest house', 'pension': 'Guest house',
+                      'apartment': 'Holiday apartment', 'holiday_home': 'Holiday home / villa', 'holiday_house': 'Holiday home / villa', 'villa': 'Holiday home / villa', 'camp_site': 'Campsite', 'caravan_site': 'Caravan site', 'alpine_hut': 'Visitor hut', 'wilderness_hut': 'Visitor hut'}
     if tourism in mapped_lodging:
         if REST_HOUSE.search(name) or tourism == 'chalet':
             return 'Rest house / chalet'
@@ -266,21 +274,40 @@ def venue_type(tags):
     return None
 
 
+def public_service_type(tags):
+    amenity=tags.get('amenity','');healthcare=tags.get('healthcare','');education=tags.get('education','')
+    if amenity in {'school','kindergarten','college','university'} or education in {'school','kindergarten','college','university'}:
+        return 'School / education facility'
+    if amenity in {'hospital','clinic','doctors','dentist','health_centre','health_post'} or healthcare in {'hospital','clinic','doctor','dentist','health_centre','centre','health_post','dispensary','rehabilitation','midwife'}:
+        return 'Health / medical facility'
+    if amenity in {'fire_station','police','ambulance_station'}:
+        return 'Emergency-response facility'
+    if amenity in {'community_centre','social_facility','townhall','public_building','library'}:
+        return 'Civic / community service'
+    return None
+
+
 def build():
     places = Places()
-    inputs, elements, property_elements = [], {}, {}
+    inputs, elements, property_elements, service_elements = [], {}, {}, {}
     for stem, endpoint in SOURCES:
         path = RAW / (stem + '-raw.json')
         if not path.exists():
             continue
         raw = path.read_bytes()
         source = json.loads(raw)
-        inputs.append({'file': str(path.relative_to(ROOT)), 'endpoint': endpoint, 'sha256': hashlib.sha256(raw).hexdigest(),
+        inputs.append({'file': str(path.relative_to(ROOT)), 'endpoint': source.get('bettergovEndpoint', endpoint), 'sha256': hashlib.sha256(raw).hexdigest(),
                        'snapshotUtc': source.get('osm3s', {}).get('timestamp_osm_base'), 'rawElements': len(source['elements'])})
-        dest = property_elements if stem in {'osm-private-properties', 'osm-large-residential'} else elements
+        if source.get('bettergovSourceSha256'):
+            inputs[-1].update(countryExtract=source['bettergovSourceFile'], countryExtractSha256=source['bettergovSourceSha256'])
+        dest = service_elements if stem == 'osm-public-services' else property_elements if stem in {'osm-private-properties', 'osm-large-residential', 'osm-private-access-properties'} else elements
         for element in source['elements']:
+            if source.get('bettergovCountryFilter'):
+                geom = element_geometry(element)
+                if not geom or not places.match(*location(geom)).get('adminType'):
+                    continue  # Bounding-box queries also cover foreign territory.
             dest[element['type'], element['id']] = element
-    venues, review, properties, discarded = [], [], [], Counter()
+    venues, review, properties, public_services, discarded = [], [], [], [], Counter()
     by_name = defaultdict(list)
     for key, el in elements.items():
         tags = el.get('tags', {})
@@ -345,6 +372,9 @@ def build():
         name = tags.get('name', '')
         is_subdivision = bool((tags.get('landuse') == 'residential' and re.search(r'\b(subdivision|subd\.?|village)\b', name, re.I)) or tags.get('residential') in {'gated', 'gated_community', 'subdivision'})
         is_estate = bool((re.search(r'\b(estate|hacienda)\b', name, re.I) and tags.get('landuse') == 'residential') or tags.get('residential') == 'mansions')
+        private_residential = ((tags.get('landuse') == 'residential' and tags.get('access') in {'private', 'residents', 'permit'})
+                               or tags.get('residential') in {'private', 'apartments', 'apartment_complex'})
+        private_recreation = tags.get('leisure') in {'garden', 'swimming_pool', 'sports_centre', 'pitch'} and tags.get('access') in {'private', 'members'}
         large_house = tags.get('building') in {'house', 'detached', 'villa', 'mansion', 'residential'} and area is not None and area >= 1000
         if is_subdivision:
             kind = 'Subdivision / residential village cue'
@@ -354,18 +384,46 @@ def build():
             kind = 'Large residential footprint · ≥1,000 m²'
         elif tags.get('building') in {'villa', 'mansion'}:
             kind = 'Villa / mansion tag · size/value unverified'
+        elif private_residential:
+            kind = 'Residential compound · restricted-access tag'
+        elif private_recreation:
+            kind = 'Recreation property · private / members-access tag'
         else:
             continue
         properties.append({'id': f'osm:{el["type"]}:{el["id"]}', 'type': kind, 'name': kind, 'recordKind': 'Private-property cue',
                            'latitude': lat, 'longitude': lon, 'areaSquareMeters': round(area, 1) if area is not None else None,
                            'geometry': geom, 'buildingTag': tags.get('building') or '', 'landuseTag': tags.get('landuse') or '',
+                           'accessTag': tags.get('access') or '', 'leisureTag': tags.get('leisure') or '',
                            'source': 'OpenStreetMap', 'sourceUrl': f'https://www.openstreetmap.org/{el["type"]}/{el["id"]}',
                            'valuationPesos': None, 'ownershipStatus': 'Unverified; no owner data published',
-                           'reviewSignal': 'remote_road_subdivision_connection' if is_subdivision else 'remote_road_estate_proximity' if is_estate else 'remote_road_large_residential_proximity' if large_house else 'remote_road_villa_tag_review',
+                           'reviewSignal': 'remote_road_subdivision_connection' if is_subdivision else 'remote_road_estate_proximity' if is_estate else 'remote_road_large_residential_proximity' if large_house else 'remote_road_restricted_access_property' if private_residential or private_recreation else 'remote_road_villa_tag_review',
                            'connectionStatus': 'Not evaluated against remote roads', **places.match(lon, lat)})
+
+    service_seen=defaultdict(list)
+    for key,el in service_elements.items():
+        tags=el.get('tags',{});kind=public_service_type(tags)
+        if not kind: continue
+        geom=element_geometry(el)
+        if not geom: continue
+        lon,lat=location(geom);raw_name=tags.get('name') or tags.get('name:en') or kind
+        name,name_sanitized=clean_osm_name(raw_name)
+        norm=' '.join(re.findall(r'\w+',raw_name.casefold())) if tags.get('name') or tags.get('name:en') else f'{el["type"]}:{el["id"]}'
+        if any(math.hypot((lon-r['longitude'])*111320*math.cos(math.radians(lat)),(lat-r['latitude'])*110540)<=75 for r in service_seen[(kind,norm)]):
+            continue
+        row={'id':f'osm:{el["type"]}:{el["id"]}','name':name,'type':kind,'latitude':lat,'longitude':lon,
+             'coordinateBasis':'OSM node' if el['type']=='node' else 'OSM bounding-box center',
+             'source':'OpenStreetMap','sourceUrl':f'https://www.openstreetmap.org/{el["type"]}/{el["id"]}',
+             'evidence':'; '.join(f'{k}={tags[k]}' for k in ('amenity','healthcare','education','office') if tags.get(k)),
+             **places.match(lon,lat)}
+        if name_sanitized: row['nameSanitized']=True
+        service_seen[(kind,norm)].append(row);public_services.append(row)
+    public_services.sort(key=lambda r:(r['province'],r['municipality'],r['type'],r['name'],r['id']))
 
     venues.sort(key=lambda r: (r['province'], r['municipality'], r['type'], r['name']))
     properties.sort(key=lambda r: (r['province'], r['municipality'], r['type'], r['id']))
+    from connectivity_place_enrichment import enrich
+    official_rows = enrich(venues, RAW, inputs, datetime.fromtimestamp((RAW/'san-juan-dot-directory.html').stat().st_mtime, timezone.utc).isoformat()
+                          if (RAW/'san-juan-dot-directory.html').exists() else None)
     common = {'builtAtUtc': datetime.now(timezone.utc).isoformat(), 'source': 'OpenStreetMap contributors',
               'sourceUrl': 'https://www.openstreetmap.org/copyright', 'license': 'ODbL 1.0', 'inputs': inputs,
               'adminBoundarySource': 'Archived DPWH City-Municipal Boundaries, March 2022; point/bounding-box-center containment; unresolved matches retained',
@@ -378,7 +436,13 @@ def build():
                                      'deduplication': 'Same normalized business name within 50 m merged; anonymous businesses retained separately',
                                      'rows': venues},
         'connectivity-venue-review-data': {**common, 'scope': 'Rest-house and event-place name cues lacking sufficient business-use tags; not qualified businesses', 'count': len(review), 'rows': review},
-        'connectivity-property-indicators-data': {**common, 'scope': 'Subdivision/village, residential-estate, villa/mansion and large-house footprint review candidates',
+        'connectivity-official-venues-data': {**common, 'scope': 'Municipal tourism directory listings; unmatched listings retain no coordinates and do not enter proximity calculations',
+                                            'source': 'San Juan municipal tourism directory and map-name reconciliation',
+                                            'sourceUrl': 'https://www.sanjuanbatangas.gov.ph/tourism/dot-accredited-enterprises',
+                                            'license': 'Government source listing; original source retained',
+                                            'count': len(official_rows), 'matchedMapRecords': sum(bool(r['matchedOsmIds']) for r in official_rows),
+                                            'rows': official_rows},
+        'connectivity-property-indicators-data': {**common, 'scope': 'Subdivision/village, residential-estate, villa/mansion, large-house footprint and restricted-access residential/recreation review candidates',
                                                  'count': len(properties), 'typeCounts': dict(Counter(r['type'] for r in properties)),
                                                  'largeHouseMinimumFootprintSquareMeters': 1000,
                                                  'limits': ['Footprint area is measured in UTM 51N; incomplete relation boundaries retain a source location and no measured area.',
@@ -387,6 +451,10 @@ def build():
                                                             'Proximity is not an established entrance or connection; no budget amounts are assigned by this inventory.',
                                                             'Owner names, private-property labels, contact details and full street addresses are omitted.'],
                                                  'rows': properties},
+        'connectivity-public-services-data': {**common, 'scope': 'Mapped schools, healthcare, emergency-response and civic/community service sites; proximity is a review exemption cue, not proof of actual service use or access',
+                                              'count': len(public_services),'typeCounts':dict(Counter(r['type'] for r in public_services)),
+                                              'deduplication':'Same normalized name and facility type within 75 m merged; unnamed facilities remain distinct',
+                                              'rows':public_services},
     }
     for stem, data in inventories.items():
         for directory in (OUT, STATIC):
@@ -395,19 +463,23 @@ def build():
             with (directory / (stem + '.csv')).open('w', newline='', encoding='utf-8-sig') as handle:
                 writer = csv.DictWriter(handle, fieldnames=fields, extrasaction='ignore')
                 writer.writeheader()
-                writer.writerows(data['rows'])
-        features = [{'type': 'Feature', 'id': r['id'], 'geometry': r.get('geometry') or {'type': 'Point', 'coordinates': [r['longitude'], r['latitude']]},
+                writer.writerows({k: json.dumps(v, ensure_ascii=False) if isinstance(v, (dict, list)) else v
+                                  for k, v in row.items()} for row in data['rows'])
+        features = [{'type': 'Feature', 'id': r['id'], 'geometry': r.get('geometry') or ({'type': 'Point', 'coordinates': [r['longitude'], r['latitude']]} if r.get('longitude') is not None else None),
                      'properties': {k: v for k, v in r.items() if k not in {'geometry', 'latitude', 'longitude'}}} for r in data['rows']]
-        (OUT / (stem + '.geojson')).write_text(compact({'type': 'FeatureCollection', 'features': features, 'license': common['license']}))
+        (OUT / (stem + '.geojson')).write_text(compact({'type': 'FeatureCollection', 'features': features, 'license': data['license']}))
     notes = ['# Connectivity place source inventory', '',
              'Current OSM snapshots; source links and SHA-256 hashes are retained in each JSON inventory. Clear profanity and slurs in mapped venue names are replaced with a neutral label in public outputs. No new road dataset is acquired by this builder.', '',
              '## Visitor venues', '', f'{len(venues):,} normalized mapped venue records; same-name records within 50 m merged.', '']
     notes += [f'- {kind}: {count:,}' for kind, count in sorted(Counter(r['type'] for r in venues).items())]
+    notes += ['', f'Official municipal tourism listings: {len(official_rows):,}; unique map-name matches: {sum(bool(r["matchedOsmIds"]) for r in official_rows):,}. Unmatched directory listings have no inferred coordinates. Directory/boundary municipality conflicts remain explicit.', '']
+    notes += ['', '## Public-service sites', '', f'{len(public_services):,} mapped schools, health/medical, emergency-response, and civic/community-service features. The source snapshot and feature tags are retained in `connectivity-public-services-data.json`; proximity is used only as an exemption cue.', '']
+    notes += [f'- {kind}: {count:,}' for kind, count in sorted(Counter(r['type'] for r in public_services).items())]
     notes += ['', '## Private-property review candidates', '', f'{len(properties):,} mapped source features. These are not yet joined to remote roads and are not confirmed beneficiary properties.', '']
     notes += [f'- {kind}: {count:,}' for kind, count in sorted(Counter(r['type'] for r in properties).items())]
     notes += ['', 'Large residential footprints use a provisional threshold of 1,000 m². Land-use estate/village cues may represent an entire development; private ownership and property value are unverified. Owner names and private-property labels are omitted.', '',
               'A 100 m road-alignment buffer identifies proximity leads. A subdivision connection requires evidence of a road entrance or intersection. City and national roads remain excluded from the remote-road screen.', '',
-              '## Files', '', '- `connectivity-venues-data.json/.csv/.geojson`', '- `connectivity-property-indicators-data.json/.csv/.geojson`',
+              '## Files', '', '- `connectivity-venues-data.json/.csv/.geojson`', '- `connectivity-property-indicators-data.json/.csv/.geojson`', '- `connectivity-public-services-data.json/.csv/.geojson`',
              '- `connectivity-venue-review-data.json/.csv/.geojson`: unverified name cues; excluded from the business inventory.',
              '- `connectivity-remote-fmr-venues.json/.csv`: generated separately by `build_connectivity_venue_links.py`; coordinate-backed FMR route/venue proximity pairs.',
              f'- Potentially offensive venue names withheld: {common["offensiveNamesWithheld"]:,}.', '',

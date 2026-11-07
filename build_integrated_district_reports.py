@@ -337,13 +337,13 @@ def build():
         'annual': annual_rows,
         'projects': [{key: row[key] for key in ('year', 'stage', 'category', 'name', 'amountPesos', 'source', 'districtId')} for row in rows],
         'method': {
-            'classifier': 'Shared title classifier from analyze_priority_repeats.py: Multi-purpose building, flood control, bridge and road.',
+            'classifier': 'Shared title classifier for multi-purpose buildings, flood control, bridges, and roads.',
             'attribution': 'Current legislative-district roster and strict qualified-location rules. Unique assignments only; shared and unresolved titles remain excluded from district totals.',
             'timeLimit': 'Project locations are assigned to current legislative district boundaries. Historical names and portraits follow the corresponding Congress roster where the seat can be reconciled with the current district. Election-year fiscal snapshots use the incoming Congress as cohort context; this does not identify who enacted or sponsored a budget. Portrait creation Congress is recorded separately from the member roster Congress.',
             'representativeCoverage': representative_audit,
             'representativeRosterCheckedDate': '2026-11-04',
             'representativeSource': 'House of Representatives, House Members · 20th Congress (https://www.congress.gov.ph/house-members), with current seat corrections for Antipolo 2nd, Cavite 4th, and the Taguig City/Taguig City-Pateros seats. Historical identities use the sourced 16th–19th Congress district rosters and attributed Commons portraits in congress-historical-rosters.json. Portraits may come from another term only when the individual identity matches; photo Congress and roster Congress remain separate.',
-            'sources': 'FY2015 DBM DPWH account-level GAA CSV with capital-outlay PAP candidates; FY2016–FY2018 title-classified DPWH current-new-appropriation rows from the BetterGov GAA Explorer baseline; FY2019 UACS-coded named project rows from the DBM Technical GAA DPWH schedule; FY2020–FY2025 ODV annual GAA data; FY2026 DPWH Details Enrolled Copy; FY2027 House GAB 3rd-reading DPWH schedule. FY2015–FY2019 use separate historical source layers; FY2027 is a proposal, not enacted GAA.',
+            'sources': 'FY2015 DBM DPWH account-level GAA CSV with capital-outlay PAP candidates; FY2016–FY2018 title-classified DPWH current-new-appropriation rows from the BetterGov GAA Explorer baseline; FY2019 UACS-coded named project rows from the DBM Technical GAA DPWH schedule; FY2020–FY2025 integrated annual GAA data; FY2026 DPWH Details Enrolled Copy; FY2027 House GAB 3rd-reading DPWH schedule. FY2015–FY2019 use separate historical source layers; FY2027 is a proposal, not enacted GAA.',
         },
     }
     data['buildVersion'] = hashlib.sha256(json.dumps(data['annual'], ensure_ascii=False, sort_keys=True).encode()).hexdigest()[:12]

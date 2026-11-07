@@ -192,7 +192,14 @@ def main():
     path=STATIC/'congress.html'
     page=re.sub(r'<section\b[^>]*id="selected-district-scrutiny"[^>]*>.*?</section>', '', path.read_text(), flags=re.S)
     path.write_text(page)
-    benchmark=build_benchmark()
+    try:
+        benchmark=build_benchmark()
+    except ValueError as exc:
+        cached_benchmark=STATIC/'congress-benchmark.json'
+        if not cached_benchmark.is_file():
+            raise
+        print(f'Congress benchmark refresh skipped ({exc}); retaining the last reconciled benchmark.')
+        benchmark=json.loads(cached_benchmark.read_text())
     benchmark_body,benchmark_script=render_benchmark(benchmark)
     inject('congress.html','congress-all-representatives',section('congress-all-representatives','All districts · estimated allocations, roles and reference comparisons',benchmark_body))
     from build_house_party_list_roster import build as build_party_list, render as render_party_list
@@ -272,28 +279,49 @@ def main():
          'alternative':'Renaming, title wrapping, scope changes, occurrence aggregation and parser errors can prevent counterpart selection.',
          'next':'Review NEP and HGAB source pages side by side, then reconcile project scope, office, location and amount.',
          'caution':'No selected counterpart means a review candidate, not a confirmed insertion.'},
-        {'rank':11,'id':'hgab-no-listed-documents','title':'HGAB 3rd projects with no listed DPWH Transparency documents',
-         'lead':f'{hgab_scope["missingListedDocumentsRows"]:,} / {hgab_scope["projectRows"]:,} project rows · {100*hgab_scope["missingListedDocumentsRows"]/hgab_scope["projectRows"]:.1f}%',
-         'basis':'DPWH Transparency FY2027 snapshot; local title reconciliation',
-         'page':'dpwh.html#hgab-coverage',
-         'question':'Are project documents available through another route, or should document links be added to the Transparency record?',
-         'evidence':'Rows without a matched transparency entry listing one or more documents are counted, including titles that do not match the snapshot.',
-         'alternative':'Documents may be available on another official page or not yet indexed in the captured snapshot.',
-         'next':'Verify the project identifier and query the responsible DPWH office for POW, geotagged photos and RDC records.',
-         'caution':'No listed document is a disclosure gap in this snapshot; it does not establish that no document exists.'},
-        {'rank':12,'id':'hgab-missing-document-types','title':'Incomplete documentation: missing POW, geotagged photos or RDC',
+        {'rank':11,'id':'hgab-no-listed-documents','title':'HGAB-only projects without a matched Senate supporting document',
+         'lead':f'{dpwh_indepth_data.get("senateSupportingDocumentCoverage",{}).get("projectRowsWithoutMatchedDocument",0):,} / {dpwh_indepth_data.get("senateSupportingDocumentCoverage",{}).get("denominatorProjectRows",0):,} HGAB-only rows · {100-dpwh_indepth_data.get("senateSupportingDocumentCoverage",{}).get("projectsWithAtLeastOneMatchedDocumentPct",0):.2f}%',
+         'basis':'Senate HGAB all-document scan; unique House-row title/code linkage',
+         'page':'dpwh.html#senate-supporting-document-coverage',
+         'question':'Which unmatched rows have files that need clearer title or file-code linkage?',
+         'evidence':'The expanded scan checks BP 202, POW, Development Council documents, geotagged-photo files, Certificates of Implementability and other PDFs for HGAB-only House rows.',
+         'alternative':'Image-only, damaged or ambiguously coded files can remain unmatched even when a document exists.',
+         'next':'Review per-project file counts and source documents, then resolve ambiguous or unreadable file associations.',
+         'caution':'A title/code match signals file presence, not verified contents; no match is not proof of absence.'},
+        {'rank':12,'id':'hgab-missing-document-types','title':'Proposal attachment lists missing a POW, photos or development-council document',
          'lead':f'{hgab_scope["missingAnyTypeRows"]:,} / {hgab_scope["inspectedRows"]:,} inspected attachment lists · {hgab_scope["missingAnyTypePct"]:.1f}%',
-         'basis':'Locally inspected attachment metadata; HGAB 3rd title matches',
-         'page':'dpwh.html#hgab-coverage',
-         'question':'Which listed attachment types are absent, and can DPWH provide the missing POW, photos or RDC?',
-         'evidence':'Counts cover only title-matched HGAB projects whose attachment metadata is locally inspected. The supporting section breaks missing POW, photos and RDC out separately.',
+         'basis':'DPWH Transparency Proposal attachment metadata; HGAB 3rd title matches',
+         'page':'dpwh-transparency.html#proposal-attachment-type-gaps',
+         'question':'Which attachment types are absent from inspected Proposal lists, and should DPWH add them?',
+         'evidence':'Counts cover only HGAB projects with a directly matched Proposal record and locally inspected attachment metadata. They are Proposal-only statistics; Senate-provided HGAB files are counted separately.',
          'alternative':'The local snapshot may be incomplete, and an attachment may be indexed under another type or record.',
-         'next':'Review each project’s transparency entry and request missing categories from the implementing office.',
+         'next':'Review each matched Proposal record and request missing categories from the implementing office.',
          'caution':'Uninspected projects are unknown, not counted as missing; the missing-type groups can overlap.'}
     ])
-    priority={'rcs':1,'insertions':2,'mpb':3,'repeats':4,'prices':5,'inspire':6,'length-coverage':7,'cost-per-km':8,'short-printed-ranges':9,'hgab-no-nep-counterpart':10,'hgab-no-listed-documents':11,'hgab-missing-document-types':12}
-    for finding in findings:finding['rank']=priority[finding['id']]
-    findings.sort(key=lambda r:r['rank'])
+    # Put the largest disclosed allocation scopes first. These cohorts overlap,
+    # so their exposures are comparison aids and must never be summed as a loss.
+    hgab_only_docs=json.loads((ROOT/'analysis_output/senate-hgab-only-document-stats.json').read_text())
+    hgab_rows=hgab_only_docs.get('projects',[])
+    exposure_by_id={
+        'rcs':(n*unit,'199 equal RCS office allocations'),
+        'prices':(price_stats['overlap']*2*5_000_000,'Minimum: one exact ₱5M road and one flood entry in each overlapping office'),
+        'repeats':(repeat_stats['uniqueCurrentPesos'],'Unique current NEP proposal allocations in the repeat screen'),
+        'insertions':(sum(int(r['amountPesos']) for r in domestic),'OO2-adjusted domestic HGAB-only candidate allocations'),
+        'inspire':(int(inspire['fy2027Pesos']),'FY2027 proposed allocation'),
+        'mpb':(int(mpb['insertionPesos']),'MPB insertion-candidate allocations'),
+        'length-coverage':(sum(int(r.get('unusableLengthAllocationPesos',0)) for r in length_data['summary']),'Allocations with absent or unusable extracted length'),
+        'cost-per-km':(sum(int(r['amountPesos']) for r in length_data['projects'] if r.get('highRateCandidate')),'Allocation of high-rate screen candidates'),
+        'short-printed-ranges':(sum(int(r['amountPesos']) for r in length_data['projects'] if r['id'] in {x['id'] for x in verified_short}),'Allocation for source-checked short-range candidates'),
+        'hgab-no-nep-counterpart':(sum(int(r.get('amountPesos',0)) for r in hgab_rows),'All HGAB-only row allocations; 6,105-row cohort'),
+        'hgab-no-listed-documents':(sum(int(r.get('amountPesos',0)) for r in hgab_rows if not r.get('hasAtLeastOneTitleMatchedDocument')),'Allocations for HGAB-only rows without a matched supporting file'),
+    }
+    for finding in findings:
+        exposure=exposure_by_id.get(finding['id'])
+        finding['costExposurePesos']=exposure[0] if exposure else None
+        finding['costExposureBasis']=exposure[1] if exposure else 'No comparable allocation total in the current Proposal attachment-list extract'
+    findings.sort(key=lambda r:(r['costExposurePesos'] is None,-(r['costExposurePesos'] or 0),r['id']))
+    findings=findings[:8]
+    for rank,finding in enumerate(findings,1):finding['rank']=rank
     coverage_rows=[[k,v['summary']['thirdRows'],int(v['summary']['thirdTotal']),sum(count for status,count in v['summary']['statusCounts'].items() if status!='Same allocation')] for k,v in revision.items()]
     from summary_evidence_links import enrich_findings
     enrich_findings(findings)
@@ -319,7 +347,7 @@ def main():
     (STATIC/'summary-data.json').write_text(json.dumps(document,ensure_ascii=False,indent=2)+'\n')
     (ROOT/'analysis_output/investigation_summary.json').write_text(json.dumps(document,ensure_ascii=False,indent=2)+'\n')
     from uniform_report_menu import NAV as nav, apply_page as apply_report_menu
-    cards=''.join(f'<article class="finding" id="lead-{r["id"]}" data-basis="{esc(r["basis"])}"><span class="rank">Investigation priority {r["rank"]} · {esc(r["basis"])}</span><h2>{esc(r["title"])}</h2><p class="lead">{esc(r["lead"])}</p><dl>'+''.join(f'<dt>{label}</dt><dd>{esc(r[key])}</dd>' for label,key in [('Talking point','question'),('Observed evidence','evidence'),('Plausible explanation','alternative'),('What investigators need next','next'),('Parsing/location caution','caution')])+f'</dl><p><a href="{esc(r["page"])}">Supporting analysis and source tables →</a></p></article>' for r in findings)
+    cards=''.join(f'<article class="finding" id="lead-{r["id"]}" data-basis="{esc(r["basis"])}"><span class="rank">Allocation exposure order {r["rank"]} · {esc(r["basis"])}</span><h2>{esc(r["title"])}</h2><p class="lead">{esc(r["lead"])}</p><p class="cost-exposure">Allocation exposure in this review scope: {peso(r["costExposurePesos"]) if r.get("costExposurePesos") is not None else "Not available for comparison"} · {esc(r["costExposureBasis"])}</p><dl>'+''.join(f'<dt>{label}</dt><dd>{esc(r[key])}</dd>' for label,key in [('Talking point','question'),('Observed evidence','evidence'),('Plausible explanation','alternative'),('What investigators need next','next'),('Parsing/location caution','caution')])+f'</dl><p><a href="{esc(r["page"])}">Supporting analysis and source tables →</a></p></article>' for r in findings)
     ranked=table(['Priority','Investigative lead','Evidence class','Question to verify'],[[r['rank'],r['title'],r['basis'],r['question']] for r in findings])
     neutral=table(['Schedule','HGAB 3rd lines','HGAB 3rd pesos','Changed between 2nd and 3rd'],coverage_rows)
     neutral+='<p>These extracted FMR, NIA, HFEP and DepEd schedules have no allocation changes between the two readings. Stability is not itself a red flag. No year-on-year repetition or NEP insertion claim follows from unchanged bill-stage totals. NIA named projects and the irrigation appendix are separate schedule slices; do not add their totals without reconciling hierarchy.</p>'
@@ -329,11 +357,11 @@ def main():
     flow+='<p><a href="congress.html#congress-all-representatives">Compare estimated allocations across all congressional districts →</a></p>'
     datasets=table(['Investigative question','Dataset or documents needed','Current workspace limitation'],[['RCS needs','Geocoded RCS sites, storage/catchment design, population served, water access and dry-season demand','Rainfall is province-level; it cannot locate demand or actual sites'],['Repeated work','Contract IDs, bill of quantities, as-built chainage, completion and disbursements','Budget titles and stated chainage do not establish paid work'],['Price clustering','Work quantities, standard estimates, procurement thresholds, prior-year comparable contracts','Exact peso values alone are not unit prices'],['Insertions','Audited native NEP/HGAB occurrence links and original PDF pages','A balanced total does not certify every unmatched row'],['LEG rankings','Dated barangay/municipality LEG boundaries and funded-segment geometry','PH location DB contains undated and conflicting claims'],['INSPIRE','Approved total project cost, phase ledger, obligations and releases','Appropriations are not disbursements']])
     datasets+='<p>Workspace search found a province poverty file, but its rows do not identify year or indicator definition; it is not used as a needs control. The local flood project summary covers 2016–2024 projects, not present-day hazard exposure. Neither provides the missing RCS site/catchment, water-access or demand denominator. Additional datasets must be dated, sourced and matched to the correct geographic level before correlation.</p>'
-    hero=f'<section class="repeat-hero"><div class="repeat-hero-primary"><span class="repeat-hero-kicker">FY2027 budget · investigative triage</span><div class="repeat-hero-total"><strong>{len(findings)}</strong><span>leads worth a closer look</span></div><p>Allocation patterns to question, explanations to check, and records to request.</p></div><div class="repeat-hero-detail"><div class="repeat-hero-breakdown"><div><span>Uniform RCS packages</span><strong>199 offices</strong></div><div><span>Repeat candidates</span><strong>686 proposals</strong></div></div><p>Evidence guides an investigation. None of these findings establishes corruption.</p></div></section>'
+    hero=f'<section class="repeat-hero"><div class="repeat-hero-primary"><span class="repeat-hero-kicker">FY2027 budget · investigative triage</span><div class="repeat-hero-total"><strong>{len(findings)}</strong><span>leads worth a closer look</span></div><p>Cards are sorted by disclosed allocation exposure within each review scope. Scopes overlap and must not be added; exposures are not losses or a corruption score.</p></div><div class="repeat-hero-detail"><div class="repeat-hero-breakdown"><div><span>Uniform RCS packages</span><strong>199 offices</strong></div><div><span>Repeat candidates</span><strong>686 proposals</strong></div></div><p>Evidence guides an investigation. None of these findings establishes corruption.</p></div></section>'
     filters='<div class="summary-controls"><input id="lead-search" type="search" placeholder="Search talking points" aria-label="Search talking points"><select id="lead-basis" aria-label="Filter evidence class"><option value="">All evidence classes</option>'+''.join(f'<option>{esc(r["basis"])}</option>' for r in findings)+'</select></div>'
     filterjs="""<script>const search=document.getElementById('lead-search'),basis=document.getElementById('lead-basis');function filter(){document.querySelectorAll('.finding').forEach(card=>card.hidden=!(card.textContent.toLowerCase().includes(search.value.toLowerCase())&&(!basis.value||card.dataset.basis===basis.value)))}search.addEventListener('input',filter);basis.addEventListener('change',filter);</script>"""
     hero=hero.replace('686 proposals',f'{len(unique):,} proposals')
-    page='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Budget Summary · Investigative Talking Points</title><style>*{box-sizing:border-box}body{margin:0;font:16px/1.5 system-ui,sans-serif;background:#f3f6f5;color:#18303b}header{background:#123944;color:white;padding:30px clamp(16px,2vw,32px)}header h1{font-size:clamp(28px,4vw,48px);margin:0}main{width:100%;padding:24px clamp(16px,2vw,32px)}a{color:#087e78}header a{color:white}header p{max-width:1100px}</style>'+STYLE+CSS+'</head><body><header><h1>Budget Summary · Investigative Talking Points</h1><p>NEP patterns and NEP → HGAB screens, with parsing uncertainty and location limits alongside every claim. Priorities are editorial triage, not a corruption score. Figures overlap and must not be added together.</p>'+nav+'</header><main>'+hero+'<p class="summary-queue-jump"><a href="#summary-top-line-items">Full line-item review queue ↓</a></p>'+section('summary-stages','Follow the changes between budget stages',flow)+section('ranked-leads','Where to start',ranked)+filters+cards+section('summary-quality','Parsing and location gotchas',quality)+section('summary-neutral','Other schedules · no reading-stage change found',neutral)+section('summary-data-needs','Evidence needed to strengthen the claims',datasets)+section('summary-top-line-items','Full line-item review queue',render_review_queue(review_queue,table,esc))+'</main>'+JS+filterjs+'</body></html>'
+    page='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Budget Summary · Investigative Talking Points</title><style>*{box-sizing:border-box}body{margin:0;font:16px/1.5 system-ui,sans-serif;background:#f3f6f5;color:#18303b}header{background:#123944;color:white;padding:30px clamp(16px,2vw,32px)}header h1{font-size:clamp(28px,4vw,48px);margin:0}main{width:100%;padding:24px clamp(16px,2vw,32px)}a{color:#087e78}header a{color:white}header p{max-width:1100px}</style>'+STYLE+CSS+'</head><body><header><h1>Budget Summary · Investigative Talking Points</h1><p>NEP patterns and NEP → HGAB screens, with parsing uncertainty and location limits alongside every claim. Priorities are editorial triage, not a corruption score. Figures overlap and must not be added together.</p>'+nav+'</header><main>'+hero+'<p class="summary-queue-jump"><a href="#summary-top-line-items">Full line-item review queue ↓</a></p>'+section('summary-stages','Follow the changes between budget stages',flow)+section('ranked-leads','Where to start',ranked)+filters+cards+section('summary-quality','Parsing and location gotchas',quality)+section('summary-neutral','Other schedules · no reading-stage change found',neutral)+section('summary-data-needs','Evidence needed to strengthen the claims',datasets)+section('summary-top-line-items','Full line-item review queue',render_review_queue(review_queue,esc))+'</main>'+JS+filterjs+'</body></html>'
     # Normalize only the newly generated summary page. Other report builders
     # retain their own content while using the shared menu transformer when they
     # write their pages; never copy one page's navigation onto every page.

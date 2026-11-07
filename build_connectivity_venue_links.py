@@ -8,7 +8,7 @@ import math
 from collections import Counter, defaultdict
 from pathlib import Path
 
-from build_connectivity_report import point_segment_distance, utm51
+from build_connectivity_report import MAX_ENDPOINT_GAP_M, endpoint_gap_meters, point_segment_distance, utm51
 from build_connectivity_places import Places
 
 ROOT = Path(__file__).resolve().parent
@@ -35,6 +35,8 @@ def project_rows():
             coords = segment.get('coordinates') or []
             if len(coords) < 2 or not all(valid_lonlat(p) for p in (coords[0], coords[-1])):
                 continue
+            if endpoint_gap_meters(coords[0], coords[-1]) > MAX_ENDPOINT_GAP_M:
+                continue
             source = row.get('source') or {}
             yield {
                 'id': row.get('project_id'), 'year': 2027, 'stage': 'HGAB 3rd',
@@ -58,12 +60,14 @@ def project_rows():
                     continue
                 if not all(valid_lonlat(p) for p in coords):
                     continue
+                if endpoint_gap_meters(coords[0], coords[-1]) > MAX_ENDPOINT_GAP_M:
+                    continue
                 yield {
                     'id': f"da-fmr-{year}:{attrs.get('objectid')}", 'year': year,
-                    'stage': f'DA FMR GIS · FY{year}', 'sourceType': f'DA FMR ArcGIS FY{year}',
+                    'stage': f'Offline DPWH shapefiles · FY{year}', 'sourceType': f'Offline DPWH shapefiles · FY{year}',
                     'title': attrs.get('Project_Description_note') or attrs.get('Contract_Name_note') or 'DA FMR project',
                     'amountPesos': None, 'sourcePage': None,
-                    'sourceUrl': f'https://services1.arcgis.com/IwZZTMxZCmAmFYvF/arcgis/rest/services/DA_FMR_FY{year}_LiveView/FeatureServer/0',
+                    'sourceUrl': 'offline DPWH shapefiles',
                     'coordinates': coords, 'routeStatus': attrs.get('PC_Status_note') or 'Status unavailable',
                 }
 
@@ -116,7 +120,10 @@ def build():
                 'roadSourceType': road['sourceType'], 'roadTitle': road['title'],
                 'roadStatus': road['routeStatus'], 'allocationPesos': road['amountPesos'],
                 'sourcePage': road['sourcePage'], 'roadSourceUrl': road['sourceUrl'],
+                'startLatitude': road['coordinates'][0][1], 'startLongitude': road['coordinates'][0][0],
+                'endLatitude': road['coordinates'][-1][1], 'endLongitude': road['coordinates'][-1][0],
                 'venueName': venue['name'], 'venueType': venue['type'],
+                'venueLatitude': venue.get('latitude'), 'venueLongitude': venue.get('longitude'),
                 'municipality': venue.get('municipality', ''), 'province': venue.get('province', ''),
                 'region': venue.get('region', ''), 'distanceMeters': round(distance, 1),
                 'venueSourceUrl': venue['sourceUrl'],
@@ -127,7 +134,7 @@ def build():
     matches.sort(key=lambda row: (-row['year'], row['distanceMeters'], row['roadTitle'], row['venueName']))
     payload = {
         'scope': 'Coordinate-backed DA FMR project routes with both endpoints in a mapped DPWH municipality and one or more OSM classified visitor venues within 100 m.',
-        'builtAtUtc': venue_data.get('builtAtUtc'), 'source': 'FY2027 HGAB DA FMR rows; DA FMR ArcGIS FY2024/FY2025; OSM visitor venue inventory.',
+        'builtAtUtc': venue_data.get('builtAtUtc'), 'source': 'FY2027 HGAB DA FMR rows; offline DPWH shapefiles FY2024/FY2025; OSM visitor venue inventory.',
         'bufferMeters': BUFFER, 'candidateRouteSegments': len(candidates),
         'uniqueCandidateRoadRecords': len({r['id'] for r in candidates}),
         'matchedRoadVenuePairs': len(matches), 'uniqueRoadRecords': len({r['roadId'] for r in matches}),

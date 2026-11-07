@@ -2,6 +2,11 @@
   "maxActiveDownloads": 2,
   "downloads": [
     {
+      "profile": "site_denr_bmb",
+      "script": "download_arcgis_inventory.py",
+      "service": "DENR_BMB"
+    },
+    {
       "profile": "bridge_inventory",
       "script": "download_bridge_inventory.py"
     },
@@ -60,11 +65,6 @@
     {
       "profile": "kilometer_posts",
       "script": "download_kilometer_posts.py"
-    },
-    {
-      "profile": "site_denr_bmb",
-      "script": "download_arcgis_inventory.py",
-      "service": "DENR_BMB"
     },
     {
       "profile": "site_active_faults",

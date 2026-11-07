@@ -3,6 +3,8 @@ from __future__ import annotations
 
 import json
 import math
+import hashlib
+import re
 from pathlib import Path
 from collections import defaultdict, Counter
 
@@ -17,35 +19,51 @@ PAGE = STATIC / 'connectivity.html'
 DATA = STATIC / 'connectivity-data.json'
 SCRIPT = STATIC / 'connectivity.js'
 CELL = 1000.0
+ROUTE_CONNECTION_TOLERANCE_M = 50.0
+ROUTE_SEARCH_RADIUS_M = 1000.0
+MAX_ENDPOINT_GAP_M = 20000.0
 
 JS = r'''(()=>{
   const n=x=>Number(x||0).toLocaleString('en-PH'),peso=x=>'₱'+n(x),
     esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const distanceColors=['#25834b','#d2a700','#d66b1f','#b4232e'],unknownColor='#89959e';
+  const distanceBand=value=>value==null?null:value<=100?0:value<=500?1:value<=1000?2:3;
+  const farmBand=row=>row.farmDistanceMeters!=null?distanceBand(row.farmDistanceMeters):row.farmCoverage1000m?3:null;
+  const distanceLabel=band=>['≤100 m','>100–500 m','>500 m–1 km','>1 km'][band]||'Unresolved';
+  const reviewDetail=row=>{const road=distanceBand(row.nearestDistanceMeters),farm=farmBand(row);return road==null||farm==null?'Road or cropland distance unresolved':`Road ${distanceLabel(road)} × cropland ${distanceLabel(farm)}`};
+  const endpointGapMeters=row=>{const raw=[row.startLatitude,row.startLongitude,row.endLatitude,row.endLongitude];if(raw.some(v=>v==null||v===''))return null;const c=raw.map(Number);if(!c.every(Number.isFinite))return null;const rad=x=>x*Math.PI/180,dl=rad(c[2]-c[0]),dn=rad(c[3]-c[1]),a=Math.sin(dl/2)**2+Math.cos(rad(c[0]))*Math.cos(rad(c[2]))*Math.sin(dn/2)**2;return 6371008.8*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a))};
+  const coordinateFlag=row=>Boolean(row.coordinateQualityFlag)||(endpointGapMeters(row)||0)>20000;
+  const googleMapsEndpoints=row=>{const coords=[row.startLatitude,row.startLongitude,row.endLatitude,row.endLongitude].map(Number);if(!coords.every(Number.isFinite))return '';const origin=encodeURIComponent(coords[0]+','+coords[1]),destination=encodeURIComponent(coords[2]+','+coords[3]),center=((coords[0]+coords[2])/2)+','+((coords[1]+coords[3])/2),satellite='https://www.google.com/maps/@?api=1&map_action=map&center='+encodeURIComponent(center)+'&zoom=14&basemap=satellite',gap=endpointGapMeters(row),directions='https://www.google.com/maps/dir/?api=1&origin='+origin+'&destination='+destination+'&travelmode=driving',route=gap>20000?`<strong style="display:block;color:#8f1515;background:#fee2e2;padding:3px 6px">⚠ RED FLAG: endpoints about ${n(gap/1000)} km apart; spatial calculations suppressed</strong><a href="${directions}" target="_blank" rel="noopener noreferrer" title="Google Maps suggested driving route and distance between endpoints; not the project alignment or straight-line measurement">Route + distance ↗</a>`:`<a href="${directions}" target="_blank" rel="noopener noreferrer" title="Google Maps suggested driving route and distance between endpoints; not the project alignment or straight-line measurement">Route + distance ↗</a>`;return `<a href="${satellite}" target="_blank" rel="noopener noreferrer" title="Satellite view centered between the printed source endpoints">Google Maps satellite ↗</a> · ${route}`};
+  const rgb=hex=>[1,3,5].map(i=>parseInt(hex.slice(i,i+2),16));
+  const multiplyColors=(a,b)=>'#'+rgb(a).map((v,i)=>Math.round(v*rgb(b)[i]/255).toString(16).padStart(2,'0')).join('');
+  const textColor=color=>{const c=rgb(color).map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4});return c[0]*.2126+c[1]*.7152+c[2]*.0722>.179?'#111':'#fff'};
+  const colorStyle=color=>`background:${color};color:${textColor(color)};font-variant-numeric:tabular-nums`;
+  const bandStyle=band=>colorStyle(band==null?unknownColor:distanceColors[band]);
+  const finalColor=row=>{if(coordinateFlag(row))return unknownColor;const road=distanceBand(row.nearestDistanceMeters),farm=farmBand(row);return road==null||farm==null?unknownColor:multiplyColors(distanceColors[road],distanceColors[farm])};
   if(location.protocol==='file:'){
     const message='Connectivity data is stored in separate JSON files. Open this page through the local web server (HTTP), not directly as a file.';
-    document.getElementById('rows').innerHTML='<tr><td colspan="7">'+message+'</td></tr>';
+    document.getElementById('rows').innerHTML='<tr><td colspan="11">'+message+'</td></tr>';
     document.getElementById('road-project-count').textContent=message;
     return;
   }
-  fetch('connectivity-data.json').then(r=>{if(!r.ok)throw Error('connectivity-data.json returned HTTP '+r.status);return r.json()}).then(d=>{
-    const rows=d.projects||[],q=document.getElementById('q'),sel=document.getElementById('result'),size=document.getElementById('size'),body=document.getElementById('rows'),pageLabel=document.getElementById('page');
-    Object.keys(d.summary||{}).forEach(x=>sel.add(new Option(`${x} (${d.summary[x]})`,x)));
-    document.getElementById('road-stats').innerHTML=Object.entries(d.summary||{}).map(([k,v])=>`<div class="stat"><strong>${n(v)}</strong>${esc(k)}</div>`).join('')+`<div class="stat"><strong>${n(rows.length)}</strong>FMR projects · ${n(d.roadFeatures)} DPWH road sections</div>`;
-    const order=['Near road · ≤100 m','Review · 100–500 m','Distant · 500 m–1 km','No nearby DPWH classified road · >1 km'],colors=['#25834b','#d2a700','#d66b1f','#b4232e'],max=Math.max(1,...order.map(k=>Number(d.summary?.[k]||0)));
+  fetch('connectivity-farm-status.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{const note=document.getElementById('farm-data-status');if(note)note.textContent=d.message+' Checked '+new Date(d.checkedAtUtc).toLocaleDateString('en-PH')+'.';}).catch(()=>{const note=document.getElementById('farm-data-status');if(note)note.textContent='Farm proximity is not assessed; the local farm-data audit could not be loaded.';});
+  fetch('connectivity-data.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('connectivity-data.json returned HTTP '+r.status);return r.json()}).then(d=>{
+    const rows=d.projects||[],q=document.getElementById('q'),sel=document.getElementById('result'),sortControl=document.getElementById('connectivity-sort'),body=document.getElementById('rows'),projectCount=document.getElementById('connectivity-project-count'),pageLabel=document.getElementById('connectivity-project-page'),prev=document.getElementById('connectivity-project-prev'),next=document.getElementById('connectivity-project-next'),size=document.getElementById('connectivity-project-size');let page=0;
+    const classSummary=d.connectivitySummary||d.summary||{};Object.keys(classSummary).forEach(x=>sel.add(new Option(`${x} (${n(classSummary[x])})`,x)));
+    const reviewCounts=new Map();rows.filter(r=>String(r.connectivityClass||'').startsWith('Review')).forEach(r=>{const key=reviewDetail(r);reviewCounts.set(key,(reviewCounts.get(key)||0)+1)});
+    [...reviewCounts.entries()].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).forEach(([label,count])=>sel.add(new Option(`${label} (${n(count)})`,`review:${label}`)));
+    document.getElementById('road-stats').innerHTML=Object.entries(d.connectivitySummary||d.summary||{}).map(([k,v])=>`<div class="stat"><strong>${n(v)}</strong>${esc(k)}</div>`).join('')+`<div class="stat"><strong>${n(rows.length)}</strong>FMR projects · ${n(d.roadFeatures)} DPWH road sections</div>`;
+    const order=['Near road · ≤100 m','Review · 100–500 m','Distant · 500 m–1 km','No nearby DPWH classified road · >1 km','Coordinate review · endpoints >20 km apart'],colors=['#25834b','#d2a700','#d66b1f','#b4232e','#6b7280'],max=Math.max(1,...order.map(k=>Number(d.summary?.[k]||0)));
     document.getElementById('road-distance-chart').innerHTML=order.map((label,i)=>{const value=Number(d.summary?.[label]||0);return `<div class="road-chart-row"><span>${esc(label.replace(/^.*· /,''))}</span><div class="road-chart-track"><i style="width:${value/max*100}%;background:${colors[i]}"></i></div><strong>${n(value)}</strong></div>`}).join('');
-    let page=0;function draw(){const term=q.value.trim().toLowerCase(),items=rows.filter(x=>(!sel.value||x.result===sel.value)&&(!term||`${x.title} ${x.region} ${x.roadName}`.toLowerCase().includes(term))).sort((a,b)=>Number(b.amountPesos||0)-Number(a.amountPesos||0)),per=Number(size.value),pages=Math.max(1,Math.ceil(items.length/per));page=Math.min(page,pages-1);body.innerHTML=items.slice(page*per,(page+1)*per).map(x=>`<tr><td><button type="button" class="connectivity-map-open" data-connectivity-map="${esc(x.id)}" aria-label="Map FMR and road connection for ${esc(x.title)}">Map</button> ${esc(x.title)}<small>Printed source p. ${esc(x.sourcePage)} · ${esc(x.coordinateBasis)}</small></td><td>${esc(x.region)}</td><td>${esc(x.roadName)}<small>${esc(x.roadClass)} · ${esc(x.roadSection)}</small></td><td class="num">${n(x.startDistanceMeters)}</td><td class="num">${x.endDistanceMeters==null?'—':n(x.endDistanceMeters)}</td><td class="${x.flagTags?.length?'red-flag':''}">${esc(x.result)}${x.flagTags?.length?'<small>Flag tag: nearest endpoint over 1 km from the DPWH classified road network</small>':''}</td><td class="num">${peso(x.amountPesos)}</td></tr>`).join('')||'<tr><td colspan="7">No matching records.</td></tr>';pageLabel.textContent=`${items.length?page*per+1:0}–${Math.min((page+1)*per,items.length)} of ${items.length} · Page ${page+1} of ${pages}`;document.getElementById('prev').disabled=page===0;document.getElementById('next').disabled=page>=pages-1}
-    q.addEventListener('input',()=>{page=0;draw()});sel.addEventListener('change',()=>{page=0;draw()});size.addEventListener('change',()=>{page=0;draw()});document.getElementById('prev').onclick=()=>{page--;draw()};document.getElementById('next').onclick=()=>{page++;draw()};draw();
-  }).catch(e=>{document.getElementById('rows').innerHTML='<tr><td colspan="8">Connectivity data unavailable: '+esc(e.message||e)+'</td></tr>';});
+    const combined=document.getElementById('farm-road-chart');if(combined){const labels=['Baseline FMR · road and mapped cropland ≤100 m','Flag FMR · only road or mapped cropland ≤500 m','Double Flag FMR · road and mapped cropland >1 km','Review · other distance combinations','Unresolved · incomplete cropland coverage','Coordinate review · endpoints >20 km apart'],total=rows.length;combined.innerHTML=labels.map(label=>{const matches=rows.filter(r=>r.connectivityClass===label),colors={};matches.forEach(r=>{const c=finalColor(r);colors[c]=(colors[c]||0)+1});return `<div class="road-chart-row"><span>${esc(label)}</span><div class="road-chart-track" style="display:flex">${Object.entries(colors).sort(([a],[b])=>a.localeCompare(b)).map(([color,count])=>`<i style="width:${total?count/total*100:0}%;background:${color};border-radius:0" title="${n(count)} FMRs · combined road and farm distance colors"></i>`).join('')}</div><strong>${n(matches.length)}</strong></div>`}).join('');}
+    const reviewChart=document.getElementById('farm-road-review-chart');if(reviewChart){const max=Math.max(1,...reviewCounts.values());reviewChart.innerHTML=[...reviewCounts.entries()].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).map(([label,count])=>{const sample=rows.find(r=>String(r.connectivityClass||'').startsWith('Review')&&reviewDetail(r)===label);return `<div class="road-chart-row"><span>${esc(label)}</span><div class="road-chart-track"><i style="width:${count/max*100}%;background:${finalColor(sample)}"></i></div><strong>${n(count)}</strong></div>`}).join('')||'<p class="note">No projects currently fall into Review.</p>'; }
+    const farmChart=document.getElementById('farm-distance-chart');if(farmChart){const labels=['≤100 m','100–500 m','500 m–1 km','>1 km','Unresolved','Coordinate review · endpoints >20 km apart'],counts=labels.map((_,i)=>rows.filter(r=>i===5?coordinateFlag(r):!coordinateFlag(r)&&farmBand(r)===(i===4?null:i)).length),max=Math.max(1,...counts);farmChart.innerHTML=labels.map((label,i)=>`<div class="road-chart-row"><span>${esc(label)}</span><div class="road-chart-track"><i style="width:${counts[i]/max*100}%;background:${i===5?'#6b7280':distanceColors[i]||unknownColor}"></i></div><strong>${n(counts[i])}</strong></div>`).join('');}
+    function draw(){const term=q.value.trim().toLowerCase(),selected=sel.value,sortMode=sortControl?.value||'gap-desc',items=rows.filter(x=>(!selected||(selected.startsWith('review:')?String(x.connectivityClass||'').startsWith('Review')&&reviewDetail(x)===selected.slice(7):(x.connectivityClass||x.result)===selected))&&(!term||`${x.title} ${x.region} ${x.roadName}`.toLowerCase().includes(term))).sort((a,b)=>{const av=a.coordinateGapMeters??endpointGapMeters(a),bv=b.coordinateGapMeters??endpointGapMeters(b),aGap=av==null?(sortMode==='gap-asc'?Infinity:-Infinity):Number(av),bGap=bv==null?(sortMode==='gap-asc'?Infinity:-Infinity):Number(bv);return sortMode==='amount-desc'?Number(b.amountPesos||0)-Number(a.amountPesos||0):sortMode==='gap-asc'?aGap-bGap:bGap-aGap||Number(b.amountPesos||0)-Number(a.amountPesos||0)}),per=Number(size?.value||20),pages=Math.max(1,Math.ceil(items.length/per));page=Math.min(page,pages-1);body.innerHTML=items.slice(page*per,(page+1)*per).map(x=>{const badCoordinate=coordinateFlag(x),ecological=Boolean(x.ecologicalReview),exemptionHtml=(x.exemptionReasons||[]).map(reason=>reason.startsWith('User map review:')?`<span class="review-note-label">Review note · ${esc(reason.replace(/^User map review:\s*/,''))}</span>`:`<span class="positive-exemption-label">Positive exemption · ${esc(reason)}</span>`).join(''),contextNote=x.exemptionNote?`<span class="review-note-label">Context · ${esc(x.exemptionNote)}</span>`:'',userNotes=(x.userMapReviewNotes||[]).map(note=>`<span class="review-note-label">Review note · ${esc(note)}</span>`).join(''),coordinateNote=x.id==='ib:p709:r12'?'<span class="review-note-label">Source coordinate review · printed start longitude 122.979706 appears suspect; 122.09706 would put endpoints about 2.15 km apart, but that correction is unverified.</span>':'',dpwhConnected=Boolean(x.routeNetworkExemption)||Number(x.nearestDistanceMeters)<=50||(x.routeNetworkDistanceMeters!=null&&Number(x.routeNetworkDistanceMeters)<=50),prefersUnpaved=String(x.unpavedRoadConnection?.status||'').startsWith('Likely connected')&&!dpwhConnected,exemptionCell=badCoordinate?(coordinateNote||'<span class="review-note-label">Coordinate review · spatial analysis suppressed.</span>'):(ecological?`<span class="ecological-review-label">Negative review flag · Baywalk/ecological screening</span><small>${esc(x.ecologicalReview)}</small>`:'')+exemptionHtml+userNotes+(contextNote||(!ecological&&!exemptionHtml&&!userNotes?'—':''));return `<tr class="${badCoordinate?'coordinate-flag':ecological?'ecological-review':x.exemptionReasons?.length?'route-exempt':''}"${badCoordinate?' style="background:#fff0f0;box-shadow:inset 4px 0 #b91c1c"':''}><td><button type="button" class="connectivity-map-open" data-connectivity-map="${esc(x.id)}" aria-label="Open FMR route and nearby road map for ${esc(x.title)}">FMR + road map</button><small>${googleMapsEndpoints(x)}</small> ${esc(x.title)}<small>Printed source p. ${esc(x.sourcePage)} · ${esc(x.coordinateBasis)}</small></td><td class="num endpoint-gap-cell">${x.coordinateGapMeters==null?'—':(Number(x.coordinateGapMeters)/1000).toFixed(3)+' km'}</td><td>${esc(x.region)}</td><td class="distance-cell" style="${bandStyle(distanceBand(x.nearestDistanceMeters))}">${badCoordinate?'Suppressed · coordinate review':prefersUnpaved?esc(x.unpavedRoadConnection.name||x.unpavedRoadConnection.highway||'Mapped unpaved road'):esc(x.roadName)}<small>${badCoordinate?'Road proximity not assessed':prefersUnpaved?'Primary connection · mapped unpaved road':`${esc(x.roadClass)} · ${esc(x.roadSection)}`}</small><small>${badCoordinate?'Endpoint gap exceeds 20 km':prefersUnpaved?`DPWH classified-road comparison: nearest endpoint ${n(x.nearestDistanceMeters)} m away`:`${n(x.nearestDistanceMeters)} m from closest endpoint`}</small></td><td class="unpaved-connection-cell">${badCoordinate?'Suppressed · coordinate review':esc(x.unpavedRoadConnection?.status||'Not assessed')}${x.unpavedRoadConnection?.distanceMeters!=null?`<small>${n(x.unpavedRoadConnection.distanceMeters)} m · ${esc(x.unpavedRoadConnection.name||x.unpavedRoadConnection.highway||'Mapped road')}</small>`:''}</td><td class="num distance-cell" style="${bandStyle(distanceBand(x.startDistanceMeters))}">${badCoordinate?'—':n(x.startDistanceMeters)}</td><td class="num distance-cell" style="${bandStyle(distanceBand(x.endDistanceMeters))}">${badCoordinate||x.endDistanceMeters==null?'—':n(x.endDistanceMeters)}</td><td class="distance-cell" style="${bandStyle(farmBand(x))}">${badCoordinate?'Suppressed · coordinate review':x.farmDistanceMeters!=null?n(x.farmDistanceMeters)+' m':x.farmCoverage1000m?'>1,000 m':'Unresolved'}<small>${badCoordinate?'Cropland proximity not assessed':'Mapped annual cropland · 2021'+(x.farmCoverage1000m?'':' · incomplete coverage')}</small></td><td class="combined-cell" style="${colorStyle(finalColor(x))}">${esc(x.connectivityClass||x.result)}${String(x.connectivityClass||'').startsWith('Review')?`<small>${esc(reviewDetail(x))}</small>`:''}<small>Road: ${esc(x.result)}</small>${x.flagTags?.includes('Nearest endpoint >1 km from DPWH classified road network')?'<small>Flag tag: nearest route is over 1 km from the DPWH classified road network</small>':''}</td><td class="exemption-cell">${exemptionCell}</td><td class="num">${peso(x.amountPesos)}</td></tr>`}).join('')||'<tr><td colspan="11">No matching records.</td></tr>';projectCount.textContent=`Showing ${n(items.length)} matching FMR projects`;if(pageLabel)pageLabel.textContent=`${items.length?page*per+1:0}–${Math.min((page+1)*per,items.length)} of ${n(items.length)} · Page ${page+1} of ${pages}`;if(prev)prev.disabled=page===0;if(next)next.disabled=page>=pages-1}
+    q.addEventListener('input',()=>{page=0;draw()});sel.addEventListener('change',()=>{page=0;draw()});sortControl?.addEventListener('change',()=>{page=0;draw()});size?.addEventListener('change',()=>{page=0;draw()});if(prev)prev.onclick=()=>{page--;draw()};if(next)next.onclick=()=>{page++;draw()};draw();
+  }).catch(e=>{document.getElementById('rows').innerHTML='<tr><td colspan="11">Connectivity data unavailable: '+esc(e.message||e)+'</td></tr>';});
 
-  // This larger title-screen asset loads independently; it cannot delay the
-  // endpoint-distance table above.
-  fetch('connectivity-road-projects.json').then(r=>{if(!r.ok)throw Error('connectivity-road-projects.json returned HTTP '+r.status);return r.json()}).then(roadData=>{
-    const roadRows=roadData.rows||[],rq=document.getElementById('roadq'),rb=document.getElementById('road-project-rows'),rp=document.getElementById('road-page'),rs=document.getElementById('road-size');
-    document.getElementById('road-project-count').textContent=`${n(roadRows.length)} GAA/HGAB road titles pass the rural/remote or national-road title screen. Place status uses DPWH City-Municipal Boundaries; municipality is a provisional remote-area proxy. ${Object.entries(roadData.placeStatusCounts||{}).map(([k,v])=>`${n(v)} ${k}`).join(' · ')}`;
-    let roadPage=0;function drawRoad(){const term=rq.value.trim().toLowerCase(),items=roadRows.filter(x=>!term||`${x.title} ${x.source}`.toLowerCase().includes(term)),per=Number(rs.value),pages=Math.max(1,Math.ceil(items.length/per));roadPage=Math.min(roadPage,pages-1);rb.innerHTML=items.slice(roadPage*per,(roadPage+1)*per).map(x=>`<tr><td>FY${x.year}<br>${esc(x.stage)}</td><td>${esc(x.title)}</td><td class="num">${peso(x.amountPesos)}</td><td>${esc(x.source)}</td><td>${esc(x.placeStatus)}${x.matchedPlaces?.length?`<small>${esc(x.matchedPlaces.join(', '))}</small>`:''}</td></tr>`).join('')||'<tr><td colspan="5">No matching projects.</td></tr>';rp.textContent=`${items.length?roadPage*per+1:0}–${Math.min((roadPage+1)*per,items.length)} of ${items.length} · Page ${roadPage+1} of ${pages}`;document.getElementById('road-prev').disabled=roadPage===0;document.getElementById('road-next').disabled=roadPage>=pages-1}
-    rq.addEventListener('input',()=>{roadPage=0;drawRoad()});rs.addEventListener('change',()=>{roadPage=0;drawRoad()});document.getElementById('road-prev').onclick=()=>{roadPage--;drawRoad()};document.getElementById('road-next').onclick=()=>{roadPage++;drawRoad()};drawRoad();
-  }).catch(e=>{document.getElementById('road-project-count').textContent='Road-place candidate data unavailable: '+String(e.message||e);});
-})();'''
+})();
+'''
 
 
 def utm51(lon: float, lat: float) -> tuple[float, float]:
@@ -73,6 +91,14 @@ def point_segment_distance(p, a, b):
     den = dx*dx + dy*dy
     t = 0 if den == 0 else max(0, min(1, ((p[0]-a[0])*dx + (p[1]-a[1])*dy) / den))
     return math.hypot(p[0] - (a[0] + t*dx), p[1] - (a[1] + t*dy))
+
+
+def endpoint_gap_meters(a, b):
+    """Great-circle distance between printed endpoints in lon/lat order."""
+    lon1, lat1, lon2, lat2 = map(math.radians, (float(a[0]), float(a[1]), float(b[0]), float(b[1])))
+    dlat, dlon = lat2-lat1, lon2-lon1
+    h = math.sin(dlat/2)**2 + math.cos(lat1)*math.cos(lat2)*math.sin(dlon/2)**2
+    return 6371008.8 * 2 * math.atan2(math.sqrt(h), math.sqrt(1-h))
 
 
 def cell(point):
@@ -115,6 +141,81 @@ def nearest_road(point, grid, segments, bounds):
     return best
 
 
+def segment_distance(a, b, c, d):
+    """Minimum planar distance between two UTM line segments."""
+    def orient(p, q, r):
+        return (q[0]-p[0])*(r[1]-p[1])-(q[1]-p[1])*(r[0]-p[0])
+    def on_segment(p, q, r):
+        return min(p[0],r[0])-1e-8 <= q[0] <= max(p[0],r[0])+1e-8 and min(p[1],r[1])-1e-8 <= q[1] <= max(p[1],r[1])+1e-8
+    o1,o2,o3,o4=orient(a,b,c),orient(a,b,d),orient(c,d,a),orient(c,d,b)
+    if ((o1*o2 < 0 and o3*o4 < 0) or
+        (abs(o1)<1e-8 and on_segment(a,c,b)) or (abs(o2)<1e-8 and on_segment(a,d,b)) or
+        (abs(o3)<1e-8 and on_segment(c,a,d)) or (abs(o4)<1e-8 and on_segment(c,b,d))):
+        return 0.0
+    return min(point_segment_distance(a,c,d), point_segment_distance(b,c,d),
+               point_segment_distance(c,a,b), point_segment_distance(d,a,b))
+
+
+def nearest_road_to_route(route_parts, grid, segments, bounds):
+    """Find nearest classified-road segment to any source-geometry leg."""
+    legs=[]
+    for part in route_parts:
+        points=[utm51(float(lon),float(lat)) for lon,lat in part]
+        legs.extend(zip(points,points[1:]))
+    if not legs:
+        return float('inf'), None
+    best=(float('inf'),None)
+    min_x,max_x,min_y,max_y=bounds
+    for a,b in legs:
+        x0=max(min_x,int((min(a[0],b[0])-ROUTE_SEARCH_RADIUS_M)//CELL))
+        x1=min(max_x,int((max(a[0],b[0])+ROUTE_SEARCH_RADIUS_M)//CELL))
+        y0=max(min_y,int((min(a[1],b[1])-ROUTE_SEARCH_RADIUS_M)//CELL))
+        y1=min(max_y,int((max(a[1],b[1])+ROUTE_SEARCH_RADIUS_M)//CELL))
+        candidates=set()
+        for gx in range(x0,x1+1):
+            for gy in range(y0,y1+1): candidates.update(grid.get((gx,gy),()))
+        for idx in candidates:
+            c,d,attrs=segments[idx]
+            distance=segment_distance(a,b,c,d)
+            if distance<best[0]: best=(distance,attrs)
+            if best[0]==0:return best
+    return best
+
+
+def route_legs_utm(route_parts):
+    legs=[]
+    for part in route_parts:
+        points=[utm51(float(lon),float(lat)) for lon,lat in part]
+        legs.extend(zip(points,points[1:]))
+    return legs
+
+
+def nearby_service_details(route_parts, service_grid, service_points, radius=500.0):
+    legs=route_legs_utm(route_parts);candidates=set()
+    for a,b in legs:
+        x0=int((min(a[0],b[0])-radius)//CELL);x1=int((max(a[0],b[0])+radius)//CELL)
+        y0=int((min(a[1],b[1])-radius)//CELL);y1=int((max(a[1],b[1])+radius)//CELL)
+        for gx in range(x0,x1+1):
+            for gy in range(y0,y1+1):candidates.update(service_grid.get((gx,gy),()))
+    found=[]
+    for idx in candidates:
+        row,point=service_points[idx]
+        distance=min(point_segment_distance(point,a,b) for a,b in legs)
+        if distance<=radius:
+            found.append({'name':row.get('name') or row.get('type'),'type':row.get('type') or 'Public service',
+                          'distanceMeters':round(distance,1),'sourceUrl':row.get('sourceUrl')})
+    return sorted(found,key=lambda x:(x['type'],x['distanceMeters'],x['name']))
+
+
+def place_point_index(rows):
+    grid=defaultdict(list);points=[]
+    for row in rows:
+        try: point=utm51(float(row['longitude']),float(row['latitude']))
+        except (KeyError,TypeError,ValueError):continue
+        idx=len(points);points.append((row,point));grid[cell(point)].append(idx)
+    return grid,points
+
+
 def build():
     grid = defaultdict(list)
     segments = []
@@ -139,6 +240,20 @@ def build():
     grid_bounds = (min(grid_x), max(grid_x), min(grid_y), max(grid_y))
 
     source = json.loads(FMR.read_text())
+    unpaved_path=ROOT/'analysis_output/connectivity-unpaved-road-indicator.json'
+    unpaved_rows={str(r.get('id')):r for r in json.loads(unpaved_path.read_text()).get('rows',[])} if unpaved_path.exists() else {}
+    services_path=STATIC/'connectivity-public-services-data.json'
+    venues_path=STATIC/'connectivity-venues-data.json'
+    services=json.loads(services_path.read_text()).get('rows',[]) if services_path.exists() else []
+    venues=json.loads(venues_path.read_text()).get('rows',[]) if venues_path.exists() else []
+    service_grid,service_points=place_point_index(services)
+    venue_grid,venue_points=place_point_index(venues)
+    subdivision_counts=defaultdict(set)
+    property_matches_path=ROOT/'analysis_output/connectivity-remote-fmr-properties.json'
+    if property_matches_path.exists():
+        for match in json.loads(property_matches_path.read_text()).get('rows',[]):
+            if match.get('venueType')=='Subdivision / residential village cue':
+                subdivision_counts[str(match.get('roadId'))].add(str(match.get('placeId')))
     integrated_path = STATIC / 'integrated-project-data.json'
     integrated = json.loads(integrated_path.read_text())
     import re
@@ -193,6 +308,25 @@ def build():
     results = []
     for row in source['projects']:
         coords = row.get('coordinates') or []
+        raw_points = [point for part in coords for point in part]
+        if not raw_points:
+            continue
+        start_ll, end_ll = raw_points[0], raw_points[-1]
+        gap_m = endpoint_gap_meters(start_ll, end_ll) if len(raw_points) > 1 else None
+        if gap_m is not None and gap_m > MAX_ENDPOINT_GAP_M:
+            ecological_review=('Baywalk title-screen flag: review the pre-project shoreline baseline, coastal habitats and ecological functions, coastal processes, storm-surge design basis, alternatives, and applicable environmental clearances. This precautionary screen is not a finding of ecological damage, project motive, or protective necessity.' if re.search(r'\bbaywalk\b', str(row.get('title') or ''), re.I) else None)
+            results.append({
+                'id':row['project_id'],'title':row['title'],'region':row['region'],'amountPesos':int(row['amount_php']),'sourcePage':row['source']['printed_page'],
+                'routeParts':[],'startLatitude':float(start_ll[1]),'startLongitude':float(start_ll[0]),'endLatitude':float(end_ll[1]),'endLongitude':float(end_ll[0]),
+                'coordinateBasis':'Printed start/end pair','coordinateGapMeters':round(gap_m,1),'coordinateQualityFlag':True,
+                'startDistanceMeters':None,'endDistanceMeters':None,'nearestDistanceMeters':None,'endpointNearestDistanceMeters':None,'routeNetworkDistanceMeters':None,
+                'routeNetworkExemption':False,'routeNetworkStatus':'Suppressed · endpoint coordinates require review before proximity analysis.',
+                'exemptionReasons':[],'exemptionNote':'','unpavedRoadConnection':{'status':'Suppressed · endpoint coordinates require review'},
+                'nearbyPublicServices':{},'nearbyPublicServiceEvidence':[],'userMapReviewNotes':[],'ecologicalReview':ecological_review,
+                'nearbySubdivisionVillageCount':0,'nearbyVisitorVenueCount':0,'result':'Coordinate review · endpoints >20 km apart',
+                'connectivityClass':'Coordinate review · endpoints >20 km apart','flagTags':['Coordinate quality · endpoint gap exceeds 20 km; spatial matches suppressed'],
+                'roadName':'Suppressed · coordinate review','roadClass':'','roadSection':''})
+            continue
         points = []
         for part in coords:
             for lon, lat in part:
@@ -204,38 +338,92 @@ def build():
         for p in ends:
             nearest.append(nearest_road(p, grid, segments, grid_bounds))
         best_idx = min(range(len(nearest)), key=lambda i: nearest[i][0])
-        distance, attrs = nearest[best_idx]
+        endpoint_distance, endpoint_attrs = nearest[best_idx]
+        route_distance, route_attrs = nearest_road_to_route(coords, grid, segments, grid_bounds)
+        route_connected = route_distance <= ROUTE_CONNECTION_TOLERANCE_M
+        endpoint_only_exempt = endpoint_distance > 1000 and route_connected
+        # Keep the original start/end screen unchanged; route-based criteria
+        # are shown separately as documented exemptions.
+        distance, attrs = endpoint_distance, endpoint_attrs
+        service_details=nearby_service_details(coords,service_grid,service_points,500.0)
+        service_counts=Counter(x['type'] for x in service_details)
+        venue_counts=Counter(x['type'] for x in nearby_service_details(coords,venue_grid,venue_points,100.0))
+        subdivision_ids=subdivision_counts.get(str(row['project_id']),set())
+        user_map_notes=({'ib:p719:r7':['Aralec Farm · identified by the user in Google Maps; exact map point not independently geolocated.']}.get(str(row['project_id']),[]))
+        ecological_review=('Baywalk title-screen flag: review the pre-project shoreline baseline, coastal habitats and ecological functions, coastal processes, storm-surge design basis, alternatives, and applicable environmental clearances. This precautionary screen is not a finding of ecological damage, project motive, or protective necessity.' if re.search(r'\bbaywalk\b', str(row.get('title') or ''), re.I) else None)
+        exemption_reasons=[]
+        if endpoint_only_exempt:
+            exemption_reasons.append('Possible loop/shortcut: source route is within 50 m of a DPWH classified road while both endpoints screen beyond 1 km.')
+        for kind,count in sorted(service_counts.items()):
+            details=[f"{x['name']} ({int(round(x['distanceMeters']))} m)" for x in service_details if x['type']==kind]
+            exemption_reasons.append(f"{kind}: {count} mapped site(s) within 500 m of the source route ({'; '.join(details)}).")
+        if len(subdivision_ids)>=2:
+            exemption_reasons.append(f'{len(subdivision_ids)} mapped subdivision/village footprints within 100 m of the source route.')
+        if sum(venue_counts.values())>2:
+            exemption_reasons.append(f'{sum(venue_counts.values())} mapped visitor venues within 100 m of the source route.')
+        exemption_note=(f'{len(subdivision_ids)} mapped subdivision/village footprint within 100 m; exemption requires at least two.'
+                        if len(subdivision_ids)==1 else '')
         threshold = 'Near road · ≤100 m' if distance <= 100 else 'Review · 100–500 m' if distance <= 500 else 'Distant · 500 m–1 km' if distance <= 1000 else 'No nearby DPWH classified road · >1 km'
         results.append({
             'id': row['project_id'], 'title': row['title'], 'region': row['region'],
             'amountPesos': int(row['amount_php']), 'sourcePage': row['source']['printed_page'],
+            'routeParts': coords,
             'startDistanceMeters': round(nearest[0][0],1),
             'endDistanceMeters': round(nearest[-1][0],1) if len(nearest)>1 else None,
             'startLatitude': float(coords[0][0][1]), 'startLongitude': float(coords[0][0][0]),
             'endLatitude': float(coords[-1][-1][1]), 'endLongitude': float(coords[-1][-1][0]),
             'coordinateBasis': 'Printed start/end pair' if len(points) > 1 else 'Single coordinate; no route line',
+            'coordinateGapMeters': round(gap_m,1) if gap_m is not None else None, 'coordinateQualityFlag': False,
             'closestEnd': 'Start' if best_idx == 0 else 'End', 'nearestDistanceMeters': round(distance,1),
+            'endpointNearestDistanceMeters': round(endpoint_distance,1),
+            'routeNetworkDistanceMeters': round(route_distance,1) if math.isfinite(route_distance) else None,
+            'routeNetworkExemption': endpoint_only_exempt,
+            'routeNetworkStatus': ('Endpoint distance exceeds 1 km, but source FMR geometry reaches a DPWH classified road within 50 m; exempt from endpoint-only gap flag.'
+                                   if endpoint_only_exempt else 'No loop/shortcut exemption; endpoint and route geometry evidence remain available for review.'),
+            'exemptionReasons': exemption_reasons,
+            'exemptionNote': exemption_note,
+            'unpavedRoadConnection': unpaved_rows.get(str(row['project_id']), {'status':'Not assessed · OSM indicator not built'}),
+            'nearbyPublicServices': dict(service_counts),
+            'nearbyPublicServiceEvidence': service_details,
+            'userMapReviewNotes': user_map_notes,
+            'ecologicalReview': ecological_review,
+            'nearbySubdivisionVillageCount': len(subdivision_ids),
+            'nearbyVisitorVenueCount': sum(venue_counts.values()),
             'result': threshold,
-            'flagTags': ['DPWH National Road Network comparison · primary/secondary/tertiary classes included', 'HGAB 3rd-reading · DA FMR coordinate row', 'Nearest endpoint >1 km from DPWH classified road network'] if distance > 1000 else [],
+            'flagTags': ['DPWH National Road Network comparison · primary/secondary/tertiary classes included', 'HGAB 3rd-reading · DA FMR coordinate row'] + (['Nearest endpoint >1 km from DPWH classified road network'] if distance > 1000 else []) + (['Ecological review · Baywalk title-screen flag'] if ecological_review else []),
             'roadName': (attrs or {}).get('ROAD_NAME') or 'Road name unavailable',
             'roadClass': (attrs or {}).get('ROAD_SEC_CLASS') or 'Class unavailable',
             'roadSection': (attrs or {}).get('SECTION_ID') or '',
         })
-    results.sort(key=lambda x:(x['nearestDistanceMeters'], x['region'], x['title']))
+    results.sort(key=lambda x:(x['nearestDistanceMeters'] if x['nearestDistanceMeters'] is not None else float('inf'), x['region'], x['title']))
+    from audit_connectivity_farm_data import audit_farm_data
+    audit_farm_data()
+    for result in results:
+        result.update(farmDistanceMeters=None, farmAssessment='unavailable')
     summary = Counter(r['result'] for r in results)
     coordinate_rows_with_route_pair = sum(
         sum(len(part) for part in (row.get('coordinates') or [])) >= 2
         for row in source['projects'])
     payload = {
         'scope': 'FY2027 House HGAB 3rd-reading DA FMR projects tested against DPWH National Road Network polylines, including the published primary, secondary and tertiary functional classes.',
-        'method': 'Each printed HGAB FMR start/end coordinate was transformed from WGS84 to UTM zone 51N. The closest point from either endpoint to a DPWH National Road Network line segment was measured in metres. This classified network layer contains primary, secondary and tertiary functional classes. The separate FY2024/FY2025 DA FMR ArcGIS layers also carry route endpoints and are used in the venue-link review, not as farm polygons. Bands are ≤100 m, 100–500 m, 500 m–1 km and >1 km; proximity is not proof of a usable access connection.',
+        'method': 'The original screen remains the minimum of the printed FMR start and end distances to DPWH National Road Network line segments, transformed to UTM zone 51N. Separate exemptions are recorded without removing rows or changing endpoint distance bands: source geometry comes within 50 m of the classified network while both endpoints are over 1 km away; an OpenStreetMap school, health/medical, emergency-response or civic/community site is within 500 m; at least two mapped subdivision/village footprints are within 100 m; or more than two mapped visitor venues are within 100 m. A single subdivision/village cue does not qualify. Source-route geometry is a local proxy, not a Google driving route; all proximity matches require verification and do not prove access or project service. The classified network contains primary, secondary and tertiary functional classes. The separate FY2024/FY2025 DA FMR ArcGIS layers are used in the venue-link review.',
         'coordinateAudit': {'hgabFmrProjectRows': len(source['projects']), 'rowsWithRouteCoordinatePairs': coordinate_rows_with_route_pair, 'singleCoordinateRows': len(source['projects']) - coordinate_rows_with_route_pair, 'separateDaFmrArcgisLayers': {'fy2024Features': 1062, 'fy2025Features': 474}},
+        'farmCoverage': {'available': False, 'audit': 'connectivity-farm-status.json'},
         'roadClasses': dict(road_classes),
         'gaaRoadAlignmentAudit': {'integratedGaaRoadRows': len(gaa_road_rows), 'rowsWithUsableGeometryOrCoordinateFields': len(gaa_rows_with_location_fields), 'note': 'This audit covers the integrated budget line-item table only. Coordinate-bearing FY2027 HGAB DA FMR project records and FY2024/FY2025 DA FMR ArcGIS records are separate datasets.'},
         'limits': ['This layer is the DPWH national-road network; its primary/secondary/tertiary labels are functional classes within that network, not a separate local-road inventory.', 'It does not cover every local, barangay, farm, or private road.', 'Coordinates are printed FMR endpoints and may be approximate; straight-line endpoint proximity does not prove an access connection.', 'Farm/cropland proximity is not included because no farm-boundary layer is currently available in the workspace.', 'Bridge analysis is deferred.', 'For question 2, DPWH National Road Network matches and routes explicitly named as national, circumferential, bypass or coastal are not treated as remote. A municipality match is a provisional remote-area proxy; routes with a city or unresolved endpoint stay out of the confirmed remote subset.', 'The visitor-venue join uses a 100 m buffer around straight-line segments reconstructed from available start/end coordinates. Route alignment, operating status, property ownership, and actual access remain unverified.'],
         'roadFeatures': roads, 'roadSegments': len(segments), 'roadProjectCandidates': len(road_projects), 'roadProjectPlaceStatusCounts': place_summary, 'summary': dict(summary), 'projects': results,
-        'placeInventories': {'visitorVenues': 'connectivity-venues-data.json', 'privatePropertyIndicators': 'connectivity-property-indicators-data.json', 'unverifiedVenueNameCues': 'connectivity-venue-review-data.json'},
+        'placeInventories': {'visitorVenues': 'connectivity-venues-data.json', 'privatePropertyIndicators': 'connectivity-property-indicators-data.json', 'publicServices': 'connectivity-public-services-data.json', 'unverifiedVenueNameCues': 'connectivity-venue-review-data.json', 'officialTourismDirectory': 'connectivity-official-venues-data.json', 'propertyRouteMatches': 'connectivity-remote-fmr-properties.json'},
     }
+    from connectivity_farm_enrichment import load_measurements, apply_measurement
+    farm_cache = load_measurements()
+    if farm_cache:
+        for row in payload['projects']:
+            apply_measurement(row, farm_cache)
+        payload['farmCoverage'] = farm_cache['source']
+        payload['limits'] = [text for text in payload.get('limits', []) if 'no farm-boundary layer' not in text]
+        payload['limits'].append(farm_cache['source']['limits'])
+        payload['connectivitySummary'] = dict(Counter(row.get('connectivityClass', 'Unresolved · incomplete cropland coverage') for row in payload['projects']))
     text = json.dumps(payload, ensure_ascii=False, separators=(',', ':'), allow_nan=False) + '\n'
     OUT.write_text(text)
     SOURCE_DATA.write_text(text)
@@ -246,26 +434,84 @@ def build():
 
 
 def make_page(d):
-    html = '''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Road connectivity · BetterGov</title><link rel="stylesheet" href="research-theme.css"><link rel="stylesheet" href="report-table-readability.css"><style>body{margin:0;background:#eef3f4;color:#172b37;font:16px/1.5 system-ui,sans-serif}header{padding:28px 3vw;background:#00246A;color:white;border-bottom:4px solid #FCD116}header p{max-width:900px}main{padding:22px 3vw;max-width:none}.card{background:white;border:1px solid #d7e0e4;border-radius:14px;padding:22px;margin:20px 0}.stats{display:flex;flex-wrap:wrap;gap:12px}.stat{min-width:150px;flex:1;padding:14px;border:1px solid #d7e0e4;border-radius:10px}.stat strong{display:block;font-size:1.7rem}.note{color:#52636d}.filters{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}.filters input,.filters select{padding:9px;border:1px solid #abb9c4;border-radius:7px;font:inherit}table{width:100%;border-collapse:collapse;table-layout:fixed}th,td{text-align:left;vertical-align:top;padding:9px;border-bottom:1px solid #d7e0e4;overflow-wrap:anywhere}th{background:#edf3f7}.num{text-align:right;white-space:nowrap}.table-wrap{overflow-x:auto}.controls{display:flex;align-items:center;gap:12px}.controls button{padding:8px 12px}.alert{padding:12px 14px;background:#fff5df;border-left:4px solid #c58100}.red-flag{color:#a31520;font-weight:750}.red-flag small{display:block;font-weight:500}@media(max-width:680px){.card{padding:14px}th,td{font-size:12px;padding:6px}}</style></head><body class="bettergov-research"><header><div class="eyebrow">BetterGov · Budget research</div><h1>Road connectivity</h1><p>Check whether FY2027 farm-to-market road endpoints meet the DPWH National Road Network. Distance bands at 100 m, 500 m and 1 km make proximity visible while keeping missing local-road data in view.</p></header><main><section class="card"><h2>1 · Do FY2027 FMR projects connect to an existing road?</h2><p>The screen measures each printed FMR start/end coordinate against DPWH National Road Network geometry and any GAA road-project alignment with usable data for determining distance or connection. Distances are grouped at 100 m, 500 m and 1 km. The local GAA project tables checked so far have no usable road alignment geometry, so the current bands use the DPWH network only. Proximity is a lead, not proof that vehicles can enter or that the segment is complete.</p><div class="stats" id="road-stats"></div><p class="alert"><strong>Coverage limit:</strong> the local ArcGIS layer represents the DPWH national-road network. It does not include every local, barangay, farm, or private road, so “no nearby national road” does not mean “no road connection.”</p><div class="filters"><label>Search <input id="q" type="search" placeholder="Project, province, road name"></label><label>Result <select id="result"><option value="">All results</option></select></label></div><div class="table-wrap"><table><thead><tr><th>FMR project</th><th>Region</th><th>Nearest national road</th><th class="num">Start (m)</th><th class="num">End (m)</th><th>Screen</th><th class="num">HGAB allocation</th><th>Map</th></tr></thead><tbody id="rows"></tbody></table></div><div class="controls"><button id="prev">Previous</button><span id="page"></span><button id="next">Next</button><label>Rows <select id="size"><option>10</option><option selected>25</option><option>50</option><option>100</option></select></label></div><p class="note">Sources: <a href="https://budget.bettergov.ph/hgab/2027/farm-to-market-roads">FY2027 HGAB FMR source page</a>; archived <a href="https://services1.arcgis.com/IwZZTMxZCmAmFYvF/arcgis/rest/services/National_Road_Network/FeatureServer/0">DPWH National Road Network ArcGIS layer</a>. <a href="connectivity-data.json" download>Download screening rows</a>.</p></section><section class="card"><h2>2 · Remote roads and current visitor venues</h2><p>Use a <strong>100 m buffer around the budgeted road alignment</strong>. Count current mapped resorts, hotels, guest houses, short-stay accommodation (including Airbnb-type venues), and event venues. Exclude residential rentals, government facilities, and public markets. A building footprint alone is not business evidence.</p><p class="alert"><strong>Distance and venue counts are pending usable alignments.</strong> The budgeted-road records have no project line geometry, so the 100 m/250 m venue test cannot be computed yet. The title candidates below include circumferential, bypass and coastal roads as national-road indicators and are checked against the DPWH City-Municipal Boundaries layer. A municipality match is only a provisional remote-area proxy. A project matched to the DPWH National Road Network is non-remote, including national-road corridors crossing city and municipality boundaries. Titles that explicitly identify a national road are tagged as such; without route alignment, other roads stay unresolved. City matches are excluded, and ambiguous/unmatched places stay unresolved.</p><p>For current public venue evidence, OpenStreetMap can supply tagged lodging and event-venue locations; its Philippines mapping convention includes hotels and event venues. DTI NegosyoKonek can help verify business identity and line of business, but the public portal is not a downloadable national geospatial inventory. These are leads, not a complete census. <a href="https://download.geofabrik.de/asia/philippines.html">Geofabrik Philippines OSM extract</a> · <a href="https://wiki.openstreetmap.org/wiki/PH%3AMap_Features">OSM Philippines mapping conventions</a> · <a href="https://negosyokonek.dti.gov.ph/">DTI NegosyoKonek</a>.</p><div class="filters"><label>Search remote-road title <input id="roadq" type="search" placeholder="Project or source"></label></div><div class="table-wrap"><table><thead><tr><th>Year / stage</th><th>Road project title</th><th class="num">Allocation</th><th>Source</th><th>Municipality/city screen</th></tr></thead><tbody id="road-project-rows"></tbody></table></div><div class="controls"><button id="road-prev">Previous</button><span id="road-page"></span><button id="road-next">Next</button><label>Rows <select id="road-size"><option>10</option><option selected>25</option><option>50</option><option>100</option></select></label></div><p class="note" id="road-project-count"></p><p><a href="connectivity-road-projects.json" download>Download remote-road title screen</a></p></section><section class="card"><h2>Method and limits</h2><ul><li>FMR records: 964 FY2027 HGAB 3rd-reading projects, 962 with usable coordinate endpoints in the corrected source ledger.</li><li>Question 1 groups the nearest FMR endpoint by distance: ≤100 m, 100–500 m, 500 m–1 km, and >1 km from the DPWH National Road Network. Question 2 uses a 100 m road-alignment buffer when alignments are available.</li><li>Coordinates are transformed to UTM zone 51N to compare metres with ArcGIS geometry. Distances are straight-line endpoint-to-line distances, not routed access distances.</li><li>GAA road alignments with usable location data are eligible as additional comparators. The reviewed GAA sources have no usable project geometry (0 of 37,754 integrated GAA road rows), so these distance bands use the DPWH network only.</li><li>Bridges are not included in this first version.</li><li>The provisional remote-area screen uses municipality/city names from the DPWH boundaries. A route matched to the DPWH National Road Network is non-remote, including national corridors crossing city and municipality boundaries. Circumferential, bypass and coastal roads are also treated as national-road indicators. The title table includes both rural/remote cues and these national-road indicators; project geometry is needed for route-level confirmation.</li></ul></section></main><script>Promise.allSettled([fetch('connectivity-data.json').then(r=>{if(!r.ok)throw Error('connectivity-data.json: HTTP '+r.status);return r.json()}),fetch('connectivity-road-projects.json').then(r=>{if(!r.ok)throw Error('connectivity-road-projects.json: HTTP '+r.status);return r.json()})]).then(([mainResult,roadResult])=>{if(mainResult.status!=='fulfilled')throw mainResult.reason;const d=mainResult.value,roadData=roadResult.status==='fulfilled'?roadResult.value:{rows:[],placeStatusCounts:{}};if(roadResult.status!=='fulfilled')document.getElementById('road-project-count').textContent='Road-place candidate data did not load: '+String(roadResult.reason.message||roadResult.reason);const n=x=>Number(x||0).toLocaleString('en-PH'),peso=x=>'₱'+n(x),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),rows=d.projects,q=document.getElementById('q'),sel=document.getElementById('result'),size=document.getElementById('size'),body=document.getElementById('rows'),pageLabel=document.getElementById('page');Object.keys(d.summary).forEach(x=>sel.add(new Option(`${x} (${d.summary[x]})`,x)));const stats=document.getElementById('road-stats');stats.innerHTML=Object.entries(d.summary).map(([k,v])=>`<div class="stat"><strong>${n(v)}</strong>${esc(k)}</div>`).join('')+`<div class="stat"><strong>${n(rows.length)}</strong>FMR projects · ${n(d.roadFeatures)} ArcGIS road features</div>`;let page=0;function draw(){const term=q.value.trim().toLowerCase(),items=rows.filter(x=>(!sel.value||x.result===sel.value)&&(!term||`${x.title} ${x.region} ${x.roadName}`.toLowerCase().includes(term))).sort((a,b)=>Number(b.amountPesos||0)-Number(a.amountPesos||0)),per=Number(size.value),pages=Math.max(1,Math.ceil(items.length/per));page=Math.min(page,pages-1);body.innerHTML=items.slice(page*per,(page+1)*per).map(x=>`<tr><td>${esc(x.title)}<small>Printed source p. ${esc(x.sourcePage)}</small></td><td>${esc(x.region)}</td><td>${esc(x.roadName)}<small>${esc(x.roadClass)} · ${esc(x.roadSection)}</small></td><td class="num">${n(x.startDistanceMeters)}</td><td class="num">${x.endDistanceMeters==null?'—':n(x.endDistanceMeters)}</td><td class="${x.flagTags.length?'red-flag':''}">${esc(x.result)}${x.flagTags.length?'<small>Flag tag: nearest endpoint over 1 km from the DPWH road network</small>':''}</td><td class="num">${peso(x.amountPesos)}</td></tr>`).join('')||'<tr><td colspan="7">No matching records.</td></tr>';pageLabel.textContent=`${items.length?page*per+1:0}–${Math.min((page+1)*per,items.length)} of ${items.length} · Page ${page+1} of ${pages}`;document.getElementById('prev').disabled=page===0;document.getElementById('next').disabled=page>=pages-1}q.addEventListener('input',()=>{page=0;draw()});sel.addEventListener('change',()=>{page=0;draw()});size.addEventListener('change',()=>{page=0;draw()});document.getElementById('prev').onclick=()=>{page--;draw()};document.getElementById('next').onclick=()=>{page++;draw()};draw();const roadRows=roadData.rows,rq=document.getElementById('roadq'),rb=document.getElementById('road-project-rows'),rp=document.getElementById('road-page'),rs=document.getElementById('road-size');document.getElementById('road-project-count').textContent=`${n(roadRows.length)} GAA/HGAB road titles pass the rural/remote or national-road title screen. Place status uses DPWH City-Municipal Boundaries; municipality is a provisional remote-area proxy. ${Object.entries(roadData.placeStatusCounts||{}).map(([k,v])=>`${n(v)} ${k}`).join(" · ")}`;let roadPage=0;function drawRoad(){const term=rq.value.trim().toLowerCase(),items=roadRows.filter(x=>!term||`${x.title} ${x.source}`.toLowerCase().includes(term)),per=Number(rs.value),pages=Math.max(1,Math.ceil(items.length/per));roadPage=Math.min(roadPage,pages-1);rb.innerHTML=items.slice(roadPage*per,(roadPage+1)*per).map(x=>`<tr><td>FY${x.year}<br>${esc(x.stage)}</td><td>${esc(x.title)}</td><td class=\"num\">${peso(x.amountPesos)}</td><td>${esc(x.source)}</td><td>${esc(x.placeStatus)}${x.matchedPlaces?.length?`<small>${esc(x.matchedPlaces.join(", "))}</small>`:""}</td></tr>`).join('')||'<tr><td colspan=\"5\">No matching projects.</td></tr>';rp.textContent=`${items.length?roadPage*per+1:0}–${Math.min((roadPage+1)*per,items.length)} of ${items.length} · Page ${roadPage+1} of ${pages}`;document.getElementById('road-prev').disabled=roadPage===0;document.getElementById('road-next').disabled=roadPage>=pages-1}rq.addEventListener('input',()=>{roadPage=0;drawRoad()});rs.addEventListener('change',()=>{roadPage=0;drawRoad()});document.getElementById('road-prev').onclick=()=>{roadPage--;drawRoad()};document.getElementById('road-next').onclick=()=>{roadPage++;drawRoad()};drawRoad()}).catch(e=>document.getElementById('rows').innerHTML='<tr><td colspan=\"7\">Connectivity data unavailable: '+String(e.message)+'</td></tr>');</script></body></html>'''
-    import re
+    if PAGE.exists():
+        current = PAGE.read_text()
+        if '<th>Farm proximity</th>' not in current and '<th>Mapped cropland (m)</th>' not in current:
+            current = current.replace('<th>Screen</th>', '<th>Farm proximity</th><th>Screen</th>', 1)
+        if 'id="farm-data-status"' not in current:
+            current = current.replace('<div class="stats" id="road-stats"></div>', '<p class="alert" id="farm-data-status" role="status">Farm proximity is not assessed: farm/cropland boundaries are not loaded.</p><div class="stats" id="road-stats"></div>', 1)
+        current = current.replace('<div class="table-wrap"><table><thead><tr><th>FMR project</th>', '<div class="table-wrap"><table data-report-table-exempt="true"><thead><tr><th>FMR project</th>', 1)
+        current = current.replace('<th>Screen</th><th class="num">HGAB allocation</th>', '<th>Screen</th><th>Exemption / review reason</th><th class="num">HGAB allocation</th>', 1)
+        current = current.replace('<th>Closest classified road to FMR route</th>', '<th>Nearest DPWH classified road</th>', 1)
+        current=current.replace('within 100 m of a mapped school, health/medical, emergency-response or civic/community service', 'within 500 m of a mapped school, health/medical, emergency-response or civic/community service')
+        note='<p class="note" id="connectivity-exemption-note"><strong>Exemptions and review flags; all project rows remain listed.</strong> Green entries are positive exemptions. Amber Baywalk/ecological entries are negative review flags, not exemptions or findings of harm. Green rows have a separate exemption reason: source route within 50 m of a DPWH classified road while both endpoints are over 1 km away; within 500 m of a mapped school, health/medical, emergency-response or civic/community service; within 100 m of at least two mapped subdivision/village footprints; or within 100 m of more than two mapped visitor venues. One subdivision/village alone does not qualify. Facility and venue points come from OpenStreetMap; proximity does not prove project service or usable access. Every FMR title containing “Baywalk” receives a precautionary ecological review flag for shoreline baseline, habitat, coastal processes, storm-surge design basis, alternatives and clearances; this title screen does not establish damage, motive or protective necessity.</p>'
+        if 'id="connectivity-exemption-note"' not in current:
+            marker='<div class="table-wrap"><table data-report-table-exempt="true"><thead><tr><th>FMR project</th>'
+            current=current.replace(marker,note+marker,1)
+        elif 'negative review flags' not in current:
+            current=re.sub(r'<p class="note" id="connectivity-exemption-note">.*?</p>',note,current,count=1,flags=re.S)
+        current=current.replace('<th>Exemption / reason</th>','<th>Exemption / review reason</th>',1)
+        if 'tr.route-exempt td' not in current:
+            current=current.replace('</style>','tr.route-exempt td{background:#e6f4e8!important}td.exemption-cell{font-size:.92em} </style>',1)
+        if 'tr.ecological-review td' not in current:
+            current=current.replace('</style>','tr.ecological-review td{background:#fff4d6!important}tr.ecological-review td:first-child{box-shadow:inset 4px 0 #b7791f}.ecological-review-label{display:block;color:#7a4b00;font-weight:750;margin:4px 0}.positive-exemption-label{display:block;color:#17633a;font-weight:700;margin:4px 0}.review-note-label{display:block;color:#5b6470;margin:4px 0}.connectivity-ecological-review{padding:10px 12px;background:#fff4d6;border-left:4px solid #b7791f;color:#573500} </style>',1)
+
+        current = current.replace('FMR route distance to the DPWH classified road network','FMR endpoint distance to the DPWH classified road network')
+        current = current.replace('Compare each FY2027 FMR’s printed endpoints with the DPWH classified road network and ESA WorldCover 2021 annual-cropland areas.', 'Compare each FY2027 FMR’s printed start and end coordinates with the DPWH classified road network and ESA WorldCover 2021 annual-cropland areas.')
+        current = current.replace('These are proximity screens using dated mapped cropland, not verified access or present farm locations.', 'These are proximity screens using dated mapped cropland, not verified access or present farm locations. Exemption cues are recorded separately and do not change endpoint classifications.')
+        current = current.replace('Distances use straight-line endpoint-to-road measurements in UTM zone 51N. The 100 m, 500 m and 1 km bands are proximity screens, not proof of accessible connection.', 'Distances use both printed endpoints and DPWH road centerlines in UTM zone 51N. Exemptions are recorded in a separate column; endpoint-distance classifications remain unchanged.')
+        current = current.replace('<th>Closest classified road to FMR route</th>', '<th>Nearest DPWH classified road</th>')
+        current = re.sub(r'<div class="controls report-table-pagination"><button id="prev">Previous</button>.*?<button id="next">Next</button><label>Rows <select id="size">.*?</select></label></div>', '<p id="connectivity-project-count" role="status">Loading FMR project rows…</p>', current, count=1, flags=re.S)
+        current = re.sub(r'<p id="connectivity-project-count" role="status">.*?</p>(?:<div class="controls report-table-pagination" id="connectivity-project-pagination">.*?</div>)?', '<p id="connectivity-project-count" role="status">Loading FMR project rows…</p><div class="controls report-table-pagination" id="connectivity-project-pagination"><button id="connectivity-project-prev" type="button" disabled>Previous</button><span id="connectivity-project-page" aria-live="polite">Page 1</span><button id="connectivity-project-next" type="button">Next</button><label>Rows <select id="connectivity-project-size"><option selected>20</option><option>50</option><option>100</option></select></label></div>', current, count=1, flags=re.S)
+        script_version = hashlib.sha256(SCRIPT.read_bytes()).hexdigest()[:12]
+        current = re.sub(r'<script src="connectivity\.js(?:\?v=[^"]*)?"></script>', f'<script src="connectivity.js?v={script_version}"></script>', current)
+        import importlib
+        import uniform_report_menu, connectivity_places_page
+        uniform_report_menu = importlib.reload(uniform_report_menu)
+        connectivity_places_page = importlib.reload(connectivity_places_page)
+        current = connectivity_places_page.apply_page(current)
+        current = uniform_report_menu.apply_research_status(current)
+        current = re.sub(r'(<details\b[^>]*\bid="connectivity-places-inventory"[^>]*)\s+open(?=[\s>])', r'\1', current)
+        PAGE.write_text(current)
+        return
+    html = '''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Road connectivity · BetterGov</title><link rel="stylesheet" href="research-theme.css"><link rel="stylesheet" href="report-table-readability.css"><style>body{margin:0;background:#eef3f4;color:#172b37;font:16px/1.5 system-ui,sans-serif}header{padding:28px 3vw;background:#00246A;color:white;border-bottom:4px solid #FCD116}header p{max-width:900px}main{padding:22px 3vw;max-width:none}.card{background:white;border:1px solid #d7e0e4;border-radius:14px;padding:22px;margin:20px 0}.stats{display:flex;flex-wrap:wrap;gap:12px}.stat{min-width:150px;flex:1;padding:14px;border:1px solid #d7e0e4;border-radius:10px}.stat strong{display:block;font-size:1.7rem}.note{color:#52636d}.filters{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}.filters input,.filters select{padding:9px;border:1px solid #abb9c4;border-radius:7px;font:inherit}table{width:100%;border-collapse:collapse;table-layout:fixed}th,td{text-align:left;vertical-align:top;padding:9px;border-bottom:1px solid #d7e0e4;overflow-wrap:anywhere}th{background:#edf3f7}.num{text-align:right;white-space:nowrap}.table-wrap{overflow-x:auto}.controls{display:flex;align-items:center;gap:12px}.controls button{padding:8px 12px}.alert{padding:12px 14px;background:#fff5df;border-left:4px solid #c58100}.red-flag{color:#a31520;font-weight:750}.red-flag small{display:block;font-weight:500}@media(max-width:680px){.card{padding:14px}th,td{font-size:12px;padding:6px}}</style></head><body class="bettergov-research"><header><div class="eyebrow">BetterGov · Budget research</div><h1>Road connectivity</h1><p>Check whether FY2027 farm-to-market road endpoints meet the DPWH National Road Network. Distance bands at 100 m, 500 m and 1 km make proximity visible while keeping missing local-road data in view.</p></header><main><section class="card"><h2>1 · How close are FY2027 FMR projects to mapped cropland and existing roads?</h2><p>The screen measures each printed FMR start/end coordinate against DPWH National Road Network geometry and any GAA road-project alignment with usable data for determining distance or connection. Distances are grouped at 100 m, 500 m and 1 km. The local GAA project tables checked so far have no usable road alignment geometry, so the current bands use the DPWH network only. Proximity is a lead, not proof that vehicles can enter or that the segment is complete.</p><div class="stats" id="road-stats"></div><p class="alert"><strong>Coverage limit:</strong> the local ArcGIS layer represents the DPWH national-road network. For this calculation, unpaved roads are treated as not roads; only roads represented in the classified DPWH layer count. It does not include every local, barangay, farm, or private road, so “no nearby national road” does not mean “no road connection.”</p><div class="filters"><label>Search <input id="q" type="search" placeholder="Project, province, road name"></label><label>Result <select id="result"><option value="">All results</option></select></label><label>Sort by <select id="connectivity-sort"><option value="amount-desc" selected>HGAB allocation</option><option value="gap-desc">Endpoint gap · longest first</option><option value="gap-asc">Endpoint gap · shortest first</option></select></label></div><div class="table-wrap"><table data-report-table-exempt="true"><thead><tr><th>FMR project</th><th class="num">Endpoint gap (km)</th><th>Region</th><th>Nearest national road</th><th class="num">Start (m)</th><th class="num">End (m)</th><th>Screen</th><th class="num">HGAB allocation</th><th>Map</th></tr></thead><tbody id="rows"></tbody></table></div><p id="connectivity-project-count" role="status">Loading FMR project rows…</p><p class="note">Sources: <a href="https://budget.bettergov.ph/hgab/2027/farm-to-market-roads">FY2027 HGAB FMR source page</a>; archived DPWH National Road Network layer · offline DPWH shapefiles. <a href="connectivity-data.json" download>Download screening rows</a>.</p></section><section class="card"><h2>2 · Remote roads and current visitor venues</h2><p>Use a <strong>100 m buffer around the budgeted road alignment</strong>. Count current mapped resorts, hotels, guest houses, short-stay accommodation (including Airbnb-type venues), and event venues. Exclude residential rentals, government facilities, and public markets. A building footprint alone is not business evidence.</p><p class="alert"><strong>Distance and venue counts are pending usable alignments.</strong> The budgeted-road records have no project line geometry, so the 100 m/250 m venue test cannot be computed yet. The title candidates below include circumferential, bypass and coastal roads as national-road indicators and are checked against the DPWH City-Municipal Boundaries layer. A municipality match is only a provisional remote-area proxy. A project matched to the DPWH National Road Network is non-remote, including national-road corridors crossing city and municipality boundaries. Titles that explicitly identify a national road are tagged as such; without route alignment, other roads stay unresolved. City matches are excluded, and ambiguous/unmatched places stay unresolved.</p><p>For current public venue evidence, OpenStreetMap can supply tagged lodging and event-venue locations; its Philippines mapping convention includes hotels and event venues. DTI NegosyoKonek can help verify business identity and line of business, but the public portal is not a downloadable national geospatial inventory. These are leads, not a complete census. <a href="https://download.geofabrik.de/asia/philippines.html">Geofabrik Philippines OSM extract</a> · <a href="https://wiki.openstreetmap.org/wiki/PH%3AMap_Features">OSM Philippines mapping conventions</a> · <a href="https://negosyokonek.dti.gov.ph/">DTI NegosyoKonek</a>.</p><div class="filters"><label>Search remote-road title <input id="roadq" type="search" placeholder="Project or source"></label></div><div class="table-wrap"><table><thead><tr><th>Year / stage</th><th>Road project title</th><th class="num">Allocation</th><th>Source</th><th>Municipality/city screen</th></tr></thead><tbody id="road-project-rows"></tbody></table></div><div class="controls"><button id="road-prev">Previous</button><span id="road-page"></span><button id="road-next">Next</button><label>Rows <select id="road-size"><option>10</option><option selected>25</option><option>50</option><option>100</option></select></label></div><p class="note" id="road-project-count"></p><p><a href="connectivity-road-projects.json" download>Download remote-road title screen</a></p></section><section class="card"><h2>Method and limits</h2><ul><li>FMR records: 964 FY2027 HGAB 3rd-reading projects, 962 with usable coordinate endpoints in the corrected source ledger.</li><li>Question 1 groups the nearest FMR endpoint by distance: ≤100 m, 100–500 m, 500 m–1 km, and >1 km from the DPWH National Road Network. Question 2 uses a 100 m road-alignment buffer when alignments are available.</li><li>Coordinates are transformed to UTM zone 51N to compare metres with ArcGIS geometry. Distances are straight-line endpoint-to-line distances, not routed access distances.</li><li>GAA road alignments with usable location data are eligible as additional comparators. The reviewed GAA sources have no usable project geometry (0 of 37,754 integrated GAA road rows), so these distance bands use the DPWH network only.</li><li>Bridges are not included in this first version.</li><li>The provisional remote-area screen uses municipality/city names from the DPWH boundaries. A route matched to the DPWH National Road Network is non-remote, including national corridors crossing city and municipality boundaries. Circumferential, bypass and coastal roads are also treated as national-road indicators. The title table includes both rural/remote cues and these national-road indicators; project geometry is needed for route-level confirmation.</li></ul></section></main><script>Promise.allSettled([fetch('connectivity-data.json').then(r=>{if(!r.ok)throw Error('connectivity-data.json: HTTP '+r.status);return r.json()}),fetch('connectivity-road-projects.json').then(r=>{if(!r.ok)throw Error('connectivity-road-projects.json: HTTP '+r.status);return r.json()})]).then(([mainResult,roadResult])=>{if(mainResult.status!=='fulfilled')throw mainResult.reason;const d=mainResult.value,roadData=roadResult.status==='fulfilled'?roadResult.value:{rows:[],placeStatusCounts:{}};if(roadResult.status!=='fulfilled')document.getElementById('road-project-count').textContent='Road-place candidate data did not load: '+String(roadResult.reason.message||roadResult.reason);const n=x=>Number(x||0).toLocaleString('en-PH'),peso=x=>'₱'+n(x),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),rows=d.projects,q=document.getElementById('q'),sel=document.getElementById('result'),size=document.getElementById('size'),body=document.getElementById('rows'),pageLabel=document.getElementById('page');Object.keys(d.summary).forEach(x=>sel.add(new Option(`${x} (${d.summary[x]})`,x)));const stats=document.getElementById('road-stats');stats.innerHTML=Object.entries(d.summary).map(([k,v])=>`<div class="stat"><strong>${n(v)}</strong>${esc(k)}</div>`).join('')+`<div class="stat"><strong>${n(rows.length)}</strong>FMR projects · ${n(d.roadFeatures)} ArcGIS road features</div>`;let page=0;function draw(){const term=q.value.trim().toLowerCase(),items=rows.filter(x=>(!sel.value||x.result===sel.value)&&(!term||`${x.title} ${x.region} ${x.roadName}`.toLowerCase().includes(term))).sort((a,b)=>Number(b.amountPesos||0)-Number(a.amountPesos||0)),per=Number(size.value),pages=Math.max(1,Math.ceil(items.length/per));page=Math.min(page,pages-1);body.innerHTML=items.slice(page*per,(page+1)*per).map(x=>`<tr><td>${esc(x.title)}<small>Printed source p. ${esc(x.sourcePage)}</small></td><td>${esc(x.region)}</td><td>${esc(x.roadName)}<small>${esc(x.roadClass)} · ${esc(x.roadSection)}</small></td><td class="num">${badCoordinate?'—':n(x.startDistanceMeters)}</td><td class="num">${badCoordinate||x.endDistanceMeters==null?'—':n(x.endDistanceMeters)}</td><td class="${x.flagTags.length?'red-flag':''}">${esc(x.result)}${x.flagTags.length?'<small>Flag tag: nearest endpoint over 1 km from the DPWH road network</small>':''}</td><td class="num">${peso(x.amountPesos)}</td></tr>`).join('')||'<tr><td colspan="7">No matching records.</td></tr>';pageLabel.textContent=`${items.length?page*per+1:0}–${Math.min((page+1)*per,items.length)} of ${items.length} · Page ${page+1} of ${pages}`;document.getElementById('prev').disabled=page===0;document.getElementById('next').disabled=page>=pages-1}q.addEventListener('input',()=>{page=0;draw()});sel.addEventListener('change',()=>{page=0;draw()});size.addEventListener('change',()=>{page=0;draw()});document.getElementById('prev').onclick=()=>{page--;draw()};document.getElementById('next').onclick=()=>{page++;draw()};draw();const roadRows=roadData.rows,rq=document.getElementById('roadq'),rb=document.getElementById('road-project-rows'),rp=document.getElementById('road-page'),rs=document.getElementById('road-size');document.getElementById('road-project-count').textContent=`${n(roadRows.length)} GAA/HGAB road titles pass the rural/remote or national-road title screen. Place status uses DPWH City-Municipal Boundaries; municipality is a provisional remote-area proxy. ${Object.entries(roadData.placeStatusCounts||{}).map(([k,v])=>`${n(v)} ${k}`).join(" · ")}`;let roadPage=0;function drawRoad(){const term=rq.value.trim().toLowerCase(),items=roadRows.filter(x=>!term||`${x.title} ${x.source}`.toLowerCase().includes(term)),per=Number(rs.value),pages=Math.max(1,Math.ceil(items.length/per));roadPage=Math.min(roadPage,pages-1);rb.innerHTML=items.slice(roadPage*per,(roadPage+1)*per).map(x=>`<tr><td>FY${x.year}<br>${esc(x.stage)}</td><td>${esc(x.title)}</td><td class=\"num\">${peso(x.amountPesos)}</td><td>${esc(x.source)}</td><td>${esc(x.placeStatus)}${x.matchedPlaces?.length?`<small>${esc(x.matchedPlaces.join(", "))}</small>`:""}</td></tr>`).join('')||'<tr><td colspan=\"5\">No matching projects.</td></tr>';rp.textContent=`${items.length?roadPage*per+1:0}–${Math.min((roadPage+1)*per,items.length)} of ${items.length} · Page ${roadPage+1} of ${pages}`;document.getElementById('road-prev').disabled=roadPage===0;document.getElementById('road-next').disabled=roadPage>=pages-1}rq.addEventListener('input',()=>{roadPage=0;drawRoad()});rs.addEventListener('change',()=>{roadPage=0;drawRoad()});document.getElementById('road-prev').onclick=()=>{roadPage--;drawRoad()};document.getElementById('road-next').onclick=()=>{roadPage++;drawRoad()};drawRoad()}).catch(e=>document.getElementById('rows').innerHTML='<tr><td colspan=\"7\">Connectivity data unavailable: '+String(e.message)+'</td></tr>');</script></body></html>'''
     html = re.sub(r'<script>Promise\.allSettled\(.*?</script>', '<script src="connectivity.js"></script>', html, count=1, flags=re.S)
     html = re.sub(
-        r'(<h2>1 · Do FY2027 FMR projects connect to an existing road\?</h2>)<p>.*?</p>',
-        r'\1<p>Each printed FY2027 HGAB FMR start/end coordinate is compared with the DPWH National Road Network, including its primary, secondary and tertiary functional classes. The table and chart show endpoint distance to that classified network. Farm proximity is not yet measured because a farm/cropland layer is not available locally; do not read these road-only results as Model, Flag or Double Flag classifications.</p>',
+        r'(<h2>1 · How close are FY2027 FMR projects to mapped cropland and existing roads\?</h2>)<p>.*?</p>',
+        r'\1<p>Each printed FY2027 HGAB FMR start/end coordinate is compared with the DPWH National Road Network, including its primary, secondary and tertiary functional classes. The screen measures the complete printed FMR geometry against that network, falling back to endpoint distance when no nearby route match is found. Routes within 50 m of the network are exempted from endpoint-only gap flags; this flags possible loops or shortcuts for review, not verified driving access. Farm proximity is not yet measured because a farm/cropland layer is not available locally; do not read these road-only results as Baseline, Flag or Double Flag classifications.</p>',
         html, count=1, flags=re.S)
     html = html.replace('<div class="stats" id="road-stats"></div>',
-        '<div class="stats" id="road-stats"></div><h3>FMR endpoint distance to the DPWH classified road network</h3><div id="road-distance-chart" role="img" aria-label="Counts of FMR projects by distance to the nearest DPWH classified road"></div><p class="note">Road-only distance bands. Farm proximity is not included yet, so the requested combined categories cannot be counted from this chart.</p>', 1)
-    html = html.replace('<th>Nearest national road</th>', '<th>Nearest DPWH classified road</th>', 1)
+        '<div class="stats" id="road-stats"></div><h3>FMR route distance to the DPWH classified road network</h3><div id="road-distance-chart" role="img" aria-label="Counts of FMR projects by distance to the nearest DPWH classified road"></div><p class="note">Road-only distance bands. Farm proximity is not included yet, so the requested combined categories cannot be counted from this chart.</p>', 1)
+    html = html.replace('<th>Nearest national road</th>', '<th>Prioritized road connection / DPWH comparison</th><th>Mapped unpaved-road link</th>', 1)
     html = html.replace('No nearby DPWH national road', 'No nearby DPWH classified road')
-    html = html.replace('nearest endpoint over 1 km from the DPWH road network', 'nearest endpoint over 1 km from the DPWH classified road network')
-    html = html.replace('https://services1.arcgis.com/IwZZTMxZCmAmFYvF/arcgis/rest/services/National_Road_Network/FeatureServer/0', 'https://services1.arcgis.com/IwZZTMxZCmAmFYvF/arcgis/rest/services/Road_Classification/FeatureServer/1')
-    html = html.replace('DPWH National Road Network ArcGIS layer', 'DPWH Road Classification · National Road Network layer (Primary/Secondary/Tertiary)')
+    html = html.replace('nearest endpoint over 1 km from the DPWH road network', 'nearest source route over 1 km from the DPWH classified road network')
+    html = html.replace('DPWH National Road Network layer · offline DPWH shapefiles', 'DPWH Road Classification · National Road Network layer (Primary/Secondary/Tertiary) · offline DPWH shapefiles')
     html = html.replace('</style>', '#road-distance-chart{display:grid;gap:10px;max-width:900px;margin:12px 0 18px}.road-chart-row{display:grid;grid-template-columns:minmax(150px,220px) minmax(100px,1fr) 60px;align-items:center;gap:12px}.road-chart-track{height:20px;border-radius:5px;background:#edf1f4;overflow:hidden}.road-chart-track i{display:block;height:100%;border-radius:5px}.road-chart-row strong{text-align:right}@media(max-width:560px){.road-chart-row{grid-template-columns:115px minmax(60px,1fr) 42px;gap:8px;font-size:13px}}\n</style>', 1)
     html = re.sub(r'<h2>Method and limits</h2><ul>.*?</ul>',
-        '<h2>Method and limits</h2><ul><li>FY2027 HGAB 3rd FMR schedule: 964 project rows, with printed start/end coordinate pairs for route distance screening.</li><li>The road comparator is DPWH’s National Road Network layer, including its Primary, Secondary and Tertiary functional classes. These are classes within the national network, not a separate local-road inventory.</li><li>Distances use straight-line endpoint-to-road measurements in UTM zone 51N. The 100 m, 500 m and 1 km bands are proximity screens, not proof of accessible connection.</li><li>Farm/cropland proximity remains unmeasured, so the Model / Flag / Double Flag categories are not assigned.</li><li>For venue review, coordinate-backed DA FMR records are compared with classified visitor venues using a 100 m straight-segment buffer. Route location, operating status and actual access need confirmation.</li><li>Municipality endpoints are a provisional remote-area proxy. City and unresolved routes are not included in the remote venue matches.</li></ul>', html, count=1, flags=re.S)
-    from uniform_report_menu import apply_page as apply_uniform_menu_page
-    from connectivity_places_page import apply_page as apply_place_inventory
-    PAGE.write_text(apply_place_inventory(apply_uniform_menu_page(html, PAGE.name)))
+        '<h2>Method and limits</h2><ul><li>FY2027 HGAB 3rd FMR schedule: 964 project rows, with printed start/end coordinate pairs for the unchanged endpoint-distance screen.</li><li>The road comparator is DPWH’s National Road Network layer, including Primary, Secondary and Tertiary functional classes. For this calculation, unpaved roads are treated as not roads; only roads represented in that classified layer count. It does not include every local, barangay, farm, or private road.</li><li>Separate green exemptions are shown without removing rows or changing endpoint classifications: a source route within 50 m of the classified network while both endpoints exceed 1 km; a mapped school, healthcare, emergency-response or civic/community site within 500 m; at least two subdivision/village cues within 100 m; or more than two visitor venues within 100 m. One subdivision/village alone does not exempt.</li><li>Facilities, subdivisions and visitor venues are OpenStreetMap proximity cues, not proof of service, actual road access, or project benefit. The source route is not a Google driving route.</li><li>A Baywalk title or user-identified site concern triggers a precautionary ecological review of shoreline baseline, habitat, coastal processes, storm-surge design basis, alternatives and applicable clearances; the flag is not a finding of damage, motive or protective necessity.</li><li>Farm/cropland proximity remains unmeasured, so the Baseline / Flag / Double Flag categories are not assigned.</li><li>For venue review, coordinate-backed DA FMR records are compared with classified visitor venues using a 100 m straight-segment buffer. Route location, operating status and actual access need confirmation.</li><li>Municipality endpoints are a provisional remote-area proxy. City and unresolved routes are not included in the remote venue matches.</li></ul>', html, count=1, flags=re.S)
+    html = html.replace('<th>Screen</th>', '<th>Farm proximity</th><th>Screen</th><th>Exemption / review reason</th>', 1)
+    html = html.replace('<div class="stats" id="road-stats"></div>', '<p class="alert" id="farm-data-status" role="status">Farm proximity is not assessed: farm/cropland boundaries are not loaded.</p><div class="stats" id="road-stats"></div>', 1)
+    import importlib
+    import uniform_report_menu, connectivity_places_page
+    # The connectivity watcher is long-lived; reload shared transforms so a
+    # stale imported panel or status helper cannot restore duplicate notes or
+    # an expanded source-inventory panel on regeneration.
+    uniform_report_menu = importlib.reload(uniform_report_menu)
+    connectivity_places_page = importlib.reload(connectivity_places_page)
+    rendered = connectivity_places_page.apply_page(uniform_report_menu.apply_page(html, PAGE.name))
+    rendered = uniform_report_menu.apply_research_status(rendered)
+    rendered = re.sub(r'(<details\b[^>]*\bid="connectivity-places-inventory"[^>]*)\s+open(?=[\s>])', r'\1', rendered)
+    coordinate_note = '<p class="alert" id="connectivity-coordinate-note"><strong>Red coordinate flag:</strong> rows with printed endpoints more than 20 km apart are shaded red, and all spatial matching and Route + distance are suppressed until the coordinates are checked. The separation is a straight-line screening distance, not a road distance.</p>'
+    unpaved_note = '<p class="note" id="unpaved-road-indicator-note"><strong>Mapped unpaved-road indicator:</strong> Offline OpenStreetMap tracks and roads tagged with an unpaved surface are compared with the printed source route. Within 30 m is marked likely connected; 31–100 m is nearby only. Missing mapped roads do not prove no unpaved road exists. When a likely unpaved connection is mapped and no DPWH connection is mapped, the unpaved road is shown as the primary connection; the DPWH distance remains a comparison for the original screen, not a claimed connection.</p>'
+    if 'Mapped unpaved-road link' not in rendered:
+        rendered = rendered.replace('<th>Nearest DPWH classified road</th>', '<th>Prioritized road connection / DPWH comparison</th><th>Mapped unpaved-road link</th>', 1)
+    if 'connectivity-coordinate-note' not in rendered:
+        marker = '</section><section class="card"><h2>2 · Remote roads'
+        rendered = rendered.replace(marker, coordinate_note + unpaved_note + marker, 1)
+    elif 'unpaved-road-indicator-note' not in rendered:
+        marker = '</section><section class="card"><h2>2 · Remote roads'
+        rendered = rendered.replace(marker, unpaved_note + marker, 1)
+    PAGE.write_text(rendered)
 
 
 if __name__ == '__main__':

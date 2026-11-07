@@ -161,7 +161,7 @@ def main():
         'mpb2027LinkedAllocationPesos': int(mpb_2027.get('allocationPesos') or 0),
         'barangayPlaceCount': len(places), 'allocationAcrossMentionedProjectsPesos': project_total,
         'placeAllocationTotalPesos': sum(x['allocationPesos'] for x in places),
-        'countingNote': 'Project rows explicitly naming a barangay are associated with each distinct title name. For FY2027 MPB PAP rows only, the shared MPB matcher also supplies official-barangay matches where the title omits the Barangay/Brgy prefix. If a project names multiple barangays, its full amount appears under each named place; place totals must not be added together as a program total. Locality context is taken from the printed title or the ODV unified location list; ambiguous title contexts remain separate.',
+        'countingNote': 'Project rows explicitly naming a barangay are associated with each distinct title name. For FY2027 MPB PAP rows only, the shared MPB matcher also supplies official-barangay matches where the title omits the Barangay/Brgy prefix. If a project names multiple barangays, its full amount appears under each named place; place totals must not be added together as a program total. Locality context is taken from the printed title or the unified geographic reference list; ambiguous title contexts remain separate.',
         'places': places
     }
     for path in [OUT / 'barangay-allocation-data.json', STATIC / 'barangay-allocation-data.json']:

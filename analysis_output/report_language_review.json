@@ -1,149 +1,408 @@
 {
-  "scope": "All static NEP preview HTML pages; generated labels also reviewed through source builders and embedded scripts. Source project titles are retained.",
+  "scope": "Static NEP preview report pages; the trivia game omits the evidence notice. Generated labels are also reviewed through source builders and embedded scripts. Source project titles are retained.",
   "pages": [
     {
       "page": "archive.html",
-      "sha256": "9abeacde6691427686ba7aee1974870647bfecd7948d83d95f9100edaa9ee1c1",
+      "sha256": "7d5a7ac0b9c4b122acf3fe33f6142d79c92b857e2098466847c78d0aabdaee32",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
-        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un"
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "barangay-historical.html",
+      "sha256": "d0feeb649588f93fe13fc357655696aee9932cc3db070f55bbb5d49ecec78f4a",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "barangay.html",
+      "sha256": "9e0c403557f3f5c58954adf0f16356cd6dacae32335646e1b15b99b4352ce6e1",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res",
+        "e or ambiguous. Project association does not establish exact project boundaries, exclusive benefit, sponsorship, implementation, or actual expenditure. Additional source documents, stakeholder input, and independent review can surface missing information or errors; the r"
       ],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     },
     {
       "page": "budget-innovations.html",
-      "sha256": "b9aad03757c7cfe7c2960073e5fd47373160f6351abb8dd040d02e4d059a2e32",
+      "sha256": "04ba25a9e36b0aa7b0188cd3f5bbefede7367a1322994cda1af3e181334280f0",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
         "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un",
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. A DEO-to",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. A DEO-to-legislative district crosswalk, where used, is a preliminary administrative or geographic assoc",
         " and enacted budget records available locally. Each signal is a lead for scrutiny, not a finding of wrongdoing. "
       ],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     },
     {
       "page": "budget-trivia.html",
-      "sha256": "0322ce596fcd2c26c3095646914799e13a9c7ea41e8929c5b435bf271e673806",
-      "changed": true,
-      "evidenceNotice": true,
-      "remainingSensitiveContexts": [
-        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un"
-      ],
+      "sha256": "ef99dde91db6dd5a7a7f39155a8fd4faab0879a11fce908bc96c60c7b100a9ee",
+      "changed": false,
+      "evidenceNotice": false,
+      "remainingSensitiveContexts": [],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     },
     {
       "page": "congress.html",
-      "sha256": "0358db74c16f234d34b45d3da42f6f55f76c6cc56cc2015e9bda620e44b5a3ab",
+      "sha256": "7e6d1526e426d16359e1d8468fac34730088933acbc2a12260e20bb386ed2f26",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
-        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un",
-        "re excluded. No accepted match does not mean no allocation; location attribution does not establish sponsorship by a representative. Loading local HGAB 3rd Reading data… Strict attribution · one clearly located congressional district Municipality and province must be exp",
-        "independent official boundary verification. Representatives are roster labels, not proof of project sponsorship. Check the cited bill page and district boundaries before drawing conclusions. Potential additions per legislative district (LEG) HGAB 3rd-reading domestic lin",
-        "ne legislative district by the PH location DB strict rules. Names describe geographic coverage, not sponsorship. Shared and unresolved locations and FAP records are excluded. These are potential insertions, pending project-scope verification. Largest potential addition a",
-        "ip. A reference value is a comparison point, not a normal budget, a legal threshold or a finding of wrongdoing. Districts with no accepted attribution remain in the table; zero accepted lines does not establish zero funding. Budget for possible added projects Number of ",
+        "re excluded. No accepted match does not mean no allocation; location attribution does not establish sponsorship by a representative. Disclaimer. Scope: This report collects FY2027 DPWH HGAB 3rd-reading project records and review flags from the source screens described be",
+        "ed evidence; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. An HGAB-only record means the current comparison selected no NEP counterpart; it does not establish that a project is new or identify who proposed it. Distric",
+        "ons, and source coverage. Geographic associations indicate possible coverage; they do not establish sponsorship or project authorship. View district allocation analysis and supporting records → Choose a congressman or district Find a congressman or district Report Choose",
+        "ip. A reference value is a comparison point, not a normal budget, a legal threshold or a finding of wrongdoing. Districts with no accepted attribution remain in the table; zero accepted lines does not establish zero funding. Budget for HGAB-only candidates Number of HGA",
         "nship column retains the source’s district and kinship descriptions. It establishes neither project sponsorship nor control of district funds. Missing entries are unresolved, not proof of no relationship. Matching method: Organization labels require an explicit party-lis"
       ],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     },
     {
-      "page": "cost-matching.html",
-      "sha256": "9684b411d36fc4181ce17f0f465ccc388ca813de352d46468c672cf209bc0657",
+      "page": "connectivity.html",
+      "sha256": "b3d0455fd463051e6821e269086399d455136f7f8397efcfbaa7c80bd4fdf057",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
-        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un"
+        "a venue, or that the venue, its owners or staff were involved. This listing is not an allegation of wrongdoing. Verify the source record, location and current status before drawing conclusions. This site is updated as additional source documents are ingested and reviewe",
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "contractors.html",
+      "sha256": "03483f8c1cd506b199a89253d48cdbcb4109c9237ed6acc6b5b48a3ddfd51fc8",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "cost-matching.html",
+      "sha256": "6d61e6460fde8f13f09dd515ea50b8b04ded514da31ed9bbabeba6e369338888",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
       ],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     },
     {
       "page": "cost-per-km.html",
-      "sha256": "eb17210b40fd54ea0835f426f11e9e8cce1ddbcecf1dcf585418e4f33a3f1983",
+      "sha256": "45be1bd89af91b668c6d148a32785a132b3c169e22a4b8222687d9609bf29ad2",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
-        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un",
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res",
         "d budget. Quantile-band counts and 2×/BIC screens are editorial exploratory choices, not calibrated corruption thresholds. Models use total allocation rather than density to reduce the arithmetic-denominator trap. Bootstrap votes measure selection stability in this samp",
-        "otes and methodology . Patterns direct source and engineering review; there is no universal safe or suspicious length. Independent source cross-check · current snapshot Comparative source: csiiiv FY2027 budget analysis · GitHub snapshot 34ef5d8cbbac . Downloaded 2026-10"
+        "otes and methodology . Patterns direct source and engineering review; there is no universal safe or suspicious length. 5. Coordinate-distance approximations Coordinate-distance estimates stay separate from stated-meter rates and high-rate flags. Detailed asset matching,"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "cost-per-unit.html",
+      "sha256": "a49b9b13a81ea7748512fa60eb41249d98130a502eb9d3aba7309d8e33ebde2e",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        "lues are prompts to check the cited source pages; they do not establish overpricing, overpayment or wrongdoing. This site is updated as additional source documents are ingested and reviewed. Its records and calculations are preliminary and open to correction. Additional",
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res",
+        "ter entries add historical locality and year context; they do not establish current office, project sponsorship or responsibility. A Governor may govern a different province from the project location. Some Rainwater Collector System POWs identify schools; system-level sc"
       ],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     },
     {
       "page": "deped.html",
-      "sha256": "2b661c16df3815fec9e5cbb025e72922ab3c457fbfff7f31e0fb0a7165c44e85",
+      "sha256": "afce5a6d9e680e74f63d23820870b0c45c49d56ad49d694fd69f01ad2b45dd7f",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
-        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un"
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "development-council.html",
+      "sha256": "a96b84c53915f47b85aee746b569e04fa723ea05036b60a41e9f63b8f4013487",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res",
+        "d across roles. Same-project associations use the HGAB project code and do not prove collaboration, sponsorship or responsibility. — projects with extracted role candidates — candidate-project records — distinct names across roles Compare roles Counts deduplicate candida",
+        "ct rows. Candidate names and roles require verification against source pages; they do not establish sponsorship, responsibility or personal benefit. Source file paths and direct Senate file links are withheld. Local data export contains only project metadata, candidate n"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "dpwh-OO2-hgab.html",
+      "sha256": "576989c9b2da6552e2219b602ce5739c6cc97044e0125c79d46fa875d5b8c0ed",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un",
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. A DEO-to",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. A DEO-to-legislative district crosswalk, where used, is a preliminary administrative or geographic assoc",
+        " local-map screening rules. Uncertain locations stay blank. Names describe geographic coverage, not sponsorship. Both GAA comparisons FY2027 NEP → FY2026 GAA FY2027 NEP → FY2025 GAA Export filtered review records to CSV Potential repeat matches by enacted GAA year Match ",
+        " local-map screening rules. Uncertain locations stay blank. Names describe geographic coverage, not sponsorship. All domestic programs All office categories All implementing offices All regions Largest allocation first Smallest allocation first Project name A–Z Closest N",
+        "B allocation Adjustment Office / sources Previous Next Read this as a review list, not a finding of wrongdoing. Amounts are shown in pesos. NEP values and FY2025 GAA values are stored in thousands of pesos and multiplied by 1,000; the FY2026 DPWH enrolled-copy GAA alrea",
+        "nt exact amounts Across all categories. Rounded figures recur often in budget proposals and are not suspicious by themselves. What this screen did not find Next useful data Physical scope (length, area, capacity), detailed cost breakdowns, implementation and completion ",
+        "nt exact amounts Across all categories. Rounded figures recur often in budget proposals and are not suspicious by themselves. Historical analysis · NEP → HGAB 2nd reading This historical section is now on the archive page . Current budget-stage comparison is maintained "
       ],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     },
     {
       "page": "dpwh-hgab-comparison.html",
-      "sha256": "8fe930654cbae5d8e4db3fae3413b6aee77ab2bdf3aadcc3b0624151c83d902f",
+      "sha256": "a985b8795a7824f2e9d16dda79d9833d268e364323d60c8bd08871d92a22510f",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
-        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un"
+        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un",
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. A DEO-to",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. A DEO-to-legislative district crosswalk, where used, is a preliminary administrative or geographic assoc"
       ],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     },
     {
       "page": "dpwh-hgab.html",
-      "sha256": "d91f4cd3387c165b8af8ed94d89769772e8b4a849f7a63b35c8fa1c6db2d8613",
+      "sha256": "805224d32c197b0214e1bdfdd691b397b9dc82037d3c5f2fe9d2546a02a1c1e2",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
         "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un",
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. A DEO-to",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. A DEO-to-legislative district crosswalk, where used, is a preliminary administrative or geographic assoc",
         " local-map screening rules. Uncertain locations stay blank. Names describe geographic coverage, not sponsorship. Both GAA comparisons FY2027 NEP → FY2026 GAA FY2027 NEP → FY2025 GAA Export filtered review records to CSV Potential repeat matches by enacted GAA year Match ",
         " local-map screening rules. Uncertain locations stay blank. Names describe geographic coverage, not sponsorship. All domestic programs All office categories All implementing offices All regions Largest allocation first Smallest allocation first Project name A–Z Closest N",
         "B allocation Adjustment Office / sources Previous Next Read this as a review list, not a finding of wrongdoing. Amounts are shown in pesos. NEP values and FY2025 GAA values are stored in thousands of pesos and multiplied by 1,000; the FY2026 DPWH enrolled-copy GAA alrea",
         "nt exact amounts Across all categories. Rounded figures recur often in budget proposals and are not suspicious by themselves. What this screen did not find Next useful data Physical scope (length, area, capacity), detailed cost breakdowns, implementation and completion ",
-        "nt exact amounts Across all categories. Rounded figures recur often in budget proposals and are not suspicious by themselves. Independent source cross-check · current snapshot Comparative source: csiiiv FY2027 budget analysis · GitHub snapshot 34ef5d8cbbac . Downloaded "
+        "nt exact amounts Across all categories. Rounded figures recur often in budget proposals and are not suspicious by themselves. Historical analysis · NEP → HGAB 2nd reading This historical section is now on the archive page . Current budget-stage comparison is maintained "
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "dpwh-transparency.html",
+      "sha256": "2a54cb4a70336f69c269e770c06869ca93a966cd5e8ddda49c6a9d94b4033c1f",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
       ],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     },
     {
       "page": "dpwh.html",
-      "sha256": "61d2a12e6cd857a79f0c819f36a91996332fea188282f4eb5aec0087dbf5359c",
+      "sha256": "b50f3fecf6b62f27b1d5f9298f76cd4cb0a5b4df094dfbb3125824e5af181177",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
-        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un",
-        "d roles below are extracted from the cited documents. They do not establish current office, project sponsorship or responsibility. An RDC chair may govern a different province from the project location. For Rainwater Collector System projects, matching POW items are summ"
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "expectation-vs-reality.html",
+      "sha256": "5c5f73753f7dbe0ce64d488ae372dae434428430441c10d3d9dac8d5da994008",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "flags.html",
+      "sha256": "83dbf9e72b90fdcc59ae3640888a7c8e8719ad1e0b40c2b551d1cfff04897ad4",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res",
+        "est type and the largest allocation stands out. Review signals are screening flags, not findings of wrongdoing. Listed appropriations are not verified spending. PBC comparison · one overlap-adjusted calculation Line / calculation NEP 2027 House bill 2027 Change / result"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "flood-control.html",
+      "sha256": "547e3d63e4a553e715b341e944dc8fd7b09449628345b38095d831ee253fa339",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
       ],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     },
     {
       "page": "fmr.html",
-      "sha256": "3ef3b8478c0b43f1eff0434232d54eeb3756a5a1962c767d99ff7a9d6be9f8d7",
+      "sha256": "13435f542cfe52ceb6990d1d3dbcdfe0f48e6d8c92d19dac9352b169bf505197",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
-        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un"
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "gaa-2015-dpwh-technical.html",
+      "sha256": "fb2a651be73e5d3984a5078232eac4ef60e5516dfac5b9598b52b05172705ce0",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "gaa-2019-dpwh-technical.html",
+      "sha256": "52a9ba29ae088e4082fb00f9773ecb95c5962671b61dc639049058acc5e781d3",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "gaa-2019-volume-ia.html",
+      "sha256": "dcb83fd0f3eb2bc6aa4582644c24f40c08a3f316aa58f2181a8c76f170a3c997",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
       ],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     },
     {
       "page": "hfep.html",
-      "sha256": "1b39665982d996b4783ea57ff6dfbf7c5a8857f2e8592e12f0bb29b66afeacd7",
+      "sha256": "0c6f47e0d5825c549233dae434abc52bbd71936f2f502aadb8a27b06c7f957cc",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
-        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un"
+        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un",
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. A DEO-to",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. A DEO-to-legislative district crosswalk, where used, is a preliminary administrative or geographic assoc"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "integrated-district-allocations.html",
+      "sha256": "398de9e9054ccc0a74b5ef05458c0c40bfbe0028899e3c53891b772d3b8c571b",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        "ear snapshots use the incoming Congress as cohort context, and do not establish budget enactment or sponsorship. Allocations are not payments. Older GAA coverage. FY2015 project-title candidates come from the DBM DPWH account-level GAA CSV and include capital-outlay PAP ",
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res",
+        "trict boundaries. Changed or unresolved historic seats are flagged; Congress context does not imply sponsorship. Project rows below follow the selected district, year, category and title filter. District Year Project type Project title Export CSV — Selected district · se"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "integrated-district-totals.html",
+      "sha256": "71ee73c781bcef4139392e7e5c02ccfcfbd9f9c8859cd609fa5c83ee6bbb30e5",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "integrated.html",
+      "sha256": "74ebb6b26bd96594c9f735dd76e005c17f35b30071b7f50877949a27687c03cb",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "mpb-barangay.html",
+      "sha256": "06ce37165a989b6fdc64cb51ff9e2ea19d4e2e760f46518017efae53f5fb1c3c",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        "ficial barangay associations; they do not verify the same physical building, completed upgrades, or wrongdoing. Project titles, source coverage, parsing, matching, and barangay resolution may be incomplete or ambiguous. Lines naming multiple barangays can appear under e",
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res",
+        " project row. This is a screening inventory, not proof of a physical building, upgrade, payment, or wrongdoing. Loading MPB barangay data… Barangay MPB lookup Filter the MPB records by the barangay shown in MPB Base and fiscal year. FY2027 lines include a DPWH proposal "
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "mpb-base.html",
+      "sha256": "389ba7fd1dc4af40da76bcd6cb1a19b00bd078ef761a59b51f0e672cb54a13b9",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "mpb-historical-contractors.html",
+      "sha256": "c13325231483dde4137bfd79c2b4d54efe5b73a105ff80b85f9b3b045f74186d",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "mpb-historical.html",
+      "sha256": "86b65d42798e996a6ccf57d1f3d17a2abe9e4c6becea2765ef905d2a1f7ead6f",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
       ],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     },
     {
       "page": "mpb.html",
-      "sha256": "608d703c50296c7dfd2903017907e60b9d5ead9d4fe49679f441f38da3a0bdd7",
+      "sha256": "c03891f4966036358f02c873e6ea12afdc9f5fd7157385c1f6fea038e9c1c763",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
-        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un",
-        "nst cited source pages. MPB review flags · overview These are different review queues, not a single corruption score. Bars show each count against its stated denominator; categories can overlap and should not be added together. A flag is a prompt for human review, not a",
-        "ows the project location in the PH location DB and describes geographic coverage; it does not imply sponsorship or control. Boundary layer source ↗ Printed coordinates outside the named municipality 145 of 1,215 coordinate-bearing entries with qualified title locations p",
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res",
+        "publishing conclusions. MPB review flags · overview These are different review queues, not a single corruption score. Bars show each count against its stated denominator; categories can overlap and should not be added together. A flag is a prompt for human review, not a",
+        "ows the project location in the PH location DB and describes geographic coverage; it does not imply sponsorship or control. Boundary layer source: offline DPWH shapefiles Printed coordinates outside the named municipality 145 of 1,215 coordinate-bearing entries with qual",
         "etation but do not establish need. The 50/100/250/1000-meter bins are descriptive review bands, not corruption thresholds. Pairs are not distinct projects; a cluster of three items yields three pairs. Do not sum pair allocations as losses. Download every distance, raw c",
         " rows. Repeat graphs count all filtered comparison pairs by retention status. No hypothesis test or corruption probability is inferred from these descriptive plots. Request original-page adjudication, approved designs, floor areas, bills of quantities, contracts, projec"
       ],
@@ -151,84 +410,172 @@
     },
     {
       "page": "nia-irrigation.html",
-      "sha256": "2c6f2c8d15aacb7db33ca0211e3c8dfa0acf6dbada6162a98c6dfd86c5473a8c",
+      "sha256": "73a38307f38d75c152e5965f8dae4309c66580adb20b88fa7eff6d1a94377e2e",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
-        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un"
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
       ],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     },
     {
       "page": "nia.html",
-      "sha256": "fc4fb59c1c9ba77b5e5586952fb802c676d8fcc65844b25397e3709c5111838c",
+      "sha256": "3b2f9e03a68992f69f0722f621003dfdbeaf2205c0518950366bc14146460e08",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
-        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un",
-        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un"
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "out-of-place.html",
+      "sha256": "5038a00bbb8abae28d2d6a1ab93de1f16f46bd2b4a3122dc011adecff892b103",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        "geographic representative association is a review lead, not proof of an incorrect location, project sponsorship, payment, or wrongdoing. Verify the printed coordinates, named place, boundary source and cited schedule page before drawing conclusions. These are preliminary",
+        " association is a review lead, not proof of an incorrect location, project sponsorship, payment, or wrongdoing. Verify the printed coordinates, named place, boundary source and cited schedule page before drawing conclusions. These are preliminary, document-based observa",
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. A DEO-to",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. A DEO-to-legislative district crosswalk, where used, is a preliminary administrative or geographic assoc"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "outside.html",
+      "sha256": "0c7e3b710a58f7034990f23b5551b3a39b0d19c4003ae12f47feec19b39655bf",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        "sing, or source-record issue; it does not establish a project’s actual location, implementation, or wrongdoing. Review the cited source document and map point before drawing conclusions. This site is updated as additional source documents are ingested and reviewed. Its ",
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "pccp-cost-per-unit.html",
+      "sha256": "e6ca015104344b03381b6e74f6ee291307ac2e43481317009f0e4b55b8b0882b",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "pow.html",
+      "sha256": "f592c2dac2cc39c8843da2bb29ebeb12fbb395f168bd3b35662e0db047e25385",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
       ],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     },
     {
       "page": "project-documents.html",
-      "sha256": "f6c2b187de74e41685a2a56197c169b16d2693a354d90af89559223699085163",
+      "sha256": "164b2b2b70c7749f49eef83439ce365f983f70ef6be4f95c3b1b0a8020cfc04b",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
-        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un"
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
       ],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     },
     {
       "page": "rcs-rainfall-archive.html",
-      "sha256": "2c85f941481279c01500400d6d52336c15cd9ee8159bfd4e3259ecf5eb17ebda",
+      "sha256": "535866781de15fc1a440c35015a22cc5538045f4b50807cb249f5851d972f58a",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
-        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un"
+        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un",
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. A DEO-to",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. A DEO-to-legislative district crosswalk, where used, is a preliminary administrative or geographic assoc"
       ],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     },
     {
       "page": "rcs.html",
-      "sha256": "aa272ef38cdafacfedc22a19bdc425107f5f80dc0db4e8c28784f5a1beb57323",
+      "sha256": "12f179e7be1b47e9b8613849315518ce1963d90e9822d80afdd1bb1839fed080",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
-        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un",
+        "ntical budget amounts create a review lead; they do not by themselves establish padding, intent, or wrongdoing. The table includes all 199 projects scheduled at ₱4.2M; POW line details are currently extracted for 22, and missing details are marked as not established. Th",
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. A DEO-to",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. A DEO-to-legislative district crosswalk, where used, is a preliminary administrative or geographic assoc",
         " allocations create a reason to compare the engineering estimates; they do not establish padding or wrongdoing. Priority review lead Was each POW priced from its actual scope, or shaped around a fixed per-office amount? Six and fourteen named school sites both sit under"
       ],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     },
     {
-      "page": "repeats.html",
-      "sha256": "8b1caf7e4acb84e2461025a56bf7647a137a5f0bc38a6163e780702c29c4d571",
+      "page": "repeats-historical.html",
+      "sha256": "49011329aa7c7843872651245d615ccaec48b513d1f772780edf587a0c6e3861",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
-        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un",
-        "etation but do not establish need. The 50/100/250/1000-meter bins are descriptive review bands, not corruption thresholds. Pairs are not distinct projects; a cluster of three items yields three pairs. Do not sum pair allocations as losses. Download every distance, raw c",
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "repeats.html",
+      "sha256": "be8e5085f692fdb04821543a980d90b4f83ff9a0e546f34226bc20b4d09c82d0",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res",
         "overlap. Matching allocation occurrences does not establish duplicate contracts, duplicate payment, fraud or authorship. Different engineering components and legitimate amendments can share titles. Office-only agreement is weaker than site evidence. Unresolved loca"
       ],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     },
     {
       "page": "summary.html",
-      "sha256": "99941a0d026bc977db28417a378b4ff8e3ed99864f5b4d167df94f33f7236983",
+      "sha256": "c50edab0d275e03eeab30cf79c55a525e3350579fc5f745088dcb04bebe0a73d",
       "changed": true,
       "evidenceNotice": true,
       "remainingSensitiveContexts": [
-        "rsing uncertainty and location limits alongside every claim. Priorities are editorial triage, not a corruption score. Figures overlap and must not be added together. Summary · investigative leads Cost per meter Project repeat comparisons DPWH · NEP → HGAB (3rd) RCS · PO",
-        "sh unlawful conduct. Title-similarity percentages are text scores, not probabilities of identity or wrongdoing. Representative names describe possible geographic coverage, not who proposed, controlled, benefited from or received a project. Parsing, location and scope un",
-        "eat candidates 1,379 proposals Evidence guides an investigation. None of these findings establishes corruption. Full line-item review queue ↓ Follow the changes between budget stages NEP → HGAB (House version) → GAB (Senate version) → Bicam (House/Senate reconciliation)",
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res",
+        "osure within each review scope. Scopes overlap and must not be added; exposures are not losses or a corruption score. Uniform RCS packages 199 offices Repeat candidates 1,576 proposals Evidence guides an investigation. None of these findings establishes corruption. Full",
+        "eat candidates 1,576 proposals Evidence guides an investigation. None of these findings establishes corruption. Full line-item review queue ↓ Follow the changes between budget stages NEP → HGAB (House version) → GAB (Senate version) → Bicam (House/Senate reconciliation)",
         " Bridge chainage is not necessarily bridge span. No cross-category average, overpricing estimate or corruption probability is established. Inventory lanes are existing asset characteristics, not verified funded quantities; widening needs additional funded lanes. Overpas",
-        "ankings cover only 41.4% of extracted allocation value. Names indicate geography, not authorship or sponsorship. Inspect congressional coverage limits → Other schedules · NEP → HGAB comparison coverage Compare the same budget hierarchy before calculating changes. Missing"
+        "ankings cover only 52.6% of extracted allocation value. Names indicate geography, not authorship or sponsorship. Inspect congressional coverage limits → Other schedules · NEP → HGAB comparison coverage Compare the same budget hierarchy before calculating changes. Missing",
+        "methods and are not a shared severity score. Flags are prompts to inspect evidence, not findings of wrongdoing. Icon key: 📐 short range · 📈 relative rate · 🛣️ recorded condition · 🛞 recent surfacing · 🧩 NEP match review · 📂 listed documents · 🧮 POW · 📷 geotagged photos "
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "undocumented-hgab.html",
+      "sha256": "c8d3347da1029c46ffd4bc8113f2cb372b2d5bf2f29cc5a3d9b06c5cd2b27cc5",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
+      ],
+      "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
+    },
+    {
+      "page": "vote-2028.html",
+      "sha256": "9851da5f63e54ce3475339d304e02a0c660c6cf198789a1c54615bd6eed61c0c",
+      "changed": true,
+      "evidenceNotice": true,
+      "remainingSensitiveContexts": [
+        " for review; it does not establish intent, responsibility, benefit, overpayment, duplicate scope or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source d",
+        "e or wrongdoing. Names and geographic or district associations indicate possible coverage only, not sponsorship, authorship, control, receipt or personal involvement. Source documents, data completeness, parsing, matching, categories, timing and boundaries may affect res"
       ],
       "reviewOutcome": "Editorial review: screening labels, source-stage distinctions, attribution limits and sensitive-term contexts reviewed; no legal certification."
     }
   ],
-  "reviewedPages": 20,
+  "reviewedPages": 48,
   "guarantee": false,
   "limitations": [
     "This is an evidence/editorial review, not jurisdiction-specific legal advice or legal clearance.",

@@ -69,7 +69,7 @@ def publish(source=SOURCE, static=STATIC):
     snapshot = json.loads(source.read_text(encoding='utf-8'))
 
     arrays = {}
-    for key in ('projects', 'powPeers', 'summaryPeerGroups'):
+    for key in ('projects', 'powPeers', 'summaryPeerGroups', 'hgabPowResults', 'costUnitHgabResults'):
         values = snapshot.pop(key, [])
         arrays[key] = split_array(key, values, static)
         snapshot[f'{key[:-1] if key.endswith("s") else key}Count'] = len(values)

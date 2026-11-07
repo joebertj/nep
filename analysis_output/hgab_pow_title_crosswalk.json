@@ -1,0 +1,1882 @@
+{
+  "method": "A unique match requires the normalized full title printed in the POW PDF first three pages to appear exactly in one HGAB 3rd-reading DPWH project title. Repeated titles are left ambiguous. A unique match outside the no-DPWH-Transparency-link cohort is identified but not added to the undocumented queue.",
+  "source": "Senate-provided HGAB POW files and the full HGAB 3rd-reading DPWH project ledger.",
+  "summary": {
+    "powFilesScanned": 226,
+    "uniqueExactTitleMatches": 137,
+    "uniqueMatchesInTransparencyLinkGap": 120,
+    "uniqueMatchesOutsideCohort": 17,
+    "ambiguousExactTitleMatches": 4,
+    "noExactTitleMatch": 85
+  },
+  "files": [
+    {
+      "code": "2027DPWH-HGAB-10578",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0244-002429"
+      ],
+      "matchedTitle": "Ortigas Avenue - K0012+(-529) - K0014+469, Manila East Rd - K0015+(-478) to K0017+131, Pasig City (Off-Carriageway Improvement: Construction of Sidewalk)",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-11147",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0365-004753"
+      ],
+      "matchedTitle": "Improvement of Balanti Creek, Second District, Barangay Concepcion Dos, Marikina City (Sta 0+000 - Sta.126.80, Sta. 280 - Sta. 837.60)",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-01411",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0698-011530"
+      ],
+      "matchedTitle": "Construction of Multi-Purpose Building, Barangay Lower Uma, Lubuagan, Kalinga",
+      "cohortStatus": "outside_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-01421",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-01422",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0690-011378"
+      ],
+      "matchedTitle": "Construction (Completion) of Multi-Purpose Building, Barangay Lower Maton, Pudtol, Apayao",
+      "cohortStatus": "outside_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-01424",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-01475",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-01477",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0696-011497"
+      ],
+      "matchedTitle": "Construction (Completion) of Multi-Purpose Building, Barangay Bila, Bauko, Mountain Province",
+      "cohortStatus": "outside_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-01484",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0697-011504"
+      ],
+      "matchedTitle": "Construction (Completion) of Multi-Purpose Building, Barangay Poblacion, Bontoc, Mountain Province",
+      "cohortStatus": "outside_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-01486",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-01487",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0697-011505"
+      ],
+      "matchedTitle": "Construction (Completion) of Multi-Purpose Building, Barangay Saclit, Sadanga, Mountain Province",
+      "cohortStatus": "outside_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-01526",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-01529",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-01530",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-01531",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-01556",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-01557",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-01587",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-01588",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0695-011482"
+      ],
+      "matchedTitle": "Construction of Multi-Purpose building, Barangay Bunga, Tadian, Mountain Province",
+      "cohortStatus": "outside_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-11178",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-11179",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-11317",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0416-005775"
+      ],
+      "matchedTitle": "Construction of Taga-Dugpa-Nambucayan Access Road, Pinukpuk, Kalinga",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-11318",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0416-005776"
+      ],
+      "matchedTitle": "Construction of Burayukan Bridge and Approaches along Bulanao-Dagupan-Balong Road Sta. 0+000 - Sta. 0+120, Tabuk City, Kalinga",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-11319",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0416-005783"
+      ],
+      "matchedTitle": "Palao-Calaba Bypass Road - Sta. 0+000-Sta. 1+780, Bangued, Abra",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-11320",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0416-005783"
+      ],
+      "matchedTitle": "Palao-Calaba Bypass Road - Sta. 0+000-Sta. 1+780, Bangued, Abra",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-11321",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0416-005784"
+      ],
+      "matchedTitle": "Palao-Calaba Bypass Road - Sta. 2+000- Sta. 2+480, Bangued, Abra",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-11322",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0416-005785"
+      ],
+      "matchedTitle": "Palao-Calaba Bypass Road - Sta. 3+000-Sta. 3+273, Bangued, Abra",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-11323",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0416-005786"
+      ],
+      "matchedTitle": "Construction of Damulog Bridge, Sta. 0+000 - Sta. 0+090,Danglas, Abra",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-11324",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0416-005787"
+      ],
+      "matchedTitle": "Construction of Carsoan Bridge, Sta. 0+000 - Sta. 0+030, San Quintin, Abra",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-11325",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0416-005788"
+      ],
+      "matchedTitle": "Rehabilitation of Danglas Road, Sta. 0+000 - Sta. 1+000, Danglas, Abra",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-11326",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0416-005789"
+      ],
+      "matchedTitle": "Construction Manawis Bridge, Sta. 0+000 - Sta. 0+030, Lagayan, Abra",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-11327",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0417-005790"
+      ],
+      "matchedTitle": "Construction of Karkariskis Bridge, Sta. 0+000 - Sta. 0+060, La Paz, Abra",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-11328",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-11329",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-11330",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-11787",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-11788",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-11790",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-11791",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-11792",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0476-006983"
+      ],
+      "matchedTitle": "Rehabilitation of Hilltop Street along Upper and Lower Magsaysay Barangay and Padre Zamora Barangay, Baguio City (Sta. 0+000 - Sta. 0+065)",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-11793",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0476-006984"
+      ],
+      "matchedTitle": "Construction of Road including Slope Protection, Honeymoon-Holyghost Barangay to Holyhghost Extension Barangay, Baguio City (Sta. 0+270 - Sta. 0+465)",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-11794",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-11795",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-11796",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0478-007016"
+      ],
+      "matchedTitle": "Concreting of Barangay Poblacion West (Lamut) Access Road, Barangay Poblacion West, Lamut, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-11797",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0478-007017"
+      ],
+      "matchedTitle": "Construction of Sitio Dengao-Barangay Ahin (Tinoc) MPB, Barangay Ahin, Tinoc, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-11798",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-11799",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0478-007019"
+      ],
+      "matchedTitle": "Construction of Tulludan MPB (MPB-Barangay Hall), Barangay Tulludan, Tinoc, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-11800",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0478-007020"
+      ],
+      "matchedTitle": "Construction of Bolog to Pugo Access Road, Barangay Bolog, Kiangan, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-11801",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0478-007024"
+      ],
+      "matchedTitle": "Construction of Panubtuban-Jolowon Road, Sta. 16+000 - Sta. 16+800, Lamut, Ifugao",
+      "cohortStatus": "outside_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-11802",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0478-007025"
+      ],
+      "matchedTitle": "Construction of O-ong-Dalligan Road, Sta. 2+250 - Sta. 4+000, Kiangan, Ifugao",
+      "cohortStatus": "outside_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-11803",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0478-007027"
+      ],
+      "matchedTitle": "Construction of Yuko - Duit Access Road, Baguinge, Kiangan, Ifugao",
+      "cohortStatus": "outside_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-11804",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-11805",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-11806",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-11807",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-11808",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-11809",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-11810",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-11811",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0483-007134"
+      ],
+      "matchedTitle": "Construction of Ab-abaan Access Road, Sta. 15+006 - Sta. 16+256 Barangay Ab- abaan, Balbalan, Kalinga",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-12904",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0634-010328"
+      ],
+      "matchedTitle": "Construction (Continuation) of Multi Purpose Building, Barangay Wangal, La Trinidad, Benguet, 16.45444444, ,120.5738889",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-12905",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0634-010329"
+      ],
+      "matchedTitle": "Completion of Multi Purpose Building, Barangay Poblacion, Kabayan, Benguet, 16.623262, 120.838184",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-12906",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0634-010330"
+      ],
+      "matchedTitle": "Improvement of Multi Purpose Building (La Trinidad Vegetable Trading Post), La Trinidad, Benguet, 16.449554, 120.589154",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-12907",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-12908",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0634-010332"
+      ],
+      "matchedTitle": "Construction of Multi-Purpose Building, Zone 3, Bangued, Abra",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13609",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0690-011370"
+      ],
+      "matchedTitle": "Rehabilitation/Construction of Multi-Purpose Building, Poblacion, La Paz, Abra (17.67413, 120.684469)",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13610",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-13611",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0690-011372"
+      ],
+      "matchedTitle": "Construction of Multi Purpose Building, North Poblacion, La Paz, Abra",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13612",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0690-011374"
+      ],
+      "matchedTitle": "Construction of Multi-Purpose Building, Barangay Katablangan, Conner, Apayao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13613",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0690-011375"
+      ],
+      "matchedTitle": "Construction of Multi-Purpose Building, Barangay Karagawan, Kabugao, Apayao (17.950264, 121 .186425)",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13614",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0690-011376"
+      ],
+      "matchedTitle": "Construction of Multi-Purpose Building, Barangay Nabuangan, Conner, Apayao",
+      "cohortStatus": "outside_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13615",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0690-011377"
+      ],
+      "matchedTitle": "Construction of Multi-Purpose Building, Barangay Cupis, Conner, Apayao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13616",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-13620",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-13622",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0691-011385"
+      ],
+      "matchedTitle": "Construction of Multi-Purpose Building, Barangay Lt. Balag, Pudtol, Apayao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13623",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-13624",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0691-011391"
+      ],
+      "matchedTitle": "Construction of Multi-purpose Building at Middle Quirino Hill, Baguio City",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13625",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0691-011392"
+      ],
+      "matchedTitle": "Construction of Multi-purpose Facilities at Quirino Hill East Barangay Baguio City",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13626",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0691-011400"
+      ],
+      "matchedTitle": "Construction (Completion) of Multi Purpose Building, Barangay Poblacion, Itogon, Benguet",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13627",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0692-011405"
+      ],
+      "matchedTitle": "Construction (Completion) of Multi-Purpose Building (People's Hall) at Poblacion South, Lagawe, Ifugao, 16.797812, 121.123793",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13628",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0692-011405"
+      ],
+      "matchedTitle": "Construction (Completion) of Multi-Purpose Building (People's Hall) at Poblacion South, Lagawe, Ifugao, 16.797812, 121.123793",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13629",
+      "status": "ambiguous_exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0692-011407",
+        "HB10858-3-0692-011416"
+      ],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-13630",
+      "status": "ambiguous_exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0692-011408",
+        "HB10858-3-0692-011417"
+      ],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-13631",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0692-011409"
+      ],
+      "matchedTitle": "Construction (Completion) of Nunggulunan Multi-purpose Building, Nunggulunan, Hungduan, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13632",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-13633",
+      "status": "ambiguous_exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0692-011411",
+        "HB10858-3-0692-011422"
+      ],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-13634",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0692-011412"
+      ],
+      "matchedTitle": "Construction of Dulao Multi-purpose Building, Barangay Dulao, Lagawe, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13635",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0692-011413"
+      ],
+      "matchedTitle": "Construction of Abinuan Multi-purpose Building, Barangay Abinuan, Lagawe, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13636",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0692-011414"
+      ],
+      "matchedTitle": "Construction of Jolowon Multi-purpose Building, Barangay Jolowon, Lamut, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13637",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0692-011415"
+      ],
+      "matchedTitle": "Construction (Completion) of Poblacion East Multi-purpose Building, Barangay Poblacion East, Lamut, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13638",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0692-011416"
+      ],
+      "matchedTitle": "Construction of LGU Tinoc Legislative Multi-Purpose Building, Poblacion, Tinoc, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13639",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0692-011417"
+      ],
+      "matchedTitle": "Construction of Tinoc Central School Multi-Purpose Building, Poblacion, Tinoc, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13640",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-13641",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-13642",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0692-011409"
+      ],
+      "matchedTitle": "Construction (Completion) of Nunggulunan Multi-purpose Building, Nunggulunan, Hungduan, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13643",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-13644",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0692-011422"
+      ],
+      "matchedTitle": "Construction (Completion) of Sanafe Multi-Purpose Building, Sanafe, Lamut, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13645",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0693-011434"
+      ],
+      "matchedTitle": "Construction (Completion) of Namillangan Multi-purpose Building, Namillangan, Alfonso Lista, Ifugao, 16.84431, 121.499756",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13646",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0693-011435"
+      ],
+      "matchedTitle": "Construction (Completion) of Kiling Multi-purpose Building, Kiling, Alfonso Lista, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13647",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0693-011436"
+      ],
+      "matchedTitle": "Construction (Completion) of Caragasan Multi-purpose Building, Caragasan, Alfonso Lista, Ifugao, 17.027408, 121.491572",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13648",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0693-011437"
+      ],
+      "matchedTitle": "Construction (Completion) of Busilac Multi-purpose Building, Busilac, Alfonso Lista, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13649",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0693-011438"
+      ],
+      "matchedTitle": "Construction (Completion) of Potia Multi-purpose Building, Potia, Alfonso Lista, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13650",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0693-011439"
+      ],
+      "matchedTitle": "Construction (Completion) of San Marcos Multi-purpose Building, San Marcos, Alfonso Lista, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13651",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0693-011440"
+      ],
+      "matchedTitle": "Construction (Completion) of Calimag Multi-purpose Building, Calimag, Alfonso Lista, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13652",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0693-011441"
+      ],
+      "matchedTitle": "Construction (Completion) of Sitio Katubangan Multi-purpose Buidling, Barangay Kiling, Alfonso Lista, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13653",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0693-011442"
+      ],
+      "matchedTitle": "Construction (Completion) of Sta. Maria Multi-purpose Building, Sta. Maria, Alfonso Lista, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13654",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0693-011443"
+      ],
+      "matchedTitle": "Construction (Completion) of Sitio Mabanutan Multi-purpose Building, Barangay Namnama, Alfonso Lista, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13655",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0693-011444"
+      ],
+      "matchedTitle": "Construction (Completion) Laya Multi-purpose Building, Laya, Alfonso Lista, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13656",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0693-011445"
+      ],
+      "matchedTitle": "Construction (Completion) of Sto. Domingo Multi-purpose Building, Sto. Domingo, Alfonso Lista, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13657",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0694-011446"
+      ],
+      "matchedTitle": "Construction of Alfonso Lista Central School Multi-purpose Building, (Evacuation Center), Sta. Maria, Alfonso Lista, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13658",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0694-011447"
+      ],
+      "matchedTitle": "Construction (Completion) of Awayan Multi-purpose Building, Awayan, Aguinaldo, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13659",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0694-011448"
+      ],
+      "matchedTitle": "Constrcution (Completion) of LGU Banaue Multi-purpose Building (Legislative Hall), Poblacion, Banaue, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13661",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0694-011450"
+      ],
+      "matchedTitle": "Construction of Ayangan Multi-Purpose Building, Barangay Ayangan, Mayoyao, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13662",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0694-011451"
+      ],
+      "matchedTitle": "Construction of Alimit Multi-purpose Building (Barangay Hall), Barangay Alimit, Mayoyao, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13663",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0694-011452"
+      ],
+      "matchedTitle": "Construction of Maga Multi-purpose Building, Barangay Maga, Mayoyao, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13664",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0694-011453"
+      ],
+      "matchedTitle": "Construction of Magulon Multi-purpose Building, Barangay Magulon, Mayoyao, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13665",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0694-011454"
+      ],
+      "matchedTitle": "Construction of Tam-an Multi-purpose Building (Barangay Hall), Barangay Tam-an, Banaue, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13666",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0694-011455"
+      ],
+      "matchedTitle": "Construction of Pula Multi-purpose Building (Barangay Hall), Barangay Pula, Banaue, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13667",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0694-011456"
+      ],
+      "matchedTitle": "Construction (Completion) of Bangaan Multi-purpose Building, Barangay Bangaan, Banaue, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13668",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0695-011466"
+      ],
+      "matchedTitle": "Construction (Completion) of Pudpud, Antonio Canao Multi-Purpose Building, Barangay Antonio Canao, Lubuagan, Kalinga",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13669",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0695-011467"
+      ],
+      "matchedTitle": "Construction (Completion) of Multi-Purpose Building, Barangays Poblacion, Mabilong, Lubuagan, Kalinga, 17.348257, 121.176817",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13670",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0695-011468"
+      ],
+      "matchedTitle": "Construction of Dugpa Multi-Purpose Building, Barangay Dugpa, Pinukpuk, Kalinga, 17.514749, 121.378510",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13671",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0695-011469"
+      ],
+      "matchedTitle": "Construction of Pinukpuk Covered Court, Barangay Taga, Pinukpuk, Kalinga, 17.5745939, 121.3654081",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13672",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-13673",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-13674",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-13675",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-13676",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0695-011474"
+      ],
+      "matchedTitle": "Construction of Covered Court, Purok 6, Barangay Bulanao, Tabuk City, Kalinga, 17.404195, 121.440059",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13677",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-13678",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0695-011476"
+      ],
+      "matchedTitle": "Construction of Dupag Multi-Purpose Building, Barangay Dupag, Tabuk City, Kalinga, 17.402252, 121.2399871",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13679",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-13680",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-13681",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0695-011479"
+      ],
+      "matchedTitle": "Construction of Multi-Purpose Building, Barangay Calanan,Tabuk City, Kalinga",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13682",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0696-011485"
+      ],
+      "matchedTitle": "Construction of Multi-Purpose Building, Barangay Bayyo, Bontoc, Mountain Province, 17.00689, 121.01655",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13683",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0696-011486"
+      ],
+      "matchedTitle": "Construction of Multi-Purpose Building, Am-am, Barangay Cadad-anan, Tadian, Mountain Province, 16.90625, 120.84225",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13684",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0696-011487"
+      ],
+      "matchedTitle": "Completion of Multi-Purpose Building, Barangay Bontoc Ili, Bontoc, Mountain Province, 17.08767, 120.97394",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13685",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0696-011488"
+      ],
+      "matchedTitle": "Completion of Multi-Purpose Building, Barangay Betwagan, Sadanga, Mountain Province, 17.14843. 121.07314",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13686",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0696-011489"
+      ],
+      "matchedTitle": "Completion of Multi-Purpose Building, Barangay Pide, Sagada, Mountain Province, 17.12781, 120.89333",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13687",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0696-011490"
+      ],
+      "matchedTitle": "Completion of Multi-Purpose Building, Barangay Kayan East, Tadian, Mountain Province, 16.98572681, 120.80713386",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13688",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0696-011491"
+      ],
+      "matchedTitle": "Completion of Multi-Purpose Building, Barangay Lenga, Tadian, Mountain Province, 16.91883, 120.82003",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13689",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0696-011492"
+      ],
+      "matchedTitle": "Completion of Multi-Purpose Building, Barangay Pandayan, Tadian, Mountain Province, 16.93831, 120.83592",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13690",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0696-011499"
+      ],
+      "matchedTitle": "Construction of Multi-Purpose Building, Barangay Caluttit, Bontoc, Mountain Province",
+      "cohortStatus": "outside_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13697",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-13698",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-13699",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-13700",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0698-011528"
+      ],
+      "matchedTitle": "Construction of Maling Covered Court, Barangay Maling, Balbalan, Kalinga, 17.457200, 121.222900",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13701",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0698-011529"
+      ],
+      "matchedTitle": "Construction of Multi-Purpose Building, Barangay Malucsad, Pasil, Kalinga",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-01338",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-01224",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-01225",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0179-001255"
+      ],
+      "matchedTitle": "Kalinga-Abra Rd - K0465 + 736 - K0465 + 772, K0467 + 432 - K0467 + 463, K0468 + 403 - K0468 + 419, K0468+912 - K0468+976, K0476 + 221 - K0476 + 244, K0476 + 502 - K0476 + 526",
+      "cohortStatus": "outside_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-01228",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0184-001358"
+      ],
+      "matchedTitle": "Kiangan-Tinoc-Buguias Rd - K0324 + 646 - K0324 + 748, K0329 + 517 - K0329 + 532",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-01230",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0178-001250"
+      ],
+      "matchedTitle": "Baguio-Bontoc Rd - K0348 + 000 - K0348 + 076",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-01231",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0235-002273"
+      ],
+      "matchedTitle": "Piddig,Carasi (Ilocos Norte)-Calanasan-Langnao-Kabugao Road, Sta.18+783.20 - Sta. 25+350, Kabugao, Apayao",
+      "cohortStatus": "outside_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-01236",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-01248",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-01250",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-01263",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-01279",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-01290",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-01294",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-01298",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-01304",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-01309",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-01312",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0234-002262"
+      ],
+      "matchedTitle": "Aguinaldo-Toboy-Natonin Road - Sta. 14+220 - Sta. 15+380",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-01314",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0234-002266"
+      ],
+      "matchedTitle": "Banaue-Barlig-Tanudan-Tabuk Road, Sta. 4+160 - Sta. 15+000, Barangay Viewpoint, Banaue, Ifugao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-01315",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0234-002263"
+      ],
+      "matchedTitle": "Aguinaldo-Toboy-Natonin Road, Sta. 11+286 - Sta. 11+512",
+      "cohortStatus": "outside_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-01316",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-01319",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0184-001356"
+      ],
+      "matchedTitle": "Banaue-Hungduan-Benguet Bdry Rd -K0364+631-K0364+647, K0372 + 511 - K0372 + 536, K0376 + 549 - K0376 + 570, K0376 + 652 - K0376 + 670, K0376 + 694 - K0376 + 724",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10132",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0123-000245"
+      ],
+      "matchedTitle": "Mt Province Bdry-Calanan-Pinukpuk-Abbut Rd - K0449 + 064 - K0449 + 973, K0450 + 180 - K0451 + 046, K0454 + 665 - K0455 + 678, K0459 + 968 - K0463 + 834",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10205",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0139-000561"
+      ],
+      "matchedTitle": "Balbalan Pinukpuk Rd - K0480 + (-369) - K0483 + 000, K0485 + 000 - K0489 + 000",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10254",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0156-000866"
+      ],
+      "matchedTitle": "Kalinga-Abra Rd - K0496 + 850 - K0497 + 859, K0497 + 879 - K0499+015",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10276",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0158-000917"
+      ],
+      "matchedTitle": "Baguio-Bontoc Rd K0322+800 - K0323+300",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10277",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0159-000919"
+      ],
+      "matchedTitle": "Mt Prov-Cagayan via Tabuk Enrile Rd - K0394+029 - K0394+137, K0397+224 - K0397+304",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10278",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0159-000920"
+      ],
+      "matchedTitle": "Mt Province Bdry-Calanan-Pinukpuk-Abbut Road - K0443 + 282 - K0443 + 890",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10323",
+      "status": "ambiguous_exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0173-001155",
+        "HB10858-3-0410-005647"
+      ],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-10328",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0174-001185"
+      ],
+      "matchedTitle": "Mt Province-N Vizcaya Rd - K0369 + 870 - K0370 + 100",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10343",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0177-001225"
+      ],
+      "matchedTitle": "Conner-Kabugao Rd - K0602 + 248 - K0602 + 260",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10344",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-10345",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-10346",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-10347",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-10348",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0178-001252"
+      ],
+      "matchedTitle": "Mt Prov-Cagayan via Tabuk-Enrile Rd - K0400 + 924 - K0400 + 994, K0400 + 427 - K0400 + 523",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10349",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0178-001253"
+      ],
+      "matchedTitle": "Mt Prov-Cagayan via Tabuk-Enrile Rd - K0394 + 384 - K0394 + 398, K0395 + 941 - K0395 + 954, K0396 + 100 - K0396 + 155, K0396 + 524 - K0396 + 541",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10365",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-10366",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0185-001367"
+      ],
+      "matchedTitle": "Jct Talubin-Barlig-Natonin-Paracelis-Calaccad Rd - K0380+1100 - K0380+1170",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10367",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0185-001368"
+      ],
+      "matchedTitle": "Jct Talubin-Barlig-Natonin-Paracelis-Calaccad Rd - K0380+2173 - K0380+2250",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10368",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0185-001369"
+      ],
+      "matchedTitle": "Jct Talubin-Barlig-Natonin-Paracelis-Calaccad Rd - K0379+677 - K0379+753",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10390",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-10391",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0191-001467"
+      ],
+      "matchedTitle": "Banaue-Hungduan-Benguet Bdry Rd-K0402+087-K0402+165",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10392",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-10393",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0192-001469"
+      ],
+      "matchedTitle": "Nueva Vizcaya-Ifugao-Mt. Province Rd-K0291+309-K0291+785",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10394",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-10395",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-10396",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-10397",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0192-001476"
+      ],
+      "matchedTitle": "Mt Prov-Ilocos Sur via Tue Rd - K0408+540, K0408+680, K0408+850, K0408+877, K0409+040",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10398",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-10399",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-10482",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0214-001897"
+      ],
+      "matchedTitle": "Chico Karayan Bridge-Lanao-Tikitik Bypass Road, Chainage 1760 - Chainage 1898, Bontoc, Mountain Province",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10483",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0214-001898"
+      ],
+      "matchedTitle": "Chico Karayan Bridge-Lanao-Tikitik Bypass Road, Sta. 1+600 - Sta. 1+760, Bontoc, Mountain Province",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10564",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-10565",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0241-002397"
+      ],
+      "matchedTitle": "Besao-Tubo (via Tamboan) Road, Sta.11+387 - Sta.11+567, Besao, Mountain Province",
+      "cohortStatus": "outside_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10566",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0241-002398"
+      ],
+      "matchedTitle": "Sagada-Besao-Quirino (via Laylaya) Road, Sta.27+665 - Sta.27+880, Besao, Mountain Province",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10634",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0252-002555"
+      ],
+      "matchedTitle": "Alfonso Lista - Aurora Bdry Rd - K0445 + 005 - K0445 + 082, K0445 + 082 - K0445 + 089, K0445 + 117 - K0445 + 305, K0449 + 216 - K0449 + 668",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10652",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0256-002598"
+      ],
+      "matchedTitle": "Mountain Province-Cervantes, Ilocos Sur via Dacudac-Pilipil Rd - Chainage 21539 - Chainage 21759",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10656",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0262-002728"
+      ],
+      "matchedTitle": "Tabbac Bridge (FB32352LZ) along Sagada-Besao-Quirino Rd",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10657",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0262-002729"
+      ],
+      "matchedTitle": "Binwaan Bridge ( B00964LZ) along Kalinga-Abra Road",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-01394",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0302-003554"
+      ],
+      "matchedTitle": "Construction of Drainage Canal along Bulana-Bulanao Norte-Laya West-Laya East Road, Sta.0+000 - Sta.8+856, Tabuk City, Kalinga",
+      "cohortStatus": "outside_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10753",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0302-003555"
+      ],
+      "matchedTitle": "Construction of Bayaan Flood Control along Abra River Basin, Sta. 0+000 - Sta. 0+890,Dolores, Abra",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10754",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0302-003556"
+      ],
+      "matchedTitle": "Construction of Udangan Flood Control, Udangan Creek, along Abra River Basin, Sta. 0+000 - Sta. 0+315, La Paz, Abra",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10755",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0302-003557"
+      ],
+      "matchedTitle": "Construction of Drainage Structure - Strawberry Fields (Sta. 1+115) to Balili River, La Trinidad, Benguet",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10756",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0302-003558"
+      ],
+      "matchedTitle": "Construction of Drainage Structure along Pico-Lamtang Road K0255 + (-168) to Balili River, La Trinidad, Benguet",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10757",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0302-003559"
+      ],
+      "matchedTitle": "Construction of Flood Control, City Camp Lagoon, 16.410157N, 120.586109E, Baguio City",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10985",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-10986",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0335-004190"
+      ],
+      "matchedTitle": "Construction of flood control along Chico River Basin, Barren River, Sta. 41+800 - Sta. 42+300 Right Side, Barangay Talifugo, Conner, Apayao",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10987",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-10988",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-10989",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0335-004195"
+      ],
+      "matchedTitle": "Construction of Slope Protection Structure from City Camp Proper Barangay going to Queen of Peace Creek, Sta. 0+000 - Sta. 0+210, Baguio City",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-10990",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-10991",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0336-004197"
+      ],
+      "matchedTitle": "Construction/Improvement of Drainage Structure along Puguis Road (Sta. 0+140) to Wangal-Motorpool Road (Sta. 0+712), La Trinidad, Benguet",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-00525",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0448-006407"
+      ],
+      "matchedTitle": "Rehabilitation of Road and Drainage at Aria St, Barangay Talon 2, Las Piñas City",
+      "cohortStatus": "outside_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-11551",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-11552",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-12882",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-13130",
+      "status": "exact_title_match",
+      "hgabIds": [
+        "HB10858-3-0655-010696"
+      ],
+      "matchedTitle": "Construction of Multi-purpose Building (Social Services Area), Bayanan Old Plaza, Muntinlupa City, 14.40963177, 121.04971832",
+      "cohortStatus": "in_transparency_link_gap_cohort"
+    },
+    {
+      "code": "2027DPWH-HGAB-13131",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-13132",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    },
+    {
+      "code": "2027DPWH-HGAB-13133",
+      "status": "no_exact_title_match",
+      "hgabIds": [],
+      "matchedTitle": null,
+      "cohortStatus": null
+    }
+  ]
+}

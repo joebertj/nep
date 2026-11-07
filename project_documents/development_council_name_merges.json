@@ -1,0 +1,14 @@
+{
+  "description": "Reviewed candidate-name aliases for the Development Council page. Routine honorific, punctuation, and Jr./Sr. formatting differences are normalized automatically; add aliases here only when variants are judged to refer to the same person.",
+  "merges": [
+    {
+      "canonical": "ELIAS C. BULUT JR.",
+      "aliases": [
+        "ELIAS C. BULUT, JR.",
+        "ELIAS C. BULUT JR.",
+        "HON. ELIAS C. BULUT JR.",
+        "HON. ELIAS C. BULUT, JR."
+      ]
+    }
+  ]
+}

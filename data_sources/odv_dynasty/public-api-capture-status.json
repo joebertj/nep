@@ -1,0 +1,10 @@
+{
+  "sourceCapture": "source-table-manifest.json",
+  "sourceTableRows": 312761,
+  "supplementalUnfilteredApiPagesCaptured": 38,
+  "supplementalUnfilteredApiRecords": 38000,
+  "unfilteredApiReportedRows": 238502,
+  "unfilteredApiCaptureComplete": false,
+  "captureState": "Superseded by complete local PostgreSQL table capture; complete governor/mayor/engineer API snapshots retained as additional source evidence.",
+  "resumeScript": "capture_odv_all_roles.py"
+}

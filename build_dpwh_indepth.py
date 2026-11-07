@@ -42,6 +42,9 @@ def category_key(value):
 def has_kind(project,kind):
     for d in project.get('documentLinks',[]):
         t=' '.join(str(d.get('type') or '').lower().split())
+        if kind=='development_council' and re.search(
+                r'\b(?:rdc|pdc|ldc)\d*\b|\b(?:regional|provincial|local) development council\b',t):
+            return True
         if kind=='pow' and (t=='pow' or 'program of work' in t):return True
         if kind=='photos' and 'geotagged' in t and 'photo' in t:return True
         if kind=='rdc' and ('rdc' in t or 'regional development council' in t):return True
@@ -108,6 +111,14 @@ def hgab_statistics(document_projects):
     coverage=json.loads((OUT/'dpwh_transparency_document_coverage.json').read_text())
     nep_map=json.loads((OUT/'hb_nep_comparison_3rd_mapping.json').read_text())
     projects=[r['third'] for r in stage['rows'] if r.get('third') and r['third'].get('allocationKind')=='project']
+    pow_crosswalk=json.loads((OUT/'hgab_pow_title_crosswalk.json').read_text())
+    from project_documents.senate_document_title_coverage import load_match_ids
+    senate_document_by_hgab=load_match_ids(OUT,include_relaxed=True)
+    advanceCopy_by_hgab={}
+    for item in pow_crosswalk.get('files',[]):
+        if item.get('status')=='exact_title_match':
+            for hid in item.get('hgabIds',[]):
+                advanceCopy_by_hgab.setdefault(hid,[]).append(item)
     unpaired_ids={r.get('id') for r in nep_map.get('hgabWithoutSelectedCounterpart',[]) if r.get('allocationKind')=='project'}
     titles=coverage.get('titles',{});linked=[];status_counts={}
     by_code={p['code']:p for p in document_projects if p.get('code')}
@@ -115,6 +126,9 @@ def hgab_statistics(document_projects):
     pair_by_hgab={p.get('hgabId'):p for p in nep_map.get('pairs',[]) if p.get('hgabId')}
     unpaired=missing_listed=double_flag=0
     direct_listed=paired_listed=listed_any=0
+    portal_only_missing=combined_advanceCopy_rows=0
+    advanceCopy_file_records=set()
+    portal_only_missing_amount=combined_missing_amount=0
     document_urls=set()
     for row in projects:
         entry=titles.get(title_key(row.get('projectName')))
@@ -130,24 +144,40 @@ def hgab_statistics(document_projects):
         direct_has_docs=bool(direct_links)
         paired_has_docs=bool(paired_links)
         linked_docs={str(d.get('url')):d for d in [*direct_links,*paired_links] if d.get('url')}
-        docs_listed=bool(linked_docs)
+        portal_docs_listed=bool(linked_docs)
+        advanceCopy_files=advanceCopy_by_hgab.get(row.get('id'),[])
+        scanned_senate_files=senate_document_by_hgab.get(row.get('id'),set())
+        docs_listed=portal_docs_listed or bool(advanceCopy_files) or bool(scanned_senate_files)
         direct_listed+=direct_has_docs
         paired_listed+=paired_has_docs
         listed_any+=docs_listed
+        if advanceCopy_files or scanned_senate_files:
+            combined_advanceCopy_rows+=1
+            advanceCopy_file_records.update(scanned_senate_files)
+            advanceCopy_file_records.update(('pow',item.get('code')) for item in advanceCopy_files if item.get('code'))
         document_urls.update(linked_docs)
         unpaired+=no_selected_nep
         missing_listed+=not docs_listed
+        portal_only_missing+=not portal_docs_listed
+        if not portal_docs_listed:portal_only_missing_amount+=float(row.get('amountPesos') or 0)
+        if not docs_listed:combined_missing_amount+=float(row.get('amountPesos') or 0)
         double_flag+=no_selected_nep and not docs_listed
         if entry and entry.get('code') and status not in UNMATCHED:
             linked.append((row,entry))
     inspected=[(row,entry,by_code[entry['code']]) for row,entry in linked
                if entry['code'] in by_code and by_code[entry['code']].get('documentLinks')]
-    required_types=('bp202','implementability','pow','photos','rdc')
+    required_types=('bp202','implementability','pow','photos','development_council')
     types={k:sum(has_kind(p,k) for _,_,p in inspected) for k in required_types}
     missing_any=sum(not all(has_kind(p,k) for k in required_types) for _,_,p in inspected)
     coverage_data={'stage':'HGAB 3rd reading','projectRows':len(projects),'linkedRows':len(linked),'linkedPct':round(100*len(linked)/len(projects),1) if projects else 0,
       'directListedRows':direct_listed,'pairedNepRowsWithListedDocuments':paired_listed,
       'listedAnyRows':listed_any,'listedAnyPct':round(100*listed_any/len(projects),1) if projects else 0,
+      'portalOnlyListedAnyRows':len(projects)-portal_only_missing,
+      'portalOnlyMissingListedDocumentsRows':portal_only_missing,
+      'portalOnlyMissingListedDocumentsAmountPesos':round(portal_only_missing_amount),
+      'advanceCopyExactTitleMatchedRows':combined_advanceCopy_rows,
+      'advanceCopyExactTitleMatchedFiles':len(advanceCopy_file_records),
+      'combinedMissingListedDocumentsAmountPesos':round(combined_missing_amount),
       'listedDocumentRecords':len(document_urls),
       'inspectedRows':len(inspected),'inspectedPct':round(100*len(inspected)/len(linked),1) if linked else 0,
       'missingAnyTypeRows':missing_any,'missingAnyTypePct':round(100*missing_any/len(inspected),1) if inspected else 0,
@@ -155,7 +185,7 @@ def hgab_statistics(document_projects):
       'missingListedDocumentsRows':missing_listed,'doubleRedFlagRows':double_flag,'doubleRedFlagPct':round(100*double_flag/len(projects),1) if projects else 0,
       'missingTypes':{k:{'count':len(inspected)-v,'pct':round(100*(len(inspected)-v)/len(inspected),1) if inspected else 0} for k,v in types.items()},
       'statusCounts':status_counts,'sourceCommit':coverage.get('sourceCommit'),'snapshotRetrievedAtUtc':coverage.get('snapshotRetrievedAtUtc'),
-      'documentCoverageMethod':'A document link is counted when listed directly on the HGAB title match or on that row’s selected NEP counterpart. Paired NEP links indicate available project documents, not proof that identical files are attached to or scoped to the HGAB row.'}
+      'documentCoverageMethod':'A project is counted as having Senate document evidence when a first-page native-text scan finds an exact normalized title or conservative relaxed POW title candidate in a Senate-provided BP 202 or POW file, or the existing advance-copy POW crosswalk assigns a unique exact title. DPWH Transparency Proposal links remain separate. This is file-presence evidence, not content verification; POW bill extraction may lag.'}
     grouped={};display_names={}
     for row,entry,project in inspected:
         docs=[d for d in project.get('documents',[]) if d.get('kind')=='pow']
@@ -188,6 +218,93 @@ def hgab_statistics(document_projects):
           'unit':unit,'basis':basis,'count':len(obs),'min':min(rates),'q1':q1,'median':med,'q3':q3,'max':max(rates),'fenceLow':low,'fenceHigh':high,'observations':sorted(obs,key=lambda o:o['ratePesos'])})
     peer_groups.sort(key=lambda g:(-g['count'],g['description'].lower(),g['unit'],g['basis']))
     return coverage_data,peer_groups
+
+def collect_hgab_pow_results(document_projects):
+    """Expose parsed HGAB POW evidence and link uniquely selected proposal counterparts."""
+    results=[]
+    title_crosswalk=json.loads((OUT/'hgab_pow_title_crosswalk.json').read_text())
+    title_scan_path=OUT/'senate_pow_hgab_only_title_scan.json'
+    title_scan=json.loads(title_scan_path.read_text()) if title_scan_path.is_file() else {'records':[]}
+    mapping=json.loads((OUT/'hb_nep_comparison_3rd_mapping.json').read_text())
+    stage=json.loads((OUT/'dpwh_hgab_2nd_vs_3rd.json').read_text())
+    coverage=json.loads((OUT/'dpwh_transparency_document_coverage.json').read_text())
+    matches={item.get('code'):item for item in title_crosswalk.get('files',[])}
+    scan_by_file={str(item.get('file') or '').replace('\\','/'):item
+                  for item in title_scan.get('records',[]) if item.get('file')}
+    proposal_by_title={}
+    for project in document_projects:
+        key=category_base_key(project.get('name'))
+        if key:proposal_by_title.setdefault(key,[]).append(project.get('code'))
+    proposal_by_nep_id={}
+    for row in coverage.get('rows',[]):
+        if row.get('sourceId') and row.get('code') and row.get('status') not in UNMATCHED:
+            proposal_by_nep_id.setdefault(row['sourceId'],set()).add(row['code'])
+    proposal_by_hgab_id={}
+    hgab_title_by_id={}
+    for row in stage.get('rows',[]):
+        third=row.get('third') or {}
+        if third.get('id') and third.get('projectName'):
+            hgab_title_by_id[third['id']]=third['projectName']
+    for pair in mapping.get('pairs',[]):
+        hgab_id,nep_id=pair.get('hgabId'),pair.get('nepId')
+        if hgab_id and nep_id:
+            proposal_by_hgab_id.setdefault(hgab_id,set()).update(proposal_by_nep_id.get(nep_id,set()))
+    allowed_rows=('itemCode','description','quantity','unit','printedUnitCostPesos',
+                  'calculatedUnitCostPesos','amountPesos','sourcePage','arithmeticStatus',
+                  'verificationStatus','costBasis','amountBasis','costCategory')
+    allowed_categories=('label','sharePct','amountPesos','sourcePage','verificationStatus')
+    for path in sorted(BULK_CACHE.glob('2027DPWH-HGAB-*/*/result.json')):
+        try:
+            parsed=json.loads(path.read_text())
+            marker=json.loads((path.parent/'status.json').read_text())
+        except (OSError,ValueError):
+            continue
+        if marker.get('status')!='parsed' or marker.get('parserVersion')!=parsed.get('parserVersion'):
+            continue
+        if marker.get('sourceSha256')!=parsed.get('sourceSha256'):
+            continue
+        code=parsed.get('projectCode')
+        if not re.fullmatch(r'2027DPWH-HGAB-\d{5}',str(code or '')):
+            continue
+        rows=[{k:r.get(k) for k in allowed_rows if k in r} for r in parsed.get('rows',[])]
+        categories=[{k:r.get(k) for k in allowed_categories if k in r} for r in parsed.get('costCategoryBreakdown',[])]
+        # Prefer the current broad first-page scan for the exact source file.
+        # The legacy crosswalk covers only a small earlier subset.
+        legacy_match=matches.get(code) or {'status':'not_assessed','hgabIds':[]}
+        match=legacy_match
+        relative_path=str(parsed.get('sourceRelativePath') or '').replace('\\','/')
+        marker='Supporting Documents (IO)/'
+        if marker in relative_path:
+            relative_path=relative_path.split(marker,1)[1]
+        scanned=scan_by_file.get(relative_path)
+        if scanned is not None:
+            match={'status':scanned.get('matchStatus','not_assessed'),
+                   'hgabIds':scanned.get('matchedHgabIds',[]),
+                   'matchedTitle':(scanned.get('matchedHgabTitles') or [None])[0],
+                   'cohortStatus':'in_transparency_link_gap_cohort' if scanned.get('matchedHgabIds') else None}
+        exact=match.get('status')=='exact_title_match'
+        unique_candidate=match.get('status') in {'exact_title_match','relaxed_title_match'}
+        # The broad title scan is newer than the legacy crosswalk. Use its
+        # matched title to link a unique Proposal counterpart when possible.
+        title_code=proposal_by_title.get(category_base_key(match.get('matchedTitle')),[]) if match.get('status')=='exact_title_match' else []
+        linked_proposals=set().union(*(proposal_by_hgab_id.get(hid,set()) for hid in legacy_match.get('hgabIds',[]))) if legacy_match.get('status')=='exact_title_match' else set()
+        # Exact proposal-title matches take precedence. Otherwise use only the
+        # existing selected NEP–HGAB pairing, and publish a link when it resolves
+        # to one Proposal code without ambiguity.
+        proposal_code=title_code[0] if exact and len(title_code)==1 else next(iter(linked_proposals)) if len(linked_proposals)==1 else None
+        proposal_link_basis=('exact_title_match' if exact and len(title_code)==1 else
+                             'selected_nep_hgab_pair' if proposal_code else None)
+        results.append({'code':code,'status':parsed.get('status'),'pageCount':parsed.get('pageCount'),
+                        'matchStatus':match.get('status','no_exact_title_match'),
+                        'hgabId':match.get('hgabIds',[None])[0] if unique_candidate and match.get('hgabIds') else None,
+                        'candidateHgabIds':match.get('hgabIds',[]) if match.get('status')=='ambiguous_exact_title_match' else [],
+                        'cohortStatus':match.get('cohortStatus'),
+                        'hgabTitle':(match.get('matchedTitle') if unique_candidate else None) or hgab_title_by_id.get(match.get('hgabIds',[None])[0] if match.get('hgabIds') else None),
+                        'proposalCode':proposal_code,'proposalLinkBasis':proposal_link_basis,
+                        'allocationPesos':parsed.get('allocationPesos'),'rows':rows,
+                        'costCategoryBreakdown':categories})
+    results.sort(key=lambda x:x['code'])
+    return results
 
 def merge_pow_results(existing,bulk):
     """Merge bulk extraction evidence without discarding richer saved fields."""
@@ -358,6 +475,39 @@ def publish_pccp_price_reference():
 
 def build_data():
     data=collect();data['powCategoryMerges']=CATEGORY_MERGES;data['powCategoryLabels']=CATEGORY_LABELS;data['powBillMerges']=BILL_MERGES;data['powBillLabels']=BILL_LABELS;data['hgabCoverage'],data['powPeers']=hgab_statistics(data['projects'])
+    data['hgabPowResults']=collect_hgab_pow_results(data['projects'])
+    cost_row_fields=('description','quantity','unit','amountPesos','sourcePage','costBasis')
+    cost_category_fields=('label','sharePct','amountPesos','submittedAmountPesos','evaluatedAmountPesos','sourcePage')
+    data['costUnitHgabResults']=[{'code':doc.get('code'),'proposalCode':doc.get('proposalCode'),'hgabId':doc.get('hgabId'),
+      'hgabTitle':doc.get('hgabTitle'),'rows':[{k:r.get(k) for k in cost_row_fields if k in r} for r in doc.get('rows',[])],
+      'costCategoryBreakdown':[{k:r.get(k) for k in cost_category_fields if k in r} for r in doc.get('costCategoryBreakdown',[])]}
+      for doc in data['hgabPowResults'] if doc.get('rows') or doc.get('costCategoryBreakdown')]
+    from project_documents.senate_document_title_coverage import load_coverage
+    data['senateDocumentTitleCoverage']=load_coverage(OUT)
+    supporting_scan_path=OUT/'senate_supporting_documents_hgab_only_scan.json'
+    supporting_scan=json.loads(supporting_scan_path.read_text()) if supporting_scan_path.is_file() else {}
+    data['senateSupportingDocumentCoverage']={k:supporting_scan.get(k) for k in (
+      'denominatorProjectRows','projectsWithAtLeastOneMatchedDocument',
+      'projectsWithAtLeastOneMatchedDocumentPct','projectRowsWithoutMatchedDocument',
+      'matchedFileRecords','byType','signatoryCandidateCounts',
+      'signatoryCandidatesByDocumentType','deduplication','matchingMethod') if k in supporting_scan}
+    title_scan_path=OUT/'senate_pow_hgab_only_title_scan.json'
+    title_scan=json.loads(title_scan_path.read_text()) if title_scan_path.is_file() else {}
+    data['hgabPowSummary']={'parsedDocuments':len(data['hgabPowResults']),
+      'documentsWithBillRows':sum(bool(x['rows']) for x in data['hgabPowResults']),
+      'billRows':sum(len(x['rows']) for x in data['hgabPowResults']),
+      'printedCategories':sum(len(x['costCategoryBreakdown']) for x in data['hgabPowResults']),
+      'titleScanDocuments':int(title_scan.get('senateDocumentsScanned') or 0),
+      'exactTitleMatchedFiles':int(title_scan.get('exactlyMatchedDocuments') or 0),
+      'relaxedTitleMatchedFiles':int(title_scan.get('relaxedMatchedDocuments') or 0),
+      'proposalLinkedFiles':sum(bool(x.get('proposalCode')) for x in data['hgabPowResults']),
+      'exactTitleMatchedFilesInGapCohort':sum(x.get('cohortStatus')=='in_transparency_link_gap_cohort' and x['matchStatus']=='exact_title_match' for x in data['hgabPowResults']),
+      'ambiguousTitleMatchedFiles':int(title_scan.get('ambiguousDocuments') or 0),
+      'titleMatchAssessedFiles':int(title_scan.get('senateDocumentsScanned') or 0),
+      'titleMatchNotAssessedFiles':0,
+      'titleMatchNoExactFiles':int(title_scan.get('documentsWithNoExactTitleMatch') or 0),
+      'titleScanErrors':int(title_scan.get('documentsWithScanErrors') or 0),
+      'titleScanNoNativeText':int(title_scan.get('documentsWithNoNativeFirstPageText') or 0)}
     data['summaryPeerGroups']=summary_peer_groups(data['projects'])
     data['documentReconciliation']=document_reconciliation(data['projects'])
     return data
@@ -391,7 +541,7 @@ def public_data(data):
                                 'documents':docs,'documentLinks':project.get('documentLinks',[])})
     public['projects']=public_projects
     public['projectDirectory']=[{k:project.get(k) for k in ('code','name','office','region')} for project in public_projects]
-    public['scope']='This snapshot covers linked DPWH project-document records available for review; it is not a whole-program inventory. Original files remain available through cited sources.'
+    public['scope']='This snapshot covers linked Proposal records and parsed HGAB POW line-item data available for review; it is not a whole-program inventory. Proposal source documents link to DPWH Transparency. HGAB PDF links are NR and are not published.'
     return public
 
 def document_reconciliation(projects):
@@ -399,11 +549,64 @@ def document_reconciliation(projects):
     catalog=json.loads((STATIC/'dpwh-portal-document-catalog.json').read_text())
     coverage=json.loads((OUT/'dpwh_transparency_document_coverage.json').read_text())
     mapping=json.loads((OUT/'hb_nep_comparison_3rd_mapping.json').read_text())
+    hgab_pow_crosswalk=json.loads((OUT/'hgab_pow_title_crosswalk.json').read_text())
     stage=json.loads((OUT/'dpwh_hgab_2nd_vs_3rd.json').read_text())
+    try:
+        from build_undocumented_hgab import supporting_file_presence
+        local_file_inventory=supporting_file_presence()
+    except (ImportError,OSError):
+        local_file_inventory={'available':False,'filesByCode':{},'typesByCode':{}}
     links_by_code={p.get('code'):p.get('documentLinks',[]) for p in projects if p.get('code')}
     portal_rows={r.get('sourceId'):r for r in coverage.get('rows',[]) if r.get('sourceId') and r.get('code')}
     selected_codes={portal_rows[p.get('nep',{}).get('id')]['code'] for p in mapping.get('pairs',[])
                     if p.get('nep',{}).get('id') in portal_rows}
+    senate_files_by_hgab={}
+    for item in hgab_pow_crosswalk.get('files',[]):
+        if item.get('status')=='exact_title_match':
+            for hgab_id in item.get('hgabIds',[]):
+                senate_files_by_hgab.setdefault(hgab_id,[]).append(item.get('code'))
+    # The older crosswalk covers only a small subset. Reuse the completed
+    # first-page POW scan's extracted titles against selected HGAB titles too;
+    # this adds no new PDF reads and assigns only unique normalized titles.
+    pow_scan_path=OUT/'senate_pow_hgab_only_title_scan.json'
+    if pow_scan_path.is_file():
+        selected_title_ids={}
+        for pair in mapping.get('pairs',[]):
+            hgab=pair.get('hgab') or {}
+            title_key_value=category_base_key(hgab.get('projectName'))
+            if title_key_value:selected_title_ids.setdefault(title_key_value,set()).add(pair.get('hgabId'))
+        pow_scan=json.loads(pow_scan_path.read_text())
+        for record in pow_scan.get('records',[]):
+            code=record.get('projectCode')
+            ids=selected_title_ids.get(category_base_key(record.get('extractedTitle')),set())
+            if code and len(ids)==1:
+                senate_files_by_hgab.setdefault(next(iter(ids)),[]).append(code)
+    selected_match_files=[{
+        'nepProject':p.get('nep',{}).get('officialNepTitle') or p.get('nep',{}).get('projectName'),
+        'hgabProject':p.get('hgab',{}).get('projectName'),
+        'hgabLedgerCode':p.get('hgabId'),
+        'senateFiles':sorted(set(senate_files_by_hgab.get(p.get('hgabId'),[]))),
+    } for p in mapping.get('pairs',[]) if senate_files_by_hgab.get(p.get('hgabId'))]
+    types_by_code=local_file_inventory.get('typesByCode',{})
+    files_by_code=local_file_inventory.get('filesByCode',{})
+    selected_match_hgab_documents=[]
+    for pair in mapping.get('pairs',[]):
+        hgab_id=pair.get('hgabId')
+        codes=sorted(set(senate_files_by_hgab.get(hgab_id,[])))
+        if not codes:continue
+        type_counts={}
+        for code in codes:
+            for label,count in types_by_code.get(code,{}).items():
+                type_counts[label]=type_counts.get(label,0)+int(count or 0)
+        selected_match_hgab_documents.append({
+            'nepProject':(pair.get('nep') or {}).get('officialNepTitle') or (pair.get('nep') or {}).get('projectName'),
+            'hgabProject':(pair.get('hgab') or {}).get('projectName'),
+            'hgabLedgerCode':hgab_id,
+            'senateFileCodes':codes,
+            'fileCount':sum(int(files_by_code.get(code,0)) for code in codes),
+            'byType':type_counts,
+        })
+    selected_hgab_codes={code for item in selected_match_hgab_documents for code in item['senateFileCodes']}
     direct_codes=set()
     for row in stage.get('rows',[]):
         project=row.get('third')
@@ -467,6 +670,12 @@ def document_reconciliation(projects):
             'nepProjectRecords':int(pair_summary.get('nepRecords') or 0),
             'nepTransparencyRecords':int(pair_summary.get('transparencyNepRecords') or 0),
             'selectedPairs':len(mapping.get('pairs',[])),
+            'selectedMatchSenateFiles':selected_match_files,
+            'selectedMatchHgabDocuments':selected_match_hgab_documents,
+            'selectedPairHgabProjectsWithFiles':sum(bool(item['fileCount']) for item in selected_match_hgab_documents),
+            'selectedPairHgabFileCodes':len(selected_hgab_codes),
+            'selectedPairHgabFileRecords':sum(int(files_by_code.get(code,0)) for code in selected_hgab_codes),
+            'selectedPairHgabFileInventoryAvailable':bool(local_file_inventory.get('available')),
             'selectedPairPortalProjects':len(selected_codes),
             'selectedPairProjectsWithLoadedDocuments':sum(bool(links_by_code.get(code)) for code in selected_codes),
             'selectedPairDocumentRecords':sum(len(values) for values in selected.values()),
@@ -476,7 +685,7 @@ def document_reconciliation(projects):
             'wastedDocumentRecords':sum(row['wastedRecords'] for row in rows),
             'developmentCouncil':development_council,
             'rows':rows,
-            'note':'Portal counts come from the full DPWH Transparency metadata inventory. Selected-pair and direct-HGAB counts use project-level document links present in the loaded snapshot and deduplicate by source URL. Direct HGAB records can overlap selected-pair records; wasted records are the inventory residual after taking their unique union. This residual is not proof of literal waste.'}
+            'note':'Every record in this reconciliation is a DPWH Transparency Proposal document link; Senate-provided HGAB POW files are reported separately. Selected-pair and direct-HGAB counts use project-level Proposal links present in the loaded snapshot and deduplicate by source URL. Direct HGAB matches can overlap selected-pair records; the unmatched Proposal inventory is the residual after taking their unique union and does not establish literal waste.'}
 
 def refresh_data_only():
     """Refresh whitelisted project JSON while preserving the hand-maintained page HTML."""
@@ -485,7 +694,155 @@ def refresh_data_only():
     atomic_write(OUT/'dpwh-in-depth-data.json',serialized)
     publish_split_data()
     publish_pccp_price_reference()
+    subprocess.run([sys.executable,str(ROOT/'build_expectation_vs_reality.py')],cwd=ROOT,
+                   check=True,capture_output=True,text=True)
     return data['summary']
+
+
+def build_all_hgab_document_coverage(indepth=None):
+    """Build one deduplicated row per HGAB project with Proposal/Senate matches and extracted signatories."""
+    mapping=json.loads((OUT/'hb_nep_comparison_3rd_mapping.json').read_text())
+    portal=json.loads((OUT/'dpwh_transparency_document_coverage.json').read_text())
+    indepth=indepth or json.loads((OUT/'dpwh-in-depth-data.json').read_text())
+    scan_path=OUT/'senate_supporting_documents_hgab_only_scan.json'
+    scan=json.loads(scan_path.read_text()) if scan_path.is_file() else {}
+    old_path=OUT/'hgab-only-document-coverage.json'
+    old=json.loads(old_path.read_text()).get('projects',[]) if old_path.is_file() else []
+    old_by_id={r.get('hgabId'):r for r in old if r.get('hgabId')}
+    projects={}
+    pairs={}
+    for pair in mapping.get('pairs',[]):
+        h=pair.get('hgab') or {}
+        if h.get('allocationKind')=='project' and h.get('id'):
+            projects[h['id']]=h
+            pairs[h['id']]=pair
+    for h in mapping.get('hgabWithoutSelectedCounterpart',[]):
+        if h.get('allocationKind')=='project' and h.get('id'):
+            projects[h['id']]=h
+
+    proposal_by_code={r.get('code'):r for r in indepth.get('projects',[]) if r.get('code')}
+    proposal_by_nep={r.get('sourceId'):r for r in portal.get('rows',[]) if r.get('sourceId')}
+    portal_titles=portal.get('titles',{})
+    proposal_matches={}
+    signatories_by_id={hid:{} for hid in projects}
+
+    def add_signatory(hid,name,role,source):
+        name=str(name or '').strip();role=str(role or '').strip()
+        if not name:return
+        key=(name.casefold(),role.casefold())
+        value=signatories_by_id[hid].setdefault(key,{'name':name,'role':role,'sources':set()})
+        if source:value['sources'].add(source)
+
+    for hid,h in projects.items():
+        matches={}
+        direct=portal_titles.get(title_key(h.get('projectName')))
+        if direct and direct.get('code'):
+            code=direct['code']; record=proposal_by_code.get(code)
+            if record and record.get('documentLinks') and int(direct.get('documentCount') or 0)>0:
+                matches[code]='Direct Proposal title match'
+        pair=pairs.get(hid)
+        if pair:
+            nep=proposal_by_nep.get(pair.get('nepId'))
+            codes={str(pair.get('apiId') or ''),str((nep or {}).get('code') or '')}
+            for code in codes-{''}:
+                record=proposal_by_code.get(code)
+                if record and record.get('documentLinks'):
+                    matches[code]='Selected NEP counterpart Proposal'
+        proposal_matches[hid]=matches
+        for code,label in matches.items():
+            record=proposal_by_code[code]
+            for doc in record.get('documents',[]):
+                kind=doc.get('kind') or doc.get('documentType') or 'document'
+                source='Proposal · '+str(kind)
+                for person in doc.get('people',[]):
+                    add_signatory(hid,person.get('name'),person.get('roleText') or person.get('role') or person.get('kind'),source)
+
+    # Resolve Senate supporting files by title or by a uniquely title-matched
+    # sibling file code. Ambiguous project titles are deliberately left unassigned.
+    title_ids={}
+    for hid,h in projects.items():
+        title_ids.setdefault(title_key(h.get('projectName')).casefold(),set()).add(hid)
+    code_ids={}
+    for doc in indepth.get('hgabPowResults',[]):
+        if doc.get('code') and doc.get('hgabId') in projects:
+            code_ids.setdefault(doc['code'],set()).add(doc['hgabId'])
+    records=scan.get('documents',[])
+    for doc in records:
+        status=doc.get('matchStatus')
+        ids=set(doc.get('matchedHgabIds') or []) & projects.keys()
+        code=doc.get('projectCode')
+        if status not in {'exact_title_match','relaxed_title_match','same_code_sibling_file_match'}:
+            ids=set()
+        if code and len(ids)==1:
+            code_ids.setdefault(code,set()).update(ids)
+    senate_files={hid:{} for hid in projects}
+    for doc in records:
+        status=doc.get('matchStatus')
+        ids=set(doc.get('matchedHgabIds') or []) & projects.keys()
+        if status not in {'exact_title_match','relaxed_title_match','same_code_sibling_file_match'}:
+            ids=set()
+        if not ids:
+            extracted=doc.get('extractedTitle')
+            exact=title_ids.get(title_key(extracted).casefold(),set()) if extracted else set()
+            if len(exact)==1:ids=set(exact)
+        code=doc.get('projectCode')
+        if not ids and code and len(code_ids.get(code,set()))==1:
+            ids=set(code_ids[code])
+        for hid in ids:
+            file_key=str(doc.get('file') or ((code or '')+'|'+str(doc.get('documentType') or 'Other')))
+            if file_key:
+                senate_files[hid][file_key]=doc
+            kind=str(doc.get('documentType') or 'Other')
+            for person in doc.get('signatories',[]):
+                role=person.get('role') or person.get('kind') or person.get('roleText')
+                if role and '_' in str(role):role=str(role).replace('_',' ').title()
+                add_signatory(hid,person.get('name'),role,'Senate HGAB · '+kind)
+
+    rows=[]
+    for hid,h in projects.items():
+        prior=old_by_id.get(hid,{})
+        proposal=proposal_matches.get(hid,{})
+        if prior:
+            # Keep the established HGAB-only table's match decisions and metadata.
+            proposal_matched=bool(prior.get('proposalDocumentsMatched'))
+            proposal_sources=list(prior.get('proposalDocumentSources') or [])
+            proposal_types=set(prior.get('proposalDocumentTypes') or [])
+            senate_types=set(prior.get('senateDocumentTypes') or [])
+            senate_matched=bool(prior.get('senateHgabDocumentsMatched'))
+            senate_count=max(int(prior.get('senateMatchedFileRecords') or 0),len(senate_files[hid]))
+            for sig in prior.get('signatories',[]):
+                for source in sig.get('sources',[]):add_signatory(hid,sig.get('name'),sig.get('role'),source)
+        else:
+            proposal_matched=bool(proposal)
+            proposal_sources=sorted(set(proposal.values()))
+            proposal_types={str(d.get('type')) for code in proposal for d in proposal_by_code[code].get('documentLinks',[]) if d.get('type')}
+            senate_types={str(d.get('documentType') or 'Other') for d in senate_files[hid].values()}
+            senate_matched=bool(senate_files[hid])
+            senate_count=len(senate_files[hid])
+        for doc in senate_files[hid].values():
+            senate_types.add(str(doc.get('documentType') or 'Other'))
+        sig_rows=[{'name':v['name'],'role':v['role'],'sources':sorted(v['sources'])}
+                  for _,v in sorted(signatories_by_id[hid].items(),key=lambda item:(item[1]['name'].casefold(),item[1]['role'].casefold()))]
+        proposal_file_records={str(d.get('url') or (d.get('type'),d.get('title'),d.get('fileName')))
+                               for code in proposal for d in proposal_by_code[code].get('documentLinks',[])}
+        document_match_status=('Both sources' if proposal_matched and senate_matched else
+                               'Proposal only' if proposal_matched else
+                               'Senate HGAB only' if senate_matched else 'No current match')
+        rows.append({'hgabId':hid,'title':h.get('projectName') or '',
+            'office':h.get('office') or '', 'region':h.get('region') or '',
+            'amountPesos':round(float(h.get('amountPesos') or 0)),
+            'documentMatchStatus':document_match_status,
+            'proposalDocumentsMatched':proposal_matched,'proposalDocumentSources':proposal_sources,
+            'proposalDocumentTypes':sorted(proposal_types),'proposalMatchedFileRecords':len(proposal_file_records),
+            'senateHgabDocumentsMatched':senate_matched,'senateDocumentTypes':sorted(senate_types),
+            'senateMatchedFileRecords':senate_count,'signatoryCandidateCount':len(sig_rows),
+            'signatories':sig_rows})
+    rows.sort(key=lambda r:(-r['amountPesos'],str(r['title']).casefold(),r['hgabId']))
+    return {'generatedAtUtc':datetime.now(timezone.utc).isoformat(),
+        'scope':'All FY2027 HGAB 3rd-reading DPWH project rows, deduplicated by House ledger row ID.',
+        'denominatorProjectRows':len(rows),
+        'method':'Proposal matches use direct Proposal title links or the selected NEP counterpart with linked Proposal documents. Senate HGAB matches use title-linked supporting files and uniquely resolved HGAB-code sibling files. Signatory names and roles are extracted document candidates, not verified unique people, current officials or project sponsors. Document presence does not verify contents.',
+        'projects':rows}
 
 def build():
     import importlib
@@ -499,15 +856,37 @@ def build():
     apply_page=uniform_report_menu.apply_page
     from report_table_presentation import apply_page as tables,publish_assets
     data=build_data();s=data['summary']
+    all_hgab_coverage=build_all_hgab_document_coverage(data)
+    all_hgab_coverage_json=json.dumps(all_hgab_coverage,ensure_ascii=False,separators=(',',':'))+'\n'
+    all_hgab_coverage_version=hashlib.sha256(all_hgab_coverage_json.encode('utf-8')).hexdigest()[:12]
+    all_hgab_coverage_js=(ROOT/'project_documents/hgab-document-coverage.js').read_text().replace('__COVERAGE_VERSION__',all_hgab_coverage_version)
+    all_hgab_coverage_js_version=hashlib.sha256(all_hgab_coverage_js.encode('utf-8')).hexdigest()[:12]
+    public_data_json=json.dumps(public_data(data),ensure_ascii=False,indent=2)+'\n'
+    public_data_version=hashlib.sha256(public_data_json.encode('utf-8')).hexdigest()[:12]
     coverage=data['hgabCoverage']
-    hero_stats=[
-        ('No selected NEP counterpart',f"{coverage['noSelectedNepRows']:,}",f"{coverage['noSelectedNepPct']:.1f}% of project rows"),
-        ('No document links · HGAB or selected NEP',f"{coverage['missingListedDocumentsRows']:,}",f"{coverage['missingListedDocumentsRows']/coverage['projectRows']:.1%} of project rows"),
-        ('DPWH transparency links',f"{coverage['linkedRows']:,}",f"{coverage['linkedPct']:.1f}% of project rows"),
-        ('Double red flag · no selected NEP counterpart + no document link',f"{coverage['doubleRedFlagRows']:,}",f"{coverage['doubleRedFlagPct']:.1f}% of project rows"),
-    ]
-    lead=hero('DPWH POWs · proposal document evidence',str(s['parsedPowRows']),'bill rows reveal the cost drivers',str(s['projectsWithParsedPow']),'projects with recovered POW bill rows', hero_stats, 'The statistics summarize HGAB 3rd-reading rows and their DPWH Transparency coverage. Coverage gaps are review flags; they do not establish that documents do not exist elsewhere.')
-    text=(ROOT/'project_documents/indepth.html').read_text().replace('<!--HERO_STYLE-->',STYLE).replace('<!--HERO-->',lead)
+    all_rows=all_hgab_coverage['projects']
+    all_denominator=len(all_rows)
+    if len({row.get('hgabId') for row in all_rows}) != all_denominator:
+        raise ValueError('All-HGAB document coverage export contains duplicate or missing project IDs')
+    expected_all_rows=int(data['hgabCoverage'].get('projectRows') or 0)
+    if all_denominator!=expected_all_rows:
+        raise ValueError(f'All-HGAB document export has {all_denominator} rows but DPWH coverage has {expected_all_rows}')
+    proposal_count=sum(bool(row.get('proposalDocumentsMatched')) for row in all_rows)
+    senate_count=sum(bool(row.get('senateHgabDocumentsMatched')) for row in all_rows)
+    any_document_count=sum(bool(row.get('proposalDocumentsMatched') or row.get('senateHgabDocumentsMatched')) for row in all_rows)
+    overlap_count=sum(bool(row.get('proposalDocumentsMatched') and row.get('senateHgabDocumentsMatched')) for row in all_rows)
+    proposal_pct=100*proposal_count/all_denominator if all_denominator else 0
+    senate_pct=100*senate_count/all_denominator if all_denominator else 0
+    any_document_pct=100*any_document_count/all_denominator if all_denominator else 0
+    senate_title=data.get('senateDocumentTitleCoverage') or {}
+    senate_types=senate_title.get('byType',{})
+    senate_pow=senate_types.get('pow',{})
+    senate_bp=senate_types.get('bp202',{})
+    supporting=data.get('senateSupportingDocumentCoverage') or {}
+    hgab_only_denominator=int(senate_title.get('denominatorProjectRows') or supporting.get('denominatorProjectRows') or 0)
+    HERO_STYLE='''<style id="hgab-coverage-hero-style">.hgab-coverage-hero{margin:20px 0 24px;padding:clamp(22px,3vw,36px);border-left:8px solid #FCD116;border-radius:16px;background:linear-gradient(120deg,#00246A,#0038A8);color:#fff;box-shadow:0 14px 34px #00246a20}.hgab-coverage-kicker{display:block;margin-bottom:14px;color:#FCD116;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.hgab-coverage-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.hgab-coverage-metric{display:flex;min-height:132px;flex-direction:column;justify-content:center;gap:7px;padding:18px;border:1px solid #ffffff45;border-radius:12px;background:#ffffff12}.hgab-coverage-metric strong{color:#FCD116;font-size:clamp(32px,4vw,52px);line-height:1;letter-spacing:-.04em;font-variant-numeric:tabular-nums}.hgab-coverage-metric span{font-size:clamp(15px,1.6vw,18px);font-weight:700;line-height:1.3}.hgab-coverage-metric small,.hgab-coverage-note{color:#e8eef8;font-size:13px;line-height:1.45}.hgab-coverage-note{margin:14px 0 0}@media(max-width:850px){.hgab-coverage-metrics{grid-template-columns:1fr}.hgab-coverage-metric{min-height:100px}}</style>'''+'''<style id="all-hgab-document-table-style">#all-hgab-document-coverage .tablewrap{overflow-x:auto;max-height:none}#all-hgab-document-coverage table{width:100%;min-width:1180px;table-layout:fixed}#all-hgab-document-coverage th:nth-child(1),#all-hgab-document-coverage td:nth-child(1){width:11%}#all-hgab-document-coverage th:nth-child(2),#all-hgab-document-coverage td:nth-child(2){width:23%}#all-hgab-document-coverage th:nth-child(3),#all-hgab-document-coverage td:nth-child(3){width:15%}#all-hgab-document-coverage th:nth-child(4),#all-hgab-document-coverage td:nth-child(4){width:12%}#all-hgab-document-coverage th:nth-child(5),#all-hgab-document-coverage td:nth-child(5){width:13%}#all-hgab-document-coverage th:nth-child(6),#all-hgab-document-coverage td:nth-child(6){width:13%}#all-hgab-document-coverage th:nth-child(7),#all-hgab-document-coverage td:nth-child(7){width:13%}#all-hgab-document-coverage th,#all-hgab-document-coverage td{padding:9px;vertical-align:top;overflow-wrap:anywhere}#all-hgab-document-coverage td small{display:block;color:#526c78;font-size:12px}#all-hgab-document-coverage .coverage-controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:12px 0}#all-hgab-document-coverage .coverage-controls input{flex:1;min-width:240px}#all-hgab-document-coverage .coverage-pagination{display:flex;gap:10px;align-items:center;justify-content:flex-end;margin-top:10px}@media(max-width:650px){#all-hgab-document-coverage{padding:14px}}</style>'''
+    lead=f'''<section class="hgab-coverage-hero" aria-label="All HGAB document reconciliation"><span class="hgab-coverage-kicker">All HGAB project rows · Proposal and Senate HGAB document reconciliation</span><div class="hgab-coverage-metrics"><div class="hgab-coverage-metric"><strong>{any_document_count:,}</strong><span>have at least one Proposal or Senate HGAB document</span><small>{any_document_pct:.2f}% of {all_denominator:,} HGAB project rows · deduplicated</small></div><div class="hgab-coverage-metric"><strong>{proposal_count:,}</strong><span>have linked Proposal documents</span><small>{proposal_pct:.2f}% of all HGAB project rows</small></div><div class="hgab-coverage-metric"><strong>{senate_count:,}</strong><span>have matched Senate HGAB documents</span><small>{senate_pct:.2f}% of all HGAB project rows</small></div></div><p class="hgab-coverage-note">The union counts rows once; {overlap_count:,} rows match both sources and {all_denominator-any_document_count:,} have no current match in either. Proposal links use direct title matches or selected NEP counterparts; Senate matches use title-linked support files and uniquely resolved file-code siblings. File presence does not verify document contents.</p></section>'''
+    text=(ROOT/'project_documents/indepth.html').read_text().replace('<!--HERO_STYLE-->',STYLE+HERO_STYLE).replace('<!--HERO-->',lead)
     version=hashlib.sha256((ROOT/'project_documents/indepth.js').read_bytes()).hexdigest()[:12]
     text=text.replace('src="dpwh-in-depth.js"',f'src="dpwh-in-depth.js?v={version}"')
     text=tables(apply_page(text,'dpwh.html'),publish_assets())
@@ -518,31 +897,46 @@ def build():
     indepth_js=(ROOT/'project_documents/indepth.js').read_text()
     indepth_version=hashlib.sha256(indepth_js.encode()).hexdigest()[:12]
     loader=(ROOT/'project_documents/dpwh-data-loader.js').read_text()
-    loader_version=hashlib.sha256(loader.encode()).hexdigest()[:12]
+    loader_version=hashlib.sha256((loader+'\n'+public_data_version).encode()).hexdigest()[:12]
+    text=text.replace('src="hgab-document-coverage.js"',f'src="hgab-document-coverage.js?v={all_hgab_coverage_js_version}"')
+    transparency_text=(ROOT/'project_documents/transparency.html').read_text()
+    transparency_text=re.sub(r'src="dpwh-in-depth\.js(?:\?v=[^"]*)?"',f'src="dpwh-in-depth.js?v={version}"',transparency_text,count=1)
+    transparency_text=re.sub(r'src="dpwh-data-loader\.js(?:\?v=[^"]*)?"',f'src="dpwh-data-loader.js?v={loader_version}"',transparency_text,count=1)
+    transparency_text=tables(apply_page(transparency_text,'dpwh-transparency.html'),publish_assets())
     cost_text=cost_text.replace('src="cost-per-unit.js"',f'src="cost-per-unit.js?v={cost_version}"')
     cost_text=re.sub(r'src="dpwh-in-depth\.js(?:\?v=[^"]*)?"',f'src="dpwh-in-depth.js?v={indepth_version}"',cost_text,count=1)
     cost_text=cost_text.replace('src="dpwh-data-loader.js"',f'src="dpwh-data-loader.js?v={loader_version}"')
-    cost_text=apply_page(cost_text,'cost-per-unit.html')
     pccp_text=pccp_text.replace('src="cost-per-unit.js"',f'src="cost-per-unit.js?v={cost_version}"')
     pccp_text=re.sub(r'src="dpwh-in-depth\.js(?:\?v=[^"]*)?"',f'src="dpwh-in-depth.js?v={indepth_version}"',pccp_text,count=1)
     pccp_text=pccp_text.replace('src="dpwh-data-loader.js"',f'src="dpwh-data-loader.js?v={loader_version}"')
-    pccp_text=apply_page(pccp_text,'pccp-cost-per-unit.html')
-    atomic_write(OUT/'dpwh-in-depth-data.json',json.dumps(public_data(data),ensure_ascii=False,indent=2)+'\n')
+    atomic_write(OUT/'dpwh-in-depth-data.json',public_data_json)
     publish_split_data()
     text=re.sub(r'src="dpwh-data-loader\.js(?:\?v=[^"]*)?"',f'src="dpwh-data-loader.js?v={loader_version}"',text)
     # Table presentation can touch report chrome; keep the shared navigation as
     # the last HTML transformation before publishing these DPWH report pages.
     text=apply_page(text,'dpwh.html')
+    # Keep the initial coverage script cache-busted after shared page transforms.
+    text=re.sub(r'src="dpwh-in-depth\.js(?:\?v=[^"]*)?"',f'src="dpwh-in-depth.js?v={version}"',text,count=1)
     cost_text=apply_page(cost_text,'cost-per-unit.html')
     pccp_text=apply_page(pccp_text,'pccp-cost-per-unit.html')
     for target in (OUT,STATIC):
         atomic_write(target/'dpwh-in-depth.js',(ROOT/'project_documents/indepth.js').read_text())
         atomic_write(target/'dpwh-data-loader.js',loader)
+        atomic_write(target/'hgab-document-coverage.js',all_hgab_coverage_js)
+        atomic_write(target/'hgab-document-coverage.json',all_hgab_coverage_json)
         atomic_write(target/'dpwh.html',text)
+        atomic_write(target/'dpwh-transparency.html',transparency_text)
         atomic_write(target/'cost-per-unit.js',cost_js)
         atomic_write(target/'cost-per-unit.html',cost_text)
         atomic_write(target/'pccp-cost-per-unit.html',pccp_text)
     publish_pccp_price_reference()
+    subprocess.run([sys.executable,str(ROOT/'build_expectation_vs_reality.py')],cwd=ROOT,
+                   check=True,capture_output=True,text=True)
+    # This page is a join over the published Proposal + Senate HGAB coverage
+    # export above. Keep it in the same build transaction so any parser, cache
+    # watcher, or direct DPWH rebuild refreshes its generated HTML and data.
+    subprocess.run([sys.executable,str(ROOT/'build_development_council.py')],cwd=ROOT,
+                   check=True,capture_output=True,text=True)
     return s
 if __name__=='__main__':
     import argparse
