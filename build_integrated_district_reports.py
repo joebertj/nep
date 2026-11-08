@@ -382,8 +382,12 @@ def make_pages(data):
     }
     # Reapply the shared menu/readability conventions after writing the HTML.
     from uniform_report_menu import apply_page
+    from report_table_presentation import apply_page_table_module
     for name, html in pages.items():
-        (STATIC / name).write_text(apply_page(html, name), encoding='utf-8')
+        html=apply_page(html,name)
+        if '<table' in html.lower():
+            html,_=apply_page_table_module(name,html)
+        (STATIC / name).write_text(html, encoding='utf-8')
     totals_page = STATIC / 'integrated-district-totals.html'
     if totals_page.exists():
         text = totals_page.read_text()
@@ -391,6 +395,8 @@ def make_pages(data):
             version = hashlib.sha256((STATIC/filename).read_bytes()).hexdigest()[:12]
             text = re.sub(r"fetch\('"+re.escape(filename)+r"(?:\?v=[^']*)?'\)",
                           "fetch('"+filename+"?v="+version+"')",text)
+        from report_table_presentation import apply_page_table_module
+        text,_=apply_page_table_module('integrated-district-totals.html',text)
         totals_page.write_text(text)
 
 

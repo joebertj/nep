@@ -99,7 +99,29 @@ def review_section(rows, summary):
 <script id="fap-review-script">document.getElementById('fapCsv').onclick=()=>{{const blob=PHLocation.createBlob(['\\ufeff',{payload}],{{type:'text/csv;charset=utf-8'}}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='dpwh_fap_nep_hgab_3rd.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}};</script>'''
 
 
-def refresh():
+def remove_section(html_text, section_id):
+    """Remove a section by balanced tag depth, including nested sections."""
+    opening = re.search(r'<section\b(?=[^>]*\bid=["\']' + re.escape(section_id) + r'["\'])[^>]*>', html_text, re.I)
+    if not opening:
+        return html_text
+    depth = 0
+    for tag in re.finditer(r'</?section\b[^>]*>', html_text[opening.start():], re.I):
+        if tag.group(0).startswith('</'):
+            depth -= 1
+            if depth == 0:
+                end = opening.start() + tag.end()
+                return html_text[:opening.start()] + html_text[end:]
+        else:
+            depth += 1
+    raise ValueError(f'Unclosed section: {section_id}')
+
+
+def refresh(page=None):
+    """Refresh FAP evidence and render it into the DPWH HGAB page string.
+
+    The owning page builder supplies and publishes HTML. This module only
+    refreshes its supporting data exports and returns its page transformation.
+    """
     data_path = STATIC / 'dpwh-data.json'
     data = json.loads(data_path.read_text())
     audit = {}
@@ -131,38 +153,31 @@ def refresh():
         writer.writeheader(); writer.writerows(fap)
     count = len(data['hbInsertions']); cost = sum(int(r['amountPesos']) for r in data['hbInsertions'])
     section = review_section(fap, summary)
-    for name in ['dpwh.html', 'dpwh-hgab.html']:
-        path = STATIC / name; page = path.read_text()
-        page = re.sub(r'<section class="card section" id="foreign-assisted-review">.*?</section>', '', page, flags=re.S)
-        page = re.sub(r'<script id="fap-review-script">.*?</script>', '', page, flags=re.S)
-        page = re.sub(r'<script id="unpaired-fap-script">.*?</script>', '', page, flags=re.S)
-        intro = (f'The domestic 3rd-reading title screen leaves <strong>{count:,} HGAB lines</strong> without a plausible NEP counterpart, carrying <strong>₱{cost/1e9:,.2f}B</strong>. Foreign assisted projects are excluded and reviewed separately below. Unmatched titles are review leads, not confirmed additions.')
-        page = re.sub(r'(<section id="hgab-insertion".*?<h2>).*?(</h2>\s*<p class="sub">).*?(</p>)', lambda m:m[1]+'Potential insertions · domestic HGAB-only line items'+m[2]+intro+m[3], page, count=1, flags=re.S)
-        page = page.replace('Counts across all 3rd-reading DPWH records;', 'Counts across domestic 3rd-reading DPWH records;')
-        page = page.replace('DPWH line items by NEP title-screen result', 'Domestic DPWH line items by NEP title-screen result')
-        # Keep this text replacement idempotent on repeat builds.
-        page = page.replace('Domestic Domestic DPWH', 'Domestic DPWH')
-        if name == 'dpwh-hgab.html':
-            hero = re.search(r'<section class="impact-teaser".*?</section>', page, re.S)
-            if hero:
-                block = hero[0]
-                block = re.sub(r'(<div class="impact-teaser-headline">).*?(</div>)', lambda m:m[1]+f'{count:,}'+m[2], block, count=1, flags=re.S)
-                block = re.sub(r'(<div class="impact-teaser-stat"><strong>).*?(</strong>)', lambda m:m[1]+f'₱{cost/1e9:,.2f}B'+m[2], block, count=1, flags=re.S)
-                block = re.sub(r'(<div class="impact-teaser-title">).*?(</div>)', lambda m:m[1]+'Potential domestic insertions · HGAB-only line items'+m[2], block, count=1, flags=re.S)
-                block = re.sub(r'(<p class="impact-teaser-copy">).*?(</p>)', lambda m:m[1]+'Foreign assisted projects are reviewed separately. Exact and plausible NEP title counterparts are screened out.'+m[2], block, count=1, flags=re.S)
-                page = page[:hero.start()] + block + page[hero.end():]
-            # Archive count and cost also use domestic scope.
-            old = data['hbInsertions2nd']; old_cost=sum(int(r['amountPesos']) for r in old)
-            page = re.sub(r'The (?:2nd-reading edition has|domestic 2nd-reading shortlist has) .*?(?:confirmed additions|not confirmed additions)\.', f'The domestic 2nd-reading shortlist has {len(old):,} unmatched records carrying ₱{old_cost/1e9:,.2f}B. FAP allocations are excluded; these are review leads, not confirmed additions.', page)
-        if '</main>' not in page: raise ValueError(f'Cannot locate main container in {name}')
-        page = page.replace('</main>', section+'</main>', 1)
-        path.write_text(page)
-    print(json.dumps({'domesticShortlistRows':count,'domesticShortlistPesos':cost,'fap':summary}, indent=2))
-    from build_dpwh_subtractions import refresh as refresh_subtractions
-    refresh_subtractions()
-    from build_dpwh_hgab_headlines import refresh as refresh_headlines
-    refresh_headlines()
+    if page is None:
+        from build_dpwh_hgab_page import build
+        return build()
+    page = remove_section(page, 'foreign-assisted-review')
+    page = re.sub(r'<script id="fap-review-script">.*?</script>', '', page, flags=re.S)
+    page = re.sub(r'<script id="unpaired-fap-script">.*?</script>', '', page, flags=re.S)
+    intro = (f'The domestic 3rd-reading title screen leaves <strong>{count:,} HGAB lines</strong> without a plausible NEP counterpart, carrying <strong>₱{cost/1e9:,.2f}B</strong>. Foreign assisted projects are excluded and reviewed separately below. Unmatched titles are review leads, not confirmed additions.')
+    page = re.sub(r'(<section id="hgab-insertion".*?<h2>).*?(</h2>\s*<p class="sub">).*?(</p>)', lambda m:m[1]+'Potential insertions · domestic HGAB-only line items'+m[2]+intro+m[3], page, count=1, flags=re.S)
+    page = page.replace('Counts across all 3rd-reading DPWH records;', 'Counts across domestic 3rd-reading DPWH records;')
+    page = page.replace('DPWH line items by NEP title-screen result', 'Domestic DPWH line items by NEP title-screen result')
+    page = page.replace('Domestic Domestic DPWH', 'Domestic DPWH')
+    hero = re.search(r'<section class="impact-teaser".*?</section>', page, re.S)
+    if hero:
+        block = hero[0]
+        block = re.sub(r'(<div class="impact-teaser-headline">).*?(</div>)', lambda m:m[1]+f'{count:,}'+m[2], block, count=1, flags=re.S)
+        block = re.sub(r'(<div class="impact-teaser-stat"><strong>).*?(</strong>)', lambda m:m[1]+f'₱{cost/1e9:,.2f}B'+m[2], block, count=1, flags=re.S)
+        block = re.sub(r'(<div class="impact-teaser-title">).*?(</div>)', lambda m:m[1]+'Potential domestic insertions · HGAB-only line items'+m[2], block, count=1, flags=re.S)
+        block = re.sub(r'(<p class="impact-teaser-copy">).*?(</p>)', lambda m:m[1]+'Foreign assisted projects are reviewed separately. Exact and plausible NEP title counterparts are screened out.'+m[2], block, count=1, flags=re.S)
+        page = page[:hero.start()] + block + page[hero.end():]
+    old = data['hbInsertions2nd']; old_cost=sum(int(r['amountPesos']) for r in old)
+    page = re.sub(r'The (?:2nd-reading edition has|domestic 2nd-reading shortlist has) .*?(?:confirmed additions|not confirmed additions)\.', f'The domestic 2nd-reading shortlist has {len(old):,} unmatched records carrying ₱{old_cost/1e9:,.2f}B. FAP allocations are excluded; these are review leads, not confirmed additions.', page)
+    if '</main>' not in page: raise ValueError('Cannot locate main container in dpwh-hgab.html')
+    return page.replace('</main>', section+'</main>', 1)
 
 
 if __name__ == '__main__':
-    refresh()
+    from build_dpwh_hgab_page import build
+    print(json.dumps(build(), ensure_ascii=False))

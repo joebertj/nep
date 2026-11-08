@@ -47,7 +47,7 @@ def apply_tailwind_link(text,href,version):
     link=f'<link id="bettergov-tailwind-style" rel="stylesheet" href="{href}?v={version}">'
     return re.sub(r'<head\b[^>]*>',lambda m:m[0]+link,text,count=1)
 
-def apply_page(text,versions,page=None):
+def _apply_page_presentation(text,versions,page=None):
     from report_currency_module import format_tables
     text,_=format_tables(text)
     if page not in {'dpwh-hgab.html','dpwh-OO2-hgab.html','repeats.html'}:
@@ -72,6 +72,75 @@ def apply_page(text,versions,page=None):
     text=text.replace('</head>',f'<link id="nep-hgab-comparison-style" rel="stylesheet" href="nep-hgab-comparison-graphs.css?v={versions["comparison_css"]}"></head>',1)
     text=text.replace('</body>',f'<script id="nep-hgab-comparison-script" src="nep-hgab-comparison-graphs.js?v={versions["comparison_js"]}"></script></body>',1)
     return text.replace('</body>',f'<script id="report-table-readability-script" src="report-table-readability.js?v={versions["js"]}"></script></body>',1)
+
+
+PAGE_TABLE_CONTRACTS={
+    'dpwh-hgab.html': {'builder':'build_dpwh_hgab_page.py','chainageViewer':True,'chartBeforeTable':True},
+    'dpwh-OO2-hgab.html': {'builder':'build_dpwh_oo2_hgab.py','chainageViewer':True,'chartBeforeTable':True},
+    'repeats.html': {'builder':'build_repeats_page.py','chainageViewer':True,'chartBeforeTable':True},
+}
+
+
+def check_page_table_contract(page_name, html):
+    """Check formatting and behavior for every table emitted by a page builder."""
+    import re
+    from report_currency_module import money_header
+    contract=PAGE_TABLE_CONTRACTS.get(page_name,{'chartBeforeTable':False})
+    tables=re.findall(r'<table\b.*?</table>',html,flags=re.I|re.S)
+    unformatted=[]
+    for table_number,table in enumerate(tables,1):
+        head=re.search(r'<thead\b.*?</thead>',table,flags=re.I|re.S)
+        if not head:continue
+        headers=[re.sub(r'<[^>]+>','',cell).strip() for cell in re.findall(r'<th\b[^>]*>(.*?)</th>',head[0],flags=re.I|re.S)]
+        body=table[head.end():]
+        for row in re.findall(r'<tr\b.*?</tr>',body,flags=re.I|re.S):
+            cells=re.findall(r'<td\b[^>]*>(.*?)</td>',row,flags=re.I|re.S)
+            for index,cell in enumerate(cells[:len(headers)]):
+                value=re.sub(r'<[^>]+>','',cell).strip().replace(',','')
+                if money_header(headers[index]) and re.fullmatch(r'-?\d+(?:\.\d+)?',value):
+                    unformatted.append(f'table {table_number}, column {headers[index]!r}')
+    if unformatted:raise RuntimeError(f'{page_name}: numeric currency cells are not formatted: {unformatted[:5]}')
+    viewer=bool(re.search(r'<script\b[^>]*id="chainage-overlap-viewer"',html,re.I))
+    if contract.get('chainageViewer') and not viewer:raise RuntimeError(f'{page_name}: required chainage overlap viewer script is missing')
+    table_script=bool(re.search(r'(?:src|href)=["\'][^"\']*report-table-readability\.js(?:\?[^"\']*)?["\']',html,re.I))
+    table_style=bool(re.search(r'(?:src|href)=["\'][^"\']*report-table-readability\.css(?:\?[^"\']*)?["\']',html,re.I))
+    if not table_script or not table_style:raise RuntimeError(f'{page_name}: shared table presentation CSS and JS are missing')
+    css=(Path(__file__).resolve().parent/'report_assets/table_readability.css').read_text(encoding='utf-8')
+    js=(Path(__file__).resolve().parent/'report_assets/table_readability.js').read_text(encoding='utf-8')
+    wrapper=re.search(r'\.report-table-scroll\s*\{([^}]*)\}',css,re.S)
+    no_nested=bool(wrapper and re.search(r'overflow\s*:\s*visible\s*!important',wrapper[1]) and re.search(r'max-height\s*:\s*none\s*!important',wrapper[1]))
+    colored=bool(re.search(r'\.report-table-scroll thead th\s*\{[^}]*background\s*:\s*#[0-9a-f]{3,8}',css,re.I|re.S))
+    export='report-table-export-json' in js and 'application/json' in js
+    navigation="makeNav('top')" in js and "makeNav('bottom')" in js and "report-table-pagination-'+position" in js
+    for valid,message in [(no_nested,'shared CSS must prevent nested scrolling'),(colored,'shared CSS must define a colored header'),(export,'shared JS must provide JSON export'),(navigation,'shared JS must provide navigation above and below tables')]:
+        if not valid:raise RuntimeError(f'{page_name}: {message}')
+    # Only the earliest chart and earliest table matter: if any chart precedes
+    # any table, the first chart must precede the first table. Avoid collecting
+    # every SVG/plot node and comparing every chart against every table; large
+    # reports can contain thousands of inline SVG elements.
+    chart_match=re.search(r'<(?:svg|canvas)\b|<[^>]*\bclass=["\'][^"\']*\b(?:chart|graph)\b[^"\']*["\'][^>]*>',html,re.I)
+    table_match=re.search(r'<table\b',html,re.I)
+    chart_before=bool(chart_match and table_match and chart_match.start()<table_match.start())
+    if contract.get('chartBeforeTable') and not chart_before:raise RuntimeError(f'{page_name}: add at least one chart above a table')
+    return {'page':page_name,'builder':contract.get('builder'),'tables':len(tables),'currencyCellsFormatted':True,'chainageViewer':viewer,'tableStandardModule':True,'noNestedScroll':no_nested,'jsonExport':export,'coloredHeader':colored,'topAndBottomNavigation':navigation,'chartBeforeTable':chart_before}
+
+
+def apply_page(text,versions=None,page=None):
+    """Apply the sole shared table standard, BetterGov presentation and output checks."""
+    versions=versions or publish_assets()
+    rendered=_apply_page_presentation(text,versions,page)
+    if re.search(r'<table\b',rendered,re.I):
+        check_page_table_contract(page or 'generated table page',rendered)
+    return rendered
+
+
+def apply_page_table_module(page_name,html):
+    """Apply presentation and checks for an owning page builder."""
+    versions=publish_assets()
+    rendered=_apply_page_presentation(html,versions,page_name)
+    contract=check_page_table_contract(page_name,rendered)
+    contract['tableAssetVersion']=versions['js']
+    return rendered,contract
 
 
 def normalize_table_pagination(text,page=None):

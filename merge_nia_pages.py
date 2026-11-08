@@ -82,7 +82,17 @@ def merge():
    ('Net allocation change',peso(revision['thirdTotal']-revision['secondTotal']),'between the two readings')],
    'This page covers NIA named projects. The separate NIA irrigation appendix is reported independently; bill-stage stability is not a repeat-project finding.')
  page=re.sub(r'<section\b[^>]*id="(?:report-hero|nia-detail-report-hero)"[^>]*>.*?</section>','',page,count=1,flags=re.S)
- page=page.replace('<main class="wrap">','<main class="wrap"><section id="report-hero">'+card+'</section>',1)
+ page=re.sub(r'<section\b[^>]*id="nia-data-quality-flag"[^>]*>.*?</section>','',page,flags=re.S)
+ page=page.replace('<main class="wrap">','<main class="wrap"><section id="report-hero">'+card+'</section><section id="nia-data-quality-flag" class="nia-data-quality-flag"><h2>Red flag · NIA project statistics are not reliable yet</h2><p>The available NIA project information is not detailed or consistent enough to support reliable statistical comparisons across these rows. All NIA project rows on this page are flagged for data sufficiency review. Treat cost, allocation and repeat-project patterns as preliminary until project scope, scale, location and identity are reconciled.</p></section>',1)
+ def mark_nia_body(match):
+  tag=match[0]
+  if re.search(r'\bclass="',tag):
+   return re.sub(r'\bclass="([^"]*)"',lambda m:'class="'+(m[1] if 'nia-statistics-flagged' in m[1].split() else m[1]+' nia-statistics-flagged')+'"',tag,count=1)
+  return tag[:-1]+' class="nia-statistics-flagged">'
+ page=re.sub(r'<body\b[^>]*>',mark_nia_body,page,count=1)
+ flag_style='<style id="nia-data-quality-style">.nia-data-quality-flag{border:2px solid #b42318!important;border-left:9px solid #b42318!important;background:#fff1f0!important;color:#681b16!important}.nia-data-quality-flag h2{color:#8f1d16!important}.nia-statistics-flagged tbody tr{background:#fff7f6!important;box-shadow:inset 4px 0 #b42318}.nia-statistics-flagged tbody tr:hover{background:#ffe8e6!important}</style>'
+ page=re.sub(r'<style id="nia-data-quality-style">.*?</style>','',page,flags=re.S)
+ page=page.replace('</head>',flag_style+'</head>',1)
  if 'id="report-hero-style"' not in page:page=page.replace('</head>',STYLE+'</head>',1)
  named_path.write_text(page);(OUT/'nia.html').write_text(page)
  (OUT/'nia_page_merge.json').write_text(json.dumps({'canonicalPage':'nia.html','detailSource':'nia-irrigation.html','namedSourcePreservedInMarkers':True,'namespacedIds':mapping,'sourceHashes':{'detail':hashlib.sha256(detail.encode()).hexdigest()},'scope':'Presentation merge; project records and allocations are unchanged; the two NIA scopes are not summed.'},indent=2)+'\n')

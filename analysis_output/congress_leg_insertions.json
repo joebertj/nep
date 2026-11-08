@@ -1,9 +1,9 @@
 {
   "method": "Domestic HGAB-only candidates intersected with uniquely assigned scope-reviewed LEG geography; unresolved/shared locations and FAP excluded.",
   "domesticCandidateLines": 5491,
-  "assignedCandidateLines": 3725,
-  "excludedCandidateLines": 1766,
-  "assignedCandidatePesos": 79475898000,
+  "assignedCandidateLines": 3724,
+  "excludedCandidateLines": 1767,
+  "assignedCandidatePesos": 79275898000,
   "districts": [
     {
       "district": "Ilocos Norte · 1st District",
@@ -37746,27 +37746,6 @@
       ]
     },
     {
-      "district": "Taguig · Lone District",
-      "representative": "Daniel Bocobo",
-      "candidateLines": 1,
-      "candidateAllocationPesos": 200000000,
-      "acceptedDistrictLines": 1,
-      "rows": [
-        {
-          "id": "HB10858-3-0927-016042",
-          "district": "Taguig · Lone District",
-          "representative": "Daniel Bocobo",
-          "projectName": "Construction (Continuation) of Multi-Purpose Building (RFU-NCR Mega Laboratory Building), 1st Quadrant of Camp Bagong Diwa Along Gen. Santos Ave., Bicutan, Taguig City, 14.48801, 121.05723",
-          "amountPesos": 200000000,
-          "office": "Central Office",
-          "closestNepTitle": "Construction of Multi-Purpose Sports Facilities and Site Development (JLO) at Barangay Lower Bicutan, Taguig City (14.490562, 121.062552)",
-          "similarityPct": 55.31,
-          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
-          "sourcePage": "927"
-        }
-      ]
-    },
-    {
       "district": "Surigao del Sur · 1st District",
       "representative": "Romeo Momo",
       "candidateLines": 7,
@@ -41863,7 +41842,7 @@
     },
     {
       "district": "Batanes · Lone District",
-      "representative": "Jun Gato",
+      "representative": "—",
       "candidateLines": 8,
       "candidateAllocationPesos": 114000000,
       "acceptedDistrictLines": 43,
@@ -46460,7 +46439,7 @@
     },
     {
       "district": "Antipolo · 2nd District",
-      "representative": "Romeo Acop",
+      "representative": "Philip Conrad \"Dok Bong\" Acop",
       "candidateLines": 0,
       "candidateAllocationPesos": 0,
       "acceptedDistrictLines": 49,
@@ -46548,7 +46527,7 @@
     },
     {
       "district": "Cavite · 4th District",
-      "representative": "Kiko Barzaga",
+      "representative": "Jennifer Austria-Barzaga",
       "candidateLines": 0,
       "candidateAllocationPesos": 0,
       "acceptedDistrictLines": 0,
@@ -46907,11 +46886,19 @@
       "rows": []
     },
     {
-      "district": "Taguig–Pateros · Lone District",
-      "representative": "Ading Cruz",
+      "district": "Taguig City · 2nd District",
+      "representative": "Jorge Daniel S. Bocobo",
       "candidateLines": 0,
       "candidateAllocationPesos": 0,
       "acceptedDistrictLines": 0,
+      "rows": []
+    },
+    {
+      "district": "Taguig City-Pateros · Lone District",
+      "representative": "Ricardo Jr. S. Cruz",
+      "candidateLines": 0,
+      "candidateAllocationPesos": 0,
+      "acceptedDistrictLines": 2,
       "rows": []
     },
     {
@@ -46929,6 +46916,27 @@
       "candidateAllocationPesos": 0,
       "acceptedDistrictLines": 4,
       "rows": []
+    }
+  ],
+  "districtsWithoutStrictBaseline": [
+    {
+      "district": "Taguig · Lone District",
+      "candidateLines": 1,
+      "candidateAllocationPesos": 200000000,
+      "rows": [
+        {
+          "id": "HB10858-3-0927-016042",
+          "district": "Taguig · Lone District",
+          "representative": "Daniel Bocobo",
+          "projectName": "Construction (Continuation) of Multi-Purpose Building (RFU-NCR Mega Laboratory Building), 1st Quadrant of Camp Bagong Diwa Along Gen. Santos Ave., Bicutan, Taguig City, 14.48801, 121.05723",
+          "amountPesos": 200000000,
+          "office": "Central Office",
+          "closestNepTitle": "Construction of Multi-Purpose Sports Facilities and Site Development (JLO) at Barangay Lower Bicutan, Taguig City (14.490562, 121.062552)",
+          "similarityPct": 55.31,
+          "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+          "sourcePage": "927"
+        }
+      ]
     }
   ],
   "sources": [

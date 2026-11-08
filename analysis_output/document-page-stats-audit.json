@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "checkedAtUtc": "2026-11-07T19:54:05.447586+01:00",
+  "checkedAtUtc": "2026-11-08T09:10:03.871104+01:00",
   "source": "Cloudflare manifest SHA-256 reconciliation across the T5 source folder and parser attachment cache, plus page outputs.",
   "checks": {
     "senateScan": {
@@ -29,7 +29,7 @@
       "withProposal": 9577,
       "withSenate": 4102,
       "union": 13617,
-      "generatedAtUtc": "2026-11-07T18:53:38.414654+00:00"
+      "generatedAtUtc": "2026-11-08T07:38:18.556173+00:00"
     },
     "parsedPow": {
       "parsedDocuments": 6259,
@@ -46,7 +46,9 @@
     },
     "encapsulation": {
       "summaryWritesOnlyOwnPage": true,
-      "sharedSectionsQueuedForOwners": true
+      "summaryHtmlTargets": [
+        "summary.html"
+      ]
     },
     "pageOwnership": {
       "dpwh.html": "build_dpwh_indepth.py",
@@ -56,12 +58,19 @@
       "expectation-vs-reality.html": "build_expectation_vs_reality.py",
       "development-council.html": "build_development_council.py",
       "undocumented-hgab.html": "build_undocumented_hgab.py",
+      "pow.html": "build_pow_page.py",
       "summary.html": "build_investigation_summary.py"
+    },
+    "senatePowPage": {
+      "parsedDocuments": 6259,
+      "billRows": 156858,
+      "uniqueMatchedHgabProjectRows": 2259,
+      "loadsParsedResults": true
     },
     "pageFreshness": {
       "sourceScanGeneratedAtUtc": "2026-11-07T18:11:08.771602+00:00",
-      "pagesAtOrAfterScan": 7,
-      "pagesExpected": 7,
+      "pagesAtOrAfterScan": 8,
+      "pagesExpected": 8,
       "stalePages": []
     }
   },
@@ -71,38 +80,42 @@
       "loadsCoverageRenderer": true,
       "coverageSource": "hgab-document-coverage.json",
       "builder": "build_dpwh_indepth.py",
-      "builtAtUtc": "2026-11-07T19:53:48.517181+01:00"
+      "builtAtUtc": "2026-11-08T08:38:32.546834+01:00"
     },
     "undocumented-hgab.html": {
       "coverageColumns": 7,
       "loadsCoverageRenderer": true,
       "coverageSource": "hgab-only-document-coverage.json",
       "builder": "build_undocumented_hgab.py",
-      "builtAtUtc": "2026-11-07T19:48:12.034117+01:00"
+      "builtAtUtc": "2026-11-08T08:38:36.107382+01:00"
     },
     "dpwh-transparency.html": {
       "builder": "build_dpwh_transparency_page.py",
-      "builtAtUtc": "2026-11-07T19:15:52.554634+01:00"
+      "builtAtUtc": "2026-11-08T08:38:32.656536+01:00"
     },
     "cost-per-unit.html": {
       "builder": "build_cost_per_unit_page.py",
-      "builtAtUtc": "2026-11-07T19:15:52.509553+01:00"
+      "builtAtUtc": "2026-11-08T08:38:32.594506+01:00"
     },
     "pccp-cost-per-unit.html": {
       "builder": "build_pccp_cost_per_unit_page.py",
-      "builtAtUtc": "2026-11-07T19:15:52.484937+01:00"
+      "builtAtUtc": "2026-11-08T08:38:32.542850+01:00"
     },
     "expectation-vs-reality.html": {
       "builder": "build_expectation_vs_reality.py",
-      "builtAtUtc": "2026-11-07T19:49:38.370975+01:00"
+      "builtAtUtc": "2026-11-08T08:38:32.654873+01:00"
     },
     "development-council.html": {
       "builder": "build_development_council.py",
-      "builtAtUtc": "2026-11-07T19:15:52.484033+01:00"
+      "builtAtUtc": "2026-11-08T08:38:32.533147+01:00"
+    },
+    "pow.html": {
+      "builder": "build_pow_page.py",
+      "builtAtUtc": "2026-11-08T09:09:23.268686+01:00"
     },
     "summary.html": {
       "builder": "build_investigation_summary.py",
-      "builtAtUtc": "2026-11-07T19:24:24.845575+01:00"
+      "builtAtUtc": "2026-11-08T08:38:38.930499+01:00"
     }
   },
   "warnings": [],

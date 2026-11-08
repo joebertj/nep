@@ -194,8 +194,8 @@ from report_currency_module import format_tables
 base,_=format_tables(base)
 from investigation_page_sections import apply_owned_sections
 base=apply_owned_sections(base,'dpwh-OO2-hgab.html')
-from report_page_table_checks import check_page_table_contract
-check_page_table_contract('dpwh-OO2-hgab.html',base)
+from report_table_presentation import apply_page_table_module
+base,_=apply_page_table_module('dpwh-OO2-hgab.html',base)
 (SITE/'dpwh-OO2-hgab.html').write_text(base)
 (ANALYSIS/'dpwh-OO2-hgab.html').write_text(base)
 print(json.dumps(summary, indent=2))

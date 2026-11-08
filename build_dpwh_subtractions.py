@@ -85,7 +85,8 @@ search.oninput=filter.onchange=()=>{page=0;draw()};document.getElementById('sub-
 </script>'''
 
 
-def refresh():
+def refresh(page=None):
+    """Refresh removal evidence and render it into one owning page string."""
     mapping=json.loads((ROOT/'analysis_output/hb_nep_comparison_3rd_mapping.json').read_text())
     hints=reverse_screen(mapping)
     groups={key:build_scope(mapping,key=='fap',hints) for key in ['domestic','fap']}
@@ -93,21 +94,19 @@ def refresh():
     path.write_text(json.dumps(data,ensure_ascii=False,separators=(',',':'))+'\n')
     (ROOT/'analysis_output/dpwh_removals_3rd.json').write_text(json.dumps(groups,ensure_ascii=False,indent=2)+'\n')
     (ROOT/'analysis_output/dpwh_removals_held_out.json').write_text(json.dumps(hints,ensure_ascii=False,indent=2)+'\n')
-    for name in ['dpwh.html','dpwh-hgab.html']:
-        path=STATIC/name;page=path.read_text()
-        if '<section id="hgab-insertion"' not in page:
-            continue
-        page=re.sub(r'<section class="card section" id="subtractions-(?:domestic|fap)">.*?</section>','',page,flags=re.S)
-        page=re.sub(r'<script id="subtractions-script">.*?</script>','',page,flags=re.S)
-        page,n=re.subn(r'(<section id="hgab-insertion".*?</section>)',lambda m:m[1]+section('domestic',groups['domestic']),page,count=1,flags=re.S)
-        if n!=1:raise ValueError('Missing additions section: '+name)
-        if groups['fap']['summary']['unpairedNepRows']>0:
-            page,n=re.subn(r'(<section class="card section" id="foreign-assisted-review">.*?</section>)',lambda m:m[1]+section('fap',groups['fap']),page,count=1,flags=re.S)
-            if n!=1:raise ValueError('Missing FAP section: '+name)
-        path.write_text(page.replace('</body>',SCRIPT+'</body>',1))
-    print(json.dumps({key:group['summary'] for key,group in groups.items()},indent=2))
-    from build_dpwh_allocation_adjustments import refresh as refresh_adjustments
-    refresh_adjustments()
+    if page is None:
+        from build_dpwh_hgab_page import build
+        return build()
+    page=re.sub(r'<section class="card section" id="subtractions-(?:domestic|fap)">.*?</section>','',page,flags=re.S)
+    page=re.sub(r'<script id="subtractions-script">.*?</script>','',page,flags=re.S)
+    page,n=re.subn(r'(<section id="hgab-insertion".*?</section>)',lambda m:m[1]+section('domestic',groups['domestic']),page,count=1,flags=re.S)
+    if n!=1:raise ValueError('Missing additions section: dpwh-hgab.html')
+    if groups['fap']['summary']['unpairedNepRows']>0:
+        page,n=re.subn(r'(<section class="card section" id="foreign-assisted-review">.*?</section>)',lambda m:m[1]+section('fap',groups['fap']),page,count=1,flags=re.S)
+        if n!=1:raise ValueError('Missing FAP section: dpwh-hgab.html')
+    return page.replace('</body>',SCRIPT+'</body>',1)
 
 
-if __name__=='__main__':refresh()
+if __name__=='__main__':
+    from build_dpwh_hgab_page import build
+    print(json.dumps(build(),ensure_ascii=False))

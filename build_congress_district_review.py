@@ -25,6 +25,40 @@ def add_flag(project, label, detail):
         flags.append({'label': label, 'detail': detail})
 
 
+def extract_section(html, marker):
+    """Return the bounds of the section whose opening tag contains marker."""
+    marker_at = html.find(marker)
+    if marker_at < 0:
+        raise ValueError(f'Congress page is missing section marker: {marker}')
+    start = html.rfind('<section', 0, marker_at + 1)
+    if start < 0:
+        raise ValueError(f'Could not locate opening section tag for: {marker}')
+    depth = 0
+    for match in re.finditer(r'<section\b[^>]*>|</section\s*>', html[start:], flags=re.I):
+        if match.group(0).lower().startswith('</section'):
+            depth -= 1
+            if depth == 0:
+                return start, start + match.end()
+        else:
+            depth += 1
+    raise ValueError(f'Could not find closing section tag for: {marker}')
+
+
+def reorder_intro_sections(html):
+    """Put the district selector after the hero, ahead of the two lower sections."""
+    selector_start, selector_end = extract_section(html, 'class="panel selector-panel"')
+    selector = html[selector_start:selector_end]
+    html = html[:selector_start] + html[selector_end:]
+    _, hero_end = extract_section(html, 'id="report-hero"')
+    html = html[:hero_end] + selector + html[hero_end:]
+
+    order = [html.find('id="report-hero"'), html.find('class="panel selector-panel"'),
+             html.find('id="leg-district-insertions"'), html.find('id="district-allocation-analysis-link"')]
+    if any(position < 0 for position in order) or order != sorted(order):
+        raise ValueError(f'Congress opening section order is invalid: {order}')
+    return html
+
+
 def distance_meters(left, right):
     lat1, lon1 = math.radians(left['latitude']), math.radians(left['longitude'])
     lat2, lon2 = math.radians(right['latitude']), math.radians(right['longitude'])
@@ -88,7 +122,8 @@ def build():
     office_changes = {r['hgabProjectId']: r for r in read_json(ROOT / 'analysis_output/dpwh_deo_office_changes.json')['records']}
     mapped = {r['id']: r for r in read_json(ROOT / 'analysis_output/out_of_place_projects.json')['projects']}
     dpwh_data = read_json(STATIC / 'dpwh-data.json')
-    assignment = read_json(ROOT / 'analysis_output/congress_leg_insertions.json')
+    from build_congress_leg_insertions import build_data as build_insertion_assignment
+    assignment = build_insertion_assignment()
     repeat_data = read_json(ROOT / 'analysis_output/within_stage_repeats.json')
     line_item_queue = read_json(ROOT / 'analysis_output/line_item_review_queue.json')
     nep_only_removals = read_json(ROOT / 'analysis_output/dpwh_removals_3rd.json').get('domestic', {}).get('rows', [])
@@ -121,7 +156,7 @@ def build():
     }
     representative_insertion_rows = {
         project_id: row for project_id, row in insertion_rows.items()
-        if project_id not in cross_boundary_insertion_ids
+        if project_id not in cross_boundary_insertion_ids and project_id not in oo2_matched_ids
     }
     queue_by_id = {r['hgabId']: r for r in line_item_queue.get('rankedOccurrences', []) if r.get('hgabId')}
     assigned_insertions = {}
@@ -455,7 +490,7 @@ def build():
 
         insertion = insertion_rows.get(project_id)
         assigned_group = assigned_insertions.get(project_id)
-        if insertion and not is_cross_boundary:
+        if insertion and not is_cross_boundary and project_id not in oo2_matched_ids:
             project['insertionCandidate'] = True
             project['closestNepTitle'] = insertion.get('closest_nep_title') or ''
             project['titleSimilarityPct'] = float(insertion.get('title_similarity_pct') or 0)
@@ -573,8 +608,13 @@ def build():
             'analysisFlags': [{'label': 'Potential NEP-only removal', 'detail': detail}],
         })
 
-    if len(insertion_rows) != int(assignment.get('domesticCandidateLines', len(insertion_rows))):
-        raise ValueError('Domestic insertion count does not reconcile with the assignment source')
+    oo2_adjusted_insertion_rows = set(insertion_rows) - oo2_matched_ids
+    if len(oo2_adjusted_insertion_rows) != int(assignment.get('domesticCandidateLines', len(oo2_adjusted_insertion_rows))):
+        raise ValueError(
+            'Domestic insertion count does not reconcile with the assignment source: '
+            f"OO2-adjusted DPWH data={len(oo2_adjusted_insertion_rows)}, "
+            f"assignment={assignment.get('domesticCandidateLines')}"
+        )
     if len(assigned_insertions) != int(assignment.get('assignedCandidateLines', len(assigned_insertions))):
         raise ValueError('District-assigned insertion count does not reconcile with the assignment source')
 
@@ -602,7 +642,7 @@ def build():
                 flag_catalog.append({'label': key[0], 'detail': key[1]})
             ids.append(flag_ids[key])
         row['flagIds'] = ids
-    assigned_insertion_count = sum(bool(row.get('insertionCandidate') and row.get('insertionDistrictAssigned')) for row in projects)
+    assigned_insertion_count = len(assigned_insertions)
     domestic_count = len(representative_insertion_rows)
     unassigned_insertion_count = domestic_count - assigned_insertion_count
     payload = {
@@ -649,7 +689,7 @@ def build():
                 page,
                 count=1,
             )
-        s=payload['summary']
+        s=allocation_data['summary']
         card=hero('HGAB 3rd Reading · strict congressional location attribution',
             f"{s['strictExcludedLines']:,} lines",'remain outside the strict district ranking',
             peso(s['strictExcludedAmountPesos']),'unresolved or shared project allocations',[
@@ -663,6 +703,11 @@ def build():
             page=page.replace('</head>',STYLE+'</head>',1)
         from investigation_page_sections import apply_owned_sections
         page=apply_owned_sections(page,'congress.html')
+        from build_congress_leg_insertions import apply_section as apply_insertion_section
+        page=apply_insertion_section(page,assignment)
+        page=reorder_intro_sections(page)
+        from report_table_presentation import apply_page_table_module
+        page,_=apply_page_table_module('congress.html',page)
         report_page.write_text(page, encoding='utf-8')
     return payload['summary']
 

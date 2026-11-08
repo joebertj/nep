@@ -24,7 +24,7 @@ BLOCK='''<section class="card scenario" id="leg-district-insertions"><h2>HGAB-on
 SCRIPT=r'''<script id="leg-insertions-script">(()=>{const DATA=__DATA__,districts=DATA.districts,$=id=>document.getElementById(id),esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),peso=v=>'₱'+Number(v).toLocaleString('en-PH'),fmt=v=>Number(v).toLocaleString('en-PH');let page=0,detailPage=0;
 function csv(name,rows,cols){const text=[cols,...rows.map(r=>cols.map(k=>r[k]??''))].map(r=>r.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\r\n'),url=URL.createObjectURL(PHLocation.createBlob(['\ufeff',text],{type:'text/csv;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
 function selected(){const q=$('leg-add-search').value.trim().toLowerCase(),sort=$('leg-add-sort').value;return districts.filter(d=>(d.district+' '+d.representative).toLowerCase().includes(q)&&($('leg-add-zero').value==='all'||d.candidateLines>0)).sort((a,b)=>(sort==='count'?b.candidateLines-a.candidateLines:sort==='name'?a.district.localeCompare(b.district):b.candidateAllocationPesos-a.candidateAllocationPesos)||a.district.localeCompare(b.district))}
-$('leg-add-coverage').textContent=fmt(DATA.assignedCandidateLines)+' of '+fmt(DATA.domesticCandidateLines)+' domestic HGAB-only candidates ('+peso(DATA.assignedCandidatePesos)+') qualify for a unique LEG. '+fmt(DATA.excludedCandidateLines)+' candidates remain outside this table because their locations are shared or unresolved.';
+ const baselineExcluded=DATA.districtsWithoutStrictBaseline||[];const baselineExcludedLines=baselineExcluded.reduce((n,d)=>n+d.candidateLines,0);$('leg-add-coverage').textContent=fmt(DATA.assignedCandidateLines)+' of '+fmt(DATA.domesticCandidateLines)+' domestic HGAB-only candidates ('+peso(DATA.assignedCandidatePesos)+') qualify for a unique LEG. '+fmt(DATA.excludedCandidateLines)+' are excluded because of shared or unresolved locations, or because their district label does not reconcile to the current strict baseline.'+(baselineExcludedLines?' '+fmt(baselineExcludedLines)+' uniquely located candidate is outside the strict baseline: '+baselineExcluded.map(d=>d.district).join('; ')+'.':'');
 for(const d of [...districts].sort((a,b)=>a.district.localeCompare(b.district))){const opt=document.createElement('option');opt.value=d.district;opt.textContent=d.district;$('leg-add-district').append(opt)}
 function draw(){const rows=selected(),pages=Math.max(1,Math.ceil(rows.length/25));page=Math.max(0,Math.min(page,pages-1));const start=page*25; $('leg-add-total').textContent=fmt(rows.length)+' districts · '+fmt(rows.reduce((t,r)=>t+r.candidateLines,0))+' HGAB-only candidate lines · '+peso(rows.reduce((t,r)=>t+r.candidateAllocationPesos,0));
 const byCount=$('leg-add-sort').value==='count',top=rows.slice(0,15),value=d=>byCount?d.candidateLines:d.candidateAllocationPesos,max=Math.max(1,...top.map(value)),cell=1200/Math.max(1,top.length);$('leg-add-graph').innerHTML=top.length?'<svg viewBox="0 0 1200 420" style="display:block;width:100%;height:auto;max-height:460px;font:12px sans-serif" role="img" aria-label="Top legislative district HGAB-only candidates">'+top.map((d,i)=>{const h=value(d)/max*180;return `<g><title>${esc(d.district)} · ${esc(d.representative)} · ${fmt(d.candidateLines)} lines · ${peso(d.candidateAllocationPesos)}</title><rect x="${i*cell+cell*.2}" y="${210-h}" width="${cell*.6}" height="${h}" fill="#087e78"/><text x="${(i+.5)*cell}" y="${202-h}" text-anchor="middle">${byCount?fmt(value(d)):'₱'+(value(d)/1e6).toFixed(0)+'M'}</text><text transform="translate(${(i+.5)*cell},225) rotate(45)" text-anchor="start">${esc(d.district)}</text></g>`}).join('')+'</svg>':'<p class="sub">No districts match these filters.</p>';
@@ -32,7 +32,7 @@ $('leg-add-body').innerHTML=rows.slice(start,start+25).map(d=>`<tr><td>${esc(d.d
 function detail(){const d=districts.find(d=>d.district===$('leg-add-district').value);if(!d){$('leg-add-detail-title').textContent='Project details · choose any district';$('leg-add-detail-total').textContent='No district selected. Choose a district or click View projects in any table row.';$('leg-add-detail-body').innerHTML='<tr><td colspan="5">Choose a district to view its project records.</td></tr>';$('leg-add-detail-page').textContent='';$('leg-add-detail-prev').disabled=true;$('leg-add-detail-next').disabled=true;$('leg-add-project-csv').disabled=true;return;}$('leg-add-project-csv').disabled=false;const pages=Math.max(1,Math.ceil(d.rows.length/20));detailPage=Math.max(0,Math.min(detailPage,pages-1));const start=detailPage*20;$('leg-add-detail-title').textContent='HGAB-only candidates · '+d.district;$('leg-add-detail-total').textContent=fmt(d.candidateLines)+' HGAB-only candidates · '+peso(d.candidateAllocationPesos)+' · '+fmt(d.acceptedDistrictLines)+' total strictly assigned HGAB lines. Projects ranked by allocation.';$('leg-add-detail-body').innerHTML=d.rows.slice(start,start+20).map(r=>`<tr><td>${esc(r.projectName)}</td><td>${esc(r.office)}</td><td>${peso(r.amountPesos)}</td><td>${esc(r.closestNepTitle)}</td><td>${esc(r.sourceVolume)} · p. ${esc(r.sourcePage)}<br>${esc(r.id)}</td></tr>`).join('')||'<tr><td colspan="5">No row meets the current no-counterpart and location screen. This means only that the current screen found no unmatched candidate for the selected district.</td></tr>';$('leg-add-detail-page').textContent=(d.rows.length?start+1:0)+'–'+Math.min(start+20,d.rows.length)+' of '+d.rows.length;$('leg-add-detail-prev').disabled=detailPage===0;$('leg-add-detail-next').disabled=detailPage===pages-1;}
 for(const id of ['leg-add-search','leg-add-sort','leg-add-zero'])$(id)[id==='leg-add-search'?'oninput':'onchange']=()=>{page=0;draw()};$('leg-add-prev').onclick=()=>{page--;draw()};$('leg-add-next').onclick=()=>{page++;draw()};$('leg-add-district').onchange=()=>{detailPage=0;detail()};$('leg-add-detail-prev').onclick=()=>{detailPage--;detail()};$('leg-add-detail-next').onclick=()=>{detailPage++;detail()};$('leg-add-csv').onclick=()=>csv('potential_additions_by_LEG.csv',selected(),['district','representative','candidateLines','candidateAllocationPesos','acceptedDistrictLines']);$('leg-add-project-csv').onclick=()=>{const d=districts.find(d=>d.district===$('leg-add-district').value);if(d)csv('potential_additions_'+d.district.replace(/[^a-z0-9]+/gi,'_')+'.csv',d.rows,['district','representative','id','projectName','amountPesos','office','closestNepTitle','similarityPct','sourceVolume','sourcePage'])};draw();detail();})();</script>'''
 
-def main():
+def build_data():
     congress=json.loads((STATIC/'congress-data.json').read_text())
     audit_path=ROOT/'analysis_output/congress_geographic_attribution_db_3rd.json'
     comparison_path=ROOT/'analysis_output/hb_nep_comparison_3rd.csv'
@@ -59,24 +59,35 @@ def main():
         if len(rows)>d['lineItems'] or sum(r['amountPesos'] for r in rows)>d['totalPesos']:raise ValueError('Additions exceed accepted district totals')
         reports.append({'district':d['district'],'representative':d['representative'],'candidateLines':len(rows),
             'candidateAllocationPesos':sum(r['amountPesos'] for r in rows),'acceptedDistrictLines':d['lineItems'],'rows':rows})
-    if groups:raise ValueError('Insertion district absent from current strict Congress data')
+    districts_without_baseline = [
+        {'district': district, 'candidateLines': len(rows),
+         'candidateAllocationPesos': sum(row['amountPesos'] for row in rows),
+         'rows': sorted(rows, key=lambda row: (-row['amountPesos'], row['id']))}
+        for district, rows in sorted(groups.items())
+    ]
     reports.sort(key=lambda r:(-r['candidateAllocationPesos'],r['district']))
     assigned=sum(r['candidateLines'] for r in reports)
     document={'method':'Domestic HGAB-only candidates intersected with uniquely assigned scope-reviewed LEG geography; unresolved/shared locations and FAP excluded.',
         'domesticCandidateLines':len(domestic),'assignedCandidateLines':assigned,'excludedCandidateLines':len(domestic)-assigned,
         'assignedCandidatePesos':sum(r['candidateAllocationPesos'] for r in reports),'districts':reports,
+        'districtsWithoutStrictBaseline':districts_without_baseline,
         'sources':[{'file':p.name,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in [comparison_path,audit_path]]}
     (ROOT/'analysis_output/congress_leg_insertions.json').write_text(json.dumps(document,ensure_ascii=False,indent=2)+'\n')
-    path=STATIC/'congress.html';page=path.read_text()
+    return document
+
+def apply_section(page, document):
     page=re.sub(r'<div id="focused-district-insertions">.*?</div><!-- focused-district-insertions-end -->','',page,flags=re.S)
     page=re.sub(r'<script id="focused-insertions-script">.*?</script>','',page,flags=re.S)
     page=re.sub(r'<section class="card scenario" id="leg-district-insertions">.*?</section>','',page,flags=re.S)
     page=re.sub(r'<script id="leg-insertions-script">.*?</script>','',page,flags=re.S)
-    marker='<section class="card scenario" aria-labelledby="deoLegTitle">'
-    if marker not in page:raise ValueError('Crosswalk insertion anchor missing')
+    marker='<section class="panel" id="district-allocation-analysis-link">'
+    if marker not in page:raise ValueError('District-allocation companion section anchor missing')
     payload=json.dumps(document,ensure_ascii=False,separators=(',',':')).replace('</','<\\/')
     page=page.replace(marker,BLOCK+marker,1).replace('</body>',SCRIPT.replace('__DATA__',payload)+'</body>',1)
-    path.write_text(page)
+    return page
+
+def main():
+    document = build_data()
     print(json.dumps({k:v for k,v in document.items() if k not in ['districts','sources']},indent=2))
 
 if __name__=='__main__':main()

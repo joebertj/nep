@@ -30,7 +30,7 @@ def build():
     for name in ['__init__.py','service.py','pow.py','requirements.txt','burol_reviewed_rows.json','ocr_vision.swift','browser_fetch.py','signatories.py','curl_fetch.py','cache_lock.py']:shutil.copy2(ROOT/'project_documents'/name,worker/name)
     links=(ROOT/'project_documents/table_links.js').read_text();(STATIC/'project-document-links.js').write_text(links);v=hashlib.sha256(links.encode()).hexdigest()[:12]
     for path in STATIC.glob('*.html'):
-        if path.name in ['project-documents.html','index.html']:continue
+        if path.name in ['project-documents.html','summary.html']:continue
         text=path.read_text();text=re.sub(r'<script[^>]*src="project-document-links.js[^\"]*"[^>]*></script>','',text)
         text=text.replace('</body>',f'<script src="project-document-links.js?v={v}"></script></body>',1);path.write_text(text)
         mirror=OUT/path.name

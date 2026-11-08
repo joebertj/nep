@@ -182,6 +182,8 @@ def build():
         html = html.replace('</head>', QUEUE_CSS + '</head>', 1)
     from uniform_report_menu import apply_page
     html = apply_page(html, 'flags.html')
+    from report_table_presentation import apply_page_table_module
+    html,_=apply_page_table_module('flags.html',html)
     for directory in (OUT, STATIC):
         directory.mkdir(parents=True, exist_ok=True)
         (directory / 'flags-data.json').write_text(serialized)

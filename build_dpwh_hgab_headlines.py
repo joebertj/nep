@@ -97,7 +97,8 @@ search.addEventListener('input',()=>{page=0;draw()});for(const [id] of selectors
 
 EXPORT_SCRIPT=r'''<script id="hgab-headline-export">(()=>{document.getElementById('hgabBreakdownCsv').onclick=()=>{const rows=JSON.parse(document.getElementById('hgab-headline-data').textContent),cols=['dimension','label','insertionCount','insertionPesos','removalCount','removalPesos'],csv=[cols,...rows.map(r=>cols.map(k=>r[k]))].map(r=>r.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\r\n'),url=URL.createObjectURL(PHLocation.createBlob(['\ufeff',csv],{type:'text/csv;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download='dpwh_nep_hgab_3rd_headline_breakdowns.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}})();</script>'''
 
-def refresh():
+def refresh(page=None):
+    """Refresh headline data and render the breakdown into one page string."""
     path=STATIC/'dpwh-data.json';data=json.loads(path.read_text())
     native=json.loads((ROOT/'hb10858_3rd_dpwh_projects.json').read_text())['data']
     if isinstance(native,dict):native=native['data']
@@ -145,7 +146,9 @@ def refresh():
     section+=count_chart(programs,'Insertion and removal candidates by source program')+stats_table(programs,'Program')+'</section>'
     export_rows=[dict(r,dimension=dimension) for dimension,rows in [('Office',offices),('Program',programs)] for r in rows]
     section+='<script type="application/json" id="hgab-headline-data">'+json.dumps(export_rows,ensure_ascii=False).replace('</','<\\/')+'</script>'
-    page_path=STATIC/'dpwh-hgab.html';page=page_path.read_text()
+    if page is None:
+        from build_dpwh_hgab_page import build
+        return build()
     page=re.sub(r'<section class="card section" id="hgab-headline-breakdowns">.*?</section>\s*<script type="application/json" id="hgab-headline-data">.*?</script>','',page,flags=re.S)
     page=re.sub(r'body\[data-page="insertions"\] main>[^{}]+\{display:none!important\}', 'body[data-page="insertions"] main>section:not(#hgab-insertion):not(#report-hero):not(#hgab-headline-breakdowns):not(#subtractions-domestic):not(#subtractions-fap):not(#allocation-adjustments-domestic):not(#foreign-assisted-review):not(#hgab-investigation-evidence):not(#report-evidence-notice):not(#supporting-methodology):not(#external-reference-review):not(#deo-office-changes){display:none!important}', page)
     page=page.replace('<section id="hgab-insertion"',section+'\n<section id="hgab-insertion"',1)
@@ -183,10 +186,10 @@ def refresh():
     page=attach_viewer(page,overlap_version)
     from report_currency_module import format_tables
     page,_=format_tables(page)
-    from report_page_table_checks import check_page_table_contract
-    check_page_table_contract('dpwh-hgab.html',page)
-    page_path.write_text(page)
-    (ROOT/'analysis_output/dpwh-hgab.html').write_text(page,encoding='utf-8')
-    print(json.dumps(data['hgabHeadline'],indent=2))
+    from report_table_presentation import apply_page_table_module
+    page,_=apply_page_table_module('dpwh-hgab.html',page)
+    return page
 
-if __name__=='__main__':refresh()
+if __name__=='__main__':
+    from build_dpwh_hgab_page import build
+    print(json.dumps(build(),ensure_ascii=False))

@@ -102,6 +102,8 @@ def generate():
     from build_investigation_summary import CSS as EVIDENCE_CSS
     page=re.sub(r'(<main\b[^>]*>)',lambda m:m[0]+NOTICE,page,count=1)
     page=page.replace('</head>',EVIDENCE_CSS+'<style id="fmr-chart-legend-style">.chart-legend-no-rank li{grid-template-columns:minmax(0,1fr) auto!important}</style></head>',1)
+    from report_table_presentation import apply_page_table_module
+    page,_=apply_page_table_module('fmr.html',page)
     (OUT/'fmr.html').write_text(page);(STATIC/'fmr.html').write_text(page)
     (STATIC/'fmr-annex-equivalence.json').write_text(json.dumps(data['annexEquivalence'],indent=2)+'\n')
     return {'summary':s,'statedLengthProjects':len(lengthrows),'historicalPairs':len(historical)}

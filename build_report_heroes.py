@@ -184,9 +184,8 @@ def refresh(page_filter=None):
         mirror=root/'analysis_output'/page
         if mirror.exists():mirror.write_text(after,encoding="utf-8")
         records.append({'page':page,'heroRefreshed':True,'changed':after!=before,'valuesDerivedFromCurrentData':True})
-    # Summary and its index alias use the summary builder's current findings,
-    # repeat-proposal count and observed RCS count rather than this card builder.
-    report={'pages':records,'policy':'Hero values derive from the current report JSON and native comparison CSV. Matching pairs and unique proposals are distinct; FAP candidates are separated from domestic candidates. Scenario outputs are not observed budget outcomes.','summaryAliases':['summary.html','index.html']}
+    # Summary uses its page builder's current findings and displayed counts.
+    report={'pages':records,'policy':'Hero values derive from the current report JSON and native comparison CSV. Matching pairs and unique proposals are distinct; FAP candidates are separated from domestic candidates. Scenario outputs are not observed budget outcomes.','summaryPage':'summary.html'}
     (root/'analysis_output/report_hero_review.json').write_text(json.dumps(report,indent=2)+'\n')
     return report
 

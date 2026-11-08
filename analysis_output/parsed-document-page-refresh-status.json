@@ -1,8 +1,8 @@
 {
   "status": "complete",
-  "startedAtUtc": "2026-11-07T18:14:58.215429+00:00",
-  "pid": 77359,
-  "source": "t5-cloudflare-reconciliation",
+  "startedAtUtc": "2026-11-08T07:37:35.584997+00:00",
+  "pid": 50107,
+  "source": "project-document-view-build",
   "builders": {
     "build_dpwh_indepth.py": {
       "projectsWithParsedPow": 7225,
@@ -17,7 +17,7 @@
     },
     "build_dpwh_transparency_page.py": {
       "page": "dpwh-transparency.html",
-      "dataVersion": "e0597635251b"
+      "dataVersion": "8b2b1abbce7f"
     },
     "build_cost_per_unit_page.py": {
       "page": "cost-per-unit.html"
@@ -93,6 +93,19 @@
     "build_undocumented_hgab.py": {
       "noDocumentProjects": 1929,
       "amountPesos": 53595249000,
+      "completeDocumentProjectRows": 3168,
+      "completeDocumentProjectRowsPct": 51.89,
+      "completeDocumentAllocationPesos": 89499883000,
+      "allHgabOnlyAllocationPesos": 170494419000,
+      "completeDocumentDenominator": 6105,
+      "completeDocumentTypeThreshold": 4,
+      "completeDocumentTypeNames": [
+        "BP 202",
+        "Certificate of Implementability",
+        "Development Council",
+        "Geotagged photos",
+        "POW"
+      ],
       "withReviewFlags": 1929,
       "withNoSelectedNep": 1929,
       "withinStageRepeatCandidates": 35,
@@ -402,28 +415,30 @@
       }
     },
     "build_investigation_summary.py": {
-      "output": "{\n  \"comparisonPairs\": 2598,\n  \"uniqueNEPProposals\": 1576,\n  \"pairStatuses\": {\n    \"Potential retained link\": 143,\n    \"Clear retained link\": 2263,\n    \"No selected or cited counterpart\": 192\n  },\n  \"uniqueStatuses\": {\n    \"Potential retained link\": 84,\n    \"Clear retained link\": 1370,\n    \"No selected or cited counterpart\": 122\n  }\n}\nCongress benchmark refresh skipped (Benchmark attribution does not reconcile); retaining the last reconciled benchmark.\n{\n  \"findings\": 8,\n  \"rcs\": {\n    \"offices\": 199,\n    \"poolPesos\": 835800000,\n    \"allocationCV\": 0,\n    \"rainfallProxyCV\": 0.19125774992682673,\n    \"minimumRainMm\": 1564.0,\n    \"maximumRainMm\": 4045.0,\n    \"wettestToDriestRatio\": 2.586317135549872,\n    \"officeMeanUnitsMoved\": 0.0,\n    \"provinceMeanUnitsMoved\": 44.0,\n    \"officeMedianUnitsMoved\": 0.0,\n    \"meanMedianDifferentOfficeUnits\": 0,\n    \"regionalFallbackOffices\": 1,\n    \"correlation\": \"Undefined: allocation variance is zero; no correlation p-value reported.\"\n  },\n  \"repeats\": {\n    \"comparisonPairs\": 2598,\n    \"uniqueCurrentProposals\": 1576,\n    \"uniqueCurrentPesos\": 51293004750,\n    \"chainageStatuses\": {\n      \"overlap\": 27,\n      \"not stated\": 827,\n      \"incomplete\": 738,\n      \"not applicable\": 1006\n    },\n    \"overlapUniqueProposals\": 26,\n    \"trancheStatuses\": {\n      \"not stated\": 2572,\n      \"same tranche\": 9,\n      \"one side stated\": 17\n    }\n  },\n  \"fiveMillion\": {\n    \"N\": 199,\n    \"roadOffices\": 96,\n    \"floodOffices\": 45,\n    \"overlap\": 35,\n    \"expectedOverlap\": 21.70854271356784,\n    \"hypergeometricP\": 5.067002321181279e-06,\n    \"oddsRatio\": 5.336065573770492,\n    \"wald95CI\": [\n      2.4621913292960116,\n      11.56433111789073\n    ],\n    \"regionalPermutationP\": 0.0003199968000319997,\n    \"regionalPermutationRepetitions\": 100000,\n    \"postSelectionAdjusted\": false\n  },\n  \"domesticInsertionCandidates\": 5491\n}\n"
+      "output": "ear retained link\": 1370,\n    \"No selected or cited counterpart\": 122\n  }\n}\nCongress benchmark refresh skipped (Benchmark attribution does not reconcile); retaining the last reconciled benchmark.\n{\n  \"findings\": 8,\n  \"rcs\": {\n    \"offices\": 199,\n    \"poolPesos\": 835800000,\n    \"allocationCV\": 0,\n    \"rainfallProxyCV\": 0.19125774992682673,\n    \"minimumRainMm\": 1564.0,\n    \"maximumRainMm\": 4045.0,\n    \"wettestToDriestRatio\": 2.586317135549872,\n    \"officeMeanUnitsMoved\": 0.0,\n    \"provinceMeanUnitsMoved\": 44.0,\n    \"officeMedianUnitsMoved\": 0.0,\n    \"meanMedianDifferentOfficeUnits\": 0,\n    \"regionalFallbackOffices\": 1,\n    \"correlation\": \"Undefined: allocation variance is zero; no correlation p-value reported.\"\n  },\n  \"repeats\": {\n    \"comparisonPairs\": 2598,\n    \"uniqueCurrentProposals\": 1576,\n    \"uniqueCurrentPesos\": 51293004750,\n    \"chainageStatuses\": {\n      \"overlap\": 27,\n      \"not stated\": 827,\n      \"incomplete\": 738,\n      \"not applicable\": 1006\n    },\n    \"overlapUniqueProposals\": 26,\n    \"trancheStatuses\": {\n      \"not stated\": 2572,\n      \"same tranche\": 9,\n      \"one side stated\": 17\n    }\n  },\n  \"fiveMillion\": {\n    \"N\": 199,\n    \"roadOffices\": 96,\n    \"floodOffices\": 45,\n    \"overlap\": 35,\n    \"expectedOverlap\": 21.70854271356784,\n    \"hypergeometricP\": 5.067002321181279e-06,\n    \"oddsRatio\": 5.336065573770492,\n    \"wald95CI\": [\n      2.4621913292960116,\n      11.56433111789073\n    ],\n    \"regionalPermutationP\": 0.0003199968000319997,\n    \"regionalPermutationRepetitions\": 100000,\n    \"postSelectionAdjusted\": false\n  },\n  \"domesticInsertionCandidates\": 5491,\n  \"allHgabDocumentGap\": {\n    \"rows\": 2362,\n    \"allocationPesos\": 71100604000,\n    \"matchedRows\": 13617,\n    \"denominatorRows\": 15979,\n    \"matchedPct\": 85.22,\n    \"totalAllocationPesos\": 540798450000\n  },\n  \"fmrConnectivity\": {\n    \"flagOrDoubleRows\": 749,\n    \"flagOrDoublePesos\": 14551317500,\n    \"baselineRows\": 206,\n    \"reviewRows\": 0,\n    \"coordinateReviewRows\": 9,\n    \"totalRows\": 964\n  }\n}\n"
     }
   },
   "activeBuilder": null,
-  "heartbeatAtUtc": "2026-11-07T18:15:56.933625+00:00",
+  "heartbeatAtUtc": "2026-11-08T07:38:36.253244+00:00",
   "outputContracts": {
     "dpwh.html": {
       "coverageColumns": 7,
-      "finalSection": "all-hgab-document-coverage"
+      "finalSection": "all-hgab-document-coverage",
+      "documentCoverageScope": "all-HGAB"
     },
     "undocumented-hgab.html": {
       "coverageColumns": 7
     },
     "summary.html": {
       "cards": 8,
-      "agencyComparisons": 5
+      "agencyComparisons": 5,
+      "restoredFrom": "open-data-visualization:72f9346cc"
     },
     "documentPageStatsAudit": {
       "status": "ok",
       "checkedPages": 8
     }
   },
-  "completedAtUtc": "2026-11-07T18:16:10.967345+00:00",
+  "completedAtUtc": "2026-11-08T07:38:41.061674+00:00",
   "lastError": null
 }

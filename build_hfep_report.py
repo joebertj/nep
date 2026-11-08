@@ -150,6 +150,8 @@ html=html.replace('</head>',STYLE+'</head>',1)
 
 DEST.parent.mkdir(parents=True, exist_ok=True)
 html=fit_tables(html)
+from report_table_presentation import apply_page_table_module
+html,_=apply_page_table_module('hfep.html',html)
 DEST.write_text(html, encoding="utf-8")
 STATIC.mkdir(parents=True,exist_ok=True)
 (STATIC/'hfep.html').write_text(html,encoding='utf-8')

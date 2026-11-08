@@ -171,6 +171,8 @@ def main():
     data_version = hashlib.sha256((STATIC / 'barangay-allocation-data.json').read_bytes()).hexdigest()[:12]
     page = apply_page(template, 'barangay.html').replace('barangay-allocation-data.json?v=1', f'barangay-allocation-data.json?v={data_version}')
     page = page.replace('</head>', '<link rel=\"stylesheet\" href=\"report-disclaimer.css?v=20261031-01\"></head>', 1) if 'report-disclaimer.css' not in page else page
+    from report_table_presentation import apply_page_table_module
+    page,_=apply_page_table_module('barangay.html',page)
     for path in [STATIC / 'barangay.html', OUT / 'barangay.html']:
         path.write_text(page)
     # This builder owns barangay.html only. Other pages receive shared menu markup from their own builders.

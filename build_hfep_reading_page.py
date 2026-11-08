@@ -14,6 +14,8 @@ def build():
     page = path.read_text(encoding='utf-8')
     if not (STATIC / 'nep-agency-baselines.json').exists():
         page = render_reading_revision_overlay(page, 'hfep')
+    from report_table_presentation import apply_page_table_module
+    page,_=apply_page_table_module(path.name,page)
     path.write_text(page, encoding='utf-8')
     (OUT / path.name).write_text(page, encoding='utf-8')
     return {'page': path.name}

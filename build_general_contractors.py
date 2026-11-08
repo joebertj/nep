@@ -475,6 +475,8 @@ def build():
     for folder in (OUT/'contractors-data', STATIC/'contractors-data'):
         stats = write_contractors_payload(folder,index.copy(),contractors)
     html = apply_uniform_menu_page(apply_share_build_meta(PAGE), 'contractors.html')
+    from report_table_presentation import apply_page_table_module
+    html,_=apply_page_table_module('contractors.html',html)
     for path in (OUT/'contractors.html',STATIC/'contractors.html'):
         path.write_text(html,encoding='utf-8')
     print(json.dumps({**data['summary'],**stats},indent=2))

@@ -44,10 +44,9 @@ def apply():
  path=STATIC/'summary-data.json'
  if not path.exists():return
  data=json.loads(path.read_text());enrich_findings(data['findings']);serialized=json.dumps(data,ensure_ascii=False,indent=2)+'\n';path.write_text(serialized);(OUT/'investigation_summary.json').write_text(serialized)
- for name in ('summary.html','index.html'):
-  p=STATIC/name
-  if not p.exists():continue
+ p=STATIC/'summary.html'
+ if p.exists():
   text=link_cards(p.read_text(),data['findings']);p.write_text(text)
-  if (OUT/name).exists():(OUT/name).write_text(text)
+  if (OUT/'summary.html').exists():(OUT/'summary.html').write_text(text)
  return [{'id':r['id'],'links':r['detailLinks']} for r in data['findings']]
 if __name__=='__main__':print(json.dumps(apply(),indent=2))

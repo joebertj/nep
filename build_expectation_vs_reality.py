@@ -185,6 +185,8 @@ let page=0,perPage=25;const q=document.getElementById('q'),status=document.getEl
     html = html.replace('__VERSION__', version)
     import uniform_report_menu
     html = uniform_report_menu.apply_page(html, 'expectation-vs-reality.html')
+    from report_table_presentation import apply_page_table_module
+    html,_=apply_page_table_module('expectation-vs-reality.html',html)
     return payload + '\n', html
 
 

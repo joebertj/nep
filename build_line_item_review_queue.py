@@ -244,7 +244,7 @@ def build(indepth_data=None):
     connectivity = json.loads((STATIC / 'connectivity-data.json').read_text())
     fmr_classes = {
         'Flag FMR · only road or mapped cropland ≤500 m': ('fmr_flag', 'FMR connectivity flag'),
-        'Double Flag FMR · road and mapped cropland >1 km': ('fmr_double_flag', 'FMR double flag'),
+        'Double Flag FMR · road and mapped cropland >500 m': ('fmr_double_flag', 'FMR double flag'),
         'Review · other distance combinations': ('fmr_review', 'FMR connectivity review'),
     }
     for item in connectivity.get('projects', []):

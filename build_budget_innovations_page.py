@@ -34,6 +34,8 @@ def build():
         page=page.replace('</head>',STYLE+'</head>',1)
     from investigation_page_sections import apply_owned_sections
     page=apply_owned_sections(page,'budget-innovations.html')
+    from report_table_presentation import apply_page_table_module
+    page,_=apply_page_table_module('budget-innovations.html',page)
     path.write_text(page,encoding='utf-8')
     mirror=OUT/path.name
     if mirror.exists():mirror.write_text(page,encoding='utf-8')

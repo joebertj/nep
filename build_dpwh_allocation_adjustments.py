@@ -43,7 +43,8 @@ search.oninput=direction.onchange=basis.onchange=()=>{page=0;draw()};document.ge
 </script>'''
 
 
-def refresh():
+def refresh(page=None):
+    """Refresh adjustment evidence and render it into one owning page string."""
     mapping=json.loads((ROOT/'analysis_output/hb_nep_comparison_3rd_mapping.json').read_text())
     rows=[]
     for p in mapping['pairs']:
@@ -59,19 +60,21 @@ def refresh():
     prior_rows={row.get('hgabId'):row for row in data.get('allocationAdjustments',{}).get('domestic',[]) if row.get('hgabId')}
     data['allocationAdjustments']={'domestic':[{**prior_rows.get(row['hgabId'],{}),**row} for row in rows]}
     path.write_text(json.dumps(data,ensure_ascii=False,separators=(',',':'))+'\n')
-    for name in ['dpwh.html','dpwh-hgab.html']:
-        path=STATIC/name;page=path.read_text()
-        if 'id="subtractions-domestic"' not in page:
-            continue
+    if page is None:
+        from build_dpwh_hgab_page import build
+        return build()
+    if 'id="subtractions-domestic"' in page:
         page=re.sub(r'<section class="card section" id="allocation-adjustments-domestic">.*?</section>','',page,flags=re.S)
         page=re.sub(r'<script id="allocation-adjustments-script">.*?</script>','',page,flags=re.S)
         page,n=re.subn(r'(<section class="card section" id="subtractions-domestic">.*?</section>)',lambda m:m[1]+SECTION,page,count=1,flags=re.S)
-        if n!=1:raise ValueError('Missing domestic removals section: '+name)
+        if n!=1:raise ValueError('Missing domestic removals section: dpwh-hgab.html')
         page=page.replace('Foreign assisted projects · separate NEP → HGAB review','Foreign assisted projects · allocation adjustments and reconciliation')
         page=re.sub(r'<style id="allocation-adjustments-table-style">.*?</style>','',page,flags=re.S)
         page=page.replace('</head>',STYLE+'</head>',1)
-        path.write_text(page.replace('</body>',SCRIPT+'</body>',1))
-    print(json.dumps({'domesticAllocationAdjustments':len(rows),'increases':sum(r['deltaPesos']>0 for r in rows),'decreases':sum(r['deltaPesos']<0 for r in rows)},indent=2))
+        page=page.replace('</body>',SCRIPT+'</body>',1)
+    return page
 
 
-if __name__=='__main__':refresh()
+if __name__=='__main__':
+    from build_dpwh_hgab_page import build
+    print(json.dumps(build(),ensure_ascii=False))

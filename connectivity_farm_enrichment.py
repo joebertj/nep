@@ -3,9 +3,9 @@ import json
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 CACHE=ROOT/'analysis_output/connectivity-cropland-measurements.json'
-MODEL='Baseline FMR · road and mapped cropland ≤100 m'
+MODEL='Baseline FMR · road and mapped cropland ≤500 m'
 FLAG='Flag FMR · only road or mapped cropland ≤500 m'
-DOUBLE='Double Flag FMR · road and mapped cropland >1 km'
+DOUBLE='Double Flag FMR · road and mapped cropland >500 m'
 REVIEW='Review · other distance combinations'
 UNKNOWN='Unresolved · incomplete cropland coverage'
 COORDINATE_REVIEW='Coordinate review · endpoints >20 km apart'
@@ -14,11 +14,13 @@ def classify(row):
  if row.get('coordinateQualityFlag'):return COORDINATE_REVIEW
  road=row.get('nearestDistanceMeters');farm=row.get('farmDistanceMeters')
  if road is None:return UNKNOWN
- if farm is not None and road<=100 and farm<=100:return MODEL
  near=farm is not None and farm<=500
- if (near or row.get('farmCoverage500m')) and ((road<=500)!=near):return FLAG
- if road>1000 and row.get('farmCoverage1000m') and (farm is None or farm>1000):return DOUBLE
- if farm is None and not row.get('farmCoverage1000m'):return UNKNOWN
+ if road<=500 and near:return MODEL
+ farm_known=farm is not None or row.get('farmCoverage1000m')
+ if not farm_known:return UNKNOWN
+ if (road<=500)!=near:return FLAG
+ farm_far=(farm is not None and farm>500) or (farm is None and row.get('farmCoverage1000m'))
+ if road>500 and farm_far:return DOUBLE
  return REVIEW
 
 def load_measurements():

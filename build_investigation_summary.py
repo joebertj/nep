@@ -101,6 +101,38 @@ def refresh_undocumented_hgab_card(page):
     return page,{'rows':missing_count,'allocationPesos':missing_pesos,'matchedRows':matched_count,
                  'denominatorRows':expected,'matchedPct':round(matched_pct,2),'totalAllocationPesos':total_pesos}
 
+def refresh_connectivity_card(page):
+    """Keep the summary's FMR lead aligned with connectivity's current classes."""
+    data=json.loads((STATIC/'connectivity-data.json').read_text(encoding='utf-8'))
+    rows=data.get('projects',[])
+    classes=Counter(row.get('connectivityClass') for row in rows)
+    flag='Flag FMR · only road or mapped cropland ≤500 m'
+    double='Double Flag FMR · road and mapped cropland >500 m'
+    review='Review · other distance combinations'
+    baseline='Baseline FMR · road and mapped cropland ≤500 m'
+    flagged_count=classes[flag]+classes[double]
+    flagged_pesos=sum(int(row.get('amountPesos') or 0) for row in rows if row.get('connectivityClass') in {flag,double})
+    review_rows=[row for row in rows if row.get('connectivityClass')==review]
+    baseline_rows=[row for row in rows if row.get('connectivityClass')==baseline]
+    coordinate_rows=sum(bool(row.get('coordinateQualityFlag')) for row in rows)
+    amount=lambda value:f'₱{value/1e9:,.3f}B' if value>=1e9 else f'₱{value/1e6:,.3f}M'
+    pattern=r'<article class="priority-card">(?:(?!</article>).)*?<h3>FMR road and cropland proximity</h3>.*?</article>'
+    match=re.search(pattern,page,re.S)
+    if not match:
+        raise ValueError('Restored summary is missing the FMR connectivity priority card')
+    card=match[0]
+    card=re.sub(r'(<strong class="priority-metric">).*?(</strong>)',
+                lambda m:m[1]+f'{amount(flagged_pesos)} · {flagged_count:,} Flag / Double Flag projects'+m[2],card,count=1,flags=re.S)
+    secondary=(f'<div class="priority-secondary"><span><strong>{len(review_rows):,}</strong> Review · {amount(sum(int(r.get("amountPesos") or 0) for r in review_rows))}</span>'
+               f'<span><strong>{len(baseline_rows):,}</strong> Baseline · {amount(sum(int(r.get("amountPesos") or 0) for r in baseline_rows))}</span>'
+               f'<span><strong>{coordinate_rows:,}</strong> Coordinate review</span><span><strong>{len(rows):,}</strong> FMRs screened</span></div>')
+    card=re.sub(r'<div class="priority-secondary">.*?</div>',lambda _m:secondary,card,count=1,flags=re.S)
+    description=('Printed route endpoints are compared with DPWH classified roads and ESA WorldCover 2021 mapped cropland using a shared 500 m cutoff. '
+                 'Rows with endpoint gaps over 20 km remain in coordinate review. Proximity does not prove road access or farm use.')
+    card=re.sub(r'<p>.*?</p>',lambda _m:'<p>'+html.escape(description)+'</p>',card,count=1,flags=re.S)
+    return page[:match.start()]+card+page[match.end():],{'flagOrDoubleRows':flagged_count,'flagOrDoublePesos':flagged_pesos,
+        'baselineRows':len(baseline_rows),'reviewRows':len(review_rows),'coordinateReviewRows':coordinate_rows,'totalRows':len(rows)}
+
 def integer_units(weights,total,ids):
     shares=[total*w/sum(weights) for w in weights];rounded=[math.floor(v) for v in shares]
     order=sorted(range(len(weights)),key=lambda i:(-(shares[i]-rounded[i]),ids[i]))
@@ -355,12 +387,18 @@ def main():
     # exposure-ranked cards and page structure authoritative after builders run.
     final_summary=(restored_summary.read_text(encoding='utf-8') if restored_summary.is_file()
                    else (STATIC/'summary.html').read_text())
+    # The checked-in historical summary is restored after the first render; it
+    # must receive the shared menu again so its chrome stays aligned with every
+    # other page. Keep this write inside the Summary builder.
+    final_summary=apply_report_menu(final_summary,'summary.html')
     if restored_summary.is_file():
         final_summary,document_gap_stats=refresh_undocumented_hgab_card(final_summary)
+        final_summary,connectivity_card_stats=refresh_connectivity_card(final_summary)
         final_summary=remove_line_item_queue(final_summary)
         (STATIC/'summary.html').write_text(final_summary,encoding='utf-8')
     else:
         document_gap_stats=None
+        connectivity_card_stats=None
     final_data=json.loads((STATIC/'summary-data.json').read_text())
     card_count=len(re.findall(r'<article class="priority-card"',final_summary)) if restored_summary.is_file() else len(re.findall(r'<article class="finding"',final_summary))
     if card_count != 8 or len(final_data.get('findings',[])) != 8:
@@ -368,8 +406,11 @@ def main():
             'Summary output drifted during finalization: '
             f'{card_count} restored HTML cards, {len(final_data.get("findings",[]))} JSON findings; expected eight of each'
         )
+    from report_table_presentation import apply_page_table_module
+    final_summary,_=apply_page_table_module('summary.html',final_summary)
+    (STATIC/'summary.html').write_text(final_summary,encoding='utf-8')
     (ROOT/'analysis_output/summary.html').write_text(final_summary)
-    print(json.dumps({'findings':len(findings),'rcs':rcs_stats,'repeats':repeat_stats,'fiveMillion':price_stats,'domesticInsertionCandidates':len(domestic),'allHgabDocumentGap':document_gap_stats},ensure_ascii=False,indent=2))
+    print(json.dumps({'findings':len(findings),'rcs':rcs_stats,'repeats':repeat_stats,'fiveMillion':price_stats,'domesticInsertionCandidates':len(domestic),'allHgabDocumentGap':document_gap_stats,'fmrConnectivity':connectivity_card_stats},ensure_ascii=False,indent=2))
 
 if __name__=='__main__':
     main()

@@ -20,6 +20,7 @@ PAGE_BUILDERS = {
     'expectation-vs-reality.html': 'build_expectation_vs_reality.py',
     'development-council.html': 'build_development_council.py',
     'undocumented-hgab.html': 'build_undocumented_hgab.py',
+    'pow.html': 'build_pow_page.py',
     'summary.html': 'build_investigation_summary.py',
 }
 
@@ -216,19 +217,39 @@ def audit():
     if builder_violations:
         fail(errors, 'page-builder-ownership', '; '.join(builder_violations))
     summary_builder = (ROOT / 'build_investigation_summary.py').read_text(encoding='utf-8')
-    if "if page != 'summary.html':" not in summary_builder or 'queue_page_section' not in summary_builder:
+    summary_html_targets = re.findall(
+        r"\bSTATIC\s*/\s*['\"]([^'\"]+\.html)['\"]", summary_builder)
+    foreign_targets = sorted({name for name in summary_html_targets if name != 'summary.html'})
+    if foreign_targets:
         fail(errors, 'summary-builder-cross-page-write',
-             'summary builder must queue shared sections for their owner builders instead of writing other pages')
+             'summary builder writes non-owned HTML pages: ' + ', '.join(foreign_targets))
     module_source = (ROOT / 'report_page_modules.py').read_text(encoding='utf-8')
     if 'def apply_page_modules(html, page):' not in module_source:
         fail(errors, 'page-module-interface-missing', 'owner builders cannot apply shared sections in memory')
-    checks['encapsulation'] = {'summaryWritesOnlyOwnPage': 'summary-builder-cross-page-write' not in {e['code'] for e in errors},
-                              'sharedSectionsQueuedForOwners': True}
+    checks['encapsulation'] = {
+        'summaryWritesOnlyOwnPage': 'summary-builder-cross-page-write' not in {e['code'] for e in errors},
+        'summaryHtmlTargets': sorted(set(summary_html_targets)),
+    }
     checks['pageOwnership'] = PAGE_BUILDERS
+
+    pow_page = (STATIC / 'pow.html').read_text(encoding='utf-8')
+    pow_data = read_json(STATIC / 'pow-hgab-parsed-documents.json')
+    pow_summary = pow_data.get('summary', {})
+    if 'id="senate-hgab-parsed-pows"' not in pow_page or 'pow-hgab-parsed-documents.js?v=' not in pow_page:
+        fail(errors, 'senate-pow-page-section', 'POW page is missing its Senate HGAB parsed-results table or loader')
+    if len(pow_data.get('documents', [])) != pow_summary.get('parsedDocuments'):
+        fail(errors, 'senate-pow-export-count', 'POW page export row count does not match parsed-document count')
+    checks['senatePowPage'] = {
+        'parsedDocuments': pow_summary.get('parsedDocuments'),
+        'billRows': pow_summary.get('billRows'),
+        'uniqueMatchedHgabProjectRows': pow_summary.get('uniqueMatchedHgabProjectRows'),
+        'loadsParsedResults': 'pow-hgab-parsed-documents.js?v=' in pow_page,
+    }
 
     scan_mtime = scan_path.stat().st_mtime
     relevant_pages = ['dpwh.html', 'undocumented-hgab.html', 'summary.html', 'cost-per-unit.html',
-                      'pccp-cost-per-unit.html', 'expectation-vs-reality.html', 'development-council.html']
+                      'pccp-cost-per-unit.html', 'expectation-vs-reality.html', 'development-council.html',
+                      'pow.html']
     stale_pages = [name for name in relevant_pages if (STATIC / name).stat().st_mtime < scan_mtime]
     if stale_pages:
         fail(errors, 'pages-older-than-scan', ', '.join(stale_pages))

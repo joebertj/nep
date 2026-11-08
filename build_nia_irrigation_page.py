@@ -10,6 +10,8 @@ OUT = ROOT / 'analysis_output'
 
 def build():
     page, summary = render_page('nia-irrigation.html')
+    from report_table_presentation import apply_page_table_module
+    page,_=apply_page_table_module('nia-irrigation.html',page)
     (STATIC / 'nia-irrigation.html').write_text(page, encoding='utf-8')
     (OUT / 'nia-irrigation.html').write_text(page, encoding='utf-8')
     return summary

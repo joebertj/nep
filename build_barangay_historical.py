@@ -152,6 +152,8 @@ function csv(){const rows=[['year','barangay','localityContext','projectName','c
 const c=D.coverage.districtSeries,m=D.coverage.mpbSeries;$('places').textContent=num(D.summary.barangayPlaceCount);$('associations').textContent=num(D.summary.projectPlaces);$('projects').textContent=num(D.summary.uniqueProjectRows);$('coverage').textContent='FY2015–FY2026. The district-family series provides '+num(c.reduce((a,r)=>a+r.assignedRows,0))+' uniquely district-assigned classified non-MPB lines across the available years; '+num(D.summary.nonMpbTitleParsedRows)+' rows with parsed barangay mentions are shown. The official MPB series contributes '+num(D.summary.mpbOfficialBarangayLinks)+' linked GAA barangay/project associations. District-family coverage by year and MPB coverage are recorded in the separate dataset.';$('year').onchange=()=>{page=0;draw()};$('search').oninput=()=>{page=0;draw()};$('prev').onclick=()=>{page--;draw()};$('next').onclick=()=>{page++;draw()};$('export').onclick=csv;draw()})().catch(e=>{document.querySelector('main').insertAdjacentHTML('afterbegin','<p class="disclaimer">Historical barangay data could not be loaded: '+String(e.message)+'</p>')});
 </script></body></html>'''.replace('__VERSION__', data_version)
     page = apply_page(template, PAGE)
+    from report_table_presentation import apply_page_table_module
+    page,_=apply_page_table_module(PAGE,page)
     page = '\n'.join(line.rstrip() for line in page.splitlines()) + '\n'
     for path in (STATIC / PAGE, OUT / PAGE):
         path.write_text(page, encoding='utf-8')

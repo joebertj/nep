@@ -14,111 +14,24 @@ HGAB_GAA_DATA=STATIC/'repeat-hgab-historical-gaa.json'
 SPLIT_GAA_DATA=STATIC/'repeats-historical-data.json'
 
 def build():
-    from report_hero_module import STYLE
-    from build_investigation_summary import CSS, JS
-    fragments=json.loads(CACHE.read_text()) if CACHE.exists() else {}
-    sources={'dpwh.html':[('within','id="within-stage-repeats"'),('survival','id="repeat-hgab-survival"')],
-             'fmr.html':[('fmr','Potential FMR repeats:')],
-             'nia.html':[('nia','Potential NIA irrigation repeats:')]}
-    for name,targets in sources.items():
-        path=STATIC/name
-        text=path.read_text()
-        for key,marker in targets:
-            found=next((m for m in SECTION.finditer(text) if marker in m[0]),None)
-            if found:
-                fragments[key]=found[0]
-                text=text[:found.start()]+f'<p class="repeat-page-link"><a href="repeats.html#{key}">Project repeat comparisons and source evidence →</a></p>'+text[found.end():]
-        path.write_text(text)
+    """Build only repeats.html from cached, page-independent repeat fragments."""
+    if not CACHE.exists():
+        raise FileNotFoundError(f"Repeat section cache is required: {CACHE}")
+    fragments=json.loads(CACHE.read_text(encoding='utf-8'))
     required={'within','survival','fmr','nia'}
-    if not required.issubset(fragments):
-        raise ValueError('Missing repeat sections: '+str(required-set(fragments)))
-    CACHE.write_text(json.dumps(fragments,ensure_ascii=False,indent=2)+'\n')
+    missing=required-set(fragments)
+    if missing:
+        raise ValueError('Missing repeat sections in cache: '+', '.join(sorted(missing)))
+    from build_repeats_split import build_repeats_page as render_repeats_page
+    result=render_repeats_page(fragments)
+    html=result.pop('html')
+    html=html.rstrip()+'\n'
+    (STATIC/'repeats.html').write_text(html,encoding='utf-8')
+    (OUT/'repeats.html').write_text(html,encoding='utf-8')
+    return result
 
-    # Historical agency screens compare current HGAB projects with enacted GAA.
-    # Label that year explicitly in each table, even where the current source
-    # covers one GAA year only.
-    def add_table_column(fragment, after_index, header, value):
-        def row_insert(match):
-            row=match.group(0)
-            cells=list(re.finditer(r'<t[dh]\b[^>]*>.*?</t[dh]>',row,re.S))
-            if len(cells)<=after_index:
-                return row
-            insert_at=cells[after_index].end()
-            tag='th' if cells[0].group(0).startswith('<th') else 'td'
-            cell=f'<{tag}>{header if tag=="th" else value}</{tag}>'
-            return row[:insert_at]+cell+row[insert_at:]
-        return re.sub(r'<tr\b[^>]*>.*?</tr>',row_insert,fragment,flags=re.S)
-    fmr=add_table_column(fragments['fmr'],1,'GAA year','FY2025')
-    nia=add_table_column(fragments['nia'],2,'GAA year','FY2025')
-    within_data=json.loads((OUT/'within_stage_repeats.json').read_text())
-    hgab_summary=next(row for row in within_data['summary'] if row['stage']=='FY2027 HGAB 3rd')
-    source_within=fragments['within']
-    match=re.search(r'<h3>FY2027 HGAB 3rd · first 50 review pairs</h3>.*?(?=<h3>Methodology and exclusions</h3>)',source_within,re.S)
-    if not match:
-        raise ValueError('Could not isolate HGAB within-stage repeat records')
-    within=('<section id="within-stage-repeats" class="investigation-evidence"><h2>Repeated line items within HGAB 3rd reading</h2>'
-            '<p>Potentially similar HGAB 3rd-reading project lines for review. These are within-stage title comparisons, not confirmed duplicate work.</p>'
-            '<div class="stats"><div><strong>'+str(hgab_summary['candidatePairs'])+'</strong><span>candidate pairs</span></div>'
-            '<div><strong>'+str(hgab_summary['distinctFlaggedOccurrences'])+'</strong><span>distinct line occurrences</span></div>'
-            '<div><strong>'+str(hgab_summary['positiveOverlapPairs'])+'</strong><span>pairs with explicit chainage overlap</span></div></div>'
-            +match.group(0).replace('<h3>FY2027 HGAB 3rd · first 50 review pairs</h3>','<h3>First 50 review pairs</h3>',1)+'</section>')
-    queue=json.loads((OUT/'line_item_review_queue.json').read_text())
-    historical_rows=[]
-    for project in queue.get('rankedOccurrences',[]):
-        for prior in project.get('historicalMatches',[]):
-            historical_rows.append({
-                'hgabId':project['hgabId'],'projectName':project['projectName'],
-                'program':project.get('program',''),'office':project.get('office',''),
-                'region':project.get('region',''),'amountPesos':int(project['amountPesos']),
-                'sourceVolume':project.get('sourceVolume',''),'sourcePage':project.get('sourcePage',''),
-                'gaaYear':int(prior['year']),'gaaTitle':prior['title'],
-                'gaaAmountPesos':int(prior['amountPesos']),'gaaSource':prior.get('source',''),
-                'changePesos':int(project['amountPesos'])-int(prior['amountPesos']),
-                'chainageStatus':prior.get('chainage',{}).get('chainage_status','not stated'),
-                'chainageOverlap':prior.get('chainage',{}).get('chainage_overlap',''),
-            })
-    historical_rows.sort(key=lambda r:(-abs(r['changePesos']),r['gaaYear'],r['projectName'],r['hgabId']))
-    historical_data={
-        'scope':'HGAB 3rd-reading project lines with an exact normalized historical title and qualified municipality/province match in prior GAA data.',
-        'method':queue.get('method',{}).get('historicalMatch',''),
-        'summary':{'comparisonPairs':len(historical_rows),'hgabOccurrences':len({r['hgabId'] for r in historical_rows}),
-                   'years':sorted({r['gaaYear'] for r in historical_rows})},
-        'rows':historical_rows,
-    }
-    serialized=json.dumps(historical_data,ensure_ascii=False,separators=(',',':'))+'\n'
-    HGAB_GAA_DATA.write_text(serialized,encoding='utf-8')
-    (OUT/HGAB_GAA_DATA.name).write_text(serialized,encoding='utf-8')
-    historical_version=hashlib.sha256(HGAB_GAA_DATA.read_bytes()).hexdigest()[:12]
-    historical_section='''<section id="hgab-historical-gaa" class="investigation-evidence"><h2>HGAB 3rd vs historical GAA · recurring project titles</h2><p>HGAB lines with an exact normalized title and qualified municipality/province match in the available FY2016–FY2019 title-classified DPWH baselines and FY2020–FY2026 GAA records. FY2019 uses the DBM technical DPWH GAA schedule, classified from specific UACS lines. The FY2015 DBM DPWH capital-outlay PAP source is now available, but its grouped PAP titles are not included in exact-title repeat counts because the PAP code is not a unique project ID. <a href="gaa-2015-dpwh-technical.html">Search FY2015 parsed lines</a>. The amount difference compares budget allocations; it is not proof that scope, contract value, or completed work is identical. Each included GAA year is a separate comparison.</p><div class="stats"><div><strong id="historical-pair-count">—</strong><span>HGAB–GAA comparison pairs</span></div><div><strong id="historical-project-count">—</strong><span>distinct HGAB project lines</span></div><div><strong id="historical-year-count">—</strong><span>GAA years represented</span></div></div><p class="muted">FY2016–FY2019 are separate historical DPWH source layers. FY2000–2008 has partial/aggregate-only coverage; FY2001/2004/2006 had no new GAA; FY2009–FY2015 is unavailable or unreconciled for this exact-title comparison. Unavailable or unreconciled years are excluded from matches and totals.</p><div class="toolbar"><label>GAA year <select id="historical-year"><option value="all">All available years</option></select></label><input id="historical-search" type="search" placeholder="Search project, program, office, or source"><button id="historical-csv" type="button">Export filtered CSV</button></div><div id="historical-year-chart" class="chart"></div><div class="tablewrap"><table><thead><tr><th>HGAB project · office · source page</th><th>GAA year</th><th>Historical GAA project · source</th><th>HGAB allocation</th><th>GAA allocation</th><th>Change</th><th>Chainage evidence</th></tr></thead><tbody id="historical-body"></tbody></table></div><div class="pagination"><button id="historical-prev" type="button">Previous</button><span id="historical-page">Page 1</span><button id="historical-next" type="button">Next</button></div><p class="muted" id="historical-status"></p></section>'''
-    historical_script='''<script>fetch("repeat-hgab-historical-gaa.json?v=__DATA_VERSION__").then(r=>{if(!r.ok)throw Error("Historical GAA comparison data unavailable");return r.json()}).then(D=>{const $=id=>document.getElementById(id),peso=n=>"₱"+Number(n||0).toLocaleString("en-PH"),esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\\\"":"&quot;","'":"&#39;"}[c])),year=$("historical-year"),search=$("historical-search"),body=$("historical-body"),size=50;let page=0,filtered=[];for(const y of D.summary.years){const o=document.createElement("option");o.value=y;o.textContent="FY"+y+" GAA";year.append(o)}for(let y=2000;y<2020;y++){if(D.summary.years.includes(y))continue;const o=document.createElement("option");o.value="unavailable-"+y;o.textContent="FY"+y+" · Data unavailable";o.disabled=true;year.append(o)}$("historical-pair-count").textContent=D.summary.comparisonPairs.toLocaleString("en-PH");$("historical-project-count").textContent=D.summary.hgabOccurrences.toLocaleString("en-PH");$("historical-year-count").textContent=D.summary.years.length.toLocaleString("en-PH");function draw(){const q=search.value.trim().toLowerCase();filtered=D.rows.filter(r=>(year.value==="all"||String(r.gaaYear)===year.value)&&(!q||[r.projectName,r.program,r.office,r.region,r.gaaTitle,r.gaaSource,r.sourceVolume].join(" ").toLowerCase().includes(q)));const pages=Math.max(1,Math.ceil(filtered.length/size));page=Math.min(page,pages-1);const start=page*size;body.innerHTML=filtered.slice(start,start+size).map(r=>"<tr><td><strong>"+esc(r.projectName)+"</strong><br><small>"+esc(r.office)+" · "+esc(r.sourceVolume)+" · p."+esc(r.sourcePage)+"</small></td><td>FY"+r.gaaYear+"</td><td>"+esc(r.gaaTitle)+"<br><small>"+esc(r.gaaSource)+"</small></td><td class=\\\"num\\\">"+peso(r.amountPesos)+"</td><td class=\\\"num\\\">"+peso(r.gaaAmountPesos)+"</td><td class=\\\"num\\\">"+(r.changePesos>=0?"+":"−")+peso(Math.abs(r.changePesos))+"</td><td>"+esc(r.chainageStatus)+(r.chainageOverlap?" · "+esc(r.chainageOverlap):"")+"</td></tr>").join("")||"<tr><td colspan=\\\"7\\\">No matched HGAB–GAA titles for these filters.</td></tr>";$("historical-page").textContent="Page "+(page+1)+" of "+pages;$("historical-prev").disabled=page===0;$("historical-next").disabled=start+size>=filtered.length;$("historical-status").textContent=filtered.length.toLocaleString("en-PH")+" comparison pairs · changes are HGAB allocation minus the selected GAA year amount.";const counts=D.summary.years.map(y=>({y,n:D.rows.filter(r=>r.gaaYear===y).length})),max=Math.max(1,...counts.map(x=>x.n));$("historical-year-chart").innerHTML="<svg viewBox=\\\"0 0 850 "+(40+counts.length*36)+"\\\" role=\\\"img\\\" aria-label=\\\"HGAB historical GAA comparison pairs by year\\\">"+counts.map((x,i)=>"<text x=\\\"8\\\" y=\\\""+(30+i*36)+"\\\">FY"+x.y+"</text><rect x=\\\"90\\\" y=\\\""+(14+i*36)+"\\\" width=\\\"550\\\" height=\\\"22\\\" rx=\\\"6\\\" fill=\\\"#e7efed\\\"/><rect x=\\\"90\\\" y=\\\""+(14+i*36)+"\\\" width=\\\""+(550*x.n/max)+"\\\" height=\\\"22\\\" rx=\\\"6\\\" fill=\\\"#087e78\\\"/><text x=\\\"655\\\" y=\\\""+(30+i*36)+"\\\">"+x.n+" pairs</text>").join("")+"</svg>"}year.onchange=search.oninput=()=>{page=0;draw()};$("historical-prev").onclick=()=>{page--;draw()};$("historical-next").onclick=()=>{page++;draw()};$("historical-csv").onclick=()=>{const cols=["hgabId","projectName","program","office","sourceVolume","sourcePage","gaaYear","gaaTitle","amountPesos","gaaAmountPesos","changePesos","gaaSource","chainageStatus","chainageOverlap"],csv=[cols,...filtered.map(r=>cols.map(k=>r[k]))].map(row=>row.map(v=>"\\\""+String(v??"").replaceAll("\\\"","\\\"\\\"")+"\\\"").join(",")).join("\\r\\n"),a=document.createElement("a");a.href=URL.createObjectURL(new Blob(["\\ufeff"+csv],{type:"text/csv;charset=utf-8"}));a.download="hgab_historical_gaa_comparisons.csv";a.click()};draw()}).catch(e=>{document.getElementById("historical-status").textContent="Could not load the historical GAA comparison data.";console.error(e)});</script>'''.replace('__DATA_VERSION__',historical_version)
-    # Avoid duplicate historical descriptions in the section header.
-    hero='<div class="repeat-hero"><div class="repeat-hero-primary"><span class="repeat-hero-kicker">Project repeat analysis</span><h2>Review patterns across years and within HGAB</h2><p>These are screening matches for source and scope review. They do not establish duplicate work.</p></div><div class="repeat-hero-detail"><div class="repeat-hero-breakdown"><div><strong>'+str(len(historical_rows))+'</strong><span>title-and-place comparisons across '+str(len(historical_data['summary']['years']))+' available GAA years</span></div><div><strong>'+str(hgab_summary['candidatePairs'])+'</strong><span>potential repeat pairs within HGAB 3rd reading</span></div><div><strong>'+str(hgab_summary['positiveOverlapPairs'])+'</strong><span>of these 97 pairs have explicit chainage overlap</span></div></div><p>Open each cited project and compare its location and funded scope.</p></div></div>'
-    content=hero+'<p>NEP-to-HGAB comparisons are shown on <a href="dpwh-hgab.html">DPWH · NEP → HGAB</a>. This page focuses on potential repeats. Similar titles are review leads; they do not establish that work was duplicated.</p>'
-    for key,part in [('hgab-historical-gaa',historical_section),('within',within),('fmr',fmr),('nia',nia)]:
-        content+=part if key=='hgab-historical-gaa' else '<div id="'+key+'">'+part+'</div>'
-    content+=historical_script
-    style='<style>*{box-sizing:border-box}body{margin:0;font:15px/1.55 system-ui,sans-serif;color:#18303b;background:#f3f6f5}header{background:#102f3e;color:#fff;padding:32px}h1{font-size:clamp(30px,4vw,48px)}main{width:100%;padding:24px clamp(16px,2vw,32px)}a{color:#087e78}section{margin:24px 0;padding:22px;border:1px solid #c6dbd6;border-radius:14px;background:white}.tablewrap{width:100%}table{width:100%;table-layout:fixed;border-collapse:collapse}th,td{padding:9px;vertical-align:top;border-bottom:1px solid #d9e3e1;overflow-wrap:anywhere;white-space:normal!important}th{background:#eef5f3}.toolbar,.pagination{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}input,select,button{font:inherit;padding:8px;border:1px solid #b6c9c4;border-radius:8px}input{flex:1;min-width:180px}svg{display:block;width:100%;height:auto;max-height:420px}.repeat-hero{margin:0 0 20px;padding:22px;border-radius:14px;color:white;background:#123b48}.repeat-hero-total strong{font-size:28px;display:block}.repeat-hero p{margin-bottom:0}</style>'
-    page='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Project repeat comparisons · Budget analysis</title>'+style+STYLE+CSS+'</head><body><header><h1>Project repeat comparisons</h1><p>Potentially repeated project lines within HGAB and across GAA years.</p></header><main>'+content+'</main></body></html>'
-    from report_page_modules import apply_page_modules
-    page=apply_page_modules(page,'repeats.html')
-    from uniform_report_menu import apply_page as apply_uniform_menu
-    page=apply_uniform_menu(page,'repeats.html')
-    from review_report_language import NOTICE
-    EVIDENCE_CSS = CSS
-    page=re.sub(r'(<main\b[^>]*>)',lambda m:m[0]+NOTICE,page,count=1)
-    page=page.replace('</head>',EVIDENCE_CSS+'</head>',1)
-    from chainage_overlap_module import build_asset, publish_asset, attach_viewer
-    overlap_asset,overlap_count=build_asset()
-    overlap_version=publish_asset(overlap_asset)
-    page=attach_viewer(page,overlap_version)
-    from report_currency_module import format_tables
-    page,_=format_tables(page)
-    from report_page_table_checks import check_page_table_contract
-    check_page_table_contract('repeats.html',page)
-    (STATIC/'repeats.html').write_text(page)
-    (OUT/'repeats.html').write_text(page)
-    from build_repeats_split import build_split_pages
-    return build_split_pages(fragments)
+if __name__ == '__main__':
+    print(build())
 
 SCRIPT=r'''<script>(()=>{
 const D=JSON.parse(document.getElementById('repeat-page-data').textContent),search=document.getElementById('priorityRepeatSearch'),year=document.getElementById('priorityRepeatYear'),category=document.getElementById('repeatCategory'),body=document.getElementById('priorityRepeatBody'),pager=document.getElementById('priorityRepeatPager');let page=0,filtered=[];

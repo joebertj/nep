@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-"""Publish separate 2027-only and historical project-repeat reports."""
+"""Page renderers for the separate current and historical project-repeat reports."""
 import hashlib
 import json
-import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -10,8 +9,7 @@ ODV = ROOT.parent / 'open-data-visualization'
 STATIC = ODV / 'static/nep-preview'
 OUT = ROOT / 'analysis_output'
 
-
-def build_split_pages(fragments):
+def build_repeats_page(fragments):
     within = fragments['within']
     within = within.replace('<h3>FY2027 NEP · first 50 review pairs</h3>', '<h3 id="inter-nep">FY2027 NEP · first 50 review pairs</h3>')
     within = within.replace('<h3>FY2027 HGAB 3rd · first 50 review pairs</h3>', '<h3 id="inter-hgab">FY2027 HGAB 3rd · first 50 review pairs</h3>')
@@ -19,6 +17,41 @@ def build_split_pages(fragments):
     fmr = fragments['fmr']
     nia = fragments['nia']
 
+    common_style = '''<style>
+*{box-sizing:border-box}body{margin:0;background:#f3f6f5;color:#18303b;font:15px/1.55 system-ui,sans-serif}main{width:100%;padding:24px clamp(16px,2vw,32px)}section{margin:20px 0;padding:22px;border:1px solid #c6dbd6;border-radius:14px;background:#fff}.repeat-hero{padding:22px;border-left:7px solid #FCD116;border-radius:14px;background:linear-gradient(120deg,#00246A,#0038A8);color:#fff}.repeat-hero h2{margin:0 0 8px;color:#fff}.repeat-hero p{margin:0}.toolbar,.pagination{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:14px 0}.toolbar input,.toolbar select{font:inherit;padding:8px;border:1px solid #b6c9c4;border-radius:8px}.toolbar input{min-width:min(320px,100%);flex:1}button{font:inherit;padding:8px 12px;border:1px solid #0038A8;border-radius:8px;background:#fff;color:#0038A8;cursor:pointer}button:hover{background:#eef3fb}button:disabled{opacity:.45;cursor:not-allowed}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;table-layout:fixed}th,td{padding:9px;vertical-align:top;border-bottom:1px solid #d9e3e1;overflow-wrap:anywhere;text-align:left}th{background:#eef5f3}.num{white-space:nowrap;text-align:right}.repeat-summary{display:flex;flex-wrap:wrap;gap:10px}.repeat-summary strong{font-size:1.35rem}.historical-hero-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}.historical-hero-metrics>div{padding:12px;border:1px solid #ffffff55;border-radius:10px;background:#ffffff12}.historical-hero-metrics strong{display:block;font-size:clamp(22px,3vw,32px);font-variant-numeric:tabular-nums}.historical-hero-metrics span{display:block;font-size:13px}.year-chart{overflow:auto}.year-chart svg{display:block;width:100%;min-width:660px;height:auto}.year-chart-legend{display:flex;flex-wrap:wrap;gap:16px;margin:8px 0 0;font-size:13px}.year-chart-legend span::before{content:'';display:inline-block;width:11px;height:11px;margin-right:6px;border-radius:3px;background:#FCD116}.year-chart-legend span+span::before{background:#6de0d4}.repeat-nav{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.repeat-nav a{padding:7px 10px;border:1px solid #b6c9c4;border-radius:8px;background:#fff;color:#0038A8;text-decoration:none;font-weight:650}
+</style>'''
+    from uniform_report_menu import apply_page
+    from review_report_language import NOTICE
+
+    def publish(filename, title, teaser, body, extra_script=''):
+        html = ('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+                f'<title>{title} | BetterGov</title>{common_style}</head><body><header><div class="eyebrow">BetterGov · Budget research</div><h1>{title}</h1><p>{teaser}</p></header>'
+                f'<main>{NOTICE}{body}{extra_script}</main></body></html>')
+        html = apply_page(html, filename)
+        from report_currency_module import format_tables
+        html,_=format_tables(html)
+        if filename == 'repeats.html':
+            from chainage_overlap_module import build_asset, publish_asset, attach_viewer
+            overlap_asset,_=build_asset()
+            overlap_version=publish_asset(overlap_asset)
+            html=attach_viewer(html,overlap_version)
+        from report_table_presentation import apply_page_table_module
+        html,_=apply_page_table_module(filename,html)
+        html = '\n'.join(line.rstrip() for line in html.splitlines()) + '\n'
+        return html
+
+    body_2027 = (
+        '<section class="repeat-hero"><h2>2027-only comparison sets</h2>'
+        '<p>Review similar line items within the NEP, within HGAB 3rd reading, and across NEP-to-HGAB. Historical GAA comparisons are on <a href="repeats-historical.html">Project repeats · Historical</a>.</p></section>'
+        '<nav class="repeat-nav" aria-label="2027 repeat sections"><a href="#inter-nep">Within NEP</a><a href="#inter-hgab">Within HGAB</a><a href="#repeat-hgab-survival">NEP ↔ HGAB</a><a href="#fmr">FMR</a><a href="#nia">NIA</a></nav>'
+        + within + survival + '<section id="fmr">' + fmr + '</section><section id="nia">' + nia + '</section>'
+    )
+    html=publish('repeats.html', 'Project repeats · 2027', 'Compare 2027 line items within each budget stage and across NEP and HGAB.', body_2027)
+
+    return {'page':'repeats.html','html':html,'withinSections':['Inter-NEP','Inter-HGAB','Inter-NEP-HGAB']}
+
+
+def build_repeats_historical_page():
     dpwh = json.loads((STATIC / 'dpwh-data.json').read_text(encoding='utf-8'))
     nep_rows = [row for row in dpwh.get('priorityRepeats', [])
                 if 2016 <= int(row.get('comparison_year') or 0) <= 2026]
@@ -31,12 +64,10 @@ def build_split_pages(fragments):
     }
     data_path = STATIC / 'repeats-historical-data.json'
     serialized = json.dumps(payload, ensure_ascii=False, separators=(',', ':')) + '\n'
-    data_path.write_text(serialized, encoding='utf-8')
-    (OUT / data_path.name).write_text(serialized, encoding='utf-8')
-    version = hashlib.sha256(data_path.read_bytes()).hexdigest()[:12]
+    version = hashlib.sha256(serialized.encode('utf-8')).hexdigest()[:12]
 
     common_style = '''<style>
-*{box-sizing:border-box}body{margin:0;background:#f3f6f5;color:#18303b;font:15px/1.55 system-ui,sans-serif}main{width:100%;padding:24px clamp(16px,2vw,32px)}section{margin:20px 0;padding:22px;border:1px solid #c6dbd6;border-radius:14px;background:#fff}.repeat-hero{padding:22px;border-left:7px solid #FCD116;border-radius:14px;background:linear-gradient(120deg,#00246A,#0038A8);color:#fff}.repeat-hero h2{margin:0 0 8px;color:#fff}.repeat-hero p{margin:0}.toolbar,.pagination{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:14px 0}.toolbar input,.toolbar select{font:inherit;padding:8px;border:1px solid #b6c9c4;border-radius:8px}.toolbar input{min-width:min(320px,100%);flex:1}button{font:inherit;padding:8px 12px;border:1px solid #0038A8;border-radius:8px;background:#fff;color:#0038A8;cursor:pointer}button:hover{background:#eef3fb}button:disabled{opacity:.45;cursor:not-allowed}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;table-layout:fixed}th,td{padding:9px;vertical-align:top;border-bottom:1px solid #d9e3e1;overflow-wrap:anywhere;text-align:left}th{background:#eef5f3}.num{white-space:nowrap;text-align:right}.repeat-summary{display:flex;flex-wrap:wrap;gap:10px}.repeat-summary strong{font-size:1.35rem}.historical-hero-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}.historical-hero-metrics>div{padding:12px;border:1px solid #ffffff55;border-radius:10px;background:#ffffff12}.historical-hero-metrics strong{display:block;font-size:clamp(22px,3vw,32px);font-variant-numeric:tabular-nums}.historical-hero-metrics span{display:block;font-size:13px}.year-chart{overflow:auto}.year-chart svg{display:block;width:100%;min-width:660px;height:auto}.year-chart-legend{display:flex;flex-wrap:wrap;gap:16px;margin:8px 0 0;font-size:13px}.year-chart-legend span::before{content:'';display:inline-block;width:11px;height:11px;margin-right:6px;border-radius:3px;background:#FCD116}.year-chart-legend span+span::before{background:#6de0d4}..repeat-nav{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.repeat-nav a{padding:7px 10px;border:1px solid #b6c9c4;border-radius:8px;background:#fff;color:#0038A8;text-decoration:none;font-weight:650}
+*{box-sizing:border-box}body{margin:0;background:#f3f6f5;color:#18303b;font:15px/1.55 system-ui,sans-serif}main{width:100%;padding:24px clamp(16px,2vw,32px)}section{margin:20px 0;padding:22px;border:1px solid #c6dbd6;border-radius:14px;background:#fff}.repeat-hero{padding:22px;border-left:7px solid #FCD116;border-radius:14px;background:linear-gradient(120deg,#00246A,#0038A8);color:#fff}.repeat-hero h2{margin:0 0 8px;color:#fff}.repeat-hero p{margin:0}.toolbar,.pagination{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:14px 0}.toolbar input,.toolbar select{font:inherit;padding:8px;border:1px solid #b6c9c4;border-radius:8px}.toolbar input{min-width:min(320px,100%);flex:1}button{font:inherit;padding:8px 12px;border:1px solid #0038A8;border-radius:8px;background:#fff;color:#0038A8;cursor:pointer}button:hover{background:#eef3fb}button:disabled{opacity:.45;cursor:not-allowed}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;table-layout:fixed}th,td{padding:9px;vertical-align:top;border-bottom:1px solid #d9e3e1;overflow-wrap:anywhere;text-align:left}th{background:#eef5f3}.num{white-space:nowrap;text-align:right}.repeat-summary{display:flex;flex-wrap:wrap;gap:10px}.repeat-summary strong{font-size:1.35rem}.historical-hero-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}.historical-hero-metrics>div{padding:12px;border:1px solid #ffffff55;border-radius:10px;background:#ffffff12}.historical-hero-metrics strong{display:block;font-size:clamp(22px,3vw,32px);font-variant-numeric:tabular-nums}.historical-hero-metrics span{display:block;font-size:13px}.year-chart{overflow:auto}.year-chart svg{display:block;width:100%;min-width:660px;height:auto}.year-chart-legend{display:flex;flex-wrap:wrap;gap:16px;margin:8px 0 0;font-size:13px}.year-chart-legend span::before{content:'';display:inline-block;width:11px;height:11px;margin-right:6px;border-radius:3px;background:#FCD116}.year-chart-legend span+span::before{background:#6de0d4}.repeat-nav{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.repeat-nav a{padding:7px 10px;border:1px solid #b6c9c4;border-radius:8px;background:#fff;color:#0038A8;text-decoration:none;font-weight:650}
 </style>'''
     from uniform_report_menu import apply_page
     from review_report_language import NOTICE
@@ -46,17 +77,17 @@ def build_split_pages(fragments):
                 f'<title>{title} | BetterGov</title>{common_style}</head><body><header><div class="eyebrow">BetterGov · Budget research</div><h1>{title}</h1><p>{teaser}</p></header>'
                 f'<main>{NOTICE}{body}{extra_script}</main></body></html>')
         html = apply_page(html, filename)
+        from report_currency_module import format_tables
+        html,_=format_tables(html)
+        if filename == 'repeats.html':
+            from chainage_overlap_module import build_asset, publish_asset, attach_viewer
+            overlap_asset,_=build_asset()
+            overlap_version=publish_asset(overlap_asset)
+            html=attach_viewer(html,overlap_version)
+        from report_table_presentation import apply_page_table_module
+        html,_=apply_page_table_module(filename,html)
         html = '\n'.join(line.rstrip() for line in html.splitlines()) + '\n'
-        (STATIC / filename).write_text(html, encoding='utf-8')
-        (OUT / filename).write_text(html, encoding='utf-8')
-
-    body_2027 = (
-        '<section class="repeat-hero"><h2>2027-only comparison sets</h2>'
-        '<p>Review similar line items within the NEP, within HGAB 3rd reading, and across NEP-to-HGAB. Historical GAA comparisons are on <a href="repeats-historical.html">Project repeats · Historical</a>.</p></section>'
-        '<nav class="repeat-nav" aria-label="2027 repeat sections"><a href="#inter-nep">Within NEP</a><a href="#inter-hgab">Within HGAB</a><a href="#repeat-hgab-survival">NEP ↔ HGAB</a><a href="#fmr">FMR</a><a href="#nia">NIA</a></nav>'
-        + within + survival + '<section id="fmr">' + fmr + '</section><section id="nia">' + nia + '</section>'
-    )
-    publish('repeats.html', 'Project repeats · 2027', 'Compare 2027 line items within each budget stage and across NEP and HGAB.', body_2027)
+        return html
 
     historical_body = '''
 <section class="repeat-hero"><h2>Historical GAA title comparisons</h2><p>Compare FY2027 NEP candidates and HGAB exact-title-and-place matches with enacted DPWH GAA records. These are review leads, not findings of duplicate construction, contracts or payments.</p><div class="historical-hero-metrics"><div><strong id="hero-nep-count">—</strong><span>NEP-to-GAA comparison pairs</span></div><div><strong id="hero-hgab-count">—</strong><span>HGAB-to-GAA comparison pairs</span></div><div><strong id="hero-year-count">—</strong><span>historical GAA years</span></div></div><p>FY2016–FY2019 and FY2020–FY2026 are included where project-level detail is available. FY2019 uses the DBM technical DPWH GAA schedule. FY2015 PAP groups are excluded because their codes do not identify unique projects. <a href="gaa-2015-dpwh-technical.html">Search FY2015 parsed lines</a>.</p></section><section class="year-chart-panel"><h2>Comparison pairs by GAA year</h2><p>The chart updates with the year and search filters in both comparison tables.</p><div id="historical-year-chart" class="year-chart" role="img" aria-label="Filtered historical comparison pairs by year"></div><div class="year-chart-legend"><span>NEP title candidates</span><span>HGAB exact title and place</span></div></section>
@@ -77,5 +108,5 @@ for(const id of ['nep-search','nep-year'])$(id).oninput=$(id).onchange=()=>{{pn=
 for(const [prefix,setPage,draw] of [['nep',v=>pn=v,drawNep],['hgab',v=>ph=v,drawHgab]]){{$(`${{prefix}}-prev`).onclick=()=>{{setPage(prefix==='nep'?pn-1:ph-1);draw()}};$(`${{prefix}}-next`).onclick=()=>{{setPage(prefix==='nep'?pn+1:ph+1);draw()}}}}
 $('nep-export').onclick=()=>csv('nep-historical-gaa-repeats.csv',nf,['category','project','office','comparison_year','prior_project','amount_2027','prior_amount','similarity_pct','prior_source']);$('hgab-export').onclick=()=>csv('hgab-historical-gaa-repeats.csv',hf,['hgabId','projectName','office','gaaYear','gaaTitle','amountPesos','gaaAmountPesos','changePesos','gaaSource','chainageStatus','chainageOverlap']);drawNep();drawHgab()}})().catch(e=>{{document.getElementById('nep-status').textContent='Historical repeat data unavailable: '+e.message}});
 </script>'''
-    publish('repeats-historical.html', 'Project repeats · Historical', 'Compare project titles against enacted historical GAA records.', historical_body, hist_script)
-    return {'page':'repeats.html','historicalPage':'repeats-historical.html','withinSections':['Inter-NEP','Inter-HGAB','Inter-NEP-HGAB'],'nepVsGaaPairs':len(nep_rows),'hgabVsGaaPairs':len(historical_rows)}
+    html=publish('repeats-historical.html', 'Project repeats · Historical', 'Compare project titles against enacted historical GAA records.', historical_body, hist_script)
+    return {'page':'repeats-historical.html','html':html,'dataFilename':'repeats-historical-data.json','data':serialized,'nepVsGaaPairs':len(nep_rows),'hgabVsGaaPairs':len(historical_rows)}

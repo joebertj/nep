@@ -289,14 +289,6 @@ def main() -> None:
     STATIC.mkdir(parents=True, exist_ok=True)
     data = build_data()
     (STATIC / "rcs-data.json").write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    archive_page = STATIC / "rcs-rainfall-archive.html"
-    archive_data = STATIC / "rcs-rainfall-archive-data.json"
-    if not archive_page.exists():
-        archived_html = page_html().replace("<title>Rainwater Collector System · Rainfall allocation scenario</title>", "<title>Archived rainfall scenario · Rainwater Collector System</title>", 1)
-        archived_html = archived_html.replace("fetch('rcs-data.json')", "fetch('rcs-rainfall-archive-data.json')", 1)
-        archive_page.write_text(archived_html, encoding="utf-8")
-    if not archive_data.exists():
-        archive_data.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     from build_rcs_pow_review import main as build_pow_review
     build_pow_review()
     summary = {**data["summary"], "method": data["method"]}
