@@ -342,11 +342,16 @@ def main() -> None:
     }
     targets = {"fmr": fmr27, "nia": nia27}
     all_matches = []
+    fragments_path = OUT / "repeat_page_fragments.json"
+    fragments = json.loads(fragments_path.read_text(encoding="utf-8")) if fragments_path.exists() else {}
     for kind in ("fmr", "nia"):
         data = matches(targets[kind], previous[kind])
         all_matches.extend(data)
-        replace_section(OUT / ("fmr.html" if kind == "fmr" else "nia.html"), render_section(kind, data))
+        # Historical sections are page-builder inputs, not direct edits to the
+        # current FMR/NIA pages. The historical page owner consumes this cache.
+        fragments[kind] = render_section(kind, data)
         print(f"{kind.upper()}: FY2027 HGAB={len(targets[kind])}, FY2025 GAA prior={len(previous[kind])}; FY2026 GAA source unavailable locally")
+    fragments_path.write_text(json.dumps(fragments, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     write_csv(OUT / "fmr_nia_year_on_year_candidates.csv", all_matches)
     print(f"Wrote {OUT / 'fmr_nia_year_on_year_candidates.csv'} and updated FMR/NIA reports")
 

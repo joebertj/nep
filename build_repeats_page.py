@@ -18,7 +18,7 @@ def build():
     if not CACHE.exists():
         raise FileNotFoundError(f"Repeat section cache is required: {CACHE}")
     fragments=json.loads(CACHE.read_text(encoding='utf-8'))
-    required={'within','survival','fmr','nia'}
+    required={'within','survival'}
     missing=required-set(fragments)
     if missing:
         raise ValueError('Missing repeat sections in cache: '+', '.join(sorted(missing)))

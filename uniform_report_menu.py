@@ -24,6 +24,7 @@ MENU_GROUPS=[
     ]),
     ('Historical',[
         ('flood-control.html','Flood-control pattern'),('repeats-historical.html','Project repeats'),
+        ('cost-per-km-historical.html','Cost per meter · all GAA years'),
         ('integrated-district-allocations.html','District allocations'),
         ('mpb-barangay.html','MPB'),('mpb-historical.html','DPWH'),
         ('barangay-historical.html','Barangay'),('contractors.html','Contractors'),('connectivity.html','Road connectivity'),

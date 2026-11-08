@@ -95,7 +95,9 @@ def main():
  meta={'available':True,'source':'ESA WorldCover 2021 v200 · class 40','sourceUrl':'https://esa-worldcover.org/en/data-access','sourceYear':2021,'resolutionMeters':10,'tileCount':len(datasets),'audit':'connectivity-farm-status.json','mapData':'connectivity-cropland-map.json','method':'Distance from either printed source endpoint to 2021 class-40 cropland pixels; exact raster-derived polygon boundaries in UTM 51N. Display polygons simplified by 12 m. No-data cells remain unknown. Search tested within 1 km of both endpoints.','limits':'Class 40 describes annual herbaceous cropland; woody perennial crops may be tree/shrub cover. This dated satellite classification does not establish present farms, property boundaries, ownership, access or wrongdoing. Measured road and cropland distances use a shared 500 m classification cutoff; exact values remain available, while incomplete raster coverage remains unresolved.','attribution':'© ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium','license':'CC BY 4.0'}
  data['farmCoverage']=meta;data['connectivitySummary']=summary
  data['limits']=[x for x in data.get('limits',[]) if 'no farm-boundary layer' not in x];data['limits'].append(meta['limits'])
- write('connectivity-data.json',data);write('connectivity-fmr-road.json',data)
+ # connectivity-data.json is owned by build_connectivity_report.py. This
+ # raster pass publishes only the farm measurement cache and map products;
+ # run the page builder afterward to merge its cache into the public dataset.
  mapdata['farmLocationAvailable']=True;mapdata['farmSource']=meta;write('connectivity-map-data.json',mapdata)
  publish_crop_maps(meta,mapcrops)
  write('connectivity-cropland-measurements.json',{'source':meta,'projects':{pid:{**measurements[pid],'start':p['start'],'end':p['end']} for pid,p in mapdata['projects'].items()}})

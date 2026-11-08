@@ -75,9 +75,13 @@ def _apply_page_presentation(text,versions,page=None):
 
 
 PAGE_TABLE_CONTRACTS={
+    'cost-per-km-historical.html': {'builder':'build_cost_per_km_historical.py','chartBeforeTable':True},
     'dpwh-hgab.html': {'builder':'build_dpwh_hgab_page.py','chainageViewer':True,'chartBeforeTable':True},
     'dpwh-OO2-hgab.html': {'builder':'build_dpwh_oo2_hgab.py','chainageViewer':True,'chartBeforeTable':True},
+    'mpb-historical.html': {'builder':'build_mpb_historical_page.py','chartBeforeTable':True},
+    'integrated-district-totals.html': {'builder':'build_integrated_district_totals.py','chartBeforeTable':True},
     'repeats.html': {'builder':'build_repeats_page.py','chainageViewer':True,'chartBeforeTable':True},
+    'repeats-historical.html': {'builder':'build_repeats_historical_page.py','chartBeforeTable':True},
 }
 
 

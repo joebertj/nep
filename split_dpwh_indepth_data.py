@@ -9,8 +9,8 @@ ROOT = Path(__file__).resolve().parent
 SOURCE = ROOT / 'analysis_output' / 'dpwh-in-depth-data.json'
 STATIC = ROOT.parent / 'open-data-visualization' / 'static' / 'nep-preview'
 SHARD_DIR = 'dpwh-in-depth-shards'
-# Keep margin below GitHub's 50 MB recommended per-file limit (decimal MB).
-MAX_SHARD_BYTES = 42_000_000
+# Keep each published data shard at or below 10 MB (decimal).
+MAX_SHARD_BYTES = 10_000_000
 
 
 def atomic_bytes(path, payload):
@@ -25,7 +25,7 @@ def encode_shard(items):
 
 
 def split_array(key, items, static):
-    """Write an array to <=42 MB files and return a compact shard manifest."""
+    """Write an array to <=10 MB files and return a compact shard manifest."""
     shards = []
     chunk = []
     chunk_bytes = 2  # []

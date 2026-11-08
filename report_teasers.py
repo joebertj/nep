@@ -10,6 +10,7 @@ TEASERS={
  'repeats.html':'How often do project titles and segments resurface?',
  'mpb.html':'How many building allocations lack a plausible NEP counterpart?',
  'cost-per-km.html':'Which projects stand out on cost per meter?',
+ 'cost-per-km-historical.html':'How do stated-meter allocations compare with FY2026 GAA?',
  'cost-per-unit.html':'Compare unit costs by bill and unit, with source pages available for review.',
  'expectation-vs-reality.html':'Costing vs proposed allocation',
  'cost-matching.html':'Can asset records recover missing length information?',

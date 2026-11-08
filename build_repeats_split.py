@@ -14,8 +14,6 @@ def build_repeats_page(fragments):
     within = within.replace('<h3>FY2027 NEP · first 50 review pairs</h3>', '<h3 id="inter-nep">FY2027 NEP · first 50 review pairs</h3>')
     within = within.replace('<h3>FY2027 HGAB 3rd · first 50 review pairs</h3>', '<h3 id="inter-hgab">FY2027 HGAB 3rd · first 50 review pairs</h3>')
     survival = fragments['survival']
-    fmr = fragments['fmr']
-    nia = fragments['nia']
 
     common_style = '''<style>
 *{box-sizing:border-box}body{margin:0;background:#f3f6f5;color:#18303b;font:15px/1.55 system-ui,sans-serif}main{width:100%;padding:24px clamp(16px,2vw,32px)}section{margin:20px 0;padding:22px;border:1px solid #c6dbd6;border-radius:14px;background:#fff}.repeat-hero{padding:22px;border-left:7px solid #FCD116;border-radius:14px;background:linear-gradient(120deg,#00246A,#0038A8);color:#fff}.repeat-hero h2{margin:0 0 8px;color:#fff}.repeat-hero p{margin:0}.toolbar,.pagination{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:14px 0}.toolbar input,.toolbar select{font:inherit;padding:8px;border:1px solid #b6c9c4;border-radius:8px}.toolbar input{min-width:min(320px,100%);flex:1}button{font:inherit;padding:8px 12px;border:1px solid #0038A8;border-radius:8px;background:#fff;color:#0038A8;cursor:pointer}button:hover{background:#eef3fb}button:disabled{opacity:.45;cursor:not-allowed}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;table-layout:fixed}th,td{padding:9px;vertical-align:top;border-bottom:1px solid #d9e3e1;overflow-wrap:anywhere;text-align:left}th{background:#eef5f3}.num{white-space:nowrap;text-align:right}.repeat-summary{display:flex;flex-wrap:wrap;gap:10px}.repeat-summary strong{font-size:1.35rem}.historical-hero-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}.historical-hero-metrics>div{padding:12px;border:1px solid #ffffff55;border-radius:10px;background:#ffffff12}.historical-hero-metrics strong{display:block;font-size:clamp(22px,3vw,32px);font-variant-numeric:tabular-nums}.historical-hero-metrics span{display:block;font-size:13px}.year-chart{overflow:auto}.year-chart svg{display:block;width:100%;min-width:660px;height:auto}.year-chart-legend{display:flex;flex-wrap:wrap;gap:16px;margin:8px 0 0;font-size:13px}.year-chart-legend span::before{content:'';display:inline-block;width:11px;height:11px;margin-right:6px;border-radius:3px;background:#FCD116}.year-chart-legend span+span::before{background:#6de0d4}.repeat-nav{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.repeat-nav a{padding:7px 10px;border:1px solid #b6c9c4;border-radius:8px;background:#fff;color:#0038A8;text-decoration:none;font-weight:650}
@@ -43,15 +41,23 @@ def build_repeats_page(fragments):
     body_2027 = (
         '<section class="repeat-hero"><h2>2027-only comparison sets</h2>'
         '<p>Review similar line items within the NEP, within HGAB 3rd reading, and across NEP-to-HGAB. Historical GAA comparisons are on <a href="repeats-historical.html">Project repeats · Historical</a>.</p></section>'
-        '<nav class="repeat-nav" aria-label="2027 repeat sections"><a href="#inter-nep">Within NEP</a><a href="#inter-hgab">Within HGAB</a><a href="#repeat-hgab-survival">NEP ↔ HGAB</a><a href="#fmr">FMR</a><a href="#nia">NIA</a></nav>'
-        + within + survival + '<section id="fmr">' + fmr + '</section><section id="nia">' + nia + '</section>'
+        '<nav class="repeat-nav" aria-label="2027 repeat sections"><a href="#inter-nep">Within NEP</a><a href="#inter-hgab">Within HGAB</a><a href="#repeat-hgab-survival">NEP ↔ HGAB</a></nav>'
+        + within + survival
     )
     html=publish('repeats.html', 'Project repeats · 2027', 'Compare 2027 line items within each budget stage and across NEP and HGAB.', body_2027)
 
     return {'page':'repeats.html','html':html,'withinSections':['Inter-NEP','Inter-HGAB','Inter-NEP-HGAB']}
 
 
-def build_repeats_historical_page():
+def build_repeats_historical_page(fragments=None):
+    if fragments is None:
+        fragments_path = OUT / 'repeat_page_fragments.json'
+        if not fragments_path.exists():
+            raise FileNotFoundError(f'Historical repeat fragments are missing: {fragments_path}')
+        fragments = json.loads(fragments_path.read_text(encoding='utf-8'))
+    missing = {'fmr', 'nia'} - set(fragments)
+    if missing:
+        raise ValueError('Missing FY2025 historical agency repeat sections: ' + ', '.join(sorted(missing)))
     dpwh = json.loads((STATIC / 'dpwh-data.json').read_text(encoding='utf-8'))
     nep_rows = [row for row in dpwh.get('priorityRepeats', [])
                 if 2016 <= int(row.get('comparison_year') or 0) <= 2026]
@@ -94,6 +100,14 @@ def build_repeats_historical_page():
 <section id="nep-historical"><h2>FY2027 NEP vs enacted DPWH GAA · FY2016–FY2026</h2><p>Ranked title candidates from the NEP against prior enacted DPWH GAA records. FY2019 is included using the DBM technical schedule; FY2015 PAP groups are incompatible with this project-level matching method and excluded. Amounts and source titles remain separate for review.</p><div class="repeat-summary"><span><strong id="nep-count">—</strong> comparison pairs</span><span><strong id="nep-years">—</strong> GAA years</span></div><div class="toolbar"><label>GAA year <select id="nep-year"><option value="all">All years</option></select></label><input id="nep-search" type="search" placeholder="Search title, office, or source"><button id="nep-export">Export CSV</button></div><div class="tablewrap"><table><thead><tr><th>NEP project · category</th><th>Office</th><th>GAA year</th><th>Historical GAA title · source</th><th class="num">NEP amount</th><th class="num">GAA amount</th><th>Title score</th></tr></thead><tbody id="nep-body"></tbody></table></div><div class="pagination"><button id="nep-prev">Previous</button><span id="nep-page">Page 1</span><button id="nep-next">Next</button></div><p id="nep-status" class="note"></p></section>
 <section id="hgab-historical"><h2>HGAB 3rd vs historical GAA · exact title and place</h2><p>HGAB lines with an exact normalized title and qualified municipality/province match in the available FY2016–FY2019 DPWH source layers and FY2020–FY2026 GAA records. FY2019 uses DBM’s technical DPWH schedule. FY2015 source records are available, but are not included in exact-title counts for the PAP-code and title-structure reasons described above.</p><div class="repeat-summary"><span><strong id="hgab-count">—</strong> comparison pairs</span><span><strong id="hgab-projects">—</strong> HGAB lines</span><span><strong id="hgab-years">—</strong> GAA years</span></div><div class="toolbar"><label>GAA year <select id="hgab-year"><option value="all">All years</option></select></label><input id="hgab-search" type="search" placeholder="Search HGAB title, GAA title, office, or source"><button id="hgab-export">Export CSV</button></div><div class="tablewrap"><table><thead><tr><th>HGAB project · office · page</th><th>GAA year</th><th>Historical GAA title · source</th><th class="num">HGAB amount</th><th class="num">GAA amount</th><th class="num">Change</th><th>Chainage evidence</th></tr></thead><tbody id="hgab-body"></tbody></table></div><div class="pagination"><button id="hgab-prev">Previous</button><span id="hgab-page">Page 1</span><button id="hgab-next">Next</button></div><p id="hgab-status" class="note"></p></section>
 '''
+    fmr_section = fragments['fmr'].replace('<section ', '<section id="fmr" ', 1)
+    nia_section = fragments['nia'].replace('<section ', '<section id="nia" ', 1)
+    historical_body += (
+        '<section id="fy2025-agency-repeats" class="year-chart-panel"><h2>FY2027 vs FY2025 GAA · agency-level review screens</h2>'
+        '<p>These additional FMR and NIA comparisons use the available FY2025 enacted schedules. They are candidate screens, not verified repeat work. FY2026 schedule data is unavailable for these agency comparisons.</p>'
+        '<nav class="repeat-nav" aria-label="Agency historical comparisons"><a href="#fmr">FMR</a><a href="#nia">NIA irrigation</a></nav></section>'
+        + fmr_section + nia_section
+    )
     hist_script = f'''<script>
 (async()=>{{const D=await fetch('repeats-historical-data.json?v={version}').then(r=>{{if(!r.ok)throw Error(r.status);return r.json()}}),$=id=>document.getElementById(id),peso=n=>'₱'+Number(n||0).toLocaleString('en-PH'),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}}[c]));
 const nep=D.nepVsGaa.rows,hgab=D.hgabVsGaa.rows,size=50;let pn=0,ph=0,nf=[],hf=[];

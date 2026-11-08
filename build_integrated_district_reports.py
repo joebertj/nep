@@ -366,7 +366,10 @@ def page_shell(title, teaser, page, content, data_url='integrated-district-data.
     return html.replace('</style></head>', HISTORY_HERO_CSS + '</style></head>', 1)
 
 
-def make_pages(data):
+def make_pages(data, *, only_page):
+    """Render one requested page for its owning entry point."""
+    if only_page not in {'integrated-district-allocations.html', 'integrated.html'}:
+        raise ValueError(f'Unknown integrated district page owner: {only_page}')
     def data_loader(url):
         version = hashlib.sha256((STATIC / url).read_bytes()).hexdigest()[:12]
         return """<script>window.integratedDataPromise=fetch('__URL__?v=__VERSION__').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).catch(e=>{document.querySelector('main').insertAdjacentHTML('afterbegin','<p class="caution">Integrated district data could not be loaded. Serve this page through the local app or a web server.</p>');throw e});</script>""".replace('__URL__', url).replace('__VERSION__', version)
@@ -383,29 +386,17 @@ def make_pages(data):
     # Reapply the shared menu/readability conventions after writing the HTML.
     from uniform_report_menu import apply_page
     from report_table_presentation import apply_page_table_module
-    for name, html in pages.items():
-        html=apply_page(html,name)
-        if '<table' in html.lower():
-            html,_=apply_page_table_module(name,html)
-        (STATIC / name).write_text(html, encoding='utf-8')
-    totals_page = STATIC / 'integrated-district-totals.html'
-    if totals_page.exists():
-        text = totals_page.read_text()
-        for filename in ('integrated-district-data.json', 'integrated-project-data.json'):
-            version = hashlib.sha256((STATIC/filename).read_bytes()).hexdigest()[:12]
-            text = re.sub(r"fetch\('"+re.escape(filename)+r"(?:\?v=[^']*)?'\)",
-                          "fetch('"+filename+"?v="+version+"')",text)
-        from report_table_presentation import apply_page_table_module
-        text,_=apply_page_table_module('integrated-district-totals.html',text)
-        totals_page.write_text(text)
+    name = only_page
+    html = apply_page(pages[name], name)
+    if '<table' in html.lower():
+        html, _ = apply_page_table_module(name, html)
+    (STATIC / name).write_text(html, encoding='utf-8')
 
 
 def main():
     data = build()
-    make_pages(data)
-    # The barangay MPB inventory consumes the integrated project snapshot above.
-    from build_mpb_barangay import main as build_mpb_barangay_page
-    build_mpb_barangay_page()
+    # This entry point owns the shared data files only. HTML is produced by
+    # page-specific builders, and the MPB barangay report runs independently.
     print(json.dumps({'periods': data['periods'], 'districts': len(data['districts']),
                       'classifiedAssignedProjectRows': len(data['projects']),
                       'output': str(OUT)}, indent=2))

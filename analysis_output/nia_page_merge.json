@@ -4,15 +4,11 @@
   "namedSourcePreservedInMarkers": true,
   "namespacedIds": {
     "report-hero": "nia-detail-report-hero",
-    "report-evidence-notice": "nia-detail-report-evidence-notice",
     "sections": "nia-detail-sections",
-    "reviewed-nia-controls": "nia-detail-reviewed-nia-controls",
-    "${esc(projectId)}": "nia-detail-${esc(projectId)}",
-    "nia-nep-scope": "nia-detail-nia-nep-scope",
-    "external-reference-review": "nia-detail-external-reference-review"
+    "${esc(projectId)}": "nia-detail-${esc(projectId)}"
   },
   "sourceHashes": {
-    "detail": "a85908722c6d76dc07595db12475fec53977c863d88e72453c0fe2ac0f2673b0"
+    "detail": "9d0e3017fa418c96e486e2cbe4e392647b28ea05dad68c11c8de9f4b939e7608"
   },
   "scope": "Presentation merge; project records and allocations are unchanged; the two NIA scopes are not summed."
 }

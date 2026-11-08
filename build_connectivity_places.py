@@ -77,6 +77,53 @@ def compact(data):
     return json.dumps(data, ensure_ascii=False, separators=(',', ':'), allow_nan=False) + '\n'
 
 
+PUBLIC_SERVICE_SHARD_LIMIT = 4 * 1024 * 1024
+
+
+def write_public_service_assets(data):
+    """Keep the full local build source, but publish a small manifest and shards."""
+    OUT.mkdir(parents=True, exist_ok=True)
+    (OUT / 'connectivity-public-services-data.json').write_text(compact(data))
+    manifest = {key: value for key, value in data.items() if key != 'rows'}
+    shard_dir_name = 'connectivity-public-services-shards'
+    manifest['shardFormat'] = shard_dir_name + '/services-{index:03d}.json'
+    manifest['shards'] = []
+    shard_rows, shard_bytes, shard_index = [], 2, 0
+
+    def flush():
+        nonlocal shard_rows, shard_bytes, shard_index
+        if not shard_rows:
+            return
+        shard_index += 1
+        filename = f'services-{shard_index:03d}.json'
+        payload = compact({'rows': shard_rows})
+        shard_dir = STATIC / shard_dir_name
+        shard_dir.mkdir(parents=True, exist_ok=True)
+        (shard_dir / filename).write_text(payload)
+        manifest['shards'].append({'file': f'{shard_dir_name}/{filename}', 'rows': len(shard_rows), 'bytes': len(payload.encode('utf-8'))})
+        shard_rows, shard_bytes = [], 2
+
+    for row in data.get('rows', []):
+        row_size = len(compact(row).encode('utf-8'))
+        if row_size + 2 > PUBLIC_SERVICE_SHARD_LIMIT:
+            raise ValueError(f'Public-service feature exceeds shard size limit: {row.get("id")}')
+        if shard_rows and shard_bytes + row_size + 1 > PUBLIC_SERVICE_SHARD_LIMIT:
+            flush()
+        shard_rows.append(row)
+        shard_bytes += row_size + 1
+    flush()
+    manifest['shardCount'] = len(manifest['shards'])
+    manifest['rowCount'] = len(data.get('rows', []))
+    text = compact(manifest)
+    (STATIC / 'connectivity-public-services-data.json').write_text(text)
+    # Remove obsolete shards if a later build produces fewer chunks.
+    shard_dir = STATIC / shard_dir_name
+    keep = {row['file'].rsplit('/', 1)[-1] for row in manifest['shards']}
+    for old in shard_dir.glob('services-*.json'):
+        if old.name not in keep:
+            old.unlink()
+
+
 def refresh():
     RAW.mkdir(parents=True, exist_ok=True)
     for stem, endpoint in SOURCES:
@@ -457,8 +504,11 @@ def build():
                                               'rows':public_services},
     }
     for stem, data in inventories.items():
+        if stem == 'connectivity-public-services-data':
+            write_public_service_assets(data)
         for directory in (OUT, STATIC):
-            (directory / (stem + '.json')).write_text(compact(data))
+            if stem != 'connectivity-public-services-data' or directory == OUT:
+                (directory / (stem + '.json')).write_text(compact(data))
             fields = list(dict.fromkeys(k for r in data['rows'] for k in r if k not in {'geometry', 'duplicateSourceUrls'})) or ['id', 'name', 'type', 'sourceUrl']
             with (directory / (stem + '.csv')).open('w', newline='', encoding='utf-8-sig') as handle:
                 writer = csv.DictWriter(handle, fieldnames=fields, extrasaction='ignore')

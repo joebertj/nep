@@ -706,6 +706,8 @@ def build():
         from build_congress_leg_insertions import apply_section as apply_insertion_section
         page=apply_insertion_section(page,assignment)
         page=reorder_intro_sections(page)
+        from uniform_report_menu import apply_page as apply_uniform_menu
+        page=apply_uniform_menu(page,'congress.html')
         from report_table_presentation import apply_page_table_module
         page,_=apply_page_table_module('congress.html',page)
         report_page.write_text(page, encoding='utf-8')

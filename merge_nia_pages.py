@@ -94,6 +94,7 @@ def merge():
  page=re.sub(r'<style id="nia-data-quality-style">.*?</style>','',page,flags=re.S)
  page=page.replace('</head>',flag_style+'</head>',1)
  if 'id="report-hero-style"' not in page:page=page.replace('</head>',STYLE+'</head>',1)
+ page=page.replace('repeats.html#nia','repeats-historical.html#nia')
  named_path.write_text(page);(OUT/'nia.html').write_text(page)
  (OUT/'nia_page_merge.json').write_text(json.dumps({'canonicalPage':'nia.html','detailSource':'nia-irrigation.html','namedSourcePreservedInMarkers':True,'namespacedIds':mapping,'sourceHashes':{'detail':hashlib.sha256(detail.encode()).hexdigest()},'scope':'Presentation merge; project records and allocations are unchanged; the two NIA scopes are not summed.'},indent=2)+'\n')
  return mapping
