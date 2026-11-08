@@ -12,6 +12,7 @@ MENU_GROUPS=[
     ('Summary',[('summary.html','Summary · investigative leads')]),
     ('Budget 2027',[
         ('dpwh.html','Senate HGAB documents'),
+        ('fmr.html','FMR · manual red-flag review'),
         ('dpwh-transparency.html','DPWH Transparency inventory'),
         ('congress.html','Project flags + district allocations'),
         ('flags.html','Flags'),

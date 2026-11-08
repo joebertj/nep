@@ -14,7 +14,7 @@ Usage: ./deployment/deploy_odv_git.sh [inspect|deploy]
 
   inspect  Read-only server checkout status (default)
   deploy   Fetch origin/main, deploy it (or NEP_DEPLOY_COMMIT), and check the
-           local frontend response. Rebuild and restart the frontend only when Rust source or Cargo files change.
+           local frontend response. Rebuild/restart the frontend only for Rust/Cargo changes and FastAPI only for visualization.py changes. Nginx is not restarted.
 
 Overrides: NEP_DEPLOY_HOST, NEP_DEPLOY_USER, NEP_DEPLOY_DIR, NEP_SSH_IDENTITY,
            NEP_DEPLOY_COMMIT (a commit reachable from origin/main)
@@ -32,8 +32,16 @@ if [[ $# -gt 1 ]]; then usage >&2; exit 2; fi
 SSH=(ssh -i "$SSH_IDENTITY" -o BatchMode=yes -o ConnectTimeout=10 \
   -o StrictHostKeyChecking=accept-new)
 
-case "$ACTION" in
-  inspect)
+if [[ "$ACTION" == "-h" || "$ACTION" == "--help" || "$ACTION" == "help" ]]; then
+  usage
+  exit 0
+fi
+if [[ "$ACTION" != "inspect" && "$ACTION" != "deploy" ]]; then
+  usage >&2
+  exit 2
+fi
+
+if [[ "$ACTION" == "inspect" ]]; then
     "${SSH[@]}" "$REMOTE_USER@$REMOTE_HOST" \
       "REMOTE_DIR='$REMOTE_DIR' bash -s" <<'REMOTE_INSPECT'
 set -u
@@ -69,9 +77,10 @@ if [[ -n "$app_ip" ]]; then
   done
 fi
 REMOTE_INSPECT
-    ;;
-  deploy)
-    DEPLOY_COMMIT="${NEP_DEPLOY_COMMIT:-origin/main}"
+  exit 0
+fi
+
+DEPLOY_COMMIT="${NEP_DEPLOY_COMMIT:-origin/main}"
     if [[ ! "$DEPLOY_COMMIT" =~ ^(origin/main|[0-9a-fA-F]{7,40})$ ]]; then
       echo "Invalid NEP_DEPLOY_COMMIT: use origin/main or a full/short commit hash." >&2
       exit 2
@@ -186,6 +195,7 @@ files=(
   static/nep-preview/chainage-overlap.js
   static/nep-preview/mpb-proximity.json
   static/nep-preview/fmr-data.json
+  static/nep-preview/fmr-manual-red-flags.json
   static/nep-preview/fmr-annex-equivalence.json
   static/nep-preview/fmr-historical-repeats.json
   static/nep-preview/fmr-historical-nep-2nd.json
@@ -285,6 +295,7 @@ health_files=(
   static/nep-preview/mpb-barangay.js
   static/nep-preview/mpb-barangay-index.json
   static/nep-preview/fmr-data.json
+  static/nep-preview/fmr-manual-red-flags.json
   static/nep-preview/fmr-annex-equivalence.json
   static/nep-preview/fmr-historical-repeats.json
   static/nep-preview/fmr-historical-nep-2nd.json
@@ -449,6 +460,17 @@ needs_build=false
 if [[ -n "$(git -C "$r" diff --name-only "$previous" "$target" -- src Cargo.toml Cargo.lock)" ]]; then
   needs_build=true
 fi
+needs_api_restart=false
+if [[ -n "$(git -C "$r" diff --name-only "$previous" "$target" -- visualization.py)" ]]; then
+  needs_api_restart=true
+fi
+if [[ "$needs_build" != true ]]; then
+  echo "No Rust/Cargo changes; skipping frontend rebuild and restart."
+fi
+if [[ "$needs_api_restart" != true ]]; then
+  echo "No visualization.py change; skipping FastAPI restart."
+fi
+echo "Nginx is not restarted by this deployment script."
 binary="$r/target/release/open-data-visualization"
 backup_bytes=0
 for file in "${files[@]}"; do
@@ -510,6 +532,9 @@ rollback_release() {
     mv -f "$binary.rollback" "$binary"
     sudo -n systemctl restart visualization.service
   fi
+  if [[ "$needs_api_restart" == true ]]; then
+    sudo -n systemctl restart visualization_api.service || true
+  fi
   echo "Rollback complete. Backup retained at $backup." >&2
 }
 trap 'rollback_release; exit 1' ERR
@@ -563,7 +588,24 @@ if [[ "$needs_build" == true ]]; then
     sleep 1
   done
 fi
-healthy=true
+api_healthy=true
+if [[ "$needs_api_restart" == true ]]; then
+  echo "Restarting FastAPI after visualization.py changed."
+  sudo -n systemctl restart visualization_api.service
+  api_healthy=false
+  for attempt in {1..20}; do
+    api_document="$(curl --silent --fail --max-time 3 http://10.104.0.2:8000/openapi.json 2>/dev/null || true)"
+    if [[ -n "$api_document" ]] && python3 -c 'import json,sys; p=json.load(sys.stdin).get("paths",{}).get("/api/connectivity/manual-greens",{}); sys.exit(0 if "get" in p and "post" in p else 1)' <<< "$api_document" 2>/dev/null; then
+      api_healthy=true
+      break
+    fi
+    sleep 1
+  done
+  if [[ "$api_healthy" != true ]]; then
+    echo "FastAPI health check failed: connectivity manual-greens GET/POST are not registered." >&2
+  fi
+fi
+healthy="$api_healthy"
 if ! curl --silent --show-error --fail "$health_base/" >/dev/null; then
   healthy=false
 fi
@@ -591,12 +633,3 @@ echo "Frontend health check failed." >&2
 rollback_release
 exit 1
 REMOTE_DEPLOY
-    ;;
-  -h|--help|help)
-    usage
-    ;;
-  *)
-    usage >&2
-    exit 2
-    ;;
-esac
