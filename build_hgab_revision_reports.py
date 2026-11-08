@@ -13,7 +13,10 @@ ROOT = Path(__file__).resolve().parent
 
 
 def main():
+    from build_reviewed_annex_sections import build_baseline_asset
+    build_baseline_asset()
     scripts = [
+        'build_nep_agency_baselines.py',
         'build_hgab_revision_pages.py',
         'build_dpwh_hgab_comparison_page.py',
         'build_dpwh_hgab_page.py',

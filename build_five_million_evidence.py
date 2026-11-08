@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Restore exact-PHP5M office clustering at its summary-linked evidence anchor."""
+"""Render exact-PHP5M office clustering evidence for the repeats page owner."""
 import csv,html,io,json,math,re
 from collections import defaultdict
 from pathlib import Path
@@ -39,24 +39,16 @@ def render():
     body+='<h3>Methodology and limits</h3><p>The road category is BIP access roads/bridges leading to major or strategic public buildings/facilities. Flood categories are construction/maintenance of flood-mitigation structures and drainage systems, and construction/rehabilitation of flood-mitigation facilities within major river basins and principal rivers. Exact ₱5M means a printed allocation of ₱5,000,000, with no rounding band.</p><p>The hypergeometric test fixes the number of road and flood offices among the year’s DEOs, then evaluates the probability of at least the observed overlap under independent assignment. The regional permutation test keeps road-office membership fixed and reshuffles flood membership within regions, preserving regional flood-office counts. The odds-ratio interval is an approximate log-Wald interval.</p><p class="caution">The amount threshold and categories were selected after noticing the pattern. These exploratory p-values and confidence intervals are unadjusted for that selection or multiple comparisons. Office workload, project mix, engineering need and standard designs can explain clustering. Small p-values reject the stated assignment model; they do not establish coordination, procurement splitting, overpricing or intent.</p><p>Next steps: pre-specify controls for work type, office workload and historical prices, then inspect quantities and engineering specifications. Group-level clustering is not a finding about any representative or signatory.</p><p><a href="dpwh-data.json" download>Source rows and statistical methods · JSON</a> · CSV buttons export every row of their table, including pages not currently shown.</p></section>'
     return body
 
-def apply():
-    from report_table_presentation import apply_page,publish_assets
-    path=STATIC/'repeats.html';text=path.read_text();block=render()
+def apply_page(html_page):
+    """Apply this page-owned section to rendered repeats.html without file I/O."""
+    block=render()
     pattern=rf'<section\b[^>]*id="{ID}"[^>]*>.*?</section>'
-    old=re.search(pattern,text,re.S)
-    if old and 'Exact ₱5M road and flood allocations cluster in the same offices' not in old[0]:
-        # Preserve the independent repeat-denominator evidence under its own ID.
-        renamed=old[0].replace(f'id="{ID}"','id="repeat-denominator-evidence"',1).replace('Repeat denominators and allocation clustering','Repeat denominators',1)
-        text=text[:old.start()]+renamed+block+text[old.end():]
-    elif old:text=text[:old.start()]+block+text[old.end():]
-    else:text=text.replace('</main>',block+'</main>',1)
-    text=apply_page(text,publish_assets());path.write_text(text);(OUT/'repeats.html').write_text(text)
-    # Keep the stored fragment from reintroducing the clustering ID on denominators.
-    cache=OUT/'repeat_page_fragments.json'
-    if cache.exists():
-        fragments=json.loads(cache.read_text())
-        if 'denominators' in fragments:
-            fragments['denominators']=fragments['denominators'].replace(f'id="{ID}"','id="repeat-denominator-evidence"',1).replace('Repeat denominators and allocation clustering','Repeat denominators',1)
-            cache.write_text(json.dumps(fragments,ensure_ascii=False,indent=2)+'\n')
-    return {'anchor':ID,'officeRows':json.loads((STATIC/'dpwh-data.json').read_text())['fiveMillionStats']['results'][0]['overlap_offices'],'stage':'FY2027 NEP','additionalAmountPatterns':True}
-if __name__=='__main__':print(json.dumps(apply(),indent=2))
+    old=re.search(pattern,html_page,re.S)
+    if old:
+        if 'Exact ₱5M road and flood allocations cluster in the same offices' not in old[0]:
+            renamed=old[0].replace(f'id="{ID}"','id="repeat-denominator-evidence"',1)
+            return html_page[:old.start()]+renamed+block+html_page[old.end():]
+        return html_page[:old.start()]+block+html_page[old.end():]
+    if '</main>' not in html_page:
+        raise ValueError('repeats.html render has no </main> insertion point')
+    return html_page.replace('</main>',block+'</main>',1)

@@ -10,6 +10,7 @@ from pathlib import Path
 from report_hero_module import STYLE, hero, peso
 from analyze_mpb_proximity import coordinates as parse_coordinates
 from build_rcs_pow_review import read_evidence as read_rcs_pow_evidence
+from report_json_shards import write_sharded_json, attach_loader
 
 ROOT = Path(__file__).resolve().parent
 STATIC = ROOT.parent / 'open-data-visualization/static/nep-preview'
@@ -677,6 +678,7 @@ def build():
     }
     out = STATIC / 'congress-district-review-data.json'
     out.write_text(json.dumps(payload, ensure_ascii=False, separators=(',', ':')) + '\n')
+    write_sharded_json(out, payload)
     roster_path = STATIC / 'congress-district-roster.json'
     report_page = STATIC / 'congress.html'
     if roster_path.is_file() and report_page.is_file():
@@ -710,6 +712,7 @@ def build():
         page=apply_uniform_menu(page,'congress.html')
         from report_table_presentation import apply_page_table_module
         page,_=apply_page_table_module('congress.html',page)
+        page=attach_loader(page, 'congress.html')
         report_page.write_text(page, encoding='utf-8')
     return payload['summary']
 

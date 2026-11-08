@@ -834,9 +834,12 @@ document.getElementById('metric').onchange=render;yearSel.onchange=()=>{render()
 SHARD_LIMIT_BYTES = 8 * 1024 * 1024
 
 
-def write_contractors_payload(directory: Path, index_data: dict, contractors: list[dict]):
+def write_contractors_payload(directory: Path, index_data: dict, contractors: list[dict],
+                              deferred_stats_fields: tuple[str, ...] = ()):
     directory.mkdir(parents=True, exist_ok=True)
     for old in directory.glob('shard-*.json'):
+        old.unlink()
+    for old in directory.glob('filter-stats-*.json'):
         old.unlink()
 
     summaries = []
@@ -861,13 +864,18 @@ def write_contractors_payload(directory: Path, index_data: dict, contractors: li
         entry_bytes = 0
 
     summary_by_id = {}
+    deferred_stats = {field: [] for field in deferred_stats_fields}
     for index, contractor in enumerate(contractors, start=1):
         contractor_id = f'c{index:05d}'
-        summary = {key: value for key, value in contractor.items() if key != 'projects'}
+        summary = {key: value for key, value in contractor.items()
+                   if key != 'projects' and key not in deferred_stats}
         summary['id'] = contractor_id
         summary['detailShards'] = []
         summaries.append(summary)
         summary_by_id[contractor_id] = summary
+        for field in deferred_stats_fields:
+            if field in contractor:
+                deferred_stats[field].append({'id': contractor_id, field: contractor[field]})
 
         project_chunks = []
         chunk = []
@@ -894,12 +902,49 @@ def write_contractors_payload(directory: Path, index_data: dict, contractors: li
             entry_bytes += size + 16
     flush_shard()
 
+    filter_stats_manifest = {}
+    for field, records in deferred_stats.items():
+        prefix = {'categoryStats': 'category', 'yearStats': 'year',
+                  'secRecords': 'sec', 'philgepsMembership': 'philgeps-membership',
+                  'pcabLicenses': 'pcab', 'amoMatches': 'amo'}.get(field, field)
+        field_shards = []
+        chunk = []
+        chunk_bytes = len(b'{"entries":[]}')
+
+        def flush_filter_stats():
+            nonlocal chunk, chunk_bytes
+            if not chunk:
+                return
+            name = f'filter-stats-{prefix}-{len(field_shards) + 1:03d}.json'
+            payload = json.dumps({'entries': chunk}, ensure_ascii=False, separators=(',', ':'))
+            size_bytes = len(payload.encode('utf-8'))
+            if size_bytes > SHARD_LIMIT_BYTES:
+                raise ValueError(f'Filter-stat shard exceeds limit: {name} ({size_bytes} bytes)')
+            (directory / name).write_text(payload, encoding='utf-8')
+            field_shards.append({'path': name, 'itemCount': len(chunk), 'sizeBytes': size_bytes})
+            chunk = []
+            chunk_bytes = len(b'{"entries":[]}')
+
+        for record in records:
+            record_bytes = len(json.dumps(record, ensure_ascii=False, separators=(',', ':')).encode('utf-8'))
+            if record_bytes + len(b'{"entries":[]}') > SHARD_LIMIT_BYTES:
+                raise ValueError(f'Single filter-stat record exceeds shard limit: {record["id"]} · {field}')
+            if chunk and chunk_bytes + record_bytes + 1 > SHARD_LIMIT_BYTES:
+                flush_filter_stats()
+            chunk.append(record)
+            chunk_bytes += record_bytes + (1 if len(chunk) > 1 else 0)
+        flush_filter_stats()
+        filter_stats_manifest[field] = field_shards
+
     index_data['contractors'] = summaries
+    if filter_stats_manifest:
+        index_data['deferredDataShards'] = filter_stats_manifest
     directory.joinpath('index.json').write_text(
         json.dumps(index_data, ensure_ascii=False, separators=(',', ':')),
         encoding='utf-8',
     )
-    return {'shardCount': shard_number, 'contractorCount': len(summaries)}
+    return {'shardCount': shard_number, 'filterStatsShardCount': sum(map(len, filter_stats_manifest.values())),
+            'contractorCount': len(summaries)}
 
 
 def main():

@@ -196,6 +196,8 @@ from investigation_page_sections import apply_owned_sections
 base=apply_owned_sections(base,'dpwh-OO2-hgab.html')
 from report_table_presentation import apply_page_table_module
 base,_=apply_page_table_module('dpwh-OO2-hgab.html',base)
+from report_json_shards import attach_loader
+base=attach_loader(base,'dpwh-OO2-hgab.html')
 (SITE/'dpwh-OO2-hgab.html').write_text(base)
 (ANALYSIS/'dpwh-OO2-hgab.html').write_text(base)
 print(json.dumps(summary, indent=2))

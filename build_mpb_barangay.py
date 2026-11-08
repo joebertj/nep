@@ -17,6 +17,9 @@ LOCATIONS = ODV / 'static' / 'data' / 'unified_locations.json'
 PROJECTS = STATIC / 'integrated-project-data.json'
 HGAB_PROJECTS = ROOT / 'hb10858_3rd_dpwh_projects.json'
 DATA_NAME = 'mpb-barangay-data.json'
+INDEX_NAME = 'mpb-barangay-index.json'
+DETAIL_SHARD_DIR = 'mpb-barangay-detail-shards'
+DETAIL_SHARD_SIZE = 100
 PAGE_NAME = 'mpb-barangay.html'
 BASE_DATA_NAME = 'mpb-barangay-base-data.json'
 BASE_PAGE_NAME = 'mpb-base.html'
@@ -235,10 +238,66 @@ def main():
         'barangays': barangays,
     }
     payload = json.dumps(result, ensure_ascii=False, separators=(',', ':')) + '\n'
-    data_path = STATIC / DATA_NAME
+    data_path = OUT / DATA_NAME
     data_path.parent.mkdir(parents=True, exist_ok=True)
-    data_path.write_text(payload, encoding='utf-8')
     (OUT / DATA_NAME).write_text(payload, encoding='utf-8')
+
+    # The page starts with an aggregate index. Full project histories are stored
+    # in small place-group shards and fetched only for expanded rows or lookups.
+    index_rows = []
+    detail_groups = []
+    years = [int(period['year']) for period in years_summary]
+    for start in range(0, len(barangays), DETAIL_SHARD_SIZE):
+        group = barangays[start:start + DETAIL_SHARD_SIZE]
+        shard_name = f'barangays-{start // DETAIL_SHARD_SIZE + 1:03d}.json'
+        detail_groups.append((shard_name, [
+            {'id': b['id'], 'projects': b['projects']} for b in group if b['projects']
+        ]))
+        for offset, b in enumerate(group):
+            by_year = defaultdict(list)
+            for project in b['projects']:
+                by_year[int(project['year'])].append(project)
+            levels = {}
+            cumulative_rows = 0
+            year_stats = []
+            for year_index, year in enumerate(years):
+                yearly = by_year.get(year, [])
+                if yearly:
+                    cumulative_rows += len(yearly)
+                    for project in yearly:
+                        key = project['buildingKey']
+                        levels[key] = max(levels.get(key, 0), int(project.get('level') or 0))
+                    year_stats.append([
+                        year_index,
+                        sum(int(project.get('amountPesos') or 0) for project in yearly),
+                        len(yearly), cumulative_rows, len(levels),
+                        max(levels.values(), default=0), sum(levels.values()),
+                    ])
+            shard_index = start // DETAIL_SHARD_SIZE
+            index_rows.append([
+                b['id'], b['barangay'], b['municipality'], b['province'], b['region'],
+                f'barangays-{shard_index + 1:03d}.json', year_stats,
+            ])
+    index_payload = json.dumps({
+        'generatedAtUtc': result['generatedAtUtc'], 'periods': years_summary,
+        'summary': result['summary'], 'barangayRows': index_rows,
+    }, ensure_ascii=False, separators=(',', ':')) + '\n'
+    index_bytes = index_payload.encode('utf-8')
+    for destination in (STATIC / DETAIL_SHARD_DIR, OUT / DETAIL_SHARD_DIR):
+        if destination.exists():
+            shutil.rmtree(destination)
+        destination.mkdir(parents=True, exist_ok=True)
+    for destination in (STATIC, OUT):
+        (destination / INDEX_NAME).write_bytes(index_bytes)
+    for destination in (STATIC / DETAIL_SHARD_DIR, OUT / DETAIL_SHARD_DIR):
+        for name, rows in detail_groups:
+            shard_payload = json.dumps({'barangays': rows}, ensure_ascii=False, separators=(',', ':'))
+            if len(shard_payload.encode('utf-8')) > 10_000_000:
+                raise RuntimeError(f'MPB detail shard exceeds 10 MB: {name}')
+            (destination / name).write_text(shard_payload, encoding='utf-8')
+    stale_published_data = STATIC / DATA_NAME
+    if stale_published_data.exists():
+        stale_published_data.unlink()
 
     # A compact per-barangay payload keeps the shareable base page fast and avoids
     # downloading the full project-record inventory for every base view.
@@ -271,8 +330,22 @@ def main():
     for destination in (STATIC, OUT):
         shutil.copytree(BASE_ASSETS, destination / 'mpb-assets', dirs_exist_ok=True)
     html = (ROOT / 'report_assets' / PAGE_NAME).read_text(encoding='utf-8')
-    version = hashlib.sha256(data_path.read_bytes()).hexdigest()[:12]
-    html = html.replace('mpb-barangay-data.json?v=1', f'mpb-barangay-data.json?v={version}')
+    version = hashlib.sha256(index_bytes).hexdigest()[:12]
+    html = html.replace('mpb-barangay-index.json?v=1', f'mpb-barangay-index.json?v={version}')
+    app_js_text = (ROOT / 'report_assets' / 'mpb-barangay.js').read_text(encoding='utf-8')
+    app_js_text = app_js_text.replace(
+        'mpb-barangay-index.json?v=1',
+        f'mpb-barangay-index.json?v={version}',
+    )
+    app_js = app_js_text.encode('utf-8')
+    app_js_version = hashlib.sha256(app_js).hexdigest()[:12]
+    html = html.replace('mpb-barangay.js?v=1', f'mpb-barangay.js?v={app_js_version}')
+    (STATIC / 'mpb-barangay.js').write_bytes(app_js)
+    (OUT / 'mpb-barangay.js').write_bytes(app_js)
+    plotly_path = STATIC / 'plotly-2.35.2.min.js'
+    if plotly_path.is_file():
+        plotly_version = hashlib.sha256(plotly_path.read_bytes()).hexdigest()[:12]
+        html = html.replace('plotly-2.35.2.min.js?v=1', f'plotly-2.35.2.min.js?v={plotly_version}')
     base_template = (ROOT / 'report_assets' / BASE_PAGE_NAME).read_bytes()
     base_page_version = hashlib.sha256(base_template + base_payload.encode('utf-8')).hexdigest()[:12]
     html = html.replace('mpb-base.html?v=1&amp;place=', f'mpb-base.html?v={base_page_version}&amp;place=')

@@ -413,7 +413,9 @@ def build():
     proximity['sharePages'] = share_pages
     proximity_json = json.dumps(proximity, ensure_ascii=False, indent=2) + '\n'
     (OUT / 'mpb_proximity.json').write_text(proximity_json)
-    (STATIC / 'mpb-proximity.json').write_text(proximity_json)
+    published_proximity = {key: value for key, value in proximity.items() if key != 'projectDetails'}
+    published_json = json.dumps(published_proximity, ensure_ascii=False, separators=(',', ':')) + '\n'
+    (STATIC / 'mpb-proximity.json').write_text(published_json)
     share_card = STATIC / 'mpb-share-card.png'
     swift_cache = Path('/private/tmp/odv-swift-module-cache')
     swift_cache.mkdir(parents=True, exist_ok=True)
@@ -429,7 +431,9 @@ def build():
     proximity['sharePages'] = share_pages
     proximity_json = json.dumps(proximity, ensure_ascii=False, indent=2) + '\n'
     (OUT / 'mpb_proximity.json').write_text(proximity_json)
-    (STATIC / 'mpb-proximity.json').write_text(proximity_json)
+    published_proximity = {key: value for key, value in proximity.items() if key != 'projectDetails'}
+    published_json = json.dumps(published_proximity, ensure_ascii=False, separators=(',', ':')) + '\n'
+    (STATIC / 'mpb-proximity.json').write_text(published_json)
     share_image_url = 'https://research.bettergov.ph/static/nep-preview/mpb-share-card.png?v=' + hashlib.sha256(share_card.read_bytes()).hexdigest()[:12]
     for row in rows:
         for key in ['amountPesos', 'amount_delta_pesos', 'closest_nep_amount_pesos']:
@@ -476,11 +480,133 @@ def build():
             'distribution': distribution,'coordinateProximity':proximity,
             'sources': [{'file': name, 'sha256': hashlib.sha256((OUT / name).read_bytes()).hexdigest()} for name in inputs] +
                        [{'file': str(LEG_PROFILE_SOURCE.relative_to(ROOT)), 'sha256': hashlib.sha256(LEG_PROFILE_SOURCE.read_bytes()).hexdigest()}]}
+    amount_counts = Counter()
+    for item in prices:
+        amount_counts[int(item['amountPesos'])] += int(item['projects'])
+    mode_amount = sorted(amount_counts.items(), key=lambda item: (-item[1], item[0]))[0][0] if amount_counts else 5_000_000
+    mode_ranking = [
+        {**row, 'hgab_id': code, 'modeMultiple': float(row.get('amountPesos') or 0) / mode_amount,
+         'modeAmount': mode_amount}
+        for code, row in proximity.get('projectDetails', {}).items()
+    ]
+    mode_ranking.sort(key=lambda row: (-row['modeMultiple'], str(row.get('projectName') or '')))
+    previous_amount = None
+    rank = 0
+    for position, row in enumerate(mode_ranking, 1):
+        amount = float(row.get('amountPesos') or 0)
+        if amount != previous_amount:
+            rank = position
+            previous_amount = amount
+        row['modeRank'] = rank
+        detail = proximity['projectDetails'][row['hgab_id']]
+        detail['modeRank'] = rank
+        detail['modeAmount'] = mode_amount
+        detail['modeMultiple'] = row['modeMultiple']
+        detail['sameAmountCount'] = amount_counts.get(int(detail.get('amountPesos') or 0), 0)
+        detail['modePopulation'] = sum(amount_counts.values())
+    land_title_signals = []
+    for code, row in proximity.get('projectDetails', {}).items():
+        title = str(row.get('projectName') or '')
+        signals = []
+        if re.search(r'\bsubdivision\b', title, re.I): signals.append('Subdivision named')
+        if re.search(r'\bHOA\b|homeowners?\s*(?:association|assoc)', title, re.I): signals.append('HOA named')
+        if re.search(r'\bvillage\b', title, re.I): signals.append('Village named · weak location cue')
+        if re.search(r'\bprivate(?:ly)?\b|private\s+(?:land|lot|property)', title, re.I): signals.append('Private ownership wording')
+        if re.search(r'\b(?:land|lot)\s+(?:acquisition|purchase|donation|donated|leased|owned)\b', title, re.I): signals.append('Land/lot transaction wording')
+        if signals: land_title_signals.append({'code': code, 'row': row, 'signals': signals})
+    land_title_signals.sort(key=lambda item: (-float(item['row'].get('amountPesos') or 0), str(item['row'].get('projectName') or '')))
+    table_rows = {
+        'modeRanking': mode_ranking, 'insertions': insertions, 'ambiguous': ambiguous,
+        'adjustments': adjustments, 'removals': removals,
+        'repeats': [{**row, 'retention': (row.get('hgabRetention') or {}).get('status'),
+                     'hgabPage': (row.get('hgabRetention') or {}).get('hgabPage'),
+                     'hgab_id': (row.get('hgabRetention') or {}).get('hgabId')}
+                    for row in repeats],
+        'prices': prices, 'distribution': distribution,
+        'landTitleSignals': land_title_signals,
+    }
+    table_dir = STATIC / 'mpb-table-data'
+    if table_dir.exists():
+        import shutil
+        shutil.rmtree(table_dir)
+    table_dir.mkdir(parents=True, exist_ok=True)
+    out_table_dir = OUT / 'mpb-table-data'
+    if out_table_dir.exists():
+        import shutil
+        shutil.rmtree(out_table_dir)
+    out_table_dir.mkdir(parents=True, exist_ok=True)
+    table_files = {}
+    for table_id, table_data in table_rows.items():
+        table_payload = json.dumps({'rows': table_data}, ensure_ascii=False, separators=(',', ':'))
+        table_bytes = table_payload.encode('utf-8')
+        if len(table_bytes) > 10_000_000:
+            raise RuntimeError(f'MPB table data exceeds 10 MB: {table_id} ({len(table_bytes):,} bytes)')
+        digest = hashlib.sha256(table_bytes).hexdigest()[:12]
+        filename = f'{table_id}-{digest}.json'
+        (table_dir / filename).write_bytes(table_bytes)
+        (out_table_dir / filename).write_bytes(table_bytes)
+        table_files[table_id] = {'file': filename, 'rows': len(table_data), 'bytes': len(table_bytes)}
+    table_index = {'summary': summary, 'prices': prices, 'modeAmountPesos': mode_amount,
+                   'modeAmountProjectCount': amount_counts.get(mode_amount, 0), 'tables': table_files}
+    table_index_payload = json.dumps(table_index, ensure_ascii=False, separators=(',', ':')) + '\n'
+    (STATIC / 'mpb-table-index.json').write_text(table_index_payload, encoding='utf-8')
+    (OUT / 'mpb-table-index.json').write_text(table_index_payload, encoding='utf-8')
+    detail_dir = STATIC / 'mpb-project-details'
+    out_detail_dir = OUT / 'mpb-project-details'
+    import shutil
+    for directory in (detail_dir, out_detail_dir):
+        if directory.exists(): shutil.rmtree(directory)
+        directory.mkdir(parents=True, exist_ok=True)
+    detail_shards = defaultdict(dict)
+    project_details = proximity.get('projectDetails', {})
+    for project_id, detail in project_details.items():
+        match = re.search(r'(\d+)$', project_id)
+        bucket = int(match.group(1)) % 32 if match else sum(project_id.encode('utf-8')) % 32
+        detail_shards[bucket][project_id] = detail
+    detail_index = {'projectIds': sorted(project_details), 'shards': {}}
+    for bucket, projects in sorted(detail_shards.items()):
+        payload = json.dumps({'projects': projects}, ensure_ascii=False, separators=(',', ':')).encode('utf-8')
+        if len(payload) > 10_000_000:
+            raise RuntimeError(f'MPB project-detail shard exceeds 10 MB: {bucket:02d} ({len(payload):,} bytes)')
+        filename = f'{bucket:02d}.json'
+        for directory in (detail_dir, out_detail_dir):
+            (directory / filename).write_bytes(payload)
+        for project_id in projects:
+            detail_index['shards'][project_id] = filename
+    detail_index_payload = json.dumps(detail_index, ensure_ascii=False, separators=(',', ':')) + '\n'
+    for directory in (detail_dir, out_detail_dir):
+        (directory / 'index.json').write_text(detail_index_payload, encoding='utf-8')
     serialized = json.dumps(data, ensure_ascii=False, indent=2) + '\n'
     static_data = json.dumps(data, ensure_ascii=False, separators=(',', ':')) + '\n'
     (OUT / 'mpb_analysis.json').write_text(serialized)
     (STATIC / 'mpb-data.json').write_text(static_data)
     html = PAGE.replace('__HERO_STYLE__', STYLE).replace('__DATA__', json.dumps({'summary': summary}, ensure_ascii=False))
+    html = html.replace(
+        'const amountFrequency=new Map();for(const row of D.prices||[])amountFrequency.set(Number(row.amountPesos),(amountFrequency.get(Number(row.amountPesos))||0)+Number(row.projects||0));\nconst modeAmount=[...amountFrequency.entries()].sort((a,b)=>b[1]-a[1]||a[0]-b[0])[0]?.[0]||5000000;',
+        'const amountFrequency=new Map([[Number(D.modeAmountPesos)||5000000,Number(D.modeAmountProjectCount)||0]]);const modeAmount=Number(D.modeAmountPesos)||5000000;',
+        1,
+    )
+    html = re.sub(r"D\.modeRanking=Object\.entries\(D\.coordinateProximity\?\.projectDetails\|\|\{}\).*?;\n", '', html, count=1)
+    html = re.sub(r"D\.repeats=D\.repeats\.map\(r=>\(\{\.\.\.r,retention:r\.hgabRetention\.status,hgabPage:r\.hgabRetention\.hgabPage,hgab_id:r\.hgabRetention\.hgabId\}\)\);\n", '', html, count=1)
+    table_loop_start = html.index('for(const c of configs){')
+    table_loop_end = html.index('</script></body></html>', table_loop_start)
+    lazy_tables_js = r'''for(const c of configs){
+ const section=document.createElement('section');section.id='mpb-'+c.id;section.className='card mpb-project-review-'+c.id+(c.id==='modeRanking'?' mpb-mode-ranking':'');
+ const sortOptions=[...new Map([[c.metric,c.columns.find(([label,key])=>key===c.metric)?.[0]||c.metric],...c.columns.filter(([label,key])=>/pesos|projects|count/i.test(key)).map(([label,key])=>[key,label])]).entries()];
+ section.innerHTML=`<h2>${esc(c.title)}</h2><p>${esc(c.note)}</p><div class="controls"><input type="search" aria-label="Search ${c.id}" placeholder="Filter projects, locations or source records"><select aria-label="Filter group"><option value="">All groups</option></select><select class="sort" aria-label="Sort metric">${sortOptions.map(([key,label])=>`<option value="${esc(key)}">${esc(label)}</option>`).join('')}</select><select class="order" aria-label="Sort direction"><option value="desc">Largest first</option><option value="asc">Smallest first</option></select><button class="export" type="button">Export CSV</button></div><figure><figcaption></figcaption><div class="graph"><p class="note">Table data loads when this section is in view.</p></div></figure><p class="count" aria-live="polite">Waiting to load this table’s data.</p><table><thead><tr>${c.columns.map(([label])=>`<th>${esc(label)}</th>`).join('')}</tr></thead><tbody><tr><td colspan="${c.columns.length}">Scroll to load rows for this table.</td></tr></tbody></table><div class="controls"><button class="prev">Previous</button><span class="page"></span><button class="next">Next</button></div>`;
+ document.getElementById('sections').append(section);let filtered=[],tableRows=null,page=0,request=null;
+ const search=section.querySelector('input'),select=section.querySelector('select'),sort=section.querySelector('.sort'),order=section.querySelector('.order');
+ function render(){if(!tableRows)return;const q=search.value.trim().toLowerCase(),group=select.value,metric=sort.value;filtered=tableRows.filter(r=>(!group||[r.buildingType,r.retention,r.region].includes(group))&&(!q||JSON.stringify(r).toLowerCase().includes(q))).sort((a,b)=>(Number(b[metric]||0)-Number(a[metric]||0))*(order.value==='desc'?1:-1));const pages=Math.max(1,Math.ceil(filtered.length/25));page=Math.min(page,pages-1);section.querySelector('.graph').innerHTML=graphic(filtered,c,metric);section.querySelector('figcaption').textContent=c.chart==='retention'?'Comparison pairs by HGAB retention status · all filtered rows':'First '+Math.min(12,filtered.length)+' filtered rows · '+sort.selectedOptions[0].text+' · '+order.selectedOptions[0].text;section.querySelector('.count').textContent=num(filtered.length)+' filtered rows';section.querySelector('tbody').innerHTML=filtered.slice(page*25,(page+1)*25).map(r=>'<tr>'+c.columns.map(([label,key])=>{const value=key==='modeMultiple'?`${Number(r[key]).toFixed(1)}×`:/pesos|allocation|adjustment/i.test(label)&&r[key]!=null&&r[key]!==''?peso(r[key]):r[key]??'—';const projectId=r.hgab_id||r.hgabRetention?.hgabId;const projectTitle=projectId&&['projectName','project','nepTitle'].includes(key);return `<td>${projectTitle?`<span>${esc(value)}</span> <button type="button" class="mpb-open-project report-project-details-trigger" data-mpb-project-id="${esc(projectId)}">Details</button>`:esc(value)}</td>`}).join('')+'</tr>').join('')||`<tr><td colspan="${c.columns.length}">No matching records.</td></tr>`;section.querySelector('.page').textContent=`Page ${page+1} of ${pages}`;section.querySelector('.prev').disabled=page===0;section.querySelector('.next').disabled=page>=pages-1;}
+ function loadRows(){if(request)return request;section.querySelector('.count').textContent='Loading this table’s records…';request=window.loadMpbTableRows(c.id).then(rows=>{tableRows=rows;const choices=[...new Set(rows.map(r=>r.buildingType||r.retention||r.region).filter(Boolean))].sort();for(const choice of choices){const option=document.createElement('option');option.value=choice;option.textContent=choice;select.append(option)}render();return rows}).catch(error=>{section.querySelector('.count').textContent='Table data could not be loaded: '+error.message;throw error});return request}
+ [search,select,sort,order].forEach(el=>el.addEventListener(el===search?'input':'change',()=>{page=0;render()}));section.querySelector('.prev').onclick=()=>{page--;render()};section.querySelector('.next').onclick=()=>{page++;render()};section.querySelector('.export').onclick=()=>{if(!tableRows)return;const quote=v=>'"'+String(v??'').replaceAll('"','""')+'"',csv=[c.columns.map(([label])=>quote(label)).join(','),...filtered.map(r=>c.columns.map(([label,key])=>quote(r[key])).join(','))].join('\r\n');const url=URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='mpb-'+c.id+'.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
+ if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting)){observer.disconnect();loadRows().catch(()=>{})}},{rootMargin:'500px'});observer.observe(section)}else loadRows().catch(()=>{});
+}
+const landSection=document.getElementById('mpb-land-site-review'),landRows=document.getElementById('mpb-land-site-rows'),landStatus=document.getElementById('mpb-land-site-summary');
+function renderLandSignals(rows){landStatus.textContent=`${num(rows.length)} FY2027 HGAB project titles match a subdivision, HOA, village, or explicit land/ownership phrase · ${peso(rows.reduce((sum,item)=>sum+Number(item.row.amountPesos||0),0))} in listed allocations. Village is a weak cue; this is a review queue, not a finding about ownership.`;landRows.innerHTML=rows.map(({code,row,signals})=>{const links=(row.transparencyLinks||[]).filter(x=>x.url&&/^https:\/\//i.test(x.url)).map(x=>`<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.type||'Project file')} ↗</a>`).join(' · '),source=`${esc(row.sourceVolume||'HB10858 3rd reading')} · p. ${esc(row.sourcePage||'not recorded')} · ${esc(code)}`;return `<tr><td>${esc(row.projectName)}<small>${esc(row.office||'Office not stated')}</small></td><td>${signals.map(esc).join('<br>')}</td><td>${esc(row.place||'No qualified place in record')}</td><td class="num">${peso(row.amountPesos)}</td><td><details><summary>View sources</summary><p>${source}</p>${links||'<p class="note">No linked project file is listed in the current transparency record.</p>'}</details></td></tr>`}).join('')||'<tr><td colspan="5">No subdivision, HOA, or explicit private-land wording was found in the current project titles.</td></tr>'}
+let landRequest=null;function loadLandSignals(){if(landRequest)return landRequest;landStatus.textContent='Loading title indicators…';landRequest=window.loadMpbTableRows('landTitleSignals').then(renderLandSignals).catch(error=>{landStatus.textContent='Title indicators unavailable: '+error.message});return landRequest}
+if('IntersectionObserver'in window){const landObserver=new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting)){landObserver.disconnect();loadLandSignals()}},{rootMargin:'500px'});landObserver.observe(landSection)}else loadLandSignals();
+'''
+    html = html[:table_loop_start] + lazy_tables_js + html[table_loop_end:]
     proximity_section=render_proximity(proximity,keys=('current',))
     share_controls='''<div id="mpbMapActions" class="mpb-map-actions"><a id="mpbMapFacebook" aria-label="Share this map on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fresearch.bettergov.ph%2Fstatic%2Fnep-preview%2Fmpb.html%23mpb-coordinate-proximity" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#1877F2" d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.018 10.125 11.927v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.979h-1.513c-1.49 0-1.955.93-1.955 1.884v2.261h3.328l-.532 3.49h-2.796V24C19.612 23.091 24 18.092 24 12.073Z"/></svg><span>FB</span></a><a id="mpbMapDownload" href="#" download aria-label="Download locality map image"><span>PNG</span></a><button id="mpbMapNativeShare" type="button" aria-label="Share locality map image" hidden><span>Share</span></button><button id="mpbMapCopyLink" type="button" aria-label="Copy map share link"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M10.59 13.41a1.996 1.996 0 0 0 2.82 0l3-3a2 2 0 0 0-2.82-2.82l-1.72 1.72-1.41-1.41 1.72-1.72a4 4 0 1 1 5.66 5.66l-3 3a4 4 0 0 1-5.66 0l-.59-.59 1.41-1.41.59.57ZM13.41 10.59a1.996 1.996 0 0 0-2.82 0l-3 3a2 2 0 1 0 2.82 2.82l1.72-1.72 1.41 1.41-1.72 1.72a4 4 0 1 1-5.66-5.66l3-3a4 4 0 0 1 5.66 0l.59.59-1.41 1.41-.59-.57Z"/></svg><span>Copy</span></button><span id="mpbMapShareStatus" aria-live="polite"></span></div>'''
     proximity_section=proximity_section.replace('<div id="mpbMunicipalityPlot"></div>','<div id="mpb-map-canvas" class="mpb-map-canvas"><div id="mpbMunicipalityPlot"></div><div id="mpbMapProjectCard" class="mpb-map-project-card" hidden></div></div>',1)
@@ -491,12 +617,22 @@ def build():
     hero_html=(f'<section class="repeat-hero"><div class="repeat-hero-primary"><span class="repeat-hero-kicker">MPB · NEP → HGAB 3rd reading</span><div class="repeat-hero-total"><strong>{summary["insertionCandidates"]:,}</strong><span>potential insertion candidates</span></div><p>₱{summary["insertionPesos"]/1e9:.2f}B without a plausible NEP counterpart identified</p></div><div class="repeat-hero-detail"><div class="repeat-hero-breakdown"><div><span>HGAB MPB schedule</span><strong>{summary["hgabLines"]:,} lines · ₱{summary["hgabPesos"]/1e9:.2f}B</strong></div><div><span>Ambiguous counterparts</span><strong>{summary["ambiguousLines"]:,} lines · ₱{summary["ambiguousPesos"]/1e9:.2f}B</strong></div><div><span>Historical repeat screen</span><strong>{summary["repeatPairs"]:,} pairs · {summary["repeatProposals"]:,} NEP projects</strong></div></div><p>Screening candidates require original-source and scope review.</p></div></section>')
     html=html.replace('<div id="hero"></div>','<div id="hero">'+hero_html+'</div>'+flagged_overview+location_checks+proximity_section+'<p><a href="mpb-historical.html">Compare historical DPWH allocations by project type →</a></p><p><a href="out-of-place.html">Map all coordinate-bearing DEO/LEG project entries →</a></p><p><a href="repeats.html#hgab-historical-gaa">HGAB projects with historical GAA title matches →</a></p>')
     html=html.replace('</head>','<link rel="stylesheet" href="mpb-location-map.css?v=20261027-native-share-27"></head>')
+    from report_json_shards import attach_loader
+    html=attach_loader(html,'mpb.html')
     html=html.replace('<meta name="viewport" content="width=device-width,initial-scale=1">','<meta name="viewport" content="width=device-width,initial-scale=1"><meta property="og:type" content="website"><meta property="og:url" content="https://research.bettergov.ph/static/nep-preview/mpb.html"><meta property="og:title" content="DPWH multi-purpose building locations and funding"><meta property="og:description" content="Explore FY2027 multi-purpose building locations, same-site comparisons, project details, and geographic legislative district associations."><meta property="og:image" content="'+share_image_url+'"><meta property="og:image:secure_url" content="'+share_image_url+'"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Map of listed FY2027 multi-purpose building project coordinates across Philippine municipal boundaries"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="DPWH multi-purpose building locations and funding"><meta name="twitter:description" content="Explore FY2027 multi-purpose building locations, same-site comparisons, and project details."><meta name="twitter:image" content="'+share_image_url+'">')
-    data_version=hashlib.sha256((STATIC/'mpb-data.json').read_bytes()).hexdigest()[:12]
+    index_version=hashlib.sha256((STATIC/'mpb-table-index.json').read_bytes()).hexdigest()[:12]
+    proximity_version=hashlib.sha256((STATIC/'mpb-proximity.json').read_bytes()).hexdigest()[:12]
+    detail_index_version=hashlib.sha256((STATIC/'mpb-project-details/index.json').read_bytes()).hexdigest()[:12]
     html=html.replace("const D=JSON.parse(document.getElementById('mpb-data').textContent),S=D.summary;",'function initMpbReport(D){const S=D.summary;')
     lazy_loader=f'''}}</script><script>
-window.loadMpbReportData=window.loadMpbReportData||(()=>window.MPB_REPORT_DATA_PROMISE||(window.MPB_REPORT_DATA_PROMISE=fetch('mpb-data.json?v={data_version}').then(r=>{{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}}).then(data=>(window.MPB_REPORT_DATA=data))));
-(()=>{{const status=document.getElementById('mpb-table-load-status'),target=document.getElementById('sections');let started=false;function load(){{if(started)return;started=true;if(status)status.textContent='Loading project tables…';window.loadMpbReportData().then(data=>{{if(status)status.remove();initMpbReport(data)}}).catch(e=>{{if(status)status.textContent='Project tables could not be loaded: '+e.message}})}}if('IntersectionObserver'in window){{const observer=new IntersectionObserver(entries=>{{if(entries.some(e=>e.isIntersecting)){{observer.disconnect();load()}}}},{{rootMargin:'800px'}});observer.observe(target)}}else load()}})();
+window.MPB_TABLE_INDEX_PROMISE=fetch('mpb-table-index.json?v={index_version}').then(r=>{{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}});
+window.MPB_TABLE_ROW_PROMISES=window.MPB_TABLE_ROW_PROMISES||new Map();
+window.loadMpbTableRows=window.loadMpbTableRows||((id)=>window.MPB_TABLE_INDEX_PROMISE.then(index=>{{const meta=index.tables[id];if(!meta)throw Error('Unknown table '+id);if(!window.MPB_TABLE_ROW_PROMISES.has(id))window.MPB_TABLE_ROW_PROMISES.set(id,fetch('mpb-table-data/'+meta.file).then(r=>{{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}}).then(payload=>payload.rows||[]));return window.MPB_TABLE_ROW_PROMISES.get(id)}}));
+window.MPB_PROJECT_DETAILS_PROMISE=window.MPB_PROJECT_DETAILS_PROMISE||fetch('mpb-project-details/index.json?v={detail_index_version}').then(r=>{{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}});
+window.MPB_PROJECT_DETAIL_SHARDS=window.MPB_PROJECT_DETAIL_SHARDS||new Map();
+window.loadMpbProjectDetail=window.loadMpbProjectDetail||((id)=>window.MPB_PROJECT_DETAILS_PROMISE.then(index=>{{const file=index.shards[id];if(!file)throw Error('Project detail not found');if(!window.MPB_PROJECT_DETAIL_SHARDS.has(file))window.MPB_PROJECT_DETAIL_SHARDS.set(file,fetch('mpb-project-details/'+file).then(r=>{{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}}));return window.MPB_PROJECT_DETAIL_SHARDS.get(file).then(payload=>payload.projects[id])}}));
+window.loadMpbReportData=window.loadMpbReportData||(()=>window.MPB_REPORT_DATA_PROMISE||(window.MPB_REPORT_DATA_PROMISE=Promise.all([fetch('mpb-proximity.json?v={proximity_version}').then(r=>{{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}}),window.MPB_TABLE_INDEX_PROMISE,window.MPB_PROJECT_DETAILS_PROMISE]).then(([coordinateProximity,index,detailIndex])=>({{coordinateProximity,prices:index.prices,projectDetailIds:detailIndex.projectIds}}))));
+(()=>{{const status=document.getElementById('mpb-table-load-status'),target=document.getElementById('sections');let started=false;function load(){{if(started)return;started=true;if(status)status.textContent='Loading table index…';window.MPB_TABLE_INDEX_PROMISE.then(data=>{{window.MPB_TABLE_FILES=data.tables;if(status)status.remove();initMpbReport(data)}}).catch(e=>{{if(status)status.textContent='Project table index could not be loaded: '+e.message}})}}if('IntersectionObserver'in window){{const observer=new IntersectionObserver(entries=>{{if(entries.some(e=>e.isIntersecting)){{observer.disconnect();load()}}}},{{rootMargin:'800px'}});observer.observe(target)}}else load()}})();
 </script></body></html>'''
     html=html.replace('</script></body></html>',lazy_loader)
     map_version=hashlib.sha256((STATIC/'mpb-location-map.js').read_bytes()).hexdigest()[:12]

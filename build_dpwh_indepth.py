@@ -834,6 +834,7 @@ def build_all_hgab_document_coverage(indepth=None):
 
 def build():
     import importlib
+    from report_json_shards import write_sharded_json, attach_loader
     from report_hero_module import hero,STYLE
     import uniform_report_menu
     # This builder also runs inside the long-lived document watcher. Reload the
@@ -960,6 +961,7 @@ def build():
     # Table presentation can touch report chrome; keep the shared navigation as
     # the last HTML transformation before publishing these DPWH report pages.
     text=apply_page(text,'dpwh.html')
+    text=attach_loader(text,'dpwh.html')
     # Keep the initial coverage script cache-busted after shared page transforms.
     text=re.sub(r'src="dpwh-in-depth\.js(?:\?v=[^"]*)?"',f'src="dpwh-in-depth.js?v={version}"',text,count=1)
     coverage_section=re.search(r'<section[^>]*id="all-hgab-document-coverage"[^>]*>.*?</section>',text,re.S)
@@ -982,6 +984,7 @@ def build():
         atomic_write(target/'dpwh-data-loader.js',loader)
         atomic_write(target/'hgab-document-coverage.js',all_hgab_coverage_js)
         atomic_write(target/'hgab-document-coverage.json',all_hgab_coverage_json)
+        write_sharded_json(target/'hgab-document-coverage.json',all_hgab_coverage)
         atomic_write(target/'dpwh.html',text)
     return s
 if __name__=='__main__':

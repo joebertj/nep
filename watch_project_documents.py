@@ -111,7 +111,18 @@ def scan(state):
     return {'parsed':changed,'reused':reused,'parseErrors':failed,'busyProjects':busy}
 
 def publication_signature():
-    source=[(str(p.relative_to(ROOT)),stamp(p)) for p in [ROOT/'refresh_parsed_document_pages.py',ROOT/'build_dpwh_indepth.py',ROOT/'build_undocumented_hgab.py',ROOT/'build_investigation_summary.py',ROOT/'build_development_council.py',ROOT/'build_expectation_vs_reality.py',ROOT/'project_documents/development_council_name_merges.json',ROOT/'uniform_report_menu.py',ROOT/'report_teasers.py',ROOT/'project_documents/indepth.html',ROOT/'project_documents/indepth.js',ROOT/'project_documents/pow_reviewed_category_totals.json']]
+    from refresh_parsed_document_pages import PAGE_BUILDERS
+    source_paths = [ROOT / 'refresh_parsed_document_pages.py']
+    source_paths.extend(ROOT / name for name in PAGE_BUILDERS)
+    source_paths.extend(ROOT / name for name in (
+        'report_json_shards.py', 'report_table_presentation.py',
+        'uniform_report_menu.py', 'report_teasers.py',
+        'project_documents/hgab-document-coverage.js',
+        'project_documents/development_council_name_merges.json',
+        'project_documents/indepth.html', 'project_documents/indepth.js',
+        'project_documents/pow_reviewed_category_totals.json',
+    ))
+    source = [(str(path.relative_to(ROOT)), stamp(path)) for path in source_paths if path.is_file()]
     results=[(str(p.relative_to(CACHE)),stamp(p)) for p in sorted(CACHE.glob('*/result.json'))]
     return hashlib.sha256(json.dumps([source,results]).encode()).hexdigest()
 

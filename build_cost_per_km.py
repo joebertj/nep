@@ -95,6 +95,90 @@ def category(row):
     return None
 
 
+PAGE_INDEX_FIELDS = (
+    'id', 'category', 'program', 'projectName', 'office', 'region', 'amountPesos',
+    'lengthKm', 'lengthMeters', 'allocationPerStatedKm', 'allocationPerStatedMeter',
+    'allocationPerTitleLaneMeter', 'titleStatedLanes', 'titleLaneMeters',
+    'allocationPerInventoryLaneMeterProxy', 'inventoryEffectiveLanes', 'inventoryLaneMetersProxy',
+    'allocationPerInventoryAssetLaneMeter', 'inventoryAssetLengthMeters',
+    'inventoryAssetEffectiveLanes', 'inventoryAssetWidthMeters', 'inventoryAssetLaneMeters',
+    'allocationPerManualLaneMeter', 'manualLaneEstimateLanes', 'surfaceDisplay',
+    'recordedConditionDisplay', 'surfacingYearDisplay', 'rehabGoodFairReview',
+    'recentSurfacingReview', 'bridgeGoodFairContextReview', 'typicalPeerRate',
+    'peerRateMultiple', 'highRateCandidate', 'graphExtreme', 'graphUpperFence',
+    'peerUpperFence', 'costDensityReviewFlag', 'approximateLengthMeters',
+    'approximateAllocationPerMeter', 'lengthStatus', 'sourceVolume', 'sourcePage',
+    'assetContextEvidence', 'inventoryDimensionsEvidence',
+)
+PAGE_DETAIL_FIELDS = (
+    'id', 'category', 'program', 'projectName', 'office', 'region', 'amountPesos',
+    'lengthKm', 'lengthMeters', 'lengthStatus', 'lengthMethod', 'allocationPerStatedKm',
+    'allocationPerStatedMeter', 'rangesMeters', 'sourceVolume', 'sourcePage', 'lengthEvidence',
+    'scopeNote', 'allocationPerTitleLaneMeter', 'titleStatedLanes', 'titleLaneMeters',
+    'allocationPerInventoryLaneMeterProxy', 'inventoryEffectiveLanes', 'inventoryLaneMetersProxy',
+    'allocationPerInventoryAssetLaneMeter', 'inventoryAssetLengthMeters',
+    'inventoryAssetEffectiveLanes', 'inventoryAssetWidthMeters', 'inventoryAssetLaneMeters',
+    'manualLaneEstimateLanes', 'allocationPerManualLaneMeter', 'manualLaneEstimateBasis',
+    'laneRateStatus', 'matchedInventoryId', 'inventoryDimensionsStatus',
+    'assetContextEvidence', 'surfaceDisplay', 'recordedConditionDisplay', 'surfacingYearDisplay',
+    'surfacePeerGroup', 'rehabGoodFairReview', 'recentSurfacingReview',
+    'bridgeGoodFairContextReview', 'inventoryPriorityReview', 'rateReview', 'typicalPeerRate',
+    'peerRateMultiple', 'graphUpperFence', 'graphExtreme', 'peerUpperFence', 'highRateCandidate',
+    'approximateLengthMeters', 'approximateAllocationPerMeter', 'approximationStatus',
+    'coordinateSegments', 'coordinateNormalizationRules', 'costDensityReviewFlag',
+    'costDensityReviewReason',
+)
+PAGE_DETAIL_SHARD_SIZE = 100
+
+
+def write_cost_per_km_page_data(data):
+    """Publish a compact filter/chart index and page-loaded table row shards."""
+    index_data = {key: value for key, value in data.items() if key != 'projects'}
+    index_data['projectIndexFields'] = list(PAGE_INDEX_FIELDS) + ['_rowKey']
+    project_rows = []
+    detail_rows = []
+    for row_key, project in enumerate(data['projects']):
+        compact = {field: project.get(field) for field in PAGE_INDEX_FIELDS if field in project}
+        compact['assetContextEvidence'] = bool(project.get('assetContextEvidence'))
+        compact['inventoryDimensionsEvidence'] = bool(project.get('inventoryDimensionsEvidence'))
+        compact['_rowKey'] = row_key
+        project_rows.append([compact.get(field) for field in index_data['projectIndexFields']])
+
+        detail = {field: project.get(field) for field in PAGE_DETAIL_FIELDS if field in project}
+        evidence = project.get('laneInventoryEvidence')
+        if evidence:
+            detail['laneMatchEvidence'] = ' · '.join(str(value) for value in (
+                evidence.get('bridgeId') or evidence.get('sectionId'), evidence.get('stationEvidence'),
+                'Inventory object IDs: ' + ', '.join(map(str, evidence.get('inventoryObjectIds', [])))
+            ) if value)
+        else:
+            detail['laneMatchEvidence'] = 'No compatible inventory match'
+        detail['_rowKey'] = row_key
+        detail_rows.append(detail)
+
+    for directory in (OUT / 'cost-per-km-page-shards', STATIC / 'cost-per-km-page-shards'):
+        directory.mkdir(parents=True, exist_ok=True)
+        for old in directory.glob('page-*.json'):
+            old.unlink()
+        shard_names = []
+        for start in range(0, len(detail_rows), PAGE_DETAIL_SHARD_SIZE):
+            name = f'page-{start // PAGE_DETAIL_SHARD_SIZE + 1:03d}.json'
+            payload = {'projects': detail_rows[start:start + PAGE_DETAIL_SHARD_SIZE]}
+            (directory / name).write_text(
+                json.dumps(payload, ensure_ascii=False, separators=(',', ':')),
+                encoding='utf-8',
+            )
+            shard_names.append(name)
+        index_data['projectIndexRows'] = project_rows
+        index_data['projectDetailShardSize'] = PAGE_DETAIL_SHARD_SIZE
+        index_data['projectDetailShards'] = shard_names
+        (directory.parent / 'cost-per-km-page-index.json').write_text(
+            json.dumps(index_data, ensure_ascii=False, separators=(',', ':')),
+            encoding='utf-8',
+        )
+    return {'projects': len(project_rows), 'detailShards': len(shard_names)}
+
+
 def build(target_page='cost-per-km.html'):
     if (ROOT/'data_sources/fmr_analyst/hgab_fmr_coordinates_normalized.json').exists():
         from build_fmr_dataset import build as build_fmr_dataset
@@ -184,11 +268,12 @@ def build(target_page='cost-per-km.html'):
             row['manualLaneEstimateBasis']='Assumed 2 lanes for group comparison; actual lanes and funded span are unverified'
     serialized=json.dumps(data,ensure_ascii=False,indent=2)+'\n'
     (OUT/'cost_per_km.json').write_text(serialized);(STATIC/'cost-per-km-data.json').write_text(serialized)
+    page_data_stats = write_cost_per_km_page_data(data)
     density['sourceCostDataSha256']=hashlib.sha256(serialized.encode()).hexdigest()
     density_text=json.dumps(density,ensure_ascii=False,indent=2)+'\n'
     (OUT/'length_density_groups.json').write_text(density_text);(STATIC/'length-density-groups.json').write_text(density_text)
     export_lane_evidence(data)
-    build_page(data,density,target_page=target_page)
+    build_page(data,density,target_page=target_page,page_data_stats=page_data_stats)
     return data
 
 
@@ -212,7 +297,7 @@ def coverage_row(group,program,rows):
             'allocationPesos':sum(r['amountPesos'] for r in rows),'unusableLengthAllocationPesos':sum(r['amountPesos'] for r in rows if r['lengthKm'] is None)}
 
 
-def build_page(data,density,target_page='cost-per-km.html'):
+def build_page(data,density,target_page='cost-per-km.html',page_data_stats=None):
     if target_page not in {'cost-per-km.html','cost-matching.html'}:
         raise ValueError(f'Unknown cost report page: {target_page}')
     from analyze_length_density import render as render_density
@@ -246,6 +331,14 @@ def build_page(data,density,target_page='cost-per-km.html'):
     controls=controls.replace("const max=Math.max(1,...points.map",BOXPLOT_BRANCH+"\n const max=Math.max(1,...points.map")
     controls=controls.replace("c.chart==='retention'?'Comparison pairs by HGAB retention status · all filtered rows'", "c.chart==='boxplot'?'One pooled stated-meter box plot · all official programs by default (log scale)':c.chart==='retention'?'Comparison pairs by HGAB retention status · all filtered rows'")
     controls=controls.replace("/pesos|projects|count/i.test(key)","/pesos|projects|count|lengthmeters|allocationper|lineitems|withlength|withoutlength|missingpct/i.test(key)")
+    controls=controls.replace("let filtered=[],page=0;", "let filtered=[],page=0,tableActive=false,hydratingPage=false,renderTicket=0,detailShardCache=new Map(),projectsByRowKey=new Map();const PAGE_SIZE=20;")
+    controls=controls.replace("const search=section.querySelector('input'),select=section.querySelector('select'),sort=section.querySelector('.sort'),order=section.querySelector('.order');", "const search=section.querySelector('input'),select=section.querySelector('select'),sort=section.querySelector('.sort'),order=section.querySelector('.order');\n for(const row of D.projects||[])if(Number.isInteger(row._rowKey))projectsByRowKey.set(row._rowKey,row);\n async function ensureDetailRows(rows){const paths=[...new Set(rows.filter(r=>Number.isInteger(r._rowKey)).map(r=>D.projectDetailShards[Math.floor(r._rowKey/D.projectDetailShardSize)]).filter(Boolean))];await Promise.all(paths.map(async path=>{if(detailShardCache.has(path))return;const payload=await fetch('cost-per-km-page-shards/'+path).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()});detailShardCache.set(path,true);for(const project of payload.projects||[]){const target=projectsByRowKey.get(project._rowKey);if(target)Object.assign(target,project)}}))}\n async function loadPageDetails(){if(!tableActive)return;const ticket=++renderTicket,rows=filtered.slice(page*PAGE_SIZE,(page+1)*PAGE_SIZE);try{await ensureDetailRows(rows);if(ticket!==renderTicket)return;hydratingPage=true;render();hydratingPage=false}catch(error){hydratingPage=false;section.querySelector('.count').textContent=num(filtered.length)+' filtered rows · page details unavailable: '+error.message}}")
+    controls=controls.replace("JSON.stringify(r).toLowerCase().includes(q)", "[r.projectName,r.program,r.office,r.region,r.id,r.sourceVolume,r.sourcePage,r.lengthStatus].join(' ').toLowerCase().includes(q)")
+    controls=controls.replace("Math.ceil(filtered.length/25)", "Math.ceil(filtered.length/PAGE_SIZE)")
+    controls=controls.replace("filtered.slice(page*25,(page+1)*25).map", "filtered.slice(page*PAGE_SIZE,(page+1)*PAGE_SIZE).map")
+    controls=controls.replace("section.querySelector('.page').textContent=`Page ${page+1} of ${pages}`;", "if(!tableActive)section.querySelector('tbody').innerHTML='<tr><td colspan=\"'+c.columns.length+'\">Table rows load when this section is in view.</td></tr>';if(tableActive&&!hydratingPage)loadPageDetails();section.querySelector('.page').textContent=`Page ${page+1} of ${pages}`;")
+    controls=controls.replace("section.querySelector('.export').onclick=()=>{const quote=", "section.querySelector('.export').onclick=async()=>{await ensureDetailRows(filtered);const quote=")
+    controls=controls.replace(";render();\n}", ";if('IntersectionObserver'in window){const tableObserver=new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting)){tableActive=true;tableObserver.disconnect();loadPageDetails()}},{rootMargin:'500px'});tableObserver.observe(section)}else tableActive=true;render();\n}")
     approximation_note='<section class="card"><h3>Coordinate-based allocation per meter · approximation</h3><p>Additional tables below divide whole allocations by straight-line separation between two printed endpoints. Separately labeled FMR segment chords are summed. A road can curve or include structures, so this distance is not a measured road or bridge length. These approximate rates are kept outside stated-length coverage, historical price comparisons and high-rate flags. Review flags, coincident endpoints, unpaired coordinate lists and mixed road/bridge rates are withheld. No distance between different projects supplies a project-length denominator.</p></section>'
     spatial_chart='''<section class="card" id="road-bridge-3d"><h3>Roads and bridges · length, lanes and allocation density</h3><p>Each chart stacks projects in planes of five parallel road strips: five side by side, then the next five above them. Strips share a starting edge. Length runs along each strip, lane count sets its crosswise width, and allocation per lane-meter sets gently log-scaled thickness. The charts show the 30 projects with the highest allocation density in each group; all eligible projects remain in the tables. Each group's thickness scale is separate. This is a screening comparison, not a verified construction cost.</p><p id="road-bridge-3d-count" class="caution"></p><h4>Roads · 30 highest density</h4><div id="roads-3d-plot" role="img" aria-label="Interactive 3D chart of the 30 highest-density road strips arranged five per plane, showing project length, lanes, and log-scaled density thickness" style="width:100%;min-height:500px"></div><h4>Bridges · 30 highest density</h4><div id="bridges-3d-plot" role="img" aria-label="Interactive 3D chart of the 30 highest-density bridge strips arranged five per plane, showing project length, lanes, and log-scaled density thickness" style="width:100%;min-height:500px"></div><p class="caution">Drag to rotate and zoom. Hover on a strip for the project, exact dimensions, lane-count basis, allocation and source. Thickness uses a gentler, slightly expanded log₁₀ allocation-per-lane-meter scale within each group; each plane is separated for visibility. Projects without a usable length and lane-count basis stay in their tables.</p></section>'''
     chart_rows=[];spatial_counts={}
@@ -279,18 +372,21 @@ renderRoadBridge3D();window.addEventListener('resize',()=>{if(window.Plotly){Plo
     computation_start=start+"\nconfigs.splice(0,configs.length,...configs.filter(c=>!"+matching_ids+".includes(c.id)));\n"
     matching_start=start+"\nconfigs.splice(0,configs.length,...configs.filter(c=>"+matching_ids+".includes(c.id)));\n"
     data_version=hashlib.sha256((STATIC/'cost-per-km-data.json').read_bytes()).hexdigest()[:12]
+    page_index_version=hashlib.sha256((STATIC/'cost-per-km-page-index.json').read_bytes()).hexdigest()[:12]
     cost_table_loader='''<script>
 function initCostPerKmTables(D){
+const projectFields=D.projectIndexFields||[];D.projects=(D.projectIndexRows||[]).map(values=>Object.fromEntries(projectFields.map((field,index)=>[field,values[index]])));delete D.projectIndexRows;delete D.projectIndexFields;
 '''+computation_start+controls+'''
 }
-(()=>{const status=document.getElementById('cost-table-load-status'),target=document.getElementById('rate-sections');let started=false;function load(){if(started)return;started=true;if(status)status.textContent='Loading table records…';fetch('cost-per-km-data.json?v=__DATA_VERSION__').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(D=>{if(status)status.remove();initCostPerKmTables(D)}).catch(e=>{if(status)status.textContent='Cost tables could not be loaded: '+e.message})}if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){observer.disconnect();load()}},{rootMargin:'800px'});observer.observe(target)}else load()})();
-</script>'''.replace('__DATA_VERSION__',data_version)
+(()=>{const status=document.getElementById('cost-table-load-status'),target=document.getElementById('rate-sections');let started=false;function load(){if(started)return;started=true;if(status)status.textContent='Loading compact table index…';fetch('cost-per-km-page-index.json?v=__INDEX_VERSION__').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(D=>{if(status)status.remove();initCostPerKmTables(D)}).catch(e=>{if(status)status.textContent='Cost table index could not be loaded: '+e.message})}if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){observer.disconnect();load()}},{rootMargin:'800px'});observer.observe(target)}else load()})();
+</script>'''.replace('__INDEX_VERSION__',page_index_version)
     matching_table_loader='''<script>
 function initCostMatchingTables(D){
+const projectFields=D.projectIndexFields||[];D.projects=(D.projectIndexRows||[]).map(values=>Object.fromEntries(projectFields.map((field,index)=>[field,values[index]])));delete D.projectIndexRows;delete D.projectIndexFields;
 '''+matching_start+controls+'''
 }
-(()=>{const status=document.getElementById('cost-matching-load-status'),target=document.getElementById('sections');let started=false;function load(){if(started)return;started=true;if(status)status.textContent='Loading matching and coverage tables…';fetch('cost-per-km-data.json?v=__DATA_VERSION__').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(D=>{if(status)status.remove();initCostMatchingTables(D)}).catch(e=>{if(status)status.textContent='Matching and coverage tables could not be loaded: '+e.message})}if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){observer.disconnect();load()}},{rootMargin:'800px'});observer.observe(target)}else load()})();
-</script>'''.replace('__DATA_VERSION__',data_version)
+(()=>{const status=document.getElementById('cost-matching-load-status'),target=document.getElementById('sections');let started=false;function load(){if(started)return;started=true;if(status)status.textContent='Loading compact matching index…';fetch('cost-per-km-page-index.json?v=__INDEX_VERSION__').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(D=>{if(status)status.remove();initCostMatchingTables(D)}).catch(e=>{if(status)status.textContent='Matching and coverage index could not be loaded: '+e.message})}if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){observer.disconnect();load()}},{rootMargin:'800px'});observer.observe(target)}else load()})();
+</script>'''.replace('__INDEX_VERSION__',page_index_version)
     chart_data_script='<script id="road-bridge-3d-data" type="application/json">'+json.dumps({'projects':chart_rows,'counts':spatial_counts},ensure_ascii=False).replace('</','<\\/')+'</script>'
     links='<section class="card"><h3>Calculations and supporting evidence</h3><p><a href="cost-per-km.html">Cost calculations and peer comparisons</a> · <a href="cost-matching.html">Asset matching, dimensions and length coverage</a></p></section>'
     lane_note='<p>Lane-meter calculations divide allocation by meters × lanes. Title-stated lanes, existing-inventory lane estimates and whole-bridge asset estimates are displayed separately. <a href="cost-matching.html#lane-meter-evidence">See matching rules, exclusions and source vintage</a>. Existing asset size does not fill a missing funded length.</p>'

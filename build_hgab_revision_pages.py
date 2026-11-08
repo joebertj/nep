@@ -10,6 +10,7 @@ import subprocess
 import unicodedata
 from collections import Counter, defaultdict
 from pathlib import Path
+from report_json_shards import write_sharded_json, attach_loader
 
 from analyze_fmr_nia_repeats import fields, matches
 from chainage import compare_chainage
@@ -172,7 +173,9 @@ def prepare_dpwh_comparison_data() -> None:
             "second": ({k: old.get(k) for k in ("projectName", "amountPesos", "office", "region", "sourcePage")} if old else None),
             "third": ({k: new.get(k) for k in ("projectName", "amountPesos", "office", "region", "sourcePage")} if new else None),
         })
-    write_json(STATIC / "dpwh-hgab-comparison.json", {"summary": comparison["summary"], "rows": thin_rows})
+    comparison_payload = {"summary": comparison["summary"], "rows": thin_rows}
+    write_json(STATIC / "dpwh-hgab-comparison.json", comparison_payload)
+    write_sharded_json(STATIC / "dpwh-hgab-comparison.json", comparison_payload)
 
 
 
@@ -193,7 +196,8 @@ fetch('dpwh-hgab-comparison.json').then(r=>r.json()).then(D=>{const rows=D.rows,
         f'<strong>line items listed in 3rd reading without a selected 2nd-reading counterpart</strong>'
         f'<p>Those lines total ₱{new_total/1_000_000:,.0f}M. {len(removed_rows):,} 2nd-reading lines have no selected 3rd-reading counterpart. These are extraction and title-screen results for document review.</p></section>')
     page = page.replace("__READING_TEASER__", teaser)
-    return page
+    page = page.replace("fetch('dpwh-hgab-comparison.json')", "window.loadReportShardedJson('dpwh-hgab-comparison-index.json')")
+    return attach_loader(page, 'dpwh-hgab-comparison.html')
 
 
 def main() -> None:

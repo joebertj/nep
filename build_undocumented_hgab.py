@@ -330,9 +330,11 @@ const q=document.getElementById('q'),flag=document.getElementById('flag'),progra
             f'headers={coverage_headers!r}, {coverage_project_rows} project rows, '
             'or shared table styling is missing'
         )
+    from report_json_shards import write_sharded_json, attach_loader
     for folder in (OUT,STATIC):
         (folder/'undocumented-hgab-data.json').write_text(payload)
         (folder/'hgab-only-document-coverage.json').write_text(coverage_export_json)
+        write_sharded_json(folder/'hgab-only-document-coverage.json', json.loads(coverage_export_json))
         (folder/'hgab-document-coverage.js').write_text(coverage_renderer)
         if support_payload is not None:
             (folder/'senate-hgab-only-document-stats.json').write_text(support_payload)
@@ -346,6 +348,7 @@ const q=document.getElementById('q'),flag=document.getElementById('flag'),progra
             (folder/name).write_text(content)
         for name,content in zip(pow_shard_names,pow_payloads):
             (folder/name).write_text(content)
+    html=attach_loader(html,'undocumented-hgab.html')
     for p in (OUT/'undocumented-hgab.html',STATIC/'undocumented-hgab.html'): p.write_text(html)
     print(json.dumps(data['summary'],indent=2))
 if __name__=='__main__':main()

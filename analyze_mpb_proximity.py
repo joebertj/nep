@@ -237,6 +237,8 @@ def build():
         historical.append({**r,'pairType':'NEP vs historical GAA','projectName':r['project'],'otherProject':r['prior_project'],
             'sourceLabel':r['source_code'],'otherSource':r['prior_source'],'currentAllocationPesos':r['amount_2027'],'otherAllocationPesos':r['prior_amount']})
     (STATIC/'dpwh-data.json').write_text(json.dumps(dpwh,ensure_ascii=False,indent=2)+'\n')
+    from report_json_shards import write_sharded_json
+    write_sharded_json(STATIC/'dpwh-data.json', dpwh)
     with (OUT/'hb_nep_comparison_3rd.csv').open() as f:rows=[r for r in csv.DictReader(f) if r['pap3']==CATEGORY]
     groups=defaultdict(list)
     for r in rows:
@@ -282,6 +284,8 @@ def build():
     boundary_json=json.dumps(boundaries,ensure_ascii=False,indent=2)+'\n'
     (OUT/'mpb_municipality_boundaries.json').write_text(boundary_json)
     (STATIC/'mpb-municipality-boundaries.json').write_text(boundary_json)
+    from report_json_shards import write_sharded_json
+    write_sharded_json(STATIC/'mpb-municipality-boundaries.json', boundaries)
     data={'summary':summary,'historical':historical,'current':current,'coordinateAudit':audit,'coordinateAuditUnresolved':unresolved_audit,'coordinateAuditUnresolvedProjects':unresolved_projects,'coordinateAuditDistrictMatches':district_matches,
         'method':'Haversine great-circle separation, radius 6,371,008.8 meters, between one unambiguous decimal point per title. Latitude/longitude order inferred only from nonoverlapping local screening ranges (4–22 latitude, 116–127 longitude), recorded per point. At least four decimal places required. No geocoding, centroid substitution, nearest-coordinate join or coordinate borrowing from other rows/stages.',
         'limits':['Printed points are not verified building footprints. Identical or nearby coordinates can be rounded, copied or reference a barangay center. Decimal precision is not positional accuracy.',

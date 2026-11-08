@@ -11,7 +11,7 @@ STATIC = ROOT.parent / 'open-data-visualization' / 'static' / 'nep-preview'
 OUT = ROOT / 'analysis_output'
 SOURCE = ROOT / 'hb10858_3rd_dpwh_projects.json'
 BARANGAY = re.compile(r'\b(?:barangay|brgy\.?)\s+(.+?)(?=,|;|\(|\b(?:barangay|brgy\.?)\b|\s+(?:section|road|rd\.?|fmr|sta\.?|station|chainage|km\.?|bridge|phase)\b|$)', re.I)
-MPB_DATA = STATIC / 'mpb-barangay-data.json'
+MPB_DATA = ROOT / 'analysis_output' / 'mpb-barangay-data.json'
 GENERIC = {
     'health station', 'health center', 'health centre', 'health station bhs',
     'barangay health station', 'health station with birthing home', 'health center bhs',

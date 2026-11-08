@@ -137,7 +137,15 @@ files=(
   static/nep-preview/rcs.html
   static/nep-preview/mpb.html
   static/nep-preview/mpb-data.json
+  static/nep-preview/mpb-location-map.js
+  static/nep-preview/mpb-municipality-boundaries.json
+  static/nep-preview/mpb-table-index.json
+  static/nep-preview/mpb-table-data
+  static/nep-preview/mpb-project-details
   static/nep-preview/mpb-barangay.html
+  static/nep-preview/mpb-barangay.js
+  static/nep-preview/mpb-barangay-index.json
+  static/nep-preview/mpb-barangay-detail-shards
   static/nep-preview/mpb-barangay-data.json
   static/nep-preview/mpb-map-share
   static/nep-preview/out-of-place.html
@@ -195,7 +203,6 @@ health_files=(
   static/nep-preview/congress-benchmark.json
   static/nep-preview/rcs-stage-trace.json
   static/nep-preview/rcs-stage-trace.csv
-  static/nep-preview/index.html
   static/nep-preview/archive.html
   static/nep-preview/barangay.html
   static/nep-preview/flood-control.html
@@ -223,7 +230,6 @@ health_files=(
   static/nep-preview/dpwh-hgab.html
   static/nep-preview/dpwh-deo-office-change-maps.json
   static/nep-preview/dpwh-deo-office-changes.js
-  static/nep-preview/dpwh-office-change-share
   static/nep-preview/dpwh-logo.svg
   static/nep-preview/dpwh-data.json
   static/nep-preview/dpwh.html
@@ -242,7 +248,6 @@ health_files=(
   static/nep-preview/out-of-place-data.json
   static/nep-preview/out-of-place-share-card.png
   static/nep-preview/out-of-place-share/representative-13c17617ebbf9151.png
-  static/nep-preview/ignorant.html
   static/nep-preview/plotly-2.35.2.min.js
   static/nep-preview/cost-per-km.html
   static/nep-preview/cost-per-km-historical.html
@@ -271,9 +276,14 @@ health_files=(
   static/nep-preview/repeats.html
   static/nep-preview/repeats-historical.html
   static/nep-preview/repeats-historical-data.json
+  static/nep-preview/mpb-proximity.json
+  static/nep-preview/mpb-location-map.js
+  static/nep-preview/mpb-municipality-boundaries.json
+  static/nep-preview/mpb-table-index.json
+  static/nep-preview/mpb-project-details/index.json
   static/nep-preview/mpb-barangay.html
-  static/nep-preview/mpb-barangay-data.json
-  static/nep-preview/mpb-map-share
+  static/nep-preview/mpb-barangay.js
+  static/nep-preview/mpb-barangay-index.json
   static/nep-preview/fmr-data.json
   static/nep-preview/fmr-annex-equivalence.json
   static/nep-preview/fmr-historical-repeats.json
@@ -281,6 +291,19 @@ health_files=(
   static/nep-preview/nep-agency-baselines.json
   static/nep-preview/nep-agency-stage-controls.json
 )
+
+# A static directory without a trailing slash responds with Actix's canonical
+# 307 redirect. Probe one concrete generated card from each directory instead.
+for share_dir in static/nep-preview/dpwh-office-change-share static/nep-preview/mpb-map-share; do
+  sample="$(find "$r/$share_dir" -type f -name '*.html' -print -quit)"
+  if [[ -z "$sample" ]]; then
+    echo "Frontend health check setup failed: no share HTML found under $share_dir." >&2
+    exit 1
+  fi
+  relative_sample="${sample#"$r"}"
+  relative_sample="${relative_sample#/}"
+  health_files+=("$relative_sample")
+done
 
 ensure_build_info_ignored() {
   local exclude_file
@@ -377,6 +400,15 @@ if [[ -n "$dirty_paths" ]]; then
         preserve_templates+=("$path")
         ;;
         *)
+        # A server-side repair may already have placed a tracked file at the
+        # exact target-commit contents (for example, the admin-hash ignore
+        # rule). Resetting to that same blob is safe and should not block a
+        # release. Preserve the refusal for any genuinely divergent content.
+        worktree_blob="$(git -C "$r" hash-object -- "$path")"
+        target_blob="$(git -C "$r" rev-parse "$target:$path" 2>/dev/null || true)"
+        if [[ -n "$target_blob" && "$worktree_blob" == "$target_blob" ]]; then
+          continue
+        fi
         release_path=false
         for file in "${files[@]}"; do
           if [[ "$path" == "$file" || "$path" == "$file/"* ]]; then release_path=true; break; fi
@@ -413,7 +445,39 @@ fi
 
 # Back up all release paths. The report files can be outdated direct copies;
 # template edits are restored after the Git fast-forward.
+needs_build=false
+if [[ -n "$(git -C "$r" diff --name-only "$previous" "$target" -- src Cargo.toml Cargo.lock)" ]]; then
+  needs_build=true
+fi
+binary="$r/target/release/open-data-visualization"
+backup_bytes=0
+for file in "${files[@]}"; do
+  if [[ -e "$r/$file" ]]; then
+    size="$(du -sb "$r/$file" | awk '{print $1}')"
+    backup_bytes=$((backup_bytes + size))
+  fi
+done
+if [[ "$needs_build" == true && -e "$binary" ]]; then
+  binary_size="$(du -sb "$binary" | awk '{print $1}')"
+  backup_bytes=$((backup_bytes + binary_size))
+fi
+available_kb="$(df -Pk /tmp | awk 'NR==2 {print $4}')"
+required_kb=$(((backup_bytes + 134217728 + 1023) / 1024))
+if (( available_kb < required_kb )); then
+  echo "Refusing deployment: /tmp has $((available_kb / 1024)) MB free; backup needs about $((backup_bytes / 1048576)) MB plus a 128 MB safety margin." >&2
+  exit 2
+fi
 backup="$(mktemp -d /tmp/odv-git-deploy.XXXXXX)"
+backup_complete=false
+cleanup_incomplete_backup() {
+  status=$?
+  if [[ "$backup_complete" != true ]]; then
+    rm -rf -- "$backup"
+    echo "Removed incomplete deployment backup; checkout was not changed." >&2
+  fi
+  exit "$status"
+}
+trap cleanup_incomplete_backup ERR
 for file in "${files[@]}"; do
   if [[ -e "$r/$file" ]]; then
     mkdir -p "$backup/$(dirname "$file")"
@@ -424,14 +488,11 @@ done
 
 # HEAD is an ancestor of target. The only preserved dirt is in templates that
 # are unchanged by this commit; all report assets are replaced by Git blobs.
-needs_build=false
-if [[ -n "$(git -C "$r" diff --name-only "$previous" "$target" -- src Cargo.toml Cargo.lock)" ]]; then
-  needs_build=true
-fi
-binary="$r/target/release/open-data-visualization"
 if [[ "$needs_build" == true ]]; then
   cp -a "$binary" "$backup/frontend-binary"
 fi
+backup_complete=true
+trap - ERR
 rollback_release() {
   trap - ERR
   echo "Deployment failed; restoring previous checkout and report files." >&2
@@ -473,6 +534,21 @@ for shard in index.get('projectShards', []):
 PY
 )
 
+# Validate every MPB detail shard referenced by the page indices, rather than
+# checking the retired monolithic barangay JSON that these pages no longer use.
+while IFS= read -r asset; do health_files+=("static/nep-preview/$asset"); done < <(python3 - "$r/static/nep-preview/mpb-table-index.json" "$r/static/nep-preview/mpb-project-details/index.json" "$r/static/nep-preview/mpb-barangay-index.json" <<'PY'
+import json, sys
+from pathlib import Path
+table_index, detail_index, barangay_index = (json.loads(Path(path).read_text()) for path in sys.argv[1:])
+for table in table_index.get('tables', {}).values():
+    print('mpb-table-data/' + table['file'])
+for shard in sorted(set(detail_index.get('shards', {}).values())):
+    print('mpb-project-details/' + shard)
+for shard in sorted({row[5] for row in barangay_index.get('barangayRows', []) if len(row) > 5 and row[5]}):
+    print('mpb-barangay-detail-shards/' + shard)
+PY
+)
+
 # The revision marker is intentionally ignored by Git. Capture the actual
 # deployed target only after reset so alternate deployment targets are exact.
 write_build_info
@@ -495,7 +571,9 @@ if ! curl --silent --show-error --fail "$health_base/static/nep-preview/" >/dev/
   healthy=false
 fi
 for file in "${health_files[@]}"; do
-  if ! curl --silent --show-error --fail "$health_base/$file" >/dev/null; then
+  status="$(curl --silent --show-error --max-time 8 --output /dev/null --write-out '%{http_code}' "$health_base/$file" 2>/dev/null || true)"
+  if [[ "$status" != 200 ]]; then
+    echo "Frontend health check failed: $file returned HTTP ${status:-000}." >&2
     healthy=false
   fi
 done

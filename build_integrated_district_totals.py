@@ -24,6 +24,8 @@ def build_page(data=None):
         )
     from uniform_report_menu import apply_page
     html = apply_page(html, PAGE)
+    from report_json_shards import attach_loader
+    html = attach_loader(html, PAGE)
     from report_table_presentation import apply_page_table_module
     html, contract = apply_page_table_module(PAGE, html)
     for destination in (STATIC / PAGE, ROOT / 'analysis_output' / PAGE):

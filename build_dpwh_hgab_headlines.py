@@ -131,6 +131,8 @@ def refresh(page=None):
     data['hgabHeadline']={'officeBreakdown':offices,'programBreakdown':programs,'insertionCount':len(inserted),'removalCount':len(removed),
         'method':'Domestic HGAB-only candidates plus separately reviewed unpaired FAP records; reverse-screened NEP-only removal candidates. Amounts use HGAB for insertions and original NEP for removals.'}
     path.write_text(json.dumps(data,ensure_ascii=False,separators=(',',':'))+'\n')
+    from report_json_shards import write_sharded_json
+    write_sharded_json(path, data)
     (ROOT/'analysis_output/dpwh_hgab_headline_stats.json').write_text(json.dumps(data['hgabHeadline'],ensure_ascii=False,indent=2)+'\n')
     domestic_count=len(data['hbInsertions'])
     fap_count=len(inserted)-domestic_count

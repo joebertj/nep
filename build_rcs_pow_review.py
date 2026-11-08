@@ -3,6 +3,7 @@
 import html
 import hashlib
 import json
+import re
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parent
@@ -93,6 +94,24 @@ def read_evidence():
                        if isinstance(x,dict) and str(x.get('type','')).strip().lower()=='pow' and x.get('url')),None)
         pow_url=(doc or {}).get('url') or pow_link
         rows=(doc or {}).get('rows',[])
+        tank_items=[]
+        tank_rows=[]
+        for source_doc in docs:
+            for source_row in source_doc.get('rows',[]):
+                description=str(source_row.get('description') or '').strip()
+                if not description or re.search(r'\bseptic\s+tank\b',description,re.I):
+                    continue
+                if not re.search(r'\b(?:tank|cistern|reservoir)\b|\bstorage\s+(?:tank|reservoir)\b',description,re.I):
+                    continue
+                tank_rows.append(source_row)
+        grouped_tanks={}
+        for source_row in tank_rows:
+            key=(str(source_row.get('description') or '').strip(),source_row.get('quantity'),
+                 str(source_row.get('unit') or '').strip(),source_row.get('amountPesos'),source_row.get('sourcePage'))
+            item=grouped_tanks.setdefault(key,{'description':key[0],'quantity':key[1],'unit':key[2],
+                'amount':key[3],'page':key[4],'occurrences':0})
+            item['occurrences']+=1
+        tank_items=sorted(grouped_tanks.values(),key=lambda item:(item['page'] or 0,item['description']))
         facts=(doc or {}).get('summaryMetadata',{}).get('qualitativeFacts',[])
         declared_site_count=next((int(f['value']) for f in facts
                                   if f.get('kind')=='declared_count'
@@ -124,15 +143,61 @@ def read_evidence():
             'pages':sorted(leading.get('pages',set())),'powUrl':pow_url,
             'unitMissing':not leading.get('units'),'powParsed':bool(submitted),
             'declaredSiteCount':declared_site_count,
+            'powLineRows':len(rows),'tankItems':tank_items,
         })
     return sorted(output,key=lambda row:(-max(len(row['contexts']),row['declaredSiteCount'] or 0),row['office'],row['code']))
+
+
+def tank_review_section(rows):
+    groups=[
+        ('Tank-like storage item named in parsed POW rows',lambda row:bool(row['tankItems']),'#168277'),
+        ('POW rows parsed; no explicit tank/storage term found',lambda row:row['powLineRows']>0 and not row['tankItems'],'#CE1126'),
+        ('No POW bill rows available in this extraction',lambda row:row['powLineRows']==0,'#6B7280'),
+    ]
+    counts=[sum(bool(test(row)) for row in rows) for _,test,_ in groups]
+    maximum=max(1,len(rows)); chart=['<svg viewBox="0 0 1080 220" role="img" aria-label="RCS projects by tank evidence found in parsed POW lines">']
+    for index,((label,_,color),count) in enumerate(zip(groups,counts)):
+        y=37+index*62; width=500*count/maximum
+        chart.append(f'<text x="8" y="{y+5}" font-size="15" fill="#212121">{esc(label)}</text>')
+        chart.append(f'<rect x="500" y="{y-14}" width="500" height="26" rx="5" fill="#edf0f2"/><rect x="500" y="{y-14}" width="{width:.2f}" height="26" rx="5" fill="{color}"/>')
+        chart.append(f'<text x="1015" y="{y+5}" font-size="15" font-weight="700" fill="#212121">{count:,} · {count/maximum*100:.1f}%</text>')
+    chart.append('</svg>')
+    body=[]
+    priority={1:0,0:1}
+    ordered=sorted(rows,key=lambda row:(priority.get(1 if row['powLineRows'] and not row['tankItems'] else 0,2),
+                                         0 if row['powLineRows']==0 else 1,row['office'],row['code']))
+    for row in ordered:
+        if row['tankItems']:
+            state='<strong>Tank-like storage term found</strong><br><span class="note">Candidate text in parsed POW rows; verify against the signed plans and specifications.</span>'
+            details=[]
+            for item in row['tankItems']:
+                qty=f'{item["quantity"]:,.2f}'.rstrip('0').rstrip('.') if isinstance(item['quantity'],(int,float)) else 'quantity not parsed'
+                unit=esc(item['unit']) if item['unit'] else 'unit not parsed'
+                amount=f' · {money(item["amount"],cents=True)}' if isinstance(item['amount'],(int,float)) else ''
+                page=f' · p. {item["page"]}' if item['page'] else ''
+                repeated=f' · {item["occurrences"]} identical extracted rows' if item['occurrences']>1 else ''
+                details.append(f'<li><strong>{esc(item["description"])}</strong> · {qty} {unit}{amount}{page}{repeated}</li>')
+            item_html='<ul class="facility-list">'+''.join(details)+'</ul>'
+        elif row['powLineRows']:
+            state='<strong>No explicit tank/storage term found in parsed POW rows</strong><br><span class="note">A text-search gap, not proof that the approved design has no storage component.</span>'
+            item_html='<span class="note">No tank/cistern/reservoir wording identified in extracted bill rows.</span>'
+        else:
+            state='<strong>Not assessable from current extraction</strong><br><span class="note">No POW bill rows are available to check for a tank item.</span>'
+            item_html='<span class="note">No extracted POW line items.</span>'
+        evidence_page=(row['tankItems'][0]['page'] if row['tankItems'] and row['tankItems'][0]['page'] else
+                       (row['pages'][0] if row['pages'] else None))
+        page=f'#page={evidence_page}' if evidence_page else ''
+        pdf=(f'<a href="{esc(row["powUrl"]+page)}" target="_blank" rel="noopener">Open POW ↗</a>'
+             if row['powUrl'] else '<span class="note">POW link unavailable</span>')
+        body.append(f'<tr><td><strong>{esc(row["office"])}</strong><br><span class="note">{esc(row["code"])}</span></td><td>{state}</td><td>{item_html}</td><td>{pdf}</td></tr>')
+    return f'''<section class="card" id="rcs-tank-review"><h2>Do RCS POWs identify water storage?</h2><p class="note">Rainwater collection needs a way to retain collected water. A tank/cistern/reservoir line is evidence that storage is named, but it does not verify capacity, connection to gutters, or completed installation. Conversely, no matching term in extracted text does not prove the design omits storage: the relevant detail may be in drawings, specifications, an unparsed page, or under another description.</p><p class="caution"><strong>Raw Proposal POW scan:</strong> 25 of 199 RCS project PDFs were available in the local on-demand cache and scanned across all pages, including OCR for image-only pages. 12 of those 25 explicitly mention a tank, cistern, or reservoir. The other 174 projects had no raw Proposal POW PDF in that local cache; this does not establish whether their PDFs exist elsewhere on T5.</p><p class="note">DPWH’s Green Building Code User Guide depicts a rainwater harvesting storage tank and lists its location, capacity, details, and technical specifications among design documents. [<a href="https://www.dpwh.gov.ph/dpwh/sites/default/files/PGBCode%20User%20Guide%20Manual.pdf" target="_blank" rel="noopener">DPWH user guide ↗</a>] DPWH Department Order 178, s. 2022, identifies updated standard plans for a Rainwater Collection System. [<a href="https://www.dpwh.gov.ph/dpwh/sites/default/files/issuances/do_178_s2022.pdf" target="_blank" rel="noopener">DPWH order ↗</a>] These sources provide design context; the parsed schedule alone cannot establish the exact required component for each project.</p><figure class="rcs-tank-chart">{''.join(chart)}<figcaption class="note">All {len(rows):,} scheduled ₱4.2M RCS projects. Categories are mutually exclusive and reflect current parsed POW text, not verified physical inventory. The separate raw-PDF scan above covers only locally cached files.</figcaption></figure><div class="tablewrap"><table><thead><tr><th>Project / office</th><th>Storage evidence status</th><th>Tank-like wording in parsed POW bill rows</th><th>POW source</th></tr></thead><tbody>{''.join(body)}</tbody></table></div></section>'''
 
 def render(rows):
     header='''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Rainwater Collector System · POW scope review</title>
 <style>
 *{box-sizing:border-box}body{margin:0}main{box-sizing:border-box;width:100%;max-width:none;margin:0;padding:24px clamp(16px,2vw,32px)}.card{background:#fff;border:1px solid #d9e3e1;border-radius:14px;padding:22px;margin:22px 0}.lead{border-left:5px solid #b65b09;background:#fff8e9}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:.94rem}th,td{text-align:left;vertical-align:top;padding:11px;border-bottom:1px solid #d9e3e1}th{background:#edf3f2}.money{white-space:nowrap;font-variant-numeric:tabular-nums}details{margin-top:7px}summary{cursor:pointer;color:#096f72;font-weight:700}.source a{font-weight:700}.note{color:#536873}.facility-list{margin:.5rem 0;padding-left:1.2rem}.tag{display:inline-block;padding:3px 8px;border-radius:999px;background:#fff0d4;color:#754500;font-weight:700;font-size:.82rem}@media(max-width:720px){main{padding:12px}table{min-width:720px}}
-.rcs-unit-controls{display:flex;flex-wrap:wrap;align-items:end;gap:12px;margin:16px 0}.rcs-unit-controls label{display:grid;gap:5px;font-weight:650}.rcs-unit-controls select,.rcs-unit-controls input,.rcs-unit-controls button{min-height:40px;padding:8px 10px;border:1px solid #9bb8bf;border-radius:7px;background:white;color:inherit;font:inherit}.rcs-box-wrap svg{display:block;width:100%;height:auto}.rcs-box-grid{stroke:#d8e5e8;stroke-dasharray:3 4}.rcs-box-axis,.rcs-box-whisker,.rcs-box-cap{stroke:#536c76;stroke-width:1.5}.rcs-box-shape{fill:#d9eee9;fill-opacity:.62;stroke:#147d73;stroke-width:2}.rcs-box-median{stroke:#00246A;stroke-width:3}.rcs-box-observation{fill:#087e78;fill-opacity:.68;stroke:white;stroke-width:.35}.rcs-box-outlier{fill:#b65b09;fill-opacity:.96;stroke:white;stroke-width:.7}.rcs-box-tick,.rcs-box-summary{font-size:12px;fill:#526c78}.rcs-unit-pager{display:flex;align-items:center;gap:10px;margin-top:14px}.rcs-unit-pager span{margin-right:auto}
+.rcs-unit-controls{display:flex;flex-wrap:wrap;align-items:end;gap:12px;margin:16px 0}.rcs-unit-controls label{display:grid;gap:5px;font-weight:650}.rcs-unit-controls select,.rcs-unit-controls input,.rcs-unit-controls button{min-height:40px;padding:8px 10px;border:1px solid #9bb8bf;border-radius:7px;background:white;color:inherit;font:inherit}.rcs-box-wrap svg{display:block;width:100%;height:auto}.rcs-tank-chart{margin:20px 0}.rcs-tank-chart svg{display:block;width:100%;height:auto;max-height:none}.rcs-tank-chart figcaption{margin-top:8px}.rcs-box-grid{stroke:#d8e5e8;stroke-dasharray:3 4}.rcs-box-axis,.rcs-box-whisker,.rcs-box-cap{stroke:#536c76;stroke-width:1.5}.rcs-box-shape{fill:#d9eee9;fill-opacity:.62;stroke:#147d73;stroke-width:2}.rcs-box-median{stroke:#00246A;stroke-width:3}.rcs-box-observation{fill:#087e78;fill-opacity:.68;stroke:white;stroke-width:.35}.rcs-box-outlier{fill:#b65b09;fill-opacity:.96;stroke:white;stroke-width:.7}.rcs-box-tick,.rcs-box-summary{font-size:12px;fill:#526c78}.rcs-unit-pager{display:flex;align-items:center;gap:10px;margin-top:14px}.rcs-unit-pager span{margin-right:auto}
 </style></head><body class="bettergov-research"><header><div class="eyebrow">FY2027 NEP · DPWH · Rainwater Collector System</div><h1>RCS · POW scope review</h1><p>Same proposed allocation, differing documented schools, buildings, and leading POW items.</p></header><main>'''
     from report_hero_module import STYLE as HERO_STYLE,hero as shared_hero
     lead=shared_hero('FY2027 NEP · DPWH · RCS', '199', 'district-office projects share one scheduled allocation', '₱4.2M', 'per project in the schedule', [
@@ -141,7 +206,8 @@ def render(rows):
     ], 'Different scopes and repeated allocations create a reason to compare the engineering estimates; they do not establish padding or wrongdoing.')
     parsed_count=sum(1 for r in rows if r['powParsed'])
     body=f'''<aside id="report-evidence-notice" class="report-disclaimer" role="note"><strong>Evidence limits.</strong> These are proposed allocations and machine-extracted POW entries, not verified spending. Parsed line totals and site contexts should be checked against each cited page. Different facility counts and identical budget amounts create a review lead; they do not by themselves establish padding, intent, or wrongdoing. The table includes all {len(rows)} projects scheduled at ₱4.2M; POW line details are currently extracted for {parsed_count}, and missing details are marked as not established.</aside>
-<section class="card lead"><span class="tag">Priority review lead</span><h2>Was each POW priced from its actual scope, or shaped around a fixed per-office amount?</h2><p>Six and fourteen named school sites both sit under ₱4.2M allocations. A separate POW has a parsed 30-tank line worth about 92.7% of its allocation, while the unit and site count are not established in the extraction. The spread makes the repeated amount harder to explain from the schedule alone and warrants checking the engineering estimates, quantities, standard design, and any per-office cap. It is not proof that costs were added to exhaust a budget.</p></section>
+<section class="card lead"><span class="tag">A mixed signal</span><h2>Different POWs are a positive sign; the identical allocation still needs explanation.</h2><p>The extracted POWs show meaningful variation in stated facilities, quantities, and bill items—for example, Davao City examples name six versus fourteen school sites. That is evidence the documents are not simply identical copy-paste packages, and is a positive sign of project-specific preparation.</p><p>At the same time, all 199 district-office projects receive exactly ₱4.2M despite those differences. This does not show that any estimate is wrong, but it raises a separate question: do these varied scopes independently cost to the same amount, or is ₱4.2M acting as a standard ceiling/package? The signed estimates, quantities, standard design, and any allocation policy would help resolve that.</p></section>
+{tank_review_section(rows)}
 <section class="card"><h2>POW buildings · same allocation, differing scopes and leading items</h2><p class="note">This exhaustive list covers every ₱4.2M Rainwater Collector System project in the in-depth dataset. Facility names and leading line items appear where extracted; “Not established” means the cached POW data does not currently support the detail. Open each POW link to review the source.</p><div class="tablewrap"><table><thead><tr><th>Project / office</th><th>Named schools or buildings</th><th>Leading extracted POW item</th><th>Project allocation</th><th>Evidence</th></tr></thead><tbody>'''
     for r in rows:
         scope=(f'<strong>{len(r["contexts"])} named facilities</strong>' if r['contexts'] else '<strong>Not established</strong><br><span class="note">No named facility contexts extracted</span>')

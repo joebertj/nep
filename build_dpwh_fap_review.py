@@ -145,6 +145,8 @@ def refresh(page=None):
         screen['fapReview'] = summary
         data['fapReview' + edition] = fap
     data_path.write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':')) + '\n')
+    from report_json_shards import write_sharded_json
+    write_sharded_json(data_path, data)
     audit['method'] = 'FAP classification is taken from the printed PAP or parser allocationKind. All full-schedule comparison records and totals are retained. Only the domestic unmatched shortlist excludes FAP. NEP amounts are selected one-to-one counterparts, not nearest-title suggestions.'
     (OUT / 'dpwh_fap_nep_hgab_review.json').write_text(json.dumps(audit, ensure_ascii=False, indent=2)+'\n')
     fap = audit['3rd']['rows']; summary = audit['3rd']['summary']

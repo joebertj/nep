@@ -24,8 +24,12 @@ def build():
     page = render_subtractions(page)
     page = render_allocation_adjustments(page)
     page = render_headlines(page)
+    from report_json_shards import write_sharded_json
+    write_sharded_json(STATIC / 'dpwh-data.json', json.loads((STATIC / 'dpwh-data.json').read_text(encoding='utf-8')))
     from report_table_presentation import apply_page_table_module
     page,_=apply_page_table_module(page_path.name,page)
+    from report_json_shards import attach_loader
+    page=attach_loader(page,page_path.name)
     page_path.write_text(page, encoding='utf-8')
     (OUT / page_path.name).write_text(page, encoding='utf-8')
     return {'page': page_path.name, 'unmatchedRows': len(data.get('hbInsertions', []))}

@@ -92,6 +92,8 @@ def refresh(page=None):
     groups={key:build_scope(mapping,key=='fap',hints) for key in ['domestic','fap']}
     path=STATIC/'dpwh-data.json';data=json.loads(path.read_text());data.pop('subtractions', None);data['removals']=groups
     path.write_text(json.dumps(data,ensure_ascii=False,separators=(',',':'))+'\n')
+    from report_json_shards import write_sharded_json
+    write_sharded_json(path, data)
     (ROOT/'analysis_output/dpwh_removals_3rd.json').write_text(json.dumps(groups,ensure_ascii=False,indent=2)+'\n')
     (ROOT/'analysis_output/dpwh_removals_held_out.json').write_text(json.dumps(hints,ensure_ascii=False,indent=2)+'\n')
     if page is None:

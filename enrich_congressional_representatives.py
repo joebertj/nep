@@ -299,6 +299,8 @@ def main() -> int:
     enrich_rows(dpwh.get("waterWatchlist", []), loc, "project_name", office_key="office")
     enrich_rows(dpwh.get("fiveMillionRows", []), loc, "", office_key="office")
     write_json(dpwh_path, dpwh)
+    from report_json_shards import write_sharded_json
+    write_sharded_json(dpwh_path, dpwh)
     for page in (PREVIEW / "dpwh.html", PREVIEW / "dpwh-hgab.html"):
         update_dpwh_html(page)
 
@@ -331,6 +333,7 @@ def main() -> int:
             texts.append(side.get("projectName", ""))
         row["congressional_representatives"] = loc.from_location(" ".join(texts))
     write_json(comparison_path, comparison)
+    write_sharded_json(comparison_path, comparison)
     comparison_html = PREVIEW / "dpwh-hgab-comparison.html"
     html = comparison_html.read_text(encoding="utf-8")
     html = replace_once(html, '<th>3rd reading line</th><th>2nd chainage</th>', '<th>3rd reading line</th><th>Representative(s) by named project location</th><th>2nd chainage</th>', "DPWH reading comparison header")

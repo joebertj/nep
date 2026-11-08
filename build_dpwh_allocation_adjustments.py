@@ -60,6 +60,8 @@ def refresh(page=None):
     prior_rows={row.get('hgabId'):row for row in data.get('allocationAdjustments',{}).get('domestic',[]) if row.get('hgabId')}
     data['allocationAdjustments']={'domestic':[{**prior_rows.get(row['hgabId'],{}),**row} for row in rows]}
     path.write_text(json.dumps(data,ensure_ascii=False,separators=(',',':'))+'\n')
+    from report_json_shards import write_sharded_json
+    write_sharded_json(path, data)
     if page is None:
         from build_dpwh_hgab_page import build
         return build()

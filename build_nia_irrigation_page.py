@@ -10,6 +10,10 @@ OUT = ROOT / 'analysis_output'
 
 def build():
     page, summary = render_page('nia-irrigation.html')
+    from build_reviewed_annex_sections import apply_page as apply_reviewed_annex_section
+    page = apply_reviewed_annex_section(page, 'nia-irrigation.html')
+    from build_nep_stage_sections import apply_page as apply_nep_stage_section
+    page = apply_nep_stage_section(page, 'nia-irrigation.html')
     from report_table_presentation import apply_page_table_module
     page,_=apply_page_table_module('nia-irrigation.html',page)
     (STATIC / 'nia-irrigation.html').write_text(page, encoding='utf-8')

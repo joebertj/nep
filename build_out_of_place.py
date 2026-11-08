@@ -264,6 +264,10 @@ def main():
     }
     STATIC_BOUNDARIES.write_text(json.dumps(boundary_data, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
     OUT_BOUNDARIES.write_text(json.dumps(boundary_data, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
+    from report_json_shards import write_sharded_json, attach_loader
+    write_sharded_json(STATIC_BOUNDARIES, boundary_data)
+    write_sharded_json(OUT_BOUNDARIES, boundary_data)
+    JS = JS.replace("fetch('out-of-place-boundaries.json')", "window.loadReportShardedJson('out-of-place-boundaries-index.json')")
     STATIC_JS.write_text(JS, encoding='utf-8')
     OUT_JS.write_text(JS, encoding='utf-8')
     cache_payload = Path('/private/tmp/out-of-place-map-cache-payload.json')
@@ -357,6 +361,7 @@ body.out-of-place-theme .mpb-member-association{background:#fff!important}body.o
 body.out-of-place-theme .map-point circle,body.out-of-place-theme .point circle{fill:#0038A8!important}body.out-of-place-theme .point.selected circle{fill:#CE1126!important}body.out-of-place-theme .point:hover circle{fill:#FCD116!important}
 </style>'''
     page_html = page_html.replace('</head>', page_brand_style + '</head>', 1)
+    page_html = attach_loader(page_html, 'out-of-place.html')
     STATIC_HTML.write_text(page_html, encoding='utf-8')
     OUT_HTML.write_text(page_html, encoding='utf-8')
     print(json.dumps({'projectCount': len(projects), 'cachedSharePages': len(projects), 'cachedMapImages': len(projects), 'html': str(STATIC_HTML), 'data': str(STATIC_DATA)}, indent=2))

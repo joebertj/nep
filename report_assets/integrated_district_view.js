@@ -5,7 +5,7 @@ const fmt=v=>Number(v||0).toLocaleString('en-PH'),peso=v=>'₱'+fmt(v);
 window.integratedDataPromise.then(async D=>{
  const dist=$('trend-district'),year=$('rank-year'),category=$('rank-category'),query=$('project-filter'),metric=$('rank-metric');
  let projectPage=0,rankPage=0,drawId=0,allProjects=null;
- const projectPromise=fetch('integrated-project-data.json?v='+encodeURIComponent(D.buildVersion||'current')).then(r=>{if(!r.ok)throw Error('Project data: HTTP '+r.status);return r.json()}).then(d=>allProjects=d.projects);
+ const projectPromise=window.loadReportShardedJson('integrated-project-data-index.json?v='+encodeURIComponent(D.buildVersion||'current')).then(d=>allProjects=d.projects||[]);
  projectPromise.catch(e=>{$('project-results-status').textContent=e.message});
  for(const d of D.districts){const o=new Option(d.district,d.districtId);dist.add(o)}
  year.add(new Option('Total · all available years','all'));

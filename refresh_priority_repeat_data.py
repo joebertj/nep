@@ -35,5 +35,7 @@ def build():
                 out.append(x)
     out.sort(key=lambda r:(-r['similarity_pct'],r['category'],r['project']))
     d['priorityRepeats']=out;p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
+    from report_json_shards import write_sharded_json
+    write_sharded_json(p, d)
     return {'beforePairs':len(old),'afterPairs':len(out)}
 if __name__=='__main__':print(json.dumps(build(),indent=2))

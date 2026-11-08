@@ -25,6 +25,10 @@ def build():
     from build_repeats_split import build_repeats_page as render_repeats_page
     result=render_repeats_page(fragments)
     html=result.pop('html')
+    from build_five_million_evidence import apply_page as apply_five_million_evidence
+    html=apply_five_million_evidence(html)
+    from report_table_presentation import apply_page_table_module
+    html,_=apply_page_table_module('repeats.html',html)
     html=html.rstrip()+'\n'
     (STATIC/'repeats.html').write_text(html,encoding='utf-8')
     (OUT/'repeats.html').write_text(html,encoding='utf-8')

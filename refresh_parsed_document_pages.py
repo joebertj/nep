@@ -16,6 +16,16 @@ OUT = ROOT / "analysis_output"
 STATIC = ROOT.parent / "open-data-visualization/static/nep-preview"
 STATUS = OUT / "parsed-document-page-refresh-status.json"
 LOCK = OUT / ".parsed-document-page-refresh.lock"
+PAGE_BUILDERS = (
+    "build_dpwh_indepth.py",
+    "build_dpwh_transparency_page.py",
+    "build_cost_per_unit_page.py",
+    "build_pccp_cost_per_unit_page.py",
+    "build_expectation_vs_reality.py",
+    "build_development_council.py",
+    "build_undocumented_hgab.py",
+    "build_investigation_summary.py",
+)
 
 
 def now():
@@ -119,16 +129,7 @@ def refresh(source="unspecified"):
                   "builders": {}}
         write_status(status)
         try:
-            for script in (
-                "build_dpwh_indepth.py",
-                "build_dpwh_transparency_page.py",
-                "build_cost_per_unit_page.py",
-                "build_pccp_cost_per_unit_page.py",
-                "build_expectation_vs_reality.py",
-                "build_development_council.py",
-                "build_undocumented_hgab.py",
-                "build_investigation_summary.py",
-            ):
+            for script in PAGE_BUILDERS:
                 status["activeBuilder"] = script
                 status["heartbeatAtUtc"] = now()
                 write_status(status)

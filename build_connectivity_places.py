@@ -335,6 +335,7 @@ def public_service_type(tags):
 
 
 def build():
+    from report_json_shards import write_sharded_json
     places = Places()
     inputs, elements, property_elements, service_elements = [], {}, {}, {}
     for stem, endpoint in SOURCES:
@@ -509,6 +510,8 @@ def build():
         for directory in (OUT, STATIC):
             if stem != 'connectivity-public-services-data' or directory == OUT:
                 (directory / (stem + '.json')).write_text(compact(data))
+                if stem == 'connectivity-venues-data':
+                    write_sharded_json(directory / (stem + '.json'), data)
             fields = list(dict.fromkeys(k for r in data['rows'] for k in r if k not in {'geometry', 'duplicateSourceUrls'})) or ['id', 'name', 'type', 'sourceUrl']
             with (directory / (stem + '.csv')).open('w', newline='', encoding='utf-8-sig') as handle:
                 writer = csv.DictWriter(handle, fieldnames=fields, extrasaction='ignore')
