@@ -12,7 +12,6 @@ from chainage import compare_chainage,has_directional_conflict,compare_tranche
 from location_data.project_location_scope import qualified,location_conflict
 
 MANUAL_RED_LABELS={
-    'sizeable-private-property-connection':'Endpoint connects to a sizeable private property',
     'section2-visitor-venue':'Section 2 · Near a mapped visitor venue',
     'section2-subdivision-village':'Section 2 · Near a subdivision or village',
     'section2-large-residential-property':'Section 2 · Near a large residential property',

@@ -1,10 +1,12 @@
 # TODO
 
-## Connectivity manual review
+## Page maintenance
 
-- [x] Deploy the `road-segment` and `connects-road-segments` green reasons; live UI and FastAPI now accept both.
-- [x] Publish the latest normalized manual-green data generated from the ignored local annotation file. Verified all 243 local annotation records match the generated `connectivity-data.json` rows and the 10-row manual-red FMR export.
+- [ ] Propagate the FMR Budget 2027 menu entry through the remaining 42 page builders; currently only archive, connectivity, FMR, and FMR archive outputs show it.
 
-## Builder ownership audit
+## Builder ownership
 
-- [ ] Audit remaining build entry points and scheduled refresh order. Each page builder should write only its page and page-owned published data; shared transformations should be called as modules by the owning builder.
+- [ ] Refactor `build_external_reference_review.py --refresh-pages`, which directly rewrites unrelated NIA, HFEP, DPWH, FMR, cost, repeats, Congress, and summary pages. Move page fragments into modules called by each owning builder.
+- [x] Make the HGAB revision refresh order explicit: shared data builders run first, then the DPWH comparison, its dependent HGAB page, and the other page owners.
+- [ ] Audit shared-data side effects in `build_hgab_revision_pages.py`; it still prepares published JSON for multiple page owners.
+- [ ] Audit shared published-data writes in `build_fmr_dataset.py` and move non-FMR outputs to their owning builders/modules.

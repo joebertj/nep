@@ -970,8 +970,9 @@ def build():
     coverage_head= re.search(r'<thead>(.*?)</thead>',coverage_section.group(0),re.S) if coverage_section else None
     coverage_headers=[re.sub(r'<[^>]+>','',header).strip() for header in re.findall(r'<th\b[^>]*>(.*?)</th>',coverage_head.group(1),re.S)] if coverage_head else []
     expected_coverage_headers=['HGAB code','Project','Office · region','HGAB allocation','Proposal docs','Senate HGAB docs','Signatories in related documents']
-    if coverage_headers != expected_coverage_headers or not all_rows or not main_sections or main_sections[-1] != 'all-hgab-document-coverage':
-        raise RuntimeError(f'All-HGAB coverage table validation failed: headers={coverage_headers!r}, {len(all_rows)} rows, final section={main_sections[-1:]!r}')
+    expected_opening_sections=['senate-supporting-document-coverage','all-hgab-document-coverage']
+    if coverage_headers != expected_coverage_headers or not all_rows or main_sections[:2] != expected_opening_sections:
+        raise RuntimeError(f'DPWH opening coverage sections failed: headers={coverage_headers!r}, {len(all_rows)} rows, opening sections={main_sections[:2]!r}')
     for section_id in ('senate-title-match-coverage','senate-supporting-document-coverage'):
         section=re.search(r'<section[^>]*id="'+section_id+r'"[^>]*>.*?</section>',text,re.S)
         markup=section.group(0) if section else ''

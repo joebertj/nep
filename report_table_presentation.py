@@ -75,6 +75,7 @@ def _apply_page_presentation(text,versions,page=None):
 
 
 PAGE_TABLE_CONTRACTS={
+    'connectivity.html': {'builder':'build_connectivity_report.py','chartBeforeTable':True},
     'cost-per-km-historical.html': {'builder':'build_cost_per_km_historical.py','chartBeforeTable':True},
     'dpwh-hgab.html': {'builder':'build_dpwh_hgab_page.py','chainageViewer':True,'chartBeforeTable':True},
     'dpwh-OO2-hgab.html': {'builder':'build_dpwh_oo2_hgab.py','chainageViewer':True,'chartBeforeTable':True},
@@ -122,7 +123,7 @@ def check_page_table_contract(page_name, html):
     # any table, the first chart must precede the first table. Avoid collecting
     # every SVG/plot node and comparing every chart against every table; large
     # reports can contain thousands of inline SVG elements.
-    chart_match=re.search(r'<(?:svg|canvas)\b|<[^>]*\bclass=["\'][^"\']*\b(?:chart|graph)\b[^"\']*["\'][^>]*>',html,re.I)
+    chart_match=re.search(r'<(?:svg|canvas)\b|<[^>]*\b(?:id|class)=["\'][^"\']*\b(?:chart|graph)\b[^"\']*["\'][^>]*>',html,re.I)
     table_match=re.search(r'<table\b',html,re.I)
     chart_before=bool(chart_match and table_match and chart_match.start()<table_match.start())
     if contract.get('chartBeforeTable') and not chart_before:raise RuntimeError(f'{page_name}: add at least one chart above a table')

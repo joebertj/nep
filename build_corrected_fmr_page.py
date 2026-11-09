@@ -12,7 +12,6 @@ from build_fmr_dataset import ROOT, OUT, STATIC
 from build_mpb_report import PAGE
 
 MANUAL_RED_LABELS = {
-    'sizeable-private-property-connection': 'Endpoint connects to a sizeable private property',
     'section2-visitor-venue': 'Near a mapped visitor venue',
     'section2-subdivision-village': 'Near a subdivision or village',
     'section2-large-residential-property': 'Near a large residential property',
@@ -49,6 +48,11 @@ def generate() -> dict:
     from report_table_presentation import apply_page_table_module
 
     source = json.loads((STATIC / 'connectivity-data.json').read_text(encoding='utf-8'))
+    coordinate_rows = [
+        row for row in source.get('projects', [])
+        if row.get('coordinateQualityFlag') or str(row.get('connectivityClass') or row.get('result') or '').startswith('Coordinate review')
+    ]
+    coordinate_rows.sort(key=lambda row: (-(float(row.get('coordinateGapMeters') or 0)), row.get('region', ''), row.get('title', '')))
     rows = []
     for row in source.get('projects', []):
         categories = [MANUAL_RED_LABELS[k] for k in row.get('manualRedReasons', []) if k in MANUAL_RED_LABELS]
@@ -90,14 +94,34 @@ def generate() -> dict:
         f'{"<br>" if row["manualFlags"] and row["manualNote"] else ""}'
         f'{("<strong>Reviewer note:</strong> " + html.escape(row["manualNote"])) if row["manualNote"] else ""}</td>'
         f'<td>{html.escape(row["region"])}</td><td class="amount">₱{row["amountPesos"]:,}</td>'
-        f'<td>{map_links(row)}</td><td>{html.escape(str(row["sourcePage"] or "—"))}</td></tr>'
+        f'<td>{map_links(row)}</td><td>PDF p. {html.escape(str(row["sourcePage"] or "—"))}</td></tr>'
         for row in rows
     ) or '<tr><td colspan="6">No projects with manual red flags yet.</td></tr>'
 
+    coordinate_table_rows = ''.join(
+        '<tr>'
+        f'<td>{html.escape(row.get("title", ""))}<small>{html.escape(str(row.get("id") or ""))} · PDF p. {html.escape(str(row.get("sourcePage") or "—"))}</small></td>'
+        f'<td>{html.escape(str(row.get("region") or "—"))}</td>'
+        f'<td>{float(row.get("coordinateGapMeters") or 0) / 1000:,.2f} km</td>'
+        f'<td class="amount">₱{int(row.get("amountPesos") or 0):,}</td>'
+        f'<td>{map_links(row)}</td></tr>'
+        for row in coordinate_rows
+    ) or '<tr><td colspan="5">No endpoint pairs currently require coordinate review.</td></tr>'
+    coordinate_section = (
+        '<section class="card fmr-coordinate-review" id="coordinate-review">'
+        '<h2>1 · Coordinate review · endpoints over 20 km apart</h2>'
+        f'<p>{len(coordinate_rows):,} FMR project rows have printed endpoint coordinates more than 20 km apart. Connectivity spatial matching is suppressed for these rows because of the coordinate gap. This is a data-quality review signal; it does not identify which printed coordinate is wrong or establish the actual route alignment.</p>'
+        f'<div class="fmr-manual-red-stats"><div><strong>{len(coordinate_rows):,}</strong><span>projects needing coordinate review</span></div>'
+        f'<div><strong>₱{sum(int(row.get("amountPesos") or 0) for row in coordinate_rows):,}</strong><span>listed HGAB allocation</span></div></div>'
+        '<p>Open satellite views at both printed endpoints and the suggested driving route to inspect the source locations. Google directions are not the project alignment or a straight-line measurement.</p>'
+        '<div class="table-wrap"><table data-report-table-exempt="true"><thead><tr><th>FMR project · source</th><th>Region</th><th>Endpoint gap</th><th class="amount">HGAB allocation</th><th>Map / route</th></tr></thead>'
+        f'<tbody>{coordinate_table_rows}</tbody></table></div></section>'
+    )
+
     section = (
         '<main><section class="card fmr-manual-red" id="manual-red-flags">'
-        '<h2>Top FMR red flags · manual review</h2>'
-        '<p>This section lists only projects with a red category or note saved through manual review. It does not apply distance thresholds, automated connectivity classes, title keyword screens, or other flag logic. HGAB allocation is used only to sort the list, highest first. Section 2 categories refer to mapped venue, subdivision or property cues; they do not establish access, ownership or wrongdoing.</p>'
+        '<h2>2 · Top FMR red flags · manual review</h2>'
+        '<p>This section lists only projects with a red category or note saved through manual review. It does not apply distance thresholds, automated connectivity classes, title keyword screens, or other flag logic. HGAB allocation is used only to sort the list, highest first. Mapped venue, subdivision, and property cues do not establish access, ownership, or wrongdoing.</p>'
         f'<div class="fmr-manual-red-stats"><div><strong>{len(rows):,}</strong><span>projects with manual red flags</span></div>'
         f'<div><strong>{sum(int(row["flagCount"]) for row in rows):,}</strong><span>manual flag categories and notes</span></div>'
         f'<div><strong>₱{sum(row["amountPesos"] for row in rows):,}</strong><span>listed HGAB allocation</span></div></div>'
@@ -109,14 +133,14 @@ def generate() -> dict:
     )
     css = '<style id="fmr-manual-review-style">.fmr-manual-red-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0}.fmr-manual-red-stats>div{display:flex;flex-direction:column;gap:4px;padding:14px;border:1px solid #e3c9c9;border-radius:10px;background:#fff8f7}.fmr-manual-red-stats strong{font-size:clamp(18px,2vw,24px);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.fmr-manual-red-stats span{font-size:13px;color:#52636d}.fmr-manual-red-chart{display:grid;gap:8px;margin:14px 0}.fmr-manual-red-bar{display:grid;grid-template-columns:minmax(180px,1fr) minmax(100px,2fr) auto;align-items:center;gap:10px}.fmr-manual-red-bar>div{height:12px;background:#f2e6e6;border-radius:99px;overflow:hidden}.fmr-manual-red-bar i{display:block;height:100%;background:#b4232e;border-radius:99px}.fmr-manual-red td small{display:block;color:#52636d}@media(max-width:760px){.fmr-manual-red-bar{grid-template-columns:minmax(120px,1fr) minmax(60px,1fr) auto}}@media(max-width:520px){.fmr-manual-red-stats{grid-template-columns:1fr}}</style>'
     head = PAGE.split('</head>', 1)[0].replace('MPB · Multi-purpose building allocations', 'FMR · Manual red-flag review') + '</head>'
-    page = head + '<body><header><h1>FMR · Manual red-flag review</h1><p>Human-reviewed project leads, sorted by HGAB allocation.</p></header>' + section + '</body></html>'
+    page = head + '<body><header><h1>FMR · Coordinate and manual review</h1><p>Endpoint coordinate quality and human-reviewed red flags.</p></header>' + '<main>' + coordinate_section + section[6:] + '</body></html>'
     page = page.replace('__HERO_STYLE__', STYLE).replace('</head>', css + '</head>', 1)
     page = apply_uniform_menu(page, 'fmr.html')
     page = page.replace('</head>', EVIDENCE_CSS + '</head>', 1)
     page, _ = apply_page_table_module('fmr.html', page)
     (OUT / 'fmr.html').write_text(page, encoding='utf-8')
     (STATIC / 'fmr.html').write_text(page, encoding='utf-8')
-    return {'manualRedProjects': len(rows), 'manualRedCategories': counts}
+    return {'coordinateReviewProjects': len(coordinate_rows), 'manualRedProjects': len(rows), 'manualRedCategories': counts}
 
 
 if __name__ == '__main__':
