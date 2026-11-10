@@ -1,0 +1,3019 @@
+{
+  "title": "Miagao barangay directory and linked public records",
+  "generatedAt": "2026-11-10",
+  "barangayCount": 119,
+  "sources": {
+    "psgcAndPopulation": "https://psa.gov.ph/classification/psgc/barangays/0603030000",
+    "historicalAndFy2027DpwhProjects": "https://research.bettergov.ph/static/nep-preview/integrated-project-data.json",
+    "mpbProjectRecords": "BetterGov FY2015–FY2027 multi-purpose-building map line export. FY2015–FY2026 rows use listed GAA allocations; FY2027 rows use House Bill allocations. Barangay assignments use the export PSGC code and stated place basis (title or GPS); rows assigned only to broader administrative levels or no place are excluded from barangay rankings.",
+    "barangayOfficialsRoster": "https://www.miagao.gov.ph/about-miagao/news/know-your-barangay-officials/",
+    "barangayOfficialsRosterNote": "The municipal roster page announces the 2023 elected officials but its linked media are photos, not a machine-readable name roster. Individual 2018 barangay profile names are excluded from the current captain field.",
+    "barangayProfiles": "https://www.miagao.gov.ph/about-miagao/barangay-map-information/",
+    "barangayProfilesNote": "The municipal barangay profiles are older background records (profile entries dated 2018); service, infrastructure, and official details may be outdated."
+  },
+  "matchingNote": "Project title mentions are leads to public records, not geocoded site boundaries. Shared/corridor projects can be listed for multiple barangays; do not sum per-barangay amounts as a municipality total.",
+  "barangays": [
+    {
+      "psgc": "0603030001",
+      "name": "Agdum",
+      "population2024": 368,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030002",
+      "name": "Aguiauan",
+      "population2024": 1010,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030003",
+      "name": "Alimodias",
+      "population2024": 608,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2020,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Brgy. Potrido to Brgy. Alimodias Road, Miagao, Iloilo",
+          "amountPesos": 50000000,
+          "source": "FY2020 GAA · gaa_2020_batch_0005.json · row 492769",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2021,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Brgy. Potrido to Brgy. Alimodias Road, Miagao, Iloilo",
+          "amountPesos": 40614000,
+          "source": "FY2021 GAA · docs/2021-GAA.xlsx · row 424891",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2024,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Brgy. Potrido to Brgy. Alimodias Road leading to various Tourism Sites including Bugsukan and Banogon Falls and the 500 Hectares Rice Terraces, Miagao, Iloilo",
+          "amountPesos": 15000000,
+          "source": "FY2024 GAA · docs/GAA-2024.xlsx · row 529912",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2025,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Brgy. Potrido to Brgy. Alimodias Road leading to various Tourism Sites including Bugsukan and Banogon Falls and the 500 Hectares Rice Terraces, Miagao, Iloilo",
+          "amountPesos": 10000000,
+          "source": "FY2025 GAA · docs/GAA-2025.xlsx · row 546003",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Road",
+          "title": "Construction of Barangay Cabunotan - Barangay Olango - Barangay Alimodias Road, Miagao, Iloilo",
+          "amountPesos": 92330000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 433",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030004",
+      "name": "Awang",
+      "population2024": 282,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030005",
+      "name": "Oya-oy",
+      "population2024": 263,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030006",
+      "name": "Bacauan",
+      "population2024": 561,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2021,
+          "stage": "GAA",
+          "category": "Flood control",
+          "title": "Construction of Bacauan Flood Control Projects, Miagao, Iloilo",
+          "amountPesos": 10000000,
+          "source": "FY2021 GAA · docs/2021-GAA.xlsx · row 440145",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2024,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Bacauan - Palaca River Control including Access Road , Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2024 GAA · docs/GAA-2024.xlsx · row 617311",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030007",
+      "name": "Bacolod",
+      "population2024": 487,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2018,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Concreting of Bacolod National High School Road, Brgy. Bacolod, Miagao, Iloilo",
+          "amountPesos": 2000000,
+          "source": "FY2018 GAA Explorer · GAA2018.xls · #Sheet 7 · UACS PAP 300117201588000",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030008",
+      "name": "Bagumbayan",
+      "population2024": 1122,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030009",
+      "name": "Banbanan",
+      "population2024": 505,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 1,
+        "buildingCountAllYears": 1,
+        "allocationPesosAllYears": 8000000,
+        "records": [
+          {
+            "year": 2027,
+            "stage": "HGAB 3rd",
+            "category": "Multi-purpose building",
+            "title": "Construction of Multi-Purpose Building, Barangay Banbanan, Miagao, Iloilo",
+            "amountPesos": 8000000,
+            "source": "BetterGov MPB map · FY2027 House Bill 10858 · line house-reading:14171",
+            "locationBasis": "barangay named in the title",
+            "identityConfidence": "Same normalized project title and source-assigned official barangay; physical site not independently verified"
+          }
+        ]
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Multi-purpose building",
+          "title": "Construction of Multi-Purpose Building, Barangay Banbanan, Miagao, Iloilo",
+          "amountPesos": 8000000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 817",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030010",
+      "name": "Banga",
+      "population2024": 208,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030011",
+      "name": "Bangladan",
+      "population2024": 489,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030012",
+      "name": "Banuyao",
+      "population2024": 910,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Road",
+          "title": "Construction of Miagao Shoreline Protection including Access Roads, Sta. 27+512 - Sta. 27+856, Barangay Kirayan Norte - Barangay Banuyao, Miagao, Iloilo",
+          "amountPesos": 92330000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 311",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030013",
+      "name": "Baraclayan",
+      "population2024": 420,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 1,
+        "buildingCountAllYears": 1,
+        "allocationPesosAllYears": 5000000,
+        "records": [
+          {
+            "year": 2022,
+            "stage": "GAA",
+            "category": "Multi-purpose building",
+            "title": "Construction of Multi-Purpose Building including Pavement, Superintendent Arsenio Napud MNHS, Barangay Baraclayan, Miagao, Iloilo",
+            "amountPesos": 5000000,
+            "source": "BetterGov MPB map · FY2022 GAA · line gaa:2022:300226102656000",
+            "locationBasis": "barangay named in the title",
+            "identityConfidence": "Same normalized project title and source-assigned official barangay; physical site not independently verified"
+          }
+        ]
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2022,
+          "stage": "GAA",
+          "category": "Multi-purpose building",
+          "title": "Construction of Multi-Purpose Building including Pavement, Superintendent Arsenio Napud MNHS, Barangay Baraclayan, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2022 GAA · docs/GAA-2022.xlsx · row 531722",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": {
+        "name": "Marlou R. Niones",
+        "role": "Punong Barangay",
+        "asOf": "2024-12-02",
+        "sourceLabel": "DOST Region VI",
+        "status": "Identified as Barangay Captain of Baraclayan in 2024 reporting.",
+        "source": "https://region6.dost.gov.ph/2024/12/02/western-visayas-participants-triumph-during-dosts-2024-cest-and-setup-awards/"
+      }
+    },
+    {
+      "psgc": "0603030014",
+      "name": "Bariri",
+      "population2024": 142,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2025,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Road including Facilites, Barangay Igpuro Bariri - Barangay Tig-amaga, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2025 GAA · docs/GAA-2025.xlsx · row 575561",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030015",
+      "name": "Baybay Norte",
+      "population2024": 3024,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 3,
+        "buildingCountAllYears": 3,
+        "allocationPesosAllYears": 52000000,
+        "records": [
+          {
+            "year": 2020,
+            "stage": "GAA",
+            "category": "Multi-purpose building",
+            "title": "Improvement of Public Market, Brgy. Baybay Norte, Miagao, Iloilo",
+            "amountPesos": 3000000,
+            "source": "BetterGov MPB map · FY2020 GAA · line gaa:2020:300104216242000",
+            "locationBasis": "barangay named in the title",
+            "identityConfidence": "Same normalized project title and source-assigned official barangay; physical site not independently verified"
+          },
+          {
+            "year": 2027,
+            "stage": "HGAB 3rd",
+            "category": "Multi-purpose building",
+            "title": "Construction (Rehabilitation) of Multi-Purpose Building, Orbe St., Baybay Norte, Miagao, Iloilo, 10.640448, 122. 238651",
+            "amountPesos": 40000000,
+            "source": "BetterGov MPB map · FY2027 House Bill 10858 · line house-reading:14202",
+            "locationBasis": "barangay named in the title",
+            "identityConfidence": "Same normalized project title and source-assigned official barangay; physical site not independently verified"
+          },
+          {
+            "year": 2027,
+            "stage": "HGAB 3rd",
+            "category": "Multi-purpose building",
+            "title": "Construction of Multi-Purpose Building, Barangay Baybay Norte, Miagao, Iloilo",
+            "amountPesos": 9000000,
+            "source": "BetterGov MPB map · FY2027 House Bill 10858 · line house-reading:14173",
+            "locationBasis": "barangay named in the title",
+            "identityConfidence": "Same normalized project title and source-assigned official barangay; physical site not independently verified"
+          }
+        ]
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Multi-purpose building",
+          "title": "Construction of Multi-Purpose Building, Barangay Baybay Norte, Miagao, Iloilo",
+          "amountPesos": 9000000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 818",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030016",
+      "name": "Baybay Sur",
+      "population2024": 944,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 1,
+        "buildingCountAllYears": 1,
+        "allocationPesosAllYears": 30000000,
+        "records": [
+          {
+            "year": 2026,
+            "stage": "GAA",
+            "category": "Multi-purpose building",
+            "title": "Construction (Completion) of Miagao Municipal Building, Barangay Baybay Sur, Miagao, Iloilo",
+            "amountPesos": 30000000,
+            "source": "BetterGov MPB map · FY2026 GAA · line gaa:2026:300226127229000",
+            "locationBasis": "barangay named in the title",
+            "identityConfidence": "Same normalized project title and source-assigned official barangay; physical site not independently verified"
+          }
+        ]
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030017",
+      "name": "Belen",
+      "population2024": 197,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030018",
+      "name": "Bolho",
+      "population2024": 480,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030019",
+      "name": "Bolocaue",
+      "population2024": 181,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030020",
+      "name": "Buenavista Norte",
+      "population2024": 450,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2025,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Road including Facilites, Barangay San Fernando-Barangay Buenavista Norte, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2025 GAA · docs/GAA-2025.xlsx · row 575553",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030021",
+      "name": "Buenavista Sur",
+      "population2024": 352,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2025,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Road including Facilites, Barangay Igdulaca-Barangay Buenavista Sur, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2025 GAA · docs/GAA-2025.xlsx · row 575566",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030022",
+      "name": "Bugtong Lumangan",
+      "population2024": 349,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030023",
+      "name": "Bugtong Naulid",
+      "population2024": 184,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030024",
+      "name": "Cabalaunan",
+      "population2024": 181,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030025",
+      "name": "Cabangcalan",
+      "population2024": 123,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2022,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Rehabilitation and Improvement of Naclub-Igdalaquit-Cabangcalan-Tigbagacay-Tig-Apog-Apog Local Road With Box Culvert Component, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2022 GAA · docs/GAA-2022.xlsx · row 527362",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030026",
+      "name": "Cabunotan",
+      "population2024": 165,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Road",
+          "title": "Construction of Barangay Cabunotan - Barangay Olango - Barangay Alimodias Road, Miagao, Iloilo",
+          "amountPesos": 92330000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 433",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030027",
+      "name": "Cadoldolan",
+      "population2024": 92,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030028",
+      "name": "Cagbang",
+      "population2024": 286,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2024,
+          "stage": "GAA",
+          "category": "Flood control",
+          "title": "Construction of Cagbang Flood Control Structure, Miagao, Iloilo",
+          "amountPesos": 15000000,
+          "source": "FY2024 GAA · docs/GAA-2024.xlsx · row 617312",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030029",
+      "name": "Caitib",
+      "population2024": 656,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030030",
+      "name": "Calagtangan",
+      "population2024": 275,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030031",
+      "name": "Calampitao",
+      "population2024": 803,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2024,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Calampitao - Gines Road, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2024 GAA · docs/GAA-2024.xlsx · row 540684",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030032",
+      "name": "Cavite",
+      "population2024": 168,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030033",
+      "name": "Cawayanan",
+      "population2024": 346,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": {
+        "name": "Elmer Nonaillada",
+        "role": "Punong Barangay",
+        "asOf": "2025-07-22",
+        "sourceLabel": "Iloilo Provincial Government",
+        "status": "Identified as Cawayanan Punong Barangay at the 2025 water-system opening.",
+        "source": "https://iloilo.gov.ph/en/infrastructure-news/new-stream-progress-water-system-projects-completed-miagao"
+      }
+    },
+    {
+      "psgc": "0603030034",
+      "name": "Cubay",
+      "population2024": 287,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Bridge",
+          "title": "Construction of Cubay Ubos to Pungtod Monteclaro Bridge, Barangay Cubay Ubos and Barangay Puntod Monteclaro, Miagao, Iloilo",
+          "amountPesos": 9000000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 571",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030035",
+      "name": "Cubay Ubos",
+      "population2024": 138,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Bridge",
+          "title": "Construction of Cubay Ubos to Pungtod Monteclaro Bridge, Barangay Cubay Ubos and Barangay Puntod Monteclaro, Miagao, Iloilo",
+          "amountPesos": 9000000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 571",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030036",
+      "name": "Dalije",
+      "population2024": 1539,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2023,
+          "stage": "GAA",
+          "category": "Multi-purpose building",
+          "title": "Construction of Dalije Elementary School Multipurpose Building, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2023 GAA · docs/GAA-2023.xlsx · row 546451",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030037",
+      "name": "Damilisan",
+      "population2024": 1226,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030038",
+      "name": "Dawog",
+      "population2024": 886,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 2,
+        "buildingCountAllYears": 2,
+        "allocationPesosAllYears": 13000000,
+        "records": [
+          {
+            "year": 2022,
+            "stage": "GAA",
+            "category": "Multi-purpose building",
+            "title": "Construction of Miranda ES Mpb With Pavement, Dawog, Miagao, Iloilo",
+            "amountPesos": 5000000,
+            "source": "BetterGov MPB map · FY2022 GAA · line gaa:2022:300226102667000",
+            "locationBasis": "barangay named in the title",
+            "identityConfidence": "Same normalized project title and source-assigned official barangay; physical site not independently verified"
+          },
+          {
+            "year": 2027,
+            "stage": "HGAB 3rd",
+            "category": "Multi-purpose building",
+            "title": "Construction of Multi-Purpose Building, Barangay Dawog, Miagao, Iloilo",
+            "amountPesos": 8000000,
+            "source": "BetterGov MPB map · FY2027 House Bill 10858 · line house-reading:14179",
+            "locationBasis": "barangay named in the title",
+            "identityConfidence": "Same normalized project title and source-assigned official barangay; physical site not independently verified"
+          }
+        ]
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Multi-purpose building",
+          "title": "Construction of Multi-Purpose Building, Barangay Dawog, Miagao, Iloilo",
+          "amountPesos": 8000000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 818",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030039",
+      "name": "Diday",
+      "population2024": 683,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030040",
+      "name": "Dingle",
+      "population2024": 387,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2025,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Concrete Road including Facilites, Barangay Dingle, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2025 GAA · docs/GAA-2025.xlsx · row 575564",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030041",
+      "name": "Durog",
+      "population2024": 987,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2024,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Durog - Baraklayan Road, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2024 GAA · docs/GAA-2024.xlsx · row 540683",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2025,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Road including Facilites, Barangay Durog - Barangay Baraklayan, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2025 GAA · docs/GAA-2025.xlsx · row 575558",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Road",
+          "title": "Construction of Barangay Durog - Barangay Tigmarabo Road, Miagao, Iloilo",
+          "amountPesos": 92330000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 433",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030042",
+      "name": "Frantilla",
+      "population2024": 179,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030043",
+      "name": "Fundacion",
+      "population2024": 287,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030044",
+      "name": "Gines",
+      "population2024": 799,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2024,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Calampitao - Gines Road, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2024 GAA · docs/GAA-2024.xlsx · row 540684",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030045",
+      "name": "Guibongan",
+      "population2024": 1130,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 1,
+        "buildingCountAllYears": 1,
+        "allocationPesosAllYears": 10000000,
+        "records": [
+          {
+            "year": 2027,
+            "stage": "HGAB 3rd",
+            "category": "Multi-purpose building",
+            "title": "Construction (Completion) of Multi-Purpose Building, Barangay Guibongan, Miagao, Iloilo - (10.639497, 122.249494)",
+            "amountPesos": 10000000,
+            "source": "BetterGov MPB map · FY2027 House Bill 10858 · line house-reading:14164",
+            "locationBasis": "GPS in the title",
+            "identityConfidence": "Same normalized project title and source-assigned official barangay; physical site not independently verified"
+          }
+        ]
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2022,
+          "stage": "GAA",
+          "category": "Flood control",
+          "title": "Rehabilitation of Road Including Drainage, Barangay Guibongan, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2022 GAA · docs/GAA-2022.xlsx · row 527359",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2023,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Guibongan-Kirayan Shoreline Protection including Access Road, Miagao, Iloilo",
+          "amountPesos": 50000000,
+          "source": "FY2023 GAA · docs/GAA-2023.xlsx · row 530609",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Road",
+          "title": "Construction of Miagao Shoreline Protection including Access Roads, Sta. 29+682 - Sta. 30+175, Barangay Guibongan, Miagao, Iloilo",
+          "amountPesos": 138495000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 311",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030046",
+      "name": "Igbita",
+      "population2024": 375,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2024,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Igbita Road including Box Culvert, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2024 GAA · docs/GAA-2024.xlsx · row 540681",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030047",
+      "name": "Igbugo",
+      "population2024": 432,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 1,
+        "buildingCountAllYears": 1,
+        "allocationPesosAllYears": 7000000,
+        "records": [
+          {
+            "year": 2024,
+            "stage": "GAA",
+            "category": "Multi-purpose building",
+            "title": "Construction of Igbugo ES Multi - Purpose Building including Facilities, Barangay Igbugo, Miagao, Iloilo",
+            "amountPesos": 7000000,
+            "source": "BetterGov MPB map · FY2024 GAA · line gaa:2024:300226113977000",
+            "locationBasis": "barangay named in the title",
+            "identityConfidence": "Same normalized project title and source-assigned official barangay; physical site not independently verified"
+          }
+        ]
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2018,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Concreting of Extension Road, Brgy. Igbugo, Miagao, Iloilo",
+          "amountPesos": 2000000,
+          "source": "FY2018 GAA Explorer · GAA2018.xls · #Sheet 7 · UACS PAP 300117201591000",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Road",
+          "title": "Construction of Naclub - Igbugo Road, Barangay Naclub and Igbugo, Miagao, Iloilo",
+          "amountPesos": 45000000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 571",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030048",
+      "name": "Igcabidio",
+      "population2024": 330,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2022,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Rehabilitation and Improvement of Oyungan-Igcabidio-Ilog-Ilog-Narorogan Local Road, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2022 GAA · docs/GAA-2022.xlsx · row 527361",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030050",
+      "name": "Igcabito-on",
+      "population2024": 426,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030051",
+      "name": "Igcatambor",
+      "population2024": 265,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030052",
+      "name": "Igdalaquit",
+      "population2024": 158,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2022,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Rehabilitation and Improvement of Naclub-Igdalaquit-Cabangcalan-Tigbagacay-Tig-Apog-Apog Local Road With Box Culvert Component, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2022 GAA · docs/GAA-2022.xlsx · row 527362",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030053",
+      "name": "Igdulaca",
+      "population2024": 541,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2025,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Road including Facilites, Barangay Igdulaca-Barangay Buenavista Sur, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2025 GAA · docs/GAA-2025.xlsx · row 575566",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030054",
+      "name": "Igpajo",
+      "population2024": 321,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030055",
+      "name": "Igpandan",
+      "population2024": 439,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": {
+        "name": "Lucia Coronia",
+        "role": "Punong Barangay",
+        "asOf": "2025-01-23",
+        "sourceLabel": "Municipality of Miagao",
+        "status": "Identified as Igpandan Punong Barangay in a 2025 municipal report.",
+        "source": "https://www.miagao.gov.ph/about-miagao/news/for-barangay-igpandan-p40000-assistance-for-the-rehabilitation-of-basketball-court/"
+      }
+    },
+    {
+      "psgc": "0603030056",
+      "name": "Igpuro",
+      "population2024": 541,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2017,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Concreting of Igpuro Local Road, Igpuro, Miagao, Iloilo",
+          "amountPesos": 2000000,
+          "source": "FY2017 GAA Explorer · A.xls · #Sheet 1 · UACS PAP 165004050308045",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2025,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Road including Facilites, Barangay Igpuro Bariri - Barangay Tig-amaga, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2025 GAA · docs/GAA-2025.xlsx · row 575561",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030057",
+      "name": "Igpuro-Bariri",
+      "population2024": 367,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2025,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Road including Facilites, Barangay Igpuro Bariri - Barangay Tig-amaga, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2025 GAA · docs/GAA-2025.xlsx · row 575561",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030058",
+      "name": "Igsoligue",
+      "population2024": 436,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 1,
+        "buildingCountAllYears": 1,
+        "allocationPesosAllYears": 8000000,
+        "records": [
+          {
+            "year": 2027,
+            "stage": "HGAB 3rd",
+            "category": "Multi-purpose building",
+            "title": "Construction of Multi-Purpose Building, Barangay Igsoligue, Miagao, Iloilo",
+            "amountPesos": 8000000,
+            "source": "BetterGov MPB map · FY2027 House Bill 10858 · line house-reading:14183",
+            "locationBasis": "barangay named in the title",
+            "identityConfidence": "Same normalized project title and source-assigned official barangay; physical site not independently verified"
+          }
+        ]
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2024,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Narorogan - Igsoligue Road, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2024 GAA · docs/GAA-2024.xlsx · row 540682",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Multi-purpose building",
+          "title": "Construction of Multi-Purpose Building, Barangay Igsoligue, Miagao, Iloilo",
+          "amountPesos": 8000000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 818",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030059",
+      "name": "Igtuba",
+      "population2024": 1523,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 2,
+        "buildingCountAllYears": 2,
+        "allocationPesosAllYears": 274459000,
+        "records": [
+          {
+            "year": 2027,
+            "stage": "HGAB 3rd",
+            "category": "Multi-purpose building",
+            "title": "Construction (Completion) of Multi-Purpose Building, Miagao, Iloilo – (10.646755, 122.245435)",
+            "amountPesos": 265459000,
+            "source": "BetterGov MPB map · FY2027 House Bill 10858 · line house-reading:14144",
+            "locationBasis": "GPS in the title",
+            "identityConfidence": "Same normalized project title and source-assigned official barangay; physical site not independently verified"
+          },
+          {
+            "year": 2027,
+            "stage": "HGAB 3rd",
+            "category": "Multi-purpose building",
+            "title": "Construction of Multi-Purpose Building, Barangay Igtuba, Miagao, Iloilo",
+            "amountPesos": 9000000,
+            "source": "BetterGov MPB map · FY2027 House Bill 10858 · line house-reading:14184",
+            "locationBasis": "barangay named in the title",
+            "identityConfidence": "Same normalized project title and source-assigned official barangay; physical site not independently verified"
+          }
+        ]
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2020,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Concreting of Brgy. Igtuba High School Local Road, Miagao, Iloilo",
+          "amountPesos": 2500000,
+          "source": "FY2020 GAA · gaa_2020_batch_0005.json · row 492767",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Road",
+          "title": "Construction of Barangay Igtuba - Barangay Kirayan Tacas Road, narangay Igtuba and Barangay Kirayan Tacas, Miagao, Iloilo",
+          "amountPesos": 39000000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 571",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Multi-purpose building",
+          "title": "Construction of Multi-Purpose Building, Barangay Igtuba, Miagao, Iloilo",
+          "amountPesos": 9000000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 818",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030060",
+      "name": "Ilog-ilog",
+      "population2024": 200,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2022,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Rehabilitation and Improvement of Oyungan-Igcabidio-Ilog-Ilog-Narorogan Local Road, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2022 GAA · docs/GAA-2022.xlsx · row 527361",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030061",
+      "name": "Indag-an",
+      "population2024": 499,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 1,
+        "buildingCountAllYears": 1,
+        "allocationPesosAllYears": 0,
+        "records": [
+          {
+            "year": 2027,
+            "stage": "HGAB 3rd",
+            "category": "Multi-purpose building",
+            "title": "Construction of Multi-Purpose Building, Indag-an, Miagao, Iloilo",
+            "amountPesos": 0,
+            "source": "BetterGov MPB map · FY2027 House Bill 10858 · line stage:17485",
+            "locationBasis": "barangay named in the title",
+            "identityConfidence": "Same normalized project title and source-assigned official barangay; physical site not independently verified"
+          }
+        ]
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030062",
+      "name": "Kirayan Norte",
+      "population2024": 1826,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Road",
+          "title": "Construction of Kirayan Norte Shoreline Protection including Access Roads, Sta. 27+861- Sta. 28+200, Barangay Kirayan Norte, Miagao, Iloilo",
+          "amountPesos": 92330000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 311",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Road",
+          "title": "Construction of Miagao Shoreline Protection including Access Roads, Sta. 27+512 - Sta. 27+856, Barangay Kirayan Norte - Barangay Banuyao, Miagao, Iloilo",
+          "amountPesos": 92330000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 311",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030063",
+      "name": "Kirayan Sur",
+      "population2024": 1388,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Road",
+          "title": "Construction of Kirayan Sur Shoreline Protection including Access Roads, Sta. 28+693 - Sta. 29+007, Barangay Kirayan Sur, Miagao, Iloilo",
+          "amountPesos": 92330000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 311",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": {
+        "name": "Rachel Narte",
+        "role": "Punong Barangay",
+        "asOf": "2025-02-28",
+        "sourceLabel": "Iloilo Provincial Government",
+        "status": "Identified as Kirayan Sur Punong Barangay during a 2025 provincial medical mission.",
+        "source": "https://iloilo.gov.ph/en/district-hospital-news/project-buligay-brings-free-medical-services-miag-ao-residents"
+      }
+    },
+    {
+      "psgc": "0603030064",
+      "name": "Kirayan Tacas",
+      "population2024": 1254,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 1,
+        "buildingCountAllYears": 1,
+        "allocationPesosAllYears": 20000000,
+        "records": [
+          {
+            "year": 2027,
+            "stage": "HGAB 3rd",
+            "category": "Multi-purpose building",
+            "title": "Rehabilitation of Multi-Purpose Building, Barangay Kirayan Tacas, Miagao, Iloilo, 10.647757, 122. 245996",
+            "amountPesos": 20000000,
+            "source": "BetterGov MPB map · FY2027 House Bill 10858 · line house-reading:14203",
+            "locationBasis": "barangay named in the title",
+            "identityConfidence": "Same normalized project title and source-assigned official barangay; physical site not independently verified"
+          }
+        ]
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2025,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Concrete Road including Facilites, Barangay Bliss - Camp Monteclaro, Barangay Kirayan Tacas, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2025 GAA · docs/GAA-2025.xlsx · row 575562",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Road",
+          "title": "Construction of Barangay Igtuba - Barangay Kirayan Tacas Road, narangay Igtuba and Barangay Kirayan Tacas, Miagao, Iloilo",
+          "amountPesos": 39000000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 571",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030065",
+      "name": "La Consolacion",
+      "population2024": 520,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 1,
+        "buildingCountAllYears": 1,
+        "allocationPesosAllYears": 8000000,
+        "records": [
+          {
+            "year": 2027,
+            "stage": "HGAB 3rd",
+            "category": "Multi-purpose building",
+            "title": "Construction of Multi-Purpose Building, Barangay La Consolacion, Miagao, Iloilo",
+            "amountPesos": 8000000,
+            "source": "BetterGov MPB map · FY2027 House Bill 10858 · line house-reading:14189",
+            "locationBasis": "barangay named in the title",
+            "identityConfidence": "Same normalized project title and source-assigned official barangay; physical site not independently verified"
+          }
+        ]
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2023,
+          "stage": "GAA",
+          "category": "Multi-purpose building",
+          "title": "Construction of La Consolacion Elementary School Multipurpose Building, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2023 GAA · docs/GAA-2023.xlsx · row 546450",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Multi-purpose building",
+          "title": "Construction of Multi-Purpose Building, Barangay La Consolacion, Miagao, Iloilo",
+          "amountPesos": 8000000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 818",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030066",
+      "name": "Lacadon",
+      "population2024": 725,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 1,
+        "buildingCountAllYears": 1,
+        "allocationPesosAllYears": 8000000,
+        "records": [
+          {
+            "year": 2027,
+            "stage": "HGAB 3rd",
+            "category": "Multi-purpose building",
+            "title": "Construction of Multi-Purpose Building, Barangay Lacadon, Miagao, Iloilo",
+            "amountPesos": 8000000,
+            "source": "BetterGov MPB map · FY2027 House Bill 10858 · line house-reading:14188",
+            "locationBasis": "barangay named in the title",
+            "identityConfidence": "Same normalized project title and source-assigned official barangay; physical site not independently verified"
+          }
+        ]
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Multi-purpose building",
+          "title": "Construction of Multi-Purpose Building, Barangay Lacadon, Miagao, Iloilo",
+          "amountPesos": 8000000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 818",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030067",
+      "name": "Lanutan",
+      "population2024": 522,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Road",
+          "title": "Construction of Miagao Shoreline Protection including Access Roads, Sta. 37+621 - Sta. 38+135, Barangay Lanutan - Barangay San Rafael, Miagao, Iloilo",
+          "amountPesos": 138495000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 311",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": {
+        "name": "Arvin Faculin",
+        "role": "Punong Barangay",
+        "asOf": "2024-10-03",
+        "sourceLabel": "Municipality of Miagao",
+        "status": "Named as newly elected Punong Barangay in the municipality’s 2024 oath-taking report.",
+        "source": "https://www.miagao.gov.ph/about-miagao/news/barangay-lanutan-gets-new-pb/"
+      }
+    },
+    {
+      "psgc": "0603030068",
+      "name": "Lumangan",
+      "population2024": 965,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 1,
+        "buildingCountAllYears": 1,
+        "allocationPesosAllYears": 8000000,
+        "records": [
+          {
+            "year": 2027,
+            "stage": "HGAB 3rd",
+            "category": "Multi-purpose building",
+            "title": "Construction of Multi-Purpose Building, Barangay Lumangan, Miagao, Iloilo",
+            "amountPesos": 8000000,
+            "source": "BetterGov MPB map · FY2027 House Bill 10858 · line house-reading:14191",
+            "locationBasis": "barangay named in the title",
+            "identityConfidence": "Same normalized project title and source-assigned official barangay; physical site not independently verified"
+          }
+        ]
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2024,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Palaca - Lumangan Road, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2024 GAA · docs/GAA-2024.xlsx · row 540680",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2025,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Road including Facilites, Barangay Lumangan, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2025 GAA · docs/GAA-2025.xlsx · row 575557",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Multi-purpose building",
+          "title": "Construction of Multi-Purpose Building, Barangay Lumangan, Miagao, Iloilo",
+          "amountPesos": 8000000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 818",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030069",
+      "name": "Mabayan",
+      "population2024": 227,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030070",
+      "name": "Maduyo",
+      "population2024": 160,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030071",
+      "name": "Malagyan",
+      "population2024": 1699,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 1,
+        "buildingCountAllYears": 1,
+        "allocationPesosAllYears": 5000000,
+        "records": [
+          {
+            "year": 2025,
+            "stage": "GAA",
+            "category": "Multi-purpose building",
+            "title": "Construction of Barangay Malagyan Multi-Purpose Building including Facilites, Miagao, Iloilo",
+            "amountPesos": 5000000,
+            "source": "BetterGov MPB map · FY2025 GAA · line gaa:2025:300226121441000",
+            "locationBasis": "barangay named in the title",
+            "identityConfidence": "Same normalized project title and source-assigned official barangay; physical site not independently verified"
+          }
+        ]
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2018,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Malagyan-Tigmalapad Road leading to Sinuhotan Cave and Tinagong Dagat Lake, Miagao, Iloilo",
+          "amountPesos": 61275000,
+          "source": "FY2018 GAA Explorer · GAA2018.xls · #Sheet 7 · UACS PAP 300203100105000",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2022,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Malagyan-Tigmalapad Road leading to Sinuhotan Cave and Tinagong Dagat Lake, Miagao, Iloilo",
+          "amountPesos": 10000000,
+          "source": "FY2022 GAA · docs/GAA-2022.xlsx · row 517967",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2023,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Malagyan - Tigmalapad Road leading to Sinuhotan Cave and Tinagong Dagat Lake, Miagao, Iloilo",
+          "amountPesos": 30000000,
+          "source": "FY2023 GAA · docs/GAA-2023.xlsx · row 519523",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2024,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Malagyan Road, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2024 GAA · docs/GAA-2024.xlsx · row 540679",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2024,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Malagyan - Tigmalapad Road leading to Sinuhotan Cave and Tinagong Dagat Lake, Miagao, Iloilo",
+          "amountPesos": 7500000,
+          "source": "FY2024 GAA · docs/GAA-2024.xlsx · row 529913",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2025,
+          "stage": "GAA",
+          "category": "Multi-purpose building",
+          "title": "Construction of Barangay Malagyan Multi-Purpose Building including Facilites, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2025 GAA · docs/GAA-2025.xlsx · row 600562",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2025,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Malagyan-Tigmalapad Road leading to Sinuhotan Cave and Tinagong Dagat Lake, Miagao, Iloilo",
+          "amountPesos": 10000000,
+          "source": "FY2025 GAA · docs/GAA-2025.xlsx · row 546222",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030072",
+      "name": "Mambatad",
+      "population2024": 937,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030073",
+      "name": "Maninila",
+      "population2024": 1129,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030074",
+      "name": "Maricolcol",
+      "population2024": 337,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2025,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Road including Facilites, Barangay Maricolcol - Barangay Sta. Barbara, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2025 GAA · docs/GAA-2025.xlsx · row 575560",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030075",
+      "name": "Maringyan",
+      "population2024": 508,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030076",
+      "name": "Mat-y",
+      "population2024": 2617,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030077",
+      "name": "Matalngon",
+      "population2024": 152,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030078",
+      "name": "Naclub",
+      "population2024": 602,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2022,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Rehabilitation and Improvement of Naclub-Igdalaquit-Cabangcalan-Tigbagacay-Tig-Apog-Apog Local Road With Box Culvert Component, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2022 GAA · docs/GAA-2022.xlsx · row 527362",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Road",
+          "title": "Construction of Naclub - Igbugo Road, Barangay Naclub and Igbugo, Miagao, Iloilo",
+          "amountPesos": 45000000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 571",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030079",
+      "name": "Nam-o Sur",
+      "population2024": 232,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 1,
+        "buildingCountAllYears": 1,
+        "allocationPesosAllYears": 8000000,
+        "records": [
+          {
+            "year": 2027,
+            "stage": "HGAB 3rd",
+            "category": "Multi-purpose building",
+            "title": "Construction of Multi-Purpose Building, Barangay Nam-o Sur, Miagao, Iloilo",
+            "amountPesos": 8000000,
+            "source": "BetterGov MPB map · FY2027 House Bill 10858 · line house-reading:14197",
+            "locationBasis": "barangay named in the title",
+            "identityConfidence": "Same normalized project title and source-assigned official barangay; physical site not independently verified"
+          }
+        ]
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Multi-purpose building",
+          "title": "Construction of Multi-Purpose Building, Barangay Nam-o Sur, Miagao, Iloilo",
+          "amountPesos": 8000000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 818",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030080",
+      "name": "Nam-o Norte",
+      "population2024": 279,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030082",
+      "name": "Narat-an",
+      "population2024": 749,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030083",
+      "name": "Narorogan",
+      "population2024": 227,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2022,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Rehabilitation and Improvement of Oyungan-Igcabidio-Ilog-Ilog-Narorogan Local Road, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2022 GAA · docs/GAA-2022.xlsx · row 527361",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2024,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Narorogan - Igsoligue Road, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2024 GAA · docs/GAA-2024.xlsx · row 540682",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2025,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Road including Facilites, Barangay Oyungan-Barangay Narorogan, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2025 GAA · docs/GAA-2025.xlsx · row 575555",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030084",
+      "name": "Naulid",
+      "population2024": 928,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 1,
+        "buildingCountAllYears": 1,
+        "allocationPesosAllYears": 2000000,
+        "records": [
+          {
+            "year": 2017,
+            "stage": "GAA",
+            "category": "Multi-purpose building",
+            "title": "Construction of Multi-Purpose Building, Kirayan National High School, Naulid, Miagao, Iloilo",
+            "amountPesos": 2000000,
+            "source": "BetterGov MPB map · FY2017 GAA · line gaa:2017:103004010312122",
+            "locationBasis": "barangay named in the title",
+            "identityConfidence": "Same normalized project title and source-assigned official barangay; physical site not independently verified"
+          }
+        ]
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2017,
+          "stage": "GAA",
+          "category": "Multi-purpose building",
+          "title": "Construction of Multi-Purpose Building, Kirayan National High School, Naulid, Miagao, Iloilo",
+          "amountPesos": 2000000,
+          "source": "FY2017 GAA Explorer · A.xls · #Sheet 1 · UACS PAP 103004010312122",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2018,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Concreting of Road, Naulid-Kirayan High School, Miagao, Iloilo",
+          "amountPesos": 2000000,
+          "source": "FY2018 GAA Explorer · GAA2018.xls · #Sheet 7 · UACS PAP 300117201598000",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2021,
+          "stage": "GAA",
+          "category": "Flood control",
+          "title": "Construction of Naulid Flood Control Project, Miagao, Iloilo",
+          "amountPesos": 10000000,
+          "source": "FY2021 GAA · docs/2021-GAA.xlsx · row 440144",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030085",
+      "name": "Olango",
+      "population2024": 266,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Road",
+          "title": "Construction of Barangay Cabunotan - Barangay Olango - Barangay Alimodias Road, Miagao, Iloilo",
+          "amountPesos": 92330000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 433",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030086",
+      "name": "Ongyod",
+      "population2024": 201,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030087",
+      "name": "Onop",
+      "population2024": 271,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030088",
+      "name": "Oyungan",
+      "population2024": 1553,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 1,
+        "buildingCountAllYears": 1,
+        "allocationPesosAllYears": 5000000,
+        "records": [
+          {
+            "year": 2022,
+            "stage": "GAA",
+            "category": "Multi-purpose building",
+            "title": "Construction of Oyungan ES Mpb With Pavement, Oyungan, Miagao, Iloilo",
+            "amountPesos": 5000000,
+            "source": "BetterGov MPB map · FY2022 GAA · line gaa:2022:300226102666000",
+            "locationBasis": "barangay named in the title",
+            "identityConfidence": "Same normalized project title and source-assigned official barangay; physical site not independently verified"
+          }
+        ]
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2022,
+          "stage": "GAA",
+          "category": "Flood control",
+          "title": "Construction of Oyungan River Flood Control Project, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2022 GAA · docs/GAA-2022.xlsx · row 562917",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2022,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Rehabilitation and Improvement of Oyungan-Igcabidio-Ilog-Ilog-Narorogan Local Road, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2022 GAA · docs/GAA-2022.xlsx · row 527361",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2022,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Rehabilitation of Road, Barangay Oyungan, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2022 GAA · docs/GAA-2022.xlsx · row 527364",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2025,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Road including Facilites, Barangay Oyungan-Barangay Narorogan, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2025 GAA · docs/GAA-2025.xlsx · row 575555",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030089",
+      "name": "Palaca",
+      "population2024": 2078,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 1,
+        "buildingCountAllYears": 1,
+        "allocationPesosAllYears": 8000000,
+        "records": [
+          {
+            "year": 2027,
+            "stage": "HGAB 3rd",
+            "category": "Multi-purpose building",
+            "title": "Construction of Multi-Purpose Building, Barangay Palaca, Miagao, Iloilo",
+            "amountPesos": 8000000,
+            "source": "BetterGov MPB map · FY2027 House Bill 10858 · line house-reading:14198",
+            "locationBasis": "barangay named in the title",
+            "identityConfidence": "Same normalized project title and source-assigned official barangay; physical site not independently verified"
+          }
+        ]
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2024,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Bacauan - Palaca River Control including Access Road , Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2024 GAA · docs/GAA-2024.xlsx · row 617311",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2024,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Palaca - Lumangan Road, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2024 GAA · docs/GAA-2024.xlsx · row 540680",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Multi-purpose building",
+          "title": "Construction of Multi-Purpose Building, Barangay Palaca, Miagao, Iloilo",
+          "amountPesos": 8000000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 818",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030090",
+      "name": "Paro-on",
+      "population2024": 132,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030091",
+      "name": "Potrido",
+      "population2024": 410,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2020,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Brgy. Potrido to Brgy. Alimodias Road, Miagao, Iloilo",
+          "amountPesos": 50000000,
+          "source": "FY2020 GAA · gaa_2020_batch_0005.json · row 492769",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2021,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Brgy. Potrido to Brgy. Alimodias Road, Miagao, Iloilo",
+          "amountPesos": 40614000,
+          "source": "FY2021 GAA · docs/2021-GAA.xlsx · row 424891",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2024,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Brgy. Potrido to Brgy. Alimodias Road leading to various Tourism Sites including Bugsukan and Banogon Falls and the 500 Hectares Rice Terraces, Miagao, Iloilo",
+          "amountPesos": 15000000,
+          "source": "FY2024 GAA · docs/GAA-2024.xlsx · row 529912",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2025,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Brgy. Potrido to Brgy. Alimodias Road leading to various Tourism Sites including Bugsukan and Banogon Falls and the 500 Hectares Rice Terraces, Miagao, Iloilo",
+          "amountPesos": 10000000,
+          "source": "FY2025 GAA · docs/GAA-2025.xlsx · row 546003",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": {
+        "name": "Diana Legaspi",
+        "role": "Punong Barangay",
+        "asOf": "2026-10-26",
+        "sourceLabel": "Municipality of Miagao",
+        "status": "Identified as Potrido Punong Barangay in a municipal report dated October 2026.",
+        "source": "https://www.miagao.gov.ph/about-miagao/news/barangay-potrido-through-punong-barangay-diana-legaspi-received-a-cheque-amounting-to-p50000-the-funds-will-be-allocated-for-the-rehabilitation-and-improvement-of-the-alternative-learning-system/"
+      }
+    },
+    {
+      "psgc": "0603030092",
+      "name": "Pudpud",
+      "population2024": 533,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030093",
+      "name": "Pungtod Monteclaro",
+      "population2024": 352,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Bridge",
+          "title": "Construction of Cubay Ubos to Pungtod Monteclaro Bridge, Barangay Cubay Ubos and Barangay Puntod Monteclaro, Miagao, Iloilo",
+          "amountPesos": 9000000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 571",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030094",
+      "name": "Pungtod Naulid",
+      "population2024": 148,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030095",
+      "name": "Sag-on",
+      "population2024": 408,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030096",
+      "name": "San Fernando",
+      "population2024": 447,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2025,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Road including Facilites, Barangay San Fernando-Barangay Buenavista Norte, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2025 GAA · docs/GAA-2025.xlsx · row 575553",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030097",
+      "name": "San Jose",
+      "population2024": 422,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2018,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Igtalongon-Corocuan-Lab-on-Bagay-Wayang-San Jose-Miagao-Cadre Road leading to Mt. Napulak, Igbaras, Iloilo",
+          "amountPesos": 20000000,
+          "source": "FY2018 GAA Explorer · GAA2018.xls · #Sheet 7 · UACS PAP 300203100352000",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2023,
+          "stage": "GAA",
+          "category": "Flood control",
+          "title": "Construction of San Jose Flood Control Structure, Miagao, Iloilo",
+          "amountPesos": 100000000,
+          "source": "FY2023 GAA · docs/GAA-2023.xlsx · row 530233",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2025,
+          "stage": "GAA",
+          "category": "Flood control",
+          "title": "Construction of Flood Mitigating Structure including Facilites, Miagao San Jose River, Miagao, Iloilo",
+          "amountPesos": 30000000,
+          "source": "FY2025 GAA · docs/GAA-2025.xlsx · row 606654",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030098",
+      "name": "San Rafael",
+      "population2024": 1260,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Road",
+          "title": "Construction of Miagao Shoreline Protection including Access Roads, Sta. 37+621 - Sta. 38+135, Barangay Lanutan - Barangay San Rafael, Miagao, Iloilo",
+          "amountPesos": 138495000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 311",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": {
+        "name": "Diofe Fatla-onag",
+        "role": "Punong Barangay",
+        "asOf": "2024-06-26",
+        "sourceLabel": "Iloilo Provincial Government",
+        "status": "Identified as San Rafael Punong Barangay in a 2024 provincial government report.",
+        "source": "https://www.iloilo.gov.ph/en/donations-and-grants-news/financial-aid-child-development-center-san-rafael-miagao"
+      }
+    },
+    {
+      "psgc": "0603030099",
+      "name": "Sapa",
+      "population2024": 830,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030100",
+      "name": "Saring",
+      "population2024": 408,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030101",
+      "name": "Sibucao",
+      "population2024": 364,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030102",
+      "name": "Taal",
+      "population2024": 193,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030103",
+      "name": "Tabunacan",
+      "population2024": 459,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030104",
+      "name": "Tacas",
+      "population2024": 712,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2025,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Concrete Road including Facilites, Barangay Bliss - Camp Monteclaro, Barangay Kirayan Tacas, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2025 GAA · docs/GAA-2025.xlsx · row 575562",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Road",
+          "title": "Construction of Barangay Igtuba - Barangay Kirayan Tacas Road, narangay Igtuba and Barangay Kirayan Tacas, Miagao, Iloilo",
+          "amountPesos": 39000000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 571",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": {
+        "name": "Nestor Faicol",
+        "role": "Punong Barangay",
+        "asOf": "2023-11-13",
+        "sourceLabel": "Iloilo Provincial Government",
+        "status": "Identified as Tacas Punong Barangay during the November 2023 hall-annex inauguration.",
+        "source": "https://www.iloilo.gov.ph/en/node/4991"
+      }
+    },
+    {
+      "psgc": "0603030105",
+      "name": "Tambong",
+      "population2024": 201,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2025,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Road including Facilites, Barangay Aguiawan - Barangay Tambong, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2025 GAA · docs/GAA-2025.xlsx · row 575565",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030106",
+      "name": "Tan-agan",
+      "population2024": 516,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030107",
+      "name": "Tatoy",
+      "population2024": 697,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030108",
+      "name": "Ticdalan",
+      "population2024": 284,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030109",
+      "name": "Tig-amaga",
+      "population2024": 241,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2025,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Construction of Road including Facilites, Barangay Igpuro Bariri - Barangay Tig-amaga, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2025 GAA · docs/GAA-2025.xlsx · row 575561",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030110",
+      "name": "Tig-Apog-Apog",
+      "population2024": 340,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2022,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Rehabilitation and Improvement of Naclub-Igdalaquit-Cabangcalan-Tigbagacay-Tig-Apog-Apog Local Road With Box Culvert Component, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2022 GAA · docs/GAA-2022.xlsx · row 527362",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030111",
+      "name": "Tigbagacay",
+      "population2024": 223,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2022,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Rehabilitation and Improvement of Naclub-Igdalaquit-Cabangcalan-Tigbagacay-Tig-Apog-Apog Local Road With Box Culvert Component, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2022 GAA · docs/GAA-2022.xlsx · row 527362",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030112",
+      "name": "Tiglawa",
+      "population2024": 131,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": {
+        "name": "Jose Nacita",
+        "role": "Punong Barangay",
+        "asOf": "2024-01-25",
+        "sourceLabel": "Municipality of Miagao",
+        "status": "Identified as Tiglawa Punong Barangay during a 2024 project conference.",
+        "source": "https://www.miagao.gov.ph/about-miagao/news/miagao-to-igbaras-opening-of-road-soon/"
+      }
+    },
+    {
+      "psgc": "0603030113",
+      "name": "Tigmalapad",
+      "population2024": 452,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2018,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Malagyan-Tigmalapad Road leading to Sinuhotan Cave and Tinagong Dagat Lake, Miagao, Iloilo",
+          "amountPesos": 61275000,
+          "source": "FY2018 GAA Explorer · GAA2018.xls · #Sheet 7 · UACS PAP 300203100105000",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2022,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Malagyan-Tigmalapad Road leading to Sinuhotan Cave and Tinagong Dagat Lake, Miagao, Iloilo",
+          "amountPesos": 10000000,
+          "source": "FY2022 GAA · docs/GAA-2022.xlsx · row 517967",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2023,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Malagyan - Tigmalapad Road leading to Sinuhotan Cave and Tinagong Dagat Lake, Miagao, Iloilo",
+          "amountPesos": 30000000,
+          "source": "FY2023 GAA · docs/GAA-2023.xlsx · row 519523",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2024,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Malagyan - Tigmalapad Road leading to Sinuhotan Cave and Tinagong Dagat Lake, Miagao, Iloilo",
+          "amountPesos": 7500000,
+          "source": "FY2024 GAA · docs/GAA-2024.xlsx · row 529913",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2025,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Malagyan-Tigmalapad Road leading to Sinuhotan Cave and Tinagong Dagat Lake, Miagao, Iloilo",
+          "amountPesos": 10000000,
+          "source": "FY2025 GAA · docs/GAA-2025.xlsx · row 546222",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030114",
+      "name": "Tigmarabo",
+      "population2024": 475,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2023,
+          "stage": "GAA",
+          "category": "Multi-purpose building",
+          "title": "Construction of Tigmarabo Elementary School Multipurpose Building, Miagao, Iloilo",
+          "amountPesos": 5000000,
+          "source": "FY2023 GAA · docs/GAA-2023.xlsx · row 546454",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        },
+        {
+          "year": 2027,
+          "stage": "HGAB 3rd",
+          "category": "Road",
+          "title": "Construction of Barangay Durog - Barangay Tigmarabo Road, Miagao, Iloilo",
+          "amountPesos": 92330000,
+          "source": "HGAB 3rd · 3- HB 10858 FOR 3RD READING VOL I-C .pdf · PDF p. 433",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    },
+    {
+      "psgc": "0603030115",
+      "name": "To-og",
+      "population2024": 127,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030116",
+      "name": "Tugura-ao",
+      "population2024": 252,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030117",
+      "name": "Tumagboc",
+      "population2024": 444,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030118",
+      "name": "Ubos Ilawod",
+      "population2024": 802,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030119",
+      "name": "Ubos Ilaya",
+      "population2024": 866,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030120",
+      "name": "Valencia",
+      "population2024": 432,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [],
+      "captain": null
+    },
+    {
+      "psgc": "0603030121",
+      "name": "Wayang",
+      "population2024": 238,
+      "urbanRural2024": null,
+      "mpb": {
+        "projectRowsAllYears": 0,
+        "buildingCountAllYears": 0,
+        "allocationPesosAllYears": 0,
+        "records": []
+      },
+      "titleMatchedProjects": [
+        {
+          "year": 2018,
+          "stage": "GAA",
+          "category": "Road",
+          "title": "Igtalongon-Corocuan-Lab-on-Bagay-Wayang-San Jose-Miagao-Cadre Road leading to Mt. Napulak, Igbaras, Iloilo",
+          "amountPesos": 20000000,
+          "source": "FY2018 GAA Explorer · GAA2018.xls · #Sheet 7 · UACS PAP 300203100352000",
+          "locationBasis": "Barangay name appears in project title; not a verified site boundary."
+        }
+      ],
+      "captain": null
+    }
+  ]
+}

@@ -4,6 +4,10 @@
 
 - [ ] Propagate the FMR Budget 2027 menu entry through the remaining 42 page builders; currently only archive, connectivity, FMR, and FMR archive outputs show it.
 
+## Miagao research
+
+- [x] Crawl BetterGov public research pages and process local ODV data for Miagao-related records; publish the 583-row source inventory at `analysis_output/miagao-bettergov-inventory.json` with reproducible builder `build_miagao_bettergov_inventory.py`.
+
 ## Builder ownership
 
 - [ ] Refactor `build_external_reference_review.py --refresh-pages`, which directly rewrites unrelated NIA, HFEP, DPWH, FMR, cost, repeats, Congress, and summary pages. Move page fragments into modules called by each owning builder.

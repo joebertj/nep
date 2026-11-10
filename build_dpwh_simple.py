@@ -126,10 +126,12 @@ def billboard_rates():
                 rows.append({'code': code, 'name': row['name'], 'unitCost': row['amount'] / row['quantity'],
                              'quantity': row['quantity'], 'pages': sorted(row['pages']), 'source': row['source']})
         values = [row['unitCost'] for row in rows]
+        maximum = max(rows, key=lambda row: row['unitCost']) if rows else None
         results[group['family']] = {
             'projectCount': len(rows), 'unit': 'each', 'costBasis': 'as_submitted',
             'q1Pesos': quantile(values, .25), 'medianPesos': quantile(values, .5),
             'q3Pesos': quantile(values, .75), 'maximumPesos': max(values) if values else None,
+            'highestUnitRateProject': maximum,
         }
     if set(results) != {'Roads', 'Bridges'}:
         raise ValueError('Road and bridge billboard groups are missing from cost-per-unit data')
@@ -149,6 +151,7 @@ def collect():
         raise ValueError('Bridge rehabilitation condition rows do not reconcile')
 
     rates = {}
+    outliers_per_meter = {}
     for name, rows in [('Roads', roads), ('Bridges', bridges)]:
         records = [row['allocationPerStatedMeter'] for row in cost['projects']
                    if row['category'] == name and isinstance(row.get('allocationPerStatedMeter'), (int, float))]
@@ -157,6 +160,23 @@ def collect():
             'q1PesosPerMeter': quantile(records, .25),
             'medianPesosPerMeter': quantile(records, .5),
             'q3PesosPerMeter': quantile(records, .75),
+        }
+        maximum = max(
+            (row for row in cost['projects']
+             if row['category'] == name and isinstance(row.get('allocationPerStatedMeter'), (int, float))),
+            key=lambda row: row['allocationPerStatedMeter'],
+        )
+        outliers_per_meter[name] = {
+            'projectId': maximum['id'],
+            'projectName': maximum['projectName'],
+            'office': maximum['office'],
+            'region': maximum['region'],
+            'amountPesos': maximum['amountPesos'],
+            'statedLengthMeters': maximum['lengthMeters'],
+            'pesosPerStatedMeter': maximum['allocationPerStatedMeter'],
+            'rateReview': maximum.get('rateReview'),
+            'sourceVolume': maximum['sourceVolume'],
+            'sourcePage': maximum['sourcePage'],
         }
 
     billboard, billboard_source = billboard_rates()
@@ -173,6 +193,7 @@ def collect():
             'policy': 'Existing road-section lengths and bridge spans are offline inventory dimensions. They do not replace the funded work length when the project title does not state a usable length.',
         },
         'allocationPerStatedMeter': rates,
+        'highestAllocationPerStatedMeter': outliers_per_meter,
         'burolOverpass': next((row for row in rehab['projects'] if 'burol overpass' in row['project'].lower()), None),
         'bridgeRehabilitation': rehab['summary'],
         'transparencySnapshotRetrievedAtUtc': rehab.get('transparencySnapshotRetrievedAtUtc'),
@@ -247,6 +268,16 @@ def billboard_chart(data):
     return ''.join(svg)
 
 
+def outlier_card(category, value, rate_label, facts, source):
+    fact_html = ''.join(f'<span><b>{escape(label)}</b>{escape(str(text))}</span>' for label, text in facts)
+    return (
+        f'<article class="outlier-card"><div class="outlier-category">{escape(category)} · highest listed rate</div>'
+        f'<strong class="outlier-rate">{escape(rate_label)}</strong>'
+        f'<h3>{escape(value)}</h3><div class="outlier-facts">{fact_html}</div>'
+        f'<p class="outlier-source">Source: {escape(source)}</p></article>'
+    )
+
+
 def detail(text):
     return f'<details class="computations"><summary>Sources and exact figures</summary>{text}</details>'
 
@@ -271,8 +302,24 @@ def build():
 
     graphic = rate_chart(data)
     rr, br = data['allocationPerStatedMeter']['Roads'], data['allocationPerStatedMeter']['Bridges']
+    per_meter = data['highestAllocationPerStatedMeter']
+    for category in ('Roads', 'Bridges'):
+        row = per_meter[category]
+        graphic += outlier_card(
+            category,
+            row['projectName'],
+            f'₱{row["pesosPerStatedMeter"]:,.2f} / m',
+            [
+                ('Allocation', f'₱{row["amountPesos"]:,.0f}'),
+                ('Title length', f'{row["statedLengthMeters"]:,.3f} m'),
+                ('Office', row['office']),
+                ('Region', row['region']),
+                ('Rate screen', row['rateReview'] or 'No review label'),
+            ],
+            f'{row["sourceVolume"]} · p. {row["sourcePage"]}',
+        )
     panels.append(('02', 'ALLOCATION ÷ STATED LENGTH', 'A meter of road and a meter of bridge are very different comparisons.', graphic,
-                   f'The middle half of road ratios is ₱{rr["q1PesosPerMeter"]:,.0f}–₱{rr["q3PesosPerMeter"]:,.0f} per stated meter. Bridge ratios are based on far fewer rows.'))
+                   f'Middle 50%: roads ₱{rr["q1PesosPerMeter"]:,.0f}–₱{rr["q3PesosPerMeter"]:,.0f}/m; bridges ₱{br["q1PesosPerMeter"]:,.0f}–₱{br["q3PesosPerMeter"]:,.0f}/m. One highest-rate record per category is shown below.'))
 
     burol_rate = burol['allocationPesos'] / burol['statedLengthMeters'] if burol.get('statedLengthMeters') else None
     bridge_drawing = '<svg class="burol-drawing" viewBox="0 0 800 170" role="img" aria-label="Illustration of a 25 meter bridge span, not to scale"><path d="M80 115h640M125 95h550M165 95V65h470v30M165 65l40-30h390l40 30M235 95V55m80 40V45m80 50V45m80 50V45m80 50V55" fill="none" stroke="#2453b8" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><path d="M120 132h560m-560-9v18m560-18v18" stroke="#183643" stroke-width="3"/><text x="400" y="160" text-anchor="middle" class="chart-label">25 stated meters</text></svg>'
@@ -288,8 +335,22 @@ def build():
     billboard = data['billboards']
     graphic = '<div class="billboard-icon" aria-hidden="true"><svg viewBox="0 0 120 100"><rect x="12" y="8" width="96" height="54" rx="5" fill="#FCD116" stroke="#00246A" stroke-width="5"/><path d="M60 62v30M40 93h40" stroke="#00246A" stroke-width="7" stroke-linecap="round"/><path d="M27 25h66M27 39h47" stroke="#00246A" stroke-width="5" stroke-linecap="round"/></svg></div>' + billboard_chart(data)
     road_billboard, bridge_billboard = billboard['Roads'], billboard['Bridges']
+    for category, row in (('Roads', road_billboard), ('Bridges', bridge_billboard)):
+        project = row.get('highestUnitRateProject') or {}
+        pages_text = ', '.join(str(page) for page in project.get('pages', [])) or 'not recorded'
+        graphic += outlier_card(
+            category,
+            project.get('name') or 'Project title unavailable',
+            f'₱{project.get("unitCost", 0):,.2f} / sign',
+            [
+                ('Quantity', f'{project.get("quantity", 0):,.0f} signs'),
+                ('Source', project.get('source') or 'POW'),
+                ('Project code', project.get('code') or 'not recorded'),
+            ],
+            f'POW page {pages_text}',
+        )
     panels.append(('05', 'A PRICE TAG PEOPLE CAN PICTURE', 'What do project billboards cost per sign?', graphic,
-                   f'Median extracted rate: ₱{road_billboard["medianPesos"]:,.0f} each for road projects and ₱{bridge_billboard["medianPesos"]:,.0f} each for bridge projects. The highest extracted road rate is ₱{road_billboard["maximumPesos"]:,.0f} per each; it is a source-review lead, not a verified price. Unit prices cannot tell us the sign’s size, quality or whether it was installed.'))
+                   f'Median extracted rate: roads ₱{road_billboard["medianPesos"]:,.0f} each; bridges ₱{bridge_billboard["medianPesos"]:,.0f} each. One highest-rate POW record per category is shown below.'))
 
     pages = []
     for number, label, headline, graphic, takeaway in panels:
@@ -305,7 +366,7 @@ def build():
     data_text = json.dumps(data, ensure_ascii=False, indent=2) + '\n'
     html = f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Five simple visuals about DPWH road and bridge allocations, stated lengths, bridge records and billboard unit rates."><title>Roads and bridges in five pictures · BetterGov</title>
 <style>
-*{{box-sizing:border-box}}body{{margin:0;background:#f4f6fa;color:#17233b;font-family:Inter,system-ui,sans-serif}}header{{background:#00246a;color:#fff;padding:34px 5vw}}header h1{{font-size:clamp(34px,5vw,60px);line-height:1.06;max-width:1000px;margin:0}}header p{{max-width:850px;line-height:1.5}}main{{max-width:1250px;margin:auto;padding:24px clamp(16px,4vw,44px)}}.simple-intro{{font-size:clamp(19px,2.3vw,27px);line-height:1.42;max-width:950px;margin:16px 0 30px;font-weight:600}}.simple-panel{{background:#fff;border:1px solid #dfe5ef;border-radius:20px;padding:clamp(20px,4vw,44px);margin:24px 0;box-shadow:0 7px 22px #17324d0a}}.panel-label{{color:#526b8c;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}}.simple-panel h2{{font-size:clamp(25px,3.1vw,39px);line-height:1.15;max-width:980px;margin:12px 0 22px}}figure{{margin:0}}figcaption{{color:#4d607a;line-height:1.55;margin:14px 0 4px}}.coverage-pair{{display:grid;grid-template-columns:1fr 1fr;gap:26px}}.coverage-pair h3{{margin:0 0 10px}}.coverage-grid{{display:grid;grid-template-columns:repeat(10,1fr);gap:5px;max-width:520px}}.coverage-unit{{height:17px;border-radius:4px;background:#2453b8}}.coverage-unit.orange{{background:#de8c18}}.coverage-unit.empty{{background:#e4e8f0}}.coverage-pair p{{font-size:18px;margin:11px 0}}.asset-facts{{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}}.asset-facts span{{background:#f1f5fa;border-radius:12px;padding:12px 18px}}.asset-facts b{{font-size:24px;color:#0038a8;display:block}}svg{{max-width:100%;height:auto}}.chart-label{{font-size:16px;fill:#183643}}.chart-value{{font-size:14px;font-weight:750;fill:#183643}}.chart-axis{{font-size:12px;fill:#526c78}}.rate-chart,.condition-chart{{width:100%;max-width:980px}}.burol-spotlight{{display:flex;align-items:center;justify-content:center;gap:clamp(24px,9vw,120px);flex-wrap:wrap;text-align:center}}.burol-amount{{font-size:clamp(54px,10vw,112px);font-weight:850;color:#00246a;letter-spacing:-.06em}}.burol-rate{{font-size:clamp(40px,7vw,78px);font-weight:850;color:#b45309;line-height:1}}.burol-rate small{{display:block;font-size:16px;letter-spacing:0;color:#465a72;font-weight:650;margin-top:8px}}.burol-drawing{{display:block;margin:10px auto 0;max-height:190px}}.billboard-icon{{width:100px;margin:0 auto 10px}}.billboard-icon svg{{width:100%}}.simple-footer{{text-align:center;color:#53627a;padding:28px 0 50px;line-height:1.6}}.simple-footer nav,.simple-links{{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}}.simple-footer a{{color:#0038a8;font-weight:650}}.simple-download{{display:inline-block;background:#0038a8;color:white!important;padding:12px 18px;border-radius:8px;text-decoration:none}}.computations{{margin-top:14px;border-top:1px solid #e1e6ee;padding-top:12px;color:#53627a}}.computations summary{{cursor:pointer;font-weight:700;color:#334c6e}}.computations p{{line-height:1.55}}@media(max-width:700px){{.coverage-pair{{grid-template-columns:1fr}}.coverage-unit{{height:13px}}.asset-facts{{display:grid;grid-template-columns:1fr 1fr}}}}
+*{{box-sizing:border-box}}body{{margin:0;background:#f4f6fa;color:#17233b;font-family:Inter,system-ui,sans-serif}}header{{background:#00246a;color:#fff;padding:34px 5vw}}header h1{{font-size:clamp(34px,5vw,60px);line-height:1.06;max-width:1000px;margin:0}}header p{{max-width:850px;line-height:1.5}}main{{max-width:1250px;margin:auto;padding:24px clamp(16px,4vw,44px)}}.simple-intro{{font-size:clamp(19px,2.3vw,27px);line-height:1.42;max-width:950px;margin:16px 0 30px;font-weight:600}}.simple-panel{{background:#fff;border:1px solid #dfe5ef;border-radius:20px;padding:clamp(20px,4vw,44px);margin:24px 0;box-shadow:0 7px 22px #17324d0a}}.panel-label{{color:#526b8c;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}}.simple-panel h2{{font-size:clamp(25px,3.1vw,39px);line-height:1.15;max-width:980px;margin:12px 0 22px}}figure{{margin:0}}figcaption{{color:#4d607a;line-height:1.55;margin:14px 0 4px}}.coverage-pair{{display:grid;grid-template-columns:1fr 1fr;gap:26px}}.coverage-pair h3{{margin:0 0 10px}}.coverage-grid{{display:grid;grid-template-columns:repeat(10,1fr);gap:5px;max-width:520px}}.coverage-unit{{height:17px;border-radius:4px;background:#2453b8}}.coverage-unit.orange{{background:#de8c18}}.coverage-unit.empty{{background:#e4e8f0}}.coverage-pair p{{font-size:18px;margin:11px 0}}.asset-facts{{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}}.asset-facts span{{background:#f1f5fa;border-radius:12px;padding:12px 18px}}.asset-facts b{{font-size:24px;color:#0038a8;display:block}}.outlier-card{{margin:16px 0 10px;padding:18px;border:1px solid #ccd7e6;border-left:5px solid #c45c17;border-radius:12px;background:#fbfcfe}}.outlier-category{{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#536982}}.outlier-rate{{display:block;margin:5px 0;font-size:clamp(25px,4vw,38px);line-height:1.1;color:#9a3412}}.outlier-card h3{{margin:8px 0;font-size:16px;line-height:1.4;overflow-wrap:anywhere}}.outlier-facts{{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:8px;margin-top:12px}}.outlier-facts span{{padding:9px;background:#f0f4f8;border-radius:8px;font-size:13px;overflow-wrap:anywhere}}.outlier-facts b{{display:block;margin-bottom:3px;color:#52647b;font-size:11px;text-transform:uppercase;letter-spacing:.04em}}.outlier-source{{margin:10px 0 0;color:#53627a;font-size:12px;overflow-wrap:anywhere}}svg{{max-width:100%;height:auto}}.chart-label{{font-size:16px;fill:#183643}}.chart-value{{font-size:14px;font-weight:750;fill:#183643}}.chart-axis{{font-size:12px;fill:#526c78}}.rate-chart,.condition-chart{{width:100%;max-width:980px}}.burol-spotlight{{display:flex;align-items:center;justify-content:center;gap:clamp(24px,9vw,120px);flex-wrap:wrap;text-align:center}}.burol-amount{{font-size:clamp(54px,10vw,112px);font-weight:850;color:#00246a;letter-spacing:-.06em}}.burol-rate{{font-size:clamp(40px,7vw,78px);font-weight:850;color:#b45309;line-height:1}}.burol-rate small{{display:block;font-size:16px;letter-spacing:0;color:#465a72;font-weight:650;margin-top:8px}}.burol-drawing{{display:block;margin:10px auto 0;max-height:190px}}.billboard-icon{{width:100px;margin:0 auto 10px}}.billboard-icon svg{{width:100%}}.simple-footer{{text-align:center;color:#53627a;padding:28px 0 50px;line-height:1.6}}.simple-footer nav,.simple-links{{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}}.simple-footer a{{color:#0038a8;font-weight:650}}.simple-download{{display:inline-block;background:#0038a8;color:white!important;padding:12px 18px;border-radius:8px;text-decoration:none}}.computations{{margin-top:14px;border-top:1px solid #e1e6ee;padding-top:12px;color:#53627a}}.computations summary{{cursor:pointer;font-weight:700;color:#334c6e}}.computations p{{line-height:1.55}}@media(max-width:700px){{.coverage-pair{{grid-template-columns:1fr}}.coverage-unit{{height:13px}}.asset-facts{{display:grid;grid-template-columns:1fr 1fr}}}}
 </style></head><body class="dpwh-simple"><header><div class="panel-label" style="color:#fcd116">BetterGov · Budget research</div><h1>Roads and bridges in five pictures</h1><p>What lengths are stated, what inventory can tell us, and what some visible project items cost.</p></header><main><p class="simple-intro">A budget title is only a starting point. These visuals show the records we can compare—and where the available evidence runs out.</p>{''.join(pages)}<section class="simple-panel"><h2>How to read these comparisons</h2><p>HGAB amounts are proposed allocations, not verified spending. Per-meter figures divide the whole allocation by the length stated in the title; they are screening ratios, not confirmed construction costs. Existing inventory dimensions do not establish funded work quantities.</p><p>Inventory condition labels have no assessment dates in the matched rows. DPWH Transparency document counts do not confirm physical completion. Parsed billboard prices do not establish the sign’s required specification, quality or installation.</p>{detail(details)}</section><footer class="simple-footer"><a class="simple-download" href="dpwh-simple-data.json" download>Download figures as JSON</a><p>Source scope: domestic DPWH road and bridge records in the FY2027 HGAB 3rd-reading extract and parsed Proposal/Senate HGAB POW rows. Full methods and record-level review are linked from the supporting pages.</p><div class="simple-links"><a href="cost-per-km.html">Cost per meter and lane-meter ↗</a><a href="cost-per-unit.html">Cost per Unit ↗</a><a href="cost-matching.html">Asset matching and length coverage ↗</a></div></footer></main>
 </body></html>'''
     from uniform_report_menu import apply_page as apply_menu

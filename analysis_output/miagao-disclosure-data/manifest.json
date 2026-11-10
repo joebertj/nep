@@ -1,0 +1,65 @@
+{
+  "title": "Miagao FY2026 budget and project tracking records",
+  "generatedAt": "2026-11-10",
+  "sourceLinks": {
+    "budget": "https://www.miagao.gov.ph/wp-content/uploads/2026/06/Budget2026.xlsx",
+    "app": "https://www.miagao.gov.ph/wp-content/uploads/2026/06/CONSOLIDATED-APP-2026.xlsx",
+    "sreQ1": "https://www.miagao.gov.ph/wp-content/uploads/2026/06/template-sre-1STQ2026.xlsx",
+    "bidResultsQ1": "https://www.miagao.gov.ph/wp-content/uploads/2026/05/FDP-DILG-Compliance-1st-Quarter-2026-CivilGoods-and-Consulting-Services.xlsx",
+    "consolidatedProgressQ1": "https://www.miagao.gov.ph/wp-content/uploads/2026/04/1CONSOLIDATED-REPORT-1ST-QTR-2026-1.xlsx"
+  },
+  "summary": {
+    "budgetSheets": {
+      "BESF2026": 189,
+      "Summary2026": 48
+    },
+    "appRows": 3578,
+    "infrastructureAppRows": 80,
+    "bidResultsQ1Rows": 5,
+    "sreQ1Rows": 67,
+    "bidResultsByForm": {
+      "FORM 10a - CW": 3,
+      "FORM 10b - GS": 2,
+      "FORM 10c - CS": 0
+    },
+    "sreQ1Sheets": {
+      "Form 3 - SRE": 76,
+      "122024": 73,
+      "sre_report": 71,
+      "FDPP LICENSE": 6
+    },
+    "consolidatedProgressQ1Sheets": [
+      "ACC",
+      "ASSESSOR",
+      "HRMO",
+      "INFOCEN",
+      "LCRO",
+      "LEGAL",
+      "MEO",
+      "MO",
+      "MSWDO",
+      "RHU",
+      "TOURISM"
+    ],
+    "consolidatedProgressQ1Rows": 106,
+    "officialBarangayProfilePages": 11,
+    "2024RosterImageCount": 8,
+    "budgetIsProjectLevel": false,
+    "sreIsProjectLevel": false
+  },
+  "files": {
+    "q1-execution.json": {
+      "url": "/data/miagao-disclosure/q1-execution.json",
+      "rows": 106
+    },
+    "barangay-history.json": {
+      "url": "/data/miagao-disclosure/barangay-history.json",
+      "rows": 11
+    }
+  },
+  "appRows": {
+    "manifestUrl": "/data/miagao-disclosure/budget-app/manifest.json",
+    "rows": 3578,
+    "shards": 8
+  }
+}
