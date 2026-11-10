@@ -36,6 +36,8 @@ def build():
     page=apply_owned_sections(page,'budget-innovations.html')
     from report_table_presentation import apply_page_table_module
     page,_=apply_page_table_module('budget-innovations.html',page)
+    from uniform_report_menu import apply_page as apply_uniform_menu
+    page=apply_uniform_menu(page,'budget-innovations.html')
     path.write_text(page,encoding='utf-8')
     mirror=OUT/path.name
     if mirror.exists():mirror.write_text(page,encoding='utf-8')

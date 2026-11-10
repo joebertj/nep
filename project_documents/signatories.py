@@ -10,7 +10,9 @@ DESIGNATION_REGISTRY=Path(__file__).resolve().parents[1]/'data_sources/designati
 def normal(value):return re.sub(r'\s+',' ',value).strip()
 def is_name(text):
     text=normal(text)
-    if re.search(r'\d|[:;/]|\b(?:REGIONAL|DISTRICT|ENGINEER|GOVERNOR|COUNCIL|DEPARTMENT|APPROVED|APPROVAL|CERTIFIED|REPUBLIC|PROJECT|SECRETARY|DEVELOPMENT|PROVINCE)\b',text,re.I):return False
+    if re.search(r'\d|[:;/]|\b(?:REGIONAL|DISTRICT|ENGINEER|GOVERNOR|COUNCIL|DEPARTMENT|APPROVED|APPROVAL|CERTIFIED|REPUBLIC|PROJECT|SECRETARY|DEVELOPMENT|PROVINCE|POSITION|TITLE|SIGNATURE|WITNESS|PRINTED|DESIGNATION)\b',text,re.I):return False
+    if re.fullmatch(r'(?:PART|SECTION|ANNEX|APPENDIX)\s+[A-Z0-9IVX]+',text,re.I):return False
+    if re.fullmatch(r'(?:NAME|POSITION|OFFICIAL)\s+(?:OF\s+)?(?:THE\s+)?(?:SIGNATORY|OFFICIAL|ENGINEER|MAYOR|GOVERNOR)',text,re.I):return False
     tokens=re.findall(r"[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ.'’\-]*",text)
     return 2<=len(tokens)<=10 and len(text)<110 and any(len(t)>3 for t in tokens) and text.upper()==text
 

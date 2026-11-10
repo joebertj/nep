@@ -80,6 +80,8 @@ PAGE_TABLE_CONTRACTS={
     'dpwh-hgab.html': {'builder':'build_dpwh_hgab_page.py','chainageViewer':True,'chartBeforeTable':True},
     'dpwh-OO2-hgab.html': {'builder':'build_dpwh_oo2_hgab.py','chainageViewer':True,'chartBeforeTable':True},
     'mpb-historical.html': {'builder':'build_mpb_historical_page.py','chartBeforeTable':True},
+    'mpb-regional-province.html': {'builder':'build_mpb_regional_provincial.py','chartBeforeTable':True},
+    'mpb-simple.html': {'builder':'build_mpb_simple.py','chartBeforeTable':False},
     'integrated-district-totals.html': {'builder':'build_integrated_district_totals.py','chartBeforeTable':True},
     'repeats.html': {'builder':'build_repeats_page.py','chainageViewer':True,'chartBeforeTable':True},
     'repeats-historical.html': {'builder':'build_repeats_historical_page.py','chartBeforeTable':True},

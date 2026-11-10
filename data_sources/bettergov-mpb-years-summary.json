@@ -1,0 +1,710 @@
+{
+ "schema": 1,
+ "built_at": "2026-11-06T11:02:51Z",
+ "source": {
+  "repo": "https://github.com/csiiiv/DPWH-NEP-HB-2027-ANALYSIS",
+  "commit": "565076af7ace7c0a71915ed42ae2cc7704d26e1f",
+  "files": {
+   "analysis/web/buildMpbLegislativeLens.py": "00d18928a8265bb0d4ac6c83b76aece2fe9c2543094194558bb39974262e5e2f",
+   "analysis/web/buildLocationLens.py": "a206e7be3781a6559d17c28bc2830269cfe4a261a8c88afa575b5a88a3b5dbfa",
+   "analysis/web/buildMpbPsgcApproxOverlay.py": "dc72a59c0a1f21ecb28fce30231980946e99e79514bcab4da1aff8e31bc251b2",
+   "analysis/builders/normalize_labels.py": "b414e26ace7a8d8fade1ad4e96029040f1175cc727c3c14f9653252a07c1e4c3",
+   "master_list/scripts/locations.py": "f32c78a3bd5bea0523a21807af23b048c2259e504563a3e13a3235f88bbaa0a1",
+   "master_list/scripts/readable_titles.py": "745b3ed99d74ff8f742fdeb76b5d3ef48acf6f5f5ac027d1048f0205cdfcc14a",
+   "gps-analysis/scan_gps_inventory.py": "66992af5296f75dc4d21152edc883da24cffce5f0129a2bf5ecfd58055864a3f",
+   "gps-analysis/coordinate_parse.py": "be246e399cc5537802bb44dfd6b2c3b6acac623e2a16a72b6aa0fedd6b37c46c",
+   "PSGC2LEG/data/psgc_locations.jsonl": "e554dec87c0c4b8ce4859dddc81f099aede1a48a267133c4124161c2a4445ba4",
+   "PSGC2LEG/data/psgc_leg_assignments.jsonl": "67c239f01389f74d9f26ce161c6b7a3fb003e52c7cde0e2a3920ab399ef7fb67",
+   "PSGC2LEG/data/legislative_districts.json": "cffa18294215e0322c8b1afee05e82155af48e7e4caff80ccbb1c876704bcde8",
+   "analysis/data/mpb_legislative_index_2027.json": "b7b2a2c926a3e6357eee458da13682f440f58e9c66e9d59c7926987ad6e3c95a",
+   "analysis/data/mpb_psgc_approx_overlay_2027.json": "45cf98293213c0262443b774dc97f48b3fd45193d8b7d4c025323151e2dfe2f5",
+   "analysis/data/congress_district_map_2027.json": "ad2d8e7868de9682122006c93fa24d6d2d0603852362431f01e322e36e3dcd22",
+   "analysis/data/comparison_projects_2027.json": "cb964990c9d09535353d9c0ecd8dd1f89ffe9ec4e680be803670c9cdf728be0f"
+  },
+  "methods": {
+   "title_place": "location_evidence_v6.5",
+   "title_cleanup": "readable_title_v1",
+   "scope": "buildMpbLegislativeLens.in_scope (PAP or title)",
+   "centroids": "buildMpbPsgcApproxOverlay.resolve_centroid"
+  }
+ },
+ "inputs": {
+  "gaa_fpaps": "/home/jason/.paseo/worktrees/241ehmra/mpb-nep-house/data/18/fpaps",
+  "gaa_operating_units": "/home/jason/.paseo/worktrees/241ehmra/mpb-nep-house/data/18/operating_units",
+  "gaa_full_extract": {
+   "path": "/home/jason/.paseo/worktrees/241ehmra/mpb-nep-house/data/18/full_extract.csv",
+   "sha256": "584172ce91dc3a2887d19f5de01f7a4d7d6ded607344699f7661aebaa48fd292"
+  },
+  "house_bill_dpwh": {
+   "path": "/home/jason/.paseo/worktrees/241ehmra/mpb-nep-house/data/hgab/2027/dpwh/projects.parquet",
+   "sha256": "c609380710e49675badda5fa32b94172754d4e6dfd027f8aff33d0df60938cb7"
+  },
+  "districts": {
+   "path": "/home/jason/.paseo/worktrees/241ehmra/mpb-nep-house/data/hgab/2027/districts.json",
+   "sha256": "d81faeca08989dad256d783fc9392751895cddfe97a44e36683dfb4360943b40"
+  },
+  "history": {
+   "path": "/home/jason/.paseo/worktrees/241ehmra/mpb-nep-house/data/hgab/2027/history.json",
+   "sha256": "808bd22af5eef83637c3858ce597916ed5a6112d82ba32c08012a356fe60ab26"
+  },
+  "gaa_history": {
+   "dir": "/home/jason/.paseo/worktrees/241ehmra/mpb-nep-house/data/gaa-history",
+   "years": {
+    "2015": {
+     "file": "parquet/gaa-2015.parquet",
+     "sha256": "f3de169b23cb1188329b384e9979b9650f33071bc0fe7f3a17696c2bd9fe12cb"
+    },
+    "2016": {
+     "file": "parquet/gaa-2016.parquet",
+     "sha256": "f16d92151148a22fc698528fa096ab043af27f94a666ec08802a51c326e1f6cb"
+    },
+    "2017": {
+     "file": "parquet/gaa-2017.parquet",
+     "sha256": "066a6e73abdd6f43bc2d8df61c8683261382835d3b34bd02f9446c12e4ad090b"
+    },
+    "2018": {
+     "file": "parquet/gaa-2018.parquet",
+     "sha256": "5e0c7c7532b26c4f0af193e8637f3f26de8da3f6b25e911470a38d8b0475aaea"
+    }
+   },
+   "2019_text": {
+    "file": "text/2019/32c79a9eba5fd2a5144e522c.txt",
+    "sha256": "07eac54c73cfafb56963af3b2865f3636f539605c343cb4db99a49aa4b9eb16f",
+    "document": "https://www.dbm.gov.ph/wp-content/uploads/GAA/GAA2019/TechGAA2019/DPWH/A.pdf"
+   }
+  },
+  "shapefiles_2023": {
+   "barangays": {
+    "file": "PH_Adm4_BgySubMuns.shp.shp",
+    "sha256": "ac54a054a24a38e167131e5e7acb94cfcfd3f484d38ba4adcd12b3b9b21ea6a2"
+   },
+   "municipalities": {
+    "file": "Municities.shp.shp",
+    "sha256": "3025f78bc11ebdb8c019024cebb431c1b4d75c601f61aea6d62f3135874a8bd1"
+   },
+   "provinces": {
+    "file": "Provdists.shp.shp",
+    "sha256": "b72b06cdb9789ad1a8f48301d3d15a5f634de75da2dc70d1f681861fe553996c"
+   }
+  }
+ },
+ "budgets": [
+  {
+   "key": "gaa-2015",
+   "fy": 2015,
+   "stage": "gaa",
+   "lines": 3616,
+   "php": 10340598000,
+   "pap_lines": 0,
+   "pap_php": 0,
+   "title_only_lines": 3616,
+   "title_only_php": 10340598000,
+   "history_php": null,
+   "levels": {
+    "gps": 0,
+    "barangay": 2211,
+    "municipality": 777,
+    "city": 326,
+    "province": 224,
+    "deo": 69,
+    "region": 7,
+    "none": 2
+   },
+   "source": "DBM technical GAA files (CSV, spreadsheets), from the GAA history release (data/gaa-history)",
+   "pap_rule": false,
+   "listed_at_zero": 0,
+   "multi_office_lines": 0,
+   "with_district": 3449,
+   "districts": 240,
+   "flags": {
+    "gps_not_drawn": 0,
+    "gps_district_differs": 0,
+    "office_elsewhere": 0,
+    "maguindanao_successor": 17,
+    "text_repaired": 58,
+    "gps_wider_reader": 0
+   }
+  },
+  {
+   "key": "gaa-2016",
+   "fy": 2016,
+   "stage": "gaa",
+   "lines": 3165,
+   "php": 8909803000,
+   "pap_lines": 0,
+   "pap_php": 0,
+   "title_only_lines": 3165,
+   "title_only_php": 8909803000,
+   "history_php": null,
+   "levels": {
+    "gps": 0,
+    "barangay": 2310,
+    "municipality": 469,
+    "city": 231,
+    "province": 128,
+    "deo": 25,
+    "region": 0,
+    "none": 2
+   },
+   "source": "DBM technical GAA files (CSV, spreadsheets), from the GAA history release (data/gaa-history)",
+   "pap_rule": false,
+   "listed_at_zero": 0,
+   "multi_office_lines": 0,
+   "with_district": 3094,
+   "districts": 236,
+   "flags": {
+    "gps_not_drawn": 0,
+    "gps_district_differs": 0,
+    "office_elsewhere": 0,
+    "maguindanao_successor": 14,
+    "text_repaired": 3,
+    "gps_wider_reader": 0
+   }
+  },
+  {
+   "key": "gaa-2017",
+   "fy": 2017,
+   "stage": "gaa",
+   "lines": 2986,
+   "php": 9098402000,
+   "pap_lines": 0,
+   "pap_php": 0,
+   "title_only_lines": 2986,
+   "title_only_php": 9098402000,
+   "history_php": null,
+   "levels": {
+    "gps": 0,
+    "barangay": 2098,
+    "municipality": 505,
+    "city": 223,
+    "province": 123,
+    "deo": 24,
+    "region": 0,
+    "none": 13
+   },
+   "source": "DBM technical GAA files (CSV, spreadsheets), from the GAA history release (data/gaa-history)",
+   "pap_rule": false,
+   "listed_at_zero": 3165,
+   "multi_office_lines": 0,
+   "with_district": 2904,
+   "districts": 236,
+   "flags": {
+    "gps_not_drawn": 0,
+    "gps_district_differs": 0,
+    "office_elsewhere": 31,
+    "maguindanao_successor": 35,
+    "text_repaired": 0,
+    "gps_wider_reader": 0
+   }
+  },
+  {
+   "key": "gaa-2018",
+   "fy": 2018,
+   "stage": "gaa",
+   "lines": 6211,
+   "php": 29308016000,
+   "pap_lines": 6197,
+   "pap_php": 28871179000,
+   "title_only_lines": 14,
+   "title_only_php": 436837000,
+   "history_php": null,
+   "levels": {
+    "gps": 0,
+    "barangay": 4487,
+    "municipality": 935,
+    "city": 519,
+    "province": 203,
+    "deo": 44,
+    "region": 20,
+    "none": 3
+   },
+   "source": "DBM technical GAA files (CSV, spreadsheets), from the GAA history release (data/gaa-history)",
+   "pap_rule": true,
+   "listed_at_zero": 0,
+   "multi_office_lines": 0,
+   "with_district": 5996,
+   "districts": 249,
+   "flags": {
+    "gps_not_drawn": 0,
+    "gps_district_differs": 0,
+    "office_elsewhere": 1,
+    "maguindanao_successor": 25,
+    "text_repaired": 0,
+    "gps_wider_reader": 0
+   }
+  },
+  {
+   "key": "gaa-2019",
+   "fy": 2019,
+   "stage": "gaa",
+   "lines": 8809,
+   "php": 41169614000,
+   "pap_lines": 8783,
+   "pap_php": 40678204000,
+   "title_only_lines": 26,
+   "title_only_php": 491410000,
+   "history_php": null,
+   "levels": {
+    "gps": 0,
+    "barangay": 6363,
+    "municipality": 1298,
+    "city": 746,
+    "province": 226,
+    "deo": 0,
+    "region": 21,
+    "none": 155
+   },
+   "source": "DBM technical GAA for DPWH (PDF), read from its text in the GAA history release",
+   "pap_rule": true,
+   "listed_at_zero": 0,
+   "multi_office_lines": 0,
+   "with_district": 8290,
+   "districts": 248,
+   "flags": {
+    "gps_not_drawn": 0,
+    "gps_district_differs": 0,
+    "office_elsewhere": 0,
+    "maguindanao_successor": 21,
+    "text_repaired": 0,
+    "gps_wider_reader": 0
+   }
+  },
+  {
+   "key": "gaa-2020",
+   "fy": 2020,
+   "stage": "gaa",
+   "lines": 7121,
+   "php": 59340650000,
+   "pap_lines": 7089,
+   "pap_php": 57913246000,
+   "title_only_lines": 32,
+   "title_only_php": 1427404000,
+   "history_php": 57913246000,
+   "levels": {
+    "gps": 0,
+    "barangay": 5261,
+    "municipality": 943,
+    "city": 654,
+    "province": 189,
+    "deo": 41,
+    "region": 29,
+    "none": 4
+   },
+   "source": "DBM GAA extracts on the site (data/18)",
+   "pap_rule": true,
+   "listed_at_zero": 0,
+   "multi_office_lines": 0,
+   "with_district": 6926,
+   "districts": 253,
+   "flags": {
+    "gps_not_drawn": 0,
+    "gps_district_differs": 0,
+    "office_elsewhere": 3,
+    "maguindanao_successor": 59,
+    "text_repaired": 2,
+    "gps_wider_reader": 0
+   }
+  },
+  {
+   "key": "gaa-2021",
+   "fy": 2021,
+   "stage": "gaa",
+   "lines": 9479,
+   "php": 79795838000,
+   "pap_lines": 9428,
+   "pap_php": 78367611000,
+   "title_only_lines": 51,
+   "title_only_php": 1428227000,
+   "history_php": 78367611000,
+   "levels": {
+    "gps": 0,
+    "barangay": 6892,
+    "municipality": 1361,
+    "city": 853,
+    "province": 300,
+    "deo": 60,
+    "region": 8,
+    "none": 5
+   },
+   "source": "DBM GAA extracts on the site (data/18)",
+   "pap_rule": true,
+   "listed_at_zero": 0,
+   "multi_office_lines": 0,
+   "with_district": 9187,
+   "districts": 253,
+   "flags": {
+    "gps_not_drawn": 0,
+    "gps_district_differs": 0,
+    "office_elsewhere": 2,
+    "maguindanao_successor": 54,
+    "text_repaired": 193,
+    "gps_wider_reader": 0
+   }
+  },
+  {
+   "key": "gaa-2022",
+   "fy": 2022,
+   "stage": "gaa",
+   "lines": 5564,
+   "php": 58096520000,
+   "pap_lines": 5465,
+   "pap_php": 55106500000,
+   "title_only_lines": 99,
+   "title_only_php": 2990020000,
+   "history_php": 55106500000,
+   "levels": {
+    "gps": 0,
+    "barangay": 4053,
+    "municipality": 801,
+    "city": 556,
+    "province": 118,
+    "deo": 34,
+    "region": 1,
+    "none": 1
+   },
+   "source": "DBM GAA extracts on the site (data/18)",
+   "pap_rule": true,
+   "listed_at_zero": 0,
+   "multi_office_lines": 0,
+   "with_district": 5411,
+   "districts": 250,
+   "flags": {
+    "gps_not_drawn": 0,
+    "gps_district_differs": 0,
+    "office_elsewhere": 4,
+    "maguindanao_successor": 15,
+    "text_repaired": 158,
+    "gps_wider_reader": 0
+   }
+  },
+  {
+   "key": "gaa-2023",
+   "fy": 2023,
+   "stage": "gaa",
+   "lines": 6047,
+   "php": 78348488000,
+   "pap_lines": 5804,
+   "pap_php": 73452861000,
+   "title_only_lines": 243,
+   "title_only_php": 4895627000,
+   "history_php": 73452861000,
+   "levels": {
+    "gps": 0,
+    "barangay": 4164,
+    "municipality": 1061,
+    "city": 561,
+    "province": 208,
+    "deo": 38,
+    "region": 2,
+    "none": 13
+   },
+   "source": "DBM GAA extracts on the site (data/18)",
+   "pap_rule": true,
+   "listed_at_zero": 0,
+   "multi_office_lines": 0,
+   "with_district": 5838,
+   "districts": 249,
+   "flags": {
+    "gps_not_drawn": 0,
+    "gps_district_differs": 0,
+    "office_elsewhere": 2,
+    "maguindanao_successor": 56,
+    "text_repaired": 139,
+    "gps_wider_reader": 0
+   }
+  },
+  {
+   "key": "gaa-2024",
+   "fy": 2024,
+   "stage": "gaa",
+   "lines": 7254,
+   "php": 94538867000,
+   "pap_lines": 7029,
+   "pap_php": 87866589000,
+   "title_only_lines": 225,
+   "title_only_php": 6672278000,
+   "history_php": 87866589000,
+   "levels": {
+    "gps": 0,
+    "barangay": 5152,
+    "municipality": 1238,
+    "city": 665,
+    "province": 148,
+    "deo": 30,
+    "region": 0,
+    "none": 21
+   },
+   "source": "DBM GAA extracts on the site (data/18)",
+   "pap_rule": true,
+   "listed_at_zero": 0,
+   "multi_office_lines": 0,
+   "with_district": 7091,
+   "districts": 252,
+   "flags": {
+    "gps_not_drawn": 0,
+    "gps_district_differs": 0,
+    "office_elsewhere": 10,
+    "maguindanao_successor": 10,
+    "text_repaired": 55,
+    "gps_wider_reader": 0
+   }
+  },
+  {
+   "key": "gaa-2025",
+   "fy": 2025,
+   "stage": "gaa",
+   "lines": 7334,
+   "php": 98633122000,
+   "pap_lines": 7137,
+   "pap_php": 89089294000,
+   "title_only_lines": 197,
+   "title_only_php": 9543828000,
+   "history_php": 89089294000,
+   "levels": {
+    "gps": 0,
+    "barangay": 5505,
+    "municipality": 1067,
+    "city": 571,
+    "province": 144,
+    "deo": 34,
+    "region": 0,
+    "none": 13
+   },
+   "source": "DBM GAA extracts on the site (data/18)",
+   "pap_rule": true,
+   "listed_at_zero": 0,
+   "multi_office_lines": 0,
+   "with_district": 7180,
+   "districts": 247,
+   "flags": {
+    "gps_not_drawn": 0,
+    "gps_district_differs": 0,
+    "office_elsewhere": 2,
+    "maguindanao_successor": 8,
+    "text_repaired": 7,
+    "gps_wider_reader": 0
+   }
+  },
+  {
+   "key": "gaa-2026",
+   "fy": 2026,
+   "stage": "gaa",
+   "lines": 6577,
+   "php": 85758491000,
+   "pap_lines": 6393,
+   "pap_php": 79865674000,
+   "title_only_lines": 184,
+   "title_only_php": 5892817000,
+   "history_php": 79865674000,
+   "levels": {
+    "gps": 5178,
+    "barangay": 959,
+    "municipality": 287,
+    "city": 92,
+    "province": 46,
+    "deo": 8,
+    "region": 1,
+    "none": 6
+   },
+   "source": "DBM GAA extracts on the site (data/18)",
+   "pap_rule": true,
+   "listed_at_zero": 0,
+   "multi_office_lines": 0,
+   "with_district": 6527,
+   "districts": 249,
+   "flags": {
+    "gps_not_drawn": 8,
+    "gps_district_differs": 63,
+    "office_elsewhere": 18,
+    "maguindanao_successor": 25,
+    "text_repaired": 7,
+    "gps_wider_reader": 207
+   }
+  },
+  {
+   "key": "nep-2027",
+   "fy": 2027,
+   "stage": "nep",
+   "lines": 2815,
+   "php": 43209739000,
+   "pap_lines": 2773,
+   "pap_php": 40974839000,
+   "title_only_lines": 42,
+   "title_only_php": 2234900000,
+   "history_php": 40974839000,
+   "levels": {
+    "gps": 400,
+    "barangay": 1993,
+    "municipality": 257,
+    "city": 138,
+    "province": 26,
+    "deo": 1,
+    "region": 0,
+    "none": 0
+   },
+   "source": "The source workbench (FY2027 NEP and House bill)",
+   "pap_rule": true,
+   "listed_at_zero": 0,
+   "multi_office_lines": 0,
+   "with_district": 2796,
+   "districts": 207,
+   "flags": {
+    "gps_not_drawn": 0,
+    "gps_district_differs": 6,
+    "office_elsewhere": 4,
+    "maguindanao_successor": 0,
+    "text_repaired": 0,
+    "gps_wider_reader": 0
+   }
+  },
+  {
+   "key": "house-2027",
+   "fy": 2027,
+   "stage": "house",
+   "lines": 5807,
+   "php": 86264219000,
+   "pap_lines": 5763,
+   "pap_php": 83706551000,
+   "title_only_lines": 44,
+   "title_only_php": 2557668000,
+   "history_php": 83706551000,
+   "levels": {
+    "gps": 1744,
+    "barangay": 3242,
+    "municipality": 508,
+    "city": 269,
+    "province": 43,
+    "deo": 1,
+    "region": 0,
+    "none": 0
+   },
+   "source": "The source workbench (FY2027 NEP and House bill)",
+   "pap_rule": true,
+   "listed_at_zero": 0,
+   "multi_office_lines": 0,
+   "with_district": 5775,
+   "districts": 222,
+   "flags": {
+    "gps_not_drawn": 3,
+    "gps_district_differs": 30,
+    "office_elsewhere": 24,
+    "maguindanao_successor": 0,
+    "text_repaired": 0,
+    "gps_wider_reader": 4
+   }
+  }
+ ],
+ "totals": {
+  "lines": 80286,
+  "places": 26638,
+  "gps_points": 7606
+ },
+ "text_repairs": {
+  "byte_order_mark": 63,
+  "enye_as_plus_minus": 514,
+  "enye_as_caron_or_acute": 3,
+  "dash_as_c1_control": 7,
+  "dash_as_u_circumflex": 7,
+  "apostrophe_as_ae": 6,
+  "stray_trailing_a_acute": 19,
+  "cyrillic_lookalikes": 3
+ },
+ "gaa_place_status": {
+  "ambiguous": 411,
+  "multiple_locations": 2424,
+  "name_matched": 69174,
+  "province_only": 1876,
+  "unresolved": 278
+ },
+ "checks": [
+  {
+   "key": "history:gaa-2020",
+   "ok": true,
+   "detail": "gaa-2020: the MPB budget lines here add up to ₱57,913,246,000; the chart on the multi-purpose page says ₱57,913,246,000"
+  },
+  {
+   "key": "history:gaa-2021",
+   "ok": true,
+   "detail": "gaa-2021: the MPB budget lines here add up to ₱78,367,611,000; the chart on the multi-purpose page says ₱78,367,611,000"
+  },
+  {
+   "key": "history:gaa-2022",
+   "ok": true,
+   "detail": "gaa-2022: the MPB budget lines here add up to ₱55,106,500,000; the chart on the multi-purpose page says ₱55,106,500,000"
+  },
+  {
+   "key": "history:gaa-2023",
+   "ok": true,
+   "detail": "gaa-2023: the MPB budget lines here add up to ₱73,452,861,000; the chart on the multi-purpose page says ₱73,452,861,000"
+  },
+  {
+   "key": "history:gaa-2024",
+   "ok": true,
+   "detail": "gaa-2024: the MPB budget lines here add up to ₱87,866,589,000; the chart on the multi-purpose page says ₱87,866,589,000"
+  },
+  {
+   "key": "history:gaa-2025",
+   "ok": true,
+   "detail": "gaa-2025: the MPB budget lines here add up to ₱89,089,294,000; the chart on the multi-purpose page says ₱89,089,294,000"
+  },
+  {
+   "key": "history:gaa-2026",
+   "ok": true,
+   "detail": "gaa-2026: the MPB budget lines here add up to ₱79,865,674,000; the chart on the multi-purpose page says ₱79,865,674,000"
+  },
+  {
+   "key": "history:nep-2027",
+   "ok": true,
+   "detail": "nep-2027: the MPB budget lines here add up to ₱40,974,839,000; the chart on the multi-purpose page says ₱40,974,839,000"
+  },
+  {
+   "key": "history:house-2027",
+   "ok": true,
+   "detail": "house-2027: the MPB budget lines here add up to ₱83,706,551,000; the chart on the multi-purpose page says ₱83,706,551,000"
+  },
+  {
+   "key": "2019:department-total",
+   "ok": true,
+   "detail": "FY2019: the 21,653 DPWH lines read from the technical GAA add up to ₱454,016,273,000, its printed total"
+  },
+  {
+   "key": "2019:headings",
+   "ok": true,
+   "detail": "FY2019: every one of its 67 Operations headings equals the lines under it (300200 against the document's own program table; its heading counts a ₱1.9 billion group twice)"
+  },
+  {
+   "key": "2019:pages",
+   "ok": true,
+   "detail": "FY2019: every line's code is printed on its page of the 1,527-page technical GAA"
+  },
+  {
+   "key": "placement:every-line-once",
+   "ok": true,
+   "detail": "80,286 lines, each placed once"
+  },
+  {
+   "key": "lens:rows",
+   "ok": true,
+   "detail": "FY2027 rows equal the source lens (6,123)"
+  },
+  {
+   "key": "lens:points",
+   "ok": true,
+   "detail": "FY2027 GPS points: 2,066 drawn + 3 at sea = the source lens (2,069); 4 more read from titles the lens has no point for"
+  }
+ ],
+ "outputs": {
+  "lines.json": {
+   "sha256": "6561e7a56583f47266b7f8f88a7434550a92a4d88c5a3904769f8950df18d8d6",
+   "bytes": 15308215
+  },
+  "districts.geojson": {
+   "sha256": "c8d0e45fe6f6ae32beb3613948576676429ef32d9108299ca8f2af0d49d1387a",
+   "bytes": 1135090
+  },
+  "lines.csv": {
+   "sha256": "7fe3b69fa011e2dd38d2ed0805b4ad3ea5babd6786d15f59df67fa1a78dc82ff",
+   "bytes": 36520902
+  }
+ }
+}

@@ -2,6 +2,20 @@
   "description": "Reviewed candidate-name aliases for the Development Council page. Routine honorific, punctuation, and Jr./Sr. formatting differences are normalized automatically; add aliases here only when variants are judged to refer to the same person.",
   "merges": [
     {
+      "canonical": "HERMON G. INES",
+      "aliases": [
+        "HARMON INES",
+        "HERMON INES"
+      ]
+    },
+    {
+      "canonical": "AMRON D. MITMUG, MPA",
+      "aliases": [
+        "AMERON MITMUG",
+        "AMRON MITMUG"
+      ]
+    },
+    {
       "canonical": "ELIAS C. BULUT JR.",
       "aliases": [
         "ELIAS C. BULUT, JR.",

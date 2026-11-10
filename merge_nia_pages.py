@@ -81,9 +81,11 @@ def merge():
    ('2nd-reading total',peso(revision['secondTotal']),f"{revision['secondRows']:,} lines"),
    ('Net allocation change',peso(revision['thirdTotal']-revision['secondTotal']),'between the two readings')],
    'This page covers NIA named projects. The separate NIA irrigation appendix is reported independently; bill-stage stability is not a repeat-project finding.')
+ from nia_geolocation_flags import render as render_nia_geolocation_flags
+ location_flags = render_nia_geolocation_flags()
  page=re.sub(r'<section\b[^>]*id="(?:report-hero|nia-detail-report-hero)"[^>]*>.*?</section>','',page,count=1,flags=re.S)
  page=re.sub(r'<section\b[^>]*id="nia-data-quality-flag"[^>]*>.*?</section>','',page,flags=re.S)
- page=page.replace('<main class="wrap">','<main class="wrap"><section id="report-hero">'+card+'</section><section id="nia-data-quality-flag" class="nia-data-quality-flag"><h2>Red flag · NIA project statistics are not reliable yet</h2><p>The available NIA project information is not detailed or consistent enough to support reliable statistical comparisons across these rows. All NIA project rows on this page are flagged for data sufficiency review. Treat cost, allocation and repeat-project patterns as preliminary until project scope, scale, location and identity are reconciled.</p></section>',1)
+ page=page.replace('<main class="wrap">','<main class="wrap"><section id="report-hero">'+card+'</section><section id="nia-data-quality-flag" class="nia-data-quality-flag"><h2>Red flag · NIA project statistics need project-level verification</h2><p>Administrative geolocation now supports place-name consistency checks, but it does not supply surveyed project coordinates or canal/dam alignments. All NIA project rows remain flagged for data sufficiency review of project scope, scale, location and identity. Read the specific PSGC hierarchy flags below; do not interpret them as findings about project validity.</p></section>'+location_flags,1)
  def mark_nia_body(match):
   tag=match[0]
   if re.search(r'\bclass="',tag):

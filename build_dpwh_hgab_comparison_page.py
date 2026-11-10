@@ -27,6 +27,8 @@ def build():
     page = page.replace('</head>', STYLE + '</head>', 1)
     from report_table_presentation import apply_page_table_module
     page,_=apply_page_table_module('dpwh-hgab-comparison.html',page)
+    from uniform_report_menu import apply_page as apply_uniform_menu
+    page=apply_uniform_menu(page,'dpwh-hgab-comparison.html')
     (STATIC / 'dpwh-hgab-comparison.html').write_text(page, encoding='utf-8')
     (OUT / 'dpwh-hgab-comparison.html').write_text(page, encoding='utf-8')
     return {'page': 'dpwh-hgab-comparison.html'}

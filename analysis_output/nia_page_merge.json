@@ -5,10 +5,12 @@
   "namespacedIds": {
     "report-hero": "nia-detail-report-hero",
     "sections": "nia-detail-sections",
+    "nia-nep-scope": "nia-detail-nia-nep-scope",
+    "reviewed-nia-controls": "nia-detail-reviewed-nia-controls",
     "${esc(projectId)}": "nia-detail-${esc(projectId)}"
   },
   "sourceHashes": {
-    "detail": "9d0e3017fa418c96e486e2cbe4e392647b28ea05dad68c11c8de9f4b939e7608"
+    "detail": "da945401ac686ceafba67f8889982ac2a1d5e4f8f0330aeeeb20eecf69f4101d"
   },
   "scope": "Presentation merge; project records and allocations are unchanged; the two NIA scopes are not summed."
 }

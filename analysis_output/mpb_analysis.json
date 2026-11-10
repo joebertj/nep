@@ -12,7 +12,77 @@
     "historicalRepeatProjects": 645,
     "removalCandidates": 137,
     "removalPesos": 2560500000,
-    "adjustedLines": 127
+    "adjustedLines": 127,
+    "fy2027HistoricalDistribution": {
+      "fiscalYear": 2027,
+      "stage": "HGAB 3rd",
+      "mappedProjectRows": 5147,
+      "coveredBarangays": 4296,
+      "historicalTitleMatches": 5147,
+      "newTitleMatches": 4240,
+      "repeatedTitleMatches": 907,
+      "newTitleMatchSharePct": 82.37808432096367,
+      "repeatedTitleMatchSharePct": 17.62191567903633,
+      "newTitleAllocationPesos": 56867891000,
+      "repeatedTitleAllocationPesos": 10911102000,
+      "totalAllocationPesos": 67778993000,
+      "firstTimeBarangays": 1071,
+      "previouslyMappedBarangays": 3225,
+      "firstTimeBarangaySharePct": 24.93016759776536
+    },
+    "fy2027DocumentCoverage": {
+      "fiscalYear": 2027,
+      "stage": "HGAB 3rd reading",
+      "source": "MPB HGAB project IDs reconciled to all-HGAB Proposal and Senate document coverage by House ledger ID",
+      "documentCoverageGeneratedAtUtc": "2026-11-09T13:34:24.837779+00:00",
+      "denominatorProjectRows": 5765,
+      "completeDocumentProjectRows": 3762,
+      "completeDocumentProjectRowsPct": 65.26,
+      "incompleteDocumentProjectRows": 2003,
+      "proposalCompleteDocumentProjectRows": 2039,
+      "senateCompleteDocumentProjectRows": 1720,
+      "completeDocumentTypeThreshold": 4,
+      "completeDocumentTypeNames": [
+        "BP 202",
+        "Certificate of Implementability",
+        "Development Council",
+        "Geotagged photos",
+        "POW"
+      ],
+      "countsByMatchedTypeCount": [
+        {
+          "matchedTypeCount": 0,
+          "projectRows": 1245,
+          "projectRowsPct": 21.6
+        },
+        {
+          "matchedTypeCount": 1,
+          "projectRows": 54,
+          "projectRowsPct": 0.94
+        },
+        {
+          "matchedTypeCount": 2,
+          "projectRows": 95,
+          "projectRowsPct": 1.65
+        },
+        {
+          "matchedTypeCount": 3,
+          "projectRows": 609,
+          "projectRowsPct": 10.56
+        },
+        {
+          "matchedTypeCount": 4,
+          "projectRows": 2330,
+          "projectRowsPct": 40.42
+        },
+        {
+          "matchedTypeCount": 5,
+          "projectRows": 1432,
+          "projectRowsPct": 24.84
+        }
+      ],
+      "method": "Each FY2027 MPB HGAB ledger row is joined by its House project ID. Proposal and Senate HGAB document types are combined and deduplicated. Complete means at least four of five named types: POW, BP 202, Development Council, geotagged photos, and Certificate of Implementability. Other document types are excluded. A title match or file presence does not verify document contents."
+    }
   },
   "insertions": [
     {
@@ -467477,6 +467547,76 @@
       "valenzuela city · identity unverified": "mpb-map-share/valenzuela-city-identity-unverified-3177bfc2.html?v=454856cbaa8c"
     }
   },
+  "fy2027HistoricalDistribution": {
+    "fiscalYear": 2027,
+    "stage": "HGAB 3rd",
+    "mappedProjectRows": 5147,
+    "coveredBarangays": 4296,
+    "historicalTitleMatches": 5147,
+    "newTitleMatches": 4240,
+    "repeatedTitleMatches": 907,
+    "newTitleMatchSharePct": 82.37808432096367,
+    "repeatedTitleMatchSharePct": 17.62191567903633,
+    "newTitleAllocationPesos": 56867891000,
+    "repeatedTitleAllocationPesos": 10911102000,
+    "totalAllocationPesos": 67778993000,
+    "firstTimeBarangays": 1071,
+    "previouslyMappedBarangays": 3225,
+    "firstTimeBarangaySharePct": 24.93016759776536
+  },
+  "fy2027DocumentCoverage": {
+    "fiscalYear": 2027,
+    "stage": "HGAB 3rd reading",
+    "source": "MPB HGAB project IDs reconciled to all-HGAB Proposal and Senate document coverage by House ledger ID",
+    "documentCoverageGeneratedAtUtc": "2026-11-09T13:34:24.837779+00:00",
+    "denominatorProjectRows": 5765,
+    "completeDocumentProjectRows": 3762,
+    "completeDocumentProjectRowsPct": 65.26,
+    "incompleteDocumentProjectRows": 2003,
+    "proposalCompleteDocumentProjectRows": 2039,
+    "senateCompleteDocumentProjectRows": 1720,
+    "completeDocumentTypeThreshold": 4,
+    "completeDocumentTypeNames": [
+      "BP 202",
+      "Certificate of Implementability",
+      "Development Council",
+      "Geotagged photos",
+      "POW"
+    ],
+    "countsByMatchedTypeCount": [
+      {
+        "matchedTypeCount": 0,
+        "projectRows": 1245,
+        "projectRowsPct": 21.6
+      },
+      {
+        "matchedTypeCount": 1,
+        "projectRows": 54,
+        "projectRowsPct": 0.94
+      },
+      {
+        "matchedTypeCount": 2,
+        "projectRows": 95,
+        "projectRowsPct": 1.65
+      },
+      {
+        "matchedTypeCount": 3,
+        "projectRows": 609,
+        "projectRowsPct": 10.56
+      },
+      {
+        "matchedTypeCount": 4,
+        "projectRows": 2330,
+        "projectRowsPct": 40.42
+      },
+      {
+        "matchedTypeCount": 5,
+        "projectRows": 1432,
+        "projectRowsPct": 24.84
+      }
+    ],
+    "method": "Each FY2027 MPB HGAB ledger row is joined by its House project ID. Proposal and Senate HGAB document types are combined and deduplicated. Complete means at least four of five named types: POW, BP 202, Development Council, geotagged photos, and Certificate of Implementability. Other document types are excluded. A title match or file presence does not verify document contents."
+  },
   "sources": [
     {
       "file": "hb_nep_comparison_3rd.csv",
@@ -467500,7 +467640,7 @@
     },
     {
       "file": "dpwh-in-depth-data.json",
-      "sha256": "6ab9e45f7d38176cb105c56832871c98a8599e30bd635b8269c91455b79764c4"
+      "sha256": "5043982aa803d344e6ea14b015bc80165b43759c55ead9af3b3238f7b9db4d83"
     },
     {
       "file": "data_sources/csiiiv/legislative_profiles_ff0f748.json",

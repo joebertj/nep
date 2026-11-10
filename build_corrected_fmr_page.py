@@ -10,6 +10,7 @@ from pathlib import Path
 
 from build_fmr_dataset import ROOT, OUT, STATIC
 from build_mpb_report import PAGE
+from sync_connectivity_manual_greens import sync_from_server
 
 MANUAL_RED_LABELS = {
     'section2-visitor-venue': 'Near a mapped visitor venue',
@@ -47,7 +48,17 @@ def generate() -> dict:
     from build_investigation_summary import CSS as EVIDENCE_CSS
     from report_table_presentation import apply_page_table_module
 
+    manual_snapshot, _ = sync_from_server()
+    manual_projects = manual_snapshot['projects']
     source = json.loads((STATIC / 'connectivity-data.json').read_text(encoding='utf-8'))
+    # FMR can be rebuilt on its own, so apply the authoritative server review
+    # over the shared connectivity snapshot before selecting flagged rows.
+    for row in source.get('projects', []):
+        record = manual_projects.get(row.get('id'), {})
+        row['manualGreenReasons'] = record.get('greenReasons', record.get('reasons', []))
+        row['manualGreenNote'] = str(record.get('greenNote') or '')[:2000]
+        row['manualRedReasons'] = record.get('redReasons', [])
+        row['manualRedReason'] = str(record.get('redReason') or '')[:2000]
     coordinate_rows = [
         row for row in source.get('projects', [])
         if row.get('coordinateQualityFlag') or str(row.get('connectivityClass') or row.get('result') or '').startswith('Coordinate review')

@@ -88,6 +88,8 @@ def build():
 
     from report_table_presentation import apply_page_table_module
     page, table_contract = apply_page_table_module("pow.html", page)
+    from uniform_report_menu import apply_page as apply_uniform_menu
+    page = apply_uniform_menu(page, "pow.html")
     (STATIC / "pow.html").write_text(page, encoding="utf-8")
     (ROOT / "analysis_output/pow.html").write_text(page, encoding="utf-8")
     return {"page": "pow.html", **stats, "tableContract": table_contract}

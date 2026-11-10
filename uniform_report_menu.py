@@ -27,7 +27,7 @@ MENU_GROUPS=[
         ('flood-control.html','Flood-control pattern'),('repeats-historical.html','Project repeats'),
         ('cost-per-km-historical.html','Cost per meter · all GAA years'),
         ('integrated-district-allocations.html','District allocations'),
-        ('mpb-barangay.html','MPB'),('mpb-historical.html','DPWH'),
+        ('mpb-barangay.html','MPB barangays'),('mpb-regional-province.html','MPB · regional + provincial rankings'),('mpb-historical.html','DPWH'),
         ('barangay-historical.html','Barangay'),('contractors.html','Contractors'),('connectivity.html','Road connectivity'),
     ]),
     ('Vote 2028',[('vote-2028.html','Vote 2028')]),

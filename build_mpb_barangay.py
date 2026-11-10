@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Build a barangay-level MPB allocation and repeat-title inventory."""
+import csv
 import hashlib
 import json
 import re
@@ -14,8 +15,9 @@ ODV = ROOT.parent / 'open-data-visualization'
 STATIC = ODV / 'static' / 'nep-preview'
 OUT = ROOT / 'analysis_output'
 LOCATIONS = ODV / 'static' / 'data' / 'unified_locations.json'
-PROJECTS = STATIC / 'integrated-project-data.json'
-HGAB_PROJECTS = ROOT / 'hb10858_3rd_dpwh_projects.json'
+MAP_LINES = ROOT / 'data_sources' / 'bettergov-mpb-years-lines.csv'
+MAP_SUMMARY = ROOT / 'data_sources' / 'bettergov-mpb-years-summary.json'
+PSGC_LOCATIONS = ROOT / 'data_sources' / 'bettergov-psgc-locations.jsonl'
 DATA_NAME = 'mpb-barangay-data.json'
 INDEX_NAME = 'mpb-barangay-index.json'
 DETAIL_SHARD_DIR = 'mpb-barangay-detail-shards'
@@ -23,10 +25,6 @@ DETAIL_SHARD_SIZE = 100
 PAGE_NAME = 'mpb-barangay.html'
 BASE_DATA_NAME = 'mpb-barangay-base-data.json'
 BASE_PAGE_NAME = 'mpb-base.html'
-LEGACY_MPB = ROOT / 'data_sources' / 'mpb-historical-2017-2018.json'
-HISTORICAL_GAA = ROOT / 'data_sources' / 'gaa-dpwh-project-families-2016-2018.json'
-TECHNICAL_GAA_2019_MPB = ROOT / 'data_sources' / 'mpb-historical-2019.json'
-TECHNICAL_GAA_2015_MPB = ROOT / 'data_sources' / 'mpb-historical-2015.json'
 BASE_ASSETS = ROOT / 'report_assets' / 'mpb-assets'
 
 MARKER = re.compile(r'\b(?:barangay|brgy\.?|bgy\.?)\s+([^,;()]+)', re.I)
@@ -61,6 +59,108 @@ def place_id(row):
     return '|'.join(norm(row.get(k)) for k in ('region', 'province', 'municipality', 'barangay'))
 
 
+REGION_LABELS = {
+    '01': 'REGION 1', '02': 'REGION 2', '03': 'REGION 3', '04': 'REGION 4A',
+    '05': 'REGION 5', '06': 'REGION 6', '07': 'REGION 7', '08': 'REGION 8',
+    '09': 'REGION 9', '10': 'REGION 10', '11': 'REGION 11', '12': 'REGION 12',
+    '13': 'NCR', '14': 'CAR', '16': 'REGION 13', '17': 'MIMAROPA',
+    '18': 'NIR', '19': 'BARMM',
+}
+
+
+def psgc_place_record(code, psgc, local_by_name):
+    """Resolve a published PSGC barangay code to the page's official place row."""
+    entry = psgc.get(code)
+    if not entry or entry.get('level') != 'barangay':
+        return None
+    parent = psgc.get(entry.get('parent_code'), {})
+    if parent.get('level') == 'sub_municipality':
+        locality = psgc.get(parent.get('parent_code'), {})
+    else:
+        locality = parent
+    ancestor = psgc.get(locality.get('parent_code'), {})
+    if locality.get('level') == 'city' and ancestor.get('level') == 'region':
+        province = locality.get('name') or ''
+    else:
+        province = ancestor.get('name') or ''
+    region_code = next((r.get('code', '') for r in (entry, parent, locality, ancestor)
+                        if r.get('level') == 'region'), '')
+    region = REGION_LABELS.get(region_code[:2], '')
+    barangay = entry.get('name') or ''
+    candidates = local_by_name.get(norm(barangay), [])
+    locality_key = norm(locality.get('name'))
+    province_key = norm(province)
+    narrowed = [row for row in candidates if
+                locality_key in (norm(row.get('municipality')), norm(row.get('province'))) and
+                (not province_key or province_key in (norm(row.get('province')), norm(row.get('municipality'))))]
+    if len(narrowed) == 1:
+        return {**narrowed[0], 'id': f'psgc:{code}', 'psgc': code}
+    # A source PSGC row remains an official place even when the site location
+    # crosswalk lacks it or uses an older spelling. Preserve it with a stable
+    # normalized ID rather than dropping its matched allocations.
+    municipality = locality.get('name') or ''
+    return {
+        'region': region or 'Unspecified region',
+        'province': province or municipality,
+        'municipality': municipality,
+        'barangay': barangay,
+        'district': '',
+        'id': f'psgc:{code}',
+        'psgc': code,
+    }
+
+
+def load_map_projects(local_locations):
+    """Read the published MPB map line file, retaining barangay-level rows only."""
+    psgc = {row['code']: row for row in
+            (json.loads(line) for line in PSGC_LOCATIONS.read_text(encoding='utf-8').splitlines() if line.strip())}
+    local_by_name = defaultdict(list)
+    for row in local_locations:
+        local_by_name[norm(row.get('barangay'))].append(row)
+    projects, skipped_places, non_barangay = [], 0, 0
+    by_year = defaultdict(lambda: {'classified': 0, 'unmapped': 0, 'nonBarangay': 0, 'amount': 0})
+    with MAP_LINES.open(encoding='utf-8-sig', newline='') as handle:
+        for index, row in enumerate(csv.DictReader(handle)):
+            year = int(row.get('fiscal_year') or 0)
+            if not year:
+                continue
+            by_year[year]['classified'] += 1
+            psgc_code = str(row.get('place_psgc') or '').strip()
+            location = psgc_place_record(psgc_code, psgc, local_by_name)
+            if location is None:
+                if psgc_code and psgc.get(psgc_code, {}).get('level') != 'barangay':
+                    non_barangay += 1
+                    by_year[year]['nonBarangay'] += 1
+                else:
+                    skipped_places += 1
+                    by_year[year]['unmapped'] += 1
+                continue
+            amount_key = 'house_bill_php' if year == 2027 else 'gaa_php'
+            amount = int(float(row.get(amount_key) or 0))
+            by_year[year]['amount'] += amount
+            title = row.get('title') or row.get('title_as_published') or ''
+            projects.append({
+                'year': year,
+                'stage': 'HGAB 3rd' if year == 2027 else 'GAA',
+                'category': 'Multi-purpose building',
+                'name': title,
+                'amountPesos': amount,
+                'source': f"BetterGov MPB map · FY{year} {'House Bill 10858' if year == 2027 else 'GAA'} · line {row.get('line_id') or index}",
+                'sourceId': row.get('line_id') or str(index),
+                'sourcePage': row.get('house_bill_pdf_page') if year == 2027 else row.get('gaa_pdf_page'),
+                'locationBasis': row.get('placed_by') or '',
+                'placePsgc': psgc_code,
+                'longitude': row.get('longitude') or None,
+                'latitude': row.get('latitude') or None,
+                'flags': [flag for flag in (row.get('flags') or '').split('|') if flag],
+                'placeId': location['id'],
+                'identityTitle': identity_title(title),
+                'projectIndex': index,
+                'sharedBarangayLine': False,
+            })
+    return projects, skipped_places, non_barangay, by_year, psgc
+
+
 def identity_title(title):
     """Normalize a named project title; no coordinates or distance are used."""
     title = COORDS.sub(' ', str(title or ''))
@@ -71,104 +171,36 @@ def identity_title(title):
 
 
 def main():
-    locations = json.loads(LOCATIONS.read_text(encoding='utf-8'))
-    source = json.loads(PROJECTS.read_text(encoding='utf-8'))
-    known = {}
-    place_rows = []
-    for loc in locations:
+    local_locations = json.loads(LOCATIONS.read_text(encoding='utf-8'))
+    local_rows = []
+    for loc in local_locations:
         row = {k: str(loc.get(k) or '').strip() for k in ('region', 'province', 'municipality', 'barangay', 'district')}
-        if not all(row[k] for k in ('region', 'province', 'municipality', 'barangay')):
+        if all(row[k] for k in ('region', 'province', 'municipality', 'barangay')):
+            row['id'] = place_id(row)
+            local_rows.append(row)
+    projects, skipped_places, non_barangay, source_years, psgc = load_map_projects(local_rows)
+    local_by_name = defaultdict(list)
+    for row in local_rows:
+        local_by_name[norm(row.get('barangay'))].append(row)
+    # Keep the site location list complete, while adding any current official
+    # PSGC barangays missing from the older unified crosswalk.
+    place_by_id = {}
+    for code, entry in psgc.items():
+        if entry.get('level') != 'barangay':
             continue
-        row['id'] = place_id(row)
-        known.setdefault(norm(row['barangay']), []).append(row)
-        place_rows.append(row)
-    names_by_first = defaultdict(set)
-    for name in known:
-        if name:
-            names_by_first[name.split()[0]].add(name)
+        row = psgc_place_record(code, psgc, local_by_name)
+        if row:
+            row = dict(row)
+            row['id'] = f'psgc:{code}'
+            row['psgc'] = code
+            place_by_id.setdefault(row['id'], row)
+    place_rows = list(place_by_id.values())
+    place_ids = {row['id'] for row in place_rows}
+    mapped = [project for project in projects if project['placeId'] in place_ids]
+    multi_place = 0
 
-    projects = [r for r in source.get('projects', [])
-                if r.get('category') == 'Multi-purpose building' and 2020 <= int(r.get('year') or 0) <= 2026]
-    legacy = json.loads(LEGACY_MPB.read_text(encoding='utf-8'))
-    projects.extend(legacy.get('records', []))
-    historical_gaa = json.loads(HISTORICAL_GAA.read_text(encoding='utf-8'))
-    projects.extend({
-        'year': 2016, 'stage': 'GAA', 'category': row['category'],
-        'name': row['name'], 'amountPesos': int(row.get('amountPesos') or 0),
-        'source': row.get('source') or 'FY2016 GAA Explorer DPWH project line',
-        'sourceId': row.get('sourceId') or '',
-    } for row in historical_gaa.get('records', [])
-        if int(row.get('year') or 0) == 2016 and row.get('category') == 'Multi-purpose building')
-    technical_2019 = json.loads(TECHNICAL_GAA_2019_MPB.read_text(encoding='utf-8'))
-    projects.extend(technical_2019.get('records', []))
-    technical_2015 = json.loads(TECHNICAL_GAA_2015_MPB.read_text(encoding='utf-8'))
-    projects.extend(technical_2015.get('records', []))
-    hgab = json.loads(HGAB_PROJECTS.read_text(encoding='utf-8'))['data']['data']
-    for row in hgab:
-        if row.get('pap3') != 'BIP - Multi-Purpose Buildings/ Facilities to support Social Services':
-            continue
-        projects.append({
-            'year': 2027, 'stage': 'HGAB 3rd', 'category': 'Multi-purpose building',
-            'name': row.get('projectName') or row.get('sourceTitle') or '',
-            'amountPesos': int(row.get('amountPesos') or 0),
-            'source': f"HGAB 3rd · {row.get('sourceVolume') or 'source volume'} · PDF p. {row.get('sourcePage') or 'not listed'}",
-            'sourceId': row.get('id') or row.get('code'),
-        })
-    mapped, unassigned, multi_place = [], [], 0
-    for number, project in enumerate(projects):
-        title = str(project.get('name') or '')
-        markers = list(MARKER.finditer(title))
-        candidate_names = []
-        for match in markers:
-            candidate = re.sub(r'\s+(?:health station|health center|covered court|multi[- ]?purpose building|hall)$', '', match.group(1), flags=re.I).strip(' .,-')
-            if norm(candidate) not in GENERIC_PLACES and len(norm(candidate)) >= 2:
-                candidate_names.append(candidate)
-        candidate_names = list(dict.fromkeys(candidate_names))
-        candidates = []
-        title_norm = norm(title)
-        for candidate in candidate_names:
-            options = known.get(norm(candidate), [])
-            for loc in options:
-                if not location_phrase(title_norm, loc['municipality']):
-                    continue
-                # When the province is printed, it must agree; many titles omit it.
-                if location_phrase(title_norm, loc['province']) or norm(loc['province']) in {'metro manila', 'quezon city'}:
-                    candidates.append(loc)
-                elif len(options) == 1:
-                    candidates.append(loc)
-        if not candidate_names:
-            # A subset of titles name an official barangay in the comma-delimited
-            # location tail without spelling out "Barangay" or "Brgy.".
-            for segment in title.split(',')[1:]:
-                segment = re.sub(r'\([^)]*\)', ' ', segment)
-                words = norm(segment).split()
-                for start in range(len(words)):
-                    for end in range(start + 1, min(len(words), start + 5) + 1):
-                        candidate = ' '.join(words[start:end])
-                        if candidate not in names_by_first.get(words[start], set()):
-                            continue
-                        options = known.get(candidate, [])
-                        for loc in options:
-                            if location_phrase(title_norm, loc['municipality']) and (
-                                location_phrase(title_norm, loc['province']) or
-                                norm(loc['province']) in {'metro manila', 'quezon city'} or len(options) == 1
-                            ):
-                                candidates.append(loc)
-        unique = {x['id']: x for x in candidates}
-        if not unique:
-            unassigned.append(project)
-            continue
-        if len(unique) > 1:
-            multi_place += 1
-        for loc in unique.values():
-            item = dict(project)
-            item.update({'placeId': loc['id'], 'projectIndex': number,
-                         'identityTitle': identity_title(title), 'sharedBarangayLine': len(unique) > 1})
-            mapped.append(item)
-
-    # A building identity requires the same normalized project wording and the same official barangay.
-    # Coordinates are stripped and never used as evidence. Duplicate identical titles in one year
-    # stay separate so they cannot manufacture an upgrade level.
+    # Keep the existing title-based repeat signal after adopting the published
+    # map export's exact line-to-PSGC barangay assignments.
     by_identity_year = defaultdict(list)
     for item in mapped:
         by_identity_year[(item['placeId'], item['identityTitle'], int(item['year']))].append(item)
@@ -183,7 +215,7 @@ def main():
         key = f'{pid}|{title}'
         row = rows[0]
         row['buildingKey'] = key
-        row['identityConfidence'] = 'Same normalized title and official barangay; physical site not independently verified'
+        row['identityConfidence'] = 'Same normalized project title and source-assigned official barangay; physical site not independently verified'
         buildings[key].append(row)
 
     for records in buildings.values():
@@ -210,31 +242,34 @@ def main():
         })
     barangays.sort(key=lambda b: (b['region'].casefold(), b['province'].casefold(), b['municipality'].casefold(), b['barangay'].casefold()))
     years_summary = []
-    for year in sorted({int(r['year']) for r in projects}):
-        source_rows = [r for r in projects if int(r['year']) == year]
-        rows = {r['projectIndex']: r for r in mapped if int(r['year']) == year}
+    for year in sorted(source_years):
+        rows = [r for r in mapped if int(r['year']) == year]
         years_summary.append({'year': year, 'stage': 'HGAB 3rd' if year == 2027 else 'GAA',
-                              'classifiedRows': len(source_rows), 'linkedRows': len(rows),
-                              'unlinkedRows': len(source_rows) - len(rows),
-                              'allocationPesos': sum(int(r.get('amountPesos') or 0) for r in rows.values())})
+                              'classifiedRows': source_years[year]['classified'], 'linkedRows': len(rows),
+                              'unlinkedRows': source_years[year]['classified'] - len(rows),
+                              'rowsAtBroaderOrUnplacedLevels': source_years[year].get('nonBarangay', 0) + source_years[year]['unmapped'],
+                              'allocationPesos': sum(int(r.get('amountPesos') or 0) for r in rows)})
+    map_summary = json.loads(MAP_SUMMARY.read_text(encoding='utf-8'))
     result = {
         'title': 'MPB allocations by official barangay',
         'generatedAtUtc': datetime.now(timezone.utc).isoformat(),
-        'source': 'the unified geographic reference list; FY2015 DBM DPWH GAA capital-outlay PAP title candidates; FY2016 DPWH family extract; FY2017–FY2018 BetterGov GAA Explorer DPWH title rows; FY2019 DBM DPWH Technical GAA UACS-coded MPB title candidates; FY2020–FY2026 integrated GAA project records; exact FY2027 HGAB MPB PAP rows',
+        'source': 'BetterGov FY2015–FY2027 multi-purpose-building map line export. FY2015–FY2026 rows use listed GAA allocations; FY2027 rows use House Bill allocations. Barangay assignments use the export PSGC code and stated place basis (title or GPS); rows assigned only to broader administrative levels or no place are excluded from barangay rankings.',
+        'mapSourceBuiltAtUtc': map_summary.get('built_at'),
+        'mapSourceCommit': map_summary.get('source', {}).get('commit'),
         'periods': years_summary,
         'summary': {
             'officialBarangays': len(barangays), 'barangaysWithMpb': sum(bool(x['projectRows']) for x in barangays),
             'mappedProjectRows': len({r['projectIndex'] for r in mapped}), 'mappedBarangayLinks': len(mapped), 'classifiedProjectRows': len(projects),
-            'unmappedProjectRows': len(unassigned), 'sharedMultiBarangayProjectRows': multi_place,
+            'unmappedProjectRows': sum(period['unlinkedRows'] for period in years_summary),
+            'rowsAtBroaderOrUnplacedLevels': non_barangay + skipped_places,
+            'sharedMultiBarangayProjectRows': multi_place,
             'buildingIdentities': len(buildings),
             'allocationPesos': sum(int(r.get('amountPesos') or 0) for r in {r['projectIndex']: r for r in mapped}.values()),
             'allocationAcrossBarangayLinksPesos': sum(int(r.get('amountPesos') or 0) for r in mapped),
             'caveat': 'Allocation records are not expenditures or verified construction costs. Repeat levels use matching normalized titles and official barangay identity, never proximity; they are review signals, not proof that physical construction occurred. A line naming multiple barangays is associated with each named barangay at its full amount, so barangay totals overlap and must not be added together.'
         },
         'repeatMethod': 'Same normalized MPB project title in the same official barangay across distinct fiscal years. Coordinate text is removed and proximity is never used. Identical titles duplicated within one year are kept separate and marked unresolved.',
-        'periodScope': 'Thirteen fiscal-year slices with project-level MPB data: FY2015 DBM DPWH GAA capital-outlay PAP title candidates; FY2016–FY2018 GAA Explorer title-classified DPWH rows; FY2019 DBM DPWH Technical GAA rows selected by specific UACS PAP code and MPB title; FY2020–FY2026 GAA plus FY2027 HGAB 3rd-reading rows. FY2015 PAP codes are not unique project IDs; the FY2019 GAA Explorer manifest snapshot lacks named DPWH lines, so the separate official technical GAA PDF supplies those titles. Earlier unobserved repeats are not implied to be the first physical construction.',
-        'historicalSource': {'manifestUrl': legacy.get('manifestUrl'), 'periods': legacy.get('periods'), 'classification': legacy.get('classification'), 'gaps': legacy.get('gaps')},
-        'historicalGaaBaseline': {'manifestUrl': 'https://budget-assets.bettergov.ph/gaa-explorer/manifest.json', 'years': [2015, 2016, 2017, 2018, 2019], 'scope': 'FY2015 DBM DPWH GAA capital-outlay rows classified from PAP titles; FY2016–FY2018 DPWH current-new-appropriation project-family rows classified from PAP titles; FY2019 uses the DBM technical DPWH GAA UACS-coded schedule. These historical layers are assigned to current barangay identities where titles name a location.'},
+        'periodScope': 'Uses BetterGov public MPB map line export for FY2015–FY2026 GAA amounts and FY2027 House Bill amounts. Barangay assignment follows the export’s official PSGC code and place basis (title or GPS); rows assigned to broader administrative areas or without a barangay PSGC assignment are excluded from barangay rankings.',
         'barangays': barangays,
     }
     payload = json.dumps(result, ensure_ascii=False, separators=(',', ':')) + '\n'

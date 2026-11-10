@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import shlex
 import subprocess
 from pathlib import Path
 
@@ -16,11 +17,17 @@ REMOTE_DIR = os.environ.get('NEP_DEPLOY_DIR', '/home/joebert/open-data-visualiza
 IDENTITY = os.environ.get('NEP_SSH_IDENTITY', str(Path.home() / '.ssh' / 'klti'))
 
 
-def main() -> None:
+def sync_from_server() -> tuple[dict, dict]:
+    """Fetch and normalize the authoritative manual review snapshot.
+
+    Builders call this before reading their source data so standalone rebuilds
+    cannot silently consume a stale local copy.
+    """
+    remote_file = f'{REMOTE_DIR.rstrip("/")}/.connectivity-manual-greens.json'
     command = [
         'ssh', '-i', IDENTITY, '-o', 'BatchMode=yes', '-o', 'ConnectTimeout=10',
         '-o', 'StrictHostKeyChecking=accept-new', f'{REMOTE_USER}@{REMOTE_HOST}',
-        f"if [ -f '{REMOTE_DIR}/.connectivity-manual-greens.json' ]; then cat '{REMOTE_DIR}/.connectivity-manual-greens.json'; else printf '%s\\n' '{{\"schemaVersion\":1,\"projects\":{{}}}}'; fi",
+        f'test -f {shlex.quote(remote_file)} && cat {shlex.quote(remote_file)}',
     ]
     result = subprocess.run(command, check=True, capture_output=True, text=True)
     document = json.loads(result.stdout)
@@ -67,8 +74,18 @@ def main() -> None:
     temporary = OUT.with_suffix('.json.tmp')
     temporary.write_text(json.dumps(document, ensure_ascii=False, indent=2) + '\n')
     temporary.replace(OUT)
-    print(f'Synced {len(document["projects"]):,} non-empty manual FMR flags; normalized notes: {normalized_notes}; merged old property category on {merged_red_categories} records; removed {empty_records_removed} empty records.')
-    print('Run build_connectivity_report.py to merge these private annotations into the shared connectivity dataset.')
+    summary = {
+        'records': len(document['projects']),
+        'normalizedNotes': normalized_notes,
+        'mergedOldPropertyCategory': merged_red_categories,
+        'emptyRecordsRemoved': empty_records_removed,
+    }
+    return document, summary
+
+
+def main() -> None:
+    _, summary = sync_from_server()
+    print(f'Synced {summary["records"]:,} non-empty manual FMR flags from server; normalized notes: {summary["normalizedNotes"]}; merged old property category on {summary["mergedOldPropertyCategory"]} records; removed {summary["emptyRecordsRemoved"]} empty records.')
 
 
 if __name__ == '__main__':
