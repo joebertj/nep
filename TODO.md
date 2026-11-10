@@ -7,6 +7,7 @@
 ## Miagao research
 
 - [x] Crawl BetterGov public research pages and process local ODV data for Miagao-related records; publish the 583-row source inventory at `analysis_output/miagao-bettergov-inventory.json` with reproducible builder `build_miagao_bettergov_inventory.py`.
+- [ ] Search the processed Miagao transparency files for barangay-level IRA/NTA allocations, verify each amount against its source document, and add a separate allocation map to BetterMiagao `/glance` when the figures are available.
 
 ## Builder ownership
 

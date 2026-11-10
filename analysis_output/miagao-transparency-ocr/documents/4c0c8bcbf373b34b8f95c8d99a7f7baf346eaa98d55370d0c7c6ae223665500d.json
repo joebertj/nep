@@ -1,0 +1,17 @@
+{
+  "sourceFileSha256": "4c0c8bcbf373b34b8f95c8d99a7f7baf346eaa98d55370d0c7c6ae223665500d",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/89ef2c28e0a25d28.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/11/Bidding-Documents-Monobloc-Chairs.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-monobloc-chairs-for-use-of-the-liga-nga-mga-barangay-miagao-chapter/",
+      "sourceTitle": "INVITATION TO BID FOR MONOBLOC CHAIRS FOR USE OF THE LIGA NG MGA BARANGAY-MIAGAO CHAPTER",
+      "publishedAt": "2020-11-10T07:44:55",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Bidding-Documents-Monobloc-Chairs.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

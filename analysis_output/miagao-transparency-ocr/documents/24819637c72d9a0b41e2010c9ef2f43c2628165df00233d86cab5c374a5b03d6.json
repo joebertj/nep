@@ -1,0 +1,17 @@
+{
+  "sourceFileSha256": "24819637c72d9a0b41e2010c9ef2f43c2628165df00233d86cab5c374a5b03d6",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/51fbf8d5f2979c4d.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/08/HUMAN-RESOURCE-COMPLEMENT.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/2020-full-disclosure/",
+      "sourceTitle": "2020 Full Disclosure",
+      "publishedAt": "2020-07-28T19:55:25",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "HUMAN-RESOURCE-COMPLEMENT.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

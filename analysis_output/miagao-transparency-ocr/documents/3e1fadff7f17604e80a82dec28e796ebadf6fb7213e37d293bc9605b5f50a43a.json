@@ -1,0 +1,17 @@
+{
+  "sourceFileSha256": "3e1fadff7f17604e80a82dec28e796ebadf6fb7213e37d293bc9605b5f50a43a",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/fc7be4c4353eac29.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/11/Bidding-Documents-MHO-Drugs-and-Medicines.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-20/",
+      "sourceTitle": "INVITATION TO BID",
+      "publishedAt": "2022-11-28T16:23:43",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Bidding-Documents-MHO-Drugs-and-Medicines.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

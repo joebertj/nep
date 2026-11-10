@@ -1,0 +1,17 @@
+{
+  "sourceFileSha256": "605e3b9e5bcbfa24c0e855bc255e561861a91ec026439f99157b26c980ce50bc",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/273f4d1fde982a50.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/SEF-Utilization-as-of-June30-2019.xlsx-Sheet2.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/2019-full-disclosure/",
+      "sourceTitle": "2019 Full Disclosure",
+      "publishedAt": "2020-01-06T19:52:15",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "SEF-Utilization-as-of-June30-2019.xlsx-Sheet2.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

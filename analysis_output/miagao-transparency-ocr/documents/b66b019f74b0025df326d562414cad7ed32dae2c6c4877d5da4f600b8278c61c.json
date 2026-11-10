@@ -1,0 +1,17 @@
+{
+  "sourceFileSha256": "b66b019f74b0025df326d562414cad7ed32dae2c6c4877d5da4f600b8278c61c",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/ab6289722f79960f.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/05/Bidding-Documents-MENRO-Pyrolysis-Machine.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-3/",
+      "sourceTitle": "INVITATION TO BID",
+      "publishedAt": "2022-05-05T02:47:32",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Bidding-Documents-MENRO-Pyrolysis-Machine.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

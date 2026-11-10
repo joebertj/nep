@@ -1,0 +1,35 @@
+{
+  "sourceFileSha256": "f62acc9329961b56479edfe737fc29bb034616df8276b8bdd7f3c669496a70b6",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/fa28356b7b51a150.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/SUPPLEMENTAL-PPMP.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/2019-full-disclosure/",
+      "sourceTitle": "2019 Full Disclosure",
+      "publishedAt": "2020-01-06T19:52:15",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "SUPPLEMENTAL-PPMP.pdf"
+    },
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/Supplemental-PPMP.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/full-disclosure-for-cy-2019/",
+      "sourceTitle": "FULL DISCLOSURE FOR CY 2019",
+      "publishedAt": "2019-04-05T05:43:41",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Supplemental-PPMP.pdf"
+    },
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/Supplemental-PPMP.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/procurement-plan/supplemental-ppmp-first-quarter-cy-2019/",
+      "sourceTitle": "SUPPLEMENTAL PPMP – FIRST QUARTER, CY 2019",
+      "publishedAt": "2019-04-03T05:10:23",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Supplemental-PPMP.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

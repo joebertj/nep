@@ -1,0 +1,17 @@
+{
+  "sourceFileSha256": "64dbc94ad944d1e85828bde5f841fb5499cfb1a73aa8e6bf3f7061226300097d",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/6fa470a2c1bb2a94.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/09/BID-RESULTS-ON-CIVIL-WORKS.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/2019-full-disclosure/",
+      "sourceTitle": "2019 Full Disclosure",
+      "publishedAt": "2020-01-06T19:52:15",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "BID-RESULTS-ON-CIVIL-WORKS.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

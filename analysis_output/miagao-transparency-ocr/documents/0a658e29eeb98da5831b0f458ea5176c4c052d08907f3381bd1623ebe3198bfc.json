@@ -1,0 +1,17 @@
+{
+  "sourceFileSha256": "0a658e29eeb98da5831b0f458ea5176c4c052d08907f3381bd1623ebe3198bfc",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/5b8d4c1933d93f48.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/09/Bidding-Documents-MSWDO-Pick-Up.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-9/",
+      "sourceTitle": "INVITATION TO BID",
+      "publishedAt": "2022-09-16T07:09:31",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Bidding-Documents-MSWDO-Pick-Up.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

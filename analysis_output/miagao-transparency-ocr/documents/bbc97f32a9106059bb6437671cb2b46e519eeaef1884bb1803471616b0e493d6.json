@@ -1,0 +1,17 @@
+{
+  "sourceFileSha256": "bbc97f32a9106059bb6437671cb2b46e519eeaef1884bb1803471616b0e493d6",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/0f7b039d3e929a76.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/09/STATEMENT-OF-DEBT-SERVICES-1.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/2020-full-disclosure/",
+      "sourceTitle": "2020 Full Disclosure",
+      "publishedAt": "2020-07-28T19:55:25",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "STATEMENT-OF-DEBT-SERVICES-1.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

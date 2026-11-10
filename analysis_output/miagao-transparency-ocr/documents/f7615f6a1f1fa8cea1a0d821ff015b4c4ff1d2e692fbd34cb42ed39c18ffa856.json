@@ -1,0 +1,17 @@
+{
+  "sourceFileSha256": "f7615f6a1f1fa8cea1a0d821ff015b4c4ff1d2e692fbd34cb42ed39c18ffa856",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/41abf26e3fb455d0.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/08/QUARTERLY-STATEMENT-OF-CASH-FLOW.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/2020-full-disclosure/",
+      "sourceTitle": "2020 Full Disclosure",
+      "publishedAt": "2020-07-28T19:55:25",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "QUARTERLY-STATEMENT-OF-CASH-FLOW.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

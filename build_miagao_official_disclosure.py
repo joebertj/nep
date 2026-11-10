@@ -10,6 +10,7 @@ from __future__ import annotations
 import html
 import json
 import re
+import shutil
 import zipfile
 from datetime import date, datetime, timedelta
 from html.parser import HTMLParser
@@ -21,6 +22,7 @@ SOURCE = ROOT / "data_sources/miagao_official_2026"
 OUT = ROOT / "analysis_output/miagao-official-disclosure-2026.json"
 PUBLIC_OUT = ROOT / "analysis_output/miagao-public-records-2026.json"
 PUBLIC_DIR = ROOT / "analysis_output/miagao-disclosure-data"
+BETTERMIAGAO_PUBLIC_DIR = ROOT.parent / "bettermiagao/public/data/miagao-disclosure"
 NS = {
     "m": "http://schemas.openxmlformats.org/spreadsheetml/2006/main",
     "r": "http://schemas.openxmlformats.org/officeDocument/2006/relationships",
@@ -32,6 +34,85 @@ FILES = {
     "bidResultsQ1": ("FDP-DILG-Compliance-1st-Quarter-2026-CivilGoods-and-Consulting-Services.xlsx", "https://www.miagao.gov.ph/wp-content/uploads/2026/05/FDP-DILG-Compliance-1st-Quarter-2026-CivilGoods-and-Consulting-Services.xlsx"),
     "consolidatedProgressQ1": ("1CONSOLIDATED-REPORT-1ST-QTR-2026-1.xlsx", "https://www.miagao.gov.ph/wp-content/uploads/2026/04/1CONSOLIDATED-REPORT-1ST-QTR-2026-1.xlsx"),
 }
+
+# Quarterly files linked from the municipality's 2026 Full Disclosure pages.
+# Keep the official URL and local filename together so each published row is
+# traceable to its workbook. The Q2 consolidated-progress page currently links
+# the Q1 workbook; it is intentionally not registered as Q2 evidence.
+QUARTERLY_FILES = {
+    "q2": [
+        ("20% NTA development fund utilization", "20NTAutilizationnewformat2026-Q2.xlsx", "https://www.miagao.gov.ph/wp-content/uploads/2026/07/20NTAutilizationnewformat2026.xlsx"),
+        ("LDRRMF utilization", "LDRRMF-Utilization-as-of-June-30-2026.xlsx", "https://www.miagao.gov.ph/wp-content/uploads/2026/09/LDRRMF-Utilization-as-of-June-30-2026-updated.xlsx"),
+        ("Trust fund utilization", "Trust-Fund-Utilization-as-of-June-30-2026.xlsx", "https://www.miagao.gov.ph/wp-content/uploads/2026/07/Trust-Fund-Utilization-as-of-June-30-2026-F.xlsx"),
+        ("Statement of cash flows", "Statement-of-Cash-Flows-as-of-June-30-2026.xlsx", "https://www.miagao.gov.ph/wp-content/uploads/2026/07/Statement-of-Cash-Flows-as-of-June-30-2026.xlsx"),
+        ("Unliquidated cash advances", "Unliquidated-Cash-advance-as-of-June-30-2026.xlsx", "https://www.miagao.gov.ph/wp-content/uploads/2026/07/Unliquidated-Cash-advance-as-of-June-302026.xlsx"),
+        ("Statement of indebtedness", "template-statement-of-indebtedness2ndQUARTER2026.xlsx", "https://www.miagao.gov.ph/wp-content/uploads/2026/07/template-statement-of-indebtedness2ndQUARTER2026.xlsx"),
+        ("SEF utilization", "SEF-utilization-as-of-June-30-2026.xlsx", "https://www.miagao.gov.ph/wp-content/uploads/2026/07/SEF-utilization-as-of-June-30-2026.xlsx"),
+        ("Manpower complement", "manpower-complement-2nd-quarter-2026.xlsx", "https://www.miagao.gov.ph/wp-content/uploads/2026/07/manpower-complement-2nd-quarter-2026.xlsx"),
+        ("Bid results", "FDP-DILG-Compliance-2nd-Quarter-2026-CivilGoods-and-Consulting-Services.xlsx", "https://www.miagao.gov.ph/wp-content/uploads/2026/07/FDP-DILG-Compliance-2nd-Quarter-2026-CivilGoods-and-Consulting-Services.xlsx"),
+        ("Statement of receipts and expenditures", "template-sre-2ndTQ2026.xlsx", "https://www.miagao.gov.ph/wp-content/uploads/2026/07/template-sre-2ndTQ2026.xlsx"),
+    ],
+    "q3": [
+        ("20% NTA development fund utilization", "20NTAutilizationnewformat2026-Q3.xlsx", "https://www.miagao.gov.ph/wp-content/uploads/2026/10/20NTAutilizationnewformat2026.xlsx"),
+        ("LDRRMF utilization", "LDRRMF-Utilization-as-of-September-30-2026.xlsx", "https://www.miagao.gov.ph/wp-content/uploads/2026/10/LDRRMF-Utilization-as-of-September-30-2026.xlsx"),
+        ("Trust fund utilization", "Trust-Fund-Utilization-as-of-September-30-2026.xlsx", "https://www.miagao.gov.ph/wp-content/uploads/2026/10/Trust-Fund-Utilization-as-of-September-30-2026-F.xlsx"),
+        ("Statement of cash flows", "Statement-of-Cash-Flows-as-of-September-30-2026.xlsx", "https://www.miagao.gov.ph/wp-content/uploads/2026/10/Statement-of-Cash-Flows-as-of-September-30-2026.xlsx"),
+        ("Unliquidated advances and fund transfers", "Unliquidated-Cash-advance-Fund-transfers-as-of-September-30-2026.xlsx", "https://www.miagao.gov.ph/wp-content/uploads/2026/10/Unliquidated-Cash-advance-Fund-transfers-as-of-September-30-2026.xlsx"),
+        ("Statement of indebtedness", "template-statement-of-indebtedness3RDQUARTER2026.xlsx", "https://www.miagao.gov.ph/wp-content/uploads/2026/10/template-statement-of-indebtedness3RDQUARTER2026.xlsx"),
+        ("SEF utilization", "SEF-utilization-as-of-September-30-2026.xlsx", "https://www.miagao.gov.ph/wp-content/uploads/2026/10/SEF-utilization-as-of-September-30-2026.xlsx"),
+        ("Manpower complement", "manpower-complement-3rd-quarter-2026.xlsx", "https://www.miagao.gov.ph/wp-content/uploads/2026/10/manpower-complement-3rd-quarter-2026.xlsx"),
+        ("Bid results", "FDP-DILG-Compliance-3rd-Quarter-2026-CivilGoods-and-Consulting-Services.xlsx", "https://www.miagao.gov.ph/wp-content/uploads/2026/10/FDP-DILG-Compliance-3rd-Quarter-2026-CivilGoods-and-Consulting-Services.xlsx"),
+        ("Statement of receipts and expenditures", "template-sre-3rdQ2026.xlsx", "https://www.miagao.gov.ph/wp-content/uploads/2026/10/template-sre-3rdQ2026.xlsx"),
+        ("Consolidated project and program progress", "consolidated-report-3rd-qtr-2026-1.xlsx", "https://www.miagao.gov.ph/wp-content/uploads/2026/10/consolidated-report-3rd-qtr-2026-1.xlsx"),
+    ],
+}
+
+
+def excel_col_name(index: int) -> str:
+    value = index + 1
+    letters = ""
+    while value:
+        value, remainder = divmod(value - 1, 26)
+        letters = chr(65 + remainder) + letters
+    return letters
+
+
+def quarterly_rows(path: Path, quarter: str, document_type: str, source_url: str) -> tuple[list[dict], list[dict]]:
+    """Extract rows from sheets marked for the selected 2026 quarter.
+
+    Sheet names and header cells are both checked because several municipal
+    workbooks bundle prior-year forms alongside the current quarterly sheet.
+    """
+    quarter_number = {"q1": "1", "q2": "2", "q3": "3"}[quarter]
+    quarter_word = {"q1": r"(?:1st|first)", "q2": r"(?:2nd|second)", "q3": r"(?:3rd|third)"}[quarter]
+    sheets = parse_xlsx(path)
+    selected = []
+    for sheet_name, rows in sheets.items():
+        if "license" in sheet_name.lower() or not rows:
+            continue
+        opening = " ".join([sheet_name] + [str(value) for row in rows[:12] for value in row["cells"].values()]).lower()
+        explicit_quarter = bool(re.search(rf"\b{quarter_word}\b|\bq{quarter_number}\b|quarter\s*[:/]?\s*{quarter_number}\b", opening))
+        year_2026 = "2026" in opening
+        if not (explicit_quarter and year_2026):
+            continue
+        selected.append((sheet_name, rows))
+    extracted = []
+    sheet_summaries = []
+    for sheet_name, rows in selected:
+        sheet_summaries.append({"name": sheet_name, "sourceRows": len(rows)})
+        for row in rows:
+            values = {excel_col_name(index): value for index, value in row["cells"].items()}
+            if not values:
+                continue
+            extracted.append({
+                "documentType": document_type,
+                "worksheet": sheet_name,
+                "sourceRow": row["row"],
+                "values": values,
+                "searchText": " ".join(values.values()),
+                "sourceUrl": source_url,
+            })
+    return extracted, sheet_summaries
 
 
 def col_num(cell_ref: str) -> int:
@@ -127,6 +208,34 @@ def main():
     workbooks = {}
     for key, (filename, url) in FILES.items():
         workbooks[key] = {"sourceUrl": url, "sheets": parse_xlsx(SOURCE / filename)}
+
+    quarterly_disclosure = {}
+    for quarter, documents in QUARTERLY_FILES.items():
+        quarter_records = []
+        quarter_sources = []
+        for document_type, filename, url in documents:
+            path = SOURCE / filename
+            if not path.exists():
+                quarter_sources.append({"documentType": document_type, "localFile": filename, "sourceUrl": url, "status": "source workbook not downloaded"})
+                continue
+            rows, sheets = quarterly_rows(path, quarter, document_type, url)
+            quarter_records.extend(rows)
+            quarter_sources.append({"documentType": document_type, "localFile": filename, "sourceUrl": url, "status": "parsed" if rows else "no worksheet clearly marked for this quarter", "rowCount": len(rows), "worksheets": sheets})
+        quarterly_disclosure[quarter] = {
+            "quarter": quarter.upper(),
+            "calendarYear": 2026,
+            "sourcePage": "https://www.miagao.gov.ph/transparency/2026-full-disclosure/",
+            "generatedAt": date.today().isoformat(),
+            "sources": quarter_sources,
+            "rows": quarter_records,
+            "rowCount": len(quarter_records),
+            "notes": [
+                "Rows are extracted from the worksheets explicitly marked for 2026 and this quarter; worksheet names, source row numbers, and cell coordinates are retained.",
+                "Where a workbook's tab label conflicts with the quarter stated inside its form, the original worksheet name is preserved as published.",
+                "These workbooks contain different disclosure forms and are not all project-level spending records. Aggregate fund statements are kept distinct from project/procurement rows.",
+                "The municipality's Q2 consolidated project-progress page currently links the Q1 workbook; no Q2 project-progress rows are attributed from that mislabeled link.",
+            ],
+        }
 
     # The current SRE sheet is aggregate by source/fund and functional
     # expenditure category. Preserve its labeled rows and original row numbers.
@@ -316,6 +425,10 @@ def main():
         "2024RosterImageCount": len(roster["imageUrls"]),
         "budgetIsProjectLevel": False,
         "sreIsProjectLevel": False,
+        "fullDisclosureQ2FilesParsed": sum(source["status"] == "parsed" for source in quarterly_disclosure["q2"]["sources"]),
+        "fullDisclosureQ2Rows": quarterly_disclosure["q2"]["rowCount"],
+        "fullDisclosureQ3FilesParsed": sum(source["status"] == "parsed" for source in quarterly_disclosure["q3"]["sources"]),
+        "fullDisclosureQ3Rows": quarterly_disclosure["q3"]["rowCount"],
     }
     budget_summary_rows = workbooks["budget"]["sheets"].get("Summary2026", [])
     budget_totals = next((r["cells"] for r in budget_summary_rows if r["cells"].get(0, "").strip().upper() == "TOTAL APPROPRIATIONS"), {})
@@ -374,6 +487,8 @@ def main():
         "financialStatementNote": "Q1 Statement of Receipts and Expenditures is aggregated by fund/account and cannot be linked to individual project titles. The separate COA progress report contains department-level program rows with reported cost incurred to date, but it is not a complete transaction-level expenditure ledger.",
         "barangayProfiles2018": [{"title": p["title"], "publishedAt": p["publishedAt"], "sourceUrl": p["sourceUrl"], "contentText": p["contentText"], "tables": p["tables"], "historicalNote": p["historicalNote"]} for p in profile_records],
         "barangayRoster2024": roster,
+        "fullDisclosureQ2": quarterly_disclosure["q2"],
+        "fullDisclosureQ3": quarterly_disclosure["q3"],
     }
     result = {
         "title": "Miagao official budget, procurement, bid and expenditure records · FY2026",
@@ -394,6 +509,8 @@ def main():
         "projectProgressQ1": progress_rows,
         "barangayProfiles2018": profile_records,
         "barangayRoster2024": roster,
+        "fullDisclosureQ2": quarterly_disclosure["q2"],
+        "fullDisclosureQ3": quarterly_disclosure["q3"],
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -404,6 +521,8 @@ def main():
     shards = {
         "q1-execution.json": {"bidResultsQ1": bid_records, "sreQ1Rows": sre_rows, "q1ProgressRows": compact_progress, "q1ProgressRowCount": len(compact_progress), "projectTrackingCases": tracking_cases, "financialStatementNote": public_asset["financialStatementNote"]},
         "barangay-history.json": {"barangayProfiles2018": public_asset["barangayProfiles2018"], "barangayRoster2024": roster},
+        "full-disclosure-q2.json": quarterly_disclosure["q2"],
+        "full-disclosure-q3.json": quarterly_disclosure["q3"],
     }
     app_shards = []
     for start in range(0, len(compact_app), 500):
@@ -412,14 +531,20 @@ def main():
         app_shards.append({"url": f"/data/miagao-disclosure/budget-app/{name}", "rows": min(500, len(compact_app) - start)})
     app_manifest = {"annualBudget": public_asset["annualBudget"], "appRowCount": len(compact_app), "appRowShards": app_shards, "sourceUrl": FILES["app"][1]}
     (APP_SHARD_DIR / "manifest.json").write_text(json.dumps(app_manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    manifest = {"title": public_asset["title"], "generatedAt": public_asset["generatedAt"], "sourceLinks": public_asset["sourceLinks"], "summary": summary, "files": {name: {"url": f"/data/miagao-disclosure/{name}", "rows": len(value.get("q1ProgressRows", value.get("bidResultsQ1", value.get("barangayProfiles2018", []))))} for name, value in shards.items()}, "appRows": {"manifestUrl": "/data/miagao-disclosure/budget-app/manifest.json", "rows": len(compact_app), "shards": len(app_shards)}}
+    manifest = {"title": public_asset["title"], "generatedAt": public_asset["generatedAt"], "sourceLinks": public_asset["sourceLinks"], "summary": summary, "files": {name: {"url": f"/data/miagao-disclosure/{name}", "rows": len(value.get("rows", value.get("q1ProgressRows", value.get("bidResultsQ1", value.get("barangayProfiles2018", [])))))} for name, value in shards.items()}, "appRows": {"manifestUrl": "/data/miagao-disclosure/budget-app/manifest.json", "rows": len(compact_app), "shards": len(app_shards)}}
     for name, payload in shards.items():
         (PUBLIC_DIR / name).write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
+    if BETTERMIAGAO_PUBLIC_DIR.parent.exists():
+        BETTERMIAGAO_PUBLIC_DIR.mkdir(parents=True, exist_ok=True)
+        for name in ("full-disclosure-q2.json", "full-disclosure-q3.json"):
+            shutil.copy2(PUBLIC_DIR / name, BETTERMIAGAO_PUBLIC_DIR / name)
     (PUBLIC_DIR / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(summary, indent=2))
     print(f"Wrote {OUT}")
     print(f"Wrote public dataset {PUBLIC_OUT}")
     print(f"Wrote lazy-loaded disclosure assets under {PUBLIC_DIR}")
+    if BETTERMIAGAO_PUBLIC_DIR.exists():
+        print(f"Copied Q2/Q3 public assets to {BETTERMIAGAO_PUBLIC_DIR}")
 
 
 if __name__ == "__main__":

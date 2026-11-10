@@ -1,0 +1,17 @@
+{
+  "sourceFileSha256": "d3156e5ab9db55b229c0450db29e6f17229e040336f7e8b7ba1cb92e2f2e37e8",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/c47aead43f1b4714.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/07/final-Bidding-Documents-Kalahi-Pre-and-Post-Harvest-Narat-an-1-1.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-6/",
+      "sourceTitle": "Invitation to Bid",
+      "publishedAt": "2022-07-13T08:15:47",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "final-Bidding-Documents-Kalahi-Pre-and-Post-Harvest-Narat-an-1-1.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

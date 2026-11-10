@@ -1,0 +1,17 @@
+{
+  "sourceFileSha256": "3b0093ff687d31baedde6dc1ed580cdd0b55139f225efc3c7194f1084244ded1",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/55c19f46c66d6b47.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/TRUST-FUND-UTILIZATION.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/2019-full-disclosure/",
+      "sourceTitle": "2019 Full Disclosure",
+      "publishedAt": "2020-01-06T19:52:15",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "TRUST-FUND-UTILIZATION.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

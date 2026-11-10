@@ -1,0 +1,17 @@
+{
+  "sourceFileSha256": "0693ac70c069c2300334276b27d340d33e465b8c0ba55205b2f10c221b496403",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/7b5eda92f7e9ad8f.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/02/Bidding-Documents-Rescue-Boat-MDRRMO.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid/",
+      "sourceTitle": "Invitation to Bid",
+      "publishedAt": "2022-02-21T06:10:09",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Bidding-Documents-Rescue-Boat-MDRRMO.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

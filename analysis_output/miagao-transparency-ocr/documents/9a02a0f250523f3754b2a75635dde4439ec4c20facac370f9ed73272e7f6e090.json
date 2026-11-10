@@ -1,0 +1,17 @@
+{
+  "sourceFileSha256": "9a02a0f250523f3754b2a75635dde4439ec4c20facac370f9ed73272e7f6e090",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/0b4bd99a42dec56d.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/Supplemental.ppmp_.2019.MPDO_.doc.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/2019-full-disclosure/",
+      "sourceTitle": "2019 Full Disclosure",
+      "publishedAt": "2020-01-06T19:52:15",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Supplemental.ppmp_.2019.MPDO_.doc.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

@@ -1,0 +1,17 @@
+{
+  "sourceFileSha256": "cb8e5b6930dae09ec99044b0f114311fc2333d92eaf99d990fd897ec95a35f05",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/395d8ddac58871dd.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-mwest-ws-rebid.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-the-construction-of-miagao-west-central-elem-school-water-system-miagao-iloilo/",
+      "sourceTitle": "INVITATION TO BID FOR THE CONSTRUCTION OF MIAGAO WEST CENTRAL ELEM. SCHOOL WATER SYSTEM, MIAGAO, ILOILO",
+      "publishedAt": "2018-09-19T06:25:40",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Section-1-Invitation-to-Bid-mwest-ws-rebid.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

@@ -1,0 +1,35 @@
+{
+  "sourceFileSha256": "a2d869e0e0e039548b7f617e160c1e44a4f64b3618c8f68a482a71dbf6da6a52",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/838afb76901fb33d.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/CASH-FLOW-AS-OF-MARCH-2019.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/2019-full-disclosure/",
+      "sourceTitle": "2019 Full Disclosure",
+      "publishedAt": "2020-01-06T19:52:15",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "CASH-FLOW-AS-OF-MARCH-2019.pdf"
+    },
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/Cash-Flow-as-of-March-31-2019.xlsx-Sheet2.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/full-disclosure-for-cy-2019/",
+      "sourceTitle": "FULL DISCLOSURE FOR CY 2019",
+      "publishedAt": "2019-04-05T05:43:41",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Cash-Flow-as-of-March-31-2019.xlsx-Sheet2.pdf"
+    },
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/Cash-Flow-as-of-March-31-2019.xlsx-Sheet2.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/statement-of-cash-flow/cash-flow-as-of-march-31-2019/",
+      "sourceTitle": "CASH FLOW as of March 31, 2019",
+      "publishedAt": "2019-04-01T01:51:46",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Cash-Flow-as-of-March-31-2019.xlsx-Sheet2.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

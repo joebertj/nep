@@ -1,0 +1,17 @@
+{
+  "sourceFileSha256": "a14102ea5fb7445a737a55fb7f0c928d3009f528310a9e724ae6ad08d7816f27",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/171a2c355369f0f6.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/08/STATEMENT-OF-RECEIPTS-AND-EXPENDITURES.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/2020-full-disclosure/",
+      "sourceTitle": "2020 Full Disclosure",
+      "publishedAt": "2020-07-28T19:55:25",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "STATEMENT-OF-RECEIPTS-AND-EXPENDITURES.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

@@ -1,0 +1,35 @@
+{
+  "sourceFileSha256": "5d338013695282bec79090afbd734017a1d417232a3499047cd0dff0daba843d",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/e54e63620dec4af9.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/BID-RESULTS-ON-CIVIL-WORKS.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/2019-full-disclosure/",
+      "sourceTitle": "2019 Full Disclosure",
+      "publishedAt": "2020-01-06T19:52:15",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "BID-RESULTS-ON-CIVIL-WORKS.pdf"
+    },
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/BID-RESULTS-ON-GOODS-and-CIVIL-WORKS-1st-Qtr.-2019.xlsx-Civil-Works-Bid-Out.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/full-disclosure-for-cy-2019/",
+      "sourceTitle": "FULL DISCLOSURE FOR CY 2019",
+      "publishedAt": "2019-04-05T05:43:41",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "BID-RESULTS-ON-GOODS-and-CIVIL-WORKS-1st-Qtr.-2019.xlsx-Civil-Works-Bid-Out.pdf"
+    },
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/BID-RESULTS-ON-GOODS-and-CIVIL-WORKS-1st-Qtr.-2019.xlsx-Civil-Works-Bid-Out.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/bid-results/bid-results-on-civil-works-first-quarter-cy-2019/",
+      "sourceTitle": "BID RESULTS ON CIVIL WORKS – FIRST QUARTER, CY 2019",
+      "publishedAt": "2019-04-04T01:37:29",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "BID-RESULTS-ON-GOODS-and-CIVIL-WORKS-1st-Qtr.-2019.xlsx-Civil-Works-Bid-Out.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

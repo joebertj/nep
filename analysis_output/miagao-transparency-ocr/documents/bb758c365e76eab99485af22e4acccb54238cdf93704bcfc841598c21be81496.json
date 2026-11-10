@@ -1,0 +1,17 @@
+{
+  "sourceFileSha256": "bb758c365e76eab99485af22e4acccb54238cdf93704bcfc841598c21be81496",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/f98d392416388b73.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/09/Bidding-Documents-Basura-Mo-Pagkaon-Ko.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-10/",
+      "sourceTitle": "INVITATION TO BID",
+      "publishedAt": "2022-09-19T07:24:12",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Bidding-Documents-Basura-Mo-Pagkaon-Ko.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

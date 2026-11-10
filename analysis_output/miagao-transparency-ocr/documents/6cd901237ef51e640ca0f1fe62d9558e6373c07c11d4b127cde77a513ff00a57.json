@@ -1,0 +1,26 @@
+{
+  "sourceFileSha256": "6cd901237ef51e640ca0f1fe62d9558e6373c07c11d4b127cde77a513ff00a57",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/641e484bc513f18c.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/12/Statement-of-Debt-Services-Sept.-2020.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/statement-of-debt-services-sept-2020/",
+      "sourceTitle": "Statement-of-Debt-Services-Sept.-2020",
+      "publishedAt": "2020-12-23T07:31:29",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Statement-of-Debt-Services-Sept.-2020.pdf"
+    },
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/12/Statement-of-Debt-Services-Sept.-2020.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/2020-full-disclosure/",
+      "sourceTitle": "2020 Full Disclosure",
+      "publishedAt": "2020-07-28T19:55:25",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Statement-of-Debt-Services-Sept.-2020.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

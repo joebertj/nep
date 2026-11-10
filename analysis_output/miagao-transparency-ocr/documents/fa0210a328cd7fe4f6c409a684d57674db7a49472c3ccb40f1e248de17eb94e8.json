@@ -1,0 +1,17 @@
+{
+  "sourceFileSha256": "fa0210a328cd7fe4f6c409a684d57674db7a49472c3ccb40f1e248de17eb94e8",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/571e86cc01c3f6d9.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/10/Bidding-Documents-Comp-of-MRF-Bldg-Brgy.-Baybay-Norte.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-12/",
+      "sourceTitle": "INVITATION TO BID",
+      "publishedAt": "2022-10-10T05:41:16",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Bidding-Documents-Comp-of-MRF-Bldg-Brgy.-Baybay-Norte.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

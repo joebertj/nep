@@ -45,7 +45,11 @@
     "officialBarangayProfilePages": 11,
     "2024RosterImageCount": 8,
     "budgetIsProjectLevel": false,
-    "sreIsProjectLevel": false
+    "sreIsProjectLevel": false,
+    "fullDisclosureQ2FilesParsed": 10,
+    "fullDisclosureQ2Rows": 643,
+    "fullDisclosureQ3FilesParsed": 11,
+    "fullDisclosureQ3Rows": 901
   },
   "files": {
     "q1-execution.json": {
@@ -55,6 +59,14 @@
     "barangay-history.json": {
       "url": "/data/miagao-disclosure/barangay-history.json",
       "rows": 11
+    },
+    "full-disclosure-q2.json": {
+      "url": "/data/miagao-disclosure/full-disclosure-q2.json",
+      "rows": 643
+    },
+    "full-disclosure-q3.json": {
+      "url": "/data/miagao-disclosure/full-disclosure-q3.json",
+      "rows": 901
     }
   },
   "appRows": {

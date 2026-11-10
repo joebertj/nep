@@ -1,0 +1,17 @@
+{
+  "sourceFileSha256": "82fe671c3c3d02ed6f55261a8aa384c64053438cd32d09d22901717d2964fef9",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/7d6993986156ea76.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/Unliquidated-CA-as-of-June-30-2019.xlsx-Sheet5.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/2019-full-disclosure/",
+      "sourceTitle": "2019 Full Disclosure",
+      "publishedAt": "2020-01-06T19:52:15",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Unliquidated-CA-as-of-June-30-2019.xlsx-Sheet5.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

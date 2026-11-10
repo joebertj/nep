@@ -1,0 +1,17 @@
+{
+  "sourceFileSha256": "cbd8dfe6ce19f662d398de356d42ec95459d0aac8d3600d788a6bf82ab21cbdf",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/54ee5f3e6976a239.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/07/FINAL-Bidding-Docs-Kalahi-Public-Address-System-1.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-6/",
+      "sourceTitle": "Invitation to Bid",
+      "publishedAt": "2022-07-13T08:15:47",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "FINAL-Bidding-Docs-Kalahi-Public-Address-System-1.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

@@ -1,0 +1,101 @@
+{
+  "sourceFileSha256": "1abca60fda26da08d6442d4520f43a870d12f99cbe2bcfae089641594b1c589e",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/e6da2b16838aafc3.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-basura-mo-1-216x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-basura-mo-pagkaon-ko-project/",
+      "sourceTitle": "INVITATION TO BID FOR BASURA MO PAGKAON KO PROJECT",
+      "publishedAt": "2018-09-28T02:25:22",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Section-1-Invitation-to-Bid-basura-mo-1-216x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "1abca60fda26da08d6442d4520f43a870d12f99cbe2bcfae089641594b1c589e",
+      "sourceFileBytes": 17646,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/e6da2b16838aafc3.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-basura-mo-1-216x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-basura-mo-pagkaon-ko-project/",
+          "sourceTitle": "INVITATION TO BID FOR BASURA MO PAGKAON KO PROJECT",
+          "publishedAt": "2018-09-28T02:25:22",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Section-1-Invitation-to-Bid-basura-mo-1-216x300.jpg"
+        }
+      ],
+      "sourceFileName": "Section-1-Invitation-to-Bid-basura-mo-1-216x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "MUNICIPALITY OF MIAGAO\nIyVTTATION TD BID FOR BASURA MO PAGKAON KO PROIECT\nDolivery of the Eaods is moquained fihose (1S) calendar daps after reosge of Nlatice to\nPrecned. (idders shoald hore comnpletod withien tweke (12) months, a coetrect\nof ae oligble bedder is coctained in che fitdiay Decansentx, particalarfly. in Section I.",
+      "ocrText": "MUNICIPALITY OF MIAGAO\nIyVTTATION TD BID FOR BASURA MO PAGKAON KO PROIECT\nDolivery of the Eaods is moquained fihose (1S) calendar daps after reosge of Nlatice to\nPrecned. (idders shoald hore comnpletod withien tweke (12) months, a coetrect\nof ae oligble bedder is coctained in che fitdiay Decansentx, particalarfly. in Section I.",
+      "ocrTokenCount": 5,
+      "ocrMeanConfidence": 0.8814,
+      "ocrTokens": [
+        {
+          "text": "MUNICIPALITY OF MIAGAO",
+          "confidence": 0.95,
+          "boxPx": [
+            50.0,
+            11.0,
+            121.0,
+            19.0
+          ]
+        },
+        {
+          "text": "IyVTTATION TD BID FOR BASURA MO PAGKAON KO PROIECT",
+          "confidence": 0.8629,
+          "boxPx": [
+            10.0,
+            46.0,
+            200.0,
+            53.0
+          ]
+        },
+        {
+          "text": "Dolivery of the Eaods is moquained fihose (1S) calendar daps after reosge of Nlatice to",
+          "confidence": 0.8526,
+          "boxPx": [
+            23.0,
+            157.0,
+            200.0,
+            165.0
+          ]
+        },
+        {
+          "text": "Precned. (idders shoald hore comnpletod withien tweke (12) months, a coetrect",
+          "confidence": 0.858,
+          "boxPx": [
+            24.0,
+            162.0,
+            199.0,
+            170.0
+          ]
+        },
+        {
+          "text": "of ae oligble bedder is coctained in che fitdiay Decansentx, particalarfly. in Section I.",
+          "confidence": 0.8837,
+          "boxPx": [
+            23.0,
+            174.0,
+            199.0,
+            181.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

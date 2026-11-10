@@ -1,0 +1,17 @@
+{
+  "sourceFileSha256": "b7c46f675f59c5faa9d199c15807f1d131e743b911087a140e9e9d6afb967116",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/a540047f2259e787.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/12/Cash-Flow-Statement-as-of-Sept.-30-2020.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/statement-of-cash-flow/26947/",
+      "sourceTitle": "",
+      "publishedAt": "2020-12-23T07:07:00",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Cash-Flow-Statement-as-of-Sept.-30-2020.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

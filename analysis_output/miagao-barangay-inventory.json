@@ -7,9 +7,45 @@
     "historicalAndFy2027DpwhProjects": "https://research.bettergov.ph/static/nep-preview/integrated-project-data.json",
     "mpbProjectRecords": "BetterGov FY2015–FY2027 multi-purpose-building map line export. FY2015–FY2026 rows use listed GAA allocations; FY2027 rows use House Bill allocations. Barangay assignments use the export PSGC code and stated place basis (title or GPS); rows assigned only to broader administrative levels or no place are excluded from barangay rankings.",
     "barangayOfficialsRoster": "https://www.miagao.gov.ph/about-miagao/news/know-your-barangay-officials/",
-    "barangayOfficialsRosterNote": "The municipal roster page announces the 2023 elected officials but its linked media are photos, not a machine-readable name roster. Individual 2018 barangay profile names are excluded from the current captain field.",
+    "dilgBarangayInformationSystemRoster": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+    "dilgBarangayInformationSystemRosterNote": "DILG Barangay Information System Region VI workbook snapshot dated 2025-09-14. It lists 119 Miagao Punong Barangays for the 2023–2025 term and matches all 119 barangay names in the 2026 PSA list. It is a dated roster, not a live register of later vacancies or successions.",
+    "barangayOfficialsRosterNote": "The municipal 2024 post announces the elected roster but its linked media are event photos, not a searchable name list. The DILG workbook provides a machine-readable list; it remains dated evidence rather than live verification.",
     "barangayProfiles": "https://www.miagao.gov.ph/about-miagao/barangay-map-information/",
     "barangayProfilesNote": "The municipal barangay profiles are older background records (profile entries dated 2018); service, infrastructure, and official details may be outdated."
+  },
+  "captainRoster": {
+    "snapshotDate": "2025-09-14",
+    "sourceUrl": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+    "barangayRows": 119,
+    "captainRows": 119,
+    "officialPositionRows": 2069,
+    "roleCounts": [
+      {
+        "role": "Sangguniang Barangay Member",
+        "count": 829
+      },
+      {
+        "role": "SK Member",
+        "count": 767
+      },
+      {
+        "role": "Barangay Secretary",
+        "count": 119
+      },
+      {
+        "role": "Punong Barangay",
+        "count": 119
+      },
+      {
+        "role": "SK Chairperson",
+        "count": 119
+      },
+      {
+        "role": "SK Secretary",
+        "count": 116
+      }
+    ],
+    "termNote": "The workbook lists the 2023–2025 term. Republic Act 12326 extended the term of the incumbent barangay officials and moved the next BSKE to November 2028. The workbook is not a live succession register."
   },
   "matchingNote": "Project title mentions are leads to public records, not geocoded site boundaries. Shared/corridor projects can be listed for multiple barangays; do not sum per-barangay amounts as a municipality total.",
   "barangays": [
@@ -25,7 +61,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Jonathan Jabor Nalunat",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030002",
@@ -39,7 +83,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Fatima Falco Librando",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030003",
@@ -99,7 +151,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Ramonito Sarcia Sabug",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030004",
@@ -113,7 +173,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Willy Magbanua Ninal Sr.",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030005",
@@ -127,7 +195,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Agapito Montealto Naganda",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030006",
@@ -160,7 +236,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Rafael Pangantihon Faelga",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030007",
@@ -184,7 +268,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Christopher Navallasca Nargatan",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030008",
@@ -198,7 +290,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Salvador Napata Nievares",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030009",
@@ -233,7 +333,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Enrico Reynaldo Mondana",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030010",
@@ -247,7 +355,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Leo Famillaran Nocal",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030011",
@@ -261,7 +377,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Elizer Fajura Falalimpa",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030012",
@@ -285,7 +409,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Cezar Bode Tumugdan Jr.",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030013",
@@ -321,12 +453,13 @@
         }
       ],
       "captain": {
-        "name": "Marlou R. Niones",
+        "name": "Sheryll Noveros Sabangan",
         "role": "Punong Barangay",
-        "asOf": "2024-12-02",
-        "sourceLabel": "DOST Region VI",
-        "status": "Identified as Barangay Captain of Baraclayan in 2024 reporting.",
-        "source": "https://region6.dost.gov.ph/2024/12/02/western-visayas-participants-triumph-during-dosts-2024-cest-and-setup-awards/"
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
       }
     },
     {
@@ -351,7 +484,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Edgar Fermindoza Ninto",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030015",
@@ -406,7 +547,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Serafin Flores Monteclaro",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030016",
@@ -431,7 +580,15 @@
         ]
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Gil Nono Libo-On",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030017",
@@ -445,7 +602,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Ramon Fedriquilan Nagpaton",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030018",
@@ -459,7 +624,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Jesus Morgal Nemiada",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030019",
@@ -473,7 +646,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Ryan Faingason Fajanilag",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030020",
@@ -497,7 +678,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Rafael Fajura Fio Jr.",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030021",
@@ -521,7 +710,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Disfer John Fariolan Naman",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030022",
@@ -535,7 +732,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Jimson Falip Nieles",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030023",
@@ -549,7 +754,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Ian Nievares Gelladula",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030024",
@@ -563,7 +776,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Carol Faala Pitalgo N/A",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030025",
@@ -587,7 +808,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Romeo Falcutan Magbanua Jr",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030026",
@@ -611,7 +840,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Salome Fangonil Nangan",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030027",
@@ -625,7 +862,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Elmer Dagum Nantong",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030028",
@@ -649,7 +894,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Ramil Perez Perez",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030029",
@@ -663,7 +916,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Jeorly Fatagani Nuñal",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030030",
@@ -677,7 +938,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Ignacio Nadong Falco",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030031",
@@ -701,7 +970,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Jonathan Mugdan Montero",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030032",
@@ -715,7 +992,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Romel Flauta Fajanilag",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030033",
@@ -730,12 +1015,13 @@
       },
       "titleMatchedProjects": [],
       "captain": {
-        "name": "Elmer Nonaillada",
+        "name": "Elmer Factes Nonaillada",
         "role": "Punong Barangay",
-        "asOf": "2025-07-22",
-        "sourceLabel": "Iloilo Provincial Government",
-        "status": "Identified as Cawayanan Punong Barangay at the 2025 water-system opening.",
-        "source": "https://iloilo.gov.ph/en/infrastructure-news/new-stream-progress-water-system-projects-completed-miagao"
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
       }
     },
     {
@@ -760,7 +1046,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Ronnie Sampiano Mondeja",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030035",
@@ -784,7 +1078,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Jocelyn Fantonalgo Garcia",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030036",
@@ -808,7 +1110,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Angelica S Faduhilao",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030037",
@@ -822,7 +1132,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Edgar Murcia Farparan",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030038",
@@ -867,7 +1185,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Franco Narbonito Falsario",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030039",
@@ -881,7 +1207,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Samuel Montil Picara",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030040",
@@ -905,7 +1239,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Gerry Muares Nacion",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030041",
@@ -947,7 +1289,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Amalia Miayo Nobleza",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030042",
@@ -961,7 +1311,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Ronald Naquita Alog",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030043",
@@ -975,7 +1333,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Victoriano Nonescan Nacanan",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030044",
@@ -999,7 +1365,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Welson Niegos Nabuab",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030045",
@@ -1052,7 +1426,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Nelsie Nique Niolar",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030046",
@@ -1076,7 +1458,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Noel Montero Mondia",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030047",
@@ -1120,7 +1510,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Ronie Granito Pacheco",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030048",
@@ -1144,7 +1542,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Florentino Blanco Navisaga",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030050",
@@ -1158,7 +1564,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Ronilo Factes Faduhilao",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030051",
@@ -1172,7 +1586,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Rey Torecillo Esposo",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030052",
@@ -1196,7 +1618,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Leonardo Nalagon Moleño",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030053",
@@ -1220,7 +1650,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Martin Sedicol Fandagani",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030054",
@@ -1234,7 +1672,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Arturo Bautista Ngalongalo",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030055",
@@ -1249,12 +1695,13 @@
       },
       "titleMatchedProjects": [],
       "captain": {
-        "name": "Lucia Coronia",
+        "name": "Lucia Niño Coronia",
         "role": "Punong Barangay",
-        "asOf": "2025-01-23",
-        "sourceLabel": "Municipality of Miagao",
-        "status": "Identified as Igpandan Punong Barangay in a 2025 municipal report.",
-        "source": "https://www.miagao.gov.ph/about-miagao/news/for-barangay-igpandan-p40000-assistance-for-the-rehabilitation-of-basketball-court/"
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
       }
     },
     {
@@ -1288,7 +1735,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Freddie Nobleza Nacional",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030057",
@@ -1312,7 +1767,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Herlin Monsale Fuentes",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030058",
@@ -1356,7 +1819,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Ann Rhea Morada Panergar None",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030059",
@@ -1419,7 +1890,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Agnes Tubok Tabacolde",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030060",
@@ -1443,7 +1922,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Mario Navallasca Morante *",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030061",
@@ -1468,7 +1955,15 @@
         ]
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Eduardo Soterio Momper Jr.",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030062",
@@ -1501,7 +1996,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Ian Glenn Delcano Norada",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030063",
@@ -1526,12 +2029,13 @@
         }
       ],
       "captain": {
-        "name": "Rachel Narte",
+        "name": "Rachel Calantas Narte",
         "role": "Punong Barangay",
-        "asOf": "2025-02-28",
-        "sourceLabel": "Iloilo Provincial Government",
-        "status": "Identified as Kirayan Sur Punong Barangay during a 2025 provincial medical mission.",
-        "source": "https://iloilo.gov.ph/en/district-hospital-news/project-buligay-brings-free-medical-services-miag-ao-residents"
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
       }
     },
     {
@@ -1576,7 +2080,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Aurelio Nares Naldoza",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030065",
@@ -1620,7 +2132,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Sonia Frajillo Netura",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030066",
@@ -1655,7 +2175,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Claudel Nuñala Sanguellas",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030067",
@@ -1680,12 +2208,13 @@
         }
       ],
       "captain": {
-        "name": "Arvin Faculin",
+        "name": "Arvin Mupada Faculin",
         "role": "Punong Barangay",
-        "asOf": "2024-10-03",
-        "sourceLabel": "Municipality of Miagao",
-        "status": "Named as newly elected Punong Barangay in the municipality’s 2024 oath-taking report.",
-        "source": "https://www.miagao.gov.ph/about-miagao/news/barangay-lanutan-gets-new-pb/"
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
       }
     },
     {
@@ -1739,7 +2268,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Angelito Mollenido Ninal Jr.",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030069",
@@ -1753,7 +2290,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Eleuterio Molavizar Farochilen",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030070",
@@ -1767,7 +2312,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "James Cojero Campaner",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030071",
@@ -1856,7 +2409,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Brian Barredo Murillo",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030072",
@@ -1870,7 +2431,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Romeo Gesulgon Fantillan",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030073",
@@ -1884,7 +2453,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Joebelle Favo Saracin",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030074",
@@ -1908,7 +2485,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Joseph Niones Felicisimo",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030075",
@@ -1922,7 +2507,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Richard Tolentino Rodriguez",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030076",
@@ -1936,7 +2529,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Mario Galvan Cubita",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030077",
@@ -1950,7 +2551,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Danilo N. Farochilin",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030078",
@@ -1983,7 +2592,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Salvador Napuli Naig Sr",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030079",
@@ -2018,7 +2635,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Ernesto Mabanes Moleta N/A",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030080",
@@ -2032,7 +2657,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Lani Niadas Praba",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030082",
@@ -2046,7 +2679,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Donato Quiatchon Sano",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030083",
@@ -2088,7 +2729,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Jose Munion Factorin",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030084",
@@ -2141,7 +2790,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Charito Gamuza Moradilla",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030085",
@@ -2165,7 +2822,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Jessica Nardo Naman",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030086",
@@ -2179,7 +2844,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Thezza Frondozo Nabua",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030087",
@@ -2193,7 +2866,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Wely Palma Florece",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030088",
@@ -2255,7 +2936,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Remia Alipat Nuevaespana",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030089",
@@ -2308,7 +2997,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Jimmy Fanuňal Ferolino",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030090",
@@ -2322,7 +3019,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Leomar Morano Fallarcon",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030091",
@@ -2379,7 +3084,9 @@
         "asOf": "2026-10-26",
         "sourceLabel": "Municipality of Miagao",
         "status": "Identified as Potrido Punong Barangay in a municipal report dated October 2026.",
-        "source": "https://www.miagao.gov.ph/about-miagao/news/barangay-potrido-through-punong-barangay-diana-legaspi-received-a-cheque-amounting-to-p50000-the-funds-will-be-allocated-for-the-rehabilitation-and-improvement-of-the-alternative-learning-system/"
+        "source": "https://www.miagao.gov.ph/about-miagao/news/barangay-potrido-through-punong-barangay-diana-legaspi-received-a-cheque-amounting-to-p50000-the-funds-will-be-allocated-for-the-rehabilitation-and-improvement-of-the-alternative-learning-system/",
+        "rosterTerm": "2023 - 2025",
+        "dilgRosterAsOf": "2025-09-14"
       }
     },
     {
@@ -2394,7 +3101,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Marianin Nice Monsale N/A",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030093",
@@ -2418,7 +3133,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Walter Ulbritch Eleccion",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030094",
@@ -2432,7 +3155,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Victorino Naman Paguntalan",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030095",
@@ -2446,7 +3177,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Narcisa Monsale Ervite",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030096",
@@ -2470,7 +3209,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Joel N Naig",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030097",
@@ -2512,7 +3259,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Jesus Naman Perez",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030098",
@@ -2537,12 +3292,13 @@
         }
       ],
       "captain": {
-        "name": "Diofe Fatla-onag",
+        "name": "Diofe Nofuente Fatla-Onag",
         "role": "Punong Barangay",
-        "asOf": "2024-06-26",
-        "sourceLabel": "Iloilo Provincial Government",
-        "status": "Identified as San Rafael Punong Barangay in a 2024 provincial government report.",
-        "source": "https://www.iloilo.gov.ph/en/donations-and-grants-news/financial-aid-child-development-center-san-rafael-miagao"
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
       }
     },
     {
@@ -2557,7 +3313,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Judy Montemar Nemiada",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030100",
@@ -2571,7 +3335,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Er Byrone Arnejo Tupan",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030101",
@@ -2585,7 +3357,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Gloria Falguisana Mariano",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030102",
@@ -2599,7 +3379,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "William Lorañia Fusin Sr.",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030103",
@@ -2613,7 +3401,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Evangeline Gela Moncal",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030104",
@@ -2647,12 +3443,13 @@
         }
       ],
       "captain": {
-        "name": "Nestor Faicol",
+        "name": "Elizabeth Torrecampo Lontok",
         "role": "Punong Barangay",
-        "asOf": "2023-11-13",
-        "sourceLabel": "Iloilo Provincial Government",
-        "status": "Identified as Tacas Punong Barangay during the November 2023 hall-annex inauguration.",
-        "source": "https://www.iloilo.gov.ph/en/node/4991"
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
       }
     },
     {
@@ -2677,7 +3474,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Joseph Monot Faisan Sr",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030106",
@@ -2691,7 +3496,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "John Melvin Arlo Nugpo Palomar",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030107",
@@ -2705,7 +3518,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Edgar Nufable Siva",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030108",
@@ -2719,7 +3540,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Carlo Francisco Molo Polmo",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030109",
@@ -2743,7 +3572,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Rossana Fabello Nalang",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030110",
@@ -2767,7 +3604,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Perry Desengaño Nualan",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030111",
@@ -2791,7 +3636,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Rodrigo Mahandog Familangco Jr",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030112",
@@ -2806,12 +3659,13 @@
       },
       "titleMatchedProjects": [],
       "captain": {
-        "name": "Jose Nacita",
+        "name": "Jose Famillaran Nacita",
         "role": "Punong Barangay",
-        "asOf": "2024-01-25",
-        "sourceLabel": "Municipality of Miagao",
-        "status": "Identified as Tiglawa Punong Barangay during a 2024 project conference.",
-        "source": "https://www.miagao.gov.ph/about-miagao/news/miagao-to-igbaras-opening-of-road-soon/"
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
       }
     },
     {
@@ -2872,7 +3726,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Janet Z Momay",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030114",
@@ -2905,7 +3767,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "July Eclarinal Ermeje",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030115",
@@ -2919,7 +3789,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Ebenizer Chavez Farochilin",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030116",
@@ -2933,7 +3811,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Nelson Napura Paran",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030117",
@@ -2947,7 +3833,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Baltazar Montecir Nuevacobita",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030118",
@@ -2961,7 +3855,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Aries Francis Xavier Medina Napud",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030119",
@@ -2975,7 +3877,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Ma. Elsie Sanchez Matias",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030120",
@@ -2989,7 +3899,15 @@
         "records": []
       },
       "titleMatchedProjects": [],
-      "captain": null
+      "captain": {
+        "name": "Jaime Nufable Navarra Jr.",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     },
     {
       "psgc": "0603030121",
@@ -3013,7 +3931,15 @@
           "locationBasis": "Barangay name appears in project title; not a verified site boundary."
         }
       ],
-      "captain": null
+      "captain": {
+        "name": "Ailen Morena Micmic",
+        "role": "Punong Barangay",
+        "asOf": "2025-09-14",
+        "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+        "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+        "source": "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx",
+        "rosterTerm": "2023 - 2025"
+      }
     }
   ]
 }

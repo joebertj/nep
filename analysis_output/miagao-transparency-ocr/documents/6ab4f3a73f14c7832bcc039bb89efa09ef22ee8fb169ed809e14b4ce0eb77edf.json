@@ -1,0 +1,17 @@
+{
+  "sourceFileSha256": "6ab4f3a73f14c7832bcc039bb89efa09ef22ee8fb169ed809e14b4ce0eb77edf",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/0fea98a3bfa7eb1c.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/11/Bidding-Documents-Const-of-Hanging-Bridge-Brgy-Toog.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-17/",
+      "sourceTitle": "INVITATION TO BID",
+      "publishedAt": "2022-11-18T13:07:48",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Bidding-Documents-Const-of-Hanging-Bridge-Brgy-Toog.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

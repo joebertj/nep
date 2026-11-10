@@ -1,0 +1,17 @@
+{
+  "sourceFileSha256": "009c481020a7e801a466e9310a49ae8a9b15d80eae93bf1d637102c79e9b07a1",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/d78193af9774873e.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/09/REPORT-OF-SPECIAL-EDUCATION-FUND-UTILIZATION-1.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/2019-full-disclosure/",
+      "sourceTitle": "2019 Full Disclosure",
+      "publishedAt": "2020-01-06T19:52:15",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "REPORT-OF-SPECIAL-EDUCATION-FUND-UTILIZATION-1.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

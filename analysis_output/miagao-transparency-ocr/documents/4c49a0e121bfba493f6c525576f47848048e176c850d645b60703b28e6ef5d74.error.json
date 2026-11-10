@@ -1,0 +1,16 @@
+{
+  "sourceFileSha256": "4c49a0e121bfba493f6c525576f47848048e176c850d645b60703b28e6ef5d74",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/7781c44952523426.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-basura-mo-1-1080x1500.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-basura-mo-pagkaon-ko-project/",
+      "sourceTitle": "INVITATION TO BID FOR BASURA MO PAGKAON KO PROJECT",
+      "publishedAt": "2018-09-28T02:25:22",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Section-1-Invitation-to-Bid-basura-mo-1-1080x1500.jpg"
+    }
+  ],
+  "error": "ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()"
+}

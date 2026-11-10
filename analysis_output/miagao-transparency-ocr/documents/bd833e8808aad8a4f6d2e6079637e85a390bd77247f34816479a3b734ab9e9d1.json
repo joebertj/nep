@@ -1,0 +1,26 @@
+{
+  "sourceFileSha256": "bd833e8808aad8a4f6d2e6079637e85a390bd77247f34816479a3b734ab9e9d1",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/82a9af0cbc27f88a.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/12/Unliquidated-CAsh-Advances-Sept.2020.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/unliquidated-cash-advances-sept-2020/",
+      "sourceTitle": "Unliquidated-CAsh-Advances-Sept.2020",
+      "publishedAt": "2020-12-23T07:34:14",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Unliquidated-CAsh-Advances-Sept.2020.pdf"
+    },
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/12/Unliquidated-CAsh-Advances-Sept.2020.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/2020-full-disclosure/",
+      "sourceTitle": "2020 Full Disclosure",
+      "publishedAt": "2020-07-28T19:55:25",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Unliquidated-CAsh-Advances-Sept.2020.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

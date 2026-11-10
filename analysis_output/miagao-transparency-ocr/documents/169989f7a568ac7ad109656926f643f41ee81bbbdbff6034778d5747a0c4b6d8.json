@@ -1,0 +1,35 @@
+{
+  "sourceFileSha256": "169989f7a568ac7ad109656926f643f41ee81bbbdbff6034778d5747a0c4b6d8",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/0f3c455d4204801b.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2019/04/SEF-Utilization-as-of-MArch-31-2019.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/full-disclosure-for-cy-2019/",
+      "sourceTitle": "FULL DISCLOSURE FOR CY 2019",
+      "publishedAt": "2019-04-05T05:43:41",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "SEF-Utilization-as-of-MArch-31-2019.pdf"
+    },
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2019/04/SEF-Utilization-as-of-MArch-31-2019.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/special-education-fund-and-expenditure-estimate/sef-utilization-as-of-march-31-2019/",
+      "sourceTitle": "SEF Utilization as of March 31, 2019",
+      "publishedAt": "2019-04-01T06:01:31",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "SEF-Utilization-as-of-MArch-31-2019.pdf"
+    },
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/SEF-UTILIZATION-AS-OF-MARCH-2019.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/2019-full-disclosure/",
+      "sourceTitle": "2019 Full Disclosure",
+      "publishedAt": "2020-01-06T19:52:15",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "SEF-UTILIZATION-AS-OF-MARCH-2019.pdf"
+    }
+  ],
+  "rows": [],
+  "parseStatus": "native_text_sufficient"
+}

@@ -5,13 +5,19 @@ from __future__ import annotations
 
 import json
 import re
+from zipfile import ZipFile
 from pathlib import Path
+from xml.etree import ElementTree as ET
 
 
 ROOT = Path(__file__).resolve().parent
 ODV = ROOT / "analysis_output"
 MIAGAO = Path("/Users/joebertj/bettermiagao/src/data")
 OUT = ODV / "miagao-barangay-inventory.json"
+DILG_BIS_ROSTER = ROOT / "data_sources/dilg_bis_2025/official-list_06_2025-09-14.xlsx"
+DILG_BIS_URL = "https://archive.org/download/20250914.dilg.barangay/official-list_06_2025-09-14.xlsx"
+DILG_BIS_DATE = "2025-09-14"
+XLSX_NS = {"m": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
 
 # PSA's 2024 POPCEN / PSGC municipality page, captured 2026-11-10.
 # Kept as a code-to-value map so source name spelling is not the join key.
@@ -74,6 +80,86 @@ def mention_matches(title: str, barangay: str) -> bool:
     return name_tokens in title_tokens
 
 
+def xlsx_inline_rows(path: Path) -> list[dict[str, str]]:
+    """Read a simple DILG XLSX sheet using only the Python standard library."""
+    with ZipFile(path) as workbook:
+        root = ET.fromstring(workbook.read("xl/worksheets/sheet1.xml"))
+    rows: list[dict[str, str]] = []
+    for row in root.findall(".//m:sheetData/m:row", XLSX_NS):
+        values: dict[str, str] = {}
+        for cell in row.findall("m:c", XLSX_NS):
+            match = re.match(r"([A-Z]+)", cell.attrib.get("r", ""))
+            if not match:
+                continue
+            text = cell.find("m:is/m:t", XLSX_NS)
+            value = cell.find("m:v", XLSX_NS)
+            values[match.group(1)] = (text.text if text is not None else value.text if value is not None else "") or ""
+        rows.append(values)
+    if not rows:
+        raise RuntimeError(f"No spreadsheet rows found in {path}")
+    headers = {value.strip().upper(): key for key, value in rows[0].items()}
+    required = {"TERM", "PROVINCE", "CITY/MUNICIPALITY", "BARANGAY", "POSITION", "LASTNAME", "FIRSTNAME"}
+    if not required.issubset(headers):
+        raise RuntimeError(f"Unexpected DILG workbook headers: {sorted(headers)}")
+    output = []
+    for row in rows[1:]:
+        output.append({header: row.get(column, "").strip() for header, column in headers.items()})
+    return output
+
+
+def parse_dilg_miagao_roster() -> tuple[dict[str, dict[str, str]], dict]:
+    if not DILG_BIS_ROSTER.exists():
+        raise RuntimeError(f"Missing DILG source workbook: {DILG_BIS_ROSTER}")
+    rows = xlsx_inline_rows(DILG_BIS_ROSTER)
+    miagao_rows = [
+        row for row in rows
+        if normalize(row.get("PROVINCE", "")) == "iloilo"
+        and normalize(row.get("CITY/MUNICIPALITY", "")) == "miagao"
+    ]
+    if not miagao_rows:
+        raise RuntimeError("DILG workbook has no Miagao rows")
+
+    role_counts: dict[str, int] = {}
+    for row in miagao_rows:
+        role = row.get("POSITION", "").strip()
+        role_counts[role] = role_counts.get(role, 0) + 1
+
+    captains: dict[str, dict[str, str]] = {}
+    for row in miagao_rows:
+        if normalize(row.get("POSITION", "")) != "punong barangay":
+            continue
+        name_parts = [
+            row.get("FIRSTNAME", ""), row.get("MIDDLENAME", ""),
+            row.get("LASTNAME", ""), row.get("SUFFIX", ""),
+        ]
+        name = " ".join(part.title() for part in name_parts if part.strip())
+        barangay = row.get("BARANGAY", "").strip()
+        key = normalize(barangay)
+        if not key or key in captains:
+            raise RuntimeError(f"Duplicate or blank Miagao captain barangay: {barangay!r}")
+        captains[key] = {
+            "name": name,
+            "role": "Punong Barangay",
+            "asOf": DILG_BIS_DATE,
+            "sourceLabel": "DILG Barangay Information System · Region VI roster snapshot",
+            "status": "Listed for the 2023–2025 term in the DILG roster snapshot dated 14 September 2025. Later vacancies or successions are not independently verified here.",
+            "source": DILG_BIS_URL,
+            "rosterTerm": row.get("TERM", ""),
+        }
+    if len(captains) != 119:
+        raise RuntimeError(f"Expected 119 DILG Miagao captain rows; found {len(captains)}")
+    summary = {
+        "snapshotDate": DILG_BIS_DATE,
+        "sourceUrl": DILG_BIS_URL,
+        "barangayRows": len({normalize(row.get("BARANGAY", "")) for row in miagao_rows}),
+        "captainRows": len(captains),
+        "officialPositionRows": len(miagao_rows),
+        "roleCounts": [{"role": role, "count": count} for role, count in sorted(role_counts.items(), key=lambda item: (-item[1], item[0]))],
+        "termNote": "The workbook lists the 2023–2025 term. Republic Act 12326 extended the term of the incumbent barangay officials and moved the next BSKE to November 2028. The workbook is not a live succession register.",
+    }
+    return captains, summary
+
+
 def main() -> None:
     # PSGC source is JSONL, not a JSON array.
     locations = [
@@ -116,7 +202,7 @@ def main() -> None:
     project_data = load_json(MIAGAO / "miagao-projects.json")
     projects = project_data["projects"]
 
-    current_captains = {
+    verified_captain_evidence = {
         "Baraclayan": {
             "name": "Marlou R. Niones", "role": "Punong Barangay",
             "asOf": "2024-12-02", "sourceLabel": "DOST Region VI",
@@ -173,6 +259,8 @@ def main() -> None:
         },
     }
 
+    dilg_captains, roster_summary = parse_dilg_miagao_roster()
+
     output_rows = []
     for source_row in barangays:
         name = source_row.get("name") or source_row.get("barangay") or ""
@@ -191,6 +279,11 @@ def main() -> None:
             for row in projects
             if mention_matches(row.get("name", ""), name)
         ]
+        captain = dilg_captains.get(normalize(name))
+        later_evidence = verified_captain_evidence.get(name)
+        if later_evidence and later_evidence.get("asOf", "") > DILG_BIS_DATE:
+            # Preserve genuinely newer official confirmation while keeping the DILG roster date explicit.
+            captain = {**captain, **later_evidence, "dilgRosterAsOf": DILG_BIS_DATE}
         output_rows.append({
             "psgc": code,
             "name": name,
@@ -215,7 +308,7 @@ def main() -> None:
                 ],
             },
             "titleMatchedProjects": linked_projects,
-            "captain": current_captains.get(name),
+            "captain": captain,
         })
 
     if len(output_rows) != 119:
@@ -233,18 +326,24 @@ def main() -> None:
             "historicalAndFy2027DpwhProjects": project_data.get("sourceUrl"),
             "mpbProjectRecords": mpb_data.get("source"),
             "barangayOfficialsRoster": "https://www.miagao.gov.ph/about-miagao/news/know-your-barangay-officials/",
-            "barangayOfficialsRosterNote": "The municipal roster page announces the 2023 elected officials but its linked media are photos, not a machine-readable name roster. Individual 2018 barangay profile names are excluded from the current captain field.",
+            "dilgBarangayInformationSystemRoster": DILG_BIS_URL,
+            "dilgBarangayInformationSystemRosterNote": "DILG Barangay Information System Region VI workbook snapshot dated 2025-09-14. It lists 119 Miagao Punong Barangays for the 2023–2025 term and matches all 119 barangay names in the 2026 PSA list. It is a dated roster, not a live register of later vacancies or successions.",
+            "barangayOfficialsRosterNote": "The municipal 2024 post announces the elected roster but its linked media are event photos, not a searchable name list. The DILG workbook provides a machine-readable list; it remains dated evidence rather than live verification.",
             "barangayProfiles": "https://www.miagao.gov.ph/about-miagao/barangay-map-information/",
             "barangayProfilesNote": "The municipal barangay profiles are older background records (profile entries dated 2018); service, infrastructure, and official details may be outdated.",
         },
+        "captainRoster": roster_summary,
         "matchingNote": "Project title mentions are leads to public records, not geocoded site boundaries. Shared/corridor projects can be listed for multiple barangays; do not sum per-barangay amounts as a municipality total.",
         "barangays": output_rows,
     }
     OUT.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Wrote {OUT} with {len(output_rows)} barangays")
+    app_inventory = MIAGAO / "miagao-barangay-inventory.json"
+    app_inventory.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"Wrote {OUT} and {app_inventory} with {len(output_rows)} barangays")
     print("PSA population rows:", len([row for row in output_rows if row["population2024"] is not None]))
     print("MPB barangays with any linked record:", sum(bool(row["mpb"]["records"]) for row in output_rows))
     print("Project-title matched barangays:", sum(bool(row["titleMatchedProjects"]) for row in output_rows))
+    print("DILG roster captain rows:", roster_summary["captainRows"])
 
 
 if __name__ == "__main__":
