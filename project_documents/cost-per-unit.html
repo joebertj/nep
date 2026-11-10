@@ -17,6 +17,14 @@
 <aside class="report-disclaimer" id="report-evidence-notice" role="note"><strong>Disclaimer.</strong> Unit costs are screening comparisons calculated from parsed POW amounts and quantities, not verified market prices, contract prices or proof of spending. Extraction errors, specifications, quantities, site conditions and project scope can affect comparisons. Unusual values are prompts to check the cited source pages; they do not establish overpricing, overpayment or wrongdoing.</aside>
 <section class="unit-hero" aria-label="Cost per Unit overview"><div class="unit-hero-copy"><span class="unit-hero-kicker">DPWH · POW analysis</span><h2>Compare like-for-like bill items</h2><p>Choose a bill and unit below to see its project count, median and outliers. Check each cited source page before comparing values.</p></div><div class="unit-hero-stats"><div><strong id="unit-hero-projects">—</strong><span>projects with usable unit costs</span></div><div><strong id="unit-hero-median">—</strong><span id="unit-hero-median-label">median · selected unit</span></div><div><strong id="unit-hero-outliers">—</strong><span>outliers · 1.5×IQR rule</span></div></div></section>
 
+<section class="unit-billboard-support card" id="billboard-unit-review">
+<h2>Road and bridge project billboards · price per each</h2>
+<p>Billboard/signboard line items are separated from the overall road or bridge allocation. The chart compares the same parsed item and unit across project groups; the table gives high extracted rates for source review.</p>
+<div class="controls"><label for="billboard-cost-basis">Cost basis</label><select id="billboard-cost-basis"><option value="as_submitted" selected>As submitted</option><option value="as_evaluated">As evaluated</option></select></div>
+<p class="note">A unit price alone cannot show whether a signboard was installed, what specification was required, or whether its quality was acceptable. High values are review leads, not findings.</p>
+<div id="billboard-support-content" aria-live="polite"><p class="note">Loading road and bridge billboards…</p></div>
+</section>
+
 <section id="unit-analysis">
 <h2>One bill · project cost distribution</h2>
 <p class="note">Unit cost is calculated as the selected cost-basis amount divided by quantity. The compact table ranks projects from highest to lowest unit cost. Open a project for its full POW bill details; verify extracted values against the cited pages. The chart uses a logarithmic price scale; compare only the same bill and unit.</p>

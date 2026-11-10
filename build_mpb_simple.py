@@ -23,7 +23,7 @@ def collect():
     regional = load('mpb-regional-province-data.json')
     base = load('mpb-barangay-base-data.json')
     history, current = Counter(), Counter()
-    returning = first = 0
+    returning = first = earlier_only = neither = 0
     for place in base['barangays']:
         groups = place.get('buildings', [])
         earlier = sum(any(2015 <= int(e.get('year') or 0) <= 2026 for e in g.get('levelHistory', [])) for g in groups)
@@ -33,9 +33,15 @@ def collect():
             current[now] += 1
             returning += earlier > 0
             first += earlier == 0
+        elif earlier:
+            earlier_only += 1
+        else:
+            neither += 1
     official = regional['summary']['officialBarangays']
     if sum(history.values()) != official:
         raise ValueError('Historical barangay universe does not reconcile with the regional page')
+    if returning + first + earlier_only + neither != official:
+        raise ValueError('Current and historical barangay cohorts do not reconcile')
     fy = analysis['summary']['fy2027HistoricalDistribution']
     if (sum(current.values()), sum(k*v for k, v in current.items()), returning, first) != (
         fy['coveredBarangays'], fy['historicalTitleMatches'], fy['previouslyMappedBarangays'], fy['firstTimeBarangays']
@@ -62,7 +68,9 @@ def collect():
         'recipientBarangays2027': {'returning': returning, 'firstTime': first, 'total': returning + first},
         'documents2027': docs,
         'coverage2027': {'officialBarangays': official, 'recipientBarangays': sum(current.values()),
+                         'earlierOnlyBarangays': earlier_only, 'noMappedRecordAnyPeriod': neither,
                          'titleBarangayMatches': sum(k*v for k, v in current.items()),
+                         'barangaysWithOneTitle': current[1],
                          'barangaysWithMultipleTitles': sum(v for k, v in current.items() if k > 1)},
         'history2015To2026': {'officialBarangays': official, 'none': history[0],
                               'oneToThree': sum(v for k, v in history.items() if 1 <= k <= 3),
@@ -124,6 +132,12 @@ CSS = '''<style id="mpb-simple-style">
 *{box-sizing:border-box}body{margin:0;background:#F4F6FA;color:#17233B;font-family:Inter,system-ui,sans-serif}header{background:#00246A;color:#fff;padding:35px 5vw}header h1{font-size:clamp(34px,5vw,60px);line-height:1.1;max-width:900px;margin:0}header p{max-width:800px}main.simple-main{max-width:1200px;margin:auto;padding:30px clamp(16px,4vw,40px)}.simple-intro{font-size:clamp(20px,2.6vw,30px);line-height:1.4;max-width:920px;margin:20px 0 35px;font-weight:600}.simple-panel{background:#fff;border:1px solid #DFE5EF;border-radius:20px;padding:clamp(22px,4vw,48px);margin:0 0 30px;box-shadow:0 8px 25px #00246A06;break-inside:avoid;scroll-margin-top:24px}.simple-card-heading{display:flex;align-items:center;gap:14px;margin-bottom:20px}.simple-step{background:#00246A;color:#fff;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:800}.simple-period{color:#616D81;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}.simple-panel h2{font-size:clamp(26px,3.8vw,42px)!important;line-height:1.15!important;max-width:900px;margin:0 0 25px!important;letter-spacing:-.03em}.simple-panel figure{margin:0}.simple-panel figcaption{font-size:clamp(17px,2vw,22px);line-height:1.5;color:#33425B;margin:25px 0 0}.simple-panel .big-fraction{font-size:clamp(52px,9vw,100px);font-weight:850;line-height:1;letter-spacing:-.07em;color:#00246A;margin:5px 0 28px}.simple-panel .big-fraction small{font-size:.25em;font-weight:650;letter-spacing:0;color:#616D81}.icon-definitions{position:absolute;width:0;height:0;overflow:hidden}.pictogram{display:grid;grid-template-columns:repeat(20,minmax(0,1fr));gap:7px}.pictogram .unit{display:block;width:100%;height:auto;aspect-ratio:1}.blue{color:#0038A8}.yellow{color:#BA8900}.muted-icon{color:#D1D7E1}.light-blue{color:#91B0E0}.simple-legend{display:flex;flex-wrap:wrap;gap:10px 24px;margin:20px 0 0;font-size:14px;color:#40516D}.simple-legend>span{display:inline-flex;gap:8px;align-items:center}.swatch{display:inline-block;width:11px;height:11px;background:currentColor;border-radius:3px;flex-shrink:0}.swatch.blue{background:#0038A8}.swatch.yellow{background:#BA8900}.swatch.muted-icon{background:#D1D7E1}.swatch.light-blue{background:#91B0E0}.folders{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,4vw,45px);max-width:720px;margin:auto}.folders svg{width:100%;height:auto}.coverage-pair{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;text-align:center;gap:12px;max-width:650px;margin:30px auto}.coverage-pair strong{display:block;font-size:clamp(25px,5vw,46px);color:#00246A;line-height:1.2}.coverage-pair span{font-size:13px;color:#616D81}.coverage-pair .pair-separator{font-size:26px;color:#8A97AA}.poverty-plot{display:block;width:100%;height:auto;max-height:none}.axis-label{font:16px system-ui;fill:#596A84}.computations{border-top:1px solid #E2E7F0;margin-top:25px;padding-top:15px;font-size:13px;color:#596A84}.computations summary{cursor:pointer;font-size:12px;font-weight:650}.computations p{max-width:950px;line-height:1.65}.simple-main a{color:#0038A8}.simple-footer{font-size:13px;color:#596A84;line-height:1.6;padding:15px 0 35px}.simple-links{display:flex;gap:12px 22px;flex-wrap:wrap}.simple-download{display:inline-block;padding:10px 15px;background:#0038A8;color:#fff!important;border-radius:8px;text-decoration:none;font-weight:650;margin-bottom:16px}@media(max-width:650px){.pictogram{grid-template-columns:repeat(10,minmax(0,1fr));gap:6px}.simple-panel{border-radius:14px}.simple-legend{font-size:12px;gap:8px 12px}.axis-label{font-size:17px}}@media print{header nav,.computations,.simple-download{display:none}.simple-panel{box-shadow:none;break-inside:avoid}main.simple-main{padding:0}.pictogram{grid-template-columns:repeat(20,minmax(0,1fr))}*{print-color-adjust:exact}}
 </style>'''
 
+CSS += '''<style id="mpb-simple-coverage-style">
+.coverage-views{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.coverage-view{min-width:0;padding:20px;border:1px solid #E2E7F0;border-radius:14px;background:#FBFCFF}.coverage-view h3{margin:0 0 18px!important;color:#00246A}.simple-panel .coverage-view .big-fraction{font-size:clamp(38px,5vw,60px);margin:0 0 24px}.simple-panel .coverage-view .big-fraction small{display:block;font-size:14px;margin-top:9px}.coverage-view .pictogram{grid-template-columns:repeat(10,minmax(0,1fr));gap:5px}.coverage-view .simple-legend{display:grid;gap:8px;font-size:13px}@media(max-width:760px){.coverage-views{grid-template-columns:1fr}.coverage-view{padding:16px}}
+.coverage-example{display:flex;align-items:center;justify-content:center;gap:clamp(16px,5vw,48px);margin:32px auto 0;padding:18px 20px;border-radius:16px;background:#F3F6FC;max-width:680px}.coverage-example>div{display:grid;justify-items:center;gap:8px}.coverage-example .coverage-place svg{width:82px;height:82px;color:#0038A8}.coverage-example .coverage-arrow{color:#8A97AA;font-size:34px;font-weight:700}.coverage-example .coverage-cards{display:flex;gap:8px}.coverage-example .coverage-cards i{display:grid;place-items:center;width:69px;height:82px;border:3px solid #0038A8;border-radius:7px;background:#fff;color:#0038A8;font-style:normal;font-size:12px;font-weight:800;box-shadow:0 4px 0 #DDE7FA}.coverage-example .coverage-label{color:#42526D;font-size:13px;font-weight:650;text-align:center}
+@media(max-width:650px){.coverage-example{gap:10px;padding:14px 8px}.coverage-example .coverage-place svg{width:60px;height:60px}.coverage-example .coverage-cards i{width:53px;height:65px;font-size:10px}.coverage-example .coverage-arrow{font-size:24px}.coverage-example .coverage-label{font-size:11px}}
+</style>'''
+
 
 def build():
     data = collect()
@@ -142,16 +156,24 @@ def build():
     panels.append(card(2, 'FY2027 HGAB · document matches', 'About a third have incomplete document matches.', graphic,
                        'These allocations still need their supporting records checked.',
                        details(f'{docs["incompleteDocumentProjectRows"]:,} of {docs["denominatorProjectRows"]:,} MPB project rows ({100*docs["incompleteDocumentProjectRows"]/docs["denominatorProjectRows"]:.2f}%) have fewer than four of five named document types matched. {docs["completeDocumentProjectRows"]:,} meet the threshold. Named types: POW, BP 202, Development Council, geotagged photos and Certificate of Implementability. Proposal and Senate document matches are combined per project. A missing match does not prove a document is absent; file presence does not verify contents. Document snapshot: {escape(docs.get("documentCoverageGeneratedAtUtc") or "not recorded")}. The three folders show a rounded proportion.', 'mpb.html#fy2027-mpb-documents', 'Review document coverage')))
-    coverage_pct = 100*cov['recipientBarangays']/cov['officialBarangays']
-    colored = round(coverage_pct)
-    graphic = f'<div class="big-fraction">{coverage_pct:.1f}% <small>of barangays</small></div>' + pictogram(
-        [(colored, 'blue', 'community-icon'), (100-colored, 'muted-icon', 'community-icon')],
-        f'{cov["recipientBarangays"]:,} of {cov["officialBarangays"]:,} official barangays have a mapped FY2027 HGAB MPB record.')
-    graphic += legend([('blue', 'Has a mapped 2027 record'), ('muted-icon', 'No mapped 2027 record')])
-    graphic += f'<div class="coverage-pair"><div><strong>{cov["titleBarangayMatches"]:,}</strong><span>title/barangay matches</span></div><span class="pair-separator">≠</span><div><strong>{cov["recipientBarangays"]:,}</strong><span>recipient barangays</span></div></div>'
-    panels.append(card(3, 'FY2027 HGAB · mapped barangay coverage', 'Ten percent coverage does not mean one MPB each.', graphic,
-                       'Some barangays have several project titles in the same year.',
-                       details(f'{cov["recipientBarangays"]:,} / {cov["officialBarangays"]:,} = {coverage_pct:.2f}% mapped coverage. {cov["titleBarangayMatches"]:,} distinct title/barangay matches are distributed across these recipient barangays; {cov["barangaysWithMultipleTitles"]:,} have more than one. The matches are grouped normalized titles for a barangay, not verified physical buildings. Unmapped project records are outside this coverage measure. Icons are rounded shares. This mapped subset differs from the {docs["denominatorProjectRows"]:,} exact-program project rows used for document coverage.', 'mpb-regional-province.html', 'Review coverage methods')))
+    single_colored = round(100*cov['barangaysWithOneTitle']/cov['recipientBarangays'])
+    recipient_graphic = f'<div class="big-fraction">{cov["recipientBarangays"]:,} <small>recipient barangays</small></div>' + pictogram(
+        [(single_colored, 'light-blue', 'community-icon'), (100-single_colored, 'blue', 'stack-icon')],
+        f'Among {cov["recipientBarangays"]:,} FY2027 recipient barangays, {cov["barangaysWithOneTitle"]:,} have one distinct project title (light blue) and {cov["barangaysWithMultipleTitles"]:,} have multiple titles (dark blue). The 100 icons show rounded shares of recipient barangays only.')
+    recipient_graphic += legend([('light-blue', 'One project title'), ('blue', 'Multiple project titles')])
+    current_icons = round(100*cov['recipientBarangays']/cov['officialBarangays'])
+    past_icons = round(100*cov['earlierOnlyBarangays']/cov['officialBarangays'])
+    historical_graphic = f'<div class="big-fraction">{cov["officialBarangays"]:,} <small>all barangays</small></div>' + pictogram(
+        [(current_icons, 'blue', 'community-icon'), (past_icons, 'yellow', 'community-icon'),
+         (100-current_icons-past_icons, 'muted-icon', 'community-icon')],
+        f'Across {cov["officialBarangays"]:,} official barangays: {cov["recipientBarangays"]:,} have mapped 2027 records (blue), {cov["earlierOnlyBarangays"]:,} have earlier records only (yellow), and {cov["noMappedRecordAnyPeriod"]:,} have no mapped record in the available FY2015–FY2027 data (grey). Rounded shares.')
+    historical_graphic += legend([('blue', '2027 allocation'), ('yellow', 'Earlier records only'), ('muted-icon', 'No mapped record')])
+    graphic = ('<div class="coverage-views"><div class="coverage-view"><h3>One or many project titles?</h3>'
+               + recipient_graphic + '</div><div class="coverage-view"><h3>Current and earlier coverage</h3>'
+               + historical_graphic + '</div></div>')
+    panels.append(card(3, 'FY2027 HGAB · recipients and historical coverage', 'One barangay does not always mean one project.', graphic,
+                       'One view shows project titles per recipient. The other shows coverage across all barangays.',
+                       details(f'The first graphic focuses only on the {cov["recipientBarangays"]:,} mapped FY2027 recipient barangays. After grouping identical normalized title/barangay pairs, {cov["barangaysWithOneTitle"]:,} ({100*cov["barangaysWithOneTitle"]/cov["recipientBarangays"]:.2f}%) have exactly one distinct 2027 title (light blue), and {cov["barangaysWithMultipleTitles"]:,} ({100*cov["barangaysWithMultipleTitles"]/cov["recipientBarangays"]:.2f}%) have multiple titles (dark blue). The two groups sum to {cov["recipientBarangays"]:,}; together they have {cov["titleBarangayMatches"]:,} distinct title/barangay matches. The number of distinct titles per barangay is counted after the dataset’s title grouping, so repeated identical titles do not increase it. The second graphic uses all {cov["officialBarangays"]:,} official barangays as its denominator: {cov["recipientBarangays"]:,} have a mapped 2027 record (blue), {cov["earlierOnlyBarangays"]:,} have earlier FY2015–FY2026 records but no mapped 2027 record (yellow), and {cov["noMappedRecordAnyPeriod"]:,} have no mapped record in the available FY2015–FY2027 data (grey). These three groups are mutually exclusive; blue includes both returning and first-time recipients. The two graphics use different denominators. These are title groups, not verified physical buildings or findings of duplicate scope. No mapped record does not establish that a barangay has no MPB. Icons are rounded shares; stacked dark-blue icons in the first graphic represent the multiple-title group. This mapped subset differs from the {docs["denominatorProjectRows"]:,} exact-program project rows used for document coverage.', 'mpb-regional-province.html', 'Review coverage methods')))
     none_pct = round(100*hist['none']/hist['officialBarangays'])
     many_pct = round(100*hist['fourOrMore']/hist['officialBarangays'])
     graphic = pictogram([(none_pct, 'muted-icon', 'community-icon'), (100-none_pct-many_pct, 'light-blue', 'community-icon'), (many_pct, 'blue', 'stack-icon')],

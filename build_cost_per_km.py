@@ -4,6 +4,7 @@ import csv
 import hashlib
 import json
 import re
+import unicodedata
 from collections import defaultdict
 from pathlib import Path
 from chainage import _PATTERN, parse_chainage, has_ambiguous_chainage
@@ -398,7 +399,8 @@ const projectFields=D.projectIndexFields||[];D.projects=(D.projectIndexRows||[])
     lane_block='<section id="lane-meter-analysis"><h2>2. Lane-meter analysis</h2>'+lane_note+'<div id="lane-sections"></div>'+spatial_chart+'</section>'
     exploratory=render_density(density).replace('<h2>At what stated lengths does allocation density change?</h2>','<h2>3. Length and allocation-density exploration</h2>',1)
     support_block='<section id="coordinate-approximations"><h2>4. Coordinate-distance approximations</h2><p>Coordinate-distance estimates stay separate from stated-meter rates and high-rate flags. Detailed asset matching, recovered dimensions, length coverage and extraction methods are on <a href="cost-matching.html">Asset matching and length coverage</a>.</p>'+approximation_note+'<div id="support-sections"></div></section>'
-    page=head+'<body class="bettergov-research"><header><div class="eyebrow">BetterGov · Budget research</div><h1>Cost per meter and lane-meter</h1><p>HGAB 3rd reading · calculations and peer comparisons</p></header><main>'+evidence_limits+hero+rate_block.replace('<div id="rate-sections"></div>','<div id="rate-sections"><p id="cost-table-load-status" class="caution">Project tables load as you reach this section.</p></div>')+lane_block+exploratory+support_block+'</main>'+chart_data_script+'<script src="plotly-2.35.2.min.js?v='+plotly_version+'"></script>'+cost_table_loader+'<script>'+spatial_script+'</script></body></html>'
+    bridge_rehab_block=bridge_rehabilitation_review(data)
+    page=head+'<body class="bettergov-research"><header><div class="eyebrow">BetterGov · Budget research</div><h1>Cost per meter and lane-meter</h1><p>HGAB 3rd reading · calculations and peer comparisons</p></header><main>'+evidence_limits+hero+rate_block.replace('<div id="rate-sections"></div>','<div id="rate-sections"><p id="cost-table-load-status" class="caution">Project tables load as you reach this section.</p></div>')+lane_block+exploratory+support_block+bridge_rehab_block+'</main>'+chart_data_script+'<script src="plotly-2.35.2.min.js?v='+plotly_version+'"></script>'+cost_table_loader+'<script>'+spatial_script+'</script></body></html>'
     from report_hero_module import STYLE,hero as lead_card
     page=page.replace('__HERO_STYLE__',STYLE)
     from uniform_report_menu import apply_page as apply_uniform_menu_page
@@ -487,6 +489,151 @@ def notation_overview(data):
     body+='</svg></figure>'
     body+=table(['Category','Line items','Usable lengths · earlier rules','Newly recovered lengths','Earlier lengths now withheld','Usable lengths · current','Missing / unusable (%)'],[[r['category'],r['lineItems'],r['earlierUsableLengths'],r['newlyRecoveredLengths'],r['earlierLengthsNowWithheld'],r['currentUsableLengths'],r['missingPct']] for r in rows])
     return body+'<p>Earlier-rule counts are recomputed on the same current HGAB records using the previous plus-form parser, including existing explicit-length and row-bounded FMR rules. Both runs use the same records. The current rules also withhold multiple road IDs whose station references cannot safely be combined; the withheld column makes that quality correction explicit. Every record in the download includes its earlier length status and whether this update recovered a usable length. Recognizing a range does not verify its funded physical extent; adjacent endpoints do not imply overlapping work.</p><p><a href="cost-per-km-data.json" download>Download current lengths, rates and notation-recovery evidence</a></p></section>'
+
+
+def bridge_rehabilitation_review(data):
+    """Add a bounded bridge rehabilitation cross-check using the current inventory and portal snapshot."""
+    from build_investigation_summary import esc, table
+
+    coverage_path = OUT / 'dpwh_transparency_document_coverage.json'
+    coverage = json.loads(coverage_path.read_text(encoding='utf-8')) if coverage_path.exists() else {}
+
+    def title_key(value):
+        value = unicodedata.normalize('NFKD', str(value or '')).encode('ascii', 'ignore').decode().lower()
+        return re.sub(r'[^a-z0-9]+', ' ', value).strip()
+
+    portal_titles = {
+        title_key(title): row
+        for title, row in (coverage.get('titles') or {}).items()
+    }
+    eligible = []
+    for row in data.get('projects', []):
+        if row.get('category') != 'Bridges':
+            continue
+        program = row.get('program') or ''
+        # Include the bridge rehabilitation program and BIP rows explicitly titled as
+        # rehabilitation/repair. Keep retrofits/strengthening as a distinct scope.
+        in_rehab_scope = (
+            program == 'Rehabilitation/ Major Repair of Permanent Bridges'
+            or (program.startswith('BIP') and re.search(r'\b(?:rehabilitation|repair)\b', row.get('projectName', ''), re.I))
+        )
+        if not in_rehab_scope:
+            continue
+        portal = portal_titles.get(title_key(row.get('projectName')))
+        condition = row.get('recordedConditionDisplay') or 'No inventory condition match'
+        if condition == 'Not matched':
+            condition = 'No inventory condition match'
+        status_code = (portal or {}).get('status', 'no_verified_match')
+        status_labels = {
+            'five_or_more_listed': '5+ documents listed',
+            'incomplete_documents': 'Fewer than 5 listed',
+            'candidate_match': 'Candidate title match · review',
+            'no_verified_match': 'No verified title match in snapshot',
+        }
+        eligible.append({
+            'project': row.get('projectName', ''),
+            'program': program,
+            'allocationPesos': row.get('amountPesos'),
+            'statedLengthMeters': row.get('lengthMeters'),
+            'inventoryBridgeId': row.get('matchedInventoryId'),
+            'inventorySpanMeters': row.get('inventoryAssetLengthMeters'),
+            'inventoryCondition': condition,
+            'conditionAssessmentDate': 'Not available in matched records',
+            'dpwhTransparencyDocumentStatus': status_labels.get(status_code, 'No exact-title record in snapshot'),
+            'dpwhTransparencyDocumentStatusCode': status_code,
+            'dpwhTransparencyDocumentCount': (portal or {}).get('documentCount'),
+            'dpwhTransparencyMatchBasis': (portal or {}).get('matchBasis'),
+            'sourceVolume': row.get('sourceVolume'),
+            'sourcePage': row.get('sourcePage'),
+        })
+
+    eligible.sort(key=lambda row: (row.get('allocationPesos') or 0), reverse=True)
+    condition_order = [
+        'Bad · assessment year unknown',
+        'Poor · assessment year unknown',
+        'Fair · assessment year unknown',
+        'Good · assessment year unknown',
+        'No inventory condition match',
+    ]
+    condition_counts = {name: sum(row['inventoryCondition'] == name for row in eligible) for name in condition_order}
+    portal_order = [
+        '5+ documents listed',
+        'Fewer than 5 listed',
+        'Candidate title match · review',
+        'No verified title match in snapshot',
+        'No exact-title record in snapshot',
+    ]
+    portal_counts = {name: sum(row['dpwhTransparencyDocumentStatus'] == name for row in eligible) for name in portal_order}
+    id_count = sum(bool(row['inventoryBridgeId']) for row in eligible)
+    condition_known = sum(row['inventoryCondition'] != 'No inventory condition match' for row in eligible)
+
+    payload = {
+        'scope': 'FY2027 HGAB 3rd-reading bridge rehabilitation/repair rows, with exact normalized title cross-check to the retained DPWH Transparency document-coverage snapshot and supported offline DPWH bridge inventory matches.',
+        'transparencySnapshotRetrievedAtUtc': coverage.get('snapshotRetrievedAtUtc'),
+        'transparencySnapshotSourceCommit': coverage.get('sourceCommit'),
+        'method': 'Scope includes the Rehabilitation/Major Repair of Permanent Bridges program plus BIP bridge rows whose titles explicitly say rehabilitation or repair. Retrofitting/strengthening, replacement, widening and new bridges are separate scopes. Inventory IDs and conditions are exact supported matches only. Transparency statuses describe listed documents, not physical project completion.',
+        'summary': {
+            'projects': len(eligible),
+            'withInventoryBridgeId': id_count,
+            'withInventoryCondition': condition_known,
+            'conditionCounts': condition_counts,
+            'transparencyDocumentStatuses': portal_counts,
+        },
+        'projects': eligible,
+    }
+    serialized = json.dumps(payload, ensure_ascii=False, indent=2) + '\n'
+    for target in (OUT, STATIC):
+        target.mkdir(parents=True, exist_ok=True)
+        (target / 'bridge-rehabilitation-review.json').write_text(serialized, encoding='utf-8')
+
+    total = len(eligible)
+    good_fair = condition_counts['Good · assessment year unknown'] + condition_counts['Fair · assessment year unknown']
+    poor_bad = condition_counts['Poor · assessment year unknown'] + condition_counts['Bad · assessment year unknown']
+    body = (
+        '<section class="card" id="bridge-rehabilitation-review"><h2>Bridge rehabilitation · inventory condition and document-list cross-check</h2>'
+        '<p>This review covers Rehabilitation/Major Repair of Permanent Bridges and BIP bridge rows explicitly titled rehabilitation or repair. Retrofitting/strengthening is excluded. A listed document count is not a construction-completion status.</p>'
+        f'<p><strong>{total:,}</strong> bridge rehabilitation/repair rows · <strong>{id_count:,}</strong> have a matched bridge ID in the offline DPWH inventory · <strong>{condition_known:,}</strong> have a recorded inventory condition. Of the rows with a condition: <strong>{good_fair:,}</strong> are marked Good/Fair and <strong>{poor_bad:,}</strong> Poor/Bad. Assessment dates are unavailable in these matched records.</p>'
+        '<figure><figcaption>Inventory condition recorded for the matched bridge asset. “No condition match” means the current crosswalk did not supply a condition; it does not mean the bridge was unassessed.</figcaption>'
+        '<svg viewBox="0 0 1000 310" role="img" aria-label="Recorded inventory condition for bridge rehabilitation projects">'
+    )
+    colors = {
+        'Bad · assessment year unknown': '#b42318',
+        'Poor · assessment year unknown': '#d97706',
+        'Fair · assessment year unknown': '#eab308',
+        'Good · assessment year unknown': '#16825d',
+        'No inventory condition match': '#8b98a5',
+    }
+    max_count = max(condition_counts.values(), default=1) or 1
+    for index, label in enumerate(condition_order):
+        y = 22 + index * 52
+        width = 650 * condition_counts[label] / max_count
+        body += f'<text x="8" y="{y + 19}" font-size="14">{esc(label.split(" · ")[0])}</text>'
+        body += f'<rect x="250" y="{y}" width="{width:.1f}" height="28" rx="4" fill="{colors[label]}"><title>{esc(label)} · {condition_counts[label]:,}</title></rect>'
+        body += f'<text x="{min(920, 260 + width):.1f}" y="{y + 19}" font-size="14">{condition_counts[label]:,}</text>'
+    body += '</svg></figure>'
+    body += table(
+        ['DPWH Transparency title status · snapshot', 'Bridge rows'],
+        [[label, portal_counts[label]] for label in portal_order],
+    )
+    body += (
+        '<p>The Transparency snapshot was retrieved 18 October 2026. “5+ documents listed” describes the portal’s document count only; it does not verify that a bridge was built or that rehabilitation is complete. An incomplete or unmatched title is not proof that a project or its documents are absent. Inventory condition dates are not available here, so Good/Fair and Poor/Bad describe the retained condition label without a dated condition comparison.</p>'
+        '<p>Existing inventory spans are asset dimensions, not funded rehabilitation lengths. The broader inventory cross-check found existing spans for 754 bridge line items, including rows without a usable stated funded length. These asset spans do not fill in the missing work length.</p>'
+        '<h3>Largest allocations · project-by-project review sample</h3>'
+    )
+    top_rows = eligible[:25]
+    body += table(
+        ['Project', 'HGAB allocation', 'Stated length (m)', 'Inventory bridge ID', 'Inventory span (m)', 'Inventory condition', 'Transparency document status'],
+        [[row['project'], row['allocationPesos'], row['statedLengthMeters'], row['inventoryBridgeId'] or 'No supported ID match', row['inventorySpanMeters'], row['inventoryCondition'], row['dpwhTransparencyDocumentStatus']] for row in top_rows],
+    )
+    body += '<p>Showing the 25 largest allocations; the JSON contains the full review population, inventory IDs, conditions, document-list status and source pages. <a href="bridge-rehabilitation-review.json" download>Download all bridge rehabilitation review rows as JSON</a>.</p>'
+    burol = next((row for row in eligible if 'burol overpass' in row['project'].lower()), None)
+    if burol:
+        body += (
+            '<aside class="report-disclaimer" role="note"><strong>Burol Overpass example:</strong> '
+            f'{esc(burol["project"])} · ₱{(burol["allocationPesos"] or 0):,.0f} over 25 stated meters = ₱{(burol["allocationPesos"] or 0) / 25:,.0f} per stated meter. '
+            'The retained record has no supported inventory bridge ID or condition match. The title has five listed DPWH Transparency documents in the October snapshot; that is document-list evidence, not proof of completed work. The 25 m title range and whole allocation still need scope review before treating this as a bridge construction unit cost.</aside>'
+        )
+    return body + '</section>'
 
 
 def length_overview(data):
