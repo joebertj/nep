@@ -1,0 +1,71 @@
+{
+  "sourceFileSha256": "4d7a7cffc144b2da901728a490cbc541309eb0b2ecaaa30e9fb33ddfcb65a5a9",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/80accde4c84c0bf8.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-la-con-ws-rebid-4-2-222x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-the-construction-of-la-consolacion-elem-school-water-system-brgy-la-consolacion-miagao-iloilo/",
+      "sourceTitle": "INVITATION TO BID FOR THE CONSTRUCTION OF LA CONSOLACION ELEM. SCHOOL WATER SYSTEM, BRGY. LA CONSOLACION, MIAGAO, ILOILO",
+      "publishedAt": "2018-09-19T06:28:46",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Section-1-Invitation-to-Bid-la-con-ws-rebid-4-2-222x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "4d7a7cffc144b2da901728a490cbc541309eb0b2ecaaa30e9fb33ddfcb65a5a9",
+      "sourceFileBytes": 13608,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/80accde4c84c0bf8.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-la-con-ws-rebid-4-2-222x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-the-construction-of-la-consolacion-elem-school-water-system-brgy-la-consolacion-miagao-iloilo/",
+          "sourceTitle": "INVITATION TO BID FOR THE CONSTRUCTION OF LA CONSOLACION ELEM. SCHOOL WATER SYSTEM, BRGY. LA CONSOLACION, MIAGAO, ILOILO",
+          "publishedAt": "2018-09-19T06:28:46",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Section-1-Invitation-to-Bid-la-con-ws-rebid-4-2-222x300.jpg"
+        }
+      ],
+      "sourceFileName": "Section-1-Invitation-to-Bid-la-con-ws-rebid-4-2-222x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Marnkicipol Judiog, Macda St\nMankicipol ikald",
+      "ocrText": "Marnkicipol Judiog, Macda St\nMankicipol ikald",
+      "ocrTokenCount": 2,
+      "ocrMeanConfidence": 0.7578,
+      "ocrTokens": [
+        {
+          "text": "Marnkicipol Judiog, Macda St",
+          "confidence": 0.8323,
+          "boxPx": [
+            40.0,
+            20.0,
+            102.0,
+            27.0
+          ]
+        },
+        {
+          "text": "Mankicipol ikald",
+          "confidence": 0.6832,
+          "boxPx": [
+            41.0,
+            78.0,
+            72.0,
+            85.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

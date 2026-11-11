@@ -1,0 +1,71 @@
+{
+  "sourceFileSha256": "7b6ea2319cc5473d43aaaa1e75e9e14d653ef221a6982a033fc1182f0567a2de",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/72f8ad5c73134eea.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-menro-shredder-machine-rebid-3-222x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-one-1-unit-brand-new-trailer-mounted-shredder-machine-for-shredding-biodegradable-compostable-waste-and-mrf-operations-miagao-iloilo/",
+      "sourceTitle": "INVITATION TO BID FOR ONE (1) UNIT BRAND NEW TRAILER MOUNTED SHREDDER MACHINE FOR SHREDDING BIODEGRADABLE / COMPOSTABLE WASTE AND MRF OPERATIONS, MIAGAO, ILOILO",
+      "publishedAt": "2018-09-28T03:04:58",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Section-1-Invitation-to-Bid-menro-shredder-machine-rebid-3-222x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "7b6ea2319cc5473d43aaaa1e75e9e14d653ef221a6982a033fc1182f0567a2de",
+      "sourceFileBytes": 8781,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/72f8ad5c73134eea.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-menro-shredder-machine-rebid-3-222x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-one-1-unit-brand-new-trailer-mounted-shredder-machine-for-shredding-biodegradable-compostable-waste-and-mrf-operations-miagao-iloilo/",
+          "sourceTitle": "INVITATION TO BID FOR ONE (1) UNIT BRAND NEW TRAILER MOUNTED SHREDDER MACHINE FOR SHREDDING BIODEGRADABLE / COMPOSTABLE WASTE AND MRF OPERATIONS, MIAGAO, ILOILO",
+          "publishedAt": "2018-09-28T03:04:58",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Section-1-Invitation-to-Bid-menro-shredder-machine-rebid-3-222x300.jpg"
+        }
+      ],
+      "sourceFileName": "Section-1-Invitation-to-Bid-menro-shredder-machine-rebid-3-222x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Munkcipol Said c\nRAC Chairpersoe",
+      "ocrText": "Munkcipol Said c\nRAC Chairpersoe",
+      "ocrTokenCount": 2,
+      "ocrMeanConfidence": 0.7338,
+      "ocrTokens": [
+        {
+          "text": "Munkcipol Said c",
+          "confidence": 0.671,
+          "boxPx": [
+            41.0,
+            60.0,
+            80.0,
+            68.0
+          ]
+        },
+        {
+          "text": "RAC Chairpersoe",
+          "confidence": 0.7965,
+          "boxPx": [
+            144.0,
+            189.0,
+            179.0,
+            196.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

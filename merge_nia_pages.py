@@ -1,10 +1,11 @@
 """Combine detailed irrigation and named NIA project evidence in one public page."""
 import hashlib,json,re
 from pathlib import Path
-from report_hero_module import STYLE,hero,peso
+from report_hero_module import STYLE,hero
 ROOT=Path(__file__).resolve().parent;STATIC=ROOT.parent/'open-data-visualization/static/nep-preview';OUT=ROOT/'analysis_output'
 START='<!-- nia-named-content:start -->';END='<!-- nia-named-content:end -->'
 SCRIPT_START='<!-- nia-named-scripts:start -->';SCRIPT_END='<!-- nia-named-scripts:end -->'
+ARCHIVE_NAMED_START='<!-- nia-archived-named-content:start -->';ARCHIVE_NAMED_END='<!-- nia-archived-named-content:end -->'
 def between(text,start,end):
  m=re.search(re.escape(start)+'(.*?)'+re.escape(end),text,re.S)
  return m[1] if m else None
@@ -24,6 +25,13 @@ def merge():
  if not named_path.exists() or not detail_path.exists():return
  named=named_path.read_text();detail=detail_path.read_text()
  saved=between(named,START,END)
+ if saved is None and (STATIC/'nia-archive.html').exists():
+  prior_archive=(STATIC/'nia-archive.html').read_text()
+  saved=between(prior_archive,ARCHIVE_NAMED_START,ARCHIVE_NAMED_END)
+  if saved is None:
+   start=prior_archive.find('<section id="nia-named-projects">')
+   end=prior_archive.find('<section class="card"><h2>NEP comparison coverage</h2>')
+   if start >= 0 and end > start:saved=prior_archive[start:end]
  if saved is None:
   content=main_content(named)
   # One lead hero per page; retain the named-scope explanation in ordinary prose.
@@ -49,7 +57,11 @@ def merge():
   return text
  donor=prefix(donor);donor_scripts=prefix(native_scripts(detail))
  # The canonical NIA page builder owns its stage-comparison hero.
- navigation='<p class="nia-scope-links"><a href="#nia-detailed-irrigation">Detailed irrigation works ↓</a> · <a href="#nia-named-projects">Named NIA projects ↓</a></p>'
+ # Move the long historical/comparison appendix out of the current NIA page.
+ archive_start=donor.find('<section class="card"><h2>NEP comparison coverage</h2>')
+ if archive_start < 0: raise ValueError('NIA archive boundary not found')
+ archive_content=donor[archive_start:]
+ donor=donor[:archive_start]+'<section class="card nia-archive-link"><h2>Older NIA analyses</h2><p>Historical comparisons, the detailed irrigation annex, and supporting tables are archived separately.</p><p><a href="nia-archive.html">Open NIA archive →</a></p></section>'
  donor='<div id="nia-detailed-irrigation">'+donor+'</div>'
  head=named.split('</head>',1)[0]+'</head>'
  head=re.sub(r'<!-- nia-donor-styles:start -->.*?<!-- nia-donor-styles:end -->','',head,flags=re.S)
@@ -57,7 +69,9 @@ def merge():
  head=head.replace('</head>','<!-- nia-donor-styles:start -->'+styles+'<!-- nia-donor-styles:end --></head>')
  head=re.sub(r'<title>.*?</title>','<title>NIA · irrigation and named projects</title>',head,flags=re.S)
  body_tag=re.search(r'<body\b[^>]*>',named)[0];header=re.search(r'<header\b[^>]*>.*?</header>',named,re.S)[0]
+ from uniform_report_menu import NAV as REPORT_NAV
  header=re.sub(r'<h1\b[^>]*>.*?</h1>','<h1>NIA · irrigation and named projects</h1>',header,flags=re.S)
+ header=re.sub(r'<nav\b[^>]*class="report-nav"[^>]*>.*?</nav>',REPORT_NAV,header,count=1,flags=re.S)
  footer=''.join(re.findall(r'<footer\b[^>]*>.*?</footer>',named,re.S))
  # Shared external behaviours and CSV handler run once on the combined DOM.
  external=[];seen=set()
@@ -65,39 +79,42 @@ def merge():
   key=m[1].split('?')[0]
   if key not in seen:external.append(m[0]);seen.add(key)
  csv_handler=re.search(r'<script id="investigation-evidence-script"[^>]*>.*?</script>',named,re.S)
- page=head+body_tag+header+'<main class="wrap">'+donor+START+saved+END+navigation+'</main>'+SCRIPT_START+scripts+SCRIPT_END+donor_scripts+(csv_handler[0] if csv_handler else '')+''.join(external)+footer+'</body></html>'
- baseline_path=STATIC/'nep-agency-baselines.json'
- if baseline_path.exists():
-  baseline=json.loads(baseline_path.read_text())
-  changed=[r for r in baseline['niaNamedComparisons'] if r['adjustmentPesos'] not in (None,0) and r['visibleHgabRowVerified']]
-  net=sum(r['adjustmentPesos'] for r in changed)
-  card=hero('Named NIA allocations · NEP → HGAB 3rd reading',str(len(changed)),'exact named-title allocations changed',('−' if net<0 else '+')+peso(abs(net)),'net adjustment across these matched rows only',[
-   ('Named HGAB rows',str(len(baseline['niaNamedComparisons'])), 'all checked against visible PDF title/amount rows'),
-   ('Unresolved scope','Separate review','blank, zero and repeated-name entries are not interchangeable')],
-   'This is a matched subset of NIA, not the agency’s total budget. Exact titles do not certify engineering-scope identity; earlier House reading comparisons are on the dedicated comparison page.')
- else:
-  revision=json.loads((STATIC/'hgab-revision-data.json').read_text())['nia_named']['summary']
-  card=hero('NIA named projects · 3rd vs 2nd Reading',f"{revision['statusCounts'].get('Same allocation',0):,}",'named-project lines retained at the same allocation',peso(revision['thirdTotal']),'schedule total in each reading',[
-   ('2nd-reading total',peso(revision['secondTotal']),f"{revision['secondRows']:,} lines"),
-   ('Net allocation change',peso(revision['thirdTotal']-revision['secondTotal']),'between the two readings')],
-   'This page covers NIA named projects. The separate NIA irrigation appendix is reported independently; bill-stage stability is not a repeat-project finding.')
+ page=head+body_tag+header+'<main class="wrap">'+donor+'</main>'+(csv_handler[0] if csv_handler else '')+''.join(external)+footer+'</body></html>'
+ archive_header=re.sub(r'<h1\b[^>]*>.*?</h1>','<h1>NIA archive · irrigation annex and historical comparisons</h1>',header,flags=re.S)
+ archive_head=re.sub(r'<title>.*?</title>','<title>NIA archive · irrigation annex and historical comparisons</title>',head,flags=re.S)
+ archive_dependencies=[];dependency_seen=set()
+ for script_tag in re.finditer(r'<script\b[^>]*\bsrc="([^"]+)"[^>]*>.*?</script>',detail,re.S):
+  dependency=script_tag[1].split('?')[0]
+  if dependency not in dependency_seen:
+   archive_dependencies.append(script_tag[0]);dependency_seen.add(dependency)
+ archive_head=archive_head.replace('</head>',''.join(archive_dependencies)+'</head>')
+ archive_page=(archive_head+body_tag+archive_header+'<main class="wrap"><p><a href="nia.html">← Current NIA summary</a></p><div id="nia-archive-sections">'+ARCHIVE_NAMED_START+saved+ARCHIVE_NAMED_END+archive_content+
+               '</div></main>'+scripts+donor_scripts+(csv_handler[0] if csv_handler else '')+''.join(external)+footer+'</body></html>')
  from nia_geolocation_flags import render as render_nia_geolocation_flags
  location_flags = render_nia_geolocation_flags()
+ nia_audit=json.loads((OUT/'nia_geolocation_audit.json').read_text())
+ card=hero(
+  'FY2027 NIA schedule · 10 November 2026 workbook',
+  f"{nia_audit['sourceRows']:,}",
+  'House-bill rows in the location workbook',
+  f"{nia_audit['resolvedPsgcRows']:,} / {nia_audit['rowsWithPsgc']:,}",
+  'supplied PSGC codes resolve in the current reference',
+  [
+   ('Station-range rows',f"{nia_audit['stationRangeCandidateRows']:,}",f"{nia_audit['stationRangeSegmentCount']:,} parsed segments"),
+   ('Allocation-per-meter screen',f"{nia_audit['stationRangeWithAmountRows']:,} rows",'category-filtered screening ratios'),
+  ],
+  'PSGC values locate projects administratively, not by surveyed coordinates. Station lengths are inferred from titles, and allocation-per-meter is not a verified unit cost or alignment.'
+ )
  page=re.sub(r'<section\b[^>]*id="(?:report-hero|nia-detail-report-hero)"[^>]*>.*?</section>','',page,count=1,flags=re.S)
  page=re.sub(r'<section\b[^>]*id="nia-data-quality-flag"[^>]*>.*?</section>','',page,flags=re.S)
- page=page.replace('<main class="wrap">','<main class="wrap"><section id="report-hero">'+card+'</section><section id="nia-data-quality-flag" class="nia-data-quality-flag"><h2>Red flag · NIA project statistics need project-level verification</h2><p>Administrative geolocation now supports place-name consistency checks, but it does not supply surveyed project coordinates or canal/dam alignments. All NIA project rows remain flagged for data sufficiency review of project scope, scale, location and identity. Read the specific PSGC hierarchy flags below; do not interpret them as findings about project validity.</p></section>'+location_flags,1)
- def mark_nia_body(match):
-  tag=match[0]
-  if re.search(r'\bclass="',tag):
-   return re.sub(r'\bclass="([^"]*)"',lambda m:'class="'+(m[1] if 'nia-statistics-flagged' in m[1].split() else m[1]+' nia-statistics-flagged')+'"',tag,count=1)
-  return tag[:-1]+' class="nia-statistics-flagged">'
- page=re.sub(r'<body\b[^>]*>',mark_nia_body,page,count=1)
- flag_style='<style id="nia-data-quality-style">.nia-data-quality-flag{border:2px solid #b42318!important;border-left:9px solid #b42318!important;background:#fff1f0!important;color:#681b16!important}.nia-data-quality-flag h2{color:#8f1d16!important}.nia-statistics-flagged tbody tr{background:#fff7f6!important;box-shadow:inset 4px 0 #b42318}.nia-statistics-flagged tbody tr:hover{background:#ffe8e6!important}</style>'
+ page=page.replace('<main class="wrap">','<main class="wrap"><section id="report-hero">'+card+'</section>'+location_flags,1)
+ flag_style='<style id="nia-data-quality-style"></style>'
  page=re.sub(r'<style id="nia-data-quality-style">.*?</style>','',page,flags=re.S)
  page=page.replace('</head>',flag_style+'</head>',1)
  if 'id="report-hero-style"' not in page:page=page.replace('</head>',STYLE+'</head>',1)
  page=page.replace('repeats.html#nia','repeats-historical.html#nia')
  named_path.write_text(page);(OUT/'nia.html').write_text(page)
+ (STATIC/'nia-archive.html').write_text(archive_page);(OUT/'nia-archive.html').write_text(archive_page)
  (OUT/'nia_page_merge.json').write_text(json.dumps({'canonicalPage':'nia.html','detailSource':'nia-irrigation.html','namedSourcePreservedInMarkers':True,'namespacedIds':mapping,'sourceHashes':{'detail':hashlib.sha256(detail.encode()).hexdigest()},'scope':'Presentation merge; project records and allocations are unchanged; the two NIA scopes are not summed.'},indent=2)+'\n')
  return mapping
 if __name__=='__main__':merge()

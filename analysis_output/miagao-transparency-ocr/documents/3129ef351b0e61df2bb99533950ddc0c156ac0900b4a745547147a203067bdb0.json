@@ -1,0 +1,71 @@
+{
+  "sourceFileSha256": "3129ef351b0e61df2bb99533950ddc0c156ac0900b4a745547147a203067bdb0",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/bc8112df15287072.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-la-con-ws-rebid-5-2-231x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-the-construction-of-la-consolacion-elem-school-water-system-brgy-la-consolacion-miagao-iloilo/",
+      "sourceTitle": "INVITATION TO BID FOR THE CONSTRUCTION OF LA CONSOLACION ELEM. SCHOOL WATER SYSTEM, BRGY. LA CONSOLACION, MIAGAO, ILOILO",
+      "publishedAt": "2018-09-19T06:28:46",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Section-1-Invitation-to-Bid-la-con-ws-rebid-5-2-231x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "3129ef351b0e61df2bb99533950ddc0c156ac0900b4a745547147a203067bdb0",
+      "sourceFileBytes": 6884,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/bc8112df15287072.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-la-con-ws-rebid-5-2-231x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-the-construction-of-la-consolacion-elem-school-water-system-brgy-la-consolacion-miagao-iloilo/",
+          "sourceTitle": "INVITATION TO BID FOR THE CONSTRUCTION OF LA CONSOLACION ELEM. SCHOOL WATER SYSTEM, BRGY. LA CONSOLACION, MIAGAO, ILOILO",
+          "publishedAt": "2018-09-19T06:28:46",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Section-1-Invitation-to-Bid-la-con-ws-rebid-5-2-231x300.jpg"
+        }
+      ],
+      "sourceFileName": "Section-1-Invitation-to-Bid-la-con-ws-rebid-5-2-231x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Mncipal\nSHGEWIN KETTEINL FAINA",
+      "ocrText": "Mncipal\nSHGEWIN KETTEINL FAINA",
+      "ocrTokenCount": 2,
+      "ocrMeanConfidence": 0.721,
+      "ocrTokens": [
+        {
+          "text": "Mncipal",
+          "confidence": 0.5935,
+          "boxPx": [
+            25.0,
+            69.0,
+            52.0,
+            76.0
+          ]
+        },
+        {
+          "text": "SHGEWIN KETTEINL FAINA",
+          "confidence": 0.8485,
+          "boxPx": [
+            146.0,
+            124.0,
+            208.0,
+            131.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

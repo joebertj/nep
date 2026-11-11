@@ -31,6 +31,14 @@ def map_links(row: dict) -> str:
             raise ValueError('coordinates out of range')
     except (KeyError, TypeError, ValueError):
         return 'Map links unavailable · source coordinates missing'
+    if abs(start[0] - end[0]) < 1e-9 and abs(start[1] - end[1]) < 1e-9:
+        satellite = f'https://www.google.com/maps/@{start[0]:.6f},{start[1]:.6f},17z/data=!3m1!1e3'
+        return (
+            f'<a href="{html.escape(satellite, quote=True)}" target="_blank" rel="noopener noreferrer" '
+            'title="Google Maps satellite view at the single printed coordinate; endpoint role is unspecified">'
+            'Google Maps satellite · printed point ↗</a>'
+            '<br><span>Route + distance unavailable · source lists one coordinate only</span>'
+        )
     satellite_start = f'https://www.google.com/maps/@{start[0]:.6f},{start[1]:.6f},17z/data=!3m1!1e3'
     satellite_end = f'https://www.google.com/maps/@{end[0]:.6f},{end[1]:.6f},17z/data=!3m1!1e3'
     route = ('https://www.google.com/maps/dir/?api=1&origin='
@@ -122,6 +130,7 @@ def generate() -> dict:
         '<section class="card fmr-coordinate-review" id="coordinate-review">'
         '<h2>1 · Coordinate review · endpoints over 20 km apart</h2>'
         f'<p>{len(coordinate_rows):,} FMR project rows have printed endpoint coordinates more than 20 km apart. Connectivity spatial matching is suppressed for these rows because of the coordinate gap. This is a data-quality review signal; it does not identify which printed coordinate is wrong or establish the actual route alignment.</p>'
+        '<p>Method note: the ArcGIS archive contains road line geometry and other road inventory features. The separate road proximity screen compares each printed endpoint with the nearest mapped DPWH national-road centreline (500 m screen); it does not calculate a connected shortest path between project endpoints. These 20 km coordinate-review cases stay suppressed until the printed coordinates are reconciled. A 50 m threshold is used for mapped-cropland proximity, not as a validated route-alignment tolerance.</p>'
         f'<div class="fmr-manual-red-stats"><div><strong>{len(coordinate_rows):,}</strong><span>projects needing coordinate review</span></div>'
         f'<div><strong>₱{sum(int(row.get("amountPesos") or 0) for row in coordinate_rows):,}</strong><span>listed HGAB allocation</span></div></div>'
         '<p>Open satellite views at both printed endpoints and the suggested driving route to inspect the source locations. Google directions are not the project alignment or a straight-line measurement.</p>'

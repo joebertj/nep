@@ -1,0 +1,1138 @@
+{
+  "source": {
+    "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+    "sheet": "Draft",
+    "sha256": "2c848a2aed4c73414e237c71a1262df94260ffa2c2264413c1662b65bc4bf295"
+  },
+  "sourceNote": "Working Draft coordinate-correction remarks, parsed to analysis_output/fmr-nov5-working-draft.json.",
+  "method": "Apply only correction rows with an exact normalized title match to one FMR ledger project and parseable START/END coordinate pairs. Preserve original ledger coordinates; these are a separate correction overlay.",
+  "overrides": [
+    {
+      "projectId": "ib:p667:r5",
+      "title": "Construction of Sitio Rango, Brgy. Tubburan FMR, Brgy. Tubburan, Bacarra, Ilocos Norte",
+      "replacementCoordinates": [
+        [
+          [
+            120.626656,
+            18.286365
+          ],
+          [
+            120.6258,
+            18.279797
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 6,
+        "control": "R1-NEW-0001",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey\n\nPlease refer to Annex A for the map reference."
+      },
+      "oldCoordinateGapMeters": 436.0,
+      "correctedCoordinateGapMeters": 735.9,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p667:r7",
+      "title": "Construction of Brgy. Escoda - Brgy. Elizabeth FMR, Brgy. Escoda and Brgy. Elizabeth, Marcos, Ilocos Norte",
+      "replacementCoordinates": [
+        [
+          [
+            120.724736,
+            18.009089
+          ],
+          [
+            120.732015,
+            17.9980347
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 10,
+        "control": "R1-NEW-0003",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 1467.8,
+      "correctedCoordinateGapMeters": 1450.3,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p667:r8",
+      "title": "Construction of Sitio Sao, Brgy. Daking FMR, Brgy. Daking, San Gabriel, La Union",
+      "replacementCoordinates": [
+        [
+          [
+            120.4839401,
+            16.6901987
+          ],
+          [
+            120.4825495,
+            16.6848773
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 17,
+        "control": "R1-NEW-0004",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 20775.9,
+      "correctedCoordinateGapMeters": 610.0,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p667:r17",
+      "title": "Construction of Brgy. Alacan to Brgy. Mabilao FMR, Brgy. Alacan and Brgy. Mabilao, San Fabian, Pangasinan",
+      "replacementCoordinates": [
+        [
+          [
+            120.4321253,
+            16.1633861
+          ],
+          [
+            120.4267045,
+            16.1700297
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 27,
+        "control": "R1-NEW-0005",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 19071.8,
+      "correctedCoordinateGapMeters": 938.6,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p669:r8",
+      "title": "Construction of Brgy. Payac FMR Phase III, Brgy. Payac, Bangui, Ilocos Norte",
+      "replacementCoordinates": [
+        [
+          [
+            120.7172779,
+            18.4758953
+          ],
+          [
+            120.70905,
+            18.428433
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 63,
+        "control": "R1-NEW-0010",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey\n\nPlease refer to Annex A for the map reference."
+      },
+      "oldCoordinateGapMeters": 2781.7,
+      "correctedCoordinateGapMeters": 5348.5,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p669:r13",
+      "title": "Construction of Camangaan - Brgy. 29 FMR, Laoag City, Ilocos Norte",
+      "replacementCoordinates": [
+        [
+          [
+            120.610414,
+            18.18375
+          ],
+          [
+            120.616351,
+            18.181358
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 72,
+        "control": "R1-NEW-0011",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 7.5,
+      "correctedCoordinateGapMeters": 681.3,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p669:r17",
+      "title": "Construction of Brgy. 1 San Lorenzo FMR, Laoag City, Ilocos Norte",
+      "replacementCoordinates": [
+        [
+          [
+            120.58005,
+            18.20295
+          ],
+          [
+            120.582433,
+            18.206083
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 79,
+        "control": "R1-NEW-0012",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 200.6,
+      "correctedCoordinateGapMeters": 429.8,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p669:r18",
+      "title": "Construction of Brgy. 25 Santa Cayetana FMR, Laoag City, Ilocos Norte",
+      "replacementCoordinates": [
+        [
+          [
+            120.603667,
+            18.188467
+          ],
+          [
+            120.601183,
+            18.185533
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 81,
+        "control": "R1-NEW-0013",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 236.8,
+      "correctedCoordinateGapMeters": 418.7,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p670:r2",
+      "title": "Construction of Brgy. 27 FMR, Laoag City, Ilocos Norte",
+      "replacementCoordinates": [
+        [
+          [
+            120.605466,
+            18.187746
+          ],
+          [
+            120.605367,
+            18.186354
+          ]
+        ],
+        [
+          [
+            120.607603,
+            18.195734
+          ],
+          [
+            120.609355,
+            18.194385
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 83,
+        "control": "R1-NEW-0014",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 844.8,
+      "correctedCoordinateGapMeters": 844.8,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p670:r15",
+      "title": "Construction of Sitio Tamuad Brgy. Dampig FMR, Brgy. Dampig, Pagudpud, Ilocos Norte",
+      "replacementCoordinates": [
+        [
+          [
+            120.822812,
+            18.5391827
+          ],
+          [
+            120.8235538,
+            18.544324
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 108,
+        "control": "R1-0068",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 577.0,
+      "correctedCoordinateGapMeters": 577.0,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p671:r10",
+      "title": "Construction of Purok 3, Brgy. Pangil FMR, Brgy. Pangil, Pasuquin, Ilocos Norte",
+      "replacementCoordinates": [
+        [
+          [
+            120.643286,
+            18.298111
+          ],
+          [
+            120.652117,
+            18.299367
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 123,
+        "control": "R1-NEW-0018",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 159.8,
+      "correctedCoordinateGapMeters": 942.7,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p671:r11",
+      "title": "Construction of Brgy. Caruan FMR, Brgy. Caruan, Pasuquin, Ilocos Norte",
+      "replacementCoordinates": [
+        [
+          [
+            120.599054,
+            18.423967
+          ],
+          [
+            120.616183,
+            18.438817
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 125,
+        "control": "R1-NEW-0019",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 933.5,
+      "correctedCoordinateGapMeters": 2447.8,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p671:r13",
+      "title": "Construction of Sitio Cagat to Sitio Turod, Brgy. Tangaoan FMR, Brgy. Tangaoan, Piddig, Ilocos Norte",
+      "replacementCoordinates": [
+        [
+          [
+            120.710936,
+            18.189244
+          ],
+          [
+            120.712562,
+            18.19302
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 129,
+        "control": "R1-NEW-0021",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 58009.7,
+      "correctedCoordinateGapMeters": 453.6,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p672:r3",
+      "title": "Construction of Brgy. Margaay FMR, Brgy. Margaay, Vintar, Ilocos Norte",
+      "replacementCoordinates": [
+        [
+          [
+            120.653267,
+            18.213083
+          ],
+          [
+            120.660783,
+            18.218683
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 137,
+        "control": "R1-NEW-0023",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 457.8,
+      "correctedCoordinateGapMeters": 1008.9,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p676:r3",
+      "title": "Construction of Brgy. Beti to Brgy. Yaway FMR, Brgy. Beti and Brgy. Yaway, Aritao, Nueva Vizcaya",
+      "replacementCoordinates": [
+        [
+          [
+            121.051562,
+            16.224575
+          ],
+          [
+            121.043995,
+            16.2147
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 220,
+        "control": "R2-NEW-0003",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 37495.1,
+      "correctedCoordinateGapMeters": 1363.3,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p677:r5",
+      "title": "Construction of Brgy. Buyon FMR, Brgy. Buyon, Cauayan City, Isabela",
+      "replacementCoordinates": [
+        [
+          [
+            121.880001,
+            16.829592
+          ],
+          [
+            121.888737,
+            16.827497
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 241,
+        "control": "R2-NEW-0004",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 2772.1,
+      "correctedCoordinateGapMeters": 958.5,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p678:r3",
+      "title": "Construction of Brgy. Nagrumbuan FMR 1, Brgy. Nagrumbuan, Cauayan City, Isabela",
+      "replacementCoordinates": [
+        [
+          [
+            121.703649,
+            16.898692
+          ],
+          [
+            121.717115,
+            16.905686
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 257,
+        "control": "R2-NEW-0006",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 491.0,
+      "correctedCoordinateGapMeters": 1630.1,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p679:r2",
+      "title": "Construction of Brgy. Buneg to Brgy. Fugu FMR, Brgy. Buneg and Brgy. Fugu, Echague, Isabela",
+      "replacementCoordinates": [
+        [
+          [
+            121.646786,
+            16.707559
+          ],
+          [
+            121.644383,
+            16.721638
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 271,
+        "control": "R2-NEW-0007",
+        "remark": "Correction of project title and coordinates per DA evaluation"
+      },
+      "oldCoordinateGapMeters": 1549.9,
+      "correctedCoordinateGapMeters": 1586.3,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p679:r4",
+      "title": "Construction of Sitio Cagurungan, Brgy. Eden FMR, Brgy. Eden, San Manuel, Isabela",
+      "replacementCoordinates": [
+        [
+          [
+            121.584853,
+            17.028548
+          ],
+          [
+            121.570947,
+            17.032067
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 275,
+        "control": "R2-L-0008",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 1337.7,
+      "correctedCoordinateGapMeters": 1529.4,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p681:r12",
+      "title": "Construction of Brgy. San Juan FMR, Brgy. San Juan, Licab, Nueva Ecija",
+      "replacementCoordinates": [
+        [
+          [
+            120.781749,
+            15.537396
+          ],
+          [
+            120.789554,
+            15.537104
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 318,
+        "control": "R3-NEW-0006",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 939.7,
+      "correctedCoordinateGapMeters": 836.8,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p681:r18",
+      "title": "Construction of Purok 3, Brgy. Suclayin FMR, Brgy. Suclayin, Arayat, Pampanga",
+      "replacementCoordinates": [
+        [
+          [
+            120.79449,
+            15.165762
+          ],
+          [
+            120.804708,
+            15.165674
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 327,
+        "control": "R3-NEW-0007",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 44782.4,
+      "correctedCoordinateGapMeters": 1096.7,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p681:r19",
+      "title": "Construction of Brgy. San Roque Bitas FMR, Brgy. San Roque Bitas, Arayat, Pampanga",
+      "replacementCoordinates": [
+        [
+          [
+            120.7179,
+            15.147101
+          ],
+          [
+            120.722635,
+            15.139795
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 329,
+        "control": "R3-NEW-0008",
+        "remark": "Correction of project title and coordinates per DA evaluation"
+      },
+      "oldCoordinateGapMeters": 912.7,
+      "correctedCoordinateGapMeters": 958.3,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p685:r7",
+      "title": "Construction of Brgy. Poblacion Norte FMR, Brgy. Poblacion Norte, Licab, Nueva Ecija",
+      "replacementCoordinates": [
+        [
+          [
+            120.771864,
+            15.5487
+          ],
+          [
+            120.771624,
+            15.542514
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 411,
+        "control": "R3-NEW-0022",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 649.6,
+      "correctedCoordinateGapMeters": 688.3,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p685:r16",
+      "title": "Construction of Brgy. San Alejandro FMR, Brgy. San Alejandro, Quezon, Nueva Ecija",
+      "replacementCoordinates": [
+        [
+          [
+            120.859087,
+            15.571728
+          ],
+          [
+            120.853789,
+            15.551956
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 440,
+        "control": "R3-NEW-0031",
+        "remark": "Correction of project title and coordinates per DA evaluation"
+      },
+      "oldCoordinateGapMeters": 1857.6,
+      "correctedCoordinateGapMeters": 2270.6,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p687:r4",
+      "title": "Construction of Brgy. Cubcub FMR, Brgy. Cubcub, Capas, Tarlac",
+      "replacementCoordinates": [
+        [
+          [
+            120.60035,
+            15.330583
+          ],
+          [
+            120.614517,
+            15.330083
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 464,
+        "control": "R3-NEW-0034",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 475.5,
+      "correctedCoordinateGapMeters": 1520.3,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p692:r10",
+      "title": "Construction of Sitio Bilwang, Brgy. Quipot FMR, Brgy. Quipot, San Juan, Batangas",
+      "replacementCoordinates": [
+        [
+          [
+            121.376712,
+            13.758237
+          ],
+          [
+            121.38715,
+            13.753767
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 538,
+        "control": "R4A-NEW-0011",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 648.4,
+      "correctedCoordinateGapMeters": 1232.1,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p692:r13",
+      "title": "Construction of Brgy. Anibawan FMR, Brgy. Anibawan, Burdeos, Quezon",
+      "replacementCoordinates": [
+        [
+          [
+            121.974867,
+            14.9594
+          ],
+          [
+            121.971317,
+            14.952667
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 542,
+        "control": "R4A-NEW-0012",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 258.8,
+      "correctedCoordinateGapMeters": 840.2,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p692:r14",
+      "title": "Construction of Brgy. Miswa FMR, Brgy. Miswa, Infanta, Quezon",
+      "replacementCoordinates": [
+        [
+          [
+            121.653183,
+            14.7432
+          ],
+          [
+            121.659333,
+            14.738533
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 544,
+        "control": "R4A-NEW-0013",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 522.7,
+      "correctedCoordinateGapMeters": 840.6,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p692:r16",
+      "title": "Construction of Brgy. Tagumpay FMR, Brgy. Tagumpay, Real, Quezon",
+      "replacementCoordinates": [
+        [
+          [
+            121.584033,
+            14.606733
+          ],
+          [
+            121.567767,
+            14.613133
+          ]
+        ],
+        [
+          [
+            121.583412,
+            14.606488
+          ],
+          [
+            121.579656,
+            14.606957
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 547,
+        "control": "R4A-NEW-0014",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 807.6,
+      "correctedCoordinateGapMeters": 471.6,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p693:r5",
+      "title": "Construction of Brgy. Pila FMR, Brgy. Pila, San Pascual, Batangas",
+      "replacementCoordinates": [
+        [
+          [
+            121.03825,
+            13.838783
+          ],
+          [
+            121.039683,
+            13.847127
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 553,
+        "control": "R4A-NEW-0016",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 661.4,
+      "correctedCoordinateGapMeters": 940.6,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p693:r15",
+      "title": "Construction of Brgy. Bangco FMR, Brgy. Bangco, Cavinti, Laguna",
+      "replacementCoordinates": [
+        [
+          [
+            121.476878,
+            14.245651
+          ],
+          [
+            121.487168,
+            14.24856
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 569,
+        "control": "R4A-NEW-0019",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 642.5,
+      "correctedCoordinateGapMeters": 1155.2,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p707:r10",
+      "title": "Construction of Brgy. Buga FMR, Brgy. Buga, Leon, lloilo",
+      "replacementCoordinates": [
+        [
+          [
+            122.384052,
+            10.818588
+          ],
+          [
+            122.386097,
+            10.826356
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 746,
+        "control": "R6-NEW-0002",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 907.7,
+      "correctedCoordinateGapMeters": 892.2,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p707:r18",
+      "title": "Construction of Sitio Capasigan, Brgy. Alimono FMR, Brgy. Alimono, Passi City, Iloilo",
+      "replacementCoordinates": [
+        [
+          [
+            122.706772,
+            11.168989
+          ],
+          [
+            122.708269,
+            11.162614
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 755,
+        "control": "R6-NEW-0003",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 339.1,
+      "correctedCoordinateGapMeters": 727.4,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p709:r14",
+      "title": "Concreting of Brgy. Kirayan Tacas - Brgy. Pungtod Naulid FMR, Brgy. Kirayan Tacas and Brgy. Pungtod, Naulid, Miagao, Iloilo",
+      "replacementCoordinates": [
+        [
+          [
+            122.24513,
+            10.652727
+          ],
+          [
+            122.249011,
+            10.671727
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 763,
+        "control": "R6-NEW-0004",
+        "remark": "Correction of project title and coordinates per DA evaluation"
+      },
+      "oldCoordinateGapMeters": 2154.8,
+      "correctedCoordinateGapMeters": 2154.9,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p713:r12",
+      "title": "Construction of Sitio Busay, Brgy. Apale FMR, Brgy. Apale, Isabel, Leyte",
+      "replacementCoordinates": [
+        [
+          [
+            124.488833,
+            10.871556
+          ],
+          [
+            124.485778,
+            10.878222
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 830,
+        "control": "R8-NEW-0001",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 812.8,
+      "correctedCoordinateGapMeters": 812.8,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p713:r13",
+      "title": "Construction of Sitio Kabaringan, Brgy. Apale FMR, Brgy. Apale, Isabel, Leyte",
+      "replacementCoordinates": [
+        [
+          [
+            124.489556,
+            10.874
+          ],
+          [
+            124.49175,
+            10.883361
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 832,
+        "control": "R8-NEW-0002",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 1067.9,
+      "correctedCoordinateGapMeters": 1068.1,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p713:r16",
+      "title": "Construction of Brgy. Imelda to Brgy. Lico FMR, Brgy. Imelda and Brgy. Lico, Naval, Biliran",
+      "replacementCoordinates": [
+        [
+          [
+            124.450083,
+            11.587819
+          ],
+          [
+            124.44325,
+            11.587833
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 838,
+        "control": "R8-NEW-0003",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 395.8,
+      "correctedCoordinateGapMeters": 744.3,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p716:r15",
+      "title": "Construction of Sitio Nangka Plain, Brgy. La Paz FMR, Brgy. La Paz, Zamboanga City",
+      "replacementCoordinates": [
+        [
+          [
+            122.002851,
+            7.016982
+          ],
+          [
+            122.006157,
+            7.01026
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 870,
+        "control": "R9-NEW-0001",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 784.3,
+      "correctedCoordinateGapMeters": 831.8,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p724:r7",
+      "title": "Construction of Brgy. San Pedro to Fish Landing FMR, Brgy. San Pedro, Alegria, Surigao del Norte",
+      "replacementCoordinates": [
+        [
+          [
+            125.578973,
+            9.480925
+          ],
+          [
+            125.562851,
+            9.49076
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 1011,
+        "control": "R13-NEW-0005",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey\n\nPlease refer to Annex A for the map reference."
+      },
+      "oldCoordinateGapMeters": 1784.1,
+      "correctedCoordinateGapMeters": 2079.0,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p725:r5",
+      "title": "Construction of Purok Magtatanim Brgy. Matin-ao FMR, Brgy. Matin-ao, Mainit, Surigao del Norte",
+      "replacementCoordinates": [
+        [
+          [
+            125.480531,
+            9.547383
+          ],
+          [
+            125.480225,
+            9.535594
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 1026,
+        "control": "R13-NEW-0014",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey\n\nPlease refer to Annex A for the map reference."
+      },
+      "oldCoordinateGapMeters": 1980.1,
+      "correctedCoordinateGapMeters": 1311.3,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    },
+    {
+      "projectId": "ib:p726:r6",
+      "title": "Construction of Purok 3 Brgy. Camboayon FMR, Brgy. Camboayon, Gigaquit, Surigao del Norte",
+      "replacementCoordinates": [
+        [
+          [
+            125.647714,
+            9.55399
+          ],
+          [
+            125.640808,
+            9.559986
+          ]
+        ]
+      ],
+      "source": {
+        "file": "data_sources/Working Draft as of Nov 5_63627eee-5ce6-4da9-bfc5-52c25db9e375 (1).xlsx",
+        "sheet": "Draft",
+        "derivedRecordFile": "analysis_output/fmr-nov5-working-draft.json",
+        "draftRow": 1050,
+        "control": "R13-NEW-0010",
+        "remark": "Correction of project coordinates per DA evaluation/ GPS survey"
+      },
+      "oldCoordinateGapMeters": 370.7,
+      "correctedCoordinateGapMeters": 1008.9,
+      "coordinateBasis": "Working Draft coordinate correction per DA evaluation / GPS survey"
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "sourceFileSha256": "fc0c78091c388c8b237d27d4f11ea95b8f98c1135e06699e6bc278a0a4644bca",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/84047fb22853954b.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-la-con-ws-rebid-5-2-789x1024.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-the-construction-of-la-consolacion-elem-school-water-system-brgy-la-consolacion-miagao-iloilo/",
+      "sourceTitle": "INVITATION TO BID FOR THE CONSTRUCTION OF LA CONSOLACION ELEM. SCHOOL WATER SYSTEM, BRGY. LA CONSOLACION, MIAGAO, ILOILO",
+      "publishedAt": "2018-09-19T06:28:46",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Section-1-Invitation-to-Bid-la-con-ws-rebid-5-2-789x1024.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "fc0c78091c388c8b237d27d4f11ea95b8f98c1135e06699e6bc278a0a4644bca",
+      "sourceFileBytes": 57776,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/84047fb22853954b.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-la-con-ws-rebid-5-2-789x1024.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-the-construction-of-la-consolacion-elem-school-water-system-brgy-la-consolacion-miagao-iloilo/",
+          "sourceTitle": "INVITATION TO BID FOR THE CONSTRUCTION OF LA CONSOLACION ELEM. SCHOOL WATER SYSTEM, BRGY. LA CONSOLACION, MIAGAO, ILOILO",
+          "publishedAt": "2018-09-19T06:28:46",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Section-1-Invitation-to-Bid-la-con-ws-rebid-5-2-789x1024.jpg"
+        }
+      ],
+      "sourceFileName": "Section-1-Invitation-to-Bid-la-con-ws-rebid-5-2-789x1024.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "8.\nThe Municipality of Miagao reserves the right to accept or reject any bid and all bids,\ndeclare failure of bidding, or not to award the contract in accordance with Section\n41 of RA 9184 and its IRR, without thereby incurring any liability to the affected\nbidder or bidders.\n9.\nFor further information, please refer to:\nSHERWIN KEITH M. FAINA\nMunicipal Planning and Development Office\nLocal Government Unit of Miagao\nMueda St,\n5023 Miagao, Iloilo\nTelefax No.: (033) 315-8050 loc. 101\nWebsite: www.miagao.gov.ph\nEmail:lgumiagao@yahoo.com\nSHERWIN KEITH M. FAINA\nBAC Chairperson\n5",
+      "ocrText": "8.\nThe Municipality of Miagao reserves the right to accept or reject any bid and all bids,\ndeclare failure of bidding, or not to award the contract in accordance with Section\n41 of RA 9184 and its IRR, without thereby incurring any liability to the affected\nbidder or bidders.\n9.\nFor further information, please refer to:\nSHERWIN KEITH M. FAINA\nMunicipal Planning and Development Office\nLocal Government Unit of Miagao\nMueda St,\n5023 Miagao, Iloilo\nTelefax No.: (033) 315-8050 loc. 101\nWebsite: www.miagao.gov.ph\nEmail:lgumiagao@yahoo.com\nSHERWIN KEITH M. FAINA\nBAC Chairperson\n5",
+      "ocrTokenCount": 18,
+      "ocrMeanConfidence": 0.9872,
+      "ocrTokens": [
+        {
+          "text": "8.",
+          "confidence": 0.9997,
+          "boxPx": [
+            34.0,
+            53.0,
+            54.0,
+            74.0
+          ]
+        },
+        {
+          "text": "The Municipality of Miagao reserves the right to accept or reject any bid and all bids,",
+          "confidence": 0.9874,
+          "boxPx": [
+            87.0,
+            53.0,
+            727.0,
+            74.0
+          ]
+        },
+        {
+          "text": "declare failure of bidding, or not to award the contract in accordance with Section",
+          "confidence": 0.9954,
+          "boxPx": [
+            90.0,
+            76.0,
+            726.0,
+            93.0
+          ]
+        },
+        {
+          "text": "41 of RA 9184 and its IRR, without thereby incurring any liability to the affected",
+          "confidence": 0.9847,
+          "boxPx": [
+            87.0,
+            94.0,
+            727.0,
+            115.0
+          ]
+        },
+        {
+          "text": "bidder or bidders.",
+          "confidence": 0.9915,
+          "boxPx": [
+            88.0,
+            117.0,
+            226.0,
+            134.0
+          ]
+        },
+        {
+          "text": "9.",
+          "confidence": 0.9974,
+          "boxPx": [
+            30.0,
+            174.0,
+            55.0,
+            202.0
+          ]
+        },
+        {
+          "text": "For further information, please refer to:",
+          "confidence": 0.9905,
+          "boxPx": [
+            89.0,
+            180.0,
+            383.0,
+            197.0
+          ]
+        },
+        {
+          "text": "SHERWIN KEITH M. FAINA",
+          "confidence": 0.9961,
+          "boxPx": [
+            88.0,
+            222.0,
+            284.0,
+            236.0
+          ]
+        },
+        {
+          "text": "Municipal Planning and Development Office",
+          "confidence": 0.9767,
+          "boxPx": [
+            89.0,
+            242.0,
+            405.0,
+            259.0
+          ]
+        },
+        {
+          "text": "Local Government Unit of Miagao",
+          "confidence": 0.9858,
+          "boxPx": [
+            88.0,
+            261.0,
+            332.0,
+            280.0
+          ]
+        },
+        {
+          "text": "Mueda St,",
+          "confidence": 0.9993,
+          "boxPx": [
+            88.0,
+            283.0,
+            165.0,
+            300.0
+          ]
+        },
+        {
+          "text": "5023 Miagao, Iloilo",
+          "confidence": 0.9922,
+          "boxPx": [
+            89.0,
+            304.0,
+            230.0,
+            321.0
+          ]
+        },
+        {
+          "text": "Telefax No.: (033) 315-8050 loc. 101",
+          "confidence": 0.9942,
+          "boxPx": [
+            90.0,
+            325.0,
+            351.0,
+            342.0
+          ]
+        },
+        {
+          "text": "Website: www.miagao.gov.ph",
+          "confidence": 0.9973,
+          "boxPx": [
+            92.0,
+            344.0,
+            308.0,
+            363.0
+          ]
+        },
+        {
+          "text": "Email:lgumiagao@yahoo.com",
+          "confidence": 0.9415,
+          "boxPx": [
+            88.0,
+            365.0,
+            312.0,
+            384.0
+          ]
+        },
+        {
+          "text": "SHERWIN KEITH M. FAINA",
+          "confidence": 0.9689,
+          "boxPx": [
+            505.0,
+            429.0,
+            710.0,
+            443.0
+          ]
+        },
+        {
+          "text": "BAC Chairperson",
+          "confidence": 0.972,
+          "boxPx": [
+            511.0,
+            448.0,
+            643.0,
+            468.0
+          ]
+        },
+        {
+          "text": "5",
+          "confidence": 0.9999,
+          "boxPx": [
+            374.0,
+            998.0,
+            391.0,
+            1018.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "sourceFileSha256": "4ce3241bb54f47c201f8d806f71458ac6a594c4a0aa5e2ed3de7d082de942780",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/961864ff61a17726.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-basura-mo-3-231x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-basura-mo-pagkaon-ko-project/",
+      "sourceTitle": "INVITATION TO BID FOR BASURA MO PAGKAON KO PROJECT",
+      "publishedAt": "2018-09-28T02:25:22",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Section-1-Invitation-to-Bid-basura-mo-3-231x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "4ce3241bb54f47c201f8d806f71458ac6a594c4a0aa5e2ed3de7d082de942780",
+      "sourceFileBytes": 6881,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/961864ff61a17726.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-basura-mo-3-231x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-basura-mo-pagkaon-ko-project/",
+          "sourceTitle": "INVITATION TO BID FOR BASURA MO PAGKAON KO PROJECT",
+          "publishedAt": "2018-09-28T02:25:22",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Section-1-Invitation-to-Bid-basura-mo-3-231x300.jpg"
+        }
+      ],
+      "sourceFileName": "Section-1-Invitation-to-Bid-basura-mo-3-231x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "SHERWIN KEITH N. FAINA\nBAC Chalrperson",
+      "ocrText": "SHERWIN KEITH N. FAINA\nBAC Chalrperson",
+      "ocrTokenCount": 2,
+      "ocrMeanConfidence": 0.9248,
+      "ocrTokens": [
+        {
+          "text": "SHERWIN KEITH N. FAINA",
+          "confidence": 0.9257,
+          "boxPx": [
+            146.0,
+            118.0,
+            208.0,
+            125.0
+          ]
+        },
+        {
+          "text": "BAC Chalrperson",
+          "confidence": 0.924,
+          "boxPx": [
+            148.0,
+            124.0,
+            189.0,
+            131.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

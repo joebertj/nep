@@ -20,6 +20,7 @@ ROOT = Path(__file__).resolve().parent
 ODV = ROOT.parent / 'open-data-visualization'
 STATIC = ODV / 'static/nep-preview'
 PARQUET = ODV / 'data/parquet'
+PHILGEPS_V2 = ODV / 'data/philgeps-v2/philgeps-2000-2025-typed.parquet'
 INTEGRATED = STATIC / 'integrated-project-data.json'
 DPWH_CONTRACTS_PARQUET = (ROOT / 'research_downloads/hgab2027_contractors/extracted/'
                           'dpwh-contractors-gaa-2020-2026/dpwh-contracts-2016-2026.parquet')
@@ -132,12 +133,21 @@ def main_data():
         'project_code, global_id, contractor_name, organization_name, contractor_status, '
         'contractor_role, province, city, barangay, source')
     philgeps = export_parquet(
-        PARQUET / 'philgeps_contracts.parquet', 'TRUE',
-        'project_name, project_description, philgeps_award_title, project_year, contract_year, '
-        'amount, contract_amount, philgeps_contract_no, philgeps_reference_id, contract_id, '
-        'project_id, global_id, contractor_name, philgeps_awardee_name, contractor_status, '
-        'philgeps_award_status, contractor_role, province, philgeps_area_of_delivery, municipality, '
-        'city, barangay, award_date, source')
+        PHILGEPS_V2,
+        "awardee_organization_name IS NOT NULL AND award_date IS NOT NULL "
+        "AND (award_reference_no IS NOT NULL OR contract_no IS NOT NULL) "
+        "AND business_category = 'Construction Projects'",
+        "coalesce(nullif(award_title, ''), nullif(notice_title, '')) AS project_name, "
+        "item_description AS project_description, award_title AS philgeps_award_title, year(award_date) AS project_year, "
+        "year(award_date) AS contract_year, contract_amount AS amount, contract_amount, "
+        "coalesce(nullif(contract_no, ''), award_reference_no) AS philgeps_contract_no, "
+        "award_reference_no AS philgeps_reference_id, contract_no AS contract_id, "
+        "bid_reference_no AS project_id, _source_file_id AS global_id, "
+        "awardee_organization_name AS contractor_name, "
+        "awardee_organization_name AS philgeps_awardee_name, "
+        "award_notice_status AS philgeps_award_status, "
+        "area_of_delivery AS province, area_of_delivery AS philgeps_area_of_delivery, "
+        "award_date, 'PhilGEPS v2 award record' AS source")
     transparency = export_parquet(
         TRANSPARENCY_PARQUET, 'TRUE',
         'contract_id, project_name, contractor_name, contractor_id, contractor_name_2, contractor_id_2, '
@@ -225,7 +235,7 @@ def main_data():
             'amountConflict': len(amounts) > 1, 'duplicateSourceRows': len(rows),
             'awardDate': str(row.get('award_date') or ''), 'status': row.get('philgeps_award_status') or '',
             'yearBasis': 'PhilGEPS source year' if any(2000 <= year_value(row.get(k)) <= 2035 for k in ('project_year', 'contract_year')) else 'Fiscal-year prefix in procurement identifier',
-            'source': row.get('source') or 'PhilGEPS awarded procurement',
+            'source': row.get('source') or 'PhilGEPS v2 award record',
             'province': row.get('province') or '', 'municipality': row.get('municipality') or row.get('city') or '',
             'barangay': row.get('barangay') or '',
         }, unique_hint=str(i))
@@ -425,11 +435,11 @@ def main_data():
         'dpwhContractAssociations': sum(c['dpwhContractCount'] for c in contractors),
         'gaaLinkedProjectAssociations': sum(c['gaaLinkedProjectCount'] for c in contractors)}
     return {'generatedAtUtc': datetime.now(timezone.utc).isoformat(), 'scope': {
-            'description': 'Named contractor associations from DIME projects, awarded PhilGEPS records, DPWH Transparency contract records and the BetterGov DPWH contract-list snapshot. Exact normalized title/year GAA matches are attached where the integrated DPWH GAA source contains a classified line. The integrated GAA baseline covers classified DPWH roads, bridges, flood-control and multi-purpose-building rows.',
+            'description': 'Named contractor associations from DIME projects, PhilGEPS v2 awarded Construction Projects, DPWH Transparency contract records and the BetterGov DPWH contract-list snapshot. PhilGEPS v2 awards are deduplicated by award identity/title/year/awardee; amount is counted once despite repeated line-item rows. Exact normalized title/year GAA matches are attached where the integrated DPWH GAA source contains a classified line. The integrated GAA baseline covers classified DPWH roads, bridges, flood-control and multi-purpose-building rows.',
             'gaaYears': sorted({year for year, _ in gaa_by_key}), 'gaaLinkedTitleYearKeys': len(gaa_by_key)},
         'summary': {'contractorCount': len(contractors), 'projectAssociations': sum(c['projectCount'] for c in contractors), **source_totals},
         'sourceNotes': {'DIME':'All named contractor project rows in the local ODV DIME cache.',
-            'PhilGEPS':'Award-dated rows with a named awardee in the local ODV PhilGEPS cache; repeated source joins are deduplicated by award identity.',
+            'PhilGEPS':'PhilGEPS v2 typed layer (2000–2025), filtered to awarded Construction Projects with an award date and named awardee. This is an independent, unofficial normalization of published exports; repeated line-item rows and source exports are deduplicated by award identity/title/year/awardee, and amounts are taken once per award rather than summed across lines. Project type, project location, Philippine-peso denomination and wrongdoing are not established by this source.',
             'DPWH Transparency':'All named contractor associations in the local DPWH Transparency cache; repeated rows are deduplicated by contract/title/year/name.',
             'DPWH contract list':'BetterGov DPWH contracts Parquet, snapshot 2026-11-03, FY2016–FY2026. Individual contract descriptions, amounts, statuses, offices and DPWH source-page links are attached by exact contractor name and license parsed from the source field. Joint-venture contract rows appear under every named party, so contractor-level associations overlap and must not be summed as distinct contracts. Contract amounts are not payments; amount-paid values are displayed as reported. This source overlaps the separate DPWH Transparency parquet and is retained as its own evidence column.',
             'GAA':'Exact normalized title/year links use classified project rows from integrated-project-data.json. An absent link means no exact classified row was found in that dataset, not proof that the project was unbudgeted.',
@@ -449,7 +459,7 @@ def _unique(rows, field):
 
 PAGE = r'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Contractors · BetterGov</title>
 <style>*{box-sizing:border-box}body{margin:0;background:#f3f6f8;color:#17212b;font:15px/1.5 system-ui,sans-serif}header{background:linear-gradient(120deg,#00246a,#0038a8);color:white;padding:24px clamp(16px,3vw,40px);border-bottom:6px solid #fcd116}h1{margin:0;font-size:clamp(28px,4vw,42px)}header p{max-width:950px;color:#eef4ff}main{width:100%;padding:22px clamp(14px,2vw,32px)}section{margin:18px 0;padding:20px;background:white;border:1px solid #d8e1e7;border-radius:14px}.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}.stat{padding:14px;background:#f3f6f8;border-radius:10px}.stat strong{display:block;color:#00246a;font-size:24px}.controls{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}.controls input,.controls select,button{font:inherit;padding:8px 10px;border:1px solid #aebdca;border-radius:8px;background:white}.controls input{flex:1;min-width:220px}button{color:#0038a8;cursor:pointer}.table-wrap{overflow:auto;max-height:72vh}table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:13px}th,td{padding:8px;border-bottom:1px solid #dce3e8;text-align:left;vertical-align:top;overflow-wrap:anywhere}th{position:sticky;top:0;background:#edf3f8;z-index:1}.num{text-align:right;white-space:nowrap}.muted{color:#566575;font-size:13px}.bar-row{display:grid;grid-template-columns:minmax(130px,1fr) minmax(80px,2fr) auto;gap:8px;align-items:center;margin:7px}.track{height:13px;background:#e7edf2;border-radius:20px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,#0038a8,#168c86)}.details{margin-top:16px}.project{padding:10px 0;border-bottom:1px solid #dce3e8}.notice{border-left:5px solid #fcd116;background:#fffdf1;padding:13px 16px}.hidden{display:none}@media(max-width:900px){.stats{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:720px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.table-wrap{max-height:none}.bar-row{grid-template-columns:minmax(90px,1fr) minmax(50px,1fr) auto}}</style></head><body>
-<header><div class="eyebrow">Procurement evidence · cross-source contractor analysis</div><h1>Contractors</h1><p>Named contractor records from DIME, awarded PhilGEPS procurement and DPWH Transparency, with exact-title/year GAA links where classified project lines are available.</p></header><main>
+<header><div class="eyebrow">Procurement evidence · cross-source contractor analysis</div><h1>Contractors</h1><p>Named contractor records from DIME, PhilGEPS v2 awarded Construction Projects, and DPWH Transparency, with exact-title/year GAA links where classified project lines are available.</p></header><main>
 <section class="notice"><strong>How to read this directory.</strong> Contractor names are consolidated by exact normalized name; similar names are not automatically merged. A project association is deduplicated by title, year and contractor, while source records remain separately visible. GAA allocations and source contract values are distinct; cross-source values can overlap and should not be added together. An absent exact GAA link is not proof that a project was unbudgeted.</section>
 <section><div id="stats" class="stats"></div></section><section><h2>Ranked contractors</h2><p class="muted">Choose a project type, year, search or source-specific ranking. DIME, PhilGEPS and Transparency amounts can describe the same contract, so they remain separate.</p><div class="controls"><label>Project type <select id="project-type"><option value="">All projects</option><option>Flood Control</option><option>MPB</option><option>Roads</option><option>Bridges</option></select></label><label>Rank by <select id="metric"><option value="projectCount">Distinct project associations</option><option value="dimeContractAmountPesos">DIME recorded value</option><option value="philgepsAwardValuePesos">PhilGEPS award value</option><option value="transparencyContractAmountPesos">DPWH Transparency value</option><option value="dpwhContractAmountPesos">DPWH contract-list value</option></select></label><label>Year <select id="year"><option value="">All available years</option></select></label><input id="search" type="search" placeholder="Search contractor"></div><div id="chart"></div><div class="table-wrap"><table><thead><tr><th>Rank</th><th>Contractor</th><th>Projects</th><th>DIME records / value</th><th>PhilGEPS awards / value</th><th>Transparency contracts / value</th><th>GAA-linked projects</th><th>DPWH contract records / value</th><th>SEC company / officers</th><th>Membership / PCAB</th><th>AMO leads</th></tr></thead><tbody id="ranking"></tbody></table></div><p id="status" class="muted"></p><button id="load-affiliations" type="button">Load SEC, membership, PCAB and AMO details</button> <button id="export" type="button">Export filtered contractors CSV</button></section>
 <section id="details" class="details"><h2>Project records</h2><div id="project-table" class="muted">Select a contractor to inspect project records and source-specific values.</div></section>

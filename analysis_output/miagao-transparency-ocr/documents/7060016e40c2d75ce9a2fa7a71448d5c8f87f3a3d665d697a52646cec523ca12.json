@@ -1,0 +1,91 @@
+{
+  "sourceFileSha256": "7060016e40c2d75ce9a2fa7a71448d5c8f87f3a3d665d697a52646cec523ca12",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/521dbb569112c9db.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-menro-shredder-machine-rebid-2-222x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-one-1-unit-brand-new-trailer-mounted-shredder-machine-for-shredding-biodegradable-compostable-waste-and-mrf-operations-miagao-iloilo/",
+      "sourceTitle": "INVITATION TO BID FOR ONE (1) UNIT BRAND NEW TRAILER MOUNTED SHREDDER MACHINE FOR SHREDDING BIODEGRADABLE / COMPOSTABLE WASTE AND MRF OPERATIONS, MIAGAO, ILOILO",
+      "publishedAt": "2018-09-28T03:04:58",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Section-1-Invitation-to-Bid-menro-shredder-machine-rebid-2-222x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "7060016e40c2d75ce9a2fa7a71448d5c8f87f3a3d665d697a52646cec523ca12",
+      "sourceFileBytes": 14797,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/521dbb569112c9db.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-menro-shredder-machine-rebid-2-222x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-one-1-unit-brand-new-trailer-mounted-shredder-machine-for-shredding-biodegradable-compostable-waste-and-mrf-operations-miagao-iloilo/",
+          "sourceTitle": "INVITATION TO BID FOR ONE (1) UNIT BRAND NEW TRAILER MOUNTED SHREDDER MACHINE FOR SHREDDING BIODEGRADABLE / COMPOSTABLE WASTE AND MRF OPERATIONS, MIAGAO, ILOILO",
+          "publishedAt": "2018-09-28T03:04:58",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Section-1-Invitation-to-Bid-menro-shredder-machine-rebid-2-222x300.jpg"
+        }
+      ],
+      "sourceFileName": "Section-1-Invitation-to-Bid-menro-shredder-machine-rebid-2-222x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Markpolthud\ns000 ars o theCow\nonla S, Misgan, Boc\na lidx neat be accompustied by a bid aocuriy is ane",
+      "ocrText": "Markpolthud\ns000 ars o theCow\nonla S, Misgan, Boc\na lidx neat be accompustied by a bid aocuriy is ane",
+      "ocrTokenCount": 4,
+      "ocrMeanConfidence": 0.7583,
+      "ocrTokens": [
+        {
+          "text": "Markpolthud",
+          "confidence": 0.7058,
+          "boxPx": [
+            40.0,
+            136.0,
+            72.0,
+            144.0
+          ]
+        },
+        {
+          "text": "s000 ars o theCow",
+          "confidence": 0.7845,
+          "boxPx": [
+            25.0,
+            206.0,
+            71.0,
+            214.0
+          ]
+        },
+        {
+          "text": "onla S, Misgan, Boc",
+          "confidence": 0.7443,
+          "boxPx": [
+            157.0,
+            206.0,
+            204.0,
+            214.0
+          ]
+        },
+        {
+          "text": "a lidx neat be accompustied by a bid aocuriy is ane",
+          "confidence": 0.7985,
+          "boxPx": [
+            89.0,
+            230.0,
+            205.0,
+            238.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

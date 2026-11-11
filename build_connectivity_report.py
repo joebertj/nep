@@ -264,6 +264,9 @@ def build():
     grid_bounds = (min(grid_x), max(grid_x), min(grid_y), max(grid_y))
 
     source = json.loads(FMR.read_text())
+    override_path = ROOT / 'data_sources/fmr_analyst/hgab_fmr_working_draft_coordinate_overrides.json'
+    override_payload = json.loads(override_path.read_text()) if override_path.exists() else {'overrides': []}
+    coordinate_overrides = {str(item['projectId']): item for item in override_payload.get('overrides', [])}
     unpaved_path=ROOT/'analysis_output/connectivity-unpaved-road-indicator.json'
     unpaved_rows={str(r.get('id')):r for r in json.loads(unpaved_path.read_text()).get('rows',[])} if unpaved_path.exists() else {}
     # The static counterpart is a manifest plus browser shards. The report
@@ -333,7 +336,8 @@ def build():
     SOURCE_ROAD_PROJECTS.write_text(road_project_text)
     results = []
     for row in source['projects']:
-        coords = row.get('coordinates') or []
+        correction = coordinate_overrides.get(str(row.get('project_id')))
+        coords = correction.get('replacementCoordinates') if correction else row.get('coordinates') or []
         raw_points = [point for part in coords for point in part]
         if not raw_points:
             continue
@@ -344,7 +348,9 @@ def build():
             results.append({
                 'id':row['project_id'],'title':row['title'],'region':row['region'],'amountPesos':int(row['amount_php']),'sourcePage':row['source']['printed_page'],
                 'routeParts':[],'startLatitude':float(start_ll[1]),'startLongitude':float(start_ll[0]),'endLatitude':float(end_ll[1]),'endLongitude':float(end_ll[0]),
-                'coordinateBasis':'Printed start/end pair','coordinateGapMeters':round(gap_m,1),'coordinateQualityFlag':True,
+                'coordinateBasis':correction['coordinateBasis'] if correction else 'Printed start/end pair',
+                'coordinateCorrection':correction.get('source') if correction else None,
+                'coordinateGapMeters':round(gap_m,1),'coordinateQualityFlag':True,
                 'startDistanceMeters':None,'endDistanceMeters':None,'nearestDistanceMeters':None,'endpointNearestDistanceMeters':None,'routeNetworkDistanceMeters':None,
                 'routeNetworkExemption':False,'routeNetworkStatus':'Suppressed · endpoint coordinates require review before proximity analysis.',
                 'exemptionReasons':[],'exemptionNote':'','unpavedRoadConnection':{'status':'Suppressed · endpoint coordinates require review'},
@@ -398,7 +404,8 @@ def build():
             'endDistanceMeters': round(nearest[-1][0],1) if len(nearest)>1 else None,
             'startLatitude': float(coords[0][0][1]), 'startLongitude': float(coords[0][0][0]),
             'endLatitude': float(coords[-1][-1][1]), 'endLongitude': float(coords[-1][-1][0]),
-            'coordinateBasis': 'Printed start/end pair' if len(points) > 1 else 'Single coordinate; no route line',
+            'coordinateBasis': correction['coordinateBasis'] if correction else ('Printed start/end pair' if len(points) > 1 else 'Single coordinate; no route line'),
+            'coordinateCorrection': correction.get('source') if correction else None,
             'coordinateGapMeters': round(gap_m,1) if gap_m is not None else None, 'coordinateQualityFlag': False,
             'closestEnd': 'Start' if best_idx == 0 else 'End', 'nearestDistanceMeters': round(distance,1),
             'endpointNearestDistanceMeters': round(endpoint_distance,1),
@@ -438,7 +445,9 @@ def build():
         'roadClasses': dict(road_classes),
         'gaaRoadAlignmentAudit': {'integratedGaaRoadRows': len(gaa_road_rows), 'rowsWithUsableGeometryOrCoordinateFields': len(gaa_rows_with_location_fields), 'note': 'This audit covers the integrated budget line-item table only. Coordinate-bearing FY2027 HGAB DA FMR project records and FY2024/FY2025 DA FMR ArcGIS records are separate datasets.'},
         'limits': ['This layer is the DPWH national-road network; its primary/secondary/tertiary labels are functional classes within that network, not a separate local-road inventory.', 'It does not cover every local, barangay, farm, or private road.', 'Coordinates are printed FMR endpoints and may be approximate; straight-line endpoint proximity does not prove an access connection.', 'Bridge analysis is deferred.', 'For question 2, DPWH National Road Network matches and routes explicitly named as national, circumferential, bypass or coastal are not treated as remote. A municipality match is a provisional remote-area proxy; routes with a city or unresolved endpoint stay out of the confirmed remote subset.', 'The visitor-venue join uses a 100 m buffer around straight-line segments reconstructed from available start/end coordinates. Route alignment, operating status, property ownership, and actual access remain unverified.'],
-        'roadFeatures': roads, 'roadSegments': len(segments), 'roadProjectCandidates': len(road_projects), 'roadProjectPlaceStatusCounts': place_summary, 'summary': dict(summary), 'projects': results,
+        'roadFeatures': roads, 'roadSegments': len(segments), 'roadProjectCandidates': len(road_projects), 'roadProjectPlaceStatusCounts': place_summary,
+        'coordinateCorrectionSource': override_payload.get('source'), 'coordinateCorrectionsApplied': len(coordinate_overrides),
+        'summary': dict(summary), 'projects': results,
         'placeInventories': {'visitorVenues': 'connectivity-venues-data.json', 'privatePropertyIndicators': 'connectivity-property-indicators-data.json', 'publicServices': 'connectivity-public-services-data.json', 'unverifiedVenueNameCues': 'connectivity-venue-review-data.json', 'officialTourismDirectory': 'connectivity-official-venues-data.json', 'propertyRouteMatches': 'connectivity-remote-fmr-properties.json'},
     }
     from connectivity_farm_enrichment import load_measurements, apply_measurement

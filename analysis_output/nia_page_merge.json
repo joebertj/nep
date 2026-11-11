@@ -3,11 +3,11 @@
   "detailSource": "nia-irrigation.html",
   "namedSourcePreservedInMarkers": true,
   "namespacedIds": {
-    "report-hero": "nia-detail-report-hero",
-    "sections": "nia-detail-sections",
+    "${esc(projectId)}": "nia-detail-${esc(projectId)}",
     "nia-nep-scope": "nia-detail-nia-nep-scope",
+    "sections": "nia-detail-sections",
     "reviewed-nia-controls": "nia-detail-reviewed-nia-controls",
-    "${esc(projectId)}": "nia-detail-${esc(projectId)}"
+    "report-hero": "nia-detail-report-hero"
   },
   "sourceHashes": {
     "detail": "da945401ac686ceafba67f8889982ac2a1d5e4f8f0330aeeeb20eecf69f4101d"

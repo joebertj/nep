@@ -9,9 +9,14 @@ STATIC=ROOT.parent/'open-data-visualization/static/nep-preview'
 RESEARCH_THEME_VERSION=hashlib.sha256((STATIC/'research-theme.css').read_bytes()).hexdigest()[:12]
 RESEARCH_STATUS_VERSION=hashlib.sha256((STATIC/'research-status.js').read_bytes()).hexdigest()[:12]
 MENU_GROUPS=[
-    ('Summary',[('summary.html','Summary · investigative leads')]),
+    ('Summary',[
+        ('summary.html','Summary · investigative leads'),
+        ('dpwh-simple.html','DPWH · roads and bridges in six pictures'),
+        ('mpb-simple.html','MPB · simple visual summary'),
+    ]),
     ('Budget 2027',[
         ('dpwh.html','Senate HGAB documents'),
+        ('nia.html','NIA · irrigation and named projects'),
         ('fmr.html','FMR · manual red-flag review'),
         ('dpwh-transparency.html','DPWH Transparency inventory'),
         ('congress.html','Project flags + district allocations'),

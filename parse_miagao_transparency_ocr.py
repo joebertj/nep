@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import multiprocessing
 import os
 import re
 import sys
@@ -27,6 +28,7 @@ OUT_DIR = ROOT / "analysis_output/miagao-transparency-ocr"
 DOC_DIR = OUT_DIR / "documents"
 STATUS_PATH = OUT_DIR / "status.json"
 ROWS_PATH = OUT_DIR / "ocr-rows.jsonl"
+ERRORS_PATH = OUT_DIR / "errors.jsonl"
 MIN_NATIVE_TEXT_CHARS = 200
 IMAGE_COVERAGE_TEXT_CEILING = 1200
 USER_AGENT = "BetterMiagao transparency OCR"
@@ -41,6 +43,12 @@ def write_json(path: Path, payload):
     temp = path.with_suffix(path.suffix + ".tmp")
     temp.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     temp.replace(path)
+
+
+def append_error(payload):
+    ERRORS_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with ERRORS_PATH.open("a", encoding="utf-8") as out:
+        out.write(json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n")
 
 
 def clean_text(value):
@@ -222,6 +230,60 @@ def parse_document(item, ocr, fitz, Image, ImageOps, np):
     return output_rows
 
 
+def ocr_worker(requests, responses):
+    """Keep OCR isolated so a native-library hang can be timed out and skipped."""
+    try:
+        import pymupdf as fitz
+        import numpy as np
+        from PIL import Image, ImageOps
+        from paddleocr import PaddleOCR
+
+        ocr = PaddleOCR(lang="en", ocr_version="PP-OCRv5", use_doc_orientation_classify=False, use_doc_unwarping=False, use_textline_orientation=False)
+        responses.put({"type": "ready"})
+    except BaseException as exc:
+        responses.put({"type": "startup_error", "error": f"{type(exc).__name__}: {exc}"})
+        return
+
+    while True:
+        item = requests.get()
+        if item is None:
+            return
+        try:
+            responses.put({"type": "result", "sha256": item["sha256"], "rows": parse_document(item, ocr, fitz, Image, ImageOps, np)})
+        except BaseException as exc:
+            responses.put({"type": "file_error", "sha256": item["sha256"], "error": f"{type(exc).__name__}: {exc}"})
+
+
+def start_worker(context, startup_timeout):
+    requests = context.Queue()
+    responses = context.Queue()
+    process = context.Process(target=ocr_worker, args=(requests, responses), daemon=True)
+    process.start()
+    try:
+        message = responses.get(timeout=startup_timeout)
+    except Exception:
+        process.terminate()
+        process.join(timeout=10)
+        raise TimeoutError(f"PaddleOCR worker did not initialize within {startup_timeout} seconds")
+    if message.get("type") != "ready":
+        process.terminate()
+        process.join(timeout=10)
+        raise RuntimeError(message.get("error") or "PaddleOCR worker failed to initialize")
+    return process, requests, responses
+
+
+def stop_worker(process, requests):
+    if process.is_alive():
+        try:
+            requests.put(None)
+            process.join(timeout=5)
+        except Exception:
+            pass
+    if process.is_alive():
+        process.terminate()
+        process.join(timeout=10)
+
+
 def refresh_rows(completed):
     temp = ROWS_PATH.with_suffix(".jsonl.tmp")
     total = 0
@@ -242,6 +304,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--max-documents", type=int, default=0, help="optional cap for a partial run; zero processes all OCR candidates")
     parser.add_argument("--rebuild-rows", action="store_true", help="rebuild the unified OCR JSONL from completed per-document results")
+    parser.add_argument("--retry-errors", action="store_true", help="retry files with a saved .error.json record; skipped by default")
+    parser.add_argument("--document-timeout-seconds", type=int, default=120, help="skip and log a file if OCR exceeds this time")
+    parser.add_argument("--worker-start-timeout-seconds", type=int, default=300, help="maximum time allowed for PaddleOCR worker startup")
     args = parser.parse_args()
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     DOC_DIR.mkdir(parents=True, exist_ok=True)
@@ -250,17 +315,21 @@ def main():
         import pymupdf as fitz
         import numpy as np
         from PIL import Image, ImageOps
-        from paddleocr import PaddleOCR
     except ImportError as exc:
         raise SystemExit(f"OCR dependencies unavailable in this environment: {exc}") from exc
 
     inventory, documents = inventory_documents()
     completed = []
     pending = []
+    prior_errors = []
     for item in documents:
         result_path = DOC_DIR / f"{item['sha256']}.json"
         if result_path.exists():
             completed.append(item)
+            continue
+        error_path = DOC_DIR / f"{item['sha256']}.error.json"
+        if error_path.exists() and not args.retry_errors:
+            prior_errors.append(json.loads(error_path.read_text(encoding="utf-8")))
             continue
         pending.append(item)
     if args.rebuild_rows:
@@ -293,7 +362,10 @@ def main():
                 })
                 completed.append(item)
         except Exception as exc:
-            discovery_errors.append({"sourceFileSha256": item["sha256"], "sourceArchivePath": item["localPath"], "error": f"{type(exc).__name__}: {exc}"})
+            error = {"sourceFileSha256": item["sha256"], "sourceArchivePath": item["localPath"], "sourceDocumentUrls": item["urls"], "stage": "discovery", "error": f"{type(exc).__name__}: {exc}"}
+            discovery_errors.append(error)
+            write_json(DOC_DIR / f"{item['sha256']}.error.json", error)
+            append_error(error)
 
     state = {
         "title": "Miagao transparency OCR parser",
@@ -304,23 +376,40 @@ def main():
         "uniqueOcrCandidateFiles": len(candidates),
         "pendingOcrDocuments": len(candidates),
         "completedDocuments": len(completed),
+        "skippedPriorErrors": len(prior_errors),
         "discoveryErrors": discovery_errors,
         "current": None,
         "rowsPath": str(ROWS_PATH.relative_to(ROOT)),
     }
     write_json(STATUS_PATH, state)
-    print(f"OCR queue: {len(candidates)} unique image/scan files; {len(completed)} source PDFs already have sufficient native text or prior results.", flush=True)
-    print(f"Initializing PaddleOCR from cached local models; results retain source URL, post, SHA-256, and page.", flush=True)
-    ocr = PaddleOCR(lang="en", ocr_version="PP-OCRv5", use_doc_orientation_classify=False, use_doc_unwarping=False, use_textline_orientation=False)
-
+    print(f"OCR queue: {len(candidates)} unique image/scan files; {len(completed)} completed; {len(prior_errors)} prior failures skipped (use --retry-errors to retry).", flush=True)
     successful = []
-    failed = list(discovery_errors)
+    failed = list(prior_errors) + list(discovery_errors)
     total_pages = 0
+    context = multiprocessing.get_context("spawn")
+    worker = requests = responses = None
     for index, item in enumerate(candidates, 1):
         state.update({"status": "processing", "updatedAtUtc": now(), "current": {"index": index, "total": len(candidates), "sha256": item["sha256"], "file": item["urls"][0]["fileName"] if item["urls"] else item["localPath"], "ocrPages": item["ocrPages"]}})
         write_json(STATUS_PATH, state)
         try:
-            rows = parse_document(item, ocr, fitz, Image, ImageOps, np)
+            if worker is None or not worker.is_alive():
+                worker, requests, responses = start_worker(context, args.worker_start_timeout_seconds)
+            requests.put(item)
+            try:
+                response = responses.get(timeout=args.document_timeout_seconds)
+            except Exception:
+                stop_worker(worker, requests)
+                worker = requests = responses = None
+                raise TimeoutError(f"OCR exceeded {args.document_timeout_seconds} seconds; worker stopped and file skipped")
+            if response.get("sha256") != item["sha256"]:
+                stop_worker(worker, requests)
+                worker = requests = responses = None
+                raise RuntimeError("OCR worker returned a result for the wrong source file")
+            if response.get("type") == "file_error":
+                raise RuntimeError(response.get("error") or "OCR worker failed on this file")
+            if response.get("type") != "result":
+                raise RuntimeError(f"Unexpected OCR worker response: {response.get('type')}")
+            rows = response["rows"]
             write_json(DOC_DIR / f"{item['sha256']}.json", {
                 "sourceFileSha256": item["sha256"],
                 "sourceArchivePath": item["localPath"],
@@ -333,15 +422,21 @@ def main():
             print(f"[{index}/{len(candidates)}] {len(rows)} OCR pages · {item['urls'][0]['fileName'] if item['urls'] else item['localPath']}", flush=True)
             state.update({"completedOcrDocuments": index, "completedOcrPages": total_pages, "lastCompletedAtUtc": now(), "current": None})
         except Exception as exc:
-            error = {"sourceFileSha256": item["sha256"], "sourceArchivePath": item["localPath"], "sourceDocumentUrls": item["urls"], "error": f"{type(exc).__name__}: {exc}"}
+            error = {"sourceFileSha256": item["sha256"], "sourceArchivePath": item["localPath"], "sourceDocumentUrls": item["urls"], "stage": "ocr", "error": f"{type(exc).__name__}: {exc}"}
             failed.append(error)
             print(f"[{index}/{len(candidates)}] ERROR {item['localPath']}: {error['error']}", flush=True)
-            # Persist failures separately; the next run can retry them.
+            # Save a per-file skip marker and a durable audit log; later passes skip it by default.
             write_json(DOC_DIR / f"{item['sha256']}.error.json", error)
+            append_error(error)
             state["current"] = None
         state["failedDocuments"] = len(failed)
+        state["completedDocuments"] = len(completed) + len(successful)
+        state["skippedDocuments"] = len(failed)
         state["updatedAtUtc"] = now()
         write_json(STATUS_PATH, state)
+
+    if worker is not None:
+        stop_worker(worker, requests)
 
     all_completed = []
     for item in documents:

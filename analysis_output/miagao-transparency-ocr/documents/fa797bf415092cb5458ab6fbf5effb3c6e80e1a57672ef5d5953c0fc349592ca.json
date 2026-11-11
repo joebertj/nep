@@ -1,0 +1,301 @@
+{
+  "sourceFileSha256": "fa797bf415092cb5458ab6fbf5effb3c6e80e1a57672ef5d5953c0fc349592ca",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/69b507bdfcb79081.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-mwest-ws-rebid-1-216x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-the-construction-of-miagao-west-central-elem-school-water-system-miagao-iloilo/",
+      "sourceTitle": "INVITATION TO BID FOR THE CONSTRUCTION OF MIAGAO WEST CENTRAL ELEM. SCHOOL WATER SYSTEM, MIAGAO, ILOILO",
+      "publishedAt": "2018-09-19T06:25:40",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Section-1-Invitation-to-Bid-mwest-ws-rebid-1-216x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "fa797bf415092cb5458ab6fbf5effb3c6e80e1a57672ef5d5953c0fc349592ca",
+      "sourceFileBytes": 19156,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/69b507bdfcb79081.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-mwest-ws-rebid-1-216x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-the-construction-of-miagao-west-central-elem-school-water-system-miagao-iloilo/",
+          "sourceTitle": "INVITATION TO BID FOR THE CONSTRUCTION OF MIAGAO WEST CENTRAL ELEM. SCHOOL WATER SYSTEM, MIAGAO, ILOILO",
+          "publishedAt": "2018-09-19T06:25:40",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Section-1-Invitation-to-Bid-mwest-ws-rebid-1-216x300.jpg"
+        }
+      ],
+      "sourceFileName": "Section-1-Invitation-to-Bid-mwest-ws-rebid-1-216x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Republic of the Phalopines\nWENICIPALITY OF MAGAO\nINVITATION TO BID FOR THE CONSTRUCTION OF MIAGAO\nWEST CENTRAL ELEM. SCHOOL WATER SYSTEM,\nMIAGAO,ILOILO\nmMNL\nOWIT\nTEMDESRPTION\nH38×6168\nps\n==\naolbult w/\nPRSAARERSRA\nI\n1\nfabricatnd dwr beck (fhwmel byp?\n2\n84\nI's I\"knoeskang\n2\nFIRGIBP\npo\nad FIPT *120\nkgs\ns",
+      "ocrText": "Republic of the Phalopines\nWENICIPALITY OF MAGAO\nINVITATION TO BID FOR THE CONSTRUCTION OF MIAGAO\nWEST CENTRAL ELEM. SCHOOL WATER SYSTEM,\nMIAGAO,ILOILO\nmMNL\nOWIT\nTEMDESRPTION\nH38×6168\nps\n==\naolbult w/\nPRSAARERSRA\nI\n1\nfabricatnd dwr beck (fhwmel byp?\n2\n84\nI's I\"knoeskang\n2\nFIRGIBP\npo\nad FIPT *120\nkgs\ns",
+      "ocrTokenCount": 25,
+      "ocrMeanConfidence": 0.6227,
+      "ocrTokens": [
+        {
+          "text": "Republic of the Phalopines",
+          "confidence": 0.9132,
+          "boxPx": [
+            50.0,
+            1.0,
+            107.0,
+            8.0
+          ]
+        },
+        {
+          "text": "WENICIPALITY OF MAGAO",
+          "confidence": 0.9796,
+          "boxPx": [
+            50.0,
+            11.0,
+            121.0,
+            19.0
+          ]
+        },
+        {
+          "text": "INVITATION TO BID FOR THE CONSTRUCTION OF MIAGAO",
+          "confidence": 0.9709,
+          "boxPx": [
+            12.0,
+            45.0,
+            195.0,
+            55.0
+          ]
+        },
+        {
+          "text": "WEST CENTRAL ELEM. SCHOOL WATER SYSTEM,",
+          "confidence": 0.972,
+          "boxPx": [
+            23.0,
+            53.0,
+            184.0,
+            64.0
+          ]
+        },
+        {
+          "text": "MIAGAO,ILOILO",
+          "confidence": 0.9922,
+          "boxPx": [
+            75.0,
+            61.0,
+            133.0,
+            72.0
+          ]
+        },
+        {
+          "text": "mMNL",
+          "confidence": 0.5358,
+          "boxPx": [
+            20.0,
+            127.0,
+            45.0,
+            134.0
+          ]
+        },
+        {
+          "text": "OWIT",
+          "confidence": 0.5817,
+          "boxPx": [
+            47.0,
+            127.0,
+            68.0,
+            134.0
+          ]
+        },
+        {
+          "text": "TEMDESRPTION",
+          "confidence": 0.7047,
+          "boxPx": [
+            129.0,
+            127.0,
+            168.0,
+            134.0
+          ]
+        },
+        {
+          "text": "H38×6168",
+          "confidence": 0.523,
+          "boxPx": [
+            96.0,
+            158.0,
+            135.0,
+            166.0
+          ]
+        },
+        {
+          "text": "ps",
+          "confidence": 0.3505,
+          "boxPx": [
+            79.0,
+            184.0,
+            88.0,
+            191.0
+          ]
+        },
+        {
+          "text": "==",
+          "confidence": 0.7252,
+          "boxPx": [
+            29.0,
+            194.0,
+            37.0,
+            208.0
+          ]
+        },
+        {
+          "text": "aolbult w/",
+          "confidence": 0.6808,
+          "boxPx": [
+            148.0,
+            188.0,
+            185.0,
+            195.0
+          ]
+        },
+        {
+          "text": "PRSAARERSRA",
+          "confidence": 0.4223,
+          "boxPx": [
+            30.0,
+            206.0,
+            37.0,
+            277.0
+          ]
+        },
+        {
+          "text": "I",
+          "confidence": 0.2149,
+          "boxPx": [
+            80.0,
+            202.0,
+            89.0,
+            208.0
+          ]
+        },
+        {
+          "text": "1",
+          "confidence": 0.5189,
+          "boxPx": [
+            80.0,
+            207.0,
+            87.0,
+            213.0
+          ]
+        },
+        {
+          "text": "fabricatnd dwr beck (fhwmel byp?",
+          "confidence": 0.7971,
+          "boxPx": [
+            95.0,
+            200.0,
+            166.0,
+            207.0
+          ]
+        },
+        {
+          "text": "2",
+          "confidence": 0.1661,
+          "boxPx": [
+            80.0,
+            214.0,
+            87.0,
+            219.0
+          ]
+        },
+        {
+          "text": "84",
+          "confidence": 0.4025,
+          "boxPx": [
+            81.0,
+            220.0,
+            87.0,
+            225.0
+          ]
+        },
+        {
+          "text": "I's I\"knoeskang",
+          "confidence": 0.6387,
+          "boxPx": [
+            95.0,
+            211.0,
+            133.0,
+            219.0
+          ]
+        },
+        {
+          "text": "2",
+          "confidence": 0.5863,
+          "boxPx": [
+            81.0,
+            225.0,
+            88.0,
+            230.0
+          ]
+        },
+        {
+          "text": "FIRGIBP",
+          "confidence": 0.6179,
+          "boxPx": [
+            95.0,
+            223.0,
+            122.0,
+            230.0
+          ]
+        },
+        {
+          "text": "po",
+          "confidence": 0.6487,
+          "boxPx": [
+            80.0,
+            236.0,
+            89.0,
+            243.0
+          ]
+        },
+        {
+          "text": "ad FIPT *120",
+          "confidence": 0.5572,
+          "boxPx": [
+            96.0,
+            241.0,
+            133.0,
+            248.0
+          ]
+        },
+        {
+          "text": "kgs",
+          "confidence": 0.9295,
+          "boxPx": [
+            80.0,
+            270.0,
+            89.0,
+            278.0
+          ]
+        },
+        {
+          "text": "s",
+          "confidence": 0.1389,
+          "boxPx": [
+            81.0,
+            277.0,
+            88.0,
+            282.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

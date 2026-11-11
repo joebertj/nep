@@ -1,0 +1,91 @@
+{
+  "sourceFileSha256": "62d6f30098112592db663d4f383c8f8a181d381824467777ecaa031155749a3f",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/175618c708656ada.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-basura-mo-2-222x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-basura-mo-pagkaon-ko-project/",
+      "sourceTitle": "INVITATION TO BID FOR BASURA MO PAGKAON KO PROJECT",
+      "publishedAt": "2018-09-28T02:25:22",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Section-1-Invitation-to-Bid-basura-mo-2-222x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "62d6f30098112592db663d4f383c8f8a181d381824467777ecaa031155749a3f",
+      "sourceFileBytes": 15072,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/175618c708656ada.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-basura-mo-2-222x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-basura-mo-pagkaon-ko-project/",
+          "sourceTitle": "INVITATION TO BID FOR BASURA MO PAGKAON KO PROJECT",
+          "publishedAt": "2018-09-28T02:25:22",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Section-1-Invitation-to-Bid-basura-mo-2-222x300.jpg"
+        }
+      ],
+      "sourceFileName": "Section-1-Invitation-to-Bid-basura-mo-2-222x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Manicipal Sddiag, Maodas St\nMinpn, Bodi\nMarkcripol Solidieg, Maxclo 5t\nManicipal Baliting, Hay",
+      "ocrText": "Manicipal Sddiag, Maodas St\nMinpn, Bodi\nMarkcripol Solidieg, Maxclo 5t\nManicipal Baliting, Hay",
+      "ocrTokenCount": 4,
+      "ocrMeanConfidence": 0.813,
+      "ocrTokens": [
+        {
+          "text": "Manicipal Sddiag, Maodas St",
+          "confidence": 0.9158,
+          "boxPx": [
+            40.0,
+            43.0,
+            102.0,
+            50.0
+          ]
+        },
+        {
+          "text": "Minpn, Bodi",
+          "confidence": 0.6724,
+          "boxPx": [
+            39.0,
+            206.0,
+            68.0,
+            214.0
+          ]
+        },
+        {
+          "text": "Markcripol Solidieg, Maxclo 5t",
+          "confidence": 0.7969,
+          "boxPx": [
+            40.0,
+            201.0,
+            102.0,
+            208.0
+          ]
+        },
+        {
+          "text": "Manicipal Baliting, Hay",
+          "confidence": 0.8668,
+          "boxPx": [
+            25.0,
+            224.0,
+            77.0,
+            231.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

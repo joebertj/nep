@@ -1,0 +1,381 @@
+{
+  "sourceFileSha256": "9967d4f96d930472724afbc2afcd03e1272bd33f4442473590d681a47e09d960",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/ae6608864a510afd.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-la-con-ws-rebid-1-2-216x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-the-construction-of-la-consolacion-elem-school-water-system-brgy-la-consolacion-miagao-iloilo/",
+      "sourceTitle": "INVITATION TO BID FOR THE CONSTRUCTION OF LA CONSOLACION ELEM. SCHOOL WATER SYSTEM, BRGY. LA CONSOLACION, MIAGAO, ILOILO",
+      "publishedAt": "2018-09-19T06:28:46",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Section-1-Invitation-to-Bid-la-con-ws-rebid-1-2-216x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "9967d4f96d930472724afbc2afcd03e1272bd33f4442473590d681a47e09d960",
+      "sourceFileBytes": 19605,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/ae6608864a510afd.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-la-con-ws-rebid-1-2-216x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-the-construction-of-la-consolacion-elem-school-water-system-brgy-la-consolacion-miagao-iloilo/",
+          "sourceTitle": "INVITATION TO BID FOR THE CONSTRUCTION OF LA CONSOLACION ELEM. SCHOOL WATER SYSTEM, BRGY. LA CONSOLACION, MIAGAO, ILOILO",
+          "publishedAt": "2018-09-19T06:28:46",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Section-1-Invitation-to-Bid-la-con-ws-rebid-1-2-216x300.jpg"
+        }
+      ],
+      "sourceFileName": "Section-1-Invitation-to-Bid-la-con-ws-rebid-1-2-216x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "WENICIPALITY OF MAGAO\nenoail acdtress igunlagaeluthcoucom\nLA CONSOLACION ELEM. SCHOOL WATER SYSTEM,\nINVITaTiON to BID FOR the COnStRUCTION OF\nBRGY.LA CONSOLACION, MIAGAO, ILOILO\n17\n3\n420\n3 5811\n3u M cowplg\n81\n1/01\n19\n19\n11\npos\n11/% 4 × 1/2\" P PE sabde cang\n20\n16\np\n1./2T x 1 /2\" Rappec wniteri waks adger\n1LZe df x )im agcher ppobsalest type)\n21\no0\n1s\nNO MPT-theId.(M9S 65)\n27\n44\nJ\n3/7\"# x17 81 9qle (520\n23\n70\n1/785",
+      "ocrText": "WENICIPALITY OF MAGAO\nenoail acdtress igunlagaeluthcoucom\nLA CONSOLACION ELEM. SCHOOL WATER SYSTEM,\nINVITaTiON to BID FOR the COnStRUCTION OF\nBRGY.LA CONSOLACION, MIAGAO, ILOILO\n17\n3\n420\n3 5811\n3u M cowplg\n81\n1/01\n19\n19\n11\npos\n11/% 4 × 1/2\" P PE sabde cang\n20\n16\np\n1./2T x 1 /2\" Rappec wniteri waks adger\n1LZe df x )im agcher ppobsalest type)\n21\no0\n1s\nNO MPT-theId.(M9S 65)\n27\n44\nJ\n3/7\"# x17 81 9qle (520\n23\n70\n1/785",
+      "ocrTokenCount": 33,
+      "ocrMeanConfidence": 0.6589,
+      "ocrTokens": [
+        {
+          "text": "WENICIPALITY OF MAGAO",
+          "confidence": 0.9777,
+          "boxPx": [
+            50.0,
+            11.0,
+            121.0,
+            19.0
+          ]
+        },
+        {
+          "text": "enoail acdtress igunlagaeluthcoucom",
+          "confidence": 0.7994,
+          "boxPx": [
+            49.0,
+            29.0,
+            133.0,
+            36.0
+          ]
+        },
+        {
+          "text": "LA CONSOLACION ELEM. SCHOOL WATER SYSTEM,",
+          "confidence": 0.9739,
+          "boxPx": [
+            20.0,
+            53.0,
+            188.0,
+            64.0
+          ]
+        },
+        {
+          "text": "INVITaTiON to BID FOR the COnStRUCTION OF",
+          "confidence": 0.7809,
+          "boxPx": [
+            28.0,
+            46.0,
+            179.0,
+            53.0
+          ]
+        },
+        {
+          "text": "BRGY.LA CONSOLACION, MIAGAO, ILOILO",
+          "confidence": 0.9607,
+          "boxPx": [
+            33.0,
+            60.0,
+            174.0,
+            72.0
+          ]
+        },
+        {
+          "text": "17",
+          "confidence": 0.5146,
+          "boxPx": [
+            32.0,
+            199.0,
+            39.0,
+            204.0
+          ]
+        },
+        {
+          "text": "3",
+          "confidence": 0.2948,
+          "boxPx": [
+            33.0,
+            205.0,
+            39.0,
+            210.0
+          ]
+        },
+        {
+          "text": "420",
+          "confidence": 0.7589,
+          "boxPx": [
+            57.0,
+            206.0,
+            66.0,
+            213.0
+          ]
+        },
+        {
+          "text": "3 5811",
+          "confidence": 0.5378,
+          "boxPx": [
+            93.0,
+            202.0,
+            157.0,
+            214.0
+          ]
+        },
+        {
+          "text": "3u M cowplg",
+          "confidence": 0.4053,
+          "boxPx": [
+            95.0,
+            209.0,
+            140.0,
+            221.0
+          ]
+        },
+        {
+          "text": "81",
+          "confidence": 0.4872,
+          "boxPx": [
+            32.0,
+            223.0,
+            40.0,
+            235.0
+          ]
+        },
+        {
+          "text": "1/01",
+          "confidence": 0.5743,
+          "boxPx": [
+            96.0,
+            223.0,
+            128.0,
+            230.0
+          ]
+        },
+        {
+          "text": "19",
+          "confidence": 0.5928,
+          "boxPx": [
+            32.0,
+            236.0,
+            39.0,
+            242.0
+          ]
+        },
+        {
+          "text": "19",
+          "confidence": 0.9454,
+          "boxPx": [
+            32.0,
+            243.0,
+            39.0,
+            248.0
+          ]
+        },
+        {
+          "text": "11",
+          "confidence": 0.9979,
+          "boxPx": [
+            58.0,
+            238.0,
+            64.0,
+            243.0
+          ]
+        },
+        {
+          "text": "pos",
+          "confidence": 0.3555,
+          "boxPx": [
+            81.0,
+            238.0,
+            88.0,
+            243.0
+          ]
+        },
+        {
+          "text": "11/% 4 × 1/2\" P PE sabde cang",
+          "confidence": 0.5988,
+          "boxPx": [
+            96.0,
+            235.0,
+            168.0,
+            243.0
+          ]
+        },
+        {
+          "text": "20",
+          "confidence": 0.9957,
+          "boxPx": [
+            30.0,
+            248.0,
+            40.0,
+            256.0
+          ]
+        },
+        {
+          "text": "16",
+          "confidence": 0.9991,
+          "boxPx": [
+            56.0,
+            248.0,
+            65.0,
+            256.0
+          ]
+        },
+        {
+          "text": "p",
+          "confidence": 0.6228,
+          "boxPx": [
+            78.0,
+            249.0,
+            89.0,
+            256.0
+          ]
+        },
+        {
+          "text": "1./2T x 1 /2\" Rappec wniteri waks adger",
+          "confidence": 0.5754,
+          "boxPx": [
+            96.0,
+            249.0,
+            184.0,
+            256.0
+          ]
+        },
+        {
+          "text": "1LZe df x )im agcher ppobsalest type)",
+          "confidence": 0.5241,
+          "boxPx": [
+            97.0,
+            242.0,
+            187.0,
+            249.0
+          ]
+        },
+        {
+          "text": "21",
+          "confidence": 0.7206,
+          "boxPx": [
+            31.0,
+            262.0,
+            40.0,
+            269.0
+          ]
+        },
+        {
+          "text": "o0",
+          "confidence": 0.4126,
+          "boxPx": [
+            57.0,
+            262.0,
+            64.0,
+            268.0
+          ]
+        },
+        {
+          "text": "1s",
+          "confidence": 0.51,
+          "boxPx": [
+            79.0,
+            261.0,
+            90.0,
+            270.0
+          ]
+        },
+        {
+          "text": "NO MPT-theId.(M9S 65)",
+          "confidence": 0.7039,
+          "boxPx": [
+            96.0,
+            255.0,
+            148.0,
+            262.0
+          ]
+        },
+        {
+          "text": "27",
+          "confidence": 0.717,
+          "boxPx": [
+            31.0,
+            270.0,
+            40.0,
+            276.0
+          ]
+        },
+        {
+          "text": "44",
+          "confidence": 0.6263,
+          "boxPx": [
+            56.0,
+            268.0,
+            66.0,
+            276.0
+          ]
+        },
+        {
+          "text": "J",
+          "confidence": 0.3896,
+          "boxPx": [
+            78.0,
+            266.0,
+            90.0,
+            277.0
+          ]
+        },
+        {
+          "text": "3/7\"# x17 81 9qle (520",
+          "confidence": 0.6,
+          "boxPx": [
+            96.0,
+            261.0,
+            155.0,
+            269.0
+          ]
+        },
+        {
+          "text": "23",
+          "confidence": 0.6739,
+          "boxPx": [
+            31.0,
+            277.0,
+            40.0,
+            283.0
+          ]
+        },
+        {
+          "text": "70",
+          "confidence": 0.5019,
+          "boxPx": [
+            57.0,
+            277.0,
+            64.0,
+            282.0
+          ]
+        },
+        {
+          "text": "1/785",
+          "confidence": 0.6148,
+          "boxPx": [
+            93.0,
+            273.0,
+            155.0,
+            284.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

@@ -1,21 +1,27 @@
 {
   "title": "Miagao transparency OCR parser",
-  "updatedAtUtc": "2026-11-10T18:28:22+00:00",
+  "updatedAtUtc": "2026-11-10T20:18:32+00:00",
   "status": "processing",
   "inventoryGeneratedAt": "2026-11-10T15:30:23+00:00",
   "sourceDocuments": 654,
-  "uniqueOcrCandidateFiles": 543,
-  "pendingOcrDocuments": 543,
-  "completedDocuments": 111,
+  "uniqueOcrCandidateFiles": 542,
+  "pendingOcrDocuments": 542,
+  "completedDocuments": 155,
+  "skippedPriorErrors": 1,
   "discoveryErrors": [],
   "current": {
-    "index": 1,
-    "total": 543,
-    "sha256": "34d63dc8fc9e64bb0a420780758e64dbed74be41e99c9776d9f94a32d92d6fe7",
-    "file": "Section-1-Invitation-to-Bid-basura-mo-1.jpg",
+    "index": 56,
+    "total": 542,
+    "sha256": "8a546d9a88bae1bb243bb0b8fc082ffb2d5a400f238d13a8a0ba09247b703ec7",
+    "file": "Section-1-Invitation-to-Bid-mwest-ws-rebid-2-1080x1544.jpg",
     "ocrPages": [
       1
     ]
   },
-  "rowsPath": "analysis_output/miagao-transparency-ocr/ocr-rows.jsonl"
+  "rowsPath": "analysis_output/miagao-transparency-ocr/ocr-rows.jsonl",
+  "completedOcrDocuments": 54,
+  "completedOcrPages": 44,
+  "lastCompletedAtUtc": "2026-11-10T20:16:27+00:00",
+  "failedDocuments": 12,
+  "skippedDocuments": 12
 }

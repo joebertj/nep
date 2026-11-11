@@ -1,0 +1,1137 @@
+{
+  "summary": {
+    "coordinateCorrectionRows": 120,
+    "appliedOverrides": 41,
+    "matchedRowsOver20kmBefore": 4,
+    "matchedRowsOver20kmAfter": 0,
+    "unmatched": 79,
+    "ambiguous": 0,
+    "sectionsNeedingReview": 0
+  },
+  "rows": [
+    {
+      "draftRow": 6,
+      "control": "R1-NEW-0001",
+      "title": "Construction of Sitio Rango, Brgy. Tubburan FMR, Brgy. Tubburan, Bacarra, Ilocos Norte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey\n\nPlease refer to Annex A for the map reference.",
+      "matchedProjectIds": [
+        "ib:p667:r5"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 436.0,
+      "correctedCoordinateGapMeters": 735.9
+    },
+    {
+      "draftRow": 8,
+      "control": "R1-NEW-0002",
+      "title": "Construction of Brgy. San Lorenzo FMR, Brgy. San Lorenzo, Bangui, Ilocos Norte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 10,
+      "control": "R1-NEW-0003",
+      "title": "Construction of Brgy. Escoda - Brgy. Elizabeth FMR, Brgy. Escoda and Brgy. Elizabeth, Marcos, Ilocos Norte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p667:r7"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 1467.8,
+      "correctedCoordinateGapMeters": 1450.3
+    },
+    {
+      "draftRow": 15,
+      "control": "R1-L-0002",
+      "title": "Construction of Sitio Guayen, Brgy. Poblacion FMR, Brgy. Poblacion, Suyo, Ilocos Sur",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 17,
+      "control": "R1-NEW-0004",
+      "title": "Construction of Sitio Sao, Brgy. Daking FMR, Brgy. Daking, San Gabriel, La Union",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p667:r8"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 20775.9,
+      "correctedCoordinateGapMeters": 610.0
+    },
+    {
+      "draftRow": 23,
+      "control": "R1-0013",
+      "title": "RETAIN",
+      "remark": "There are two separate localities named Buenlag in Pangasinan: one located in the Municipality of Mangaldan and another in the Municipality of Mangatarem.\n\nFor the FY 2026 GAA project, a modification was proposed to correct its geographic coordinates, which currently point to Buenlag, Mangatarem, although the intended project location is Buenlag, Mangaldan. \n\nMeanwhile, under the FY 2027 NEP, the project in Buenlag, Mangatarem was included using the corrected location name and corresponding geographic coordinates.\n\nThis clarification ensures that the two projects refer to their respective intended locations and prevents potential duplication or misidentification.",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 27,
+      "control": "R1-NEW-0005",
+      "title": "Construction of Brgy. Alacan to Brgy. Mabilao FMR, Brgy. Alacan and Brgy. Mabilao, San Fabian, Pangasinan",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p667:r17"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 19071.8,
+      "correctedCoordinateGapMeters": 938.6
+    },
+    {
+      "draftRow": 30,
+      "control": "R1-NEW-0006",
+      "title": "Construction of Brgy. Bobonan FMR, Brgy. Bobonan, Pozorrubio, Pangasinan",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 39,
+      "control": "R1-NEW-0007",
+      "title": "Construction of Sitio Utoy, Brgy. Estancia FMR, Brgy. Estancia, Piddig, Ilocos Norte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 43,
+      "control": "R1-NEW-0008",
+      "title": "Concreting of Brgy. Gueteb FMR, Brgy. Gueteb, Urbiztondo, Pangasinan",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 56,
+      "control": "R1-NEW-0009",
+      "title": "Construction of Brgy. Amontoc FMR, Brgy. Amontoc, San Gabriel, La Union",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 61,
+      "control": "R1-L-0001",
+      "title": "Construction of Brgy. San Lorenzo to Brgy. Nagbalagan - Brgy. Malasin - Brgy. Lanao FMR, Brgy. Nagbalagan and Brgy. Malasin and Brgy. Lanao, Bangui, Ilocos Norte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 63,
+      "control": "R1-NEW-0010",
+      "title": "Construction of Brgy. Payac FMR Phase III, Brgy. Payac, Bangui, Ilocos Norte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey\n\nPlease refer to Annex A for the map reference.",
+      "matchedProjectIds": [
+        "ib:p669:r8"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 2781.7,
+      "correctedCoordinateGapMeters": 5348.5
+    },
+    {
+      "draftRow": 72,
+      "control": "R1-NEW-0011",
+      "title": "Construction of Camangaan - Brgy. 29 FMR, Laoag City, Ilocos Norte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p669:r13"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 7.5,
+      "correctedCoordinateGapMeters": 681.3
+    },
+    {
+      "draftRow": 79,
+      "control": "R1-NEW-0012",
+      "title": "Construction of Brgy. 1, San Lorenzo FMR, Laoag City, Ilocos Norte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p669:r17"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 200.6,
+      "correctedCoordinateGapMeters": 429.8
+    },
+    {
+      "draftRow": 81,
+      "control": "R1-NEW-0013",
+      "title": "Construction of Brgy. 25, Santa Cayetana FMR, Laoag City, Ilocos Norte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p669:r18"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 236.8,
+      "correctedCoordinateGapMeters": 418.7
+    },
+    {
+      "draftRow": 83,
+      "control": "R1-NEW-0014",
+      "title": "Construction of Brgy. 27 FMR, Laoag City, Ilocos Norte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p670:r2"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 844.8,
+      "correctedCoordinateGapMeters": 844.8
+    },
+    {
+      "draftRow": 85,
+      "control": "R1-NEW-0015",
+      "title": "Construction of Brgy. No. 40, Balatong FMR, Laoag City, Ilocos Norte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 87,
+      "control": "R1-NEW-0016",
+      "title": "Construction of Brgy. No. 41, Balacad FMR, Laoag City, Ilocos Norte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 91,
+      "control": "R1-NEW-0017",
+      "title": "Construction of Brgy. No. 30-B, Santa Maria FMR, Laoag City, Ilocos Norte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 108,
+      "control": "R1-0068",
+      "title": "Construction of Sitio Tamuad Brgy. Dampig FMR, Brgy. Dampig, Pagudpud, Ilocos Norte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p670:r15"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 577.0,
+      "correctedCoordinateGapMeters": 577.0
+    },
+    {
+      "draftRow": 123,
+      "control": "R1-NEW-0018",
+      "title": "Construction of Purok 3, Brgy. Pangil FMR, Brgy. Pangil, Pasuquin, Ilocos Norte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p671:r10"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 159.8,
+      "correctedCoordinateGapMeters": 942.7
+    },
+    {
+      "draftRow": 125,
+      "control": "R1-NEW-0019",
+      "title": "Construction of Brgy. Caruan FMR, Brgy. Caruan, Pasuquin, Ilocos Norte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p671:r11"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 933.5,
+      "correctedCoordinateGapMeters": 2447.8
+    },
+    {
+      "draftRow": 127,
+      "control": "R1-NEW-0020",
+      "title": "Construction of Brgy. Pragata - Brgy. Binsang FMR, Brgy. Pragata and Brgy. Binsang, Pasuquin, Ilocos Norte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 129,
+      "control": "R1-NEW-0021",
+      "title": "Construction of Sitio Cagat to Sitio Turod Brgy. Tangaoan FMR, Brgy. Tangaoan, Piddig, Ilocos Norte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p671:r13"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 58009.7,
+      "correctedCoordinateGapMeters": 453.6
+    },
+    {
+      "draftRow": 134,
+      "control": "R1-NEW-0022",
+      "title": "Construction of Sitio Dasar, Brgy. Isic Isic FMR, Brgy. Isic Isic, Vintar, Ilocos Norte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 137,
+      "control": "R1-NEW-0023",
+      "title": "Construction of Brgy. Margaay FMR, Brgy. Margaay, Vintar, Ilocos Norte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p672:r3"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 457.8,
+      "correctedCoordinateGapMeters": 1008.9
+    },
+    {
+      "draftRow": 197,
+      "control": "R2-NEW-0017",
+      "title": "Construction of Brgy. Macañao to Brgy. Luyao FMR Phase II, Brgy. Macañao and Brgy. Luyao, Luna, Isabela",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey\n\nThe project will no longer be duplicated in the FY 2026 GAA, as a proposed modification to the GAA 2026 project alignment will be implemented, resulting in a different route and eliminating any overlap between the two projects.\n\nPlease refer to Annex A for the map reference.",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 216,
+      "control": "R2-NEW-0002",
+      "title": "Construction of Brgy. Tupa FMR, Brgy. Tupa, San Pablo, Isabela",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 220,
+      "control": "R2-NEW-0003",
+      "title": "Construction of Brgy. Beti to Brgy. Yaway FMR, Brgy. Beti and Brgy. Yaway, Aritao, Nueva Vizcaya",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p676:r3"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 37495.1,
+      "correctedCoordinateGapMeters": 1363.3
+    },
+    {
+      "draftRow": 241,
+      "control": "R2-NEW-0004",
+      "title": "Construction of Brgy. Buyon FMR, Brgy. Buyon, Cauayan City, Isabela",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p677:r5"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 2772.1,
+      "correctedCoordinateGapMeters": 958.5
+    },
+    {
+      "draftRow": 257,
+      "control": "R2-NEW-0006",
+      "title": "Construction of Brgy. Nagrumbuan FMR 1, Brgy. Nagrumbuan, Cauayan City, Isabela",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p678:r3"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 491.0,
+      "correctedCoordinateGapMeters": 1630.1
+    },
+    {
+      "draftRow": 271,
+      "control": "R2-NEW-0007",
+      "title": "Construction of Brgy. Buneg to Brgy. Fugu FMR, Brgy. Buneg and Brgy. Fugu, Echague, Isabela",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [
+        "ib:p679:r2"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 1549.9,
+      "correctedCoordinateGapMeters": 1586.3
+    },
+    {
+      "draftRow": 273,
+      "control": "R2-NEW-0008",
+      "title": "Construction of Alintuneg, Brgy. Eden FMR, Brgy. Eden, San Manuel, Isabela",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 275,
+      "control": "R2-L-0008",
+      "title": "Construction of Sitio Cagurungan, Brgy. Eden FMR, Brgy. Eden, San Manuel, Isabela",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p679:r4"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 1337.7,
+      "correctedCoordinateGapMeters": 1529.4
+    },
+    {
+      "draftRow": 298,
+      "control": "R3-NEW-0001",
+      "title": "Construction of Brgy. Dulong Bayan FMR, Brgy. Dulong Bayan, San Jose Del Monte City, Bulacan",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 300,
+      "control": "R3-NEW-0002",
+      "title": "Construction of Sitio Linawan, Brgy. Dulong Bayan FMR, Brgy. Dulong Bayan, San Jose Del Monte City, Bulacan",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 312,
+      "control": "R3-NEW-0004",
+      "title": "Concreting of Brgy. Matictic FMR, Brgy. Matictic, Norzagaray, Bulacan",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 314,
+      "control": "R3-NEW-0005",
+      "title": "Construction of Sitio Coral, Brgy. Matictic FMR, Brgy. Matictic, Norzagaray, Bulacan",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 318,
+      "control": "R3-NEW-0006",
+      "title": "Construction of Brgy. San Juan FMR, Brgy. San Juan, Licab, Nueva Ecija",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p681:r12"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 939.7,
+      "correctedCoordinateGapMeters": 836.8
+    },
+    {
+      "draftRow": 327,
+      "control": "R3-NEW-0007",
+      "title": "Construction of Purok 3, Brgy. Suclayin FMR, Brgy. Suclayin, Arayat, Pampanga",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p681:r18"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 44782.4,
+      "correctedCoordinateGapMeters": 1096.7
+    },
+    {
+      "draftRow": 329,
+      "control": "R3-NEW-0008",
+      "title": "Construction of Brgy. San Roque Bitas FMR, Brgy. San Roque Bitas, Arayat, Pampanga",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [
+        "ib:p681:r19"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 912.7,
+      "correctedCoordinateGapMeters": 958.3
+    },
+    {
+      "draftRow": 339,
+      "control": "R3-NEW-0009",
+      "title": "Concreting of NIA Rd To Santol Road Brgy. Paudpod FMR, Brgy. Paudpod, Botolan, Zambales",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 343,
+      "control": "R3-NEW-0010",
+      "title": "Concreting of Sitio Tuklas, Brgy. Barangca Fmr, Brgy. Barangca, Candaba, Pampanga",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 347,
+      "control": "R3-NEW-0011",
+      "title": "Construction of Brgy. Mapaniqui to Brgy. Vizal San Pablo FMR, Brgy. Mapaniqui and Brgy. Vizal San Pablo, Candaba, Pampanga",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 349,
+      "control": "R3-NEW-0012",
+      "title": "Construction of Brgy. Mandili To Brgy. Cuayan Bugtong FMR",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 362,
+      "control": "R3-NEW-0013",
+      "title": "Construction of Purok 4 Brgy. Cansinala FMR, Apalit, Pampanga",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 375,
+      "control": "R3-NEW-0015",
+      "title": "Construction of Brgy. Batang-batang to Brgy. Balibago II FMR, Brgy. Batang-batang and Brgy. Balibago II, Tarlac City, Tarlac",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 392,
+      "control": "R3-NEW-0018",
+      "title": "Concreting of San Andres - Camiing FMR, Brgy. San Andres and Brgy. Camiing, Guimba Nueva Ecija",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 396,
+      "control": "R3-NEW-0019",
+      "title": "Construction of Brgy. Malasin to Hulo FMR, Santo Domingo Nueva Ecija",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 398,
+      "control": "R3-NEW-0020",
+      "title": "Construction of Brgy. Linao FMR, Brgy. Linao, Licab, Nueva Ecija",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 401,
+      "control": "R3-NEW-0021",
+      "title": "Construction of Brgy. Bertese (Dulong Bayang Rd. Purok 6) FMR, Quezon, Nueva Ecija",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 411,
+      "control": "R3-NEW-0022",
+      "title": "Construction of Brgy. Poblacion Norte FMR, Brgy. Poblacion Norte, Licab, Nueva Ecija",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p685:r7"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 649.6,
+      "correctedCoordinateGapMeters": 688.3
+    },
+    {
+      "draftRow": 413,
+      "control": "R3-NEW-0023",
+      "title": "Construction of Brgy. Pantoc to Brgy. Carmen FMR, Brgy. Pantoc and Brgy. Carmen, Zaragoza, Nueva Ecija",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 414,
+      "control": "R3-NEW-0024",
+      "title": "Construction of Brgy. Estacion FMR, Brgy. Estacion, Nampicuan, Nueva Ecija",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 415,
+      "control": "R3-NEW-0025",
+      "title": "Construction of Brgy. Maeling FMR, Brgy Maeling, Nampicuan, Nueva Ecija",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 425,
+      "control": "R3-NEW-0026",
+      "title": "Construction of Brgy. San Cristobal, Licab, Nueva Ecija",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 429,
+      "control": "R3-NEW-0028",
+      "title": "Construction of Purok 4, Brgy. Baloy FMR, Brgy. Baloy, Cuyapo, Nueva Ecija",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 433,
+      "control": "R3-NEW-0029",
+      "title": "Construction of Brgy. Comitang FMR, Brgy. Comitang, Sto. Domingo, Nueva Ecija",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 435,
+      "control": "R3-NEW-0030",
+      "title": "Construction of Brgy. San Miguel (Mambarao Irrig. Purok 1) FMR, Brgy. San Miguel, Quezon, Nueva Ecija",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 440,
+      "control": "R3-NEW-0031",
+      "title": "Construction of Brgy. San Alejandro FMR, Brgy. San Alejandro, Quezon, Nueva Ecija",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [
+        "ib:p685:r16"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 1857.6,
+      "correctedCoordinateGapMeters": 2270.6
+    },
+    {
+      "draftRow": 445,
+      "control": "R3-NEW-0032",
+      "title": "Construction of Brgy. Valeriana FMR, Brgy. Valeriana, Zaragoza, Nueva Ecija",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 449,
+      "control": "R3-NEW-0033",
+      "title": "Construction of Brgy. Sto. Rosario Young to Brgy. Santa Lucia Old FMR, Brgy. Sto. Rosario Young and Brgy. Santa Lucia Old, Zaragoza, Nueva Ecija",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 464,
+      "control": "R3-NEW-0034",
+      "title": "Construction of Brgy. Cubcub FMR, Brgy. Cubcub, Capas, Tarlac",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p687:r4"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 475.5,
+      "correctedCoordinateGapMeters": 1520.3
+    },
+    {
+      "draftRow": 466,
+      "control": "R3-NEW-0035",
+      "title": "Construction of Brgy. Cutcut 2nd FMR, Brgy. Cutcut 2nd, Capas, Tarlac",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 501,
+      "control": "R4A-NEW-0003",
+      "title": "Construction of Brgy. Kalubkob FMR, Brgy. Kalubkob, Silang, Cavite",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 504,
+      "control": "R4A-NEW-0004",
+      "title": "Construction of Brgy. Dapdap, Tayabas City to Brgy. Palola, Lucban FMR, Brgy. Dapdap, Tayabas City to Brgy. Palola, Lucban, Quezon",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 513,
+      "control": "R4A-NEW-0006",
+      "title": "Concreting of Brgy. Santol FMR, Brgy. Santol Tanza, Cavite",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 515,
+      "control": "R4A-NEW-0007",
+      "title": "Concreting of  Sitio Paulbuan, Brgy. Kaypaaba FMR, Brgy. Kaypaaba, General Emilio Aguinaldo, Cavite",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 517,
+      "control": "R4A-NEW-0008",
+      "title": "Construction of Brgy. San Agustin FMR, Brgy. San Agustin, Magallanes, Cavite",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 538,
+      "control": "R4A-NEW-0011",
+      "title": "Construction of Sitio Bilwang, Brgy. Quipot FMR, Brgy. Quipot, San Juan, Batangas",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p692:r10"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 648.4,
+      "correctedCoordinateGapMeters": 1232.1
+    },
+    {
+      "draftRow": 542,
+      "control": "R4A-NEW-0012",
+      "title": "Construction of Brgy. Anibawan FMR, Brgy. Anibawan, Burdeos, Quezon",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p692:r13"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 258.8,
+      "correctedCoordinateGapMeters": 840.2
+    },
+    {
+      "draftRow": 544,
+      "control": "R4A-NEW-0013",
+      "title": "Construction of Brgy. Miswa FMR, Brgy. Miswa, Infanta, Quezon",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p692:r14"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 522.7,
+      "correctedCoordinateGapMeters": 840.6
+    },
+    {
+      "draftRow": 547,
+      "control": "R4A-NEW-0014",
+      "title": "Construction of Brgy. Tagumpay FMR, Brgy. Tagumpay, Real, Quezon",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p692:r16"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 807.6,
+      "correctedCoordinateGapMeters": 471.6
+    },
+    {
+      "draftRow": 551,
+      "control": "R4A-NEW-0015",
+      "title": "Concreting of Brgy. Lipata to Brgy. Bato FMR, Brgy. Lipata and Brgy. Bato, Panukulan, Quezon",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 553,
+      "control": "R4A-NEW-0016",
+      "title": "Construction of Brgy. Pila FMR, Brgy. Pila, San Pascual, Batangas",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p693:r5"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 661.4,
+      "correctedCoordinateGapMeters": 940.6
+    },
+    {
+      "draftRow": 566,
+      "control": "R4A-NEW-0017",
+      "title": "Construction of Brgy. Balanac FMR, Brgy. Balanac, Magdalena, Laguna",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 567,
+      "control": "R4A-NEW-0018",
+      "title": "Construction of Brgy. Cigaras FMR, Brgy. Cigaras, Magdalena, Laguna",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 569,
+      "control": "R4A-NEW-0019",
+      "title": "Construction of Brgy. Bangco FMR, Brgy. Bangco, Cavinti, Laguna",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p693:r15"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 642.5,
+      "correctedCoordinateGapMeters": 1155.2
+    },
+    {
+      "draftRow": 573,
+      "control": "R4A-L-0007",
+      "title": "Construction of Brgy. Silangang Calutan FMR, Brgy. Silangang Calutan, Agdangan, Quezon",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 581,
+      "control": "R4A-NEW-0020",
+      "title": "Construction of Sitio Hulo, Brgy. Looc FMR, Brgy. Looc, Nasugbu, Batangas",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 583,
+      "control": "R4A-NEW-0021",
+      "title": "Construction of Brgy. Concepcion to Brgy. Balagbag FMR, Brgy. Concepcion and Brgy. Balagbag, Alitagtag, Batangas",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 635,
+      "control": "R4B-NEW-0001",
+      "title": "Concreting of Brgy. Hagupit FMR, Brgy. Hagupit, Bongabong, Oriental Mindoro",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 642,
+      "control": "R4B-NEW-0002",
+      "title": "Construction of Sitio Arado, Brgy. Poblacion FMR, Brgy. Poblacion, Taytay, Palawan",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey.\n\nPlease refer to Annex A for the map reference.",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 646,
+      "control": "R4B-NEW-0003",
+      "title": "Concreting of Brgy. Poblacion to Brgy. Sagana FMR, Brgy. Poblacion and Brgy. Sagana, Bongabong, Oriental Mindoro",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 648,
+      "control": "R4B-NEW-0004",
+      "title": "Concreting of Brgy. San Juan to Brgy. Luna FMR, Brgy. San Juan and Brgy. Luna, Bongabong, Oriental Mindoro",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 714,
+      "control": "R5-NEW-0004",
+      "title": "Concreting of Brgy. Kinuartilan to Brgy. Lourdes FMR, Brgy. Kinuartilan and Brgy. Lourdes, Polangui, Albay",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 741,
+      "control": "R6-NEW-0001",
+      "title": "Concreting of Brgy. Oracon Norte FMR, Brgy. Oracon Norte, Sibunag, Guimaras",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 746,
+      "control": "R6-NEW-0002",
+      "title": "Construction of Brgy. Buga FMR, Brgy. Buga, Leon, lloilo",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p707:r10"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 907.7,
+      "correctedCoordinateGapMeters": 892.2
+    },
+    {
+      "draftRow": 755,
+      "control": "R6-NEW-0003",
+      "title": "Construction of Sitio Capasigan, Brgy. Alimono FMR, Brgy. Alimono, Passi City, Iloilo",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p707:r18"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 339.1,
+      "correctedCoordinateGapMeters": 727.4
+    },
+    {
+      "draftRow": 763,
+      "control": "R6-NEW-0004",
+      "title": "Concreting of Brgy. Kirayan Tacas to Brgy. Pungtod Naulid FMR, Brgy. Kirayan Tacas and Brgy. Pungtod Naulid, Miagao, Iloilo",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [
+        "ib:p709:r14"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 2154.8,
+      "correctedCoordinateGapMeters": 2154.9
+    },
+    {
+      "draftRow": 812,
+      "control": "R7-NEW-0001",
+      "title": "Construction of Brgy. Consuelo to Brgy. Unidos FMR, Brgy. Consuelo and Brgy. Unidos, San Francisco, Cebu",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 814,
+      "control": "R7-NEW-0002",
+      "title": "Construction of Brgy. Manga FMR, Brgy. Manga, Alcantara, Cebu",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 830,
+      "control": "R8-NEW-0001",
+      "title": "Construction of Sitio Busay, Brgy. Apale FMR, Brgy. Apale, Isabel, Leyte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p713:r12"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 812.8,
+      "correctedCoordinateGapMeters": 812.8
+    },
+    {
+      "draftRow": 832,
+      "control": "R8-NEW-0002",
+      "title": "Construction of Sitio Kabaringan, Brgy. Apale FMR, Brgy. Apale, Isabel, Leyte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p713:r13"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 1067.9,
+      "correctedCoordinateGapMeters": 1068.1
+    },
+    {
+      "draftRow": 838,
+      "control": "R8-NEW-0003",
+      "title": "Construction of Brgy. Imelda to Brgy. Lico FMR, Brgy. Imelda and Brgy. Lico, Naval, Biliran",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p713:r16"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 395.8,
+      "correctedCoordinateGapMeters": 744.3
+    },
+    {
+      "draftRow": 870,
+      "control": "R9-NEW-0001",
+      "title": "Construction of Sitio Nangka Plain, Brgy. La Paz FMR, Brgy. La Paz, Zamboanga City",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p716:r15"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 784.3,
+      "correctedCoordinateGapMeters": 831.8
+    },
+    {
+      "draftRow": 873,
+      "control": "R9-NEW-0002",
+      "title": "Construction of Brgy. Vitali FMR, Brgy. Vitali, Zamboanga City",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 877,
+      "control": "R9-NEW-0003",
+      "title": "Construction of Brgy. Suguilon FMR, Brgy. Suguilon, Siayan, Zamboanga del Norte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 886,
+      "control": "R9-NEW-0004",
+      "title": "Concreting of Brgy. Lunib FMR Phase II, Brgy. Lunib, Vincenzo A. Sagun, Zamboanga del Sur",
+      "remark": "The project will no longer be duplicated in the FY 2026 GAA, as a proposed modification to the GAA 2026 project alignment will be implemented, resulting in a different route and eliminating any overlap between the two projects.\n\nCorrection of project coordinates per DA evaluation/ GPS survey\n\nPlease refer to Annex A for the map reference.",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 892,
+      "control": "R9-NEW-0005",
+      "title": "Construction of Brgy. Santa Clara to Brgy. San Isidro FMR, Brgy. Santa Clara and Brgy. San Isidro, Naga, Zamboanga Sibugay",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 895,
+      "control": "R9-NEW-0006",
+      "title": "Construction of Brgy. Small Kapatagan FMR, Brgy. Small Kapatagan, Isabela City, Basilan",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 899,
+      "control": "R9-NEW-0007",
+      "title": "Construction of Brgy. Pisak-pisak FMR, Brgy. Pisak-pisak, Pata, Sulu",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 947,
+      "control": "R11-NEW-0001",
+      "title": "Concreting of Brgy. Camoning to Brgy. San Vicente FMR, Brgy. Camoning and Brgy. San Vicente, Asuncion, Davao del Norte",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 951,
+      "control": "R11-NEW-0002",
+      "title": "Concreting of Brgy. San Pedro FMR, Brgy. San Pedro, Santa Maria, Davao Occidental",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 955,
+      "control": "R11-NEW-0003",
+      "title": "Concreting of Junction Provincial Road, Purok 8, Brgy. Anibongan FMR, Brgy. Anibongan, Carmen, Davao del Norte",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 958,
+      "control": "R11-NEW-0004",
+      "title": "Construction of Coastal Road to Sitio Bacuring to Sitio Tugun to Sitio Nabintad to Sitio Gapas, Brgy. Madaum FMR, Brgy. Madaum, Tagum City, Davao del Norte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 961,
+      "control": "R11-L-0001",
+      "title": "Construction of Junction Panlaisan to Sitio Butay, Brgy. Pichon FMR, Brgy. Pichon,",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 969,
+      "control": "R12-NEW-0001",
+      "title": "Concreting of Crossing Diego, Brgy. Doroluman to Sitio Tagaytay, Brgy. Makalangot to Sitio Talaytay, Brgy. Malibatuan FMR, Brgy. Doroluman and Brgy. Makalangot and Brgy. Malibatuan, Arakan, Cotabato",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 980,
+      "control": "R12-NEW-0003",
+      "title": "Construction of Purok Luyan, Brgy. Kalanawe II to Purok 2, Brgy. Tinaungan FMR, Brgy. Kalanawe II and Brgy. Tinaungan, Pres. Quirino, Sultan Kudarat",
+      "remark": "The project will no longer be duplicated in the FY 2026 GAA, as a proposed modification to the GAA 2026 project alignment will be implemented, resulting in a different route and eliminating any overlap between the two projects.\n\nCorrection of project coordinates per DA evaluation/ GPS survey\n\nPlease refer to Annex A for the map reference.",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 984,
+      "control": "R12-NEW-0004",
+      "title": "Construction of Sitio Kilbog Proper, Brgy. Balwan FMR, Brgy. Balwan, Palimbang, Sultan Kudarat",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 991,
+      "control": "R13-NEW-0002",
+      "title": "Concreting of Purok-4 Sta. Cruz FMR, Brgy. Manila de Bugabus, Butuan City",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 995,
+      "control": "R13-NEW-0003",
+      "title": "Construction of Brgy. Concepcion FMR, Brgy. Concepcion, Sta. Josefa, Agusan del Sur",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 997,
+      "control": "R13-NEW-0004",
+      "title": "Construction of Brgy. Candiis to Brgy. Sta. Emelia FMR, Brgy. Candiis and Brgy. Sta. Emelia, Veruela, Agusan del Sur",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 1011,
+      "control": "R13-NEW-0005",
+      "title": "Construction of Brgy. San Pedro to Fish Landing FMR, Brgy. San Pedro, Alegria, Surigao del Norte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey\n\nPlease refer to Annex A for the map reference.",
+      "matchedProjectIds": [
+        "ib:p724:r7"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 1784.1,
+      "correctedCoordinateGapMeters": 2079.0
+    },
+    {
+      "draftRow": 1014,
+      "control": "R13-NEW-0006",
+      "title": "Construction of Brgy. Jubgan FMR, Brgy. Jubgan, San Francisco, Surigao del Norte",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 1026,
+      "control": "R13-NEW-0014",
+      "title": "Construction of Purok Magtatanim Brgy. Matin-ao FMR, Brgy. Matin-ao, Mainit, Surigao del Norte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey\n\nPlease refer to Annex A for the map reference.",
+      "matchedProjectIds": [
+        "ib:p725:r5"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 1980.1,
+      "correctedCoordinateGapMeters": 1311.3
+    },
+    {
+      "draftRow": 1039,
+      "control": "R13-NEW-0007",
+      "title": "Construction of Purok Magbabaol, Brgy. San Isidro FMR, Brgy. San Isidro, Gigaquit, Surigao del Norte",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 1042,
+      "control": "R13-NEW-0008",
+      "title": "Construction of Brgy. Pautao to Brgy. Pungtod FMR, Brgy. Pautao and Brgy. Pungtod, Bacuag, Surigao del Norte",
+      "remark": "Correction of project title and coordinates per DA evaluation",
+      "matchedProjectIds": [],
+      "status": "unmatched"
+    },
+    {
+      "draftRow": 1050,
+      "control": "R13-NEW-0010",
+      "title": "Construction of Purok 3, Brgy. Cam-boayon FMR, Brgy. Cam-boayon, Gigaquit, Surigao del Norte",
+      "remark": "Correction of project coordinates per DA evaluation/ GPS survey",
+      "matchedProjectIds": [
+        "ib:p726:r6"
+      ],
+      "status": "matched-and-parsed",
+      "oldCoordinateGapMeters": 370.7,
+      "correctedCoordinateGapMeters": 1008.9
+    }
+  ]
+}
