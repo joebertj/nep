@@ -1,688 +1,101 @@
 #!/usr/bin/env bash
-# Deploy ODV main through Git without running the broad build/restart script.
-# The direct-copy helpers remain available for explicitly approved intervention.
+# Git deploy; HTTP checks run locally, outside the SSH command.
 set -euo pipefail
 
 REMOTE_HOST="${NEP_DEPLOY_HOST:-165.245.186.194}"
 REMOTE_USER="${NEP_DEPLOY_USER:-joebert}"
 REMOTE_DIR="${NEP_DEPLOY_DIR:-/home/joebert/open-data-visualization}"
 SSH_IDENTITY="${NEP_SSH_IDENTITY:-$HOME/.ssh/klti}"
-
-usage() {
-  cat <<'EOF'
-Usage: ./deployment/deploy_odv_git.sh [inspect|deploy]
-
-  inspect  Read-only server checkout status (default)
-  deploy   Fetch origin/main, deploy it (or NEP_DEPLOY_COMMIT), and check the
-           local frontend response. Rebuild/restart the frontend only for Rust/Cargo changes and FastAPI only for visualization.py changes. Nginx is not restarted.
-
-Overrides: NEP_DEPLOY_HOST, NEP_DEPLOY_USER, NEP_DEPLOY_DIR, NEP_SSH_IDENTITY,
-           NEP_DEPLOY_COMMIT (a commit reachable from origin/main)
-EOF
-}
-
-if [[ ! -r "$SSH_IDENTITY" ]]; then
-  echo "SSH identity is not readable: $SSH_IDENTITY" >&2
-  exit 2
-fi
-
+HEALTH_URL="${NEP_DEPLOY_HEALTH_URL:-https://research.bettergov.ph}"
 ACTION="${1:-inspect}"
-if [[ $# -gt 1 ]]; then usage >&2; exit 2; fi
+DEPLOY_COMMIT="${NEP_DEPLOY_COMMIT:-origin/main}"
+SSH=(ssh -i "$SSH_IDENTITY" -o BatchMode=yes -o ConnectTimeout=10 -o StrictHostKeyChecking=accept-new)
 
-SSH=(ssh -i "$SSH_IDENTITY" -o BatchMode=yes -o ConnectTimeout=10 \
-  -o StrictHostKeyChecking=accept-new)
-
+if [[ ! -r "$SSH_IDENTITY" ]]; then echo "SSH identity is not readable: $SSH_IDENTITY" >&2; exit 2; fi
 if [[ "$ACTION" == "-h" || "$ACTION" == "--help" || "$ACTION" == "help" ]]; then
-  usage
+  echo "Usage: ./deployment/deploy_odv_git.sh [inspect|deploy]"
+  echo "Override with NEP_DEPLOY_COMMIT, NEP_DEPLOY_HEALTH_URL, NEP_DEPLOY_HOST, NEP_DEPLOY_USER, NEP_DEPLOY_DIR, NEP_SSH_IDENTITY."
   exit 0
 fi
-if [[ "$ACTION" != "inspect" && "$ACTION" != "deploy" ]]; then
-  usage >&2
+if [[ "$ACTION" == "inspect" ]]; then
+  "${SSH[@]}" "$REMOTE_USER@$REMOTE_HOST" "git -C '$REMOTE_DIR' status --short && git -C '$REMOTE_DIR' branch --show-current && git -C '$REMOTE_DIR' rev-parse --short HEAD"
+  exit 0
+fi
+if [[ "$ACTION" != "deploy" || $# -gt 1 ]]; then
+  echo "Usage: ./deployment/deploy_odv_git.sh [inspect|deploy]" >&2
+  exit 2
+fi
+if [[ ! "$DEPLOY_COMMIT" =~ ^(origin/main|[0-9a-fA-F]{7,40})$ ]]; then
+  echo "Invalid NEP_DEPLOY_COMMIT: use origin/main or a commit hash." >&2
   exit 2
 fi
 
-if [[ "$ACTION" == "inspect" ]]; then
-    "${SSH[@]}" "$REMOTE_USER@$REMOTE_HOST" \
-      "REMOTE_DIR='$REMOTE_DIR' bash -s" <<'REMOTE_INSPECT'
-set -u
-r="$REMOTE_DIR"
-printf '=== Checkout ===\n'
-git -C "$r" branch --show-current
-git -C "$r" rev-parse --short HEAD
-git -C "$r" status --short
-printf '\n=== Frontend service ===\n'
-systemctl is-active visualization.service 2>/dev/null || true
-systemctl --no-pager --full status visualization.service 2>/dev/null | sed -n '1,18p' || true
-printf '\n=== Listening TCP sockets ===\n'
-ss -ltnp 2>/dev/null | sed -n '1,24p' || true
-printf '\n=== Homepage edits vs checkout ===\n'
-git -C "$r" diff --unified=3 -- templates/visualizations_home.html templates/mobile/visualizations_home.html | sed -n '1,180p'
-sha256sum "$r/templates/visualizations_home.html" "$r/templates/mobile/visualizations_home.html"
-printf '\n=== Nginx checks with the site Host header ===\n'
-for path in / /static/nep-preview/ /static/nep-preview/summary.html /static/nep-preview/budget-innovations.html /static/nep-preview/congress.html /static/nep-preview/deped.html /static/nep-preview/dpwh-hgab-comparison.html /static/nep-preview/dpwh-hgab.html /static/nep-preview/dpwh.html /static/nep-preview/fmr.html /static/nep-preview/hfep.html /static/nep-preview/nia-irrigation.html /static/nep-preview/nia.html /static/nep-preview/rcs.html /static/nep-preview/mpb.html /static/nep-preview/mpb-barangay.html /static/nep-preview/cost-per-km.html /static/nep-preview/cost-per-km-historical.html /static/nep-preview/cost-matching.html; do
-  status="$(curl --silent --show-error --location --max-time 8 --resolve 'research.bettergov.ph:443:127.0.0.1' --output /dev/null --write-out '%{http_code}' "http://research.bettergov.ph$path" 2>/dev/null || true)"
-  printf '%s %s\n' "$status" "$path"
-done
-printf '\n=== Service working directory and static files ===\n'
-systemctl show visualization.service --property=WorkingDirectory --property=ExecStart 2>/dev/null || true
-ls -lh "$r/static/nep-preview" 2>/dev/null || true
-printf 'favicon status: '
-curl --silent --show-error --max-time 5 --output /dev/null --write-out '%{http_code}\n' http://127.0.0.1/static/favicon.ico 2>/dev/null || true
-app_ip="$(ss -H -ltn 'sport = :8888' 2>/dev/null | awk 'NR==1 {sub(/:[0-9]+$/, "", $4); print $4}')"
-if [[ -n "$app_ip" ]]; then
-  printf 'Direct Actix listener checks (%s):\n' "$app_ip"
-  for path in / /static/nep-preview/ /static/nep-preview/summary.html /static/nep-preview/budget-innovations.html /static/nep-preview/congress.html /static/nep-preview/deped.html /static/nep-preview/dpwh-hgab-comparison.html /static/nep-preview/dpwh-hgab.html /static/nep-preview/fmr.html /static/nep-preview/hfep.html /static/nep-preview/nia-irrigation.html /static/nep-preview/nia.html /static/nep-preview/rcs.html /static/nep-preview/mpb.html /static/nep-preview/mpb-barangay.html /static/nep-preview/cost-per-km.html /static/nep-preview/cost-per-km-historical.html /static/nep-preview/cost-matching.html; do
-    status="$(curl --silent --show-error --max-time 5 --output /dev/null --write-out '%{http_code}' "http://$app_ip:8888$path" 2>/dev/null || true)"
-    printf '%s %s\n' "$status" "$path"
-  done
-fi
-REMOTE_INSPECT
-  exit 0
-fi
+printf 'Deploy %s from origin/main history? Type DEPLOY ODV MAIN: ' "$DEPLOY_COMMIT"
+read -r answer
+[[ "$answer" == "DEPLOY ODV MAIN" ]] || { echo "Cancelled."; exit 1; }
 
-DEPLOY_COMMIT="${NEP_DEPLOY_COMMIT:-origin/main}"
-    if [[ ! "$DEPLOY_COMMIT" =~ ^(origin/main|[0-9a-fA-F]{7,40})$ ]]; then
-      echo "Invalid NEP_DEPLOY_COMMIT: use origin/main or a full/short commit hash." >&2
-      exit 2
-    fi
-    printf 'This will deploy %s from origin/main history and check the local frontend response.\n' "$DEPLOY_COMMIT"
-    printf 'Type DEPLOY ODV MAIN to continue: '
-    read -r answer
-    [[ "$answer" == "DEPLOY ODV MAIN" ]] || { echo "Cancelled."; exit 1; }
-    "${SSH[@]}" "$REMOTE_USER@$REMOTE_HOST" \
-      "REMOTE_DIR='$REMOTE_DIR' DEPLOY_COMMIT='$DEPLOY_COMMIT' bash -s" <<'REMOTE_DEPLOY'
+deploy_output="$("${SSH[@]}" "$REMOTE_USER@$REMOTE_HOST" "REMOTE_DIR='$REMOTE_DIR' DEPLOY_COMMIT='$DEPLOY_COMMIT' bash -s" <<'REMOTE_DEPLOY'
 set -euo pipefail
 r="$REMOTE_DIR"
-files=(
-  static/nep-preview/research-theme.css
-  static/nep-preview/research-status.js
-  static/nep-preview/site-build-info.json
-  static/nep-preview/nep-hgab-comparison-graphs.css
-  static/nep-preview/nep-hgab-comparison-graphs.js
-  static/nep-preview/report-table-readability.css
-  static/nep-preview/report-table-readability.js
-  static/nep-preview/congress-benchmark.json
-  static/nep-preview/index.html
-  static/nep-preview/archive.html
-  static/nep-preview/barangay.html
-  static/nep-preview/flood-control.html
-  static/nep-preview/integrated.html
-  static/nep-preview/integrated-district-allocations.html
-  static/nep-preview/outside.html
-  static/nep-preview/rcs-rainfall-archive.html
-  static/nep-preview/summary.html
-  static/nep-preview/summary-data.json
-  static/nep-preview/rcs-stage-trace.json
-  static/nep-preview/rcs-stage-trace.csv
-  static/nep-preview/repeat-nep-hgab-survival.json
-  static/nep-preview/repeat-nep-hgab-proposals.csv
-  static/nep-preview/ph-location-representatives.js
-  static/nep-preview/budget-innovations-data.json
-  static/nep-preview/budget-innovations.html
-  static/nep-preview/congress-data.json
-  static/nep-preview/congress-benchmark.json
-  static/nep-preview/appropriations-roster.json
-  static/nep-preview/house-leadership-roles.json
-  static/nep-preview/house-party-list-roster.json
-  static/nep-preview/congress.html
-  static/nep-preview/deped-data.json
-  static/nep-preview/deped.html
-  static/nep-preview/dpwh-data.json
-  static/nep-preview/dpwh-hgab-comparison.html
-  static/nep-preview/dpwh-hgab-comparison.json
-  static/nep-preview/dpwh-hgab.html
-  static/nep-preview/dpwh-deo-office-change-maps.json
-  static/nep-preview/dpwh-deo-office-changes.js
-  static/nep-preview/dpwh-office-change-share
-  static/nep-preview/dpwh-logo.svg
-  static/nep-preview/dpwh.html
-  static/nep-preview/fmr.html
-  static/nep-preview/hfep.html
-  static/nep-preview/hgab-revision-data.json
-  static/nep-preview/nia-irrigation-data.json
-  static/nep-preview/nia-irrigation.html
-  static/nep-preview/nia.html
-  static/nep-preview/rcs-data.json
-  static/nep-preview/rcs.html
-  static/nep-preview/mpb.html
-  static/nep-preview/mpb-data.json
-  static/nep-preview/mpb-location-map.js
-  static/nep-preview/mpb-municipality-boundaries.json
-  static/nep-preview/mpb-table-index.json
-  static/nep-preview/mpb-table-data
-  static/nep-preview/mpb-project-details
-  static/nep-preview/mpb-barangay.html
-  static/nep-preview/mpb-barangay.js
-  static/nep-preview/mpb-barangay-index.json
-  static/nep-preview/mpb-barangay-detail-shards
-  static/nep-preview/mpb-barangay-data.json
-  static/nep-preview/mpb-map-share
-  static/nep-preview/out-of-place.html
-  static/nep-preview/out-of-place.js
-  static/nep-preview/out-of-place-data.json
-  static/nep-preview/out-of-place-share-card.png
-  static/nep-preview/out-of-place-share
-  static/nep-preview/ignorant.html
-  static/nep-preview/plotly-2.35.2.min.js
-  static/nep-preview/cost-per-km.html
-  static/nep-preview/cost-per-km-historical.html
-  static/nep-preview/cost-matching.html
-  static/nep-preview/external-reference-review.json
-  static/nep-preview/reviewed-source-adoption.json
-  static/nep-preview/reviewed-annex-baselines.json
-  static/nep-preview/archive-higher-level.js
-  static/nep-preview/higher-level-archive.json
-  static/nep-preview/archive/index.html
-  static/nep-preview/dpwh-in-depth-data.json
-  static/nep-preview/dpwh-in-depth-shards
-  static/nep-preview/dpwh-data-loader.js
-  static/nep-preview/dpwh-in-depth.js
-  static/nep-preview/project-documents.html
-  static/nep-preview/project-documents.js
-  static/nep-preview/project-document-index.json
-  static/nep-preview/project-document-links.js
-  static/nep-preview/burol-reviewed-pow-rows.json
-  static/nep-preview/cost-per-km-data.json
-  static/nep-preview/short-segment-audit.json
-  static/nep-preview/length-density-groups.json
-  static/nep-preview/meter-rates-2026-comparison.json
-  static/nep-preview/meter-rates-all-years.json
-  static/nep-preview/line-item-review-queue.json
-  static/nep-preview/within-stage-repeats.json
-  static/nep-preview/repeats.html
-  static/nep-preview/repeats-historical.html
-  static/nep-preview/repeats-historical-data.json
-  static/nep-preview/chainage-overlap.js
-  static/nep-preview/mpb-proximity.json
-  static/nep-preview/fmr-data.json
-  static/nep-preview/fmr-manual-red-flags.json
-  static/nep-preview/fmr-annex-equivalence.json
-  static/nep-preview/fmr-historical-repeats.json
-  static/nep-preview/fmr-historical-nep-2nd.json
-  static/nep-preview/nep-agency-baselines.json
-  static/nep-preview/nep-agency-stage-controls.json
-)
-health_files=(
-  static/nep-preview/research-theme.css
-  static/nep-preview/research-status.js
-  static/nep-preview/site-build-info.json
-  static/nep-preview/nep-hgab-comparison-graphs.css
-  static/nep-preview/nep-hgab-comparison-graphs.js
-  static/nep-preview/report-table-readability.css
-  static/nep-preview/report-table-readability.js
-  static/nep-preview/congress-benchmark.json
-  static/nep-preview/rcs-stage-trace.json
-  static/nep-preview/rcs-stage-trace.csv
-  static/nep-preview/archive.html
-  static/nep-preview/barangay.html
-  static/nep-preview/flood-control.html
-  static/nep-preview/integrated.html
-  static/nep-preview/integrated-district-allocations.html
-  static/nep-preview/outside.html
-  static/nep-preview/rcs-rainfall-archive.html
-  static/nep-preview/summary.html
-  static/nep-preview/summary-data.json
-  static/nep-preview/repeat-nep-hgab-survival.json
-  static/nep-preview/repeat-nep-hgab-proposals.csv
-  static/nep-preview/ph-location-representatives.js
-  static/nep-preview/budget-innovations-data.json
-  static/nep-preview/budget-innovations.html
-  static/nep-preview/congress-data.json
-  static/nep-preview/congress-benchmark.json
-  static/nep-preview/appropriations-roster.json
-  static/nep-preview/house-leadership-roles.json
-  static/nep-preview/house-party-list-roster.json
-  static/nep-preview/congress.html
-  static/nep-preview/deped-data.json
-  static/nep-preview/deped.html
-  static/nep-preview/dpwh-hgab-comparison.html
-  static/nep-preview/dpwh-hgab-comparison.json
-  static/nep-preview/dpwh-hgab.html
-  static/nep-preview/dpwh-deo-office-change-maps.json
-  static/nep-preview/dpwh-deo-office-changes.js
-  static/nep-preview/dpwh-logo.svg
-  static/nep-preview/dpwh-data.json
-  static/nep-preview/dpwh.html
-  static/nep-preview/fmr.html
-  static/nep-preview/hfep.html
-  static/nep-preview/hgab-revision-data.json
-  static/nep-preview/nia-irrigation-data.json
-  static/nep-preview/nia-irrigation.html
-  static/nep-preview/nia.html
-  static/nep-preview/rcs-data.json
-  static/nep-preview/rcs.html
-  static/nep-preview/mpb.html
-  static/nep-preview/mpb-data.json
-  static/nep-preview/out-of-place.html
-  static/nep-preview/out-of-place.js
-  static/nep-preview/out-of-place-data.json
-  static/nep-preview/out-of-place-share-card.png
-  static/nep-preview/out-of-place-share/representative-13c17617ebbf9151.png
-  static/nep-preview/plotly-2.35.2.min.js
-  static/nep-preview/cost-per-km.html
-  static/nep-preview/cost-per-km-historical.html
-  static/nep-preview/cost-matching.html
-  static/nep-preview/external-reference-review.json
-  static/nep-preview/reviewed-source-adoption.json
-  static/nep-preview/reviewed-annex-baselines.json
-  static/nep-preview/archive-higher-level.js
-  static/nep-preview/higher-level-archive.json
-  static/nep-preview/archive/index.html
-  static/nep-preview/dpwh-in-depth-data.json
-  static/nep-preview/dpwh-data-loader.js
-  static/nep-preview/dpwh-in-depth.js
-  static/nep-preview/project-documents.html
-  static/nep-preview/project-documents.js
-  static/nep-preview/project-document-index.json
-  static/nep-preview/project-document-links.js
-  static/nep-preview/burol-reviewed-pow-rows.json
-  static/nep-preview/cost-per-km-data.json
-  static/nep-preview/short-segment-audit.json
-  static/nep-preview/length-density-groups.json
-  static/nep-preview/meter-rates-2026-comparison.json
-  static/nep-preview/meter-rates-all-years.json
-  static/nep-preview/line-item-review-queue.json
-  static/nep-preview/within-stage-repeats.json
-  static/nep-preview/repeats.html
-  static/nep-preview/repeats-historical.html
-  static/nep-preview/repeats-historical-data.json
-  static/nep-preview/mpb-proximity.json
-  static/nep-preview/mpb-location-map.js
-  static/nep-preview/mpb-municipality-boundaries.json
-  static/nep-preview/mpb-table-index.json
-  static/nep-preview/mpb-project-details/index.json
-  static/nep-preview/mpb-barangay.html
-  static/nep-preview/mpb-barangay.js
-  static/nep-preview/mpb-barangay-index.json
-  static/nep-preview/fmr-data.json
-  static/nep-preview/fmr-manual-red-flags.json
-  static/nep-preview/fmr-annex-equivalence.json
-  static/nep-preview/fmr-historical-repeats.json
-  static/nep-preview/fmr-historical-nep-2nd.json
-  static/nep-preview/nep-agency-baselines.json
-  static/nep-preview/nep-agency-stage-controls.json
-)
-
-# A static directory without a trailing slash responds with Actix's canonical
-# 307 redirect. Probe one concrete generated card from each directory instead.
-for share_dir in static/nep-preview/dpwh-office-change-share static/nep-preview/mpb-map-share; do
-  sample="$(find "$r/$share_dir" -type f -name '*.html' -print -quit)"
-  if [[ -z "$sample" ]]; then
-    echo "Frontend health check setup failed: no share HTML found under $share_dir." >&2
-    exit 1
-  fi
-  relative_sample="${sample#"$r"}"
-  relative_sample="${relative_sample#/}"
-  health_files+=("$relative_sample")
-done
-
-ensure_build_info_ignored() {
-  local exclude_file
-  if git -C "$r" check-ignore -q -- static/nep-preview/site-build-info.json; then
-    return 0
-  fi
-  # A no-op metadata repair may run against a server whose current commit
-  # predates the committed .gitignore rule. Keep that checkout clean meanwhile.
-  exclude_file="$r/.git/info/exclude"
-  if ! grep -Fqx '/static/nep-preview/site-build-info.json' "$exclude_file"; then
-    printf '\n/static/nep-preview/site-build-info.json\n' >> "$exclude_file"
-  fi
-  git -C "$r" check-ignore -q -- static/nep-preview/site-build-info.json
-}
-
-write_build_info() {
-  local build_commit build_timestamp build_info
-  build_commit="$(git -C "$r" rev-parse HEAD)"
-  build_timestamp="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-  build_info="$r/static/nep-preview/site-build-info.json"
-  if ! ensure_build_info_ignored; then
-    echo "Unable to ignore site-build-info.json in this checkout." >&2
-    return 1
-  fi
-  printf '{"commit":"%s","deployedAtUtc":"%s"}\n' "$build_commit" "$build_timestamp" > "$build_info"
-}
-
-build_info_matches_head() {
-  local build_commit build_info
-  build_commit="$(git -C "$r" rev-parse HEAD)"
-  build_info="$r/static/nep-preview/site-build-info.json"
-  [[ -f "$build_info" ]] && grep -Eq "\"commit\":\"$build_commit\".*\"deployedAtUtc\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z\"" "$build_info"
-}
-
 if [[ "$(git -C "$r" branch --show-current)" != "main" ]]; then
-  echo "Refusing deployment: server checkout is not on main." >&2
-  exit 2
-fi
-if ! git -C "$r" diff --cached --quiet; then
-  echo "Refusing deployment: the server has staged changes." >&2
-  git -C "$r" status --short >&2
+  echo "Refusing deployment: checkout is not on main." >&2
   exit 2
 fi
 previous="$(git -C "$r" rev-parse HEAD)"
+if [[ -n "$(git -C "$r" status --porcelain)" ]]; then
+  echo "Refusing deployment: server checkout has local changes." >&2
+  exit 2
+fi
 git -C "$r" fetch origin main
 if [[ "$DEPLOY_COMMIT" == "origin/main" ]]; then
   target="$(git -C "$r" rev-parse FETCH_HEAD)"
 else
   target="$(git -C "$r" rev-parse "$DEPLOY_COMMIT^{commit}")"
-  if ! git -C "$r" merge-base --is-ancestor "$target" FETCH_HEAD; then
-    echo "Refusing deployment: requested commit is not in origin/main history." >&2
+  git -C "$r" merge-base --is-ancestor "$target" FETCH_HEAD
+fi
+if [[ "$previous" != "$target" ]]; then
+  restart_frontend=false
+  restart_api=false
+  restart_nginx=false
+  if ! git -C "$r" diff --quiet "$previous" "$target" -- src Cargo.toml Cargo.lock; then
+    echo "Refusing deployment: Rust changes require a build, which this Git-and-restart-only deploy does not run." >&2
     exit 2
   fi
-fi
-
-# A clean checkout already at the requested commit needs no release validation,
-# backup, reset, or HTTP checks. Keep this common no-op pull path short.
-if [[ "$previous" == "$target" ]] \
-  && git -C "$r" diff --quiet \
-  && git -C "$r" diff --cached --quiet \
-  && [[ -z "$(git -C "$r" ls-files --others --exclude-standard)" ]]; then
-  if ! build_info_matches_head; then
-    echo "Checkout is already at $target; repairing the ignored deployment metadata."
-    write_build_info
-  else
-    echo "Server is already at requested target ($target); deployment metadata is current."
-  fi
-  exit 0
-fi
-
-# The summary is the editorial entry point. Refuse to deploy an older builder
-# output that drops the eight allocation-exposure-ranked investigation cards.
-summary_cards="$(git -C "$r" show "$target:static/nep-preview/summary.html" | python3 -c 'import re,sys; print(len(re.findall(r"<article\b[^>]*\bclass=\"[^\"]*\bpriority-card\b[^\"]*\"[^>]*>", sys.stdin.read())))')"
-if [[ "$summary_cards" != "8" ]]; then
-  echo "Refusing deployment: target summary has $summary_cards investigation cards; expected 8." >&2
-  exit 2
-fi
-
-# Keep the consolidated Proposal/Senate-document tables present in both reports.
-# DPWH also includes a separate Senate document ID/name column; the
-# undocumented-HGAB view keeps the compact seven-column layout.
-for coverage_page in dpwh.html undocumented-hgab.html; do
-  coverage_columns="$(git -C "$r" show "$target:static/nep-preview/$coverage_page" | python3 -c 'import re,sys; s=sys.stdin.read(); m=re.search(r"<section[^>]*id=\"all-hgab-document-coverage\"[^>]*>(.*?)</section>", s, re.S); h=re.search(r"<thead>(.*?)</thead>", m.group(1), re.S) if m else None; print(len(re.findall(r"<th\b", h.group(1))) if h else 0)')"
-  expected_columns=7
-  if [[ "$coverage_page" == "dpwh.html" ]]; then expected_columns=8; fi
-  if [[ "$coverage_columns" != "$expected_columns" ]]; then
-    echo "Refusing deployment: $coverage_page has $coverage_columns columns in its consolidated HGAB document table; expected $expected_columns." >&2
-    exit 2
-  fi
-done
-
-# The direct publisher may have left the release files dirty in the checkout.
-# Keep server-only homepage edits when this commit does not change those
-# templates. Replace the report files with the committed versions after
-# backing up every release path for rollback.
-dirty_paths="$(git -C "$r" diff --name-only; git -C "$r" diff --cached --name-only; git -C "$r" ls-files --others --exclude-standard)"
-preserve_templates=()
-if [[ -n "$dirty_paths" ]]; then
-  while IFS= read -r path; do
-      case "$path" in
-        templates/visualizations_home.html|templates/mobile/visualizations_home.html)
-        worktree_blob="$(git -C "$r" hash-object -- "$path")"
-        target_blob="$(git -C "$r" rev-parse "$target:$path")"
-        if [[ "$worktree_blob" == "$target_blob" ]]; then
-          # A direct publication already placed the committed template here.
-          continue
-        fi
-        previous_blob="$(git -C "$r" rev-parse "$previous:$path")"
-        if [[ "$previous_blob" != "$target_blob" ]]; then
-          echo "Refusing deployment: origin/main also changes server-edited $path." >&2
-          exit 2
-        fi
-        preserve_templates+=("$path")
-        ;;
-        *)
-        # A server-side repair may already have placed a tracked file at the
-        # exact target-commit contents (for example, the admin-hash ignore
-        # rule). Resetting to that same blob is safe and should not block a
-        # release. Preserve the refusal for any genuinely divergent content.
-        worktree_blob="$(git -C "$r" hash-object -- "$path")"
-        target_blob="$(git -C "$r" rev-parse "$target:$path" 2>/dev/null || true)"
-        if [[ -n "$target_blob" && "$worktree_blob" == "$target_blob" ]]; then
-          continue
-        fi
-        release_path=false
-        for file in "${files[@]}"; do
-          if [[ "$path" == "$file" || "$path" == "$file/"* ]]; then release_path=true; break; fi
-        done
-        if [[ "$release_path" != true ]]; then
-          echo "Refusing deployment: unrelated server changes exist." >&2
-          git -C "$r" status --short >&2
-          exit 2
-        fi
-        ;;
-      esac
-  done <<< "$dirty_paths"
-fi
-if [[ "$previous" == "$target" && -z "$dirty_paths" ]]; then
-  if ! build_info_matches_head; then
-    echo "Checkout is already at $target; repairing the ignored deployment metadata."
-    write_build_info
-  else
-    echo "Server is already at requested target ($target); deployment metadata is current."
-  fi
-  exit 0
-fi
-
-app_ip="$(ss -H -ltn 'sport = :8888' 2>/dev/null | awk 'NR==1 {sub(/:[0-9]+$/, "", $4); print $4}')"
-if [[ -z "$app_ip" ]]; then
-  echo "Refusing deployment: no Actix listener was found on port 8888." >&2
-  exit 2
-fi
-health_base="http://$app_ip:8888"
-if ! curl --silent --show-error --fail "$health_base/" >/dev/null; then
-  echo "Refusing deployment: frontend health check failed before update." >&2
-  exit 2
-fi
-
-# Back up all release paths. The report files can be outdated direct copies;
-# template edits are restored after the Git fast-forward.
-needs_build=false
-if [[ -n "$(git -C "$r" diff --name-only "$previous" "$target" -- src Cargo.toml Cargo.lock)" ]]; then
-  needs_build=true
-fi
-needs_api_restart=false
-if [[ -n "$(git -C "$r" diff --name-only "$previous" "$target" -- visualization.py)" ]]; then
-  needs_api_restart=true
-fi
-if [[ "$needs_build" != true ]]; then
-  echo "No Rust/Cargo changes; skipping frontend rebuild and restart."
-fi
-if [[ "$needs_api_restart" != true ]]; then
-  echo "No visualization.py change; skipping FastAPI restart."
-fi
-echo "Nginx is not restarted by this deployment script."
-binary="$r/target/release/open-data-visualization"
-backup_bytes=0
-same_backup_filesystem=false
-if [[ "$(stat -c %d "$r")" == "$(stat -c %d /tmp)" ]]; then
-  same_backup_filesystem=true
+  if ! git -C "$r" diff --quiet "$previous" "$target" -- visualization.py; then restart_api=true; fi
+  if ! git -C "$r" diff --quiet "$previous" "$target" -- 'deployment/*.conf'; then restart_nginx=true; fi
+  git -C "$r" reset --hard "$target"
+  if [[ "$restart_frontend" == true ]]; then sudo -n systemctl restart visualization.service; fi
+  if [[ "$restart_api" == true ]]; then sudo -n systemctl restart visualization_api.service; fi
+  if [[ "$restart_nginx" == true ]]; then sudo -n systemctl restart nginx.service; fi
 else
-  for file in "${files[@]}"; do
-    if [[ -e "$r/$file" ]]; then
-      size="$(du -sb "$r/$file" | awk '{print $1}')"
-      backup_bytes=$((backup_bytes + size))
-    fi
-  done
-  if [[ "$needs_build" == true && -e "$binary" ]]; then
-    binary_size="$(du -sb "$binary" | awk '{print $1}')"
-    backup_bytes=$((backup_bytes + binary_size))
-  fi
-  available_kb="$(df -Pk /tmp | awk 'NR==2 {print $4}')"
-  required_kb=$(((backup_bytes + 134217728 + 1023) / 1024))
-  if (( available_kb < required_kb )); then
-    echo "Refusing deployment: /tmp has $((available_kb / 1024)) MB free; backup needs about $((backup_bytes / 1048576)) MB plus a 128 MB safety margin." >&2
-    exit 2
-  fi
+  restart_frontend=false
+  restart_api=false
+  restart_nginx=false
 fi
-backup="$(mktemp -d /tmp/odv-git-deploy.XXXXXX)"
-backup_complete=false
-cleanup_incomplete_backup() {
-  status=$?
-  if [[ "$backup_complete" != true ]]; then
-    rm -rf -- "$backup"
-    echo "Removed incomplete deployment backup; checkout was not changed." >&2
-  fi
-  exit "$status"
-}
-trap cleanup_incomplete_backup ERR
-for file in "${files[@]}"; do
-  if [[ -e "$r/$file" ]]; then
-    mkdir -p "$backup/$(dirname "$file")"
-    if [[ "$same_backup_filesystem" == true ]]; then
-      cp -al "$r/$file" "$backup/$file" 2>/dev/null || cp -a "$r/$file" "$backup/$file"
-    else
-      cp -a "$r/$file" "$backup/$file"
-    fi
-    touch "$backup/$file.existed"
-  fi
-done
-
-# HEAD is an ancestor of target. The only preserved dirt is in templates that
-# are unchanged by this commit; all report assets are replaced by Git blobs.
-if [[ "$needs_build" == true ]]; then
-  if [[ "$same_backup_filesystem" == true ]]; then
-    cp -al "$binary" "$backup/frontend-binary" 2>/dev/null || cp -a "$binary" "$backup/frontend-binary"
-  else
-    cp -a "$binary" "$backup/frontend-binary"
-  fi
-fi
-backup_complete=true
-trap - ERR
-rollback_release() {
-  trap - ERR
-  echo "Deployment failed; restoring previous checkout and report files." >&2
-  git -C "$r" reset --hard "$previous"
-  for file in "${files[@]}"; do
-    if [[ -f "$backup/$file.existed" ]]; then
-      mkdir -p "$r/$(dirname "$file")"
-      cp -a "$backup/$file" "$r/$file"
-    else
-      rm -rf "$r/$file"
-    fi
-  done
-  if [[ -f "$backup/frontend-binary" ]]; then
-    cp -a "$backup/frontend-binary" "$binary.rollback"
-    mv -f "$binary.rollback" "$binary"
-    sudo -n systemctl restart visualization.service
-  fi
-  if [[ "$needs_api_restart" == true ]]; then
-    sudo -n systemctl restart visualization_api.service || true
-  fi
-  echo "Rollback complete. Backup retained at $backup." >&2
-}
-trap 'rollback_release; exit 1' ERR
-git -C "$r" reset --hard "$target"
-for file in "${preserve_templates[@]}"; do
-  cp -a "$backup/$file" "$r/$file"
-done
-
-# The DPWH data loader reconstructs each logical array from these committed
-# shards; check every referenced file during release health validation.
-while IFS= read -r shard; do
-  health_files+=("static/nep-preview/$shard")
-done < <(python3 - "$r/static/nep-preview/dpwh-in-depth-data.json" <<'PY'
-import json, sys
-from pathlib import Path
-index = json.loads(Path(sys.argv[1]).read_text())
-for shards in index.get('arrayShards', {}).values():
-    for shard in shards:
-        print(shard['path'])
-for shard in index.get('projectShards', []):
-    print(shard['path'])
-PY
-)
-
-# Validate every MPB detail shard referenced by the page indices, rather than
-# checking the retired monolithic barangay JSON that these pages no longer use.
-while IFS= read -r asset; do health_files+=("static/nep-preview/$asset"); done < <(python3 - "$r/static/nep-preview/mpb-table-index.json" "$r/static/nep-preview/mpb-project-details/index.json" "$r/static/nep-preview/mpb-barangay-index.json" <<'PY'
-import json, sys
-from pathlib import Path
-table_index, detail_index, barangay_index = (json.loads(Path(path).read_text()) for path in sys.argv[1:])
-for table in table_index.get('tables', {}).values():
-    print('mpb-table-data/' + table['file'])
-for shard in sorted(set(detail_index.get('shards', {}).values())):
-    print('mpb-project-details/' + shard)
-for shard in sorted({row[5] for row in barangay_index.get('barangayRows', []) if len(row) > 5 and row[5]}):
-    print('mpb-barangay-detail-shards/' + shard)
-PY
-)
-
-# The revision marker is intentionally ignored by Git. Capture the actual
-# deployed target only after reset so alternate deployment targets are exact.
-write_build_info
-
-if [[ "$needs_build" == true ]]; then
-  echo "Building the frontend for the route change."
-  [[ ! -f "$HOME/.cargo/env" ]] || source "$HOME/.cargo/env"
-  (cd "$r" && cargo build --release --locked --bin open-data-visualization)
-  sudo -n systemctl restart visualization.service
-  for attempt in {1..20}; do
-    if curl --silent --fail --max-time 2 "$health_base/" >/dev/null; then break; fi
-    sleep 1
-  done
-fi
-api_healthy=true
-if [[ "$needs_api_restart" == true ]]; then
-  echo "Restarting FastAPI after visualization.py changed."
-  sudo -n systemctl restart visualization_api.service
-  api_healthy=false
-  for attempt in {1..20}; do
-    api_document="$(curl --silent --fail --max-time 3 http://10.104.0.2:8000/openapi.json 2>/dev/null || true)"
-    if [[ -n "$api_document" ]] && python3 -c 'import json,sys; p=json.load(sys.stdin).get("paths",{}).get("/api/connectivity/manual-greens",{}); sys.exit(0 if "get" in p and "post" in p else 1)' <<< "$api_document" 2>/dev/null; then
-      api_healthy=true
-      break
-    fi
-    sleep 1
-  done
-  if [[ "$api_healthy" != true ]]; then
-    echo "FastAPI health check failed: connectivity manual-greens GET/POST are not registered." >&2
-  fi
-fi
-healthy="$api_healthy"
-if ! curl --silent --show-error --fail "$health_base/" >/dev/null; then
-  healthy=false
-fi
-if ! curl --silent --show-error --fail "$health_base/static/nep-preview/" >/dev/null; then
-  healthy=false
-fi
-# Shard-heavy releases can have hundreds of files. Check them concurrently
-# with a modest cap so validation time is not one network round trip per file.
-health_jobs="${NEP_DEPLOY_HEALTH_JOBS:-12}"
-if [[ ! "$health_jobs" =~ ^[1-9][0-9]*$ ]]; then
-  echo "Invalid NEP_DEPLOY_HEALTH_JOBS: use a positive integer." >&2
-  exit 2
-fi
-declare -A seen_health_files=()
-unique_health_files=()
-for file in "${health_files[@]}"; do
-  if [[ -z "${seen_health_files[$file]+x}" ]]; then
-    seen_health_files[$file]=1
-    unique_health_files+=("$file")
-  fi
-done
-health_results="$(mktemp)"
-printf '%s\0' "${unique_health_files[@]}" | xargs -0 -P "$health_jobs" -n 1 bash -c '
-  file="$2"
-  status="$(curl --silent --show-error --max-time 8 --output /dev/null --write-out "%{http_code}" "$1/$file" 2>/dev/null || true)"
-  printf "%s\t%s\n" "${status:-000}" "$file"
-' _ "$health_base" > "$health_results"
-while IFS=$'\t' read -r status file; do
-  if [[ "$status" != 200 ]]; then
-    echo "Frontend health check failed: $file returned HTTP ${status:-000}." >&2
-    healthy=false
-  fi
-done < "$health_results"
-rm -f "$health_results"
-if [[ "$healthy" == true ]]; then
-  trap - ERR
-  rm -rf "$backup"
-  echo "Deployment succeeded at $(git -C "$r" rev-parse --short HEAD)."
-  if [[ ${#preserve_templates[@]} -gt 0 ]]; then
-    echo "Preserved server-only template edits: ${preserve_templates[*]}"
-  fi
-  exit 0
-fi
-
-echo "Frontend health check failed." >&2
-rollback_release
-exit 1
+printf '__DEPLOY_META__ %s %s %s %s %s\n' "$previous" "$target" "$restart_frontend" "$restart_api" "$restart_nginx"
 REMOTE_DEPLOY
+)"
+deploy_meta=""
+while IFS= read -r line; do
+  case "$line" in
+    __DEPLOY_META__\ *) deploy_meta="${line#__DEPLOY_META__ }" ;;
+    *) printf '%s\n' "$line" ;;
+  esac
+done <<< "$deploy_output"
+read -r previous target restart_frontend restart_api restart_nginx <<< "$deploy_meta"
+
+if ! curl --silent --show-error --fail --max-time 15 "$HEALTH_URL/" >/dev/null ||
+   ! curl --silent --show-error --fail --max-time 15 "$HEALTH_URL/static/nep-preview/" >/dev/null; then
+  echo "Local HTTP health check failed for $HEALTH_URL." >&2
+  "${SSH[@]}" "$REMOTE_USER@$REMOTE_HOST" \
+    "REMOTE_DIR='$REMOTE_DIR' PREVIOUS='$previous' RESTART_FRONTEND='$restart_frontend' RESTART_API='$restart_api' RESTART_NGINX='$restart_nginx' bash -s" <<'REMOTE_ROLLBACK'
+set -euo pipefail
+r="$REMOTE_DIR"
+git -C "$r" reset --hard "$PREVIOUS"
+if [[ "$RESTART_FRONTEND" == true ]]; then sudo -n systemctl restart visualization.service; fi
+if [[ "$RESTART_API" == true ]]; then sudo -n systemctl restart visualization_api.service; fi
+if [[ "$RESTART_NGINX" == true ]]; then sudo -n systemctl restart nginx.service; fi
+REMOTE_ROLLBACK
+  exit 1
+fi
+echo "Local HTTP health checks passed."
