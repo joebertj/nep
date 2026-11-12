@@ -29,6 +29,7 @@ MENU_GROUPS=[
         ('rcs.html','RCS project scope'),('mpb.html','MPB Flags'),('barangay.html','Barangay allocations'),
     ]),
     ('Historical',[
+        ('education-health.html','MPB · schools, health + evacuation'),
         ('flood-control.html','Flood-control pattern'),('repeats-historical.html','Project repeats'),
         ('cost-per-km-historical.html','Cost per meter · all GAA years'),
         ('integrated-district-allocations.html','District allocations'),
