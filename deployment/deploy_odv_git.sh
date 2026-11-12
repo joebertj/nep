@@ -85,9 +85,17 @@ fi
 if [[ "$previous" != "$target" ]]; then
   restart_api=false
   restart_nginx=false
+  rebuild_frontend=false
+  binary="$r/target/release/open-data-visualization"
+  binary_backup="-"
   if ! git -C "$r" diff --quiet "$previous" "$target" -- src Cargo.toml Cargo.lock; then
-    echo "Refusing deployment: Rust changes require a build, which this Git-and-restart-only deploy does not run." >&2
-    exit 2
+    if [[ ! -x "$binary" ]]; then
+      echo "Refusing deployment: the current Rust frontend binary is missing; cannot preserve rollback." >&2
+      exit 2
+    fi
+    rebuild_frontend=true
+    binary_backup="$binary.deploy-backup-$previous"
+    cp -p "$binary" "$binary_backup"
   fi
   if ! git -C "$r" diff --quiet "$previous" "$target" -- visualization.py; then restart_api=true; fi
   if ! git -C "$r" diff --quiet "$previous" "$target" -- 'deployment/*.conf'; then restart_nginx=true; fi
@@ -100,13 +108,25 @@ if [[ "$previous" != "$target" ]]; then
       fi
     done
   fi
+  if [[ "$rebuild_frontend" == true ]]; then
+    if ! (cd "$r" && cargo build --locked --release); then
+      cp -p "$binary_backup" "$binary"
+      git -C "$r" reset --hard "$previous"
+      rm -f "$binary_backup"
+      echo "Rust build failed; restored the previous checkout and frontend binary." >&2
+      exit 2
+    fi
+    sudo -n systemctl restart visualization.service
+  fi
   if [[ "$restart_api" == true ]]; then sudo -n systemctl restart visualization_api.service; fi
   if [[ "$restart_nginx" == true ]]; then sudo -n systemctl restart nginx.service; fi
 else
   restart_api=false
   restart_nginx=false
+  rebuild_frontend=false
+  binary_backup="-"
 fi
-printf '__DEPLOY_META__ %s %s %s %s %s\n' "$previous" "$target" "$restart_api" "$restart_nginx" "$rollback_stash"
+printf '__DEPLOY_META__ %s %s %s %s %s %s %s\n' "$previous" "$target" "$restart_api" "$restart_nginx" "$rebuild_frontend" "$rollback_stash" "$binary_backup"
 REMOTE_DEPLOY
 )"
 deploy_meta=""
@@ -116,16 +136,21 @@ while IFS= read -r line; do
     *) printf '%s\n' "$line" ;;
   esac
 done <<< "$deploy_output"
-read -r previous target restart_api restart_nginx rollback_stash <<< "$deploy_meta"
+read -r previous target restart_api restart_nginx rebuild_frontend rollback_stash binary_backup <<< "$deploy_meta"
 
 if ! curl --silent --show-error --fail --max-time 15 "$HEALTH_URL/" >/dev/null ||
    ! curl --silent --show-error --fail --max-time 15 "$HEALTH_URL/static/nep-preview/" >/dev/null; then
   echo "Local HTTP health check failed for $HEALTH_URL." >&2
   "${SSH[@]}" "$REMOTE_USER@$REMOTE_HOST" \
-    "REMOTE_DIR='$REMOTE_DIR' PREVIOUS='$previous' RESTART_API='$restart_api' RESTART_NGINX='$restart_nginx' ROLLBACK_STASH='$rollback_stash' bash -s" <<'REMOTE_ROLLBACK'
+    "REMOTE_DIR='$REMOTE_DIR' PREVIOUS='$previous' RESTART_API='$restart_api' RESTART_NGINX='$restart_nginx' REBUILD_FRONTEND='$rebuild_frontend' BINARY_BACKUP='$binary_backup' ROLLBACK_STASH='$rollback_stash' bash -s" <<'REMOTE_ROLLBACK'
 set -euo pipefail
 r="$REMOTE_DIR"
 git -C "$r" reset --hard "$PREVIOUS"
+if [[ "$REBUILD_FRONTEND" == true && "$BINARY_BACKUP" != "-" ]]; then
+  cp -p "$BINARY_BACKUP" "$r/target/release/open-data-visualization"
+  sudo -n systemctl restart visualization.service
+  rm -f "$BINARY_BACKUP"
+fi
 if [[ "$ROLLBACK_STASH" != "-" ]]; then git -C "$r" stash apply --index "$ROLLBACK_STASH"; fi
 if [[ "$RESTART_API" == true ]]; then sudo -n systemctl restart visualization_api.service; fi
 if [[ "$RESTART_NGINX" == true ]]; then sudo -n systemctl restart nginx.service; fi
@@ -141,5 +166,8 @@ if [[ "$(git -C "$r" rev-parse -q --verify refs/stash 2>/dev/null || true)" == "
   git -C "$r" stash drop stash@{0}
 fi
 REMOTE_FINALIZE
+fi
+if [[ "$binary_backup" != "-" ]]; then
+  "${SSH[@]}" "$REMOTE_USER@$REMOTE_HOST" "rm -f '$binary_backup'"
 fi
 echo "Local HTTP health checks passed."
