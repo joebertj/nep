@@ -1,5 +1,7 @@
 # ODV source databases moved out of the ODV repository
 
-These source-only SQL dumps, workbook, and unused merchant backup files were moved from the adjacent `open-data-visualization` repository after checking Rust route and browser-template references. The live pages continue to use their generated static/API outputs. The active `database/philgeps_merchant_info.parquet` remains in ODV because the Python backend reads it.
+Cold source databases, offline Parquet inputs, historical extracts, and duplicate static Parquet copies are stored here. The ODV runtime retains its live database inputs; the current retained set includes the FY2020–FY2026 budget comparison files, current DPWH/road datasets, the typed PhilGEPS query dataset, merchant lookup data, contract-splitting inputs, and unified-location data. Cold ODV paths are sibling-repository symlinks for local offline builders; those files are not needed by the live site routes.
 
-The moved build inputs remain available to local ODV scripts through sibling-repository paths. Their original paths, byte sizes, and SHA-256 checksums are recorded in `MOVED_FILES.json`.
+The large untyped PhilGEPS export is kept locally here but excluded from Git to avoid adding a 1.1 GB Git object. The active typed export remains at its ODV runtime path.
+
+Their original paths, byte sizes, and SHA-256 checksums are recorded in `MOVED_FILES.json`.

@@ -1,5 +1,5 @@
 {
-  "purpose": "Offline ODV source databases and source datasets moved out of the open-data-visualization repository. Rust routes and browser pages do not load these files directly.",
+  "purpose": "Cold/offline ODV database inputs and duplicate static Parquet exports are stored in the adjacent nep repository. Runtime database inputs remain in ODV; local offline ODV scripts retain their old paths through sibling-repository symlinks.",
   "originalRepository": "open-data-visualization",
   "files": [
     {
@@ -151,6 +151,216 @@
       "storedPath": "data_sources/odv-source-databases/duplicates_a5_2026.json.backup",
       "bytes": 30284187,
       "sha256": "64f25e6b6fb7a1a074488164fbad7d7ed72755afbe666192739d628fb4937b66"
+    },
+    {
+      "originalPath": "data/dynasty_projects.duckdb",
+      "storedPath": "data_sources/odv-source-databases/dynasty_projects.duckdb",
+      "bytes": 12288,
+      "sha256": "07ddae610165c3fc50b04e23ddaa5bba60cc69e794a74be763022d43d5db1d8b"
+    },
+    {
+      "originalPath": "data/parquet/connection_types.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/connection_types.parquet",
+      "bytes": 2931,
+      "sha256": "590ca2ed26ee37fb7ed1961575c7c9aa35caed5a9a7aecd6c78ee0f3ca4c4a47"
+    },
+    {
+      "originalPath": "data/parquet/dime_projects.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/dime_projects.parquet",
+      "bytes": 1817129,
+      "sha256": "4841fda9ba2f030c09df9265e139e3779fa9718e0ed3856dc1a6ae6d23dd6442"
+    },
+    {
+      "originalPath": "data/parquet/flood_control_projects.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/flood_control_projects.parquet",
+      "bytes": 3870356,
+      "sha256": "d6984eda71386eaf7bc868507d1fd748a60879ddb54b5c9fc4f298cb3c6b8256"
+    },
+    {
+      "originalPath": "data/parquet/flood_projects.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/flood_projects.parquet",
+      "bytes": 1932522,
+      "sha256": "b5f9bf063b2cf0abb5a04390a363cd27478a2e8738ef32ce94519b6a186c691c"
+    },
+    {
+      "originalPath": "data/parquet/integrated_projects_2020.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/integrated_projects_2020.parquet",
+      "bytes": 647883,
+      "sha256": "69abfcb0c4612dbf791a525da0baea565540b0738a49d31b00ed8ee8a9627be7"
+    },
+    {
+      "originalPath": "data/parquet/integrated_projects_2021.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/integrated_projects_2021.parquet",
+      "bytes": 901640,
+      "sha256": "8df33e02c8a9622400931cd429c818969b300f53e37dc8a195debb0cf4f243b2"
+    },
+    {
+      "originalPath": "data/parquet/integrated_projects_2022.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/integrated_projects_2022.parquet",
+      "bytes": 2108367,
+      "sha256": "92f8a2e321d6afe4154aa06d8de337f93ad121b869c0b286ab59b57170eec210"
+    },
+    {
+      "originalPath": "data/parquet/integrated_projects_2023.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/integrated_projects_2023.parquet",
+      "bytes": 2325723,
+      "sha256": "591cdb32d4f9dace59146c0d786d223b81929ccd0db596074604db2dc7259c19"
+    },
+    {
+      "originalPath": "data/parquet/integrated_projects_2024.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/integrated_projects_2024.parquet",
+      "bytes": 2185109,
+      "sha256": "d8f3363bee31d8ebbf17abdea085d3d5c0c95b6177f4ae26ab7f80b4ea65685e"
+    },
+    {
+      "originalPath": "data/parquet/integrated_projects_2025.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/integrated_projects_2025.parquet",
+      "bytes": 860453,
+      "sha256": "c89e37d6fe1b704c013044b4ee8a55cff7238054759d0c75ce6465f45c8b0d45"
+    },
+    {
+      "originalPath": "data/parquet/party_list_members.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/party_list_members.parquet",
+      "bytes": 6149,
+      "sha256": "0f83d93bf30b4304f55ab2ff95fb70a6e68fc60942d5e4340f2e1eff629cba30"
+    },
+    {
+      "originalPath": "data/parquet/political_dynasties.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/political_dynasties.parquet",
+      "bytes": 2033096,
+      "sha256": "ba95fd52fe39ac4e5c9a89284d567b78dde1a2fdce939d71040c9ba2eb78b2d8"
+    },
+    {
+      "originalPath": "data/parquet/politician_contractors.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/politician_contractors.parquet",
+      "bytes": 19746,
+      "sha256": "e00c835d8e939156a9e64bb0bd2e59ad4e6a83f80e33d8d2e02cb5766509f66b"
+    },
+    {
+      "originalPath": "data/parquet/relationships.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/relationships.parquet",
+      "bytes": 65486,
+      "sha256": "311eaf65b9428e3ab2dfe6f013856ad0d770432c62da6ce0a67884cb1fc323ed"
+    },
+    {
+      "originalPath": "data/parquet/tmp_integrated_projects_classified.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/tmp_integrated_projects_classified.parquet",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "originalPath": "data/philgeps-v2/philgeps-2000-2025.parquet",
+      "storedPath": "data_sources/odv-source-databases/philgeps-v2/philgeps-2000-2025.parquet",
+      "bytes": 1179924787,
+      "sha256": "fb0ef259ceada8cbed82da1205c83c987b93bc4240199c567424447b5aa9a00a"
+    },
+    {
+      "originalPath": "data/philgeps-v2/sources.parquet",
+      "storedPath": "data_sources/odv-source-databases/philgeps-v2/sources.parquet",
+      "bytes": 13129,
+      "sha256": "73868a706c0afe614f031d5215fc8348c54f0eb4b1db42bce9b668c6f5f08e64"
+    },
+    {
+      "originalPath": "static/data/parquet/budget_2026_amendments.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/budget_2026_amendments.parquet",
+      "bytes": 1337022,
+      "sha256": "e71db391483f3760881f800790da7fbf2ee7c8417d4e23747339be5335a56cc3"
+    },
+    {
+      "originalPath": "static/data/parquet/connection_types.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/connection_types.parquet",
+      "bytes": 2931,
+      "sha256": "590ca2ed26ee37fb7ed1961575c7c9aa35caed5a9a7aecd6c78ee0f3ca4c4a47"
+    },
+    {
+      "originalPath": "static/data/parquet/dime_projects.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/dime_projects.parquet",
+      "bytes": 1817129,
+      "sha256": "4841fda9ba2f030c09df9265e139e3779fa9718e0ed3856dc1a6ae6d23dd6442"
+    },
+    {
+      "originalPath": "static/data/parquet/flood_control_projects.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/flood_control_projects.parquet",
+      "bytes": 3870356,
+      "sha256": "d6984eda71386eaf7bc868507d1fd748a60879ddb54b5c9fc4f298cb3c6b8256"
+    },
+    {
+      "originalPath": "static/data/parquet/flood_projects.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/flood_projects.parquet",
+      "bytes": 1932522,
+      "sha256": "b5f9bf063b2cf0abb5a04390a363cd27478a2e8738ef32ce94519b6a186c691c"
+    },
+    {
+      "originalPath": "static/data/parquet/integrated_projects_2020.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/integrated_projects_2020.parquet",
+      "bytes": 647883,
+      "sha256": "69abfcb0c4612dbf791a525da0baea565540b0738a49d31b00ed8ee8a9627be7"
+    },
+    {
+      "originalPath": "static/data/parquet/integrated_projects_2021.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/integrated_projects_2021.parquet",
+      "bytes": 901640,
+      "sha256": "8df33e02c8a9622400931cd429c818969b300f53e37dc8a195debb0cf4f243b2"
+    },
+    {
+      "originalPath": "static/data/parquet/integrated_projects_2022.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/integrated_projects_2022.parquet",
+      "bytes": 2108367,
+      "sha256": "92f8a2e321d6afe4154aa06d8de337f93ad121b869c0b286ab59b57170eec210"
+    },
+    {
+      "originalPath": "static/data/parquet/integrated_projects_2023.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/integrated_projects_2023.parquet",
+      "bytes": 2325723,
+      "sha256": "591cdb32d4f9dace59146c0d786d223b81929ccd0db596074604db2dc7259c19"
+    },
+    {
+      "originalPath": "static/data/parquet/integrated_projects_2024.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/integrated_projects_2024.parquet",
+      "bytes": 2185109,
+      "sha256": "d8f3363bee31d8ebbf17abdea085d3d5c0c95b6177f4ae26ab7f80b4ea65685e"
+    },
+    {
+      "originalPath": "static/data/parquet/integrated_projects_2025.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/integrated_projects_2025.parquet",
+      "bytes": 860453,
+      "sha256": "c89e37d6fe1b704c013044b4ee8a55cff7238054759d0c75ce6465f45c8b0d45"
+    },
+    {
+      "originalPath": "static/data/parquet/party_list_members.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/party_list_members.parquet",
+      "bytes": 6149,
+      "sha256": "0f83d93bf30b4304f55ab2ff95fb70a6e68fc60942d5e4340f2e1eff629cba30"
+    },
+    {
+      "originalPath": "static/data/parquet/philgeps_contracts.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/philgeps_contracts.parquet",
+      "bytes": 11308391,
+      "sha256": "b1681387e73a2260100e6ac6a62dabcfcce22869766e6d958fb6406376072bd0"
+    },
+    {
+      "originalPath": "static/data/parquet/political_dynasties.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/political_dynasties.parquet",
+      "bytes": 2033096,
+      "sha256": "ba95fd52fe39ac4e5c9a89284d567b78dde1a2fdce939d71040c9ba2eb78b2d8"
+    },
+    {
+      "originalPath": "static/data/parquet/politician_contractors.parquet",
+      "storedPath": "data_sources/odv-source-databases/static-data-parquet/politician_contractors.parquet",
+      "bytes": 16798,
+      "sha256": "e97a0cf6c20e0de2813fffebd632d7d179c01c58a5be6ae7f28c16b116c28dbd"
+    },
+    {
+      "originalPath": "static/data/parquet/relationships.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/relationships.parquet",
+      "bytes": 65486,
+      "sha256": "311eaf65b9428e3ab2dfe6f013856ad0d770432c62da6ce0a67884cb1fc323ed"
+    },
+    {
+      "originalPath": "static/data/parquet/transparency_projects.parquet",
+      "storedPath": "data_sources/odv-source-databases/parquet/transparency_projects.parquet",
+      "bytes": 34338311,
+      "sha256": "29fcf9a08cba8d0880e17b6259193dc74794bdb4322a6718e6dd6073a73a0940"
     }
   ]
 }

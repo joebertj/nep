@@ -41,3 +41,6 @@ NEP-FY2027.xlsx
 /data_sources/PROGRAM OF WORKS AND PICTURES (ONGOING UPLOADING)/
 /data_sources/RDC ENDORSEMENT/
 /data_sources/REGIONAL IRRIGATION MASTER PLAN (RIMP)/
+
+# Large ODV PhilGEPS normalized source archive; local cold storage only.
+/data_sources/odv-source-databases/philgeps-v2/philgeps-2000-2025.parquet

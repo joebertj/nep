@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Extract visible CMPD rates, match POW bill candidates, and build CMPD page."""
 import json,re,hashlib
+from collections import defaultdict
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent; OUT=ROOT/'analysis_output'; STATIC=ROOT.parent/'open-data-visualization/static/nep-preview'
 OCR=Path('/tmp/cmpd-vision.json'); POW=OUT/'dpwh-in-depth-data.json'; SOURCE=ROOT/'data_sources/Nationwide CMPD_compressed.pdf'
@@ -43,12 +44,26 @@ def main():
      if re.search(pat,txt):
       unit=('sq.m' if u in ('sq m','sqm','m2') else 'cu.m' if u in ('cu m','cum','m3') else 'kg' if u in ('kg','kgs') else 'm' if u in ('m','lin m','linear m') else row.get('unit') or '—')
       candidates.append({'material':label,'description':desc,'itemCode':row.get('itemCode'),'unit':unit,'unitCost':row.get('calculatedUnitCostPesos') or row.get('printedUnitCostPesos'),'amount':row.get('amountPesos'),'quantity':row.get('quantity'),'project':project.get('name'),'code':project.get('code'),'office':project.get('office'),'region':project.get('region'),'powUrl':d.get('url'),'page':row.get('sourcePage')})
- data={'source':SOURCE.name,'referencePeriod':'1st Semester CY 2026','coverage':'Supplied extract includes NCR (pp. 4–10), CAR (pp. 12–17), and only pp. 19–20 of Region I.','rates':refs,'candidates':candidates}
+ grouped=defaultdict(list)
+ for candidate in candidates:grouped[candidate['material']].append(candidate)
+ shard_payloads={};shard_names={}
+ for category,items in grouped.items():
+  slug=re.sub(r'[^a-z0-9]+','-',category.lower()).strip('-')
+  for offset in range(0,len(items),800):
+   chunk=items[offset:offset+800]
+   content=json.dumps(chunk,ensure_ascii=False,separators=(',',':'))
+   digest=hashlib.sha256(content.encode('utf-8')).hexdigest()[:12]
+   name=f'cmpd-cost-per-unit-shards/{slug}-{offset//800:02d}-{digest}.json'
+   shard_payloads[name]=content
+   shard_names.setdefault(category,[]).append(name)
+ data={'source':SOURCE.name,'referencePeriod':'1st semester · CY 2026','coverage':'Supplied extract includes NCR (pp. 4–10), CAR (pp. 12–17), and only pp. 19–20 of Region I.','rates':refs,'candidateShards':shard_names}
+ data['version']=hashlib.sha256(json.dumps(data,ensure_ascii=False,separators=(',',':')).encode('utf-8')+'|'.join(shard_payloads.values()).encode('utf-8')).hexdigest()[:12]
  from report_table_presentation import apply_page as apply_tables, publish_assets
  from uniform_report_menu import apply_page as apply_menu
  page=(ROOT/'project_documents/cmpd-cost-per-unit.html').read_text(encoding='utf-8')
  script=(ROOT/'project_documents/cmpd-cost-per-unit.js').read_text(encoding='utf-8')
  script_version=hashlib.sha256(script.encode()).hexdigest()[:12]
+ page=page.replace('</head>',f'<meta name="cmpd-data-version" content="{data["version"]}"></head>')
  page=page.replace('src="cmpd-cost-per-unit.js"',f'src="cmpd-cost-per-unit.js?v={script_version}"')
  page=apply_tables(apply_menu(page,'cmpd-cost-per-unit.html'),publish_assets())
  for target in (OUT,STATIC):
@@ -56,5 +71,9 @@ def main():
   (target/'cmpd-cost-per-unit.html').write_text(page,encoding='utf-8')
   (target/'cmpd-cost-per-unit.js').write_text(script,encoding='utf-8')
   (target/'cmpd-cost-per-unit-data.json').write_text(json.dumps(data,ensure_ascii=False),encoding='utf-8')
+  shard_dir=target/'cmpd-cost-per-unit-shards';shard_dir.mkdir(exist_ok=True)
+  for stale in shard_dir.glob('*.json'):stale.unlink()
+  for name,content in shard_payloads.items():
+   dest=target/name;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_text(content,encoding='utf-8')
  print(json.dumps({'rates':len(refs),'powCandidates':len(candidates),'page':'cmpd-cost-per-unit.html'}))
 if __name__=='__main__':main()
