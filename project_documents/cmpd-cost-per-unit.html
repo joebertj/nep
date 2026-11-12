@@ -13,7 +13,7 @@
     header .eyebrow{color:var(--cmpd-gold);font-size:12px;font-weight:750;letter-spacing:.1em;text-transform:uppercase}
     header h1{max-width:950px;margin:8px 0;font-size:clamp(30px,4vw,48px);line-height:1.08;letter-spacing:-.025em}
     header p{max-width:850px;margin:0;color:#eef3ff;font-size:17px}
-    main{width:min(1280px,100%);margin:auto;padding:24px clamp(14px,3vw,36px) 44px}
+    main{width:100%;max-width:none;margin:0;padding:24px clamp(14px,3vw,36px) 44px}
     .cmpd-disclaimer,.cmpd-section{margin:18px 0;padding:clamp(18px,3vw,28px);border:1px solid var(--cmpd-line);border-radius:15px;background:#fff;box-shadow:0 5px 18px #00246a0a}
     .cmpd-disclaimer{border-left:5px solid var(--cmpd-gold);background:#fffdf4}
     .cmpd-disclaimer p{margin:6px 0 0;color:#425766}
@@ -59,11 +59,17 @@
     details.cmpd-rates[open]>summary{border-bottom:1px solid var(--cmpd-line)}
     .cmpd-rates-body{padding:14px}
     .cmpd-source-links{display:flex;flex-wrap:wrap;gap:10px 22px;margin:16px 0 0}
+    #page-loading{position:fixed;inset:0;z-index:2000;display:grid;place-items:center;padding:20px;background:#00246aee;color:#fff}
+    #page-loading[hidden]{display:none!important}
+    .cmpd-loading-card{display:grid;justify-items:center;gap:12px;padding:24px 30px;border:1px solid #ffffff38;border-radius:14px;background:#00246A;box-shadow:0 18px 50px #00143a66;text-align:center}
+    .cmpd-loading-spinner{width:34px;height:34px;border:3px solid #ffffff55;border-top-color:#FCD116;border-radius:50%;animation:cmpd-spin .8s linear infinite}
+    @keyframes cmpd-spin{to{transform:rotate(360deg)}}
     a{color:var(--cmpd-blue);text-underline-offset:2px}
     @media(max-width:680px){.cmpd-overview{grid-template-columns:1fr}.cmpd-period{justify-self:start}.cmpd-controls{grid-template-columns:1fr}th,td{min-width:125px}}
   </style>
 </head>
 <body>
+  <div id="page-loading" role="status" aria-live="polite"><div class="cmpd-loading-card"><span class="cmpd-loading-spinner" aria-hidden="true"></span><strong>Loading CMPD rates and POW matches…</strong><span>Preparing material comparisons</span></div></div>
   <header>
     <div class="eyebrow">Budget 2027 · DPWH materials</div>
     <h1>CMPD cost per unit</h1>
@@ -79,7 +85,7 @@
       <h2 id="match-title">Review matching POW items</h2>
       <p class="cmpd-section-intro">Choose a CMPD material to see matching POW bill rows. The table pairs a reference rate only when the available region and unit match.</p>
       <div class="cmpd-overview">
-        <div><strong>Source coverage is incomplete</strong><p>The supplied CMPD PDF includes NCR pages 4–10, CAR pages 12–17, and only pages 19–20 of Region I. Other regions are not present in this extract.</p></div>
+        <div><strong>Source coverage is incomplete</strong><p>The supplied CMPD PDF includes NCR pages 4–10, CAR pages 12–17, and only pages 19–20 of Region I. Other regions are not present in this extract. Where a POW region has no CMPD rate, the table uses the highest available rate for the same unit as an estimate; this is not a local regional price. Rates are never compared across different units.</p></div>
         <span class="cmpd-period">1st semester · CY 2026</span>
       </div>
       <div class="cmpd-controls">
@@ -89,8 +95,8 @@
       <p id="summary" class="cmpd-result-summary" aria-live="polite">Loading source data…</p>
       <p id="load-error" class="cmpd-error" role="alert" hidden></p>
       <section id="boxplot-panel" class="cmpd-boxplot" aria-labelledby="boxplot-title" hidden>
-        <h3 id="boxplot-title">Matched POW unit-cost distribution</h3>
-        <p class="cmpd-boxplot-intro">Each box shows the middle half of matched POW unit costs; the center line is the median. Whiskers extend to the most extreme values within 1.5× the interquartile range. Gold dots mark values outside that range. Each unit has its own peso scale.</p>
+        <h3 id="boxplot-title">POW unit-cost distribution · CMPD-referenced rows</h3>
+        <p class="cmpd-boxplot-intro">Includes POW rows with an exact regional CMPD rate or an estimated same-unit proxy where the region is absent. Each box shows the middle half of POW unit costs; the center line is the median. Whiskers extend to the most extreme values within 1.5× the interquartile range. Gold dots mark values outside that range; hover or focus a dot for its bill item, project, office, region, and source page. Each unit uses its own logarithmic peso scale so extreme values do not collapse the other observations.</p>
         <div id="boxplot" aria-live="polite"></div>
       </section>
       <div class="cmpd-table-wrap">

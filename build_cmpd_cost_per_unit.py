@@ -12,9 +12,17 @@ def rates():
   if region=='Region I' and pg>20:continue
   words=p['words']; codes=[w for w in words if w[0]<165 and re.fullmatch(r'M[A-Z0-9]{1,3}\.\d{4}',w[4].replace('ł','1'))]
   for c in codes:
-   y=c[1]; desc=' '.join(w[4] for w in words if 175<w[0]<900 and abs(w[1]-y)<12)
-   unit=next((w[4] for w in words if 900<w[0]<1050 and abs(w[1]-y)<12),'')
-   avg=next((w[4] for w in words if w[0]>2200 and abs(w[1]-y)<13),'')
+   y=c[1]
+   row=[w for w in words if abs(w[1]-y)<8]
+   desc=' '.join(w[4] for w in sorted(row,key=lambda w:w[0]) if 175<w[0]<700)
+   unit_aliases={'CUM':'CUM','M3':'CUM','M³':'CUM','SQM':'SQM','M2':'SQM','M²':'SQM',
+                 'KG':'KG','KGS':'KG','BAG':'BAG','PC':'PC','PCS':'PC','PCI':'PC',
+                 'EA':'PC','EACH':'PC','SET':'SET','M':'M','LM':'M','LTR':'LTR',
+                 'L':'LTR','GAL':'GAL','NONE':'NONE'}
+   unit=next((unit_aliases.get(w[4].strip().upper().strip('.,:;')) for w in sorted(row,key=lambda w:w[0])
+              if 700<w[0]<1100 and w[4].strip().upper().strip('.,:;') in unit_aliases),'')
+   if not unit and re.search(r'\b40\s*kg\b',desc,re.I):unit='BAG'
+   avg=next((w[4] for w in sorted(row,key=lambda w:w[0],reverse=True) if w[0]>2200),'')
    val=re.sub(r'[^0-9.,]','',avg).replace(',','')
    try: amount=float(val)
    except: amount=None
