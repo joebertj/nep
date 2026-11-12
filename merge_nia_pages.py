@@ -116,5 +116,10 @@ def merge():
  named_path.write_text(page);(OUT/'nia.html').write_text(page)
  (STATIC/'nia-archive.html').write_text(archive_page);(OUT/'nia-archive.html').write_text(archive_page)
  (OUT/'nia_page_merge.json').write_text(json.dumps({'canonicalPage':'nia.html','detailSource':'nia-irrigation.html','namedSourcePreservedInMarkers':True,'namespacedIds':mapping,'sourceHashes':{'detail':hashlib.sha256(detail.encode()).hexdigest()},'scope':'Presentation merge; project records and allocations are unchanged; the two NIA scopes are not summed.'},indent=2)+'\n')
+ # Keep the supplied NIMP/RIMP inventories on the standalone NIA page after merges.
+ crosswalk=OUT/'nia-masterplan-crosswalk.json'
+ if crosswalk.exists():
+  from build_nia_source_sections import attach_nia
+  attach_nia(json.loads(crosswalk.read_text()))
  return mapping
 if __name__=='__main__':merge()

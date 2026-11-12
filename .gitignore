@@ -33,3 +33,11 @@ NEP-FY2027.xlsx
 
 /analysis_output/.parsed-document-page-refresh.lock
 /analysis_output/connectivity-manual-greens.json
+/analysis_output/nia-plan-text-index.json.gz
+
+# Large NIA source archives are stored on T5; see data_sources/NIA-EXTERNAL-SOURCE-DATA.md.
+/data_sources/FARMLAND GEOGRAPHIC INFORMATION SYSTEM (FGIS)/
+/data_sources/NATIONAL IRRIGATION MASTER PLAN (NIMP)/
+/data_sources/PROGRAM OF WORKS AND PICTURES (ONGOING UPLOADING)/
+/data_sources/RDC ENDORSEMENT/
+/data_sources/REGIONAL IRRIGATION MASTER PLAN (RIMP)/

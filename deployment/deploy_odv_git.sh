@@ -379,10 +379,14 @@ if [[ "$summary_cards" != "8" ]]; then
 fi
 
 # Keep the consolidated Proposal/Senate-document tables present in both reports.
+# DPWH also includes a separate Senate document ID/name column; the
+# undocumented-HGAB view keeps the compact seven-column layout.
 for coverage_page in dpwh.html undocumented-hgab.html; do
   coverage_columns="$(git -C "$r" show "$target:static/nep-preview/$coverage_page" | python3 -c 'import re,sys; s=sys.stdin.read(); m=re.search(r"<section[^>]*id=\"all-hgab-document-coverage\"[^>]*>(.*?)</section>", s, re.S); h=re.search(r"<thead>(.*?)</thead>", m.group(1), re.S) if m else None; print(len(re.findall(r"<th\b", h.group(1))) if h else 0)')"
-  if [[ "$coverage_columns" != "7" ]]; then
-    echo "Refusing deployment: $coverage_page has $coverage_columns columns in its consolidated HGAB document table; expected 7." >&2
+  expected_columns=7
+  if [[ "$coverage_page" == "dpwh.html" ]]; then expected_columns=8; fi
+  if [[ "$coverage_columns" != "$expected_columns" ]]; then
+    echo "Refusing deployment: $coverage_page has $coverage_columns columns in its consolidated HGAB document table; expected $expected_columns." >&2
     exit 2
   fi
 done

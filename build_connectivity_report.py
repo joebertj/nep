@@ -527,6 +527,12 @@ def make_page(d):
 
     PAGE.write_text(rendered)
     (ROOT / 'analysis_output/connectivity.html').write_text(rendered)
+    # Add the locally prepared NIA cross-source tables and FGIS canal layer
+    # after the canonical report render, so connectivity remains the joining page.
+    crosswalk = ROOT / 'analysis_output/nia-masterplan-crosswalk.json'
+    if crosswalk.exists():
+        from build_nia_source_sections import attach_connectivity
+        attach_connectivity(json.loads(crosswalk.read_text()))
 
 
 if __name__ == '__main__':

@@ -3,6 +3,7 @@
 import json,html,shutil,hashlib,uuid,re,unicodedata,statistics,subprocess,sys
 from datetime import datetime,timezone
 from pathlib import Path
+from urllib.parse import unquote,urlsplit
 ROOT=Path(__file__).resolve().parent
 OUT=ROOT/'analysis_output'
 STATIC=ROOT.parent/'open-data-visualization/static/nep-preview'
@@ -702,6 +703,39 @@ def build_all_hgab_document_coverage(indepth=None):
     indepth=indepth or json.loads((OUT/'dpwh-in-depth-data.json').read_text())
     scan_path=OUT/'senate_supporting_documents_hgab_only_scan.json'
     scan=json.loads(scan_path.read_text()) if scan_path.is_file() else {}
+    file_links_by_code={}
+    file_link_source_records=0
+    file_links_path=OUT/'Cloudflare-file-links.jsonl'
+    if file_links_path.is_file():
+        with file_links_path.open(encoding='utf-8') as stream:
+            for line in stream:
+                try: link=json.loads(line)
+                except json.JSONDecodeError: continue
+                file_link_source_records+=1
+                path_value=str(link.get('path') or '')
+                code_match=re.search(r'((?:2027[-_\s]*)?DPWH[-_\s]*HGAB[-_\s-]*\d{5})',path_value,re.I)
+                if not code_match: continue
+                project_code=re.sub(r'[-_\s]+','-',code_match.group(1)).upper()
+                url=str(link.get('url') or '')
+                parsed=urlsplit(url)
+                if parsed.scheme!='https' or parsed.netloc!='budget-assets.bettergov.ph' or not parsed.path.startswith('/hgab/2027/dpwh/supporting-documents/'):
+                    continue
+                filename=unquote(path_value.rsplit('/',1)[-1])
+                upper=filename.upper()
+                if re.search(r'(?:^|[^A-Z0-9])POW(?:[^A-Z0-9]|$)|PROGRAM OF WORK',upper): doc_type='POW'
+                elif re.search(r'BP\s*202',upper): doc_type='BP 202'
+                elif re.search(r'GEO.?TAG|PHOTO|PICTURE',upper): doc_type='Geotagged photos'
+                elif 'IMPLEMENTABILITY' in upper: doc_type='Certificate of Implementability'
+                elif re.search(r'RDC|PDC|LDC|DEVELOPMENT.?COUNCIL',upper): doc_type='Development Council'
+                else: doc_type='Other'
+                file_links_by_code.setdefault(project_code,[]).append({
+                    'fileLinkId':link.get('id'),
+                    'documentId':Path(filename).stem,
+                    'documentName':filename,
+                    'documentType':doc_type,
+                    'url':url,
+                    'path':path_value,
+                })
     old_path=OUT/'hgab-only-document-coverage.json'
     old=json.loads(old_path.read_text()).get('projects',[]) if old_path.is_file() else []
     old_by_id={r.get('hgabId'):r for r in old if r.get('hgabId')}
@@ -794,6 +828,16 @@ def build_all_hgab_document_coverage(indepth=None):
                 if role and '_' in str(role):role=str(role).replace('_',' ').title()
                 add_signatory(hid,person.get('name'),role,'Senate HGAB · '+kind)
 
+    # Resolve the Cloudflare file-link index through codes already assigned to
+    # exactly one HGAB row by the title-matched document scan.
+    senate_documents={hid:[] for hid in projects}
+    for code,ids in code_ids.items():
+        if len(ids)!=1: continue
+        hid=next(iter(ids))
+        senate_documents[hid].extend(file_links_by_code.get(code,[]))
+    for docs in senate_documents.values():
+        docs.sort(key=lambda d:(d['documentType'],d['documentName'].casefold(),str(d.get('fileLinkId') or '')))
+
     rows=[]
     for hid,h in projects.items():
         proposal=proposal_matches.get(hid,{})
@@ -823,13 +867,22 @@ def build_all_hgab_document_coverage(indepth=None):
             'proposalDocumentTypes':sorted(proposal_types),'proposalMatchedFileRecords':len(proposal_file_records),
             'senateHgabDocumentsMatched':senate_matched,'senateDocumentTypes':sorted(senate_types),
             'senateMatchedFileRecords':senate_count,
+            'senateDocuments':senate_documents.get(hid,[]),
             'signatoryCandidateCount':len(sig_rows),
             'signatories':sig_rows})
     rows.sort(key=lambda r:(-r['amountPesos'],str(r['title']).casefold(),r['hgabId']))
     return {'generatedAtUtc':datetime.now(timezone.utc).isoformat(),
         'scope':'All FY2027 HGAB 3rd-reading DPWH project rows, deduplicated by House ledger row ID.',
         'denominatorProjectRows':len(rows),
-        'method':'Proposal matches use direct Proposal title links or the selected NEP counterpart with linked Proposal documents. Senate HGAB matches use title-linked supporting files and uniquely resolved HGAB-code sibling files. Signatory names and roles are extracted document candidates, not verified unique people, current officials or project sponsors. Document presence does not verify contents.',
+        'senateDocumentFileLinkIndex':{
+            'source':'https://budget-assets.bettergov.ph/hgab/2027/dpwh/supporting-documents-file-links.jsonl',
+            'localSnapshot':'analysis_output/Cloudflare-file-links.jsonl',
+            'fileLinkRecords':file_link_source_records,
+            'recognizedProjectCodeRecords':sum(len(values) for values in file_links_by_code.values()),
+            'uniquelyAssignedDocuments':sum(len(row.get('senateDocuments') or []) for row in rows),
+            'join':'Supporting-document folder code joined to existing Senate scan code only when it resolves to one HGAB row.',
+        },
+        'method':'Proposal matches use direct Proposal title links or the selected NEP counterpart with linked Proposal documents. Senate HGAB matches use title-linked supporting files and uniquely resolved HGAB-code sibling files. Senate document IDs, names and URLs come from the Cloudflare file-link index and are attached only when the file code resolves uniquely to one HGAB project through the existing matched scan. Signatory names and roles are extracted document candidates, not verified unique people, current officials or project sponsors. Document presence does not verify contents.',
         'projects':rows}
 
 def build():
@@ -944,7 +997,7 @@ def build():
           f"{parsed_supporting_pdfs:,} of {int(t5_reconciliation.get('pdfFilesAvailable') or 0):,} available PDFs have scan records; "
           f"{int(t5_reconciliation.get('manifestFilesNotPresentOnT5') or 0):,} manifest entries are currently unavailable on T5."
         )
-    HERO_STYLE='''<style id="hgab-coverage-hero-style">.hgab-coverage-hero{margin:20px 0 24px;padding:clamp(22px,3vw,36px);border-left:8px solid #FCD116;border-radius:16px;background:linear-gradient(120deg,#00246A,#0038A8);color:#fff;box-shadow:0 14px 34px #00246a20}.hgab-coverage-kicker{display:block;margin-bottom:14px;color:#FCD116;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.hgab-coverage-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.hgab-coverage-metric{display:flex;min-height:132px;flex-direction:column;justify-content:center;gap:7px;padding:18px;border:1px solid #ffffff45;border-radius:12px;background:#ffffff12}.hgab-coverage-metric strong{color:#FCD116;font-size:clamp(32px,4vw,52px);line-height:1;letter-spacing:-.04em;font-variant-numeric:tabular-nums}.hgab-coverage-metric span{font-size:clamp(15px,1.6vw,18px);font-weight:700;line-height:1.3}.hgab-coverage-metric small,.hgab-coverage-note{color:#e8eef8;font-size:13px;line-height:1.45}.hgab-coverage-note{margin:14px 0 0}@media(max-width:850px){.hgab-coverage-metrics{grid-template-columns:1fr}.hgab-coverage-metric{min-height:100px}}</style>'''+'''<style id="all-hgab-document-table-style">#all-hgab-document-coverage th.report-card-hidden-column,#all-hgab-document-coverage td.report-card-hidden-column{display:table-cell!important}#all-hgab-document-coverage col.report-card-hidden-column{display:table-column!important}#all-hgab-document-coverage .tablewrap{overflow-x:auto;max-height:none}#all-hgab-document-coverage table{width:100%;min-width:1180px;table-layout:fixed}#all-hgab-document-coverage th:nth-child(1),#all-hgab-document-coverage td:nth-child(1){width:11%}#all-hgab-document-coverage th:nth-child(2),#all-hgab-document-coverage td:nth-child(2){width:23%}#all-hgab-document-coverage th:nth-child(3),#all-hgab-document-coverage td:nth-child(3){width:15%}#all-hgab-document-coverage th:nth-child(4),#all-hgab-document-coverage td:nth-child(4){width:12%}#all-hgab-document-coverage th:nth-child(5),#all-hgab-document-coverage td:nth-child(5){width:13%}#all-hgab-document-coverage th:nth-child(6),#all-hgab-document-coverage td:nth-child(6){width:13%}#all-hgab-document-coverage th:nth-child(7),#all-hgab-document-coverage td:nth-child(7){width:13%}#all-hgab-document-coverage th,#all-hgab-document-coverage td{padding:9px;vertical-align:top;overflow-wrap:anywhere}#all-hgab-document-coverage td small{display:block;color:#526c78;font-size:12px}#all-hgab-document-coverage .coverage-controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:12px 0}#all-hgab-document-coverage .coverage-controls input{flex:1;min-width:240px}#all-hgab-document-coverage .coverage-pagination{display:flex;gap:10px;align-items:center;justify-content:flex-end;margin-top:10px}@media(max-width:650px){#all-hgab-document-coverage{padding:14px}}</style>'''
+    HERO_STYLE='''<style id="hgab-coverage-hero-style">.hgab-coverage-hero{margin:20px 0 24px;padding:clamp(22px,3vw,36px);border-left:8px solid #FCD116;border-radius:16px;background:linear-gradient(120deg,#00246A,#0038A8);color:#fff;box-shadow:0 14px 34px #00246a20}.hgab-coverage-kicker{display:block;margin-bottom:14px;color:#FCD116;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.hgab-coverage-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.hgab-coverage-metric{display:flex;min-height:132px;flex-direction:column;justify-content:center;gap:7px;padding:18px;border:1px solid #ffffff45;border-radius:12px;background:#ffffff12}.hgab-coverage-metric strong{color:#FCD116;font-size:clamp(32px,4vw,52px);line-height:1;letter-spacing:-.04em;font-variant-numeric:tabular-nums}.hgab-coverage-metric span{font-size:clamp(15px,1.6vw,18px);font-weight:700;line-height:1.3}.hgab-coverage-metric small,.hgab-coverage-note{color:#e8eef8;font-size:13px;line-height:1.45}.hgab-coverage-note{margin:14px 0 0}@media(max-width:850px){.hgab-coverage-metrics{grid-template-columns:1fr}.hgab-coverage-metric{min-height:100px}}</style>'''+'''<style id="all-hgab-document-table-style">#all-hgab-document-coverage th.report-card-hidden-column,#all-hgab-document-coverage td.report-card-hidden-column{display:table-cell!important}#all-hgab-document-coverage col.report-card-hidden-column{display:table-column!important}#all-hgab-document-coverage .tablewrap{overflow-x:auto;max-height:none}#all-hgab-document-coverage table{width:100%;min-width:1500px;table-layout:fixed}#all-hgab-document-coverage th:nth-child(1),#all-hgab-document-coverage td:nth-child(1){width:9%}#all-hgab-document-coverage th:nth-child(2),#all-hgab-document-coverage td:nth-child(2){width:19%}#all-hgab-document-coverage th:nth-child(3),#all-hgab-document-coverage td:nth-child(3){width:11%}#all-hgab-document-coverage th:nth-child(4),#all-hgab-document-coverage td:nth-child(4){width:9%}#all-hgab-document-coverage th:nth-child(5),#all-hgab-document-coverage td:nth-child(5){width:11%}#all-hgab-document-coverage th:nth-child(6),#all-hgab-document-coverage td:nth-child(6){width:12%}#all-hgab-document-coverage th:nth-child(7),#all-hgab-document-coverage td:nth-child(7){width:18%}#all-hgab-document-coverage th:nth-child(8),#all-hgab-document-coverage td:nth-child(8){width:11%}#all-hgab-document-coverage th,#all-hgab-document-coverage td{padding:9px;vertical-align:top;overflow-wrap:anywhere}#all-hgab-document-coverage td small{display:block;color:#526c78;font-size:12px}#all-hgab-document-coverage .coverage-controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:12px 0}#all-hgab-document-coverage .coverage-controls input{flex:1;min-width:240px}#all-hgab-document-coverage .coverage-pagination{display:flex;gap:10px;align-items:center;justify-content:flex-end;margin-top:10px}@media(max-width:650px){#all-hgab-document-coverage{padding:14px}}</style>'''
     lead=f'''<section class="hgab-coverage-hero" aria-label="All HGAB document reconciliation"><span class="hgab-coverage-kicker">All HGAB project rows · Proposal and Senate HGAB document reconciliation</span><div class="hgab-coverage-metrics"><div class="hgab-coverage-metric"><strong>{any_document_count:,}</strong><span>have at least one Proposal or Senate HGAB document</span><small>{any_document_pct:.2f}% of {all_denominator:,} HGAB project rows · deduplicated</small></div><div class="hgab-coverage-metric"><strong>{proposal_count:,}</strong><span>have linked Proposal documents</span><small>{proposal_pct:.2f}% of all HGAB project rows</small></div><div class="hgab-coverage-metric"><strong>{senate_count:,}</strong><span>have matched Senate HGAB documents</span><small>{senate_pct:.2f}% of all HGAB project rows</small></div></div><p class="hgab-coverage-note">The union counts rows once; {overlap_count:,} rows match both sources and {all_denominator-any_document_count:,} have no current match in either. Proposal links use direct title matches or selected NEP counterparts; Senate matches use title-linked support files and uniquely resolved file-code siblings. File presence does not verify document contents.{t5_reconciliation_note}</p></section>'''
     text=(ROOT/'project_documents/indepth.html').read_text().replace('<!--HERO_STYLE-->',STYLE+HERO_STYLE).replace('<!--HERO-->',lead)
     version=hashlib.sha256((ROOT/'project_documents/indepth.js').read_bytes()).hexdigest()[:12]
@@ -969,7 +1022,7 @@ def build():
     main_sections=re.findall(r'<section\b[^>]*id="([^"]+)"[^>]*>',main_match.group(1),re.S) if main_match else []
     coverage_head= re.search(r'<thead>(.*?)</thead>',coverage_section.group(0),re.S) if coverage_section else None
     coverage_headers=[re.sub(r'<[^>]+>','',header).strip() for header in re.findall(r'<th\b[^>]*>(.*?)</th>',coverage_head.group(1),re.S)] if coverage_head else []
-    expected_coverage_headers=['HGAB code','Project','Office · region','HGAB allocation','Proposal docs','Senate HGAB docs','Signatories in related documents']
+    expected_coverage_headers=['HGAB code','Project','Office · region','HGAB allocation','Proposal docs','Senate HGAB docs','Senate document IDs / names','Signatories in related documents']
     expected_opening_sections=['senate-supporting-document-coverage','all-hgab-document-coverage']
     if coverage_headers != expected_coverage_headers or not all_rows or main_sections[:2] != expected_opening_sections:
         raise RuntimeError(f'DPWH opening coverage sections failed: headers={coverage_headers!r}, {len(all_rows)} rows, opening sections={main_sections[:2]!r}')
