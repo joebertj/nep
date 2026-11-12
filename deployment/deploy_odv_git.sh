@@ -616,13 +616,34 @@ fi
 if ! curl --silent --show-error --fail "$health_base/static/nep-preview/" >/dev/null; then
   healthy=false
 fi
+# Shard-heavy releases can have hundreds of files. Check them concurrently
+# with a modest cap so validation time is not one network round trip per file.
+health_jobs="${NEP_DEPLOY_HEALTH_JOBS:-12}"
+if [[ ! "$health_jobs" =~ ^[1-9][0-9]*$ ]]; then
+  echo "Invalid NEP_DEPLOY_HEALTH_JOBS: use a positive integer." >&2
+  exit 2
+fi
+declare -A seen_health_files=()
+unique_health_files=()
 for file in "${health_files[@]}"; do
-  status="$(curl --silent --show-error --max-time 8 --output /dev/null --write-out '%{http_code}' "$health_base/$file" 2>/dev/null || true)"
+  if [[ -z "${seen_health_files[$file]+x}" ]]; then
+    seen_health_files[$file]=1
+    unique_health_files+=("$file")
+  fi
+done
+health_results="$(mktemp)"
+printf '%s\0' "${unique_health_files[@]}" | xargs -0 -P "$health_jobs" -n 1 bash -c '
+  file="$1"
+  status="$(curl --silent --show-error --max-time 8 --output /dev/null --write-out "%{http_code}" "$2/$file" 2>/dev/null || true)"
+  printf "%s\t%s\n" "${status:-000}" "$file"
+' _ _ "$health_base" > "$health_results"
+while IFS=$'\t' read -r status file; do
   if [[ "$status" != 200 ]]; then
     echo "Frontend health check failed: $file returned HTTP ${status:-000}." >&2
     healthy=false
   fi
-done
+done < "$health_results"
+rm -f "$health_results"
 if [[ "$healthy" == true ]]; then
   trap - ERR
   rm -rf "$backup"
