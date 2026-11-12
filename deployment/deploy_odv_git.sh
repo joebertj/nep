@@ -370,6 +370,21 @@ else
   fi
 fi
 
+# A clean checkout already at the requested commit needs no release validation,
+# backup, reset, or HTTP checks. Keep this common no-op pull path short.
+if [[ "$previous" == "$target" ]] \
+  && git -C "$r" diff --quiet \
+  && git -C "$r" diff --cached --quiet \
+  && [[ -z "$(git -C "$r" ls-files --others --exclude-standard)" ]]; then
+  if ! build_info_matches_head; then
+    echo "Checkout is already at $target; repairing the ignored deployment metadata."
+    write_build_info
+  else
+    echo "Server is already at requested target ($target); deployment metadata is current."
+  fi
+  exit 0
+fi
+
 # The summary is the editorial entry point. Refuse to deploy an older builder
 # output that drops the eight allocation-exposure-ranked investigation cards.
 summary_cards="$(git -C "$r" show "$target:static/nep-preview/summary.html" | python3 -c 'import re,sys; print(len(re.findall(r"<article\b[^>]*\bclass=\"[^\"]*\bpriority-card\b[^\"]*\"[^>]*>", sys.stdin.read())))')"
@@ -477,21 +492,26 @@ fi
 echo "Nginx is not restarted by this deployment script."
 binary="$r/target/release/open-data-visualization"
 backup_bytes=0
-for file in "${files[@]}"; do
-  if [[ -e "$r/$file" ]]; then
-    size="$(du -sb "$r/$file" | awk '{print $1}')"
-    backup_bytes=$((backup_bytes + size))
+same_backup_filesystem=false
+if [[ "$(stat -c %d "$r")" == "$(stat -c %d /tmp)" ]]; then
+  same_backup_filesystem=true
+else
+  for file in "${files[@]}"; do
+    if [[ -e "$r/$file" ]]; then
+      size="$(du -sb "$r/$file" | awk '{print $1}')"
+      backup_bytes=$((backup_bytes + size))
+    fi
+  done
+  if [[ "$needs_build" == true && -e "$binary" ]]; then
+    binary_size="$(du -sb "$binary" | awk '{print $1}')"
+    backup_bytes=$((backup_bytes + binary_size))
   fi
-done
-if [[ "$needs_build" == true && -e "$binary" ]]; then
-  binary_size="$(du -sb "$binary" | awk '{print $1}')"
-  backup_bytes=$((backup_bytes + binary_size))
-fi
-available_kb="$(df -Pk /tmp | awk 'NR==2 {print $4}')"
-required_kb=$(((backup_bytes + 134217728 + 1023) / 1024))
-if (( available_kb < required_kb )); then
-  echo "Refusing deployment: /tmp has $((available_kb / 1024)) MB free; backup needs about $((backup_bytes / 1048576)) MB plus a 128 MB safety margin." >&2
-  exit 2
+  available_kb="$(df -Pk /tmp | awk 'NR==2 {print $4}')"
+  required_kb=$(((backup_bytes + 134217728 + 1023) / 1024))
+  if (( available_kb < required_kb )); then
+    echo "Refusing deployment: /tmp has $((available_kb / 1024)) MB free; backup needs about $((backup_bytes / 1048576)) MB plus a 128 MB safety margin." >&2
+    exit 2
+  fi
 fi
 backup="$(mktemp -d /tmp/odv-git-deploy.XXXXXX)"
 backup_complete=false
@@ -507,7 +527,11 @@ trap cleanup_incomplete_backup ERR
 for file in "${files[@]}"; do
   if [[ -e "$r/$file" ]]; then
     mkdir -p "$backup/$(dirname "$file")"
-    cp -a "$r/$file" "$backup/$file"
+    if [[ "$same_backup_filesystem" == true ]]; then
+      cp -al "$r/$file" "$backup/$file" 2>/dev/null || cp -a "$r/$file" "$backup/$file"
+    else
+      cp -a "$r/$file" "$backup/$file"
+    fi
     touch "$backup/$file.existed"
   fi
 done
@@ -515,7 +539,11 @@ done
 # HEAD is an ancestor of target. The only preserved dirt is in templates that
 # are unchanged by this commit; all report assets are replaced by Git blobs.
 if [[ "$needs_build" == true ]]; then
-  cp -a "$binary" "$backup/frontend-binary"
+  if [[ "$same_backup_filesystem" == true ]]; then
+    cp -al "$binary" "$backup/frontend-binary" 2>/dev/null || cp -a "$binary" "$backup/frontend-binary"
+  else
+    cp -a "$binary" "$backup/frontend-binary"
+  fi
 fi
 backup_complete=true
 trap - ERR
@@ -633,10 +661,10 @@ for file in "${health_files[@]}"; do
 done
 health_results="$(mktemp)"
 printf '%s\0' "${unique_health_files[@]}" | xargs -0 -P "$health_jobs" -n 1 bash -c '
-  file="$1"
-  status="$(curl --silent --show-error --max-time 8 --output /dev/null --write-out "%{http_code}" "$2/$file" 2>/dev/null || true)"
+  file="$2"
+  status="$(curl --silent --show-error --max-time 8 --output /dev/null --write-out "%{http_code}" "$1/$file" 2>/dev/null || true)"
   printf "%s\t%s\n" "${status:-000}" "$file"
-' _ _ "$health_base" > "$health_results"
+' _ "$health_base" > "$health_results"
 while IFS=$'\t' read -r status file; do
   if [[ "$status" != 200 ]]; then
     echo "Frontend health check failed: $file returned HTTP ${status:-000}." >&2
