@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Extract retained official facility sources into an auditable site ledger."""
-import hashlib,json,re
+import hashlib,json,re,unicodedata
 from collections import Counter
 from html.parser import HTMLParser
 from pathlib import Path
@@ -23,19 +23,20 @@ class Tables(HTMLParser):
         if tag=='table':self.depth-=1
 
 def norm(s):
-    s=s.casefold().replace('sto.','santo').replace('sta.','santa')
+    s=unicodedata.normalize('NFKD',s).encode('ascii','ignore').decode();s=s.casefold().replace('sto.','santo').replace('sta.','santa')
     return ' '.join(re.findall(r'[a-z0-9]+',s))
 def build():
     path=SOURCE/'qc-evacuation.html';parser=Tables();parser.feed(path.read_text())
     places={r['code']:r for r in map(json.loads,(ROOT/'data_sources/bettergov-psgc-locations.jsonl').read_text().splitlines())}
     barangays={norm(r['name']):r['code'] for r in places.values() if r.get('parent_code')=='1381300000' and r['level']=='barangay'}
-    aliases={'n s amoranto':'n s amoranto salvacion','santa cruz':'santa cruz','e rodriguez':'e rodriguez','duyan duyan':'duyan duyan','bagong pag asa':'bagong pag asa','st ignatius':'saint ignatius'}
+    aliases={'n s amoranto':'n s amoranto','santa cruz':'santa cruz','e rodriguez':'e rodriguez','duyan duyan':'duyan duyan','bagong pag asa':'bagong pag asa','st ignatius':'saint ignatius','quirino 2a':'quirino 2 a','dona aurora':'aurora','immaculate conception':'immaculate concepcion','san isidro galas':'san isidro','up campus':'u p campus'}
     records=[];seen=set();duplicates=[]
     for row in parser.rows:
-        if len(row)!=4 or row[0].casefold()=='barangay':continue
+        if len(row)!=4 or row[0].casefold() in {'barangay','barangay name'}:continue
         brgy,name,address,kind=row
+        kind={'Tem porary':'Temporary','Temporay':'Temporary'}.get(kind,kind)
         if not name:continue
-        identity=(norm(brgy),norm(name))
+        identity=(norm(brgy),norm(name),norm(address))
         if identity in seen:duplicates.append(row);continue
         seen.add(identity)
         key=norm(brgy);key=aliases.get(key,key)

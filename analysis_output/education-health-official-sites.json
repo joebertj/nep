@@ -266,7 +266,7 @@
       "category": "evacuation",
       "name": "Barangay Katipunan Youth Center",
       "address": "San Antonio Street",
-      "siteType": "Tem porary",
+      "siteType": "Temporary",
       "barangayAsPublished": "Katipunan",
       "barangayPsgc": "1381300049",
       "municipalityPsgc": "1381300000",
@@ -344,7 +344,7 @@
       "category": "evacuation",
       "name": "Maharlika Barangay Hall",
       "address": "246 Apo Street",
-      "siteType": "Temporay",
+      "siteType": "Temporary",
       "barangayAsPublished": "Maharlika",
       "barangayPsgc": "1381300056",
       "municipalityPsgc": "1381300000",
@@ -476,7 +476,7 @@
       "address": "Angelo Street",
       "siteType": "Temporary",
       "barangayAsPublished": "N.S Amoranto",
-      "barangayPsgc": null,
+      "barangayPsgc": "1381300042",
       "municipalityPsgc": "1381300000",
       "sourceUrl": "https://quezoncity.gov.ph/qcitizen-guides/quezon-city-evacuation-centers/",
       "source": "Quezon City government evacuation-site directory",
@@ -489,7 +489,7 @@
       "address": "Malaya Street",
       "siteType": "Temporary",
       "barangayAsPublished": "N.S Amoranto",
-      "barangayPsgc": null,
+      "barangayPsgc": "1381300042",
       "municipalityPsgc": "1381300000",
       "sourceUrl": "https://quezoncity.gov.ph/qcitizen-guides/quezon-city-evacuation-centers/",
       "source": "Quezon City government evacuation-site directory",
@@ -502,7 +502,7 @@
       "address": "Malaya Street",
       "siteType": "Temporary",
       "barangayAsPublished": "N.S Amoranto",
-      "barangayPsgc": null,
+      "barangayPsgc": "1381300042",
       "municipalityPsgc": "1381300000",
       "sourceUrl": "https://quezoncity.gov.ph/qcitizen-guides/quezon-city-evacuation-centers/",
       "source": "Quezon City government evacuation-site directory",
@@ -1850,19 +1850,6 @@
     {
       "id": "qc-evacuation:0143",
       "category": "evacuation",
-      "name": "LOCATION NAME",
-      "address": "ADDRESS",
-      "siteType": "EVACUATION CENTER TYPE",
-      "barangayAsPublished": "BARANGAY NAME",
-      "barangayPsgc": null,
-      "municipalityPsgc": "1381300000",
-      "sourceUrl": "https://quezoncity.gov.ph/qcitizen-guides/quezon-city-evacuation-centers/",
-      "source": "Quezon City government evacuation-site directory",
-      "retrievedDate": "2026-11-12"
-    },
-    {
-      "id": "qc-evacuation:0144",
-      "category": "evacuation",
       "name": "Amihan Day Care Center",
       "address": "Amihan Day Care Center Palosapis Street",
       "siteType": "Temporary",
@@ -1874,7 +1861,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0145",
+      "id": "qc-evacuation:0144",
       "category": "evacuation",
       "name": "Batino SPED Elementary School",
       "address": "Batino SPED Elementary School Batino Street",
@@ -1887,7 +1874,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0146",
+      "id": "qc-evacuation:0145",
       "category": "evacuation",
       "name": "Church of Christ Tutorial Center",
       "address": "Church of Christ Tutorial Center Palosapis Street",
@@ -1900,7 +1887,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0147",
+      "id": "qc-evacuation:0146",
       "category": "evacuation",
       "name": "Bagumbayan Covered Court",
       "address": "Covered Court San Roque Street",
@@ -1913,7 +1900,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0148",
+      "id": "qc-evacuation:0147",
       "category": "evacuation",
       "name": "Bagumbayan Elementary School",
       "address": "Bagumbayan elementary school San Roque Street",
@@ -1926,7 +1913,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0149",
+      "id": "qc-evacuation:0148",
       "category": "evacuation",
       "name": "Bagumbayan Senior Citizens Hall",
       "address": "Senior Citizens Hall San Roque Street",
@@ -1939,7 +1926,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0150",
+      "id": "qc-evacuation:0149",
       "category": "evacuation",
       "name": "Manggahan Fire Station",
       "address": "Manggahan Fire Station Manggahan Street",
@@ -1952,7 +1939,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0151",
+      "id": "qc-evacuation:0150",
       "category": "evacuation",
       "name": "Bagumbuhay Barangay Hall / Basketball Covered Court",
       "address": "Miguel Malvar Street",
@@ -1965,7 +1952,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0152",
+      "id": "qc-evacuation:0151",
       "category": "evacuation",
       "name": "Kalantiaw Elementary School",
       "address": "Miguel Malvar Street",
@@ -1978,7 +1965,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0153",
+      "id": "qc-evacuation:0152",
       "category": "evacuation",
       "name": "Bayanihan Barangay Hall",
       "address": "P. Martinez Street Barangay Hall",
@@ -1991,7 +1978,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0154",
+      "id": "qc-evacuation:0153",
       "category": "evacuation",
       "name": "Camp Aguinaldo Parade Ground",
       "address": "Camp Aguinaldo Parade Ground (De Jesus Ave. )",
@@ -2004,7 +1991,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0155",
+      "id": "qc-evacuation:0154",
       "category": "evacuation",
       "name": "Blue Ridge A Parking Area front of Barangay Hall",
       "address": "Parking Area front of Barangay Hall (Cliff Dr)",
@@ -2017,7 +2004,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0156",
+      "id": "qc-evacuation:0155",
       "category": "evacuation",
       "name": "Blue Ridge A Tennis Court & Basketball Court",
       "address": "Tennis Court & Basketball Court (Cliff Dr)",
@@ -2030,7 +2017,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0157",
+      "id": "qc-evacuation:0156",
       "category": "evacuation",
       "name": "Blue Ridge B Barangay Hall",
       "address": "Barangay Hall (Moonlight Loop)",
@@ -2043,7 +2030,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0158",
+      "id": "qc-evacuation:0157",
       "category": "evacuation",
       "name": "Camp Aguinaldo Open Space",
       "address": "De Jesus Ave",
@@ -2056,7 +2043,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0159",
+      "id": "qc-evacuation:0158",
       "category": "evacuation",
       "name": "Dioquino Zobel Barangay Hall Mini Stage",
       "address": "Barangay Dioquino Zobel",
@@ -2069,7 +2056,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0160",
+      "id": "qc-evacuation:0159",
       "category": "evacuation",
       "name": "Duyan-duyan Covered Court",
       "address": "Kamagong Street",
@@ -2082,7 +2069,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0161",
+      "id": "qc-evacuation:0160",
       "category": "evacuation",
       "name": "Project 3 Elementary School",
       "address": "Molave Street",
@@ -2095,7 +2082,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0162",
+      "id": "qc-evacuation:0161",
       "category": "evacuation",
       "name": "Quirino High School",
       "address": "Molave Street",
@@ -2108,7 +2095,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0163",
+      "id": "qc-evacuation:0162",
       "category": "evacuation",
       "name": "Cubao Elementary School",
       "address": "Cubao Elementary School Aurora Blvd",
@@ -2121,7 +2108,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0164",
+      "id": "qc-evacuation:0163",
       "category": "evacuation",
       "name": "E. Rodriguez Barangay Hall",
       "address": "Barangay Hall, Ermin Garcia Street",
@@ -2134,7 +2121,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0165",
+      "id": "qc-evacuation:0164",
       "category": "evacuation",
       "name": "E. Rodriguez, Jesus is Lord Church, Oxford Street",
       "address": "Jesus is Lord Church, Oxford Street",
@@ -2147,7 +2134,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0166",
+      "id": "qc-evacuation:0165",
       "category": "evacuation",
       "name": "E. Rodriguez, Stella Maris College, Day care Center",
       "address": "Stella Maris College, Day care Center, Cambridge Street",
@@ -2160,7 +2147,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0167",
+      "id": "qc-evacuation:0166",
       "category": "evacuation",
       "name": "Nativity of our Lord Parish Church",
       "address": "Nativity of our lord parish church, Ermin Garcia Street",
@@ -2173,7 +2160,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0168",
+      "id": "qc-evacuation:0167",
       "category": "evacuation",
       "name": "East Kamias BarangayHall – 2nd and 3rd Floor",
       "address": "K-10th Street",
@@ -2186,7 +2173,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0169",
+      "id": "qc-evacuation:0168",
       "category": "evacuation",
       "name": "East Kamias Multi-Purpose Hall",
       "address": "K-J Street",
@@ -2199,7 +2186,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0170",
+      "id": "qc-evacuation:0169",
       "category": "evacuation",
       "name": "East Kamias SK Hall – 2nd Floor",
       "address": "K-J Street",
@@ -2212,7 +2199,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0171",
+      "id": "qc-evacuation:0170",
       "category": "evacuation",
       "name": "East Kamias, Day Care Multi-Purpose Hall",
       "address": "K-10th Street",
@@ -2225,7 +2212,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0172",
+      "id": "qc-evacuation:0171",
       "category": "evacuation",
       "name": "In front East Kamias Barangay Hall",
       "address": "K-10th Street",
@@ -2238,7 +2225,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0173",
+      "id": "qc-evacuation:0172",
       "category": "evacuation",
       "name": "Escopa I Chapel",
       "address": "Chapel Escopa I road",
@@ -2251,7 +2238,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0174",
+      "id": "qc-evacuation:0173",
       "category": "evacuation",
       "name": "Escopa I Mini-Court",
       "address": "P. Burgos Street",
@@ -2264,7 +2251,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0175",
+      "id": "qc-evacuation:0174",
       "category": "evacuation",
       "name": "Escopa II, Camp Emilio Aguinaldo",
       "address": "De Jesus Ave.",
@@ -2277,7 +2264,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0176",
+      "id": "qc-evacuation:0175",
       "category": "evacuation",
       "name": "Escopa III NVRC",
       "address": "P.Burgos St. (NVRC)",
@@ -2290,7 +2277,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0177",
+      "id": "qc-evacuation:0176",
       "category": "evacuation",
       "name": "Escopa IV Barangay Hall",
       "address": "Barangay Hall / Mapagmahal Street",
@@ -2303,7 +2290,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0178",
+      "id": "qc-evacuation:0177",
       "category": "evacuation",
       "name": "Escipa IV Basketball Covered Court proper",
       "address": "Mapagmahal Street / Proper",
@@ -2316,7 +2303,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0179",
+      "id": "qc-evacuation:0178",
       "category": "evacuation",
       "name": "Libis Barangay Hall",
       "address": "Barangay Hall",
@@ -2329,7 +2316,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0180",
+      "id": "qc-evacuation:0179",
       "category": "evacuation",
       "name": "Libis Basketball Covered Court",
       "address": "Basketball covered court",
@@ -2342,7 +2329,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0181",
+      "id": "qc-evacuation:0180",
       "category": "evacuation",
       "name": "Libis Day Care Center",
       "address": "Barangay Hall",
@@ -2355,7 +2342,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0182",
+      "id": "qc-evacuation:0181",
       "category": "evacuation",
       "name": "Libis Elementary School",
       "address": "C5 Road",
@@ -2368,7 +2355,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0183",
+      "id": "qc-evacuation:0182",
       "category": "evacuation",
       "name": "Libis Multi-purpose Hall",
       "address": "Barangay Hall",
@@ -2381,7 +2368,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0184",
+      "id": "qc-evacuation:0183",
       "category": "evacuation",
       "name": "Libis Parking Area",
       "address": "Front of barangay Hall",
@@ -2394,7 +2381,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0185",
+      "id": "qc-evacuation:0184",
       "category": "evacuation",
       "name": "Libis, Gazebo (Senior Hall)",
       "address": "Barangay Hall",
@@ -2407,7 +2394,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0186",
+      "id": "qc-evacuation:0185",
       "category": "evacuation",
       "name": "Loyola Heights, Alta Vista",
       "address": "Alta Vista",
@@ -2420,7 +2407,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0187",
+      "id": "qc-evacuation:0186",
       "category": "evacuation",
       "name": "Loyola Heights, Daan Tubo",
       "address": "Daang Tubo Street",
@@ -2433,7 +2420,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0188",
+      "id": "qc-evacuation:0187",
       "category": "evacuation",
       "name": "Loyola Heights, Jocson Meralco Line",
       "address": "Jocson Meralco Line",
@@ -2446,7 +2433,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0189",
+      "id": "qc-evacuation:0188",
       "category": "evacuation",
       "name": "Loyola Heights, Mary town",
       "address": "Mary Town",
@@ -2459,7 +2446,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0190",
+      "id": "qc-evacuation:0189",
       "category": "evacuation",
       "name": "Loyola Heights, Park-7",
       "address": "Park-7",
@@ -2472,7 +2459,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0191",
+      "id": "qc-evacuation:0190",
       "category": "evacuation",
       "name": "Loyola Heights, Ronas Garden",
       "address": "Ronas Garden",
@@ -2485,7 +2472,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0192",
+      "id": "qc-evacuation:0191",
       "category": "evacuation",
       "name": "Loyola Heights, Varsity Hills",
       "address": "Varsity Hills",
@@ -2498,7 +2485,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0193",
+      "id": "qc-evacuation:0192",
       "category": "evacuation",
       "name": "Loyola Heights, Villa Aurora",
       "address": "Villa Aurora",
@@ -2511,7 +2498,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0194",
+      "id": "qc-evacuation:0193",
       "category": "evacuation",
       "name": "Loyola Heights, Xavierville I",
       "address": "Xavierville I",
@@ -2524,7 +2511,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0195",
+      "id": "qc-evacuation:0194",
       "category": "evacuation",
       "name": "Loyola Heights, Xavierville II",
       "address": "Xavierville II",
@@ -2537,7 +2524,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0196",
+      "id": "qc-evacuation:0195",
       "category": "evacuation",
       "name": "Loyola Heights, Xavierville III",
       "address": "Xavierville III",
@@ -2550,7 +2537,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0197",
+      "id": "qc-evacuation:0196",
       "category": "evacuation",
       "name": "Mangga, Day care Center",
       "address": "Brgy Mangga Street",
@@ -2563,7 +2550,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0198",
+      "id": "qc-evacuation:0197",
       "category": "evacuation",
       "name": "Mangga, Garden Open Court",
       "address": "Brgy Mangga Street",
@@ -2576,7 +2563,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0199",
+      "id": "qc-evacuation:0198",
       "category": "evacuation",
       "name": "Mangga, Technological Institute of the Philippines",
       "address": "Technological Institute of the Philippines Aurora Boulevard",
@@ -2589,7 +2576,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0200",
+      "id": "qc-evacuation:0199",
       "category": "evacuation",
       "name": "Marilag, Plaza",
       "address": "Plaza Marilag (Camerino Street)",
@@ -2602,7 +2589,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0201",
+      "id": "qc-evacuation:0200",
       "category": "evacuation",
       "name": "Marilag. T. Alonzo Elementary Shool",
       "address": "T. Alonzo Elementary School (A. De Legaspi Street)",
@@ -2615,7 +2602,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0202",
+      "id": "qc-evacuation:0201",
       "category": "evacuation",
       "name": "Masagana Barangay Hall",
       "address": "Barangay Hall",
@@ -2628,7 +2615,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0203",
+      "id": "qc-evacuation:0202",
       "category": "evacuation",
       "name": "Masagana Basketball Covered court",
       "address": "Front of Barangay Hall",
@@ -2641,7 +2628,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0204",
+      "id": "qc-evacuation:0203",
       "category": "evacuation",
       "name": "Masagana Basketball Open Court",
       "address": "Beside a Covered court",
@@ -2654,7 +2641,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0205",
+      "id": "qc-evacuation:0204",
       "category": "evacuation",
       "name": "Matandang Balara, Mafran Covered court",
       "address": "Mafran Covered court (Kalye Dos)",
@@ -2667,7 +2654,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0206",
+      "id": "qc-evacuation:0205",
       "category": "evacuation",
       "name": "Matandang Balara, Namalu Open Field",
       "address": "Namalu Open Field",
@@ -2680,7 +2667,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0207",
+      "id": "qc-evacuation:0206",
       "category": "evacuation",
       "name": "Matandang Balara, Old Balara Elementary School",
       "address": "Old Balara Elementary school",
@@ -2693,7 +2680,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0208",
+      "id": "qc-evacuation:0207",
       "category": "evacuation",
       "name": "Matandang Balara, Talipapa Covered Court",
       "address": "Feria Community",
@@ -2706,7 +2693,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0209",
+      "id": "qc-evacuation:0208",
       "category": "evacuation",
       "name": "Matandang Balara, Tandang Sora Covered Court",
       "address": "Old Balara Basketball Court",
@@ -2719,7 +2706,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0210",
+      "id": "qc-evacuation:0209",
       "category": "evacuation",
       "name": "Milagrosa, 5k Covered court",
       "address": "Milagrosa Park Basketball Covered Court",
@@ -2732,7 +2719,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0211",
+      "id": "qc-evacuation:0210",
       "category": "evacuation",
       "name": "Milagrosa, Project 4 Open Space",
       "address": "Milagrosa Park",
@@ -2745,7 +2732,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0212",
+      "id": "qc-evacuation:0211",
       "category": "evacuation",
       "name": "Pansol Proper covered and open court",
       "address": "Pansol Proper covered and open court",
@@ -2758,7 +2745,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0213",
+      "id": "qc-evacuation:0212",
       "category": "evacuation",
       "name": "Pansol, Balara Filter’s Parks and Play Grounds",
       "address": "Balara Filter’s Parks and Play Grounds",
@@ -2771,7 +2758,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0214",
+      "id": "qc-evacuation:0213",
       "category": "evacuation",
       "name": "Pansol, Kaingin I Covered and Open Courts",
       "address": "Kaingin I Covered and Open Courts",
@@ -2784,7 +2771,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0215",
+      "id": "qc-evacuation:0214",
       "category": "evacuation",
       "name": "Pansol, Kaingin II Covered court and Open Courts",
       "address": "Kaingin II Covered court and Open Courts",
@@ -2797,7 +2784,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0216",
+      "id": "qc-evacuation:0215",
       "category": "evacuation",
       "name": "Pansol. Barangay Hall Complex located at Plaza Street",
       "address": "Barangay Hall Complex located at Plaza Street",
@@ -2810,7 +2797,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0217",
+      "id": "qc-evacuation:0216",
       "category": "evacuation",
       "name": "Quirino 3-A Barangay Hall",
       "address": "36-A PajoQuezon City1102 Metro Manila",
@@ -2823,7 +2810,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0218",
+      "id": "qc-evacuation:0217",
       "category": "evacuation",
       "name": "Quirino 3-A Molave Street",
       "address": "Molave street",
@@ -2836,7 +2823,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0219",
+      "id": "qc-evacuation:0218",
       "category": "evacuation",
       "name": "Quirino 3-B Covered Basketball Court",
       "address": "Akle Park and Play ground, Akle St. Project 3, QC",
@@ -2849,7 +2836,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0220",
+      "id": "qc-evacuation:0219",
       "category": "evacuation",
       "name": "Quirino 3-B Multi-purpose Hall",
       "address": "#20 Almon St. Project 3, Quezon City",
@@ -2862,20 +2849,20 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0221",
+      "id": "qc-evacuation:0220",
       "category": "evacuation",
       "name": "Quirino 2-A Barangay Hall",
       "address": "Barangay Hall & Basketball Court of Quirino 2-a (Kubili&Chico Street)",
       "siteType": "Semi-permanent",
       "barangayAsPublished": "Quirino 2A",
-      "barangayPsgc": null,
+      "barangayPsgc": "1381300085",
       "municipalityPsgc": "1381300000",
       "sourceUrl": "https://quezoncity.gov.ph/qcitizen-guides/quezon-city-evacuation-centers/",
       "source": "Quezon City government evacuation-site directory",
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0222",
+      "id": "qc-evacuation:0221",
       "category": "evacuation",
       "name": "Quirino 2-B, Barangay Multi-purpose Hall",
       "address": "Pajo Street",
@@ -2888,7 +2875,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0223",
+      "id": "qc-evacuation:0222",
       "category": "evacuation",
       "name": "Quirino High School & Elementary School",
       "address": "Molave street",
@@ -2901,7 +2888,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0224",
+      "id": "qc-evacuation:0223",
       "category": "evacuation",
       "name": "Quirino 2C, Open Space",
       "address": "Siniguelas St. Guyabano St.",
@@ -2914,7 +2901,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0225",
+      "id": "qc-evacuation:0224",
       "category": "evacuation",
       "name": "St. Ignatius Barangay Social Hall",
       "address": "Riviera Street",
@@ -2927,7 +2914,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0226",
+      "id": "qc-evacuation:0225",
       "category": "evacuation",
       "name": "St. Ignatius Basketball Covered court",
       "address": "Riviera Street",
@@ -2940,7 +2927,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0227",
+      "id": "qc-evacuation:0226",
       "category": "evacuation",
       "name": "St. Ignatius Community Center",
       "address": "Riviera Street",
@@ -2953,7 +2940,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0228",
+      "id": "qc-evacuation:0227",
       "category": "evacuation",
       "name": "St. Ignatius Empty lot (3rd cor fordham)",
       "address": "Fordham Street",
@@ -2966,7 +2953,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0229",
+      "id": "qc-evacuation:0228",
       "category": "evacuation",
       "name": "St. Ignatius, Promenade A",
       "address": "Riviera Street",
@@ -2979,7 +2966,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0230",
+      "id": "qc-evacuation:0229",
       "category": "evacuation",
       "name": "San Roque Brgy Hall (3rd Floor)",
       "address": "85 19th Avenue",
@@ -2992,7 +2979,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0231",
+      "id": "qc-evacuation:0230",
       "category": "evacuation",
       "name": "San Roque, Aguinaldo Elementary School (Covered Court)",
       "address": "18th Avenue",
@@ -3005,7 +2992,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0232",
+      "id": "qc-evacuation:0231",
       "category": "evacuation",
       "name": "Silangan Barangay Hall",
       "address": "Silangan Barangay Hall (Ermin Garcia St.)",
@@ -3018,7 +3005,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0233",
+      "id": "qc-evacuation:0232",
       "category": "evacuation",
       "name": "Silangan Friendship Covered Court",
       "address": "Friendship Covered Court Ermin Garcia St.",
@@ -3031,7 +3018,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0234",
+      "id": "qc-evacuation:0233",
       "category": "evacuation",
       "name": "15th Avenue Elementary SchoolBasketball Covered Court",
       "address": "15th Avenue",
@@ -3044,7 +3031,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0235",
+      "id": "qc-evacuation:0234",
       "category": "evacuation",
       "name": "Camp Aguinaldo",
       "address": "Bonny Serrano Avenue",
@@ -3057,7 +3044,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0236",
+      "id": "qc-evacuation:0235",
       "category": "evacuation",
       "name": "SM Cubao Parking",
       "address": "Gen. McArthur Avenue cor. Gen. AguinaldoAvenue",
@@ -3070,7 +3057,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0237",
+      "id": "qc-evacuation:0236",
       "category": "evacuation",
       "name": "Tagumpay Proper Area",
       "address": "309 P. Tuazon Blvrd",
@@ -3083,7 +3070,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0238",
+      "id": "qc-evacuation:0237",
       "category": "evacuation",
       "name": "Ugong Norte Arcadia Ave",
       "address": "131, 134, 138, 161, and 104 Arcadia Ave",
@@ -3096,7 +3083,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0239",
+      "id": "qc-evacuation:0238",
       "category": "evacuation",
       "name": "Ugong Norte D.V Rufino corner Don Vicente Ave",
       "address": "D.V Rufino corner don vicente ave",
@@ -3109,7 +3096,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0240",
+      "id": "qc-evacuation:0239",
       "category": "evacuation",
       "name": "Ugong Norte David St. Gate 3 Madrigal St",
       "address": "David St. Gate 3 Madrigal St",
@@ -3122,7 +3109,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0241",
+      "id": "qc-evacuation:0240",
       "category": "evacuation",
       "name": "Ugong Norte Eclave and Ivory Court",
       "address": "Christ the King Parish Church open parking lot",
@@ -3135,7 +3122,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0242",
+      "id": "qc-evacuation:0241",
       "category": "evacuation",
       "name": "Ugong Norte Football Field",
       "address": "Corinthian Gardens Park",
@@ -3148,7 +3135,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0243",
+      "id": "qc-evacuation:0242",
       "category": "evacuation",
       "name": "Ugong Norte Hechanova corner Francisco St. vacant lot",
       "address": "Hechanova corner Francisco Street vacant lot",
@@ -3161,7 +3148,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0244",
+      "id": "qc-evacuation:0243",
       "category": "evacuation",
       "name": "Ugong Norte Luna Park",
       "address": "Luna Park",
@@ -3174,7 +3161,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0245",
+      "id": "qc-evacuation:0244",
       "category": "evacuation",
       "name": "Ugong Norte Madrigal Park",
       "address": "Madrigal Park",
@@ -3187,7 +3174,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0246",
+      "id": "qc-evacuation:0245",
       "category": "evacuation",
       "name": "Ugong Norte Open parking lot",
       "address": "The Clubhouse",
@@ -3200,7 +3187,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0247",
+      "id": "qc-evacuation:0246",
       "category": "evacuation",
       "name": "Ugong Norte Park",
       "address": "Tabuena",
@@ -3213,7 +3200,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0248",
+      "id": "qc-evacuation:0247",
       "category": "evacuation",
       "name": "Ugong Norte Vacant Lot",
       "address": "Swallow drive",
@@ -3226,7 +3213,111 @@
       "retrievedDate": "2026-11-12"
     },
     {
+      "id": "qc-evacuation:0248",
+      "category": "evacuation",
+      "name": "Ugong Norte Vacant Lot",
+      "address": "Heron Street",
+      "siteType": "Temporary",
+      "barangayAsPublished": "Ugong Norte",
+      "barangayPsgc": "1381300126",
+      "municipalityPsgc": "1381300000",
+      "sourceUrl": "https://quezoncity.gov.ph/qcitizen-guides/quezon-city-evacuation-centers/",
+      "source": "Quezon City government evacuation-site directory",
+      "retrievedDate": "2026-11-12"
+    },
+    {
       "id": "qc-evacuation:0249",
+      "category": "evacuation",
+      "name": "Ugong Norte Vacant Lot",
+      "address": "Sparrow St.",
+      "siteType": "Temporary",
+      "barangayAsPublished": "Ugong Norte",
+      "barangayPsgc": "1381300126",
+      "municipalityPsgc": "1381300000",
+      "sourceUrl": "https://quezoncity.gov.ph/qcitizen-guides/quezon-city-evacuation-centers/",
+      "source": "Quezon City government evacuation-site directory",
+      "retrievedDate": "2026-11-12"
+    },
+    {
+      "id": "qc-evacuation:0250",
+      "category": "evacuation",
+      "name": "Ugong Norte Vacant Lot",
+      "address": "Woodpecker corner Swan Street",
+      "siteType": "Temporary",
+      "barangayAsPublished": "Ugong Norte",
+      "barangayPsgc": "1381300126",
+      "municipalityPsgc": "1381300000",
+      "sourceUrl": "https://quezoncity.gov.ph/qcitizen-guides/quezon-city-evacuation-centers/",
+      "source": "Quezon City government evacuation-site directory",
+      "retrievedDate": "2026-11-12"
+    },
+    {
+      "id": "qc-evacuation:0251",
+      "category": "evacuation",
+      "name": "Ugong Norte Vacant Lot",
+      "address": "Flicker Street corner swallow drive",
+      "siteType": "Temporary",
+      "barangayAsPublished": "Ugong Norte",
+      "barangayPsgc": "1381300126",
+      "municipalityPsgc": "1381300000",
+      "sourceUrl": "https://quezoncity.gov.ph/qcitizen-guides/quezon-city-evacuation-centers/",
+      "source": "Quezon City government evacuation-site directory",
+      "retrievedDate": "2026-11-12"
+    },
+    {
+      "id": "qc-evacuation:0252",
+      "category": "evacuation",
+      "name": "Ugong Norte Vacant Lot",
+      "address": "Flamingo Street corner Hornbill Street",
+      "siteType": "Temporary",
+      "barangayAsPublished": "Ugong Norte",
+      "barangayPsgc": "1381300126",
+      "municipalityPsgc": "1381300000",
+      "sourceUrl": "https://quezoncity.gov.ph/qcitizen-guides/quezon-city-evacuation-centers/",
+      "source": "Quezon City government evacuation-site directory",
+      "retrievedDate": "2026-11-12"
+    },
+    {
+      "id": "qc-evacuation:0253",
+      "category": "evacuation",
+      "name": "Ugong Norte Vacant Lot",
+      "address": "Flamingo street",
+      "siteType": "Temporary",
+      "barangayAsPublished": "Ugong Norte",
+      "barangayPsgc": "1381300126",
+      "municipalityPsgc": "1381300000",
+      "sourceUrl": "https://quezoncity.gov.ph/qcitizen-guides/quezon-city-evacuation-centers/",
+      "source": "Quezon City government evacuation-site directory",
+      "retrievedDate": "2026-11-12"
+    },
+    {
+      "id": "qc-evacuation:0254",
+      "category": "evacuation",
+      "name": "Ugong Norte Vacant Lot",
+      "address": "Temple Drive",
+      "siteType": "Temporary",
+      "barangayAsPublished": "Ugong Norte",
+      "barangayPsgc": "1381300126",
+      "municipalityPsgc": "1381300000",
+      "sourceUrl": "https://quezoncity.gov.ph/qcitizen-guides/quezon-city-evacuation-centers/",
+      "source": "Quezon City government evacuation-site directory",
+      "retrievedDate": "2026-11-12"
+    },
+    {
+      "id": "qc-evacuation:0255",
+      "category": "evacuation",
+      "name": "Ugong Norte Vacant Lot",
+      "address": "Front of Barangay Ugong Norte",
+      "siteType": "Temporary",
+      "barangayAsPublished": "Ugong Norte",
+      "barangayPsgc": "1381300126",
+      "municipalityPsgc": "1381300000",
+      "sourceUrl": "https://quezoncity.gov.ph/qcitizen-guides/quezon-city-evacuation-centers/",
+      "source": "Quezon City government evacuation-site directory",
+      "retrievedDate": "2026-11-12"
+    },
+    {
+      "id": "qc-evacuation:0256",
       "category": "evacuation",
       "name": "Ugong Norte, Castrillo St. Gate 3 Vacant lot",
       "address": "Castrillo St. Gate 3 Vacant lot",
@@ -3239,7 +3330,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0250",
+      "id": "qc-evacuation:0257",
       "category": "evacuation",
       "name": "Ugong Norte, Paterno Circle Park",
       "address": "Paterno Circle Park",
@@ -3252,7 +3343,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0251",
+      "id": "qc-evacuation:0258",
       "category": "evacuation",
       "name": "J, Bracken Covered Court and Multi- purpose hall",
       "address": "J. Bracken Street",
@@ -3265,7 +3356,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0252",
+      "id": "qc-evacuation:0259",
       "category": "evacuation",
       "name": "P. Pelaez Multipurpose hall",
       "address": "P. Pelaez Street",
@@ -3278,7 +3369,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0253",
+      "id": "qc-evacuation:0260",
       "category": "evacuation",
       "name": "Pelaez park",
       "address": "P. Pelaez Street",
@@ -3291,7 +3382,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0254",
+      "id": "qc-evacuation:0261",
       "category": "evacuation",
       "name": "Villa Maria Clara Barangay Hall",
       "address": "Alimudin Extension Street",
@@ -3304,7 +3395,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0255",
+      "id": "qc-evacuation:0262",
       "category": "evacuation",
       "name": "Villa Maria Clara Material Recovery Facility",
       "address": "Alimudin Extension Street",
@@ -3317,7 +3408,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0256",
+      "id": "qc-evacuation:0263",
       "category": "evacuation",
       "name": "Villa Maria Clara Senior Citizens Hall",
       "address": "Alimudin Extension Street",
@@ -3330,7 +3421,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0257",
+      "id": "qc-evacuation:0264",
       "category": "evacuation",
       "name": "Holy Family Parish Formation Center",
       "address": "K1 Street Holy Family Parish formation center",
@@ -3343,7 +3434,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0258",
+      "id": "qc-evacuation:0265",
       "category": "evacuation",
       "name": "West Kamias Covered Walk",
       "address": "K10th Street Covered Walk",
@@ -3356,7 +3447,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0259",
+      "id": "qc-evacuation:0266",
       "category": "evacuation",
       "name": "White Plains Sports and Fitness Center (WPSFC)",
       "address": "Goldstar Street",
@@ -3369,7 +3460,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0260",
+      "id": "qc-evacuation:0267",
       "category": "evacuation",
       "name": "White Plains Tennis Court",
       "address": "Goldstar Street",
@@ -3382,7 +3473,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0261",
+      "id": "qc-evacuation:0268",
       "category": "evacuation",
       "name": "Bagong Lipunan ng Crame, Bagong barrio half court",
       "address": "Bagong Bario",
@@ -3395,7 +3486,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0262",
+      "id": "qc-evacuation:0269",
       "category": "evacuation",
       "name": "Bagong Lipunan ng Crame, First Avenue court",
       "address": "First Avenue, 1st Ave Open Court",
@@ -3408,7 +3499,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0263",
+      "id": "qc-evacuation:0270",
       "category": "evacuation",
       "name": "Bagong Lipunan ng Crame, Manggahan Half court",
       "address": "Sunrise Drive",
@@ -3421,7 +3512,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0264",
+      "id": "qc-evacuation:0271",
       "category": "evacuation",
       "name": "Botocan Barangay Hall",
       "address": "Makadios Streetz- 3rd Floor",
@@ -3434,7 +3525,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0265",
+      "id": "qc-evacuation:0272",
       "category": "evacuation",
       "name": "Botocan Suntay Multi-Purpose Building",
       "address": "Camp Karingal, Makadios Street",
@@ -3447,7 +3538,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0266",
+      "id": "qc-evacuation:0273",
       "category": "evacuation",
       "name": "Central Agham Road (BIR Road)",
       "address": "BIR Road",
@@ -3460,7 +3551,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0267",
+      "id": "qc-evacuation:0274",
       "category": "evacuation",
       "name": "Central Kalayaan Service Road (Kalayaan Ave)",
       "address": "Kalayaan Ave",
@@ -3473,7 +3564,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0268",
+      "id": "qc-evacuation:0275",
       "category": "evacuation",
       "name": "Central Mutlti-purpose Hall",
       "address": "Quezon Ave E. Service Road",
@@ -3486,7 +3577,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0269",
+      "id": "qc-evacuation:0276",
       "category": "evacuation",
       "name": "Quezon City Memorial Circle (Eliptical Road)",
       "address": "QMC",
@@ -3499,7 +3590,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0270",
+      "id": "qc-evacuation:0277",
       "category": "evacuation",
       "name": "Damayang Lagi, Scalabrini Theology",
       "address": "Scalabrini Theology",
@@ -3512,7 +3603,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0271",
+      "id": "qc-evacuation:0278",
       "category": "evacuation",
       "name": "Damayang Lagi, TUA Building",
       "address": "Trinity University of Asia (Covered Court)",
@@ -3525,7 +3616,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0272",
+      "id": "qc-evacuation:0279",
       "category": "evacuation",
       "name": "Damayang Lagi,Missionary Society of Saint Paul (MSSP)",
       "address": "Missionary Society of Saint Paul (MSSP)",
@@ -3538,7 +3629,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0273",
+      "id": "qc-evacuation:0280",
       "category": "evacuation",
       "name": "San Lorenzo Ruiz Formation House",
       "address": "San Lorenzo Ruiz",
@@ -3551,7 +3642,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0274",
+      "id": "qc-evacuation:0281",
       "category": "evacuation",
       "name": "Don Manuel, Aurora A. Quezon Elementary School",
       "address": "Aurora A. Quezon Elementary School (Cordillera St)",
@@ -3564,7 +3655,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0275",
+      "id": "qc-evacuation:0282",
       "category": "evacuation",
       "name": "Our Lady of Parish (Diocese of Cubao)",
       "address": "Our Lady of Parish (Diocese of Cubao) / (L.Castillo)",
@@ -3577,59 +3668,59 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0276",
+      "id": "qc-evacuation:0283",
       "category": "evacuation",
       "name": "Aurora A Quezon Elementary School",
       "address": "Cordillera Street",
       "siteType": "Temporary",
       "barangayAsPublished": "Doña Aurora",
-      "barangayPsgc": null,
+      "barangayPsgc": "1381300004",
       "municipalityPsgc": "1381300000",
       "sourceUrl": "https://quezoncity.gov.ph/qcitizen-guides/quezon-city-evacuation-centers/",
       "source": "Quezon City government evacuation-site directory",
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0277",
+      "id": "qc-evacuation:0284",
       "category": "evacuation",
       "name": "Barangay Doña Aurora SB2 Court",
       "address": "Jacinto Street",
       "siteType": "Temporary",
       "barangayAsPublished": "Doña Aurora",
-      "barangayPsgc": null,
+      "barangayPsgc": "1381300004",
       "municipalityPsgc": "1381300000",
       "sourceUrl": "https://quezoncity.gov.ph/qcitizen-guides/quezon-city-evacuation-centers/",
       "source": "Quezon City government evacuation-site directory",
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0278",
+      "id": "qc-evacuation:0285",
       "category": "evacuation",
       "name": "Doña Aurora Barangay Hall",
       "address": "Luskot Street",
       "siteType": "Semi-permanent",
       "barangayAsPublished": "Doña Aurora",
-      "barangayPsgc": null,
+      "barangayPsgc": "1381300004",
       "municipalityPsgc": "1381300000",
       "sourceUrl": "https://quezoncity.gov.ph/qcitizen-guides/quezon-city-evacuation-centers/",
       "source": "Quezon City government evacuation-site directory",
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0279",
+      "id": "qc-evacuation:0286",
       "category": "evacuation",
       "name": "Doña Aurora Our Lady of Sacred Heart School",
       "address": "Bayani Street",
       "siteType": "Temporary",
       "barangayAsPublished": "Doña Aurora",
-      "barangayPsgc": null,
+      "barangayPsgc": "1381300004",
       "municipalityPsgc": "1381300000",
       "sourceUrl": "https://quezoncity.gov.ph/qcitizen-guides/quezon-city-evacuation-centers/",
       "source": "Quezon City government evacuation-site directory",
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0280",
+      "id": "qc-evacuation:0287",
       "category": "evacuation",
       "name": "Doña Imelda Justice Hall",
       "address": "Bayani St.",
@@ -3642,7 +3733,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0281",
+      "id": "qc-evacuation:0288",
       "category": "evacuation",
       "name": "Doña Imelda Malangen Hall",
       "address": "Bayani St.",
@@ -3655,7 +3746,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0282",
+      "id": "qc-evacuation:0289",
       "category": "evacuation",
       "name": "Doña Imelda Multi Purpose Hall Gymnasium",
       "address": "Bayani St.",
@@ -3668,7 +3759,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0283",
+      "id": "qc-evacuation:0290",
       "category": "evacuation",
       "name": "Doña Imelda Suntay Amphitheater",
       "address": "Bayani St.",
@@ -3681,7 +3772,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0284",
+      "id": "qc-evacuation:0291",
       "category": "evacuation",
       "name": "Philippines Institute of Quezon City (PIQC)",
       "address": "Kitanlad Street, Barangay Doña Josefa",
@@ -3694,7 +3785,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0285",
+      "id": "qc-evacuation:0292",
       "category": "evacuation",
       "name": "Horseshoe Barangay Hall",
       "address": "Sunset Drive, Quezon City",
@@ -3707,7 +3798,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0286",
+      "id": "qc-evacuation:0293",
       "category": "evacuation",
       "name": "Horseshoe Juliet Circle Open Space Area",
       "address": "Julieta Circle",
@@ -3720,7 +3811,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0287",
+      "id": "qc-evacuation:0294",
       "category": "evacuation",
       "name": "Horseshoe Plaza Court Velasco Compound",
       "address": "Gilmore Town House",
@@ -3733,33 +3824,33 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0288",
+      "id": "qc-evacuation:0295",
       "category": "evacuation",
       "name": "Immaculate Conception Barangay Multi-purpose Hall",
       "address": "Trinidad Street",
       "siteType": "Semi-permanent",
       "barangayAsPublished": "Immaculate Conception",
-      "barangayPsgc": null,
+      "barangayPsgc": "1381300045",
       "municipalityPsgc": "1381300000",
       "sourceUrl": "https://quezoncity.gov.ph/qcitizen-guides/quezon-city-evacuation-centers/",
       "source": "Quezon City government evacuation-site directory",
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0289",
+      "id": "qc-evacuation:0296",
       "category": "evacuation",
       "name": "Immaculate Conception Cathedral School",
       "address": "Lantana Street",
       "siteType": "Temporary",
       "barangayAsPublished": "Immaculate Conception",
-      "barangayPsgc": null,
+      "barangayPsgc": "1381300045",
       "municipalityPsgc": "1381300000",
       "sourceUrl": "https://quezoncity.gov.ph/qcitizen-guides/quezon-city-evacuation-centers/",
       "source": "Quezon City government evacuation-site directory",
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0290",
+      "id": "qc-evacuation:0297",
       "category": "evacuation",
       "name": "Kalusugan Barangay Hall",
       "address": "19th St. & Sta. Ignacia St.",
@@ -3772,7 +3863,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0291",
+      "id": "qc-evacuation:0298",
       "category": "evacuation",
       "name": "Kalusugan Multi-Purpose Building",
       "address": "Broadway Avenue.",
@@ -3785,7 +3876,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0292",
+      "id": "qc-evacuation:0299",
       "category": "evacuation",
       "name": "Missionary Saint Andrew Theological",
       "address": "Trinity Drive",
@@ -3798,7 +3889,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0293",
+      "id": "qc-evacuation:0300",
       "category": "evacuation",
       "name": "Kamuning Barangay Hall",
       "address": "K-5th Street behind the kamuning public market",
@@ -3811,7 +3902,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0294",
+      "id": "qc-evacuation:0301",
       "category": "evacuation",
       "name": "Kamuning Bernardo Multi-purpose Hall",
       "address": "K-3rd Street Behind the BJMP",
@@ -3824,7 +3915,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0295",
+      "id": "qc-evacuation:0302",
       "category": "evacuation",
       "name": "Kamuning Senior Citizens Building",
       "address": "K-5th Street",
@@ -3837,7 +3928,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0296",
+      "id": "qc-evacuation:0303",
       "category": "evacuation",
       "name": "Kamuning Vicente Hall",
       "address": "K-5th Street",
@@ -3850,7 +3941,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0297",
+      "id": "qc-evacuation:0304",
       "category": "evacuation",
       "name": "Kaunalaran Banahaw",
       "address": "Banahaw St., N. Domingo St.",
@@ -3863,7 +3954,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0298",
+      "id": "qc-evacuation:0305",
       "category": "evacuation",
       "name": "Kaunlaran Youth Development (Planas)",
       "address": "Yakap Day care center",
@@ -3876,7 +3967,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0299",
+      "id": "qc-evacuation:0306",
       "category": "evacuation",
       "name": "Ponciano Bernardo Elementary School",
       "address": "P. Bernardo",
@@ -3889,7 +3980,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0300",
+      "id": "qc-evacuation:0307",
       "category": "evacuation",
       "name": "Kristong Hari Barangay Hall",
       "address": "Kalusugan St. (Broadway Avenue)",
@@ -3902,7 +3993,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0301",
+      "id": "qc-evacuation:0308",
       "category": "evacuation",
       "name": "Kristong Hari Lagman Building",
       "address": "E. Jacinto Street",
@@ -3915,7 +4006,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0302",
+      "id": "qc-evacuation:0309",
       "category": "evacuation",
       "name": "Kristong Hari Rillo Building",
       "address": "Kalusugan St. (Broadway Avenue)",
@@ -3928,7 +4019,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0303",
+      "id": "qc-evacuation:0310",
       "category": "evacuation",
       "name": "Holy Cross Parish",
       "address": "P. Francisco",
@@ -3941,7 +4032,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0304",
+      "id": "qc-evacuation:0311",
       "category": "evacuation",
       "name": "Krus na Ligas Amado Baluyot Covered Court",
       "address": "B. Baluyot",
@@ -3954,7 +4045,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0305",
+      "id": "qc-evacuation:0312",
       "category": "evacuation",
       "name": "Krus na Ligas Community Park",
       "address": "Magiting Street",
@@ -3967,7 +4058,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0306",
+      "id": "qc-evacuation:0313",
       "category": "evacuation",
       "name": "Krus na Ligas Elementary School",
       "address": "P. Francisco",
@@ -3980,7 +4071,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0307",
+      "id": "qc-evacuation:0314",
       "category": "evacuation",
       "name": "Krus na Ligas Events Place",
       "address": "B. Baluyot",
@@ -3993,7 +4084,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0308",
+      "id": "qc-evacuation:0315",
       "category": "evacuation",
       "name": "Krus na Ligas Health Center",
       "address": "P. Francisco",
@@ -4006,7 +4097,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0309",
+      "id": "qc-evacuation:0316",
       "category": "evacuation",
       "name": "Krus na Ligas High School",
       "address": "P. Francisco",
@@ -4019,7 +4110,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0310",
+      "id": "qc-evacuation:0317",
       "category": "evacuation",
       "name": "Krus na Ligas Multi-Purpose Building",
       "address": "B. Baluyot",
@@ -4032,7 +4123,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0311",
+      "id": "qc-evacuation:0318",
       "category": "evacuation",
       "name": "Krus na Ligas Sitio Lambak Covered Court",
       "address": "Sitio Lambak",
@@ -4045,7 +4136,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0312",
+      "id": "qc-evacuation:0319",
       "category": "evacuation",
       "name": "Laging Handa Barangay Basketball Court",
       "address": "73 Sct. Gandia cor. Sct. Tuason",
@@ -4058,7 +4149,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0313",
+      "id": "qc-evacuation:0320",
       "category": "evacuation",
       "name": "Laging Handa Barangay Hall – 3rd Floor",
       "address": "73 Sct. Gandia cor. Sct. Tuason",
@@ -4071,7 +4162,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0314",
+      "id": "qc-evacuation:0321",
       "category": "evacuation",
       "name": "Laging Handa Barangay Open Stretch",
       "address": "Sct. Tobias St.",
@@ -4084,7 +4175,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0315",
+      "id": "qc-evacuation:0322",
       "category": "evacuation",
       "name": "Malaya Barangay Hall",
       "address": "Matahimik Street",
@@ -4097,7 +4188,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0316",
+      "id": "qc-evacuation:0323",
       "category": "evacuation",
       "name": "Malaya Basketball Covered Court",
       "address": "Matahimik Street",
@@ -4110,7 +4201,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0317",
+      "id": "qc-evacuation:0324",
       "category": "evacuation",
       "name": "Malaya Elementary School",
       "address": "Matahimik School",
@@ -4123,7 +4214,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0318",
+      "id": "qc-evacuation:0325",
       "category": "evacuation",
       "name": "Mary Hill School of Theology",
       "address": "Bayani Road corner Gilmore Avenue",
@@ -4136,7 +4227,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0319",
+      "id": "qc-evacuation:0326",
       "category": "evacuation",
       "name": "National Shrine of Our Lady of Mount Carmel",
       "address": "Victoria Avenue corner. 5th St.",
@@ -4149,7 +4240,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0320",
+      "id": "qc-evacuation:0327",
       "category": "evacuation",
       "name": "Don Alejandro Roces Science High School",
       "address": "Don A Roces Ave",
@@ -4162,7 +4253,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0321",
+      "id": "qc-evacuation:0328",
       "category": "evacuation",
       "name": "Obrero Function Hall",
       "address": "T. Morato cor Parkway St",
@@ -4175,7 +4266,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0322",
+      "id": "qc-evacuation:0329",
       "category": "evacuation",
       "name": "Old Capitol Site Barangay Gym / Covered Court",
       "address": "Barangay Gym / Covered Court",
@@ -4188,7 +4279,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0323",
+      "id": "qc-evacuation:0330",
       "category": "evacuation",
       "name": "Old Capitol Site Barangay Hall",
       "address": "Esquinita street",
@@ -4201,7 +4292,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0324",
+      "id": "qc-evacuation:0331",
       "category": "evacuation",
       "name": "Old Capitol Site Barangay Hall Annex",
       "address": "Esquinita street",
@@ -4214,7 +4305,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0325",
+      "id": "qc-evacuation:0332",
       "category": "evacuation",
       "name": "Old Capitol Site Rillo Multi – purpose Hall",
       "address": "Esquinita street",
@@ -4227,7 +4318,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0326",
+      "id": "qc-evacuation:0333",
       "category": "evacuation",
       "name": "Manuel Roxas High School",
       "address": "Sct. Chuatoco Street",
@@ -4240,7 +4331,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0327",
+      "id": "qc-evacuation:0334",
       "category": "evacuation",
       "name": "Amoranto Sports Complex",
       "address": "Sct. Chuatoco St.",
@@ -4253,7 +4344,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0328",
+      "id": "qc-evacuation:0335",
       "category": "evacuation",
       "name": "Pinyahan Elementary School",
       "address": "Mabilis Street",
@@ -4266,7 +4357,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0329",
+      "id": "qc-evacuation:0336",
       "category": "evacuation",
       "name": "Pinyahan Suntay Multi – Purpose Hall Building",
       "address": "Barangay Hall Multipurpose halll",
@@ -4279,7 +4370,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0330",
+      "id": "qc-evacuation:0337",
       "category": "evacuation",
       "name": "General Roxas Elementary SchoolCovered Court",
       "address": "Jasmin St.",
@@ -4292,7 +4383,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0331",
+      "id": "qc-evacuation:0338",
       "category": "evacuation",
       "name": "Holy Family Parish Church",
       "address": "Padre Silva St.",
@@ -4305,7 +4396,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0332",
+      "id": "qc-evacuation:0339",
       "category": "evacuation",
       "name": "Roxas Multi Purpose Gymnasium",
       "address": "Champaca St.",
@@ -4318,7 +4409,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0333",
+      "id": "qc-evacuation:0340",
       "category": "evacuation",
       "name": "Kamuning Elementary School",
       "address": "Scout torillo Street",
@@ -4331,7 +4422,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0334",
+      "id": "qc-evacuation:0341",
       "category": "evacuation",
       "name": "Sacred Heart, Church",
       "address": "Sacred Heart Parish – Shrine",
@@ -4344,46 +4435,46 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0335",
+      "id": "qc-evacuation:0342",
       "category": "evacuation",
       "name": "San Isidro Galas Badminton Court",
       "address": "Unang Hakbang Street",
       "siteType": "Temporary",
       "barangayAsPublished": "San Isidro Galas",
-      "barangayPsgc": null,
+      "barangayPsgc": "1381300098",
       "municipalityPsgc": "1381300000",
       "sourceUrl": "https://quezoncity.gov.ph/qcitizen-guides/quezon-city-evacuation-centers/",
       "source": "Quezon City government evacuation-site directory",
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0336",
+      "id": "qc-evacuation:0343",
       "category": "evacuation",
       "name": "San Isidro Galas Basketball Court",
       "address": "Unang Hakbang Street",
       "siteType": "Temporary",
       "barangayAsPublished": "San Isidro Galas",
-      "barangayPsgc": null,
+      "barangayPsgc": "1381300098",
       "municipalityPsgc": "1381300000",
       "sourceUrl": "https://quezoncity.gov.ph/qcitizen-guides/quezon-city-evacuation-centers/",
       "source": "Quezon City government evacuation-site directory",
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0337",
+      "id": "qc-evacuation:0344",
       "category": "evacuation",
       "name": "San Isidro Galas Tennis Court",
       "address": "Unang Hakbang Street",
       "siteType": "Temporary",
       "barangayAsPublished": "San Isidro Galas",
-      "barangayPsgc": null,
+      "barangayPsgc": "1381300098",
       "municipalityPsgc": "1381300000",
       "sourceUrl": "https://quezoncity.gov.ph/qcitizen-guides/quezon-city-evacuation-centers/",
       "source": "Quezon City government evacuation-site directory",
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0338",
+      "id": "qc-evacuation:0345",
       "category": "evacuation",
       "name": "San Martin De Porres Open Spaces ( A. Banahaw & Edsa Terminal)",
       "address": "Edsa Terminal",
@@ -4396,7 +4487,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0339",
+      "id": "qc-evacuation:0346",
       "category": "evacuation",
       "name": "San Martin de Porres, Barangay Hall & Basketball Covered Court",
       "address": "Mecca Aly",
@@ -4409,7 +4500,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0340",
+      "id": "qc-evacuation:0347",
       "category": "evacuation",
       "name": "San Martin De Porres, Open Spaces ( C. Parking Area 2 Banahaw Street)",
       "address": "Mayor Ignacio Santos Diaz Street",
@@ -4422,7 +4513,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0341",
+      "id": "qc-evacuation:0348",
       "category": "evacuation",
       "name": "San Martin De Porres, Open Spaces ( B. Mataba Street)",
       "address": "Mataba Street",
@@ -4435,7 +4526,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0342",
+      "id": "qc-evacuation:0349",
       "category": "evacuation",
       "name": "San Martin De Porres, Open Spaces ( D. Edsa Cor. P.tuazon Blvd)",
       "address": "P. Tuazon Blvd",
@@ -4448,7 +4539,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0343",
+      "id": "qc-evacuation:0350",
       "category": "evacuation",
       "name": "San Vicente Covered Basketball Court",
       "address": "Maayusin Street",
@@ -4461,7 +4552,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0344",
+      "id": "qc-evacuation:0351",
       "category": "evacuation",
       "name": "San Vicente Suntay Hall",
       "address": "Maayusin Street",
@@ -4474,7 +4565,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0345",
+      "id": "qc-evacuation:0352",
       "category": "evacuation",
       "name": "Santol Barangay Hall",
       "address": "Baloy Silencio Street",
@@ -4487,7 +4578,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0346",
+      "id": "qc-evacuation:0353",
       "category": "evacuation",
       "name": "Sikatuna Village, 1st Quadrant",
       "address": "Maamo Street",
@@ -4500,7 +4591,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0347",
+      "id": "qc-evacuation:0354",
       "category": "evacuation",
       "name": "Sikatuna Village, 2nd Quadrant",
       "address": "Manining Street",
@@ -4513,7 +4604,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0348",
+      "id": "qc-evacuation:0355",
       "category": "evacuation",
       "name": "Sikatuna Village, 3rd Quadrant",
       "address": "Malihim Street",
@@ -4526,7 +4617,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0349",
+      "id": "qc-evacuation:0356",
       "category": "evacuation",
       "name": "Sikatuna Village, 4th Quadrant",
       "address": "Maginhawa Street",
@@ -4539,7 +4630,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0350",
+      "id": "qc-evacuation:0357",
       "category": "evacuation",
       "name": "South Triangle Barangay Hall",
       "address": "Sct. Bayoran Street",
@@ -4552,7 +4643,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0351",
+      "id": "qc-evacuation:0358",
       "category": "evacuation",
       "name": "Sto. Nino Barangay Hall",
       "address": "San Isidro Street",
@@ -4565,7 +4656,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0352",
+      "id": "qc-evacuation:0359",
       "category": "evacuation",
       "name": "Tatalon JFYC Covered Basketball Court",
       "address": "Tagupo Street",
@@ -4578,7 +4669,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0353",
+      "id": "qc-evacuation:0360",
       "category": "evacuation",
       "name": "Tatalon Victory Covered Court",
       "address": "Along Victory Avenue",
@@ -4591,7 +4682,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0354",
+      "id": "qc-evacuation:0361",
       "category": "evacuation",
       "name": "Teachers Village East Barangay Hall / Covered Court",
       "address": "Maginhawa Street",
@@ -4604,7 +4695,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0355",
+      "id": "qc-evacuation:0362",
       "category": "evacuation",
       "name": "Claret School of Quezon City",
       "address": "Mahinhin St.",
@@ -4617,7 +4708,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0356",
+      "id": "qc-evacuation:0363",
       "category": "evacuation",
       "name": "U.P Village Basketball Court",
       "address": "Mapayapa Street",
@@ -4630,7 +4721,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0357",
+      "id": "qc-evacuation:0364",
       "category": "evacuation",
       "name": "U.P. Village Tennis Court",
       "address": "Mapayapa Street",
@@ -4643,46 +4734,46 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0358",
+      "id": "qc-evacuation:0365",
       "category": "evacuation",
       "name": "UP Campus Amorsolo Building",
       "address": "C.V. Francisco Street",
       "siteType": "Temporary",
       "barangayAsPublished": "UP Campus",
-      "barangayPsgc": null,
+      "barangayPsgc": "1381300124",
       "municipalityPsgc": "1381300000",
       "sourceUrl": "https://quezoncity.gov.ph/qcitizen-guides/quezon-city-evacuation-centers/",
       "source": "Quezon City government evacuation-site directory",
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0359",
+      "id": "qc-evacuation:0366",
       "category": "evacuation",
       "name": "UP Campus Dagohoy Hall",
       "address": "Dagohoy Street",
       "siteType": "Temporary",
       "barangayAsPublished": "UP Campus",
-      "barangayPsgc": null,
+      "barangayPsgc": "1381300124",
       "municipalityPsgc": "1381300000",
       "sourceUrl": "https://quezoncity.gov.ph/qcitizen-guides/quezon-city-evacuation-centers/",
       "source": "Quezon City government evacuation-site directory",
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0360",
+      "id": "qc-evacuation:0367",
       "category": "evacuation",
       "name": "UP Campus Village B Covered Court",
       "address": "Village B Street",
       "siteType": "Temporary",
       "barangayAsPublished": "UP Campus",
-      "barangayPsgc": null,
+      "barangayPsgc": "1381300124",
       "municipalityPsgc": "1381300000",
       "sourceUrl": "https://quezoncity.gov.ph/qcitizen-guides/quezon-city-evacuation-centers/",
       "source": "Quezon City government evacuation-site directory",
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0361",
+      "id": "qc-evacuation:0368",
       "category": "evacuation",
       "name": "Valencia Barangay Hall",
       "address": "86 B Col.Bonny Serrano Avenue",
@@ -4695,7 +4786,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0362",
+      "id": "qc-evacuation:0369",
       "category": "evacuation",
       "name": "Valencia Multi – purpose Hall",
       "address": "Bonny Serano Avenue (Multi-purpose Hall)",
@@ -4708,7 +4799,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0363",
+      "id": "qc-evacuation:0370",
       "category": "evacuation",
       "name": "Valencia Open Court",
       "address": "6. Castillas",
@@ -4721,7 +4812,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0364",
+      "id": "qc-evacuation:0371",
       "category": "evacuation",
       "name": "Bagbag Elementary School",
       "address": "Franco Street",
@@ -4734,7 +4825,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0365",
+      "id": "qc-evacuation:0372",
       "category": "evacuation",
       "name": "Bagbag Remarville Covered Court (Old & New)",
       "address": "Capricorn Street",
@@ -4747,7 +4838,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0366",
+      "id": "qc-evacuation:0373",
       "category": "evacuation",
       "name": "Bagbag SP Park – Kingspoint Subd.",
       "address": "King George Street",
@@ -4760,7 +4851,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0367",
+      "id": "qc-evacuation:0374",
       "category": "evacuation",
       "name": "Goodwill Elementary School",
       "address": "Moses Street & Capricorn Ave.",
@@ -4773,7 +4864,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0368",
+      "id": "qc-evacuation:0375",
       "category": "evacuation",
       "name": "Capri Activity Center (CaC)",
       "address": "Narra St. Area-3",
@@ -4786,7 +4877,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0369",
+      "id": "qc-evacuation:0376",
       "category": "evacuation",
       "name": "Capri Multi purpose Bldg 2nd Floor",
       "address": "Sampaguita St. Cor Langka St.",
@@ -4799,7 +4890,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0370",
+      "id": "qc-evacuation:0377",
       "category": "evacuation",
       "name": "Capri Multi purpose Covered Court 2nd Floor",
       "address": "Narra St. cor Sampaguita St. Area -3",
@@ -4812,7 +4903,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0371",
+      "id": "qc-evacuation:0378",
       "category": "evacuation",
       "name": "Capri Vargas Hall 2 Storey Bldg",
       "address": "Mangga St. Area 4",
@@ -4825,7 +4916,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0372",
+      "id": "qc-evacuation:0379",
       "category": "evacuation",
       "name": "San Isidro Labrador Parish Chapel",
       "address": "Ilang -ilang St. Area 2",
@@ -4838,7 +4929,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0373",
+      "id": "qc-evacuation:0380",
       "category": "evacuation",
       "name": "Fairview Basketball Covered court",
       "address": "Beside Barangay hall",
@@ -4851,7 +4942,20 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0374",
+      "id": "qc-evacuation:0381",
+      "category": "evacuation",
+      "name": "Fairview Basketball Covered court",
+      "address": "Bistek ville 6",
+      "siteType": "Temporary",
+      "barangayAsPublished": "Fairview",
+      "barangayPsgc": "1381300041",
+      "municipalityPsgc": "1381300000",
+      "sourceUrl": "https://quezoncity.gov.ph/qcitizen-guides/quezon-city-evacuation-centers/",
+      "source": "Quezon City government evacuation-site directory",
+      "retrievedDate": "2026-11-12"
+    },
+    {
+      "id": "qc-evacuation:0382",
       "category": "evacuation",
       "name": "Fairview Elementary School",
       "address": "Fairlane Street",
@@ -4864,7 +4968,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0375",
+      "id": "qc-evacuation:0383",
       "category": "evacuation",
       "name": "Fairview King Kibbal Restaurant",
       "address": "Regalado Ave. Street",
@@ -4877,7 +4981,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0376",
+      "id": "qc-evacuation:0384",
       "category": "evacuation",
       "name": "Fairview Sitio Kislap Covered court",
       "address": "Pearl Street",
@@ -4890,7 +4994,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0377",
+      "id": "qc-evacuation:0385",
       "category": "evacuation",
       "name": "Fairview Sitio Ruby multi-purpose center",
       "address": "Sitio Ruby Street",
@@ -4903,7 +5007,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0378",
+      "id": "qc-evacuation:0386",
       "category": "evacuation",
       "name": "Good Shepherd Cathedral Parish",
       "address": "Regalado Ave. Street",
@@ -4916,7 +5020,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0379",
+      "id": "qc-evacuation:0387",
       "category": "evacuation",
       "name": "The Church of Jesus Christ of Latter-day Saints",
       "address": "Regalado Ave. Street",
@@ -4929,7 +5033,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0380",
+      "id": "qc-evacuation:0388",
       "category": "evacuation",
       "name": "Greater Lagro Centennial Park Dulo",
       "address": "Flores De Mayo, Sultan, Tengao, Ascension Ave.",
@@ -4942,7 +5046,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0381",
+      "id": "qc-evacuation:0389",
       "category": "evacuation",
       "name": "Greater Lagro Covered Basketball Court",
       "address": "Flores De Mayo, Sultan, Tengao, Ascension Ave.",
@@ -4955,7 +5059,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0382",
+      "id": "qc-evacuation:0390",
       "category": "evacuation",
       "name": "Greater Lagro Covered Tennis Court",
       "address": "Flores De Mayo, Sultan, Tengao, Ascension Ave.",
@@ -4968,7 +5072,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0383",
+      "id": "qc-evacuation:0391",
       "category": "evacuation",
       "name": "Greater Lagro Hilltop Covered Basketball Court",
       "address": "Esperanza Street",
@@ -4981,7 +5085,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0384",
+      "id": "qc-evacuation:0392",
       "category": "evacuation",
       "name": "Greater Lagro Mindanao Ave. Ext. Open Spaces",
       "address": "Mindanao Ave ext.",
@@ -4994,7 +5098,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0385",
+      "id": "qc-evacuation:0393",
       "category": "evacuation",
       "name": "Greater Lagro Open Basketball Court",
       "address": "Flores De Mayo, Sultan, Tengao, Ascension Ave.",
@@ -5007,7 +5111,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0386",
+      "id": "qc-evacuation:0394",
       "category": "evacuation",
       "name": "Greater Lagro Open Spaces",
       "address": "Flores De Mayo, Sultan, Tengao, Ascension Ave.",
@@ -5020,7 +5124,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0387",
+      "id": "qc-evacuation:0395",
       "category": "evacuation",
       "name": "Greater Lagro Open Volleyball Court Plaza",
       "address": "Flores De Mayo, Sultan, Tengao, Ascension Ave.",
@@ -5033,7 +5137,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0388",
+      "id": "qc-evacuation:0396",
       "category": "evacuation",
       "name": "Holy Family Parish (Diocese of Novaliches)",
       "address": "Villareal Street",
@@ -5046,7 +5150,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0389",
+      "id": "qc-evacuation:0397",
       "category": "evacuation",
       "name": "Jose Maria Panganiban Senior High School",
       "address": "Villaflor Street",
@@ -5059,7 +5163,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0390",
+      "id": "qc-evacuation:0398",
       "category": "evacuation",
       "name": "Rosa L. Susano Novaliches Elementary",
       "address": "Quirino Highway",
@@ -5072,7 +5176,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0391",
+      "id": "qc-evacuation:0399",
       "category": "evacuation",
       "name": "Kaligayahan Multi – Purpose Hall",
       "address": "Mockingbird Street",
@@ -5085,7 +5189,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0392",
+      "id": "qc-evacuation:0400",
       "category": "evacuation",
       "name": "Kaligayahan Roxas Vargas Hall",
       "address": "4B Penguin Street Novaliches Quezon City",
@@ -5098,7 +5202,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0393",
+      "id": "qc-evacuation:0401",
       "category": "evacuation",
       "name": "Kaligayahan, Zabarte Covered Court",
       "address": "Mockingbird Street",
@@ -5111,7 +5215,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0394",
+      "id": "qc-evacuation:0402",
       "category": "evacuation",
       "name": "Nagkaisang Nayon Banahaw St. Open Space",
       "address": "Banahaw Street",
@@ -5124,7 +5228,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0395",
+      "id": "qc-evacuation:0403",
       "category": "evacuation",
       "name": "Nagkaisang Nayon Goldmine Basketball Court",
       "address": "San Dionisio Street",
@@ -5137,7 +5241,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0396",
+      "id": "qc-evacuation:0404",
       "category": "evacuation",
       "name": "Nagkaisang Nayon Pasacola Area D. Basketball Covered Court",
       "address": "Queens Avenue",
@@ -5150,7 +5254,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0397",
+      "id": "qc-evacuation:0405",
       "category": "evacuation",
       "name": "Nagkaisang Nayon Robina Covered Court",
       "address": "Robina St.",
@@ -5163,7 +5267,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0398",
+      "id": "qc-evacuation:0406",
       "category": "evacuation",
       "name": "North Fairview Barangay Hall",
       "address": "Sarong Bangui Street",
@@ -5176,7 +5280,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0399",
+      "id": "qc-evacuation:0407",
       "category": "evacuation",
       "name": "North Fairview Elementary School",
       "address": "Avon Street",
@@ -5189,7 +5293,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0400",
+      "id": "qc-evacuation:0408",
       "category": "evacuation",
       "name": "North Fairview High School",
       "address": "Auburn Street",
@@ -5202,7 +5306,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0401",
+      "id": "qc-evacuation:0409",
       "category": "evacuation",
       "name": "North Fairview Milenyo Day care center",
       "address": "Milenyo Street",
@@ -5215,7 +5319,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0402",
+      "id": "qc-evacuation:0410",
       "category": "evacuation",
       "name": "North Fairview UNFHAI Phase 8 Clubhouse and Covered Court",
       "address": "Peso Street",
@@ -5228,7 +5332,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0403",
+      "id": "qc-evacuation:0411",
       "category": "evacuation",
       "name": "Novaliches Proper Barangay Hall",
       "address": "Barangay Novaliches Proper",
@@ -5241,7 +5345,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0404",
+      "id": "qc-evacuation:0412",
       "category": "evacuation",
       "name": "Novaliches Proper Doña Isaura Covered Court",
       "address": "Doña Isaura Subd",
@@ -5254,7 +5358,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0405",
+      "id": "qc-evacuation:0413",
       "category": "evacuation",
       "name": "Novaliches Proper Doña Rosario Covered Court",
       "address": "Doña Rosario Street",
@@ -5267,7 +5371,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0406",
+      "id": "qc-evacuation:0414",
       "category": "evacuation",
       "name": "Novaliches Proper SB Plaza",
       "address": "Buenamar Street, Quirino Highway",
@@ -5280,7 +5384,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0407",
+      "id": "qc-evacuation:0415",
       "category": "evacuation",
       "name": "Novaliches Proper Visaya’s Residence rooftop",
       "address": "245 Gen Luis Street",
@@ -5293,7 +5397,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0408",
+      "id": "qc-evacuation:0416",
       "category": "evacuation",
       "name": "Maligaya Elementary School Building",
       "address": "ilang-ilang street",
@@ -5306,7 +5410,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0409",
+      "id": "qc-evacuation:0417",
       "category": "evacuation",
       "name": "Maligaya High School Building",
       "address": "ilang-ilang street",
@@ -5319,7 +5423,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0410",
+      "id": "qc-evacuation:0418",
       "category": "evacuation",
       "name": "Pasong Putik Proper Covered Basketball Court",
       "address": "Pechayan Covered court ilang-ilang street",
@@ -5332,7 +5436,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0411",
+      "id": "qc-evacuation:0419",
       "category": "evacuation",
       "name": "San Agustin Fidel Covered Court",
       "address": "T.S Cruz Subdivision",
@@ -5345,7 +5449,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0412",
+      "id": "qc-evacuation:0420",
       "category": "evacuation",
       "name": "San Agustin Vargas Multi-purpose building (old barangay)",
       "address": "Old Barangay",
@@ -5358,7 +5462,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0413",
+      "id": "qc-evacuation:0421",
       "category": "evacuation",
       "name": "Odelco Elementary School",
       "address": "Ivory & Orange St.",
@@ -5371,7 +5475,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0414",
+      "id": "qc-evacuation:0422",
       "category": "evacuation",
       "name": "San Bartolome California Village",
       "address": "Katipunan Ave. California Village",
@@ -5384,7 +5488,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0415",
+      "id": "qc-evacuation:0423",
       "category": "evacuation",
       "name": "San Bartolome Nomar II Covered Court",
       "address": "Santan St.",
@@ -5397,7 +5501,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0416",
+      "id": "qc-evacuation:0424",
       "category": "evacuation",
       "name": "San Bartolome Odelco Covered Court",
       "address": "Ivory & Orange St.",
@@ -5410,7 +5514,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0417",
+      "id": "qc-evacuation:0425",
       "category": "evacuation",
       "name": "San Bartolome, S.M Parking lot Area",
       "address": "Quirino highway",
@@ -5423,7 +5527,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0418",
+      "id": "qc-evacuation:0426",
       "category": "evacuation",
       "name": "San Gabriel Elementary School",
       "address": "A. Bonifacio Street",
@@ -5436,7 +5540,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0419",
+      "id": "qc-evacuation:0427",
       "category": "evacuation",
       "name": "Sta. Lucia Barangay Hall rooftop",
       "address": "Barangay hall Sta. lucia",
@@ -5449,7 +5553,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0420",
+      "id": "qc-evacuation:0428",
       "category": "evacuation",
       "name": "Sta. Lucia Basketball Covered Court",
       "address": "Sta. Lucia Ave.",
@@ -5462,7 +5566,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0421",
+      "id": "qc-evacuation:0429",
       "category": "evacuation",
       "name": "Sta. Lucia High School",
       "address": "P. Paterno Street",
@@ -5475,7 +5579,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0422",
+      "id": "qc-evacuation:0430",
       "category": "evacuation",
       "name": "Sta. Lucia Multipurpose Hall",
       "address": "Sta. Lucia Street",
@@ -5488,7 +5592,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0423",
+      "id": "qc-evacuation:0431",
       "category": "evacuation",
       "name": "Sta. Lucia Parish",
       "address": "T. Alonzo Street & J.P Rizal Street",
@@ -5501,7 +5605,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0424",
+      "id": "qc-evacuation:0432",
       "category": "evacuation",
       "name": "Sta. Monica Idang Daycare",
       "address": "Idang Street",
@@ -5514,7 +5618,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0425",
+      "id": "qc-evacuation:0433",
       "category": "evacuation",
       "name": "Sta. Monica Lydia Basketball court",
       "address": "Lydia Street",
@@ -5527,7 +5631,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0426",
+      "id": "qc-evacuation:0434",
       "category": "evacuation",
       "name": "Sta. Monica Mayang Pula Multi-purpose hall",
       "address": "Orange Street",
@@ -5540,7 +5644,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0427",
+      "id": "qc-evacuation:0435",
       "category": "evacuation",
       "name": "Sta. Monica Sarmiento Daycare",
       "address": "Doña Rorie Street",
@@ -5553,7 +5657,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0428",
+      "id": "qc-evacuation:0436",
       "category": "evacuation",
       "name": "Sta. Monica, Barangay Covered Court",
       "address": "Pugong Ginto Street",
@@ -5566,7 +5670,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0429",
+      "id": "qc-evacuation:0437",
       "category": "evacuation",
       "name": "Apolonio Samson Elementary School",
       "address": "Q.Baetong Dr.",
@@ -5579,7 +5683,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0430",
+      "id": "qc-evacuation:0438",
       "category": "evacuation",
       "name": "Baesa Covered Court Asamba",
       "address": "Asamba Covered Court",
@@ -5592,7 +5696,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0431",
+      "id": "qc-evacuation:0439",
       "category": "evacuation",
       "name": "Baesa Dead End Court",
       "address": "Dead End Court",
@@ -5605,7 +5709,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0432",
+      "id": "qc-evacuation:0440",
       "category": "evacuation",
       "name": "Baesa G.K Multi-purpose Hall",
       "address": "G.K Sitio Pajo",
@@ -5618,7 +5722,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0433",
+      "id": "qc-evacuation:0441",
       "category": "evacuation",
       "name": "Baesa Monotoc Covered Court",
       "address": "Marikit St.",
@@ -5631,7 +5735,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0434",
+      "id": "qc-evacuation:0442",
       "category": "evacuation",
       "name": "Baesa Upper Pajo Open Basketball Court",
       "address": "F. Carlos Street",
@@ -5644,7 +5748,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0435",
+      "id": "qc-evacuation:0443",
       "category": "evacuation",
       "name": "Lucas R. Pascual Memorial Elementary School",
       "address": "Pascual Road",
@@ -5657,7 +5761,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0436",
+      "id": "qc-evacuation:0444",
       "category": "evacuation",
       "name": "Saint Martin De Porres Chapel",
       "address": "Sitio Mendez",
@@ -5670,7 +5774,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0437",
+      "id": "qc-evacuation:0445",
       "category": "evacuation",
       "name": "Bagong-bato Barangay Hall",
       "address": "Maximina Street",
@@ -5683,7 +5787,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0438",
+      "id": "qc-evacuation:0446",
       "category": "evacuation",
       "name": "Balong-bato Leland Drive Covered Court",
       "address": "Sab beda College",
@@ -5696,7 +5800,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0439",
+      "id": "qc-evacuation:0447",
       "category": "evacuation",
       "name": "Balumbato Elementary School",
       "address": "S. Gonzales Dr",
@@ -5709,7 +5813,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0440",
+      "id": "qc-evacuation:0448",
       "category": "evacuation",
       "name": "Culiat High School",
       "address": "Tandang Sora Ave.",
@@ -5722,7 +5826,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0441",
+      "id": "qc-evacuation:0449",
       "category": "evacuation",
       "name": "Culiat Multi-Purpose Hall Casanova",
       "address": "Casanova Dr Ext.",
@@ -5735,7 +5839,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0442",
+      "id": "qc-evacuation:0450",
       "category": "evacuation",
       "name": "Culiat, Forestry Covered Court",
       "address": "Cenacle Drive",
@@ -5748,7 +5852,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0443",
+      "id": "qc-evacuation:0451",
       "category": "evacuation",
       "name": "Culiat, Luzon Satellite Covered Court",
       "address": "Purok 4 Luzon Satellite",
@@ -5761,7 +5865,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0444",
+      "id": "qc-evacuation:0452",
       "category": "evacuation",
       "name": "Culiat, Purok 4B Covered Court",
       "address": "Purok 4B",
@@ -5774,7 +5878,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0445",
+      "id": "qc-evacuation:0453",
       "category": "evacuation",
       "name": "Culiat, San Lorenzo Formation Center",
       "address": "Opal Street",
@@ -5787,7 +5891,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0446",
+      "id": "qc-evacuation:0454",
       "category": "evacuation",
       "name": "Culiat, Sanville Multi- Purpose Hall",
       "address": "Cenacle Drive",
@@ -5800,7 +5904,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0447",
+      "id": "qc-evacuation:0455",
       "category": "evacuation",
       "name": "Culiat, Vargas Covered Court",
       "address": "Vargas LN",
@@ -5813,7 +5917,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0448",
+      "id": "qc-evacuation:0456",
       "category": "evacuation",
       "name": "New Era Disaster Building",
       "address": "St. Joseph Street Beside a Barangay Hall",
@@ -5826,7 +5930,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0449",
+      "id": "qc-evacuation:0457",
       "category": "evacuation",
       "name": "New Era MRF Building",
       "address": "St. Joseph Street Beside a Barangay Hall",
@@ -5839,7 +5943,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0450",
+      "id": "qc-evacuation:0458",
       "category": "evacuation",
       "name": "Pasong Tamo Pingkian III Covered Court",
       "address": "Lily Street",
@@ -5852,7 +5956,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0451",
+      "id": "qc-evacuation:0459",
       "category": "evacuation",
       "name": "Pasong Tamo Barangay Hall Annex II",
       "address": "Freedom Ave",
@@ -5865,7 +5969,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0452",
+      "id": "qc-evacuation:0460",
       "category": "evacuation",
       "name": "Pasong Tamo Elementary School",
       "address": "Tandang Sora Ave.",
@@ -5878,7 +5982,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0453",
+      "id": "qc-evacuation:0461",
       "category": "evacuation",
       "name": "Pasong Tamo Marcel Covered Court",
       "address": "Marcel Village",
@@ -5891,7 +5995,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0454",
+      "id": "qc-evacuation:0462",
       "category": "evacuation",
       "name": "Pasong Tamo SK Hall Covered Court",
       "address": "Freedom Ave",
@@ -5904,7 +6008,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0455",
+      "id": "qc-evacuation:0463",
       "category": "evacuation",
       "name": "GSIS Village Elementary School",
       "address": "Premium Street",
@@ -5917,7 +6021,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0456",
+      "id": "qc-evacuation:0464",
       "category": "evacuation",
       "name": "Ismael Mathay Sr. High School",
       "address": "Branches Street",
@@ -5930,7 +6034,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0457",
+      "id": "qc-evacuation:0465",
       "category": "evacuation",
       "name": "Mendoza Multi-Level Building",
       "address": "Branches Street",
@@ -5943,7 +6047,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0458",
+      "id": "qc-evacuation:0466",
       "category": "evacuation",
       "name": "Greenville Covered Court",
       "address": "Greenville Street",
@@ -5956,7 +6060,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0459",
+      "id": "qc-evacuation:0467",
       "category": "evacuation",
       "name": "Sauyo Area 5A Day Care Center",
       "address": "Pascual road",
@@ -5969,7 +6073,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0460",
+      "id": "qc-evacuation:0468",
       "category": "evacuation",
       "name": "Sauyo Area 6A Day Care Center",
       "address": "Primula Street",
@@ -5982,7 +6086,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0461",
+      "id": "qc-evacuation:0469",
       "category": "evacuation",
       "name": "Sauyo Baluyot Covered Court",
       "address": "Gold Star Street",
@@ -5995,7 +6099,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0462",
+      "id": "qc-evacuation:0470",
       "category": "evacuation",
       "name": "Sauyo Baluyot Day Care Center",
       "address": "Gold Star Street",
@@ -6008,7 +6112,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0463",
+      "id": "qc-evacuation:0471",
       "category": "evacuation",
       "name": "Sauyo Del Nacia Covered Court",
       "address": "Daisy Street",
@@ -6021,7 +6125,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0464",
+      "id": "qc-evacuation:0472",
       "category": "evacuation",
       "name": "Sauyo Elementary School",
       "address": "Fuschia Street",
@@ -6034,7 +6138,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0465",
+      "id": "qc-evacuation:0473",
       "category": "evacuation",
       "name": "Sauyo Greenview Royale Covered Court",
       "address": "Green valley Street",
@@ -6047,7 +6151,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0466",
+      "id": "qc-evacuation:0474",
       "category": "evacuation",
       "name": "Sauyo High School",
       "address": "Pantabangan Street",
@@ -6060,7 +6164,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0467",
+      "id": "qc-evacuation:0475",
       "category": "evacuation",
       "name": "Sauyo Homeland Park",
       "address": "Teacher Street",
@@ -6073,7 +6177,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0468",
+      "id": "qc-evacuation:0476",
       "category": "evacuation",
       "name": "Sauyo Lower Gulod Day Care Center",
       "address": "Lower Gulod, Quezon City",
@@ -6086,7 +6190,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0469",
+      "id": "qc-evacuation:0477",
       "category": "evacuation",
       "name": "Sauyo Masarnaa Day care Center",
       "address": "201 Mabuhay Compound, Quezon City",
@@ -6099,7 +6203,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0470",
+      "id": "qc-evacuation:0478",
       "category": "evacuation",
       "name": "Sauyo NIA Covered Court",
       "address": "Pantabangan Street",
@@ -6112,7 +6216,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0471",
+      "id": "qc-evacuation:0479",
       "category": "evacuation",
       "name": "Sauyo Sumama Day care",
       "address": "202 Mabuhay Compound, Quezon City",
@@ -6125,7 +6229,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0472",
+      "id": "qc-evacuation:0480",
       "category": "evacuation",
       "name": "Sauyo, Old cabuyao Day Care Center",
       "address": "Orchids Street",
@@ -6138,7 +6242,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0473",
+      "id": "qc-evacuation:0481",
       "category": "evacuation",
       "name": "Placido Del Mundo Elementary School",
       "address": "Placido Del Mundo Elementary School, Quirino Highway",
@@ -6151,7 +6255,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0474",
+      "id": "qc-evacuation:0482",
       "category": "evacuation",
       "name": "Talipapa Barangay Hall",
       "address": "Brgy. Hall 3rd Floor, Quirino Highway",
@@ -6164,7 +6268,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0475",
+      "id": "qc-evacuation:0483",
       "category": "evacuation",
       "name": "Talipapa Sahara Basketball Court",
       "address": "C. Francisco Sahara Sports Complex Basketball Court",
@@ -6177,7 +6281,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0476",
+      "id": "qc-evacuation:0484",
       "category": "evacuation",
       "name": "Talipapa Silvina Village Sports Complex",
       "address": "Silvina Village Sports Complex / Bangus St.",
@@ -6190,7 +6294,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0477",
+      "id": "qc-evacuation:0485",
       "category": "evacuation",
       "name": "Talipapa Villa Sabina Park",
       "address": "Santa Sabina St.",
@@ -6203,7 +6307,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0478",
+      "id": "qc-evacuation:0486",
       "category": "evacuation",
       "name": "Talipapa Volley Ball Court",
       "address": "Santa Sabina St.",
@@ -6216,7 +6320,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0479",
+      "id": "qc-evacuation:0487",
       "category": "evacuation",
       "name": "St. Vincent Seminary",
       "address": "Tandang Sora Ave",
@@ -6229,7 +6333,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0480",
+      "id": "qc-evacuation:0488",
       "category": "evacuation",
       "name": "Tandang Sora Barangay Hall",
       "address": "Don Jose Street",
@@ -6242,7 +6346,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0481",
+      "id": "qc-evacuation:0489",
       "category": "evacuation",
       "name": "Tandang Sora SB Court",
       "address": "Neptune Street",
@@ -6255,7 +6359,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0482",
+      "id": "qc-evacuation:0490",
       "category": "evacuation",
       "name": "Bonifacio Memorial Elementary School",
       "address": "Beside Barangay hall",
@@ -6268,7 +6372,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0483",
+      "id": "qc-evacuation:0491",
       "category": "evacuation",
       "name": "Unang Sigaw Barangay Hall",
       "address": "Quezon City, Metro Manila Road",
@@ -6281,7 +6385,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0484",
+      "id": "qc-evacuation:0492",
       "category": "evacuation",
       "name": "Unang Sigaw Bus Terminal",
       "address": "–",
@@ -6294,7 +6398,7 @@
       "retrievedDate": "2026-11-12"
     },
     {
-      "id": "qc-evacuation:0485",
+      "id": "qc-evacuation:0493",
       "category": "evacuation",
       "name": "Unang Sigaw Multi-purpose Covered Court",
       "address": "West Service Road",
@@ -6308,26 +6412,16 @@
     }
   ],
   "audit": {
-    "extractedRows": 499,
-    "uniqueSites": 485,
-    "duplicateRowsExcluded": 14,
+    "extractedRows": 496,
+    "uniqueSites": 493,
+    "duplicateRowsExcluded": 3,
     "unmatchedBarangays": {
-      "N.S Amoranto": 3,
-      "BARANGAY NAME": 1,
-      "Quirino 3-B": 2,
-      "Quirino 2A": 1,
-      "Doña Aurora": 4,
-      "Immaculate Conception": 2,
-      "San Isidro Galas": 3,
-      "UP Campus": 3
+      "Quirino 3-B": 2
     },
     "siteTypes": {
-      "Temporary": 411,
-      "Tem porary": 1,
-      "Temporay": 1,
+      "Temporary": 422,
       "Semi-permanent": 69,
-      "Permanent": 2,
-      "EVACUATION CENTER TYPE": 1
+      "Permanent": 2
     },
     "coverage": "Quezon City only. Designated evacuation sites, including temporary and semi-permanent sites; not a count of dedicated buildings."
   }
