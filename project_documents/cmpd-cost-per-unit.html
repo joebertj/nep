@@ -1,4 +1,111 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CMPD Cost per Unit · DPWH POW bills</title><style>body{margin:0;background:#f4f7f8;color:#183643;font:16px/1.5 system-ui}header{background:#00246a;color:white;padding:24px}main{padding:24px}section{background:white;margin:18px 0;padding:20px;border:1px solid #d8e5e8;border-radius:12px}.note{color:#526c78}.controls{display:grid;gap:8px;max-width:700px}select,input,button{font:inherit;padding:9px;border:1px solid #9bb8bf;border-radius:7px}table{border-collapse:collapse;width:100%}td,th{text-align:left;padding:9px;border-bottom:1px solid #dbe3e6;vertical-align:top}.num{text-align:right;white-space:nowrap}.scroll{overflow:auto}.pill{background:#fff4cc;padding:3px 7px;border-radius:6px}a{color:#0038a8}</style></head><body><header><h1>CMPD Cost per Unit</h1><p>Compare 1st Semester CY 2026 DPWH Construction Materials Price Data with matching POW bill items.</p></header><main><section><b>Source coverage</b><p class="note">The supplied compressed PDF contains NCR pages 4–10, CAR pages 12–17, and only pages 19–20 of Region I. Region I is incomplete; other regions are absent from this copy. CMPD average prices are shown as published. POW items are text matches for review, not confirmed equivalent materials or evidence of overpricing. Check the source schedule, unit, specification, location and date before comparing.</p></section><section><h2>Choose a material</h2><div class="controls"><label>Material <select id="material"></select></label><label>Search POW matches <input id="search" placeholder="Project, item or office"></label></div><p id="summary" class="note"></p><div class="scroll"><table><thead><tr><th>Material code / description</th><th>Unit</th><th>CMPD average</th><th>POW unit cost</th><th>Project and source</th></tr></thead><tbody id="rows"></tbody></table></div></section><section><h2>Reference rates by available region</h2><div class="scroll"><table><thead><tr><th>Code</th><th>Material</th><th>Unit</th><th>Region</th><th>Average</th><th>Source page</th></tr></thead><tbody id="rates"></tbody></table></div></section><p class="note">CMPD source: <a href="../data_sources/Nationwide%20CMPD_compressed.pdf">supplied PDF</a>. Department guidance: <a href="../data_sources/do_043_s2026.pdf">DO 043, s. 2026</a>. The order sets price validation procedures; it does not itself establish CMPD material rates.</p></main><script>fetch('cmpd-cost-per-unit-data.json').then(r=>r.json()).then(d=>{const s=document.querySelector('#material'),q=document.querySelector('#search'),body=document.querySelector('#rows'),rates=document.querySelector('#rates'),summary=document.querySelector('#summary');const aliases={'common borrow':['common borrow'],'selected borrow':['selected borrow'],'aggregate subbase course':['aggregate subbase','subbase course'],'aggregate base course':['aggregate base course','base course'],'cement concrete pavement':['cement concrete pavement','pccp'],'asphalt concrete':['asphalt concrete','hot laid asphalt'],'portland cement':['portland cement'],'fine aggregate sand':['fine aggregate','concrete sand'],'concrete hollow blocks':['concrete hollow block','chb'],'reinforcing steel':['reinforcing steel','deformed bars','reinforcing bars'],'ready mix concrete':['ready mix concrete','ready mixed concrete'],'gravel':['gravel']};const termsFor=name=>{const key=name.toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();return Object.entries(aliases).find(([k])=>key.includes(k))?.[1]||[key]};const mats=[...new Set(d.rates.map(x=>x.description))].filter(name=>d.candidates.some(x=>termsFor(name).some(t=>x.description.toLowerCase().includes(t)))).sort();s.innerHTML=mats.map(x=>`<option>${x}</option>`).join('');function unitKey(u){u=(u||'').toLowerCase().replace(/[²³]/g,'').replace(/\s+/g,'').replace(/\./g,'');return ({cum:'m3','cu.m':'m3','m3':'m3',sqm:'m2','sq.m':'m2','m2':'m2',kg:'kg',m:'m',ltr:'l','l':'l',gal:'gal',bag:'bag',ea:'each',each:'each'})[u]||u}function draw(){const name=s.value,rr=d.rates.filter(x=>x.description===name),code=rr[0]?.code,terms=termsFor(name),refUnits=new Set(rr.map(x=>unitKey(x.unit)).filter(x=>x&&x!=='none'));const found=d.candidates.filter(x=>terms.some(t=>x.description.toLowerCase().includes(t))&&(!refUnits.size||refUnits.has(unitKey(x.unit)))&&(!q.value||[x.project,x.description,x.office].join(' ').toLowerCase().includes(q.value.toLowerCase())));summary.textContent=`${rr[0]?.description||name} · ${rr[0]?.unit||'unit unavailable'} · ${found.length} text matched POW rows. Material code ${code||'—'}.`;
-body.innerHTML=found.map(x=>{const sourceRegion=x.region==='NCR'?'NCR':x.region==='CAR'?'CAR':/^Region I/i.test(x.region||'')?'Region I':'';const rate=rr.find(r=>r.region===sourceRegion&&r.unit.toLowerCase()===({ 'cu.m':'cum','sq.m':'sqm','kg':'kg','m':'m','l':'ltr'}[x.unit.toLowerCase()]||x.unit.toLowerCase()));return `<tr><td>${x.itemCode||''}<small>${x.description}</small></td><td>${x.unit}</td><td>${rate?.average==null?'No comparable regional rate':`₱${rate.average.toLocaleString('en-PH',{maximumFractionDigits:2})}`}<small>${rate?`${rate.region} · CMPD p.${rate.page}`:'Region/unit not available in supplied extract'}</small></td><td>${x.unitCost==null?'—':'₱'+Number(x.unitCost).toLocaleString('en-PH',{maximumFractionDigits:2})}</td><td>${x.project}<small>${x.office} · ${x.region} · POW p.${x.page} · <a href="${x.powUrl}#page=${x.page}" target="_blank">source ↗</a></small></td></tr>`}).join('')||'<tr><td colspan="5">No text matches.</td></tr>';
-rates.innerHTML=rr.map(x=>`<tr><td>${x.code}</td><td>${x.description}</td><td>${x.unit}</td><td>${x.region}</td><td>${x.average==null?'OCR review needed':'₱'+x.average.toLocaleString('en-PH',{maximumFractionDigits:2})}</td><td><a href="../data_sources/Nationwide%20CMPD_compressed.pdf#page=${x.page}" target="_blank">p.${x.page} ↗</a></td></tr>`).join('')}
-s.onchange=draw;q.oninput=draw;draw()}).catch(e=>document.querySelector('main').insertAdjacentHTML('beforeend','<p>Data unavailable: '+e.message+'</p>'));</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Review DPWH Construction Materials Price Data alongside text-matched project POW bill items.">
+  <title>CMPD Cost per Unit · BetterGov</title>
+  <style>
+    :root{--cmpd-navy:#00246A;--cmpd-blue:#0038A8;--cmpd-gold:#FCD116;--cmpd-ink:#183643;--cmpd-muted:#526c78;--cmpd-line:#d8e5e8;--cmpd-wash:#f4f7f8}
+    *{box-sizing:border-box}
+    body{margin:0;color:var(--cmpd-ink);background:var(--cmpd-wash);font:16px/1.55 system-ui,sans-serif}
+    header{padding:34px clamp(18px,4vw,56px);background:var(--cmpd-navy);color:white}
+    header .eyebrow{color:var(--cmpd-gold);font-size:12px;font-weight:750;letter-spacing:.1em;text-transform:uppercase}
+    header h1{max-width:950px;margin:8px 0;font-size:clamp(30px,4vw,48px);line-height:1.08;letter-spacing:-.025em}
+    header p{max-width:850px;margin:0;color:#eef3ff;font-size:17px}
+    main{width:min(1280px,100%);margin:auto;padding:24px clamp(14px,3vw,36px) 44px}
+    .cmpd-disclaimer,.cmpd-section{margin:18px 0;padding:clamp(18px,3vw,28px);border:1px solid var(--cmpd-line);border-radius:15px;background:#fff;box-shadow:0 5px 18px #00246a0a}
+    .cmpd-disclaimer{border-left:5px solid var(--cmpd-gold);background:#fffdf4}
+    .cmpd-disclaimer p{margin:6px 0 0;color:#425766}
+    .cmpd-section h2{margin:0 0 6px;color:var(--cmpd-navy);font-size:clamp(21px,2.5vw,29px)}
+    .cmpd-section-intro{max-width:900px;margin:0;color:var(--cmpd-muted)}
+    .cmpd-overview{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;margin-top:18px;padding:18px;border-radius:12px;background:#f2f6fa}
+    .cmpd-overview strong{display:block;color:var(--cmpd-navy)}
+    .cmpd-overview p{margin:4px 0 0;color:var(--cmpd-muted);font-size:14px}
+    .cmpd-period{padding:8px 12px;border-radius:999px;background:#e8efff;color:var(--cmpd-navy);font-size:13px;font-weight:700;white-space:nowrap}
+    .cmpd-controls{display:grid;grid-template-columns:minmax(220px,.8fr) minmax(260px,1.2fr);gap:14px;margin:22px 0 12px}
+    .cmpd-controls label{display:grid;gap:6px;font-weight:700}
+    .cmpd-controls select,.cmpd-controls input{width:100%;min-height:44px;padding:9px 12px;border:1px solid #9bb8bf;border-radius:8px;background:white;color:inherit;font:inherit}
+    .cmpd-controls select:focus,.cmpd-controls input:focus{outline:3px solid #0038a833;border-color:var(--cmpd-blue)}
+    .cmpd-result-summary{margin:14px 0;padding:13px 15px;border-radius:9px;background:#f2f6fa;color:#334b59;font-variant-numeric:tabular-nums}
+    .cmpd-boxplot{margin:18px 0 22px;padding:18px;border:1px solid var(--cmpd-line);border-radius:12px;background:#fbfcff}
+    .cmpd-boxplot h3{margin:0 0 4px;color:var(--cmpd-navy);font-size:18px}
+    .cmpd-boxplot-intro,.cmpd-boxplot-note{margin:0;color:var(--cmpd-muted);font-size:13px}
+    .cmpd-boxplot-row{display:grid;grid-template-columns:minmax(145px,.32fr) minmax(360px,1fr);gap:14px;align-items:center;padding:12px 0;border-top:1px solid var(--cmpd-line)}
+    .cmpd-boxplot-row:first-child{margin-top:12px}
+    .cmpd-boxplot-unit strong{display:block;color:var(--cmpd-ink)}
+    .cmpd-boxplot-unit small{display:block;margin-top:3px;color:var(--cmpd-muted);font-size:12px;line-height:1.4}
+    .cmpd-boxplot-chart{overflow-x:auto}
+    .cmpd-boxplot-chart svg{display:block;width:100%;min-width:420px;height:auto}
+    .cmpd-boxplot-axis{stroke:#9aabb6;stroke-width:1}
+    .cmpd-boxplot-whisker{stroke:#0038A8;stroke-width:2}
+    .cmpd-boxplot-box{fill:#dce8ff;stroke:#0038A8;stroke-width:2}
+    .cmpd-boxplot-median{stroke:#00246A;stroke-width:3}
+    .cmpd-boxplot-outlier{fill:#BA8900;stroke:#fff;stroke-width:1}
+    .cmpd-boxplot-tick{fill:#526c78;font:11px system-ui,sans-serif}
+    .cmpd-boxplot-empty{margin-top:12px;padding:12px;border-radius:8px;background:#f2f6fa;color:var(--cmpd-muted)}
+    .cmpd-table-wrap{overflow:auto;border:1px solid var(--cmpd-line);border-radius:10px}
+    table{width:100%;border-collapse:collapse;background:white}
+    th,td{min-width:115px;padding:11px 12px;border-bottom:1px solid var(--cmpd-line);text-align:left;vertical-align:top;overflow-wrap:anywhere}
+    thead{background:#edf3f8;color:var(--cmpd-navy)}
+    th{font-size:13px;line-height:1.3}
+    tbody tr:nth-child(even){background:#fafcfd}
+    tbody tr:last-child td{border-bottom:0}
+    td small{display:block;margin-top:4px;color:var(--cmpd-muted);font-size:12px;line-height:1.4}
+    .cmpd-empty,.cmpd-error{padding:18px;color:var(--cmpd-muted)}
+    .cmpd-error{color:#8b252a}
+    details.cmpd-rates{margin-top:22px;border:1px solid var(--cmpd-line);border-radius:10px;background:white}
+    details.cmpd-rates>summary{padding:14px 16px;color:var(--cmpd-navy);font-weight:750;cursor:pointer}
+    details.cmpd-rates[open]>summary{border-bottom:1px solid var(--cmpd-line)}
+    .cmpd-rates-body{padding:14px}
+    .cmpd-source-links{display:flex;flex-wrap:wrap;gap:10px 22px;margin:16px 0 0}
+    a{color:var(--cmpd-blue);text-underline-offset:2px}
+    @media(max-width:680px){.cmpd-overview{grid-template-columns:1fr}.cmpd-period{justify-self:start}.cmpd-controls{grid-template-columns:1fr}th,td{min-width:125px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="eyebrow">Budget 2027 · DPWH materials</div>
+    <h1>CMPD cost per unit</h1>
+    <p class="report-header-teaser">Compare DPWH Construction Materials Price Data with similarly worded items in project Plans of Work.</p>
+  </header>
+  <main>
+    <aside class="report-disclaimer cmpd-disclaimer" id="report-evidence-notice" role="note">
+      <strong>Use this as a screening comparison.</strong>
+      <p>POW items are text matches, not confirmed equivalent materials and not evidence of overpricing. Check the source schedule, unit, specification, location, and date before comparing a rate.</p>
+    </aside>
+
+    <section class="cmpd-section" aria-labelledby="match-title">
+      <h2 id="match-title">Review matching POW items</h2>
+      <p class="cmpd-section-intro">Choose a CMPD material to see matching POW bill rows. The table pairs a reference rate only when the available region and unit match.</p>
+      <div class="cmpd-overview">
+        <div><strong>Source coverage is incomplete</strong><p>The supplied CMPD PDF includes NCR pages 4–10, CAR pages 12–17, and only pages 19–20 of Region I. Other regions are not present in this extract.</p></div>
+        <span class="cmpd-period">1st semester · CY 2026</span>
+      </div>
+      <div class="cmpd-controls">
+        <label for="material">CMPD material<select id="material"><option>Loading materials…</option></select></label>
+        <label for="search">Search matched POW rows<input id="search" type="search" placeholder="Project, bill item, office, or region"></label>
+      </div>
+      <p id="summary" class="cmpd-result-summary" aria-live="polite">Loading source data…</p>
+      <p id="load-error" class="cmpd-error" role="alert" hidden></p>
+      <section id="boxplot-panel" class="cmpd-boxplot" aria-labelledby="boxplot-title" hidden>
+        <h3 id="boxplot-title">Matched POW unit-cost distribution</h3>
+        <p class="cmpd-boxplot-intro">Each box shows the middle half of matched POW unit costs; the center line is the median. Whiskers extend to the most extreme values within 1.5× the interquartile range. Gold dots mark values outside that range. Each unit has its own peso scale.</p>
+        <div id="boxplot" aria-live="polite"></div>
+      </section>
+      <div class="cmpd-table-wrap">
+        <table id="matches-table">
+          <thead><tr><th>POW bill item</th><th>Unit</th><th>CMPD reference</th><th>POW unit cost</th><th>Project and source</th></tr></thead>
+          <tbody id="rows"><tr><td class="cmpd-empty" colspan="5">Loading matching rows…</td></tr></tbody>
+        </table>
+      </div>
+      <details class="cmpd-rates">
+        <summary>Reference rates in the supplied CMPD extract</summary>
+        <div class="cmpd-rates-body"><div class="cmpd-table-wrap"><table><thead><tr><th>Code</th><th>Material</th><th>Unit</th><th>Region</th><th>Average rate</th><th>Source</th></tr></thead><tbody id="rates"><tr><td class="cmpd-empty" colspan="6">Loading rates…</td></tr></tbody></table></div></div>
+      </details>
+      <div class="cmpd-source-links"><span>Reference source: DPWH Construction Materials Price Data, 1st Semester CY 2026</span><span>Guidance: DPWH Department Order 043, s. 2026</span></div>
+    </section>
+  </main>
+  <script src="cmpd-cost-per-unit.js" defer></script>
+</body>
+</html>

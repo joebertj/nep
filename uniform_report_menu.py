@@ -25,6 +25,7 @@ MENU_GROUPS=[
         ('out-of-place.html','Out of Place'),('cost-per-km.html','Cost per meter'),
         ('pccp-cost-per-unit.html','Cost Per Unit · DPWH Atlas'),
         ('cost-per-unit.html','Cost per Unit · peer comparison'),
+        ('cmpd-cost-per-unit.html','CMPD · cost per unit'),
         ('expectation-vs-reality.html','Costing vs proposed allocation'),
         ('rcs.html','RCS project scope'),('mpb.html','MPB Flags'),('barangay.html','Barangay allocations'),
     ]),
@@ -62,6 +63,24 @@ MENU_BEHAVIOR_SCRIPT='''<script id="report-menu-exclusive-groups">(()=>{const gr
 def apply_menu_behavior(text):
     text=re.sub(r'<script id="report-menu-exclusive-groups">.*?</script>','',text,flags=re.S)
     return text.replace('</body>',MENU_BEHAVIOR_SCRIPT+'</body>',1)
+
+def refresh_generated_menus():
+    """Refresh shared navigation in generated HTML without changing page content."""
+    updated=[]
+    for root in (ROOT/'analysis_output', STATIC):
+        if not root.exists():
+            continue
+        for path in root.rglob('*.html'):
+            text=path.read_text(encoding='utf-8')
+            if not re.search(r'<nav\b[^>]*class="report-nav"',text):
+                continue
+            revised=re.sub(r'<nav\b[^>]*class="report-nav"[^>]*>.*?</nav>',
+                           lambda _match:NAV,text,count=1,flags=re.S)
+            revised=apply_menu_behavior(revised)
+            if revised!=text:
+                path.write_text(revised,encoding='utf-8')
+                updated.append(str(path.relative_to(ROOT.parent)))
+    return {'mode':'generated-menu-refresh','updatedPages':len(updated),'pages':updated}
 AI_CREDIT='<footer class="site-ai-credit"><p><strong>Sources:</strong> <a href="https://visualizations.bettergov.ph/sources" target="_blank" rel="noreferrer">Common source catalog</a>. Each page identifies the years and records used in that analysis.</p><p><a href="__BUDGET_TRIVIA_HREF__">Budget Trivia · play the game</a></p><p><strong>AI assistance:</strong> OpenAI Codex contributed to software implementation and data-processing workflows for this site. This credit does not represent independent verification of the underlying sources, calculations, or conclusions.</p></footer>'
 MPB_SOURCE_FOOTER='''<footer class="mpb-source-footer" id="mpb-source-footer"><p><strong>Sources and credits</strong> · <a href="https://visualizations.bettergov.ph/sources" target="_blank" rel="noreferrer">Full source catalog for legacy and current ODV pages</a></p><p>GAA project records: <a href="https://budget-assets.bettergov.ph/gaa-explorer/manifest.json" target="_blank" rel="noreferrer">BetterGov GAA Explorer and integrated GAA datasets</a> (FY2016–FY2018 title-classified DPWH baseline; FY2017–FY2018 MPB candidate layer; FY2020–FY2026 integrated datasets). FY2027 MPB records: <a href="https://budget.bettergov.ph/hgab/2027/multi-purpose/map" target="_blank" rel="noreferrer">BetterGov HGAB Multi-purpose Buildings map</a>. Barangay names and identities use BetterGov's unified geographic reference list.</p><p>MPB base artwork: Kenney, <a href="https://kenney.nl/assets/isometric-tiles-buildings" target="_blank" rel="noreferrer">Isometric Tiles Buildings</a> and <a href="https://kenney.nl/assets/isometric-tiles-city" target="_blank" rel="noreferrer">Isometric Tiles City</a>, both CC0. District attribution review references the <a href="https://csiiiv.github.io/DPWH-NEP-HB-2027-ANALYSIS/app/" target="_blank" rel="noreferrer">CSIIIV DPWH–NEP–HGAB workbench</a>. Project rows and allocations are review evidence, not proof of completed buildings or spending.</p></footer>'''
 CSS='''<style id="uniform-report-menu-style">
@@ -257,6 +276,11 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser(description='Refresh the shared BetterGov report menu.')
     parser.add_argument('--navigation-only',action='store_true',
                         help='update only menu markup and behavior, preserving page content and styles')
+    parser.add_argument('--refresh-generated-menus',action='store_true',
+                        help='rewrite shared menu markup in generated report HTML')
     args=parser.parse_args()
-    result=apply_navigation_only() if args.navigation_only else apply()
+    if args.navigation_only and args.refresh_generated_menus:
+        parser.error('choose one mode')
+    result=(refresh_generated_menus() if args.refresh_generated_menus else
+            apply_navigation_only() if args.navigation_only else apply())
     print(json.dumps(result,indent=2,ensure_ascii=False))

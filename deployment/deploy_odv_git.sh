@@ -30,9 +30,12 @@ if [[ ! "$DEPLOY_COMMIT" =~ ^(origin/main|[0-9a-fA-F]{7,40})$ ]]; then
   exit 2
 fi
 
-printf 'Deploy %s from origin/main history? Type DEPLOY ODV MAIN: ' "$DEPLOY_COMMIT"
+printf 'Deploy %s from origin/main history? [y/N] ' "$DEPLOY_COMMIT"
 read -r answer
-[[ "$answer" == "DEPLOY ODV MAIN" ]] || { echo "Cancelled."; exit 1; }
+case "$answer" in
+  y|Y|yes|YES|Yes) ;;
+  *) echo "Cancelled."; exit 1 ;;
+esac
 
 deploy_output="$("${SSH[@]}" "$REMOTE_USER@$REMOTE_HOST" "REMOTE_DIR='$REMOTE_DIR' DEPLOY_COMMIT='$DEPLOY_COMMIT' bash -s" <<'REMOTE_DEPLOY'
 set -euo pipefail
@@ -42,8 +45,23 @@ if [[ "$(git -C "$r" branch --show-current)" != "main" ]]; then
   exit 2
 fi
 previous="$(git -C "$r" rev-parse HEAD)"
-if [[ -n "$(git -C "$r" status --porcelain)" ]]; then
-  echo "Refusing deployment: server checkout has local changes." >&2
+if ! git -C "$r" diff --cached --quiet; then
+  echo "Refusing deployment: server checkout has staged changes." >&2
+  exit 2
+fi
+dirty_paths="$(git -C "$r" diff --name-only; git -C "$r" ls-files --others --exclude-standard)"
+unrelated_paths="$(
+  git -C "$r" diff --name-only -- . \
+    ':(exclude,glob)static/nep-preview/**' \
+    ':(exclude)templates/visualizations_home.html' \
+    ':(exclude)templates/mobile/visualizations_home.html'
+  git -C "$r" ls-files --others --exclude-standard -- . \
+    ':(exclude,glob)static/nep-preview/**' \
+    ':(exclude)templates/visualizations_home.html' \
+    ':(exclude)templates/mobile/visualizations_home.html'
+)"
+if [[ -n "$unrelated_paths" ]]; then
+  echo "Refusing deployment: server checkout has changes outside the deployable assets." >&2
   exit 2
 fi
 git -C "$r" fetch origin main
@@ -53,8 +71,18 @@ else
   target="$(git -C "$r" rev-parse "$DEPLOY_COMMIT^{commit}")"
   git -C "$r" merge-base --is-ancestor "$target" FETCH_HEAD
 fi
+rollback_stash="-"
+if [[ -n "$dirty_paths" ]]; then
+  stash_before="$(git -C "$r" rev-parse -q --verify refs/stash 2>/dev/null || true)"
+  git -C "$r" stash push --include-untracked -m "odv deploy rollback $previous"
+  stash_after="$(git -C "$r" rev-parse -q --verify refs/stash 2>/dev/null || true)"
+  if [[ -z "$stash_after" || "$stash_after" == "$stash_before" ]]; then
+    echo "Refusing deployment: Git could not stash the server changes." >&2
+    exit 2
+  fi
+  rollback_stash="$stash_after"
+fi
 if [[ "$previous" != "$target" ]]; then
-  restart_frontend=false
   restart_api=false
   restart_nginx=false
   if ! git -C "$r" diff --quiet "$previous" "$target" -- src Cargo.toml Cargo.lock; then
@@ -64,15 +92,21 @@ if [[ "$previous" != "$target" ]]; then
   if ! git -C "$r" diff --quiet "$previous" "$target" -- visualization.py; then restart_api=true; fi
   if ! git -C "$r" diff --quiet "$previous" "$target" -- 'deployment/*.conf'; then restart_nginx=true; fi
   git -C "$r" reset --hard "$target"
-  if [[ "$restart_frontend" == true ]]; then sudo -n systemctl restart visualization.service; fi
+  if [[ "$rollback_stash" != "-" ]]; then
+    for path in templates/visualizations_home.html templates/mobile/visualizations_home.html; do
+      if git -C "$r" diff --quiet "$previous" "$target" -- "$path" &&
+         git -C "$r" diff --quiet "$rollback_stash" -- "$path"; then
+        git -C "$r" restore --source="$rollback_stash" --worktree -- "$path"
+      fi
+    done
+  fi
   if [[ "$restart_api" == true ]]; then sudo -n systemctl restart visualization_api.service; fi
   if [[ "$restart_nginx" == true ]]; then sudo -n systemctl restart nginx.service; fi
 else
-  restart_frontend=false
   restart_api=false
   restart_nginx=false
 fi
-printf '__DEPLOY_META__ %s %s %s %s %s\n' "$previous" "$target" "$restart_frontend" "$restart_api" "$restart_nginx"
+printf '__DEPLOY_META__ %s %s %s %s %s\n' "$previous" "$target" "$restart_api" "$restart_nginx" "$rollback_stash"
 REMOTE_DEPLOY
 )"
 deploy_meta=""
@@ -82,20 +116,30 @@ while IFS= read -r line; do
     *) printf '%s\n' "$line" ;;
   esac
 done <<< "$deploy_output"
-read -r previous target restart_frontend restart_api restart_nginx <<< "$deploy_meta"
+read -r previous target restart_api restart_nginx rollback_stash <<< "$deploy_meta"
 
 if ! curl --silent --show-error --fail --max-time 15 "$HEALTH_URL/" >/dev/null ||
    ! curl --silent --show-error --fail --max-time 15 "$HEALTH_URL/static/nep-preview/" >/dev/null; then
   echo "Local HTTP health check failed for $HEALTH_URL." >&2
   "${SSH[@]}" "$REMOTE_USER@$REMOTE_HOST" \
-    "REMOTE_DIR='$REMOTE_DIR' PREVIOUS='$previous' RESTART_FRONTEND='$restart_frontend' RESTART_API='$restart_api' RESTART_NGINX='$restart_nginx' bash -s" <<'REMOTE_ROLLBACK'
+    "REMOTE_DIR='$REMOTE_DIR' PREVIOUS='$previous' RESTART_API='$restart_api' RESTART_NGINX='$restart_nginx' ROLLBACK_STASH='$rollback_stash' bash -s" <<'REMOTE_ROLLBACK'
 set -euo pipefail
 r="$REMOTE_DIR"
 git -C "$r" reset --hard "$PREVIOUS"
-if [[ "$RESTART_FRONTEND" == true ]]; then sudo -n systemctl restart visualization.service; fi
+if [[ "$ROLLBACK_STASH" != "-" ]]; then git -C "$r" stash apply --index "$ROLLBACK_STASH"; fi
 if [[ "$RESTART_API" == true ]]; then sudo -n systemctl restart visualization_api.service; fi
 if [[ "$RESTART_NGINX" == true ]]; then sudo -n systemctl restart nginx.service; fi
 REMOTE_ROLLBACK
   exit 1
+fi
+if [[ "$rollback_stash" != "-" ]]; then
+  "${SSH[@]}" "$REMOTE_USER@$REMOTE_HOST" \
+    "REMOTE_DIR='$REMOTE_DIR' ROLLBACK_STASH='$rollback_stash' bash -s" <<'REMOTE_FINALIZE'
+set -euo pipefail
+r="$REMOTE_DIR"
+if [[ "$(git -C "$r" rev-parse -q --verify refs/stash 2>/dev/null || true)" == "$ROLLBACK_STASH" ]]; then
+  git -C "$r" stash drop stash@{0}
+fi
+REMOTE_FINALIZE
 fi
 echo "Local HTTP health checks passed."
