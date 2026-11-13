@@ -83,9 +83,9 @@
 
     <section class="cmpd-section" aria-labelledby="match-title">
       <h2 id="match-title">Review matching POW items</h2>
-      <p class="cmpd-section-intro">Choose a CMPD material to see matching POW bill rows. The table pairs a reference rate only when the available region and unit match.</p>
+      <p class="cmpd-section-intro">Choose a CMPD material to see matching POW bill rows and the regional CMPD reference. Comparisons require the same source region and unit.</p>
       <div class="cmpd-overview">
-        <div><strong>Source coverage is incomplete</strong><p>The supplied CMPD PDF includes NCR pages 4–10, CAR pages 12–17, and only pages 19–20 of Region I. Other regions are not present in this extract. Where a POW region has no CMPD rate, the table uses the highest available rate for the same unit as an estimate; this is not a local regional price. Rates are never compared across different units.</p></div>
+        <div><strong>17-region office-level extract</strong><p>The supplied CSV contains 63,040 material-office rows for 320 materials, 197 implementing offices, and 17 listed regions; it has no BARMM entries. The reference table preserves each office price, price category, and source label. POW comparisons use the source region’s regional average and the same unit, never a single DEO price. Where no matching regional average is available, the highest available same-material, same-unit regional average is shown as an estimate. 438 rows have no office price (status NU); blank values are not treated as zero.</p></div>
         <span class="cmpd-period">1st semester · CY 2026</span>
       </div>
       <div class="cmpd-controls">
@@ -106,8 +106,8 @@
         </table>
       </div>
       <details class="cmpd-rates">
-        <summary>Reference rates in the supplied CMPD extract</summary>
-        <div class="cmpd-rates-body"><div class="cmpd-table-wrap"><table><thead><tr><th>Code</th><th>Material</th><th>Unit</th><th>Region</th><th>Average rate</th><th>Source</th></tr></thead><tbody id="rates"><tr><td class="cmpd-empty" colspan="6">Loading rates…</td></tr></tbody></table></div></div>
+        <summary>Office prices and regional averages in the supplied CMPD extract</summary>
+        <div class="cmpd-rates-body"><div class="cmpd-table-wrap"><table><thead><tr><th>Code</th><th>Material</th><th>Unit</th><th>Region</th><th>Implementing office</th><th>Office price</th><th>Regional average</th><th>Price category and source</th></tr></thead><tbody id="rates"><tr><td class="cmpd-empty" colspan="8">Loading office prices…</td></tr></tbody></table></div></div>
       </details>
       <div class="cmpd-source-links"><span>Reference source: DPWH Construction Materials Price Data, 1st Semester CY 2026</span><span>Guidance: DPWH Department Order 043, s. 2026</span></div>
     </section>
