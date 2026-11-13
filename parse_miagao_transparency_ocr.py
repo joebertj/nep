@@ -29,6 +29,7 @@ DOC_DIR = OUT_DIR / "documents"
 STATUS_PATH = OUT_DIR / "status.json"
 ROWS_PATH = OUT_DIR / "ocr-rows.jsonl"
 ERRORS_PATH = OUT_DIR / "errors.jsonl"
+SKIP_LIST_PATH = OUT_DIR / "skip-list.json"
 MIN_NATIVE_TEXT_CHARS = 200
 IMAGE_COVERAGE_TEXT_CEILING = 1200
 USER_AGENT = "BetterMiagao transparency OCR"
@@ -88,6 +89,46 @@ def inventory_documents():
             if all((old["documentUrl"], old["sourcePageUrl"]) != key for old in group["urls"]):
                 group["urls"].append(ref)
     return inventory, list(groups.values())
+
+
+def document_identifiers(item):
+    identifiers = {item["sha256"].lower(), item["localPath"].lower()}
+    identifiers.add(Path(item["localPath"]).name.lower())
+    for ref in item["urls"]:
+        identifiers.add(ref["fileName"].lower())
+        identifiers.add(ref["documentUrl"].lower())
+    return identifiers
+
+
+def update_skip_list(documents, add_values, remove_values):
+    entries = json.loads(SKIP_LIST_PATH.read_text(encoding="utf-8")) if SKIP_LIST_PATH.exists() else []
+    by_sha = {entry["sha256"]: entry for entry in entries}
+
+    def resolve(value):
+        query = value.strip().lower()
+        matches = [item for item in documents if query in document_identifiers(item)]
+        if not matches:
+            raise SystemExit(f"Skip-list identifier did not match an inventory document: {value}")
+        if len(matches) > 1:
+            raise SystemExit(f"Skip-list identifier is ambiguous; use a SHA-256 or archive path: {value}")
+        return matches[0]
+
+    for value in remove_values:
+        item = resolve(value)
+        by_sha.pop(item["sha256"], None)
+    for value in add_values:
+        item = resolve(value)
+        by_sha[item["sha256"]] = {
+            "sha256": item["sha256"],
+            "localPath": item["localPath"],
+            "fileName": item["urls"][0]["fileName"] if item["urls"] else Path(item["localPath"]).name,
+            "addedAtUtc": now(),
+        }
+
+    entries = sorted(by_sha.values(), key=lambda entry: entry["sha256"])
+    if entries or SKIP_LIST_PATH.exists() or add_values or remove_values:
+        write_json(SKIP_LIST_PATH, entries)
+    return by_sha
 
 
 def alpha_count(text: str) -> int:
@@ -305,24 +346,24 @@ def main():
     parser.add_argument("--max-documents", type=int, default=0, help="optional cap for a partial run; zero processes all OCR candidates")
     parser.add_argument("--rebuild-rows", action="store_true", help="rebuild the unified OCR JSONL from completed per-document results")
     parser.add_argument("--retry-errors", action="store_true", help="retry files with a saved .error.json record; skipped by default")
+    parser.add_argument("--skip-file", action="append", default=[], metavar="SHA256|PATH|NAME", help="persistently skip a file (repeatable; accepts SHA-256, archive path, or unique filename)")
+    parser.add_argument("--unskip-file", action="append", default=[], metavar="SHA256|PATH|NAME", help="remove a file from the persistent skip list (repeatable)")
     parser.add_argument("--document-timeout-seconds", type=int, default=120, help="skip and log a file if OCR exceeds this time")
     parser.add_argument("--worker-start-timeout-seconds", type=int, default=300, help="maximum time allowed for PaddleOCR worker startup")
     args = parser.parse_args()
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     DOC_DIR.mkdir(parents=True, exist_ok=True)
 
-    try:
-        import pymupdf as fitz
-        import numpy as np
-        from PIL import Image, ImageOps
-    except ImportError as exc:
-        raise SystemExit(f"OCR dependencies unavailable in this environment: {exc}") from exc
-
     inventory, documents = inventory_documents()
+    skipped_files = update_skip_list(documents, args.skip_file, args.unskip_file)
     completed = []
     pending = []
     prior_errors = []
+    intentionally_skipped = []
     for item in documents:
+        if item["sha256"] in skipped_files:
+            intentionally_skipped.append(item)
+            continue
         result_path = DOC_DIR / f"{item['sha256']}.json"
         if result_path.exists():
             completed.append(item)
@@ -334,8 +375,35 @@ def main():
         pending.append(item)
     if args.rebuild_rows:
         count = refresh_rows(completed)
-        print(f"Rebuilt {ROWS_PATH} with {count} page/image rows", flush=True)
+        if STATUS_PATH.exists():
+            status = json.loads(STATUS_PATH.read_text(encoding="utf-8"))
+            status.update({
+                "updatedAtUtc": now(),
+                "intentionallySkippedDocuments": len(intentionally_skipped),
+                "skipListPath": str(SKIP_LIST_PATH.relative_to(ROOT)),
+                "skippedFiles": [
+                    {"sha256": item["sha256"], "localPath": item["localPath"],
+                     "fileName": item["urls"][0]["fileName"] if item["urls"] else Path(item["localPath"]).name}
+                    for item in intentionally_skipped
+                ],
+            })
+            current = status.get("current") or {}
+            if current.get("sha256") in skipped_files:
+                status.update({
+                    "status": "paused",
+                    "current": None,
+                    "resumeNote": "Run the parser to continue; intentionally skipped files are excluded from the queue.",
+                })
+            write_json(STATUS_PATH, status)
+        print(f"Rebuilt {ROWS_PATH} with {count} page/image rows; {len(intentionally_skipped)} files are on the persistent skip list", flush=True)
         return
+
+    try:
+        import pymupdf as fitz
+        import numpy as np
+        from PIL import Image, ImageOps
+    except ImportError as exc:
+        raise SystemExit(f"OCR dependencies unavailable in this environment: {exc}") from exc
     if args.max_documents:
         pending = pending[: args.max_documents]
 
@@ -377,12 +445,14 @@ def main():
         "pendingOcrDocuments": len(candidates),
         "completedDocuments": len(completed),
         "skippedPriorErrors": len(prior_errors),
+        "intentionallySkippedDocuments": len(intentionally_skipped),
+        "skipListPath": str(SKIP_LIST_PATH.relative_to(ROOT)),
         "discoveryErrors": discovery_errors,
         "current": None,
         "rowsPath": str(ROWS_PATH.relative_to(ROOT)),
     }
     write_json(STATUS_PATH, state)
-    print(f"OCR queue: {len(candidates)} unique image/scan files; {len(completed)} completed; {len(prior_errors)} prior failures skipped (use --retry-errors to retry).", flush=True)
+    print(f"OCR queue: {len(candidates)} unique image/scan files; {len(completed)} completed; {len(intentionally_skipped)} intentionally skipped; {len(prior_errors)} prior failures skipped (use --retry-errors to retry).", flush=True)
     successful = []
     failed = list(prior_errors) + list(discovery_errors)
     total_pages = 0
@@ -451,6 +521,8 @@ def main():
         "completedOcrDocuments": len(successful),
         "ocrPageRows": row_count,
         "failedDocuments": len(failed),
+        "intentionallySkippedDocuments": len(intentionally_skipped),
+        "skipListPath": str(SKIP_LIST_PATH.relative_to(ROOT)),
         "errors": failed,
     })
     write_json(STATUS_PATH, state)

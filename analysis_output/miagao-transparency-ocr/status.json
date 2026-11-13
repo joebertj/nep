@@ -1,27 +1,24 @@
 {
   "title": "Miagao transparency OCR parser",
-  "updatedAtUtc": "2026-11-10T20:18:32+00:00",
-  "status": "processing",
+  "updatedAtUtc": "2026-11-13T08:59:23+00:00",
+  "status": "paused",
   "inventoryGeneratedAt": "2026-11-10T15:30:23+00:00",
   "sourceDocuments": 654,
-  "uniqueOcrCandidateFiles": 542,
-  "pendingOcrDocuments": 542,
+  "uniqueOcrCandidateFiles": 499,
+  "pendingOcrDocuments": 499,
   "completedDocuments": 155,
-  "skippedPriorErrors": 1,
+  "skippedPriorErrors": 0,
   "discoveryErrors": [],
-  "current": {
-    "index": 56,
-    "total": 542,
-    "sha256": "8a546d9a88bae1bb243bb0b8fc082ffb2d5a400f238d13a8a0ba09247b703ec7",
-    "file": "Section-1-Invitation-to-Bid-mwest-ws-rebid-2-1080x1544.jpg",
-    "ocrPages": [
-      1
-    ]
-  },
+  "current": null,
   "rowsPath": "analysis_output/miagao-transparency-ocr/ocr-rows.jsonl",
-  "completedOcrDocuments": 54,
-  "completedOcrPages": 44,
-  "lastCompletedAtUtc": "2026-11-10T20:16:27+00:00",
-  "failedDocuments": 12,
-  "skippedDocuments": 12
+  "resumeNote": "Run the parser to continue; intentionally skipped files are excluded from the queue.",
+  "intentionallySkippedDocuments": 1,
+  "skipListPath": "analysis_output/miagao-transparency-ocr/skip-list.json",
+  "skippedFiles": [
+    {
+      "sha256": "34d63dc8fc9e64bb0a420780758e64dbed74be41e99c9776d9f94a32d92d6fe7",
+      "localPath": "data_sources/miagao_transparency_archive/files/46e536189d2f0a60.jpg",
+      "fileName": "Section-1-Invitation-to-Bid-basura-mo-1.jpg"
+    }
+  ]
 }
