@@ -1,0 +1,17 @@
+{
+  "sourceFileSha256": "e2d58a0298cda0bf37116f3c7d2fa1a62f5768f795b3a8d4ea9f2fed4b105c8d",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/a3cd93b716152db8.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/10/Section-1-Invitation-to-Bid-IT-MTO-2.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-i-t-equipment-for-use-of-treasurers-office/",
+      "sourceTitle": "INVITATION TO BID FOR I.T. EQUIPMENT FOR USE OF TREASURER’S OFFICE",
+      "publishedAt": "2018-10-03T08:00:41",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Section-1-Invitation-to-Bid-IT-MTO-2.jpg"
+    }
+  ],
+  "stage": "ocr",
+  "error": "TimeoutError: OCR exceeded 30 seconds; worker stopped and file skipped"
+}

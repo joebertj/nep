@@ -1,0 +1,521 @@
+{
+  "sourceFileSha256": "16e43c8049b26e33efaafa593f746c682cde2d5a752b0c45fcf32fb1ae2193f7",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/ddbb6097e6466a4b.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/12/Section-I-Invitation-to-Bid-local-access2.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/section-i-invitation-to-bid-local-access/",
+      "sourceTitle": "Section I: Invitation to Bid local access",
+      "publishedAt": "2018-12-07T01:48:11",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Section-I-Invitation-to-Bid-local-access2.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "16e43c8049b26e33efaafa593f746c682cde2d5a752b0c45fcf32fb1ae2193f7",
+      "sourceFileBytes": 75010,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/ddbb6097e6466a4b.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/12/Section-I-Invitation-to-Bid-local-access2.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/section-i-invitation-to-bid-local-access/",
+          "sourceTitle": "Section I: Invitation to Bid local access",
+          "publishedAt": "2018-12-07T01:48:11",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "Section-I-Invitation-to-Bid-local-access2.jpg"
+        }
+      ],
+      "sourceFileName": "Section-I-Invitation-to-Bid-local-access2.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Volume : 220 cu.m.\n3. Aggregate Sub-base Course\nQuantity: 1,800 sq.m.\nVolume: 180 cu.m.\n4. Portland Cement Concrete Pavement (PCCP\nDimension: (0.20m x 4.0m x 300m)\nQuantity: 1.200 sq.m.\nVolume: 240 cu.m.\n5Road Shouldering\nQuantity: 600 sq.m.\nVolume: 90 cu.m.\n6. Masonry Line Ditch Canal\nQuantity: 250 L.m.\nVolume : 79 cu.m.\n7. Reinforced Concrete Pipe Culvert (RCPC\nQuantity: 14 L.m.\n8. Grouted Riprap\nQuantity: 90 L.m.\nVolume : 32.40 cu.m.\n3\n1\nJOB\nCONTRACT ON LOCAL ACCESS ROAD IN BRGY.\nBAGUMBAYAN - MAT-Y ROAD\n1. Clearing and grubbing of site / mobilization of equipment\nQty. : 1,250 sg.m.\n2. Earthworks\nQuantity: 700 sq.m.\nVolume : 1400 cu.m.\n3. Aggregate Sub-base Course\nQuantity: 1,750 sq.m.\nVolume: 175 cu.m.\n4. Portland Cement Concrete Pavement (PCCP)\nDimension: (0.20m x 5.10m x 250m)\nQuantity: 1.275 sq.m.\nVolume: 255 cu.m.\n5. Road Shouldering\nQuantity: 500 so.m.\nVolume : 75 cu.m.\n6. Masonry Line Ditch Canal\nQuantity: 150 L.m.\nVolume: 27.37 cu.m.\n7. Reinforced Concrete Pipe Culvert (RCPC)\nQuantity: 16 L.m.\n8.Grouted Riprap\nQuantity:60 L.m.\nVolume: 29.00 cu.m.",
+      "ocrText": "Volume : 220 cu.m.\n3. Aggregate Sub-base Course\nQuantity: 1,800 sq.m.\nVolume: 180 cu.m.\n4. Portland Cement Concrete Pavement (PCCP\nDimension: (0.20m x 4.0m x 300m)\nQuantity: 1.200 sq.m.\nVolume: 240 cu.m.\n5Road Shouldering\nQuantity: 600 sq.m.\nVolume: 90 cu.m.\n6. Masonry Line Ditch Canal\nQuantity: 250 L.m.\nVolume : 79 cu.m.\n7. Reinforced Concrete Pipe Culvert (RCPC\nQuantity: 14 L.m.\n8. Grouted Riprap\nQuantity: 90 L.m.\nVolume : 32.40 cu.m.\n3\n1\nJOB\nCONTRACT ON LOCAL ACCESS ROAD IN BRGY.\nBAGUMBAYAN - MAT-Y ROAD\n1. Clearing and grubbing of site / mobilization of equipment\nQty. : 1,250 sg.m.\n2. Earthworks\nQuantity: 700 sq.m.\nVolume : 1400 cu.m.\n3. Aggregate Sub-base Course\nQuantity: 1,750 sq.m.\nVolume: 175 cu.m.\n4. Portland Cement Concrete Pavement (PCCP)\nDimension: (0.20m x 5.10m x 250m)\nQuantity: 1.275 sq.m.\nVolume: 255 cu.m.\n5. Road Shouldering\nQuantity: 500 so.m.\nVolume : 75 cu.m.\n6. Masonry Line Ditch Canal\nQuantity: 150 L.m.\nVolume: 27.37 cu.m.\n7. Reinforced Concrete Pipe Culvert (RCPC)\nQuantity: 16 L.m.\n8.Grouted Riprap\nQuantity:60 L.m.\nVolume: 29.00 cu.m.",
+      "ocrTokenCount": 47,
+      "ocrMeanConfidence": 0.9732,
+      "ocrTokens": [
+        {
+          "text": "Volume : 220 cu.m.",
+          "confidence": 0.9522,
+          "boxPx": [
+            317.0,
+            71.0,
+            401.0,
+            84.0
+          ]
+        },
+        {
+          "text": "3. Aggregate Sub-base Course",
+          "confidence": 0.9994,
+          "boxPx": [
+            309.0,
+            84.0,
+            436.0,
+            97.0
+          ]
+        },
+        {
+          "text": "Quantity: 1,800 sq.m.",
+          "confidence": 0.9556,
+          "boxPx": [
+            317.0,
+            96.0,
+            407.0,
+            111.0
+          ]
+        },
+        {
+          "text": "Volume: 180 cu.m.",
+          "confidence": 0.9566,
+          "boxPx": [
+            317.0,
+            111.0,
+            401.0,
+            124.0
+          ]
+        },
+        {
+          "text": "4. Portland Cement Concrete Pavement (PCCP",
+          "confidence": 0.9812,
+          "boxPx": [
+            309.0,
+            126.0,
+            502.0,
+            136.0
+          ]
+        },
+        {
+          "text": "Dimension: (0.20m x 4.0m x 300m)",
+          "confidence": 0.9914,
+          "boxPx": [
+            317.0,
+            138.0,
+            461.0,
+            150.0
+          ]
+        },
+        {
+          "text": "Quantity: 1.200 sq.m.",
+          "confidence": 0.966,
+          "boxPx": [
+            317.0,
+            150.0,
+            407.0,
+            163.0
+          ]
+        },
+        {
+          "text": "Volume: 240 cu.m.",
+          "confidence": 0.9654,
+          "boxPx": [
+            317.0,
+            164.0,
+            401.0,
+            177.0
+          ]
+        },
+        {
+          "text": "5Road Shouldering",
+          "confidence": 0.9785,
+          "boxPx": [
+            307.0,
+            176.0,
+            395.0,
+            191.0
+          ]
+        },
+        {
+          "text": "Quantity: 600 sq.m.",
+          "confidence": 0.9651,
+          "boxPx": [
+            316.0,
+            189.0,
+            399.0,
+            204.0
+          ]
+        },
+        {
+          "text": "Volume: 90 cu.m.",
+          "confidence": 0.9715,
+          "boxPx": [
+            316.0,
+            204.0,
+            396.0,
+            217.0
+          ]
+        },
+        {
+          "text": "6. Masonry Line Ditch Canal",
+          "confidence": 0.9737,
+          "boxPx": [
+            307.0,
+            216.0,
+            426.0,
+            231.0
+          ]
+        },
+        {
+          "text": "Quantity: 250 L.m.",
+          "confidence": 0.9931,
+          "boxPx": [
+            318.0,
+            232.0,
+            394.0,
+            243.0
+          ]
+        },
+        {
+          "text": "Volume : 79 cu.m.",
+          "confidence": 0.9614,
+          "boxPx": [
+            318.0,
+            245.0,
+            396.0,
+            256.0
+          ]
+        },
+        {
+          "text": "7. Reinforced Concrete Pipe Culvert (RCPC",
+          "confidence": 0.9875,
+          "boxPx": [
+            307.0,
+            255.0,
+            488.0,
+            268.0
+          ]
+        },
+        {
+          "text": "Quantity: 14 L.m.",
+          "confidence": 0.9819,
+          "boxPx": [
+            318.0,
+            271.0,
+            389.0,
+            282.0
+          ]
+        },
+        {
+          "text": "8. Grouted Riprap",
+          "confidence": 0.9806,
+          "boxPx": [
+            307.0,
+            282.0,
+            385.0,
+            297.0
+          ]
+        },
+        {
+          "text": "Quantity: 90 L.m.",
+          "confidence": 0.9533,
+          "boxPx": [
+            318.0,
+            297.0,
+            390.0,
+            308.0
+          ]
+        },
+        {
+          "text": "Volume : 32.40 cu.m.",
+          "confidence": 0.9582,
+          "boxPx": [
+            315.0,
+            308.0,
+            408.0,
+            321.0
+          ]
+        },
+        {
+          "text": "3",
+          "confidence": 0.9999,
+          "boxPx": [
+            157.0,
+            325.0,
+            167.0,
+            336.0
+          ]
+        },
+        {
+          "text": "1",
+          "confidence": 0.9998,
+          "boxPx": [
+            215.0,
+            325.0,
+            225.0,
+            336.0
+          ]
+        },
+        {
+          "text": "JOB",
+          "confidence": 0.9998,
+          "boxPx": [
+            258.0,
+            335.0,
+            285.0,
+            349.0
+          ]
+        },
+        {
+          "text": "CONTRACT ON LOCAL ACCESS ROAD IN BRGY.",
+          "confidence": 0.9922,
+          "boxPx": [
+            310.0,
+            330.0,
+            547.0,
+            343.0
+          ]
+        },
+        {
+          "text": "BAGUMBAYAN - MAT-Y ROAD",
+          "confidence": 0.9713,
+          "boxPx": [
+            300.0,
+            342.0,
+            448.0,
+            354.0
+          ]
+        },
+        {
+          "text": "1. Clearing and grubbing of site / mobilization of equipment",
+          "confidence": 0.9649,
+          "boxPx": [
+            308.0,
+            362.0,
+            547.0,
+            375.0
+          ]
+        },
+        {
+          "text": "Qty. : 1,250 sg.m.",
+          "confidence": 0.9491,
+          "boxPx": [
+            318.0,
+            377.0,
+            392.0,
+            388.0
+          ]
+        },
+        {
+          "text": "2. Earthworks",
+          "confidence": 0.9604,
+          "boxPx": [
+            308.0,
+            390.0,
+            367.0,
+            401.0
+          ]
+        },
+        {
+          "text": "Quantity: 700 sq.m.",
+          "confidence": 0.9905,
+          "boxPx": [
+            316.0,
+            401.0,
+            399.0,
+            416.0
+          ]
+        },
+        {
+          "text": "Volume : 1400 cu.m.",
+          "confidence": 0.9549,
+          "boxPx": [
+            315.0,
+            415.0,
+            406.0,
+            430.0
+          ]
+        },
+        {
+          "text": "3. Aggregate Sub-base Course",
+          "confidence": 0.997,
+          "boxPx": [
+            308.0,
+            430.0,
+            436.0,
+            443.0
+          ]
+        },
+        {
+          "text": "Quantity: 1,750 sq.m.",
+          "confidence": 0.9585,
+          "boxPx": [
+            317.0,
+            443.0,
+            407.0,
+            455.0
+          ]
+        },
+        {
+          "text": "Volume: 175 cu.m.",
+          "confidence": 0.9895,
+          "boxPx": [
+            317.0,
+            455.0,
+            401.0,
+            468.0
+          ]
+        },
+        {
+          "text": "4. Portland Cement Concrete Pavement (PCCP)",
+          "confidence": 0.9803,
+          "boxPx": [
+            308.0,
+            468.0,
+            503.0,
+            482.0
+          ]
+        },
+        {
+          "text": "Dimension: (0.20m x 5.10m x 250m)",
+          "confidence": 0.9894,
+          "boxPx": [
+            317.0,
+            482.0,
+            466.0,
+            495.0
+          ]
+        },
+        {
+          "text": "Quantity: 1.275 sq.m.",
+          "confidence": 0.9482,
+          "boxPx": [
+            317.0,
+            496.0,
+            407.0,
+            509.0
+          ]
+        },
+        {
+          "text": "Volume: 255 cu.m.",
+          "confidence": 0.9646,
+          "boxPx": [
+            316.0,
+            507.0,
+            401.0,
+            522.0
+          ]
+        },
+        {
+          "text": "5. Road Shouldering",
+          "confidence": 0.9583,
+          "boxPx": [
+            308.0,
+            521.0,
+            395.0,
+            536.0
+          ]
+        },
+        {
+          "text": "Quantity: 500 so.m.",
+          "confidence": 0.965,
+          "boxPx": [
+            317.0,
+            536.0,
+            399.0,
+            548.0
+          ]
+        },
+        {
+          "text": "Volume : 75 cu.m.",
+          "confidence": 0.9458,
+          "boxPx": [
+            318.0,
+            549.0,
+            396.0,
+            561.0
+          ]
+        },
+        {
+          "text": "6. Masonry Line Ditch Canal",
+          "confidence": 0.9535,
+          "boxPx": [
+            309.0,
+            561.0,
+            425.0,
+            574.0
+          ]
+        },
+        {
+          "text": "Quantity: 150 L.m.",
+          "confidence": 0.9856,
+          "boxPx": [
+            318.0,
+            576.0,
+            394.0,
+            587.0
+          ]
+        },
+        {
+          "text": "Volume: 27.37 cu.m.",
+          "confidence": 0.9734,
+          "boxPx": [
+            316.0,
+            587.0,
+            408.0,
+            602.0
+          ]
+        },
+        {
+          "text": "7. Reinforced Concrete Pipe Culvert (RCPC)",
+          "confidence": 0.9734,
+          "boxPx": [
+            308.0,
+            602.0,
+            489.0,
+            615.0
+          ]
+        },
+        {
+          "text": "Quantity: 16 L.m.",
+          "confidence": 0.9846,
+          "boxPx": [
+            318.0,
+            616.0,
+            389.0,
+            627.0
+          ]
+        },
+        {
+          "text": "8.Grouted Riprap",
+          "confidence": 0.9544,
+          "boxPx": [
+            308.0,
+            629.0,
+            381.0,
+            640.0
+          ]
+        },
+        {
+          "text": "Quantity:60 L.m.",
+          "confidence": 0.9811,
+          "boxPx": [
+            318.0,
+            643.0,
+            389.0,
+            653.0
+          ]
+        },
+        {
+          "text": "Volume: 29.00 cu.m.",
+          "confidence": 0.9829,
+          "boxPx": [
+            317.0,
+            654.0,
+            408.0,
+            667.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

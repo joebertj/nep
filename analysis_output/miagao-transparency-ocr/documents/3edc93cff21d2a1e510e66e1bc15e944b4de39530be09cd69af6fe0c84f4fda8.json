@@ -1,0 +1,151 @@
+{
+  "sourceFileSha256": "3edc93cff21d2a1e510e66e1bc15e944b4de39530be09cd69af6fe0c84f4fda8",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/bd107c18e309a3c1.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-mwest-ws-rebid-3-210x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-the-construction-of-miagao-west-central-elem-school-water-system-miagao-iloilo/",
+      "sourceTitle": "INVITATION TO BID FOR THE CONSTRUCTION OF MIAGAO WEST CENTRAL ELEM. SCHOOL WATER SYSTEM, MIAGAO, ILOILO",
+      "publishedAt": "2018-09-19T06:25:40",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Section-1-Invitation-to-Bid-mwest-ws-rebid-3-210x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "3edc93cff21d2a1e510e66e1bc15e944b4de39530be09cd69af6fe0c84f4fda8",
+      "sourceFileBytes": 18058,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/bd107c18e309a3c1.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-mwest-ws-rebid-3-210x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-the-construction-of-miagao-west-central-elem-school-water-system-miagao-iloilo/",
+          "sourceTitle": "INVITATION TO BID FOR THE CONSTRUCTION OF MIAGAO WEST CENTRAL ELEM. SCHOOL WATER SYSTEM, MIAGAO, ILOILO",
+          "publishedAt": "2018-09-19T06:25:40",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Section-1-Invitation-to-Bid-mwest-ws-rebid-3-210x300.jpg"
+        }
+      ],
+      "sourceFileName": "Section-1-Invitation-to-Bid-mwest-ws-rebid-3-210x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "859\nW\n76\n77\n78\n79\n90\ni\nh1.5H010\n12",
+      "ocrText": "859\nW\n76\n77\n78\n79\n90\ni\nh1.5H010\n12",
+      "ocrTokenCount": 10,
+      "ocrMeanConfidence": 0.7073,
+      "ocrTokens": [
+        {
+          "text": "859",
+          "confidence": 0.7704,
+          "boxPx": [
+            24.0,
+            0.0,
+            35.0,
+            20.0
+          ]
+        },
+        {
+          "text": "W",
+          "confidence": 0.2287,
+          "boxPx": [
+            26.0,
+            19.0,
+            33.0,
+            24.0
+          ]
+        },
+        {
+          "text": "76",
+          "confidence": 0.9383,
+          "boxPx": [
+            26.0,
+            70.0,
+            33.0,
+            75.0
+          ]
+        },
+        {
+          "text": "77",
+          "confidence": 0.9975,
+          "boxPx": [
+            25.0,
+            93.0,
+            34.0,
+            101.0
+          ]
+        },
+        {
+          "text": "78",
+          "confidence": 0.7025,
+          "boxPx": [
+            25.0,
+            118.0,
+            34.0,
+            126.0
+          ]
+        },
+        {
+          "text": "79",
+          "confidence": 0.9699,
+          "boxPx": [
+            25.0,
+            167.0,
+            34.0,
+            175.0
+          ]
+        },
+        {
+          "text": "90",
+          "confidence": 0.7143,
+          "boxPx": [
+            25.0,
+            243.0,
+            34.0,
+            249.0
+          ]
+        },
+        {
+          "text": "i",
+          "confidence": 0.5715,
+          "boxPx": [
+            23.0,
+            245.0,
+            34.0,
+            257.0
+          ]
+        },
+        {
+          "text": "h1.5H010",
+          "confidence": 0.5985,
+          "boxPx": [
+            160.0,
+            248.0,
+            200.0,
+            255.0
+          ]
+        },
+        {
+          "text": "12",
+          "confidence": 0.5814,
+          "boxPx": [
+            25.0,
+            260.0,
+            35.0,
+            269.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

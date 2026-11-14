@@ -1,0 +1,211 @@
+{
+  "sourceFileSha256": "36fc1c5a0976d580a9703fea875b7b9aee1400648dfca4dc8114583d15c6ba74",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/66f4372d1cbcb337.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/10/Invitation-to-Bid-for-Ten-10-Units-Laptop-for-the-Use-of-the-Office-of-Sangguniang-Bayan-Miagao-Iloilo-1-216x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-ten-10-units-laptop-for-the-use-of-the-office-of-the-sangguniang-bayan-miagao-iloilo/",
+      "sourceTitle": "INVITATION TO BID FOR TEN (10) UNITS LAPTOP FOR THE USE OF THE OFFICE OF THE SANGGUNIANG BAYAN, MIAGAO, ILOILO",
+      "publishedAt": "2018-10-05T05:11:49",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Invitation-to-Bid-for-Ten-10-Units-Laptop-for-the-Use-of-the-Office-of-Sangguniang-Bayan-Miagao-Iloilo-1-216x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "36fc1c5a0976d580a9703fea875b7b9aee1400648dfca4dc8114583d15c6ba74",
+      "sourceFileBytes": 18792,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/66f4372d1cbcb337.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/10/Invitation-to-Bid-for-Ten-10-Units-Laptop-for-the-Use-of-the-Office-of-Sangguniang-Bayan-Miagao-Iloilo-1-216x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-ten-10-units-laptop-for-the-use-of-the-office-of-the-sangguniang-bayan-miagao-iloilo/",
+          "sourceTitle": "INVITATION TO BID FOR TEN (10) UNITS LAPTOP FOR THE USE OF THE OFFICE OF THE SANGGUNIANG BAYAN, MIAGAO, ILOILO",
+          "publishedAt": "2018-10-05T05:11:49",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Invitation-to-Bid-for-Ten-10-Units-Laptop-for-the-Use-of-the-Office-of-Sangguniang-Bayan-Miagao-Iloilo-1-216x300.jpg"
+        }
+      ],
+      "sourceFileName": "Invitation-to-Bid-for-Ten-10-Units-Laptop-for-the-Use-of-the-Office-of-Sangguniang-Bayan-Miagao-Iloilo-1-216x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Repubbic of the Phalopines\nWENICIPALITY OF MIAGAO\nwebte menlosae.geva\nINVITATION TO BID FOR TEN (1O) UNITS LAPTOP POR THE UISE OF\nTHE OFFICE OF THE SANGGUNIANG BAYAN, MIAGAO, ILOILO\nSangwa, Aud Nador 1821-1-87-d-0gd Ralpes Teur 20caads 1i apy\nNO.\nguavtry\nFARD DRISK LT2.51NCh 5480 RPM\nOS:LATESTS+-BTOS\nDISPLAY 15 10\n(/0 POkTs E3 (8)-46) andk\ny (Parts an\nC4SE/B4CCarykng Blag/kompeack/came\n2 Drir Faes. R1-45\nI T8 SATA HES",
+      "ocrText": "Repubbic of the Phalopines\nWENICIPALITY OF MIAGAO\nwebte menlosae.geva\nINVITATION TO BID FOR TEN (1O) UNITS LAPTOP POR THE UISE OF\nTHE OFFICE OF THE SANGGUNIANG BAYAN, MIAGAO, ILOILO\nSangwa, Aud Nador 1821-1-87-d-0gd Ralpes Teur 20caads 1i apy\nNO.\nguavtry\nFARD DRISK LT2.51NCh 5480 RPM\nOS:LATESTS+-BTOS\nDISPLAY 15 10\n(/0 POkTs E3 (8)-46) andk\ny (Parts an\nC4SE/B4CCarykng Blag/kompeack/came\n2 Drir Faes. R1-45\nI T8 SATA HES",
+      "ocrTokenCount": 16,
+      "ocrMeanConfidence": 0.7596,
+      "ocrTokens": [
+        {
+          "text": "Repubbic of the Phalopines",
+          "confidence": 0.8525,
+          "boxPx": [
+            50.0,
+            1.0,
+            107.0,
+            8.0
+          ]
+        },
+        {
+          "text": "WENICIPALITY OF MIAGAO",
+          "confidence": 0.9446,
+          "boxPx": [
+            49.0,
+            11.0,
+            121.0,
+            19.0
+          ]
+        },
+        {
+          "text": "webte menlosae.geva",
+          "confidence": 0.6414,
+          "boxPx": [
+            48.0,
+            24.0,
+            116.0,
+            31.0
+          ]
+        },
+        {
+          "text": "INVITATION TO BID FOR TEN (1O) UNITS LAPTOP POR THE UISE OF",
+          "confidence": 0.9288,
+          "boxPx": [
+            10.0,
+            44.0,
+            197.0,
+            55.0
+          ]
+        },
+        {
+          "text": "THE OFFICE OF THE SANGGUNIANG BAYAN, MIAGAO, ILOILO",
+          "confidence": 0.9802,
+          "boxPx": [
+            16.0,
+            55.0,
+            190.0,
+            63.0
+          ]
+        },
+        {
+          "text": "Sangwa, Aud Nador 1821-1-87-d-0gd Ralpes Teur 20caads 1i apy",
+          "confidence": 0.5764,
+          "boxPx": [
+            23.0,
+            73.0,
+            199.0,
+            80.0
+          ]
+        },
+        {
+          "text": "NO.",
+          "confidence": 0.8747,
+          "boxPx": [
+            27.0,
+            125.0,
+            39.0,
+            132.0
+          ]
+        },
+        {
+          "text": "guavtry",
+          "confidence": 0.5833,
+          "boxPx": [
+            42.0,
+            123.0,
+            68.0,
+            133.0
+          ]
+        },
+        {
+          "text": "FARD DRISK LT2.51NCh 5480 RPM",
+          "confidence": 0.6255,
+          "boxPx": [
+            87.0,
+            175.0,
+            166.0,
+            185.0
+          ]
+        },
+        {
+          "text": "OS:LATESTS+-BTOS",
+          "confidence": 0.765,
+          "boxPx": [
+            88.0,
+            171.0,
+            140.0,
+            178.0
+          ]
+        },
+        {
+          "text": "DISPLAY 15 10",
+          "confidence": 0.7618,
+          "boxPx": [
+            88.0,
+            182.0,
+            128.0,
+            190.0
+          ]
+        },
+        {
+          "text": "(/0 POkTs E3 (8)-46) andk",
+          "confidence": 0.6395,
+          "boxPx": [
+            88.0,
+            206.0,
+            171.0,
+            214.0
+          ]
+        },
+        {
+          "text": "y (Parts an",
+          "confidence": 0.7691,
+          "boxPx": [
+            179.0,
+            229.0,
+            209.0,
+            236.0
+          ]
+        },
+        {
+          "text": "C4SE/B4CCarykng Blag/kompeack/came",
+          "confidence": 0.7938,
+          "boxPx": [
+            88.0,
+            241.0,
+            183.0,
+            248.0
+          ]
+        },
+        {
+          "text": "2 Drir Faes. R1-45",
+          "confidence": 0.7176,
+          "boxPx": [
+            87.0,
+            252.0,
+            131.0,
+            259.0
+          ]
+        },
+        {
+          "text": "I T8 SATA HES",
+          "confidence": 0.6991,
+          "boxPx": [
+            87.0,
+            258.0,
+            122.0,
+            266.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

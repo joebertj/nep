@@ -1,0 +1,601 @@
+{
+  "sourceFileSha256": "14a7d89327024791046cf9090fa65cc0ebfb6e0a2b2e688ea6eb904ec838eb8d",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/0aaa0dfcd2f89b74.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/10/Section-1-Invitation-to-Bid-IT-MTO-1-768x1069.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-i-t-equipment-for-use-of-treasurers-office/",
+      "sourceTitle": "INVITATION TO BID FOR I.T. EQUIPMENT FOR USE OF TREASURER’S OFFICE",
+      "publishedAt": "2018-10-03T08:00:41",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Section-1-Invitation-to-Bid-IT-MTO-1-768x1069.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "14a7d89327024791046cf9090fa65cc0ebfb6e0a2b2e688ea6eb904ec838eb8d",
+      "sourceFileBytes": 142811,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/0aaa0dfcd2f89b74.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/10/Section-1-Invitation-to-Bid-IT-MTO-1-768x1069.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-i-t-equipment-for-use-of-treasurers-office/",
+          "sourceTitle": "INVITATION TO BID FOR I.T. EQUIPMENT FOR USE OF TREASURER’S OFFICE",
+          "publishedAt": "2018-10-03T08:00:41",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Section-1-Invitation-to-Bid-IT-MTO-1-768x1069.jpg"
+        }
+      ],
+      "sourceFileName": "Section-1-Invitation-to-Bid-IT-MTO-1-768x1069.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Republic of the Philippines\nProvince of Iloilo\nMUNICIPALITY OF MIAGAO\nBIDS AND AWARDS COMMITTEE\nwebsite : www.miagao.gov.ph\nemail address: Igumiagao@yahoo.com\nINVITATION TO BID FOR I.T. EQUIPMENT FOR USE OF\nTREASURER'S OFFICE\n1.\nThe Municipality of Miagao through the Budget for the Contract Approved by the\nSanggunian, Account Number 1091-1-07-05-030, Budget Year 2018 intends to apply\nthe sum of P 210,000.00 being the Approved Budget for the Contract (ABC) to\npayments under the contract for Supply and Delivery of Various I.T. Equipment for\nuse of Treasurer's Office, Miagao, Iloilo. Bids received in excess of the ABC shall be\nautomatically rejected at bid opening.\n2.\nThe Municipality of Miagao now invites bids for the following:\nITEM NO.\nQUANTITY\nUNIT\nITEM DESCRIPTION\n1\n2\nSet\nDesktop Computer with Printer\nProcessor: 2.4 GHz\nATX case with 600 PSU\n4GB DDR4 memory\n1TB SATA\nUSB keyboard\nUSB optical wheel mouse\n18.5 LED monitor 500 watts AVR\nPRINTER\nMulti-function (Print Scan Copy Printer)\nUPS\n650 VA\n2.\n1\nUnit\nLaptop\nProcessor: 2.6 GHz\n8GB memory\n1 TB storage\n2Gb dedication video card\n3.\n4\nUnit\nPrinter\nDOT MATRIX\n4.\n8\nUnit\nUPS\n650 VA\n1",
+      "ocrText": "Republic of the Philippines\nProvince of Iloilo\nMUNICIPALITY OF MIAGAO\nBIDS AND AWARDS COMMITTEE\nwebsite : www.miagao.gov.ph\nemail address: Igumiagao@yahoo.com\nINVITATION TO BID FOR I.T. EQUIPMENT FOR USE OF\nTREASURER'S OFFICE\n1.\nThe Municipality of Miagao through the Budget for the Contract Approved by the\nSanggunian, Account Number 1091-1-07-05-030, Budget Year 2018 intends to apply\nthe sum of P 210,000.00 being the Approved Budget for the Contract (ABC) to\npayments under the contract for Supply and Delivery of Various I.T. Equipment for\nuse of Treasurer's Office, Miagao, Iloilo. Bids received in excess of the ABC shall be\nautomatically rejected at bid opening.\n2.\nThe Municipality of Miagao now invites bids for the following:\nITEM NO.\nQUANTITY\nUNIT\nITEM DESCRIPTION\n1\n2\nSet\nDesktop Computer with Printer\nProcessor: 2.4 GHz\nATX case with 600 PSU\n4GB DDR4 memory\n1TB SATA\nUSB keyboard\nUSB optical wheel mouse\n18.5 LED monitor 500 watts AVR\nPRINTER\nMulti-function (Print Scan Copy Printer)\nUPS\n650 VA\n2.\n1\nUnit\nLaptop\nProcessor: 2.6 GHz\n8GB memory\n1 TB storage\n2Gb dedication video card\n3.\n4\nUnit\nPrinter\nDOT MATRIX\n4.\n8\nUnit\nUPS\n650 VA\n1",
+      "ocrTokenCount": 55,
+      "ocrMeanConfidence": 0.9915,
+      "ocrTokens": [
+        {
+          "text": "Republic of the Philippines",
+          "confidence": 0.9987,
+          "boxPx": [
+            179.0,
+            5.0,
+            381.0,
+            25.0
+          ]
+        },
+        {
+          "text": "Province of Iloilo",
+          "confidence": 0.991,
+          "boxPx": [
+            178.0,
+            25.0,
+            308.0,
+            46.0
+          ]
+        },
+        {
+          "text": "MUNICIPALITY OF MIAGAO",
+          "confidence": 0.9993,
+          "boxPx": [
+            179.0,
+            47.0,
+            426.0,
+            64.0
+          ]
+        },
+        {
+          "text": "BIDS AND AWARDS COMMITTEE",
+          "confidence": 0.9979,
+          "boxPx": [
+            180.0,
+            69.0,
+            473.0,
+            83.0
+          ]
+        },
+        {
+          "text": "website : www.miagao.gov.ph",
+          "confidence": 0.9541,
+          "boxPx": [
+            179.0,
+            89.0,
+            410.0,
+            106.0
+          ]
+        },
+        {
+          "text": "email address: Igumiagao@yahoo.com",
+          "confidence": 0.9737,
+          "boxPx": [
+            177.0,
+            107.0,
+            473.0,
+            129.0
+          ]
+        },
+        {
+          "text": "INVITATION TO BID FOR I.T. EQUIPMENT FOR USE OF",
+          "confidence": 0.992,
+          "boxPx": [
+            81.0,
+            167.0,
+            663.0,
+            191.0
+          ]
+        },
+        {
+          "text": "TREASURER'S OFFICE",
+          "confidence": 0.9889,
+          "boxPx": [
+            245.0,
+            199.0,
+            499.0,
+            220.0
+          ]
+        },
+        {
+          "text": "1.",
+          "confidence": 0.9997,
+          "boxPx": [
+            33.0,
+            245.0,
+            53.0,
+            264.0
+          ]
+        },
+        {
+          "text": "The Municipality of Miagao through the Budget for the Contract Approved by the",
+          "confidence": 0.9866,
+          "boxPx": [
+            87.0,
+            247.0,
+            707.0,
+            264.0
+          ]
+        },
+        {
+          "text": "Sanggunian, Account Number 1091-1-07-05-030, Budget Year 2018 intends to apply",
+          "confidence": 0.991,
+          "boxPx": [
+            87.0,
+            267.0,
+            707.0,
+            284.0
+          ]
+        },
+        {
+          "text": "the sum of P 210,000.00 being the Approved Budget for the Contract (ABC) to",
+          "confidence": 0.9736,
+          "boxPx": [
+            85.0,
+            285.0,
+            707.0,
+            305.0
+          ]
+        },
+        {
+          "text": "payments under the contract for Supply and Delivery of Various I.T. Equipment for",
+          "confidence": 0.9871,
+          "boxPx": [
+            84.0,
+            305.0,
+            709.0,
+            327.0
+          ]
+        },
+        {
+          "text": "use of Treasurer's Office, Miagao, Iloilo. Bids received in excess of the ABC shall be",
+          "confidence": 0.9829,
+          "boxPx": [
+            87.0,
+            329.0,
+            706.0,
+            343.0
+          ]
+        },
+        {
+          "text": "automatically rejected at bid opening.",
+          "confidence": 0.9899,
+          "boxPx": [
+            87.0,
+            348.0,
+            358.0,
+            365.0
+          ]
+        },
+        {
+          "text": "2.",
+          "confidence": 0.9994,
+          "boxPx": [
+            31.0,
+            385.0,
+            54.0,
+            407.0
+          ]
+        },
+        {
+          "text": "The Municipality of Miagao now invites bids for the following:",
+          "confidence": 0.9742,
+          "boxPx": [
+            86.0,
+            388.0,
+            531.0,
+            405.0
+          ]
+        },
+        {
+          "text": "ITEM NO.",
+          "confidence": 0.9988,
+          "boxPx": [
+            102.0,
+            448.0,
+            177.0,
+            467.0
+          ]
+        },
+        {
+          "text": "QUANTITY",
+          "confidence": 0.9999,
+          "boxPx": [
+            197.0,
+            446.0,
+            282.0,
+            468.0
+          ]
+        },
+        {
+          "text": "UNIT",
+          "confidence": 0.9999,
+          "boxPx": [
+            301.0,
+            447.0,
+            345.0,
+            467.0
+          ]
+        },
+        {
+          "text": "ITEM DESCRIPTION",
+          "confidence": 0.996,
+          "boxPx": [
+            375.0,
+            448.0,
+            525.0,
+            466.0
+          ]
+        },
+        {
+          "text": "1",
+          "confidence": 1.0,
+          "boxPx": [
+            131.0,
+            468.0,
+            148.0,
+            488.0
+          ]
+        },
+        {
+          "text": "2",
+          "confidence": 0.9999,
+          "boxPx": [
+            230.0,
+            469.0,
+            249.0,
+            489.0
+          ]
+        },
+        {
+          "text": "Set",
+          "confidence": 0.9999,
+          "boxPx": [
+            307.0,
+            466.0,
+            341.0,
+            489.0
+          ]
+        },
+        {
+          "text": "Desktop Computer with Printer",
+          "confidence": 0.9922,
+          "boxPx": [
+            359.0,
+            470.0,
+            591.0,
+            487.0
+          ]
+        },
+        {
+          "text": "Processor: 2.4 GHz",
+          "confidence": 0.9939,
+          "boxPx": [
+            358.0,
+            491.0,
+            499.0,
+            508.0
+          ]
+        },
+        {
+          "text": "ATX case with 600 PSU",
+          "confidence": 0.9756,
+          "boxPx": [
+            358.0,
+            509.0,
+            530.0,
+            529.0
+          ]
+        },
+        {
+          "text": "4GB DDR4 memory",
+          "confidence": 0.9708,
+          "boxPx": [
+            356.0,
+            529.0,
+            504.0,
+            552.0
+          ]
+        },
+        {
+          "text": "1TB SATA",
+          "confidence": 0.9997,
+          "boxPx": [
+            358.0,
+            552.0,
+            436.0,
+            570.0
+          ]
+        },
+        {
+          "text": "USB keyboard",
+          "confidence": 0.9795,
+          "boxPx": [
+            357.0,
+            572.0,
+            465.0,
+            593.0
+          ]
+        },
+        {
+          "text": "USB optical wheel mouse",
+          "confidence": 0.9839,
+          "boxPx": [
+            358.0,
+            595.0,
+            544.0,
+            612.0
+          ]
+        },
+        {
+          "text": "18.5 LED monitor 500 watts AVR",
+          "confidence": 0.9968,
+          "boxPx": [
+            358.0,
+            615.0,
+            601.0,
+            633.0
+          ]
+        },
+        {
+          "text": "PRINTER",
+          "confidence": 0.9999,
+          "boxPx": [
+            357.0,
+            637.0,
+            430.0,
+            654.0
+          ]
+        },
+        {
+          "text": "Multi-function (Print Scan Copy Printer)",
+          "confidence": 0.9975,
+          "boxPx": [
+            356.0,
+            655.0,
+            652.0,
+            676.0
+          ]
+        },
+        {
+          "text": "UPS",
+          "confidence": 0.9999,
+          "boxPx": [
+            355.0,
+            675.0,
+            394.0,
+            698.0
+          ]
+        },
+        {
+          "text": "650 VA",
+          "confidence": 0.9909,
+          "boxPx": [
+            355.0,
+            695.0,
+            415.0,
+            717.0
+          ]
+        },
+        {
+          "text": "2.",
+          "confidence": 0.9978,
+          "boxPx": [
+            129.0,
+            719.0,
+            153.0,
+            740.0
+          ]
+        },
+        {
+          "text": "1",
+          "confidence": 0.9999,
+          "boxPx": [
+            231.0,
+            719.0,
+            249.0,
+            739.0
+          ]
+        },
+        {
+          "text": "Unit",
+          "confidence": 1.0,
+          "boxPx": [
+            303.0,
+            718.0,
+            345.0,
+            740.0
+          ]
+        },
+        {
+          "text": "Laptop",
+          "confidence": 0.9999,
+          "boxPx": [
+            355.0,
+            717.0,
+            415.0,
+            742.0
+          ]
+        },
+        {
+          "text": "Processor: 2.6 GHz",
+          "confidence": 0.9921,
+          "boxPx": [
+            358.0,
+            741.0,
+            498.0,
+            758.0
+          ]
+        },
+        {
+          "text": "8GB memory",
+          "confidence": 0.9997,
+          "boxPx": [
+            356.0,
+            759.0,
+            458.0,
+            782.0
+          ]
+        },
+        {
+          "text": "1 TB storage",
+          "confidence": 0.9723,
+          "boxPx": [
+            356.0,
+            780.0,
+            455.0,
+            803.0
+          ]
+        },
+        {
+          "text": "2Gb dedication video card",
+          "confidence": 0.9915,
+          "boxPx": [
+            356.0,
+            801.0,
+            552.0,
+            822.0
+          ]
+        },
+        {
+          "text": "3.",
+          "confidence": 0.9987,
+          "boxPx": [
+            128.0,
+            822.0,
+            153.0,
+            844.0
+          ]
+        },
+        {
+          "text": "4",
+          "confidence": 0.9999,
+          "boxPx": [
+            230.0,
+            823.0,
+            250.0,
+            842.0
+          ]
+        },
+        {
+          "text": "Unit",
+          "confidence": 1.0,
+          "boxPx": [
+            303.0,
+            822.0,
+            345.0,
+            844.0
+          ]
+        },
+        {
+          "text": "Printer",
+          "confidence": 0.9974,
+          "boxPx": [
+            357.0,
+            824.0,
+            415.0,
+            842.0
+          ]
+        },
+        {
+          "text": "DOT MATRIX",
+          "confidence": 0.9529,
+          "boxPx": [
+            357.0,
+            843.0,
+            459.0,
+            864.0
+          ]
+        },
+        {
+          "text": "4.",
+          "confidence": 0.9995,
+          "boxPx": [
+            128.0,
+            865.0,
+            152.0,
+            887.0
+          ]
+        },
+        {
+          "text": "8",
+          "confidence": 1.0,
+          "boxPx": [
+            230.0,
+            865.0,
+            249.0,
+            885.0
+          ]
+        },
+        {
+          "text": "Unit",
+          "confidence": 1.0,
+          "boxPx": [
+            303.0,
+            864.0,
+            344.0,
+            886.0
+          ]
+        },
+        {
+          "text": "UPS",
+          "confidence": 1.0,
+          "boxPx": [
+            357.0,
+            865.0,
+            393.0,
+            885.0
+          ]
+        },
+        {
+          "text": "650 VA",
+          "confidence": 0.9753,
+          "boxPx": [
+            358.0,
+            887.0,
+            415.0,
+            905.0
+          ]
+        },
+        {
+          "text": "1",
+          "confidence": 0.9992,
+          "boxPx": [
+            365.0,
+            1046.0,
+            378.0,
+            1061.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

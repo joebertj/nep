@@ -1,0 +1,91 @@
+{
+  "sourceFileSha256": "4e0655fdd2763656f3fd3ccc277a82dd50e589443222608daac98ed72ecf07e1",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/5ef229a1f83d0c63.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/10/Invitation-to-Bid-for-Ten-10-Units-Laptop-for-the-Use-of-the-Office-of-Sangguniang-Bayan-Miagao-Iloilo-3-222x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-ten-10-units-laptop-for-the-use-of-the-office-of-the-sangguniang-bayan-miagao-iloilo/",
+      "sourceTitle": "INVITATION TO BID FOR TEN (10) UNITS LAPTOP FOR THE USE OF THE OFFICE OF THE SANGGUNIANG BAYAN, MIAGAO, ILOILO",
+      "publishedAt": "2018-10-05T05:11:49",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Invitation-to-Bid-for-Ten-10-Units-Laptop-for-the-Use-of-the-Office-of-Sangguniang-Bayan-Miagao-Iloilo-3-222x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "4e0655fdd2763656f3fd3ccc277a82dd50e589443222608daac98ed72ecf07e1",
+      "sourceFileBytes": 10798,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/5ef229a1f83d0c63.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/10/Invitation-to-Bid-for-Ten-10-Units-Laptop-for-the-Use-of-the-Office-of-Sangguniang-Bayan-Miagao-Iloilo-3-222x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-ten-10-units-laptop-for-the-use-of-the-office-of-the-sangguniang-bayan-miagao-iloilo/",
+          "sourceTitle": "INVITATION TO BID FOR TEN (10) UNITS LAPTOP FOR THE USE OF THE OFFICE OF THE SANGGUNIANG BAYAN, MIAGAO, ILOILO",
+          "publishedAt": "2018-10-05T05:11:49",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Invitation-to-Bid-for-Ten-10-Units-Laptop-for-the-Use-of-the-Office-of-Sangguniang-Bayan-Miagao-Iloilo-3-222x300.jpg"
+        }
+      ],
+      "sourceFileName": "Invitation-to-Bid-for-Ten-10-Units-Laptop-for-the-Use-of-the-Office-of-Sangguniang-Bayan-Miagao-Iloilo-3-222x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Thiby runt be dhy recolved by the taC Secretariat at the odd\noffrecmepalbeforns and in thenow sated in tm Clae It\nManicipal Juidiag, Murda St\nFor fuarther ink",
+      "ocrText": "Thiby runt be dhy recolved by the taC Secretariat at the odd\noffrecmepalbeforns and in thenow sated in tm Clae It\nManicipal Juidiag, Murda St\nFor fuarther ink",
+      "ocrTokenCount": 4,
+      "ocrMeanConfidence": 0.8108,
+      "ocrTokens": [
+        {
+          "text": "Thiby runt be dhy recolved by the taC Secretariat at the odd",
+          "confidence": 0.8867,
+          "boxPx": [
+            24.0,
+            20.0,
+            155.0,
+            27.0
+          ]
+        },
+        {
+          "text": "offrecmepalbeforns and in thenow sated in tm Clae It",
+          "confidence": 0.6735,
+          "boxPx": [
+            24.0,
+            31.0,
+            163.0,
+            39.0
+          ]
+        },
+        {
+          "text": "Manicipal Juidiag, Murda St",
+          "confidence": 0.8501,
+          "boxPx": [
+            40.0,
+            49.0,
+            102.0,
+            56.0
+          ]
+        },
+        {
+          "text": "For fuarther ink",
+          "confidence": 0.8331,
+          "boxPx": [
+            24.0,
+            159.0,
+            56.0,
+            167.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

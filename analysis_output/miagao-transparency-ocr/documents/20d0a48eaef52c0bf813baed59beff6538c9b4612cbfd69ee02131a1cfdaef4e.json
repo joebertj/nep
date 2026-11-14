@@ -1,0 +1,111 @@
+{
+  "sourceFileSha256": "20d0a48eaef52c0bf813baed59beff6538c9b4612cbfd69ee02131a1cfdaef4e",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/e0d55c80400ce126.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-mwest-ws-rebid-5-222x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-the-construction-of-miagao-west-central-elem-school-water-system-miagao-iloilo/",
+      "sourceTitle": "INVITATION TO BID FOR THE CONSTRUCTION OF MIAGAO WEST CENTRAL ELEM. SCHOOL WATER SYSTEM, MIAGAO, ILOILO",
+      "publishedAt": "2018-09-19T06:25:40",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Section-1-Invitation-to-Bid-mwest-ws-rebid-5-222x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "20d0a48eaef52c0bf813baed59beff6538c9b4612cbfd69ee02131a1cfdaef4e",
+      "sourceFileBytes": 10174,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/e0d55c80400ce126.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-mwest-ws-rebid-5-222x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-the-construction-of-miagao-west-central-elem-school-water-system-miagao-iloilo/",
+          "sourceTitle": "INVITATION TO BID FOR THE CONSTRUCTION OF MIAGAO WEST CENTRAL ELEM. SCHOOL WATER SYSTEM, MIAGAO, ILOILO",
+          "publishedAt": "2018-09-19T06:25:40",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Section-1-Invitation-to-Bid-mwest-ws-rebid-5-222x300.jpg"
+        }
+      ],
+      "sourceFileName": "Section-1-Invitation-to-Bid-mwest-ws-rebid-5-222x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Oetober 15, 2005 at 9:30 aut. Al Babs rusnt be accompontied by a bid security in are\nof fhe crmepable forms and in the amoent slated in Imas Clamse 38\nofee of the Mariciqal itayer\nMankicipal lSkaldiag, Maoda St.\naccsgoed.\nForfurther ir",
+      "ocrText": "Oetober 15, 2005 at 9:30 aut. Al Babs rusnt be accompontied by a bid security in are\nof fhe crmepable forms and in the amoent slated in Imas Clamse 38\nofee of the Mariciqal itayer\nMankicipal lSkaldiag, Maoda St.\naccsgoed.\nForfurther ir",
+      "ocrTokenCount": 6,
+      "ocrMeanConfidence": 0.7674,
+      "ocrTokens": [
+        {
+          "text": "Oetober 15, 2005 at 9:30 aut. Al Babs rusnt be accompontied by a bid security in are",
+          "confidence": 0.8031,
+          "boxPx": [
+            24.0,
+            20.0,
+            204.0,
+            27.0
+          ]
+        },
+        {
+          "text": "of fhe crmepable forms and in the amoent slated in Imas Clamse 38",
+          "confidence": 0.8756,
+          "boxPx": [
+            24.0,
+            26.0,
+            164.0,
+            33.0
+          ]
+        },
+        {
+          "text": "ofee of the Mariciqal itayer",
+          "confidence": 0.6509,
+          "boxPx": [
+            39.0,
+            36.0,
+            102.0,
+            44.0
+          ]
+        },
+        {
+          "text": "Mankicipal lSkaldiag, Maoda St.",
+          "confidence": 0.8432,
+          "boxPx": [
+            40.0,
+            43.0,
+            102.0,
+            50.0
+          ]
+        },
+        {
+          "text": "accsgoed.",
+          "confidence": 0.579,
+          "boxPx": [
+            26.0,
+            78.0,
+            46.0,
+            85.0
+          ]
+        },
+        {
+          "text": "Forfurther ir",
+          "confidence": 0.8528,
+          "boxPx": [
+            24.0,
+            159.0,
+            53.0,
+            167.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

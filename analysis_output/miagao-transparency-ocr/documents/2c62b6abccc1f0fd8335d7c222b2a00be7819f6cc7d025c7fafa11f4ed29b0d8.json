@@ -1,0 +1,371 @@
+{
+  "sourceFileSha256": "2c62b6abccc1f0fd8335d7c222b2a00be7819f6cc7d025c7fafa11f4ed29b0d8",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/beddddb299763fec.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/10/Section-1-Invitation-to-Bid-IT-MTO-3-759x1024.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-i-t-equipment-for-use-of-treasurers-office/",
+      "sourceTitle": "INVITATION TO BID FOR I.T. EQUIPMENT FOR USE OF TREASURER’S OFFICE",
+      "publishedAt": "2018-10-03T08:00:41",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Section-1-Invitation-to-Bid-IT-MTO-3-759x1024.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "2c62b6abccc1f0fd8335d7c222b2a00be7819f6cc7d025c7fafa11f4ed29b0d8",
+      "sourceFileBytes": 100187,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/beddddb299763fec.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/10/Section-1-Invitation-to-Bid-IT-MTO-3-759x1024.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-i-t-equipment-for-use-of-treasurers-office/",
+          "sourceTitle": "INVITATION TO BID FOR I.T. EQUIPMENT FOR USE OF TREASURER’S OFFICE",
+          "publishedAt": "2018-10-03T08:00:41",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Section-1-Invitation-to-Bid-IT-MTO-3-759x1024.jpg"
+        }
+      ],
+      "sourceFileName": "Section-1-Invitation-to-Bid-IT-MTO-3-759x1024.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "7.\nBids must be duly received by the BAC Secretariat at the address below on or before\nOctober 23, 2018 at 9:30 a.m. All Bids must be accompanied by a bid security in any\nof the acceptable forms and in the amount stated in ITB Clause 18\nOffice of the Municipal Mayor\nMunicipal Building, Mueda St.\nMiagao, Iloilo\nBid opening shall be on October 23, 2018 at 10:00 a.m. at the Conference Room of\nthe Municipal Building, Miagao, Iloilo. Bids will be opened in the presence of the\nBidders' representatives who choose to attend at the address below. Late bids shall\nnot be accepted.\nConference Room\nMunicipal Building, Mueda St.\nMiagao, Iloilo\n8.\nThe Municipality of Miagao reserves the right to accept or reject any bid and all bids,\ndeclare failure of bidding, or not to award the contract in accordance with Section\n41 of RA 9184 and its IRR, without thereby incurring any liability to the affected\nbidder or bidders.\n9.\nFor further information, please refer to:\nSHERWIN KEITH M. FAINA\nMunicipal Planning and Development Office\nLocal Government Unit of Miagao\nMueda St.,\n5023 Miagao, Iloilo\nTelefax No.: (033) 315-8050 loc. 101\nWebsite: www.miagao.gov.ph\nEmail: Igumiagao@yahoo.com\nSHERWIN KEITH M. FAINA\nBAC Chairperson\n3",
+      "ocrText": "7.\nBids must be duly received by the BAC Secretariat at the address below on or before\nOctober 23, 2018 at 9:30 a.m. All Bids must be accompanied by a bid security in any\nof the acceptable forms and in the amount stated in ITB Clause 18\nOffice of the Municipal Mayor\nMunicipal Building, Mueda St.\nMiagao, Iloilo\nBid opening shall be on October 23, 2018 at 10:00 a.m. at the Conference Room of\nthe Municipal Building, Miagao, Iloilo. Bids will be opened in the presence of the\nBidders' representatives who choose to attend at the address below. Late bids shall\nnot be accepted.\nConference Room\nMunicipal Building, Mueda St.\nMiagao, Iloilo\n8.\nThe Municipality of Miagao reserves the right to accept or reject any bid and all bids,\ndeclare failure of bidding, or not to award the contract in accordance with Section\n41 of RA 9184 and its IRR, without thereby incurring any liability to the affected\nbidder or bidders.\n9.\nFor further information, please refer to:\nSHERWIN KEITH M. FAINA\nMunicipal Planning and Development Office\nLocal Government Unit of Miagao\nMueda St.,\n5023 Miagao, Iloilo\nTelefax No.: (033) 315-8050 loc. 101\nWebsite: www.miagao.gov.ph\nEmail: Igumiagao@yahoo.com\nSHERWIN KEITH M. FAINA\nBAC Chairperson\n3",
+      "ocrTokenCount": 32,
+      "ocrMeanConfidence": 0.9885,
+      "ocrTokens": [
+        {
+          "text": "7.",
+          "confidence": 0.9998,
+          "boxPx": [
+            32.0,
+            52.0,
+            52.0,
+            70.0
+          ]
+        },
+        {
+          "text": "Bids must be duly received by the BAC Secretariat at the address below on or before",
+          "confidence": 0.976,
+          "boxPx": [
+            86.0,
+            53.0,
+            699.0,
+            70.0
+          ]
+        },
+        {
+          "text": "October 23, 2018 at 9:30 a.m. All Bids must be accompanied by a bid security in any",
+          "confidence": 0.9879,
+          "boxPx": [
+            85.0,
+            70.0,
+            699.0,
+            92.0
+          ]
+        },
+        {
+          "text": "of the acceptable forms and in the amount stated in ITB Clause 18",
+          "confidence": 0.9875,
+          "boxPx": [
+            87.0,
+            94.0,
+            556.0,
+            108.0
+          ]
+        },
+        {
+          "text": "Office of the Municipal Mayor",
+          "confidence": 0.9931,
+          "boxPx": [
+            135.0,
+            131.0,
+            348.0,
+            150.0
+          ]
+        },
+        {
+          "text": "Municipal Building, Mueda St.",
+          "confidence": 0.9948,
+          "boxPx": [
+            137.0,
+            154.0,
+            348.0,
+            168.0
+          ]
+        },
+        {
+          "text": "Miagao, Iloilo",
+          "confidence": 0.992,
+          "boxPx": [
+            135.0,
+            173.0,
+            233.0,
+            190.0
+          ]
+        },
+        {
+          "text": "Bid opening shall be on October 23, 2018 at 10:00 a.m. at the Conference Room of",
+          "confidence": 0.9828,
+          "boxPx": [
+            87.0,
+            214.0,
+            700.0,
+            228.0
+          ]
+        },
+        {
+          "text": "the Municipal Building, Miagao, Iloilo. Bids will be opened in the presence of the",
+          "confidence": 0.9843,
+          "boxPx": [
+            85.0,
+            232.0,
+            699.0,
+            249.0
+          ]
+        },
+        {
+          "text": "Bidders' representatives who choose to attend at the address below. Late bids shall",
+          "confidence": 0.9856,
+          "boxPx": [
+            85.0,
+            252.0,
+            699.0,
+            269.0
+          ]
+        },
+        {
+          "text": "not be accepted.",
+          "confidence": 0.9713,
+          "boxPx": [
+            85.0,
+            272.0,
+            202.0,
+            289.0
+          ]
+        },
+        {
+          "text": "Conference Room",
+          "confidence": 0.9998,
+          "boxPx": [
+            135.0,
+            311.0,
+            265.0,
+            328.0
+          ]
+        },
+        {
+          "text": "Municipal Building, Mueda St.",
+          "confidence": 0.9978,
+          "boxPx": [
+            136.0,
+            332.0,
+            348.0,
+            349.0
+          ]
+        },
+        {
+          "text": "Miagao, Iloilo",
+          "confidence": 0.9977,
+          "boxPx": [
+            134.0,
+            350.0,
+            233.0,
+            370.0
+          ]
+        },
+        {
+          "text": "8.",
+          "confidence": 0.9951,
+          "boxPx": [
+            30.0,
+            408.0,
+            52.0,
+            430.0
+          ]
+        },
+        {
+          "text": "The Municipality of Miagao reserves the right to accept or reject any bid and all bids,",
+          "confidence": 0.977,
+          "boxPx": [
+            85.0,
+            411.0,
+            699.0,
+            428.0
+          ]
+        },
+        {
+          "text": "declare failure of bidding, or not to award the contract in accordance with Section",
+          "confidence": 0.9902,
+          "boxPx": [
+            84.0,
+            430.0,
+            698.0,
+            448.0
+          ]
+        },
+        {
+          "text": "41 of RA 9184 and its IRR, without thereby incurring any liability to the affected",
+          "confidence": 0.9909,
+          "boxPx": [
+            84.0,
+            450.0,
+            698.0,
+            468.0
+          ]
+        },
+        {
+          "text": "bidder or bidders.",
+          "confidence": 0.9925,
+          "boxPx": [
+            84.0,
+            470.0,
+            217.0,
+            488.0
+          ]
+        },
+        {
+          "text": "9.",
+          "confidence": 0.9991,
+          "boxPx": [
+            33.0,
+            529.0,
+            52.0,
+            548.0
+          ]
+        },
+        {
+          "text": "For further information, please refer to:",
+          "confidence": 0.9964,
+          "boxPx": [
+            86.0,
+            532.0,
+            367.0,
+            546.0
+          ]
+        },
+        {
+          "text": "SHERWIN KEITH M. FAINA",
+          "confidence": 0.9902,
+          "boxPx": [
+            86.0,
+            572.0,
+            275.0,
+            585.0
+          ]
+        },
+        {
+          "text": "Municipal Planning and Development Office",
+          "confidence": 0.9911,
+          "boxPx": [
+            86.0,
+            591.0,
+            390.0,
+            608.0
+          ]
+        },
+        {
+          "text": "Local Government Unit of Miagao",
+          "confidence": 0.9996,
+          "boxPx": [
+            84.0,
+            610.0,
+            319.0,
+            629.0
+          ]
+        },
+        {
+          "text": "Mueda St.,",
+          "confidence": 0.9637,
+          "boxPx": [
+            85.0,
+            630.0,
+            158.0,
+            647.0
+          ]
+        },
+        {
+          "text": "5023 Miagao, Iloilo",
+          "confidence": 0.9761,
+          "boxPx": [
+            85.0,
+            651.0,
+            220.0,
+            668.0
+          ]
+        },
+        {
+          "text": "Telefax No.: (033) 315-8050 loc. 101",
+          "confidence": 0.9851,
+          "boxPx": [
+            85.0,
+            668.0,
+            339.0,
+            689.0
+          ]
+        },
+        {
+          "text": "Website: www.miagao.gov.ph",
+          "confidence": 0.9793,
+          "boxPx": [
+            89.0,
+            691.0,
+            295.0,
+            708.0
+          ]
+        },
+        {
+          "text": "Email: Igumiagao@yahoo.com",
+          "confidence": 0.9847,
+          "boxPx": [
+            86.0,
+            710.0,
+            299.0,
+            727.0
+          ]
+        },
+        {
+          "text": "SHERWIN KEITH M. FAINA",
+          "confidence": 0.9718,
+          "boxPx": [
+            485.0,
+            751.0,
+            683.0,
+            765.0
+          ]
+        },
+        {
+          "text": "BAC Chairperson",
+          "confidence": 0.9991,
+          "boxPx": [
+            492.0,
+            770.0,
+            618.0,
+            787.0
+          ]
+        },
+        {
+          "text": "3",
+          "confidence": 0.9999,
+          "boxPx": [
+            361.0,
+            1001.0,
+            375.0,
+            1016.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

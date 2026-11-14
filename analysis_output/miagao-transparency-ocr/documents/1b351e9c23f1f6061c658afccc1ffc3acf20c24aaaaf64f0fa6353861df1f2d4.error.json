@@ -1,0 +1,17 @@
+{
+  "sourceFileSha256": "1b351e9c23f1f6061c658afccc1ffc3acf20c24aaaaf64f0fa6353861df1f2d4",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/742201573dd153d4.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/10/Invitation-to-Bid-for-Ten-10-Units-Laptop-for-the-Use-of-the-Office-of-Sangguniang-Bayan-Miagao-Iloilo-2.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-ten-10-units-laptop-for-the-use-of-the-office-of-the-sangguniang-bayan-miagao-iloilo/",
+      "sourceTitle": "INVITATION TO BID FOR TEN (10) UNITS LAPTOP FOR THE USE OF THE OFFICE OF THE SANGGUNIANG BAYAN, MIAGAO, ILOILO",
+      "publishedAt": "2018-10-05T05:11:49",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Invitation-to-Bid-for-Ten-10-Units-Laptop-for-the-Use-of-the-Office-of-Sangguniang-Bayan-Miagao-Iloilo-2.jpg"
+    }
+  ],
+  "stage": "ocr",
+  "error": "TimeoutError: OCR exceeded 120 seconds; worker stopped and file skipped"
+}

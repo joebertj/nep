@@ -1,0 +1,181 @@
+{
+  "sourceFileSha256": "10b639a2be0738b1aca8be0aa2b63c664c6d6312c97a70a6040b50bd8c6acb32",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/09617fd4e45becc6.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/11/2-Concreting-of-Road-_-Invitation-to-Bid-conc-of-baybay-norte-igcabidio-232x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-the-concreting-of-brgy-baybay-norte-road-section-and-concreting-of-brgy-oyungan-brgy-igcabidio-road-section/",
+      "sourceTitle": "INVITATION TO BID FOR THE CONCRETING OF BRGY. BAYBAY NORTE ROAD SECTION AND CONCRETING OF BRGY. OYUNGAN – BRGY. IGCABIDIO ROAD SECTION",
+      "publishedAt": "2018-10-22T02:57:17",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "2-Concreting-of-Road-_-Invitation-to-Bid-conc-of-baybay-norte-igcabidio-232x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "10b639a2be0738b1aca8be0aa2b63c664c6d6312c97a70a6040b50bd8c6acb32",
+      "sourceFileBytes": 17320,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/09617fd4e45becc6.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/11/2-Concreting-of-Road-_-Invitation-to-Bid-conc-of-baybay-norte-igcabidio-232x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-the-concreting-of-brgy-baybay-norte-road-section-and-concreting-of-brgy-oyungan-brgy-igcabidio-road-section/",
+          "sourceTitle": "INVITATION TO BID FOR THE CONCRETING OF BRGY. BAYBAY NORTE ROAD SECTION AND CONCRETING OF BRGY. OYUNGAN – BRGY. IGCABIDIO ROAD SECTION",
+          "publishedAt": "2018-10-22T02:57:17",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "2-Concreting-of-Road-_-Invitation-to-Bid-conc-of-baybay-norte-igcabidio-232x300.jpg"
+        }
+      ],
+      "sourceFileName": "2-Concreting-of-Road-_-Invitation-to-Bid-conc-of-baybay-norte-igcabidio-232x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "CONCRETING OF BROY. CYUNGAN BRGR. IOCARIDIC\nROAD SECTION\nQarby\nDescriptien\n5,680\n4,280\n2.40\n4.780\n42\nX\nMunicipal buliding, Meodia\n(ie of the Mu\nMingas, Rple",
+      "ocrText": "CONCRETING OF BROY. CYUNGAN BRGR. IOCARIDIC\nROAD SECTION\nQarby\nDescriptien\n5,680\n4,280\n2.40\n4.780\n42\nX\nMunicipal buliding, Meodia\n(ie of the Mu\nMingas, Rple",
+      "ocrTokenCount": 13,
+      "ocrMeanConfidence": 0.7578,
+      "ocrTokens": [
+        {
+          "text": "CONCRETING OF BROY. CYUNGAN BRGR. IOCARIDIC",
+          "confidence": 0.79,
+          "boxPx": [
+            30.0,
+            9.0,
+            141.0,
+            17.0
+          ]
+        },
+        {
+          "text": "ROAD SECTION",
+          "confidence": 0.9212,
+          "boxPx": [
+            31.0,
+            16.0,
+            63.0,
+            23.0
+          ]
+        },
+        {
+          "text": "Qarby",
+          "confidence": 0.5844,
+          "boxPx": [
+            184.0,
+            9.0,
+            205.0,
+            18.0
+          ]
+        },
+        {
+          "text": "Descriptien",
+          "confidence": 0.9219,
+          "boxPx": [
+            23.0,
+            23.0,
+            50.0,
+            30.0
+          ]
+        },
+        {
+          "text": "5,680",
+          "confidence": 0.8415,
+          "boxPx": [
+            201.0,
+            34.0,
+            214.0,
+            42.0
+          ]
+        },
+        {
+          "text": "4,280",
+          "confidence": 0.9108,
+          "boxPx": [
+            201.0,
+            41.0,
+            214.0,
+            48.0
+          ]
+        },
+        {
+          "text": "2.40",
+          "confidence": 0.4549,
+          "boxPx": [
+            200.0,
+            52.0,
+            215.0,
+            68.0
+          ]
+        },
+        {
+          "text": "4.780",
+          "confidence": 0.8094,
+          "boxPx": [
+            201.0,
+            47.0,
+            214.0,
+            54.0
+          ]
+        },
+        {
+          "text": "42",
+          "confidence": 0.6095,
+          "boxPx": [
+            205.0,
+            71.0,
+            214.0,
+            79.0
+          ]
+        },
+        {
+          "text": "X",
+          "confidence": 0.5581,
+          "boxPx": [
+            206.0,
+            67.0,
+            213.0,
+            72.0
+          ]
+        },
+        {
+          "text": "Municipal buliding, Meodia",
+          "confidence": 0.9022,
+          "boxPx": [
+            29.0,
+            274.0,
+            87.0,
+            281.0
+          ]
+        },
+        {
+          "text": "(ie of the Mu",
+          "confidence": 0.9284,
+          "boxPx": [
+            30.0,
+            267.0,
+            66.0,
+            274.0
+          ]
+        },
+        {
+          "text": "Mingas, Rple",
+          "confidence": 0.6186,
+          "boxPx": [
+            28.0,
+            277.0,
+            59.0,
+            290.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

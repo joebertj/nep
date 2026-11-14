@@ -1,0 +1,91 @@
+{
+  "sourceFileSha256": "2d28bc7a51a94a58adf77c7b0588ff422cc24a6364e38a9e8bfd7910a23a939e",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/1f871bce6d7a4124.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/10/Section-1-Invitation-to-Bid-IT-MTO-3-222x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-i-t-equipment-for-use-of-treasurers-office/",
+      "sourceTitle": "INVITATION TO BID FOR I.T. EQUIPMENT FOR USE OF TREASURER’S OFFICE",
+      "publishedAt": "2018-10-03T08:00:41",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Section-1-Invitation-to-Bid-IT-MTO-3-222x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "2d28bc7a51a94a58adf77c7b0588ff422cc24a6364e38a9e8bfd7910a23a939e",
+      "sourceFileBytes": 10300,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/1f871bce6d7a4124.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/10/Section-1-Invitation-to-Bid-IT-MTO-3-222x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-i-t-equipment-for-use-of-treasurers-office/",
+          "sourceTitle": "INVITATION TO BID FOR I.T. EQUIPMENT FOR USE OF TREASURER’S OFFICE",
+          "publishedAt": "2018-10-03T08:00:41",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Section-1-Invitation-to-Bid-IT-MTO-3-222x300.jpg"
+        }
+      ],
+      "sourceFileName": "Section-1-Invitation-to-Bid-IT-MTO-3-222x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "October ZX, 2008 ot 9:30 su. A1 Bafs rat be acromipontied by a bid secouriy in arg\nofae of the Maricqal intayur\nManicipal lShaldiag, Maoda St.\nSHURWINIGTEROMLFAINA",
+      "ocrText": "October ZX, 2008 ot 9:30 su. A1 Bafs rat be acromipontied by a bid secouriy in arg\nofae of the Maricqal intayur\nManicipal lShaldiag, Maoda St.\nSHURWINIGTEROMLFAINA",
+      "ocrTokenCount": 4,
+      "ocrMeanConfidence": 0.7575,
+      "ocrTokens": [
+        {
+          "text": "October ZX, 2008 ot 9:30 su. A1 Bafs rat be acromipontied by a bid secouriy in arg",
+          "confidence": 0.8074,
+          "boxPx": [
+            24.0,
+            20.0,
+            204.0,
+            27.0
+          ]
+        },
+        {
+          "text": "ofae of the Maricqal intayur",
+          "confidence": 0.5932,
+          "boxPx": [
+            39.0,
+            36.0,
+            102.0,
+            44.0
+          ]
+        },
+        {
+          "text": "Manicipal lShaldiag, Maoda St.",
+          "confidence": 0.8406,
+          "boxPx": [
+            40.0,
+            43.0,
+            102.0,
+            50.0
+          ]
+        },
+        {
+          "text": "SHURWINIGTEROMLFAINA",
+          "confidence": 0.789,
+          "boxPx": [
+            141.0,
+            218.0,
+            200.0,
+            225.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

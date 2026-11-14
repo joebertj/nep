@@ -1,0 +1,50 @@
+{
+  "sourceFileSha256": "9a9dcba91472072af36ad32c05507765b7ff4c3ec1fc96a8aa485593bac470fe",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/69772b7f1d5d140a.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/10/Invitation-to-Bid-for-Ten-10-Units-Laptop-for-the-Use-of-the-Office-of-Sangguniang-Bayan-Miagao-Iloilo-2-222x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-ten-10-units-laptop-for-the-use-of-the-office-of-the-sangguniang-bayan-miagao-iloilo/",
+      "sourceTitle": "INVITATION TO BID FOR TEN (10) UNITS LAPTOP FOR THE USE OF THE OFFICE OF THE SANGGUNIANG BAYAN, MIAGAO, ILOILO",
+      "publishedAt": "2018-10-05T05:11:49",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Invitation-to-Bid-for-Ten-10-Units-Laptop-for-the-Use-of-the-Office-of-Sangguniang-Bayan-Miagao-Iloilo-2-222x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "9a9dcba91472072af36ad32c05507765b7ff4c3ec1fc96a8aa485593bac470fe",
+      "sourceFileBytes": 15051,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/69772b7f1d5d140a.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/10/Invitation-to-Bid-for-Ten-10-Units-Laptop-for-the-Use-of-the-Office-of-Sangguniang-Bayan-Miagao-Iloilo-2-222x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-ten-10-units-laptop-for-the-use-of-the-office-of-the-sangguniang-bayan-miagao-iloilo/",
+          "sourceTitle": "INVITATION TO BID FOR TEN (10) UNITS LAPTOP FOR THE USE OF THE OFFICE OF THE SANGGUNIANG BAYAN, MIAGAO, ILOILO",
+          "publishedAt": "2018-10-05T05:11:49",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Invitation-to-Bid-for-Ten-10-Units-Laptop-for-the-Use-of-the-Office-of-Sangguniang-Bayan-Miagao-Iloilo-2-222x300.jpg"
+        }
+      ],
+      "sourceFileName": "Invitation-to-Bid-for-Ten-10-Units-Laptop-for-the-Use-of-the-Office-of-Sangguniang-Bayan-Miagao-Iloilo-2-222x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "",
+      "ocrText": "",
+      "ocrTokenCount": 0,
+      "ocrMeanConfidence": null,
+      "ocrTokens": [],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+      "parseStatus": "no_text_detected"
+    }
+  ]
+}

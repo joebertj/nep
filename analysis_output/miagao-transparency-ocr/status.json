@@ -1,24 +1,29 @@
 {
   "title": "Miagao transparency OCR parser",
-  "updatedAtUtc": "2026-11-13T08:59:23+00:00",
-  "status": "paused",
+  "updatedAtUtc": "2026-11-14T09:28:14+00:00",
+  "status": "processing",
   "inventoryGeneratedAt": "2026-11-10T15:30:23+00:00",
   "sourceDocuments": 654,
-  "uniqueOcrCandidateFiles": 499,
-  "pendingOcrDocuments": 499,
-  "completedDocuments": 155,
-  "skippedPriorErrors": 0,
-  "discoveryErrors": [],
-  "current": null,
-  "rowsPath": "analysis_output/miagao-transparency-ocr/ocr-rows.jsonl",
-  "resumeNote": "Run the parser to continue; intentionally skipped files are excluded from the queue.",
+  "uniqueOcrCandidateFiles": 448,
+  "pendingOcrDocuments": 448,
+  "completedDocuments": 235,
+  "skippedPriorErrors": 18,
   "intentionallySkippedDocuments": 1,
   "skipListPath": "analysis_output/miagao-transparency-ocr/skip-list.json",
-  "skippedFiles": [
-    {
-      "sha256": "34d63dc8fc9e64bb0a420780758e64dbed74be41e99c9776d9f94a32d92d6fe7",
-      "localPath": "data_sources/miagao_transparency_archive/files/46e536189d2f0a60.jpg",
-      "fileName": "Section-1-Invitation-to-Bid-basura-mo-1.jpg"
-    }
-  ]
+  "discoveryErrors": [],
+  "current": {
+    "index": 58,
+    "total": 448,
+    "sha256": "28630aa12869a7c852256fa134783bbd54daa55bb313b2eb3583175da5891be2",
+    "file": "20-IRA-UTILIZATION-1-scaled.jpg",
+    "ocrPages": [
+      1
+    ]
+  },
+  "rowsPath": "analysis_output/miagao-transparency-ocr/ocr-rows.jsonl",
+  "failedDocuments": 27,
+  "skippedDocuments": 27,
+  "completedOcrDocuments": 57,
+  "completedOcrPages": 48,
+  "lastCompletedAtUtc": "2026-11-14T09:28:14+00:00"
 }

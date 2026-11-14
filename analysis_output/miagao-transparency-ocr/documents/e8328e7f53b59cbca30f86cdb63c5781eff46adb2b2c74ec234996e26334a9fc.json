@@ -1,0 +1,661 @@
+{
+  "sourceFileSha256": "e8328e7f53b59cbca30f86cdb63c5781eff46adb2b2c74ec234996e26334a9fc",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/0df883ee042763f5.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/20-IRA-UTILIZATION-1-1080x665.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/20-ira-utilization/20-component-of-the-ira-utilization/",
+      "sourceTitle": "20% COMPONENT OF THE IRA UTILIZATION",
+      "publishedAt": "2019-04-03T08:10:06",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "20-IRA-UTILIZATION-1-1080x665.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "e8328e7f53b59cbca30f86cdb63c5781eff46adb2b2c74ec234996e26334a9fc",
+      "sourceFileBytes": 77469,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/0df883ee042763f5.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/20-IRA-UTILIZATION-1-1080x665.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/20-ira-utilization/20-component-of-the-ira-utilization/",
+          "sourceTitle": "20% COMPONENT OF THE IRA UTILIZATION",
+          "publishedAt": "2019-04-03T08:10:06",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "20-IRA-UTILIZATION-1-1080x665.jpg"
+        }
+      ],
+      "sourceFileName": "20-IRA-UTILIZATION-1-1080x665.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "FDP Form 7 - 20% Component of the IRA Utilization\n20% COMPONENT OF THE IRA UTILIZATION\nFOR THE FIRST QUARTER, CY 2019\nProvince, City or Municipality: MIAGAO\nTarget\nProject Status\nNo. of\nProgram or Project\nLocation\nTotal Cost\nDate Started\nCompletion\n% of\nTotal Cost\nExtensions, if\nDate\nCompletion\nIncurred to Date\nany\nRemarks\nI. Social Development\n1. Health\n1.1 Construction/Improvement of RHU 1, RHU II\nMiagao, Iloilo\n2,000,000.00\n0.00%\nnot\nBHS and Half-Way Home\nimplemented\n2. Purchase/Construction and Improvement\nof Government Facilities-Social Develeopment\n2.1 Rehabilitation of Potable Water Supply\nMiagao, Iloilo\n100,000.00\n0.00%\nnot\nSystem at Barangay Baybay Norte\nimplemented\n2.2 Assistance to Barangays\nMiagao, Iloilo\n3,000,000.00 January 30, 2019\n25.67%\n770,000.00\nwith PR.\nPhp279,564.00\n3. Social Welfare\n3.1 Construction of Multi-Purpose Building\nMiagao, Iloilo\n300,000.00\n0.00%\nnot\n(Stock Room-Phase II)\nimplemented\n3.2 Construction of Multi-Purpose Building\nMiagao, Iloilo\n500,000.00\n0.00%\nnot\n(Holding Center)\nimplemented\nSMJEM20%IRAUTILIZATION2019",
+      "ocrText": "FDP Form 7 - 20% Component of the IRA Utilization\n20% COMPONENT OF THE IRA UTILIZATION\nFOR THE FIRST QUARTER, CY 2019\nProvince, City or Municipality: MIAGAO\nTarget\nProject Status\nNo. of\nProgram or Project\nLocation\nTotal Cost\nDate Started\nCompletion\n% of\nTotal Cost\nExtensions, if\nDate\nCompletion\nIncurred to Date\nany\nRemarks\nI. Social Development\n1. Health\n1.1 Construction/Improvement of RHU 1, RHU II\nMiagao, Iloilo\n2,000,000.00\n0.00%\nnot\nBHS and Half-Way Home\nimplemented\n2. Purchase/Construction and Improvement\nof Government Facilities-Social Develeopment\n2.1 Rehabilitation of Potable Water Supply\nMiagao, Iloilo\n100,000.00\n0.00%\nnot\nSystem at Barangay Baybay Norte\nimplemented\n2.2 Assistance to Barangays\nMiagao, Iloilo\n3,000,000.00 January 30, 2019\n25.67%\n770,000.00\nwith PR.\nPhp279,564.00\n3. Social Welfare\n3.1 Construction of Multi-Purpose Building\nMiagao, Iloilo\n300,000.00\n0.00%\nnot\n(Stock Room-Phase II)\nimplemented\n3.2 Construction of Multi-Purpose Building\nMiagao, Iloilo\n500,000.00\n0.00%\nnot\n(Holding Center)\nimplemented\nSMJEM20%IRAUTILIZATION2019",
+      "ocrTokenCount": 61,
+      "ocrMeanConfidence": 0.9907,
+      "ocrTokens": [
+        {
+          "text": "FDP Form 7 - 20% Component of the IRA Utilization",
+          "confidence": 0.9799,
+          "boxPx": [
+            44.0,
+            15.0,
+            262.0,
+            28.0
+          ]
+        },
+        {
+          "text": "20% COMPONENT OF THE IRA UTILIZATION",
+          "confidence": 0.9934,
+          "boxPx": [
+            414.0,
+            48.0,
+            645.0,
+            62.0
+          ]
+        },
+        {
+          "text": "FOR THE FIRST QUARTER, CY 2019",
+          "confidence": 0.9911,
+          "boxPx": [
+            439.0,
+            67.0,
+            622.0,
+            81.0
+          ]
+        },
+        {
+          "text": "Province, City or Municipality: MIAGAO",
+          "confidence": 0.9934,
+          "boxPx": [
+            44.0,
+            103.0,
+            251.0,
+            117.0
+          ]
+        },
+        {
+          "text": "Target",
+          "confidence": 0.9999,
+          "boxPx": [
+            602.0,
+            138.0,
+            643.0,
+            155.0
+          ]
+        },
+        {
+          "text": "Project Status",
+          "confidence": 0.9851,
+          "boxPx": [
+            723.0,
+            138.0,
+            803.0,
+            154.0
+          ]
+        },
+        {
+          "text": "No. of",
+          "confidence": 0.9912,
+          "boxPx": [
+            874.0,
+            137.0,
+            914.0,
+            154.0
+          ]
+        },
+        {
+          "text": "Program or Project",
+          "confidence": 0.9992,
+          "boxPx": [
+            128.0,
+            155.0,
+            233.0,
+            172.0
+          ]
+        },
+        {
+          "text": "Location",
+          "confidence": 0.9862,
+          "boxPx": [
+            334.0,
+            154.0,
+            386.0,
+            172.0
+          ]
+        },
+        {
+          "text": "Total Cost",
+          "confidence": 0.9999,
+          "boxPx": [
+            407.0,
+            154.0,
+            469.0,
+            172.0
+          ]
+        },
+        {
+          "text": "Date Started",
+          "confidence": 0.9996,
+          "boxPx": [
+            488.0,
+            156.0,
+            560.0,
+            170.0
+          ]
+        },
+        {
+          "text": "Completion",
+          "confidence": 0.9999,
+          "boxPx": [
+            589.0,
+            153.0,
+            656.0,
+            171.0
+          ]
+        },
+        {
+          "text": "% of",
+          "confidence": 0.9286,
+          "boxPx": [
+            700.0,
+            154.0,
+            732.0,
+            173.0
+          ]
+        },
+        {
+          "text": "Total Cost",
+          "confidence": 0.9997,
+          "boxPx": [
+            769.0,
+            155.0,
+            829.0,
+            172.0
+          ]
+        },
+        {
+          "text": "Extensions, if",
+          "confidence": 0.9812,
+          "boxPx": [
+            854.0,
+            153.0,
+            932.0,
+            173.0
+          ]
+        },
+        {
+          "text": "Date",
+          "confidence": 0.9999,
+          "boxPx": [
+            607.0,
+            172.0,
+            639.0,
+            191.0
+          ]
+        },
+        {
+          "text": "Completion",
+          "confidence": 0.9999,
+          "boxPx": [
+            679.0,
+            172.0,
+            745.0,
+            189.0
+          ]
+        },
+        {
+          "text": "Incurred to Date",
+          "confidence": 0.9999,
+          "boxPx": [
+            753.0,
+            174.0,
+            845.0,
+            188.0
+          ]
+        },
+        {
+          "text": "any",
+          "confidence": 0.9998,
+          "boxPx": [
+            878.0,
+            173.0,
+            907.0,
+            191.0
+          ]
+        },
+        {
+          "text": "Remarks",
+          "confidence": 0.9999,
+          "boxPx": [
+            953.0,
+            171.0,
+            1006.0,
+            189.0
+          ]
+        },
+        {
+          "text": "I. Social Development",
+          "confidence": 0.9923,
+          "boxPx": [
+            42.0,
+            193.0,
+            160.0,
+            207.0
+          ]
+        },
+        {
+          "text": "1. Health",
+          "confidence": 0.9501,
+          "boxPx": [
+            49.0,
+            209.0,
+            104.0,
+            226.0
+          ]
+        },
+        {
+          "text": "1.1 Construction/Improvement of RHU 1, RHU II",
+          "confidence": 0.9742,
+          "boxPx": [
+            67.0,
+            237.0,
+            319.0,
+            250.0
+          ]
+        },
+        {
+          "text": "Miagao, Iloilo",
+          "confidence": 0.9798,
+          "boxPx": [
+            313.0,
+            235.0,
+            397.0,
+            251.0
+          ]
+        },
+        {
+          "text": "2,000,000.00",
+          "confidence": 0.9999,
+          "boxPx": [
+            406.0,
+            235.0,
+            480.0,
+            251.0
+          ]
+        },
+        {
+          "text": "0.00%",
+          "confidence": 0.9968,
+          "boxPx": [
+            713.0,
+            235.0,
+            752.0,
+            252.0
+          ]
+        },
+        {
+          "text": "not",
+          "confidence": 1.0,
+          "boxPx": [
+            966.0,
+            236.0,
+            993.0,
+            253.0
+          ]
+        },
+        {
+          "text": "BHS and Half-Way Home",
+          "confidence": 0.9889,
+          "boxPx": [
+            93.0,
+            253.0,
+            222.0,
+            267.0
+          ]
+        },
+        {
+          "text": "implemented",
+          "confidence": 0.9998,
+          "boxPx": [
+            942.0,
+            251.0,
+            1018.0,
+            270.0
+          ]
+        },
+        {
+          "text": "2. Purchase/Construction and Improvement",
+          "confidence": 0.9879,
+          "boxPx": [
+            51.0,
+            290.0,
+            288.0,
+            304.0
+          ]
+        },
+        {
+          "text": "of Government Facilities-Social Develeopment",
+          "confidence": 0.9727,
+          "boxPx": [
+            72.0,
+            308.0,
+            321.0,
+            322.0
+          ]
+        },
+        {
+          "text": "2.1 Rehabilitation of Potable Water Supply",
+          "confidence": 0.9765,
+          "boxPx": [
+            66.0,
+            334.0,
+            289.0,
+            348.0
+          ]
+        },
+        {
+          "text": "Miagao, Iloilo",
+          "confidence": 0.9965,
+          "boxPx": [
+            322.0,
+            332.0,
+            396.0,
+            348.0
+          ]
+        },
+        {
+          "text": "100,000.00",
+          "confidence": 0.9992,
+          "boxPx": [
+            412.0,
+            332.0,
+            475.0,
+            349.0
+          ]
+        },
+        {
+          "text": "0.00%",
+          "confidence": 0.9999,
+          "boxPx": [
+            713.0,
+            333.0,
+            751.0,
+            348.0
+          ]
+        },
+        {
+          "text": "not",
+          "confidence": 1.0,
+          "boxPx": [
+            966.0,
+            333.0,
+            992.0,
+            349.0
+          ]
+        },
+        {
+          "text": "System at Barangay Baybay Norte",
+          "confidence": 0.9936,
+          "boxPx": [
+            92.0,
+            353.0,
+            270.0,
+            366.0
+          ]
+        },
+        {
+          "text": "implemented",
+          "confidence": 0.9999,
+          "boxPx": [
+            943.0,
+            351.0,
+            1017.0,
+            368.0
+          ]
+        },
+        {
+          "text": "2.2 Assistance to Barangays",
+          "confidence": 0.9731,
+          "boxPx": [
+            63.0,
+            388.0,
+            214.0,
+            407.0
+          ]
+        },
+        {
+          "text": "Miagao, Iloilo",
+          "confidence": 0.9814,
+          "boxPx": [
+            323.0,
+            389.0,
+            398.0,
+            406.0
+          ]
+        },
+        {
+          "text": "3,000,000.00 January 30, 2019",
+          "confidence": 0.9851,
+          "boxPx": [
+            407.0,
+            389.0,
+            568.0,
+            406.0
+          ]
+        },
+        {
+          "text": "25.67%",
+          "confidence": 0.9999,
+          "boxPx": [
+            708.0,
+            390.0,
+            751.0,
+            405.0
+          ]
+        },
+        {
+          "text": "770,000.00",
+          "confidence": 0.9999,
+          "boxPx": [
+            780.0,
+            389.0,
+            845.0,
+            406.0
+          ]
+        },
+        {
+          "text": "with PR.",
+          "confidence": 0.9173,
+          "boxPx": [
+            956.0,
+            388.0,
+            1003.0,
+            408.0
+          ]
+        },
+        {
+          "text": "Php279,564.00",
+          "confidence": 0.9999,
+          "boxPx": [
+            941.0,
+            409.0,
+            1018.0,
+            426.0
+          ]
+        },
+        {
+          "text": "3. Social Welfare",
+          "confidence": 0.9885,
+          "boxPx": [
+            51.0,
+            428.0,
+            143.0,
+            441.0
+          ]
+        },
+        {
+          "text": "3.1 Construction of Multi-Purpose Building",
+          "confidence": 0.9962,
+          "boxPx": [
+            66.0,
+            455.0,
+            291.0,
+            469.0
+          ]
+        },
+        {
+          "text": "Miagao, Iloilo",
+          "confidence": 0.9816,
+          "boxPx": [
+            323.0,
+            453.0,
+            397.0,
+            470.0
+          ]
+        },
+        {
+          "text": "300,000.00",
+          "confidence": 0.9998,
+          "boxPx": [
+            411.0,
+            452.0,
+            477.0,
+            471.0
+          ]
+        },
+        {
+          "text": "0.00%",
+          "confidence": 0.9999,
+          "boxPx": [
+            712.0,
+            453.0,
+            752.0,
+            471.0
+          ]
+        },
+        {
+          "text": "not",
+          "confidence": 1.0,
+          "boxPx": [
+            965.0,
+            453.0,
+            994.0,
+            472.0
+          ]
+        },
+        {
+          "text": "(Stock Room-Phase II)",
+          "confidence": 0.9936,
+          "boxPx": [
+            93.0,
+            474.0,
+            207.0,
+            488.0
+          ]
+        },
+        {
+          "text": "implemented",
+          "confidence": 0.9999,
+          "boxPx": [
+            944.0,
+            474.0,
+            1016.0,
+            488.0
+          ]
+        },
+        {
+          "text": "3.2 Construction of Multi-Purpose Building",
+          "confidence": 0.9925,
+          "boxPx": [
+            66.0,
+            511.0,
+            289.0,
+            524.0
+          ]
+        },
+        {
+          "text": "Miagao, Iloilo",
+          "confidence": 0.9913,
+          "boxPx": [
+            323.0,
+            510.0,
+            397.0,
+            526.0
+          ]
+        },
+        {
+          "text": "500,000.00",
+          "confidence": 0.9996,
+          "boxPx": [
+            412.0,
+            510.0,
+            475.0,
+            526.0
+          ]
+        },
+        {
+          "text": "0.00%",
+          "confidence": 0.9999,
+          "boxPx": [
+            712.0,
+            510.0,
+            751.0,
+            527.0
+          ]
+        },
+        {
+          "text": "not",
+          "confidence": 1.0,
+          "boxPx": [
+            965.0,
+            510.0,
+            994.0,
+            528.0
+          ]
+        },
+        {
+          "text": "(Holding Center)",
+          "confidence": 0.9975,
+          "boxPx": [
+            90.0,
+            527.0,
+            181.0,
+            547.0
+          ]
+        },
+        {
+          "text": "implemented",
+          "confidence": 1.0,
+          "boxPx": [
+            943.0,
+            528.0,
+            1017.0,
+            545.0
+          ]
+        },
+        {
+          "text": "SMJEM20%IRAUTILIZATION2019",
+          "confidence": 0.9996,
+          "boxPx": [
+            36.0,
+            637.0,
+            219.0,
+            654.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

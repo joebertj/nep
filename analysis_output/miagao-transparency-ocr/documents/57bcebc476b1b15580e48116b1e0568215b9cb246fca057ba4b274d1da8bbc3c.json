@@ -1,0 +1,111 @@
+{
+  "sourceFileSha256": "57bcebc476b1b15580e48116b1e0568215b9cb246fca057ba4b274d1da8bbc3c",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/499a099b47555969.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/12/Section-I-Invitation-to-Bid-local-access-232x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/section-i-invitation-to-bid-local-access/",
+      "sourceTitle": "Section I: Invitation to Bid local access",
+      "publishedAt": "2018-12-07T01:48:11",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Section-I-Invitation-to-Bid-local-access-232x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "57bcebc476b1b15580e48116b1e0568215b9cb246fca057ba4b274d1da8bbc3c",
+      "sourceFileBytes": 14650,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/499a099b47555969.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/12/Section-I-Invitation-to-Bid-local-access-232x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/section-i-invitation-to-bid-local-access/",
+          "sourceTitle": "Section I: Invitation to Bid local access",
+          "publishedAt": "2018-12-07T01:48:11",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Section-I-Invitation-to-Bid-local-access-232x300.jpg"
+        }
+      ],
+      "sourceFileName": "Section-I-Invitation-to-Bid-local-access-232x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Ropudsc af the ilipoires\nMUBEICIPALITY OF MLAGAD\nBEDS ARD AWARDIS COMBETTE\nAAWLAMON TO THO COR T9E COMORTIMU OP LOCAL ACCESSROAD)\n7N9\n-",
+      "ocrText": "Ropudsc af the ilipoires\nMUBEICIPALITY OF MLAGAD\nBEDS ARD AWARDIS COMBETTE\nAAWLAMON TO THO COR T9E COMORTIMU OP LOCAL ACCESSROAD)\n7N9\n-",
+      "ocrTokenCount": 6,
+      "ocrMeanConfidence": 0.6688,
+      "ocrTokens": [
+        {
+          "text": "Ropudsc af the ilipoires",
+          "confidence": 0.745,
+          "boxPx": [
+            61.0,
+            12.0,
+            119.0,
+            24.0
+          ]
+        },
+        {
+          "text": "MUBEICIPALITY OF MLAGAD",
+          "confidence": 0.8302,
+          "boxPx": [
+            64.0,
+            25.0,
+            130.0,
+            32.0
+          ]
+        },
+        {
+          "text": "BEDS ARD AWARDIS COMBETTE",
+          "confidence": 0.8746,
+          "boxPx": [
+            64.0,
+            31.0,
+            140.0,
+            39.0
+          ]
+        },
+        {
+          "text": "AAWLAMON TO THO COR T9E COMORTIMU OP LOCAL ACCESSROAD)",
+          "confidence": 0.7313,
+          "boxPx": [
+            48.0,
+            55.0,
+            183.0,
+            63.0
+          ]
+        },
+        {
+          "text": "7N9",
+          "confidence": 0.4343,
+          "boxPx": [
+            50.0,
+            120.0,
+            70.0,
+            127.0
+          ]
+        },
+        {
+          "text": "-",
+          "confidence": 0.3971,
+          "boxPx": [
+            132.0,
+            262.0,
+            154.0,
+            273.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

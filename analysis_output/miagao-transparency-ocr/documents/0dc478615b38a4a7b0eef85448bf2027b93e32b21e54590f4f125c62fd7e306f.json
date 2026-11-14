@@ -1,0 +1,50 @@
+{
+  "sourceFileSha256": "0dc478615b38a4a7b0eef85448bf2027b93e32b21e54590f4f125c62fd7e306f",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/d0ec83dc6f9ce4e3.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/12/Section-I-Invitation-to-Bid-local-access3-232x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/section-i-invitation-to-bid-local-access/",
+      "sourceTitle": "Section I: Invitation to Bid local access",
+      "publishedAt": "2018-12-07T01:48:11",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Section-I-Invitation-to-Bid-local-access3-232x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "0dc478615b38a4a7b0eef85448bf2027b93e32b21e54590f4f125c62fd7e306f",
+      "sourceFileBytes": 13659,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/d0ec83dc6f9ce4e3.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/12/Section-I-Invitation-to-Bid-local-access3-232x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/section-i-invitation-to-bid-local-access/",
+          "sourceTitle": "Section I: Invitation to Bid local access",
+          "publishedAt": "2018-12-07T01:48:11",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Section-I-Invitation-to-Bid-local-access3-232x300.jpg"
+        }
+      ],
+      "sourceFileName": "Section-I-Invitation-to-Bid-local-access3-232x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "",
+      "ocrText": "",
+      "ocrTokenCount": 0,
+      "ocrMeanConfidence": null,
+      "ocrTokens": [],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+      "parseStatus": "no_text_detected"
+    }
+  ]
+}

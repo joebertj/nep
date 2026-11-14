@@ -1,0 +1,211 @@
+{
+  "sourceFileSha256": "71c192e3f2f786c51a3ac29d338ef1d0c951b2cd1d1a22c242fe5de449db392d",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/9cd08059529885fc.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/12/Section-I-Invitation-to-Bid-local-access4-400x516.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/section-i-invitation-to-bid-local-access/",
+      "sourceTitle": "Section I: Invitation to Bid local access",
+      "publishedAt": "2018-12-07T01:48:11",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Section-I-Invitation-to-Bid-local-access4-400x516.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "71c192e3f2f786c51a3ac29d338ef1d0c951b2cd1d1a22c242fe5de449db392d",
+      "sourceFileBytes": 16298,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/9cd08059529885fc.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/12/Section-I-Invitation-to-Bid-local-access4-400x516.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/section-i-invitation-to-bid-local-access/",
+          "sourceTitle": "Section I: Invitation to Bid local access",
+          "publishedAt": "2018-12-07T01:48:11",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Section-I-Invitation-to-Bid-local-access4-400x516.jpg"
+        }
+      ],
+      "sourceFileName": "Section-I-Invitation-to-Bid-local-access4-400x516.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Municipal Building, Miagao, llollo. Bids wil be opened in the presence of the bidders\naccepted\nConfenence Room\nMiagao, Iloilo\nMunicipal Bullding. Mueda St\naccordance with Section 41 of RA 9184 and its IRR, witheut thereby incurring any\nliability to the affected bidder or bididers\nFor further infoemation, please refler to:\nSHERWIN KEITH M. FAINA\nLocal Government Uinit of Magee\nMunicipal Pianningond Deveiopmene Office\nMueda St., Magan, Nele\n(033) 315-8050 10c. 208\nigumiagao@yahoe.com\nSHERWIN KEITH ML FAINA\nBAC Chairperson",
+      "ocrText": "Municipal Building, Miagao, llollo. Bids wil be opened in the presence of the bidders\naccepted\nConfenence Room\nMiagao, Iloilo\nMunicipal Bullding. Mueda St\naccordance with Section 41 of RA 9184 and its IRR, witheut thereby incurring any\nliability to the affected bidder or bididers\nFor further infoemation, please refler to:\nSHERWIN KEITH M. FAINA\nLocal Government Uinit of Magee\nMunicipal Pianningond Deveiopmene Office\nMueda St., Magan, Nele\n(033) 315-8050 10c. 208\nigumiagao@yahoe.com\nSHERWIN KEITH ML FAINA\nBAC Chairperson",
+      "ocrTokenCount": 16,
+      "ocrMeanConfidence": 0.9427,
+      "ocrTokens": [
+        {
+          "text": "Municipal Building, Miagao, llollo. Bids wil be opened in the presence of the bidders",
+          "confidence": 0.9625,
+          "boxPx": [
+            92.0,
+            62.0,
+            353.0,
+            73.0
+          ]
+        },
+        {
+          "text": "accepted",
+          "confidence": 0.9706,
+          "boxPx": [
+            91.0,
+            81.0,
+            123.0,
+            91.0
+          ]
+        },
+        {
+          "text": "Confenence Room",
+          "confidence": 0.9623,
+          "boxPx": [
+            92.0,
+            98.0,
+            147.0,
+            108.0
+          ]
+        },
+        {
+          "text": "Miagao, Iloilo",
+          "confidence": 0.9252,
+          "boxPx": [
+            91.0,
+            116.0,
+            134.0,
+            126.0
+          ]
+        },
+        {
+          "text": "Municipal Bullding. Mueda St",
+          "confidence": 0.9068,
+          "boxPx": [
+            92.0,
+            108.0,
+            179.0,
+            115.0
+          ]
+        },
+        {
+          "text": "accordance with Section 41 of RA 9184 and its IRR, witheut thereby incurring any",
+          "confidence": 0.9702,
+          "boxPx": [
+            91.0,
+            150.0,
+            353.0,
+            161.0
+          ]
+        },
+        {
+          "text": "liability to the affected bidder or bididers",
+          "confidence": 0.9642,
+          "boxPx": [
+            93.0,
+            161.0,
+            214.0,
+            168.0
+          ]
+        },
+        {
+          "text": "For further infoemation, please refler to:",
+          "confidence": 0.9522,
+          "boxPx": [
+            87.0,
+            176.0,
+            208.0,
+            187.0
+          ]
+        },
+        {
+          "text": "SHERWIN KEITH M. FAINA",
+          "confidence": 0.9471,
+          "boxPx": [
+            92.0,
+            185.0,
+            170.0,
+            196.0
+          ]
+        },
+        {
+          "text": "Local Government Uinit of Magee",
+          "confidence": 0.9303,
+          "boxPx": [
+            92.0,
+            204.0,
+            190.0,
+            213.0
+          ]
+        },
+        {
+          "text": "Municipal Pianningond Deveiopmene Office",
+          "confidence": 0.9357,
+          "boxPx": [
+            93.0,
+            197.0,
+            219.0,
+            204.0
+          ]
+        },
+        {
+          "text": "Mueda St., Magan, Nele",
+          "confidence": 0.8558,
+          "boxPx": [
+            91.0,
+            212.0,
+            166.0,
+            223.0
+          ]
+        },
+        {
+          "text": "(033) 315-8050 10c. 208",
+          "confidence": 0.9035,
+          "boxPx": [
+            92.0,
+            221.0,
+            162.0,
+            231.0
+          ]
+        },
+        {
+          "text": "igumiagao@yahoe.com",
+          "confidence": 0.9414,
+          "boxPx": [
+            92.0,
+            230.0,
+            165.0,
+            241.0
+          ]
+        },
+        {
+          "text": "SHERWIN KEITH ML FAINA",
+          "confidence": 0.9578,
+          "boxPx": [
+            241.0,
+            266.0,
+            319.0,
+            273.0
+          ]
+        },
+        {
+          "text": "BAC Chairperson",
+          "confidence": 0.9969,
+          "boxPx": [
+            245.0,
+            274.0,
+            297.0,
+            284.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

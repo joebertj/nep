@@ -22,6 +22,13 @@ from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
+# Keep Paddle and its numerical runtimes to one CPU thread. The OCR queue also
+# runs one isolated worker process at a time so a stalled file can be stopped.
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["MKL_NUM_THREADS"] = "1"
+os.environ["OPENBLAS_NUM_THREADS"] = "1"
+os.environ["FLAGS_cpu_num_threads"] = "1"
+
 ROOT = Path(__file__).resolve().parent
 INVENTORY = ROOT / "analysis_output/miagao-transparency-source-inventory.json"
 OUT_DIR = ROOT / "analysis_output/miagao-transparency-ocr"
@@ -348,7 +355,7 @@ def main():
     parser.add_argument("--retry-errors", action="store_true", help="retry files with a saved .error.json record; skipped by default")
     parser.add_argument("--skip-file", action="append", default=[], metavar="SHA256|PATH|NAME", help="persistently skip a file (repeatable; accepts SHA-256, archive path, or unique filename)")
     parser.add_argument("--unskip-file", action="append", default=[], metavar="SHA256|PATH|NAME", help="remove a file from the persistent skip list (repeatable)")
-    parser.add_argument("--document-timeout-seconds", type=int, default=120, help="skip and log a file if OCR exceeds this time")
+    parser.add_argument("--document-timeout-seconds", type=int, default=30, help="skip and log a file if OCR exceeds this time")
     parser.add_argument("--worker-start-timeout-seconds", type=int, default=300, help="maximum time allowed for PaddleOCR worker startup")
     args = parser.parse_args()
     OUT_DIR.mkdir(parents=True, exist_ok=True)

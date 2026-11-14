@@ -1,0 +1,281 @@
+{
+  "sourceFileSha256": "250e8425ac58059bc0d0639c48f390190395e943a9aeda9436151c94e693937c",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/083d24470417ab3a.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/10/Section-1-Invitation-to-Bid-IT-MTO-1-216x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-i-t-equipment-for-use-of-treasurers-office/",
+      "sourceTitle": "INVITATION TO BID FOR I.T. EQUIPMENT FOR USE OF TREASURER’S OFFICE",
+      "publishedAt": "2018-10-03T08:00:41",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Section-1-Invitation-to-Bid-IT-MTO-1-216x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "250e8425ac58059bc0d0639c48f390190395e943a9aeda9436151c94e693937c",
+      "sourceFileBytes": 15623,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/083d24470417ab3a.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/10/Section-1-Invitation-to-Bid-IT-MTO-1-216x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-i-t-equipment-for-use-of-treasurers-office/",
+          "sourceTitle": "INVITATION TO BID FOR I.T. EQUIPMENT FOR USE OF TREASURER’S OFFICE",
+          "publishedAt": "2018-10-03T08:00:41",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Section-1-Invitation-to-Bid-IT-MTO-1-216x300.jpg"
+        }
+      ],
+      "sourceFileName": "Section-1-Invitation-to-Bid-IT-MTO-1-216x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Repubhic of the Phlippines\nMENICIPALITY OF MIAGAO\nINVTTATION TO BID FOR LT.EQUIPMENT FOR USE OF\nTREASURER'S OFFICE\nSangwn, AnalN1041--87-0-d3, Bag4Ter23wk aply\nthe suat of P 2hlupeoad heing tho Approned Radpet fer the Goerract (A) to\nTEM M\nQELRNTITY\nariC\n185 LPT1 w040180 wels 8E8\n654VA\nIs\nFer\nProrme T CHe\nLaphps\n2 dvc\n1 Th cag\nVwt\nhristar\n6\nYet\nMMN\nBOT MATRD",
+      "ocrText": "Repubhic of the Phlippines\nMENICIPALITY OF MIAGAO\nINVTTATION TO BID FOR LT.EQUIPMENT FOR USE OF\nTREASURER'S OFFICE\nSangwn, AnalN1041--87-0-d3, Bag4Ter23wk aply\nthe suat of P 2hlupeoad heing tho Approned Radpet fer the Goerract (A) to\nTEM M\nQELRNTITY\nariC\n185 LPT1 w040180 wels 8E8\n654VA\nIs\nFer\nProrme T CHe\nLaphps\n2 dvc\n1 Th cag\nVwt\nhristar\n6\nYet\nMMN\nBOT MATRD",
+      "ocrTokenCount": 23,
+      "ocrMeanConfidence": 0.6706,
+      "ocrTokens": [
+        {
+          "text": "Repubhic of the Phlippines",
+          "confidence": 0.8589,
+          "boxPx": [
+            49.0,
+            1.0,
+            107.0,
+            8.0
+          ]
+        },
+        {
+          "text": "MENICIPALITY OF MIAGAO",
+          "confidence": 0.9175,
+          "boxPx": [
+            49.0,
+            11.0,
+            121.0,
+            19.0
+          ]
+        },
+        {
+          "text": "INVTTATION TO BID FOR LT.EQUIPMENT FOR USE OF",
+          "confidence": 0.9792,
+          "boxPx": [
+            19.0,
+            44.0,
+            187.0,
+            55.0
+          ]
+        },
+        {
+          "text": "TREASURER'S OFFICE",
+          "confidence": 0.9962,
+          "boxPx": [
+            67.0,
+            53.0,
+            142.0,
+            64.0
+          ]
+        },
+        {
+          "text": "Sangwn, AnalN1041--87-0-d3, Bag4Ter23wk aply",
+          "confidence": 0.5174,
+          "boxPx": [
+            23.0,
+            73.0,
+            199.0,
+            80.0
+          ]
+        },
+        {
+          "text": "the suat of P 2hlupeoad heing tho Approned Radpet fer the Goerract (A) to",
+          "confidence": 0.8024,
+          "boxPx": [
+            23.0,
+            79.0,
+            199.0,
+            86.0
+          ]
+        },
+        {
+          "text": "TEM M",
+          "confidence": 0.8111,
+          "boxPx": [
+            25.0,
+            123.0,
+            51.0,
+            133.0
+          ]
+        },
+        {
+          "text": "QELRNTITY",
+          "confidence": 0.8693,
+          "boxPx": [
+            52.0,
+            125.0,
+            79.0,
+            132.0
+          ]
+        },
+        {
+          "text": "ariC",
+          "confidence": 0.4509,
+          "boxPx": [
+            98.0,
+            181.0,
+            186.0,
+            192.0
+          ]
+        },
+        {
+          "text": "185 LPT1 w040180 wels 8E8",
+          "confidence": 0.4966,
+          "boxPx": [
+            100.0,
+            172.0,
+            170.0,
+            179.0
+          ]
+        },
+        {
+          "text": "654VA",
+          "confidence": 0.4997,
+          "boxPx": [
+            99.0,
+            195.0,
+            117.0,
+            202.0
+          ]
+        },
+        {
+          "text": "Is",
+          "confidence": 0.455,
+          "boxPx": [
+            100.0,
+            189.0,
+            111.0,
+            196.0
+          ]
+        },
+        {
+          "text": "Fer",
+          "confidence": 0.8424,
+          "boxPx": [
+            85.0,
+            200.0,
+            98.0,
+            208.0
+          ]
+        },
+        {
+          "text": "Prorme T CHe",
+          "confidence": 0.5141,
+          "boxPx": [
+            98.0,
+            204.0,
+            142.0,
+            215.0
+          ]
+        },
+        {
+          "text": "Laphps",
+          "confidence": 0.7982,
+          "boxPx": [
+            99.0,
+            201.0,
+            118.0,
+            208.0
+          ]
+        },
+        {
+          "text": "2 dvc",
+          "confidence": 0.3686,
+          "boxPx": [
+            98.0,
+            221.0,
+            155.0,
+            232.0
+          ]
+        },
+        {
+          "text": "1 Th cag",
+          "confidence": 0.6003,
+          "boxPx": [
+            100.0,
+            218.0,
+            127.0,
+            225.0
+          ]
+        },
+        {
+          "text": "Vwt",
+          "confidence": 0.4157,
+          "boxPx": [
+            84.0,
+            229.0,
+            97.0,
+            238.0
+          ]
+        },
+        {
+          "text": "hristar",
+          "confidence": 0.6418,
+          "boxPx": [
+            99.0,
+            229.0,
+            117.0,
+            236.0
+          ]
+        },
+        {
+          "text": "6",
+          "confidence": 0.5494,
+          "boxPx": [
+            64.0,
+            243.0,
+            69.0,
+            248.0
+          ]
+        },
+        {
+          "text": "Yet",
+          "confidence": 0.5417,
+          "boxPx": [
+            84.0,
+            241.0,
+            97.0,
+            249.0
+          ]
+        },
+        {
+          "text": "MMN",
+          "confidence": 0.5744,
+          "boxPx": [
+            96.0,
+            240.0,
+            119.0,
+            257.0
+          ]
+        },
+        {
+          "text": "BOT MATRD",
+          "confidence": 0.9223,
+          "boxPx": [
+            99.0,
+            235.0,
+            129.0,
+            243.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

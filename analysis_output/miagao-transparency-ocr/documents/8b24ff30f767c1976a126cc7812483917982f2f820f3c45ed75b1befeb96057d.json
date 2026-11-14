@@ -1,0 +1,341 @@
+{
+  "sourceFileSha256": "8b24ff30f767c1976a126cc7812483917982f2f820f3c45ed75b1befeb96057d",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/721584fe2370c458.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2019/04/SEF-Utilization-as-of-MArch-31-2019.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/special-education-fund-and-expenditure-estimate/sef-utilization-as-of-march-31-2019/",
+      "sourceTitle": "SEF Utilization as of March 31, 2019",
+      "publishedAt": "2019-04-01T06:01:31",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "SEF-Utilization-as-of-MArch-31-2019.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "8b24ff30f767c1976a126cc7812483917982f2f820f3c45ed75b1befeb96057d",
+      "sourceFileBytes": 143309,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/721584fe2370c458.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2019/04/SEF-Utilization-as-of-MArch-31-2019.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/special-education-fund-and-expenditure-estimate/sef-utilization-as-of-march-31-2019/",
+          "sourceTitle": "SEF Utilization as of March 31, 2019",
+          "publishedAt": "2019-04-01T06:01:31",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "SEF-Utilization-as-of-MArch-31-2019.jpg"
+        }
+      ],
+      "sourceFileName": "SEF-Utilization-as-of-MArch-31-2019.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Republic of the Philippines\nProvince of Iloilo\nMUNICIPALITY OF MIAGAO\nREPORT OF SEF UTILIZATION\nFor the Year Ended March 31, 2019\nProvince/City/Municipality: Miagao\nReceipt from SEF\n1,391,885.04\nSurplus CY 2018\n1,652,417.21\nContinuing Appropriations\n2,744,492.21\nTotal\n5,788,794.46\nLess:\nDisbursement:\nCapital Outlay\nSchool Buildings\n291,234.00\nTotal Expenditures\n291,234.00\nBalance\n5,497,560.46\nCeritfied Correct:\nMAYLENE T. SERVIDAD\nMunicipal Accountant\nApproved by:\nHON. MACARIO N. NAPULAN, M.D\nMunicipal Mayor",
+      "ocrText": "Republic of the Philippines\nProvince of Iloilo\nMUNICIPALITY OF MIAGAO\nREPORT OF SEF UTILIZATION\nFor the Year Ended March 31, 2019\nProvince/City/Municipality: Miagao\nReceipt from SEF\n1,391,885.04\nSurplus CY 2018\n1,652,417.21\nContinuing Appropriations\n2,744,492.21\nTotal\n5,788,794.46\nLess:\nDisbursement:\nCapital Outlay\nSchool Buildings\n291,234.00\nTotal Expenditures\n291,234.00\nBalance\n5,497,560.46\nCeritfied Correct:\nMAYLENE T. SERVIDAD\nMunicipal Accountant\nApproved by:\nHON. MACARIO N. NAPULAN, M.D\nMunicipal Mayor",
+      "ocrTokenCount": 29,
+      "ocrMeanConfidence": 0.9944,
+      "ocrTokens": [
+        {
+          "text": "Republic of the Philippines",
+          "confidence": 0.9923,
+          "boxPx": [
+            416.0,
+            94.0,
+            686.0,
+            118.0
+          ]
+        },
+        {
+          "text": "Province of Iloilo",
+          "confidence": 0.983,
+          "boxPx": [
+            464.0,
+            128.0,
+            637.0,
+            152.0
+          ]
+        },
+        {
+          "text": "MUNICIPALITY OF MIAGAO",
+          "confidence": 0.9997,
+          "boxPx": [
+            413.0,
+            164.0,
+            689.0,
+            186.0
+          ]
+        },
+        {
+          "text": "REPORT OF SEF UTILIZATION",
+          "confidence": 0.9908,
+          "boxPx": [
+            354.0,
+            229.0,
+            750.0,
+            256.0
+          ]
+        },
+        {
+          "text": "For the Year Ended March 31, 2019",
+          "confidence": 0.9799,
+          "boxPx": [
+            369.0,
+            269.0,
+            732.0,
+            293.0
+          ]
+        },
+        {
+          "text": "Province/City/Municipality: Miagao",
+          "confidence": 0.9996,
+          "boxPx": [
+            127.0,
+            371.0,
+            489.0,
+            398.0
+          ]
+        },
+        {
+          "text": "Receipt from SEF",
+          "confidence": 0.9681,
+          "boxPx": [
+            127.0,
+            475.0,
+            303.0,
+            502.0
+          ]
+        },
+        {
+          "text": "1,391,885.04",
+          "confidence": 1.0,
+          "boxPx": [
+            835.0,
+            475.0,
+            971.0,
+            503.0
+          ]
+        },
+        {
+          "text": "Surplus CY 2018",
+          "confidence": 0.993,
+          "boxPx": [
+            127.0,
+            511.0,
+            303.0,
+            537.0
+          ]
+        },
+        {
+          "text": "1,652,417.21",
+          "confidence": 1.0,
+          "boxPx": [
+            835.0,
+            510.0,
+            970.0,
+            537.0
+          ]
+        },
+        {
+          "text": "Continuing Appropriations",
+          "confidence": 0.9993,
+          "boxPx": [
+            127.0,
+            546.0,
+            388.0,
+            570.0
+          ]
+        },
+        {
+          "text": "2,744,492.21",
+          "confidence": 1.0,
+          "boxPx": [
+            833.0,
+            544.0,
+            970.0,
+            572.0
+          ]
+        },
+        {
+          "text": "Total",
+          "confidence": 0.9999,
+          "boxPx": [
+            213.0,
+            577.0,
+            276.0,
+            607.0
+          ]
+        },
+        {
+          "text": "5,788,794.46",
+          "confidence": 1.0,
+          "boxPx": [
+            832.0,
+            577.0,
+            971.0,
+            608.0
+          ]
+        },
+        {
+          "text": "Less:",
+          "confidence": 0.9998,
+          "boxPx": [
+            126.0,
+            684.0,
+            183.0,
+            710.0
+          ]
+        },
+        {
+          "text": "Disbursement:",
+          "confidence": 0.9999,
+          "boxPx": [
+            215.0,
+            682.0,
+            370.0,
+            711.0
+          ]
+        },
+        {
+          "text": "Capital Outlay",
+          "confidence": 0.9999,
+          "boxPx": [
+            215.0,
+            791.0,
+            375.0,
+            822.0
+          ]
+        },
+        {
+          "text": "School Buildings",
+          "confidence": 0.9999,
+          "boxPx": [
+            216.0,
+            829.0,
+            388.0,
+            857.0
+          ]
+        },
+        {
+          "text": "291,234.00",
+          "confidence": 1.0,
+          "boxPx": [
+            852.0,
+            827.0,
+            971.0,
+            855.0
+          ]
+        },
+        {
+          "text": "Total Expenditures",
+          "confidence": 0.9999,
+          "boxPx": [
+            215.0,
+            900.0,
+            410.0,
+            928.0
+          ]
+        },
+        {
+          "text": "291,234.00",
+          "confidence": 1.0,
+          "boxPx": [
+            852.0,
+            900.0,
+            972.0,
+            928.0
+          ]
+        },
+        {
+          "text": "Balance",
+          "confidence": 0.9912,
+          "boxPx": [
+            214.0,
+            972.0,
+            310.0,
+            1003.0
+          ]
+        },
+        {
+          "text": "5,497,560.46",
+          "confidence": 1.0,
+          "boxPx": [
+            834.0,
+            971.0,
+            971.0,
+            999.0
+          ]
+        },
+        {
+          "text": "Ceritfied Correct:",
+          "confidence": 0.9788,
+          "boxPx": [
+            766.0,
+            1154.0,
+            946.0,
+            1183.0
+          ]
+        },
+        {
+          "text": "MAYLENE T. SERVIDAD",
+          "confidence": 0.982,
+          "boxPx": [
+            767.0,
+            1267.0,
+            1001.0,
+            1291.0
+          ]
+        },
+        {
+          "text": "Municipal Accountant",
+          "confidence": 0.9999,
+          "boxPx": [
+            779.0,
+            1304.0,
+            1004.0,
+            1328.0
+          ]
+        },
+        {
+          "text": "Approved by:",
+          "confidence": 0.9998,
+          "boxPx": [
+            765.0,
+            1411.0,
+            907.0,
+            1442.0
+          ]
+        },
+        {
+          "text": "HON. MACARIO N. NAPULAN, M.D",
+          "confidence": 0.9819,
+          "boxPx": [
+            768.0,
+            1523.0,
+            1117.0,
+            1547.0
+          ]
+        },
+        {
+          "text": "Municipal Mayor",
+          "confidence": 0.9998,
+          "boxPx": [
+            766.0,
+            1558.0,
+            943.0,
+            1587.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}
