@@ -1,0 +1,50 @@
+{
+  "sourceFileSha256": "d3e8d89b3c5dbf89cb5f3c362e79ebe4cacd841a918412120d3660e56f1a6639",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/825e8a05a79424da.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2023/10/385774819_747664977405599_4071859495413234286_n-1-300x200.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/30445/",
+      "sourceTitle": "",
+      "publishedAt": "2023-10-05T15:08:10",
+      "sourceElement": "img",
+      "sourceAttribute": "src",
+      "fileName": "385774819_747664977405599_4071859495413234286_n-1-300x200.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "d3e8d89b3c5dbf89cb5f3c362e79ebe4cacd841a918412120d3660e56f1a6639",
+      "sourceFileBytes": 11408,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/825e8a05a79424da.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2023/10/385774819_747664977405599_4071859495413234286_n-1-300x200.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/30445/",
+          "sourceTitle": "",
+          "publishedAt": "2023-10-05T15:08:10",
+          "sourceElement": "img",
+          "sourceAttribute": "src",
+          "fileName": "385774819_747664977405599_4071859495413234286_n-1-300x200.jpg"
+        }
+      ],
+      "sourceFileName": "385774819_747664977405599_4071859495413234286_n-1-300x200.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "",
+      "ocrText": "",
+      "ocrTokenCount": 0,
+      "ocrMeanConfidence": null,
+      "ocrTokens": [],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "no_text_detected"
+    }
+  ]
+}

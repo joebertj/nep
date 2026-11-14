@@ -1,0 +1,2875 @@
+{
+  "sourceFileSha256": "a4559a21d2cde00c0d04b077dfc9c54c9763bb8bb906407a8b2c4378925e266b",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/7ab68581db2122fc.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/07/pdf-with-sign-Malagyan-1.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-6/",
+      "sourceTitle": "Invitation to Bid",
+      "publishedAt": "2022-07-13T08:15:47",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "pdf-with-sign-Malagyan-1.pdf"
+    }
+  ],
+  "ocrPageNumbers": [
+    23,
+    24,
+    25
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "a4559a21d2cde00c0d04b077dfc9c54c9763bb8bb906407a8b2c4378925e266b",
+      "sourceFileBytes": 1125746,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/7ab68581db2122fc.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/07/pdf-with-sign-Malagyan-1.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-6/",
+          "sourceTitle": "Invitation to Bid",
+          "publishedAt": "2022-07-13T08:15:47",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "pdf-with-sign-Malagyan-1.pdf"
+        }
+      ],
+      "sourceFileName": "pdf-with-sign-Malagyan-1.pdf",
+      "pageNumber": 23,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "Section VII. Drawings",
+      "extractedText": "Section VII. Drawings\nSection VII, Drawings\noe\nDESCRIPTION Gr PROJECT:\nCOUNTRY NAME : THE REPUBLIC OF THE PHILIPPINES\nPROJECT NAME ; CONSTRUCTION OF DRAINAGE CANAL AT BRGY. MALAGYAN\nSITELOCATION : BRGY. MALAGYAN, MIAG-AO, ILOILO\nTOTALLENGTH : 72MITRS\n\\, PROPOSED LOCATION’\nFOR SUB-PROJECT OF\n(GY. MALAGYAN\n—— — — pees —f pam ce a\n. s — CONSTRUCTION OF ORAINAGE CANAL AT ex\n== | Sine wcrhCresm — | Grarmne, yam $Thormo not RAAT NEW,",
+      "ocrText": "Section VII, Drawings\noe\nDESCRIPTION Gr PROJECT:\nCOUNTRY NAME : THE REPUBLIC OF THE PHILIPPINES\nPROJECT NAME ; CONSTRUCTION OF DRAINAGE CANAL AT BRGY. MALAGYAN\nSITELOCATION : BRGY. MALAGYAN, MIAG-AO, ILOILO\nTOTALLENGTH : 72MITRS\n\\, PROPOSED LOCATION’\nFOR SUB-PROJECT OF\n(GY. MALAGYAN\n—— — — pees —f pam ce a\n. s — CONSTRUCTION OF ORAINAGE CANAL AT ex\n== | Sine wcrhCresm — | Grarmne, yam $Thormo not RAAT NEW,",
+      "ocrTokenCount": 71,
+      "ocrMeanConfidence": 0.6356,
+      "ocrTokens": [
+        {
+          "text": "Section",
+          "confidence": 0.9658,
+          "boxPx": [
+            636.0,
+            115.0,
+            768.0,
+            146.0
+          ]
+        },
+        {
+          "text": "VII,",
+          "confidence": 0.7589,
+          "boxPx": [
+            785.0,
+            115.0,
+            852.0,
+            146.0
+          ]
+        },
+        {
+          "text": "Drawings",
+          "confidence": 0.9561,
+          "boxPx": [
+            865.0,
+            115.0,
+            1041.0,
+            154.0
+          ]
+        },
+        {
+          "text": "oe",
+          "confidence": 0.1295,
+          "boxPx": [
+            570.0,
+            216.0,
+            615.0,
+            236.0
+          ]
+        },
+        {
+          "text": "DESCRIPTION",
+          "confidence": 0.9677,
+          "boxPx": [
+            177.0,
+            230.0,
+            341.0,
+            250.0
+          ]
+        },
+        {
+          "text": "Gr",
+          "confidence": 0.7471,
+          "boxPx": [
+            350.0,
+            220.0,
+            384.0,
+            251.0
+          ]
+        },
+        {
+          "text": "PROJECT:",
+          "confidence": 0.9687,
+          "boxPx": [
+            392.0,
+            231.0,
+            508.0,
+            250.0
+          ]
+        },
+        {
+          "text": "COUNTRY",
+          "confidence": 0.946,
+          "boxPx": [
+            177.0,
+            269.0,
+            269.0,
+            284.0
+          ]
+        },
+        {
+          "text": "NAME",
+          "confidence": 0.8662,
+          "boxPx": [
+            276.0,
+            271.0,
+            332.0,
+            285.0
+          ]
+        },
+        {
+          "text": ":",
+          "confidence": 0.8662,
+          "boxPx": [
+            339.0,
+            275.0,
+            343.0,
+            285.0
+          ]
+        },
+        {
+          "text": "THE",
+          "confidence": 0.9102,
+          "boxPx": [
+            377.0,
+            272.0,
+            408.0,
+            285.0
+          ]
+        },
+        {
+          "text": "REPUBLIC",
+          "confidence": 0.9611,
+          "boxPx": [
+            415.0,
+            271.0,
+            498.0,
+            285.0
+          ]
+        },
+        {
+          "text": "OF",
+          "confidence": 0.9611,
+          "boxPx": [
+            505.0,
+            271.0,
+            530.0,
+            284.0
+          ]
+        },
+        {
+          "text": "THE",
+          "confidence": 0.9699,
+          "boxPx": [
+            536.0,
+            270.0,
+            566.0,
+            284.0
+          ]
+        },
+        {
+          "text": "PHILIPPINES",
+          "confidence": 0.9698,
+          "boxPx": [
+            573.0,
+            267.0,
+            674.0,
+            283.0
+          ]
+        },
+        {
+          "text": "PROJECT",
+          "confidence": 0.2142,
+          "boxPx": [
+            177.0,
+            303.0,
+            262.0,
+            317.0
+          ]
+        },
+        {
+          "text": "NAME",
+          "confidence": 0.2142,
+          "boxPx": [
+            268.0,
+            304.0,
+            325.0,
+            318.0
+          ]
+        },
+        {
+          "text": ";",
+          "confidence": 0.631,
+          "boxPx": [
+            344.0,
+            308.0,
+            347.0,
+            318.0
+          ]
+        },
+        {
+          "text": "CONSTRUCTION",
+          "confidence": 0.9442,
+          "boxPx": [
+            378.0,
+            304.0,
+            523.0,
+            319.0
+          ]
+        },
+        {
+          "text": "OF",
+          "confidence": 0.9686,
+          "boxPx": [
+            530.0,
+            303.0,
+            554.0,
+            317.0
+          ]
+        },
+        {
+          "text": "DRAINAGE",
+          "confidence": 0.9653,
+          "boxPx": [
+            562.0,
+            301.0,
+            659.0,
+            316.0
+          ]
+        },
+        {
+          "text": "CANAL",
+          "confidence": 0.9637,
+          "boxPx": [
+            666.0,
+            300.0,
+            733.0,
+            314.0
+          ]
+        },
+        {
+          "text": "AT",
+          "confidence": 0.9648,
+          "boxPx": [
+            739.0,
+            301.0,
+            761.0,
+            314.0
+          ]
+        },
+        {
+          "text": "BRGY.",
+          "confidence": 0.8543,
+          "boxPx": [
+            767.0,
+            302.0,
+            822.0,
+            317.0
+          ]
+        },
+        {
+          "text": "MALAGYAN",
+          "confidence": 0.9074,
+          "boxPx": [
+            828.0,
+            298.0,
+            937.0,
+            318.0
+          ]
+        },
+        {
+          "text": "SITELOCATION",
+          "confidence": 0.8126,
+          "boxPx": [
+            177.0,
+            340.0,
+            316.0,
+            355.0
+          ]
+        },
+        {
+          "text": ":",
+          "confidence": 0.8126,
+          "boxPx": [
+            340.0,
+            345.0,
+            344.0,
+            355.0
+          ]
+        },
+        {
+          "text": "BRGY.",
+          "confidence": 0.7684,
+          "boxPx": [
+            378.0,
+            342.0,
+            433.0,
+            355.0
+          ]
+        },
+        {
+          "text": "MALAGYAN,",
+          "confidence": 0.8991,
+          "boxPx": [
+            439.0,
+            340.0,
+            554.0,
+            354.0
+          ]
+        },
+        {
+          "text": "MIAG-AO,",
+          "confidence": 0.9023,
+          "boxPx": [
+            561.0,
+            338.0,
+            655.0,
+            353.0
+          ]
+        },
+        {
+          "text": "ILOILO",
+          "confidence": 0.9623,
+          "boxPx": [
+            661.0,
+            337.0,
+            720.0,
+            351.0
+          ]
+        },
+        {
+          "text": "TOTALLENGTH",
+          "confidence": 0.8583,
+          "boxPx": [
+            175.0,
+            373.0,
+            311.0,
+            388.0
+          ]
+        },
+        {
+          "text": ":",
+          "confidence": 0.663,
+          "boxPx": [
+            340.0,
+            377.0,
+            343.0,
+            388.0
+          ]
+        },
+        {
+          "text": "72MITRS",
+          "confidence": 0.4643,
+          "boxPx": [
+            376.0,
+            374.0,
+            448.0,
+            388.0
+          ]
+        },
+        {
+          "text": "\\,",
+          "confidence": 0.6582,
+          "boxPx": [
+            1265.0,
+            409.0,
+            1269.0,
+            411.0
+          ]
+        },
+        {
+          "text": "PROPOSED",
+          "confidence": 0.9118,
+          "boxPx": [
+            1277.0,
+            417.0,
+            1344.0,
+            428.0
+          ]
+        },
+        {
+          "text": "LOCATION’",
+          "confidence": 0.5441,
+          "boxPx": [
+            1348.0,
+            417.0,
+            1409.0,
+            428.0
+          ]
+        },
+        {
+          "text": "FOR",
+          "confidence": 0.9202,
+          "boxPx": [
+            1278.0,
+            431.0,
+            1303.0,
+            442.0
+          ]
+        },
+        {
+          "text": "SUB-PROJECT",
+          "confidence": 0.9107,
+          "boxPx": [
+            1307.0,
+            431.0,
+            1390.0,
+            443.0
+          ]
+        },
+        {
+          "text": "OF",
+          "confidence": 0.9688,
+          "boxPx": [
+            1394.0,
+            433.0,
+            1409.0,
+            443.0
+          ]
+        },
+        {
+          "text": "(GY.",
+          "confidence": 0.1051,
+          "boxPx": [
+            1296.0,
+            446.0,
+            1312.0,
+            457.0
+          ]
+        },
+        {
+          "text": "MALAGYAN",
+          "confidence": 0.8157,
+          "boxPx": [
+            1320.0,
+            448.0,
+            1385.0,
+            458.0
+          ]
+        },
+        {
+          "text": "——",
+          "confidence": 0.3992,
+          "boxPx": [
+            228.0,
+            980.0,
+            411.0,
+            993.0
+          ]
+        },
+        {
+          "text": "—",
+          "confidence": 0.7273,
+          "boxPx": [
+            536.0,
+            983.0,
+            585.0,
+            990.0
+          ]
+        },
+        {
+          "text": "—",
+          "confidence": 0.7519,
+          "boxPx": [
+            714.0,
+            985.0,
+            817.0,
+            994.0
+          ]
+        },
+        {
+          "text": "pees",
+          "confidence": 0.3209,
+          "boxPx": [
+            894.0,
+            982.0,
+            949.0,
+            988.0
+          ]
+        },
+        {
+          "text": "—f",
+          "confidence": 0.2528,
+          "boxPx": [
+            1002.0,
+            979.0,
+            1011.0,
+            992.0
+          ]
+        },
+        {
+          "text": "pam",
+          "confidence": 0.3119,
+          "boxPx": [
+            1050.0,
+            981.0,
+            1108.0,
+            988.0
+          ]
+        },
+        {
+          "text": "ce",
+          "confidence": 0.2903,
+          "boxPx": [
+            1320.0,
+            982.0,
+            1390.0,
+            989.0
+          ]
+        },
+        {
+          "text": "a",
+          "confidence": 0.2885,
+          "boxPx": [
+            1484.0,
+            982.0,
+            1513.0,
+            989.0
+          ]
+        },
+        {
+          "text": ".",
+          "confidence": 0.0,
+          "boxPx": [
+            307.0,
+            1020.0,
+            314.0,
+            1024.0
+          ]
+        },
+        {
+          "text": "s",
+          "confidence": 0.0,
+          "boxPx": [
+            398.0,
+            1009.0,
+            412.0,
+            1013.0
+          ]
+        },
+        {
+          "text": "—",
+          "confidence": 0.3507,
+          "boxPx": [
+            737.0,
+            991.0,
+            766.0,
+            1034.0
+          ]
+        },
+        {
+          "text": "CONSTRUCTION",
+          "confidence": 0.8848,
+          "boxPx": [
+            1081.0,
+            1011.0,
+            1282.0,
+            1020.0
+          ]
+        },
+        {
+          "text": "OF",
+          "confidence": 0.8186,
+          "boxPx": [
+            1171.0,
+            993.0,
+            1185.0,
+            1031.0
+          ]
+        },
+        {
+          "text": "ORAINAGE",
+          "confidence": 0.4068,
+          "boxPx": [
+            1190.0,
+            1011.0,
+            1242.0,
+            1020.0
+          ]
+        },
+        {
+          "text": "CANAL",
+          "confidence": 0.9484,
+          "boxPx": [
+            1251.0,
+            993.0,
+            1280.0,
+            1031.0
+          ]
+        },
+        {
+          "text": "AT",
+          "confidence": 0.9457,
+          "boxPx": [
+            1287.0,
+            1012.0,
+            1299.0,
+            1019.0
+          ]
+        },
+        {
+          "text": "ex",
+          "confidence": 0.0,
+          "boxPx": [
+            1504.0,
+            1000.0,
+            1545.0,
+            1018.0
+          ]
+        },
+        {
+          "text": "==",
+          "confidence": 0.1978,
+          "boxPx": [
+            242.0,
+            1020.0,
+            342.0,
+            1029.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.9595,
+          "boxPx": [
+            350.0,
+            1008.0,
+            361.0,
+            1049.0
+          ]
+        },
+        {
+          "text": "Sine",
+          "confidence": 0.361,
+          "boxPx": [
+            377.0,
+            1029.0,
+            458.0,
+            1044.0
+          ]
+        },
+        {
+          "text": "wcrhCresm",
+          "confidence": 0.0,
+          "boxPx": [
+            562.0,
+            1030.0,
+            674.0,
+            1039.0
+          ]
+        },
+        {
+          "text": "—",
+          "confidence": 0.6929,
+          "boxPx": [
+            691.0,
+            1010.0,
+            702.0,
+            1051.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.9015,
+          "boxPx": [
+            708.0,
+            1010.0,
+            719.0,
+            1051.0
+          ]
+        },
+        {
+          "text": "Grarmne,",
+          "confidence": 0.0,
+          "boxPx": [
+            734.0,
+            1032.0,
+            765.0,
+            1039.0
+          ]
+        },
+        {
+          "text": "yam",
+          "confidence": 0.0,
+          "boxPx": [
+            802.0,
+            1029.0,
+            856.0,
+            1045.0
+          ]
+        },
+        {
+          "text": "$Thormo",
+          "confidence": 0.0,
+          "boxPx": [
+            965.0,
+            1024.0,
+            1033.0,
+            1042.0
+          ]
+        },
+        {
+          "text": "not",
+          "confidence": 0.2756,
+          "boxPx": [
+            1145.0,
+            1023.0,
+            1173.0,
+            1031.0
+          ]
+        },
+        {
+          "text": "RAAT",
+          "confidence": 0.0,
+          "boxPx": [
+            1180.0,
+            1022.0,
+            1238.0,
+            1031.0
+          ]
+        },
+        {
+          "text": "NEW,",
+          "confidence": 0.4935,
+          "boxPx": [
+            1496.0,
+            1026.0,
+            1546.0,
+            1042.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 18,
+      "imageCoverageRatio": 0.6186,
+      "extractionMethod": "PyMuPDF native text + Tesseract OCR",
+      "parseStatus": "ocr_text_found"
+    },
+    {
+      "sourceFileSha256": "a4559a21d2cde00c0d04b077dfc9c54c9763bb8bb906407a8b2c4378925e266b",
+      "sourceFileBytes": 1125746,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/7ab68581db2122fc.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/07/pdf-with-sign-Malagyan-1.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-6/",
+          "sourceTitle": "Invitation to Bid",
+          "publishedAt": "2022-07-13T08:15:47",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "pdf-with-sign-Malagyan-1.pdf"
+        }
+      ],
+      "sourceFileName": "pdf-with-sign-Malagyan-1.pdf",
+      "pageNumber": 24,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "oO\n4 - 10MM dia. tie\non bars as shown\ntt\nEo STIFFENER @ EVERY SM\nes\n(see stiffener section detail) \\ 4 = 10mm 4-10mw TES 1\n10MM dia. Vertical Bars TES os i\nspaced @ 0.40M 0.C. oun —Lt |\n06 be 7-10MM dia, RSB as shown | 2-10 se |\n| -Sithow oetaus |\n7 4h \\ |\ny DETAIL A\nNN inrete Flooring\nSECTION A-A |\n4 Law = 2.900\n§ 1E = 2.40M\ncanbe o \\\nwut PEPEl by . ;\neg bea aE GE seen lms Er 25h ‘man\nSITE 1 PROFILE . 20 wg\nORS teem . .\n[ k © lew wll] | |\nom aet yJ\ners | = a\nDRAINAGE PLAN\nSCALE NTS\nSn sire iow inion ——j} — farce\n\\ y Cok eapengueenpevee\n—se if vce Bele Fome | aenoncaronr ent. | romero ass",
+      "ocrText": "oO\n4 - 10MM dia. tie\non bars as shown\ntt\nEo STIFFENER @ EVERY SM\nes\n(see stiffener section detail) \\ 4 = 10mm 4-10mw TES 1\n10MM dia. Vertical Bars TES os i\nspaced @ 0.40M 0.C. oun —Lt |\n06 be 7-10MM dia, RSB as shown | 2-10 se |\n| -Sithow oetaus |\n7 4h \\ |\ny DETAIL A\nNN inrete Flooring\nSECTION A-A |\n4 Law = 2.900\n§ 1E = 2.40M\ncanbe o \\\nwut PEPEl by . ;\neg bea aE GE seen lms Er 25h ‘man\nSITE 1 PROFILE . 20 wg\nORS teem . .\n[ k © lew wll] | |\nom aet yJ\ners | = a\nDRAINAGE PLAN\nSCALE NTS\nSn sire iow inion ——j} — farce\n\\ y Cok eapengueenpevee\n—se if vce Bele Fome | aenoncaronr ent. | romero ass",
+      "ocrTokenCount": 145,
+      "ocrMeanConfidence": 0.5101,
+      "ocrTokens": [
+        {
+          "text": "oO",
+          "confidence": 0.3242,
+          "boxPx": [
+            589.0,
+            139.0,
+            622.0,
+            164.0
+          ]
+        },
+        {
+          "text": "4",
+          "confidence": 0.512,
+          "boxPx": [
+            631.0,
+            196.0,
+            638.0,
+            207.0
+          ]
+        },
+        {
+          "text": "-",
+          "confidence": 0.512,
+          "boxPx": [
+            644.0,
+            200.0,
+            649.0,
+            203.0
+          ]
+        },
+        {
+          "text": "10MM",
+          "confidence": 0.725,
+          "boxPx": [
+            656.0,
+            195.0,
+            692.0,
+            206.0
+          ]
+        },
+        {
+          "text": "dia.",
+          "confidence": 0.8183,
+          "boxPx": [
+            698.0,
+            195.0,
+            721.0,
+            206.0
+          ]
+        },
+        {
+          "text": "tie",
+          "confidence": 0.9349,
+          "boxPx": [
+            727.0,
+            195.0,
+            743.0,
+            206.0
+          ]
+        },
+        {
+          "text": "on",
+          "confidence": 0.3814,
+          "boxPx": [
+            508.0,
+            222.0,
+            532.0,
+            231.0
+          ]
+        },
+        {
+          "text": "bars",
+          "confidence": 0.9638,
+          "boxPx": [
+            631.0,
+            212.0,
+            658.0,
+            223.0
+          ]
+        },
+        {
+          "text": "as",
+          "confidence": 0.9638,
+          "boxPx": [
+            663.0,
+            213.0,
+            678.0,
+            223.0
+          ]
+        },
+        {
+          "text": "shown",
+          "confidence": 0.9663,
+          "boxPx": [
+            683.0,
+            211.0,
+            724.0,
+            223.0
+          ]
+        },
+        {
+          "text": "tt",
+          "confidence": 0.5137,
+          "boxPx": [
+            506.0,
+            235.0,
+            542.0,
+            251.0
+          ]
+        },
+        {
+          "text": "Eo",
+          "confidence": 0.2667,
+          "boxPx": [
+            526.0,
+            260.0,
+            621.0,
+            308.0
+          ]
+        },
+        {
+          "text": "STIFFENER",
+          "confidence": 0.7329,
+          "boxPx": [
+            631.0,
+            291.0,
+            704.0,
+            303.0
+          ]
+        },
+        {
+          "text": "@",
+          "confidence": 0.9312,
+          "boxPx": [
+            709.0,
+            291.0,
+            720.0,
+            303.0
+          ]
+        },
+        {
+          "text": "EVERY",
+          "confidence": 0.965,
+          "boxPx": [
+            726.0,
+            290.0,
+            768.0,
+            302.0
+          ]
+        },
+        {
+          "text": "SM",
+          "confidence": 0.9637,
+          "boxPx": [
+            774.0,
+            290.0,
+            792.0,
+            301.0
+          ]
+        },
+        {
+          "text": "es",
+          "confidence": 0.0848,
+          "boxPx": [
+            1402.0,
+            291.0,
+            1503.0,
+            315.0
+          ]
+        },
+        {
+          "text": "(see",
+          "confidence": 0.9672,
+          "boxPx": [
+            631.0,
+            307.0,
+            659.0,
+            320.0
+          ]
+        },
+        {
+          "text": "stiffener",
+          "confidence": 0.9598,
+          "boxPx": [
+            664.0,
+            306.0,
+            718.0,
+            318.0
+          ]
+        },
+        {
+          "text": "section",
+          "confidence": 0.9668,
+          "boxPx": [
+            723.0,
+            306.0,
+            768.0,
+            318.0
+          ]
+        },
+        {
+          "text": "detail)",
+          "confidence": 0.9591,
+          "boxPx": [
+            773.0,
+            305.0,
+            815.0,
+            319.0
+          ]
+        },
+        {
+          "text": "\\",
+          "confidence": 0.1045,
+          "boxPx": [
+            836.0,
+            321.0,
+            837.0,
+            326.0
+          ]
+        },
+        {
+          "text": "4",
+          "confidence": 0.7544,
+          "boxPx": [
+            1206.0,
+            316.0,
+            1213.0,
+            327.0
+          ]
+        },
+        {
+          "text": "=",
+          "confidence": 0.6294,
+          "boxPx": [
+            1225.0,
+            322.0,
+            1234.0,
+            324.0
+          ]
+        },
+        {
+          "text": "10mm",
+          "confidence": 0.4748,
+          "boxPx": [
+            1247.0,
+            317.0,
+            1286.0,
+            329.0
+          ]
+        },
+        {
+          "text": "4-10mw",
+          "confidence": 0.1653,
+          "boxPx": [
+            1303.0,
+            307.0,
+            1345.0,
+            316.0
+          ]
+        },
+        {
+          "text": "TES",
+          "confidence": 0.9169,
+          "boxPx": [
+            1351.0,
+            307.0,
+            1371.0,
+            317.0
+          ]
+        },
+        {
+          "text": "1",
+          "confidence": 0.3803,
+          "boxPx": [
+            1500.0,
+            317.0,
+            1502.0,
+            323.0
+          ]
+        },
+        {
+          "text": "10MM",
+          "confidence": 0.9333,
+          "boxPx": [
+            634.0,
+            330.0,
+            670.0,
+            341.0
+          ]
+        },
+        {
+          "text": "dia.",
+          "confidence": 0.8629,
+          "boxPx": [
+            676.0,
+            330.0,
+            699.0,
+            341.0
+          ]
+        },
+        {
+          "text": "Vertical",
+          "confidence": 0.9512,
+          "boxPx": [
+            704.0,
+            329.0,
+            753.0,
+            341.0
+          ]
+        },
+        {
+          "text": "Bars",
+          "confidence": 0.9467,
+          "boxPx": [
+            759.0,
+            330.0,
+            788.0,
+            340.0
+          ]
+        },
+        {
+          "text": "TES",
+          "confidence": 0.784,
+          "boxPx": [
+            1207.0,
+            332.0,
+            1236.0,
+            345.0
+          ]
+        },
+        {
+          "text": "os",
+          "confidence": 0.8337,
+          "boxPx": [
+            1247.0,
+            337.0,
+            1263.0,
+            346.0
+          ]
+        },
+        {
+          "text": "i",
+          "confidence": 0.9463,
+          "boxPx": [
+            1500.0,
+            325.0,
+            1506.0,
+            348.0
+          ]
+        },
+        {
+          "text": "spaced",
+          "confidence": 0.933,
+          "boxPx": [
+            633.0,
+            345.0,
+            678.0,
+            358.0
+          ]
+        },
+        {
+          "text": "@",
+          "confidence": 0.932,
+          "boxPx": [
+            684.0,
+            345.0,
+            696.0,
+            357.0
+          ]
+        },
+        {
+          "text": "0.40M",
+          "confidence": 0.863,
+          "boxPx": [
+            701.0,
+            345.0,
+            741.0,
+            356.0
+          ]
+        },
+        {
+          "text": "0.C.",
+          "confidence": 0.4768,
+          "boxPx": [
+            747.0,
+            345.0,
+            774.0,
+            356.0
+          ]
+        },
+        {
+          "text": "oun",
+          "confidence": 0.4218,
+          "boxPx": [
+            1207.0,
+            349.0,
+            1251.0,
+            360.0
+          ]
+        },
+        {
+          "text": "—Lt",
+          "confidence": 0.0595,
+          "boxPx": [
+            1462.0,
+            351.0,
+            1502.0,
+            354.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.9442,
+          "boxPx": [
+            1517.0,
+            352.0,
+            1519.0,
+            361.0
+          ]
+        },
+        {
+          "text": "06",
+          "confidence": 0.7928,
+          "boxPx": [
+            186.0,
+            367.0,
+            207.0,
+            378.0
+          ]
+        },
+        {
+          "text": "be",
+          "confidence": 0.0897,
+          "boxPx": [
+            519.0,
+            354.0,
+            533.0,
+            382.0
+          ]
+        },
+        {
+          "text": "7-10MM",
+          "confidence": 0.8987,
+          "boxPx": [
+            633.0,
+            362.0,
+            684.0,
+            373.0
+          ]
+        },
+        {
+          "text": "dia,",
+          "confidence": 0.7766,
+          "boxPx": [
+            690.0,
+            363.0,
+            713.0,
+            373.0
+          ]
+        },
+        {
+          "text": "RSB",
+          "confidence": 0.9317,
+          "boxPx": [
+            719.0,
+            363.0,
+            745.0,
+            373.0
+          ]
+        },
+        {
+          "text": "as",
+          "confidence": 0.9653,
+          "boxPx": [
+            750.0,
+            364.0,
+            765.0,
+            373.0
+          ]
+        },
+        {
+          "text": "shown",
+          "confidence": 0.9653,
+          "boxPx": [
+            770.0,
+            363.0,
+            811.0,
+            373.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.8883,
+          "boxPx": [
+            877.0,
+            363.0,
+            880.0,
+            403.0
+          ]
+        },
+        {
+          "text": "2-10",
+          "confidence": 0.14,
+          "boxPx": [
+            1326.0,
+            362.0,
+            1366.0,
+            372.0
+          ]
+        },
+        {
+          "text": "se",
+          "confidence": 0.4725,
+          "boxPx": [
+            1373.0,
+            362.0,
+            1392.0,
+            372.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.8231,
+          "boxPx": [
+            1517.0,
+            362.0,
+            1519.0,
+            379.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.1272,
+          "boxPx": [
+            877.0,
+            404.0,
+            879.0,
+            406.0
+          ]
+        },
+        {
+          "text": "-Sithow",
+          "confidence": 0.0,
+          "boxPx": [
+            1371.0,
+            383.0,
+            1433.0,
+            408.0
+          ]
+        },
+        {
+          "text": "oetaus",
+          "confidence": 0.1425,
+          "boxPx": [
+            1443.0,
+            387.0,
+            1505.0,
+            408.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.9606,
+          "boxPx": [
+            1517.0,
+            383.0,
+            1518.0,
+            400.0
+          ]
+        },
+        {
+          "text": "7",
+          "confidence": 0.518,
+          "boxPx": [
+            925.0,
+            403.0,
+            936.0,
+            430.0
+          ]
+        },
+        {
+          "text": "4h",
+          "confidence": 0.5456,
+          "boxPx": [
+            981.0,
+            402.0,
+            1015.0,
+            433.0
+          ]
+        },
+        {
+          "text": "\\",
+          "confidence": 0.9318,
+          "boxPx": [
+            1193.0,
+            399.0,
+            1202.0,
+            427.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.8963,
+          "boxPx": [
+            1516.0,
+            407.0,
+            1518.0,
+            425.0
+          ]
+        },
+        {
+          "text": "y",
+          "confidence": 0.0,
+          "boxPx": [
+            523.0,
+            461.0,
+            529.0,
+            467.0
+          ]
+        },
+        {
+          "text": "DETAIL",
+          "confidence": 0.955,
+          "boxPx": [
+            987.0,
+            440.0,
+            1086.0,
+            463.0
+          ]
+        },
+        {
+          "text": "A",
+          "confidence": 0.955,
+          "boxPx": [
+            1108.0,
+            441.0,
+            1125.0,
+            461.0
+          ]
+        },
+        {
+          "text": "NN",
+          "confidence": 0.1084,
+          "boxPx": [
+            534.0,
+            480.0,
+            643.0,
+            496.0
+          ]
+        },
+        {
+          "text": "inrete",
+          "confidence": 0.0,
+          "boxPx": [
+            624.0,
+            466.0,
+            712.0,
+            508.0
+          ]
+        },
+        {
+          "text": "Flooring",
+          "confidence": 0.2141,
+          "boxPx": [
+            722.0,
+            466.0,
+            775.0,
+            508.0
+          ]
+        },
+        {
+          "text": "SECTION",
+          "confidence": 0.8743,
+          "boxPx": [
+            332.0,
+            514.0,
+            467.0,
+            534.0
+          ]
+        },
+        {
+          "text": "A-A",
+          "confidence": 0.8728,
+          "boxPx": [
+            498.0,
+            514.0,
+            564.0,
+            533.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.8484,
+          "boxPx": [
+            1516.0,
+            529.0,
+            1518.0,
+            542.0
+          ]
+        },
+        {
+          "text": "4",
+          "confidence": 0.322,
+          "boxPx": [
+            470.0,
+            585.0,
+            475.0,
+            588.0
+          ]
+        },
+        {
+          "text": "Law",
+          "confidence": 0.2372,
+          "boxPx": [
+            1029.0,
+            571.0,
+            1056.0,
+            587.0
+          ]
+        },
+        {
+          "text": "=",
+          "confidence": 0.958,
+          "boxPx": [
+            1065.0,
+            580.0,
+            1073.0,
+            585.0
+          ]
+        },
+        {
+          "text": "2.900",
+          "confidence": 0.5243,
+          "boxPx": [
+            1084.0,
+            576.0,
+            1122.0,
+            587.0
+          ]
+        },
+        {
+          "text": "§",
+          "confidence": 0.0,
+          "boxPx": [
+            337.0,
+            607.0,
+            340.0,
+            612.0
+          ]
+        },
+        {
+          "text": "1E",
+          "confidence": 0.2297,
+          "boxPx": [
+            1045.0,
+            591.0,
+            1055.0,
+            601.0
+          ]
+        },
+        {
+          "text": "=",
+          "confidence": 0.9191,
+          "boxPx": [
+            1065.0,
+            594.0,
+            1073.0,
+            599.0
+          ]
+        },
+        {
+          "text": "2.40M",
+          "confidence": 0.9066,
+          "boxPx": [
+            1084.0,
+            590.0,
+            1122.0,
+            601.0
+          ]
+        },
+        {
+          "text": "canbe",
+          "confidence": 0.2581,
+          "boxPx": [
+            179.0,
+            627.0,
+            278.0,
+            694.0
+          ]
+        },
+        {
+          "text": "o",
+          "confidence": 0.0,
+          "boxPx": [
+            1017.0,
+            654.0,
+            1026.0,
+            663.0
+          ]
+        },
+        {
+          "text": "\\",
+          "confidence": 0.6722,
+          "boxPx": [
+            1526.0,
+            648.0,
+            1527.0,
+            652.0
+          ]
+        },
+        {
+          "text": "wut",
+          "confidence": 0.0,
+          "boxPx": [
+            182.0,
+            664.0,
+            278.0,
+            691.0
+          ]
+        },
+        {
+          "text": "PEPEl",
+          "confidence": 0.1999,
+          "boxPx": [
+            309.0,
+            660.0,
+            422.0,
+            688.0
+          ]
+        },
+        {
+          "text": "by",
+          "confidence": 0.0666,
+          "boxPx": [
+            1013.0,
+            658.0,
+            1026.0,
+            696.0
+          ]
+        },
+        {
+          "text": ".",
+          "confidence": 0.3192,
+          "boxPx": [
+            1316.0,
+            686.0,
+            1325.0,
+            691.0
+          ]
+        },
+        {
+          "text": ";",
+          "confidence": 0.0,
+          "boxPx": [
+            1475.0,
+            679.0,
+            1477.0,
+            681.0
+          ]
+        },
+        {
+          "text": "eg",
+          "confidence": 0.1135,
+          "boxPx": [
+            214.0,
+            679.0,
+            223.0,
+            690.0
+          ]
+        },
+        {
+          "text": "bea",
+          "confidence": 0.1683,
+          "boxPx": [
+            271.0,
+            691.0,
+            450.0,
+            709.0
+          ]
+        },
+        {
+          "text": "aE",
+          "confidence": 0.1974,
+          "boxPx": [
+            385.0,
+            675.0,
+            422.0,
+            718.0
+          ]
+        },
+        {
+          "text": "GE",
+          "confidence": 0.32,
+          "boxPx": [
+            435.0,
+            675.0,
+            454.0,
+            718.0
+          ]
+        },
+        {
+          "text": "seen",
+          "confidence": 0.3967,
+          "boxPx": [
+            891.0,
+            677.0,
+            919.0,
+            719.0
+          ]
+        },
+        {
+          "text": "lms",
+          "confidence": 0.5608,
+          "boxPx": [
+            926.0,
+            677.0,
+            951.0,
+            719.0
+          ]
+        },
+        {
+          "text": "Er",
+          "confidence": 0.4208,
+          "boxPx": [
+            1289.0,
+            682.0,
+            1324.0,
+            707.0
+          ]
+        },
+        {
+          "text": "25h",
+          "confidence": 0.4549,
+          "boxPx": [
+            1335.0,
+            682.0,
+            1376.0,
+            707.0
+          ]
+        },
+        {
+          "text": "‘man",
+          "confidence": 0.4315,
+          "boxPx": [
+            1415.0,
+            671.0,
+            1536.0,
+            728.0
+          ]
+        },
+        {
+          "text": "SITE",
+          "confidence": 0.9406,
+          "boxPx": [
+            301.0,
+            719.0,
+            339.0,
+            733.0
+          ]
+        },
+        {
+          "text": "1",
+          "confidence": 0.9406,
+          "boxPx": [
+            346.0,
+            720.0,
+            352.0,
+            732.0
+          ]
+        },
+        {
+          "text": "PROFILE",
+          "confidence": 0.9468,
+          "boxPx": [
+            360.0,
+            719.0,
+            434.0,
+            745.0
+          ]
+        },
+        {
+          "text": ".",
+          "confidence": 0.6324,
+          "boxPx": [
+            1413.0,
+            709.0,
+            1422.0,
+            717.0
+          ]
+        },
+        {
+          "text": "20",
+          "confidence": 0.4451,
+          "boxPx": [
+            1485.0,
+            722.0,
+            1506.0,
+            730.0
+          ]
+        },
+        {
+          "text": "wg",
+          "confidence": 0.5497,
+          "boxPx": [
+            1512.0,
+            714.0,
+            1539.0,
+            731.0
+          ]
+        },
+        {
+          "text": "ORS",
+          "confidence": 0.4549,
+          "boxPx": [
+            262.0,
+            724.0,
+            343.0,
+            748.0
+          ]
+        },
+        {
+          "text": "teem",
+          "confidence": 0.2804,
+          "boxPx": [
+            358.0,
+            720.0,
+            424.0,
+            759.0
+          ]
+        },
+        {
+          "text": ".",
+          "confidence": 0.3804,
+          "boxPx": [
+            1007.0,
+            748.0,
+            1012.0,
+            756.0
+          ]
+        },
+        {
+          "text": ".",
+          "confidence": 0.0,
+          "boxPx": [
+            1094.0,
+            754.0,
+            1097.0,
+            757.0
+          ]
+        },
+        {
+          "text": "[",
+          "confidence": 0.8458,
+          "boxPx": [
+            923.0,
+            717.0,
+            944.0,
+            784.0
+          ]
+        },
+        {
+          "text": "k",
+          "confidence": 0.6621,
+          "boxPx": [
+            1005.0,
+            757.0,
+            1015.0,
+            775.0
+          ]
+        },
+        {
+          "text": "©",
+          "confidence": 0.8647,
+          "boxPx": [
+            1077.0,
+            743.0,
+            1106.0,
+            776.0
+          ]
+        },
+        {
+          "text": "lew",
+          "confidence": 0.1556,
+          "boxPx": [
+            1205.0,
+            735.0,
+            1239.0,
+            785.0
+          ]
+        },
+        {
+          "text": "wll]",
+          "confidence": 0.0,
+          "boxPx": [
+            1363.0,
+            734.0,
+            1470.0,
+            780.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.5531,
+          "boxPx": [
+            1500.0,
+            739.0,
+            1506.0,
+            781.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.9402,
+          "boxPx": [
+            1535.0,
+            733.0,
+            1539.0,
+            767.0
+          ]
+        },
+        {
+          "text": "om",
+          "confidence": 0.2101,
+          "boxPx": [
+            806.0,
+            798.0,
+            833.0,
+            809.0
+          ]
+        },
+        {
+          "text": "aet",
+          "confidence": 0.0,
+          "boxPx": [
+            865.0,
+            798.0,
+            894.0,
+            823.0
+          ]
+        },
+        {
+          "text": "yJ",
+          "confidence": 0.0,
+          "boxPx": [
+            1198.0,
+            785.0,
+            1232.0,
+            840.0
+          ]
+        },
+        {
+          "text": "ers",
+          "confidence": 0.3231,
+          "boxPx": [
+            818.0,
+            838.0,
+            897.0,
+            863.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.4411,
+          "boxPx": [
+            941.0,
+            831.0,
+            948.0,
+            870.0
+          ]
+        },
+        {
+          "text": "=",
+          "confidence": 0.7317,
+          "boxPx": [
+            1081.0,
+            837.0,
+            1096.0,
+            854.0
+          ]
+        },
+        {
+          "text": "a",
+          "confidence": 0.0899,
+          "boxPx": [
+            1179.0,
+            829.0,
+            1233.0,
+            865.0
+          ]
+        },
+        {
+          "text": "DRAINAGE",
+          "confidence": 0.8833,
+          "boxPx": [
+            1044.0,
+            896.0,
+            1229.0,
+            925.0
+          ]
+        },
+        {
+          "text": "PLAN",
+          "confidence": 0.8833,
+          "boxPx": [
+            1258.0,
+            896.0,
+            1352.0,
+            923.0
+          ]
+        },
+        {
+          "text": "SCALE",
+          "confidence": 0.9451,
+          "boxPx": [
+            992.0,
+            941.0,
+            1042.0,
+            954.0
+          ]
+        },
+        {
+          "text": "NTS",
+          "confidence": 0.9534,
+          "boxPx": [
+            1374.0,
+            938.0,
+            1404.0,
+            951.0
+          ]
+        },
+        {
+          "text": "Sn",
+          "confidence": 0.1079,
+          "boxPx": [
+            198.0,
+            977.0,
+            347.0,
+            985.0
+          ]
+        },
+        {
+          "text": "sire",
+          "confidence": 0.3302,
+          "boxPx": [
+            530.0,
+            977.0,
+            574.0,
+            984.0
+          ]
+        },
+        {
+          "text": "iow",
+          "confidence": 0.2693,
+          "boxPx": [
+            704.0,
+            978.0,
+            744.0,
+            985.0
+          ]
+        },
+        {
+          "text": "inion",
+          "confidence": 0.1093,
+          "boxPx": [
+            878.0,
+            976.0,
+            932.0,
+            983.0
+          ]
+        },
+        {
+          "text": "——j}",
+          "confidence": 0.0,
+          "boxPx": [
+            979.0,
+            955.0,
+            993.0,
+            987.0
+          ]
+        },
+        {
+          "text": "—",
+          "confidence": 0.0,
+          "boxPx": [
+            1006.0,
+            951.0,
+            1018.0,
+            994.0
+          ]
+        },
+        {
+          "text": "farce",
+          "confidence": 0.0,
+          "boxPx": [
+            1032.0,
+            976.0,
+            1089.0,
+            983.0
+          ]
+        },
+        {
+          "text": "\\",
+          "confidence": 0.1139,
+          "boxPx": [
+            194.0,
+            987.0,
+            213.0,
+            1024.0
+          ]
+        },
+        {
+          "text": "y",
+          "confidence": 0.1526,
+          "boxPx": [
+            634.0,
+            991.0,
+            647.0,
+            1036.0
+          ]
+        },
+        {
+          "text": "Cok",
+          "confidence": 0.4627,
+          "boxPx": [
+            709.0,
+            984.0,
+            850.0,
+            1036.0
+          ]
+        },
+        {
+          "text": "eapengueenpevee",
+          "confidence": 0.0,
+          "boxPx": [
+            1057.0,
+            1006.0,
+            1268.0,
+            1016.0
+          ]
+        },
+        {
+          "text": "—se",
+          "confidence": 0.0,
+          "boxPx": [
+            246.0,
+            1022.0,
+            342.0,
+            1043.0
+          ]
+        },
+        {
+          "text": "if",
+          "confidence": 0.3027,
+          "boxPx": [
+            376.0,
+            1025.0,
+            381.0,
+            1033.0
+          ]
+        },
+        {
+          "text": "vce",
+          "confidence": 0.0527,
+          "boxPx": [
+            555.0,
+            1027.0,
+            581.0,
+            1035.0
+          ]
+        },
+        {
+          "text": "Bele",
+          "confidence": 0.0,
+          "boxPx": [
+            592.0,
+            1014.0,
+            616.0,
+            1055.0
+          ]
+        },
+        {
+          "text": "Fome",
+          "confidence": 0.0,
+          "boxPx": [
+            620.0,
+            1038.0,
+            649.0,
+            1044.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.3962,
+          "boxPx": [
+            687.0,
+            1014.0,
+            705.0,
+            1055.0
+          ]
+        },
+        {
+          "text": "aenoncaronr",
+          "confidence": 0.0,
+          "boxPx": [
+            715.0,
+            1014.0,
+            794.0,
+            1055.0
+          ]
+        },
+        {
+          "text": "ent.",
+          "confidence": 0.2455,
+          "boxPx": [
+            807.0,
+            1014.0,
+            866.0,
+            1055.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.7955,
+          "boxPx": [
+            872.0,
+            1014.0,
+            879.0,
+            1055.0
+          ]
+        },
+        {
+          "text": "romero",
+          "confidence": 0.0,
+          "boxPx": [
+            880.0,
+            1026.0,
+            1010.0,
+            1042.0
+          ]
+        },
+        {
+          "text": "ass",
+          "confidence": 0.4799,
+          "boxPx": [
+            1118.0,
+            1018.0,
+            1208.0,
+            1027.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 0.6764,
+      "extractionMethod": "Tesseract OCR",
+      "parseStatus": "ocr_text_found"
+    },
+    {
+      "sourceFileSha256": "a4559a21d2cde00c0d04b077dfc9c54c9763bb8bb906407a8b2c4378925e266b",
+      "sourceFileBytes": 1125746,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/7ab68581db2122fc.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/07/pdf-with-sign-Malagyan-1.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-6/",
+          "sourceTitle": "Invitation to Bid",
+          "publishedAt": "2022-07-13T08:15:47",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "pdf-with-sign-Malagyan-1.pdf"
+        }
+      ],
+      "sourceFileName": "pdf-with-sign-Malagyan-1.pdf",
+      "pageNumber": 25,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "o -9-\nSUB-PROJECT MARKER DESIGN taco ne mass\nSP DSWD oerarerror ssc wit io oemomeur Ea\n— commen Soest ae ag\nCOMMUNITY SuB-pRoyEcrT\nat\nsarexct\nas\nEden\nSeiten\n5\n=\nrxcnane\nsaetome\nsansa\nmoe\nPEiliytT]\n| (eer\nRET ET a —_— — ac\n_ 2 = oaeweaeu\nSE | Sfmncone oon tence mone saan | no eaphT masa Bean acta",
+      "ocrText": "o -9-\nSUB-PROJECT MARKER DESIGN taco ne mass\nSP DSWD oerarerror ssc wit io oemomeur Ea\n— commen Soest ae ag\nCOMMUNITY SuB-pRoyEcrT\nat\nsarexct\nas\nEden\nSeiten\n5\n=\nrxcnane\nsaetome\nsansa\nmoe\nPEiliytT]\n| (eer\nRET ET a —_— — ac\n_ 2 = oaeweaeu\nSE | Sfmncone oon tence mone saan | no eaphT masa Bean acta",
+      "ocrTokenCount": 60,
+      "ocrMeanConfidence": 0.297,
+      "ocrTokens": [
+        {
+          "text": "o",
+          "confidence": 0.1403,
+          "boxPx": [
+            345.0,
+            103.0,
+            382.0,
+            128.0
+          ]
+        },
+        {
+          "text": "-9-",
+          "confidence": 0.2439,
+          "boxPx": [
+            562.0,
+            97.0,
+            621.0,
+            124.0
+          ]
+        },
+        {
+          "text": "SUB-PROJECT",
+          "confidence": 0.9221,
+          "boxPx": [
+            287.0,
+            181.0,
+            439.0,
+            199.0
+          ]
+        },
+        {
+          "text": "MARKER",
+          "confidence": 0.9673,
+          "boxPx": [
+            448.0,
+            180.0,
+            538.0,
+            198.0
+          ]
+        },
+        {
+          "text": "DESIGN",
+          "confidence": 0.9673,
+          "boxPx": [
+            547.0,
+            177.0,
+            630.0,
+            196.0
+          ]
+        },
+        {
+          "text": "taco",
+          "confidence": 0.1464,
+          "boxPx": [
+            1016.0,
+            183.0,
+            1110.0,
+            195.0
+          ]
+        },
+        {
+          "text": "ne",
+          "confidence": 0.4794,
+          "boxPx": [
+            1061.0,
+            172.0,
+            1069.0,
+            203.0
+          ]
+        },
+        {
+          "text": "mass",
+          "confidence": 0.0,
+          "boxPx": [
+            1074.0,
+            183.0,
+            1110.0,
+            195.0
+          ]
+        },
+        {
+          "text": "SP",
+          "confidence": 0.2737,
+          "boxPx": [
+            794.0,
+            182.0,
+            820.0,
+            225.0
+          ]
+        },
+        {
+          "text": "DSWD",
+          "confidence": 0.2713,
+          "boxPx": [
+            825.0,
+            187.0,
+            902.0,
+            218.0
+          ]
+        },
+        {
+          "text": "oerarerror",
+          "confidence": 0.0,
+          "boxPx": [
+            932.0,
+            191.0,
+            1188.0,
+            220.0
+          ]
+        },
+        {
+          "text": "ssc",
+          "confidence": 0.4172,
+          "boxPx": [
+            1016.0,
+            182.0,
+            1038.0,
+            225.0
+          ]
+        },
+        {
+          "text": "wit",
+          "confidence": 0.3492,
+          "boxPx": [
+            1055.0,
+            182.0,
+            1092.0,
+            225.0
+          ]
+        },
+        {
+          "text": "io",
+          "confidence": 0.2541,
+          "boxPx": [
+            1098.0,
+            182.0,
+            1117.0,
+            225.0
+          ]
+        },
+        {
+          "text": "oemomeur",
+          "confidence": 0.0,
+          "boxPx": [
+            1123.0,
+            191.0,
+            1188.0,
+            220.0
+          ]
+        },
+        {
+          "text": "Ea",
+          "confidence": 0.5595,
+          "boxPx": [
+            1267.0,
+            192.0,
+            1307.0,
+            220.0
+          ]
+        },
+        {
+          "text": "—",
+          "confidence": 0.6176,
+          "boxPx": [
+            824.0,
+            215.0,
+            871.0,
+            222.0
+          ]
+        },
+        {
+          "text": "commen",
+          "confidence": 0.3471,
+          "boxPx": [
+            955.0,
+            214.0,
+            1167.0,
+            236.0
+          ]
+        },
+        {
+          "text": "Soest",
+          "confidence": 0.1026,
+          "boxPx": [
+            1016.0,
+            206.0,
+            1062.0,
+            240.0
+          ]
+        },
+        {
+          "text": "ae",
+          "confidence": 0.139,
+          "boxPx": [
+            1072.0,
+            206.0,
+            1124.0,
+            240.0
+          ]
+        },
+        {
+          "text": "ag",
+          "confidence": 0.4035,
+          "boxPx": [
+            1143.0,
+            206.0,
+            1170.0,
+            240.0
+          ]
+        },
+        {
+          "text": "COMMUNITY",
+          "confidence": 0.6786,
+          "boxPx": [
+            993.0,
+            229.0,
+            1061.0,
+            258.0
+          ]
+        },
+        {
+          "text": "SuB-pRoyEcrT",
+          "confidence": 0.0,
+          "boxPx": [
+            1065.0,
+            229.0,
+            1136.0,
+            258.0
+          ]
+        },
+        {
+          "text": "at",
+          "confidence": 0.3053,
+          "boxPx": [
+            969.0,
+            254.0,
+            1003.0,
+            262.0
+          ]
+        },
+        {
+          "text": "sarexct",
+          "confidence": 0.0526,
+          "boxPx": [
+            795.0,
+            281.0,
+            856.0,
+            291.0
+          ]
+        },
+        {
+          "text": "as",
+          "confidence": 0.4046,
+          "boxPx": [
+            796.0,
+            292.0,
+            833.0,
+            302.0
+          ]
+        },
+        {
+          "text": "Eden",
+          "confidence": 0.0356,
+          "boxPx": [
+            795.0,
+            302.0,
+            863.0,
+            312.0
+          ]
+        },
+        {
+          "text": "Seiten",
+          "confidence": 0.0036,
+          "boxPx": [
+            795.0,
+            313.0,
+            882.0,
+            323.0
+          ]
+        },
+        {
+          "text": "5",
+          "confidence": 0.4786,
+          "boxPx": [
+            795.0,
+            323.0,
+            808.0,
+            330.0
+          ]
+        },
+        {
+          "text": "=",
+          "confidence": 0.936,
+          "boxPx": [
+            795.0,
+            333.0,
+            816.0,
+            341.0
+          ]
+        },
+        {
+          "text": "rxcnane",
+          "confidence": 0.0,
+          "boxPx": [
+            795.0,
+            351.0,
+            856.0,
+            361.0
+          ]
+        },
+        {
+          "text": "saetome",
+          "confidence": 0.0,
+          "boxPx": [
+            795.0,
+            373.0,
+            889.0,
+            384.0
+          ]
+        },
+        {
+          "text": "sansa",
+          "confidence": 0.0051,
+          "boxPx": [
+            795.0,
+            385.0,
+            874.0,
+            404.0
+          ]
+        },
+        {
+          "text": "moe",
+          "confidence": 0.293,
+          "boxPx": [
+            795.0,
+            396.0,
+            886.0,
+            418.0
+          ]
+        },
+        {
+          "text": "PEiliytT]",
+          "confidence": 0.0,
+          "boxPx": [
+            473.0,
+            821.0,
+            607.0,
+            844.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.6554,
+          "boxPx": [
+            439.0,
+            850.0,
+            450.0,
+            876.0
+          ]
+        },
+        {
+          "text": "(eer",
+          "confidence": 0.2002,
+          "boxPx": [
+            465.0,
+            848.0,
+            607.0,
+            864.0
+          ]
+        },
+        {
+          "text": "RET",
+          "confidence": 0.238,
+          "boxPx": [
+            220.0,
+            980.0,
+            329.0,
+            989.0
+          ]
+        },
+        {
+          "text": "ET",
+          "confidence": 0.4004,
+          "boxPx": [
+            339.0,
+            979.0,
+            394.0,
+            986.0
+          ]
+        },
+        {
+          "text": "a",
+          "confidence": 0.1114,
+          "boxPx": [
+            510.0,
+            978.0,
+            562.0,
+            989.0
+          ]
+        },
+        {
+          "text": "—_—",
+          "confidence": 0.259,
+          "boxPx": [
+            684.0,
+            953.0,
+            748.0,
+            998.0
+          ]
+        },
+        {
+          "text": "—",
+          "confidence": 0.4084,
+          "boxPx": [
+            863.0,
+            979.0,
+            920.0,
+            987.0
+          ]
+        },
+        {
+          "text": "ac",
+          "confidence": 0.3391,
+          "boxPx": [
+            1018.0,
+            980.0,
+            1075.0,
+            987.0
+          ]
+        },
+        {
+          "text": "_",
+          "confidence": 0.4701,
+          "boxPx": [
+            253.0,
+            1020.0,
+            297.0,
+            1025.0
+          ]
+        },
+        {
+          "text": "2",
+          "confidence": 0.3877,
+          "boxPx": [
+            391.0,
+            1009.0,
+            403.0,
+            1012.0
+          ]
+        },
+        {
+          "text": "=",
+          "confidence": 0.0,
+          "boxPx": [
+            667.0,
+            999.0,
+            739.0,
+            1034.0
+          ]
+        },
+        {
+          "text": "oaeweaeu",
+          "confidence": 0.0,
+          "boxPx": [
+            1045.0,
+            1011.0,
+            1258.0,
+            1022.0
+          ]
+        },
+        {
+          "text": "SE",
+          "confidence": 0.3096,
+          "boxPx": [
+            226.0,
+            1027.0,
+            323.0,
+            1031.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.6232,
+          "boxPx": [
+            332.0,
+            1011.0,
+            349.0,
+            1051.0
+          ]
+        },
+        {
+          "text": "Sfmncone",
+          "confidence": 0.0,
+          "boxPx": [
+            390.0,
+            1031.0,
+            439.0,
+            1047.0
+          ]
+        },
+        {
+          "text": "oon",
+          "confidence": 0.1381,
+          "boxPx": [
+            534.0,
+            1013.0,
+            567.0,
+            1052.0
+          ]
+        },
+        {
+          "text": "tence",
+          "confidence": 0.213,
+          "boxPx": [
+            687.0,
+            1019.0,
+            847.0,
+            1048.0
+          ]
+        },
+        {
+          "text": "mone",
+          "confidence": 0.3133,
+          "boxPx": [
+            744.0,
+            1013.0,
+            778.0,
+            1052.0
+          ]
+        },
+        {
+          "text": "saan",
+          "confidence": 0.2992,
+          "boxPx": [
+            787.0,
+            1019.0,
+            836.0,
+            1048.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.8726,
+          "boxPx": [
+            858.0,
+            1013.0,
+            865.0,
+            1052.0
+          ]
+        },
+        {
+          "text": "no",
+          "confidence": 0.2235,
+          "boxPx": [
+            874.0,
+            1013.0,
+            891.0,
+            1052.0
+          ]
+        },
+        {
+          "text": "eaphT",
+          "confidence": 0.0,
+          "boxPx": [
+            907.0,
+            1013.0,
+            942.0,
+            1052.0
+          ]
+        },
+        {
+          "text": "masa",
+          "confidence": 0.0755,
+          "boxPx": [
+            953.0,
+            1032.0,
+            1003.0,
+            1042.0
+          ]
+        },
+        {
+          "text": "Bean",
+          "confidence": 0.3423,
+          "boxPx": [
+            1103.0,
+            1005.0,
+            1133.0,
+            1044.0
+          ]
+        },
+        {
+          "text": "acta",
+          "confidence": 0.1469,
+          "boxPx": [
+            1145.0,
+            1023.0,
+            1197.0,
+            1033.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 0.7048,
+      "extractionMethod": "Tesseract OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

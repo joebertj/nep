@@ -1,0 +1,829 @@
+{
+  "sourceFileSha256": "9b4c13c745465729da643df02e1164c25c2a5b43bb75704f025b66c5714a106a",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/423343980f881a71.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/BID-RESULTS-ON-GOODS-1st-Qtr-1-1536x809.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/bid-results/bid-results-on-civil-works-first-quarter-cy-2019/",
+      "sourceTitle": "BID RESULTS ON CIVIL WORKS – FIRST QUARTER, CY 2019",
+      "publishedAt": "2019-04-04T01:37:29",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "BID-RESULTS-ON-GOODS-1st-Qtr-1-1536x809.jpg"
+    },
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/BID-RESULTS-ON-GOODS-1st-Qtr-1536x809.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/bid-results/bid-result-on-goods/",
+      "sourceTitle": "BID RESULT ON GOODS – FIRST QUARTER, CY 2019",
+      "publishedAt": "2019-04-03T08:17:42",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "BID-RESULTS-ON-GOODS-1st-Qtr-1536x809.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "9b4c13c745465729da643df02e1164c25c2a5b43bb75704f025b66c5714a106a",
+      "sourceFileBytes": 97496,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/423343980f881a71.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/BID-RESULTS-ON-GOODS-1st-Qtr-1-1536x809.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/bid-results/bid-results-on-civil-works-first-quarter-cy-2019/",
+          "sourceTitle": "BID RESULTS ON CIVIL WORKS – FIRST QUARTER, CY 2019",
+          "publishedAt": "2019-04-04T01:37:29",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "BID-RESULTS-ON-GOODS-1st-Qtr-1-1536x809.jpg"
+        },
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/BID-RESULTS-ON-GOODS-1st-Qtr-1536x809.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/bid-results/bid-result-on-goods/",
+          "sourceTitle": "BID RESULT ON GOODS – FIRST QUARTER, CY 2019",
+          "publishedAt": "2019-04-03T08:17:42",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "BID-RESULTS-ON-GOODS-1st-Qtr-1536x809.jpg"
+        }
+      ],
+      "sourceFileName": "BID-RESULTS-ON-GOODS-1st-Qtr-1-1536x809.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Republic of the Philippines\nGOODS BID-OUT\nMunicipality of Miagao\n1ST Quarter, CY 2019\nNO. |REFERENCE NAME OF PROJECT APPROVED LOCATION WINNING NAME AND = |BIDAMOUNT| BIDDING contract\nNo. BUDGET FOR BIDDER ADDRESS DATE — |puRATION\nTHE CONTRACT\nNONE FOR THE PERIOD\nWe hereby certify that we have received the contents and hereby attest to the veracity and correctness of the data or information contained in this document.\nSHERWIN KEITH M. FAINA\nBids and Awards Committee Chairman",
+      "ocrText": "Republic of the Philippines\nGOODS BID-OUT\nMunicipality of Miagao\n1ST Quarter, CY 2019\nNO. |REFERENCE NAME OF PROJECT APPROVED LOCATION WINNING NAME AND = |BIDAMOUNT| BIDDING contract\nNo. BUDGET FOR BIDDER ADDRESS DATE — |puRATION\nTHE CONTRACT\nNONE FOR THE PERIOD\nWe hereby certify that we have received the contents and hereby attest to the veracity and correctness of the data or information contained in this document.\nSHERWIN KEITH M. FAINA\nBids and Awards Committee Chairman",
+      "ocrTokenCount": 76,
+      "ocrMeanConfidence": 0.88,
+      "ocrTokens": [
+        {
+          "text": "Republic",
+          "confidence": 0.9476,
+          "boxPx": [
+            655.0,
+            10.0,
+            726.0,
+            29.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9674,
+          "boxPx": [
+            733.0,
+            10.0,
+            750.0,
+            25.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.97,
+          "boxPx": [
+            755.0,
+            10.0,
+            782.0,
+            25.0
+          ]
+        },
+        {
+          "text": "Philippines",
+          "confidence": 0.9584,
+          "boxPx": [
+            790.0,
+            10.0,
+            881.0,
+            29.0
+          ]
+        },
+        {
+          "text": "GOODS",
+          "confidence": 0.9316,
+          "boxPx": [
+            671.0,
+            40.0,
+            753.0,
+            58.0
+          ]
+        },
+        {
+          "text": "BID-OUT",
+          "confidence": 0.9182,
+          "boxPx": [
+            768.0,
+            40.0,
+            864.0,
+            58.0
+          ]
+        },
+        {
+          "text": "Municipality",
+          "confidence": 0.9634,
+          "boxPx": [
+            669.0,
+            74.0,
+            774.0,
+            92.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9314,
+          "boxPx": [
+            780.0,
+            74.0,
+            797.0,
+            89.0
+          ]
+        },
+        {
+          "text": "Miagao",
+          "confidence": 0.9177,
+          "boxPx": [
+            803.0,
+            75.0,
+            866.0,
+            92.0
+          ]
+        },
+        {
+          "text": "1ST",
+          "confidence": 0.9592,
+          "boxPx": [
+            647.0,
+            104.0,
+            685.0,
+            122.0
+          ]
+        },
+        {
+          "text": "Quarter,",
+          "confidence": 0.9596,
+          "boxPx": [
+            699.0,
+            104.0,
+            792.0,
+            125.0
+          ]
+        },
+        {
+          "text": "CY",
+          "confidence": 0.9654,
+          "boxPx": [
+            800.0,
+            104.0,
+            827.0,
+            122.0
+          ]
+        },
+        {
+          "text": "2019",
+          "confidence": 0.9662,
+          "boxPx": [
+            835.0,
+            104.0,
+            887.0,
+            122.0
+          ]
+        },
+        {
+          "text": "NO.",
+          "confidence": 0.842,
+          "boxPx": [
+            13.0,
+            168.0,
+            45.0,
+            183.0
+          ]
+        },
+        {
+          "text": "|REFERENCE",
+          "confidence": 0.9033,
+          "boxPx": [
+            61.0,
+            169.0,
+            159.0,
+            183.0
+          ]
+        },
+        {
+          "text": "NAME",
+          "confidence": 0.9682,
+          "boxPx": [
+            221.0,
+            169.0,
+            275.0,
+            182.0
+          ]
+        },
+        {
+          "text": "OF",
+          "confidence": 0.9686,
+          "boxPx": [
+            281.0,
+            168.0,
+            304.0,
+            183.0
+          ]
+        },
+        {
+          "text": "PROJECT",
+          "confidence": 0.9686,
+          "boxPx": [
+            311.0,
+            168.0,
+            386.0,
+            183.0
+          ]
+        },
+        {
+          "text": "APPROVED",
+          "confidence": 0.9651,
+          "boxPx": [
+            463.0,
+            169.0,
+            560.0,
+            183.0
+          ]
+        },
+        {
+          "text": "LOCATION",
+          "confidence": 0.9645,
+          "boxPx": [
+            672.0,
+            157.0,
+            761.0,
+            194.0
+          ]
+        },
+        {
+          "text": "WINNING",
+          "confidence": 0.9654,
+          "boxPx": [
+            881.0,
+            169.0,
+            965.0,
+            183.0
+          ]
+        },
+        {
+          "text": "NAME",
+          "confidence": 0.0,
+          "boxPx": [
+            1051.0,
+            169.0,
+            1105.0,
+            182.0
+          ]
+        },
+        {
+          "text": "AND",
+          "confidence": 0.0,
+          "boxPx": [
+            1111.0,
+            169.0,
+            1150.0,
+            182.0
+          ]
+        },
+        {
+          "text": "=",
+          "confidence": 0.2224,
+          "boxPx": [
+            1170.0,
+            157.0,
+            1183.0,
+            194.0
+          ]
+        },
+        {
+          "text": "|BIDAMOUNT|",
+          "confidence": 0.2224,
+          "boxPx": [
+            1203.0,
+            168.0,
+            1321.0,
+            183.0
+          ]
+        },
+        {
+          "text": "BIDDING",
+          "confidence": 0.7731,
+          "boxPx": [
+            1344.0,
+            168.0,
+            1419.0,
+            183.0
+          ]
+        },
+        {
+          "text": "contract",
+          "confidence": 0.3019,
+          "boxPx": [
+            1446.0,
+            172.0,
+            1524.0,
+            184.0
+          ]
+        },
+        {
+          "text": "No.",
+          "confidence": 0.9581,
+          "boxPx": [
+            96.0,
+            186.0,
+            128.0,
+            223.0
+          ]
+        },
+        {
+          "text": "BUDGET",
+          "confidence": 0.9686,
+          "boxPx": [
+            453.0,
+            198.0,
+            526.0,
+            212.0
+          ]
+        },
+        {
+          "text": "FOR",
+          "confidence": 0.9686,
+          "boxPx": [
+            532.0,
+            198.0,
+            566.0,
+            212.0
+          ]
+        },
+        {
+          "text": "BIDDER",
+          "confidence": 0.9697,
+          "boxPx": [
+            895.0,
+            198.0,
+            960.0,
+            212.0
+          ]
+        },
+        {
+          "text": "ADDRESS",
+          "confidence": 0.8254,
+          "boxPx": [
+            1059.0,
+            187.0,
+            1140.0,
+            224.0
+          ]
+        },
+        {
+          "text": "DATE",
+          "confidence": 0.7765,
+          "boxPx": [
+            1362.0,
+            198.0,
+            1407.0,
+            212.0
+          ]
+        },
+        {
+          "text": "—",
+          "confidence": 0.2635,
+          "boxPx": [
+            1419.0,
+            187.0,
+            1429.0,
+            224.0
+          ]
+        },
+        {
+          "text": "|puRATION",
+          "confidence": 0.2635,
+          "boxPx": [
+            1448.0,
+            201.0,
+            1525.0,
+            213.0
+          ]
+        },
+        {
+          "text": "THE",
+          "confidence": 0.9652,
+          "boxPx": [
+            445.0,
+            228.0,
+            478.0,
+            242.0
+          ]
+        },
+        {
+          "text": "CONTRACT",
+          "confidence": 0.9684,
+          "boxPx": [
+            484.0,
+            228.0,
+            581.0,
+            242.0
+          ]
+        },
+        {
+          "text": "NONE",
+          "confidence": 0.962,
+          "boxPx": [
+            515.0,
+            379.0,
+            601.0,
+            402.0
+          ]
+        },
+        {
+          "text": "FOR",
+          "confidence": 0.9686,
+          "boxPx": [
+            609.0,
+            379.0,
+            666.0,
+            402.0
+          ]
+        },
+        {
+          "text": "THE",
+          "confidence": 0.966,
+          "boxPx": [
+            677.0,
+            380.0,
+            732.0,
+            402.0
+          ]
+        },
+        {
+          "text": "PERIOD",
+          "confidence": 0.9611,
+          "boxPx": [
+            740.0,
+            379.0,
+            848.0,
+            402.0
+          ]
+        },
+        {
+          "text": "We",
+          "confidence": 0.9678,
+          "boxPx": [
+            8.0,
+            660.0,
+            36.0,
+            674.0
+          ]
+        },
+        {
+          "text": "hereby",
+          "confidence": 0.943,
+          "boxPx": [
+            43.0,
+            659.0,
+            102.0,
+            677.0
+          ]
+        },
+        {
+          "text": "certify",
+          "confidence": 0.9629,
+          "boxPx": [
+            108.0,
+            659.0,
+            161.0,
+            677.0
+          ]
+        },
+        {
+          "text": "that",
+          "confidence": 0.9667,
+          "boxPx": [
+            167.0,
+            659.0,
+            202.0,
+            674.0
+          ]
+        },
+        {
+          "text": "we",
+          "confidence": 0.9693,
+          "boxPx": [
+            208.0,
+            663.0,
+            232.0,
+            674.0
+          ]
+        },
+        {
+          "text": "have",
+          "confidence": 0.968,
+          "boxPx": [
+            239.0,
+            659.0,
+            278.0,
+            674.0
+          ]
+        },
+        {
+          "text": "received",
+          "confidence": 0.9614,
+          "boxPx": [
+            286.0,
+            659.0,
+            356.0,
+            674.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.9677,
+          "boxPx": [
+            363.0,
+            659.0,
+            390.0,
+            674.0
+          ]
+        },
+        {
+          "text": "contents",
+          "confidence": 0.9654,
+          "boxPx": [
+            397.0,
+            661.0,
+            471.0,
+            674.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.9689,
+          "boxPx": [
+            478.0,
+            659.0,
+            508.0,
+            674.0
+          ]
+        },
+        {
+          "text": "hereby",
+          "confidence": 0.9667,
+          "boxPx": [
+            515.0,
+            659.0,
+            574.0,
+            677.0
+          ]
+        },
+        {
+          "text": "attest",
+          "confidence": 0.9693,
+          "boxPx": [
+            580.0,
+            661.0,
+            629.0,
+            674.0
+          ]
+        },
+        {
+          "text": "to",
+          "confidence": 0.9693,
+          "boxPx": [
+            635.0,
+            661.0,
+            652.0,
+            674.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.9702,
+          "boxPx": [
+            658.0,
+            659.0,
+            685.0,
+            674.0
+          ]
+        },
+        {
+          "text": "veracity",
+          "confidence": 0.9665,
+          "boxPx": [
+            691.0,
+            660.0,
+            759.0,
+            677.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.9674,
+          "boxPx": [
+            765.0,
+            659.0,
+            795.0,
+            674.0
+          ]
+        },
+        {
+          "text": "correctness",
+          "confidence": 0.9616,
+          "boxPx": [
+            802.0,
+            661.0,
+            901.0,
+            674.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9684,
+          "boxPx": [
+            907.0,
+            659.0,
+            924.0,
+            674.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.9684,
+          "boxPx": [
+            929.0,
+            659.0,
+            957.0,
+            674.0
+          ]
+        },
+        {
+          "text": "data",
+          "confidence": 0.9655,
+          "boxPx": [
+            964.0,
+            659.0,
+            1000.0,
+            674.0
+          ]
+        },
+        {
+          "text": "or",
+          "confidence": 0.9675,
+          "boxPx": [
+            1007.0,
+            663.0,
+            1024.0,
+            674.0
+          ]
+        },
+        {
+          "text": "information",
+          "confidence": 0.9625,
+          "boxPx": [
+            1031.0,
+            659.0,
+            1130.0,
+            674.0
+          ]
+        },
+        {
+          "text": "contained",
+          "confidence": 0.9639,
+          "boxPx": [
+            1138.0,
+            659.0,
+            1222.0,
+            674.0
+          ]
+        },
+        {
+          "text": "in",
+          "confidence": 0.9633,
+          "boxPx": [
+            1229.0,
+            660.0,
+            1243.0,
+            674.0
+          ]
+        },
+        {
+          "text": "this",
+          "confidence": 0.9633,
+          "boxPx": [
+            1249.0,
+            659.0,
+            1279.0,
+            674.0
+          ]
+        },
+        {
+          "text": "document.",
+          "confidence": 0.9654,
+          "boxPx": [
+            1286.0,
+            659.0,
+            1377.0,
+            674.0
+          ]
+        },
+        {
+          "text": "SHERWIN",
+          "confidence": 0.9679,
+          "boxPx": [
+            8.0,
+            753.0,
+            91.0,
+            767.0
+          ]
+        },
+        {
+          "text": "KEITH",
+          "confidence": 0.9322,
+          "boxPx": [
+            98.0,
+            753.0,
+            147.0,
+            767.0
+          ]
+        },
+        {
+          "text": "M.",
+          "confidence": 0.9184,
+          "boxPx": [
+            155.0,
+            754.0,
+            176.0,
+            767.0
+          ]
+        },
+        {
+          "text": "FAINA",
+          "confidence": 0.9182,
+          "boxPx": [
+            184.0,
+            754.0,
+            237.0,
+            767.0
+          ]
+        },
+        {
+          "text": "Bids",
+          "confidence": 0.9691,
+          "boxPx": [
+            9.0,
+            786.0,
+            43.0,
+            801.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.9688,
+          "boxPx": [
+            49.0,
+            786.0,
+            79.0,
+            801.0
+          ]
+        },
+        {
+          "text": "Awards",
+          "confidence": 0.9686,
+          "boxPx": [
+            86.0,
+            786.0,
+            149.0,
+            801.0
+          ]
+        },
+        {
+          "text": "Committee",
+          "confidence": 0.9642,
+          "boxPx": [
+            155.0,
+            787.0,
+            250.0,
+            801.0
+          ]
+        },
+        {
+          "text": "Chairman",
+          "confidence": 0.9652,
+          "boxPx": [
+            257.0,
+            786.0,
+            338.0,
+            801.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

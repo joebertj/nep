@@ -1,0 +1,941 @@
+{
+  "sourceFileSha256": "6c6f43bc36ebaa9ea5ebfa5784c5693c3a1b6f6f84dd0eb6b47f6337900fe4e9",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/23e7b771c4492479.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-la-con-ws-rebid-5-2.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-the-construction-of-la-consolacion-elem-school-water-system-brgy-la-consolacion-miagao-iloilo/",
+      "sourceTitle": "INVITATION TO BID FOR THE CONSTRUCTION OF LA CONSOLACION ELEM. SCHOOL WATER SYSTEM, BRGY. LA CONSOLACION, MIAGAO, ILOILO",
+      "publishedAt": "2018-09-19T06:28:46",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Section-1-Invitation-to-Bid-la-con-ws-rebid-5-2.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "6c6f43bc36ebaa9ea5ebfa5784c5693c3a1b6f6f84dd0eb6b47f6337900fe4e9",
+      "sourceFileBytes": 354137,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/23e7b771c4492479.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2018/09/Section-1-Invitation-to-Bid-la-con-ws-rebid-5-2.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-the-construction-of-la-consolacion-elem-school-water-system-brgy-la-consolacion-miagao-iloilo/",
+          "sourceTitle": "INVITATION TO BID FOR THE CONSTRUCTION OF LA CONSOLACION ELEM. SCHOOL WATER SYSTEM, BRGY. LA CONSOLACION, MIAGAO, ILOILO",
+          "publishedAt": "2018-09-19T06:28:46",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "Section-1-Invitation-to-Bid-la-con-ws-rebid-5-2.jpg"
+        }
+      ],
+      "sourceFileName": "Section-1-Invitation-to-Bid-la-con-ws-rebid-5-2.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "The Municipality of Miagao reserves the right to accept or reject any bid and all bids,\ndeclare failure of bidding, or not to award the contract in accordance with Section\n41 of RA 9184 and its IRR, without thereby incurring any liability to the affected\nbidder or bidders.\nFor further information, please refer to:\nSHERWIN KEITH M. FAINA\nMunicipal Planning and Development Office\nLocal Government Unit of Miagao\nMueda St,\n5023 Miagao, Iloilo\nTelefax No.: (033) 315-8050 loc. 101\nWebsite: www.miagao.gov.ph\nEmail: Igumiagao@yahoo.com\nSHERWIN KEITH M. FAINA\nBAC Chairperson",
+      "ocrText": "The Municipality of Miagao reserves the right to accept or reject any bid and all bids,\ndeclare failure of bidding, or not to award the contract in accordance with Section\n41 of RA 9184 and its IRR, without thereby incurring any liability to the affected\nbidder or bidders.\nFor further information, please refer to:\nSHERWIN KEITH M. FAINA\nMunicipal Planning and Development Office\nLocal Government Unit of Miagao\nMueda St,\n5023 Miagao, Iloilo\nTelefax No.: (033) 315-8050 loc. 101\nWebsite: www.miagao.gov.ph\nEmail: Igumiagao@yahoo.com\nSHERWIN KEITH M. FAINA\nBAC Chairperson",
+      "ocrTokenCount": 89,
+      "ocrMeanConfidence": 0.9444,
+      "ocrTokens": [
+        {
+          "text": "The",
+          "confidence": 0.9641,
+          "boxPx": [
+            257.0,
+            163.0,
+            336.0,
+            199.0
+          ]
+        },
+        {
+          "text": "Municipality",
+          "confidence": 0.9672,
+          "boxPx": [
+            353.0,
+            163.0,
+            613.0,
+            209.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9146,
+          "boxPx": [
+            626.0,
+            163.0,
+            668.0,
+            199.0
+          ]
+        },
+        {
+          "text": "Miagao",
+          "confidence": 0.9146,
+          "boxPx": [
+            679.0,
+            165.0,
+            826.0,
+            209.0
+          ]
+        },
+        {
+          "text": "reserves",
+          "confidence": 0.963,
+          "boxPx": [
+            842.0,
+            174.0,
+            1020.0,
+            199.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.9655,
+          "boxPx": [
+            1036.0,
+            163.0,
+            1101.0,
+            199.0
+          ]
+        },
+        {
+          "text": "right",
+          "confidence": 0.9583,
+          "boxPx": [
+            1118.0,
+            163.0,
+            1220.0,
+            209.0
+          ]
+        },
+        {
+          "text": "to",
+          "confidence": 0.9583,
+          "boxPx": [
+            1232.0,
+            169.0,
+            1272.0,
+            199.0
+          ]
+        },
+        {
+          "text": "accept",
+          "confidence": 0.9653,
+          "boxPx": [
+            1288.0,
+            169.0,
+            1424.0,
+            209.0
+          ]
+        },
+        {
+          "text": "or",
+          "confidence": 0.9512,
+          "boxPx": [
+            1437.0,
+            174.0,
+            1482.0,
+            199.0
+          ]
+        },
+        {
+          "text": "reject",
+          "confidence": 0.9658,
+          "boxPx": [
+            1496.0,
+            165.0,
+            1616.0,
+            209.0
+          ]
+        },
+        {
+          "text": "any",
+          "confidence": 0.965,
+          "boxPx": [
+            1630.0,
+            174.0,
+            1706.0,
+            209.0
+          ]
+        },
+        {
+          "text": "bid",
+          "confidence": 0.9584,
+          "boxPx": [
+            1718.0,
+            163.0,
+            1785.0,
+            199.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.9584,
+          "boxPx": [
+            1801.0,
+            163.0,
+            1878.0,
+            199.0
+          ]
+        },
+        {
+          "text": "all",
+          "confidence": 0.9655,
+          "boxPx": [
+            1894.0,
+            163.0,
+            1941.0,
+            199.0
+          ]
+        },
+        {
+          "text": "bids,",
+          "confidence": 0.9694,
+          "boxPx": [
+            1957.0,
+            163.0,
+            2055.0,
+            204.0
+          ]
+        },
+        {
+          "text": "declare",
+          "confidence": 0.9635,
+          "boxPx": [
+            258.0,
+            221.0,
+            411.0,
+            257.0
+          ]
+        },
+        {
+          "text": "failure",
+          "confidence": 0.968,
+          "boxPx": [
+            430.0,
+            221.0,
+            565.0,
+            257.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9612,
+          "boxPx": [
+            584.0,
+            221.0,
+            626.0,
+            257.0
+          ]
+        },
+        {
+          "text": "bidding,",
+          "confidence": 0.9647,
+          "boxPx": [
+            639.0,
+            221.0,
+            810.0,
+            267.0
+          ]
+        },
+        {
+          "text": "or",
+          "confidence": 0.9698,
+          "boxPx": [
+            829.0,
+            232.0,
+            873.0,
+            257.0
+          ]
+        },
+        {
+          "text": "not",
+          "confidence": 0.9583,
+          "boxPx": [
+            891.0,
+            227.0,
+            960.0,
+            257.0
+          ]
+        },
+        {
+          "text": "to",
+          "confidence": 0.9656,
+          "boxPx": [
+            976.0,
+            227.0,
+            1015.0,
+            257.0
+          ]
+        },
+        {
+          "text": "award",
+          "confidence": 0.9592,
+          "boxPx": [
+            1035.0,
+            221.0,
+            1166.0,
+            257.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.9592,
+          "boxPx": [
+            1184.0,
+            221.0,
+            1249.0,
+            257.0
+          ]
+        },
+        {
+          "text": "contract",
+          "confidence": 0.9534,
+          "boxPx": [
+            1268.0,
+            227.0,
+            1443.0,
+            257.0
+          ]
+        },
+        {
+          "text": "in",
+          "confidence": 0.9653,
+          "boxPx": [
+            1475.0,
+            223.0,
+            1513.0,
+            256.0
+          ]
+        },
+        {
+          "text": "accordance",
+          "confidence": 0.9655,
+          "boxPx": [
+            1531.0,
+            221.0,
+            1769.0,
+            257.0
+          ]
+        },
+        {
+          "text": "with",
+          "confidence": 0.9626,
+          "boxPx": [
+            1787.0,
+            221.0,
+            1881.0,
+            257.0
+          ]
+        },
+        {
+          "text": "Section",
+          "confidence": 0.9678,
+          "boxPx": [
+            1900.0,
+            222.0,
+            2052.0,
+            257.0
+          ]
+        },
+        {
+          "text": "41",
+          "confidence": 0.9672,
+          "boxPx": [
+            258.0,
+            280.0,
+            308.0,
+            314.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9672,
+          "boxPx": [
+            332.0,
+            279.0,
+            374.0,
+            315.0
+          ]
+        },
+        {
+          "text": "RA",
+          "confidence": 0.9632,
+          "boxPx": [
+            393.0,
+            280.0,
+            451.0,
+            314.0
+          ]
+        },
+        {
+          "text": "9184",
+          "confidence": 0.9588,
+          "boxPx": [
+            472.0,
+            280.0,
+            578.0,
+            315.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.9644,
+          "boxPx": [
+            600.0,
+            279.0,
+            676.0,
+            315.0
+          ]
+        },
+        {
+          "text": "its",
+          "confidence": 0.9575,
+          "boxPx": [
+            698.0,
+            281.0,
+            746.0,
+            315.0
+          ]
+        },
+        {
+          "text": "IRR,",
+          "confidence": 0.9578,
+          "boxPx": [
+            770.0,
+            281.0,
+            852.0,
+            320.0
+          ]
+        },
+        {
+          "text": "without",
+          "confidence": 0.9647,
+          "boxPx": [
+            874.0,
+            279.0,
+            1041.0,
+            315.0
+          ]
+        },
+        {
+          "text": "thereby",
+          "confidence": 0.963,
+          "boxPx": [
+            1060.0,
+            279.0,
+            1226.0,
+            325.0
+          ]
+        },
+        {
+          "text": "incurring",
+          "confidence": 0.9552,
+          "boxPx": [
+            1246.0,
+            281.0,
+            1442.0,
+            325.0
+          ]
+        },
+        {
+          "text": "any",
+          "confidence": 0.9648,
+          "boxPx": [
+            1463.0,
+            290.0,
+            1538.0,
+            325.0
+          ]
+        },
+        {
+          "text": "liability",
+          "confidence": 0.968,
+          "boxPx": [
+            1558.0,
+            279.0,
+            1718.0,
+            325.0
+          ]
+        },
+        {
+          "text": "to",
+          "confidence": 0.969,
+          "boxPx": [
+            1738.0,
+            285.0,
+            1777.0,
+            315.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.969,
+          "boxPx": [
+            1799.0,
+            279.0,
+            1865.0,
+            315.0
+          ]
+        },
+        {
+          "text": "affected",
+          "confidence": 0.9664,
+          "boxPx": [
+            1887.0,
+            279.0,
+            2055.0,
+            315.0
+          ]
+        },
+        {
+          "text": "bidder",
+          "confidence": 0.9572,
+          "boxPx": [
+            257.0,
+            339.0,
+            397.0,
+            375.0
+          ]
+        },
+        {
+          "text": "or",
+          "confidence": 0.954,
+          "boxPx": [
+            411.0,
+            350.0,
+            455.0,
+            375.0
+          ]
+        },
+        {
+          "text": "bidders.",
+          "confidence": 0.954,
+          "boxPx": [
+            468.0,
+            339.0,
+            638.0,
+            375.0
+          ]
+        },
+        {
+          "text": "For",
+          "confidence": 0.9678,
+          "boxPx": [
+            259.0,
+            517.0,
+            328.0,
+            551.0
+          ]
+        },
+        {
+          "text": "further",
+          "confidence": 0.9634,
+          "boxPx": [
+            342.0,
+            515.0,
+            489.0,
+            551.0
+          ]
+        },
+        {
+          "text": "information,",
+          "confidence": 0.9634,
+          "boxPx": [
+            502.0,
+            515.0,
+            759.0,
+            556.0
+          ]
+        },
+        {
+          "text": "please",
+          "confidence": 0.9676,
+          "boxPx": [
+            773.0,
+            515.0,
+            903.0,
+            561.0
+          ]
+        },
+        {
+          "text": "refer",
+          "confidence": 0.9646,
+          "boxPx": [
+            917.0,
+            515.0,
+            1018.0,
+            551.0
+          ]
+        },
+        {
+          "text": "to:",
+          "confidence": 0.9663,
+          "boxPx": [
+            1031.0,
+            521.0,
+            1080.0,
+            551.0
+          ]
+        },
+        {
+          "text": "SHERWIN",
+          "confidence": 0.9661,
+          "boxPx": [
+            256.0,
+            632.0,
+            465.0,
+            667.0
+          ]
+        },
+        {
+          "text": "KEITH",
+          "confidence": 0.9323,
+          "boxPx": [
+            475.0,
+            633.0,
+            609.0,
+            666.0
+          ]
+        },
+        {
+          "text": "M.",
+          "confidence": 0.9113,
+          "boxPx": [
+            619.0,
+            633.0,
+            664.0,
+            666.0
+          ]
+        },
+        {
+          "text": "FAINA",
+          "confidence": 0.9152,
+          "boxPx": [
+            679.0,
+            632.0,
+            809.0,
+            666.0
+          ]
+        },
+        {
+          "text": "Municipal",
+          "confidence": 0.967,
+          "boxPx": [
+            257.0,
+            690.0,
+            461.0,
+            736.0
+          ]
+        },
+        {
+          "text": "Planning",
+          "confidence": 0.9638,
+          "boxPx": [
+            471.0,
+            690.0,
+            653.0,
+            736.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.9675,
+          "boxPx": [
+            667.0,
+            690.0,
+            745.0,
+            726.0
+          ]
+        },
+        {
+          "text": "Development",
+          "confidence": 0.9613,
+          "boxPx": [
+            755.0,
+            690.0,
+            1023.0,
+            736.0
+          ]
+        },
+        {
+          "text": "Office",
+          "confidence": 0.966,
+          "boxPx": [
+            1036.0,
+            690.0,
+            1148.0,
+            736.0
+          ]
+        },
+        {
+          "text": "Local",
+          "confidence": 0.9618,
+          "boxPx": [
+            257.0,
+            749.0,
+            368.0,
+            785.0
+          ]
+        },
+        {
+          "text": "Government",
+          "confidence": 0.9632,
+          "boxPx": [
+            380.0,
+            750.0,
+            629.0,
+            785.0
+          ]
+        },
+        {
+          "text": "Unit",
+          "confidence": 0.9688,
+          "boxPx": [
+            643.0,
+            751.0,
+            728.0,
+            785.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9327,
+          "boxPx": [
+            738.0,
+            749.0,
+            783.0,
+            795.0
+          ]
+        },
+        {
+          "text": "Miagao",
+          "confidence": 0.9234,
+          "boxPx": [
+            786.0,
+            751.0,
+            939.0,
+            795.0
+          ]
+        },
+        {
+          "text": "Mueda",
+          "confidence": 0.8969,
+          "boxPx": [
+            257.0,
+            807.0,
+            394.0,
+            843.0
+          ]
+        },
+        {
+          "text": "St,",
+          "confidence": 0.689,
+          "boxPx": [
+            406.0,
+            808.0,
+            463.0,
+            849.0
+          ]
+        },
+        {
+          "text": "5023",
+          "confidence": 0.9299,
+          "boxPx": [
+            258.0,
+            866.0,
+            359.0,
+            901.0
+          ]
+        },
+        {
+          "text": "Miagao,",
+          "confidence": 0.8997,
+          "boxPx": [
+            371.0,
+            868.0,
+            532.0,
+            912.0
+          ]
+        },
+        {
+          "text": "Iloilo",
+          "confidence": 0.9644,
+          "boxPx": [
+            546.0,
+            866.0,
+            648.0,
+            902.0
+          ]
+        },
+        {
+          "text": "Telefax",
+          "confidence": 0.9323,
+          "boxPx": [
+            261.0,
+            925.0,
+            405.0,
+            971.0
+          ]
+        },
+        {
+          "text": "No.:",
+          "confidence": 0.9099,
+          "boxPx": [
+            416.0,
+            927.0,
+            493.0,
+            961.0
+          ]
+        },
+        {
+          "text": "(033)",
+          "confidence": 0.9558,
+          "boxPx": [
+            509.0,
+            925.0,
+            618.0,
+            971.0
+          ]
+        },
+        {
+          "text": "315-8050",
+          "confidence": 0.9575,
+          "boxPx": [
+            631.0,
+            925.0,
+            828.0,
+            960.0
+          ]
+        },
+        {
+          "text": "loc.",
+          "confidence": 0.9621,
+          "boxPx": [
+            841.0,
+            925.0,
+            903.0,
+            961.0
+          ]
+        },
+        {
+          "text": "101",
+          "confidence": 0.9677,
+          "boxPx": [
+            920.0,
+            926.0,
+            991.0,
+            960.0
+          ]
+        },
+        {
+          "text": "Website:",
+          "confidence": 0.9328,
+          "boxPx": [
+            271.0,
+            983.0,
+            441.0,
+            1019.0
+          ]
+        },
+        {
+          "text": "www.miagao.gov.ph",
+          "confidence": 0.9061,
+          "boxPx": [
+            455.0,
+            983.0,
+            868.0,
+            1029.0
+          ]
+        },
+        {
+          "text": "Email:",
+          "confidence": 0.9318,
+          "boxPx": [
+            257.0,
+            1042.0,
+            386.0,
+            1078.0
+          ]
+        },
+        {
+          "text": "Igumiagao@yahoo.com",
+          "confidence": 0.3751,
+          "boxPx": [
+            399.0,
+            1042.0,
+            879.0,
+            1088.0
+          ]
+        },
+        {
+          "text": "SHERWIN",
+          "confidence": 0.9607,
+          "boxPx": [
+            1434.0,
+            1219.0,
+            1644.0,
+            1254.0
+          ]
+        },
+        {
+          "text": "KEITH",
+          "confidence": 0.9329,
+          "boxPx": [
+            1661.0,
+            1220.0,
+            1795.0,
+            1253.0
+          ]
+        },
+        {
+          "text": "M.",
+          "confidence": 0.8966,
+          "boxPx": [
+            1812.0,
+            1220.0,
+            1858.0,
+            1253.0
+          ]
+        },
+        {
+          "text": "FAINA",
+          "confidence": 0.92,
+          "boxPx": [
+            1874.0,
+            1219.0,
+            2011.0,
+            1253.0
+          ]
+        },
+        {
+          "text": "BAC",
+          "confidence": 0.9693,
+          "boxPx": [
+            1457.0,
+            1278.0,
+            1541.0,
+            1313.0
+          ]
+        },
+        {
+          "text": "Chairperson",
+          "confidence": 0.9597,
+          "boxPx": [
+            1557.0,
+            1277.0,
+            1816.0,
+            1323.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

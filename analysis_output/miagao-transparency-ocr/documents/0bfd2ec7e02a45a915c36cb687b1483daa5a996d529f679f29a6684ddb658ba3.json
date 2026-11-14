@@ -1,0 +1,61 @@
+{
+  "sourceFileSha256": "0bfd2ec7e02a45a915c36cb687b1483daa5a996d529f679f29a6684ddb658ba3",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/b42ce9b403ea71e4.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/12/New-Bidding-Documents-HB-Valencia.docx.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-21/",
+      "sourceTitle": "INVITATION TO BID",
+      "publishedAt": "2022-12-01T11:48:04",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "New-Bidding-Documents-HB-Valencia.docx.pdf"
+    }
+  ],
+  "ocrPageNumbers": [
+    31
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "0bfd2ec7e02a45a915c36cb687b1483daa5a996d529f679f29a6684ddb658ba3",
+      "sourceFileBytes": 1041578,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/b42ce9b403ea71e4.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/12/New-Bidding-Documents-HB-Valencia.docx.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-21/",
+          "sourceTitle": "INVITATION TO BID",
+          "publishedAt": "2022-12-01T11:48:04",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "New-Bidding-Documents-HB-Valencia.docx.pdf"
+        }
+      ],
+      "sourceFileName": "New-Bidding-Documents-HB-Valencia.docx.pdf",
+      "pageNumber": 31,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "31 Bids and Awards Committee",
+      "extractedText": "31 Bids and Awards Committee\n31",
+      "ocrText": "31",
+      "ocrTokenCount": 1,
+      "ocrMeanConfidence": 0.9588,
+      "ocrTokens": [
+        {
+          "text": "31",
+          "confidence": 0.9588,
+          "boxPx": [
+            538.0,
+            1405.0,
+            556.0,
+            1418.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 22,
+      "imageCoverageRatio": 0.0,
+      "extractionMethod": "PyMuPDF native text + Tesseract OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

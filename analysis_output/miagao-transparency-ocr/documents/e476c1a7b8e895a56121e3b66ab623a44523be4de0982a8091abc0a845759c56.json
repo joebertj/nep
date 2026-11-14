@@ -1,0 +1,831 @@
+{
+  "sourceFileSha256": "e476c1a7b8e895a56121e3b66ab623a44523be4de0982a8091abc0a845759c56",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/b2bedfac9ecc1068.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/Supplemental-PPMP-C-2048x1292.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/procurement-plan/supplemental-ppmp-first-quarter-cy-2019/",
+      "sourceTitle": "SUPPLEMENTAL PPMP – FIRST QUARTER, CY 2019",
+      "publishedAt": "2019-04-03T05:10:23",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Supplemental-PPMP-C-2048x1292.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "e476c1a7b8e895a56121e3b66ab623a44523be4de0982a8091abc0a845759c56",
+      "sourceFileBytes": 198861,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/b2bedfac9ecc1068.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/Supplemental-PPMP-C-2048x1292.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/procurement-plan/supplemental-ppmp-first-quarter-cy-2019/",
+          "sourceTitle": "SUPPLEMENTAL PPMP – FIRST QUARTER, CY 2019",
+          "publishedAt": "2019-04-03T05:10:23",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Supplemental-PPMP-C-2048x1292.jpg"
+        }
+      ],
+      "sourceFileName": "Supplemental-PPMP-C-2048x1292.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Republic of the Philippines\nOffice of the Municipal Mayor\nProvince of Iloilo\nMunicipality of Miagao\nSUPPLEMENTAL PROJECT PROCUREMENT MANAGEMENT PLAN - CY 2019\nEND-USER/UNIT: Office of the Municipal Mayor\nCode\nGeneral Description\nQuantity/Size\nEstimated Budget\nSchedule/Milestone of Activities\nJan | Feb\nOct\nNov\nDec\nNONE\nNOTE: Technical Specifications for each Item/Project being proposed shall be submitted as part of the PPMP\nPrepared by:\nQUENA M. RAMIREZ\nSenior Administrative Assistant III\nApproved by:\nMACARIO N. NAPULAN, M.D.\nMunicipal Mayor",
+      "ocrText": "Republic of the Philippines\nOffice of the Municipal Mayor\nProvince of Iloilo\nMunicipality of Miagao\nSUPPLEMENTAL PROJECT PROCUREMENT MANAGEMENT PLAN - CY 2019\nEND-USER/UNIT: Office of the Municipal Mayor\nCode\nGeneral Description\nQuantity/Size\nEstimated Budget\nSchedule/Milestone of Activities\nJan | Feb\nOct\nNov\nDec\nNONE\nNOTE: Technical Specifications for each Item/Project being proposed shall be submitted as part of the PPMP\nPrepared by:\nQUENA M. RAMIREZ\nSenior Administrative Assistant III\nApproved by:\nMACARIO N. NAPULAN, M.D.\nMunicipal Mayor",
+      "ocrTokenCount": 78,
+      "ocrMeanConfidence": 0.9529,
+      "ocrTokens": [
+        {
+          "text": "Republic",
+          "confidence": 0.9663,
+          "boxPx": [
+            881.0,
+            145.0,
+            971.0,
+            168.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9684,
+          "boxPx": [
+            979.0,
+            145.0,
+            1000.0,
+            164.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.9679,
+          "boxPx": [
+            1006.0,
+            145.0,
+            1041.0,
+            164.0
+          ]
+        },
+        {
+          "text": "Philippines",
+          "confidence": 0.9667,
+          "boxPx": [
+            1050.0,
+            145.0,
+            1164.0,
+            168.0
+          ]
+        },
+        {
+          "text": "Office",
+          "confidence": 0.9655,
+          "boxPx": [
+            841.0,
+            272.0,
+            911.0,
+            292.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9618,
+          "boxPx": [
+            920.0,
+            272.0,
+            944.0,
+            292.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.9687,
+          "boxPx": [
+            951.0,
+            272.0,
+            989.0,
+            292.0
+          ]
+        },
+        {
+          "text": "Municipal",
+          "confidence": 0.9596,
+          "boxPx": [
+            1000.0,
+            272.0,
+            1116.0,
+            297.0
+          ]
+        },
+        {
+          "text": "Mayor",
+          "confidence": 0.9547,
+          "boxPx": [
+            1127.0,
+            273.0,
+            1205.0,
+            297.0
+          ]
+        },
+        {
+          "text": "Province",
+          "confidence": 0.967,
+          "boxPx": [
+            934.0,
+            189.0,
+            1024.0,
+            206.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9699,
+          "boxPx": [
+            1033.0,
+            188.0,
+            1054.0,
+            206.0
+          ]
+        },
+        {
+          "text": "Iloilo",
+          "confidence": 0.8891,
+          "boxPx": [
+            1062.0,
+            188.0,
+            1111.0,
+            206.0
+          ]
+        },
+        {
+          "text": "Municipality",
+          "confidence": 0.9618,
+          "boxPx": [
+            902.0,
+            231.0,
+            1033.0,
+            254.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9325,
+          "boxPx": [
+            1040.0,
+            231.0,
+            1061.0,
+            249.0
+          ]
+        },
+        {
+          "text": "Miagao",
+          "confidence": 0.9211,
+          "boxPx": [
+            1069.0,
+            232.0,
+            1147.0,
+            254.0
+          ]
+        },
+        {
+          "text": "SUPPLEMENTAL",
+          "confidence": 0.9629,
+          "boxPx": [
+            628.0,
+            361.0,
+            800.0,
+            378.0
+          ]
+        },
+        {
+          "text": "PROJECT",
+          "confidence": 0.9665,
+          "boxPx": [
+            808.0,
+            361.0,
+            900.0,
+            378.0
+          ]
+        },
+        {
+          "text": "PROCUREMENT",
+          "confidence": 0.9652,
+          "boxPx": [
+            909.0,
+            361.0,
+            1076.0,
+            378.0
+          ]
+        },
+        {
+          "text": "MANAGEMENT",
+          "confidence": 0.9654,
+          "boxPx": [
+            1085.0,
+            361.0,
+            1249.0,
+            378.0
+          ]
+        },
+        {
+          "text": "PLAN",
+          "confidence": 0.9324,
+          "boxPx": [
+            1257.0,
+            361.0,
+            1310.0,
+            378.0
+          ]
+        },
+        {
+          "text": "-",
+          "confidence": 0.9148,
+          "boxPx": [
+            1320.0,
+            371.0,
+            1326.0,
+            372.0
+          ]
+        },
+        {
+          "text": "CY",
+          "confidence": 0.9649,
+          "boxPx": [
+            1334.0,
+            361.0,
+            1359.0,
+            378.0
+          ]
+        },
+        {
+          "text": "2019",
+          "confidence": 0.9631,
+          "boxPx": [
+            1367.0,
+            361.0,
+            1419.0,
+            378.0
+          ]
+        },
+        {
+          "text": "END-USER/UNIT:",
+          "confidence": 0.9163,
+          "boxPx": [
+            12.0,
+            445.0,
+            191.0,
+            468.0
+          ]
+        },
+        {
+          "text": "Office",
+          "confidence": 0.9683,
+          "boxPx": [
+            200.0,
+            446.0,
+            262.0,
+            465.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9701,
+          "boxPx": [
+            272.0,
+            446.0,
+            292.0,
+            465.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.9694,
+          "boxPx": [
+            304.0,
+            446.0,
+            332.0,
+            465.0
+          ]
+        },
+        {
+          "text": "Municipal",
+          "confidence": 0.9688,
+          "boxPx": [
+            342.0,
+            446.0,
+            445.0,
+            469.0
+          ]
+        },
+        {
+          "text": "Mayor",
+          "confidence": 0.9678,
+          "boxPx": [
+            455.0,
+            447.0,
+            523.0,
+            469.0
+          ]
+        },
+        {
+          "text": "Code",
+          "confidence": 0.9701,
+          "boxPx": [
+            38.0,
+            548.0,
+            91.0,
+            567.0
+          ]
+        },
+        {
+          "text": "General",
+          "confidence": 0.9697,
+          "boxPx": [
+            313.0,
+            548.0,
+            394.0,
+            567.0
+          ]
+        },
+        {
+          "text": "Description",
+          "confidence": 0.9689,
+          "boxPx": [
+            405.0,
+            549.0,
+            524.0,
+            571.0
+          ]
+        },
+        {
+          "text": "Quantity/Size",
+          "confidence": 0.9282,
+          "boxPx": [
+            750.0,
+            547.0,
+            895.0,
+            571.0
+          ]
+        },
+        {
+          "text": "Estimated",
+          "confidence": 0.965,
+          "boxPx": [
+            992.0,
+            548.0,
+            1096.0,
+            567.0
+          ]
+        },
+        {
+          "text": "Budget",
+          "confidence": 0.9641,
+          "boxPx": [
+            1106.0,
+            548.0,
+            1180.0,
+            571.0
+          ]
+        },
+        {
+          "text": "Schedule/Milestone",
+          "confidence": 0.9245,
+          "boxPx": [
+            1465.0,
+            527.0,
+            1680.0,
+            549.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9699,
+          "boxPx": [
+            1689.0,
+            528.0,
+            1709.0,
+            546.0
+          ]
+        },
+        {
+          "text": "Activities",
+          "confidence": 0.9694,
+          "boxPx": [
+            1716.0,
+            529.0,
+            1813.0,
+            546.0
+          ]
+        },
+        {
+          "text": "Jan",
+          "confidence": 0.9576,
+          "boxPx": [
+            1249.0,
+            572.0,
+            1283.0,
+            589.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.9511,
+          "boxPx": [
+            1295.0,
+            567.0,
+            1307.0,
+            599.0
+          ]
+        },
+        {
+          "text": "Feb",
+          "confidence": 0.9661,
+          "boxPx": [
+            1317.0,
+            571.0,
+            1353.0,
+            589.0
+          ]
+        },
+        {
+          "text": "Oct",
+          "confidence": 0.9692,
+          "boxPx": [
+            1857.0,
+            572.0,
+            1892.0,
+            589.0
+          ]
+        },
+        {
+          "text": "Nov",
+          "confidence": 0.9689,
+          "boxPx": [
+            1923.0,
+            572.0,
+            1964.0,
+            589.0
+          ]
+        },
+        {
+          "text": "Dec",
+          "confidence": 0.9701,
+          "boxPx": [
+            1993.0,
+            572.0,
+            2031.0,
+            589.0
+          ]
+        },
+        {
+          "text": "NONE",
+          "confidence": 0.9675,
+          "boxPx": [
+            311.0,
+            677.0,
+            662.0,
+            775.0
+          ]
+        },
+        {
+          "text": "NOTE:",
+          "confidence": 0.9645,
+          "boxPx": [
+            12.0,
+            1006.0,
+            76.0,
+            1023.0
+          ]
+        },
+        {
+          "text": "Technical",
+          "confidence": 0.9665,
+          "boxPx": [
+            84.0,
+            1005.0,
+            184.0,
+            1023.0
+          ]
+        },
+        {
+          "text": "Specifications",
+          "confidence": 0.9651,
+          "boxPx": [
+            193.0,
+            1005.0,
+            339.0,
+            1028.0
+          ]
+        },
+        {
+          "text": "for",
+          "confidence": 0.9661,
+          "boxPx": [
+            347.0,
+            1005.0,
+            377.0,
+            1023.0
+          ]
+        },
+        {
+          "text": "each",
+          "confidence": 0.9321,
+          "boxPx": [
+            385.0,
+            1005.0,
+            433.0,
+            1023.0
+          ]
+        },
+        {
+          "text": "Item/Project",
+          "confidence": 0.6847,
+          "boxPx": [
+            443.0,
+            1004.0,
+            577.0,
+            1028.0
+          ]
+        },
+        {
+          "text": "being",
+          "confidence": 0.9701,
+          "boxPx": [
+            586.0,
+            1005.0,
+            643.0,
+            1028.0
+          ]
+        },
+        {
+          "text": "proposed",
+          "confidence": 0.9685,
+          "boxPx": [
+            651.0,
+            1005.0,
+            751.0,
+            1028.0
+          ]
+        },
+        {
+          "text": "shall",
+          "confidence": 0.9694,
+          "boxPx": [
+            760.0,
+            1005.0,
+            806.0,
+            1023.0
+          ]
+        },
+        {
+          "text": "be",
+          "confidence": 0.9642,
+          "boxPx": [
+            816.0,
+            1005.0,
+            840.0,
+            1023.0
+          ]
+        },
+        {
+          "text": "submitted",
+          "confidence": 0.9642,
+          "boxPx": [
+            848.0,
+            1005.0,
+            956.0,
+            1023.0
+          ]
+        },
+        {
+          "text": "as",
+          "confidence": 0.9627,
+          "boxPx": [
+            965.0,
+            1010.0,
+            986.0,
+            1023.0
+          ]
+        },
+        {
+          "text": "part",
+          "confidence": 0.9627,
+          "boxPx": [
+            995.0,
+            1007.0,
+            1037.0,
+            1028.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9657,
+          "boxPx": [
+            1045.0,
+            1005.0,
+            1066.0,
+            1023.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.9633,
+          "boxPx": [
+            1073.0,
+            1005.0,
+            1107.0,
+            1023.0
+          ]
+        },
+        {
+          "text": "PPMP",
+          "confidence": 0.9179,
+          "boxPx": [
+            1116.0,
+            1006.0,
+            1177.0,
+            1023.0
+          ]
+        },
+        {
+          "text": "Prepared",
+          "confidence": 0.9671,
+          "boxPx": [
+            12.0,
+            1091.0,
+            108.0,
+            1114.0
+          ]
+        },
+        {
+          "text": "by:",
+          "confidence": 0.9659,
+          "boxPx": [
+            117.0,
+            1091.0,
+            147.0,
+            1114.0
+          ]
+        },
+        {
+          "text": "QUENA",
+          "confidence": 0.9238,
+          "boxPx": [
+            11.0,
+            1221.0,
+            92.0,
+            1241.0
+          ]
+        },
+        {
+          "text": "M.",
+          "confidence": 0.9303,
+          "boxPx": [
+            100.0,
+            1221.0,
+            127.0,
+            1238.0
+          ]
+        },
+        {
+          "text": "RAMIREZ",
+          "confidence": 0.9624,
+          "boxPx": [
+            136.0,
+            1221.0,
+            237.0,
+            1238.0
+          ]
+        },
+        {
+          "text": "Senior",
+          "confidence": 0.9679,
+          "boxPx": [
+            11.0,
+            1264.0,
+            79.0,
+            1282.0
+          ]
+        },
+        {
+          "text": "Administrative",
+          "confidence": 0.9642,
+          "boxPx": [
+            86.0,
+            1263.0,
+            242.0,
+            1282.0
+          ]
+        },
+        {
+          "text": "Assistant",
+          "confidence": 0.9679,
+          "boxPx": [
+            250.0,
+            1264.0,
+            346.0,
+            1282.0
+          ]
+        },
+        {
+          "text": "III",
+          "confidence": 0.9084,
+          "boxPx": [
+            355.0,
+            1264.0,
+            371.0,
+            1281.0
+          ]
+        },
+        {
+          "text": "Approved",
+          "confidence": 0.9628,
+          "boxPx": [
+            1242.0,
+            1091.0,
+            1345.0,
+            1114.0
+          ]
+        },
+        {
+          "text": "by:",
+          "confidence": 0.9648,
+          "boxPx": [
+            1355.0,
+            1091.0,
+            1384.0,
+            1114.0
+          ]
+        },
+        {
+          "text": "MACARIO",
+          "confidence": 0.9184,
+          "boxPx": [
+            1243.0,
+            1221.0,
+            1350.0,
+            1239.0
+          ]
+        },
+        {
+          "text": "N.",
+          "confidence": 0.9288,
+          "boxPx": [
+            1359.0,
+            1221.0,
+            1380.0,
+            1238.0
+          ]
+        },
+        {
+          "text": "NAPULAN,",
+          "confidence": 0.925,
+          "boxPx": [
+            1389.0,
+            1221.0,
+            1503.0,
+            1242.0
+          ]
+        },
+        {
+          "text": "M.D.",
+          "confidence": 0.9567,
+          "boxPx": [
+            1512.0,
+            1221.0,
+            1563.0,
+            1238.0
+          ]
+        },
+        {
+          "text": "Municipal",
+          "confidence": 0.9593,
+          "boxPx": [
+            1244.0,
+            1263.0,
+            1346.0,
+            1286.0
+          ]
+        },
+        {
+          "text": "Mayor",
+          "confidence": 0.9677,
+          "boxPx": [
+            1356.0,
+            1265.0,
+            1424.0,
+            1286.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

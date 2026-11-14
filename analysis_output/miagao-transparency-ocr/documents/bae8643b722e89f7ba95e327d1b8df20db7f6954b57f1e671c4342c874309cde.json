@@ -1,0 +1,2031 @@
+{
+  "sourceFileSha256": "bae8643b722e89f7ba95e327d1b8df20db7f6954b57f1e671c4342c874309cde",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/ad3532e44ec9a6ff.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2021/01/rfq.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/request-for-quotation/",
+      "sourceTitle": "Request for Quotation",
+      "publishedAt": "2020-12-07T06:43:17",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "rfq.pdf"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "bae8643b722e89f7ba95e327d1b8df20db7f6954b57f1e671c4342c874309cde",
+      "sourceFileBytes": 551992,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/ad3532e44ec9a6ff.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2021/01/rfq.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/request-for-quotation/",
+          "sourceTitle": "Request for Quotation",
+          "publishedAt": "2020-12-07T06:43:17",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "rfq.pdf"
+        }
+      ],
+      "sourceFileName": "rfq.pdf",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Municipality of Miagao\nStandard Form Number: SF-GOOD-60\nRevised on: May 24, 2004 *\nStandard Form Tite: Request for Quotation\nNOTE 1. ALL ENTRIES MUST pe TYPEWRITTEN,\nRl\n2 DELIVERY PERIOD wrriIn\n3. WARRANTY\nONE (1) YEAR FOR Roun\nuC\niLL BE FOR A PERIOD Op\nCALENT\nMONTHS KOR supp\nOF ACCEPTANCE BY TH1p j\nProject Reference Number\nName of the Project\n‘MATERIALS,\n3 orreRED,\n—\ncou TTEM & DESCRIPTION ry. UNIT PRICE TOTAL\n1 _| Contract for Catering of packed Snack and meal good for 4 Job\nthree hundred fifty (350) pax\nMenu:\nSnack\n- Cheese Burger\ni\n~ Potato Chips\n- Bottled Juice\nMeal\n-Rice\n~ Shanghai Rolls\n~Chopsuey\n= Chicken Pastel\n~Pork Ribs\n- Beef with Broccol\nApple\n~Butterscotch\n~ Softdrinks\nSubmit this quotation with the\n1. Mayor's/Business Permit\n2. PhIGEPS Reg. Number\n3. Income/Business Tax Ream\n4. Omnibus Swom Statement\n2. For medicines & medical a\nCalendar days\n“PCs having carflly read and accepted Your General Conditions, 1/\nCANVASSED By. _ -\nPrinted Name Signature\n‘We quote you on the item at prices noted above\nBrand and Mode!\nDelivery Period:\nWarranty:\nPrice Validity\nPrinted Name? Signature\nTel No.7 Cel phone No ema 5\n“> Stee",
+      "ocrText": "Municipality of Miagao\nStandard Form Number: SF-GOOD-60\nRevised on: May 24, 2004 *\nStandard Form Tite: Request for Quotation\nNOTE 1. ALL ENTRIES MUST pe TYPEWRITTEN,\nRl\n2 DELIVERY PERIOD wrriIn\n3. WARRANTY\nONE (1) YEAR FOR Roun\nuC\niLL BE FOR A PERIOD Op\nCALENT\nMONTHS KOR supp\nOF ACCEPTANCE BY TH1p j\nProject Reference Number\nName of the Project\n‘MATERIALS,\n3 orreRED,\n—\ncou TTEM & DESCRIPTION ry. UNIT PRICE TOTAL\n1 _| Contract for Catering of packed Snack and meal good for 4 Job\nthree hundred fifty (350) pax\nMenu:\nSnack\n- Cheese Burger\ni\n~ Potato Chips\n- Bottled Juice\nMeal\n-Rice\n~ Shanghai Rolls\n~Chopsuey\n= Chicken Pastel\n~Pork Ribs\n- Beef with Broccol\nApple\n~Butterscotch\n~ Softdrinks\nSubmit this quotation with the\n1. Mayor's/Business Permit\n2. PhIGEPS Reg. Number\n3. Income/Business Tax Ream\n4. Omnibus Swom Statement\n2. For medicines & medical a\nCalendar days\n“PCs having carflly read and accepted Your General Conditions, 1/\nCANVASSED By. _ -\nPrinted Name Signature\n‘We quote you on the item at prices noted above\nBrand and Mode!\nDelivery Period:\nWarranty:\nPrice Validity\nPrinted Name? Signature\nTel No.7 Cel phone No ema 5\n“> Stee",
+      "ocrTokenCount": 198,
+      "ocrMeanConfidence": 0.7256,
+      "ocrTokens": [
+        {
+          "text": "Municipality",
+          "confidence": 0.9148,
+          "boxPx": [
+            148.0,
+            23.0,
+            210.0,
+            37.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.933,
+          "boxPx": [
+            215.0,
+            29.0,
+            225.0,
+            37.0
+          ]
+        },
+        {
+          "text": "Miagao",
+          "confidence": 0.6537,
+          "boxPx": [
+            230.0,
+            29.0,
+            267.0,
+            42.0
+          ]
+        },
+        {
+          "text": "Standard",
+          "confidence": 0.9351,
+          "boxPx": [
+            144.0,
+            86.0,
+            188.0,
+            98.0
+          ]
+        },
+        {
+          "text": "Form",
+          "confidence": 0.9598,
+          "boxPx": [
+            192.0,
+            90.0,
+            219.0,
+            101.0
+          ]
+        },
+        {
+          "text": "Number:",
+          "confidence": 0.9319,
+          "boxPx": [
+            223.0,
+            92.0,
+            266.0,
+            104.0
+          ]
+        },
+        {
+          "text": "SF-GOOD-60",
+          "confidence": 0.7331,
+          "boxPx": [
+            270.0,
+            96.0,
+            341.0,
+            109.0
+          ]
+        },
+        {
+          "text": "Revised",
+          "confidence": 0.9532,
+          "boxPx": [
+            143.0,
+            103.0,
+            182.0,
+            114.0
+          ]
+        },
+        {
+          "text": "on:",
+          "confidence": 0.9685,
+          "boxPx": [
+            186.0,
+            109.0,
+            198.0,
+            115.0
+          ]
+        },
+        {
+          "text": "May",
+          "confidence": 0.9641,
+          "boxPx": [
+            205.0,
+            107.0,
+            228.0,
+            120.0
+          ]
+        },
+        {
+          "text": "24,",
+          "confidence": 0.9641,
+          "boxPx": [
+            231.0,
+            109.0,
+            246.0,
+            119.0
+          ]
+        },
+        {
+          "text": "2004",
+          "confidence": 0.6775,
+          "boxPx": [
+            251.0,
+            111.0,
+            275.0,
+            120.0
+          ]
+        },
+        {
+          "text": "*",
+          "confidence": 0.6775,
+          "boxPx": [
+            285.0,
+            110.0,
+            289.0,
+            115.0
+          ]
+        },
+        {
+          "text": "Standard",
+          "confidence": 0.9634,
+          "boxPx": [
+            142.0,
+            117.0,
+            187.0,
+            129.0
+          ]
+        },
+        {
+          "text": "Form",
+          "confidence": 0.9418,
+          "boxPx": [
+            190.0,
+            121.0,
+            217.0,
+            132.0
+          ]
+        },
+        {
+          "text": "Tite:",
+          "confidence": 0.6928,
+          "boxPx": [
+            221.0,
+            124.0,
+            244.0,
+            134.0
+          ]
+        },
+        {
+          "text": "Request",
+          "confidence": 0.9617,
+          "boxPx": [
+            251.0,
+            126.0,
+            295.0,
+            139.0
+          ]
+        },
+        {
+          "text": "for",
+          "confidence": 0.9603,
+          "boxPx": [
+            299.0,
+            123.0,
+            315.0,
+            151.0
+          ]
+        },
+        {
+          "text": "Quotation",
+          "confidence": 0.9675,
+          "boxPx": [
+            323.0,
+            123.0,
+            377.0,
+            151.0
+          ]
+        },
+        {
+          "text": "NOTE",
+          "confidence": 0.9179,
+          "boxPx": [
+            125.0,
+            354.0,
+            160.0,
+            365.0
+          ]
+        },
+        {
+          "text": "1.",
+          "confidence": 0.1769,
+          "boxPx": [
+            182.0,
+            358.0,
+            187.0,
+            367.0
+          ]
+        },
+        {
+          "text": "ALL",
+          "confidence": 0.1769,
+          "boxPx": [
+            193.0,
+            360.0,
+            215.0,
+            369.0
+          ]
+        },
+        {
+          "text": "ENTRIES",
+          "confidence": 0.7406,
+          "boxPx": [
+            219.0,
+            361.0,
+            269.0,
+            373.0
+          ]
+        },
+        {
+          "text": "MUST",
+          "confidence": 0.7406,
+          "boxPx": [
+            273.0,
+            365.0,
+            324.0,
+            377.0
+          ]
+        },
+        {
+          "text": "pe",
+          "confidence": 0.6836,
+          "boxPx": [
+            312.0,
+            350.0,
+            328.0,
+            381.0
+          ]
+        },
+        {
+          "text": "TYPEWRITTEN,",
+          "confidence": 0.8876,
+          "boxPx": [
+            330.0,
+            369.0,
+            413.0,
+            383.0
+          ]
+        },
+        {
+          "text": "Rl",
+          "confidence": 0.4935,
+          "boxPx": [
+            238.0,
+            378.0,
+            245.0,
+            387.0
+          ]
+        },
+        {
+          "text": "2",
+          "confidence": 0.9135,
+          "boxPx": [
+            181.0,
+            374.0,
+            187.0,
+            383.0
+          ]
+        },
+        {
+          "text": "DELIVERY",
+          "confidence": 0.9135,
+          "boxPx": [
+            193.0,
+            375.0,
+            249.0,
+            387.0
+          ]
+        },
+        {
+          "text": "PERIOD",
+          "confidence": 0.4261,
+          "boxPx": [
+            261.0,
+            380.0,
+            302.0,
+            393.0
+          ]
+        },
+        {
+          "text": "wrriIn",
+          "confidence": 0.1622,
+          "boxPx": [
+            306.0,
+            383.0,
+            349.0,
+            394.0
+          ]
+        },
+        {
+          "text": "3.",
+          "confidence": 0.7994,
+          "boxPx": [
+            179.0,
+            390.0,
+            185.0,
+            399.0
+          ]
+        },
+        {
+          "text": "WARRANTY",
+          "confidence": 0.908,
+          "boxPx": [
+            193.0,
+            391.0,
+            254.0,
+            404.0
+          ]
+        },
+        {
+          "text": "ONE",
+          "confidence": 0.631,
+          "boxPx": [
+            178.0,
+            406.0,
+            203.0,
+            416.0
+          ]
+        },
+        {
+          "text": "(1)",
+          "confidence": 0.2689,
+          "boxPx": [
+            207.0,
+            409.0,
+            220.0,
+            418.0
+          ]
+        },
+        {
+          "text": "YEAR",
+          "confidence": 0.9602,
+          "boxPx": [
+            225.0,
+            409.0,
+            255.0,
+            420.0
+          ]
+        },
+        {
+          "text": "FOR",
+          "confidence": 0.9543,
+          "boxPx": [
+            258.0,
+            412.0,
+            283.0,
+            422.0
+          ]
+        },
+        {
+          "text": "Roun",
+          "confidence": 0.144,
+          "boxPx": [
+            286.0,
+            414.0,
+            336.0,
+            427.0
+          ]
+        },
+        {
+          "text": "uC",
+          "confidence": 0.6769,
+          "boxPx": [
+            205.0,
+            424.0,
+            214.0,
+            433.0
+          ]
+        },
+        {
+          "text": "iLL",
+          "confidence": 0.4205,
+          "boxPx": [
+            279.0,
+            398.0,
+            297.0,
+            407.0
+          ]
+        },
+        {
+          "text": "BE",
+          "confidence": 0.8902,
+          "boxPx": [
+            300.0,
+            399.0,
+            314.0,
+            409.0
+          ]
+        },
+        {
+          "text": "FOR",
+          "confidence": 0.8296,
+          "boxPx": [
+            319.0,
+            400.0,
+            344.0,
+            411.0
+          ]
+        },
+        {
+          "text": "A",
+          "confidence": 0.8296,
+          "boxPx": [
+            349.0,
+            403.0,
+            354.0,
+            411.0
+          ]
+        },
+        {
+          "text": "PERIOD",
+          "confidence": 0.9374,
+          "boxPx": [
+            358.0,
+            398.0,
+            405.0,
+            415.0
+          ]
+        },
+        {
+          "text": "Op",
+          "confidence": 0.5049,
+          "boxPx": [
+            408.0,
+            401.0,
+            419.0,
+            416.0
+          ]
+        },
+        {
+          "text": "CALENT",
+          "confidence": 0.2455,
+          "boxPx": [
+            390.0,
+            391.0,
+            431.0,
+            401.0
+          ]
+        },
+        {
+          "text": "MONTHS",
+          "confidence": 0.2967,
+          "boxPx": [
+            466.0,
+            411.0,
+            519.0,
+            424.0
+          ]
+        },
+        {
+          "text": "KOR",
+          "confidence": 0.7138,
+          "boxPx": [
+            522.0,
+            415.0,
+            546.0,
+            426.0
+          ]
+        },
+        {
+          "text": "supp",
+          "confidence": 0.8488,
+          "boxPx": [
+            549.0,
+            418.0,
+            577.0,
+            428.0
+          ]
+        },
+        {
+          "text": "OF",
+          "confidence": 0.7321,
+          "boxPx": [
+            467.0,
+            428.0,
+            483.0,
+            437.0
+          ]
+        },
+        {
+          "text": "ACCEPTANCE",
+          "confidence": 0.9579,
+          "boxPx": [
+            487.0,
+            430.0,
+            565.0,
+            443.0
+          ]
+        },
+        {
+          "text": "BY",
+          "confidence": 0.9156,
+          "boxPx": [
+            570.0,
+            435.0,
+            582.0,
+            444.0
+          ]
+        },
+        {
+          "text": "TH1p",
+          "confidence": 0.0437,
+          "boxPx": [
+            588.0,
+            437.0,
+            604.0,
+            446.0
+          ]
+        },
+        {
+          "text": "j",
+          "confidence": 0.3881,
+          "boxPx": [
+            617.0,
+            441.0,
+            619.0,
+            447.0
+          ]
+        },
+        {
+          "text": "Project",
+          "confidence": 0.9302,
+          "boxPx": [
+            566.0,
+            54.0,
+            602.0,
+            67.0
+          ]
+        },
+        {
+          "text": "Reference",
+          "confidence": 0.8097,
+          "boxPx": [
+            606.0,
+            57.0,
+            655.0,
+            69.0
+          ]
+        },
+        {
+          "text": "Number",
+          "confidence": 0.5776,
+          "boxPx": [
+            660.0,
+            61.0,
+            698.0,
+            72.0
+          ]
+        },
+        {
+          "text": "Name",
+          "confidence": 0.8684,
+          "boxPx": [
+            565.0,
+            70.0,
+            594.0,
+            80.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9639,
+          "boxPx": [
+            598.0,
+            63.0,
+            606.0,
+            93.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.9639,
+          "boxPx": [
+            611.0,
+            73.0,
+            626.0,
+            83.0
+          ]
+        },
+        {
+          "text": "Project",
+          "confidence": 0.8172,
+          "boxPx": [
+            630.0,
+            75.0,
+            665.0,
+            88.0
+          ]
+        },
+        {
+          "text": "‘MATERIALS,",
+          "confidence": 0.575,
+          "boxPx": [
+            620.0,
+            423.0,
+            690.0,
+            437.0
+          ]
+        },
+        {
+          "text": "3",
+          "confidence": 0.4359,
+          "boxPx": [
+            244.0,
+            465.0,
+            246.0,
+            468.0
+          ]
+        },
+        {
+          "text": "orreRED,",
+          "confidence": 0.2472,
+          "boxPx": [
+            787.0,
+            500.0,
+            844.0,
+            512.0
+          ]
+        },
+        {
+          "text": "—",
+          "confidence": 0.6039,
+          "boxPx": [
+            1045.0,
+            546.0,
+            1078.0,
+            557.0
+          ]
+        },
+        {
+          "text": "cou",
+          "confidence": 0.4062,
+          "boxPx": [
+            121.0,
+            483.0,
+            164.0,
+            516.0
+          ]
+        },
+        {
+          "text": "TTEM",
+          "confidence": 0.8166,
+          "boxPx": [
+            384.0,
+            512.0,
+            417.0,
+            524.0
+          ]
+        },
+        {
+          "text": "&",
+          "confidence": 0.8619,
+          "boxPx": [
+            421.0,
+            515.0,
+            431.0,
+            525.0
+          ]
+        },
+        {
+          "text": "DESCRIPTION",
+          "confidence": 0.7824,
+          "boxPx": [
+            436.0,
+            516.0,
+            527.0,
+            532.0
+          ]
+        },
+        {
+          "text": "ry.",
+          "confidence": 0.7523,
+          "boxPx": [
+            806.0,
+            544.0,
+            843.0,
+            558.0
+          ]
+        },
+        {
+          "text": "UNIT",
+          "confidence": 0.9641,
+          "boxPx": [
+            932.0,
+            552.0,
+            971.0,
+            566.0
+          ]
+        },
+        {
+          "text": "PRICE",
+          "confidence": 0.9677,
+          "boxPx": [
+            976.0,
+            556.0,
+            1024.0,
+            570.0
+          ]
+        },
+        {
+          "text": "TOTAL",
+          "confidence": 0.963,
+          "boxPx": [
+            1091.0,
+            565.0,
+            1146.0,
+            580.0
+          ]
+        },
+        {
+          "text": "1",
+          "confidence": 0.4433,
+          "boxPx": [
+            136.0,
+            524.0,
+            143.0,
+            538.0
+          ]
+        },
+        {
+          "text": "_|",
+          "confidence": 0.4433,
+          "boxPx": [
+            148.0,
+            520.0,
+            168.0,
+            553.0
+          ]
+        },
+        {
+          "text": "Contract",
+          "confidence": 0.7936,
+          "boxPx": [
+            178.0,
+            527.0,
+            249.0,
+            546.0
+          ]
+        },
+        {
+          "text": "for",
+          "confidence": 0.7936,
+          "boxPx": [
+            255.0,
+            533.0,
+            278.0,
+            548.0
+          ]
+        },
+        {
+          "text": "Catering",
+          "confidence": 0.3923,
+          "boxPx": [
+            283.0,
+            537.0,
+            350.0,
+            556.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9691,
+          "boxPx": [
+            356.0,
+            541.0,
+            373.0,
+            555.0
+          ]
+        },
+        {
+          "text": "packed",
+          "confidence": 0.9448,
+          "boxPx": [
+            377.0,
+            545.0,
+            438.0,
+            561.0
+          ]
+        },
+        {
+          "text": "Snack",
+          "confidence": 0.9559,
+          "boxPx": [
+            445.0,
+            550.0,
+            493.0,
+            565.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.9695,
+          "boxPx": [
+            500.0,
+            554.0,
+            531.0,
+            568.0
+          ]
+        },
+        {
+          "text": "meal",
+          "confidence": 0.964,
+          "boxPx": [
+            537.0,
+            557.0,
+            577.0,
+            571.0
+          ]
+        },
+        {
+          "text": "good",
+          "confidence": 0.9592,
+          "boxPx": [
+            583.0,
+            561.0,
+            625.0,
+            575.0
+          ]
+        },
+        {
+          "text": "for",
+          "confidence": 0.9696,
+          "boxPx": [
+            630.0,
+            562.0,
+            653.0,
+            577.0
+          ]
+        },
+        {
+          "text": "4",
+          "confidence": 0.7626,
+          "boxPx": [
+            790.0,
+            574.0,
+            796.0,
+            587.0
+          ]
+        },
+        {
+          "text": "Job",
+          "confidence": 0.7626,
+          "boxPx": [
+            807.0,
+            575.0,
+            837.0,
+            591.0
+          ]
+        },
+        {
+          "text": "three",
+          "confidence": 0.9479,
+          "boxPx": [
+            176.0,
+            550.0,
+            218.0,
+            566.0
+          ]
+        },
+        {
+          "text": "hundred",
+          "confidence": 0.967,
+          "boxPx": [
+            224.0,
+            553.0,
+            295.0,
+            572.0
+          ]
+        },
+        {
+          "text": "fifty",
+          "confidence": 0.9687,
+          "boxPx": [
+            297.0,
+            555.0,
+            331.0,
+            582.0
+          ]
+        },
+        {
+          "text": "(350)",
+          "confidence": 0.969,
+          "boxPx": [
+            335.0,
+            558.0,
+            377.0,
+            587.0
+          ]
+        },
+        {
+          "text": "pax",
+          "confidence": 0.9672,
+          "boxPx": [
+            386.0,
+            568.0,
+            415.0,
+            582.0
+          ]
+        },
+        {
+          "text": "Menu:",
+          "confidence": 0.9036,
+          "boxPx": [
+            168.0,
+            571.0,
+            214.0,
+            588.0
+          ]
+        },
+        {
+          "text": "Snack",
+          "confidence": 0.9251,
+          "boxPx": [
+            166.0,
+            593.0,
+            218.0,
+            611.0
+          ]
+        },
+        {
+          "text": "-",
+          "confidence": 0.5756,
+          "boxPx": [
+            175.0,
+            624.0,
+            180.0,
+            626.0
+          ]
+        },
+        {
+          "text": "Cheese",
+          "confidence": 0.9697,
+          "boxPx": [
+            187.0,
+            617.0,
+            252.0,
+            636.0
+          ]
+        },
+        {
+          "text": "Burger",
+          "confidence": 0.9686,
+          "boxPx": [
+            258.0,
+            622.0,
+            316.0,
+            641.0
+          ]
+        },
+        {
+          "text": "i",
+          "confidence": 0.1902,
+          "boxPx": [
+            1004.0,
+            670.0,
+            1054.0,
+            708.0
+          ]
+        },
+        {
+          "text": "~",
+          "confidence": 0.5281,
+          "boxPx": [
+            175.0,
+            646.0,
+            180.0,
+            648.0
+          ]
+        },
+        {
+          "text": "Potato",
+          "confidence": 0.8515,
+          "boxPx": [
+            187.0,
+            639.0,
+            240.0,
+            657.0
+          ]
+        },
+        {
+          "text": "Chips",
+          "confidence": 0.9083,
+          "boxPx": [
+            246.0,
+            644.0,
+            295.0,
+            662.0
+          ]
+        },
+        {
+          "text": "-",
+          "confidence": 0.3964,
+          "boxPx": [
+            173.0,
+            668.0,
+            178.0,
+            670.0
+          ]
+        },
+        {
+          "text": "Bottled",
+          "confidence": 0.9459,
+          "boxPx": [
+            185.0,
+            661.0,
+            243.0,
+            679.0
+          ]
+        },
+        {
+          "text": "Juice",
+          "confidence": 0.9689,
+          "boxPx": [
+            249.0,
+            667.0,
+            293.0,
+            683.0
+          ]
+        },
+        {
+          "text": "Meal",
+          "confidence": 0.9454,
+          "boxPx": [
+            166.0,
+            682.0,
+            206.0,
+            698.0
+          ]
+        },
+        {
+          "text": "-Rice",
+          "confidence": 0.5161,
+          "boxPx": [
+            170.0,
+            705.0,
+            218.0,
+            721.0
+          ]
+        },
+        {
+          "text": "~",
+          "confidence": 0.8103,
+          "boxPx": [
+            161.0,
+            734.0,
+            167.0,
+            736.0
+          ]
+        },
+        {
+          "text": "Shanghai",
+          "confidence": 0.9663,
+          "boxPx": [
+            173.0,
+            726.0,
+            253.0,
+            748.0
+          ]
+        },
+        {
+          "text": "Rolls",
+          "confidence": 0.7784,
+          "boxPx": [
+            260.0,
+            734.0,
+            301.0,
+            750.0
+          ]
+        },
+        {
+          "text": "~Chopsuey",
+          "confidence": 0.2753,
+          "boxPx": [
+            160.0,
+            749.0,
+            258.0,
+            771.0
+          ]
+        },
+        {
+          "text": "=",
+          "confidence": 0.0,
+          "boxPx": [
+            158.0,
+            778.0,
+            164.0,
+            781.0
+          ]
+        },
+        {
+          "text": "Chicken",
+          "confidence": 0.0,
+          "boxPx": [
+            170.0,
+            771.0,
+            238.0,
+            790.0
+          ]
+        },
+        {
+          "text": "Pastel",
+          "confidence": 0.8457,
+          "boxPx": [
+            245.0,
+            777.0,
+            297.0,
+            795.0
+          ]
+        },
+        {
+          "text": "~Pork",
+          "confidence": 0.725,
+          "boxPx": [
+            163.0,
+            794.0,
+            213.0,
+            811.0
+          ]
+        },
+        {
+          "text": "Ribs",
+          "confidence": 0.9111,
+          "boxPx": [
+            219.0,
+            797.0,
+            256.0,
+            814.0
+          ]
+        },
+        {
+          "text": "-",
+          "confidence": 0.5303,
+          "boxPx": [
+            162.0,
+            823.0,
+            167.0,
+            825.0
+          ]
+        },
+        {
+          "text": "Beef",
+          "confidence": 0.8674,
+          "boxPx": [
+            174.0,
+            816.0,
+            213.0,
+            833.0
+          ]
+        },
+        {
+          "text": "with",
+          "confidence": 0.9324,
+          "boxPx": [
+            217.0,
+            820.0,
+            250.0,
+            836.0
+          ]
+        },
+        {
+          "text": "Broccol",
+          "confidence": 0.0639,
+          "boxPx": [
+            256.0,
+            823.0,
+            323.0,
+            841.0
+          ]
+        },
+        {
+          "text": "Apple",
+          "confidence": 0.1553,
+          "boxPx": [
+            160.0,
+            839.0,
+            219.0,
+            856.0
+          ]
+        },
+        {
+          "text": "~Butterscotch",
+          "confidence": 0.4514,
+          "boxPx": [
+            152.0,
+            859.0,
+            264.0,
+            881.0
+          ]
+        },
+        {
+          "text": "~",
+          "confidence": 0.7,
+          "boxPx": [
+            157.0,
+            889.0,
+            162.0,
+            892.0
+          ]
+        },
+        {
+          "text": "Softdrinks",
+          "confidence": 0.9074,
+          "boxPx": [
+            168.0,
+            882.0,
+            252.0,
+            902.0
+          ]
+        },
+        {
+          "text": "Submit",
+          "confidence": 0.8173,
+          "boxPx": [
+            70.0,
+            1114.0,
+            114.0,
+            1127.0
+          ]
+        },
+        {
+          "text": "this",
+          "confidence": 0.7566,
+          "boxPx": [
+            118.0,
+            1118.0,
+            139.0,
+            1129.0
+          ]
+        },
+        {
+          "text": "quotation",
+          "confidence": 0.9658,
+          "boxPx": [
+            144.0,
+            1122.0,
+            201.0,
+            1134.0
+          ]
+        },
+        {
+          "text": "with",
+          "confidence": 0.9415,
+          "boxPx": [
+            205.0,
+            1126.0,
+            229.0,
+            1136.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.2921,
+          "boxPx": [
+            234.0,
+            1127.0,
+            253.0,
+            1138.0
+          ]
+        },
+        {
+          "text": "1.",
+          "confidence": 0.7361,
+          "boxPx": [
+            70.0,
+            1133.0,
+            74.0,
+            1143.0
+          ]
+        },
+        {
+          "text": "Mayor's/Business",
+          "confidence": 0.7195,
+          "boxPx": [
+            85.0,
+            1134.0,
+            194.0,
+            1153.0
+          ]
+        },
+        {
+          "text": "Permit",
+          "confidence": 0.9526,
+          "boxPx": [
+            199.0,
+            1143.0,
+            241.0,
+            1157.0
+          ]
+        },
+        {
+          "text": "2.",
+          "confidence": 0.8746,
+          "boxPx": [
+            67.0,
+            1152.0,
+            74.0,
+            1163.0
+          ]
+        },
+        {
+          "text": "PhIGEPS",
+          "confidence": 0.4629,
+          "boxPx": [
+            83.0,
+            1153.0,
+            145.0,
+            1168.0
+          ]
+        },
+        {
+          "text": "Reg.",
+          "confidence": 0.8536,
+          "boxPx": [
+            151.0,
+            1158.0,
+            175.0,
+            1173.0
+          ]
+        },
+        {
+          "text": "Number",
+          "confidence": 0.8536,
+          "boxPx": [
+            185.0,
+            1161.0,
+            235.0,
+            1175.0
+          ]
+        },
+        {
+          "text": "3.",
+          "confidence": 0.8778,
+          "boxPx": [
+            66.0,
+            1171.0,
+            72.0,
+            1182.0
+          ]
+        },
+        {
+          "text": "Income/Business",
+          "confidence": 0.7336,
+          "boxPx": [
+            82.0,
+            1172.0,
+            189.0,
+            1191.0
+          ]
+        },
+        {
+          "text": "Tax",
+          "confidence": 0.9322,
+          "boxPx": [
+            194.0,
+            1181.0,
+            216.0,
+            1193.0
+          ]
+        },
+        {
+          "text": "Ream",
+          "confidence": 0.1052,
+          "boxPx": [
+            221.0,
+            1183.0,
+            262.0,
+            1196.0
+          ]
+        },
+        {
+          "text": "4.",
+          "confidence": 0.833,
+          "boxPx": [
+            64.0,
+            1190.0,
+            71.0,
+            1200.0
+          ]
+        },
+        {
+          "text": "Omnibus",
+          "confidence": 0.8935,
+          "boxPx": [
+            80.0,
+            1191.0,
+            136.0,
+            1206.0
+          ]
+        },
+        {
+          "text": "Swom",
+          "confidence": 0.891,
+          "boxPx": [
+            142.0,
+            1196.0,
+            180.0,
+            1209.0
+          ]
+        },
+        {
+          "text": "Statement",
+          "confidence": 0.9515,
+          "boxPx": [
+            185.0,
+            1199.0,
+            251.0,
+            1215.0
+          ]
+        },
+        {
+          "text": "2.",
+          "confidence": 0.3577,
+          "boxPx": [
+            63.0,
+            1209.0,
+            70.0,
+            1219.0
+          ]
+        },
+        {
+          "text": "For",
+          "confidence": 0.8535,
+          "boxPx": [
+            79.0,
+            1210.0,
+            100.0,
+            1222.0
+          ]
+        },
+        {
+          "text": "medicines",
+          "confidence": 0.9311,
+          "boxPx": [
+            105.0,
+            1214.0,
+            168.0,
+            1227.0
+          ]
+        },
+        {
+          "text": "&",
+          "confidence": 0.9311,
+          "boxPx": [
+            172.0,
+            1217.0,
+            181.0,
+            1228.0
+          ]
+        },
+        {
+          "text": "medical",
+          "confidence": 0.9409,
+          "boxPx": [
+            186.0,
+            1220.0,
+            235.0,
+            1232.0
+          ]
+        },
+        {
+          "text": "a",
+          "confidence": 0.401,
+          "boxPx": [
+            243.0,
+            1225.0,
+            246.0,
+            1233.0
+          ]
+        },
+        {
+          "text": "Calendar",
+          "confidence": 0.9296,
+          "boxPx": [
+            596.0,
+            1384.0,
+            657.0,
+            1398.0
+          ]
+        },
+        {
+          "text": "days",
+          "confidence": 0.9296,
+          "boxPx": [
+            660.0,
+            1389.0,
+            693.0,
+            1403.0
+          ]
+        },
+        {
+          "text": "“PCs",
+          "confidence": 0.3633,
+          "boxPx": [
+            47.0,
+            1469.0,
+            70.0,
+            1478.0
+          ]
+        },
+        {
+          "text": "having",
+          "confidence": 0.7252,
+          "boxPx": [
+            74.0,
+            1471.0,
+            106.0,
+            1484.0
+          ]
+        },
+        {
+          "text": "carflly",
+          "confidence": 0.4807,
+          "boxPx": [
+            110.0,
+            1475.0,
+            152.0,
+            1485.0
+          ]
+        },
+        {
+          "text": "read",
+          "confidence": 0.4807,
+          "boxPx": [
+            157.0,
+            1479.0,
+            179.0,
+            1487.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.5116,
+          "boxPx": [
+            182.0,
+            1480.0,
+            200.0,
+            1489.0
+          ]
+        },
+        {
+          "text": "accepted",
+          "confidence": 0.6947,
+          "boxPx": [
+            204.0,
+            1484.0,
+            248.0,
+            1494.0
+          ]
+        },
+        {
+          "text": "Your",
+          "confidence": 0.912,
+          "boxPx": [
+            252.0,
+            1488.0,
+            274.0,
+            1495.0
+          ]
+        },
+        {
+          "text": "General",
+          "confidence": 0.9609,
+          "boxPx": [
+            277.0,
+            1487.0,
+            316.0,
+            1498.0
+          ]
+        },
+        {
+          "text": "Conditions,",
+          "confidence": 0.9319,
+          "boxPx": [
+            320.0,
+            1490.0,
+            377.0,
+            1503.0
+          ]
+        },
+        {
+          "text": "1/",
+          "confidence": 0.7253,
+          "boxPx": [
+            382.0,
+            1495.0,
+            392.0,
+            1503.0
+          ]
+        },
+        {
+          "text": "CANVASSED",
+          "confidence": 0.9159,
+          "boxPx": [
+            39.0,
+            1548.0,
+            117.0,
+            1558.0
+          ]
+        },
+        {
+          "text": "By.",
+          "confidence": 0.6397,
+          "boxPx": [
+            128.0,
+            1553.0,
+            147.0,
+            1564.0
+          ]
+        },
+        {
+          "text": "_",
+          "confidence": 0.6397,
+          "boxPx": [
+            158.0,
+            1568.0,
+            161.0,
+            1569.0
+          ]
+        },
+        {
+          "text": "-",
+          "confidence": 0.0,
+          "boxPx": [
+            310.0,
+            1580.0,
+            315.0,
+            1581.0
+          ]
+        },
+        {
+          "text": "Printed",
+          "confidence": 0.944,
+          "boxPx": [
+            166.0,
+            1573.0,
+            205.0,
+            1585.0
+          ]
+        },
+        {
+          "text": "Name",
+          "confidence": 0.4914,
+          "boxPx": [
+            210.0,
+            1576.0,
+            243.0,
+            1588.0
+          ]
+        },
+        {
+          "text": "Signature",
+          "confidence": 0.9224,
+          "boxPx": [
+            255.0,
+            1580.0,
+            308.0,
+            1593.0
+          ]
+        },
+        {
+          "text": "‘We",
+          "confidence": 0.581,
+          "boxPx": [
+            396.0,
+            1496.0,
+            412.0,
+            1506.0
+          ]
+        },
+        {
+          "text": "quote",
+          "confidence": 0.581,
+          "boxPx": [
+            415.0,
+            1500.0,
+            443.0,
+            1509.0
+          ]
+        },
+        {
+          "text": "you",
+          "confidence": 0.8691,
+          "boxPx": [
+            447.0,
+            1502.0,
+            464.0,
+            1509.0
+          ]
+        },
+        {
+          "text": "on",
+          "confidence": 0.9654,
+          "boxPx": [
+            468.0,
+            1504.0,
+            480.0,
+            1511.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.5408,
+          "boxPx": [
+            484.0,
+            1503.0,
+            498.0,
+            1512.0
+          ]
+        },
+        {
+          "text": "item",
+          "confidence": 0.5408,
+          "boxPx": [
+            502.0,
+            1505.0,
+            535.0,
+            1515.0
+          ]
+        },
+        {
+          "text": "at",
+          "confidence": 0.757,
+          "boxPx": [
+            528.0,
+            1492.0,
+            536.0,
+            1524.0
+          ]
+        },
+        {
+          "text": "prices",
+          "confidence": 0.7853,
+          "boxPx": [
+            539.0,
+            1510.0,
+            568.0,
+            1518.0
+          ]
+        },
+        {
+          "text": "noted",
+          "confidence": 0.8913,
+          "boxPx": [
+            572.0,
+            1511.0,
+            599.0,
+            1520.0
+          ]
+        },
+        {
+          "text": "above",
+          "confidence": 0.6422,
+          "boxPx": [
+            602.0,
+            1503.0,
+            631.0,
+            1531.0
+          ]
+        },
+        {
+          "text": "Brand",
+          "confidence": 0.9516,
+          "boxPx": [
+            586.0,
+            1442.0,
+            615.0,
+            1452.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.9516,
+          "boxPx": [
+            619.0,
+            1445.0,
+            636.0,
+            1454.0
+          ]
+        },
+        {
+          "text": "Mode!",
+          "confidence": 0.5775,
+          "boxPx": [
+            640.0,
+            1446.0,
+            672.0,
+            1457.0
+          ]
+        },
+        {
+          "text": "Delivery",
+          "confidence": 0.9544,
+          "boxPx": [
+            584.0,
+            1462.0,
+            627.0,
+            1474.0
+          ]
+        },
+        {
+          "text": "Period:",
+          "confidence": 0.9202,
+          "boxPx": [
+            631.0,
+            1466.0,
+            663.0,
+            1477.0
+          ]
+        },
+        {
+          "text": "Warranty:",
+          "confidence": 0.543,
+          "boxPx": [
+            584.0,
+            1478.0,
+            628.0,
+            1491.0
+          ]
+        },
+        {
+          "text": "Price",
+          "confidence": 0.9449,
+          "boxPx": [
+            578.0,
+            1486.0,
+            606.0,
+            1514.0
+          ]
+        },
+        {
+          "text": "Validity",
+          "confidence": 0.9536,
+          "boxPx": [
+            613.0,
+            1486.0,
+            650.0,
+            1514.0
+          ]
+        },
+        {
+          "text": "Printed",
+          "confidence": 0.9483,
+          "boxPx": [
+            630.0,
+            1576.0,
+            675.0,
+            1589.0
+          ]
+        },
+        {
+          "text": "Name?",
+          "confidence": 0.5837,
+          "boxPx": [
+            679.0,
+            1578.0,
+            715.0,
+            1592.0
+          ]
+        },
+        {
+          "text": "Signature",
+          "confidence": 0.4056,
+          "boxPx": [
+            722.0,
+            1581.0,
+            776.0,
+            1598.0
+          ]
+        },
+        {
+          "text": "Tel",
+          "confidence": 0.8727,
+          "boxPx": [
+            583.0,
+            1605.0,
+            596.0,
+            1615.0
+          ]
+        },
+        {
+          "text": "No.7",
+          "confidence": 0.8437,
+          "boxPx": [
+            607.0,
+            1607.0,
+            624.0,
+            1617.0
+          ]
+        },
+        {
+          "text": "Cel",
+          "confidence": 0.8015,
+          "boxPx": [
+            648.0,
+            1614.0,
+            654.0,
+            1620.0
+          ]
+        },
+        {
+          "text": "phone",
+          "confidence": 0.8122,
+          "boxPx": [
+            669.0,
+            1601.0,
+            701.0,
+            1633.0
+          ]
+        },
+        {
+          "text": "No",
+          "confidence": 0.4369,
+          "boxPx": [
+            709.0,
+            1614.0,
+            721.0,
+            1625.0
+          ]
+        },
+        {
+          "text": "ema",
+          "confidence": 0.3476,
+          "boxPx": [
+            731.0,
+            1617.0,
+            779.0,
+            1629.0
+          ]
+        },
+        {
+          "text": "5",
+          "confidence": 0.1181,
+          "boxPx": [
+            810.0,
+            1626.0,
+            821.0,
+            1632.0
+          ]
+        },
+        {
+          "text": "“>",
+          "confidence": 0.3802,
+          "boxPx": [
+            569.0,
+            1633.0,
+            643.0,
+            1640.0
+          ]
+        },
+        {
+          "text": "Stee",
+          "confidence": 0.4637,
+          "boxPx": [
+            650.0,
+            1639.0,
+            713.0,
+            1656.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 0.9996,
+      "extractionMethod": "Tesseract OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

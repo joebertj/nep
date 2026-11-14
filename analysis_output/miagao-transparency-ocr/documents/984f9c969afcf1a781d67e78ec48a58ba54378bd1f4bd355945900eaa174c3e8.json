@@ -1,0 +1,541 @@
+{
+  "sourceFileSha256": "984f9c969afcf1a781d67e78ec48a58ba54378bd1f4bd355945900eaa174c3e8",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/721755bf75a71ebd.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/TRUST-FUND-Utilization-March-2019-D-1536x221.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/trust-fund-utilization-first-quarter-cy-2019/",
+      "sourceTitle": "TRUST FUND UTILIZATION – FIRST QUARTER, CY 2019",
+      "publishedAt": "2019-04-04T05:17:48",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "TRUST-FUND-Utilization-March-2019-D-1536x221.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "984f9c969afcf1a781d67e78ec48a58ba54378bd1f4bd355945900eaa174c3e8",
+      "sourceFileBytes": 31530,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/721755bf75a71ebd.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/TRUST-FUND-Utilization-March-2019-D-1536x221.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/trust-fund-utilization-first-quarter-cy-2019/",
+          "sourceTitle": "TRUST FUND UTILIZATION – FIRST QUARTER, CY 2019",
+          "publishedAt": "2019-04-04T05:17:48",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "TRUST-FUND-Utilization-March-2019-D-1536x221.jpg"
+        }
+      ],
+      "sourceFileName": "TRUST-FUND-Utilization-March-2019-D-1536x221.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Construction of School Bldg.\nMalagyan Elementary School\nBrgy. Malagyan,\nMiagao, Iloilo\n1,000,000.00\nJanaury 2019\nDecember 2019\n0.00%\nWe hereby certify that we have reviewed the contents and hereby attest to\nthe veracity and correctness of the data or information contained in this document.\nHON. MACARIO N. NAPULAN, M.D.\nLCE",
+      "ocrText": "Construction of School Bldg.\nMalagyan Elementary School\nBrgy. Malagyan,\nMiagao, Iloilo\n1,000,000.00\nJanaury 2019\nDecember 2019\n0.00%\nWe hereby certify that we have reviewed the contents and hereby attest to\nthe veracity and correctness of the data or information contained in this document.\nHON. MACARIO N. NAPULAN, M.D.\nLCE",
+      "ocrTokenCount": 49,
+      "ocrMeanConfidence": 0.9302,
+      "ocrTokens": [
+        {
+          "text": "Construction",
+          "confidence": 0.9071,
+          "boxPx": [
+            6.0,
+            17.0,
+            89.0,
+            28.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9563,
+          "boxPx": [
+            94.0,
+            17.0,
+            109.0,
+            28.0
+          ]
+        },
+        {
+          "text": "School",
+          "confidence": 0.9446,
+          "boxPx": [
+            112.0,
+            17.0,
+            156.0,
+            28.0
+          ]
+        },
+        {
+          "text": "Bldg.",
+          "confidence": 0.9615,
+          "boxPx": [
+            162.0,
+            17.0,
+            192.0,
+            32.0
+          ]
+        },
+        {
+          "text": "Malagyan",
+          "confidence": 0.8237,
+          "boxPx": [
+            7.0,
+            35.0,
+            70.0,
+            50.0
+          ]
+        },
+        {
+          "text": "Elementary",
+          "confidence": 0.9503,
+          "boxPx": [
+            76.0,
+            35.0,
+            150.0,
+            50.0
+          ]
+        },
+        {
+          "text": "School",
+          "confidence": 0.9163,
+          "boxPx": [
+            155.0,
+            35.0,
+            199.0,
+            47.0
+          ]
+        },
+        {
+          "text": "Brgy.",
+          "confidence": 0.9331,
+          "boxPx": [
+            267.0,
+            6.0,
+            298.0,
+            21.0
+          ]
+        },
+        {
+          "text": "Malagyan,",
+          "confidence": 0.9277,
+          "boxPx": [
+            307.0,
+            6.0,
+            375.0,
+            21.0
+          ]
+        },
+        {
+          "text": "Miagao,",
+          "confidence": 0.8725,
+          "boxPx": [
+            278.0,
+            25.0,
+            330.0,
+            40.0
+          ]
+        },
+        {
+          "text": "Iloilo",
+          "confidence": 0.6166,
+          "boxPx": [
+            336.0,
+            25.0,
+            370.0,
+            36.0
+          ]
+        },
+        {
+          "text": "1,000,000.00",
+          "confidence": 0.8377,
+          "boxPx": [
+            429.0,
+            35.0,
+            512.0,
+            48.0
+          ]
+        },
+        {
+          "text": "Janaury",
+          "confidence": 0.9289,
+          "boxPx": [
+            574.0,
+            35.0,
+            616.0,
+            47.0
+          ]
+        },
+        {
+          "text": "2019",
+          "confidence": 0.9339,
+          "boxPx": [
+            629.0,
+            35.0,
+            660.0,
+            47.0
+          ]
+        },
+        {
+          "text": "December",
+          "confidence": 0.9677,
+          "boxPx": [
+            726.0,
+            35.0,
+            792.0,
+            47.0
+          ]
+        },
+        {
+          "text": "2019",
+          "confidence": 0.9554,
+          "boxPx": [
+            797.0,
+            35.0,
+            828.0,
+            47.0
+          ]
+        },
+        {
+          "text": "0.00%",
+          "confidence": 0.9253,
+          "boxPx": [
+            888.0,
+            35.0,
+            929.0,
+            47.0
+          ]
+        },
+        {
+          "text": "We",
+          "confidence": 0.961,
+          "boxPx": [
+            7.0,
+            108.0,
+            28.0,
+            120.0
+          ]
+        },
+        {
+          "text": "hereby",
+          "confidence": 0.961,
+          "boxPx": [
+            33.0,
+            108.0,
+            76.0,
+            123.0
+          ]
+        },
+        {
+          "text": "certify",
+          "confidence": 0.9582,
+          "boxPx": [
+            81.0,
+            108.0,
+            123.0,
+            123.0
+          ]
+        },
+        {
+          "text": "that",
+          "confidence": 0.966,
+          "boxPx": [
+            128.0,
+            108.0,
+            151.0,
+            120.0
+          ]
+        },
+        {
+          "text": "we",
+          "confidence": 0.97,
+          "boxPx": [
+            156.0,
+            112.0,
+            174.0,
+            120.0
+          ]
+        },
+        {
+          "text": "have",
+          "confidence": 0.9699,
+          "boxPx": [
+            180.0,
+            108.0,
+            209.0,
+            120.0
+          ]
+        },
+        {
+          "text": "reviewed",
+          "confidence": 0.9696,
+          "boxPx": [
+            215.0,
+            108.0,
+            273.0,
+            120.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.9699,
+          "boxPx": [
+            278.0,
+            108.0,
+            297.0,
+            120.0
+          ]
+        },
+        {
+          "text": "contents",
+          "confidence": 0.9681,
+          "boxPx": [
+            302.0,
+            110.0,
+            355.0,
+            120.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.9658,
+          "boxPx": [
+            360.0,
+            108.0,
+            383.0,
+            120.0
+          ]
+        },
+        {
+          "text": "hereby",
+          "confidence": 0.97,
+          "boxPx": [
+            388.0,
+            108.0,
+            432.0,
+            123.0
+          ]
+        },
+        {
+          "text": "attest",
+          "confidence": 0.934,
+          "boxPx": [
+            436.0,
+            110.0,
+            470.0,
+            120.0
+          ]
+        },
+        {
+          "text": "to",
+          "confidence": 0.9652,
+          "boxPx": [
+            475.0,
+            110.0,
+            487.0,
+            120.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.9252,
+          "boxPx": [
+            6.0,
+            132.0,
+            25.0,
+            143.0
+          ]
+        },
+        {
+          "text": "veracity",
+          "confidence": 0.9676,
+          "boxPx": [
+            30.0,
+            134.0,
+            82.0,
+            147.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.9698,
+          "boxPx": [
+            87.0,
+            132.0,
+            109.0,
+            143.0
+          ]
+        },
+        {
+          "text": "correctness",
+          "confidence": 0.944,
+          "boxPx": [
+            114.0,
+            134.0,
+            187.0,
+            143.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9686,
+          "boxPx": [
+            192.0,
+            132.0,
+            206.0,
+            143.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.9682,
+          "boxPx": [
+            209.0,
+            132.0,
+            228.0,
+            143.0
+          ]
+        },
+        {
+          "text": "data",
+          "confidence": 0.9682,
+          "boxPx": [
+            233.0,
+            132.0,
+            259.0,
+            143.0
+          ]
+        },
+        {
+          "text": "or",
+          "confidence": 0.9593,
+          "boxPx": [
+            264.0,
+            136.0,
+            278.0,
+            143.0
+          ]
+        },
+        {
+          "text": "information",
+          "confidence": 0.9217,
+          "boxPx": [
+            283.0,
+            132.0,
+            358.0,
+            143.0
+          ]
+        },
+        {
+          "text": "contained",
+          "confidence": 0.9659,
+          "boxPx": [
+            363.0,
+            132.0,
+            425.0,
+            143.0
+          ]
+        },
+        {
+          "text": "in",
+          "confidence": 0.9697,
+          "boxPx": [
+            431.0,
+            136.0,
+            442.0,
+            143.0
+          ]
+        },
+        {
+          "text": "this",
+          "confidence": 0.9687,
+          "boxPx": [
+            448.0,
+            132.0,
+            470.0,
+            143.0
+          ]
+        },
+        {
+          "text": "document.",
+          "confidence": 0.9566,
+          "boxPx": [
+            475.0,
+            132.0,
+            538.0,
+            143.0
+          ]
+        },
+        {
+          "text": "HON.",
+          "confidence": 0.9326,
+          "boxPx": [
+            1049.0,
+            180.0,
+            1088.0,
+            192.0
+          ]
+        },
+        {
+          "text": "MACARIO",
+          "confidence": 0.7578,
+          "boxPx": [
+            1094.0,
+            180.0,
+            1174.0,
+            192.0
+          ]
+        },
+        {
+          "text": "N.",
+          "confidence": 0.7578,
+          "boxPx": [
+            1179.0,
+            180.0,
+            1194.0,
+            192.0
+          ]
+        },
+        {
+          "text": "NAPULAN,",
+          "confidence": 0.9156,
+          "boxPx": [
+            1200.0,
+            180.0,
+            1277.0,
+            192.0
+          ]
+        },
+        {
+          "text": "M.D.",
+          "confidence": 0.9429,
+          "boxPx": [
+            1287.0,
+            180.0,
+            1321.0,
+            192.0
+          ]
+        },
+        {
+          "text": "LCE",
+          "confidence": 0.9334,
+          "boxPx": [
+            1169.0,
+            204.0,
+            1199.0,
+            216.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

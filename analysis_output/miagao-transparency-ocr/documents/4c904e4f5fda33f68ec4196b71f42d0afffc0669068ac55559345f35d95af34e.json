@@ -1,0 +1,71 @@
+{
+  "sourceFileSha256": "4c904e4f5fda33f68ec4196b71f42d0afffc0669068ac55559345f35d95af34e",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/f51de0b0880d6fe2.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2024/10/461899297_996410605864367_4352664749062202827_n-231x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/invitation-to-bid-for-the-following-projects-14/",
+      "sourceTitle": "Invitation to Bid for the following projects",
+      "publishedAt": "2024-10-10T15:41:48",
+      "sourceElement": "img",
+      "sourceAttribute": "src",
+      "fileName": "461899297_996410605864367_4352664749062202827_n-231x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "4c904e4f5fda33f68ec4196b71f42d0afffc0669068ac55559345f35d95af34e",
+      "sourceFileBytes": 16953,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/f51de0b0880d6fe2.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2024/10/461899297_996410605864367_4352664749062202827_n-231x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/invitation-to-bid-for-the-following-projects-14/",
+          "sourceTitle": "Invitation to Bid for the following projects",
+          "publishedAt": "2024-10-10T15:41:48",
+          "sourceElement": "img",
+          "sourceAttribute": "src",
+          "fileName": "461899297_996410605864367_4352664749062202827_n-231x300.jpg"
+        }
+      ],
+      "sourceFileName": "461899297_996410605864367_4352664749062202827_n-231x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "eux Plgm",
+      "ocrText": "eux Plgm",
+      "ocrTokenCount": 2,
+      "ocrMeanConfidence": 0.2923,
+      "ocrTokens": [
+        {
+          "text": "eux",
+          "confidence": 0.5847,
+          "boxPx": [
+            11.0,
+            16.0,
+            94.0,
+            38.0
+          ]
+        },
+        {
+          "text": "Plgm",
+          "confidence": 0.0,
+          "boxPx": [
+            103.0,
+            7.0,
+            226.0,
+            52.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

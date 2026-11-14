@@ -1,0 +1,50 @@
+{
+  "sourceFileSha256": "4deaba535039587ebf325d2f37e5d367b50d57c14adc1dd257fe429b4064021b",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/5335cd23758ff4de.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2024/11/468314393_1038912371614190_526350000622512292_n-242x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/invitation-to-bid-36/",
+      "sourceTitle": "INVITATION TO BID",
+      "publishedAt": "2024-11-28T16:15:58",
+      "sourceElement": "img",
+      "sourceAttribute": "src",
+      "fileName": "468314393_1038912371614190_526350000622512292_n-242x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "4deaba535039587ebf325d2f37e5d367b50d57c14adc1dd257fe429b4064021b",
+      "sourceFileBytes": 18083,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/5335cd23758ff4de.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2024/11/468314393_1038912371614190_526350000622512292_n-242x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/invitation-to-bid-36/",
+          "sourceTitle": "INVITATION TO BID",
+          "publishedAt": "2024-11-28T16:15:58",
+          "sourceElement": "img",
+          "sourceAttribute": "src",
+          "fileName": "468314393_1038912371614190_526350000622512292_n-242x300.jpg"
+        }
+      ],
+      "sourceFileName": "468314393_1038912371614190_526350000622512292_n-242x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "",
+      "ocrText": "",
+      "ocrTokenCount": 0,
+      "ocrMeanConfidence": null,
+      "ocrTokens": [],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "no_text_detected"
+    }
+  ]
+}

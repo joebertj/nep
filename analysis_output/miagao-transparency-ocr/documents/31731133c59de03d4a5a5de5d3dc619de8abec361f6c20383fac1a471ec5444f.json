@@ -1,0 +1,1731 @@
+{
+  "sourceFileSha256": "31731133c59de03d4a5a5de5d3dc619de8abec361f6c20383fac1a471ec5444f",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/0bc61f99299a1ee8.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/Cash-Flow-as-of-March-31-2019-1080x1727.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/statement-of-cash-flow/cash-flow-as-of-march-31-2019/",
+      "sourceTitle": "CASH FLOW as of March 31, 2019",
+      "publishedAt": "2019-04-01T01:51:46",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Cash-Flow-as-of-March-31-2019-1080x1727.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "31731133c59de03d4a5a5de5d3dc619de8abec361f6c20383fac1a471ec5444f",
+      "sourceFileBytes": 210841,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/0bc61f99299a1ee8.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/Cash-Flow-as-of-March-31-2019-1080x1727.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/statement-of-cash-flow/cash-flow-as-of-march-31-2019/",
+          "sourceTitle": "CASH FLOW as of March 31, 2019",
+          "publishedAt": "2019-04-01T01:51:46",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Cash-Flow-as-of-March-31-2019-1080x1727.jpg"
+        }
+      ],
+      "sourceFileName": "Cash-Flow-as-of-March-31-2019-1080x1727.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Municipality of Miagao\nProvince of Iloilo\nConsolidated- Statement of Condensed Cash Flows\nAs of March 31, 2019\nCash Flows from Operating Activities\nCash Inflows\nCollection from taxpayers\nShare from Internal Revenue Allotment\nReceipts from business/service income\nInterest Income\nDivident Income\nOther Receipts\nTotal Cash Inflows\nCash Outflows\nPayment of expenses\nPayments to suppliers and creditors\nPayment to employees\nInterest Expense\nOther Expenses\nTotal Cash Outflows\nNet Cash Flows from Operating Activities\nCash Flows from Investing Activities\nCash Inflows\nProceeds from Sale of Investment Property\nProceeds from Sale/Disposal of Property, Plant and\nEquipment\nProceeds from Sale of Non-Current Investments\nCollection of Principal on loans to other entities\nTotal Cash Inflows\nCash Outflows\nPurchase/Construction of Investment Property\nPurchase/Construction of Property, Plant and Equipment\nInvestment\nPurchase of Bearer Biological Assets\nPurchase of Intangible Assets\nGrant of Loans\nTotal Cash Outflows\nNet Cash Flows from Investing Activities\nCash Flows from Financing Activities\nCash Inflows\nProceeds from Issuance of Bonds\n7,172,540.40\n28,219,020.00\n5,938,389.46\n7,578,796.82\n48,908,746.68\n30,304,752.01\n10,095,417.94\n5,517,996.97\n45,918,166.92\n2,990,579.76\n17,948,334.85\n17,948,334.85\n(17,948,334.85)",
+      "ocrText": "Municipality of Miagao\nProvince of Iloilo\nConsolidated- Statement of Condensed Cash Flows\nAs of March 31, 2019\nCash Flows from Operating Activities\nCash Inflows\nCollection from taxpayers\nShare from Internal Revenue Allotment\nReceipts from business/service income\nInterest Income\nDivident Income\nOther Receipts\nTotal Cash Inflows\nCash Outflows\nPayment of expenses\nPayments to suppliers and creditors\nPayment to employees\nInterest Expense\nOther Expenses\nTotal Cash Outflows\nNet Cash Flows from Operating Activities\nCash Flows from Investing Activities\nCash Inflows\nProceeds from Sale of Investment Property\nProceeds from Sale/Disposal of Property, Plant and\nEquipment\nProceeds from Sale of Non-Current Investments\nCollection of Principal on loans to other entities\nTotal Cash Inflows\nCash Outflows\nPurchase/Construction of Investment Property\nPurchase/Construction of Property, Plant and Equipment\nInvestment\nPurchase of Bearer Biological Assets\nPurchase of Intangible Assets\nGrant of Loans\nTotal Cash Outflows\nNet Cash Flows from Investing Activities\nCash Flows from Financing Activities\nCash Inflows\nProceeds from Issuance of Bonds\n7,172,540.40\n28,219,020.00\n5,938,389.46\n7,578,796.82\n48,908,746.68\n30,304,752.01\n10,095,417.94\n5,517,996.97\n45,918,166.92\n2,990,579.76\n17,948,334.85\n17,948,334.85\n(17,948,334.85)",
+      "ocrTokenCount": 168,
+      "ocrMeanConfidence": 0.9555,
+      "ocrTokens": [
+        {
+          "text": "Municipality",
+          "confidence": 0.9691,
+          "boxPx": [
+            11.0,
+            49.0,
+            150.0,
+            75.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9246,
+          "boxPx": [
+            162.0,
+            49.0,
+            183.0,
+            69.0
+          ]
+        },
+        {
+          "text": "Miagao",
+          "confidence": 0.9246,
+          "boxPx": [
+            188.0,
+            49.0,
+            269.0,
+            75.0
+          ]
+        },
+        {
+          "text": "Province",
+          "confidence": 0.9654,
+          "boxPx": [
+            10.0,
+            87.0,
+            106.0,
+            108.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9681,
+          "boxPx": [
+            114.0,
+            87.0,
+            139.0,
+            108.0
+          ]
+        },
+        {
+          "text": "Iloilo",
+          "confidence": 0.866,
+          "boxPx": [
+            144.0,
+            87.0,
+            201.0,
+            108.0
+          ]
+        },
+        {
+          "text": "Consolidated-",
+          "confidence": 0.9225,
+          "boxPx": [
+            11.0,
+            125.0,
+            171.0,
+            145.0
+          ]
+        },
+        {
+          "text": "Statement",
+          "confidence": 0.9628,
+          "boxPx": [
+            179.0,
+            125.0,
+            296.0,
+            145.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9628,
+          "boxPx": [
+            304.0,
+            125.0,
+            328.0,
+            145.0
+          ]
+        },
+        {
+          "text": "Condensed",
+          "confidence": 0.96,
+          "boxPx": [
+            334.0,
+            125.0,
+            461.0,
+            145.0
+          ]
+        },
+        {
+          "text": "Cash",
+          "confidence": 0.9665,
+          "boxPx": [
+            470.0,
+            125.0,
+            527.0,
+            145.0
+          ]
+        },
+        {
+          "text": "Flows",
+          "confidence": 0.9614,
+          "boxPx": [
+            536.0,
+            126.0,
+            602.0,
+            145.0
+          ]
+        },
+        {
+          "text": "As",
+          "confidence": 0.9573,
+          "boxPx": [
+            10.0,
+            164.0,
+            39.0,
+            184.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9573,
+          "boxPx": [
+            47.0,
+            164.0,
+            69.0,
+            184.0
+          ]
+        },
+        {
+          "text": "March",
+          "confidence": 0.9677,
+          "boxPx": [
+            77.0,
+            164.0,
+            147.0,
+            184.0
+          ]
+        },
+        {
+          "text": "31,",
+          "confidence": 0.9602,
+          "boxPx": [
+            156.0,
+            164.0,
+            187.0,
+            188.0
+          ]
+        },
+        {
+          "text": "2019",
+          "confidence": 0.968,
+          "boxPx": [
+            196.0,
+            164.0,
+            249.0,
+            183.0
+          ]
+        },
+        {
+          "text": "Cash",
+          "confidence": 0.9655,
+          "boxPx": [
+            11.0,
+            278.0,
+            67.0,
+            298.0
+          ]
+        },
+        {
+          "text": "Flows",
+          "confidence": 0.9693,
+          "boxPx": [
+            77.0,
+            278.0,
+            143.0,
+            298.0
+          ]
+        },
+        {
+          "text": "from",
+          "confidence": 0.9598,
+          "boxPx": [
+            151.0,
+            278.0,
+            207.0,
+            298.0
+          ]
+        },
+        {
+          "text": "Operating",
+          "confidence": 0.9607,
+          "boxPx": [
+            216.0,
+            278.0,
+            334.0,
+            304.0
+          ]
+        },
+        {
+          "text": "Activities",
+          "confidence": 0.9692,
+          "boxPx": [
+            342.0,
+            278.0,
+            449.0,
+            298.0
+          ]
+        },
+        {
+          "text": "Cash",
+          "confidence": 0.9661,
+          "boxPx": [
+            11.0,
+            316.0,
+            66.0,
+            336.0
+          ]
+        },
+        {
+          "text": "Inflows",
+          "confidence": 0.9609,
+          "boxPx": [
+            73.0,
+            316.0,
+            159.0,
+            342.0
+          ]
+        },
+        {
+          "text": "Collection",
+          "confidence": 0.9674,
+          "boxPx": [
+            75.0,
+            354.0,
+            187.0,
+            374.0
+          ]
+        },
+        {
+          "text": "from",
+          "confidence": 0.9631,
+          "boxPx": [
+            196.0,
+            354.0,
+            248.0,
+            374.0
+          ]
+        },
+        {
+          "text": "taxpayers",
+          "confidence": 0.9625,
+          "boxPx": [
+            255.0,
+            358.0,
+            358.0,
+            380.0
+          ]
+        },
+        {
+          "text": "Share",
+          "confidence": 0.9683,
+          "boxPx": [
+            76.0,
+            393.0,
+            136.0,
+            413.0
+          ]
+        },
+        {
+          "text": "from",
+          "confidence": 0.97,
+          "boxPx": [
+            145.0,
+            393.0,
+            196.0,
+            413.0
+          ]
+        },
+        {
+          "text": "Internal",
+          "confidence": 0.97,
+          "boxPx": [
+            204.0,
+            393.0,
+            287.0,
+            413.0
+          ]
+        },
+        {
+          "text": "Revenue",
+          "confidence": 0.9654,
+          "boxPx": [
+            296.0,
+            393.0,
+            389.0,
+            413.0
+          ]
+        },
+        {
+          "text": "Allotment",
+          "confidence": 0.9618,
+          "boxPx": [
+            397.0,
+            393.0,
+            508.0,
+            413.0
+          ]
+        },
+        {
+          "text": "Receipts",
+          "confidence": 0.9688,
+          "boxPx": [
+            75.0,
+            431.0,
+            167.0,
+            456.0
+          ]
+        },
+        {
+          "text": "from",
+          "confidence": 0.9328,
+          "boxPx": [
+            177.0,
+            430.0,
+            228.0,
+            451.0
+          ]
+        },
+        {
+          "text": "business/service",
+          "confidence": 0.9281,
+          "boxPx": [
+            236.0,
+            431.0,
+            411.0,
+            451.0
+          ]
+        },
+        {
+          "text": "income",
+          "confidence": 0.9689,
+          "boxPx": [
+            420.0,
+            431.0,
+            499.0,
+            451.0
+          ]
+        },
+        {
+          "text": "Interest",
+          "confidence": 0.969,
+          "boxPx": [
+            76.0,
+            469.0,
+            156.0,
+            489.0
+          ]
+        },
+        {
+          "text": "Income",
+          "confidence": 0.967,
+          "boxPx": [
+            164.0,
+            470.0,
+            244.0,
+            489.0
+          ]
+        },
+        {
+          "text": "Divident",
+          "confidence": 0.9324,
+          "boxPx": [
+            75.0,
+            507.0,
+            170.0,
+            527.0
+          ]
+        },
+        {
+          "text": "Income",
+          "confidence": 0.968,
+          "boxPx": [
+            177.0,
+            507.0,
+            257.0,
+            527.0
+          ]
+        },
+        {
+          "text": "Other",
+          "confidence": 0.9617,
+          "boxPx": [
+            75.0,
+            545.0,
+            137.0,
+            566.0
+          ]
+        },
+        {
+          "text": "Receipts",
+          "confidence": 0.9692,
+          "boxPx": [
+            144.0,
+            545.0,
+            236.0,
+            571.0
+          ]
+        },
+        {
+          "text": "Total",
+          "confidence": 0.9635,
+          "boxPx": [
+            75.0,
+            584.0,
+            136.0,
+            603.0
+          ]
+        },
+        {
+          "text": "Cash",
+          "confidence": 0.9697,
+          "boxPx": [
+            144.0,
+            583.0,
+            202.0,
+            603.0
+          ]
+        },
+        {
+          "text": "Inflows",
+          "confidence": 0.9604,
+          "boxPx": [
+            210.0,
+            583.0,
+            295.0,
+            603.0
+          ]
+        },
+        {
+          "text": "Cash",
+          "confidence": 0.9329,
+          "boxPx": [
+            11.0,
+            622.0,
+            66.0,
+            641.0
+          ]
+        },
+        {
+          "text": "Outflows",
+          "confidence": 0.9149,
+          "boxPx": [
+            75.0,
+            622.0,
+            175.0,
+            647.0
+          ]
+        },
+        {
+          "text": "Payment",
+          "confidence": 0.966,
+          "boxPx": [
+            75.0,
+            660.0,
+            170.0,
+            685.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9673,
+          "boxPx": [
+            177.0,
+            659.0,
+            202.0,
+            680.0
+          ]
+        },
+        {
+          "text": "expenses",
+          "confidence": 0.9701,
+          "boxPx": [
+            207.0,
+            666.0,
+            304.0,
+            685.0
+          ]
+        },
+        {
+          "text": "Payments",
+          "confidence": 0.9646,
+          "boxPx": [
+            75.0,
+            698.0,
+            180.0,
+            724.0
+          ]
+        },
+        {
+          "text": "to",
+          "confidence": 0.9691,
+          "boxPx": [
+            188.0,
+            702.0,
+            208.0,
+            718.0
+          ]
+        },
+        {
+          "text": "suppliers",
+          "confidence": 0.9691,
+          "boxPx": [
+            217.0,
+            698.0,
+            313.0,
+            724.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.9673,
+          "boxPx": [
+            321.0,
+            698.0,
+            359.0,
+            718.0
+          ]
+        },
+        {
+          "text": "creditors",
+          "confidence": 0.9673,
+          "boxPx": [
+            368.0,
+            698.0,
+            462.0,
+            718.0
+          ]
+        },
+        {
+          "text": "Payment",
+          "confidence": 0.9657,
+          "boxPx": [
+            75.0,
+            736.0,
+            170.0,
+            762.0
+          ]
+        },
+        {
+          "text": "to",
+          "confidence": 0.9701,
+          "boxPx": [
+            177.0,
+            739.0,
+            197.0,
+            756.0
+          ]
+        },
+        {
+          "text": "employees",
+          "confidence": 0.9628,
+          "boxPx": [
+            205.0,
+            736.0,
+            321.0,
+            762.0
+          ]
+        },
+        {
+          "text": "Interest",
+          "confidence": 0.9655,
+          "boxPx": [
+            75.0,
+            777.0,
+            156.0,
+            796.0
+          ]
+        },
+        {
+          "text": "Expense",
+          "confidence": 0.9691,
+          "boxPx": [
+            164.0,
+            777.0,
+            254.0,
+            802.0
+          ]
+        },
+        {
+          "text": "Other",
+          "confidence": 0.966,
+          "boxPx": [
+            75.0,
+            816.0,
+            137.0,
+            836.0
+          ]
+        },
+        {
+          "text": "Expenses",
+          "confidence": 0.9698,
+          "boxPx": [
+            144.0,
+            816.0,
+            245.0,
+            842.0
+          ]
+        },
+        {
+          "text": "Total",
+          "confidence": 0.9587,
+          "boxPx": [
+            75.0,
+            857.0,
+            136.0,
+            876.0
+          ]
+        },
+        {
+          "text": "Cash",
+          "confidence": 0.933,
+          "boxPx": [
+            144.0,
+            856.0,
+            201.0,
+            876.0
+          ]
+        },
+        {
+          "text": "Outflows",
+          "confidence": 0.9257,
+          "boxPx": [
+            210.0,
+            856.0,
+            315.0,
+            876.0
+          ]
+        },
+        {
+          "text": "Net",
+          "confidence": 0.9658,
+          "boxPx": [
+            10.0,
+            897.0,
+            50.0,
+            917.0
+          ]
+        },
+        {
+          "text": "Cash",
+          "confidence": 0.967,
+          "boxPx": [
+            58.0,
+            896.0,
+            116.0,
+            917.0
+          ]
+        },
+        {
+          "text": "Flows",
+          "confidence": 0.968,
+          "boxPx": [
+            124.0,
+            897.0,
+            191.0,
+            917.0
+          ]
+        },
+        {
+          "text": "from",
+          "confidence": 0.9614,
+          "boxPx": [
+            199.0,
+            896.0,
+            255.0,
+            917.0
+          ]
+        },
+        {
+          "text": "Operating",
+          "confidence": 0.9676,
+          "boxPx": [
+            263.0,
+            896.0,
+            382.0,
+            922.0
+          ]
+        },
+        {
+          "text": "Activities",
+          "confidence": 0.965,
+          "boxPx": [
+            389.0,
+            896.0,
+            497.0,
+            917.0
+          ]
+        },
+        {
+          "text": "Cash",
+          "confidence": 0.9682,
+          "boxPx": [
+            11.0,
+            936.0,
+            68.0,
+            956.0
+          ]
+        },
+        {
+          "text": "Flows",
+          "confidence": 0.9631,
+          "boxPx": [
+            77.0,
+            937.0,
+            143.0,
+            956.0
+          ]
+        },
+        {
+          "text": "from",
+          "confidence": 0.9614,
+          "boxPx": [
+            151.0,
+            936.0,
+            207.0,
+            956.0
+          ]
+        },
+        {
+          "text": "Investing",
+          "confidence": 0.9614,
+          "boxPx": [
+            216.0,
+            936.0,
+            322.0,
+            962.0
+          ]
+        },
+        {
+          "text": "Activities",
+          "confidence": 0.9684,
+          "boxPx": [
+            329.0,
+            936.0,
+            437.0,
+            956.0
+          ]
+        },
+        {
+          "text": "Cash",
+          "confidence": 0.967,
+          "boxPx": [
+            11.0,
+            976.0,
+            66.0,
+            996.0
+          ]
+        },
+        {
+          "text": "Inflows",
+          "confidence": 0.9567,
+          "boxPx": [
+            73.0,
+            976.0,
+            159.0,
+            1002.0
+          ]
+        },
+        {
+          "text": "Proceeds",
+          "confidence": 0.9687,
+          "boxPx": [
+            75.0,
+            1017.0,
+            172.0,
+            1037.0
+          ]
+        },
+        {
+          "text": "from",
+          "confidence": 0.9585,
+          "boxPx": [
+            181.0,
+            1017.0,
+            232.0,
+            1037.0
+          ]
+        },
+        {
+          "text": "Sale",
+          "confidence": 0.968,
+          "boxPx": [
+            241.0,
+            1017.0,
+            285.0,
+            1037.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9643,
+          "boxPx": [
+            294.0,
+            1017.0,
+            319.0,
+            1037.0
+          ]
+        },
+        {
+          "text": "Investment",
+          "confidence": 0.9694,
+          "boxPx": [
+            324.0,
+            1017.0,
+            444.0,
+            1037.0
+          ]
+        },
+        {
+          "text": "Property",
+          "confidence": 0.9643,
+          "boxPx": [
+            451.0,
+            1017.0,
+            544.0,
+            1043.0
+          ]
+        },
+        {
+          "text": "Proceeds",
+          "confidence": 0.9692,
+          "boxPx": [
+            75.0,
+            1056.0,
+            172.0,
+            1077.0
+          ]
+        },
+        {
+          "text": "from",
+          "confidence": 0.9327,
+          "boxPx": [
+            181.0,
+            1056.0,
+            232.0,
+            1077.0
+          ]
+        },
+        {
+          "text": "Sale/Disposal",
+          "confidence": 0.9317,
+          "boxPx": [
+            241.0,
+            1056.0,
+            388.0,
+            1082.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9699,
+          "boxPx": [
+            397.0,
+            1056.0,
+            422.0,
+            1077.0
+          ]
+        },
+        {
+          "text": "Property,",
+          "confidence": 0.9676,
+          "boxPx": [
+            426.0,
+            1057.0,
+            525.0,
+            1082.0
+          ]
+        },
+        {
+          "text": "Plant",
+          "confidence": 0.9668,
+          "boxPx": [
+            534.0,
+            1056.0,
+            589.0,
+            1077.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.9668,
+          "boxPx": [
+            597.0,
+            1056.0,
+            635.0,
+            1077.0
+          ]
+        },
+        {
+          "text": "Equipment",
+          "confidence": 0.9669,
+          "boxPx": [
+            117.0,
+            1097.0,
+            236.0,
+            1123.0
+          ]
+        },
+        {
+          "text": "Proceeds",
+          "confidence": 0.9692,
+          "boxPx": [
+            75.0,
+            1136.0,
+            172.0,
+            1157.0
+          ]
+        },
+        {
+          "text": "from",
+          "confidence": 0.9692,
+          "boxPx": [
+            181.0,
+            1136.0,
+            232.0,
+            1157.0
+          ]
+        },
+        {
+          "text": "Sale",
+          "confidence": 0.9683,
+          "boxPx": [
+            241.0,
+            1136.0,
+            286.0,
+            1157.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9331,
+          "boxPx": [
+            294.0,
+            1136.0,
+            319.0,
+            1157.0
+          ]
+        },
+        {
+          "text": "Non-Current",
+          "confidence": 0.9147,
+          "boxPx": [
+            323.0,
+            1136.0,
+            462.0,
+            1157.0
+          ]
+        },
+        {
+          "text": "Investments",
+          "confidence": 0.9653,
+          "boxPx": [
+            470.0,
+            1137.0,
+            599.0,
+            1157.0
+          ]
+        },
+        {
+          "text": "Collection",
+          "confidence": 0.9668,
+          "boxPx": [
+            75.0,
+            1177.0,
+            187.0,
+            1197.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9701,
+          "boxPx": [
+            196.0,
+            1177.0,
+            220.0,
+            1197.0
+          ]
+        },
+        {
+          "text": "Principal",
+          "confidence": 0.9691,
+          "boxPx": [
+            225.0,
+            1177.0,
+            321.0,
+            1203.0
+          ]
+        },
+        {
+          "text": "on",
+          "confidence": 0.9675,
+          "boxPx": [
+            331.0,
+            1183.0,
+            356.0,
+            1197.0
+          ]
+        },
+        {
+          "text": "loans",
+          "confidence": 0.9684,
+          "boxPx": [
+            365.0,
+            1177.0,
+            420.0,
+            1197.0
+          ]
+        },
+        {
+          "text": "to",
+          "confidence": 0.9589,
+          "boxPx": [
+            429.0,
+            1181.0,
+            448.0,
+            1197.0
+          ]
+        },
+        {
+          "text": "other",
+          "confidence": 0.9682,
+          "boxPx": [
+            457.0,
+            1177.0,
+            512.0,
+            1197.0
+          ]
+        },
+        {
+          "text": "entities",
+          "confidence": 0.9642,
+          "boxPx": [
+            520.0,
+            1177.0,
+            596.0,
+            1197.0
+          ]
+        },
+        {
+          "text": "Total",
+          "confidence": 0.9633,
+          "boxPx": [
+            75.0,
+            1218.0,
+            136.0,
+            1237.0
+          ]
+        },
+        {
+          "text": "Cash",
+          "confidence": 0.9699,
+          "boxPx": [
+            144.0,
+            1217.0,
+            202.0,
+            1237.0
+          ]
+        },
+        {
+          "text": "Inflows",
+          "confidence": 0.9602,
+          "boxPx": [
+            210.0,
+            1217.0,
+            295.0,
+            1237.0
+          ]
+        },
+        {
+          "text": "Cash",
+          "confidence": 0.9329,
+          "boxPx": [
+            11.0,
+            1257.0,
+            66.0,
+            1276.0
+          ]
+        },
+        {
+          "text": "Outflows",
+          "confidence": 0.9274,
+          "boxPx": [
+            75.0,
+            1257.0,
+            175.0,
+            1283.0
+          ]
+        },
+        {
+          "text": "Purchase/Construction",
+          "confidence": 0.9231,
+          "boxPx": [
+            75.0,
+            1297.0,
+            321.0,
+            1317.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9692,
+          "boxPx": [
+            329.0,
+            1297.0,
+            354.0,
+            1317.0
+          ]
+        },
+        {
+          "text": "Investment",
+          "confidence": 0.9692,
+          "boxPx": [
+            359.0,
+            1298.0,
+            479.0,
+            1317.0
+          ]
+        },
+        {
+          "text": "Property",
+          "confidence": 0.9676,
+          "boxPx": [
+            486.0,
+            1298.0,
+            579.0,
+            1323.0
+          ]
+        },
+        {
+          "text": "Purchase/Construction",
+          "confidence": 0.9275,
+          "boxPx": [
+            75.0,
+            1337.0,
+            320.0,
+            1357.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.969,
+          "boxPx": [
+            329.0,
+            1337.0,
+            354.0,
+            1357.0
+          ]
+        },
+        {
+          "text": "Property,",
+          "confidence": 0.9698,
+          "boxPx": [
+            358.0,
+            1337.0,
+            457.0,
+            1363.0
+          ]
+        },
+        {
+          "text": "Plant",
+          "confidence": 0.9659,
+          "boxPx": [
+            466.0,
+            1337.0,
+            521.0,
+            1357.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.9697,
+          "boxPx": [
+            529.0,
+            1337.0,
+            567.0,
+            1357.0
+          ]
+        },
+        {
+          "text": "Equipment",
+          "confidence": 0.9666,
+          "boxPx": [
+            575.0,
+            1337.0,
+            694.0,
+            1363.0
+          ]
+        },
+        {
+          "text": "Investment",
+          "confidence": 0.9641,
+          "boxPx": [
+            75.0,
+            1378.0,
+            195.0,
+            1397.0
+          ]
+        },
+        {
+          "text": "Purchase",
+          "confidence": 0.9579,
+          "boxPx": [
+            75.0,
+            1417.0,
+            172.0,
+            1438.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9654,
+          "boxPx": [
+            180.0,
+            1417.0,
+            205.0,
+            1438.0
+          ]
+        },
+        {
+          "text": "Bearer",
+          "confidence": 0.9702,
+          "boxPx": [
+            210.0,
+            1418.0,
+            282.0,
+            1438.0
+          ]
+        },
+        {
+          "text": "Biological",
+          "confidence": 0.9686,
+          "boxPx": [
+            289.0,
+            1417.0,
+            401.0,
+            1443.0
+          ]
+        },
+        {
+          "text": "Assets",
+          "confidence": 0.9676,
+          "boxPx": [
+            409.0,
+            1418.0,
+            479.0,
+            1438.0
+          ]
+        },
+        {
+          "text": "Purchase",
+          "confidence": 0.9694,
+          "boxPx": [
+            75.0,
+            1457.0,
+            172.0,
+            1477.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9674,
+          "boxPx": [
+            180.0,
+            1457.0,
+            206.0,
+            1477.0
+          ]
+        },
+        {
+          "text": "Intangible",
+          "confidence": 0.9612,
+          "boxPx": [
+            210.0,
+            1457.0,
+            319.0,
+            1483.0
+          ]
+        },
+        {
+          "text": "Assets",
+          "confidence": 0.9693,
+          "boxPx": [
+            327.0,
+            1457.0,
+            397.0,
+            1477.0
+          ]
+        },
+        {
+          "text": "Grant",
+          "confidence": 0.97,
+          "boxPx": [
+            75.0,
+            1497.0,
+            136.0,
+            1518.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9701,
+          "boxPx": [
+            144.0,
+            1497.0,
+            169.0,
+            1518.0
+          ]
+        },
+        {
+          "text": "Loans",
+          "confidence": 0.966,
+          "boxPx": [
+            174.0,
+            1498.0,
+            239.0,
+            1518.0
+          ]
+        },
+        {
+          "text": "Total",
+          "confidence": 0.9675,
+          "boxPx": [
+            75.0,
+            1538.0,
+            136.0,
+            1558.0
+          ]
+        },
+        {
+          "text": "Cash",
+          "confidence": 0.933,
+          "boxPx": [
+            144.0,
+            1538.0,
+            201.0,
+            1558.0
+          ]
+        },
+        {
+          "text": "Outflows",
+          "confidence": 0.9123,
+          "boxPx": [
+            210.0,
+            1538.0,
+            314.0,
+            1558.0
+          ]
+        },
+        {
+          "text": "Net",
+          "confidence": 0.9666,
+          "boxPx": [
+            10.0,
+            1578.0,
+            50.0,
+            1598.0
+          ]
+        },
+        {
+          "text": "Cash",
+          "confidence": 0.9691,
+          "boxPx": [
+            58.0,
+            1577.0,
+            116.0,
+            1598.0
+          ]
+        },
+        {
+          "text": "Flows",
+          "confidence": 0.9609,
+          "boxPx": [
+            124.0,
+            1578.0,
+            191.0,
+            1598.0
+          ]
+        },
+        {
+          "text": "from",
+          "confidence": 0.967,
+          "boxPx": [
+            199.0,
+            1577.0,
+            255.0,
+            1598.0
+          ]
+        },
+        {
+          "text": "Investing",
+          "confidence": 0.9617,
+          "boxPx": [
+            263.0,
+            1577.0,
+            370.0,
+            1603.0
+          ]
+        },
+        {
+          "text": "Activities",
+          "confidence": 0.9692,
+          "boxPx": [
+            377.0,
+            1577.0,
+            485.0,
+            1598.0
+          ]
+        },
+        {
+          "text": "Cash",
+          "confidence": 0.9654,
+          "boxPx": [
+            11.0,
+            1618.0,
+            68.0,
+            1638.0
+          ]
+        },
+        {
+          "text": "Flows",
+          "confidence": 0.9563,
+          "boxPx": [
+            76.0,
+            1618.0,
+            143.0,
+            1638.0
+          ]
+        },
+        {
+          "text": "from",
+          "confidence": 0.9673,
+          "boxPx": [
+            151.0,
+            1618.0,
+            207.0,
+            1638.0
+          ]
+        },
+        {
+          "text": "Financing",
+          "confidence": 0.9629,
+          "boxPx": [
+            216.0,
+            1618.0,
+            331.0,
+            1643.0
+          ]
+        },
+        {
+          "text": "Activities",
+          "confidence": 0.9687,
+          "boxPx": [
+            339.0,
+            1618.0,
+            446.0,
+            1638.0
+          ]
+        },
+        {
+          "text": "Cash",
+          "confidence": 0.9691,
+          "boxPx": [
+            11.0,
+            1657.0,
+            66.0,
+            1677.0
+          ]
+        },
+        {
+          "text": "Inflows",
+          "confidence": 0.9657,
+          "boxPx": [
+            73.0,
+            1657.0,
+            158.0,
+            1683.0
+          ]
+        },
+        {
+          "text": "Proceeds",
+          "confidence": 0.9672,
+          "boxPx": [
+            75.0,
+            1698.0,
+            172.0,
+            1718.0
+          ]
+        },
+        {
+          "text": "from",
+          "confidence": 0.9603,
+          "boxPx": [
+            181.0,
+            1698.0,
+            232.0,
+            1718.0
+          ]
+        },
+        {
+          "text": "Issuance",
+          "confidence": 0.953,
+          "boxPx": [
+            240.0,
+            1698.0,
+            333.0,
+            1718.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9686,
+          "boxPx": [
+            341.0,
+            1698.0,
+            366.0,
+            1718.0
+          ]
+        },
+        {
+          "text": "Bonds",
+          "confidence": 0.9691,
+          "boxPx": [
+            371.0,
+            1698.0,
+            438.0,
+            1718.0
+          ]
+        },
+        {
+          "text": "7,172,540.40",
+          "confidence": 0.9204,
+          "boxPx": [
+            920.0,
+            355.0,
+            1060.0,
+            379.0
+          ]
+        },
+        {
+          "text": "28,219,020.00",
+          "confidence": 0.8627,
+          "boxPx": [
+            906.0,
+            393.0,
+            1060.0,
+            417.0
+          ]
+        },
+        {
+          "text": "5,938,389.46",
+          "confidence": 0.9222,
+          "boxPx": [
+            920.0,
+            431.0,
+            1060.0,
+            455.0
+          ]
+        },
+        {
+          "text": "7,578,796.82",
+          "confidence": 0.8576,
+          "boxPx": [
+            920.0,
+            546.0,
+            1060.0,
+            569.0
+          ]
+        },
+        {
+          "text": "48,908,746.68",
+          "confidence": 0.9188,
+          "boxPx": [
+            905.0,
+            584.0,
+            1061.0,
+            607.0
+          ]
+        },
+        {
+          "text": "30,304,752.01",
+          "confidence": 0.9079,
+          "boxPx": [
+            906.0,
+            698.0,
+            1058.0,
+            722.0
+          ]
+        },
+        {
+          "text": "10,095,417.94",
+          "confidence": 0.8352,
+          "boxPx": [
+            909.0,
+            736.0,
+            1061.0,
+            760.0
+          ]
+        },
+        {
+          "text": "5,517,996.97",
+          "confidence": 0.9159,
+          "boxPx": [
+            920.0,
+            816.0,
+            1060.0,
+            840.0
+          ]
+        },
+        {
+          "text": "45,918,166.92",
+          "confidence": 0.923,
+          "boxPx": [
+            905.0,
+            857.0,
+            1060.0,
+            880.0
+          ]
+        },
+        {
+          "text": "2,990,579.76",
+          "confidence": 0.8832,
+          "boxPx": [
+            919.0,
+            897.0,
+            1061.0,
+            920.0
+          ]
+        },
+        {
+          "text": "17,948,334.85",
+          "confidence": 0.9063,
+          "boxPx": [
+            909.0,
+            1337.0,
+            1059.0,
+            1361.0
+          ]
+        },
+        {
+          "text": "17,948,334.85",
+          "confidence": 0.9008,
+          "boxPx": [
+            907.0,
+            1538.0,
+            1060.0,
+            1561.0
+          ]
+        },
+        {
+          "text": "(17,948,334.85)",
+          "confidence": 0.9268,
+          "boxPx": [
+            897.0,
+            1578.0,
+            1070.0,
+            1602.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

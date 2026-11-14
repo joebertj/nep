@@ -1,0 +1,71 @@
+{
+  "sourceFileSha256": "9955e4fe0852076a8c230f03f98e96ddd62e2fa9dd314e6880a75fa11d045948",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/7b1b1829013ef28c.jpeg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/11/BGCM-NOVEMBER-480x349.jpeg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/report-on-fund-utilization-and-status-of-program-project-activity-implementation-for-the-month-of-october-2020/",
+      "sourceTitle": "Report on Fund Utilization and Status of Program/Project/Activity Implementation for the Month of October 2020",
+      "publishedAt": "2020-11-17T02:12:21",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "BGCM-NOVEMBER-480x349.jpeg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "9955e4fe0852076a8c230f03f98e96ddd62e2fa9dd314e6880a75fa11d045948",
+      "sourceFileBytes": 31612,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/7b1b1829013ef28c.jpeg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/11/BGCM-NOVEMBER-480x349.jpeg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/report-on-fund-utilization-and-status-of-program-project-activity-implementation-for-the-month-of-october-2020/",
+          "sourceTitle": "Report on Fund Utilization and Status of Program/Project/Activity Implementation for the Month of October 2020",
+          "publishedAt": "2020-11-17T02:12:21",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "BGCM-NOVEMBER-480x349.jpeg"
+        }
+      ],
+      "sourceFileName": "BGCM-NOVEMBER-480x349.jpeg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "sco sft",
+      "ocrText": "sco sft",
+      "ocrTokenCount": 2,
+      "ocrMeanConfidence": 0.1944,
+      "ocrTokens": [
+        {
+          "text": "sco",
+          "confidence": 0.114,
+          "boxPx": [
+            80.0,
+            310.0,
+            122.0,
+            314.0
+          ]
+        },
+        {
+          "text": "sft",
+          "confidence": 0.2748,
+          "boxPx": [
+            194.0,
+            294.0,
+            245.0,
+            314.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

@@ -1,0 +1,471 @@
+{
+  "sourceFileSha256": "dc79f6b2ddc7bb6d66ae757f97ca2739e4680b41761d47f100adcdfd6a667d66",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/087fdbc21264253f.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/TRUST-FUND-Utilization-March-2019-D-1080x156.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/trust-fund-utilization-first-quarter-cy-2019/",
+      "sourceTitle": "TRUST FUND UTILIZATION – FIRST QUARTER, CY 2019",
+      "publishedAt": "2019-04-04T05:17:48",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "TRUST-FUND-Utilization-March-2019-D-1080x156.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "dc79f6b2ddc7bb6d66ae757f97ca2739e4680b41761d47f100adcdfd6a667d66",
+      "sourceFileBytes": 19682,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/087fdbc21264253f.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/TRUST-FUND-Utilization-March-2019-D-1080x156.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/trust-fund-utilization-first-quarter-cy-2019/",
+          "sourceTitle": "TRUST FUND UTILIZATION – FIRST QUARTER, CY 2019",
+          "publishedAt": "2019-04-04T05:17:48",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "TRUST-FUND-Utilization-March-2019-D-1080x156.jpg"
+        }
+      ],
+      "sourceFileName": "TRUST-FUND-Utilization-March-2019-D-1080x156.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Bray. Malagyan,\n|Constaiction of School Bldg Mogae Ile\nMalagyan Elementary School\n1,000,000.00 Janaury 2019 December 2019 0.00%\nWe hereby certify that we have reviewed the contents and hereby\nthe veracity and correctness of the data or information contained in this document.\nTCE",
+      "ocrText": "Bray. Malagyan,\n|Constaiction of School Bldg Mogae Ile\nMalagyan Elementary School\n1,000,000.00 Janaury 2019 December 2019 0.00%\nWe hereby certify that we have reviewed the contents and hereby\nthe veracity and correctness of the data or information contained in this document.\nTCE",
+      "ocrTokenCount": 42,
+      "ocrMeanConfidence": 0.7042,
+      "ocrTokens": [
+        {
+          "text": "Bray.",
+          "confidence": 0.8817,
+          "boxPx": [
+            188.0,
+            4.0,
+            209.0,
+            15.0
+          ]
+        },
+        {
+          "text": "Malagyan,",
+          "confidence": 0.9186,
+          "boxPx": [
+            216.0,
+            4.0,
+            264.0,
+            15.0
+          ]
+        },
+        {
+          "text": "|Constaiction",
+          "confidence": 0.1553,
+          "boxPx": [
+            4.0,
+            12.0,
+            51.0,
+            20.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9686,
+          "boxPx": [
+            61.0,
+            12.0,
+            75.0,
+            20.0
+          ]
+        },
+        {
+          "text": "School",
+          "confidence": 0.9516,
+          "boxPx": [
+            79.0,
+            12.0,
+            110.0,
+            20.0
+          ]
+        },
+        {
+          "text": "Bldg",
+          "confidence": 0.7909,
+          "boxPx": [
+            114.0,
+            12.0,
+            135.0,
+            22.0
+          ]
+        },
+        {
+          "text": "Mogae",
+          "confidence": 0.373,
+          "boxPx": [
+            195.0,
+            17.0,
+            230.0,
+            28.0
+          ]
+        },
+        {
+          "text": "Ile",
+          "confidence": 0.4882,
+          "boxPx": [
+            236.0,
+            17.0,
+            260.0,
+            26.0
+          ]
+        },
+        {
+          "text": "Malagyan",
+          "confidence": 0.2159,
+          "boxPx": [
+            5.0,
+            25.0,
+            27.0,
+            33.0
+          ]
+        },
+        {
+          "text": "Elementary",
+          "confidence": 0.9338,
+          "boxPx": [
+            39.0,
+            25.0,
+            105.0,
+            34.0
+          ]
+        },
+        {
+          "text": "School",
+          "confidence": 0.3353,
+          "boxPx": [
+            109.0,
+            25.0,
+            140.0,
+            33.0
+          ]
+        },
+        {
+          "text": "1,000,000.00",
+          "confidence": 0.5578,
+          "boxPx": [
+            302.0,
+            25.0,
+            360.0,
+            34.0
+          ]
+        },
+        {
+          "text": "Janaury",
+          "confidence": 0.8374,
+          "boxPx": [
+            404.0,
+            25.0,
+            433.0,
+            33.0
+          ]
+        },
+        {
+          "text": "2019",
+          "confidence": 0.7752,
+          "boxPx": [
+            442.0,
+            25.0,
+            464.0,
+            33.0
+          ]
+        },
+        {
+          "text": "December",
+          "confidence": 0.6599,
+          "boxPx": [
+            510.0,
+            25.0,
+            557.0,
+            33.0
+          ]
+        },
+        {
+          "text": "2019",
+          "confidence": 0.9134,
+          "boxPx": [
+            560.0,
+            25.0,
+            583.0,
+            33.0
+          ]
+        },
+        {
+          "text": "0.00%",
+          "confidence": 0.7507,
+          "boxPx": [
+            624.0,
+            25.0,
+            653.0,
+            33.0
+          ]
+        },
+        {
+          "text": "We",
+          "confidence": 0.8984,
+          "boxPx": [
+            5.0,
+            76.0,
+            20.0,
+            85.0
+          ]
+        },
+        {
+          "text": "hereby",
+          "confidence": 0.9479,
+          "boxPx": [
+            23.0,
+            76.0,
+            54.0,
+            87.0
+          ]
+        },
+        {
+          "text": "certify",
+          "confidence": 0.4464,
+          "boxPx": [
+            57.0,
+            76.0,
+            85.0,
+            87.0
+          ]
+        },
+        {
+          "text": "that",
+          "confidence": 0.4787,
+          "boxPx": [
+            90.0,
+            76.0,
+            106.0,
+            84.0
+          ]
+        },
+        {
+          "text": "we",
+          "confidence": 0.9673,
+          "boxPx": [
+            113.0,
+            66.0,
+            123.0,
+            94.0
+          ]
+        },
+        {
+          "text": "have",
+          "confidence": 0.9024,
+          "boxPx": [
+            126.0,
+            76.0,
+            146.0,
+            84.0
+          ]
+        },
+        {
+          "text": "reviewed",
+          "confidence": 0.7963,
+          "boxPx": [
+            151.0,
+            76.0,
+            192.0,
+            85.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.8534,
+          "boxPx": [
+            196.0,
+            76.0,
+            209.0,
+            85.0
+          ]
+        },
+        {
+          "text": "contents",
+          "confidence": 0.4514,
+          "boxPx": [
+            212.0,
+            78.0,
+            250.0,
+            85.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.4514,
+          "boxPx": [
+            253.0,
+            76.0,
+            269.0,
+            84.0
+          ]
+        },
+        {
+          "text": "hereby",
+          "confidence": 0.9593,
+          "boxPx": [
+            273.0,
+            76.0,
+            301.0,
+            87.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.7338,
+          "boxPx": [
+            4.0,
+            93.0,
+            18.0,
+            101.0
+          ]
+        },
+        {
+          "text": "veracity",
+          "confidence": 0.7416,
+          "boxPx": [
+            21.0,
+            95.0,
+            58.0,
+            104.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.9626,
+          "boxPx": [
+            61.0,
+            93.0,
+            77.0,
+            101.0
+          ]
+        },
+        {
+          "text": "correctness",
+          "confidence": 0.5348,
+          "boxPx": [
+            80.0,
+            95.0,
+            131.0,
+            101.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.5348,
+          "boxPx": [
+            135.0,
+            82.0,
+            143.0,
+            110.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.6909,
+          "boxPx": [
+            141.0,
+            93.0,
+            161.0,
+            101.0
+          ]
+        },
+        {
+          "text": "data",
+          "confidence": 0.59,
+          "boxPx": [
+            164.0,
+            93.0,
+            183.0,
+            101.0
+          ]
+        },
+        {
+          "text": "or",
+          "confidence": 0.59,
+          "boxPx": [
+            186.0,
+            96.0,
+            195.0,
+            101.0
+          ]
+        },
+        {
+          "text": "information",
+          "confidence": 0.6723,
+          "boxPx": [
+            199.0,
+            93.0,
+            252.0,
+            101.0
+          ]
+        },
+        {
+          "text": "contained",
+          "confidence": 0.8972,
+          "boxPx": [
+            255.0,
+            93.0,
+            299.0,
+            101.0
+          ]
+        },
+        {
+          "text": "in",
+          "confidence": 0.8635,
+          "boxPx": [
+            303.0,
+            96.0,
+            311.0,
+            101.0
+          ]
+        },
+        {
+          "text": "this",
+          "confidence": 0.8635,
+          "boxPx": [
+            315.0,
+            93.0,
+            330.0,
+            101.0
+          ]
+        },
+        {
+          "text": "document.",
+          "confidence": 0.708,
+          "boxPx": [
+            334.0,
+            93.0,
+            378.0,
+            101.0
+          ]
+        },
+        {
+          "text": "TCE",
+          "confidence": 0.5336,
+          "boxPx": [
+            822.0,
+            144.0,
+            843.0,
+            152.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

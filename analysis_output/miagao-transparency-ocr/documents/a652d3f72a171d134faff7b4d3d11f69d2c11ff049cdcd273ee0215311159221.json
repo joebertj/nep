@@ -1,0 +1,50 @@
+{
+  "sourceFileSha256": "a652d3f72a171d134faff7b4d3d11f69d2c11ff049cdcd273ee0215311159221",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/7c5508253bfa667d.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/TRUST-FUND-Utilization-March-2019-B-300x173.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/trust-fund-utilization-first-quarter-cy-2019/",
+      "sourceTitle": "TRUST FUND UTILIZATION – FIRST QUARTER, CY 2019",
+      "publishedAt": "2019-04-04T05:17:48",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "TRUST-FUND-Utilization-March-2019-B-300x173.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "a652d3f72a171d134faff7b4d3d11f69d2c11ff049cdcd273ee0215311159221",
+      "sourceFileBytes": 14142,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/7c5508253bfa667d.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/TRUST-FUND-Utilization-March-2019-B-300x173.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/trust-fund-utilization-first-quarter-cy-2019/",
+          "sourceTitle": "TRUST FUND UTILIZATION – FIRST QUARTER, CY 2019",
+          "publishedAt": "2019-04-04T05:17:48",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "TRUST-FUND-Utilization-March-2019-B-300x173.jpg"
+        }
+      ],
+      "sourceFileName": "TRUST-FUND-Utilization-March-2019-B-300x173.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "",
+      "ocrText": "",
+      "ocrTokenCount": 0,
+      "ocrMeanConfidence": null,
+      "ocrTokens": [],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "no_text_detected"
+    }
+  ]
+}

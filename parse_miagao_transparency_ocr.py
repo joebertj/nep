@@ -10,24 +10,19 @@ left to their structured/native-text parsers.
 from __future__ import annotations
 
 import argparse
+import csv
 import hashlib
+import io
 import json
-import multiprocessing
 import os
 import re
-import sys
-import time
+import shutil
+import subprocess
+import tempfile
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import unquote, urlparse
-
-# Keep Paddle and its numerical runtimes to one CPU thread. The OCR queue also
-# runs one isolated worker process at a time so a stalled file can be stopped.
-os.environ["OMP_NUM_THREADS"] = "1"
-os.environ["MKL_NUM_THREADS"] = "1"
-os.environ["OPENBLAS_NUM_THREADS"] = "1"
-os.environ["FLAGS_cpu_num_threads"] = "1"
 
 ROOT = Path(__file__).resolve().parent
 INVENTORY = ROOT / "analysis_output/miagao-transparency-source-inventory.json"
@@ -40,6 +35,10 @@ SKIP_LIST_PATH = OUT_DIR / "skip-list.json"
 MIN_NATIVE_TEXT_CHARS = 200
 IMAGE_COVERAGE_TEXT_CEILING = 1200
 USER_AGENT = "BetterMiagao transparency OCR"
+TESSERACT = shutil.which("tesseract")
+if not TESSERACT:
+    homebrew_tesseract = Path("/opt/homebrew/opt/tesseract/bin/tesseract")
+    TESSERACT = str(homebrew_tesseract) if homebrew_tesseract.is_file() else None
 
 
 def now():
@@ -172,48 +171,48 @@ def pdf_ocr_pages(path: Path, fitz):
     return doc, pages
 
 
-def image_for_pdf_page(page, fitz, Image):
-    pix = page.get_pixmap(matrix=fitz.Matrix(2.25, 2.25), alpha=False)
-    return Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
-
-
-def ocr_result(ocr, image, np):
-    result = ocr.predict(np.asarray(image))[0]
-    texts = result.get("rec_texts")
-    scores = result.get("rec_scores")
-    boxes = result.get("rec_boxes")
-    texts = [] if texts is None else list(texts)
-    scores = [] if scores is None else list(scores)
-    boxes = [] if boxes is None else list(boxes)
+def run_tesseract_ocr(image_path: Path, timeout: int):
+    if not TESSERACT:
+        raise RuntimeError("Tesseract is required for scan OCR; install it before resuming this queue")
+    result = subprocess.run(
+        [TESSERACT, str(image_path), "stdout", "--psm", "3", "tsv"],
+        capture_output=True, text=True, timeout=timeout, check=True,
+        env={**os.environ, "OMP_THREAD_LIMIT": "1", "OMP_NUM_THREADS": "1"},
+    )
     tokens = []
-    for index, text in enumerate(texts):
-        text = clean_text(text)
+    lines: dict[tuple[str, str, str], list[str]] = defaultdict(list)
+    for row in csv.DictReader(io.StringIO(result.stdout), delimiter="\t"):
+        text = clean_text(row.get("text", ""))
         if not text:
             continue
-        confidence = None
-        if index < len(scores):
-            try:
-                confidence = round(float(scores[index]), 4)
-            except (TypeError, ValueError):
-                pass
-        box = None
-        if index < len(boxes):
-            try:
-                box = [round(float(v), 1) for v in boxes[index]]
-            except (TypeError, ValueError):
-                pass
-        tokens.append({"text": text, "confidence": confidence, "boxPx": box})
-    text = "\n".join(token["text"] for token in tokens)
-    confidence_values = [token["confidence"] for token in tokens if token["confidence"] is not None]
+        try:
+            left, top = float(row["left"]), float(row["top"])
+            width, height = float(row["width"]), float(row["height"])
+            confidence = float(row["conf"])
+        except (KeyError, TypeError, ValueError):
+            continue
+        if confidence < 0:
+            confidence = None
+        else:
+            confidence = round(confidence / 100, 4)
+        tokens.append({"text": text, "confidence": confidence,
+                       "boxPx": [left, top, left + width, top + height]})
+        key = (row.get("block_num", ""), row.get("par_num", ""), row.get("line_num", ""))
+        lines[key].append(text)
+    return {"ocrText": "\n".join(" ".join(words) for words in lines.values()), "tokens": tokens}
+
+
+def summarize_ocr(extracted):
+    confidences = [float(token["confidence"]) for token in extracted["tokens"] if token.get("confidence") is not None]
     return {
-        "ocrText": text,
-        "tokens": tokens,
-        "tokenCount": len(tokens),
-        "meanConfidence": round(sum(confidence_values) / len(confidence_values), 4) if confidence_values else None,
+        "ocrText": extracted["ocrText"],
+        "tokens": extracted["tokens"],
+        "tokenCount": len(extracted["tokens"]),
+        "meanConfidence": round(sum(confidences) / len(confidences), 4) if confidences else None,
     }
 
 
-def parse_document(item, ocr, fitz, Image, ImageOps, np):
+def parse_document(item, fitz, timeout):
     path = ROOT / item["localPath"]
     if not path.is_file():
         raise FileNotFoundError(f"Archived file not found: {item['localPath']}")
@@ -225,36 +224,36 @@ def parse_document(item, ocr, fitz, Image, ImageOps, np):
     if ext == ".pdf":
         doc, pages = pdf_ocr_pages(path, fitz)
         try:
-            for page_item in pages:
-                page = doc[page_item["pageNumber"] - 1]
-                image = image_for_pdf_page(page, fitz, Image)
-                extracted = ocr_result(ocr, image, np)
-                output_rows.append({
-                    "sourceFileSha256": item["sha256"],
-                    "sourceFileBytes": item.get("bytes"),
-                    "sourceArchivePath": item["localPath"],
-                    "sourceDocumentUrls": item["urls"],
-                    "sourceFileName": item["urls"][0]["fileName"] if item["urls"] else path.name,
-                    "pageNumber": page_item["pageNumber"],
-                    "worksheetName": None,
-                    "sourceRowNumber": None,
-                    "nativeText": page_item["nativeText"],
-                    "extractedText": "\n".join(v for v in [page_item["nativeText"], extracted["ocrText"]] if v),
-                    "ocrText": extracted["ocrText"],
-                    "ocrTokenCount": extracted["tokenCount"],
-                    "ocrMeanConfidence": extracted["meanConfidence"],
-                    "ocrTokens": extracted["tokens"],
-                    "nativeTextCharacters": page_item["nativeTextCharacters"],
-                    "imageCoverageRatio": page_item["imageCoverageRatio"],
-                    "extractionMethod": "PyMuPDF native text + PaddleOCR PP-OCRv5 scan-page OCR" if page_item["nativeText"] else "PaddleOCR PP-OCRv5 scan-page OCR",
-                    "parseStatus": "ocr_text_found" if extracted["tokenCount"] else "no_text_detected",
-                })
+            with tempfile.TemporaryDirectory(prefix="miagao-tesseract-") as temp_dir:
+                for page_item in pages:
+                    page_number = page_item["pageNumber"]
+                    image_path = Path(temp_dir) / f"page-{page_number}.png"
+                    doc[page_number - 1].get_pixmap(matrix=fitz.Matrix(2.0, 2.0), alpha=False).save(image_path)
+                    extracted = summarize_ocr(run_tesseract_ocr(image_path, timeout))
+                    output_rows.append({
+                        "sourceFileSha256": item["sha256"],
+                        "sourceFileBytes": item.get("bytes"),
+                        "sourceArchivePath": item["localPath"],
+                        "sourceDocumentUrls": item["urls"],
+                        "sourceFileName": item["urls"][0]["fileName"] if item["urls"] else path.name,
+                        "pageNumber": page_number,
+                        "worksheetName": None,
+                        "sourceRowNumber": None,
+                        "nativeText": page_item["nativeText"],
+                        "extractedText": "\n".join(v for v in [page_item["nativeText"], extracted["ocrText"]] if v),
+                        "ocrText": extracted["ocrText"],
+                        "ocrTokenCount": extracted["tokenCount"],
+                        "ocrMeanConfidence": extracted["meanConfidence"],
+                        "ocrTokens": extracted["tokens"],
+                        "nativeTextCharacters": page_item["nativeTextCharacters"],
+                        "imageCoverageRatio": page_item["imageCoverageRatio"],
+                        "extractionMethod": "PyMuPDF native text + Tesseract OCR" if page_item["nativeText"] else "Tesseract OCR",
+                        "parseStatus": "ocr_text_found" if extracted["tokenCount"] else "no_text_detected",
+                    })
         finally:
             doc.close()
     else:
-        with Image.open(path) as opened:
-            image = ImageOps.exif_transpose(opened).convert("RGB")
-            extracted = ocr_result(ocr, image, np)
+        extracted = summarize_ocr(run_tesseract_ocr(path, timeout))
         output_rows.append({
             "sourceFileSha256": item["sha256"],
             "sourceFileBytes": item.get("bytes"),
@@ -272,64 +271,10 @@ def parse_document(item, ocr, fitz, Image, ImageOps, np):
             "ocrTokens": extracted["tokens"],
             "nativeTextCharacters": 0,
             "imageCoverageRatio": 1.0,
-            "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
+            "extractionMethod": "Tesseract image OCR",
             "parseStatus": "ocr_text_found" if extracted["tokenCount"] else "no_text_detected",
         })
     return output_rows
-
-
-def ocr_worker(requests, responses):
-    """Keep OCR isolated so a native-library hang can be timed out and skipped."""
-    try:
-        import pymupdf as fitz
-        import numpy as np
-        from PIL import Image, ImageOps
-        from paddleocr import PaddleOCR
-
-        ocr = PaddleOCR(lang="en", ocr_version="PP-OCRv5", use_doc_orientation_classify=False, use_doc_unwarping=False, use_textline_orientation=False)
-        responses.put({"type": "ready"})
-    except BaseException as exc:
-        responses.put({"type": "startup_error", "error": f"{type(exc).__name__}: {exc}"})
-        return
-
-    while True:
-        item = requests.get()
-        if item is None:
-            return
-        try:
-            responses.put({"type": "result", "sha256": item["sha256"], "rows": parse_document(item, ocr, fitz, Image, ImageOps, np)})
-        except BaseException as exc:
-            responses.put({"type": "file_error", "sha256": item["sha256"], "error": f"{type(exc).__name__}: {exc}"})
-
-
-def start_worker(context, startup_timeout):
-    requests = context.Queue()
-    responses = context.Queue()
-    process = context.Process(target=ocr_worker, args=(requests, responses), daemon=True)
-    process.start()
-    try:
-        message = responses.get(timeout=startup_timeout)
-    except Exception:
-        process.terminate()
-        process.join(timeout=10)
-        raise TimeoutError(f"PaddleOCR worker did not initialize within {startup_timeout} seconds")
-    if message.get("type") != "ready":
-        process.terminate()
-        process.join(timeout=10)
-        raise RuntimeError(message.get("error") or "PaddleOCR worker failed to initialize")
-    return process, requests, responses
-
-
-def stop_worker(process, requests):
-    if process.is_alive():
-        try:
-            requests.put(None)
-            process.join(timeout=5)
-        except Exception:
-            pass
-    if process.is_alive():
-        process.terminate()
-        process.join(timeout=10)
 
 
 def refresh_rows(completed):
@@ -353,16 +298,28 @@ def main():
     parser.add_argument("--max-documents", type=int, default=0, help="optional cap for a partial run; zero processes all OCR candidates")
     parser.add_argument("--rebuild-rows", action="store_true", help="rebuild the unified OCR JSONL from completed per-document results")
     parser.add_argument("--retry-errors", action="store_true", help="retry files with a saved .error.json record; skipped by default")
+    parser.add_argument("--retry-error-records", action="store_true", help="after the main queue, retry unique files recorded in errors.jsonl and current error markers, including files with older saved results")
     parser.add_argument("--skip-file", action="append", default=[], metavar="SHA256|PATH|NAME", help="persistently skip a file (repeatable; accepts SHA-256, archive path, or unique filename)")
     parser.add_argument("--unskip-file", action="append", default=[], metavar="SHA256|PATH|NAME", help="remove a file from the persistent skip list (repeatable)")
     parser.add_argument("--document-timeout-seconds", type=int, default=30, help="skip and log a file if OCR exceeds this time")
-    parser.add_argument("--worker-start-timeout-seconds", type=int, default=300, help="maximum time allowed for PaddleOCR worker startup")
     args = parser.parse_args()
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     DOC_DIR.mkdir(parents=True, exist_ok=True)
 
     inventory, documents = inventory_documents()
     skipped_files = update_skip_list(documents, args.skip_file, args.unskip_file)
+    retry_error_hashes: set[str] = set()
+    if args.retry_error_records:
+        if ERRORS_PATH.exists():
+            with ERRORS_PATH.open(encoding="utf-8") as stream:
+                for line in stream:
+                    try:
+                        digest = json.loads(line).get("sourceFileSha256")
+                    except (json.JSONDecodeError, AttributeError):
+                        continue
+                    if digest:
+                        retry_error_hashes.add(digest)
+        retry_error_hashes.update(path.name.removesuffix(".error.json") for path in DOC_DIR.glob("*.error.json"))
     completed = []
     pending = []
     prior_errors = []
@@ -370,6 +327,12 @@ def main():
     for item in documents:
         if item["sha256"] in skipped_files:
             intentionally_skipped.append(item)
+            continue
+        if args.retry_error_records:
+            if item["sha256"] in retry_error_hashes:
+                pending.append(item)
+            elif (DOC_DIR / f"{item['sha256']}.json").exists():
+                completed.append(item)
             continue
         result_path = DOC_DIR / f"{item['sha256']}.json"
         if result_path.exists():
@@ -407,10 +370,10 @@ def main():
 
     try:
         import pymupdf as fitz
-        import numpy as np
-        from PIL import Image, ImageOps
     except ImportError as exc:
-        raise SystemExit(f"OCR dependencies unavailable in this environment: {exc}") from exc
+        raise SystemExit(f"PDF text/rendering dependency unavailable in this environment: {exc}") from exc
+    if not TESSERACT:
+        raise SystemExit("Tesseract is required for scan OCR; install it before resuming this queue.")
     if args.max_documents:
         pending = pending[: args.max_documents]
 
@@ -443,7 +406,9 @@ def main():
             append_error(error)
 
     state = {
-        "title": "Miagao transparency OCR parser",
+        "title": "Miagao transparency parser",
+        "ocrEngine": "Tesseract OCR, single-threaded",
+        "existingCompletedResultsReused": len(completed),
         "updatedAtUtc": now(),
         "status": "starting",
         "inventoryGeneratedAt": inventory.get("generatedAt"),
@@ -452,6 +417,7 @@ def main():
         "pendingOcrDocuments": len(candidates),
         "completedDocuments": len(completed),
         "skippedPriorErrors": len(prior_errors),
+        "retryErrorRecordFiles": len([item for item in pending if item["sha256"] in retry_error_hashes]),
         "intentionallySkippedDocuments": len(intentionally_skipped),
         "skipListPath": str(SKIP_LIST_PATH.relative_to(ROOT)),
         "discoveryErrors": discovery_errors,
@@ -459,34 +425,16 @@ def main():
         "rowsPath": str(ROWS_PATH.relative_to(ROOT)),
     }
     write_json(STATUS_PATH, state)
-    print(f"OCR queue: {len(candidates)} unique image/scan files; {len(completed)} completed; {len(intentionally_skipped)} intentionally skipped; {len(prior_errors)} prior failures skipped (use --retry-errors to retry).", flush=True)
+    queue_label = "error-record retry queue" if args.retry_error_records else "OCR queue"
+    print(f"{queue_label}: {len(candidates)} unique image/scan files; {len(completed)} completed; {len(intentionally_skipped)} intentionally skipped; {len(prior_errors)} prior failures skipped.", flush=True)
     successful = []
     failed = list(prior_errors) + list(discovery_errors)
     total_pages = 0
-    context = multiprocessing.get_context("spawn")
-    worker = requests = responses = None
     for index, item in enumerate(candidates, 1):
         state.update({"status": "processing", "updatedAtUtc": now(), "current": {"index": index, "total": len(candidates), "sha256": item["sha256"], "file": item["urls"][0]["fileName"] if item["urls"] else item["localPath"], "ocrPages": item["ocrPages"]}})
         write_json(STATUS_PATH, state)
         try:
-            if worker is None or not worker.is_alive():
-                worker, requests, responses = start_worker(context, args.worker_start_timeout_seconds)
-            requests.put(item)
-            try:
-                response = responses.get(timeout=args.document_timeout_seconds)
-            except Exception:
-                stop_worker(worker, requests)
-                worker = requests = responses = None
-                raise TimeoutError(f"OCR exceeded {args.document_timeout_seconds} seconds; worker stopped and file skipped")
-            if response.get("sha256") != item["sha256"]:
-                stop_worker(worker, requests)
-                worker = requests = responses = None
-                raise RuntimeError("OCR worker returned a result for the wrong source file")
-            if response.get("type") == "file_error":
-                raise RuntimeError(response.get("error") or "OCR worker failed on this file")
-            if response.get("type") != "result":
-                raise RuntimeError(f"Unexpected OCR worker response: {response.get('type')}")
-            rows = response["rows"]
+            rows = parse_document(item, fitz, args.document_timeout_seconds)
             write_json(DOC_DIR / f"{item['sha256']}.json", {
                 "sourceFileSha256": item["sha256"],
                 "sourceArchivePath": item["localPath"],
@@ -494,6 +442,7 @@ def main():
                 "ocrPageNumbers": item["ocrPages"],
                 "rows": rows,
             })
+            (DOC_DIR / f"{item['sha256']}.error.json").unlink(missing_ok=True)
             successful.append(item)
             total_pages += len(rows)
             print(f"[{index}/{len(candidates)}] {len(rows)} OCR pages · {item['urls'][0]['fileName'] if item['urls'] else item['localPath']}", flush=True)
@@ -511,9 +460,6 @@ def main():
         state["skippedDocuments"] = len(failed)
         state["updatedAtUtc"] = now()
         write_json(STATUS_PATH, state)
-
-    if worker is not None:
-        stop_worker(worker, requests)
 
     all_completed = []
     for item in documents:

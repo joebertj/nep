@@ -1,0 +1,50 @@
+{
+  "sourceFileSha256": "c2c432c563cf18108627016369710c2ac32fead82f8c23c8399e88ac4d9362ad",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/baffb3e11b710b80.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2023/09/353657392_679043347601096_7446325835569556895_n-300x168.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/the-members-of-the-bids-and-awards-committee-are-closely-looking-into-the-bid-documents-submitted-by-suppliers-for-the-following-projects/",
+      "sourceTitle": "The members of the Bids and Awards Committee are closely looking into the bid documents submitted by suppliers for the following projects:",
+      "publishedAt": "2023-09-08T14:01:38",
+      "sourceElement": "img",
+      "sourceAttribute": "src",
+      "fileName": "353657392_679043347601096_7446325835569556895_n-300x168.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "c2c432c563cf18108627016369710c2ac32fead82f8c23c8399e88ac4d9362ad",
+      "sourceFileBytes": 13971,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/baffb3e11b710b80.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2023/09/353657392_679043347601096_7446325835569556895_n-300x168.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/the-members-of-the-bids-and-awards-committee-are-closely-looking-into-the-bid-documents-submitted-by-suppliers-for-the-following-projects/",
+          "sourceTitle": "The members of the Bids and Awards Committee are closely looking into the bid documents submitted by suppliers for the following projects:",
+          "publishedAt": "2023-09-08T14:01:38",
+          "sourceElement": "img",
+          "sourceAttribute": "src",
+          "fileName": "353657392_679043347601096_7446325835569556895_n-300x168.jpg"
+        }
+      ],
+      "sourceFileName": "353657392_679043347601096_7446325835569556895_n-300x168.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "",
+      "ocrText": "",
+      "ocrTokenCount": 0,
+      "ocrMeanConfidence": null,
+      "ocrTokens": [],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "no_text_detected"
+    }
+  ]
+}

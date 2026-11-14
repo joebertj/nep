@@ -15,6 +15,7 @@ ROOT = Path(__file__).resolve().parent
 OCR_DIR = ROOT / "analysis_output/miagao-transparency-ocr"
 INVENTORY = ROOT / "analysis_output/miagao-transparency-source-inventory.json"
 DEFAULT_OUTPUT = ROOT.parent / "bettermiagao/public/data/miagao-historical-index.json"
+DEFAULT_PREVIEW_OUTPUT = ROOT.parent / "bettermiagao/dist/data/miagao-historical-index.json"
 
 
 def read_json(path: Path, fallback):
@@ -79,7 +80,23 @@ def main():
 
         # Keep all source page references; a single archived file can be linked
         # from multiple official posts.
-        refs = result.get("sourceDocumentUrls") or source.get("sources") or []
+        # A URL may be attached to a new official post after its bytes were
+        # archived and parsed. Keep the parser's stable document references,
+        # while refreshing the latest post/page references from each crawl.
+        refs = []
+        ref_keys = set()
+        for ref in [*(result.get("sourceDocumentUrls") or []), *(source.get("sources") or [])]:
+            normalized = {
+                "documentUrl": ref.get("documentUrl") or source.get("url"),
+                "sourcePageUrl": ref.get("sourcePageUrl") or ref.get("sourceUrl"),
+                "sourceTitle": ref.get("sourceTitle"),
+                "sourceDate": ref.get("sourceDate"),
+                "publishedAt": ref.get("publishedAt"),
+            }
+            key = (normalized["documentUrl"], normalized["sourcePageUrl"])
+            if key not in ref_keys:
+                ref_keys.add(key)
+                refs.append({key: value for key, value in normalized.items() if value is not None})
         if not refs:
             refs = [{"documentUrl": source.get("url")}]
         for page_index, page in enumerate(result_rows, start=1):
@@ -151,11 +168,16 @@ def main():
         "summary": summary,
         "rows": sorted(rows, key=lambda row: (row.get("publishedAt") or "", row["sourceTitle"].lower()), reverse=True),
     }
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    temporary = args.output.with_suffix(args.output.suffix + ".tmp")
-    temporary.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
-    temporary.replace(args.output)
-    print(json.dumps({"output": str(args.output), **summary}, indent=2))
+    outputs = [args.output]
+    if args.output.resolve() == DEFAULT_OUTPUT.resolve() and DEFAULT_PREVIEW_OUTPUT.parent.is_dir():
+        outputs.append(DEFAULT_PREVIEW_OUTPUT)
+    serialized = json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n"
+    for output in outputs:
+        output.parent.mkdir(parents=True, exist_ok=True)
+        temporary = output.with_suffix(output.suffix + ".tmp")
+        temporary.write_text(serialized, encoding="utf-8")
+        temporary.replace(output)
+    print(json.dumps({"outputs": [str(output) for output in outputs], **summary}, indent=2))
 
 
 if __name__ == "__main__":

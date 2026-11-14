@@ -1,0 +1,501 @@
+{
+  "sourceFileSha256": "e2c8350b8ab5b6702a334858efac95d25a30f770191aea7cb0469657b9d50f88",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/5a1beee7a2eedfce.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/LDRRMF-Utilization-March-2019-b-1536x318.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/ldrrmf-fund-utilization/ldrrmf-utilization-as-of-march-2019/",
+      "sourceTitle": "LDRRMF Utilization as of March 2019",
+      "publishedAt": "2019-04-03T02:10:41",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "LDRRMF-Utilization-March-2019-b-1536x318.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "e2c8350b8ab5b6702a334858efac95d25a30f770191aea7cb0469657b9d50f88",
+      "sourceFileBytes": 50063,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/5a1beee7a2eedfce.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/LDRRMF-Utilization-March-2019-b-1536x318.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/ldrrmf-fund-utilization/ldrrmf-utilization-as-of-march-2019/",
+          "sourceTitle": "LDRRMF Utilization as of March 2019",
+          "publishedAt": "2019-04-03T02:10:41",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "LDRRMF-Utilization-March-2019-b-1536x318.jpg"
+        }
+      ],
+      "sourceFileName": "LDRRMF-Utilization-March-2019-b-1536x318.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Total Utilization\n= | 908,222.61 | 901,843.42\nUnutilized Balance\n2,838,453.00 | 20,736,889.55 | 23,581,721.74\n| hereby certify that | have reviewed the contents and hereby attest to the veracity and\ncorrectness of the data or information contained in this document.\nMAYLENE T. SERVIDAD\nMunicipal Accountant",
+      "ocrText": "Total Utilization\n= | 908,222.61 | 901,843.42\nUnutilized Balance\n2,838,453.00 | 20,736,889.55 | 23,581,721.74\n| hereby certify that | have reviewed the contents and hereby attest to the veracity and\ncorrectness of the data or information contained in this document.\nMAYLENE T. SERVIDAD\nMunicipal Accountant",
+      "ocrTokenCount": 45,
+      "ocrMeanConfidence": 0.937,
+      "ocrTokens": [
+        {
+          "text": "Total",
+          "confidence": 0.9696,
+          "boxPx": [
+            9.0,
+            14.0,
+            55.0,
+            31.0
+          ]
+        },
+        {
+          "text": "Utilization",
+          "confidence": 0.9649,
+          "boxPx": [
+            64.0,
+            14.0,
+            159.0,
+            31.0
+          ]
+        },
+        {
+          "text": "=",
+          "confidence": 0.6867,
+          "boxPx": [
+            687.0,
+            24.0,
+            693.0,
+            26.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.9203,
+          "boxPx": [
+            731.0,
+            2.0,
+            733.0,
+            36.0
+          ]
+        },
+        {
+          "text": "908,222.61",
+          "confidence": 0.9613,
+          "boxPx": [
+            825.0,
+            16.0,
+            932.0,
+            35.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.9384,
+          "boxPx": [
+            1067.0,
+            2.0,
+            1069.0,
+            36.0
+          ]
+        },
+        {
+          "text": "901,843.42",
+          "confidence": 0.959,
+          "boxPx": [
+            1413.0,
+            16.0,
+            1520.0,
+            35.0
+          ]
+        },
+        {
+          "text": "Unutilized",
+          "confidence": 0.9294,
+          "boxPx": [
+            10.0,
+            48.0,
+            110.0,
+            64.0
+          ]
+        },
+        {
+          "text": "Balance",
+          "confidence": 0.9694,
+          "boxPx": [
+            119.0,
+            48.0,
+            199.0,
+            64.0
+          ]
+        },
+        {
+          "text": "2,838,453.00",
+          "confidence": 0.9244,
+          "boxPx": [
+            594.0,
+            48.0,
+            719.0,
+            67.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.842,
+          "boxPx": [
+            731.0,
+            39.0,
+            733.0,
+            69.0
+          ]
+        },
+        {
+          "text": "20,736,889.55",
+          "confidence": 0.8173,
+          "boxPx": [
+            796.0,
+            48.0,
+            933.0,
+            67.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.8762,
+          "boxPx": [
+            1067.0,
+            39.0,
+            1069.0,
+            69.0
+          ]
+        },
+        {
+          "text": "23,581,721.74",
+          "confidence": 0.9159,
+          "boxPx": [
+            1391.0,
+            48.0,
+            1528.0,
+            67.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.9119,
+          "boxPx": [
+            684.0,
+            120.0,
+            686.0,
+            136.0
+          ]
+        },
+        {
+          "text": "hereby",
+          "confidence": 0.9223,
+          "boxPx": [
+            696.0,
+            120.0,
+            760.0,
+            141.0
+          ]
+        },
+        {
+          "text": "certify",
+          "confidence": 0.9586,
+          "boxPx": [
+            767.0,
+            120.0,
+            823.0,
+            141.0
+          ]
+        },
+        {
+          "text": "that",
+          "confidence": 0.9684,
+          "boxPx": [
+            830.0,
+            120.0,
+            865.0,
+            136.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.9631,
+          "boxPx": [
+            875.0,
+            120.0,
+            876.0,
+            136.0
+          ]
+        },
+        {
+          "text": "have",
+          "confidence": 0.9684,
+          "boxPx": [
+            884.0,
+            120.0,
+            929.0,
+            136.0
+          ]
+        },
+        {
+          "text": "reviewed",
+          "confidence": 0.9653,
+          "boxPx": [
+            937.0,
+            120.0,
+            1020.0,
+            136.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.9702,
+          "boxPx": [
+            1028.0,
+            120.0,
+            1057.0,
+            136.0
+          ]
+        },
+        {
+          "text": "contents",
+          "confidence": 0.9701,
+          "boxPx": [
+            1064.0,
+            121.0,
+            1144.0,
+            136.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.9687,
+          "boxPx": [
+            1152.0,
+            120.0,
+            1185.0,
+            136.0
+          ]
+        },
+        {
+          "text": "hereby",
+          "confidence": 0.9651,
+          "boxPx": [
+            1194.0,
+            120.0,
+            1258.0,
+            141.0
+          ]
+        },
+        {
+          "text": "attest",
+          "confidence": 0.9652,
+          "boxPx": [
+            1265.0,
+            121.0,
+            1317.0,
+            136.0
+          ]
+        },
+        {
+          "text": "to",
+          "confidence": 0.9652,
+          "boxPx": [
+            1323.0,
+            121.0,
+            1340.0,
+            136.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.97,
+          "boxPx": [
+            1347.0,
+            120.0,
+            1376.0,
+            136.0
+          ]
+        },
+        {
+          "text": "veracity",
+          "confidence": 0.9665,
+          "boxPx": [
+            1383.0,
+            120.0,
+            1456.0,
+            141.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.9684,
+          "boxPx": [
+            1464.0,
+            120.0,
+            1497.0,
+            136.0
+          ]
+        },
+        {
+          "text": "correctness",
+          "confidence": 0.9566,
+          "boxPx": [
+            778.0,
+            156.0,
+            888.0,
+            171.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9697,
+          "boxPx": [
+            895.0,
+            155.0,
+            913.0,
+            171.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.9697,
+          "boxPx": [
+            919.0,
+            155.0,
+            948.0,
+            171.0
+          ]
+        },
+        {
+          "text": "data",
+          "confidence": 0.9685,
+          "boxPx": [
+            955.0,
+            155.0,
+            996.0,
+            171.0
+          ]
+        },
+        {
+          "text": "or",
+          "confidence": 0.9697,
+          "boxPx": [
+            1003.0,
+            159.0,
+            1022.0,
+            171.0
+          ]
+        },
+        {
+          "text": "information",
+          "confidence": 0.968,
+          "boxPx": [
+            1029.0,
+            155.0,
+            1133.0,
+            171.0
+          ]
+        },
+        {
+          "text": "contained",
+          "confidence": 0.9672,
+          "boxPx": [
+            1141.0,
+            155.0,
+            1232.0,
+            171.0
+          ]
+        },
+        {
+          "text": "in",
+          "confidence": 0.9584,
+          "boxPx": [
+            1240.0,
+            155.0,
+            1254.0,
+            171.0
+          ]
+        },
+        {
+          "text": "this",
+          "confidence": 0.9584,
+          "boxPx": [
+            1262.0,
+            155.0,
+            1295.0,
+            171.0
+          ]
+        },
+        {
+          "text": "document.",
+          "confidence": 0.9642,
+          "boxPx": [
+            1302.0,
+            155.0,
+            1400.0,
+            171.0
+          ]
+        },
+        {
+          "text": "MAYLENE",
+          "confidence": 0.8152,
+          "boxPx": [
+            1263.0,
+            259.0,
+            1354.0,
+            274.0
+          ]
+        },
+        {
+          "text": "T.",
+          "confidence": 0.8152,
+          "boxPx": [
+            1366.0,
+            259.0,
+            1381.0,
+            274.0
+          ]
+        },
+        {
+          "text": "SERVIDAD",
+          "confidence": 0.9184,
+          "boxPx": [
+            1389.0,
+            259.0,
+            1485.0,
+            274.0
+          ]
+        },
+        {
+          "text": "Municipal",
+          "confidence": 0.9573,
+          "boxPx": [
+            1270.0,
+            292.0,
+            1361.0,
+            313.0
+          ]
+        },
+        {
+          "text": "Accountant",
+          "confidence": 0.9662,
+          "boxPx": [
+            1368.0,
+            294.0,
+            1478.0,
+            309.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

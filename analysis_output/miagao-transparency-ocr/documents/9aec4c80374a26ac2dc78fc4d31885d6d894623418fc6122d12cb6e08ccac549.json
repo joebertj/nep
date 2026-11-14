@@ -1,0 +1,50 @@
+{
+  "sourceFileSha256": "9aec4c80374a26ac2dc78fc4d31885d6d894623418fc6122d12cb6e08ccac549",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/9a0d114ef19747b7.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2024/10/464828357_1016736580498436_9105589366057933996_n-233x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/invitation-to-bid-34/",
+      "sourceTitle": "Invitation to Bid",
+      "publishedAt": "2024-10-30T11:33:37",
+      "sourceElement": "img",
+      "sourceAttribute": "src",
+      "fileName": "464828357_1016736580498436_9105589366057933996_n-233x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "9aec4c80374a26ac2dc78fc4d31885d6d894623418fc6122d12cb6e08ccac549",
+      "sourceFileBytes": 10936,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/9a0d114ef19747b7.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2024/10/464828357_1016736580498436_9105589366057933996_n-233x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/invitation-to-bid-34/",
+          "sourceTitle": "Invitation to Bid",
+          "publishedAt": "2024-10-30T11:33:37",
+          "sourceElement": "img",
+          "sourceAttribute": "src",
+          "fileName": "464828357_1016736580498436_9105589366057933996_n-233x300.jpg"
+        }
+      ],
+      "sourceFileName": "464828357_1016736580498436_9105589366057933996_n-233x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "",
+      "ocrText": "",
+      "ocrTokenCount": 0,
+      "ocrMeanConfidence": null,
+      "ocrTokens": [],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "no_text_detected"
+    }
+  ]
+}

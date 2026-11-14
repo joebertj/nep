@@ -1,0 +1,301 @@
+{
+  "sourceFileSha256": "efb7ca85995dda2424e11b1223e019187967272ecdaa0ec64c54b98c1fcb335b",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/e39eeb57135bfd72.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/Cash-Flow-as-of-March-31-2019-B-300x246.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/statement-of-cash-flow/cash-flow-as-of-march-31-2019/",
+      "sourceTitle": "CASH FLOW as of March 31, 2019",
+      "publishedAt": "2019-04-01T01:51:46",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Cash-Flow-as-of-March-31-2019-B-300x246.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "efb7ca85995dda2424e11b1223e019187967272ecdaa0ec64c54b98c1fcb335b",
+      "sourceFileBytes": 14417,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/e39eeb57135bfd72.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/Cash-Flow-as-of-March-31-2019-B-300x246.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/statement-of-cash-flow/cash-flow-as-of-march-31-2019/",
+          "sourceTitle": "CASH FLOW as of March 31, 2019",
+          "publishedAt": "2019-04-01T01:51:46",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Cash-Flow-as-of-March-31-2019-B-300x246.jpg"
+        }
+      ],
+      "sourceFileName": "Cash-Flow-as-of-March-31-2019-B-300x246.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Co tio\nenantio of seis\nTot Goh Proieby Opersing venga\nACs athe einige ee\nCah baer a he ada he Que FTE\nPepe\nMclain\nNatty",
+      "ocrText": "Co tio\nenantio of seis\nTot Goh Proieby Opersing venga\nACs athe einige ee\nCah baer a he ada he Que FTE\nPepe\nMclain\nNatty",
+      "ocrTokenCount": 25,
+      "ocrMeanConfidence": 0.3706,
+      "ocrTokens": [
+        {
+          "text": "Co",
+          "confidence": 0.4025,
+          "boxPx": [
+            3.0,
+            26.0,
+            18.0,
+            32.0
+          ]
+        },
+        {
+          "text": "tio",
+          "confidence": 0.0114,
+          "boxPx": [
+            21.0,
+            26.0,
+            49.0,
+            33.0
+          ]
+        },
+        {
+          "text": "enantio",
+          "confidence": 0.0,
+          "boxPx": [
+            21.0,
+            48.0,
+            116.0,
+            56.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.3968,
+          "boxPx": [
+            96.0,
+            37.0,
+            101.0,
+            65.0
+          ]
+        },
+        {
+          "text": "seis",
+          "confidence": 0.3817,
+          "boxPx": [
+            119.0,
+            49.0,
+            147.0,
+            54.0
+          ]
+        },
+        {
+          "text": "Tot",
+          "confidence": 0.5825,
+          "boxPx": [
+            3.0,
+            93.0,
+            17.0,
+            99.0
+          ]
+        },
+        {
+          "text": "Goh",
+          "confidence": 0.5757,
+          "boxPx": [
+            23.0,
+            81.0,
+            38.0,
+            109.0
+          ]
+        },
+        {
+          "text": "Proieby",
+          "confidence": 0.2285,
+          "boxPx": [
+            41.0,
+            93.0,
+            69.0,
+            99.0
+          ]
+        },
+        {
+          "text": "Opersing",
+          "confidence": 0.1809,
+          "boxPx": [
+            72.0,
+            93.0,
+            114.0,
+            100.0
+          ]
+        },
+        {
+          "text": "venga",
+          "confidence": 0.2531,
+          "boxPx": [
+            119.0,
+            93.0,
+            162.0,
+            100.0
+          ]
+        },
+        {
+          "text": "ACs",
+          "confidence": 0.5692,
+          "boxPx": [
+            3.0,
+            115.0,
+            35.0,
+            121.0
+          ]
+        },
+        {
+          "text": "athe",
+          "confidence": 0.5227,
+          "boxPx": [
+            39.0,
+            104.0,
+            57.0,
+            132.0
+          ]
+        },
+        {
+          "text": "einige",
+          "confidence": 0.2342,
+          "boxPx": [
+            60.0,
+            115.0,
+            128.0,
+            123.0
+          ]
+        },
+        {
+          "text": "ee",
+          "confidence": 0.6281,
+          "boxPx": [
+            116.0,
+            104.0,
+            131.0,
+            132.0
+          ]
+        },
+        {
+          "text": "Cah",
+          "confidence": 0.3325,
+          "boxPx": [
+            3.0,
+            114.0,
+            19.0,
+            142.0
+          ]
+        },
+        {
+          "text": "baer",
+          "confidence": 0.4931,
+          "boxPx": [
+            23.0,
+            114.0,
+            47.0,
+            142.0
+          ]
+        },
+        {
+          "text": "a",
+          "confidence": 0.5703,
+          "boxPx": [
+            49.0,
+            127.0,
+            54.0,
+            132.0
+          ]
+        },
+        {
+          "text": "he",
+          "confidence": 0.6973,
+          "boxPx": [
+            58.0,
+            126.0,
+            67.0,
+            132.0
+          ]
+        },
+        {
+          "text": "ada",
+          "confidence": 0.5777,
+          "boxPx": [
+            72.0,
+            126.0,
+            89.0,
+            132.0
+          ]
+        },
+        {
+          "text": "he",
+          "confidence": 0.495,
+          "boxPx": [
+            93.0,
+            114.0,
+            103.0,
+            142.0
+          ]
+        },
+        {
+          "text": "Que",
+          "confidence": 0.4283,
+          "boxPx": [
+            107.0,
+            126.0,
+            131.0,
+            133.0
+          ]
+        },
+        {
+          "text": "FTE",
+          "confidence": 0.4643,
+          "boxPx": [
+            248.0,
+            125.0,
+            294.0,
+            131.0
+          ]
+        },
+        {
+          "text": "Pepe",
+          "confidence": 0.1007,
+          "boxPx": [
+            3.0,
+            149.0,
+            39.0,
+            156.0
+          ]
+        },
+        {
+          "text": "Mclain",
+          "confidence": 0.0602,
+          "boxPx": [
+            25.0,
+            182.0,
+            92.0,
+            189.0
+          ]
+        },
+        {
+          "text": "Natty",
+          "confidence": 0.0788,
+          "boxPx": [
+            3.0,
+            204.0,
+            30.0,
+            212.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

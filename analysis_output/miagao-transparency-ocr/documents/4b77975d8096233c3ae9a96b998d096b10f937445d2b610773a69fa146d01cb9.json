@@ -1,0 +1,1551 @@
+{
+  "sourceFileSha256": "4b77975d8096233c3ae9a96b998d096b10f937445d2b610773a69fa146d01cb9",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/856373fee2a6b9c9.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/20-Utilization-2nd-quarter.xlsx-2019-1-scaled.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/20-ira-utilization/20-ira-utilization-second-quarter-for-cy-2019/",
+      "sourceTitle": "20% IRA UTILIZATION – SECOND QUARTER FOR CY 2019",
+      "publishedAt": "2019-07-01T02:12:00",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "20-Utilization-2nd-quarter.xlsx-2019-1-scaled.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "4b77975d8096233c3ae9a96b998d096b10f937445d2b610773a69fa146d01cb9",
+      "sourceFileBytes": 278811,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/856373fee2a6b9c9.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/20-Utilization-2nd-quarter.xlsx-2019-1-scaled.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/20-ira-utilization/20-ira-utilization-second-quarter-for-cy-2019/",
+          "sourceTitle": "20% IRA UTILIZATION – SECOND QUARTER FOR CY 2019",
+          "publishedAt": "2019-07-01T02:12:00",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "20-Utilization-2nd-quarter.xlsx-2019-1-scaled.jpg"
+        }
+      ],
+      "sourceFileName": "20-Utilization-2nd-quarter.xlsx-2019-1-scaled.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "FDP Form 7 - 20% Component of the IRA Utilization\nProvince, City or Municipality: MIAGAO\n20% COMPONENT OF THE IRA UTILIZATION\nFOR THE SECOND QUARTER, CY 2019\nTarget Project Status No. of\nProgram or Project Location Total Cost Date Started Completion % of Total Cost Extensions, if\nDate Completion | Incurred to Date | any Remarks\nI. Social Development\n1. Health\n1.1 Construction/Improvement of RHU I, RHU II Miagao, lloilo | 2,000,000.00 0.00% not\nBHS and Half-Way Home implemented\n2. Purchase/Construction and Improvement\nof Government Facilities-Social Develeopment\n2.1 Rehabilitation of Potable Water Supply Miagao, lloilo 100,000.00 0.00% not\nSystem at Barangay Baybay Norte implemented\n2.2 Assistance to Barangays Miagao, lloilo | 3,000,000.00 | January 30, 2019 48.72% 1,461,740.00\n3. Social Welfare\n3.1 Construction of Multi-Purpose Building Miagao, lloilo 300,000.00 |June 3, 2019 6.40% 19,200.00\n(Stock Room-Phase I!)\n3.2 Construction of Multi-Purpose Building Miagao, lloilo 500,000.00 0.00% not\n(Holding Center) implemented",
+      "ocrText": "FDP Form 7 - 20% Component of the IRA Utilization\nProvince, City or Municipality: MIAGAO\n20% COMPONENT OF THE IRA UTILIZATION\nFOR THE SECOND QUARTER, CY 2019\nTarget Project Status No. of\nProgram or Project Location Total Cost Date Started Completion % of Total Cost Extensions, if\nDate Completion | Incurred to Date | any Remarks\nI. Social Development\n1. Health\n1.1 Construction/Improvement of RHU I, RHU II Miagao, lloilo | 2,000,000.00 0.00% not\nBHS and Half-Way Home implemented\n2. Purchase/Construction and Improvement\nof Government Facilities-Social Develeopment\n2.1 Rehabilitation of Potable Water Supply Miagao, lloilo 100,000.00 0.00% not\nSystem at Barangay Baybay Norte implemented\n2.2 Assistance to Barangays Miagao, lloilo | 3,000,000.00 | January 30, 2019 48.72% 1,461,740.00\n3. Social Welfare\n3.1 Construction of Multi-Purpose Building Miagao, lloilo 300,000.00 |June 3, 2019 6.40% 19,200.00\n(Stock Room-Phase I!)\n3.2 Construction of Multi-Purpose Building Miagao, lloilo 500,000.00 0.00% not\n(Holding Center) implemented",
+      "ocrTokenCount": 150,
+      "ocrMeanConfidence": 0.9343,
+      "ocrTokens": [
+        {
+          "text": "FDP",
+          "confidence": 0.9693,
+          "boxPx": [
+            13.0,
+            20.0,
+            56.0,
+            38.0
+          ]
+        },
+        {
+          "text": "Form",
+          "confidence": 0.9642,
+          "boxPx": [
+            63.0,
+            20.0,
+            119.0,
+            38.0
+          ]
+        },
+        {
+          "text": "7",
+          "confidence": 0.9313,
+          "boxPx": [
+            128.0,
+            20.0,
+            141.0,
+            38.0
+          ]
+        },
+        {
+          "text": "-",
+          "confidence": 0.9313,
+          "boxPx": [
+            147.0,
+            30.0,
+            154.0,
+            32.0
+          ]
+        },
+        {
+          "text": "20%",
+          "confidence": 0.9616,
+          "boxPx": [
+            161.0,
+            20.0,
+            208.0,
+            38.0
+          ]
+        },
+        {
+          "text": "Component",
+          "confidence": 0.9635,
+          "boxPx": [
+            217.0,
+            20.0,
+            345.0,
+            43.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9691,
+          "boxPx": [
+            352.0,
+            19.0,
+            376.0,
+            43.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.97,
+          "boxPx": [
+            381.0,
+            19.0,
+            416.0,
+            38.0
+          ]
+        },
+        {
+          "text": "IRA",
+          "confidence": 0.9678,
+          "boxPx": [
+            424.0,
+            20.0,
+            459.0,
+            38.0
+          ]
+        },
+        {
+          "text": "Utilization",
+          "confidence": 0.9692,
+          "boxPx": [
+            469.0,
+            19.0,
+            580.0,
+            38.0
+          ]
+        },
+        {
+          "text": "Province,",
+          "confidence": 0.965,
+          "boxPx": [
+            15.0,
+            251.0,
+            137.0,
+            277.0
+          ]
+        },
+        {
+          "text": "City",
+          "confidence": 0.9675,
+          "boxPx": [
+            148.0,
+            251.0,
+            198.0,
+            279.0
+          ]
+        },
+        {
+          "text": "or",
+          "confidence": 0.9616,
+          "boxPx": [
+            208.0,
+            256.0,
+            235.0,
+            273.0
+          ]
+        },
+        {
+          "text": "Municipality:",
+          "confidence": 0.9329,
+          "boxPx": [
+            246.0,
+            249.0,
+            420.0,
+            279.0
+          ]
+        },
+        {
+          "text": "MIAGAO",
+          "confidence": 0.9219,
+          "boxPx": [
+            432.0,
+            251.0,
+            552.0,
+            273.0
+          ]
+        },
+        {
+          "text": "20%",
+          "confidence": 0.9672,
+          "boxPx": [
+            978.0,
+            109.0,
+            1035.0,
+            131.0
+          ]
+        },
+        {
+          "text": "COMPONENT",
+          "confidence": 0.9644,
+          "boxPx": [
+            1045.0,
+            109.0,
+            1231.0,
+            131.0
+          ]
+        },
+        {
+          "text": "OF",
+          "confidence": 0.9575,
+          "boxPx": [
+            1241.0,
+            109.0,
+            1277.0,
+            131.0
+          ]
+        },
+        {
+          "text": "THE",
+          "confidence": 0.9576,
+          "boxPx": [
+            1285.0,
+            109.0,
+            1338.0,
+            131.0
+          ]
+        },
+        {
+          "text": "IRA",
+          "confidence": 0.967,
+          "boxPx": [
+            1349.0,
+            109.0,
+            1395.0,
+            131.0
+          ]
+        },
+        {
+          "text": "UTILIZATION",
+          "confidence": 0.9638,
+          "boxPx": [
+            1406.0,
+            109.0,
+            1579.0,
+            131.0
+          ]
+        },
+        {
+          "text": "FOR",
+          "confidence": 0.9571,
+          "boxPx": [
+            1024.0,
+            156.0,
+            1078.0,
+            179.0
+          ]
+        },
+        {
+          "text": "THE",
+          "confidence": 0.9571,
+          "boxPx": [
+            1086.0,
+            157.0,
+            1139.0,
+            178.0
+          ]
+        },
+        {
+          "text": "SECOND",
+          "confidence": 0.9634,
+          "boxPx": [
+            1149.0,
+            156.0,
+            1264.0,
+            179.0
+          ]
+        },
+        {
+          "text": "QUARTER,",
+          "confidence": 0.9636,
+          "boxPx": [
+            1274.0,
+            156.0,
+            1417.0,
+            183.0
+          ]
+        },
+        {
+          "text": "CY",
+          "confidence": 0.9618,
+          "boxPx": [
+            1427.0,
+            156.0,
+            1461.0,
+            179.0
+          ]
+        },
+        {
+          "text": "2019",
+          "confidence": 0.9643,
+          "boxPx": [
+            1471.0,
+            156.0,
+            1536.0,
+            179.0
+          ]
+        },
+        {
+          "text": "Target",
+          "confidence": 0.9681,
+          "boxPx": [
+            1520.0,
+            345.0,
+            1608.0,
+            373.0
+          ]
+        },
+        {
+          "text": "Project",
+          "confidence": 0.9678,
+          "boxPx": [
+            1800.0,
+            344.0,
+            1897.0,
+            373.0
+          ]
+        },
+        {
+          "text": "Status",
+          "confidence": 0.9682,
+          "boxPx": [
+            1906.0,
+            345.0,
+            1991.0,
+            367.0
+          ]
+        },
+        {
+          "text": "No.",
+          "confidence": 0.9681,
+          "boxPx": [
+            2182.0,
+            346.0,
+            2227.0,
+            367.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9681,
+          "boxPx": [
+            2238.0,
+            344.0,
+            2266.0,
+            367.0
+          ]
+        },
+        {
+          "text": "Program",
+          "confidence": 0.9626,
+          "boxPx": [
+            252.0,
+            392.0,
+            368.0,
+            420.0
+          ]
+        },
+        {
+          "text": "or",
+          "confidence": 0.9626,
+          "boxPx": [
+            379.0,
+            397.0,
+            407.0,
+            414.0
+          ]
+        },
+        {
+          "text": "Project",
+          "confidence": 0.9633,
+          "boxPx": [
+            417.0,
+            391.0,
+            514.0,
+            420.0
+          ]
+        },
+        {
+          "text": "Location",
+          "confidence": 0.9646,
+          "boxPx": [
+            821.0,
+            391.0,
+            936.0,
+            414.0
+          ]
+        },
+        {
+          "text": "Total",
+          "confidence": 0.9666,
+          "boxPx": [
+            1034.0,
+            391.0,
+            1103.0,
+            414.0
+          ]
+        },
+        {
+          "text": "Cost",
+          "confidence": 0.9672,
+          "boxPx": [
+            1114.0,
+            392.0,
+            1173.0,
+            414.0
+          ]
+        },
+        {
+          "text": "Date",
+          "confidence": 0.9622,
+          "boxPx": [
+            1252.0,
+            392.0,
+            1316.0,
+            414.0
+          ]
+        },
+        {
+          "text": "Started",
+          "confidence": 0.9692,
+          "boxPx": [
+            1326.0,
+            391.0,
+            1426.0,
+            414.0
+          ]
+        },
+        {
+          "text": "Completion",
+          "confidence": 0.967,
+          "boxPx": [
+            1488.0,
+            387.0,
+            1648.0,
+            424.0
+          ]
+        },
+        {
+          "text": "%",
+          "confidence": 0.9312,
+          "boxPx": [
+            1742.0,
+            392.0,
+            1765.0,
+            414.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9658,
+          "boxPx": [
+            1774.0,
+            391.0,
+            1802.0,
+            414.0
+          ]
+        },
+        {
+          "text": "Total",
+          "confidence": 0.9644,
+          "boxPx": [
+            1918.0,
+            391.0,
+            1988.0,
+            414.0
+          ]
+        },
+        {
+          "text": "Cost",
+          "confidence": 0.9691,
+          "boxPx": [
+            1999.0,
+            392.0,
+            2057.0,
+            414.0
+          ]
+        },
+        {
+          "text": "Extensions,",
+          "confidence": 0.9644,
+          "boxPx": [
+            2133.0,
+            391.0,
+            2288.0,
+            419.0
+          ]
+        },
+        {
+          "text": "if",
+          "confidence": 0.96,
+          "boxPx": [
+            2298.0,
+            391.0,
+            2316.0,
+            414.0
+          ]
+        },
+        {
+          "text": "Date",
+          "confidence": 0.9662,
+          "boxPx": [
+            1538.0,
+            440.0,
+            1601.0,
+            462.0
+          ]
+        },
+        {
+          "text": "Completion",
+          "confidence": 0.9607,
+          "boxPx": [
+            1685.0,
+            438.0,
+            1845.0,
+            467.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.0454,
+          "boxPx": [
+            1853.0,
+            434.0,
+            1865.0,
+            478.0
+          ]
+        },
+        {
+          "text": "Incurred",
+          "confidence": 0.0454,
+          "boxPx": [
+            1876.0,
+            438.0,
+            1990.0,
+            462.0
+          ]
+        },
+        {
+          "text": "to",
+          "confidence": 0.965,
+          "boxPx": [
+            1999.0,
+            441.0,
+            2028.0,
+            462.0
+          ]
+        },
+        {
+          "text": "Date",
+          "confidence": 0.965,
+          "boxPx": [
+            2039.0,
+            440.0,
+            2102.0,
+            462.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.9699,
+          "boxPx": [
+            2113.0,
+            467.0,
+            2119.0,
+            474.0
+          ]
+        },
+        {
+          "text": "any",
+          "confidence": 0.9697,
+          "boxPx": [
+            2200.0,
+            445.0,
+            2249.0,
+            467.0
+          ]
+        },
+        {
+          "text": "Remarks",
+          "confidence": 0.9644,
+          "boxPx": [
+            2386.0,
+            438.0,
+            2504.0,
+            462.0
+          ]
+        },
+        {
+          "text": "I.",
+          "confidence": 0.7003,
+          "boxPx": [
+            13.0,
+            487.0,
+            27.0,
+            508.0
+          ]
+        },
+        {
+          "text": "Social",
+          "confidence": 0.9673,
+          "boxPx": [
+            38.0,
+            485.0,
+            120.0,
+            509.0
+          ]
+        },
+        {
+          "text": "Development",
+          "confidence": 0.9595,
+          "boxPx": [
+            128.0,
+            485.0,
+            314.0,
+            514.0
+          ]
+        },
+        {
+          "text": "1.",
+          "confidence": 0.9646,
+          "boxPx": [
+            37.0,
+            534.0,
+            59.0,
+            556.0
+          ]
+        },
+        {
+          "text": "Health",
+          "confidence": 0.9611,
+          "boxPx": [
+            71.0,
+            533.0,
+            160.0,
+            556.0
+          ]
+        },
+        {
+          "text": "1.1",
+          "confidence": 0.9281,
+          "boxPx": [
+            75.0,
+            628.0,
+            113.0,
+            650.0
+          ]
+        },
+        {
+          "text": "Construction/Improvement",
+          "confidence": 0.9129,
+          "boxPx": [
+            125.0,
+            626.0,
+            499.0,
+            656.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9327,
+          "boxPx": [
+            509.0,
+            627.0,
+            535.0,
+            650.0
+          ]
+        },
+        {
+          "text": "RHU",
+          "confidence": 0.931,
+          "boxPx": [
+            545.0,
+            629.0,
+            601.0,
+            650.0
+          ]
+        },
+        {
+          "text": "I,",
+          "confidence": 0.9091,
+          "boxPx": [
+            614.0,
+            629.0,
+            626.0,
+            655.0
+          ]
+        },
+        {
+          "text": "RHU",
+          "confidence": 0.9281,
+          "boxPx": [
+            638.0,
+            629.0,
+            694.0,
+            651.0
+          ]
+        },
+        {
+          "text": "II",
+          "confidence": 0.9335,
+          "boxPx": [
+            707.0,
+            629.0,
+            718.0,
+            650.0
+          ]
+        },
+        {
+          "text": "Miagao,",
+          "confidence": 0.9215,
+          "boxPx": [
+            789.0,
+            628.0,
+            895.0,
+            656.0
+          ]
+        },
+        {
+          "text": "lloilo",
+          "confidence": 0.7525,
+          "boxPx": [
+            907.0,
+            627.0,
+            970.0,
+            651.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.9293,
+          "boxPx": [
+            991.0,
+            623.0,
+            1007.0,
+            660.0
+          ]
+        },
+        {
+          "text": "2,000,000.00",
+          "confidence": 0.9197,
+          "boxPx": [
+            1023.0,
+            628.0,
+            1199.0,
+            655.0
+          ]
+        },
+        {
+          "text": "0.00%",
+          "confidence": 0.9649,
+          "boxPx": [
+            1774.0,
+            628.0,
+            1856.0,
+            651.0
+          ]
+        },
+        {
+          "text": "not",
+          "confidence": 0.9701,
+          "boxPx": [
+            2419.0,
+            630.0,
+            2464.0,
+            651.0
+          ]
+        },
+        {
+          "text": "BHS",
+          "confidence": 0.9169,
+          "boxPx": [
+            144.0,
+            675.0,
+            195.0,
+            697.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.9254,
+          "boxPx": [
+            205.0,
+            674.0,
+            253.0,
+            697.0
+          ]
+        },
+        {
+          "text": "Half-Way",
+          "confidence": 0.9205,
+          "boxPx": [
+            265.0,
+            674.0,
+            389.0,
+            703.0
+          ]
+        },
+        {
+          "text": "Home",
+          "confidence": 0.9588,
+          "boxPx": [
+            401.0,
+            675.0,
+            479.0,
+            697.0
+          ]
+        },
+        {
+          "text": "implemented",
+          "confidence": 0.9617,
+          "boxPx": [
+            2356.0,
+            674.0,
+            2535.0,
+            703.0
+          ]
+        },
+        {
+          "text": "2.",
+          "confidence": 0.9322,
+          "boxPx": [
+            36.0,
+            769.0,
+            59.0,
+            792.0
+          ]
+        },
+        {
+          "text": "Purchase/Construction",
+          "confidence": 0.9092,
+          "boxPx": [
+            71.0,
+            767.0,
+            388.0,
+            796.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.9587,
+          "boxPx": [
+            398.0,
+            768.0,
+            448.0,
+            792.0
+          ]
+        },
+        {
+          "text": "Improvement",
+          "confidence": 0.9578,
+          "boxPx": [
+            460.0,
+            770.0,
+            649.0,
+            797.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9571,
+          "boxPx": [
+            89.0,
+            816.0,
+            117.0,
+            839.0
+          ]
+        },
+        {
+          "text": "Government",
+          "confidence": 0.933,
+          "boxPx": [
+            126.0,
+            817.0,
+            301.0,
+            839.0
+          ]
+        },
+        {
+          "text": "Facilities-Social",
+          "confidence": 0.9215,
+          "boxPx": [
+            311.0,
+            816.0,
+            520.0,
+            839.0
+          ]
+        },
+        {
+          "text": "Develeopment",
+          "confidence": 0.916,
+          "boxPx": [
+            531.0,
+            816.0,
+            736.0,
+            845.0
+          ]
+        },
+        {
+          "text": "2.1",
+          "confidence": 0.9674,
+          "boxPx": [
+            74.0,
+            911.0,
+            113.0,
+            933.0
+          ]
+        },
+        {
+          "text": "Rehabilitation",
+          "confidence": 0.9623,
+          "boxPx": [
+            126.0,
+            910.0,
+            313.0,
+            934.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9698,
+          "boxPx": [
+            324.0,
+            910.0,
+            351.0,
+            934.0
+          ]
+        },
+        {
+          "text": "Potable",
+          "confidence": 0.9604,
+          "boxPx": [
+            361.0,
+            910.0,
+            461.0,
+            934.0
+          ]
+        },
+        {
+          "text": "Water",
+          "confidence": 0.9604,
+          "boxPx": [
+            471.0,
+            912.0,
+            556.0,
+            934.0
+          ]
+        },
+        {
+          "text": "Supply",
+          "confidence": 0.9638,
+          "boxPx": [
+            565.0,
+            910.0,
+            655.0,
+            939.0
+          ]
+        },
+        {
+          "text": "Miagao,",
+          "confidence": 0.9158,
+          "boxPx": [
+            789.0,
+            911.0,
+            895.0,
+            939.0
+          ]
+        },
+        {
+          "text": "lloilo",
+          "confidence": 0.8943,
+          "boxPx": [
+            907.0,
+            910.0,
+            970.0,
+            934.0
+          ]
+        },
+        {
+          "text": "100,000.00",
+          "confidence": 0.963,
+          "boxPx": [
+            1049.0,
+            911.0,
+            1199.0,
+            938.0
+          ]
+        },
+        {
+          "text": "0.00%",
+          "confidence": 0.9549,
+          "boxPx": [
+            1774.0,
+            911.0,
+            1856.0,
+            934.0
+          ]
+        },
+        {
+          "text": "not",
+          "confidence": 0.97,
+          "boxPx": [
+            2419.0,
+            913.0,
+            2464.0,
+            934.0
+          ]
+        },
+        {
+          "text": "System",
+          "confidence": 0.957,
+          "boxPx": [
+            142.0,
+            961.0,
+            238.0,
+            989.0
+          ]
+        },
+        {
+          "text": "at",
+          "confidence": 0.957,
+          "boxPx": [
+            249.0,
+            963.0,
+            274.0,
+            983.0
+          ]
+        },
+        {
+          "text": "Barangay",
+          "confidence": 0.9329,
+          "boxPx": [
+            286.0,
+            962.0,
+            409.0,
+            989.0
+          ]
+        },
+        {
+          "text": "Baybay",
+          "confidence": 0.9245,
+          "boxPx": [
+            421.0,
+            960.0,
+            516.0,
+            989.0
+          ]
+        },
+        {
+          "text": "Norte",
+          "confidence": 0.9699,
+          "boxPx": [
+            527.0,
+            962.0,
+            603.0,
+            983.0
+          ]
+        },
+        {
+          "text": "implemented",
+          "confidence": 0.9608,
+          "boxPx": [
+            2356.0,
+            960.0,
+            2535.0,
+            989.0
+          ]
+        },
+        {
+          "text": "2.2",
+          "confidence": 0.9674,
+          "boxPx": [
+            74.0,
+            1060.0,
+            113.0,
+            1082.0
+          ]
+        },
+        {
+          "text": "Assistance",
+          "confidence": 0.9671,
+          "boxPx": [
+            124.0,
+            1060.0,
+            264.0,
+            1082.0
+          ]
+        },
+        {
+          "text": "to",
+          "confidence": 0.9681,
+          "boxPx": [
+            274.0,
+            1062.0,
+            301.0,
+            1082.0
+          ]
+        },
+        {
+          "text": "Barangays",
+          "confidence": 0.9643,
+          "boxPx": [
+            313.0,
+            1061.0,
+            450.0,
+            1088.0
+          ]
+        },
+        {
+          "text": "Miagao,",
+          "confidence": 0.9152,
+          "boxPx": [
+            789.0,
+            1060.0,
+            895.0,
+            1088.0
+          ]
+        },
+        {
+          "text": "lloilo",
+          "confidence": 0.8465,
+          "boxPx": [
+            907.0,
+            1059.0,
+            970.0,
+            1082.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.9016,
+          "boxPx": [
+            991.0,
+            1055.0,
+            1004.0,
+            1092.0
+          ]
+        },
+        {
+          "text": "3,000,000.00",
+          "confidence": 0.9016,
+          "boxPx": [
+            1022.0,
+            1060.0,
+            1199.0,
+            1087.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.9471,
+          "boxPx": [
+            1210.0,
+            1055.0,
+            1226.0,
+            1092.0
+          ]
+        },
+        {
+          "text": "January",
+          "confidence": 0.9665,
+          "boxPx": [
+            1243.0,
+            1063.0,
+            1338.0,
+            1088.0
+          ]
+        },
+        {
+          "text": "30,",
+          "confidence": 0.9607,
+          "boxPx": [
+            1347.0,
+            1063.0,
+            1382.0,
+            1087.0
+          ]
+        },
+        {
+          "text": "2019",
+          "confidence": 0.9673,
+          "boxPx": [
+            1393.0,
+            1063.0,
+            1451.0,
+            1083.0
+          ]
+        },
+        {
+          "text": "48.72%",
+          "confidence": 0.9558,
+          "boxPx": [
+            1757.0,
+            1060.0,
+            1856.0,
+            1083.0
+          ]
+        },
+        {
+          "text": "1,461,740.00",
+          "confidence": 0.9272,
+          "boxPx": [
+            1920.0,
+            1060.0,
+            2095.0,
+            1087.0
+          ]
+        },
+        {
+          "text": "3.",
+          "confidence": 0.9569,
+          "boxPx": [
+            36.0,
+            1159.0,
+            59.0,
+            1181.0
+          ]
+        },
+        {
+          "text": "Social",
+          "confidence": 0.9569,
+          "boxPx": [
+            70.0,
+            1158.0,
+            147.0,
+            1181.0
+          ]
+        },
+        {
+          "text": "Welfare",
+          "confidence": 0.9606,
+          "boxPx": [
+            158.0,
+            1158.0,
+            268.0,
+            1181.0
+          ]
+        },
+        {
+          "text": "3.1",
+          "confidence": 0.9675,
+          "boxPx": [
+            74.0,
+            1258.0,
+            113.0,
+            1280.0
+          ]
+        },
+        {
+          "text": "Construction",
+          "confidence": 0.9619,
+          "boxPx": [
+            125.0,
+            1258.0,
+            297.0,
+            1280.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9675,
+          "boxPx": [
+            308.0,
+            1257.0,
+            335.0,
+            1280.0
+          ]
+        },
+        {
+          "text": "Multi-Purpose",
+          "confidence": 0.9583,
+          "boxPx": [
+            345.0,
+            1257.0,
+            537.0,
+            1286.0
+          ]
+        },
+        {
+          "text": "Building",
+          "confidence": 0.9583,
+          "boxPx": [
+            549.0,
+            1257.0,
+            656.0,
+            1286.0
+          ]
+        },
+        {
+          "text": "Miagao,",
+          "confidence": 0.9169,
+          "boxPx": [
+            789.0,
+            1258.0,
+            895.0,
+            1286.0
+          ]
+        },
+        {
+          "text": "lloilo",
+          "confidence": 0.8303,
+          "boxPx": [
+            907.0,
+            1257.0,
+            970.0,
+            1280.0
+          ]
+        },
+        {
+          "text": "300,000.00",
+          "confidence": 0.9329,
+          "boxPx": [
+            1048.0,
+            1258.0,
+            1199.0,
+            1285.0
+          ]
+        },
+        {
+          "text": "|June",
+          "confidence": 0.8639,
+          "boxPx": [
+            1227.0,
+            1258.0,
+            1288.0,
+            1280.0
+          ]
+        },
+        {
+          "text": "3,",
+          "confidence": 0.9693,
+          "boxPx": [
+            1299.0,
+            1258.0,
+            1320.0,
+            1284.0
+          ]
+        },
+        {
+          "text": "2019",
+          "confidence": 0.9667,
+          "boxPx": [
+            1332.0,
+            1258.0,
+            1397.0,
+            1280.0
+          ]
+        },
+        {
+          "text": "6.40%",
+          "confidence": 0.9668,
+          "boxPx": [
+            1774.0,
+            1258.0,
+            1856.0,
+            1280.0
+          ]
+        },
+        {
+          "text": "19,200.00",
+          "confidence": 0.9661,
+          "boxPx": [
+            1963.0,
+            1258.0,
+            2096.0,
+            1284.0
+          ]
+        },
+        {
+          "text": "(Stock",
+          "confidence": 0.9304,
+          "boxPx": [
+            143.0,
+            1306.0,
+            225.0,
+            1335.0
+          ]
+        },
+        {
+          "text": "Room-Phase",
+          "confidence": 0.9294,
+          "boxPx": [
+            236.0,
+            1307.0,
+            404.0,
+            1330.0
+          ]
+        },
+        {
+          "text": "I!)",
+          "confidence": 0.8689,
+          "boxPx": [
+            416.0,
+            1306.0,
+            439.0,
+            1335.0
+          ]
+        },
+        {
+          "text": "3.2",
+          "confidence": 0.9684,
+          "boxPx": [
+            74.0,
+            1407.0,
+            113.0,
+            1429.0
+          ]
+        },
+        {
+          "text": "Construction",
+          "confidence": 0.9615,
+          "boxPx": [
+            125.0,
+            1407.0,
+            297.0,
+            1429.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9592,
+          "boxPx": [
+            308.0,
+            1405.0,
+            335.0,
+            1429.0
+          ]
+        },
+        {
+          "text": "Multi-Purpose",
+          "confidence": 0.9629,
+          "boxPx": [
+            345.0,
+            1405.0,
+            537.0,
+            1435.0
+          ]
+        },
+        {
+          "text": "Building",
+          "confidence": 0.962,
+          "boxPx": [
+            549.0,
+            1405.0,
+            656.0,
+            1435.0
+          ]
+        },
+        {
+          "text": "Miagao,",
+          "confidence": 0.9136,
+          "boxPx": [
+            789.0,
+            1407.0,
+            895.0,
+            1435.0
+          ]
+        },
+        {
+          "text": "lloilo",
+          "confidence": 0.8052,
+          "boxPx": [
+            907.0,
+            1405.0,
+            970.0,
+            1429.0
+          ]
+        },
+        {
+          "text": "500,000.00",
+          "confidence": 0.9611,
+          "boxPx": [
+            1048.0,
+            1407.0,
+            1199.0,
+            1433.0
+          ]
+        },
+        {
+          "text": "0.00%",
+          "confidence": 0.9572,
+          "boxPx": [
+            1774.0,
+            1407.0,
+            1856.0,
+            1429.0
+          ]
+        },
+        {
+          "text": "not",
+          "confidence": 0.9625,
+          "boxPx": [
+            2419.0,
+            1409.0,
+            2464.0,
+            1429.0
+          ]
+        },
+        {
+          "text": "(Holding",
+          "confidence": 0.9625,
+          "boxPx": [
+            143.0,
+            1455.0,
+            257.0,
+            1484.0
+          ]
+        },
+        {
+          "text": "Center)",
+          "confidence": 0.966,
+          "boxPx": [
+            267.0,
+            1455.0,
+            365.0,
+            1484.0
+          ]
+        },
+        {
+          "text": "implemented",
+          "confidence": 0.9612,
+          "boxPx": [
+            2356.0,
+            1455.0,
+            2535.0,
+            1484.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

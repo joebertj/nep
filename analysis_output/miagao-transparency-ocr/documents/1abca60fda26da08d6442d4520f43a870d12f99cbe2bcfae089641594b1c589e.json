@@ -36,66 +36,15 @@
       "worksheetName": null,
       "sourceRowNumber": null,
       "nativeText": "",
-      "extractedText": "MUNICIPALITY OF MIAGAO\nIyVTTATION TD BID FOR BASURA MO PAGKAON KO PROIECT\nDolivery of the Eaods is moquained fihose (1S) calendar daps after reosge of Nlatice to\nPrecned. (idders shoald hore comnpletod withien tweke (12) months, a coetrect\nof ae oligble bedder is coctained in che fitdiay Decansentx, particalarfly. in Section I.",
-      "ocrText": "MUNICIPALITY OF MIAGAO\nIyVTTATION TD BID FOR BASURA MO PAGKAON KO PROIECT\nDolivery of the Eaods is moquained fihose (1S) calendar daps after reosge of Nlatice to\nPrecned. (idders shoald hore comnpletod withien tweke (12) months, a coetrect\nof ae oligble bedder is coctained in che fitdiay Decansentx, particalarfly. in Section I.",
-      "ocrTokenCount": 5,
-      "ocrMeanConfidence": 0.8814,
-      "ocrTokens": [
-        {
-          "text": "MUNICIPALITY OF MIAGAO",
-          "confidence": 0.95,
-          "boxPx": [
-            50.0,
-            11.0,
-            121.0,
-            19.0
-          ]
-        },
-        {
-          "text": "IyVTTATION TD BID FOR BASURA MO PAGKAON KO PROIECT",
-          "confidence": 0.8629,
-          "boxPx": [
-            10.0,
-            46.0,
-            200.0,
-            53.0
-          ]
-        },
-        {
-          "text": "Dolivery of the Eaods is moquained fihose (1S) calendar daps after reosge of Nlatice to",
-          "confidence": 0.8526,
-          "boxPx": [
-            23.0,
-            157.0,
-            200.0,
-            165.0
-          ]
-        },
-        {
-          "text": "Precned. (idders shoald hore comnpletod withien tweke (12) months, a coetrect",
-          "confidence": 0.858,
-          "boxPx": [
-            24.0,
-            162.0,
-            199.0,
-            170.0
-          ]
-        },
-        {
-          "text": "of ae oligble bedder is coctained in che fitdiay Decansentx, particalarfly. in Section I.",
-          "confidence": 0.8837,
-          "boxPx": [
-            23.0,
-            174.0,
-            199.0,
-            181.0
-          ]
-        }
-      ],
+      "extractedText": "",
+      "ocrText": "",
+      "ocrTokenCount": 0,
+      "ocrMeanConfidence": null,
+      "ocrTokens": [],
       "nativeTextCharacters": 0,
       "imageCoverageRatio": 1.0,
-      "extractionMethod": "PaddleOCR PP-OCRv5 image OCR",
-      "parseStatus": "ocr_text_found"
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "no_text_detected"
     }
   ]
 }

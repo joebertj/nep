@@ -1,0 +1,1271 @@
+{
+  "sourceFileSha256": "962606ab18fff9dbbab2159fee5806d1f50f66cb9319349821bf688b7e6b1d94",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/53845bdf9502e29f.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/20-IRA-UTILIZATION-3-768x473.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/20-ira-utilization/20-component-of-the-ira-utilization/",
+      "sourceTitle": "20% COMPONENT OF THE IRA UTILIZATION",
+      "publishedAt": "2019-04-03T08:10:06",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "20-IRA-UTILIZATION-3-768x473.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "962606ab18fff9dbbab2159fee5806d1f50f66cb9319349821bf688b7e6b1d94",
+      "sourceFileBytes": 45258,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/53845bdf9502e29f.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/20-IRA-UTILIZATION-3-768x473.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/20-ira-utilization/20-component-of-the-ira-utilization/",
+          "sourceTitle": "20% COMPONENT OF THE IRA UTILIZATION",
+          "publishedAt": "2019-04-03T08:10:06",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "20-IRA-UTILIZATION-3-768x473.jpg"
+        }
+      ],
+      "sourceFileName": "20-IRA-UTILIZATION-3-768x473.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Sw ENROKIRAUTUZATIONZOS\nowt ‘mplemenes\nTare Project Sats Naf\n‘Program or Project, completion | Wat | TotalCos | eatnsons it\ntecation | tortcast | oatestaned | ate __|completion ncuvedtooate| ary | _Remarts\n77 improverent of Maicpal Cemetery | Wisp, loia| 0.00000 ‘o00s| ‘ot\nImplemented\n2BRehaitaton/imrovement of Feblacion | Migs, lio 10000000) ten 2, 09 o00s| win Pa\nRoads Asphalt Overy) rset c00\n29 Puchae of osder Mago, ot $,000,00000 00x] ot\n‘mpemenes\n2.10 Constrcton fox Cuvert sev, ot| 100000000 00x] ot\n‘Banga Box Cubert ‘implemented\n'bBarangy Dale Sto Camambugan)\n« Borangay abo\n2.11 ConstrucionfDidyTambong Road | Migs, io} 00000000] o00x| ot\n‘mpementes\n2.12 Constracton of Hanging Bie se, | 150000009 oon] ot\n{Ranbananto cagbang) smpementes\n213EstbtshmentofCnkaliabertony | Migs, ole 30000000 00x] ot\nsmplementes",
+      "ocrText": "Sw ENROKIRAUTUZATIONZOS\nowt ‘mplemenes\nTare Project Sats Naf\n‘Program or Project, completion | Wat | TotalCos | eatnsons it\ntecation | tortcast | oatestaned | ate __|completion ncuvedtooate| ary | _Remarts\n77 improverent of Maicpal Cemetery | Wisp, loia| 0.00000 ‘o00s| ‘ot\nImplemented\n2BRehaitaton/imrovement of Feblacion | Migs, lio 10000000) ten 2, 09 o00s| win Pa\nRoads Asphalt Overy) rset c00\n29 Puchae of osder Mago, ot $,000,00000 00x] ot\n‘mpemenes\n2.10 Constrcton fox Cuvert sev, ot| 100000000 00x] ot\n‘Banga Box Cubert ‘implemented\n'bBarangy Dale Sto Camambugan)\n« Borangay abo\n2.11 ConstrucionfDidyTambong Road | Migs, io} 00000000] o00x| ot\n‘mpementes\n2.12 Constracton of Hanging Bie se, | 150000009 oon] ot\n{Ranbananto cagbang) smpementes\n213EstbtshmentofCnkaliabertony | Migs, ole 30000000 00x] ot\nsmplementes",
+      "ocrTokenCount": 122,
+      "ocrMeanConfidence": 0.3328,
+      "ocrTokens": [
+        {
+          "text": "Sw",
+          "confidence": 0.0,
+          "boxPx": [
+            27.0,
+            445.0,
+            37.0,
+            473.0
+          ]
+        },
+        {
+          "text": "ENROKIRAUTUZATIONZOS",
+          "confidence": 0.0,
+          "boxPx": [
+            33.0,
+            457.0,
+            155.0,
+            464.0
+          ]
+        },
+        {
+          "text": "owt",
+          "confidence": 0.2409,
+          "boxPx": [
+            67.0,
+            0.0,
+            89.0,
+            28.0
+          ]
+        },
+        {
+          "text": "‘mplemenes",
+          "confidence": 0.0,
+          "boxPx": [
+            672.0,
+            13.0,
+            720.0,
+            21.0
+          ]
+        },
+        {
+          "text": "Tare",
+          "confidence": 0.0,
+          "boxPx": [
+            430.0,
+            82.0,
+            454.0,
+            110.0
+          ]
+        },
+        {
+          "text": "Project",
+          "confidence": 0.4219,
+          "boxPx": [
+            512.0,
+            81.0,
+            543.0,
+            109.0
+          ]
+        },
+        {
+          "text": "Sats",
+          "confidence": 0.3365,
+          "boxPx": [
+            547.0,
+            81.0,
+            568.0,
+            109.0
+          ]
+        },
+        {
+          "text": "Naf",
+          "confidence": 0.4479,
+          "boxPx": [
+            624.0,
+            93.0,
+            646.0,
+            99.0
+          ]
+        },
+        {
+          "text": "‘Program",
+          "confidence": 0.5731,
+          "boxPx": [
+            89.0,
+            95.0,
+            124.0,
+            123.0
+          ]
+        },
+        {
+          "text": "or",
+          "confidence": 0.4824,
+          "boxPx": [
+            128.0,
+            108.0,
+            136.0,
+            113.0
+          ]
+        },
+        {
+          "text": "Project,",
+          "confidence": 0.0,
+          "boxPx": [
+            140.0,
+            95.0,
+            169.0,
+            123.0
+          ]
+        },
+        {
+          "text": "completion",
+          "confidence": 0.443,
+          "boxPx": [
+            421.0,
+            106.0,
+            465.0,
+            114.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.4069,
+          "boxPx": [
+            479.0,
+            95.0,
+            490.0,
+            123.0
+          ]
+        },
+        {
+          "text": "Wat",
+          "confidence": 0.3439,
+          "boxPx": [
+            500.0,
+            106.0,
+            517.0,
+            113.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.4926,
+          "boxPx": [
+            529.0,
+            95.0,
+            541.0,
+            123.0
+          ]
+        },
+        {
+          "text": "TotalCos",
+          "confidence": 0.0972,
+          "boxPx": [
+            549.0,
+            106.0,
+            587.0,
+            113.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.4959,
+          "boxPx": [
+            596.0,
+            95.0,
+            604.0,
+            123.0
+          ]
+        },
+        {
+          "text": "eatnsons",
+          "confidence": 0.1704,
+          "boxPx": [
+            610.0,
+            106.0,
+            660.0,
+            114.0
+          ]
+        },
+        {
+          "text": "it",
+          "confidence": 0.4513,
+          "boxPx": [
+            654.0,
+            95.0,
+            665.0,
+            123.0
+          ]
+        },
+        {
+          "text": "tecation",
+          "confidence": 0.0,
+          "boxPx": [
+            240.0,
+            120.0,
+            272.0,
+            126.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.4974,
+          "boxPx": [
+            278.0,
+            108.0,
+            288.0,
+            136.0
+          ]
+        },
+        {
+          "text": "tortcast",
+          "confidence": 0.1758,
+          "boxPx": [
+            293.0,
+            120.0,
+            330.0,
+            126.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.933,
+          "boxPx": [
+            338.0,
+            108.0,
+            344.0,
+            136.0
+          ]
+        },
+        {
+          "text": "oatestaned",
+          "confidence": 0.2971,
+          "boxPx": [
+            349.0,
+            120.0,
+            396.0,
+            126.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.7667,
+          "boxPx": [
+            404.0,
+            108.0,
+            411.0,
+            136.0
+          ]
+        },
+        {
+          "text": "ate",
+          "confidence": 0.1743,
+          "boxPx": [
+            434.0,
+            120.0,
+            452.0,
+            126.0
+          ]
+        },
+        {
+          "text": "__|completion",
+          "confidence": 0.0,
+          "boxPx": [
+            485.0,
+            120.0,
+            528.0,
+            128.0
+          ]
+        },
+        {
+          "text": "ncuvedtooate|",
+          "confidence": 0.0564,
+          "boxPx": [
+            537.0,
+            119.0,
+            599.0,
+            126.0
+          ]
+        },
+        {
+          "text": "ary",
+          "confidence": 0.5336,
+          "boxPx": [
+            628.0,
+            121.0,
+            641.0,
+            128.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.3308,
+          "boxPx": [
+            658.0,
+            108.0,
+            670.0,
+            136.0
+          ]
+        },
+        {
+          "text": "_Remarts",
+          "confidence": 0.3311,
+          "boxPx": [
+            680.0,
+            120.0,
+            712.0,
+            126.0
+          ]
+        },
+        {
+          "text": "77",
+          "confidence": 0.5139,
+          "boxPx": [
+            45.0,
+            121.0,
+            59.0,
+            149.0
+          ]
+        },
+        {
+          "text": "improverent",
+          "confidence": 0.174,
+          "boxPx": [
+            63.0,
+            133.0,
+            199.0,
+            141.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.5188,
+          "boxPx": [
+            115.0,
+            121.0,
+            122.0,
+            149.0
+          ]
+        },
+        {
+          "text": "Maicpal",
+          "confidence": 0.4309,
+          "boxPx": [
+            129.0,
+            121.0,
+            162.0,
+            149.0
+          ]
+        },
+        {
+          "text": "Cemetery",
+          "confidence": 0.4309,
+          "boxPx": [
+            166.0,
+            121.0,
+            199.0,
+            149.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.6696,
+          "boxPx": [
+            215.0,
+            121.0,
+            232.0,
+            149.0
+          ]
+        },
+        {
+          "text": "Wisp,",
+          "confidence": 0.0,
+          "boxPx": [
+            232.0,
+            133.0,
+            258.0,
+            141.0
+          ]
+        },
+        {
+          "text": "loia|",
+          "confidence": 0.1257,
+          "boxPx": [
+            264.0,
+            133.0,
+            281.0,
+            139.0
+          ]
+        },
+        {
+          "text": "0.00000",
+          "confidence": 0.6608,
+          "boxPx": [
+            295.0,
+            133.0,
+            336.0,
+            140.0
+          ]
+        },
+        {
+          "text": "‘o00s|",
+          "confidence": 0.1079,
+          "boxPx": [
+            505.0,
+            121.0,
+            536.0,
+            149.0
+          ]
+        },
+        {
+          "text": "‘ot",
+          "confidence": 0.5207,
+          "boxPx": [
+            689.0,
+            134.0,
+            701.0,
+            139.0
+          ]
+        },
+        {
+          "text": "Implemented",
+          "confidence": 0.2784,
+          "boxPx": [
+            672.0,
+            146.0,
+            720.0,
+            154.0
+          ]
+        },
+        {
+          "text": "2BRehaitaton/imrovement",
+          "confidence": 0.0,
+          "boxPx": [
+            49.0,
+            173.0,
+            215.0,
+            181.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.5433,
+          "boxPx": [
+            170.0,
+            161.0,
+            178.0,
+            189.0
+          ]
+        },
+        {
+          "text": "Feblacion",
+          "confidence": 0.2645,
+          "boxPx": [
+            180.0,
+            161.0,
+            216.0,
+            189.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.549,
+          "boxPx": [
+            222.0,
+            161.0,
+            230.0,
+            189.0
+          ]
+        },
+        {
+          "text": "Migs,",
+          "confidence": 0.2319,
+          "boxPx": [
+            234.0,
+            161.0,
+            260.0,
+            189.0
+          ]
+        },
+        {
+          "text": "lio",
+          "confidence": 0.3246,
+          "boxPx": [
+            264.0,
+            173.0,
+            281.0,
+            181.0
+          ]
+        },
+        {
+          "text": "10000000)",
+          "confidence": 0.5152,
+          "boxPx": [
+            292.0,
+            173.0,
+            340.0,
+            180.0
+          ]
+        },
+        {
+          "text": "ten",
+          "confidence": 0.3914,
+          "boxPx": [
+            346.0,
+            174.0,
+            364.0,
+            180.0
+          ]
+        },
+        {
+          "text": "2,",
+          "confidence": 0.6115,
+          "boxPx": [
+            371.0,
+            174.0,
+            381.0,
+            181.0
+          ]
+        },
+        {
+          "text": "09",
+          "confidence": 0.7025,
+          "boxPx": [
+            386.0,
+            174.0,
+            402.0,
+            180.0
+          ]
+        },
+        {
+          "text": "o00s|",
+          "confidence": 0.0373,
+          "boxPx": [
+            509.0,
+            161.0,
+            536.0,
+            189.0
+          ]
+        },
+        {
+          "text": "win",
+          "confidence": 0.6024,
+          "boxPx": [
+            681.0,
+            160.0,
+            696.0,
+            188.0
+          ]
+        },
+        {
+          "text": "Pa",
+          "confidence": 0.4433,
+          "boxPx": [
+            700.0,
+            160.0,
+            711.0,
+            188.0
+          ]
+        },
+        {
+          "text": "Roads",
+          "confidence": 0.3479,
+          "boxPx": [
+            63.0,
+            175.0,
+            89.0,
+            203.0
+          ]
+        },
+        {
+          "text": "Asphalt",
+          "confidence": 0.3506,
+          "boxPx": [
+            93.0,
+            175.0,
+            122.0,
+            203.0
+          ]
+        },
+        {
+          "text": "Overy)",
+          "confidence": 0.243,
+          "boxPx": [
+            125.0,
+            175.0,
+            155.0,
+            203.0
+          ]
+        },
+        {
+          "text": "rset",
+          "confidence": 0.1801,
+          "boxPx": [
+            667.0,
+            175.0,
+            695.0,
+            203.0
+          ]
+        },
+        {
+          "text": "c00",
+          "confidence": 0.1801,
+          "boxPx": [
+            699.0,
+            175.0,
+            712.0,
+            203.0
+          ]
+        },
+        {
+          "text": "29",
+          "confidence": 0.5257,
+          "boxPx": [
+            49.0,
+            213.0,
+            59.0,
+            220.0
+          ]
+        },
+        {
+          "text": "Puchae",
+          "confidence": 0.5257,
+          "boxPx": [
+            63.0,
+            201.0,
+            94.0,
+            229.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.8654,
+          "boxPx": [
+            98.0,
+            213.0,
+            105.0,
+            220.0
+          ]
+        },
+        {
+          "text": "osder",
+          "confidence": 0.4669,
+          "boxPx": [
+            110.0,
+            201.0,
+            133.0,
+            229.0
+          ]
+        },
+        {
+          "text": "Mago,",
+          "confidence": 0.4981,
+          "boxPx": [
+            232.0,
+            213.0,
+            260.0,
+            221.0
+          ]
+        },
+        {
+          "text": "ot",
+          "confidence": 0.3427,
+          "boxPx": [
+            265.0,
+            213.0,
+            281.0,
+            220.0
+          ]
+        },
+        {
+          "text": "$,000,00000",
+          "confidence": 0.1945,
+          "boxPx": [
+            292.0,
+            213.0,
+            340.0,
+            221.0
+          ]
+        },
+        {
+          "text": "00x]",
+          "confidence": 0.0,
+          "boxPx": [
+            509.0,
+            201.0,
+            536.0,
+            229.0
+          ]
+        },
+        {
+          "text": "ot",
+          "confidence": 0.63,
+          "boxPx": [
+            689.0,
+            214.0,
+            701.0,
+            220.0
+          ]
+        },
+        {
+          "text": "‘mpemenes",
+          "confidence": 0.0,
+          "boxPx": [
+            672.0,
+            226.0,
+            720.0,
+            234.0
+          ]
+        },
+        {
+          "text": "2.10",
+          "confidence": 0.5044,
+          "boxPx": [
+            49.0,
+            241.0,
+            64.0,
+            269.0
+          ]
+        },
+        {
+          "text": "Constrcton",
+          "confidence": 0.2942,
+          "boxPx": [
+            68.0,
+            241.0,
+            113.0,
+            269.0
+          ]
+        },
+        {
+          "text": "fox",
+          "confidence": 0.4493,
+          "boxPx": [
+            117.0,
+            253.0,
+            139.0,
+            260.0
+          ]
+        },
+        {
+          "text": "Cuvert",
+          "confidence": 0.0041,
+          "boxPx": [
+            143.0,
+            241.0,
+            171.0,
+            269.0
+          ]
+        },
+        {
+          "text": "sev,",
+          "confidence": 0.4392,
+          "boxPx": [
+            232.0,
+            253.0,
+            258.0,
+            261.0
+          ]
+        },
+        {
+          "text": "ot|",
+          "confidence": 0.1757,
+          "boxPx": [
+            264.0,
+            253.0,
+            281.0,
+            260.0
+          ]
+        },
+        {
+          "text": "100000000",
+          "confidence": 0.4739,
+          "boxPx": [
+            292.0,
+            253.0,
+            340.0,
+            261.0
+          ]
+        },
+        {
+          "text": "00x]",
+          "confidence": 0.4563,
+          "boxPx": [
+            509.0,
+            242.0,
+            536.0,
+            270.0
+          ]
+        },
+        {
+          "text": "ot",
+          "confidence": 0.6201,
+          "boxPx": [
+            689.0,
+            254.0,
+            701.0,
+            260.0
+          ]
+        },
+        {
+          "text": "‘Banga",
+          "confidence": 0.3413,
+          "boxPx": [
+            75.0,
+            255.0,
+            106.0,
+            283.0
+          ]
+        },
+        {
+          "text": "Box",
+          "confidence": 0.6347,
+          "boxPx": [
+            110.0,
+            255.0,
+            123.0,
+            283.0
+          ]
+        },
+        {
+          "text": "Cubert",
+          "confidence": 0.3513,
+          "boxPx": [
+            127.0,
+            255.0,
+            151.0,
+            283.0
+          ]
+        },
+        {
+          "text": "‘implemented",
+          "confidence": 0.1925,
+          "boxPx": [
+            672.0,
+            267.0,
+            720.0,
+            275.0
+          ]
+        },
+        {
+          "text": "'bBarangy",
+          "confidence": 0.0,
+          "boxPx": [
+            75.0,
+            280.0,
+            220.0,
+            288.0
+          ]
+        },
+        {
+          "text": "Dale",
+          "confidence": 0.3164,
+          "boxPx": [
+            122.0,
+            268.0,
+            144.0,
+            296.0
+          ]
+        },
+        {
+          "text": "Sto",
+          "confidence": 0.6353,
+          "boxPx": [
+            145.0,
+            268.0,
+            165.0,
+            296.0
+          ]
+        },
+        {
+          "text": "Camambugan)",
+          "confidence": 0.3161,
+          "boxPx": [
+            169.0,
+            280.0,
+            220.0,
+            288.0
+          ]
+        },
+        {
+          "text": "«",
+          "confidence": 0.0044,
+          "boxPx": [
+            71.0,
+            282.0,
+            76.0,
+            310.0
+          ]
+        },
+        {
+          "text": "Borangay",
+          "confidence": 0.0751,
+          "boxPx": [
+            85.0,
+            282.0,
+            118.0,
+            310.0
+          ]
+        },
+        {
+          "text": "abo",
+          "confidence": 0.0751,
+          "boxPx": [
+            122.0,
+            293.0,
+            142.0,
+            301.0
+          ]
+        },
+        {
+          "text": "2.11",
+          "confidence": 0.5243,
+          "boxPx": [
+            49.0,
+            309.0,
+            64.0,
+            337.0
+          ]
+        },
+        {
+          "text": "ConstrucionfDidyTambong",
+          "confidence": 0.306,
+          "boxPx": [
+            67.0,
+            320.0,
+            205.0,
+            328.0
+          ]
+        },
+        {
+          "text": "Road",
+          "confidence": 0.4153,
+          "boxPx": [
+            187.0,
+            309.0,
+            204.0,
+            337.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.0,
+          "boxPx": [
+            217.0,
+            309.0,
+            230.0,
+            337.0
+          ]
+        },
+        {
+          "text": "Migs,",
+          "confidence": 0.0,
+          "boxPx": [
+            232.0,
+            309.0,
+            260.0,
+            337.0
+          ]
+        },
+        {
+          "text": "io}",
+          "confidence": 0.3671,
+          "boxPx": [
+            266.0,
+            309.0,
+            286.0,
+            337.0
+          ]
+        },
+        {
+          "text": "00000000]",
+          "confidence": 0.4037,
+          "boxPx": [
+            292.0,
+            320.0,
+            340.0,
+            328.0
+          ]
+        },
+        {
+          "text": "o00x|",
+          "confidence": 0.155,
+          "boxPx": [
+            509.0,
+            308.0,
+            536.0,
+            336.0
+          ]
+        },
+        {
+          "text": "ot",
+          "confidence": 0.5925,
+          "boxPx": [
+            689.0,
+            321.0,
+            701.0,
+            327.0
+          ]
+        },
+        {
+          "text": "‘mpementes",
+          "confidence": 0.0,
+          "boxPx": [
+            672.0,
+            333.0,
+            720.0,
+            341.0
+          ]
+        },
+        {
+          "text": "2.12",
+          "confidence": 0.4151,
+          "boxPx": [
+            49.0,
+            348.0,
+            64.0,
+            376.0
+          ]
+        },
+        {
+          "text": "Constracton",
+          "confidence": 0.1945,
+          "boxPx": [
+            68.0,
+            348.0,
+            114.0,
+            376.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.5886,
+          "boxPx": [
+            117.0,
+            348.0,
+            124.0,
+            376.0
+          ]
+        },
+        {
+          "text": "Hanging",
+          "confidence": 0.5842,
+          "boxPx": [
+            129.0,
+            348.0,
+            155.0,
+            376.0
+          ]
+        },
+        {
+          "text": "Bie",
+          "confidence": 0.4422,
+          "boxPx": [
+            159.0,
+            348.0,
+            181.0,
+            376.0
+          ]
+        },
+        {
+          "text": "se,",
+          "confidence": 0.4637,
+          "boxPx": [
+            232.0,
+            360.0,
+            258.0,
+            368.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.4922,
+          "boxPx": [
+            264.0,
+            360.0,
+            281.0,
+            367.0
+          ]
+        },
+        {
+          "text": "150000009",
+          "confidence": 0.3676,
+          "boxPx": [
+            292.0,
+            360.0,
+            340.0,
+            368.0
+          ]
+        },
+        {
+          "text": "oon]",
+          "confidence": 0.0,
+          "boxPx": [
+            509.0,
+            349.0,
+            536.0,
+            377.0
+          ]
+        },
+        {
+          "text": "ot",
+          "confidence": 0.6099,
+          "boxPx": [
+            689.0,
+            361.0,
+            701.0,
+            367.0
+          ]
+        },
+        {
+          "text": "{Ranbananto",
+          "confidence": 0.0,
+          "boxPx": [
+            65.0,
+            361.0,
+            119.0,
+            389.0
+          ]
+        },
+        {
+          "text": "cagbang)",
+          "confidence": 0.3451,
+          "boxPx": [
+            121.0,
+            361.0,
+            155.0,
+            389.0
+          ]
+        },
+        {
+          "text": "smpementes",
+          "confidence": 0.0,
+          "boxPx": [
+            672.0,
+            374.0,
+            720.0,
+            381.0
+          ]
+        },
+        {
+          "text": "213EstbtshmentofCnkaliabertony",
+          "confidence": 0.0,
+          "boxPx": [
+            49.0,
+            400.0,
+            199.0,
+            408.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.3836,
+          "boxPx": [
+            217.0,
+            389.0,
+            230.0,
+            417.0
+          ]
+        },
+        {
+          "text": "Migs,",
+          "confidence": 0.0966,
+          "boxPx": [
+            234.0,
+            389.0,
+            260.0,
+            417.0
+          ]
+        },
+        {
+          "text": "ole",
+          "confidence": 0.1519,
+          "boxPx": [
+            266.0,
+            400.0,
+            281.0,
+            407.0
+          ]
+        },
+        {
+          "text": "30000000",
+          "confidence": 0.6128,
+          "boxPx": [
+            296.0,
+            400.0,
+            336.0,
+            408.0
+          ]
+        },
+        {
+          "text": "00x]",
+          "confidence": 0.5356,
+          "boxPx": [
+            509.0,
+            389.0,
+            536.0,
+            417.0
+          ]
+        },
+        {
+          "text": "ot",
+          "confidence": 0.6978,
+          "boxPx": [
+            689.0,
+            401.0,
+            701.0,
+            407.0
+          ]
+        },
+        {
+          "text": "smplementes",
+          "confidence": 0.0,
+          "boxPx": [
+            672.0,
+            414.0,
+            720.0,
+            422.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

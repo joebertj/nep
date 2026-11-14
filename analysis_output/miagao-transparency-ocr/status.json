@@ -1,29 +1,26 @@
 {
-  "title": "Miagao transparency OCR parser",
-  "updatedAtUtc": "2026-11-14T09:28:14+00:00",
-  "status": "processing",
+  "title": "Miagao transparency parser",
+  "ocrEngine": "Tesseract OCR, single-threaded",
+  "existingCompletedResultsReused": 653,
+  "updatedAtUtc": "2026-11-14T12:09:58+00:00",
+  "status": "complete",
   "inventoryGeneratedAt": "2026-11-10T15:30:23+00:00",
   "sourceDocuments": 654,
-  "uniqueOcrCandidateFiles": 448,
-  "pendingOcrDocuments": 448,
-  "completedDocuments": 235,
-  "skippedPriorErrors": 18,
-  "intentionallySkippedDocuments": 1,
+  "uniqueOcrCandidateFiles": 1,
+  "pendingOcrDocuments": 1,
+  "completedDocuments": 654,
+  "skippedPriorErrors": 0,
+  "retryErrorRecordFiles": 0,
+  "intentionallySkippedDocuments": 0,
   "skipListPath": "analysis_output/miagao-transparency-ocr/skip-list.json",
   "discoveryErrors": [],
-  "current": {
-    "index": 58,
-    "total": 448,
-    "sha256": "28630aa12869a7c852256fa134783bbd54daa55bb313b2eb3583175da5891be2",
-    "file": "20-IRA-UTILIZATION-1-scaled.jpg",
-    "ocrPages": [
-      1
-    ]
-  },
+  "current": null,
   "rowsPath": "analysis_output/miagao-transparency-ocr/ocr-rows.jsonl",
-  "failedDocuments": 27,
-  "skippedDocuments": 27,
-  "completedOcrDocuments": 57,
-  "completedOcrPages": 48,
-  "lastCompletedAtUtc": "2026-11-14T09:28:14+00:00"
+  "completedOcrDocuments": 1,
+  "completedOcrPages": 1,
+  "lastCompletedAtUtc": "2026-11-14T12:09:58+00:00",
+  "failedDocuments": 0,
+  "skippedDocuments": 0,
+  "ocrPageRows": 651,
+  "errors": []
 }

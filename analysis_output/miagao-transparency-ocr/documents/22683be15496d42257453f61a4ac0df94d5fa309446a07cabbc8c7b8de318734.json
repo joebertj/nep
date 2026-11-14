@@ -1,0 +1,301 @@
+{
+  "sourceFileSha256": "22683be15496d42257453f61a4ac0df94d5fa309446a07cabbc8c7b8de318734",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/54a6946b6944c722.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/02/Bidding-Documents-Supplies-OMA.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid-2/",
+      "sourceTitle": "Invitation to Bid",
+      "publishedAt": "2022-02-24T05:05:28",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Bidding-Documents-Supplies-OMA.pdf"
+    }
+  ],
+  "ocrPageNumbers": [
+    25
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "22683be15496d42257453f61a4ac0df94d5fa309446a07cabbc8c7b8de318734",
+      "sourceFileBytes": 971070,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/54a6946b6944c722.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/02/Bidding-Documents-Supplies-OMA.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid-2/",
+          "sourceTitle": "Invitation to Bid",
+          "publishedAt": "2022-02-24T05:05:28",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "Bidding-Documents-Supplies-OMA.pdf"
+        }
+      ],
+      "sourceFileName": "Bidding-Documents-Supplies-OMA.pdf",
+      "pageNumber": 25,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "25 25 FINANCIAL COMPONENT ENVELOPE ⬜ (a) Original of duly signed and accomplished Financial Bid Form; and ⬜ (b) Original of duly signed and accomplished Price Schedule(s).",
+      "extractedText": "25 25 FINANCIAL COMPONENT ENVELOPE ⬜ (a) Original of duly signed and accomplished Financial Bid Form; and ⬜ (b) Original of duly signed and accomplished Price Schedule(s).\n25 FINANCIAL COMPONENT ENVELOPE\n(a) Original of duly signed and accomplished Financial Bid Form; and\n(b) Original of duly signed and accomplished Price Schedule(s).\n25",
+      "ocrText": "25 FINANCIAL COMPONENT ENVELOPE\n(a) Original of duly signed and accomplished Financial Bid Form; and\n(b) Original of duly signed and accomplished Price Schedule(s).\n25",
+      "ocrTokenCount": 25,
+      "ocrMeanConfidence": 0.9458,
+      "ocrTokens": [
+        {
+          "text": "25",
+          "confidence": 0.8994,
+          "boxPx": [
+            144.0,
+            177.0,
+            167.0,
+            194.0
+          ]
+        },
+        {
+          "text": "FINANCIAL",
+          "confidence": 0.943,
+          "boxPx": [
+            187.0,
+            177.0,
+            321.0,
+            194.0
+          ]
+        },
+        {
+          "text": "COMPONENT",
+          "confidence": 0.9603,
+          "boxPx": [
+            329.0,
+            177.0,
+            486.0,
+            195.0
+          ]
+        },
+        {
+          "text": "ENVELOPE",
+          "confidence": 0.9626,
+          "boxPx": [
+            493.0,
+            177.0,
+            624.0,
+            194.0
+          ]
+        },
+        {
+          "text": "(a)",
+          "confidence": 0.9064,
+          "boxPx": [
+            230.0,
+            205.0,
+            254.0,
+            225.0
+          ]
+        },
+        {
+          "text": "Original",
+          "confidence": 0.8952,
+          "boxPx": [
+            283.0,
+            205.0,
+            361.0,
+            226.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9694,
+          "boxPx": [
+            369.0,
+            205.0,
+            390.0,
+            221.0
+          ]
+        },
+        {
+          "text": "duly",
+          "confidence": 0.9691,
+          "boxPx": [
+            395.0,
+            205.0,
+            437.0,
+            226.0
+          ]
+        },
+        {
+          "text": "signed",
+          "confidence": 0.97,
+          "boxPx": [
+            444.0,
+            205.0,
+            505.0,
+            226.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.9663,
+          "boxPx": [
+            512.0,
+            205.0,
+            546.0,
+            221.0
+          ]
+        },
+        {
+          "text": "accomplished",
+          "confidence": 0.9663,
+          "boxPx": [
+            553.0,
+            205.0,
+            684.0,
+            226.0
+          ]
+        },
+        {
+          "text": "Financial",
+          "confidence": 0.9652,
+          "boxPx": [
+            691.0,
+            205.0,
+            778.0,
+            221.0
+          ]
+        },
+        {
+          "text": "Bid",
+          "confidence": 0.9699,
+          "boxPx": [
+            786.0,
+            205.0,
+            819.0,
+            221.0
+          ]
+        },
+        {
+          "text": "Form;",
+          "confidence": 0.967,
+          "boxPx": [
+            827.0,
+            205.0,
+            883.0,
+            224.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.9619,
+          "boxPx": [
+            891.0,
+            205.0,
+            930.0,
+            226.0
+          ]
+        },
+        {
+          "text": "(b)",
+          "confidence": 0.9244,
+          "boxPx": [
+            230.0,
+            234.0,
+            255.0,
+            254.0
+          ]
+        },
+        {
+          "text": "Original",
+          "confidence": 0.8453,
+          "boxPx": [
+            283.0,
+            234.0,
+            361.0,
+            255.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.969,
+          "boxPx": [
+            369.0,
+            234.0,
+            390.0,
+            250.0
+          ]
+        },
+        {
+          "text": "duly",
+          "confidence": 0.9651,
+          "boxPx": [
+            395.0,
+            234.0,
+            437.0,
+            255.0
+          ]
+        },
+        {
+          "text": "signed",
+          "confidence": 0.9697,
+          "boxPx": [
+            444.0,
+            234.0,
+            505.0,
+            255.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.9699,
+          "boxPx": [
+            512.0,
+            234.0,
+            546.0,
+            250.0
+          ]
+        },
+        {
+          "text": "accomplished",
+          "confidence": 0.966,
+          "boxPx": [
+            553.0,
+            234.0,
+            684.0,
+            255.0
+          ]
+        },
+        {
+          "text": "Price",
+          "confidence": 0.933,
+          "boxPx": [
+            691.0,
+            234.0,
+            739.0,
+            250.0
+          ]
+        },
+        {
+          "text": "Schedule(s).",
+          "confidence": 0.9282,
+          "boxPx": [
+            747.0,
+            234.0,
+            863.0,
+            254.0
+          ]
+        },
+        {
+          "text": "25",
+          "confidence": 0.9033,
+          "boxPx": [
+            586.0,
+            1565.0,
+            604.0,
+            1579.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 131,
+      "imageCoverageRatio": 0.0,
+      "extractionMethod": "PyMuPDF native text + Tesseract OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

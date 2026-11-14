@@ -1,0 +1,553 @@
+{
+  "sourceFileSha256": "02bb2b6f184bcd78e808e4a0b27e06de14336938c1199d1c809bda0eac7c5e3d",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/2192194ecf13691d.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/12/LDRRM-Fund-Utilization-Sept.-30-2020-1.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/ldrrm-fund-utilization-sept-30-2020/",
+      "sourceTitle": "LDRRM-Fund Utilization Sept 30 2020",
+      "publishedAt": "2020-12-23T07:29:11",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "LDRRM-Fund-Utilization-Sept.-30-2020-1.pdf"
+    }
+  ],
+  "ocrPageNumbers": [
+    3,
+    4
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "02bb2b6f184bcd78e808e4a0b27e06de14336938c1199d1c809bda0eac7c5e3d",
+      "sourceFileBytes": 461133,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/2192194ecf13691d.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/12/LDRRM-Fund-Utilization-Sept.-30-2020-1.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/ldrrm-fund-utilization-sept-30-2020/",
+          "sourceTitle": "LDRRM-Fund Utilization Sept 30 2020",
+          "publishedAt": "2020-12-23T07:29:11",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "LDRRM-Fund-Utilization-Sept.-30-2020-1.pdf"
+        }
+      ],
+      "sourceFileName": "LDRRM-Fund-Utilization-Sept.-30-2020-1.pdf",
+      "pageNumber": 3,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "NDRRMF From other From Other LGUs Sources Total 0 0 10,540,000.00 6,347,085.06 11,663,760.76 0.00 28,550,845.82 838,200.00 285,210.00 1,342,814.00 4,738.70 57,800.00 231,027.00 7,000.00 11,802.45 821,760.32 43,791.50 485,000.00 809,750.00 344,636.88 287,152.00 133,000.00 512,000.00 27,169.00 ZATION",
+      "extractedText": "NDRRMF From other From Other LGUs Sources Total 0 0 10,540,000.00 6,347,085.06 11,663,760.76 0.00 28,550,845.82 838,200.00 285,210.00 1,342,814.00 4,738.70 57,800.00 231,027.00 7,000.00 11,802.45 821,760.32 43,791.50 485,000.00 809,750.00 344,636.88 287,152.00 133,000.00 512,000.00 27,169.00 ZATION\nZATION\nNDRRMF | From other | From Other\nLGUs Sources Total\n0 t) 10,540,000.00\n6,347,085.06\n11,663,760.76|\n0.00\n28,550,845.82\n838,200.00\n285,210.00\n1,342,814.00\n4,738.70\n57,800.00\n231,027.00\n7,000.00\n11,802.45\n821,760.32\n43,791.50\n485,000.00\n809,750.00\n344,636.88\n287,152.00\n133,000.00\n512,000.00\n27,169.00",
+      "ocrText": "ZATION\nNDRRMF | From other | From Other\nLGUs Sources Total\n0 t) 10,540,000.00\n6,347,085.06\n11,663,760.76|\n0.00\n28,550,845.82\n838,200.00\n285,210.00\n1,342,814.00\n4,738.70\n57,800.00\n231,027.00\n7,000.00\n11,802.45\n821,760.32\n43,791.50\n485,000.00\n809,750.00\n344,636.88\n287,152.00\n133,000.00\n512,000.00\n27,169.00",
+      "ocrTokenCount": 35,
+      "ocrMeanConfidence": 0.8979,
+      "ocrTokens": [
+        {
+          "text": "ZATION",
+          "confidence": 0.9661,
+          "boxPx": [
+            102.0,
+            205.0,
+            161.0,
+            218.0
+          ]
+        },
+        {
+          "text": "NDRRMF",
+          "confidence": 0.9197,
+          "boxPx": [
+            107.0,
+            379.0,
+            180.0,
+            392.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.9534,
+          "boxPx": [
+            184.0,
+            374.0,
+            197.0,
+            402.0
+          ]
+        },
+        {
+          "text": "From",
+          "confidence": 0.8582,
+          "boxPx": [
+            211.0,
+            379.0,
+            252.0,
+            392.0
+          ]
+        },
+        {
+          "text": "other",
+          "confidence": 0.7947,
+          "boxPx": [
+            259.0,
+            378.0,
+            303.0,
+            392.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.7947,
+          "boxPx": [
+            310.0,
+            374.0,
+            318.0,
+            402.0
+          ]
+        },
+        {
+          "text": "From",
+          "confidence": 0.9412,
+          "boxPx": [
+            332.0,
+            379.0,
+            373.0,
+            392.0
+          ]
+        },
+        {
+          "text": "Other",
+          "confidence": 0.9621,
+          "boxPx": [
+            379.0,
+            378.0,
+            427.0,
+            392.0
+          ]
+        },
+        {
+          "text": "LGUs",
+          "confidence": 0.9652,
+          "boxPx": [
+            211.0,
+            408.0,
+            252.0,
+            421.0
+          ]
+        },
+        {
+          "text": "Sources",
+          "confidence": 0.9509,
+          "boxPx": [
+            331.0,
+            403.0,
+            395.0,
+            431.0
+          ]
+        },
+        {
+          "text": "Total",
+          "confidence": 0.9674,
+          "boxPx": [
+            493.0,
+            406.0,
+            539.0,
+            422.0
+          ]
+        },
+        {
+          "text": "0",
+          "confidence": 0.8263,
+          "boxPx": [
+            182.0,
+            495.0,
+            191.0,
+            508.0
+          ]
+        },
+        {
+          "text": "t)",
+          "confidence": 0.0,
+          "boxPx": [
+            296.0,
+            485.0,
+            309.0,
+            515.0
+          ]
+        },
+        {
+          "text": "10,540,000.00",
+          "confidence": 0.8634,
+          "boxPx": [
+            472.0,
+            495.0,
+            586.0,
+            511.0
+          ]
+        },
+        {
+          "text": "6,347,085.06",
+          "confidence": 0.9234,
+          "boxPx": [
+            481.0,
+            524.0,
+            585.0,
+            540.0
+          ]
+        },
+        {
+          "text": "11,663,760.76|",
+          "confidence": 0.7656,
+          "boxPx": [
+            472.0,
+            583.0,
+            586.0,
+            599.0
+          ]
+        },
+        {
+          "text": "0.00",
+          "confidence": 0.9552,
+          "boxPx": [
+            552.0,
+            815.0,
+            586.0,
+            828.0
+          ]
+        },
+        {
+          "text": "28,550,845.82",
+          "confidence": 0.8428,
+          "boxPx": [
+            471.0,
+            844.0,
+            585.0,
+            860.0
+          ]
+        },
+        {
+          "text": "838,200.00",
+          "confidence": 0.9476,
+          "boxPx": [
+            490.0,
+            960.0,
+            580.0,
+            976.0
+          ]
+        },
+        {
+          "text": "285,210.00",
+          "confidence": 0.9631,
+          "boxPx": [
+            491.0,
+            989.0,
+            580.0,
+            1005.0
+          ]
+        },
+        {
+          "text": "1,342,814.00",
+          "confidence": 0.8483,
+          "boxPx": [
+            476.0,
+            1018.0,
+            580.0,
+            1034.0
+          ]
+        },
+        {
+          "text": "4,738.70",
+          "confidence": 0.9671,
+          "boxPx": [
+            510.0,
+            1047.0,
+            580.0,
+            1063.0
+          ]
+        },
+        {
+          "text": "57,800.00",
+          "confidence": 0.9347,
+          "boxPx": [
+            500.0,
+            1076.0,
+            580.0,
+            1092.0
+          ]
+        },
+        {
+          "text": "231,027.00",
+          "confidence": 0.9539,
+          "boxPx": [
+            491.0,
+            1105.0,
+            580.0,
+            1121.0
+          ]
+        },
+        {
+          "text": "7,000.00",
+          "confidence": 0.933,
+          "boxPx": [
+            510.0,
+            1134.0,
+            580.0,
+            1150.0
+          ]
+        },
+        {
+          "text": "11,802.45",
+          "confidence": 0.9667,
+          "boxPx": [
+            501.0,
+            1192.0,
+            579.0,
+            1208.0
+          ]
+        },
+        {
+          "text": "821,760.32",
+          "confidence": 0.967,
+          "boxPx": [
+            490.0,
+            1222.0,
+            579.0,
+            1238.0
+          ]
+        },
+        {
+          "text": "43,791.50",
+          "confidence": 0.96,
+          "boxPx": [
+            500.0,
+            1251.0,
+            580.0,
+            1267.0
+          ]
+        },
+        {
+          "text": "485,000.00",
+          "confidence": 0.9649,
+          "boxPx": [
+            490.0,
+            1280.0,
+            580.0,
+            1296.0
+          ]
+        },
+        {
+          "text": "809,750.00",
+          "confidence": 0.9456,
+          "boxPx": [
+            490.0,
+            1309.0,
+            580.0,
+            1325.0
+          ]
+        },
+        {
+          "text": "344,636.88",
+          "confidence": 0.9563,
+          "boxPx": [
+            490.0,
+            1338.0,
+            580.0,
+            1354.0
+          ]
+        },
+        {
+          "text": "287,152.00",
+          "confidence": 0.9668,
+          "boxPx": [
+            491.0,
+            1367.0,
+            580.0,
+            1383.0
+          ]
+        },
+        {
+          "text": "133,000.00",
+          "confidence": 0.9674,
+          "boxPx": [
+            491.0,
+            1396.0,
+            580.0,
+            1412.0
+          ]
+        },
+        {
+          "text": "512,000.00",
+          "confidence": 0.9661,
+          "boxPx": [
+            490.0,
+            1425.0,
+            580.0,
+            1441.0
+          ]
+        },
+        {
+          "text": "27,169.00",
+          "confidence": 0.9673,
+          "boxPx": [
+            501.0,
+            1454.0,
+            580.0,
+            1470.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 46,
+      "imageCoverageRatio": 0.0,
+      "extractionMethod": "PyMuPDF native text + Tesseract OCR",
+      "parseStatus": "ocr_text_found"
+    },
+    {
+      "sourceFileSha256": "02bb2b6f184bcd78e808e4a0b27e06de14336938c1199d1c809bda0eac7c5e3d",
+      "sourceFileBytes": 461133,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/2192194ecf13691d.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/12/LDRRM-Fund-Utilization-Sept.-30-2020-1.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/ldrrm-fund-utilization-sept-30-2020/",
+          "sourceTitle": "LDRRM-Fund Utilization Sept 30 2020",
+          "publishedAt": "2020-12-23T07:29:11",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "LDRRM-Fund-Utilization-Sept.-30-2020-1.pdf"
+        }
+      ],
+      "sourceFileName": "LDRRM-Fund-Utilization-Sept.-30-2020-1.pdf",
+      "pageNumber": 4,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "28,800.00 51,888.75 831,000.00 500,000.00 7,654,540.60 20,896,305.22 or inform contained in this document.",
+      "extractedText": "28,800.00 51,888.75 831,000.00 500,000.00 7,654,540.60 20,896,305.22 or inform contained in this document.\n28,800.00\n51,888.75\n831,000.00\n500,000.00\n7,654,540.60\n20,896,305.22\nor inform contained in this document.",
+      "ocrText": "28,800.00\n51,888.75\n831,000.00\n500,000.00\n7,654,540.60\n20,896,305.22\nor inform contained in this document.",
+      "ocrTokenCount": 12,
+      "ocrMeanConfidence": 0.9433,
+      "ocrTokens": [
+        {
+          "text": "28,800.00",
+          "confidence": 0.9673,
+          "boxPx": [
+            501.0,
+            118.0,
+            580.0,
+            134.0
+          ]
+        },
+        {
+          "text": "51,888.75",
+          "confidence": 0.9588,
+          "boxPx": [
+            500.0,
+            147.0,
+            579.0,
+            163.0
+          ]
+        },
+        {
+          "text": "831,000.00",
+          "confidence": 0.9286,
+          "boxPx": [
+            490.0,
+            176.0,
+            580.0,
+            192.0
+          ]
+        },
+        {
+          "text": "500,000.00",
+          "confidence": 0.9655,
+          "boxPx": [
+            490.0,
+            205.0,
+            580.0,
+            221.0
+          ]
+        },
+        {
+          "text": "7,654,540.60",
+          "confidence": 0.9268,
+          "boxPx": [
+            475.0,
+            263.0,
+            579.0,
+            279.0
+          ]
+        },
+        {
+          "text": "20,896,305.22",
+          "confidence": 0.7997,
+          "boxPx": [
+            465.0,
+            292.0,
+            579.0,
+            308.0
+          ]
+        },
+        {
+          "text": "or",
+          "confidence": 0.954,
+          "boxPx": [
+            104.0,
+            385.0,
+            121.0,
+            395.0
+          ]
+        },
+        {
+          "text": "inform",
+          "confidence": 0.9594,
+          "boxPx": [
+            128.0,
+            382.0,
+            182.0,
+            395.0
+          ]
+        },
+        {
+          "text": "contained",
+          "confidence": 0.9635,
+          "boxPx": [
+            189.0,
+            382.0,
+            272.0,
+            395.0
+          ]
+        },
+        {
+          "text": "in",
+          "confidence": 0.9669,
+          "boxPx": [
+            280.0,
+            382.0,
+            293.0,
+            395.0
+          ]
+        },
+        {
+          "text": "this",
+          "confidence": 0.9694,
+          "boxPx": [
+            300.0,
+            382.0,
+            331.0,
+            395.0
+          ]
+        },
+        {
+          "text": "document.",
+          "confidence": 0.9598,
+          "boxPx": [
+            337.0,
+            382.0,
+            427.0,
+            395.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 31,
+      "imageCoverageRatio": 0.0,
+      "extractionMethod": "PyMuPDF native text + Tesseract OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

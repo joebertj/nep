@@ -1,0 +1,68 @@
+{
+  "sourceFileSha256": "c4e7a4f18329059705d648018cb07f99cd27ea8f6295b9a0e9dc5dc84efd399c",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/e6ef7ed43202e22d.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/BID-RESULTS-ON-GOODS-1st-Qtr-1-300x158.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/bid-results/bid-results-on-civil-works-first-quarter-cy-2019/",
+      "sourceTitle": "BID RESULTS ON CIVIL WORKS – FIRST QUARTER, CY 2019",
+      "publishedAt": "2019-04-04T01:37:29",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "BID-RESULTS-ON-GOODS-1st-Qtr-1-300x158.jpg"
+    },
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/BID-RESULTS-ON-GOODS-1st-Qtr-300x158.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/bid-results/bid-result-on-goods/",
+      "sourceTitle": "BID RESULT ON GOODS – FIRST QUARTER, CY 2019",
+      "publishedAt": "2019-04-03T08:17:42",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "BID-RESULTS-ON-GOODS-1st-Qtr-300x158.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "c4e7a4f18329059705d648018cb07f99cd27ea8f6295b9a0e9dc5dc84efd399c",
+      "sourceFileBytes": 7805,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/e6ef7ed43202e22d.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/BID-RESULTS-ON-GOODS-1st-Qtr-1-300x158.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/bid-results/bid-results-on-civil-works-first-quarter-cy-2019/",
+          "sourceTitle": "BID RESULTS ON CIVIL WORKS – FIRST QUARTER, CY 2019",
+          "publishedAt": "2019-04-04T01:37:29",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "BID-RESULTS-ON-GOODS-1st-Qtr-1-300x158.jpg"
+        },
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/BID-RESULTS-ON-GOODS-1st-Qtr-300x158.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/bid-results/bid-result-on-goods/",
+          "sourceTitle": "BID RESULT ON GOODS – FIRST QUARTER, CY 2019",
+          "publishedAt": "2019-04-03T08:17:42",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "BID-RESULTS-ON-GOODS-1st-Qtr-300x158.jpg"
+        }
+      ],
+      "sourceFileName": "BID-RESULTS-ON-GOODS-1st-Qtr-1-300x158.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "",
+      "ocrText": "",
+      "ocrTokenCount": 0,
+      "ocrMeanConfidence": null,
+      "ocrTokens": [],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "no_text_detected"
+    }
+  ]
+}

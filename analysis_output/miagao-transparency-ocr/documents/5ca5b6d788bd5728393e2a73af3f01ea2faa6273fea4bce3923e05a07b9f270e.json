@@ -1,0 +1,585 @@
+{
+  "sourceFileSha256": "5ca5b6d788bd5728393e2a73af3f01ea2faa6273fea4bce3923e05a07b9f270e",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/17b404ced5cf30e7.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/08/UNLIQUIDATED-CASH-ADVANCES-1Q-2020.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/2020-full-disclosure/",
+      "sourceTitle": "2020 Full Disclosure",
+      "publishedAt": "2020-07-28T19:55:25",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "UNLIQUIDATED-CASH-ADVANCES-1Q-2020.pdf"
+    }
+  ],
+  "ocrPageNumbers": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "5ca5b6d788bd5728393e2a73af3f01ea2faa6273fea4bce3923e05a07b9f270e",
+      "sourceFileBytes": 472489,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/17b404ced5cf30e7.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/08/UNLIQUIDATED-CASH-ADVANCES-1Q-2020.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/2020-full-disclosure/",
+          "sourceTitle": "2020 Full Disclosure",
+          "publishedAt": "2020-07-28T19:55:25",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "UNLIQUIDATED-CASH-ADVANCES-1Q-2020.pdf"
+        }
+      ],
+      "sourceFileName": "UNLIQUIDATED-CASH-ADVANCES-1Q-2020.pdf",
+      "pageNumber": 3,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "Total 2,708,677.99 1,375,756.69 995,311.81 252,023.00 1.80 - 85,584.69 We hereby certify that i have reviewed the contents and hereby attest to the veracity and correctness of the date or information contained in this document. MAYLENE T. SERVIDAD - Municipal Accountant LCE HON. MACARIO NAPULAN, M.D",
+      "extractedText": "Total 2,708,677.99 1,375,756.69 995,311.81 252,023.00 1.80 - 85,584.69 We hereby certify that i have reviewed the contents and hereby attest to the veracity and correctness of the date or information contained in this document. MAYLENE T. SERVIDAD - Municipal Accountant LCE HON. MACARIO NAPULAN, M.D\nTotal\n2,708,677.99\n1,375,756.69\n995,311.81\n252,023.00\n1.80\n85,584.69\nWe hereby certify that i have reviewed the contents and hereby attest to the veracity and correctness of the date\nor information contained in this document.\nMAYLENE T. SERVIDAD\nMunicipal Accountant\nHON. MACARIO NAPULAN, M.D.\nLCE",
+      "ocrText": "Total\n2,708,677.99\n1,375,756.69\n995,311.81\n252,023.00\n1.80\n85,584.69\nWe hereby certify that i have reviewed the contents and hereby attest to the veracity and correctness of the date\nor information contained in this document.\nMAYLENE T. SERVIDAD\nMunicipal Accountant\nHON. MACARIO NAPULAN, M.D.\nLCE",
+      "ocrTokenCount": 43,
+      "ocrMeanConfidence": 0.944,
+      "ocrTokens": [
+        {
+          "text": "Total",
+          "confidence": 0.9696,
+          "boxPx": [
+            268.0,
+            111.0,
+            307.0,
+            125.0
+          ]
+        },
+        {
+          "text": "2,708,677.99",
+          "confidence": 0.8021,
+          "boxPx": [
+            460.0,
+            112.0,
+            565.0,
+            128.0
+          ]
+        },
+        {
+          "text": "1,375,756.69",
+          "confidence": 0.9219,
+          "boxPx": [
+            995.0,
+            112.0,
+            1099.0,
+            128.0
+          ]
+        },
+        {
+          "text": "995,311.81",
+          "confidence": 0.9647,
+          "boxPx": [
+            1150.0,
+            112.0,
+            1239.0,
+            128.0
+          ]
+        },
+        {
+          "text": "252,023.00",
+          "confidence": 0.968,
+          "boxPx": [
+            1272.0,
+            112.0,
+            1362.0,
+            128.0
+          ]
+        },
+        {
+          "text": "1.80",
+          "confidence": 0.9547,
+          "boxPx": [
+            1447.0,
+            112.0,
+            1481.0,
+            125.0
+          ]
+        },
+        {
+          "text": "85,584.69",
+          "confidence": 0.966,
+          "boxPx": [
+            1670.0,
+            112.0,
+            1749.0,
+            128.0
+          ]
+        },
+        {
+          "text": "We",
+          "confidence": 0.9677,
+          "boxPx": [
+            149.0,
+            165.0,
+            175.0,
+            178.0
+          ]
+        },
+        {
+          "text": "hereby",
+          "confidence": 0.9677,
+          "boxPx": [
+            182.0,
+            164.0,
+            237.0,
+            182.0
+          ]
+        },
+        {
+          "text": "certify",
+          "confidence": 0.9682,
+          "boxPx": [
+            243.0,
+            164.0,
+            293.0,
+            182.0
+          ]
+        },
+        {
+          "text": "that",
+          "confidence": 0.9657,
+          "boxPx": [
+            299.0,
+            164.0,
+            331.0,
+            178.0
+          ]
+        },
+        {
+          "text": "i",
+          "confidence": 0.9624,
+          "boxPx": [
+            338.0,
+            169.0,
+            339.0,
+            178.0
+          ]
+        },
+        {
+          "text": "have",
+          "confidence": 0.951,
+          "boxPx": [
+            347.0,
+            164.0,
+            383.0,
+            178.0
+          ]
+        },
+        {
+          "text": "reviewed",
+          "confidence": 0.964,
+          "boxPx": [
+            390.0,
+            164.0,
+            462.0,
+            178.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.964,
+          "boxPx": [
+            468.0,
+            165.0,
+            494.0,
+            178.0
+          ]
+        },
+        {
+          "text": "contents",
+          "confidence": 0.9647,
+          "boxPx": [
+            500.0,
+            166.0,
+            570.0,
+            178.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.968,
+          "boxPx": [
+            576.0,
+            164.0,
+            604.0,
+            178.0
+          ]
+        },
+        {
+          "text": "hereby",
+          "confidence": 0.968,
+          "boxPx": [
+            612.0,
+            164.0,
+            667.0,
+            182.0
+          ]
+        },
+        {
+          "text": "attest",
+          "confidence": 0.9583,
+          "boxPx": [
+            673.0,
+            166.0,
+            718.0,
+            178.0
+          ]
+        },
+        {
+          "text": "to",
+          "confidence": 0.9695,
+          "boxPx": [
+            724.0,
+            166.0,
+            740.0,
+            178.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.9558,
+          "boxPx": [
+            746.0,
+            164.0,
+            771.0,
+            178.0
+          ]
+        },
+        {
+          "text": "veracity",
+          "confidence": 0.9558,
+          "boxPx": [
+            777.0,
+            165.0,
+            841.0,
+            182.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.97,
+          "boxPx": [
+            846.0,
+            165.0,
+            875.0,
+            178.0
+          ]
+        },
+        {
+          "text": "correctness",
+          "confidence": 0.959,
+          "boxPx": [
+            882.0,
+            166.0,
+            974.0,
+            178.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9696,
+          "boxPx": [
+            980.0,
+            156.0,
+            993.0,
+            188.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.967,
+          "boxPx": [
+            990.0,
+            164.0,
+            1026.0,
+            178.0
+          ]
+        },
+        {
+          "text": "date",
+          "confidence": 0.9697,
+          "boxPx": [
+            1033.0,
+            165.0,
+            1067.0,
+            178.0
+          ]
+        },
+        {
+          "text": "or",
+          "confidence": 0.9422,
+          "boxPx": [
+            149.0,
+            195.0,
+            166.0,
+            204.0
+          ]
+        },
+        {
+          "text": "information",
+          "confidence": 0.9656,
+          "boxPx": [
+            172.0,
+            190.0,
+            266.0,
+            204.0
+          ]
+        },
+        {
+          "text": "contained",
+          "confidence": 0.9549,
+          "boxPx": [
+            272.0,
+            190.0,
+            351.0,
+            204.0
+          ]
+        },
+        {
+          "text": "in",
+          "confidence": 0.9688,
+          "boxPx": [
+            359.0,
+            195.0,
+            371.0,
+            204.0
+          ]
+        },
+        {
+          "text": "this",
+          "confidence": 0.9688,
+          "boxPx": [
+            377.0,
+            191.0,
+            406.0,
+            204.0
+          ]
+        },
+        {
+          "text": "document.",
+          "confidence": 0.9334,
+          "boxPx": [
+            412.0,
+            190.0,
+            498.0,
+            204.0
+          ]
+        },
+        {
+          "text": "MAYLENE",
+          "confidence": 0.8997,
+          "boxPx": [
+            150.0,
+            295.0,
+            227.0,
+            308.0
+          ]
+        },
+        {
+          "text": "T.",
+          "confidence": 0.8642,
+          "boxPx": [
+            232.0,
+            295.0,
+            246.0,
+            308.0
+          ]
+        },
+        {
+          "text": "SERVIDAD",
+          "confidence": 0.8861,
+          "boxPx": [
+            252.0,
+            295.0,
+            333.0,
+            308.0
+          ]
+        },
+        {
+          "text": "Municipal",
+          "confidence": 0.935,
+          "boxPx": [
+            150.0,
+            321.0,
+            227.0,
+            339.0
+          ]
+        },
+        {
+          "text": "Accountant",
+          "confidence": 0.9462,
+          "boxPx": [
+            234.0,
+            322.0,
+            326.0,
+            335.0
+          ]
+        },
+        {
+          "text": "HON.",
+          "confidence": 0.9328,
+          "boxPx": [
+            1042.0,
+            295.0,
+            1082.0,
+            308.0
+          ]
+        },
+        {
+          "text": "MACARIO",
+          "confidence": 0.9102,
+          "boxPx": [
+            1090.0,
+            295.0,
+            1167.0,
+            308.0
+          ]
+        },
+        {
+          "text": "NAPULAN,",
+          "confidence": 0.9102,
+          "boxPx": [
+            1174.0,
+            295.0,
+            1256.0,
+            311.0
+          ]
+        },
+        {
+          "text": "M.D.",
+          "confidence": 0.7761,
+          "boxPx": [
+            1264.0,
+            295.0,
+            1296.0,
+            308.0
+          ]
+        },
+        {
+          "text": "LCE",
+          "confidence": 0.9661,
+          "boxPx": [
+            1156.0,
+            322.0,
+            1182.0,
+            335.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 192,
+      "imageCoverageRatio": 0.0,
+      "extractionMethod": "PyMuPDF native text + Tesseract OCR",
+      "parseStatus": "ocr_text_found"
+    },
+    {
+      "sourceFileSha256": "5ca5b6d788bd5728393e2a73af3f01ea2faa6273fea4bce3923e05a07b9f270e",
+      "sourceFileBytes": 472489,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/17b404ced5cf30e7.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/08/UNLIQUIDATED-CASH-ADVANCES-1Q-2020.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/2020-full-disclosure/",
+          "sourceTitle": "2020 Full Disclosure",
+          "publishedAt": "2020-07-28T19:55:25",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "UNLIQUIDATED-CASH-ADVANCES-1Q-2020.pdf"
+        }
+      ],
+      "sourceFileName": "UNLIQUIDATED-CASH-ADVANCES-1Q-2020.pdf",
+      "pageNumber": 4,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "",
+      "ocrText": "",
+      "ocrTokenCount": 0,
+      "ocrMeanConfidence": null,
+      "ocrTokens": [],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 0.0,
+      "extractionMethod": "Tesseract OCR",
+      "parseStatus": "no_text_detected"
+    },
+    {
+      "sourceFileSha256": "5ca5b6d788bd5728393e2a73af3f01ea2faa6273fea4bce3923e05a07b9f270e",
+      "sourceFileBytes": 472489,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/17b404ced5cf30e7.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/08/UNLIQUIDATED-CASH-ADVANCES-1Q-2020.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/2020-full-disclosure/",
+          "sourceTitle": "2020 Full Disclosure",
+          "publishedAt": "2020-07-28T19:55:25",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "UNLIQUIDATED-CASH-ADVANCES-1Q-2020.pdf"
+        }
+      ],
+      "sourceFileName": "UNLIQUIDATED-CASH-ADVANCES-1Q-2020.pdf",
+      "pageNumber": 5,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "",
+      "ocrText": "",
+      "ocrTokenCount": 0,
+      "ocrMeanConfidence": null,
+      "ocrTokens": [],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 0.0,
+      "extractionMethod": "Tesseract OCR",
+      "parseStatus": "no_text_detected"
+    },
+    {
+      "sourceFileSha256": "5ca5b6d788bd5728393e2a73af3f01ea2faa6273fea4bce3923e05a07b9f270e",
+      "sourceFileBytes": 472489,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/17b404ced5cf30e7.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/08/UNLIQUIDATED-CASH-ADVANCES-1Q-2020.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/2020-full-disclosure/",
+          "sourceTitle": "2020 Full Disclosure",
+          "publishedAt": "2020-07-28T19:55:25",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "UNLIQUIDATED-CASH-ADVANCES-1Q-2020.pdf"
+        }
+      ],
+      "sourceFileName": "UNLIQUIDATED-CASH-ADVANCES-1Q-2020.pdf",
+      "pageNumber": 6,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "(2,708,677.99)",
+      "extractedText": "(2,708,677.99)\n(2,708,677.99)",
+      "ocrText": "(2,708,677.99)",
+      "ocrTokenCount": 1,
+      "ocrMeanConfidence": 0.9212,
+      "ocrTokens": [
+        {
+          "text": "(2,708,677.99)",
+          "confidence": 0.9212,
+          "boxPx": [
+            367.0,
+            111.0,
+            483.0,
+            128.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 0.0,
+      "extractionMethod": "PyMuPDF native text + Tesseract OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

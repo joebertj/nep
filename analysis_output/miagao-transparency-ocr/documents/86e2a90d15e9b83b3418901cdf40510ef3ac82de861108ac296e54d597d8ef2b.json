@@ -1,0 +1,50 @@
+{
+  "sourceFileSha256": "86e2a90d15e9b83b3418901cdf40510ef3ac82de861108ac296e54d597d8ef2b",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/46eedae649fd2451.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2023/07/358513023_931357201308941_9194214669701329498_n-1-232x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-28/",
+      "sourceTitle": "INVITATION TO BID",
+      "publishedAt": "2023-07-07T10:06:31",
+      "sourceElement": "img",
+      "sourceAttribute": "src",
+      "fileName": "358513023_931357201308941_9194214669701329498_n-1-232x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "86e2a90d15e9b83b3418901cdf40510ef3ac82de861108ac296e54d597d8ef2b",
+      "sourceFileBytes": 17156,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/46eedae649fd2451.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2023/07/358513023_931357201308941_9194214669701329498_n-1-232x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-28/",
+          "sourceTitle": "INVITATION TO BID",
+          "publishedAt": "2023-07-07T10:06:31",
+          "sourceElement": "img",
+          "sourceAttribute": "src",
+          "fileName": "358513023_931357201308941_9194214669701329498_n-1-232x300.jpg"
+        }
+      ],
+      "sourceFileName": "358513023_931357201308941_9194214669701329498_n-1-232x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "",
+      "ocrText": "",
+      "ocrTokenCount": 0,
+      "ocrMeanConfidence": null,
+      "ocrTokens": [],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "no_text_detected"
+    }
+  ]
+}

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Run the Miagao OCR parser with an independent per-file stall watchdog.
+"""Run the Miagao parser with a per-file watchdog and historical publisher.
 
-The parser already times out its OCR worker. This supervisor is a second guard:
-if the parser itself stops making progress while a file is current, it terminates
-the parser process group, persistently skips that file, and resumes the queue.
+The parser times out individual Tesseract calls. This supervisor also detects a
+stalled document, skips it, resumes the queue, and runs the /historical index
+publisher while new parsed records are being written.
 """
 from __future__ import annotations
 
@@ -19,6 +19,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 PARSER = ROOT / "parse_miagao_transparency_ocr.py"
+HISTORICAL_PUBLISHER = ROOT / "publish_miagao_historical_index.py"
 STATUS = ROOT / "analysis_output/miagao-transparency-ocr/status.json"
 LOG = ROOT / "analysis_output/miagao-transparency-ocr/supervisor.log"
 
@@ -52,17 +53,32 @@ def stop_process_group(process):
         process.wait(timeout=10)
 
 
+def start_historical_watcher(interval_seconds):
+    record(f"Starting /historical index watcher (every {interval_seconds}s)")
+    return subprocess.Popen(
+        [sys.executable, str(HISTORICAL_PUBLISHER), "--watch-seconds", str(interval_seconds)],
+        cwd=ROOT,
+        start_new_session=True,
+    )
+
+
+def publish_historical_once():
+    subprocess.run([sys.executable, str(HISTORICAL_PUBLISHER)], cwd=ROOT, check=True)
+
+
 def main():
     cli = argparse.ArgumentParser(description=__doc__)
     cli.add_argument("--stall-timeout-seconds", type=int, default=360)
     cli.add_argument("--poll-seconds", type=int, default=10)
     cli.add_argument("--document-timeout-seconds", type=int, default=30)
-    cli.add_argument("--worker-start-timeout-seconds", type=int, default=300)
+    cli.add_argument("--historical-update-interval-seconds", type=int, default=15)
     cli.add_argument("--retry-errors", action="store_true")
+    cli.add_argument("--retry-error-records", action="store_true")
     cli.add_argument("--max-documents", type=int, default=0)
     args = cli.parse_args()
 
     skipped_during_run: set[str] = set()
+    historical_watcher = None
     try:
         while True:
             command = [
@@ -70,17 +86,17 @@ def main():
                 str(PARSER),
                 "--document-timeout-seconds",
                 str(args.document_timeout_seconds),
-                "--worker-start-timeout-seconds",
-                str(args.worker_start_timeout_seconds),
             ]
             if args.max_documents:
                 command.extend(["--max-documents", str(args.max_documents)])
             if args.retry_errors:
                 command.append("--retry-errors")
+            if args.retry_error_records:
+                command.append("--retry-error-records")
             for sha in sorted(skipped_during_run):
                 command.extend(["--skip-file", sha])
 
-            record("Starting or resuming the Miagao OCR parser")
+            record("Starting or resuming the Miagao parser with single-threaded Tesseract OCR")
             child_started_ns = time.time_ns()
             process = subprocess.Popen(command, cwd=ROOT, start_new_session=True)
             watched_sha = None
@@ -97,6 +113,17 @@ def main():
                 if not status_is_current:
                     time.sleep(max(args.poll_seconds, 1))
                     continue
+                if historical_watcher is None:
+                    historical_watcher = start_historical_watcher(
+                        max(args.historical_update_interval_seconds, 5)
+                    )
+                elif historical_watcher.poll() is not None:
+                    watcher_code = historical_watcher.returncode
+                    if state.get("status") not in {"complete", "complete_with_errors"} or watcher_code != 0:
+                        record(f"Historical index watcher exited with status {watcher_code}; restarting")
+                        historical_watcher = start_historical_watcher(
+                            max(args.historical_update_interval_seconds, 5)
+                        )
                 if sha and sha not in skipped_during_run:
                     if sha != watched_sha:
                         watched_sha = sha
@@ -115,12 +142,33 @@ def main():
 
             if process.poll() is not None:
                 if process.returncode != 0:
+                    if historical_watcher is not None:
+                        stop_process_group(historical_watcher)
+                    try:
+                        publish_historical_once()
+                    except Exception as exc:
+                        record(f"Final /historical publish failed: {exc}")
                     record(f"Parser exited with status {process.returncode}; stopping supervisor")
                     return process.returncode
                 state = read_status()
                 if state.get("status") in {"complete", "complete_with_errors"}:
+                    if historical_watcher is not None:
+                        try:
+                            historical_watcher.wait(timeout=max(args.historical_update_interval_seconds, 5) + 20)
+                        except subprocess.TimeoutExpired:
+                            stop_process_group(historical_watcher)
+                            publish_historical_once()
+                        historical_watcher = None
+                    else:
+                        publish_historical_once()
                     record(f"Parser finished with status {state['status']}")
                     return 0
+                if historical_watcher is not None:
+                    stop_process_group(historical_watcher)
+                try:
+                    publish_historical_once()
+                except Exception as exc:
+                    record(f"Final /historical publish failed: {exc}")
                 record("Parser exited before completion; stopping supervisor")
                 return 1
     except KeyboardInterrupt:
@@ -128,6 +176,12 @@ def main():
         child = locals().get("process")
         if child is not None:
             stop_process_group(child)
+        if historical_watcher is not None:
+            stop_process_group(historical_watcher)
+        try:
+            publish_historical_once()
+        except Exception as exc:
+            record(f"Partial /historical publish failed: {exc}")
         return 130
 
 

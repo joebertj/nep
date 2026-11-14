@@ -12,6 +12,7 @@ import hashlib
 import html
 import json
 import re
+import os
 import time
 import urllib.error
 import urllib.parse
@@ -125,7 +126,9 @@ def download_one(url: str):
         data, headers, final_url = get(url, timeout=90)
         if not data:
             return {"status": "empty_response", "finalUrl": final_url}
-        destination.write_bytes(data)
+        temporary = destination.with_name(f".{destination.name}.{os.getpid()}.tmp")
+        temporary.write_bytes(data)
+        temporary.replace(destination)
         return {
             "status": "downloaded",
             "localPath": str(destination.relative_to(ROOT)),
@@ -230,7 +233,11 @@ def main():
         "records": records,
     }
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
-    OUT_JSON.write_text(json.dumps(output, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
+    temporary_inventory = OUT_JSON.with_name(f".{OUT_JSON.name}.{os.getpid()}.tmp")
+    temporary_inventory.write_text(
+        json.dumps(output, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8"
+    )
+    temporary_inventory.replace(OUT_JSON)
     print(json.dumps(output["summary"], indent=2))
     print(f"Wrote {OUT_JSON}")
     print(f"Archived linked uploads under {FILE_DIR}")

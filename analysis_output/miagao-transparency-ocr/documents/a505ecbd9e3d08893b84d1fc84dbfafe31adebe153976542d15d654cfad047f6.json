@@ -1,0 +1,653 @@
+{
+  "sourceFileSha256": "a505ecbd9e3d08893b84d1fc84dbfafe31adebe153976542d15d654cfad047f6",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/9b159f0a50fae297.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/02/Bidding-Documents-Roads-San-Jose-to-Maduyo.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/barangay-road-projects-for-bidding/",
+      "sourceTitle": "Barangay road projects for Bidding!",
+      "publishedAt": "2022-02-21T05:45:41",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Bidding-Documents-Roads-San-Jose-to-Maduyo.pdf"
+    }
+  ],
+  "ocrPageNumbers": [
+    22,
+    25
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "a505ecbd9e3d08893b84d1fc84dbfafe31adebe153976542d15d654cfad047f6",
+      "sourceFileBytes": 909146,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/9b159f0a50fae297.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/02/Bidding-Documents-Roads-San-Jose-to-Maduyo.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/barangay-road-projects-for-bidding/",
+          "sourceTitle": "Barangay road projects for Bidding!",
+          "publishedAt": "2022-02-21T05:45:41",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "Bidding-Documents-Roads-San-Jose-to-Maduyo.pdf"
+        }
+      ],
+      "sourceFileName": "Bidding-Documents-Roads-San-Jose-to-Maduyo.pdf",
+      "pageNumber": 22,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "22 Section VII. Drawings [Insert here a list of Drawings. The actual Drawings, including site plans, should be attached to this section, or annexed in a separate folder.]",
+      "extractedText": "22 Section VII. Drawings [Insert here a list of Drawings. The actual Drawings, including site plans, should be attached to this section, or annexed in a separate folder.]\nSection VI. Drawings\n[Insert here a list of Drawings. The actual Drawings, including site plans, should be\nattached to this section, or annexed in a separate folder.]\n22",
+      "ocrText": "Section VI. Drawings\n[Insert here a list of Drawings. The actual Drawings, including site plans, should be\nattached to this section, or annexed in a separate folder.]\n22",
+      "ocrTokenCount": 28,
+      "ocrMeanConfidence": 0.946,
+      "ocrTokens": [
+        {
+          "text": "Section",
+          "confidence": 0.965,
+          "boxPx": [
+            392.0,
+            146.0,
+            523.0,
+            177.0
+          ]
+        },
+        {
+          "text": "VI.",
+          "confidence": 0.7646,
+          "boxPx": [
+            540.0,
+            146.0,
+            607.0,
+            177.0
+          ]
+        },
+        {
+          "text": "Drawings",
+          "confidence": 0.9626,
+          "boxPx": [
+            620.0,
+            146.0,
+            796.0,
+            185.0
+          ]
+        },
+        {
+          "text": "[Insert",
+          "confidence": 0.9684,
+          "boxPx": [
+            145.0,
+            219.0,
+            210.0,
+            239.0
+          ]
+        },
+        {
+          "text": "here",
+          "confidence": 0.9613,
+          "boxPx": [
+            222.0,
+            219.0,
+            263.0,
+            235.0
+          ]
+        },
+        {
+          "text": "a",
+          "confidence": 0.9489,
+          "boxPx": [
+            277.0,
+            224.0,
+            287.0,
+            235.0
+          ]
+        },
+        {
+          "text": "list",
+          "confidence": 0.9489,
+          "boxPx": [
+            301.0,
+            219.0,
+            330.0,
+            235.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9633,
+          "boxPx": [
+            342.0,
+            219.0,
+            364.0,
+            240.0
+          ]
+        },
+        {
+          "text": "Drawings.",
+          "confidence": 0.8844,
+          "boxPx": [
+            373.0,
+            219.0,
+            470.0,
+            240.0
+          ]
+        },
+        {
+          "text": "The",
+          "confidence": 0.8844,
+          "boxPx": [
+            499.0,
+            219.0,
+            532.0,
+            235.0
+          ]
+        },
+        {
+          "text": "actual",
+          "confidence": 0.96,
+          "boxPx": [
+            545.0,
+            219.0,
+            605.0,
+            235.0
+          ]
+        },
+        {
+          "text": "Drawings,",
+          "confidence": 0.9656,
+          "boxPx": [
+            617.0,
+            219.0,
+            715.0,
+            240.0
+          ]
+        },
+        {
+          "text": "including",
+          "confidence": 0.9661,
+          "boxPx": [
+            731.0,
+            219.0,
+            820.0,
+            240.0
+          ]
+        },
+        {
+          "text": "site",
+          "confidence": 0.9626,
+          "boxPx": [
+            833.0,
+            219.0,
+            865.0,
+            235.0
+          ]
+        },
+        {
+          "text": "plans,",
+          "confidence": 0.9666,
+          "boxPx": [
+            876.0,
+            219.0,
+            933.0,
+            240.0
+          ]
+        },
+        {
+          "text": "should",
+          "confidence": 0.9669,
+          "boxPx": [
+            947.0,
+            219.0,
+            1012.0,
+            235.0
+          ]
+        },
+        {
+          "text": "be",
+          "confidence": 0.968,
+          "boxPx": [
+            1024.0,
+            219.0,
+            1045.0,
+            235.0
+          ]
+        },
+        {
+          "text": "attached",
+          "confidence": 0.968,
+          "boxPx": [
+            144.0,
+            247.0,
+            228.0,
+            263.0
+          ]
+        },
+        {
+          "text": "to",
+          "confidence": 0.9687,
+          "boxPx": [
+            233.0,
+            250.0,
+            251.0,
+            263.0
+          ]
+        },
+        {
+          "text": "this",
+          "confidence": 0.9619,
+          "boxPx": [
+            258.0,
+            247.0,
+            292.0,
+            263.0
+          ]
+        },
+        {
+          "text": "section,",
+          "confidence": 0.9619,
+          "boxPx": [
+            299.0,
+            247.0,
+            370.0,
+            266.0
+          ]
+        },
+        {
+          "text": "or",
+          "confidence": 0.9661,
+          "boxPx": [
+            379.0,
+            252.0,
+            400.0,
+            263.0
+          ]
+        },
+        {
+          "text": "annexed",
+          "confidence": 0.9693,
+          "boxPx": [
+            406.0,
+            247.0,
+            486.0,
+            263.0
+          ]
+        },
+        {
+          "text": "in",
+          "confidence": 0.9399,
+          "boxPx": [
+            493.0,
+            247.0,
+            509.0,
+            263.0
+          ]
+        },
+        {
+          "text": "a",
+          "confidence": 0.9399,
+          "boxPx": [
+            517.0,
+            252.0,
+            527.0,
+            263.0
+          ]
+        },
+        {
+          "text": "separate",
+          "confidence": 0.9175,
+          "boxPx": [
+            535.0,
+            250.0,
+            616.0,
+            268.0
+          ]
+        },
+        {
+          "text": "folder.]",
+          "confidence": 0.9175,
+          "boxPx": [
+            619.0,
+            247.0,
+            695.0,
+            268.0
+          ]
+        },
+        {
+          "text": "22",
+          "confidence": 0.9686,
+          "boxPx": [
+            586.0,
+            1551.0,
+            605.0,
+            1565.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 133,
+      "imageCoverageRatio": 0.0,
+      "extractionMethod": "PyMuPDF native text + Tesseract OCR",
+      "parseStatus": "ocr_text_found"
+    },
+    {
+      "sourceFileSha256": "a505ecbd9e3d08893b84d1fc84dbfafe31adebe153976542d15d654cfad047f6",
+      "sourceFileBytes": 909146,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/9b159f0a50fae297.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/02/Bidding-Documents-Roads-San-Jose-to-Maduyo.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/barangay-road-projects-for-bidding/",
+          "sourceTitle": "Barangay road projects for Bidding!",
+          "publishedAt": "2022-02-21T05:45:41",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "Bidding-Documents-Roads-San-Jose-to-Maduyo.pdf"
+        }
+      ],
+      "sourceFileName": "Bidding-Documents-Roads-San-Jose-to-Maduyo.pdf",
+      "pageNumber": 25,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "25 6. Embankment from Roadway Excavation 190,000.00 Qty: 6 70 cu.m. 7. Levelling and Compaction of Sub-Grade Preparation 132,900.00 Qty.: 6900 sq.m. 8. Indirect Cost 222,220.00 Qty. 1 Lot",
+      "extractedText": "25 6. Embankment from Roadway Excavation 190,000.00 Qty: 6 70 cu.m. 7. Levelling and Compaction of Sub-Grade Preparation 132,900.00 Qty.: 6900 sq.m. 8. Indirect Cost 222,220.00 Qty. 1 Lot\n6. Embankment from Roadway Excavation\n190,000.00\nQty: 6 70 cum.\n7. Levelling and Compaction of Sub-Grade 132,900.00\nPreparation\nQty.: 6900 sq.m.\n222,220.00\n8. Indirect Cost\nQty. 1 Lot\n25",
+      "ocrText": "6. Embankment from Roadway Excavation\n190,000.00\nQty: 6 70 cum.\n7. Levelling and Compaction of Sub-Grade 132,900.00\nPreparation\nQty.: 6900 sq.m.\n222,220.00\n8. Indirect Cost\nQty. 1 Lot\n25",
+      "ocrTokenCount": 29,
+      "ocrMeanConfidence": 0.9213,
+      "ocrTokens": [
+        {
+          "text": "6.",
+          "confidence": 0.9452,
+          "boxPx": [
+            341.0,
+            159.0,
+            357.0,
+            175.0
+          ]
+        },
+        {
+          "text": "Embankment",
+          "confidence": 0.9637,
+          "boxPx": [
+            364.0,
+            159.0,
+            503.0,
+            175.0
+          ]
+        },
+        {
+          "text": "from",
+          "confidence": 0.9654,
+          "boxPx": [
+            510.0,
+            158.0,
+            560.0,
+            175.0
+          ]
+        },
+        {
+          "text": "Roadway",
+          "confidence": 0.9616,
+          "boxPx": [
+            567.0,
+            159.0,
+            662.0,
+            180.0
+          ]
+        },
+        {
+          "text": "Excavation",
+          "confidence": 0.9678,
+          "boxPx": [
+            669.0,
+            158.0,
+            782.0,
+            175.0
+          ]
+        },
+        {
+          "text": "190,000.00",
+          "confidence": 0.9637,
+          "boxPx": [
+            918.0,
+            141.0,
+            1024.0,
+            162.0
+          ]
+        },
+        {
+          "text": "Qty:",
+          "confidence": 0.9662,
+          "boxPx": [
+            341.0,
+            203.0,
+            385.0,
+            225.0
+          ]
+        },
+        {
+          "text": "6",
+          "confidence": 0.8144,
+          "boxPx": [
+            394.0,
+            204.0,
+            404.0,
+            220.0
+          ]
+        },
+        {
+          "text": "70",
+          "confidence": 0.8144,
+          "boxPx": [
+            411.0,
+            203.0,
+            434.0,
+            220.0
+          ]
+        },
+        {
+          "text": "cum.",
+          "confidence": 0.3137,
+          "boxPx": [
+            442.0,
+            209.0,
+            496.0,
+            220.0
+          ]
+        },
+        {
+          "text": "7.",
+          "confidence": 0.9435,
+          "boxPx": [
+            340.0,
+            233.0,
+            357.0,
+            249.0
+          ]
+        },
+        {
+          "text": "Levelling",
+          "confidence": 0.9631,
+          "boxPx": [
+            365.0,
+            232.0,
+            459.0,
+            254.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.9683,
+          "boxPx": [
+            466.0,
+            233.0,
+            503.0,
+            249.0
+          ]
+        },
+        {
+          "text": "Compaction",
+          "confidence": 0.9635,
+          "boxPx": [
+            510.0,
+            232.0,
+            634.0,
+            254.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9177,
+          "boxPx": [
+            641.0,
+            232.0,
+            662.0,
+            249.0
+          ]
+        },
+        {
+          "text": "Sub-Grade",
+          "confidence": 0.9177,
+          "boxPx": [
+            667.0,
+            232.0,
+            779.0,
+            250.0
+          ]
+        },
+        {
+          "text": "132,900.00",
+          "confidence": 0.9653,
+          "boxPx": [
+            918.0,
+            232.0,
+            1024.0,
+            253.0
+          ]
+        },
+        {
+          "text": "Preparation",
+          "confidence": 0.9649,
+          "boxPx": [
+            340.0,
+            259.0,
+            463.0,
+            281.0
+          ]
+        },
+        {
+          "text": "Qty.:",
+          "confidence": 0.9266,
+          "boxPx": [
+            341.0,
+            305.0,
+            391.0,
+            327.0
+          ]
+        },
+        {
+          "text": "6900",
+          "confidence": 0.966,
+          "boxPx": [
+            400.0,
+            305.0,
+            446.0,
+            322.0
+          ]
+        },
+        {
+          "text": "sq.m.",
+          "confidence": 0.9479,
+          "boxPx": [
+            453.0,
+            311.0,
+            506.0,
+            328.0
+          ]
+        },
+        {
+          "text": "222,220.00",
+          "confidence": 0.965,
+          "boxPx": [
+            917.0,
+            334.0,
+            1024.0,
+            355.0
+          ]
+        },
+        {
+          "text": "8.",
+          "confidence": 0.9507,
+          "boxPx": [
+            341.0,
+            350.0,
+            357.0,
+            367.0
+          ]
+        },
+        {
+          "text": "Indirect",
+          "confidence": 0.9507,
+          "boxPx": [
+            365.0,
+            350.0,
+            447.0,
+            367.0
+          ]
+        },
+        {
+          "text": "Cost",
+          "confidence": 0.9654,
+          "boxPx": [
+            454.0,
+            350.0,
+            498.0,
+            368.0
+          ]
+        },
+        {
+          "text": "Qty.",
+          "confidence": 0.9554,
+          "boxPx": [
+            341.0,
+            395.0,
+            384.0,
+            417.0
+          ]
+        },
+        {
+          "text": "1",
+          "confidence": 0.9536,
+          "boxPx": [
+            393.0,
+            395.0,
+            401.0,
+            412.0
+          ]
+        },
+        {
+          "text": "Lot",
+          "confidence": 0.9536,
+          "boxPx": [
+            410.0,
+            396.0,
+            444.0,
+            412.0
+          ]
+        },
+        {
+          "text": "25",
+          "confidence": 0.9033,
+          "boxPx": [
+            568.0,
+            1542.0,
+            586.0,
+            1556.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 104,
+      "imageCoverageRatio": 0.0,
+      "extractionMethod": "PyMuPDF native text + Tesseract OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

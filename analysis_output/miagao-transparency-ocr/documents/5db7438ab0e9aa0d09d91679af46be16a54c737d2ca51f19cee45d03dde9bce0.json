@@ -1,0 +1,50 @@
+{
+  "sourceFileSha256": "5db7438ab0e9aa0d09d91679af46be16a54c737d2ca51f19cee45d03dde9bce0",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/d0d4249b0ebcb278.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2023/02/332526049_531736435492640_6163568269247653042_n-300x200.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/updates-i-construction-of-the-four-storey-municipal-building/",
+      "sourceTitle": "UPDATES I CONSTRUCTION OF THE FOUR-STOREY MUNICIPAL BUILDING",
+      "publishedAt": "2023-02-23T15:00:06",
+      "sourceElement": "img",
+      "sourceAttribute": "src",
+      "fileName": "332526049_531736435492640_6163568269247653042_n-300x200.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "5db7438ab0e9aa0d09d91679af46be16a54c737d2ca51f19cee45d03dde9bce0",
+      "sourceFileBytes": 14461,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/d0d4249b0ebcb278.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2023/02/332526049_531736435492640_6163568269247653042_n-300x200.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/updates-i-construction-of-the-four-storey-municipal-building/",
+          "sourceTitle": "UPDATES I CONSTRUCTION OF THE FOUR-STOREY MUNICIPAL BUILDING",
+          "publishedAt": "2023-02-23T15:00:06",
+          "sourceElement": "img",
+          "sourceAttribute": "src",
+          "fileName": "332526049_531736435492640_6163568269247653042_n-300x200.jpg"
+        }
+      ],
+      "sourceFileName": "332526049_531736435492640_6163568269247653042_n-300x200.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "",
+      "ocrText": "",
+      "ocrTokenCount": 0,
+      "ocrMeanConfidence": null,
+      "ocrTokens": [],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "no_text_detected"
+    }
+  ]
+}

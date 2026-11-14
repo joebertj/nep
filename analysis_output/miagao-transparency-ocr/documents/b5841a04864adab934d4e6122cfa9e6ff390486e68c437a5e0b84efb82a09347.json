@@ -1,0 +1,513 @@
+{
+  "sourceFileSha256": "b5841a04864adab934d4e6122cfa9e6ff390486e68c437a5e0b84efb82a09347",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/c928a3883f2d3c7e.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/02/Bidding-Documents-Roads-Igcabidio-Narorogan.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/barangay-road-projects-for-bidding/",
+      "sourceTitle": "Barangay road projects for Bidding!",
+      "publishedAt": "2022-02-21T05:45:41",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Bidding-Documents-Roads-Igcabidio-Narorogan.pdf"
+    }
+  ],
+  "ocrPageNumbers": [
+    22,
+    25
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "b5841a04864adab934d4e6122cfa9e6ff390486e68c437a5e0b84efb82a09347",
+      "sourceFileBytes": 906408,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/c928a3883f2d3c7e.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/02/Bidding-Documents-Roads-Igcabidio-Narorogan.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/barangay-road-projects-for-bidding/",
+          "sourceTitle": "Barangay road projects for Bidding!",
+          "publishedAt": "2022-02-21T05:45:41",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "Bidding-Documents-Roads-Igcabidio-Narorogan.pdf"
+        }
+      ],
+      "sourceFileName": "Bidding-Documents-Roads-Igcabidio-Narorogan.pdf",
+      "pageNumber": 22,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "22 Section VII. Drawings [Insert here a list of Drawings. The actual Drawings, including site plans, should be attached to this section, or annexed in a separate folder.]",
+      "extractedText": "22 Section VII. Drawings [Insert here a list of Drawings. The actual Drawings, including site plans, should be attached to this section, or annexed in a separate folder.]\nSection VI. Drawings\n[Insert here a list of Drawings. The actual Drawings, including site plans, should be\nattached to this section, or annexed in a separate folder.]\n22",
+      "ocrText": "Section VI. Drawings\n[Insert here a list of Drawings. The actual Drawings, including site plans, should be\nattached to this section, or annexed in a separate folder.]\n22",
+      "ocrTokenCount": 28,
+      "ocrMeanConfidence": 0.9477,
+      "ocrTokens": [
+        {
+          "text": "Section",
+          "confidence": 0.965,
+          "boxPx": [
+            392.0,
+            146.0,
+            523.0,
+            177.0
+          ]
+        },
+        {
+          "text": "VI.",
+          "confidence": 0.7646,
+          "boxPx": [
+            540.0,
+            146.0,
+            607.0,
+            177.0
+          ]
+        },
+        {
+          "text": "Drawings",
+          "confidence": 0.9626,
+          "boxPx": [
+            620.0,
+            146.0,
+            796.0,
+            185.0
+          ]
+        },
+        {
+          "text": "[Insert",
+          "confidence": 0.9526,
+          "boxPx": [
+            145.0,
+            219.0,
+            210.0,
+            239.0
+          ]
+        },
+        {
+          "text": "here",
+          "confidence": 0.9553,
+          "boxPx": [
+            222.0,
+            219.0,
+            263.0,
+            235.0
+          ]
+        },
+        {
+          "text": "a",
+          "confidence": 0.9518,
+          "boxPx": [
+            277.0,
+            224.0,
+            287.0,
+            235.0
+          ]
+        },
+        {
+          "text": "list",
+          "confidence": 0.9518,
+          "boxPx": [
+            301.0,
+            219.0,
+            330.0,
+            235.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9625,
+          "boxPx": [
+            342.0,
+            219.0,
+            364.0,
+            240.0
+          ]
+        },
+        {
+          "text": "Drawings.",
+          "confidence": 0.88,
+          "boxPx": [
+            373.0,
+            219.0,
+            470.0,
+            240.0
+          ]
+        },
+        {
+          "text": "The",
+          "confidence": 0.88,
+          "boxPx": [
+            499.0,
+            219.0,
+            532.0,
+            235.0
+          ]
+        },
+        {
+          "text": "actual",
+          "confidence": 0.9593,
+          "boxPx": [
+            545.0,
+            219.0,
+            605.0,
+            235.0
+          ]
+        },
+        {
+          "text": "Drawings,",
+          "confidence": 0.965,
+          "boxPx": [
+            617.0,
+            219.0,
+            715.0,
+            240.0
+          ]
+        },
+        {
+          "text": "including",
+          "confidence": 0.9625,
+          "boxPx": [
+            731.0,
+            219.0,
+            820.0,
+            240.0
+          ]
+        },
+        {
+          "text": "site",
+          "confidence": 0.9679,
+          "boxPx": [
+            833.0,
+            219.0,
+            865.0,
+            235.0
+          ]
+        },
+        {
+          "text": "plans,",
+          "confidence": 0.9619,
+          "boxPx": [
+            877.0,
+            219.0,
+            934.0,
+            240.0
+          ]
+        },
+        {
+          "text": "should",
+          "confidence": 0.9665,
+          "boxPx": [
+            948.0,
+            219.0,
+            1013.0,
+            235.0
+          ]
+        },
+        {
+          "text": "be",
+          "confidence": 0.9673,
+          "boxPx": [
+            1025.0,
+            219.0,
+            1046.0,
+            235.0
+          ]
+        },
+        {
+          "text": "attached",
+          "confidence": 0.967,
+          "boxPx": [
+            144.0,
+            247.0,
+            228.0,
+            263.0
+          ]
+        },
+        {
+          "text": "to",
+          "confidence": 0.967,
+          "boxPx": [
+            233.0,
+            250.0,
+            251.0,
+            263.0
+          ]
+        },
+        {
+          "text": "this",
+          "confidence": 0.9687,
+          "boxPx": [
+            258.0,
+            247.0,
+            292.0,
+            263.0
+          ]
+        },
+        {
+          "text": "section,",
+          "confidence": 0.969,
+          "boxPx": [
+            298.0,
+            247.0,
+            369.0,
+            266.0
+          ]
+        },
+        {
+          "text": "or",
+          "confidence": 0.9697,
+          "boxPx": [
+            379.0,
+            252.0,
+            400.0,
+            263.0
+          ]
+        },
+        {
+          "text": "annexed",
+          "confidence": 0.97,
+          "boxPx": [
+            406.0,
+            247.0,
+            486.0,
+            263.0
+          ]
+        },
+        {
+          "text": "in",
+          "confidence": 0.9615,
+          "boxPx": [
+            493.0,
+            247.0,
+            509.0,
+            263.0
+          ]
+        },
+        {
+          "text": "a",
+          "confidence": 0.9615,
+          "boxPx": [
+            516.0,
+            252.0,
+            527.0,
+            263.0
+          ]
+        },
+        {
+          "text": "separate",
+          "confidence": 0.9321,
+          "boxPx": [
+            534.0,
+            250.0,
+            615.0,
+            268.0
+          ]
+        },
+        {
+          "text": "folder.]",
+          "confidence": 0.9232,
+          "boxPx": [
+            619.0,
+            247.0,
+            695.0,
+            268.0
+          ]
+        },
+        {
+          "text": "22",
+          "confidence": 0.9686,
+          "boxPx": [
+            586.0,
+            1551.0,
+            605.0,
+            1565.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 133,
+      "imageCoverageRatio": 0.0,
+      "extractionMethod": "PyMuPDF native text + Tesseract OCR",
+      "parseStatus": "ocr_text_found"
+    },
+    {
+      "sourceFileSha256": "b5841a04864adab934d4e6122cfa9e6ff390486e68c437a5e0b84efb82a09347",
+      "sourceFileBytes": 906408,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/c928a3883f2d3c7e.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/02/Bidding-Documents-Roads-Igcabidio-Narorogan.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/barangay-road-projects-for-bidding/",
+          "sourceTitle": "Barangay road projects for Bidding!",
+          "publishedAt": "2022-02-21T05:45:41",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "Bidding-Documents-Roads-Igcabidio-Narorogan.pdf"
+        }
+      ],
+      "sourceFileName": "Bidding-Documents-Roads-Igcabidio-Narorogan.pdf",
+      "pageNumber": 25,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "25 wall and apron slab Qty: 6 l.m. 7. Indirect Cost 171,096.00 Qty.: 1 Lot",
+      "extractedText": "25 wall and apron slab Qty: 6 l.m. 7. Indirect Cost 171,096.00 Qty.: 1 Lot\nwall and apron slab\nQty: 6 1m.\n7. Indirect Cost\n171,096.00\nQty.: 1 Lot\n25",
+      "ocrText": "wall and apron slab\nQty: 6 1m.\n7. Indirect Cost\n171,096.00\nQty.: 1 Lot\n25",
+      "ocrTokenCount": 15,
+      "ocrMeanConfidence": 0.8717,
+      "ocrTokens": [
+        {
+          "text": "wall",
+          "confidence": 0.9673,
+          "boxPx": [
+            341.0,
+            142.0,
+            383.0,
+            158.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.9678,
+          "boxPx": [
+            390.0,
+            142.0,
+            427.0,
+            158.0
+          ]
+        },
+        {
+          "text": "apron",
+          "confidence": 0.9668,
+          "boxPx": [
+            434.0,
+            147.0,
+            494.0,
+            163.0
+          ]
+        },
+        {
+          "text": "slab",
+          "confidence": 0.9694,
+          "boxPx": [
+            501.0,
+            142.0,
+            541.0,
+            158.0
+          ]
+        },
+        {
+          "text": "Qty:",
+          "confidence": 0.9529,
+          "boxPx": [
+            341.0,
+            203.0,
+            385.0,
+            225.0
+          ]
+        },
+        {
+          "text": "6",
+          "confidence": 0.8267,
+          "boxPx": [
+            394.0,
+            203.0,
+            404.0,
+            220.0
+          ]
+        },
+        {
+          "text": "1m.",
+          "confidence": 0.6489,
+          "boxPx": [
+            411.0,
+            204.0,
+            448.0,
+            220.0
+          ]
+        },
+        {
+          "text": "7.",
+          "confidence": 0.5819,
+          "boxPx": [
+            340.0,
+            250.0,
+            357.0,
+            266.0
+          ]
+        },
+        {
+          "text": "Indirect",
+          "confidence": 0.5819,
+          "boxPx": [
+            365.0,
+            249.0,
+            447.0,
+            266.0
+          ]
+        },
+        {
+          "text": "Cost",
+          "confidence": 0.9692,
+          "boxPx": [
+            454.0,
+            249.0,
+            498.0,
+            267.0
+          ]
+        },
+        {
+          "text": "171,096.00",
+          "confidence": 0.9119,
+          "boxPx": [
+            918.0,
+            232.0,
+            1024.0,
+            253.0
+          ]
+        },
+        {
+          "text": "Qty.:",
+          "confidence": 0.9022,
+          "boxPx": [
+            341.0,
+            294.0,
+            391.0,
+            316.0
+          ]
+        },
+        {
+          "text": "1",
+          "confidence": 0.9629,
+          "boxPx": [
+            401.0,
+            294.0,
+            409.0,
+            311.0
+          ]
+        },
+        {
+          "text": "Lot",
+          "confidence": 0.9629,
+          "boxPx": [
+            418.0,
+            295.0,
+            452.0,
+            311.0
+          ]
+        },
+        {
+          "text": "25",
+          "confidence": 0.9033,
+          "boxPx": [
+            568.0,
+            1542.0,
+            586.0,
+            1556.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 39,
+      "imageCoverageRatio": 0.0,
+      "extractionMethod": "PyMuPDF native text + Tesseract OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

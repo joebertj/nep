@@ -1,0 +1,50 @@
+{
+  "sourceFileSha256": "b2c9271881621fff197e601c15d2f47cedb16de21415f70ab00ace993b185e4b",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/b303ae30e4684c7b.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2024/10/454803047_956454349859993_633173377842685611_n-228x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/invitation-to-bid-for-one-job-contract-for-the-provision-of-accommodation-and-food-during-the-anti-illegal-drugs-campaign-cum-capacity-building-for-barangay-tanod-tanod-academy-on-august-28-30202/",
+      "sourceTitle": "INVITATION TO BID FOR ONE JOB CONTRACT FOR THE PROVISION OF ACCOMMODATION AND FOOD DURING THE ANTI-ILLEGAL DRUGS CAMPAIGN CUM CAPACITY BUILDING FOR BARANGAY TANOD (TANOD ACADEMY) ON AUGUST 28-30,2024",
+      "publishedAt": "2024-10-06T18:16:21",
+      "sourceElement": "img",
+      "sourceAttribute": "src",
+      "fileName": "454803047_956454349859993_633173377842685611_n-228x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "b2c9271881621fff197e601c15d2f47cedb16de21415f70ab00ace993b185e4b",
+      "sourceFileBytes": 13172,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/b303ae30e4684c7b.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2024/10/454803047_956454349859993_633173377842685611_n-228x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/invitation-to-bid-for-one-job-contract-for-the-provision-of-accommodation-and-food-during-the-anti-illegal-drugs-campaign-cum-capacity-building-for-barangay-tanod-tanod-academy-on-august-28-30202/",
+          "sourceTitle": "INVITATION TO BID FOR ONE JOB CONTRACT FOR THE PROVISION OF ACCOMMODATION AND FOOD DURING THE ANTI-ILLEGAL DRUGS CAMPAIGN CUM CAPACITY BUILDING FOR BARANGAY TANOD (TANOD ACADEMY) ON AUGUST 28-30,2024",
+          "publishedAt": "2024-10-06T18:16:21",
+          "sourceElement": "img",
+          "sourceAttribute": "src",
+          "fileName": "454803047_956454349859993_633173377842685611_n-228x300.jpg"
+        }
+      ],
+      "sourceFileName": "454803047_956454349859993_633173377842685611_n-228x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "",
+      "ocrText": "",
+      "ocrTokenCount": 0,
+      "ocrMeanConfidence": null,
+      "ocrTokens": [],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "no_text_detected"
+    }
+  ]
+}

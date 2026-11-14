@@ -1,0 +1,111 @@
+{
+  "sourceFileSha256": "095afc4532cdbce7a4f6135014524a3fca545e92075d1a6de65932db298d531c",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/b3d89e0a8b91045d.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2023/01/324895113_544071617778943_4027697808912530217_n-300x200.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/miagao-procures-2-additional-rescue-boats/",
+      "sourceTitle": "MIAGAO PROCURES 2 ADDITIONAL RESCUE BOATS",
+      "publishedAt": "2023-01-18T09:46:10",
+      "sourceElement": "img",
+      "sourceAttribute": "src",
+      "fileName": "324895113_544071617778943_4027697808912530217_n-300x200.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "095afc4532cdbce7a4f6135014524a3fca545e92075d1a6de65932db298d531c",
+      "sourceFileBytes": 15342,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/b3d89e0a8b91045d.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2023/01/324895113_544071617778943_4027697808912530217_n-300x200.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/miagao-procures-2-additional-rescue-boats/",
+          "sourceTitle": "MIAGAO PROCURES 2 ADDITIONAL RESCUE BOATS",
+          "publishedAt": "2023-01-18T09:46:10",
+          "sourceElement": "img",
+          "sourceAttribute": "src",
+          "fileName": "324895113_544071617778943_4027697808912530217_n-300x200.jpg"
+        }
+      ],
+      "sourceFileName": "324895113_544071617778943_4027697808912530217_n-300x200.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "i De he beth” | le",
+      "ocrText": "i De he beth” | le",
+      "ocrTokenCount": 6,
+      "ocrMeanConfidence": 0.2074,
+      "ocrTokens": [
+        {
+          "text": "i",
+          "confidence": 0.3043,
+          "boxPx": [
+            21.0,
+            0.0,
+            74.0,
+            22.0
+          ]
+        },
+        {
+          "text": "De",
+          "confidence": 0.0801,
+          "boxPx": [
+            76.0,
+            0.0,
+            100.0,
+            31.0
+          ]
+        },
+        {
+          "text": "he",
+          "confidence": 0.0,
+          "boxPx": [
+            114.0,
+            0.0,
+            129.0,
+            20.0
+          ]
+        },
+        {
+          "text": "beth”",
+          "confidence": 0.0,
+          "boxPx": [
+            144.0,
+            0.0,
+            300.0,
+            22.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.468,
+          "boxPx": [
+            252.0,
+            0.0,
+            258.0,
+            31.0
+          ]
+        },
+        {
+          "text": "le",
+          "confidence": 0.3921,
+          "boxPx": [
+            267.0,
+            0.0,
+            299.0,
+            31.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

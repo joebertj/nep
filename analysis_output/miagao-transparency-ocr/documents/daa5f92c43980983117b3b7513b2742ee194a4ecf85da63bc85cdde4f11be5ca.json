@@ -1,0 +1,71 @@
+{
+  "sourceFileSha256": "daa5f92c43980983117b3b7513b2742ee194a4ecf85da63bc85cdde4f11be5ca",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/dd577a6d314b2aae.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2025/01/472398749_1068154692023291_4994079539446604440_n-233x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/invitation-to-bid-for-the-following-projects-18/",
+      "sourceTitle": "INVITATION TO BID FOR THE FOLLOWING PROJECTS",
+      "publishedAt": "2025-01-22T16:12:59",
+      "sourceElement": "img",
+      "sourceAttribute": "src",
+      "fileName": "472398749_1068154692023291_4994079539446604440_n-233x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "daa5f92c43980983117b3b7513b2742ee194a4ecf85da63bc85cdde4f11be5ca",
+      "sourceFileBytes": 15949,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/dd577a6d314b2aae.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2025/01/472398749_1068154692023291_4994079539446604440_n-233x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/invitation-to-bid-for-the-following-projects-18/",
+          "sourceTitle": "INVITATION TO BID FOR THE FOLLOWING PROJECTS",
+          "publishedAt": "2025-01-22T16:12:59",
+          "sourceElement": "img",
+          "sourceAttribute": "src",
+          "fileName": "472398749_1068154692023291_4994079539446604440_n-233x300.jpg"
+        }
+      ],
+      "sourceFileName": "472398749_1068154692023291_4994079539446604440_n-233x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "ous Pig",
+      "ocrText": "ous Pig",
+      "ocrTokenCount": 2,
+      "ocrMeanConfidence": 0.3113,
+      "ocrTokens": [
+        {
+          "text": "ous",
+          "confidence": 0.6226,
+          "boxPx": [
+            15.0,
+            34.0,
+            98.0,
+            56.0
+          ]
+        },
+        {
+          "text": "Pig",
+          "confidence": 0.0,
+          "boxPx": [
+            107.0,
+            25.0,
+            231.0,
+            70.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

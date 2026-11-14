@@ -1,0 +1,50 @@
+{
+  "sourceFileSha256": "6c3de2de27254d11db2bd868657027cac6f1f77c45135ab0b054eaff74da77b2",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/1f2f91b7a1b43be6.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/12/318120550_527967612708671_3187991443427371351_n-300x200.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/28340/",
+      "sourceTitle": "",
+      "publishedAt": "2022-12-05T15:18:04",
+      "sourceElement": "img",
+      "sourceAttribute": "src",
+      "fileName": "318120550_527967612708671_3187991443427371351_n-300x200.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "6c3de2de27254d11db2bd868657027cac6f1f77c45135ab0b054eaff74da77b2",
+      "sourceFileBytes": 16178,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/1f2f91b7a1b43be6.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/12/318120550_527967612708671_3187991443427371351_n-300x200.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/28340/",
+          "sourceTitle": "",
+          "publishedAt": "2022-12-05T15:18:04",
+          "sourceElement": "img",
+          "sourceAttribute": "src",
+          "fileName": "318120550_527967612708671_3187991443427371351_n-300x200.jpg"
+        }
+      ],
+      "sourceFileName": "318120550_527967612708671_3187991443427371351_n-300x200.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "",
+      "ocrText": "",
+      "ocrTokenCount": 0,
+      "ocrMeanConfidence": null,
+      "ocrTokens": [],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "no_text_detected"
+    }
+  ]
+}

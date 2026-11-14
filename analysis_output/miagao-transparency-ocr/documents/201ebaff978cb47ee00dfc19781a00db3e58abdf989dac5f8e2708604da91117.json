@@ -1,0 +1,501 @@
+{
+  "sourceFileSha256": "201ebaff978cb47ee00dfc19781a00db3e58abdf989dac5f8e2708604da91117",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/24531699d6a4e33d.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/TRUST-FUND-Utilization-March-2019-C-768x446.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/trust-fund-utilization-first-quarter-cy-2019/",
+      "sourceTitle": "TRUST FUND UTILIZATION – FIRST QUARTER, CY 2019",
+      "publishedAt": "2019-04-04T05:17:48",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "TRUST-FUND-Utilization-March-2019-C-768x446.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "201ebaff978cb47ee00dfc19781a00db3e58abdf989dac5f8e2708604da91117",
+      "sourceFileBytes": 73294,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/24531699d6a4e33d.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/TRUST-FUND-Utilization-March-2019-C-768x446.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/trust-fund-utilization-first-quarter-cy-2019/",
+          "sourceTitle": "TRUST FUND UTILIZATION – FIRST QUARTER, CY 2019",
+          "publishedAt": "2019-04-04T05:17:48",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "TRUST-FUND-Utilization-March-2019-C-768x446.jpg"
+        }
+      ],
+      "sourceFileName": "TRUST-FUND-Utilization-March-2019-C-768x446.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "cont Raper oF CC ty, [PO PRR\nSe nda | — norm —| enc | a,\npercents [PE | omoneel eae Leaman |_sor\nFe mel Sil PP el\nination atsactaee | Qe\nat rponCovet Gym | HY Rig Nw\nisp eoncone, |e\nconnsioarvnense | BSS",
+      "ocrText": "cont Raper oF CC ty, [PO PRR\nSe nda | — norm —| enc | a,\npercents [PE | omoneel eae Leaman |_sor\nFe mel Sil PP el\nination atsactaee | Qe\nat rponCovet Gym | HY Rig Nw\nisp eoncone, |e\nconnsioarvnense | BSS",
+      "ocrTokenCount": 45,
+      "ocrMeanConfidence": 0.2584,
+      "ocrTokens": [
+        {
+          "text": "cont",
+          "confidence": 0.4361,
+          "boxPx": [
+            3.0,
+            134.0,
+            21.0,
+            140.0
+          ]
+        },
+        {
+          "text": "Raper",
+          "confidence": 0.0,
+          "boxPx": [
+            27.0,
+            133.0,
+            102.0,
+            141.0
+          ]
+        },
+        {
+          "text": "oF",
+          "confidence": 0.3791,
+          "boxPx": [
+            50.0,
+            120.0,
+            58.0,
+            149.0
+          ]
+        },
+        {
+          "text": "CC",
+          "confidence": 0.4438,
+          "boxPx": [
+            62.0,
+            120.0,
+            75.0,
+            149.0
+          ]
+        },
+        {
+          "text": "ty,",
+          "confidence": 0.3939,
+          "boxPx": [
+            79.0,
+            133.0,
+            102.0,
+            141.0
+          ]
+        },
+        {
+          "text": "[PO",
+          "confidence": 0.4697,
+          "boxPx": [
+            121.0,
+            129.0,
+            137.0,
+            136.0
+          ]
+        },
+        {
+          "text": "PRR",
+          "confidence": 0.3758,
+          "boxPx": [
+            143.0,
+            129.0,
+            169.0,
+            144.0
+          ]
+        },
+        {
+          "text": "Se",
+          "confidence": 0.1709,
+          "boxPx": [
+            3.0,
+            158.0,
+            102.0,
+            174.0
+          ]
+        },
+        {
+          "text": "nda",
+          "confidence": 0.3213,
+          "boxPx": [
+            219.0,
+            168.0,
+            256.0,
+            174.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.4211,
+          "boxPx": [
+            261.0,
+            149.0,
+            264.0,
+            182.0
+          ]
+        },
+        {
+          "text": "—",
+          "confidence": 0.3012,
+          "boxPx": [
+            269.0,
+            149.0,
+            278.0,
+            182.0
+          ]
+        },
+        {
+          "text": "norm",
+          "confidence": 0.1821,
+          "boxPx": [
+            286.0,
+            168.0,
+            330.0,
+            174.0
+          ]
+        },
+        {
+          "text": "—|",
+          "confidence": 0.6343,
+          "boxPx": [
+            343.0,
+            149.0,
+            358.0,
+            182.0
+          ]
+        },
+        {
+          "text": "enc",
+          "confidence": 0.0988,
+          "boxPx": [
+            363.0,
+            168.0,
+            414.0,
+            174.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.3518,
+          "boxPx": [
+            420.0,
+            149.0,
+            427.0,
+            182.0
+          ]
+        },
+        {
+          "text": "a,",
+          "confidence": 0.1365,
+          "boxPx": [
+            444.0,
+            168.0,
+            464.0,
+            174.0
+          ]
+        },
+        {
+          "text": "percents",
+          "confidence": 0.0,
+          "boxPx": [
+            3.0,
+            232.0,
+            95.0,
+            247.0
+          ]
+        },
+        {
+          "text": "[PE",
+          "confidence": 0.3179,
+          "boxPx": [
+            124.0,
+            226.0,
+            197.0,
+            242.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.5127,
+          "boxPx": [
+            204.0,
+            222.0,
+            210.0,
+            256.0
+          ]
+        },
+        {
+          "text": "omoneel",
+          "confidence": 0.0,
+          "boxPx": [
+            220.0,
+            241.0,
+            256.0,
+            247.0
+          ]
+        },
+        {
+          "text": "eae",
+          "confidence": 0.0,
+          "boxPx": [
+            283.0,
+            241.0,
+            334.0,
+            247.0
+          ]
+        },
+        {
+          "text": "Leaman",
+          "confidence": 0.1173,
+          "boxPx": [
+            363.0,
+            241.0,
+            414.0,
+            247.0
+          ]
+        },
+        {
+          "text": "|_sor",
+          "confidence": 0.0,
+          "boxPx": [
+            444.0,
+            241.0,
+            464.0,
+            247.0
+          ]
+        },
+        {
+          "text": "Fe",
+          "confidence": 0.1645,
+          "boxPx": [
+            3.0,
+            281.0,
+            28.0,
+            296.0
+          ]
+        },
+        {
+          "text": "mel",
+          "confidence": 0.1916,
+          "boxPx": [
+            52.0,
+            281.0,
+            95.0,
+            289.0
+          ]
+        },
+        {
+          "text": "Sil",
+          "confidence": 0.2628,
+          "boxPx": [
+            144.0,
+            276.0,
+            197.0,
+            291.0
+          ]
+        },
+        {
+          "text": "PP",
+          "confidence": 0.4061,
+          "boxPx": [
+            220.0,
+            290.0,
+            256.0,
+            296.0
+          ]
+        },
+        {
+          "text": "el",
+          "confidence": 0.3151,
+          "boxPx": [
+            283.0,
+            290.0,
+            334.0,
+            296.0
+          ]
+        },
+        {
+          "text": "ination",
+          "confidence": 0.0,
+          "boxPx": [
+            3.0,
+            291.0,
+            39.0,
+            321.0
+          ]
+        },
+        {
+          "text": "atsactaee",
+          "confidence": 0.0,
+          "boxPx": [
+            42.0,
+            291.0,
+            95.0,
+            321.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.5722,
+          "boxPx": [
+            112.0,
+            291.0,
+            123.0,
+            321.0
+          ]
+        },
+        {
+          "text": "Qe",
+          "confidence": 0.0008,
+          "boxPx": [
+            131.0,
+            300.0,
+            191.0,
+            317.0
+          ]
+        },
+        {
+          "text": "at",
+          "confidence": 0.0,
+          "boxPx": [
+            3.0,
+            330.0,
+            20.0,
+            336.0
+          ]
+        },
+        {
+          "text": "rponCovet",
+          "confidence": 0.0,
+          "boxPx": [
+            24.0,
+            330.0,
+            79.0,
+            338.0
+          ]
+        },
+        {
+          "text": "Gym",
+          "confidence": 0.5297,
+          "boxPx": [
+            82.0,
+            330.0,
+            98.0,
+            338.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.4384,
+          "boxPx": [
+            116.0,
+            318.0,
+            122.0,
+            346.0
+          ]
+        },
+        {
+          "text": "HY",
+          "confidence": 0.4459,
+          "boxPx": [
+            122.0,
+            325.0,
+            137.0,
+            332.0
+          ]
+        },
+        {
+          "text": "Rig",
+          "confidence": 0.3436,
+          "boxPx": [
+            143.0,
+            325.0,
+            170.0,
+            340.0
+          ]
+        },
+        {
+          "text": "Nw",
+          "confidence": 0.4844,
+          "boxPx": [
+            173.0,
+            325.0,
+            197.0,
+            332.0
+          ]
+        },
+        {
+          "text": "isp",
+          "confidence": 0.3532,
+          "boxPx": [
+            3.0,
+            354.0,
+            50.0,
+            362.0
+          ]
+        },
+        {
+          "text": "eoncone,",
+          "confidence": 0.0,
+          "boxPx": [
+            54.0,
+            354.0,
+            92.0,
+            366.0
+          ]
+        },
+        {
+          "text": "|e",
+          "confidence": 0.2249,
+          "boxPx": [
+            133.0,
+            349.0,
+            188.0,
+            366.0
+          ]
+        },
+        {
+          "text": "connsioarvnense",
+          "confidence": 0.0,
+          "boxPx": [
+            3.0,
+            403.0,
+            103.0,
+            411.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.6655,
+          "boxPx": [
+            113.0,
+            390.0,
+            124.0,
+            419.0
+          ]
+        },
+        {
+          "text": "BSS",
+          "confidence": 0.1644,
+          "boxPx": [
+            131.0,
+            398.0,
+            191.0,
+            415.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "sourceFileSha256": "669bb8aa7c5fbaa6809acef14013c9a7c86e813ab38f60eb9b193648ef56d726",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/8b8dcc359be5d595.jpeg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/10/BGCM-SEPTEMBER-480x314.jpeg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/report-on-fund-utilization-and-status-of-program-project-activity-implementation-for-the-month-of-september-2020/",
+      "sourceTitle": "Report on Fund Utilization and Status of Program/Project/Activity Implementation for the Month of September 2020",
+      "publishedAt": "2020-10-13T06:53:39",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "BGCM-SEPTEMBER-480x314.jpeg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "669bb8aa7c5fbaa6809acef14013c9a7c86e813ab38f60eb9b193648ef56d726",
+      "sourceFileBytes": 29517,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/8b8dcc359be5d595.jpeg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/10/BGCM-SEPTEMBER-480x314.jpeg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/report-on-fund-utilization-and-status-of-program-project-activity-implementation-for-the-month-of-september-2020/",
+          "sourceTitle": "Report on Fund Utilization and Status of Program/Project/Activity Implementation for the Month of September 2020",
+          "publishedAt": "2020-10-13T06:53:39",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "BGCM-SEPTEMBER-480x314.jpeg"
+        }
+      ],
+      "sourceFileName": "BGCM-SEPTEMBER-480x314.jpeg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "",
+      "ocrText": "",
+      "ocrTokenCount": 0,
+      "ocrMeanConfidence": null,
+      "ocrTokens": [],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "no_text_detected"
+    }
+  ]
+}

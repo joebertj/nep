@@ -1,0 +1,50 @@
+{
+  "sourceFileSha256": "e418c1f4987811dc627f1e6765150d8a2a328f4fe6879ff3c778a03b8c82d882",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/68a2cbfbfaf5e775.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2023/01/325778263_731904724812619_2097619514179589417_n-300x200.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/miagao-procures-2-additional-rescue-boats/",
+      "sourceTitle": "MIAGAO PROCURES 2 ADDITIONAL RESCUE BOATS",
+      "publishedAt": "2023-01-18T09:46:10",
+      "sourceElement": "img",
+      "sourceAttribute": "src",
+      "fileName": "325778263_731904724812619_2097619514179589417_n-300x200.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "e418c1f4987811dc627f1e6765150d8a2a328f4fe6879ff3c778a03b8c82d882",
+      "sourceFileBytes": 13676,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/68a2cbfbfaf5e775.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2023/01/325778263_731904724812619_2097619514179589417_n-300x200.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/miagao-procures-2-additional-rescue-boats/",
+          "sourceTitle": "MIAGAO PROCURES 2 ADDITIONAL RESCUE BOATS",
+          "publishedAt": "2023-01-18T09:46:10",
+          "sourceElement": "img",
+          "sourceAttribute": "src",
+          "fileName": "325778263_731904724812619_2097619514179589417_n-300x200.jpg"
+        }
+      ],
+      "sourceFileName": "325778263_731904724812619_2097619514179589417_n-300x200.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "",
+      "ocrText": "",
+      "ocrTokenCount": 0,
+      "ocrMeanConfidence": null,
+      "ocrTokens": [],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "no_text_detected"
+    }
+  ]
+}

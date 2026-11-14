@@ -1,0 +1,1131 @@
+{
+  "sourceFileSha256": "49fa54ccb400a1f552cdfc4aab51f26b3222228f2c5bf3ce66aef52ba679f24e",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/ad85bec38b822d37.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/Unliquidated-CA-as-of-March-2019-A-scaled.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/cash-advances/unliquidated-cash-advances-as-of-march-31-2019/",
+      "sourceTitle": "UNLIQUIDATED CASH ADVANCES AS OF MARCH 31, 2019",
+      "publishedAt": "2019-04-04T05:36:27",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Unliquidated-CA-as-of-March-2019-A-scaled.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "49fa54ccb400a1f552cdfc4aab51f26b3222228f2c5bf3ce66aef52ba679f24e",
+      "sourceFileBytes": 657442,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/ad85bec38b822d37.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/Unliquidated-CA-as-of-March-2019-A-scaled.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/cash-advances/unliquidated-cash-advances-as-of-march-31-2019/",
+          "sourceTitle": "UNLIQUIDATED CASH ADVANCES AS OF MARCH 31, 2019",
+          "publishedAt": "2019-04-04T05:36:27",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "Unliquidated-CA-as-of-March-2019-A-scaled.jpg"
+        }
+      ],
+      "sourceFileName": "Unliquidated-CA-as-of-March-2019-A-scaled.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "FDP Form 12 - Unliquidated Cash Advances\nMunicipality : Miagao\nName of Debtor Amount\n(In alphabetical order) Balance\nGENERAL FUND\nUnnamed\nUnnamed\nMary Jill Momper\nMary Jill Momper\nNinfa Momblan\nNinfa Momblan\nNinfa Momblan\nNinfa Momblan\nNinfa Momblan\nMacario Napulan , M.D.\nRaymundo Monroy\n20,909.64 |\n168,960.00\n64,400.00\n54,207.70\n10,806.00\nDate Granted\nC.A /MOOE\nC.A /MOOE\nC.A /MOOE\nC.A /MOOE\nC.A/MOOE\nC.A /Payrol\nCA/MOOE\nCA/MOOE\nC:A/MOOE\n9/17/2018\nUNLIQUIDATED CASH ADVANCES\nAs of March 31, 2019\nAmount Due\nPurpose Current\nPast Due\nLess than 30\ndays\n31-90 days\n|/Monetization\n64,400.00\n91-365 days | Over 1yr.\n54,207.70\n10,806.00\nover 2 yrs.\n3 yrs and\nabove\n~~ 20,909.64\n553.66 |\nRemarks",
+      "ocrText": "FDP Form 12 - Unliquidated Cash Advances\nMunicipality : Miagao\nName of Debtor Amount\n(In alphabetical order) Balance\nGENERAL FUND\nUnnamed\nUnnamed\nMary Jill Momper\nMary Jill Momper\nNinfa Momblan\nNinfa Momblan\nNinfa Momblan\nNinfa Momblan\nNinfa Momblan\nMacario Napulan , M.D.\nRaymundo Monroy\n20,909.64 |\n168,960.00\n64,400.00\n54,207.70\n10,806.00\nDate Granted\nC.A /MOOE\nC.A /MOOE\nC.A /MOOE\nC.A /MOOE\nC.A/MOOE\nC.A /Payrol\nCA/MOOE\nCA/MOOE\nC:A/MOOE\n9/17/2018\nUNLIQUIDATED CASH ADVANCES\nAs of March 31, 2019\nAmount Due\nPurpose Current\nPast Due\nLess than 30\ndays\n31-90 days\n|/Monetization\n64,400.00\n91-365 days | Over 1yr.\n54,207.70\n10,806.00\nover 2 yrs.\n3 yrs and\nabove\n~~ 20,909.64\n553.66 |\nRemarks",
+      "ocrTokenCount": 108,
+      "ocrMeanConfidence": 0.901,
+      "ocrTokens": [
+        {
+          "text": "FDP",
+          "confidence": 0.9674,
+          "boxPx": [
+            12.0,
+            17.0,
+            54.0,
+            35.0
+          ]
+        },
+        {
+          "text": "Form",
+          "confidence": 0.9629,
+          "boxPx": [
+            64.0,
+            17.0,
+            120.0,
+            35.0
+          ]
+        },
+        {
+          "text": "12",
+          "confidence": 0.9329,
+          "boxPx": [
+            131.0,
+            16.0,
+            156.0,
+            35.0
+          ]
+        },
+        {
+          "text": "-",
+          "confidence": 0.9002,
+          "boxPx": [
+            165.0,
+            27.0,
+            171.0,
+            29.0
+          ]
+        },
+        {
+          "text": "Unliquidated",
+          "confidence": 0.9182,
+          "boxPx": [
+            181.0,
+            15.0,
+            327.0,
+            40.0
+          ]
+        },
+        {
+          "text": "Cash",
+          "confidence": 0.9632,
+          "boxPx": [
+            336.0,
+            15.0,
+            388.0,
+            35.0
+          ]
+        },
+        {
+          "text": "Advances",
+          "confidence": 0.9632,
+          "boxPx": [
+            397.0,
+            15.0,
+            505.0,
+            35.0
+          ]
+        },
+        {
+          "text": "Municipality",
+          "confidence": 0.9306,
+          "boxPx": [
+            12.0,
+            174.0,
+            152.0,
+            199.0
+          ]
+        },
+        {
+          "text": ":",
+          "confidence": 0.9287,
+          "boxPx": [
+            164.0,
+            181.0,
+            165.0,
+            194.0
+          ]
+        },
+        {
+          "text": "Miagao",
+          "confidence": 0.9226,
+          "boxPx": [
+            176.0,
+            175.0,
+            259.0,
+            199.0
+          ]
+        },
+        {
+          "text": "Name",
+          "confidence": 0.9664,
+          "boxPx": [
+            127.0,
+            295.0,
+            193.0,
+            313.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9664,
+          "boxPx": [
+            201.0,
+            293.0,
+            224.0,
+            313.0
+          ]
+        },
+        {
+          "text": "Debtor",
+          "confidence": 0.9631,
+          "boxPx": [
+            233.0,
+            293.0,
+            311.0,
+            313.0
+          ]
+        },
+        {
+          "text": "Amount",
+          "confidence": 0.9663,
+          "boxPx": [
+            481.0,
+            295.0,
+            574.0,
+            313.0
+          ]
+        },
+        {
+          "text": "(In",
+          "confidence": 0.9678,
+          "boxPx": [
+            91.0,
+            333.0,
+            118.0,
+            358.0
+          ]
+        },
+        {
+          "text": "alphabetical",
+          "confidence": 0.9624,
+          "boxPx": [
+            127.0,
+            333.0,
+            265.0,
+            358.0
+          ]
+        },
+        {
+          "text": "order)",
+          "confidence": 0.9697,
+          "boxPx": [
+            275.0,
+            333.0,
+            345.0,
+            358.0
+          ]
+        },
+        {
+          "text": "Balance",
+          "confidence": 0.9675,
+          "boxPx": [
+            489.0,
+            333.0,
+            576.0,
+            353.0
+          ]
+        },
+        {
+          "text": "GENERAL",
+          "confidence": 0.9514,
+          "boxPx": [
+            11.0,
+            414.0,
+            119.0,
+            433.0
+          ]
+        },
+        {
+          "text": "FUND",
+          "confidence": 0.9685,
+          "boxPx": [
+            128.0,
+            414.0,
+            193.0,
+            433.0
+          ]
+        },
+        {
+          "text": "Unnamed",
+          "confidence": 0.9678,
+          "boxPx": [
+            12.0,
+            489.0,
+            122.0,
+            509.0
+          ]
+        },
+        {
+          "text": "Unnamed",
+          "confidence": 0.9675,
+          "boxPx": [
+            12.0,
+            529.0,
+            122.0,
+            549.0
+          ]
+        },
+        {
+          "text": "Mary",
+          "confidence": 0.9696,
+          "boxPx": [
+            12.0,
+            605.0,
+            57.0,
+            638.0
+          ]
+        },
+        {
+          "text": "Jill",
+          "confidence": 0.9328,
+          "boxPx": [
+            71.0,
+            609.0,
+            103.0,
+            633.0
+          ]
+        },
+        {
+          "text": "Momper",
+          "confidence": 0.9282,
+          "boxPx": [
+            114.0,
+            610.0,
+            212.0,
+            633.0
+          ]
+        },
+        {
+          "text": "Mary",
+          "confidence": 0.9697,
+          "boxPx": [
+            12.0,
+            644.0,
+            57.0,
+            677.0
+          ]
+        },
+        {
+          "text": "Jill",
+          "confidence": 0.9326,
+          "boxPx": [
+            71.0,
+            644.0,
+            116.0,
+            677.0
+          ]
+        },
+        {
+          "text": "Momper",
+          "confidence": 0.9236,
+          "boxPx": [
+            114.0,
+            649.0,
+            212.0,
+            673.0
+          ]
+        },
+        {
+          "text": "Ninfa",
+          "confidence": 0.8823,
+          "boxPx": [
+            12.0,
+            728.0,
+            70.0,
+            748.0
+          ]
+        },
+        {
+          "text": "Momblan",
+          "confidence": 0.9254,
+          "boxPx": [
+            81.0,
+            728.0,
+            188.0,
+            748.0
+          ]
+        },
+        {
+          "text": "Ninfa",
+          "confidence": 0.8795,
+          "boxPx": [
+            12.0,
+            849.0,
+            70.0,
+            869.0
+          ]
+        },
+        {
+          "text": "Momblan",
+          "confidence": 0.9226,
+          "boxPx": [
+            81.0,
+            849.0,
+            188.0,
+            869.0
+          ]
+        },
+        {
+          "text": "Ninfa",
+          "confidence": 0.8898,
+          "boxPx": [
+            12.0,
+            891.0,
+            70.0,
+            911.0
+          ]
+        },
+        {
+          "text": "Momblan",
+          "confidence": 0.8898,
+          "boxPx": [
+            81.0,
+            891.0,
+            188.0,
+            911.0
+          ]
+        },
+        {
+          "text": "Ninfa",
+          "confidence": 0.8862,
+          "boxPx": [
+            12.0,
+            1016.0,
+            70.0,
+            1036.0
+          ]
+        },
+        {
+          "text": "Momblan",
+          "confidence": 0.9252,
+          "boxPx": [
+            81.0,
+            1016.0,
+            188.0,
+            1036.0
+          ]
+        },
+        {
+          "text": "Ninfa",
+          "confidence": 0.8901,
+          "boxPx": [
+            12.0,
+            1057.0,
+            70.0,
+            1077.0
+          ]
+        },
+        {
+          "text": "Momblan",
+          "confidence": 0.9282,
+          "boxPx": [
+            81.0,
+            1058.0,
+            188.0,
+            1077.0
+          ]
+        },
+        {
+          "text": "Macario",
+          "confidence": 0.9245,
+          "boxPx": [
+            12.0,
+            1142.0,
+            104.0,
+            1161.0
+          ]
+        },
+        {
+          "text": "Napulan",
+          "confidence": 0.9168,
+          "boxPx": [
+            114.0,
+            1141.0,
+            206.0,
+            1166.0
+          ]
+        },
+        {
+          "text": ",",
+          "confidence": 0.9184,
+          "boxPx": [
+            211.0,
+            1137.0,
+            220.0,
+            1170.0
+          ]
+        },
+        {
+          "text": "M.D.",
+          "confidence": 0.9421,
+          "boxPx": [
+            230.0,
+            1143.0,
+            276.0,
+            1161.0
+          ]
+        },
+        {
+          "text": "Raymundo",
+          "confidence": 0.9637,
+          "boxPx": [
+            12.0,
+            1392.0,
+            133.0,
+            1417.0
+          ]
+        },
+        {
+          "text": "Monroy",
+          "confidence": 0.9637,
+          "boxPx": [
+            143.0,
+            1393.0,
+            232.0,
+            1417.0
+          ]
+        },
+        {
+          "text": "20,909.64",
+          "confidence": 0.9442,
+          "boxPx": [
+            502.0,
+            533.0,
+            614.0,
+            556.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.9475,
+          "boxPx": [
+            626.0,
+            519.0,
+            628.0,
+            521.0
+          ]
+        },
+        {
+          "text": "168,960.00",
+          "confidence": 0.429,
+          "boxPx": [
+            489.0,
+            638.0,
+            628.0,
+            675.0
+          ]
+        },
+        {
+          "text": "64,400.00",
+          "confidence": 0.9677,
+          "boxPx": [
+            502.0,
+            897.0,
+            614.0,
+            920.0
+          ]
+        },
+        {
+          "text": "54,207.70",
+          "confidence": 0.9678,
+          "boxPx": [
+            502.0,
+            1064.0,
+            614.0,
+            1086.0
+          ]
+        },
+        {
+          "text": "10,806.00",
+          "confidence": 0.9609,
+          "boxPx": [
+            503.0,
+            1398.0,
+            614.0,
+            1420.0
+          ]
+        },
+        {
+          "text": "Date",
+          "confidence": 0.9691,
+          "boxPx": [
+            640.0,
+            295.0,
+            692.0,
+            313.0
+          ]
+        },
+        {
+          "text": "Granted",
+          "confidence": 0.9645,
+          "boxPx": [
+            700.0,
+            293.0,
+            792.0,
+            313.0
+          ]
+        },
+        {
+          "text": "C.A",
+          "confidence": 0.9002,
+          "boxPx": [
+            812.0,
+            533.0,
+            849.0,
+            552.0
+          ]
+        },
+        {
+          "text": "/MOOE",
+          "confidence": 0.9002,
+          "boxPx": [
+            856.0,
+            531.0,
+            942.0,
+            556.0
+          ]
+        },
+        {
+          "text": "C.A",
+          "confidence": 0.8992,
+          "boxPx": [
+            812.0,
+            652.0,
+            849.0,
+            671.0
+          ]
+        },
+        {
+          "text": "/MOOE",
+          "confidence": 0.9093,
+          "boxPx": [
+            856.0,
+            650.0,
+            942.0,
+            675.0
+          ]
+        },
+        {
+          "text": "C.A",
+          "confidence": 0.8954,
+          "boxPx": [
+            812.0,
+            732.0,
+            849.0,
+            751.0
+          ]
+        },
+        {
+          "text": "/MOOE",
+          "confidence": 0.8985,
+          "boxPx": [
+            856.0,
+            730.0,
+            942.0,
+            755.0
+          ]
+        },
+        {
+          "text": "C.A",
+          "confidence": 0.8944,
+          "boxPx": [
+            812.0,
+            897.0,
+            849.0,
+            916.0
+          ]
+        },
+        {
+          "text": "/MOOE",
+          "confidence": 0.8998,
+          "boxPx": [
+            856.0,
+            895.0,
+            942.0,
+            919.0
+          ]
+        },
+        {
+          "text": "C.A/MOOE",
+          "confidence": 0.6256,
+          "boxPx": [
+            812.0,
+            1020.0,
+            942.0,
+            1050.0
+          ]
+        },
+        {
+          "text": "C.A",
+          "confidence": 0.9043,
+          "boxPx": [
+            812.0,
+            1064.0,
+            849.0,
+            1083.0
+          ]
+        },
+        {
+          "text": "/Payrol",
+          "confidence": 0.9089,
+          "boxPx": [
+            856.0,
+            1062.0,
+            938.0,
+            1087.0
+          ]
+        },
+        {
+          "text": "CA/MOOE",
+          "confidence": 0.5608,
+          "boxPx": [
+            812.0,
+            491.0,
+            982.0,
+            521.0
+          ]
+        },
+        {
+          "text": "CA/MOOE",
+          "confidence": 0.6444,
+          "boxPx": [
+            812.0,
+            610.0,
+            982.0,
+            640.0
+          ]
+        },
+        {
+          "text": "C:A/MOOE",
+          "confidence": 0.3619,
+          "boxPx": [
+            812.0,
+            853.0,
+            982.0,
+            883.0
+          ]
+        },
+        {
+          "text": "9/17/2018",
+          "confidence": 0.9605,
+          "boxPx": [
+            657.0,
+            1395.0,
+            778.0,
+            1420.0
+          ]
+        },
+        {
+          "text": "UNLIQUIDATED",
+          "confidence": 0.9122,
+          "boxPx": [
+            1091.0,
+            95.0,
+            1268.0,
+            117.0
+          ]
+        },
+        {
+          "text": "CASH",
+          "confidence": 0.9574,
+          "boxPx": [
+            1276.0,
+            96.0,
+            1335.0,
+            114.0
+          ]
+        },
+        {
+          "text": "ADVANCES",
+          "confidence": 0.8006,
+          "boxPx": [
+            1344.0,
+            95.0,
+            1470.0,
+            114.0
+          ]
+        },
+        {
+          "text": "As",
+          "confidence": 0.9556,
+          "boxPx": [
+            1158.0,
+            136.0,
+            1183.0,
+            154.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9655,
+          "boxPx": [
+            1192.0,
+            134.0,
+            1214.0,
+            154.0
+          ]
+        },
+        {
+          "text": "March",
+          "confidence": 0.9652,
+          "boxPx": [
+            1223.0,
+            134.0,
+            1294.0,
+            154.0
+          ]
+        },
+        {
+          "text": "31,",
+          "confidence": 0.9652,
+          "boxPx": [
+            1304.0,
+            135.0,
+            1336.0,
+            158.0
+          ]
+        },
+        {
+          "text": "2019",
+          "confidence": 0.9635,
+          "boxPx": [
+            1346.0,
+            135.0,
+            1400.0,
+            154.0
+          ]
+        },
+        {
+          "text": "Amount",
+          "confidence": 0.964,
+          "boxPx": [
+            1803.0,
+            255.0,
+            1895.0,
+            273.0
+          ]
+        },
+        {
+          "text": "Due",
+          "confidence": 0.9649,
+          "boxPx": [
+            1905.0,
+            255.0,
+            1948.0,
+            273.0
+          ]
+        },
+        {
+          "text": "Purpose",
+          "confidence": 0.9651,
+          "boxPx": [
+            954.0,
+            295.0,
+            1045.0,
+            318.0
+          ]
+        },
+        {
+          "text": "Current",
+          "confidence": 0.9617,
+          "boxPx": [
+            1438.0,
+            295.0,
+            1525.0,
+            313.0
+          ]
+        },
+        {
+          "text": "Past",
+          "confidence": 0.9622,
+          "boxPx": [
+            2113.0,
+            295.0,
+            2159.0,
+            313.0
+          ]
+        },
+        {
+          "text": "Due",
+          "confidence": 0.9637,
+          "boxPx": [
+            2168.0,
+            295.0,
+            2212.0,
+            313.0
+          ]
+        },
+        {
+          "text": "Less",
+          "confidence": 0.9684,
+          "boxPx": [
+            1229.0,
+            335.0,
+            1274.0,
+            353.0
+          ]
+        },
+        {
+          "text": "than",
+          "confidence": 0.9654,
+          "boxPx": [
+            1282.0,
+            333.0,
+            1332.0,
+            353.0
+          ]
+        },
+        {
+          "text": "30",
+          "confidence": 0.9633,
+          "boxPx": [
+            1342.0,
+            334.0,
+            1368.0,
+            353.0
+          ]
+        },
+        {
+          "text": "days",
+          "confidence": 0.9664,
+          "boxPx": [
+            1271.0,
+            373.0,
+            1321.0,
+            398.0
+          ]
+        },
+        {
+          "text": "31-90",
+          "confidence": 0.9673,
+          "boxPx": [
+            1436.0,
+            334.0,
+            1500.0,
+            353.0
+          ]
+        },
+        {
+          "text": "days",
+          "confidence": 0.9665,
+          "boxPx": [
+            1509.0,
+            333.0,
+            1559.0,
+            358.0
+          ]
+        },
+        {
+          "text": "|/Monetization",
+          "confidence": 0.7576,
+          "boxPx": [
+            942.0,
+            1062.0,
+            1111.0,
+            1086.0
+          ]
+        },
+        {
+          "text": "64,400.00",
+          "confidence": 0.9635,
+          "boxPx": [
+            1468.0,
+            897.0,
+            1580.0,
+            920.0
+          ]
+        },
+        {
+          "text": "91-365",
+          "confidence": 0.9667,
+          "boxPx": [
+            1613.0,
+            334.0,
+            1691.0,
+            353.0
+          ]
+        },
+        {
+          "text": "days",
+          "confidence": 0.9533,
+          "boxPx": [
+            1700.0,
+            333.0,
+            1750.0,
+            358.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.8988,
+          "boxPx": [
+            1765.0,
+            329.0,
+            1780.0,
+            362.0
+          ]
+        },
+        {
+          "text": "Over",
+          "confidence": 0.3069,
+          "boxPx": [
+            1796.0,
+            334.0,
+            1850.0,
+            353.0
+          ]
+        },
+        {
+          "text": "1yr.",
+          "confidence": 0.3069,
+          "boxPx": [
+            1860.0,
+            334.0,
+            1906.0,
+            358.0
+          ]
+        },
+        {
+          "text": "54,207.70",
+          "confidence": 0.9693,
+          "boxPx": [
+            1639.0,
+            1064.0,
+            1752.0,
+            1086.0
+          ]
+        },
+        {
+          "text": "10,806.00",
+          "confidence": 0.9673,
+          "boxPx": [
+            1640.0,
+            1398.0,
+            1752.0,
+            1420.0
+          ]
+        },
+        {
+          "text": "over",
+          "confidence": 0.9672,
+          "boxPx": [
+            1965.0,
+            339.0,
+            2015.0,
+            353.0
+          ]
+        },
+        {
+          "text": "2",
+          "confidence": 0.9611,
+          "boxPx": [
+            2024.0,
+            334.0,
+            2035.0,
+            353.0
+          ]
+        },
+        {
+          "text": "yrs.",
+          "confidence": 0.9532,
+          "boxPx": [
+            2044.0,
+            339.0,
+            2082.0,
+            358.0
+          ]
+        },
+        {
+          "text": "3",
+          "confidence": 0.8894,
+          "boxPx": [
+            2154.0,
+            334.0,
+            2165.0,
+            353.0
+          ]
+        },
+        {
+          "text": "yrs",
+          "confidence": 0.8894,
+          "boxPx": [
+            2174.0,
+            339.0,
+            2206.0,
+            358.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.9677,
+          "boxPx": [
+            2215.0,
+            333.0,
+            2255.0,
+            353.0
+          ]
+        },
+        {
+          "text": "above",
+          "confidence": 0.9654,
+          "boxPx": [
+            2172.0,
+            373.0,
+            2240.0,
+            393.0
+          ]
+        },
+        {
+          "text": "~~",
+          "confidence": 0.2436,
+          "boxPx": [
+            2133.0,
+            519.0,
+            2159.0,
+            521.0
+          ]
+        },
+        {
+          "text": "20,909.64",
+          "confidence": 0.8346,
+          "boxPx": [
+            2168.0,
+            519.0,
+            2282.0,
+            556.0
+          ]
+        },
+        {
+          "text": "553.66",
+          "confidence": 0.9501,
+          "boxPx": [
+            2203.0,
+            493.0,
+            2244.0,
+            512.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.9691,
+          "boxPx": [
+            2289.0,
+            493.0,
+            2304.0,
+            521.0
+          ]
+        },
+        {
+          "text": "Remarks",
+          "confidence": 0.9679,
+          "boxPx": [
+            2378.0,
+            333.0,
+            2474.0,
+            353.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

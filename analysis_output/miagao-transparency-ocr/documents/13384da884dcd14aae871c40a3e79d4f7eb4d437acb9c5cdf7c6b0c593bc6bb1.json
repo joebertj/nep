@@ -1,0 +1,581 @@
+{
+  "sourceFileSha256": "13384da884dcd14aae871c40a3e79d4f7eb4d437acb9c5cdf7c6b0c593bc6bb1",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/3e8f99a93f08df09.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/MANPOWER-COMPLEMENT-1st-quarter-2019-768x1022.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/manpower-complement/manpower-complement-as-of-march-2019/",
+      "sourceTitle": "MANPOWER COMPLEMENT as of March 2019",
+      "publishedAt": "2019-04-03T02:54:56",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "MANPOWER-COMPLEMENT-1st-quarter-2019-768x1022.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "13384da884dcd14aae871c40a3e79d4f7eb4d437acb9c5cdf7c6b0c593bc6bb1",
+      "sourceFileBytes": 55142,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/3e8f99a93f08df09.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/MANPOWER-COMPLEMENT-1st-quarter-2019-768x1022.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/manpower-complement/manpower-complement-as-of-march-2019/",
+          "sourceTitle": "MANPOWER COMPLEMENT as of March 2019",
+          "publishedAt": "2019-04-03T02:54:56",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "MANPOWER-COMPLEMENT-1st-quarter-2019-768x1022.jpg"
+        }
+      ],
+      "sourceFileName": "MANPOWER-COMPLEMENT-1st-quarter-2019-768x1022.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Republic of the Philippines\nProvince of Iloilo\nMunicipality of Miagao\nPERSONNEL UNIT\nPERSONNEL COMPLEMENT as of March 31, 2019\nPermanent 131\nCo-Terminous 2\nElective 11\nTemporary 0\nCasual 14\nJob Order (Laborers) 142\nContract of Service 25\nPrepared by:\nANGELI M. ALLI\nSupervising Administrative Officer\nNoted by:\nMACARIO N. NAPULAN, M.D.\nMunicipal Mayor",
+      "ocrText": "Republic of the Philippines\nProvince of Iloilo\nMunicipality of Miagao\nPERSONNEL UNIT\nPERSONNEL COMPLEMENT as of March 31, 2019\nPermanent 131\nCo-Terminous 2\nElective 11\nTemporary 0\nCasual 14\nJob Order (Laborers) 142\nContract of Service 25\nPrepared by:\nANGELI M. ALLI\nSupervising Administrative Officer\nNoted by:\nMACARIO N. NAPULAN, M.D.\nMunicipal Mayor",
+      "ocrTokenCount": 53,
+      "ocrMeanConfidence": 0.9507,
+      "ocrTokens": [
+        {
+          "text": "Republic",
+          "confidence": 0.9673,
+          "boxPx": [
+            247.0,
+            11.0,
+            334.0,
+            33.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9681,
+          "boxPx": [
+            341.0,
+            11.0,
+            362.0,
+            29.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.9671,
+          "boxPx": [
+            368.0,
+            11.0,
+            401.0,
+            29.0
+          ]
+        },
+        {
+          "text": "Philippines",
+          "confidence": 0.9632,
+          "boxPx": [
+            410.0,
+            11.0,
+            520.0,
+            33.0
+          ]
+        },
+        {
+          "text": "Province",
+          "confidence": 0.9675,
+          "boxPx": [
+            299.0,
+            48.0,
+            386.0,
+            65.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9648,
+          "boxPx": [
+            394.0,
+            47.0,
+            414.0,
+            64.0
+          ]
+        },
+        {
+          "text": "Iloilo",
+          "confidence": 0.809,
+          "boxPx": [
+            422.0,
+            47.0,
+            470.0,
+            64.0
+          ]
+        },
+        {
+          "text": "Municipality",
+          "confidence": 0.9563,
+          "boxPx": [
+            267.0,
+            83.0,
+            393.0,
+            105.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.93,
+          "boxPx": [
+            401.0,
+            83.0,
+            421.0,
+            101.0
+          ]
+        },
+        {
+          "text": "Miagao",
+          "confidence": 0.9151,
+          "boxPx": [
+            428.0,
+            84.0,
+            504.0,
+            105.0
+          ]
+        },
+        {
+          "text": "PERSONNEL",
+          "confidence": 0.9655,
+          "boxPx": [
+            295.0,
+            155.0,
+            418.0,
+            172.0
+          ]
+        },
+        {
+          "text": "UNIT",
+          "confidence": 0.9664,
+          "boxPx": [
+            426.0,
+            156.0,
+            475.0,
+            172.0
+          ]
+        },
+        {
+          "text": "PERSONNEL",
+          "confidence": 0.9655,
+          "boxPx": [
+            11.0,
+            227.0,
+            136.0,
+            244.0
+          ]
+        },
+        {
+          "text": "COMPLEMENT",
+          "confidence": 0.9636,
+          "boxPx": [
+            142.0,
+            227.0,
+            296.0,
+            244.0
+          ]
+        },
+        {
+          "text": "as",
+          "confidence": 0.9663,
+          "boxPx": [
+            303.0,
+            231.0,
+            324.0,
+            244.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9684,
+          "boxPx": [
+            331.0,
+            226.0,
+            352.0,
+            244.0
+          ]
+        },
+        {
+          "text": "March",
+          "confidence": 0.9665,
+          "boxPx": [
+            360.0,
+            226.0,
+            425.0,
+            244.0
+          ]
+        },
+        {
+          "text": "31,",
+          "confidence": 0.9692,
+          "boxPx": [
+            433.0,
+            227.0,
+            464.0,
+            247.0
+          ]
+        },
+        {
+          "text": "2019",
+          "confidence": 0.9699,
+          "boxPx": [
+            472.0,
+            227.0,
+            522.0,
+            244.0
+          ]
+        },
+        {
+          "text": "Permanent",
+          "confidence": 0.9691,
+          "boxPx": [
+            11.0,
+            295.0,
+            124.0,
+            325.0
+          ]
+        },
+        {
+          "text": "131",
+          "confidence": 0.9594,
+          "boxPx": [
+            476.0,
+            299.0,
+            512.0,
+            315.0
+          ]
+        },
+        {
+          "text": "Co-Terminous",
+          "confidence": 0.9075,
+          "boxPx": [
+            10.0,
+            334.0,
+            154.0,
+            351.0
+          ]
+        },
+        {
+          "text": "2",
+          "confidence": 0.9701,
+          "boxPx": [
+            488.0,
+            334.0,
+            499.0,
+            351.0
+          ]
+        },
+        {
+          "text": "Elective",
+          "confidence": 0.9664,
+          "boxPx": [
+            11.0,
+            369.0,
+            88.0,
+            386.0
+          ]
+        },
+        {
+          "text": "11",
+          "confidence": 0.9648,
+          "boxPx": [
+            482.0,
+            370.0,
+            505.0,
+            386.0
+          ]
+        },
+        {
+          "text": "Temporary",
+          "confidence": 0.9587,
+          "boxPx": [
+            9.0,
+            402.0,
+            123.0,
+            431.0
+          ]
+        },
+        {
+          "text": "0",
+          "confidence": 0.7725,
+          "boxPx": [
+            488.0,
+            406.0,
+            500.0,
+            423.0
+          ]
+        },
+        {
+          "text": "Casual",
+          "confidence": 0.9674,
+          "boxPx": [
+            10.0,
+            436.0,
+            75.0,
+            466.0
+          ]
+        },
+        {
+          "text": "14",
+          "confidence": 0.9668,
+          "boxPx": [
+            481.0,
+            444.0,
+            505.0,
+            461.0
+          ]
+        },
+        {
+          "text": "Job",
+          "confidence": 0.9678,
+          "boxPx": [
+            9.0,
+            476.0,
+            43.0,
+            494.0
+          ]
+        },
+        {
+          "text": "Order",
+          "confidence": 0.9645,
+          "boxPx": [
+            51.0,
+            476.0,
+            111.0,
+            494.0
+          ]
+        },
+        {
+          "text": "(Laborers)",
+          "confidence": 0.9628,
+          "boxPx": [
+            118.0,
+            476.0,
+            221.0,
+            498.0
+          ]
+        },
+        {
+          "text": "142",
+          "confidence": 0.9575,
+          "boxPx": [
+            476.0,
+            480.0,
+            512.0,
+            497.0
+          ]
+        },
+        {
+          "text": "Contract",
+          "confidence": 0.969,
+          "boxPx": [
+            10.0,
+            513.0,
+            98.0,
+            530.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.969,
+          "boxPx": [
+            105.0,
+            512.0,
+            126.0,
+            530.0
+          ]
+        },
+        {
+          "text": "Service",
+          "confidence": 0.9679,
+          "boxPx": [
+            132.0,
+            513.0,
+            205.0,
+            530.0
+          ]
+        },
+        {
+          "text": "25",
+          "confidence": 0.9584,
+          "boxPx": [
+            481.0,
+            516.0,
+            505.0,
+            533.0
+          ]
+        },
+        {
+          "text": "Prepared",
+          "confidence": 0.9694,
+          "boxPx": [
+            11.0,
+            620.0,
+            103.0,
+            642.0
+          ]
+        },
+        {
+          "text": "by:",
+          "confidence": 0.9651,
+          "boxPx": [
+            112.0,
+            620.0,
+            140.0,
+            642.0
+          ]
+        },
+        {
+          "text": "ANGELI",
+          "confidence": 0.9207,
+          "boxPx": [
+            10.0,
+            692.0,
+            86.0,
+            709.0
+          ]
+        },
+        {
+          "text": "M.",
+          "confidence": 0.9163,
+          "boxPx": [
+            95.0,
+            692.0,
+            121.0,
+            709.0
+          ]
+        },
+        {
+          "text": "ALLI",
+          "confidence": 0.9163,
+          "boxPx": [
+            129.0,
+            692.0,
+            171.0,
+            709.0
+          ]
+        },
+        {
+          "text": "Supervising",
+          "confidence": 0.968,
+          "boxPx": [
+            10.0,
+            729.0,
+            127.0,
+            751.0
+          ]
+        },
+        {
+          "text": "Administrative",
+          "confidence": 0.9688,
+          "boxPx": [
+            134.0,
+            728.0,
+            285.0,
+            746.0
+          ]
+        },
+        {
+          "text": "Officer",
+          "confidence": 0.9683,
+          "boxPx": [
+            293.0,
+            728.0,
+            362.0,
+            746.0
+          ]
+        },
+        {
+          "text": "Noted",
+          "confidence": 0.9694,
+          "boxPx": [
+            11.0,
+            879.0,
+            72.0,
+            897.0
+          ]
+        },
+        {
+          "text": "by:",
+          "confidence": 0.9663,
+          "boxPx": [
+            81.0,
+            879.0,
+            109.0,
+            901.0
+          ]
+        },
+        {
+          "text": "MACARIO",
+          "confidence": 0.9116,
+          "boxPx": [
+            11.0,
+            955.0,
+            113.0,
+            972.0
+          ]
+        },
+        {
+          "text": "N.",
+          "confidence": 0.9093,
+          "boxPx": [
+            122.0,
+            955.0,
+            142.0,
+            972.0
+          ]
+        },
+        {
+          "text": "NAPULAN,",
+          "confidence": 0.919,
+          "boxPx": [
+            151.0,
+            955.0,
+            261.0,
+            975.0
+          ]
+        },
+        {
+          "text": "M.D.",
+          "confidence": 0.9663,
+          "boxPx": [
+            269.0,
+            955.0,
+            318.0,
+            972.0
+          ]
+        },
+        {
+          "text": "Municipal",
+          "confidence": 0.9536,
+          "boxPx": [
+            11.0,
+            992.0,
+            110.0,
+            1014.0
+          ]
+        },
+        {
+          "text": "Mayor",
+          "confidence": 0.9682,
+          "boxPx": [
+            120.0,
+            993.0,
+            185.0,
+            1014.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

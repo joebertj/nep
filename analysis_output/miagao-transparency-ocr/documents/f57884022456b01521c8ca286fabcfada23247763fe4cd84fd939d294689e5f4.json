@@ -1,0 +1,50 @@
+{
+  "sourceFileSha256": "f57884022456b01521c8ca286fabcfada23247763fe4cd84fd939d294689e5f4",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/754e8b7bea730eab.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2023/06/356337242_780995967055289_8397458676670273270_n-232x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-27/",
+      "sourceTitle": "INVITATION TO BID",
+      "publishedAt": "2023-06-19T14:41:54",
+      "sourceElement": "img",
+      "sourceAttribute": "src",
+      "fileName": "356337242_780995967055289_8397458676670273270_n-232x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "f57884022456b01521c8ca286fabcfada23247763fe4cd84fd939d294689e5f4",
+      "sourceFileBytes": 16837,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/754e8b7bea730eab.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2023/06/356337242_780995967055289_8397458676670273270_n-232x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-27/",
+          "sourceTitle": "INVITATION TO BID",
+          "publishedAt": "2023-06-19T14:41:54",
+          "sourceElement": "img",
+          "sourceAttribute": "src",
+          "fileName": "356337242_780995967055289_8397458676670273270_n-232x300.jpg"
+        }
+      ],
+      "sourceFileName": "356337242_780995967055289_8397458676670273270_n-232x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "",
+      "ocrText": "",
+      "ocrTokenCount": 0,
+      "ocrMeanConfidence": null,
+      "ocrTokens": [],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "no_text_detected"
+    }
+  ]
+}

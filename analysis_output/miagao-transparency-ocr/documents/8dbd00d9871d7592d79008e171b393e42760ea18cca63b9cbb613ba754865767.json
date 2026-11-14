@@ -1,0 +1,50 @@
+{
+  "sourceFileSha256": "8dbd00d9871d7592d79008e171b393e42760ea18cca63b9cbb613ba754865767",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/9bf741727032be85.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2024/10/458330356_973985138106914_4227250298659244917_n-300x200.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/mayor-richard-garin-is-personally-examining-the-proposed-budgets-of-various-local-government-offices-during-a-series-of-public-hearings/",
+      "sourceTitle": "Mayor Richard Garin is personally examining the proposed budgets of various local government offices during a series of public hearings.",
+      "publishedAt": "2024-10-08T15:53:39",
+      "sourceElement": "img",
+      "sourceAttribute": "src",
+      "fileName": "458330356_973985138106914_4227250298659244917_n-300x200.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "8dbd00d9871d7592d79008e171b393e42760ea18cca63b9cbb613ba754865767",
+      "sourceFileBytes": 12191,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/9bf741727032be85.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2024/10/458330356_973985138106914_4227250298659244917_n-300x200.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/mayor-richard-garin-is-personally-examining-the-proposed-budgets-of-various-local-government-offices-during-a-series-of-public-hearings/",
+          "sourceTitle": "Mayor Richard Garin is personally examining the proposed budgets of various local government offices during a series of public hearings.",
+          "publishedAt": "2024-10-08T15:53:39",
+          "sourceElement": "img",
+          "sourceAttribute": "src",
+          "fileName": "458330356_973985138106914_4227250298659244917_n-300x200.jpg"
+        }
+      ],
+      "sourceFileName": "458330356_973985138106914_4227250298659244917_n-300x200.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "",
+      "ocrText": "",
+      "ocrTokenCount": 0,
+      "ocrMeanConfidence": null,
+      "ocrTokens": [],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "no_text_detected"
+    }
+  ]
+}

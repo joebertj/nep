@@ -14,6 +14,15 @@ the post or page where it appeared.
 
 Inventory: `../../analysis_output/miagao-transparency-source-inventory.json`.
 
+The recurring downloader is `../../watch_miagao_transparency.py`. Run it once
+with `python3 ../../watch_miagao_transparency.py --once` to refresh the catalog,
+download new uploads, parse newly found PDF/JPEG files with the Miagao OCR
+supervisor, and publish `/historical`. Run it without `--once` as a long-lived
+process to check the official site every six hours (configurable with
+`--interval-seconds`). Keep it running under the host's service manager for
+automatic checks after reboot. A failed crawl is logged and retried on the next
+cycle; downloads and inventory updates are written atomically.
+
 Two official links returned HTTP 404 during the crawl:
 
 - `LDRRMF-Utilization-March-2019.xlsx` — the related post also links to PDF

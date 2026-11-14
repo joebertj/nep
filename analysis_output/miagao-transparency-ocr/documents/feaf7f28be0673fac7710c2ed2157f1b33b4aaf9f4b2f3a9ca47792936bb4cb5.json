@@ -1,0 +1,71 @@
+{
+  "sourceFileSha256": "feaf7f28be0673fac7710c2ed2157f1b33b4aaf9f4b2f3a9ca47792936bb4cb5",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/b5509241f90a3c3d.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2024/10/464133543_1011952600976834_4682745410089135752_n-231x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/invitation-to-bid-for-the-following-projects-15/",
+      "sourceTitle": "INVITATION TO BID FOR THE FOLLOWING PROJECTS:",
+      "publishedAt": "2024-10-25T17:01:54",
+      "sourceElement": "img",
+      "sourceAttribute": "src",
+      "fileName": "464133543_1011952600976834_4682745410089135752_n-231x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "feaf7f28be0673fac7710c2ed2157f1b33b4aaf9f4b2f3a9ca47792936bb4cb5",
+      "sourceFileBytes": 15309,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/b5509241f90a3c3d.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2024/10/464133543_1011952600976834_4682745410089135752_n-231x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/invitation-to-bid-for-the-following-projects-15/",
+          "sourceTitle": "INVITATION TO BID FOR THE FOLLOWING PROJECTS:",
+          "publishedAt": "2024-10-25T17:01:54",
+          "sourceElement": "img",
+          "sourceAttribute": "src",
+          "fileName": "464133543_1011952600976834_4682745410089135752_n-231x300.jpg"
+        }
+      ],
+      "sourceFileName": "464133543_1011952600976834_4682745410089135752_n-231x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "ou Pigm",
+      "ocrText": "ou Pigm",
+      "ocrTokenCount": 2,
+      "ocrMeanConfidence": 0.4639,
+      "ocrTokens": [
+        {
+          "text": "ou",
+          "confidence": 0.6133,
+          "boxPx": [
+            16.0,
+            14.0,
+            97.0,
+            36.0
+          ]
+        },
+        {
+          "text": "Pigm",
+          "confidence": 0.3145,
+          "boxPx": [
+            105.0,
+            5.0,
+            229.0,
+            50.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

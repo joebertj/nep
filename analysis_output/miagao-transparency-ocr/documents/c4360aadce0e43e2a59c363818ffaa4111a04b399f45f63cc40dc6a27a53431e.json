@@ -1,0 +1,50 @@
+{
+  "sourceFileSha256": "c4360aadce0e43e2a59c363818ffaa4111a04b399f45f63cc40dc6a27a53431e",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/5fe5953361a9e482.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2023/01/324182864_1131865860786140_8689532015942342385_n-300x168.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/bac-voted-new-chairman/",
+      "sourceTitle": "‘BAC VOTED NEW CHAIRMAN’",
+      "publishedAt": "2023-01-18T09:33:56",
+      "sourceElement": "img",
+      "sourceAttribute": "src",
+      "fileName": "324182864_1131865860786140_8689532015942342385_n-300x168.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "c4360aadce0e43e2a59c363818ffaa4111a04b399f45f63cc40dc6a27a53431e",
+      "sourceFileBytes": 13955,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/5fe5953361a9e482.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2023/01/324182864_1131865860786140_8689532015942342385_n-300x168.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/bac-voted-new-chairman/",
+          "sourceTitle": "‘BAC VOTED NEW CHAIRMAN’",
+          "publishedAt": "2023-01-18T09:33:56",
+          "sourceElement": "img",
+          "sourceAttribute": "src",
+          "fileName": "324182864_1131865860786140_8689532015942342385_n-300x168.jpg"
+        }
+      ],
+      "sourceFileName": "324182864_1131865860786140_8689532015942342385_n-300x168.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "",
+      "ocrText": "",
+      "ocrTokenCount": 0,
+      "ocrMeanConfidence": null,
+      "ocrTokens": [],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "no_text_detected"
+    }
+  ]
+}

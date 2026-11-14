@@ -1,0 +1,711 @@
+{
+  "sourceFileSha256": "45ff56d3bc2b066c0ba64e3d3ffa579e0990b1446de11122bbd618a73ae88df0",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/18cc6aca62a5bf5f.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/Unliquidated-CA-as-of-March-2019-C-2048x512.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/cash-advances/unliquidated-cash-advances-as-of-march-31-2019/",
+      "sourceTitle": "UNLIQUIDATED CASH ADVANCES AS OF MARCH 31, 2019",
+      "publishedAt": "2019-04-04T05:36:27",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Unliquidated-CA-as-of-March-2019-C-2048x512.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "45ff56d3bc2b066c0ba64e3d3ffa579e0990b1446de11122bbd618a73ae88df0",
+      "sourceFileBytes": 134613,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/18cc6aca62a5bf5f.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/Unliquidated-CA-as-of-March-2019-C-2048x512.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/cash-advances/unliquidated-cash-advances-as-of-march-31-2019/",
+          "sourceTitle": "UNLIQUIDATED CASH ADVANCES AS OF MARCH 31, 2019",
+          "publishedAt": "2019-04-04T05:36:27",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Unliquidated-CA-as-of-March-2019-C-2048x512.jpg"
+        }
+      ],
+      "sourceFileName": "Unliquidated-CA-as-of-March-2019-C-2048x512.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "TRUST FUND\nunnamed 54,645.02\nAimee Marie Biboso 0.20\nNinfa Momblan 38,650.00\nundated\n2/9/2016\n3/6/2019\nUnreconcilled Amount\nSalaries/Wages JO\nSalaries/Wages JO\n38,650.00\n0.20\nTotal 2,927,208.58\n472,410.78\n2,263,144.62\n65,197.69\n47,526.00\n0.20\n78,929.29\nWe hereby certify that i have reviewed the contents and hereby attest to the veracity and correctness of the date\nor information contained in this document.\nMAYLENE T. SERVIDAD\nMunicipal Accountant\nHON. MACARIO NAPULAN, M.D\nLCE",
+      "ocrText": "TRUST FUND\nunnamed 54,645.02\nAimee Marie Biboso 0.20\nNinfa Momblan 38,650.00\nundated\n2/9/2016\n3/6/2019\nUnreconcilled Amount\nSalaries/Wages JO\nSalaries/Wages JO\n38,650.00\n0.20\nTotal 2,927,208.58\n472,410.78\n2,263,144.62\n65,197.69\n47,526.00\n0.20\n78,929.29\nWe hereby certify that i have reviewed the contents and hereby attest to the veracity and correctness of the date\nor information contained in this document.\nMAYLENE T. SERVIDAD\nMunicipal Accountant\nHON. MACARIO NAPULAN, M.D\nLCE",
+      "ocrTokenCount": 66,
+      "ocrMeanConfidence": 0.9524,
+      "ocrTokens": [
+        {
+          "text": "TRUST",
+          "confidence": 0.9374,
+          "boxPx": [
+            8.0,
+            15.0,
+            69.0,
+            30.0
+          ]
+        },
+        {
+          "text": "FUND",
+          "confidence": 0.9374,
+          "boxPx": [
+            75.0,
+            15.0,
+            128.0,
+            29.0
+          ]
+        },
+        {
+          "text": "unnamed",
+          "confidence": 0.9664,
+          "boxPx": [
+            9.0,
+            43.0,
+            95.0,
+            59.0
+          ]
+        },
+        {
+          "text": "54,645.02",
+          "confidence": 0.9646,
+          "boxPx": [
+            402.0,
+            44.0,
+            491.0,
+            62.0
+          ]
+        },
+        {
+          "text": "Aimee",
+          "confidence": 0.9664,
+          "boxPx": [
+            8.0,
+            78.0,
+            66.0,
+            92.0
+          ]
+        },
+        {
+          "text": "Marie",
+          "confidence": 0.9326,
+          "boxPx": [
+            74.0,
+            78.0,
+            126.0,
+            92.0
+          ]
+        },
+        {
+          "text": "Biboso",
+          "confidence": 0.9236,
+          "boxPx": [
+            134.0,
+            77.0,
+            193.0,
+            92.0
+          ]
+        },
+        {
+          "text": "0.20",
+          "confidence": 0.9678,
+          "boxPx": [
+            453.0,
+            78.0,
+            491.0,
+            92.0
+          ]
+        },
+        {
+          "text": "Ninfa",
+          "confidence": 0.9147,
+          "boxPx": [
+            10.0,
+            110.0,
+            56.0,
+            126.0
+          ]
+        },
+        {
+          "text": "Momblan",
+          "confidence": 0.9117,
+          "boxPx": [
+            65.0,
+            110.0,
+            151.0,
+            126.0
+          ]
+        },
+        {
+          "text": "38,650.00",
+          "confidence": 0.9598,
+          "boxPx": [
+            402.0,
+            111.0,
+            491.0,
+            129.0
+          ]
+        },
+        {
+          "text": "undated",
+          "confidence": 0.969,
+          "boxPx": [
+            536.0,
+            43.0,
+            610.0,
+            59.0
+          ]
+        },
+        {
+          "text": "2/9/2016",
+          "confidence": 0.9624,
+          "boxPx": [
+            530.0,
+            76.0,
+            615.0,
+            95.0
+          ]
+        },
+        {
+          "text": "3/6/2019",
+          "confidence": 0.9651,
+          "boxPx": [
+            530.0,
+            109.0,
+            615.0,
+            129.0
+          ]
+        },
+        {
+          "text": "Unreconcilled",
+          "confidence": 0.9114,
+          "boxPx": [
+            725.0,
+            41.0,
+            816.0,
+            53.0
+          ]
+        },
+        {
+          "text": "Amount",
+          "confidence": 0.9678,
+          "boxPx": [
+            820.0,
+            42.0,
+            874.0,
+            52.0
+          ]
+        },
+        {
+          "text": "Salaries/Wages",
+          "confidence": 0.9132,
+          "boxPx": [
+            715.0,
+            76.0,
+            854.0,
+            96.0
+          ]
+        },
+        {
+          "text": "JO",
+          "confidence": 0.9451,
+          "boxPx": [
+            861.0,
+            78.0,
+            882.0,
+            92.0
+          ]
+        },
+        {
+          "text": "Salaries/Wages",
+          "confidence": 0.9063,
+          "boxPx": [
+            715.0,
+            109.0,
+            854.0,
+            129.0
+          ]
+        },
+        {
+          "text": "JO",
+          "confidence": 0.9329,
+          "boxPx": [
+            861.0,
+            111.0,
+            882.0,
+            126.0
+          ]
+        },
+        {
+          "text": "38,650.00",
+          "confidence": 0.9511,
+          "boxPx": [
+            1017.0,
+            115.0,
+            1107.0,
+            133.0
+          ]
+        },
+        {
+          "text": "0.20",
+          "confidence": 0.9678,
+          "boxPx": [
+            1640.0,
+            82.0,
+            1679.0,
+            104.0
+          ]
+        },
+        {
+          "text": "Total",
+          "confidence": 0.9642,
+          "boxPx": [
+            148.0,
+            217.0,
+            193.0,
+            245.0
+          ]
+        },
+        {
+          "text": "2,927,208.58",
+          "confidence": 0.9256,
+          "boxPx": [
+            372.0,
+            222.0,
+            491.0,
+            239.0
+          ]
+        },
+        {
+          "text": "472,410.78",
+          "confidence": 0.9588,
+          "boxPx": [
+            1004.0,
+            222.0,
+            1107.0,
+            239.0
+          ]
+        },
+        {
+          "text": "2,263,144.62",
+          "confidence": 0.9232,
+          "boxPx": [
+            1144.0,
+            222.0,
+            1264.0,
+            239.0
+          ]
+        },
+        {
+          "text": "65,197.69",
+          "confidence": 0.961,
+          "boxPx": [
+            1310.0,
+            222.0,
+            1401.0,
+            239.0
+          ]
+        },
+        {
+          "text": "47,526.00",
+          "confidence": 0.9692,
+          "boxPx": [
+            1443.0,
+            222.0,
+            1534.0,
+            239.0
+          ]
+        },
+        {
+          "text": "0.20",
+          "confidence": 0.9641,
+          "boxPx": [
+            1640.0,
+            222.0,
+            1679.0,
+            236.0
+          ]
+        },
+        {
+          "text": "78,929.29",
+          "confidence": 0.9541,
+          "boxPx": [
+            1733.0,
+            222.0,
+            1824.0,
+            239.0
+          ]
+        },
+        {
+          "text": "We",
+          "confidence": 0.9673,
+          "boxPx": [
+            9.0,
+            288.0,
+            38.0,
+            303.0
+          ]
+        },
+        {
+          "text": "hereby",
+          "confidence": 0.9528,
+          "boxPx": [
+            46.0,
+            287.0,
+            109.0,
+            306.0
+          ]
+        },
+        {
+          "text": "certify",
+          "confidence": 0.9693,
+          "boxPx": [
+            115.0,
+            287.0,
+            173.0,
+            306.0
+          ]
+        },
+        {
+          "text": "that",
+          "confidence": 0.9671,
+          "boxPx": [
+            179.0,
+            287.0,
+            216.0,
+            303.0
+          ]
+        },
+        {
+          "text": "i",
+          "confidence": 0.9689,
+          "boxPx": [
+            223.0,
+            288.0,
+            225.0,
+            303.0
+          ]
+        },
+        {
+          "text": "have",
+          "confidence": 0.9685,
+          "boxPx": [
+            233.0,
+            287.0,
+            275.0,
+            303.0
+          ]
+        },
+        {
+          "text": "reviewed",
+          "confidence": 0.962,
+          "boxPx": [
+            283.0,
+            287.0,
+            365.0,
+            303.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.9693,
+          "boxPx": [
+            373.0,
+            287.0,
+            402.0,
+            303.0
+          ]
+        },
+        {
+          "text": "contents",
+          "confidence": 0.9684,
+          "boxPx": [
+            409.0,
+            289.0,
+            488.0,
+            303.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.9674,
+          "boxPx": [
+            495.0,
+            287.0,
+            527.0,
+            303.0
+          ]
+        },
+        {
+          "text": "hereby",
+          "confidence": 0.9621,
+          "boxPx": [
+            536.0,
+            287.0,
+            598.0,
+            306.0
+          ]
+        },
+        {
+          "text": "attest",
+          "confidence": 0.9634,
+          "boxPx": [
+            604.0,
+            289.0,
+            657.0,
+            303.0
+          ]
+        },
+        {
+          "text": "to",
+          "confidence": 0.966,
+          "boxPx": [
+            663.0,
+            289.0,
+            681.0,
+            303.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.9699,
+          "boxPx": [
+            688.0,
+            287.0,
+            717.0,
+            303.0
+          ]
+        },
+        {
+          "text": "veracity",
+          "confidence": 0.9674,
+          "boxPx": [
+            724.0,
+            288.0,
+            796.0,
+            306.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.9642,
+          "boxPx": [
+            802.0,
+            287.0,
+            835.0,
+            303.0
+          ]
+        },
+        {
+          "text": "correctness",
+          "confidence": 0.9653,
+          "boxPx": [
+            842.0,
+            289.0,
+            947.0,
+            303.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9701,
+          "boxPx": [
+            954.0,
+            287.0,
+            971.0,
+            303.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.9643,
+          "boxPx": [
+            979.0,
+            287.0,
+            1008.0,
+            303.0
+          ]
+        },
+        {
+          "text": "date",
+          "confidence": 0.9677,
+          "boxPx": [
+            1014.0,
+            287.0,
+            1054.0,
+            303.0
+          ]
+        },
+        {
+          "text": "or",
+          "confidence": 0.9619,
+          "boxPx": [
+            9.0,
+            325.0,
+            27.0,
+            336.0
+          ]
+        },
+        {
+          "text": "information",
+          "confidence": 0.9619,
+          "boxPx": [
+            34.0,
+            321.0,
+            141.0,
+            336.0
+          ]
+        },
+        {
+          "text": "contained",
+          "confidence": 0.9682,
+          "boxPx": [
+            149.0,
+            321.0,
+            239.0,
+            336.0
+          ]
+        },
+        {
+          "text": "in",
+          "confidence": 0.9676,
+          "boxPx": [
+            247.0,
+            321.0,
+            261.0,
+            336.0
+          ]
+        },
+        {
+          "text": "this",
+          "confidence": 0.9676,
+          "boxPx": [
+            268.0,
+            321.0,
+            301.0,
+            336.0
+          ]
+        },
+        {
+          "text": "document.",
+          "confidence": 0.9526,
+          "boxPx": [
+            307.0,
+            321.0,
+            405.0,
+            336.0
+          ]
+        },
+        {
+          "text": "MAYLENE",
+          "confidence": 0.9238,
+          "boxPx": [
+            10.0,
+            455.0,
+            97.0,
+            470.0
+          ]
+        },
+        {
+          "text": "T.",
+          "confidence": 0.8955,
+          "boxPx": [
+            103.0,
+            455.0,
+            118.0,
+            470.0
+          ]
+        },
+        {
+          "text": "SERVIDAD",
+          "confidence": 0.9195,
+          "boxPx": [
+            126.0,
+            455.0,
+            218.0,
+            470.0
+          ]
+        },
+        {
+          "text": "Municipal",
+          "confidence": 0.9628,
+          "boxPx": [
+            10.0,
+            488.0,
+            98.0,
+            507.0
+          ]
+        },
+        {
+          "text": "Accountant",
+          "confidence": 0.9611,
+          "boxPx": [
+            105.0,
+            489.0,
+            210.0,
+            503.0
+          ]
+        },
+        {
+          "text": "HON.",
+          "confidence": 0.9318,
+          "boxPx": [
+            1040.0,
+            455.0,
+            1086.0,
+            470.0
+          ]
+        },
+        {
+          "text": "MACARIO",
+          "confidence": 0.9084,
+          "boxPx": [
+            1095.0,
+            455.0,
+            1183.0,
+            470.0
+          ]
+        },
+        {
+          "text": "NAPULAN,",
+          "confidence": 0.9265,
+          "boxPx": [
+            1191.0,
+            455.0,
+            1285.0,
+            473.0
+          ]
+        },
+        {
+          "text": "M.D",
+          "confidence": 0.9661,
+          "boxPx": [
+            1293.0,
+            455.0,
+            1330.0,
+            470.0
+          ]
+        },
+        {
+          "text": "LCE",
+          "confidence": 0.9678,
+          "boxPx": [
+            1170.0,
+            489.0,
+            1200.0,
+            503.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

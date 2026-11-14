@@ -1,0 +1,720 @@
+{
+  "sourceFileSha256": "c31b1ce6dbd8e01613ea7b4172c73759361cb78a2a9003bba31bec608625a1cc",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/f07c21e0e6f7fab1.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/11/Bidding-Documents-Drugs-and-Medicines-Supplies-2.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-drugs-and-medicines-supplies-for-the-use-of-municipal-health-office-miagao-iloilo-2/",
+      "sourceTitle": "INVITATION TO BID FOR DRUGS AND MEDICINES SUPPLIES FOR THE USE OF MUNICIPAL HEALTH OFFICE, MIAGAO, ILOILO",
+      "publishedAt": "2020-11-10T07:59:41",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Bidding-Documents-Drugs-and-Medicines-Supplies-2.pdf"
+    },
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/11/Bidding-Documents-Drugs-and-Medicines-Supplies.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-drugs-and-medicines-supplies-for-the-use-of-municipal-health-office-miagao-iloilo/",
+      "sourceTitle": "INVITATION TO BID FOR DRUGS AND MEDICINES SUPPLIES FOR THE USE OF MUNICIPAL HEALTH OFFICE, MIAGAO, ILOILO",
+      "publishedAt": "2020-11-10T07:50:11",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Bidding-Documents-Drugs-and-Medicines-Supplies.pdf"
+    }
+  ],
+  "ocrPageNumbers": [
+    21,
+    25
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "c31b1ce6dbd8e01613ea7b4172c73759361cb78a2a9003bba31bec608625a1cc",
+      "sourceFileBytes": 874447,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/f07c21e0e6f7fab1.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/11/Bidding-Documents-Drugs-and-Medicines-Supplies-2.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-drugs-and-medicines-supplies-for-the-use-of-municipal-health-office-miagao-iloilo-2/",
+          "sourceTitle": "INVITATION TO BID FOR DRUGS AND MEDICINES SUPPLIES FOR THE USE OF MUNICIPAL HEALTH OFFICE, MIAGAO, ILOILO",
+          "publishedAt": "2020-11-10T07:59:41",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "Bidding-Documents-Drugs-and-Medicines-Supplies-2.pdf"
+        },
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/11/Bidding-Documents-Drugs-and-Medicines-Supplies.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-drugs-and-medicines-supplies-for-the-use-of-municipal-health-office-miagao-iloilo/",
+          "sourceTitle": "INVITATION TO BID FOR DRUGS AND MEDICINES SUPPLIES FOR THE USE OF MUNICIPAL HEALTH OFFICE, MIAGAO, ILOILO",
+          "publishedAt": "2020-11-10T07:50:11",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "Bidding-Documents-Drugs-and-Medicines-Supplies.pdf"
+        }
+      ],
+      "sourceFileName": "Bidding-Documents-Drugs-and-Medicines-Supplies-2.pdf",
+      "pageNumber": 21,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "21 NTP 12 Vitamin B1 + B6 + B12/tab 100’s (Blister Pack) 100 box Fifteen (15) calendar days after receipt of NTP",
+      "extractedText": "21 NTP 12 Vitamin B1 + B6 + B12/tab 100’s (Blister Pack) 100 box Fifteen (15) calendar days after receipt of NTP\nNTP\n12\nVitamin B1 + B6 + B12/tab\n100’s (Blister Pack)\n100 box\nFifteen (15) calendar\ndays after receipt of\nNTP\n21",
+      "ocrText": "NTP\n12\nVitamin B1 + B6 + B12/tab\n100’s (Blister Pack)\n100 box\nFifteen (15) calendar\ndays after receipt of\nNTP\n21",
+      "ocrTokenCount": 22,
+      "ocrMeanConfidence": 0.9346,
+      "ocrTokens": [
+        {
+          "text": "NTP",
+          "confidence": 0.9539,
+          "boxPx": [
+            819.0,
+            151.0,
+            864.0,
+            167.0
+          ]
+        },
+        {
+          "text": "12",
+          "confidence": 0.9674,
+          "boxPx": [
+            187.0,
+            203.0,
+            207.0,
+            219.0
+          ]
+        },
+        {
+          "text": "Vitamin",
+          "confidence": 0.9328,
+          "boxPx": [
+            272.0,
+            203.0,
+            350.0,
+            219.0
+          ]
+        },
+        {
+          "text": "B1",
+          "confidence": 0.8559,
+          "boxPx": [
+            361.0,
+            203.0,
+            384.0,
+            219.0
+          ]
+        },
+        {
+          "text": "+",
+          "confidence": 0.9247,
+          "boxPx": [
+            398.0,
+            207.0,
+            410.0,
+            219.0
+          ]
+        },
+        {
+          "text": "B6",
+          "confidence": 0.9247,
+          "boxPx": [
+            421.0,
+            203.0,
+            447.0,
+            219.0
+          ]
+        },
+        {
+          "text": "+",
+          "confidence": 0.9325,
+          "boxPx": [
+            458.0,
+            207.0,
+            470.0,
+            219.0
+          ]
+        },
+        {
+          "text": "B12/tab",
+          "confidence": 0.9102,
+          "boxPx": [
+            481.0,
+            203.0,
+            556.0,
+            219.0
+          ]
+        },
+        {
+          "text": "100’s",
+          "confidence": 0.9048,
+          "boxPx": [
+            275.0,
+            231.0,
+            324.0,
+            247.0
+          ]
+        },
+        {
+          "text": "(Blister",
+          "confidence": 0.9594,
+          "boxPx": [
+            331.0,
+            230.0,
+            403.0,
+            252.0
+          ]
+        },
+        {
+          "text": "Pack)",
+          "confidence": 0.9594,
+          "boxPx": [
+            409.0,
+            230.0,
+            462.0,
+            252.0
+          ]
+        },
+        {
+          "text": "100",
+          "confidence": 0.9694,
+          "boxPx": [
+            597.0,
+            203.0,
+            630.0,
+            219.0
+          ]
+        },
+        {
+          "text": "box",
+          "confidence": 0.956,
+          "boxPx": [
+            636.0,
+            203.0,
+            671.0,
+            219.0
+          ]
+        },
+        {
+          "text": "Fifteen",
+          "confidence": 0.847,
+          "boxPx": [
+            819.0,
+            203.0,
+            886.0,
+            219.0
+          ]
+        },
+        {
+          "text": "(15)",
+          "confidence": 0.847,
+          "boxPx": [
+            914.0,
+            203.0,
+            952.0,
+            223.0
+          ]
+        },
+        {
+          "text": "calendar",
+          "confidence": 0.9647,
+          "boxPx": [
+            967.0,
+            203.0,
+            1048.0,
+            219.0
+          ]
+        },
+        {
+          "text": "days",
+          "confidence": 0.9631,
+          "boxPx": [
+            819.0,
+            231.0,
+            861.0,
+            252.0
+          ]
+        },
+        {
+          "text": "after",
+          "confidence": 0.9597,
+          "boxPx": [
+            881.0,
+            231.0,
+            925.0,
+            247.0
+          ]
+        },
+        {
+          "text": "receipt",
+          "confidence": 0.9643,
+          "boxPx": [
+            944.0,
+            231.0,
+            1009.0,
+            252.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.965,
+          "boxPx": [
+            1028.0,
+            231.0,
+            1049.0,
+            247.0
+          ]
+        },
+        {
+          "text": "NTP",
+          "confidence": 0.9677,
+          "boxPx": [
+            819.0,
+            258.0,
+            864.0,
+            274.0
+          ]
+        },
+        {
+          "text": "21",
+          "confidence": 0.9323,
+          "boxPx": [
+            586.0,
+            1565.0,
+            602.0,
+            1579.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 67,
+      "imageCoverageRatio": 0.0,
+      "extractionMethod": "PyMuPDF native text + Tesseract OCR",
+      "parseStatus": "ocr_text_found"
+    },
+    {
+      "sourceFileSha256": "c31b1ce6dbd8e01613ea7b4172c73759361cb78a2a9003bba31bec608625a1cc",
+      "sourceFileBytes": 874447,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/f07c21e0e6f7fab1.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/11/Bidding-Documents-Drugs-and-Medicines-Supplies-2.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-drugs-and-medicines-supplies-for-the-use-of-municipal-health-office-miagao-iloilo-2/",
+          "sourceTitle": "INVITATION TO BID FOR DRUGS AND MEDICINES SUPPLIES FOR THE USE OF MUNICIPAL HEALTH OFFICE, MIAGAO, ILOILO",
+          "publishedAt": "2020-11-10T07:59:41",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "Bidding-Documents-Drugs-and-Medicines-Supplies-2.pdf"
+        },
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/11/Bidding-Documents-Drugs-and-Medicines-Supplies.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-for-drugs-and-medicines-supplies-for-the-use-of-municipal-health-office-miagao-iloilo/",
+          "sourceTitle": "INVITATION TO BID FOR DRUGS AND MEDICINES SUPPLIES FOR THE USE OF MUNICIPAL HEALTH OFFICE, MIAGAO, ILOILO",
+          "publishedAt": "2020-11-10T07:50:11",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "Bidding-Documents-Drugs-and-Medicines-Supplies.pdf"
+        }
+      ],
+      "sourceFileName": "Bidding-Documents-Drugs-and-Medicines-Supplies-2.pdf",
+      "pageNumber": 25,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "25 9 10 box Paracetamol 500mg / tab 100’s 10 288 btls. Paracetamol 250mg / 5ml syrup @ 60ml 11 100 box Multivitamins capsule 100’s (Blister Pack) 12 100 box Vitamin B1 + B6 + B12/tab 100’s (Blister Pack)",
+      "extractedText": "25 9 10 box Paracetamol 500mg / tab 100’s 10 288 btls. Paracetamol 250mg / 5ml syrup @ 60ml 11 100 box Multivitamins capsule 100’s (Blister Pack) 12 100 box Vitamin B1 + B6 + B12/tab 100’s (Blister Pack)\n9 10 box Paracetamol 500mg / tab 100’s\n10 288 btls. Paracetamol 250mg / 5m] syrup @ 60m1\n11 100 box Multivitamins capsule 100’s (Blister Pack)\n12 100 box Vitamin B1 + B6 + B12/tab 100’s (Blister\nPack)\n25",
+      "ocrText": "9 10 box Paracetamol 500mg / tab 100’s\n10 288 btls. Paracetamol 250mg / 5m] syrup @ 60m1\n11 100 box Multivitamins capsule 100’s (Blister Pack)\n12 100 box Vitamin B1 + B6 + B12/tab 100’s (Blister\nPack)\n25",
+      "ocrTokenCount": 39,
+      "ocrMeanConfidence": 0.9007,
+      "ocrTokens": [
+        {
+          "text": "9",
+          "confidence": 0.9667,
+          "boxPx": [
+            198.0,
+            151.0,
+            209.0,
+            168.0
+          ]
+        },
+        {
+          "text": "10",
+          "confidence": 0.9684,
+          "boxPx": [
+            389.0,
+            151.0,
+            409.0,
+            167.0
+          ]
+        },
+        {
+          "text": "box",
+          "confidence": 0.689,
+          "boxPx": [
+            416.0,
+            151.0,
+            451.0,
+            167.0
+          ]
+        },
+        {
+          "text": "Paracetamol",
+          "confidence": 0.9632,
+          "boxPx": [
+            605.0,
+            150.0,
+            722.0,
+            167.0
+          ]
+        },
+        {
+          "text": "500mg",
+          "confidence": 0.9322,
+          "boxPx": [
+            730.0,
+            150.0,
+            808.0,
+            172.0
+          ]
+        },
+        {
+          "text": "/",
+          "confidence": 0.9321,
+          "boxPx": [
+            796.0,
+            146.0,
+            806.0,
+            176.0
+          ]
+        },
+        {
+          "text": "tab",
+          "confidence": 0.9324,
+          "boxPx": [
+            813.0,
+            150.0,
+            842.0,
+            167.0
+          ]
+        },
+        {
+          "text": "100’s",
+          "confidence": 0.9267,
+          "boxPx": [
+            852.0,
+            151.0,
+            901.0,
+            167.0
+          ]
+        },
+        {
+          "text": "10",
+          "confidence": 0.9598,
+          "boxPx": [
+            195.0,
+            203.0,
+            215.0,
+            219.0
+          ]
+        },
+        {
+          "text": "288",
+          "confidence": 0.9301,
+          "boxPx": [
+            378.0,
+            203.0,
+            412.0,
+            219.0
+          ]
+        },
+        {
+          "text": "btls.",
+          "confidence": 0.876,
+          "boxPx": [
+            419.0,
+            203.0,
+            458.0,
+            219.0
+          ]
+        },
+        {
+          "text": "Paracetamol",
+          "confidence": 0.9623,
+          "boxPx": [
+            605.0,
+            203.0,
+            722.0,
+            219.0
+          ]
+        },
+        {
+          "text": "250mg",
+          "confidence": 0.9322,
+          "boxPx": [
+            730.0,
+            203.0,
+            794.0,
+            224.0
+          ]
+        },
+        {
+          "text": "/",
+          "confidence": 0.9322,
+          "boxPx": [
+            801.0,
+            203.0,
+            808.0,
+            219.0
+          ]
+        },
+        {
+          "text": "5m]",
+          "confidence": 0.5481,
+          "boxPx": [
+            814.0,
+            203.0,
+            850.0,
+            219.0
+          ]
+        },
+        {
+          "text": "syrup",
+          "confidence": 0.9328,
+          "boxPx": [
+            858.0,
+            208.0,
+            909.0,
+            224.0
+          ]
+        },
+        {
+          "text": "@",
+          "confidence": 0.9294,
+          "boxPx": [
+            919.0,
+            203.0,
+            935.0,
+            219.0
+          ]
+        },
+        {
+          "text": "60m1",
+          "confidence": 0.4166,
+          "boxPx": [
+            945.0,
+            203.0,
+            992.0,
+            219.0
+          ]
+        },
+        {
+          "text": "11",
+          "confidence": 0.5643,
+          "boxPx": [
+            195.0,
+            256.0,
+            212.0,
+            272.0
+          ]
+        },
+        {
+          "text": "100",
+          "confidence": 0.9599,
+          "boxPx": [
+            383.0,
+            256.0,
+            415.0,
+            272.0
+          ]
+        },
+        {
+          "text": "box",
+          "confidence": 0.9665,
+          "boxPx": [
+            422.0,
+            256.0,
+            457.0,
+            272.0
+          ]
+        },
+        {
+          "text": "Multivitamins",
+          "confidence": 0.968,
+          "boxPx": [
+            605.0,
+            255.0,
+            739.0,
+            272.0
+          ]
+        },
+        {
+          "text": "capsule",
+          "confidence": 0.9325,
+          "boxPx": [
+            747.0,
+            255.0,
+            817.0,
+            277.0
+          ]
+        },
+        {
+          "text": "100’s",
+          "confidence": 0.9247,
+          "boxPx": [
+            827.0,
+            256.0,
+            877.0,
+            272.0
+          ]
+        },
+        {
+          "text": "(Blister",
+          "confidence": 0.9666,
+          "boxPx": [
+            884.0,
+            255.0,
+            955.0,
+            277.0
+          ]
+        },
+        {
+          "text": "Pack)",
+          "confidence": 0.9683,
+          "boxPx": [
+            962.0,
+            255.0,
+            1014.0,
+            277.0
+          ]
+        },
+        {
+          "text": "12",
+          "confidence": 0.9666,
+          "boxPx": [
+            195.0,
+            309.0,
+            215.0,
+            325.0
+          ]
+        },
+        {
+          "text": "100",
+          "confidence": 0.9599,
+          "boxPx": [
+            383.0,
+            309.0,
+            415.0,
+            325.0
+          ]
+        },
+        {
+          "text": "box",
+          "confidence": 0.9665,
+          "boxPx": [
+            422.0,
+            309.0,
+            457.0,
+            325.0
+          ]
+        },
+        {
+          "text": "Vitamin",
+          "confidence": 0.9328,
+          "boxPx": [
+            604.0,
+            308.0,
+            683.0,
+            325.0
+          ]
+        },
+        {
+          "text": "B1",
+          "confidence": 0.893,
+          "boxPx": [
+            690.0,
+            309.0,
+            714.0,
+            325.0
+          ]
+        },
+        {
+          "text": "+",
+          "confidence": 0.9274,
+          "boxPx": [
+            725.0,
+            311.0,
+            737.0,
+            323.0
+          ]
+        },
+        {
+          "text": "B6",
+          "confidence": 0.8924,
+          "boxPx": [
+            746.0,
+            309.0,
+            772.0,
+            325.0
+          ]
+        },
+        {
+          "text": "+",
+          "confidence": 0.9323,
+          "boxPx": [
+            781.0,
+            311.0,
+            793.0,
+            323.0
+          ]
+        },
+        {
+          "text": "B12/tab",
+          "confidence": 0.9166,
+          "boxPx": [
+            801.0,
+            308.0,
+            876.0,
+            325.0
+          ]
+        },
+        {
+          "text": "100’s",
+          "confidence": 0.9191,
+          "boxPx": [
+            887.0,
+            309.0,
+            936.0,
+            325.0
+          ]
+        },
+        {
+          "text": "(Blister",
+          "confidence": 0.9686,
+          "boxPx": [
+            945.0,
+            308.0,
+            1016.0,
+            330.0
+          ]
+        },
+        {
+          "text": "Pack)",
+          "confidence": 0.969,
+          "boxPx": [
+            605.0,
+            336.0,
+            657.0,
+            356.0
+          ]
+        },
+        {
+          "text": "25",
+          "confidence": 0.9033,
+          "boxPx": [
+            586.0,
+            1565.0,
+            604.0,
+            1579.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 109,
+      "imageCoverageRatio": 0.0,
+      "extractionMethod": "PyMuPDF native text + Tesseract OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

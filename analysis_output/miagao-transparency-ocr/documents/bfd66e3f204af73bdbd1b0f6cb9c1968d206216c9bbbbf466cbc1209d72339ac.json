@@ -1,0 +1,68 @@
+{
+  "sourceFileSha256": "bfd66e3f204af73bdbd1b0f6cb9c1968d206216c9bbbbf466cbc1209d72339ac",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/6ba5e21cb3c0b768.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2025/01/472514233_1067343715437722_5117485540432950693_n-1-233x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/invitation-to-bid-for-the-following-projects-17/",
+      "sourceTitle": "INVITATION TO BID FOR THE FOLLOWING PROJECTS",
+      "publishedAt": "2025-01-07T11:53:33",
+      "sourceElement": "img",
+      "sourceAttribute": "src",
+      "fileName": "472514233_1067343715437722_5117485540432950693_n-1-233x300.jpg"
+    },
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2025/01/472514233_1067343715437722_5117485540432950693_n-233x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/invitation-to-bid-for-the-following-projects-17/",
+      "sourceTitle": "INVITATION TO BID FOR THE FOLLOWING PROJECTS",
+      "publishedAt": "2025-01-07T11:53:33",
+      "sourceElement": "img",
+      "sourceAttribute": "src",
+      "fileName": "472514233_1067343715437722_5117485540432950693_n-233x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "bfd66e3f204af73bdbd1b0f6cb9c1968d206216c9bbbbf466cbc1209d72339ac",
+      "sourceFileBytes": 10487,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/6ba5e21cb3c0b768.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2025/01/472514233_1067343715437722_5117485540432950693_n-1-233x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/invitation-to-bid-for-the-following-projects-17/",
+          "sourceTitle": "INVITATION TO BID FOR THE FOLLOWING PROJECTS",
+          "publishedAt": "2025-01-07T11:53:33",
+          "sourceElement": "img",
+          "sourceAttribute": "src",
+          "fileName": "472514233_1067343715437722_5117485540432950693_n-1-233x300.jpg"
+        },
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2025/01/472514233_1067343715437722_5117485540432950693_n-233x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/invitation-to-bid-for-the-following-projects-17/",
+          "sourceTitle": "INVITATION TO BID FOR THE FOLLOWING PROJECTS",
+          "publishedAt": "2025-01-07T11:53:33",
+          "sourceElement": "img",
+          "sourceAttribute": "src",
+          "fileName": "472514233_1067343715437722_5117485540432950693_n-233x300.jpg"
+        }
+      ],
+      "sourceFileName": "472514233_1067343715437722_5117485540432950693_n-1-233x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "",
+      "ocrText": "",
+      "ocrTokenCount": 0,
+      "ocrMeanConfidence": null,
+      "ocrTokens": [],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "no_text_detected"
+    }
+  ]
+}

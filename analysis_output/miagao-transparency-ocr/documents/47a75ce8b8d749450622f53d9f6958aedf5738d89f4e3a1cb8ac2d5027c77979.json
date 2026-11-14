@@ -1,0 +1,50 @@
+{
+  "sourceFileSha256": "47a75ce8b8d749450622f53d9f6958aedf5738d89f4e3a1cb8ac2d5027c77979",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/1a0096033d8568d2.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2024/10/464297320_1013441907494570_6931386374773510581_n-231x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/invitation-to-bid-33/",
+      "sourceTitle": "Invitation to Bid",
+      "publishedAt": "2024-10-30T11:09:19",
+      "sourceElement": "img",
+      "sourceAttribute": "src",
+      "fileName": "464297320_1013441907494570_6931386374773510581_n-231x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "47a75ce8b8d749450622f53d9f6958aedf5738d89f4e3a1cb8ac2d5027c77979",
+      "sourceFileBytes": 9413,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/1a0096033d8568d2.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2024/10/464297320_1013441907494570_6931386374773510581_n-231x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/invitation-to-bid-33/",
+          "sourceTitle": "Invitation to Bid",
+          "publishedAt": "2024-10-30T11:09:19",
+          "sourceElement": "img",
+          "sourceAttribute": "src",
+          "fileName": "464297320_1013441907494570_6931386374773510581_n-231x300.jpg"
+        }
+      ],
+      "sourceFileName": "464297320_1013441907494570_6931386374773510581_n-231x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "",
+      "ocrText": "",
+      "ocrTokenCount": 0,
+      "ocrMeanConfidence": null,
+      "ocrTokens": [],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "no_text_detected"
+    }
+  ]
+}

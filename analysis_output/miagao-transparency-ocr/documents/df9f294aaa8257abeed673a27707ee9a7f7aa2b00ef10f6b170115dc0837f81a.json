@@ -1,0 +1,71 @@
+{
+  "sourceFileSha256": "df9f294aaa8257abeed673a27707ee9a7f7aa2b00ef10f6b170115dc0837f81a",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/e7ea3c7cf41cdfad.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/12/SEF-Utilization-as-of-Sept30-2020.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/sef-utilization-as-of-sept30-2020/",
+      "sourceTitle": "SEF-Utilization-as-of-Sept30-2020",
+      "publishedAt": "2020-12-23T07:30:32",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "SEF-Utilization-as-of-Sept30-2020.pdf"
+    }
+  ],
+  "ocrPageNumbers": [
+    2
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "df9f294aaa8257abeed673a27707ee9a7f7aa2b00ef10f6b170115dc0837f81a",
+      "sourceFileBytes": 214829,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/e7ea3c7cf41cdfad.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/12/SEF-Utilization-as-of-Sept30-2020.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/sef-utilization-as-of-sept30-2020/",
+          "sourceTitle": "SEF-Utilization-as-of-Sept30-2020",
+          "publishedAt": "2020-12-23T07:30:32",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "SEF-Utilization-as-of-Sept30-2020.pdf"
+        }
+      ],
+      "sourceFileName": "SEF-Utilization-as-of-Sept30-2020.pdf",
+      "pageNumber": 2,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "D t PULAN, M.D",
+      "extractedText": "D t PULAN, M.D\nPULAN, M.D",
+      "ocrText": "PULAN, M.D",
+      "ocrTokenCount": 2,
+      "ocrMeanConfidence": 0.9426,
+      "ocrTokens": [
+        {
+          "text": "PULAN,",
+          "confidence": 0.9226,
+          "boxPx": [
+            571.0,
+            1290.0,
+            635.0,
+            1307.0
+          ]
+        },
+        {
+          "text": "M.D",
+          "confidence": 0.9627,
+          "boxPx": [
+            643.0,
+            1290.0,
+            678.0,
+            1304.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 9,
+      "imageCoverageRatio": 0.0,
+      "extractionMethod": "PyMuPDF native text + Tesseract OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

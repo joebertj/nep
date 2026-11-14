@@ -1,0 +1,531 @@
+{
+  "sourceFileSha256": "d566ce699fc390d5630bedbfdccd2decd04ed074f7960f52ac8a9bc2e8afaac6",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/20d3f7611120e281.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/Unliquidated-CA-as-of-March-2019-C-768x192.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/cash-advances/unliquidated-cash-advances-as-of-march-31-2019/",
+      "sourceTitle": "UNLIQUIDATED CASH ADVANCES AS OF MARCH 31, 2019",
+      "publishedAt": "2019-04-04T05:36:27",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Unliquidated-CA-as-of-March-2019-C-768x192.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "d566ce699fc390d5630bedbfdccd2decd04ed074f7960f52ac8a9bc2e8afaac6",
+      "sourceFileBytes": 25114,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/20d3f7611120e281.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/Unliquidated-CA-as-of-March-2019-C-768x192.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/cash-advances/unliquidated-cash-advances-as-of-march-31-2019/",
+          "sourceTitle": "UNLIQUIDATED CASH ADVANCES AS OF MARCH 31, 2019",
+          "publishedAt": "2019-04-04T05:36:27",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Unliquidated-CA-as-of-March-2019-C-768x192.jpg"
+        }
+      ],
+      "sourceFileName": "Unliquidated-CA-as-of-March-2019-C-768x192.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "a ‘aaa | anes aaa | ese\naes Ma 0202/2016 | Soe/ wages 0 a0\nirs Norain| “000 | ae/0%8 | siege 10 mom\nox aomaoass araors| 226510482) 6530760] es200| 020 | rapn029\nWeer cry that nave eed the contents an heey ts tothe vert andere fhe te",
+      "ocrText": "a ‘aaa | anes aaa | ese\naes Ma 0202/2016 | Soe/ wages 0 a0\nirs Norain| “000 | ae/0%8 | siege 10 mom\nox aomaoass araors| 226510482) 6530760] es200| 020 | rapn029\nWeer cry that nave eed the contents an heey ts tothe vert andere fhe te",
+      "ocrTokenCount": 48,
+      "ocrMeanConfidence": 0.323,
+      "ocrTokens": [
+        {
+          "text": "a",
+          "confidence": 0.3619,
+          "boxPx": [
+            3.0,
+            16.0,
+            65.0,
+            27.0
+          ]
+        },
+        {
+          "text": "‘aaa",
+          "confidence": 0.4638,
+          "boxPx": [
+            150.0,
+            16.0,
+            184.0,
+            26.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.4935,
+          "boxPx": [
+            188.0,
+            4.0,
+            193.0,
+            32.0
+          ]
+        },
+        {
+          "text": "anes",
+          "confidence": 0.2762,
+          "boxPx": [
+            201.0,
+            16.0,
+            229.0,
+            26.0
+          ]
+        },
+        {
+          "text": "aaa",
+          "confidence": 0.2848,
+          "boxPx": [
+            272.0,
+            4.0,
+            328.0,
+            32.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.4733,
+          "boxPx": [
+            613.0,
+            25.0,
+            629.0,
+            26.0
+          ]
+        },
+        {
+          "text": "ese",
+          "confidence": 0.2153,
+          "boxPx": [
+            650.0,
+            18.0,
+            684.0,
+            26.0
+          ]
+        },
+        {
+          "text": "aes",
+          "confidence": 0.3424,
+          "boxPx": [
+            3.0,
+            29.0,
+            25.0,
+            35.0
+          ]
+        },
+        {
+          "text": "Ma",
+          "confidence": 0.3473,
+          "boxPx": [
+            30.0,
+            16.0,
+            41.0,
+            44.0
+          ]
+        },
+        {
+          "text": "0202/2016",
+          "confidence": 0.016,
+          "boxPx": [
+            170.0,
+            28.0,
+            231.0,
+            36.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.4934,
+          "boxPx": [
+            238.0,
+            17.0,
+            255.0,
+            45.0
+          ]
+        },
+        {
+          "text": "Soe/",
+          "confidence": 0.0,
+          "boxPx": [
+            266.0,
+            17.0,
+            297.0,
+            45.0
+          ]
+        },
+        {
+          "text": "wages",
+          "confidence": 0.0,
+          "boxPx": [
+            299.0,
+            17.0,
+            320.0,
+            45.0
+          ]
+        },
+        {
+          "text": "0",
+          "confidence": 0.3828,
+          "boxPx": [
+            324.0,
+            29.0,
+            331.0,
+            35.0
+          ]
+        },
+        {
+          "text": "a0",
+          "confidence": 0.0,
+          "boxPx": [
+            615.0,
+            31.0,
+            630.0,
+            36.0
+          ]
+        },
+        {
+          "text": "irs",
+          "confidence": 0.4598,
+          "boxPx": [
+            3.0,
+            41.0,
+            21.0,
+            47.0
+          ]
+        },
+        {
+          "text": "Norain|",
+          "confidence": 0.0,
+          "boxPx": [
+            25.0,
+            29.0,
+            61.0,
+            57.0
+          ]
+        },
+        {
+          "text": "“000",
+          "confidence": 0.2426,
+          "boxPx": [
+            150.0,
+            42.0,
+            184.0,
+            48.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.4952,
+          "boxPx": [
+            188.0,
+            28.0,
+            193.0,
+            56.0
+          ]
+        },
+        {
+          "text": "ae/0%8",
+          "confidence": 0.0,
+          "boxPx": [
+            199.0,
+            41.0,
+            231.0,
+            48.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.551,
+          "boxPx": [
+            237.0,
+            28.0,
+            244.0,
+            56.0
+          ]
+        },
+        {
+          "text": "siege",
+          "confidence": 0.4026,
+          "boxPx": [
+            268.0,
+            41.0,
+            331.0,
+            49.0
+          ]
+        },
+        {
+          "text": "10",
+          "confidence": 0.6991,
+          "boxPx": [
+            323.0,
+            28.0,
+            335.0,
+            56.0
+          ]
+        },
+        {
+          "text": "mom",
+          "confidence": 0.2917,
+          "boxPx": [
+            381.0,
+            43.0,
+            415.0,
+            51.0
+          ]
+        },
+        {
+          "text": "ox",
+          "confidence": 0.1606,
+          "boxPx": [
+            55.0,
+            83.0,
+            73.0,
+            89.0
+          ]
+        },
+        {
+          "text": "aomaoass",
+          "confidence": 0.1993,
+          "boxPx": [
+            139.0,
+            71.0,
+            184.0,
+            99.0
+          ]
+        },
+        {
+          "text": "araors|",
+          "confidence": 0.2758,
+          "boxPx": [
+            376.0,
+            83.0,
+            415.0,
+            90.0
+          ]
+        },
+        {
+          "text": "226510482)",
+          "confidence": 0.1227,
+          "boxPx": [
+            429.0,
+            83.0,
+            474.0,
+            90.0
+          ]
+        },
+        {
+          "text": "6530760]",
+          "confidence": 0.3527,
+          "boxPx": [
+            491.0,
+            83.0,
+            525.0,
+            89.0
+          ]
+        },
+        {
+          "text": "es200|",
+          "confidence": 0.0,
+          "boxPx": [
+            541.0,
+            83.0,
+            576.0,
+            90.0
+          ]
+        },
+        {
+          "text": "020",
+          "confidence": 0.2495,
+          "boxPx": [
+            615.0,
+            83.0,
+            630.0,
+            89.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.2495,
+          "boxPx": [
+            633.0,
+            71.0,
+            641.0,
+            99.0
+          ]
+        },
+        {
+          "text": "rapn029",
+          "confidence": 0.0,
+          "boxPx": [
+            650.0,
+            83.0,
+            684.0,
+            90.0
+          ]
+        },
+        {
+          "text": "Weer",
+          "confidence": 0.0443,
+          "boxPx": [
+            3.0,
+            107.0,
+            103.0,
+            115.0
+          ]
+        },
+        {
+          "text": "cry",
+          "confidence": 0.5028,
+          "boxPx": [
+            44.0,
+            96.0,
+            66.0,
+            124.0
+          ]
+        },
+        {
+          "text": "that",
+          "confidence": 0.6236,
+          "boxPx": [
+            67.0,
+            96.0,
+            82.0,
+            124.0
+          ]
+        },
+        {
+          "text": "nave",
+          "confidence": 0.4578,
+          "boxPx": [
+            88.0,
+            96.0,
+            103.0,
+            124.0
+          ]
+        },
+        {
+          "text": "eed",
+          "confidence": 0.4578,
+          "boxPx": [
+            106.0,
+            108.0,
+            137.0,
+            114.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.4777,
+          "boxPx": [
+            140.0,
+            108.0,
+            151.0,
+            114.0
+          ]
+        },
+        {
+          "text": "contents",
+          "confidence": 0.4777,
+          "boxPx": [
+            153.0,
+            108.0,
+            198.0,
+            114.0
+          ]
+        },
+        {
+          "text": "an",
+          "confidence": 0.5506,
+          "boxPx": [
+            186.0,
+            96.0,
+            196.0,
+            124.0
+          ]
+        },
+        {
+          "text": "heey",
+          "confidence": 0.6253,
+          "boxPx": [
+            201.0,
+            96.0,
+            224.0,
+            124.0
+          ]
+        },
+        {
+          "text": "ts",
+          "confidence": 0.5097,
+          "boxPx": [
+            228.0,
+            96.0,
+            243.0,
+            124.0
+          ]
+        },
+        {
+          "text": "tothe",
+          "confidence": 0.5097,
+          "boxPx": [
+            249.0,
+            96.0,
+            269.0,
+            124.0
+          ]
+        },
+        {
+          "text": "vert",
+          "confidence": 0.3606,
+          "boxPx": [
+            273.0,
+            96.0,
+            297.0,
+            124.0
+          ]
+        },
+        {
+          "text": "andere",
+          "confidence": 0.0,
+          "boxPx": [
+            316.0,
+            108.0,
+            355.0,
+            114.0
+          ]
+        },
+        {
+          "text": "fhe",
+          "confidence": 0.5453,
+          "boxPx": [
+            358.0,
+            108.0,
+            378.0,
+            114.0
+          ]
+        },
+        {
+          "text": "te",
+          "confidence": 0.4606,
+          "boxPx": [
+            389.0,
+            108.0,
+            395.0,
+            114.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

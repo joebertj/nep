@@ -1,0 +1,701 @@
+{
+  "sourceFileSha256": "8d490f09ff418df3037700541f91f2d82a2a337c85a1e720f5daad5497dc0b17",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/f47c6215724059df.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2019/04/SEF-Utilization-as-of-MArch-31-2019-1080x1398.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/special-education-fund-and-expenditure-estimate/sef-utilization-as-of-march-31-2019/",
+      "sourceTitle": "SEF Utilization as of March 31, 2019",
+      "publishedAt": "2019-04-01T06:01:31",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "SEF-Utilization-as-of-MArch-31-2019-1080x1398.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "8d490f09ff418df3037700541f91f2d82a2a337c85a1e720f5daad5497dc0b17",
+      "sourceFileBytes": 74142,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/f47c6215724059df.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2019/04/SEF-Utilization-as-of-MArch-31-2019-1080x1398.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/special-education-fund-and-expenditure-estimate/sef-utilization-as-of-march-31-2019/",
+          "sourceTitle": "SEF Utilization as of March 31, 2019",
+          "publishedAt": "2019-04-01T06:01:31",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "SEF-Utilization-as-of-MArch-31-2019-1080x1398.jpg"
+        }
+      ],
+      "sourceFileName": "SEF-Utilization-as-of-MArch-31-2019-1080x1398.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Republic of the Philippines\nProvince of Iloilo\nMUNICIPALITY OF MIAGAO\nREPORT OF SEF UTILIZATION\nFor the Year Ended March 31, 2019\nProvince/City/Municipality: Miagao\nReceipt from SEF 1,391 ,885.04\nSurplus CY 2018 1,652,417.21\nContinuing Appropriations 2,744,492.21\nTotal 5,788,794.46\nLess: Disbursement:\nCapital Outlay\nSchool Buildings 291,234.00\nTotal Expenditures 291,234.00\nBalance 5,497,560.46\nCeritfied Correct:\nMAYLENE T. SERVIDAD\nMunicipal Accountant\nApproved by:\nHON. MACARIO N. NAPULAN, M.D\nMunicipal Mayor",
+      "ocrText": "Republic of the Philippines\nProvince of Iloilo\nMUNICIPALITY OF MIAGAO\nREPORT OF SEF UTILIZATION\nFor the Year Ended March 31, 2019\nProvince/City/Municipality: Miagao\nReceipt from SEF 1,391 ,885.04\nSurplus CY 2018 1,652,417.21\nContinuing Appropriations 2,744,492.21\nTotal 5,788,794.46\nLess: Disbursement:\nCapital Outlay\nSchool Buildings 291,234.00\nTotal Expenditures 291,234.00\nBalance 5,497,560.46\nCeritfied Correct:\nMAYLENE T. SERVIDAD\nMunicipal Accountant\nApproved by:\nHON. MACARIO N. NAPULAN, M.D\nMunicipal Mayor",
+      "ocrTokenCount": 65,
+      "ocrMeanConfidence": 0.9145,
+      "ocrTokens": [
+        {
+          "text": "Republic",
+          "confidence": 0.9675,
+          "boxPx": [
+            355.0,
+            82.0,
+            427.0,
+            101.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9699,
+          "boxPx": [
+            433.0,
+            82.0,
+            450.0,
+            97.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.9604,
+          "boxPx": [
+            455.0,
+            82.0,
+            482.0,
+            97.0
+          ]
+        },
+        {
+          "text": "Philippines",
+          "confidence": 0.8904,
+          "boxPx": [
+            490.0,
+            82.0,
+            581.0,
+            101.0
+          ]
+        },
+        {
+          "text": "Province",
+          "confidence": 0.9675,
+          "boxPx": [
+            397.0,
+            112.0,
+            469.0,
+            126.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9651,
+          "boxPx": [
+            475.0,
+            112.0,
+            492.0,
+            126.0
+          ]
+        },
+        {
+          "text": "Iloilo",
+          "confidence": 0.8601,
+          "boxPx": [
+            498.0,
+            112.0,
+            538.0,
+            126.0
+          ]
+        },
+        {
+          "text": "MUNICIPALITY",
+          "confidence": 0.9618,
+          "boxPx": [
+            353.0,
+            142.0,
+            475.0,
+            156.0
+          ]
+        },
+        {
+          "text": "OF",
+          "confidence": 0.9087,
+          "boxPx": [
+            482.0,
+            142.0,
+            503.0,
+            156.0
+          ]
+        },
+        {
+          "text": "MIAGAO",
+          "confidence": 0.9087,
+          "boxPx": [
+            511.0,
+            142.0,
+            583.0,
+            156.0
+          ]
+        },
+        {
+          "text": "REPORT",
+          "confidence": 0.9583,
+          "boxPx": [
+            303.0,
+            197.0,
+            396.0,
+            215.0
+          ]
+        },
+        {
+          "text": "OF",
+          "confidence": 0.9639,
+          "boxPx": [
+            404.0,
+            197.0,
+            434.0,
+            215.0
+          ]
+        },
+        {
+          "text": "SEF",
+          "confidence": 0.9654,
+          "boxPx": [
+            442.0,
+            197.0,
+            485.0,
+            215.0
+          ]
+        },
+        {
+          "text": "UTILIZATION",
+          "confidence": 0.9641,
+          "boxPx": [
+            494.0,
+            198.0,
+            633.0,
+            215.0
+          ]
+        },
+        {
+          "text": "For",
+          "confidence": 0.9616,
+          "boxPx": [
+            316.0,
+            231.0,
+            343.0,
+            246.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.9616,
+          "boxPx": [
+            349.0,
+            231.0,
+            374.0,
+            246.0
+          ]
+        },
+        {
+          "text": "Year",
+          "confidence": 0.9686,
+          "boxPx": [
+            381.0,
+            231.0,
+            421.0,
+            246.0
+          ]
+        },
+        {
+          "text": "Ended",
+          "confidence": 0.9658,
+          "boxPx": [
+            427.0,
+            231.0,
+            480.0,
+            246.0
+          ]
+        },
+        {
+          "text": "March",
+          "confidence": 0.9625,
+          "boxPx": [
+            488.0,
+            231.0,
+            539.0,
+            246.0
+          ]
+        },
+        {
+          "text": "31,",
+          "confidence": 0.9685,
+          "boxPx": [
+            546.0,
+            231.0,
+            570.0,
+            248.0
+          ]
+        },
+        {
+          "text": "2019",
+          "confidence": 0.9685,
+          "boxPx": [
+            577.0,
+            231.0,
+            619.0,
+            246.0
+          ]
+        },
+        {
+          "text": "Province/City/Municipality:",
+          "confidence": 0.8681,
+          "boxPx": [
+            111.0,
+            317.0,
+            343.0,
+            336.0
+          ]
+        },
+        {
+          "text": "Miagao",
+          "confidence": 0.9313,
+          "boxPx": [
+            350.0,
+            319.0,
+            412.0,
+            337.0
+          ]
+        },
+        {
+          "text": "Receipt",
+          "confidence": 0.9651,
+          "boxPx": [
+            111.0,
+            407.0,
+            173.0,
+            424.0
+          ]
+        },
+        {
+          "text": "from",
+          "confidence": 0.9639,
+          "boxPx": [
+            179.0,
+            406.0,
+            219.0,
+            421.0
+          ]
+        },
+        {
+          "text": "SEF",
+          "confidence": 0.9666,
+          "boxPx": [
+            225.0,
+            407.0,
+            254.0,
+            421.0
+          ]
+        },
+        {
+          "text": "1,391",
+          "confidence": 0.2262,
+          "boxPx": [
+            711.0,
+            408.0,
+            753.0,
+            425.0
+          ]
+        },
+        {
+          "text": ",885.04",
+          "confidence": 0.2262,
+          "boxPx": [
+            758.0,
+            408.0,
+            820.0,
+            425.0
+          ]
+        },
+        {
+          "text": "Surplus",
+          "confidence": 0.9605,
+          "boxPx": [
+            111.0,
+            437.0,
+            174.0,
+            455.0
+          ]
+        },
+        {
+          "text": "CY",
+          "confidence": 0.9605,
+          "boxPx": [
+            181.0,
+            437.0,
+            206.0,
+            452.0
+          ]
+        },
+        {
+          "text": "2018",
+          "confidence": 0.9677,
+          "boxPx": [
+            212.0,
+            437.0,
+            254.0,
+            452.0
+          ]
+        },
+        {
+          "text": "1,652,417.21",
+          "confidence": 0.9216,
+          "boxPx": [
+            711.0,
+            437.0,
+            817.0,
+            454.0
+          ]
+        },
+        {
+          "text": "Continuing",
+          "confidence": 0.9686,
+          "boxPx": [
+            111.0,
+            467.0,
+            200.0,
+            485.0
+          ]
+        },
+        {
+          "text": "Appropriations",
+          "confidence": 0.968,
+          "boxPx": [
+            206.0,
+            467.0,
+            329.0,
+            485.0
+          ]
+        },
+        {
+          "text": "2,744,492.21",
+          "confidence": 0.8745,
+          "boxPx": [
+            709.0,
+            467.0,
+            817.0,
+            484.0
+          ]
+        },
+        {
+          "text": "Total",
+          "confidence": 0.9632,
+          "boxPx": [
+            182.0,
+            490.0,
+            228.0,
+            518.0
+          ]
+        },
+        {
+          "text": "5,788,794.46",
+          "confidence": 0.9143,
+          "boxPx": [
+            710.0,
+            496.0,
+            820.0,
+            513.0
+          ]
+        },
+        {
+          "text": "Less:",
+          "confidence": 0.8894,
+          "boxPx": [
+            111.0,
+            584.0,
+            150.0,
+            598.0
+          ]
+        },
+        {
+          "text": "Disbursement:",
+          "confidence": 0.4258,
+          "boxPx": [
+            188.0,
+            583.0,
+            310.0,
+            598.0
+          ]
+        },
+        {
+          "text": "Capital",
+          "confidence": 0.9674,
+          "boxPx": [
+            187.0,
+            676.0,
+            249.0,
+            694.0
+          ]
+        },
+        {
+          "text": "Outlay",
+          "confidence": 0.9611,
+          "boxPx": [
+            256.0,
+            676.0,
+            314.0,
+            694.0
+          ]
+        },
+        {
+          "text": "School",
+          "confidence": 0.9526,
+          "boxPx": [
+            187.0,
+            707.0,
+            243.0,
+            721.0
+          ]
+        },
+        {
+          "text": "Buildings",
+          "confidence": 0.9666,
+          "boxPx": [
+            251.0,
+            707.0,
+            327.0,
+            725.0
+          ]
+        },
+        {
+          "text": "291,234.00",
+          "confidence": 0.9687,
+          "boxPx": [
+            726.0,
+            706.0,
+            820.0,
+            723.0
+          ]
+        },
+        {
+          "text": "Total",
+          "confidence": 0.964,
+          "boxPx": [
+            186.0,
+            768.0,
+            228.0,
+            782.0
+          ]
+        },
+        {
+          "text": "Expenditures",
+          "confidence": 0.9501,
+          "boxPx": [
+            236.0,
+            768.0,
+            345.0,
+            786.0
+          ]
+        },
+        {
+          "text": "291,234.00",
+          "confidence": 0.9388,
+          "boxPx": [
+            725.0,
+            768.0,
+            820.0,
+            786.0
+          ]
+        },
+        {
+          "text": "Balance",
+          "confidence": 0.9692,
+          "boxPx": [
+            187.0,
+            826.0,
+            259.0,
+            855.0
+          ]
+        },
+        {
+          "text": "5,497,560.46",
+          "confidence": 0.9134,
+          "boxPx": [
+            710.0,
+            828.0,
+            820.0,
+            845.0
+          ]
+        },
+        {
+          "text": "Ceritfied",
+          "confidence": 0.9298,
+          "boxPx": [
+            653.0,
+            984.0,
+            724.0,
+            999.0
+          ]
+        },
+        {
+          "text": "Correct:",
+          "confidence": 0.9696,
+          "boxPx": [
+            731.0,
+            985.0,
+            798.0,
+            999.0
+          ]
+        },
+        {
+          "text": "MAYLENE",
+          "confidence": 0.9241,
+          "boxPx": [
+            653.0,
+            1078.0,
+            735.0,
+            1092.0
+          ]
+        },
+        {
+          "text": "T.",
+          "confidence": 0.9113,
+          "boxPx": [
+            740.0,
+            1078.0,
+            754.0,
+            1091.0
+          ]
+        },
+        {
+          "text": "SERVIDAD",
+          "confidence": 0.9113,
+          "boxPx": [
+            761.0,
+            1078.0,
+            846.0,
+            1092.0
+          ]
+        },
+        {
+          "text": "Municipal",
+          "confidence": 0.9578,
+          "boxPx": [
+            663.0,
+            1107.0,
+            745.0,
+            1126.0
+          ]
+        },
+        {
+          "text": "Accountant",
+          "confidence": 0.9674,
+          "boxPx": [
+            751.0,
+            1108.0,
+            849.0,
+            1122.0
+          ]
+        },
+        {
+          "text": "Approved",
+          "confidence": 0.9681,
+          "boxPx": [
+            652.0,
+            1200.0,
+            735.0,
+            1219.0
+          ]
+        },
+        {
+          "text": "by:",
+          "confidence": 0.9682,
+          "boxPx": [
+            742.0,
+            1200.0,
+            765.0,
+            1219.0
+          ]
+        },
+        {
+          "text": "HON.",
+          "confidence": 0.9323,
+          "boxPx": [
+            653.0,
+            1294.0,
+            697.0,
+            1308.0
+          ]
+        },
+        {
+          "text": "MACARIO",
+          "confidence": 0.8611,
+          "boxPx": [
+            704.0,
+            1294.0,
+            786.0,
+            1308.0
+          ]
+        },
+        {
+          "text": "N.",
+          "confidence": 0.8611,
+          "boxPx": [
+            793.0,
+            1294.0,
+            809.0,
+            1308.0
+          ]
+        },
+        {
+          "text": "NAPULAN,",
+          "confidence": 0.9109,
+          "boxPx": [
+            817.0,
+            1294.0,
+            904.0,
+            1311.0
+          ]
+        },
+        {
+          "text": "M.D",
+          "confidence": 0.9647,
+          "boxPx": [
+            912.0,
+            1294.0,
+            945.0,
+            1308.0
+          ]
+        },
+        {
+          "text": "Municipal",
+          "confidence": 0.9577,
+          "boxPx": [
+            653.0,
+            1324.0,
+            735.0,
+            1343.0
+          ]
+        },
+        {
+          "text": "Mayor",
+          "confidence": 0.9675,
+          "boxPx": [
+            743.0,
+            1325.0,
+            797.0,
+            1343.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

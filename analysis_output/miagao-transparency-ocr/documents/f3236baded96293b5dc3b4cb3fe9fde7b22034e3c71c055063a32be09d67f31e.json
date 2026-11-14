@@ -1,0 +1,2347 @@
+{
+  "sourceFileSha256": "f3236baded96293b5dc3b4cb3fe9fde7b22034e3c71c055063a32be09d67f31e",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/ed8b329bb702a7bd.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/07/Bidding-Documents-Kalahi-Damilisan-1.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-6/",
+      "sourceTitle": "Invitation to Bid",
+      "publishedAt": "2022-07-13T08:15:47",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Bidding-Documents-Kalahi-Damilisan-1.pdf"
+    }
+  ],
+  "ocrPageNumbers": [
+    22,
+    23,
+    24,
+    25
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "f3236baded96293b5dc3b4cb3fe9fde7b22034e3c71c055063a32be09d67f31e",
+      "sourceFileBytes": 1135696,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/ed8b329bb702a7bd.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/07/Bidding-Documents-Kalahi-Damilisan-1.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-6/",
+          "sourceTitle": "Invitation to Bid",
+          "publishedAt": "2022-07-13T08:15:47",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "Bidding-Documents-Kalahi-Damilisan-1.pdf"
+        }
+      ],
+      "sourceFileName": "Bidding-Documents-Kalahi-Damilisan-1.pdf",
+      "pageNumber": 22,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "22 Qty. 6 pairs 6. HAND TOOLS Qty. 1 lot Construction Spade Qty. 3 pcs Plastic Drum (Blue) Qty. 4 pcs Construction Pail Qty. 5 pcs Tagad Qty. 5 pcs 7.MATERIAL TESTING Qty. 1 lot 8.PROJECT SITE SUPERVISOR Qty. 1 lot 9. CONTRACTORS PROFIT Qty.1 lot 10. CONTRACTORS TAX Qty. 1 lot",
+      "extractedText": "22 Qty. 6 pairs 6. HAND TOOLS Qty. 1 lot Construction Spade Qty. 3 pcs Plastic Drum (Blue) Qty. 4 pcs Construction Pail Qty. 5 pcs Tagad Qty. 5 pcs 7.MATERIAL TESTING Qty. 1 lot 8.PROJECT SITE SUPERVISOR Qty. 1 lot 9. CONTRACTORS PROFIT Qty.1 lot 10. CONTRACTORS TAX Qty. 1 lot\nQty. 6 pairs\n6. HAND TOOLS\nQty. 1 lot\nConstruction Spade\nQty. 3 pes\nPlastic Drum (Blue)\nQty. 4 pes\nConstruction Pail\nQty. 5 pes\nTagad\nQty. 5 pes\n7.MATERIAL TESTING\nQty. 1 lot\n8.PROJECT SITE SUPERVISOR\nQty. 1 lot\n9. CONTRACTORS PROFIT\nQty.1 lot\n10. CONTRACTORS TAX\nQty. 1 lot\n22",
+      "ocrText": "Qty. 6 pairs\n6. HAND TOOLS\nQty. 1 lot\nConstruction Spade\nQty. 3 pes\nPlastic Drum (Blue)\nQty. 4 pes\nConstruction Pail\nQty. 5 pes\nTagad\nQty. 5 pes\n7.MATERIAL TESTING\nQty. 1 lot\n8.PROJECT SITE SUPERVISOR\nQty. 1 lot\n9. CONTRACTORS PROFIT\nQty.1 lot\n10. CONTRACTORS TAX\nQty. 1 lot\n22",
+      "ocrTokenCount": 52,
+      "ocrMeanConfidence": 0.9413,
+      "ocrTokens": [
+        {
+          "text": "Qty.",
+          "confidence": 0.9609,
+          "boxPx": [
+            590.0,
+            141.0,
+            626.0,
+            161.0
+          ]
+        },
+        {
+          "text": "6",
+          "confidence": 0.9609,
+          "boxPx": [
+            634.0,
+            141.0,
+            644.0,
+            156.0
+          ]
+        },
+        {
+          "text": "pairs",
+          "confidence": 0.845,
+          "boxPx": [
+            651.0,
+            141.0,
+            692.0,
+            161.0
+          ]
+        },
+        {
+          "text": "6.",
+          "confidence": 0.9674,
+          "boxPx": [
+            590.0,
+            170.0,
+            605.0,
+            185.0
+          ]
+        },
+        {
+          "text": "HAND",
+          "confidence": 0.9616,
+          "boxPx": [
+            612.0,
+            170.0,
+            675.0,
+            185.0
+          ]
+        },
+        {
+          "text": "TOOLS",
+          "confidence": 0.9334,
+          "boxPx": [
+            682.0,
+            170.0,
+            757.0,
+            185.0
+          ]
+        },
+        {
+          "text": "Qty.",
+          "confidence": 0.9223,
+          "boxPx": [
+            590.0,
+            199.0,
+            626.0,
+            219.0
+          ]
+        },
+        {
+          "text": "1",
+          "confidence": 0.9414,
+          "boxPx": [
+            637.0,
+            199.0,
+            641.0,
+            214.0
+          ]
+        },
+        {
+          "text": "lot",
+          "confidence": 0.9606,
+          "boxPx": [
+            651.0,
+            199.0,
+            672.0,
+            214.0
+          ]
+        },
+        {
+          "text": "Construction",
+          "confidence": 0.9651,
+          "boxPx": [
+            590.0,
+            228.0,
+            702.0,
+            243.0
+          ]
+        },
+        {
+          "text": "Spade",
+          "confidence": 0.9656,
+          "boxPx": [
+            710.0,
+            228.0,
+            762.0,
+            248.0
+          ]
+        },
+        {
+          "text": "Qty.",
+          "confidence": 0.9538,
+          "boxPx": [
+            590.0,
+            257.0,
+            626.0,
+            277.0
+          ]
+        },
+        {
+          "text": "3",
+          "confidence": 0.9538,
+          "boxPx": [
+            635.0,
+            257.0,
+            643.0,
+            272.0
+          ]
+        },
+        {
+          "text": "pes",
+          "confidence": 0.8315,
+          "boxPx": [
+            651.0,
+            262.0,
+            678.0,
+            277.0
+          ]
+        },
+        {
+          "text": "Plastic",
+          "confidence": 0.9696,
+          "boxPx": [
+            590.0,
+            286.0,
+            647.0,
+            301.0
+          ]
+        },
+        {
+          "text": "Drum",
+          "confidence": 0.964,
+          "boxPx": [
+            655.0,
+            286.0,
+            704.0,
+            301.0
+          ]
+        },
+        {
+          "text": "(Blue)",
+          "confidence": 0.9642,
+          "boxPx": [
+            712.0,
+            286.0,
+            765.0,
+            305.0
+          ]
+        },
+        {
+          "text": "Qty.",
+          "confidence": 0.9644,
+          "boxPx": [
+            590.0,
+            315.0,
+            626.0,
+            335.0
+          ]
+        },
+        {
+          "text": "4",
+          "confidence": 0.9644,
+          "boxPx": [
+            634.0,
+            315.0,
+            644.0,
+            330.0
+          ]
+        },
+        {
+          "text": "pes",
+          "confidence": 0.8613,
+          "boxPx": [
+            651.0,
+            320.0,
+            678.0,
+            335.0
+          ]
+        },
+        {
+          "text": "Construction",
+          "confidence": 0.9691,
+          "boxPx": [
+            590.0,
+            344.0,
+            702.0,
+            359.0
+          ]
+        },
+        {
+          "text": "Pail",
+          "confidence": 0.9697,
+          "boxPx": [
+            709.0,
+            344.0,
+            741.0,
+            359.0
+          ]
+        },
+        {
+          "text": "Qty.",
+          "confidence": 0.9604,
+          "boxPx": [
+            590.0,
+            373.0,
+            626.0,
+            393.0
+          ]
+        },
+        {
+          "text": "5",
+          "confidence": 0.9599,
+          "boxPx": [
+            634.0,
+            373.0,
+            643.0,
+            388.0
+          ]
+        },
+        {
+          "text": "pes",
+          "confidence": 0.8392,
+          "boxPx": [
+            651.0,
+            378.0,
+            678.0,
+            393.0
+          ]
+        },
+        {
+          "text": "Tagad",
+          "confidence": 0.9295,
+          "boxPx": [
+            590.0,
+            402.0,
+            643.0,
+            422.0
+          ]
+        },
+        {
+          "text": "Qty.",
+          "confidence": 0.9604,
+          "boxPx": [
+            590.0,
+            432.0,
+            626.0,
+            452.0
+          ]
+        },
+        {
+          "text": "5",
+          "confidence": 0.9599,
+          "boxPx": [
+            634.0,
+            432.0,
+            643.0,
+            447.0
+          ]
+        },
+        {
+          "text": "pes",
+          "confidence": 0.8392,
+          "boxPx": [
+            651.0,
+            437.0,
+            678.0,
+            452.0
+          ]
+        },
+        {
+          "text": "7.MATERIAL",
+          "confidence": 0.8879,
+          "boxPx": [
+            590.0,
+            461.0,
+            726.0,
+            476.0
+          ]
+        },
+        {
+          "text": "TESTING",
+          "confidence": 0.959,
+          "boxPx": [
+            733.0,
+            461.0,
+            829.0,
+            476.0
+          ]
+        },
+        {
+          "text": "Qty.",
+          "confidence": 0.9223,
+          "boxPx": [
+            590.0,
+            490.0,
+            626.0,
+            510.0
+          ]
+        },
+        {
+          "text": "1",
+          "confidence": 0.9414,
+          "boxPx": [
+            637.0,
+            490.0,
+            641.0,
+            505.0
+          ]
+        },
+        {
+          "text": "lot",
+          "confidence": 0.9606,
+          "boxPx": [
+            651.0,
+            490.0,
+            672.0,
+            505.0
+          ]
+        },
+        {
+          "text": "8.PROJECT",
+          "confidence": 0.9179,
+          "boxPx": [
+            590.0,
+            519.0,
+            708.0,
+            536.0
+          ]
+        },
+        {
+          "text": "SITE",
+          "confidence": 0.9658,
+          "boxPx": [
+            714.0,
+            519.0,
+            763.0,
+            534.0
+          ]
+        },
+        {
+          "text": "SUPERVISOR",
+          "confidence": 0.9408,
+          "boxPx": [
+            770.0,
+            519.0,
+            911.0,
+            534.0
+          ]
+        },
+        {
+          "text": "Qty.",
+          "confidence": 0.9223,
+          "boxPx": [
+            590.0,
+            548.0,
+            626.0,
+            568.0
+          ]
+        },
+        {
+          "text": "1",
+          "confidence": 0.9414,
+          "boxPx": [
+            637.0,
+            548.0,
+            641.0,
+            563.0
+          ]
+        },
+        {
+          "text": "lot",
+          "confidence": 0.9606,
+          "boxPx": [
+            651.0,
+            548.0,
+            672.0,
+            563.0
+          ]
+        },
+        {
+          "text": "9.",
+          "confidence": 0.9521,
+          "boxPx": [
+            590.0,
+            577.0,
+            605.0,
+            592.0
+          ]
+        },
+        {
+          "text": "CONTRACTORS",
+          "confidence": 0.9522,
+          "boxPx": [
+            613.0,
+            577.0,
+            781.0,
+            592.0
+          ]
+        },
+        {
+          "text": "PROFIT",
+          "confidence": 0.9669,
+          "boxPx": [
+            788.0,
+            577.0,
+            870.0,
+            592.0
+          ]
+        },
+        {
+          "text": "Qty.1",
+          "confidence": 0.874,
+          "boxPx": [
+            590.0,
+            606.0,
+            635.0,
+            626.0
+          ]
+        },
+        {
+          "text": "lot",
+          "confidence": 0.9638,
+          "boxPx": [
+            646.0,
+            606.0,
+            667.0,
+            621.0
+          ]
+        },
+        {
+          "text": "10.",
+          "confidence": 0.9621,
+          "boxPx": [
+            591.0,
+            635.0,
+            616.0,
+            650.0
+          ]
+        },
+        {
+          "text": "CONTRACTORS",
+          "confidence": 0.9647,
+          "boxPx": [
+            624.0,
+            635.0,
+            792.0,
+            650.0
+          ]
+        },
+        {
+          "text": "TAX",
+          "confidence": 0.9641,
+          "boxPx": [
+            800.0,
+            635.0,
+            845.0,
+            650.0
+          ]
+        },
+        {
+          "text": "Qty.",
+          "confidence": 0.9608,
+          "boxPx": [
+            590.0,
+            664.0,
+            626.0,
+            684.0
+          ]
+        },
+        {
+          "text": "1",
+          "confidence": 0.9365,
+          "boxPx": [
+            637.0,
+            664.0,
+            641.0,
+            679.0
+          ]
+        },
+        {
+          "text": "lot",
+          "confidence": 0.9607,
+          "boxPx": [
+            651.0,
+            664.0,
+            672.0,
+            679.0
+          ]
+        },
+        {
+          "text": "22",
+          "confidence": 0.9686,
+          "boxPx": [
+            586.0,
+            1551.0,
+            605.0,
+            1565.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 191,
+      "imageCoverageRatio": 0.0,
+      "extractionMethod": "PyMuPDF native text + Tesseract OCR",
+      "parseStatus": "ocr_text_found"
+    },
+    {
+      "sourceFileSha256": "f3236baded96293b5dc3b4cb3fe9fde7b22034e3c71c055063a32be09d67f31e",
+      "sourceFileBytes": 1135696,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/ed8b329bb702a7bd.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/07/Bidding-Documents-Kalahi-Damilisan-1.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-6/",
+          "sourceTitle": "Invitation to Bid",
+          "publishedAt": "2022-07-13T08:15:47",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "Bidding-Documents-Kalahi-Damilisan-1.pdf"
+        }
+      ],
+      "sourceFileName": "Bidding-Documents-Kalahi-Damilisan-1.pdf",
+      "pageNumber": 23,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "Section VII. Drawings",
+      "extractedText": "Section VII. Drawings\nSection VII, Drawings\n[DESCRIPTION PPROJECT.\nCOUNTRY NAME : THE REPUBLIC OF THE PHILIPPINES\nPROJECT NAME : CONSTRUCTION OF DRAINAGE CANAL AT BRGy. DAMILISAN\nSITELOCATION : BRGY. DAMILISAN, MIAG-AO, ILOILO\nTOTAL LENGTH 45 MTRS\nq\noy =\na\n© ay\naw\nSCALE wis\nmone me\nCONSTRUCTION OF ORAINAGE CANAL AT\nBRGY. DAMILISAN\nENGR, JERSON P.TEXADA",
+      "ocrText": "Section VII, Drawings\n[DESCRIPTION PPROJECT.\nCOUNTRY NAME : THE REPUBLIC OF THE PHILIPPINES\nPROJECT NAME : CONSTRUCTION OF DRAINAGE CANAL AT BRGy. DAMILISAN\nSITELOCATION : BRGY. DAMILISAN, MIAG-AO, ILOILO\nTOTAL LENGTH 45 MTRS\nq\noy =\na\n© ay\naw\nSCALE wis\nmone me\nCONSTRUCTION OF ORAINAGE CANAL AT\nBRGY. DAMILISAN\nENGR, JERSON P.TEXADA",
+      "ocrTokenCount": 54,
+      "ocrMeanConfidence": 0.7203,
+      "ocrTokens": [
+        {
+          "text": "Section",
+          "confidence": 0.9658,
+          "boxPx": [
+            586.0,
+            115.0,
+            718.0,
+            146.0
+          ]
+        },
+        {
+          "text": "VII,",
+          "confidence": 0.7589,
+          "boxPx": [
+            735.0,
+            115.0,
+            802.0,
+            146.0
+          ]
+        },
+        {
+          "text": "Drawings",
+          "confidence": 0.9561,
+          "boxPx": [
+            815.0,
+            115.0,
+            991.0,
+            154.0
+          ]
+        },
+        {
+          "text": "[DESCRIPTION",
+          "confidence": 0.3604,
+          "boxPx": [
+            58.0,
+            199.0,
+            237.0,
+            232.0
+          ]
+        },
+        {
+          "text": "PPROJECT.",
+          "confidence": 0.0,
+          "boxPx": [
+            247.0,
+            192.0,
+            409.0,
+            228.0
+          ]
+        },
+        {
+          "text": "COUNTRY",
+          "confidence": 0.9385,
+          "boxPx": [
+            77.0,
+            255.0,
+            167.0,
+            271.0
+          ]
+        },
+        {
+          "text": "NAME",
+          "confidence": 0.9321,
+          "boxPx": [
+            174.0,
+            254.0,
+            229.0,
+            269.0
+          ]
+        },
+        {
+          "text": ":",
+          "confidence": 0.8812,
+          "boxPx": [
+            237.0,
+            257.0,
+            240.0,
+            268.0
+          ]
+        },
+        {
+          "text": "THE",
+          "confidence": 0.9567,
+          "boxPx": [
+            274.0,
+            251.0,
+            305.0,
+            266.0
+          ]
+        },
+        {
+          "text": "REPUBLIC",
+          "confidence": 0.9655,
+          "boxPx": [
+            313.0,
+            249.0,
+            398.0,
+            266.0
+          ]
+        },
+        {
+          "text": "OF",
+          "confidence": 0.9562,
+          "boxPx": [
+            405.0,
+            248.0,
+            430.0,
+            264.0
+          ]
+        },
+        {
+          "text": "THE",
+          "confidence": 0.9695,
+          "boxPx": [
+            436.0,
+            247.0,
+            468.0,
+            262.0
+          ]
+        },
+        {
+          "text": "PHILIPPINES",
+          "confidence": 0.9331,
+          "boxPx": [
+            474.0,
+            241.0,
+            579.0,
+            267.0
+          ]
+        },
+        {
+          "text": "PROJECT",
+          "confidence": 0.4982,
+          "boxPx": [
+            78.0,
+            292.0,
+            160.0,
+            308.0
+          ]
+        },
+        {
+          "text": "NAME",
+          "confidence": 0.4982,
+          "boxPx": [
+            166.0,
+            291.0,
+            222.0,
+            306.0
+          ]
+        },
+        {
+          "text": ":",
+          "confidence": 0.8953,
+          "boxPx": [
+            240.0,
+            294.0,
+            243.0,
+            305.0
+          ]
+        },
+        {
+          "text": "CONSTRUCTION",
+          "confidence": 0.9348,
+          "boxPx": [
+            274.0,
+            286.0,
+            423.0,
+            304.0
+          ]
+        },
+        {
+          "text": "OF",
+          "confidence": 0.9646,
+          "boxPx": [
+            429.0,
+            285.0,
+            455.0,
+            301.0
+          ]
+        },
+        {
+          "text": "DRAINAGE",
+          "confidence": 0.9643,
+          "boxPx": [
+            462.0,
+            282.0,
+            564.0,
+            300.0
+          ]
+        },
+        {
+          "text": "CANAL",
+          "confidence": 0.9436,
+          "boxPx": [
+            570.0,
+            282.0,
+            638.0,
+            298.0
+          ]
+        },
+        {
+          "text": "AT",
+          "confidence": 0.902,
+          "boxPx": [
+            644.0,
+            282.0,
+            667.0,
+            296.0
+          ]
+        },
+        {
+          "text": "BRGy.",
+          "confidence": 0.8479,
+          "boxPx": [
+            673.0,
+            282.0,
+            728.0,
+            301.0
+          ]
+        },
+        {
+          "text": "DAMILISAN",
+          "confidence": 0.9219,
+          "boxPx": [
+            735.0,
+            269.0,
+            833.0,
+            305.0
+          ]
+        },
+        {
+          "text": "SITELOCATION",
+          "confidence": 0.4022,
+          "boxPx": [
+            76.0,
+            331.0,
+            212.0,
+            349.0
+          ]
+        },
+        {
+          "text": ":",
+          "confidence": 0.7497,
+          "boxPx": [
+            236.0,
+            334.0,
+            239.0,
+            345.0
+          ]
+        },
+        {
+          "text": "BRGY.",
+          "confidence": 0.9205,
+          "boxPx": [
+            274.0,
+            329.0,
+            330.0,
+            344.0
+          ]
+        },
+        {
+          "text": "DAMILISAN,",
+          "confidence": 0.9207,
+          "boxPx": [
+            337.0,
+            327.0,
+            443.0,
+            343.0
+          ]
+        },
+        {
+          "text": "MIAG-AO,",
+          "confidence": 0.9114,
+          "boxPx": [
+            450.0,
+            324.0,
+            547.0,
+            341.0
+          ]
+        },
+        {
+          "text": "ILOILO",
+          "confidence": 0.9615,
+          "boxPx": [
+            554.0,
+            323.0,
+            614.0,
+            339.0
+          ]
+        },
+        {
+          "text": "TOTAL",
+          "confidence": 0.9598,
+          "boxPx": [
+            74.0,
+            369.0,
+            129.0,
+            384.0
+          ]
+        },
+        {
+          "text": "LENGTH",
+          "confidence": 0.9617,
+          "boxPx": [
+            135.0,
+            367.0,
+            205.0,
+            382.0
+          ]
+        },
+        {
+          "text": "45",
+          "confidence": 0.9165,
+          "boxPx": [
+            271.0,
+            365.0,
+            292.0,
+            380.0
+          ]
+        },
+        {
+          "text": "MTRS",
+          "confidence": 0.9092,
+          "boxPx": [
+            298.0,
+            365.0,
+            345.0,
+            379.0
+          ]
+        },
+        {
+          "text": "q",
+          "confidence": 0.7263,
+          "boxPx": [
+            1127.0,
+            720.0,
+            1144.0,
+            740.0
+          ]
+        },
+        {
+          "text": "oy",
+          "confidence": 0.0889,
+          "boxPx": [
+            1053.0,
+            730.0,
+            1241.0,
+            798.0
+          ]
+        },
+        {
+          "text": "=",
+          "confidence": 0.8564,
+          "boxPx": [
+            1207.0,
+            726.0,
+            1240.0,
+            805.0
+          ]
+        },
+        {
+          "text": "a",
+          "confidence": 0.3588,
+          "boxPx": [
+            1079.0,
+            799.0,
+            1156.0,
+            846.0
+          ]
+        },
+        {
+          "text": "©",
+          "confidence": 0.1804,
+          "boxPx": [
+            935.0,
+            773.0,
+            1010.0,
+            860.0
+          ]
+        },
+        {
+          "text": "ay",
+          "confidence": 0.2552,
+          "boxPx": [
+            1194.0,
+            817.0,
+            1261.0,
+            828.0
+          ]
+        },
+        {
+          "text": "aw",
+          "confidence": 0.3679,
+          "boxPx": [
+            941.0,
+            795.0,
+            1272.0,
+            892.0
+          ]
+        },
+        {
+          "text": "SCALE",
+          "confidence": 0.5723,
+          "boxPx": [
+            1111.0,
+            926.0,
+            1145.0,
+            954.0
+          ]
+        },
+        {
+          "text": "wis",
+          "confidence": 0.6014,
+          "boxPx": [
+            1242.0,
+            939.0,
+            1274.0,
+            946.0
+          ]
+        },
+        {
+          "text": "mone",
+          "confidence": 0.3396,
+          "boxPx": [
+            895.0,
+            973.0,
+            929.0,
+            1001.0
+          ]
+        },
+        {
+          "text": "me",
+          "confidence": 0.241,
+          "boxPx": [
+            935.0,
+            973.0,
+            953.0,
+            1001.0
+          ]
+        },
+        {
+          "text": "CONSTRUCTION",
+          "confidence": 0.6627,
+          "boxPx": [
+            924.0,
+            1014.0,
+            1006.0,
+            1022.0
+          ]
+        },
+        {
+          "text": "OF",
+          "confidence": 0.9328,
+          "boxPx": [
+            1010.0,
+            1014.0,
+            1023.0,
+            1021.0
+          ]
+        },
+        {
+          "text": "ORAINAGE",
+          "confidence": 0.9175,
+          "boxPx": [
+            1027.0,
+            1014.0,
+            1081.0,
+            1021.0
+          ]
+        },
+        {
+          "text": "CANAL",
+          "confidence": 0.9658,
+          "boxPx": [
+            1085.0,
+            1014.0,
+            1119.0,
+            1022.0
+          ]
+        },
+        {
+          "text": "AT",
+          "confidence": 0.9658,
+          "boxPx": [
+            1123.0,
+            1014.0,
+            1137.0,
+            1022.0
+          ]
+        },
+        {
+          "text": "BRGY.",
+          "confidence": 0.8312,
+          "boxPx": [
+            983.0,
+            1025.0,
+            1010.0,
+            1033.0
+          ]
+        },
+        {
+          "text": "DAMILISAN",
+          "confidence": 0.4697,
+          "boxPx": [
+            1018.0,
+            1024.0,
+            1075.0,
+            1033.0
+          ]
+        },
+        {
+          "text": "ENGR,",
+          "confidence": 0.2288,
+          "boxPx": [
+            248.0,
+            1024.0,
+            281.0,
+            1052.0
+          ]
+        },
+        {
+          "text": "JERSON",
+          "confidence": 0.5575,
+          "boxPx": [
+            285.0,
+            1024.0,
+            321.0,
+            1052.0
+          ]
+        },
+        {
+          "text": "P.TEXADA",
+          "confidence": 0.2177,
+          "boxPx": [
+            327.0,
+            1024.0,
+            377.0,
+            1052.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 18,
+      "imageCoverageRatio": 0.6628,
+      "extractionMethod": "PyMuPDF native text + Tesseract OCR",
+      "parseStatus": "ocr_text_found"
+    },
+    {
+      "sourceFileSha256": "f3236baded96293b5dc3b4cb3fe9fde7b22034e3c71c055063a32be09d67f31e",
+      "sourceFileBytes": 1135696,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/ed8b329bb702a7bd.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/07/Bidding-Documents-Kalahi-Damilisan-1.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-6/",
+          "sourceTitle": "Invitation to Bid",
+          "publishedAt": "2022-07-13T08:15:47",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "Bidding-Documents-Kalahi-Damilisan-1.pdf"
+        }
+      ],
+      "sourceFileName": "Bidding-Documents-Kalahi-Damilisan-1.pdf",
+      "pageNumber": 24,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "3- 10mm dia. RsB 3-10mm @ Roos oes :\no TS sa\nn 10MM dia. RSB @ 0.20 0.¢.\n10MM dia. Vertical\nspaced @ 0500.0\"\n3-10mm @ RSB~_|\noso\n7-10MM dia. RSB as shown\n0.10M Thick\nii Concrete Flooring G—t o 4.\nNOTE: 0.85\nT A ALL COVERS ARE + — +\nSECTION AWA REMOVABLE DETAIL A\n—\nteow\n2\"6 VENT HOLES A\n(EVERY NEXT 3 COVERS) y\nL \\\n7 = ar =\n_. FAH | 5 1 24 4 1 4 1244 733 78 12 29.981394 178 4 1 24 4 2 0 1244 746 77 21 -1 5 1 24 4 2 1 1244 746 1 14 74.509293 | 5 1 24 4 2 2 1274 729 17 51 74.509293 / 5 1 24 4 2 3 1302 747 19 20 65.087715 8 4 1 24 4 3 0 747 763 572 35 -1 5 1 24 4 3 1 747 781 86 14 37.543339 Oo) 5 1 24 4 3 2 1134 780 15 14 60.865379 co 5 1 24 4 3 3 1206 763 39 35 4.659700 ol( 5 1 24 4 3 4 1300 769 19 13 23.824581 S 4 1 24 4 4 0 1107 805 223 14 -1 5 1 24 4 4 1 1107 805 4 4 0.000000 * 5 1 24 4 4 2 1312 811 18 8 55.591820 ~~ 2 1 25 0 0 0 695 805 127 12 -1 3 1 25 1 0 0 695 805 127 12 -1 4 1 25 1 1 0 695 805 127 12 -1 5 1 25 1 1 1 695 805 15 10 69.389099 E 5 1 25 1 1 2 757 806 65 11 2.519350 SSE 2 1 26 0 0 0 703 689 570 23 -1 3 1 26 1 0 0 703 689 570 23 -1 4 1 26 1 1 0 703 689 570 23 -1 5 1 26 1 1 1 703 689 570 23 95.000000 2 1 27 0 0 0 722 701 558 23 -1 3 1 27 1 0 0 722 701 558 23 -1 4 1 27 1 1 0 722 701 558 23 -1 5 1 27 1 1 1 722 701 558 23 95.000000 2 1 28 0 0 0 501 704 61 4 -1 3 1 28 1 0 0 501 704 61 4 -1 4 1 28 1 1 0 501 704 61 4 -1 5 1 28 1 1 1 501 704 61 4 95.000000 2 1 29 0 0 0 460 714 102 7 -1 3 1 29 1 0 0 460 714 102 7 -1 4 1 29 1 1 0 460 714 102 7 -1 5 1 29 1 1 1 460 714 102 7 95.000000 2 1 30 0 0 0 425 727 137 6 -1 3 1 30 1 0 0 425 727 137 6 -1 4 1 30 1 1 0 425 727 137 6 -1 5 1 30 1 1 1 425 727 137 6 95.000000 2 1 31 0 0 0 391 738 171 8 -1 3 1 31 1 0 0 391 738 171 8 -1 4 1 31 1 1 0 391 738 171 8 -1 5 1 31 1 1 1 391 738 171 8 95.000000 2 1 32 0 0 0 358 750 204 8 -1 3 1 32 1 0 0 358 750 204 8 -1 4 1 32 1 1 0 358 750 204 8 -1 5 1 32 1 1 1 358 750 204 8 95.000000 2 1 33 0 0 0 321 761 240 10 -1 3 1 33 1 0 0 321 761 240 10 -1 4 1 33 1 1 0 321 761 240 10 -1 5 1 33 1 1 1 321 761 240 10 95.000000 2 1 34 0 0 0 1111 726 3 72 -1 3 1 34 1 0 0 1111 726 3 72 -1 4 1 34 1 1 0 1111 726 3 72 -1 5 1 34 1 1 1 1111 726 3 72 95.000000 2 1 35 0 0 0 284 772 277 11 -1 3 1 35 1 0 0 284 772 277 11 -1 4 1 35 1 1 0 284 772 277 11 -1 5 1 35 1 1 1 284 772 277 11 95.000000 2 1 36 0 0 0 853 712 4 93 -1 3 1 36 1 0 0 853 712 4 93 -1 4 1 36 1 1 0 853 712 4 93 -1 5 1 36 1 1 1 853 712 4 93 95.000000 2 1 37 0 0 0 254 785 307 10 -1 3 1 37 1 0 0 254 785 307 10 -1 4 1 37 1 1 0 254 785 307 10 -1 5 1 37 1 1 1 254 785 307 10 95.000000 2 1 38 0 0 0 699 791 574 23 -1 3 1 38 1 0 0 699 791 574 23 -1 4 1 38 1 1 0 699 791 574 23 -1 5 1 38 1 1 1 699 791 574 23 95.000000 2 1 39 0 0 0 540 684 7 137 -1 3 1 39 1 0 0 540 684 7 137 -1 4 1 39 1 1 0 540 684 7 137 -1 5 1 39 1 1 1 540 684 7 137 95.000000 2 1 40 0 0 0 647 702 31 124 -1 3 1 40 1 0 0 647 702 31 124 -1 4 1 40 1 1 0 647 702 31 124 -1 5 1 40 1 1 1 660 817 17 9 0.271320 , 5 1 40 1 1 2 647 702 31 89 43.963326 0.60, 2 1 41 0 0 0 497 705 7 116 -1 3 1 41 1 0 0 497 705 7 116 -1 4 1 41 1 1 0 497 705 7 116 -1 5 1 41 1 1 1 497 705 7 116 95.000000 2 1 42 0 0 0 459 715 7 106 -1 3 1 42 1 0 0 459 715 7 106 -1 4 1 42 1 1 0 459 715 7 106 -1 5 1 42 1 1 1 459 715 7 106 95.000000 2 1 43 0 0 0 424 729 7 91 -1 3 1 43 1 0 0 424 729 7 91 -1 4 1 43 1 1 0 424 729 7 91 -1 5 1 43 1 1 1 424 729 7 91 95.000000 2 1 44 0 0 0 390 740 5 80 -1 3 1 44 1 0 0 390 740 5 80 -1 4 1 44 1 1 0 390 740 5 80 -1 5 1 44 1 1 1 390 740 5 80 95.000000 2 1 45 0 0 0 355 754 4 66 -1 3 1 45 1 0 0 355 754 4 66 -1 4 1 45 1 1 0 355 754 4 66 -1 5 1 45 1 1 1 355 754 4 66 95.000000 2 1 46 0 0 0 321 759 4 61 -1 3 1 46 1 0 0 321 759 4 61 -1 4 1 46 1 1 0 321 759 4 61 -1 5 1 46 1 1 1 321 759 4 61 95.000000 2 1 47 0 0 0 285 776 4 43 -1 3 1 47 1 0 0 285 776 4 43 -1 4 1 47 1 1 0 285 776 4 43 -1 5 1 47 1 1 1 285 776 4 43 95.000000 2 1 48 0 0 0 694 803 584 23 -1 3 1 48 1 0 0 694 803 584 23 -1 4 1 48 1 1 0 694 803 584 23 -1 5 1 48 1 1 1 694 803 584 23 95.000000 2 1 49 0 0 0 86 799 475 15 -1 3 1 49 1 0 0 86 799 475 15 -1 4 1 49 1 1 0 86 799 475 15 -1 5 1 49 1 1 1 86 799 475 15 95.000000 2 1 50 0 0 0 82 798 1225 56 -1 3 1 50 1 0 0 82 798 1218 44 -1 4 1 50 1 1 0 137 798 15 9 -1 5 1 50 1 1 1 137 798 15 9 49.911133 ~~ 4 1 50 1 2 0 82 807 104 11 -1 5 1 50 1 2 1 82 807 56 11 91.514359 EXISTING 5 1 50 1 2 2 147 808 39 10 91.514359 CANAL, 4 1 50 1 3 0 1197 833 103 9 -1 5 1 50 1 3 1 1197 833 33 9 92.951576 TOTAL 5 1 50 1 3 2 1237 833 42 9 84.651329 LENGTH 5 1 50 1 3 3 1287 833 13 9 93.253616 OF 3 1 50 2 0 0 1196 845 111 9 -1 4 1 50 2 1 0 1196 845 111 9 -1 5 1 50 2 1 1 1196 845 54 9 45.759911 ORANASE. 5 1 50 2 1 2 1263 845 44 9 51.704285 4SuTRS 2 1 51 0 0 0 1137 807 35 36 -1 3 1 51 1 0 0 1137 807 35 36 -1 4 1 51 1 1 0 1137 807 35 36 -1 5 1 51 1 1 1 1137 807 35 36 64.621277 Ni 2 1 52 0 0 0 106 835 39 12 -1 3 1 52 1 0 0 106 835 39 12 -1 4 1 52 1 1 0 106 835 39 12 -1 5 1 52 1 1 1 106 835 39 12 0.000000 Te-00 2 1 53 0 0 0 196 791 351 94 -1 3 1 53 1 0 0 196 791 351 94 -1 4 1 53 1 1 0 196 824 9 59 -1 5 1 53 1 1 1 196 865 9 18 59.861786 Sm 5 1 53 1 1 2 196 824 9 33 73.138237 04045, 4 1 53 1 2 0 247 791 9 92 -1 5 1 53 1 2 1 247 865 9 18 56.400101 sta 5 1 53 1 2 2 247 824 9 33 0.000000 ovo00 5 1 53 1 2 3 251 791 2 29 53.534054 1) 4 1 53 1 3 0 281 824 10 59 -1 5 1 53 1 3 1 281 864 10 19 41.241150 St 5 1 53 1 3 2 282 824 9 33 76.700569 04035 4 1 53 1 4 0 318 824 9 60 -1 5 1 53 1 4 1 318 865 8 19 61.648071 STA. 5 1 53 1 4 2 318 824 9 33 64.018250 04030 4 1 53 1 5 0 352 824 10 60 -1 5 1 53 1 5 1 352 865 9 19 57.963463 SIA 5 1 53 1 5 2 352 824 10 33 62.407402 04025 4 1 53 1 6 0 387 823 9 59 -1 5 1 53 1 6 1 387 863 9 19 56.882862 STA 5 1 53 1 6 2 387 823 9 33 55.248268 04020 4 1 53 1 7 0 423 824 9 60 -1 5 1 53 1 7 1 423 866 8 18 79.088982 STA 5 1 53 1 7 2 423 824 9 34 66.322342 09015 4 1 53 1 8 0 457 825 10 60 -1 5 1 53 1 8 1 457 865 9 20 71.106277 STA 5 1 53 1 8 2 458 825 9 33 3.103189 0v010 4 1 53 1 9 0 495 825 10 60 -1 5 1 53 1 9 1 495 865 9 20 66.467262 STA. 5 1 53 1 9 2 496 825 9 33 57.855972 04005 4 1 53 1 10 0 537 825 10 60 -1 5 1 53 1 10 1 537 866 9 19 72.751793 STA. 5 1 53 1 10 2 538 825 9 34 72.751793 04000 2 1 54 0 0 0 722 857 394 30 -1 3 1 54 1 0 0 722 857 394 30 -1 4 1 54 1 1 0 722 857 394 30 -1 5 1 54 1 1 1 722 871 9 16 0.000000 , 5 1 54 1 1 2 764 859 52 17 83.343773 085 5 1 54 1 1 3 849 870 10 17 83.031425 , 5 1 54 1 1 4 893 858 51 18 79.228966 085 5 1 54 1 1 5 978 870 10 16 0.000000 , 5 1 54 1 1 6 1021 857 52 18 75.201332 0.85 5 1 54 1 1 7 1107 870 9 15 65.141815 , 2 1 55 0 0 0 310 917 921 39 -1 3 1 55 1 0 0 310 917 921 39 -1 4 1 55 1 1 0 310 917 921 39 -1 5 1 55 1 1 1 310 917 62 21 96.617561 SITE 5 1 55 1 1 2 383 918 121 21 96.825287 PROFILE 5 1 55 1 1 3 728 927 201 29 95.923813 DRAINAGE 5 1 55 1 1 4 961 927 137 29 94.728615 CANAL 5 1 55 1 1 5 1128 926 103 29 94.728615 PLAN 2 1 56 0 0 0 427 948 835 37 -1 3 1 56 1 0 0 427 948 835 37 -1 4 1 56 1 1 0 427 948 80 12 -1 5 1 56 1 1 1 427 948 46 11 84.859352 SCALE 5 1 56 1 1 2 478 949 29 11 84.859352 NTS 4 1 56 1 2 0 1229 972 33 13 -1 5 1 56 1 2 1 1229 972 33 13 94.873024 NTS 2 1 57 0 0 0 722 713 10 243 -1 3 1 57 1 0 0 722 713 10 243 -1 4 1 57 1 1 0 722 713 10 243 -1 5 1 57 1 1 1 722 713 10 243 95.000000 2 1 58 0 0 0 680 951 585 23 -1 3 1 58 1 0 0 680 951 585 23 -1 4 1 58 1 1 0 680 951 585 23 -1 5 1 58 1 1 1 680 951 585 23 95.000000 2 1 59 0 0 0 681 973 55 15 -1 3 1 59 1 0 0 681 973 55 15 -1 4 1 59 1 1 0 681 973 55 15 -1 5 1 59 1 1 1 681 973 55 15 92.384392 SCALE 2 1 60 0 0 0 48 989 1357 46 -1 3 1 60 1 0 0 48 989 1357 46 -1 4 1 60 1 1 0 48 989 1357 46 -1 5 1 60 1 1 1 48 989 1357 46 95.000000 2 1 61 0 0 0 48 1003 462 18 -1 3 1 61 1 0 0 48 1003 462 18 -1 4 1 61 1 1 0 48 1003 462 18 -1 5 1 61 1 1 1 48 1003 462 18 95.000000 2 1 62 0 0 0 42 184 24 844 -1 3 1 62 1 0 0 42 184 24 844 -1 4 1 62 1 1 0 42 184 24 844 -1 5 1 62 1 1 1 42 184 24 844 95.000000 2 1 63 0 0 0 233 1005 1170 42 -1 3 1 63 1 0 0 233 1005 1170 42 -1 4 1 63 1 1 0 233 1005 1170 42 -1 5 1 63 1 1 1 233 1005 1170 42 95.000000 2 1 64 0 0 0 1180 1013 76 62 -1 3 1 64 1 0 0 1180 1013 76 62 -1 4 1 64 1 1 0 1180 1013 76 62 -1 5 1 64 1 1 1 1180 1013 76 62 95.000000 2 1 65 0 0 0 911 1014 5 76 -1 3 1 65 1 0 0 911 1014 5 76 -1 4 1 65 1 1 0 911 1014 5 76 -1 5 1 65 1 1 1 911 1014 5 76 95.000000 2 1 66 0 0 0 757 1013 4 76 -1 3 1 66 1 0 0 757 1013 4 76 -1 4 1 66 1 1 0 757 1013 4 76 -1 5 1 66 1 1 1 757 1013 4 76 95.000000 2 1 67 0 0 0 581 1015 4 75 -1 3 1 67 1 0 0 581 1015 4 75 -1 4 1 67 1 1 0 581 1015 4 75 -1 5 1 67 1 1 1 581 1015 4 75 95.000000 2 1 68 0 0 0 406 1013 4 76 -1 3 1 68 1 0 0 406 1013 4 76 -1 4 1 68 1 1 0 406 1013 4 76 -1 5 1 68 1 1 1 406 1013 4 76 95.000000 2 1 69 0 0 0 232 1012 4 75 -1 3 1 69 1 0 0 232 1012 4 75 -1 4 1 69 1 1 0 232 1012 4 75 -1 5 1 69 1 1 1 232 1012 4 75 95.000000 2 1 70 0 0 0 46 1001 480 86 -1 3 1 70 1 0 0 50 1013 476 70 -1 4 1 70 1 1 0 46 1001 480 86 -1 5 1 70 1 1 1 46 1002 66 85 45.408409 fay 5 1 70 1 1 2 113 1002 77 34 0.000000 TAALEDSS 5 1 70 1 1 3 192 1002 32 34 26.745596 ND? 5 1 70 1 1 4 236 1017 52 6 6.210728 ROOT 5 1 70 1 1 5 406 1001 53 35 15.015726 cee 5 1 70 1 1 6 516 1016 10 13 42.931923 5 4 1 70 1 2 0 108 1054 2 13 -1 5 1 70 1 2 1 108 1054 2 13 92.375786 | 4 1 70 1 3 0 108 1069 235 14 -1 5 1 70 1 3 1 108 1069 2 14 75.228264 | 5 1 70 1 3 2 339 1077 4 3 0.000000 ‘ 2 1 71 0 0 0 588 1027 568 61 -1 3 1 71 1 0 0 590 1031 566 57 -1 4 1 71 1 1 0 588 1027 568 52 -1 5 1 71 1 1 1 588 1027 65 52 44.186039 a 5 1 71 1 1 2 687 1031 48 44 64.527351 = 5 1 71 1 1 3 939 1032 84 36 0.000000 consmmucrion 5 1 71 1 1 4 1032 1032 12 36 82.626534 OF 5 1 71 1 1 5 1050 1032 51 36 0.000000 Danses 5 1 71 1 1 6 1110 1032 30 36 46.006237 Cane. 5 1 71 1 1 7 1146 1050 10 7 35.895538 AT 4 1 71 1 2 0 590 1060 507 28 -1 5 1 71 1 2 1 590 1072 51 10 15.474682 Corer 5 1 71 1 2 2 638 1060 109 28 0.000000 tranan 5 1 71 1 2 3 736 1050 8 42 19.908695 X 5 1 71 1 2 4 757 1050 4 42 87.698860 | 5 1 71 1 2 5 775 1067 36 10 66.584679 von, 5 1 71 1 2 6 843 1067 58 11 5.930281 socom. 5 1 71 1 2 7 1004 1062 31 9 0.000000 eaSy- 5 1 71 1 2 8 1039 1062 58 9 0.000000 OANA 2 1 72 0 0 0 47 1062 1355 47 -1 3 1 72 1 0 0 47 1062 1355 47 -1 4 1 72 1 1 0 47 1062 1355 47 -1 5 1 72 1 1 1 47 1062 1355 47 95.000000 2 1 73 0 0 0 119 1027 430 82 -1 3 1 73 1 0 0 119 1027 430 82 -1 4 1 73 1 1 0 119 1027 430 82 -1 5 1 73 1 1 1 119 1027 430 82 95.000000 2 1 74 0 0 0 1401 980 3 106 -1 3 1 74 1 0 0 1401 980 3 106 -1 4 1 74 1 1 0 1401 980 3 106 -1 5 1 74 1 1 1 1401 980 3 106 95.000000",
+      "ocrText": "3- 10mm dia. RsB 3-10mm @ Roos oes :\no TS sa\nn 10MM dia. RSB @ 0.20 0.¢.\n10MM dia. Vertical\nspaced @ 0500.0\"\n3-10mm @ RSB~_|\noso\n7-10MM dia. RSB as shown\n0.10M Thick\nii Concrete Flooring G—t o 4.\nNOTE: 0.85\nT A ALL COVERS ARE + — +\nSECTION AWA REMOVABLE DETAIL A\n—\nteow\n2\"6 VENT HOLES A\n(EVERY NEXT 3 COVERS) y\nL \\\n7 = ar =\n_. FAH | 5 1 24 4 1 4 1244 733 78 12 29.981394 178 4 1 24 4 2 0 1244 746 77 21 -1 5 1 24 4 2 1 1244 746 1 14 74.509293 | 5 1 24 4 2 2 1274 729 17 51 74.509293 / 5 1 24 4 2 3 1302 747 19 20 65.087715 8 4 1 24 4 3 0 747 763 572 35 -1 5 1 24 4 3 1 747 781 86 14 37.543339 Oo) 5 1 24 4 3 2 1134 780 15 14 60.865379 co 5 1 24 4 3 3 1206 763 39 35 4.659700 ol( 5 1 24 4 3 4 1300 769 19 13 23.824581 S 4 1 24 4 4 0 1107 805 223 14 -1 5 1 24 4 4 1 1107 805 4 4 0.000000 * 5 1 24 4 4 2 1312 811 18 8 55.591820 ~~ 2 1 25 0 0 0 695 805 127 12 -1 3 1 25 1 0 0 695 805 127 12 -1 4 1 25 1 1 0 695 805 127 12 -1 5 1 25 1 1 1 695 805 15 10 69.389099 E 5 1 25 1 1 2 757 806 65 11 2.519350 SSE 2 1 26 0 0 0 703 689 570 23 -1 3 1 26 1 0 0 703 689 570 23 -1 4 1 26 1 1 0 703 689 570 23 -1 5 1 26 1 1 1 703 689 570 23 95.000000 2 1 27 0 0 0 722 701 558 23 -1 3 1 27 1 0 0 722 701 558 23 -1 4 1 27 1 1 0 722 701 558 23 -1 5 1 27 1 1 1 722 701 558 23 95.000000 2 1 28 0 0 0 501 704 61 4 -1 3 1 28 1 0 0 501 704 61 4 -1 4 1 28 1 1 0 501 704 61 4 -1 5 1 28 1 1 1 501 704 61 4 95.000000 2 1 29 0 0 0 460 714 102 7 -1 3 1 29 1 0 0 460 714 102 7 -1 4 1 29 1 1 0 460 714 102 7 -1 5 1 29 1 1 1 460 714 102 7 95.000000 2 1 30 0 0 0 425 727 137 6 -1 3 1 30 1 0 0 425 727 137 6 -1 4 1 30 1 1 0 425 727 137 6 -1 5 1 30 1 1 1 425 727 137 6 95.000000 2 1 31 0 0 0 391 738 171 8 -1 3 1 31 1 0 0 391 738 171 8 -1 4 1 31 1 1 0 391 738 171 8 -1 5 1 31 1 1 1 391 738 171 8 95.000000 2 1 32 0 0 0 358 750 204 8 -1 3 1 32 1 0 0 358 750 204 8 -1 4 1 32 1 1 0 358 750 204 8 -1 5 1 32 1 1 1 358 750 204 8 95.000000 2 1 33 0 0 0 321 761 240 10 -1 3 1 33 1 0 0 321 761 240 10 -1 4 1 33 1 1 0 321 761 240 10 -1 5 1 33 1 1 1 321 761 240 10 95.000000 2 1 34 0 0 0 1111 726 3 72 -1 3 1 34 1 0 0 1111 726 3 72 -1 4 1 34 1 1 0 1111 726 3 72 -1 5 1 34 1 1 1 1111 726 3 72 95.000000 2 1 35 0 0 0 284 772 277 11 -1 3 1 35 1 0 0 284 772 277 11 -1 4 1 35 1 1 0 284 772 277 11 -1 5 1 35 1 1 1 284 772 277 11 95.000000 2 1 36 0 0 0 853 712 4 93 -1 3 1 36 1 0 0 853 712 4 93 -1 4 1 36 1 1 0 853 712 4 93 -1 5 1 36 1 1 1 853 712 4 93 95.000000 2 1 37 0 0 0 254 785 307 10 -1 3 1 37 1 0 0 254 785 307 10 -1 4 1 37 1 1 0 254 785 307 10 -1 5 1 37 1 1 1 254 785 307 10 95.000000 2 1 38 0 0 0 699 791 574 23 -1 3 1 38 1 0 0 699 791 574 23 -1 4 1 38 1 1 0 699 791 574 23 -1 5 1 38 1 1 1 699 791 574 23 95.000000 2 1 39 0 0 0 540 684 7 137 -1 3 1 39 1 0 0 540 684 7 137 -1 4 1 39 1 1 0 540 684 7 137 -1 5 1 39 1 1 1 540 684 7 137 95.000000 2 1 40 0 0 0 647 702 31 124 -1 3 1 40 1 0 0 647 702 31 124 -1 4 1 40 1 1 0 647 702 31 124 -1 5 1 40 1 1 1 660 817 17 9 0.271320 , 5 1 40 1 1 2 647 702 31 89 43.963326 0.60, 2 1 41 0 0 0 497 705 7 116 -1 3 1 41 1 0 0 497 705 7 116 -1 4 1 41 1 1 0 497 705 7 116 -1 5 1 41 1 1 1 497 705 7 116 95.000000 2 1 42 0 0 0 459 715 7 106 -1 3 1 42 1 0 0 459 715 7 106 -1 4 1 42 1 1 0 459 715 7 106 -1 5 1 42 1 1 1 459 715 7 106 95.000000 2 1 43 0 0 0 424 729 7 91 -1 3 1 43 1 0 0 424 729 7 91 -1 4 1 43 1 1 0 424 729 7 91 -1 5 1 43 1 1 1 424 729 7 91 95.000000 2 1 44 0 0 0 390 740 5 80 -1 3 1 44 1 0 0 390 740 5 80 -1 4 1 44 1 1 0 390 740 5 80 -1 5 1 44 1 1 1 390 740 5 80 95.000000 2 1 45 0 0 0 355 754 4 66 -1 3 1 45 1 0 0 355 754 4 66 -1 4 1 45 1 1 0 355 754 4 66 -1 5 1 45 1 1 1 355 754 4 66 95.000000 2 1 46 0 0 0 321 759 4 61 -1 3 1 46 1 0 0 321 759 4 61 -1 4 1 46 1 1 0 321 759 4 61 -1 5 1 46 1 1 1 321 759 4 61 95.000000 2 1 47 0 0 0 285 776 4 43 -1 3 1 47 1 0 0 285 776 4 43 -1 4 1 47 1 1 0 285 776 4 43 -1 5 1 47 1 1 1 285 776 4 43 95.000000 2 1 48 0 0 0 694 803 584 23 -1 3 1 48 1 0 0 694 803 584 23 -1 4 1 48 1 1 0 694 803 584 23 -1 5 1 48 1 1 1 694 803 584 23 95.000000 2 1 49 0 0 0 86 799 475 15 -1 3 1 49 1 0 0 86 799 475 15 -1 4 1 49 1 1 0 86 799 475 15 -1 5 1 49 1 1 1 86 799 475 15 95.000000 2 1 50 0 0 0 82 798 1225 56 -1 3 1 50 1 0 0 82 798 1218 44 -1 4 1 50 1 1 0 137 798 15 9 -1 5 1 50 1 1 1 137 798 15 9 49.911133 ~~ 4 1 50 1 2 0 82 807 104 11 -1 5 1 50 1 2 1 82 807 56 11 91.514359 EXISTING 5 1 50 1 2 2 147 808 39 10 91.514359 CANAL, 4 1 50 1 3 0 1197 833 103 9 -1 5 1 50 1 3 1 1197 833 33 9 92.951576 TOTAL 5 1 50 1 3 2 1237 833 42 9 84.651329 LENGTH 5 1 50 1 3 3 1287 833 13 9 93.253616 OF 3 1 50 2 0 0 1196 845 111 9 -1 4 1 50 2 1 0 1196 845 111 9 -1 5 1 50 2 1 1 1196 845 54 9 45.759911 ORANASE. 5 1 50 2 1 2 1263 845 44 9 51.704285 4SuTRS 2 1 51 0 0 0 1137 807 35 36 -1 3 1 51 1 0 0 1137 807 35 36 -1 4 1 51 1 1 0 1137 807 35 36 -1 5 1 51 1 1 1 1137 807 35 36 64.621277 Ni 2 1 52 0 0 0 106 835 39 12 -1 3 1 52 1 0 0 106 835 39 12 -1 4 1 52 1 1 0 106 835 39 12 -1 5 1 52 1 1 1 106 835 39 12 0.000000 Te-00 2 1 53 0 0 0 196 791 351 94 -1 3 1 53 1 0 0 196 791 351 94 -1 4 1 53 1 1 0 196 824 9 59 -1 5 1 53 1 1 1 196 865 9 18 59.861786 Sm 5 1 53 1 1 2 196 824 9 33 73.138237 04045, 4 1 53 1 2 0 247 791 9 92 -1 5 1 53 1 2 1 247 865 9 18 56.400101 sta 5 1 53 1 2 2 247 824 9 33 0.000000 ovo00 5 1 53 1 2 3 251 791 2 29 53.534054 1) 4 1 53 1 3 0 281 824 10 59 -1 5 1 53 1 3 1 281 864 10 19 41.241150 St 5 1 53 1 3 2 282 824 9 33 76.700569 04035 4 1 53 1 4 0 318 824 9 60 -1 5 1 53 1 4 1 318 865 8 19 61.648071 STA. 5 1 53 1 4 2 318 824 9 33 64.018250 04030 4 1 53 1 5 0 352 824 10 60 -1 5 1 53 1 5 1 352 865 9 19 57.963463 SIA 5 1 53 1 5 2 352 824 10 33 62.407402 04025 4 1 53 1 6 0 387 823 9 59 -1 5 1 53 1 6 1 387 863 9 19 56.882862 STA 5 1 53 1 6 2 387 823 9 33 55.248268 04020 4 1 53 1 7 0 423 824 9 60 -1 5 1 53 1 7 1 423 866 8 18 79.088982 STA 5 1 53 1 7 2 423 824 9 34 66.322342 09015 4 1 53 1 8 0 457 825 10 60 -1 5 1 53 1 8 1 457 865 9 20 71.106277 STA 5 1 53 1 8 2 458 825 9 33 3.103189 0v010 4 1 53 1 9 0 495 825 10 60 -1 5 1 53 1 9 1 495 865 9 20 66.467262 STA. 5 1 53 1 9 2 496 825 9 33 57.855972 04005 4 1 53 1 10 0 537 825 10 60 -1 5 1 53 1 10 1 537 866 9 19 72.751793 STA. 5 1 53 1 10 2 538 825 9 34 72.751793 04000 2 1 54 0 0 0 722 857 394 30 -1 3 1 54 1 0 0 722 857 394 30 -1 4 1 54 1 1 0 722 857 394 30 -1 5 1 54 1 1 1 722 871 9 16 0.000000 , 5 1 54 1 1 2 764 859 52 17 83.343773 085 5 1 54 1 1 3 849 870 10 17 83.031425 , 5 1 54 1 1 4 893 858 51 18 79.228966 085 5 1 54 1 1 5 978 870 10 16 0.000000 , 5 1 54 1 1 6 1021 857 52 18 75.201332 0.85 5 1 54 1 1 7 1107 870 9 15 65.141815 , 2 1 55 0 0 0 310 917 921 39 -1 3 1 55 1 0 0 310 917 921 39 -1 4 1 55 1 1 0 310 917 921 39 -1 5 1 55 1 1 1 310 917 62 21 96.617561 SITE 5 1 55 1 1 2 383 918 121 21 96.825287 PROFILE 5 1 55 1 1 3 728 927 201 29 95.923813 DRAINAGE 5 1 55 1 1 4 961 927 137 29 94.728615 CANAL 5 1 55 1 1 5 1128 926 103 29 94.728615 PLAN 2 1 56 0 0 0 427 948 835 37 -1 3 1 56 1 0 0 427 948 835 37 -1 4 1 56 1 1 0 427 948 80 12 -1 5 1 56 1 1 1 427 948 46 11 84.859352 SCALE 5 1 56 1 1 2 478 949 29 11 84.859352 NTS 4 1 56 1 2 0 1229 972 33 13 -1 5 1 56 1 2 1 1229 972 33 13 94.873024 NTS 2 1 57 0 0 0 722 713 10 243 -1 3 1 57 1 0 0 722 713 10 243 -1 4 1 57 1 1 0 722 713 10 243 -1 5 1 57 1 1 1 722 713 10 243 95.000000 2 1 58 0 0 0 680 951 585 23 -1 3 1 58 1 0 0 680 951 585 23 -1 4 1 58 1 1 0 680 951 585 23 -1 5 1 58 1 1 1 680 951 585 23 95.000000 2 1 59 0 0 0 681 973 55 15 -1 3 1 59 1 0 0 681 973 55 15 -1 4 1 59 1 1 0 681 973 55 15 -1 5 1 59 1 1 1 681 973 55 15 92.384392 SCALE 2 1 60 0 0 0 48 989 1357 46 -1 3 1 60 1 0 0 48 989 1357 46 -1 4 1 60 1 1 0 48 989 1357 46 -1 5 1 60 1 1 1 48 989 1357 46 95.000000 2 1 61 0 0 0 48 1003 462 18 -1 3 1 61 1 0 0 48 1003 462 18 -1 4 1 61 1 1 0 48 1003 462 18 -1 5 1 61 1 1 1 48 1003 462 18 95.000000 2 1 62 0 0 0 42 184 24 844 -1 3 1 62 1 0 0 42 184 24 844 -1 4 1 62 1 1 0 42 184 24 844 -1 5 1 62 1 1 1 42 184 24 844 95.000000 2 1 63 0 0 0 233 1005 1170 42 -1 3 1 63 1 0 0 233 1005 1170 42 -1 4 1 63 1 1 0 233 1005 1170 42 -1 5 1 63 1 1 1 233 1005 1170 42 95.000000 2 1 64 0 0 0 1180 1013 76 62 -1 3 1 64 1 0 0 1180 1013 76 62 -1 4 1 64 1 1 0 1180 1013 76 62 -1 5 1 64 1 1 1 1180 1013 76 62 95.000000 2 1 65 0 0 0 911 1014 5 76 -1 3 1 65 1 0 0 911 1014 5 76 -1 4 1 65 1 1 0 911 1014 5 76 -1 5 1 65 1 1 1 911 1014 5 76 95.000000 2 1 66 0 0 0 757 1013 4 76 -1 3 1 66 1 0 0 757 1013 4 76 -1 4 1 66 1 1 0 757 1013 4 76 -1 5 1 66 1 1 1 757 1013 4 76 95.000000 2 1 67 0 0 0 581 1015 4 75 -1 3 1 67 1 0 0 581 1015 4 75 -1 4 1 67 1 1 0 581 1015 4 75 -1 5 1 67 1 1 1 581 1015 4 75 95.000000 2 1 68 0 0 0 406 1013 4 76 -1 3 1 68 1 0 0 406 1013 4 76 -1 4 1 68 1 1 0 406 1013 4 76 -1 5 1 68 1 1 1 406 1013 4 76 95.000000 2 1 69 0 0 0 232 1012 4 75 -1 3 1 69 1 0 0 232 1012 4 75 -1 4 1 69 1 1 0 232 1012 4 75 -1 5 1 69 1 1 1 232 1012 4 75 95.000000 2 1 70 0 0 0 46 1001 480 86 -1 3 1 70 1 0 0 50 1013 476 70 -1 4 1 70 1 1 0 46 1001 480 86 -1 5 1 70 1 1 1 46 1002 66 85 45.408409 fay 5 1 70 1 1 2 113 1002 77 34 0.000000 TAALEDSS 5 1 70 1 1 3 192 1002 32 34 26.745596 ND? 5 1 70 1 1 4 236 1017 52 6 6.210728 ROOT 5 1 70 1 1 5 406 1001 53 35 15.015726 cee 5 1 70 1 1 6 516 1016 10 13 42.931923 5 4 1 70 1 2 0 108 1054 2 13 -1 5 1 70 1 2 1 108 1054 2 13 92.375786 | 4 1 70 1 3 0 108 1069 235 14 -1 5 1 70 1 3 1 108 1069 2 14 75.228264 | 5 1 70 1 3 2 339 1077 4 3 0.000000 ‘ 2 1 71 0 0 0 588 1027 568 61 -1 3 1 71 1 0 0 590 1031 566 57 -1 4 1 71 1 1 0 588 1027 568 52 -1 5 1 71 1 1 1 588 1027 65 52 44.186039 a 5 1 71 1 1 2 687 1031 48 44 64.527351 = 5 1 71 1 1 3 939 1032 84 36 0.000000 consmmucrion 5 1 71 1 1 4 1032 1032 12 36 82.626534 OF 5 1 71 1 1 5 1050 1032 51 36 0.000000 Danses 5 1 71 1 1 6 1110 1032 30 36 46.006237 Cane. 5 1 71 1 1 7 1146 1050 10 7 35.895538 AT 4 1 71 1 2 0 590 1060 507 28 -1 5 1 71 1 2 1 590 1072 51 10 15.474682 Corer 5 1 71 1 2 2 638 1060 109 28 0.000000 tranan 5 1 71 1 2 3 736 1050 8 42 19.908695 X 5 1 71 1 2 4 757 1050 4 42 87.698860 | 5 1 71 1 2 5 775 1067 36 10 66.584679 von, 5 1 71 1 2 6 843 1067 58 11 5.930281 socom. 5 1 71 1 2 7 1004 1062 31 9 0.000000 eaSy- 5 1 71 1 2 8 1039 1062 58 9 0.000000 OANA 2 1 72 0 0 0 47 1062 1355 47 -1 3 1 72 1 0 0 47 1062 1355 47 -1 4 1 72 1 1 0 47 1062 1355 47 -1 5 1 72 1 1 1 47 1062 1355 47 95.000000 2 1 73 0 0 0 119 1027 430 82 -1 3 1 73 1 0 0 119 1027 430 82 -1 4 1 73 1 1 0 119 1027 430 82 -1 5 1 73 1 1 1 119 1027 430 82 95.000000 2 1 74 0 0 0 1401 980 3 106 -1 3 1 74 1 0 0 1401 980 3 106 -1 4 1 74 1 1 0 1401 980 3 106 -1 5 1 74 1 1 1 1401 980 3 106 95.000000",
+      "ocrTokenCount": 77,
+      "ocrMeanConfidence": 0.6722,
+      "ocrTokens": [
+        {
+          "text": "3-",
+          "confidence": 0.703,
+          "boxPx": [
+            542.0,
+            264.0,
+            559.0,
+            275.0
+          ]
+        },
+        {
+          "text": "10mm",
+          "confidence": 0.9598,
+          "boxPx": [
+            567.0,
+            264.0,
+            608.0,
+            275.0
+          ]
+        },
+        {
+          "text": "dia.",
+          "confidence": 0.7349,
+          "boxPx": [
+            613.0,
+            265.0,
+            637.0,
+            277.0
+          ]
+        },
+        {
+          "text": "RsB",
+          "confidence": 0.2039,
+          "boxPx": [
+            644.0,
+            266.0,
+            671.0,
+            279.0
+          ]
+        },
+        {
+          "text": "3-10mm",
+          "confidence": 0.9021,
+          "boxPx": [
+            760.0,
+            252.0,
+            831.0,
+            268.0
+          ]
+        },
+        {
+          "text": "@",
+          "confidence": 0.7379,
+          "boxPx": [
+            838.0,
+            249.0,
+            850.0,
+            264.0
+          ]
+        },
+        {
+          "text": "Roos",
+          "confidence": 0.188,
+          "boxPx": [
+            858.0,
+            249.0,
+            944.0,
+            280.0
+          ]
+        },
+        {
+          "text": "oes",
+          "confidence": 0.5719,
+          "boxPx": [
+            1021.0,
+            260.0,
+            1052.0,
+            271.0
+          ]
+        },
+        {
+          "text": ":",
+          "confidence": 0.0,
+          "boxPx": [
+            1130.0,
+            273.0,
+            1133.0,
+            282.0
+          ]
+        },
+        {
+          "text": "o",
+          "confidence": 0.8489,
+          "boxPx": [
+            899.0,
+            280.0,
+            921.0,
+            290.0
+          ]
+        },
+        {
+          "text": "TS",
+          "confidence": 0.2924,
+          "boxPx": [
+            945.0,
+            280.0,
+            967.0,
+            291.0
+          ]
+        },
+        {
+          "text": "sa",
+          "confidence": 0.2404,
+          "boxPx": [
+            1045.0,
+            287.0,
+            1068.0,
+            295.0
+          ]
+        },
+        {
+          "text": "n",
+          "confidence": 0.0,
+          "boxPx": [
+            490.0,
+            376.0,
+            497.0,
+            380.0
+          ]
+        },
+        {
+          "text": "10MM",
+          "confidence": 0.9469,
+          "boxPx": [
+            549.0,
+            361.0,
+            587.0,
+            373.0
+          ]
+        },
+        {
+          "text": "dia.",
+          "confidence": 0.8701,
+          "boxPx": [
+            592.0,
+            362.0,
+            616.0,
+            373.0
+          ]
+        },
+        {
+          "text": "RSB",
+          "confidence": 0.8346,
+          "boxPx": [
+            623.0,
+            362.0,
+            649.0,
+            374.0
+          ]
+        },
+        {
+          "text": "@",
+          "confidence": 0.8346,
+          "boxPx": [
+            657.0,
+            364.0,
+            665.0,
+            376.0
+          ]
+        },
+        {
+          "text": "0.20",
+          "confidence": 0.3631,
+          "boxPx": [
+            672.0,
+            365.0,
+            713.0,
+            378.0
+          ]
+        },
+        {
+          "text": "0.¢.",
+          "confidence": 0.3084,
+          "boxPx": [
+            718.0,
+            369.0,
+            741.0,
+            382.0
+          ]
+        },
+        {
+          "text": "10MM",
+          "confidence": 0.9483,
+          "boxPx": [
+            567.0,
+            391.0,
+            604.0,
+            402.0
+          ]
+        },
+        {
+          "text": "dia.",
+          "confidence": 0.9408,
+          "boxPx": [
+            610.0,
+            391.0,
+            634.0,
+            402.0
+          ]
+        },
+        {
+          "text": "Vertical",
+          "confidence": 0.9417,
+          "boxPx": [
+            640.0,
+            392.0,
+            689.0,
+            405.0
+          ]
+        },
+        {
+          "text": "spaced",
+          "confidence": 0.8007,
+          "boxPx": [
+            567.0,
+            407.0,
+            613.0,
+            419.0
+          ]
+        },
+        {
+          "text": "@",
+          "confidence": 0.8007,
+          "boxPx": [
+            618.0,
+            407.0,
+            631.0,
+            419.0
+          ]
+        },
+        {
+          "text": "0500.0\"",
+          "confidence": 0.4743,
+          "boxPx": [
+            637.0,
+            395.0,
+            722.0,
+            421.0
+          ]
+        },
+        {
+          "text": "3-10mm",
+          "confidence": 0.9142,
+          "boxPx": [
+            768.0,
+            420.0,
+            839.0,
+            435.0
+          ]
+        },
+        {
+          "text": "@",
+          "confidence": 0.8123,
+          "boxPx": [
+            846.0,
+            419.0,
+            858.0,
+            434.0
+          ]
+        },
+        {
+          "text": "RSB~_|",
+          "confidence": 0.7739,
+          "boxPx": [
+            865.0,
+            419.0,
+            939.0,
+            440.0
+          ]
+        },
+        {
+          "text": "oso",
+          "confidence": 0.7341,
+          "boxPx": [
+            187.0,
+            424.0,
+            195.0,
+            445.0
+          ]
+        },
+        {
+          "text": "7-10MM",
+          "confidence": 0.9065,
+          "boxPx": [
+            557.0,
+            440.0,
+            610.0,
+            451.0
+          ]
+        },
+        {
+          "text": "dia.",
+          "confidence": 0.932,
+          "boxPx": [
+            615.0,
+            440.0,
+            639.0,
+            451.0
+          ]
+        },
+        {
+          "text": "RSB",
+          "confidence": 0.9117,
+          "boxPx": [
+            646.0,
+            441.0,
+            672.0,
+            452.0
+          ]
+        },
+        {
+          "text": "as",
+          "confidence": 0.9681,
+          "boxPx": [
+            677.0,
+            444.0,
+            691.0,
+            454.0
+          ]
+        },
+        {
+          "text": "shown",
+          "confidence": 0.8285,
+          "boxPx": [
+            696.0,
+            444.0,
+            736.0,
+            457.0
+          ]
+        },
+        {
+          "text": "0.10M",
+          "confidence": 0.5267,
+          "boxPx": [
+            556.0,
+            493.0,
+            594.0,
+            504.0
+          ]
+        },
+        {
+          "text": "Thick",
+          "confidence": 0.9408,
+          "boxPx": [
+            600.0,
+            489.0,
+            638.0,
+            513.0
+          ]
+        },
+        {
+          "text": "ii",
+          "confidence": 0.1301,
+          "boxPx": [
+            187.0,
+            508.0,
+            206.0,
+            528.0
+          ]
+        },
+        {
+          "text": "Concrete",
+          "confidence": 0.8951,
+          "boxPx": [
+            556.0,
+            503.0,
+            613.0,
+            530.0
+          ]
+        },
+        {
+          "text": "Flooring",
+          "confidence": 0.9239,
+          "boxPx": [
+            619.0,
+            503.0,
+            674.0,
+            530.0
+          ]
+        },
+        {
+          "text": "G—t",
+          "confidence": 0.1015,
+          "boxPx": [
+            953.0,
+            519.0,
+            999.0,
+            527.0
+          ]
+        },
+        {
+          "text": "o",
+          "confidence": 0.0716,
+          "boxPx": [
+            1070.0,
+            518.0,
+            1078.0,
+            525.0
+          ]
+        },
+        {
+          "text": "4.",
+          "confidence": 0.2476,
+          "boxPx": [
+            1182.0,
+            524.0,
+            1197.0,
+            532.0
+          ]
+        },
+        {
+          "text": "NOTE:",
+          "confidence": 0.9687,
+          "boxPx": [
+            731.0,
+            525.0,
+            791.0,
+            561.0
+          ]
+        },
+        {
+          "text": "0.85",
+          "confidence": 0.9539,
+          "boxPx": [
+            1011.0,
+            539.0,
+            1062.0,
+            557.0
+          ]
+        },
+        {
+          "text": "T",
+          "confidence": 0.8989,
+          "boxPx": [
+            325.0,
+            567.0,
+            336.0,
+            582.0
+          ]
+        },
+        {
+          "text": "A",
+          "confidence": 0.9588,
+          "boxPx": [
+            426.0,
+            567.0,
+            438.0,
+            582.0
+          ]
+        },
+        {
+          "text": "ALL",
+          "confidence": 0.9609,
+          "boxPx": [
+            731.0,
+            559.0,
+            768.0,
+            575.0
+          ]
+        },
+        {
+          "text": "COVERS",
+          "confidence": 0.9609,
+          "boxPx": [
+            783.0,
+            557.0,
+            868.0,
+            574.0
+          ]
+        },
+        {
+          "text": "ARE",
+          "confidence": 0.7883,
+          "boxPx": [
+            884.0,
+            552.0,
+            944.0,
+            572.0
+          ]
+        },
+        {
+          "text": "+",
+          "confidence": 0.7883,
+          "boxPx": [
+            931.0,
+            548.0,
+            946.0,
+            584.0
+          ]
+        },
+        {
+          "text": "—",
+          "confidence": 0.2423,
+          "boxPx": [
+            1026.0,
+            552.0,
+            1062.0,
+            557.0
+          ]
+        },
+        {
+          "text": "+",
+          "confidence": 0.5233,
+          "boxPx": [
+            1131.0,
+            554.0,
+            1141.0,
+            566.0
+          ]
+        },
+        {
+          "text": "SECTION",
+          "confidence": 0.8062,
+          "boxPx": [
+            261.0,
+            563.0,
+            379.0,
+            601.0
+          ]
+        },
+        {
+          "text": "AWA",
+          "confidence": 0.3354,
+          "boxPx": [
+            390.0,
+            563.0,
+            458.0,
+            601.0
+          ]
+        },
+        {
+          "text": "REMOVABLE",
+          "confidence": 0.9624,
+          "boxPx": [
+            731.0,
+            581.0,
+            858.0,
+            599.0
+          ]
+        },
+        {
+          "text": "DETAIL",
+          "confidence": 0.9387,
+          "boxPx": [
+            979.0,
+            578.0,
+            1052.0,
+            594.0
+          ]
+        },
+        {
+          "text": "A",
+          "confidence": 0.9387,
+          "boxPx": [
+            1068.0,
+            578.0,
+            1081.0,
+            593.0
+          ]
+        },
+        {
+          "text": "—",
+          "confidence": 0.2868,
+          "boxPx": [
+            521.0,
+            692.0,
+            540.0,
+            699.0
+          ]
+        },
+        {
+          "text": "teow",
+          "confidence": 0.2868,
+          "boxPx": [
+            565.0,
+            702.0,
+            588.0,
+            709.0
+          ]
+        },
+        {
+          "text": "2\"6",
+          "confidence": 0.3276,
+          "boxPx": [
+            806.0,
+            623.0,
+            836.0,
+            639.0
+          ]
+        },
+        {
+          "text": "VENT",
+          "confidence": 0.9611,
+          "boxPx": [
+            848.0,
+            624.0,
+            893.0,
+            638.0
+          ]
+        },
+        {
+          "text": "HOLES",
+          "confidence": 0.962,
+          "boxPx": [
+            905.0,
+            624.0,
+            962.0,
+            638.0
+          ]
+        },
+        {
+          "text": "A",
+          "confidence": 0.6133,
+          "boxPx": [
+            1167.0,
+            626.0,
+            1180.0,
+            641.0
+          ]
+        },
+        {
+          "text": "(EVERY",
+          "confidence": 0.966,
+          "boxPx": [
+            806.0,
+            645.0,
+            870.0,
+            663.0
+          ]
+        },
+        {
+          "text": "NEXT",
+          "confidence": 0.9659,
+          "boxPx": [
+            882.0,
+            645.0,
+            928.0,
+            659.0
+          ]
+        },
+        {
+          "text": "3",
+          "confidence": 0.9576,
+          "boxPx": [
+            940.0,
+            645.0,
+            950.0,
+            659.0
+          ]
+        },
+        {
+          "text": "COVERS)",
+          "confidence": 0.9576,
+          "boxPx": [
+            962.0,
+            644.0,
+            1040.0,
+            662.0
+          ]
+        },
+        {
+          "text": "y",
+          "confidence": 0.0,
+          "boxPx": [
+            1177.0,
+            654.0,
+            1188.0,
+            659.0
+          ]
+        },
+        {
+          "text": "L",
+          "confidence": 0.3184,
+          "boxPx": [
+            704.0,
+            678.0,
+            718.0,
+            701.0
+          ]
+        },
+        {
+          "text": "\\",
+          "confidence": 0.9315,
+          "boxPx": [
+            1260.0,
+            676.0,
+            1271.0,
+            696.0
+          ]
+        },
+        {
+          "text": "7",
+          "confidence": 0.8152,
+          "boxPx": [
+            762.0,
+            703.0,
+            769.0,
+            713.0
+          ]
+        },
+        {
+          "text": "=",
+          "confidence": 0.829,
+          "boxPx": [
+            862.0,
+            702.0,
+            867.0,
+            708.0
+          ]
+        },
+        {
+          "text": "ar",
+          "confidence": 0.3914,
+          "boxPx": [
+            913.0,
+            703.0,
+            947.0,
+            710.0
+          ]
+        },
+        {
+          "text": "=",
+          "confidence": 0.783,
+          "boxPx": [
+            1112.0,
+            702.0,
+            1140.0,
+            724.0
+          ]
+        },
+        {
+          "text": "_.",
+          "confidence": 0.3666,
+          "boxPx": [
+            748.0,
+            715.0,
+            833.0,
+            736.0
+          ]
+        },
+        {
+          "text": "FAH",
+          "confidence": 0.6392,
+          "boxPx": [
+            867.0,
+            717.0,
+            970.0,
+            805.0
+          ]
+        },
+        {
+          "text": "| 5 1 24 4 1 4 1244 733 78 12 29.981394 178 4 1 24 4 2 0 1244 746 77 21 -1 5 1 24 4 2 1 1244 746 1 14 74.509293 | 5 1 24 4 2 2 1274 729 17 51 74.509293 / 5 1 24 4 2 3 1302 747 19 20 65.087715 8 4 1 24 4 3 0 747 763 572 35 -1 5 1 24 4 3 1 747 781 86 14 37.543339 Oo) 5 1 24 4 3 2 1134 780 15 14 60.865379 co 5 1 24 4 3 3 1206 763 39 35 4.659700 ol( 5 1 24 4 3 4 1300 769 19 13 23.824581 S 4 1 24 4 4 0 1107 805 223 14 -1 5 1 24 4 4 1 1107 805 4 4 0.000000 * 5 1 24 4 4 2 1312 811 18 8 55.591820 ~~ 2 1 25 0 0 0 695 805 127 12 -1 3 1 25 1 0 0 695 805 127 12 -1 4 1 25 1 1 0 695 805 127 12 -1 5 1 25 1 1 1 695 805 15 10 69.389099 E 5 1 25 1 1 2 757 806 65 11 2.519350 SSE 2 1 26 0 0 0 703 689 570 23 -1 3 1 26 1 0 0 703 689 570 23 -1 4 1 26 1 1 0 703 689 570 23 -1 5 1 26 1 1 1 703 689 570 23 95.000000 2 1 27 0 0 0 722 701 558 23 -1 3 1 27 1 0 0 722 701 558 23 -1 4 1 27 1 1 0 722 701 558 23 -1 5 1 27 1 1 1 722 701 558 23 95.000000 2 1 28 0 0 0 501 704 61 4 -1 3 1 28 1 0 0 501 704 61 4 -1 4 1 28 1 1 0 501 704 61 4 -1 5 1 28 1 1 1 501 704 61 4 95.000000 2 1 29 0 0 0 460 714 102 7 -1 3 1 29 1 0 0 460 714 102 7 -1 4 1 29 1 1 0 460 714 102 7 -1 5 1 29 1 1 1 460 714 102 7 95.000000 2 1 30 0 0 0 425 727 137 6 -1 3 1 30 1 0 0 425 727 137 6 -1 4 1 30 1 1 0 425 727 137 6 -1 5 1 30 1 1 1 425 727 137 6 95.000000 2 1 31 0 0 0 391 738 171 8 -1 3 1 31 1 0 0 391 738 171 8 -1 4 1 31 1 1 0 391 738 171 8 -1 5 1 31 1 1 1 391 738 171 8 95.000000 2 1 32 0 0 0 358 750 204 8 -1 3 1 32 1 0 0 358 750 204 8 -1 4 1 32 1 1 0 358 750 204 8 -1 5 1 32 1 1 1 358 750 204 8 95.000000 2 1 33 0 0 0 321 761 240 10 -1 3 1 33 1 0 0 321 761 240 10 -1 4 1 33 1 1 0 321 761 240 10 -1 5 1 33 1 1 1 321 761 240 10 95.000000 2 1 34 0 0 0 1111 726 3 72 -1 3 1 34 1 0 0 1111 726 3 72 -1 4 1 34 1 1 0 1111 726 3 72 -1 5 1 34 1 1 1 1111 726 3 72 95.000000 2 1 35 0 0 0 284 772 277 11 -1 3 1 35 1 0 0 284 772 277 11 -1 4 1 35 1 1 0 284 772 277 11 -1 5 1 35 1 1 1 284 772 277 11 95.000000 2 1 36 0 0 0 853 712 4 93 -1 3 1 36 1 0 0 853 712 4 93 -1 4 1 36 1 1 0 853 712 4 93 -1 5 1 36 1 1 1 853 712 4 93 95.000000 2 1 37 0 0 0 254 785 307 10 -1 3 1 37 1 0 0 254 785 307 10 -1 4 1 37 1 1 0 254 785 307 10 -1 5 1 37 1 1 1 254 785 307 10 95.000000 2 1 38 0 0 0 699 791 574 23 -1 3 1 38 1 0 0 699 791 574 23 -1 4 1 38 1 1 0 699 791 574 23 -1 5 1 38 1 1 1 699 791 574 23 95.000000 2 1 39 0 0 0 540 684 7 137 -1 3 1 39 1 0 0 540 684 7 137 -1 4 1 39 1 1 0 540 684 7 137 -1 5 1 39 1 1 1 540 684 7 137 95.000000 2 1 40 0 0 0 647 702 31 124 -1 3 1 40 1 0 0 647 702 31 124 -1 4 1 40 1 1 0 647 702 31 124 -1 5 1 40 1 1 1 660 817 17 9 0.271320 , 5 1 40 1 1 2 647 702 31 89 43.963326 0.60, 2 1 41 0 0 0 497 705 7 116 -1 3 1 41 1 0 0 497 705 7 116 -1 4 1 41 1 1 0 497 705 7 116 -1 5 1 41 1 1 1 497 705 7 116 95.000000 2 1 42 0 0 0 459 715 7 106 -1 3 1 42 1 0 0 459 715 7 106 -1 4 1 42 1 1 0 459 715 7 106 -1 5 1 42 1 1 1 459 715 7 106 95.000000 2 1 43 0 0 0 424 729 7 91 -1 3 1 43 1 0 0 424 729 7 91 -1 4 1 43 1 1 0 424 729 7 91 -1 5 1 43 1 1 1 424 729 7 91 95.000000 2 1 44 0 0 0 390 740 5 80 -1 3 1 44 1 0 0 390 740 5 80 -1 4 1 44 1 1 0 390 740 5 80 -1 5 1 44 1 1 1 390 740 5 80 95.000000 2 1 45 0 0 0 355 754 4 66 -1 3 1 45 1 0 0 355 754 4 66 -1 4 1 45 1 1 0 355 754 4 66 -1 5 1 45 1 1 1 355 754 4 66 95.000000 2 1 46 0 0 0 321 759 4 61 -1 3 1 46 1 0 0 321 759 4 61 -1 4 1 46 1 1 0 321 759 4 61 -1 5 1 46 1 1 1 321 759 4 61 95.000000 2 1 47 0 0 0 285 776 4 43 -1 3 1 47 1 0 0 285 776 4 43 -1 4 1 47 1 1 0 285 776 4 43 -1 5 1 47 1 1 1 285 776 4 43 95.000000 2 1 48 0 0 0 694 803 584 23 -1 3 1 48 1 0 0 694 803 584 23 -1 4 1 48 1 1 0 694 803 584 23 -1 5 1 48 1 1 1 694 803 584 23 95.000000 2 1 49 0 0 0 86 799 475 15 -1 3 1 49 1 0 0 86 799 475 15 -1 4 1 49 1 1 0 86 799 475 15 -1 5 1 49 1 1 1 86 799 475 15 95.000000 2 1 50 0 0 0 82 798 1225 56 -1 3 1 50 1 0 0 82 798 1218 44 -1 4 1 50 1 1 0 137 798 15 9 -1 5 1 50 1 1 1 137 798 15 9 49.911133 ~~ 4 1 50 1 2 0 82 807 104 11 -1 5 1 50 1 2 1 82 807 56 11 91.514359 EXISTING 5 1 50 1 2 2 147 808 39 10 91.514359 CANAL, 4 1 50 1 3 0 1197 833 103 9 -1 5 1 50 1 3 1 1197 833 33 9 92.951576 TOTAL 5 1 50 1 3 2 1237 833 42 9 84.651329 LENGTH 5 1 50 1 3 3 1287 833 13 9 93.253616 OF 3 1 50 2 0 0 1196 845 111 9 -1 4 1 50 2 1 0 1196 845 111 9 -1 5 1 50 2 1 1 1196 845 54 9 45.759911 ORANASE. 5 1 50 2 1 2 1263 845 44 9 51.704285 4SuTRS 2 1 51 0 0 0 1137 807 35 36 -1 3 1 51 1 0 0 1137 807 35 36 -1 4 1 51 1 1 0 1137 807 35 36 -1 5 1 51 1 1 1 1137 807 35 36 64.621277 Ni 2 1 52 0 0 0 106 835 39 12 -1 3 1 52 1 0 0 106 835 39 12 -1 4 1 52 1 1 0 106 835 39 12 -1 5 1 52 1 1 1 106 835 39 12 0.000000 Te-00 2 1 53 0 0 0 196 791 351 94 -1 3 1 53 1 0 0 196 791 351 94 -1 4 1 53 1 1 0 196 824 9 59 -1 5 1 53 1 1 1 196 865 9 18 59.861786 Sm 5 1 53 1 1 2 196 824 9 33 73.138237 04045, 4 1 53 1 2 0 247 791 9 92 -1 5 1 53 1 2 1 247 865 9 18 56.400101 sta 5 1 53 1 2 2 247 824 9 33 0.000000 ovo00 5 1 53 1 2 3 251 791 2 29 53.534054 1) 4 1 53 1 3 0 281 824 10 59 -1 5 1 53 1 3 1 281 864 10 19 41.241150 St 5 1 53 1 3 2 282 824 9 33 76.700569 04035 4 1 53 1 4 0 318 824 9 60 -1 5 1 53 1 4 1 318 865 8 19 61.648071 STA. 5 1 53 1 4 2 318 824 9 33 64.018250 04030 4 1 53 1 5 0 352 824 10 60 -1 5 1 53 1 5 1 352 865 9 19 57.963463 SIA 5 1 53 1 5 2 352 824 10 33 62.407402 04025 4 1 53 1 6 0 387 823 9 59 -1 5 1 53 1 6 1 387 863 9 19 56.882862 STA 5 1 53 1 6 2 387 823 9 33 55.248268 04020 4 1 53 1 7 0 423 824 9 60 -1 5 1 53 1 7 1 423 866 8 18 79.088982 STA 5 1 53 1 7 2 423 824 9 34 66.322342 09015 4 1 53 1 8 0 457 825 10 60 -1 5 1 53 1 8 1 457 865 9 20 71.106277 STA 5 1 53 1 8 2 458 825 9 33 3.103189 0v010 4 1 53 1 9 0 495 825 10 60 -1 5 1 53 1 9 1 495 865 9 20 66.467262 STA. 5 1 53 1 9 2 496 825 9 33 57.855972 04005 4 1 53 1 10 0 537 825 10 60 -1 5 1 53 1 10 1 537 866 9 19 72.751793 STA. 5 1 53 1 10 2 538 825 9 34 72.751793 04000 2 1 54 0 0 0 722 857 394 30 -1 3 1 54 1 0 0 722 857 394 30 -1 4 1 54 1 1 0 722 857 394 30 -1 5 1 54 1 1 1 722 871 9 16 0.000000 , 5 1 54 1 1 2 764 859 52 17 83.343773 085 5 1 54 1 1 3 849 870 10 17 83.031425 , 5 1 54 1 1 4 893 858 51 18 79.228966 085 5 1 54 1 1 5 978 870 10 16 0.000000 , 5 1 54 1 1 6 1021 857 52 18 75.201332 0.85 5 1 54 1 1 7 1107 870 9 15 65.141815 , 2 1 55 0 0 0 310 917 921 39 -1 3 1 55 1 0 0 310 917 921 39 -1 4 1 55 1 1 0 310 917 921 39 -1 5 1 55 1 1 1 310 917 62 21 96.617561 SITE 5 1 55 1 1 2 383 918 121 21 96.825287 PROFILE 5 1 55 1 1 3 728 927 201 29 95.923813 DRAINAGE 5 1 55 1 1 4 961 927 137 29 94.728615 CANAL 5 1 55 1 1 5 1128 926 103 29 94.728615 PLAN 2 1 56 0 0 0 427 948 835 37 -1 3 1 56 1 0 0 427 948 835 37 -1 4 1 56 1 1 0 427 948 80 12 -1 5 1 56 1 1 1 427 948 46 11 84.859352 SCALE 5 1 56 1 1 2 478 949 29 11 84.859352 NTS 4 1 56 1 2 0 1229 972 33 13 -1 5 1 56 1 2 1 1229 972 33 13 94.873024 NTS 2 1 57 0 0 0 722 713 10 243 -1 3 1 57 1 0 0 722 713 10 243 -1 4 1 57 1 1 0 722 713 10 243 -1 5 1 57 1 1 1 722 713 10 243 95.000000 2 1 58 0 0 0 680 951 585 23 -1 3 1 58 1 0 0 680 951 585 23 -1 4 1 58 1 1 0 680 951 585 23 -1 5 1 58 1 1 1 680 951 585 23 95.000000 2 1 59 0 0 0 681 973 55 15 -1 3 1 59 1 0 0 681 973 55 15 -1 4 1 59 1 1 0 681 973 55 15 -1 5 1 59 1 1 1 681 973 55 15 92.384392 SCALE 2 1 60 0 0 0 48 989 1357 46 -1 3 1 60 1 0 0 48 989 1357 46 -1 4 1 60 1 1 0 48 989 1357 46 -1 5 1 60 1 1 1 48 989 1357 46 95.000000 2 1 61 0 0 0 48 1003 462 18 -1 3 1 61 1 0 0 48 1003 462 18 -1 4 1 61 1 1 0 48 1003 462 18 -1 5 1 61 1 1 1 48 1003 462 18 95.000000 2 1 62 0 0 0 42 184 24 844 -1 3 1 62 1 0 0 42 184 24 844 -1 4 1 62 1 1 0 42 184 24 844 -1 5 1 62 1 1 1 42 184 24 844 95.000000 2 1 63 0 0 0 233 1005 1170 42 -1 3 1 63 1 0 0 233 1005 1170 42 -1 4 1 63 1 1 0 233 1005 1170 42 -1 5 1 63 1 1 1 233 1005 1170 42 95.000000 2 1 64 0 0 0 1180 1013 76 62 -1 3 1 64 1 0 0 1180 1013 76 62 -1 4 1 64 1 1 0 1180 1013 76 62 -1 5 1 64 1 1 1 1180 1013 76 62 95.000000 2 1 65 0 0 0 911 1014 5 76 -1 3 1 65 1 0 0 911 1014 5 76 -1 4 1 65 1 1 0 911 1014 5 76 -1 5 1 65 1 1 1 911 1014 5 76 95.000000 2 1 66 0 0 0 757 1013 4 76 -1 3 1 66 1 0 0 757 1013 4 76 -1 4 1 66 1 1 0 757 1013 4 76 -1 5 1 66 1 1 1 757 1013 4 76 95.000000 2 1 67 0 0 0 581 1015 4 75 -1 3 1 67 1 0 0 581 1015 4 75 -1 4 1 67 1 1 0 581 1015 4 75 -1 5 1 67 1 1 1 581 1015 4 75 95.000000 2 1 68 0 0 0 406 1013 4 76 -1 3 1 68 1 0 0 406 1013 4 76 -1 4 1 68 1 1 0 406 1013 4 76 -1 5 1 68 1 1 1 406 1013 4 76 95.000000 2 1 69 0 0 0 232 1012 4 75 -1 3 1 69 1 0 0 232 1012 4 75 -1 4 1 69 1 1 0 232 1012 4 75 -1 5 1 69 1 1 1 232 1012 4 75 95.000000 2 1 70 0 0 0 46 1001 480 86 -1 3 1 70 1 0 0 50 1013 476 70 -1 4 1 70 1 1 0 46 1001 480 86 -1 5 1 70 1 1 1 46 1002 66 85 45.408409 fay 5 1 70 1 1 2 113 1002 77 34 0.000000 TAALEDSS 5 1 70 1 1 3 192 1002 32 34 26.745596 ND? 5 1 70 1 1 4 236 1017 52 6 6.210728 ROOT 5 1 70 1 1 5 406 1001 53 35 15.015726 cee 5 1 70 1 1 6 516 1016 10 13 42.931923 5 4 1 70 1 2 0 108 1054 2 13 -1 5 1 70 1 2 1 108 1054 2 13 92.375786 | 4 1 70 1 3 0 108 1069 235 14 -1 5 1 70 1 3 1 108 1069 2 14 75.228264 | 5 1 70 1 3 2 339 1077 4 3 0.000000 ‘ 2 1 71 0 0 0 588 1027 568 61 -1 3 1 71 1 0 0 590 1031 566 57 -1 4 1 71 1 1 0 588 1027 568 52 -1 5 1 71 1 1 1 588 1027 65 52 44.186039 a 5 1 71 1 1 2 687 1031 48 44 64.527351 = 5 1 71 1 1 3 939 1032 84 36 0.000000 consmmucrion 5 1 71 1 1 4 1032 1032 12 36 82.626534 OF 5 1 71 1 1 5 1050 1032 51 36 0.000000 Danses 5 1 71 1 1 6 1110 1032 30 36 46.006237 Cane. 5 1 71 1 1 7 1146 1050 10 7 35.895538 AT 4 1 71 1 2 0 590 1060 507 28 -1 5 1 71 1 2 1 590 1072 51 10 15.474682 Corer 5 1 71 1 2 2 638 1060 109 28 0.000000 tranan 5 1 71 1 2 3 736 1050 8 42 19.908695 X 5 1 71 1 2 4 757 1050 4 42 87.698860 | 5 1 71 1 2 5 775 1067 36 10 66.584679 von, 5 1 71 1 2 6 843 1067 58 11 5.930281 socom. 5 1 71 1 2 7 1004 1062 31 9 0.000000 eaSy- 5 1 71 1 2 8 1039 1062 58 9 0.000000 OANA 2 1 72 0 0 0 47 1062 1355 47 -1 3 1 72 1 0 0 47 1062 1355 47 -1 4 1 72 1 1 0 47 1062 1355 47 -1 5 1 72 1 1 1 47 1062 1355 47 95.000000 2 1 73 0 0 0 119 1027 430 82 -1 3 1 73 1 0 0 119 1027 430 82 -1 4 1 73 1 1 0 119 1027 430 82 -1 5 1 73 1 1 1 119 1027 430 82 95.000000 2 1 74 0 0 0 1401 980 3 106 -1 3 1 74 1 0 0 1401 980 3 106 -1 4 1 74 1 1 0 1401 980 3 106 -1 5 1 74 1 1 1 1401 980 3 106 95.000000",
+          "confidence": 0.311,
+          "boxPx": [
+            1135.0,
+            721.0,
+            1149.0,
+            734.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 0.6933,
+      "extractionMethod": "Tesseract OCR",
+      "parseStatus": "ocr_text_found"
+    },
+    {
+      "sourceFileSha256": "f3236baded96293b5dc3b4cb3fe9fde7b22034e3c71c055063a32be09d67f31e",
+      "sourceFileBytes": 1135696,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/ed8b329bb702a7bd.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2022/07/Bidding-Documents-Kalahi-Damilisan-1.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid/invitation-to-bid-6/",
+          "sourceTitle": "Invitation to Bid",
+          "publishedAt": "2022-07-13T08:15:47",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "Bidding-Documents-Kalahi-Damilisan-1.pdf"
+        }
+      ],
+      "sourceFileName": "Bidding-Documents-Kalahi-Damilisan-1.pdf",
+      "pageNumber": 25,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "SUB-PROJECT MARKER DESIGN\nDEPARTHUIT op {OK Pears\n(OF SOCIAL WELFARE AO DEVELOPMENT El\ncepranesi cea\nNO vasnnT Sac Hes\nVALANTCIDSSNCDDP [REMAED\nCoord aoe ME\norem ron constRuciON OF ORANAGE CANAL AT\n: BRGY. DAMILISAN\nHON, foGMm Tanga",
+      "ocrText": "SUB-PROJECT MARKER DESIGN\nDEPARTHUIT op {OK Pears\n(OF SOCIAL WELFARE AO DEVELOPMENT El\ncepranesi cea\nNO vasnnT Sac Hes\nVALANTCIDSSNCDDP [REMAED\nCoord aoe ME\norem ron constRuciON OF ORANAGE CANAL AT\n: BRGY. DAMILISAN\nHON, foGMm Tanga",
+      "ocrTokenCount": 37,
+      "ocrMeanConfidence": 0.3898,
+      "ocrTokens": [
+        {
+          "text": "SUB-PROJECT",
+          "confidence": 0.9256,
+          "boxPx": [
+            202.0,
+            230.0,
+            352.0,
+            252.0
+          ]
+        },
+        {
+          "text": "MARKER",
+          "confidence": 0.968,
+          "boxPx": [
+            361.0,
+            226.0,
+            450.0,
+            247.0
+          ]
+        },
+        {
+          "text": "DESIGN",
+          "confidence": 0.9669,
+          "boxPx": [
+            459.0,
+            224.0,
+            545.0,
+            243.0
+          ]
+        },
+        {
+          "text": "DEPARTHUIT",
+          "confidence": 0.0,
+          "boxPx": [
+            846.0,
+            244.0,
+            896.0,
+            256.0
+          ]
+        },
+        {
+          "text": "op",
+          "confidence": 0.8294,
+          "boxPx": [
+            914.0,
+            225.0,
+            924.0,
+            260.0
+          ]
+        },
+        {
+          "text": "{OK",
+          "confidence": 0.234,
+          "boxPx": [
+            929.0,
+            225.0,
+            962.0,
+            260.0
+          ]
+        },
+        {
+          "text": "Pears",
+          "confidence": 0.2645,
+          "boxPx": [
+            982.0,
+            225.0,
+            1026.0,
+            260.0
+          ]
+        },
+        {
+          "text": "(OF",
+          "confidence": 0.6679,
+          "boxPx": [
+            909.0,
+            241.0,
+            924.0,
+            271.0
+          ]
+        },
+        {
+          "text": "SOCIAL",
+          "confidence": 0.8793,
+          "boxPx": [
+            929.0,
+            241.0,
+            962.0,
+            271.0
+          ]
+        },
+        {
+          "text": "WELFARE",
+          "confidence": 0.9361,
+          "boxPx": [
+            969.0,
+            241.0,
+            1007.0,
+            271.0
+          ]
+        },
+        {
+          "text": "AO",
+          "confidence": 0.0,
+          "boxPx": [
+            1014.0,
+            241.0,
+            1029.0,
+            271.0
+          ]
+        },
+        {
+          "text": "DEVELOPMENT",
+          "confidence": 0.8635,
+          "boxPx": [
+            1036.0,
+            241.0,
+            1103.0,
+            271.0
+          ]
+        },
+        {
+          "text": "El",
+          "confidence": 0.7367,
+          "boxPx": [
+            1183.0,
+            245.0,
+            1222.0,
+            272.0
+          ]
+        },
+        {
+          "text": "cepranesi",
+          "confidence": 0.0,
+          "boxPx": [
+            866.0,
+            261.0,
+            921.0,
+            291.0
+          ]
+        },
+        {
+          "text": "cea",
+          "confidence": 0.2474,
+          "boxPx": [
+            941.0,
+            261.0,
+            989.0,
+            291.0
+          ]
+        },
+        {
+          "text": "NO",
+          "confidence": 0.1277,
+          "boxPx": [
+            966.0,
+            269.0,
+            980.0,
+            297.0
+          ]
+        },
+        {
+          "text": "vasnnT",
+          "confidence": 0.0,
+          "boxPx": [
+            983.0,
+            277.0,
+            1081.0,
+            289.0
+          ]
+        },
+        {
+          "text": "Sac",
+          "confidence": 0.2526,
+          "boxPx": [
+            1022.0,
+            269.0,
+            1043.0,
+            297.0
+          ]
+        },
+        {
+          "text": "Hes",
+          "confidence": 0.0,
+          "boxPx": [
+            1054.0,
+            269.0,
+            1085.0,
+            297.0
+          ]
+        },
+        {
+          "text": "VALANTCIDSSNCDDP",
+          "confidence": 0.0,
+          "boxPx": [
+            138.0,
+            1009.0,
+            246.0,
+            1017.0
+          ]
+        },
+        {
+          "text": "[REMAED",
+          "confidence": 0.0,
+          "boxPx": [
+            255.0,
+            1008.0,
+            309.0,
+            1015.0
+          ]
+        },
+        {
+          "text": "Coord",
+          "confidence": 0.3208,
+          "boxPx": [
+            782.0,
+            1009.0,
+            839.0,
+            1017.0
+          ]
+        },
+        {
+          "text": "aoe",
+          "confidence": 0.0,
+          "boxPx": [
+            937.0,
+            1009.0,
+            970.0,
+            1016.0
+          ]
+        },
+        {
+          "text": "ME",
+          "confidence": 0.2572,
+          "boxPx": [
+            974.0,
+            1009.0,
+            994.0,
+            1016.0
+          ]
+        },
+        {
+          "text": "orem",
+          "confidence": 0.0,
+          "boxPx": [
+            275.0,
+            1058.0,
+            345.0,
+            1066.0
+          ]
+        },
+        {
+          "text": "ron",
+          "confidence": 0.175,
+          "boxPx": [
+            361.0,
+            1058.0,
+            397.0,
+            1066.0
+          ]
+        },
+        {
+          "text": "constRuciON",
+          "confidence": 0.0,
+          "boxPx": [
+            964.0,
+            1040.0,
+            1177.0,
+            1051.0
+          ]
+        },
+        {
+          "text": "OF",
+          "confidence": 0.7649,
+          "boxPx": [
+            1053.0,
+            1020.0,
+            1064.0,
+            1063.0
+          ]
+        },
+        {
+          "text": "ORANAGE",
+          "confidence": 0.1348,
+          "boxPx": [
+            1071.0,
+            1020.0,
+            1122.0,
+            1063.0
+          ]
+        },
+        {
+          "text": "CANAL",
+          "confidence": 0.6709,
+          "boxPx": [
+            1128.0,
+            1020.0,
+            1161.0,
+            1063.0
+          ]
+        },
+        {
+          "text": "AT",
+          "confidence": 0.6563,
+          "boxPx": [
+            1164.0,
+            1020.0,
+            1179.0,
+            1063.0
+          ]
+        },
+        {
+          "text": ":",
+          "confidence": 0.4884,
+          "boxPx": [
+            349.0,
+            1058.0,
+            357.0,
+            1066.0
+          ]
+        },
+        {
+          "text": "BRGY.",
+          "confidence": 0.7717,
+          "boxPx": [
+            1024.0,
+            1054.0,
+            1052.0,
+            1062.0
+          ]
+        },
+        {
+          "text": "DAMILISAN",
+          "confidence": 0.8134,
+          "boxPx": [
+            1060.0,
+            1053.0,
+            1118.0,
+            1062.0
+          ]
+        },
+        {
+          "text": "HON,",
+          "confidence": 0.1494,
+          "boxPx": [
+            786.0,
+            1049.0,
+            825.0,
+            1079.0
+          ]
+        },
+        {
+          "text": "foGMm",
+          "confidence": 0.0,
+          "boxPx": [
+            829.0,
+            1049.0,
+            857.0,
+            1079.0
+          ]
+        },
+        {
+          "text": "Tanga",
+          "confidence": 0.3189,
+          "boxPx": [
+            896.0,
+            1060.0,
+            916.0,
+            1070.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 0.7052,
+      "extractionMethod": "Tesseract OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

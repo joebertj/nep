@@ -1,0 +1,1441 @@
+{
+  "sourceFileSha256": "a0f76bb00bfa6132a65f411f204afdfea7c7b5986f06031f13c0386c446583d5",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/3425f88a9967a26b.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/TRUST-FUND-Utilization-March-2019-A-768x427.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/trust-fund-utilization-first-quarter-cy-2019/",
+      "sourceTitle": "TRUST FUND UTILIZATION – FIRST QUARTER, CY 2019",
+      "publishedAt": "2019-04-04T05:17:48",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "TRUST-FUND-Utilization-March-2019-A-768x427.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "a0f76bb00bfa6132a65f411f204afdfea7c7b5986f06031f13c0386c446583d5",
+      "sourceFileBytes": 74607,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/3425f88a9967a26b.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/TRUST-FUND-Utilization-March-2019-A-768x427.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/trust-fund-utilization-first-quarter-cy-2019/",
+          "sourceTitle": "TRUST FUND UTILIZATION – FIRST QUARTER, CY 2019",
+          "publishedAt": "2019-04-04T05:17:48",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "TRUST-FUND-Utilization-March-2019-A-768x427.jpg"
+        }
+      ],
+      "sourceFileName": "TRUST-FUND-Utilization-March-2019-A-768x427.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "‘ERLE YEATES SORT CON CYTE ACIEL BRORACT. ARCHES fe ACTIV TORS:\nFORTHE QUARTER 2009\nProgram oP Lecaion “ot Cost De Stared sear Cosptcion | sD Remus\nsess tun) mye tois | 2000] samy 2016 | Descier2ois | sear asa ano2\na I 7 PY sans\nfg Contig | “operate | ss0s0000| tomy 01s | seni 2013 | ome 130270\nking Se Caen Miao tis zwsow | taney 2015 | Demers | ow 86 245210\ncamino Oper Tacs Ope ngs\nse Ba Te 2rmwon0| —oautersu's | Daseaterris | oe aera\neo Cast Anais Napad | By Tn :\nPik Cao fT DOT ~ °\nSenco Mt magn, tts | vnpm00| rover 2mté | Dscater2017 | 920% 534000\nfNeacouatin it | Miago.tiis | asomo | sonntsr201¢ | poem 2017 | 9998 weno\nween sre dm ummm PSP] ery ey ee ‘sane",
+      "ocrText": "‘ERLE YEATES SORT CON CYTE ACIEL BRORACT. ARCHES fe ACTIV TORS:\nFORTHE QUARTER 2009\nProgram oP Lecaion “ot Cost De Stared sear Cosptcion | sD Remus\nsess tun) mye tois | 2000] samy 2016 | Descier2ois | sear asa ano2\na I 7 PY sans\nfg Contig | “operate | ss0s0000| tomy 01s | seni 2013 | ome 130270\nking Se Caen Miao tis zwsow | taney 2015 | Demers | ow 86 245210\ncamino Oper Tacs Ope ngs\nse Ba Te 2rmwon0| —oautersu's | Daseaterris | oe aera\neo Cast Anais Napad | By Tn :\nPik Cao fT DOT ~ °\nSenco Mt magn, tts | vnpm00| rover 2mté | Dscater2017 | 920% 534000\nfNeacouatin it | Miago.tiis | asomo | sonntsr201¢ | poem 2017 | 9998 weno\nween sre dm ummm PSP] ery ey ee ‘sane",
+      "ocrTokenCount": 139,
+      "ocrMeanConfidence": 0.2808,
+      "ocrTokens": [
+        {
+          "text": "‘ERLE",
+          "confidence": 0.0,
+          "boxPx": [
+            168.0,
+            4.0,
+            241.0,
+            11.0
+          ]
+        },
+        {
+          "text": "YEATES",
+          "confidence": 0.0679,
+          "boxPx": [
+            244.0,
+            4.0,
+            280.0,
+            10.0
+          ]
+        },
+        {
+          "text": "SORT",
+          "confidence": 0.3238,
+          "boxPx": [
+            284.0,
+            4.0,
+            313.0,
+            10.0
+          ]
+        },
+        {
+          "text": "CON",
+          "confidence": 0.5513,
+          "boxPx": [
+            317.0,
+            4.0,
+            328.0,
+            10.0
+          ]
+        },
+        {
+          "text": "CYTE",
+          "confidence": 0.0,
+          "boxPx": [
+            331.0,
+            4.0,
+            351.0,
+            10.0
+          ]
+        },
+        {
+          "text": "ACIEL",
+          "confidence": 0.0,
+          "boxPx": [
+            354.0,
+            4.0,
+            386.0,
+            10.0
+          ]
+        },
+        {
+          "text": "BRORACT.",
+          "confidence": 0.0,
+          "boxPx": [
+            390.0,
+            4.0,
+            422.0,
+            10.0
+          ]
+        },
+        {
+          "text": "ARCHES",
+          "confidence": 0.0,
+          "boxPx": [
+            429.0,
+            4.0,
+            496.0,
+            11.0
+          ]
+        },
+        {
+          "text": "fe",
+          "confidence": 0.3956,
+          "boxPx": [
+            477.0,
+            0.0,
+            484.0,
+            20.0
+          ]
+        },
+        {
+          "text": "ACTIV",
+          "confidence": 0.0928,
+          "boxPx": [
+            489.0,
+            0.0,
+            510.0,
+            20.0
+          ]
+        },
+        {
+          "text": "TORS:",
+          "confidence": 0.0928,
+          "boxPx": [
+            510.0,
+            0.0,
+            535.0,
+            20.0
+          ]
+        },
+        {
+          "text": "FORTHE",
+          "confidence": 0.8014,
+          "boxPx": [
+            296.0,
+            16.0,
+            328.0,
+            22.0
+          ]
+        },
+        {
+          "text": "QUARTER",
+          "confidence": 0.0,
+          "boxPx": [
+            333.0,
+            16.0,
+            373.0,
+            23.0
+          ]
+        },
+        {
+          "text": "2009",
+          "confidence": 0.1768,
+          "boxPx": [
+            377.0,
+            16.0,
+            400.0,
+            22.0
+          ]
+        },
+        {
+          "text": "Program",
+          "confidence": 0.6154,
+          "boxPx": [
+            25.0,
+            72.0,
+            55.0,
+            97.0
+          ]
+        },
+        {
+          "text": "oP",
+          "confidence": 0.5147,
+          "boxPx": [
+            60.0,
+            82.0,
+            76.0,
+            88.0
+          ]
+        },
+        {
+          "text": "Lecaion",
+          "confidence": 0.0,
+          "boxPx": [
+            148.0,
+            72.0,
+            180.0,
+            97.0
+          ]
+        },
+        {
+          "text": "“ot",
+          "confidence": 0.5428,
+          "boxPx": [
+            216.0,
+            72.0,
+            229.0,
+            97.0
+          ]
+        },
+        {
+          "text": "Cost",
+          "confidence": 0.4963,
+          "boxPx": [
+            237.0,
+            82.0,
+            249.0,
+            88.0
+          ]
+        },
+        {
+          "text": "De",
+          "confidence": 0.6751,
+          "boxPx": [
+            288.0,
+            82.0,
+            303.0,
+            88.0
+          ]
+        },
+        {
+          "text": "Stared",
+          "confidence": 0.5407,
+          "boxPx": [
+            306.0,
+            72.0,
+            328.0,
+            97.0
+          ]
+        },
+        {
+          "text": "sear",
+          "confidence": 0.4546,
+          "boxPx": [
+            426.0,
+            82.0,
+            448.0,
+            88.0
+          ]
+        },
+        {
+          "text": "Cosptcion",
+          "confidence": 0.0,
+          "boxPx": [
+            464.0,
+            82.0,
+            481.0,
+            88.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.3454,
+          "boxPx": [
+            484.0,
+            71.0,
+            496.0,
+            97.0
+          ]
+        },
+        {
+          "text": "sD",
+          "confidence": 0.132,
+          "boxPx": [
+            511.0,
+            75.0,
+            544.0,
+            88.0
+          ]
+        },
+        {
+          "text": "Remus",
+          "confidence": 0.4479,
+          "boxPx": [
+            641.0,
+            82.0,
+            670.0,
+            88.0
+          ]
+        },
+        {
+          "text": "sess",
+          "confidence": 0.0912,
+          "boxPx": [
+            3.0,
+            119.0,
+            49.0,
+            125.0
+          ]
+        },
+        {
+          "text": "tun)",
+          "confidence": 0.3888,
+          "boxPx": [
+            60.0,
+            119.0,
+            87.0,
+            126.0
+          ]
+        },
+        {
+          "text": "mye",
+          "confidence": 0.1947,
+          "boxPx": [
+            139.0,
+            119.0,
+            163.0,
+            126.0
+          ]
+        },
+        {
+          "text": "tois",
+          "confidence": 0.0,
+          "boxPx": [
+            168.0,
+            119.0,
+            185.0,
+            125.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.6477,
+          "boxPx": [
+            197.0,
+            106.0,
+            208.0,
+            134.0
+          ]
+        },
+        {
+          "text": "2000]",
+          "confidence": 0.0,
+          "boxPx": [
+            214.0,
+            119.0,
+            256.0,
+            125.0
+          ]
+        },
+        {
+          "text": "samy",
+          "confidence": 0.0,
+          "boxPx": [
+            287.0,
+            119.0,
+            299.0,
+            125.0
+          ]
+        },
+        {
+          "text": "2016",
+          "confidence": 0.1591,
+          "boxPx": [
+            314.0,
+            119.0,
+            330.0,
+            125.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.5638,
+          "boxPx": [
+            347.0,
+            106.0,
+            359.0,
+            134.0
+          ]
+        },
+        {
+          "text": "Descier2ois",
+          "confidence": 0.0,
+          "boxPx": [
+            363.0,
+            119.0,
+            414.0,
+            125.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.6016,
+          "boxPx": [
+            419.0,
+            106.0,
+            432.0,
+            134.0
+          ]
+        },
+        {
+          "text": "sear",
+          "confidence": 0.4243,
+          "boxPx": [
+            441.0,
+            119.0,
+            466.0,
+            124.0
+          ]
+        },
+        {
+          "text": "asa",
+          "confidence": 0.1759,
+          "boxPx": [
+            514.0,
+            106.0,
+            531.0,
+            134.0
+          ]
+        },
+        {
+          "text": "ano2",
+          "confidence": 0.0,
+          "boxPx": [
+            535.0,
+            119.0,
+            556.0,
+            125.0
+          ]
+        },
+        {
+          "text": "a",
+          "confidence": 0.3756,
+          "boxPx": [
+            3.0,
+            164.0,
+            111.0,
+            180.0
+          ]
+        },
+        {
+          "text": "I",
+          "confidence": 0.2073,
+          "boxPx": [
+            139.0,
+            174.0,
+            145.0,
+            180.0
+          ]
+        },
+        {
+          "text": "7",
+          "confidence": 0.3683,
+          "boxPx": [
+            213.0,
+            159.0,
+            289.0,
+            180.0
+          ]
+        },
+        {
+          "text": "PY",
+          "confidence": 0.3732,
+          "boxPx": [
+            363.0,
+            174.0,
+            414.0,
+            180.0
+          ]
+        },
+        {
+          "text": "sans",
+          "confidence": 0.0,
+          "boxPx": [
+            515.0,
+            174.0,
+            556.0,
+            180.0
+          ]
+        },
+        {
+          "text": "fg",
+          "confidence": 0.4537,
+          "boxPx": [
+            3.0,
+            190.0,
+            16.0,
+            205.0
+          ]
+        },
+        {
+          "text": "Contig",
+          "confidence": 0.2532,
+          "boxPx": [
+            17.0,
+            189.0,
+            110.0,
+            205.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.7394,
+          "boxPx": [
+            116.0,
+            185.0,
+            124.0,
+            214.0
+          ]
+        },
+        {
+          "text": "“operate",
+          "confidence": 0.2176,
+          "boxPx": [
+            132.0,
+            189.0,
+            187.0,
+            205.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.0,
+          "boxPx": [
+            203.0,
+            185.0,
+            211.0,
+            214.0
+          ]
+        },
+        {
+          "text": "ss0s0000|",
+          "confidence": 0.0,
+          "boxPx": [
+            220.0,
+            199.0,
+            256.0,
+            205.0
+          ]
+        },
+        {
+          "text": "tomy",
+          "confidence": 0.2633,
+          "boxPx": [
+            287.0,
+            199.0,
+            289.0,
+            205.0
+          ]
+        },
+        {
+          "text": "01s",
+          "confidence": 0.5568,
+          "boxPx": [
+            314.0,
+            199.0,
+            330.0,
+            205.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.6801,
+          "boxPx": [
+            345.0,
+            185.0,
+            358.0,
+            214.0
+          ]
+        },
+        {
+          "text": "seni",
+          "confidence": 0.1063,
+          "boxPx": [
+            363.0,
+            199.0,
+            387.0,
+            205.0
+          ]
+        },
+        {
+          "text": "2013",
+          "confidence": 0.0,
+          "boxPx": [
+            411.0,
+            199.0,
+            414.0,
+            205.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.4903,
+          "boxPx": [
+            420.0,
+            185.0,
+            433.0,
+            214.0
+          ]
+        },
+        {
+          "text": "ome",
+          "confidence": 0.2351,
+          "boxPx": [
+            446.0,
+            199.0,
+            461.0,
+            205.0
+          ]
+        },
+        {
+          "text": "130270",
+          "confidence": 0.4145,
+          "boxPx": [
+            521.0,
+            199.0,
+            557.0,
+            205.0
+          ]
+        },
+        {
+          "text": "king",
+          "confidence": 0.4744,
+          "boxPx": [
+            3.0,
+            205.0,
+            31.0,
+            233.0
+          ]
+        },
+        {
+          "text": "Se",
+          "confidence": 0.1241,
+          "boxPx": [
+            35.0,
+            209.0,
+            53.0,
+            224.0
+          ]
+        },
+        {
+          "text": "Caen",
+          "confidence": 0.407,
+          "boxPx": [
+            58.0,
+            209.0,
+            87.0,
+            224.0
+          ]
+        },
+        {
+          "text": "Miao",
+          "confidence": 0.2709,
+          "boxPx": [
+            139.0,
+            218.0,
+            145.0,
+            224.0
+          ]
+        },
+        {
+          "text": "tis",
+          "confidence": 0.4804,
+          "boxPx": [
+            168.0,
+            218.0,
+            185.0,
+            224.0
+          ]
+        },
+        {
+          "text": "zwsow",
+          "confidence": 0.0,
+          "boxPx": [
+            220.0,
+            218.0,
+            256.0,
+            224.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.7753,
+          "boxPx": [
+            259.0,
+            207.0,
+            266.0,
+            233.0
+          ]
+        },
+        {
+          "text": "taney",
+          "confidence": 0.2426,
+          "boxPx": [
+            287.0,
+            218.0,
+            290.0,
+            224.0
+          ]
+        },
+        {
+          "text": "2015",
+          "confidence": 0.2426,
+          "boxPx": [
+            314.0,
+            218.0,
+            330.0,
+            224.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.4648,
+          "boxPx": [
+            343.0,
+            207.0,
+            359.0,
+            233.0
+          ]
+        },
+        {
+          "text": "Demers",
+          "confidence": 0.197,
+          "boxPx": [
+            363.0,
+            218.0,
+            414.0,
+            224.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.5145,
+          "boxPx": [
+            419.0,
+            207.0,
+            427.0,
+            233.0
+          ]
+        },
+        {
+          "text": "ow",
+          "confidence": 0.2648,
+          "boxPx": [
+            434.0,
+            207.0,
+            448.0,
+            233.0
+          ]
+        },
+        {
+          "text": "86",
+          "confidence": 0.3824,
+          "boxPx": [
+            456.0,
+            207.0,
+            470.0,
+            233.0
+          ]
+        },
+        {
+          "text": "245210",
+          "confidence": 0.4758,
+          "boxPx": [
+            520.0,
+            218.0,
+            557.0,
+            224.0
+          ]
+        },
+        {
+          "text": "camino",
+          "confidence": 0.1873,
+          "boxPx": [
+            3.0,
+            228.0,
+            107.0,
+            236.0
+          ]
+        },
+        {
+          "text": "Oper",
+          "confidence": 0.4358,
+          "boxPx": [
+            58.0,
+            215.0,
+            84.0,
+            243.0
+          ]
+        },
+        {
+          "text": "Tacs",
+          "confidence": 0.3193,
+          "boxPx": [
+            88.0,
+            215.0,
+            122.0,
+            243.0
+          ]
+        },
+        {
+          "text": "Ope",
+          "confidence": 0.3601,
+          "boxPx": [
+            142.0,
+            228.0,
+            166.0,
+            236.0
+          ]
+        },
+        {
+          "text": "ngs",
+          "confidence": 0.2661,
+          "boxPx": [
+            179.0,
+            228.0,
+            200.0,
+            236.0
+          ]
+        },
+        {
+          "text": "se",
+          "confidence": 0.431,
+          "boxPx": [
+            3.0,
+            237.0,
+            35.0,
+            243.0
+          ]
+        },
+        {
+          "text": "Ba",
+          "confidence": 0.5364,
+          "boxPx": [
+            39.0,
+            237.0,
+            52.0,
+            243.0
+          ]
+        },
+        {
+          "text": "Te",
+          "confidence": 0.4295,
+          "boxPx": [
+            153.0,
+            237.0,
+            170.0,
+            243.0
+          ]
+        },
+        {
+          "text": "2rmwon0|",
+          "confidence": 0.0,
+          "boxPx": [
+            213.0,
+            237.0,
+            256.0,
+            243.0
+          ]
+        },
+        {
+          "text": "—oautersu's",
+          "confidence": 0.0,
+          "boxPx": [
+            286.0,
+            237.0,
+            330.0,
+            243.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.4795,
+          "boxPx": [
+            346.0,
+            225.0,
+            359.0,
+            253.0
+          ]
+        },
+        {
+          "text": "Daseaterris",
+          "confidence": 0.2112,
+          "boxPx": [
+            363.0,
+            237.0,
+            414.0,
+            243.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.6592,
+          "boxPx": [
+            421.0,
+            225.0,
+            426.0,
+            253.0
+          ]
+        },
+        {
+          "text": "oe",
+          "confidence": 0.0962,
+          "boxPx": [
+            441.0,
+            237.0,
+            466.0,
+            243.0
+          ]
+        },
+        {
+          "text": "aera",
+          "confidence": 0.0,
+          "boxPx": [
+            514.0,
+            237.0,
+            557.0,
+            244.0
+          ]
+        },
+        {
+          "text": "eo",
+          "confidence": 0.4018,
+          "boxPx": [
+            3.0,
+            248.0,
+            16.0,
+            253.0
+          ]
+        },
+        {
+          "text": "Cast",
+          "confidence": 0.4097,
+          "boxPx": [
+            35.0,
+            235.0,
+            52.0,
+            263.0
+          ]
+        },
+        {
+          "text": "Anais",
+          "confidence": 0.1887,
+          "boxPx": [
+            56.0,
+            235.0,
+            79.0,
+            263.0
+          ]
+        },
+        {
+          "text": "Napad",
+          "confidence": 0.0093,
+          "boxPx": [
+            81.0,
+            247.0,
+            102.0,
+            255.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.2995,
+          "boxPx": [
+            112.0,
+            235.0,
+            122.0,
+            263.0
+          ]
+        },
+        {
+          "text": "By",
+          "confidence": 0.4796,
+          "boxPx": [
+            129.0,
+            247.0,
+            145.0,
+            255.0
+          ]
+        },
+        {
+          "text": "Tn",
+          "confidence": 0.3739,
+          "boxPx": [
+            150.0,
+            247.0,
+            185.0,
+            254.0
+          ]
+        },
+        {
+          "text": ":",
+          "confidence": 0.0,
+          "boxPx": [
+            463.0,
+            257.0,
+            465.0,
+            259.0
+          ]
+        },
+        {
+          "text": "Pik",
+          "confidence": 0.475,
+          "boxPx": [
+            3.0,
+            305.0,
+            25.0,
+            311.0
+          ]
+        },
+        {
+          "text": "Cao",
+          "confidence": 0.6214,
+          "boxPx": [
+            39.0,
+            305.0,
+            61.0,
+            313.0
+          ]
+        },
+        {
+          "text": "fT",
+          "confidence": 0.5827,
+          "boxPx": [
+            70.0,
+            305.0,
+            80.0,
+            311.0
+          ]
+        },
+        {
+          "text": "DOT",
+          "confidence": 0.6331,
+          "boxPx": [
+            91.0,
+            305.0,
+            108.0,
+            312.0
+          ]
+        },
+        {
+          "text": "~",
+          "confidence": 0.0,
+          "boxPx": [
+            214.0,
+            300.0,
+            217.0,
+            301.0
+          ]
+        },
+        {
+          "text": "°",
+          "confidence": 0.0,
+          "boxPx": [
+            519.0,
+            300.0,
+            521.0,
+            302.0
+          ]
+        },
+        {
+          "text": "Senco",
+          "confidence": 0.0,
+          "boxPx": [
+            3.0,
+            380.0,
+            17.0,
+            385.0
+          ]
+        },
+        {
+          "text": "Mt",
+          "confidence": 0.179,
+          "boxPx": [
+            40.0,
+            380.0,
+            66.0,
+            386.0
+          ]
+        },
+        {
+          "text": "magn,",
+          "confidence": 0.0,
+          "boxPx": [
+            139.0,
+            367.0,
+            163.0,
+            395.0
+          ]
+        },
+        {
+          "text": "tts",
+          "confidence": 0.0,
+          "boxPx": [
+            168.0,
+            380.0,
+            185.0,
+            386.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.596,
+          "boxPx": [
+            197.0,
+            367.0,
+            212.0,
+            395.0
+          ]
+        },
+        {
+          "text": "vnpm00|",
+          "confidence": 0.1383,
+          "boxPx": [
+            220.0,
+            380.0,
+            256.0,
+            386.0
+          ]
+        },
+        {
+          "text": "rover",
+          "confidence": 0.0,
+          "boxPx": [
+            283.0,
+            367.0,
+            317.0,
+            395.0
+          ]
+        },
+        {
+          "text": "2mté",
+          "confidence": 0.0,
+          "boxPx": [
+            319.0,
+            380.0,
+            335.0,
+            386.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.6478,
+          "boxPx": [
+            347.0,
+            367.0,
+            359.0,
+            395.0
+          ]
+        },
+        {
+          "text": "Dscater2017",
+          "confidence": 0.0,
+          "boxPx": [
+            363.0,
+            380.0,
+            414.0,
+            386.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.6103,
+          "boxPx": [
+            419.0,
+            367.0,
+            425.0,
+            395.0
+          ]
+        },
+        {
+          "text": "920%",
+          "confidence": 0.6103,
+          "boxPx": [
+            441.0,
+            380.0,
+            466.0,
+            386.0
+          ]
+        },
+        {
+          "text": "534000",
+          "confidence": 0.2995,
+          "boxPx": [
+            524.0,
+            380.0,
+            557.0,
+            386.0
+          ]
+        },
+        {
+          "text": "fNeacouatin",
+          "confidence": 0.0,
+          "boxPx": [
+            0.0,
+            386.0,
+            67.0,
+            414.0
+          ]
+        },
+        {
+          "text": "it",
+          "confidence": 0.5398,
+          "boxPx": [
+            72.0,
+            390.0,
+            103.0,
+            405.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.1176,
+          "boxPx": [
+            116.0,
+            392.0,
+            117.0,
+            396.0
+          ]
+        },
+        {
+          "text": "Miago.tiis",
+          "confidence": 0.0332,
+          "boxPx": [
+            139.0,
+            399.0,
+            185.0,
+            405.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.5983,
+          "boxPx": [
+            198.0,
+            386.0,
+            210.0,
+            414.0
+          ]
+        },
+        {
+          "text": "asomo",
+          "confidence": 0.2013,
+          "boxPx": [
+            219.0,
+            399.0,
+            256.0,
+            405.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.2433,
+          "boxPx": [
+            259.0,
+            386.0,
+            271.0,
+            414.0
+          ]
+        },
+        {
+          "text": "sonntsr201¢",
+          "confidence": 0.0,
+          "boxPx": [
+            282.0,
+            399.0,
+            335.0,
+            405.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.5775,
+          "boxPx": [
+            347.0,
+            386.0,
+            357.0,
+            414.0
+          ]
+        },
+        {
+          "text": "poem",
+          "confidence": 0.0,
+          "boxPx": [
+            364.0,
+            386.0,
+            390.0,
+            414.0
+          ]
+        },
+        {
+          "text": "2017",
+          "confidence": 0.1005,
+          "boxPx": [
+            399.0,
+            399.0,
+            414.0,
+            405.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.6225,
+          "boxPx": [
+            420.0,
+            386.0,
+            425.0,
+            414.0
+          ]
+        },
+        {
+          "text": "9998",
+          "confidence": 0.2673,
+          "boxPx": [
+            441.0,
+            399.0,
+            462.0,
+            405.0
+          ]
+        },
+        {
+          "text": "weno",
+          "confidence": 0.1228,
+          "boxPx": [
+            520.0,
+            399.0,
+            557.0,
+            405.0
+          ]
+        },
+        {
+          "text": "ween",
+          "confidence": 0.238,
+          "boxPx": [
+            0.0,
+            405.0,
+            25.0,
+            427.0
+          ]
+        },
+        {
+          "text": "sre",
+          "confidence": 0.3261,
+          "boxPx": [
+            34.0,
+            405.0,
+            52.0,
+            427.0
+          ]
+        },
+        {
+          "text": "dm",
+          "confidence": 0.2894,
+          "boxPx": [
+            56.0,
+            409.0,
+            70.0,
+            424.0
+          ]
+        },
+        {
+          "text": "ummm",
+          "confidence": 0.0,
+          "boxPx": [
+            72.0,
+            409.0,
+            115.0,
+            424.0
+          ]
+        },
+        {
+          "text": "PSP]",
+          "confidence": 0.3266,
+          "boxPx": [
+            139.0,
+            418.0,
+            183.0,
+            424.0
+          ]
+        },
+        {
+          "text": "ery",
+          "confidence": 0.2362,
+          "boxPx": [
+            283.0,
+            418.0,
+            333.0,
+            424.0
+          ]
+        },
+        {
+          "text": "ey",
+          "confidence": 0.2927,
+          "boxPx": [
+            363.0,
+            418.0,
+            414.0,
+            424.0
+          ]
+        },
+        {
+          "text": "ee",
+          "confidence": 0.138,
+          "boxPx": [
+            441.0,
+            418.0,
+            466.0,
+            424.0
+          ]
+        },
+        {
+          "text": "‘sane",
+          "confidence": 0.2271,
+          "boxPx": [
+            521.0,
+            418.0,
+            557.0,
+            424.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

@@ -2,3 +2,7 @@
 {"atUtc": "2026-11-14T09:14:21+00:00", "message": "Starting or resuming the Miagao OCR parser"}
 {"atUtc": "2026-11-14T09:14:31+00:00", "message": "Parser exited with status 1; stopping supervisor"}
 {"atUtc": "2026-11-14T09:14:51+00:00", "message": "Starting or resuming the Miagao OCR parser"}
+{"atUtc": "2026-11-14T12:03:52+00:00", "message": "Starting or resuming the Miagao parser with single-threaded Tesseract OCR"}
+{"atUtc": "2026-11-14T12:06:42+00:00", "message": "Parser finished with status complete"}
+{"atUtc": "2026-11-14T12:08:51+00:00", "message": "Starting or resuming the Miagao parser with single-threaded Tesseract OCR"}
+{"atUtc": "2026-11-14T12:09:11+00:00", "message": "Parser finished with status complete"}

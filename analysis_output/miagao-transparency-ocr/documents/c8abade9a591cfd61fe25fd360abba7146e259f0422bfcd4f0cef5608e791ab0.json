@@ -1,0 +1,61 @@
+{
+  "sourceFileSha256": "c8abade9a591cfd61fe25fd360abba7146e259f0422bfcd4f0cef5608e791ab0",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/c3e56b382b28fbf1.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/Unliquidated-CA-as-of-March-2019-B-300x172.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/cash-advances/unliquidated-cash-advances-as-of-march-31-2019/",
+      "sourceTitle": "UNLIQUIDATED CASH ADVANCES AS OF MARCH 31, 2019",
+      "publishedAt": "2019-04-04T05:36:27",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "Unliquidated-CA-as-of-March-2019-B-300x172.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "c8abade9a591cfd61fe25fd360abba7146e259f0422bfcd4f0cef5608e791ab0",
+      "sourceFileBytes": 15870,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/c3e56b382b28fbf1.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/Unliquidated-CA-as-of-March-2019-B-300x172.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/financial-statements/cash-advances/unliquidated-cash-advances-as-of-march-31-2019/",
+          "sourceTitle": "UNLIQUIDATED CASH ADVANCES AS OF MARCH 31, 2019",
+          "publishedAt": "2019-04-04T05:36:27",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "Unliquidated-CA-as-of-March-2019-B-300x172.jpg"
+        }
+      ],
+      "sourceFileName": "Unliquidated-CA-as-of-March-2019-B-300x172.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "=",
+      "ocrText": "=",
+      "ocrTokenCount": 1,
+      "ocrMeanConfidence": 0.546,
+      "ocrTokens": [
+        {
+          "text": "=",
+          "confidence": 0.546,
+          "boxPx": [
+            1.0,
+            152.0,
+            30.0,
+            159.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

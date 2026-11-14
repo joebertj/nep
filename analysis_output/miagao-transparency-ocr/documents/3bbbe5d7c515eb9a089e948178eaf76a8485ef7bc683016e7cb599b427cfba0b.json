@@ -1,0 +1,50 @@
+{
+  "sourceFileSha256": "3bbbe5d7c515eb9a089e948178eaf76a8485ef7bc683016e7cb599b427cfba0b",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/a8f5da2686609bf4.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2025/01/472430199_1068154765356617_8518736570398857396_n-231x300.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/invitation-to-bid-for-the-following-projects-18/",
+      "sourceTitle": "INVITATION TO BID FOR THE FOLLOWING PROJECTS",
+      "publishedAt": "2025-01-22T16:12:59",
+      "sourceElement": "img",
+      "sourceAttribute": "src",
+      "fileName": "472430199_1068154765356617_8518736570398857396_n-231x300.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "3bbbe5d7c515eb9a089e948178eaf76a8485ef7bc683016e7cb599b427cfba0b",
+      "sourceFileBytes": 9979,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/a8f5da2686609bf4.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2025/01/472430199_1068154765356617_8518736570398857396_n-231x300.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/about-miagao/news/invitation-to-bid-for-the-following-projects-18/",
+          "sourceTitle": "INVITATION TO BID FOR THE FOLLOWING PROJECTS",
+          "publishedAt": "2025-01-22T16:12:59",
+          "sourceElement": "img",
+          "sourceAttribute": "src",
+          "fileName": "472430199_1068154765356617_8518736570398857396_n-231x300.jpg"
+        }
+      ],
+      "sourceFileName": "472430199_1068154765356617_8518736570398857396_n-231x300.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "",
+      "ocrText": "",
+      "ocrTokenCount": 0,
+      "ocrMeanConfidence": null,
+      "ocrTokens": [],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "no_text_detected"
+    }
+  ]
+}

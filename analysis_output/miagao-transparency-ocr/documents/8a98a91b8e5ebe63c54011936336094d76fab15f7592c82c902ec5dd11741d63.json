@@ -1,0 +1,331 @@
+{
+  "sourceFileSha256": "8a98a91b8e5ebe63c54011936336094d76fab15f7592c82c902ec5dd11741d63",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/b07550cb70312900.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2023/03/Bidding-Documents-Const-Impvt-of-MP-Bldg-Econ-Enterprise.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid-25/",
+      "sourceTitle": "Invitation to Bid",
+      "publishedAt": "2023-03-21T16:08:05",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Bidding-Documents-Const-Impvt-of-MP-Bldg-Econ-Enterprise.pdf"
+    }
+  ],
+  "ocrPageNumbers": [
+    24
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "8a98a91b8e5ebe63c54011936336094d76fab15f7592c82c902ec5dd11741d63",
+      "sourceFileBytes": 1115979,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/b07550cb70312900.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2023/03/Bidding-Documents-Const-Impvt-of-MP-Bldg-Econ-Enterprise.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid-25/",
+          "sourceTitle": "Invitation to Bid",
+          "publishedAt": "2023-03-21T16:08:05",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "Bidding-Documents-Const-Impvt-of-MP-Bldg-Econ-Enterprise.pdf"
+        }
+      ],
+      "sourceFileName": "Bidding-Documents-Const-Impvt-of-MP-Bldg-Econ-Enterprise.pdf",
+      "pageNumber": 24,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "24 Section VII. Drawings [Insert here a list of Drawings. The actual Drawings, including site plans, should be attached to this section, or annexed in a separate folder.]",
+      "extractedText": "24 Section VII. Drawings [Insert here a list of Drawings. The actual Drawings, including site plans, should be attached to this section, or annexed in a separate folder.]\nSection VII. Drawings\n[Insert here a list of Drawings. The actual Drawings, including site plans, should be\nattached to this section, or annexed in a separate folder.]\n24",
+      "ocrText": "Section VII. Drawings\n[Insert here a list of Drawings. The actual Drawings, including site plans, should be\nattached to this section, or annexed in a separate folder.]\n24",
+      "ocrTokenCount": 28,
+      "ocrMeanConfidence": 0.9438,
+      "ocrTokens": [
+        {
+          "text": "Section",
+          "confidence": 0.9648,
+          "boxPx": [
+            401.0,
+            147.0,
+            532.0,
+            177.0
+          ]
+        },
+        {
+          "text": "VII.",
+          "confidence": 0.8825,
+          "boxPx": [
+            548.0,
+            148.0,
+            601.0,
+            176.0
+          ]
+        },
+        {
+          "text": "Drawings",
+          "confidence": 0.9583,
+          "boxPx": [
+            616.0,
+            147.0,
+            788.0,
+            184.0
+          ]
+        },
+        {
+          "text": "[Insert",
+          "confidence": 0.9649,
+          "boxPx": [
+            145.0,
+            222.0,
+            207.0,
+            242.0
+          ]
+        },
+        {
+          "text": "here",
+          "confidence": 0.9606,
+          "boxPx": [
+            219.0,
+            222.0,
+            261.0,
+            238.0
+          ]
+        },
+        {
+          "text": "a",
+          "confidence": 0.9606,
+          "boxPx": [
+            273.0,
+            227.0,
+            284.0,
+            238.0
+          ]
+        },
+        {
+          "text": "list",
+          "confidence": 0.9642,
+          "boxPx": [
+            296.0,
+            222.0,
+            324.0,
+            238.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9641,
+          "boxPx": [
+            335.0,
+            222.0,
+            357.0,
+            242.0
+          ]
+        },
+        {
+          "text": "Drawings.",
+          "confidence": 0.9577,
+          "boxPx": [
+            367.0,
+            222.0,
+            461.0,
+            242.0
+          ]
+        },
+        {
+          "text": "The",
+          "confidence": 0.7016,
+          "boxPx": [
+            499.0,
+            222.0,
+            532.0,
+            238.0
+          ]
+        },
+        {
+          "text": "actual",
+          "confidence": 0.9544,
+          "boxPx": [
+            539.0,
+            222.0,
+            599.0,
+            238.0
+          ]
+        },
+        {
+          "text": "Drawings,",
+          "confidence": 0.9647,
+          "boxPx": [
+            605.0,
+            222.0,
+            700.0,
+            242.0
+          ]
+        },
+        {
+          "text": "including",
+          "confidence": 0.9701,
+          "boxPx": [
+            708.0,
+            222.0,
+            795.0,
+            242.0
+          ]
+        },
+        {
+          "text": "site",
+          "confidence": 0.9665,
+          "boxPx": [
+            801.0,
+            222.0,
+            835.0,
+            238.0
+          ]
+        },
+        {
+          "text": "plans,",
+          "confidence": 0.9669,
+          "boxPx": [
+            840.0,
+            222.0,
+            896.0,
+            242.0
+          ]
+        },
+        {
+          "text": "should",
+          "confidence": 0.9694,
+          "boxPx": [
+            904.0,
+            222.0,
+            968.0,
+            238.0
+          ]
+        },
+        {
+          "text": "be",
+          "confidence": 0.9682,
+          "boxPx": [
+            974.0,
+            222.0,
+            997.0,
+            238.0
+          ]
+        },
+        {
+          "text": "attached",
+          "confidence": 0.9668,
+          "boxPx": [
+            145.0,
+            251.0,
+            232.0,
+            267.0
+          ]
+        },
+        {
+          "text": "to",
+          "confidence": 0.97,
+          "boxPx": [
+            238.0,
+            253.0,
+            256.0,
+            267.0
+          ]
+        },
+        {
+          "text": "this",
+          "confidence": 0.9679,
+          "boxPx": [
+            264.0,
+            251.0,
+            297.0,
+            267.0
+          ]
+        },
+        {
+          "text": "section,",
+          "confidence": 0.9679,
+          "boxPx": [
+            303.0,
+            251.0,
+            375.0,
+            270.0
+          ]
+        },
+        {
+          "text": "or",
+          "confidence": 0.9693,
+          "boxPx": [
+            384.0,
+            256.0,
+            404.0,
+            267.0
+          ]
+        },
+        {
+          "text": "annexed",
+          "confidence": 0.9676,
+          "boxPx": [
+            410.0,
+            251.0,
+            492.0,
+            267.0
+          ]
+        },
+        {
+          "text": "in",
+          "confidence": 0.8841,
+          "boxPx": [
+            499.0,
+            251.0,
+            515.0,
+            267.0
+          ]
+        },
+        {
+          "text": "a",
+          "confidence": 0.8841,
+          "boxPx": [
+            522.0,
+            256.0,
+            533.0,
+            267.0
+          ]
+        },
+        {
+          "text": "separate",
+          "confidence": 0.9325,
+          "boxPx": [
+            539.0,
+            253.0,
+            624.0,
+            271.0
+          ]
+        },
+        {
+          "text": "folder.]",
+          "confidence": 0.9173,
+          "boxPx": [
+            627.0,
+            251.0,
+            699.0,
+            271.0
+          ]
+        },
+        {
+          "text": "24",
+          "confidence": 0.9592,
+          "boxPx": [
+            586.0,
+            1552.0,
+            605.0,
+            1566.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 133,
+      "imageCoverageRatio": 0.0,
+      "extractionMethod": "PyMuPDF native text + Tesseract OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

@@ -1,0 +1,523 @@
+{
+  "sourceFileSha256": "2a82204e3b7881a35dd0502ec1e0bc3d78f24513cacd53a08882c18316fd574f",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/e684bf03edf7d656.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2023/03/Bidding-Documents-Public-Market-Drainage-Pavement-Fencing.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid-25/",
+      "sourceTitle": "Invitation to Bid",
+      "publishedAt": "2023-03-21T16:08:05",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "Bidding-Documents-Public-Market-Drainage-Pavement-Fencing.pdf"
+    }
+  ],
+  "ocrPageNumbers": [
+    12,
+    24
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "2a82204e3b7881a35dd0502ec1e0bc3d78f24513cacd53a08882c18316fd574f",
+      "sourceFileBytes": 1084962,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/e684bf03edf7d656.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2023/03/Bidding-Documents-Public-Market-Drainage-Pavement-Fencing.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid-25/",
+          "sourceTitle": "Invitation to Bid",
+          "publishedAt": "2023-03-21T16:08:05",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "Bidding-Documents-Public-Market-Drainage-Pavement-Fencing.pdf"
+        }
+      ],
+      "sourceFileName": "Bidding-Documents-Public-Market-Drainage-Pavement-Fencing.pdf",
+      "pageNumber": 12,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "12 screeds, motorized Concrete Vibrator 1 with 6.5hp motor, 32mm dia. Hose, 8300-9000 impulses per minute",
+      "extractedText": "12 screeds, motorized Concrete Vibrator 1 with 6.5hp motor, 32mm dia. Hose, 8300-9000 impulses per minute\nConcrete Vibrator\n1\nscreeds, motorized\nwith 6.5hp motor, 32mm dia. Hose,\n8300-9000 impulses per minute\n12",
+      "ocrText": "Concrete Vibrator\n1\nscreeds, motorized\nwith 6.5hp motor, 32mm dia. Hose,\n8300-9000 impulses per minute\n12",
+      "ocrTokenCount": 16,
+      "ocrMeanConfidence": 0.9546,
+      "ocrTokens": [
+        {
+          "text": "Concrete",
+          "confidence": 0.9685,
+          "boxPx": [
+            292.0,
+            177.0,
+            378.0,
+            192.0
+          ]
+        },
+        {
+          "text": "Vibrator",
+          "confidence": 0.9659,
+          "boxPx": [
+            385.0,
+            176.0,
+            465.0,
+            192.0
+          ]
+        },
+        {
+          "text": "1",
+          "confidence": 0.9662,
+          "boxPx": [
+            576.0,
+            177.0,
+            584.0,
+            192.0
+          ]
+        },
+        {
+          "text": "screeds,",
+          "confidence": 0.9649,
+          "boxPx": [
+            648.0,
+            144.0,
+            725.0,
+            163.0
+          ]
+        },
+        {
+          "text": "motorized",
+          "confidence": 0.9677,
+          "boxPx": [
+            733.0,
+            144.0,
+            830.0,
+            160.0
+          ]
+        },
+        {
+          "text": "with",
+          "confidence": 0.9328,
+          "boxPx": [
+            647.0,
+            176.0,
+            687.0,
+            192.0
+          ]
+        },
+        {
+          "text": "6.5hp",
+          "confidence": 0.8715,
+          "boxPx": [
+            696.0,
+            176.0,
+            749.0,
+            196.0
+          ]
+        },
+        {
+          "text": "motor,",
+          "confidence": 0.9619,
+          "boxPx": [
+            757.0,
+            178.0,
+            821.0,
+            195.0
+          ]
+        },
+        {
+          "text": "32mm",
+          "confidence": 0.9577,
+          "boxPx": [
+            829.0,
+            177.0,
+            889.0,
+            192.0
+          ]
+        },
+        {
+          "text": "dia.",
+          "confidence": 0.9577,
+          "boxPx": [
+            897.0,
+            176.0,
+            930.0,
+            192.0
+          ]
+        },
+        {
+          "text": "Hose,",
+          "confidence": 0.9673,
+          "boxPx": [
+            939.0,
+            177.0,
+            990.0,
+            195.0
+          ]
+        },
+        {
+          "text": "8300-9000",
+          "confidence": 0.9571,
+          "boxPx": [
+            650.0,
+            209.0,
+            752.0,
+            224.0
+          ]
+        },
+        {
+          "text": "impulses",
+          "confidence": 0.9571,
+          "boxPx": [
+            760.0,
+            208.0,
+            844.0,
+            228.0
+          ]
+        },
+        {
+          "text": "per",
+          "confidence": 0.9652,
+          "boxPx": [
+            852.0,
+            213.0,
+            883.0,
+            228.0
+          ]
+        },
+        {
+          "text": "minute",
+          "confidence": 0.964,
+          "boxPx": [
+            890.0,
+            208.0,
+            957.0,
+            224.0
+          ]
+        },
+        {
+          "text": "12",
+          "confidence": 0.9485,
+          "boxPx": [
+            589.0,
+            1552.0,
+            605.0,
+            1566.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 69,
+      "imageCoverageRatio": 0.0,
+      "extractionMethod": "PyMuPDF native text + Tesseract OCR",
+      "parseStatus": "ocr_text_found"
+    },
+    {
+      "sourceFileSha256": "2a82204e3b7881a35dd0502ec1e0bc3d78f24513cacd53a08882c18316fd574f",
+      "sourceFileBytes": 1084962,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/e684bf03edf7d656.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2023/03/Bidding-Documents-Public-Market-Drainage-Pavement-Fencing.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/invitation-to-bid-25/",
+          "sourceTitle": "Invitation to Bid",
+          "publishedAt": "2023-03-21T16:08:05",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "Bidding-Documents-Public-Market-Drainage-Pavement-Fencing.pdf"
+        }
+      ],
+      "sourceFileName": "Bidding-Documents-Public-Market-Drainage-Pavement-Fencing.pdf",
+      "pageNumber": 24,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "24 Section VII. Drawings [Insert here a list of Drawings. The actual Drawings, including site plans, should be attached to this section, or annexed in a separate folder.]",
+      "extractedText": "24 Section VII. Drawings [Insert here a list of Drawings. The actual Drawings, including site plans, should be attached to this section, or annexed in a separate folder.]\nSection VII. Drawings\n[Insert here a list of Drawings. The actual Drawings, including site plans, should be\nattached to this section, or annexed in a separate folder.]\n24",
+      "ocrText": "Section VII. Drawings\n[Insert here a list of Drawings. The actual Drawings, including site plans, should be\nattached to this section, or annexed in a separate folder.]\n24",
+      "ocrTokenCount": 28,
+      "ocrMeanConfidence": 0.9455,
+      "ocrTokens": [
+        {
+          "text": "Section",
+          "confidence": 0.9648,
+          "boxPx": [
+            401.0,
+            147.0,
+            532.0,
+            177.0
+          ]
+        },
+        {
+          "text": "VII.",
+          "confidence": 0.8825,
+          "boxPx": [
+            548.0,
+            148.0,
+            601.0,
+            176.0
+          ]
+        },
+        {
+          "text": "Drawings",
+          "confidence": 0.9583,
+          "boxPx": [
+            616.0,
+            147.0,
+            788.0,
+            184.0
+          ]
+        },
+        {
+          "text": "[Insert",
+          "confidence": 0.9649,
+          "boxPx": [
+            145.0,
+            222.0,
+            207.0,
+            242.0
+          ]
+        },
+        {
+          "text": "here",
+          "confidence": 0.9606,
+          "boxPx": [
+            219.0,
+            222.0,
+            261.0,
+            238.0
+          ]
+        },
+        {
+          "text": "a",
+          "confidence": 0.9606,
+          "boxPx": [
+            273.0,
+            227.0,
+            284.0,
+            238.0
+          ]
+        },
+        {
+          "text": "list",
+          "confidence": 0.9642,
+          "boxPx": [
+            296.0,
+            222.0,
+            324.0,
+            238.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9641,
+          "boxPx": [
+            335.0,
+            222.0,
+            357.0,
+            242.0
+          ]
+        },
+        {
+          "text": "Drawings.",
+          "confidence": 0.9577,
+          "boxPx": [
+            367.0,
+            222.0,
+            461.0,
+            242.0
+          ]
+        },
+        {
+          "text": "The",
+          "confidence": 0.7016,
+          "boxPx": [
+            499.0,
+            222.0,
+            532.0,
+            238.0
+          ]
+        },
+        {
+          "text": "actual",
+          "confidence": 0.9544,
+          "boxPx": [
+            539.0,
+            222.0,
+            599.0,
+            238.0
+          ]
+        },
+        {
+          "text": "Drawings,",
+          "confidence": 0.9647,
+          "boxPx": [
+            605.0,
+            222.0,
+            700.0,
+            242.0
+          ]
+        },
+        {
+          "text": "including",
+          "confidence": 0.9701,
+          "boxPx": [
+            708.0,
+            222.0,
+            795.0,
+            242.0
+          ]
+        },
+        {
+          "text": "site",
+          "confidence": 0.9665,
+          "boxPx": [
+            801.0,
+            222.0,
+            835.0,
+            238.0
+          ]
+        },
+        {
+          "text": "plans,",
+          "confidence": 0.9669,
+          "boxPx": [
+            840.0,
+            222.0,
+            896.0,
+            242.0
+          ]
+        },
+        {
+          "text": "should",
+          "confidence": 0.9694,
+          "boxPx": [
+            904.0,
+            222.0,
+            968.0,
+            238.0
+          ]
+        },
+        {
+          "text": "be",
+          "confidence": 0.9682,
+          "boxPx": [
+            974.0,
+            222.0,
+            997.0,
+            238.0
+          ]
+        },
+        {
+          "text": "attached",
+          "confidence": 0.9646,
+          "boxPx": [
+            145.0,
+            251.0,
+            232.0,
+            267.0
+          ]
+        },
+        {
+          "text": "to",
+          "confidence": 0.97,
+          "boxPx": [
+            238.0,
+            253.0,
+            256.0,
+            267.0
+          ]
+        },
+        {
+          "text": "this",
+          "confidence": 0.9668,
+          "boxPx": [
+            264.0,
+            251.0,
+            297.0,
+            267.0
+          ]
+        },
+        {
+          "text": "section,",
+          "confidence": 0.9668,
+          "boxPx": [
+            303.0,
+            251.0,
+            375.0,
+            270.0
+          ]
+        },
+        {
+          "text": "or",
+          "confidence": 0.969,
+          "boxPx": [
+            384.0,
+            256.0,
+            404.0,
+            267.0
+          ]
+        },
+        {
+          "text": "annexed",
+          "confidence": 0.9676,
+          "boxPx": [
+            410.0,
+            251.0,
+            492.0,
+            267.0
+          ]
+        },
+        {
+          "text": "in",
+          "confidence": 0.9095,
+          "boxPx": [
+            498.0,
+            251.0,
+            514.0,
+            267.0
+          ]
+        },
+        {
+          "text": "a",
+          "confidence": 0.9095,
+          "boxPx": [
+            521.0,
+            256.0,
+            532.0,
+            267.0
+          ]
+        },
+        {
+          "text": "separate",
+          "confidence": 0.9321,
+          "boxPx": [
+            539.0,
+            253.0,
+            623.0,
+            271.0
+          ]
+        },
+        {
+          "text": "folder.]",
+          "confidence": 0.9205,
+          "boxPx": [
+            627.0,
+            251.0,
+            699.0,
+            271.0
+          ]
+        },
+        {
+          "text": "24",
+          "confidence": 0.9592,
+          "boxPx": [
+            586.0,
+            1552.0,
+            605.0,
+            1566.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 133,
+      "imageCoverageRatio": 0.0,
+      "extractionMethod": "PyMuPDF native text + Tesseract OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

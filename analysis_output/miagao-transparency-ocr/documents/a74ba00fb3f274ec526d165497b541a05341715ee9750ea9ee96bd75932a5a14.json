@@ -1,0 +1,779 @@
+{
+  "sourceFileSha256": "a74ba00fb3f274ec526d165497b541a05341715ee9750ea9ee96bd75932a5a14",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/f95ebfac79bdac16.jpg",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/BID-RESULTS-ON-GOODS-1st-Qtr-1-768x404.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/bid-results/bid-results-on-civil-works-first-quarter-cy-2019/",
+      "sourceTitle": "BID RESULTS ON CIVIL WORKS – FIRST QUARTER, CY 2019",
+      "publishedAt": "2019-04-04T01:37:29",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "BID-RESULTS-ON-GOODS-1st-Qtr-1-768x404.jpg"
+    },
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/BID-RESULTS-ON-GOODS-1st-Qtr-768x404.jpg",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/bid-results/bid-result-on-goods/",
+      "sourceTitle": "BID RESULT ON GOODS – FIRST QUARTER, CY 2019",
+      "publishedAt": "2019-04-03T08:17:42",
+      "sourceElement": "img",
+      "sourceAttribute": "srcset",
+      "fileName": "BID-RESULTS-ON-GOODS-1st-Qtr-768x404.jpg"
+    }
+  ],
+  "ocrPageNumbers": [
+    1
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "a74ba00fb3f274ec526d165497b541a05341715ee9750ea9ee96bd75932a5a14",
+      "sourceFileBytes": 35136,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/f95ebfac79bdac16.jpg",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/BID-RESULTS-ON-GOODS-1st-Qtr-1-768x404.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/bid-results/bid-results-on-civil-works-first-quarter-cy-2019/",
+          "sourceTitle": "BID RESULTS ON CIVIL WORKS – FIRST QUARTER, CY 2019",
+          "publishedAt": "2019-04-04T01:37:29",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "BID-RESULTS-ON-GOODS-1st-Qtr-1-768x404.jpg"
+        },
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/03/BID-RESULTS-ON-GOODS-1st-Qtr-768x404.jpg",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/bids-and-awards/bid-results/bid-result-on-goods/",
+          "sourceTitle": "BID RESULT ON GOODS – FIRST QUARTER, CY 2019",
+          "publishedAt": "2019-04-03T08:17:42",
+          "sourceElement": "img",
+          "sourceAttribute": "srcset",
+          "fileName": "BID-RESULTS-ON-GOODS-1st-Qtr-768x404.jpg"
+        }
+      ],
+      "sourceFileName": "BID-RESULTS-ON-GOODS-1st-Qtr-1-768x404.jpg",
+      "pageNumber": 1,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "Republic of the Philippines\nGOODS BID-OUT\n‘Municpaliy of Miagao\n1ST Quarter, CY 2019\n‘NO, [REFERENCE] NAMEOF PROJECT | APPROVED LOCATION ‘WINNING NAME AND BID AMOUNT] BIDDING cowrnact\nNo. BUDGET FOR ‘BIDDER ‘ADDRESS aE ouranion\n[THE CONTRACT\nNONE FOR THE PERIOD\n\\We hereby certly that we have received the contents and hereby atest tothe veracity and correctness ofthe data or information contained inthis document.\nSHERWIN KerTH\nAINA,\n‘ial iad acted Chakaiins Catan:",
+      "ocrText": "Republic of the Philippines\nGOODS BID-OUT\n‘Municpaliy of Miagao\n1ST Quarter, CY 2019\n‘NO, [REFERENCE] NAMEOF PROJECT | APPROVED LOCATION ‘WINNING NAME AND BID AMOUNT] BIDDING cowrnact\nNo. BUDGET FOR ‘BIDDER ‘ADDRESS aE ouranion\n[THE CONTRACT\nNONE FOR THE PERIOD\n\\We hereby certly that we have received the contents and hereby atest tothe veracity and correctness ofthe data or information contained inthis document.\nSHERWIN KerTH\nAINA,\n‘ial iad acted Chakaiins Catan:",
+      "ocrTokenCount": 71,
+      "ocrMeanConfidence": 0.6078,
+      "ocrTokens": [
+        {
+          "text": "Republic",
+          "confidence": 0.805,
+          "boxPx": [
+            327.0,
+            5.0,
+            363.0,
+            14.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.9696,
+          "boxPx": [
+            367.0,
+            0.0,
+            373.0,
+            22.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.9695,
+          "boxPx": [
+            372.0,
+            5.0,
+            391.0,
+            13.0
+          ]
+        },
+        {
+          "text": "Philippines",
+          "confidence": 0.8346,
+          "boxPx": [
+            395.0,
+            5.0,
+            441.0,
+            14.0
+          ]
+        },
+        {
+          "text": "GOODS",
+          "confidence": 0.9305,
+          "boxPx": [
+            336.0,
+            20.0,
+            377.0,
+            29.0
+          ]
+        },
+        {
+          "text": "BID-OUT",
+          "confidence": 0.8818,
+          "boxPx": [
+            384.0,
+            20.0,
+            432.0,
+            29.0
+          ]
+        },
+        {
+          "text": "‘Municpaliy",
+          "confidence": 0.316,
+          "boxPx": [
+            334.0,
+            37.0,
+            387.0,
+            46.0
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 0.749,
+          "boxPx": [
+            390.0,
+            37.0,
+            399.0,
+            44.0
+          ]
+        },
+        {
+          "text": "Miagao",
+          "confidence": 0.7022,
+          "boxPx": [
+            402.0,
+            37.0,
+            433.0,
+            46.0
+          ]
+        },
+        {
+          "text": "1ST",
+          "confidence": 0.8771,
+          "boxPx": [
+            324.0,
+            52.0,
+            343.0,
+            61.0
+          ]
+        },
+        {
+          "text": "Quarter,",
+          "confidence": 0.9447,
+          "boxPx": [
+            349.0,
+            52.0,
+            396.0,
+            62.0
+          ]
+        },
+        {
+          "text": "CY",
+          "confidence": 0.9203,
+          "boxPx": [
+            400.0,
+            52.0,
+            413.0,
+            61.0
+          ]
+        },
+        {
+          "text": "2019",
+          "confidence": 0.8396,
+          "boxPx": [
+            417.0,
+            52.0,
+            444.0,
+            61.0
+          ]
+        },
+        {
+          "text": "‘NO,",
+          "confidence": 0.3463,
+          "boxPx": [
+            6.0,
+            84.0,
+            23.0,
+            91.0
+          ]
+        },
+        {
+          "text": "[REFERENCE]",
+          "confidence": 0.3753,
+          "boxPx": [
+            30.0,
+            84.0,
+            79.0,
+            91.0
+          ]
+        },
+        {
+          "text": "NAMEOF",
+          "confidence": 0.6349,
+          "boxPx": [
+            111.0,
+            84.0,
+            152.0,
+            91.0
+          ]
+        },
+        {
+          "text": "PROJECT",
+          "confidence": 0.5354,
+          "boxPx": [
+            156.0,
+            72.0,
+            196.0,
+            100.0
+          ]
+        },
+        {
+          "text": "|",
+          "confidence": 0.6212,
+          "boxPx": [
+            209.0,
+            72.0,
+            224.0,
+            100.0
+          ]
+        },
+        {
+          "text": "APPROVED",
+          "confidence": 0.7539,
+          "boxPx": [
+            231.0,
+            84.0,
+            280.0,
+            91.0
+          ]
+        },
+        {
+          "text": "LOCATION",
+          "confidence": 0.8037,
+          "boxPx": [
+            332.0,
+            73.0,
+            381.0,
+            101.0
+          ]
+        },
+        {
+          "text": "‘WINNING",
+          "confidence": 0.5913,
+          "boxPx": [
+            436.0,
+            73.0,
+            483.0,
+            101.0
+          ]
+        },
+        {
+          "text": "NAME",
+          "confidence": 0.0,
+          "boxPx": [
+            525.0,
+            84.0,
+            552.0,
+            91.0
+          ]
+        },
+        {
+          "text": "AND",
+          "confidence": 0.0,
+          "boxPx": [
+            556.0,
+            73.0,
+            575.0,
+            101.0
+          ]
+        },
+        {
+          "text": "BID",
+          "confidence": 0.2937,
+          "boxPx": [
+            601.0,
+            84.0,
+            616.0,
+            91.0
+          ]
+        },
+        {
+          "text": "AMOUNT]",
+          "confidence": 0.4002,
+          "boxPx": [
+            621.0,
+            73.0,
+            664.0,
+            101.0
+          ]
+        },
+        {
+          "text": "BIDDING",
+          "confidence": 0.8076,
+          "boxPx": [
+            672.0,
+            84.0,
+            710.0,
+            91.0
+          ]
+        },
+        {
+          "text": "cowrnact",
+          "confidence": 0.0,
+          "boxPx": [
+            723.0,
+            86.0,
+            762.0,
+            92.0
+          ]
+        },
+        {
+          "text": "No.",
+          "confidence": 0.8668,
+          "boxPx": [
+            48.0,
+            99.0,
+            64.0,
+            106.0
+          ]
+        },
+        {
+          "text": "BUDGET",
+          "confidence": 0.8925,
+          "boxPx": [
+            223.0,
+            87.0,
+            261.0,
+            115.0
+          ]
+        },
+        {
+          "text": "FOR",
+          "confidence": 0.9482,
+          "boxPx": [
+            266.0,
+            87.0,
+            283.0,
+            115.0
+          ]
+        },
+        {
+          "text": "‘BIDDER",
+          "confidence": 0.5226,
+          "boxPx": [
+            443.0,
+            88.0,
+            480.0,
+            116.0
+          ]
+        },
+        {
+          "text": "‘ADDRESS",
+          "confidence": 0.4012,
+          "boxPx": [
+            526.0,
+            88.0,
+            570.0,
+            116.0
+          ]
+        },
+        {
+          "text": "aE",
+          "confidence": 0.2482,
+          "boxPx": [
+            681.0,
+            99.0,
+            704.0,
+            106.0
+          ]
+        },
+        {
+          "text": "ouranion",
+          "confidence": 0.3963,
+          "boxPx": [
+            724.0,
+            100.0,
+            763.0,
+            107.0
+          ]
+        },
+        {
+          "text": "[THE",
+          "confidence": 0.4547,
+          "boxPx": [
+            218.0,
+            102.0,
+            239.0,
+            130.0
+          ]
+        },
+        {
+          "text": "CONTRACT",
+          "confidence": 0.5119,
+          "boxPx": [
+            242.0,
+            114.0,
+            290.0,
+            121.0
+          ]
+        },
+        {
+          "text": "NONE",
+          "confidence": 0.8832,
+          "boxPx": [
+            258.0,
+            189.0,
+            301.0,
+            201.0
+          ]
+        },
+        {
+          "text": "FOR",
+          "confidence": 0.968,
+          "boxPx": [
+            305.0,
+            189.0,
+            333.0,
+            201.0
+          ]
+        },
+        {
+          "text": "THE",
+          "confidence": 0.9611,
+          "boxPx": [
+            339.0,
+            189.0,
+            366.0,
+            201.0
+          ]
+        },
+        {
+          "text": "PERIOD",
+          "confidence": 0.8796,
+          "boxPx": [
+            370.0,
+            189.0,
+            424.0,
+            201.0
+          ]
+        },
+        {
+          "text": "\\We",
+          "confidence": 0.3723,
+          "boxPx": [
+            4.0,
+            329.0,
+            18.0,
+            336.0
+          ]
+        },
+        {
+          "text": "hereby",
+          "confidence": 0.951,
+          "boxPx": [
+            21.0,
+            329.0,
+            51.0,
+            338.0
+          ]
+        },
+        {
+          "text": "certly",
+          "confidence": 0.3352,
+          "boxPx": [
+            54.0,
+            329.0,
+            81.0,
+            338.0
+          ]
+        },
+        {
+          "text": "that",
+          "confidence": 0.4661,
+          "boxPx": [
+            84.0,
+            329.0,
+            116.0,
+            336.0
+          ]
+        },
+        {
+          "text": "we",
+          "confidence": 0.9675,
+          "boxPx": [
+            107.0,
+            318.0,
+            115.0,
+            346.0
+          ]
+        },
+        {
+          "text": "have",
+          "confidence": 0.9656,
+          "boxPx": [
+            120.0,
+            329.0,
+            139.0,
+            337.0
+          ]
+        },
+        {
+          "text": "received",
+          "confidence": 0.8127,
+          "boxPx": [
+            143.0,
+            329.0,
+            178.0,
+            337.0
+          ]
+        },
+        {
+          "text": "the",
+          "confidence": 0.9271,
+          "boxPx": [
+            182.0,
+            329.0,
+            195.0,
+            336.0
+          ]
+        },
+        {
+          "text": "contents",
+          "confidence": 0.6543,
+          "boxPx": [
+            199.0,
+            330.0,
+            236.0,
+            337.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.6543,
+          "boxPx": [
+            239.0,
+            329.0,
+            254.0,
+            336.0
+          ]
+        },
+        {
+          "text": "hereby",
+          "confidence": 0.9649,
+          "boxPx": [
+            258.0,
+            329.0,
+            287.0,
+            338.0
+          ]
+        },
+        {
+          "text": "atest",
+          "confidence": 0.8322,
+          "boxPx": [
+            290.0,
+            330.0,
+            314.0,
+            337.0
+          ]
+        },
+        {
+          "text": "tothe",
+          "confidence": 0.8405,
+          "boxPx": [
+            317.0,
+            329.0,
+            343.0,
+            337.0
+          ]
+        },
+        {
+          "text": "veracity",
+          "confidence": 0.7444,
+          "boxPx": [
+            346.0,
+            330.0,
+            380.0,
+            338.0
+          ]
+        },
+        {
+          "text": "and",
+          "confidence": 0.7705,
+          "boxPx": [
+            383.0,
+            329.0,
+            398.0,
+            336.0
+          ]
+        },
+        {
+          "text": "correctness",
+          "confidence": 0.5453,
+          "boxPx": [
+            401.0,
+            330.0,
+            450.0,
+            337.0
+          ]
+        },
+        {
+          "text": "ofthe",
+          "confidence": 0.5453,
+          "boxPx": [
+            454.0,
+            329.0,
+            478.0,
+            337.0
+          ]
+        },
+        {
+          "text": "data",
+          "confidence": 0.4535,
+          "boxPx": [
+            482.0,
+            329.0,
+            500.0,
+            336.0
+          ]
+        },
+        {
+          "text": "or",
+          "confidence": 0.4535,
+          "boxPx": [
+            503.0,
+            331.0,
+            511.0,
+            337.0
+          ]
+        },
+        {
+          "text": "information",
+          "confidence": 0.6242,
+          "boxPx": [
+            515.0,
+            329.0,
+            565.0,
+            337.0
+          ]
+        },
+        {
+          "text": "contained",
+          "confidence": 0.4478,
+          "boxPx": [
+            569.0,
+            329.0,
+            611.0,
+            337.0
+          ]
+        },
+        {
+          "text": "inthis",
+          "confidence": 0.4478,
+          "boxPx": [
+            614.0,
+            329.0,
+            640.0,
+            337.0
+          ]
+        },
+        {
+          "text": "document.",
+          "confidence": 0.829,
+          "boxPx": [
+            643.0,
+            329.0,
+            686.0,
+            337.0
+          ]
+        },
+        {
+          "text": "SHERWIN",
+          "confidence": 0.6842,
+          "boxPx": [
+            4.0,
+            376.0,
+            46.0,
+            383.0
+          ]
+        },
+        {
+          "text": "KerTH",
+          "confidence": 0.2165,
+          "boxPx": [
+            49.0,
+            376.0,
+            74.0,
+            383.0
+          ]
+        },
+        {
+          "text": "AINA,",
+          "confidence": 0.2993,
+          "boxPx": [
+            92.0,
+            376.0,
+            119.0,
+            383.0
+          ]
+        },
+        {
+          "text": "‘ial",
+          "confidence": 0.387,
+          "boxPx": [
+            4.0,
+            393.0,
+            21.0,
+            400.0
+          ]
+        },
+        {
+          "text": "iad",
+          "confidence": 0.1195,
+          "boxPx": [
+            24.0,
+            393.0,
+            40.0,
+            400.0
+          ]
+        },
+        {
+          "text": "acted",
+          "confidence": 0.0038,
+          "boxPx": [
+            43.0,
+            393.0,
+            75.0,
+            400.0
+          ]
+        },
+        {
+          "text": "Chakaiins",
+          "confidence": 0.0,
+          "boxPx": [
+            78.0,
+            393.0,
+            125.0,
+            400.0
+          ]
+        },
+        {
+          "text": "Catan:",
+          "confidence": 0.0,
+          "boxPx": [
+            129.0,
+            393.0,
+            169.0,
+            400.0
+          ]
+        }
+      ],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 1.0,
+      "extractionMethod": "Tesseract image OCR",
+      "parseStatus": "ocr_text_found"
+    }
+  ]
+}

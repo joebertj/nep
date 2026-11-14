@@ -1,0 +1,81 @@
+{
+  "sourceFileSha256": "41c58f8b7c80f1ca7c8d889d5c4c5cd71a917505db8d0b980c95fd02e116ade3",
+  "sourceArchivePath": "data_sources/miagao_transparency_archive/files/78c66a9fd3b2d7c5.pdf",
+  "sourceDocumentUrls": [
+    {
+      "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/09/UNLIQUIDATED-CASH-ADVANCES-1.pdf",
+      "sourcePageUrl": "https://www.miagao.gov.ph/transparency/2019-full-disclosure/",
+      "sourceTitle": "2019 Full Disclosure",
+      "publishedAt": "2020-01-06T19:52:15",
+      "sourceElement": "a",
+      "sourceAttribute": "href",
+      "fileName": "UNLIQUIDATED-CASH-ADVANCES-1.pdf"
+    }
+  ],
+  "ocrPageNumbers": [
+    3,
+    4
+  ],
+  "rows": [
+    {
+      "sourceFileSha256": "41c58f8b7c80f1ca7c8d889d5c4c5cd71a917505db8d0b980c95fd02e116ade3",
+      "sourceFileBytes": 464076,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/78c66a9fd3b2d7c5.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/09/UNLIQUIDATED-CASH-ADVANCES-1.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/2019-full-disclosure/",
+          "sourceTitle": "2019 Full Disclosure",
+          "publishedAt": "2020-01-06T19:52:15",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "UNLIQUIDATED-CASH-ADVANCES-1.pdf"
+        }
+      ],
+      "sourceFileName": "UNLIQUIDATED-CASH-ADVANCES-1.pdf",
+      "pageNumber": 3,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "",
+      "ocrText": "",
+      "ocrTokenCount": 0,
+      "ocrMeanConfidence": null,
+      "ocrTokens": [],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 0.0,
+      "extractionMethod": "Tesseract OCR",
+      "parseStatus": "no_text_detected"
+    },
+    {
+      "sourceFileSha256": "41c58f8b7c80f1ca7c8d889d5c4c5cd71a917505db8d0b980c95fd02e116ade3",
+      "sourceFileBytes": 464076,
+      "sourceArchivePath": "data_sources/miagao_transparency_archive/files/78c66a9fd3b2d7c5.pdf",
+      "sourceDocumentUrls": [
+        {
+          "documentUrl": "https://www.miagao.gov.ph/wp-content/uploads/2020/09/UNLIQUIDATED-CASH-ADVANCES-1.pdf",
+          "sourcePageUrl": "https://www.miagao.gov.ph/transparency/2019-full-disclosure/",
+          "sourceTitle": "2019 Full Disclosure",
+          "publishedAt": "2020-01-06T19:52:15",
+          "sourceElement": "a",
+          "sourceAttribute": "href",
+          "fileName": "UNLIQUIDATED-CASH-ADVANCES-1.pdf"
+        }
+      ],
+      "sourceFileName": "UNLIQUIDATED-CASH-ADVANCES-1.pdf",
+      "pageNumber": 4,
+      "worksheetName": null,
+      "sourceRowNumber": null,
+      "nativeText": "",
+      "extractedText": "",
+      "ocrText": "",
+      "ocrTokenCount": 0,
+      "ocrMeanConfidence": null,
+      "ocrTokens": [],
+      "nativeTextCharacters": 0,
+      "imageCoverageRatio": 0.0,
+      "extractionMethod": "Tesseract OCR",
+      "parseStatus": "no_text_detected"
+    }
+  ]
+}
