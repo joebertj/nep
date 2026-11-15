@@ -84,7 +84,19 @@ def build():
     script = JS_SOURCE.read_text(encoding="utf-8")
     (STATIC / "pow-hgab-parsed-documents.js").write_text(script, encoding="utf-8")
     version = __import__("hashlib").sha256(script.encode("utf-8")).hexdigest()[:12]
-    page = page.replace("</body>", f'<script src="pow-hgab-parsed-documents.js?v={version}"></script></body>', 1)
+    page = page.replace("</body>", f'''<script>
+window.__showPowComparisonUnavailable=()=>{{
+ const summary=document.getElementById('hgab-pow-summary'),table=document.querySelector('#hgab-pow-table tbody'),metrics=document.getElementById('token-pow-metrics'),tokenTable=document.querySelector('#token-pow-table tbody');
+ if(summary)summary.innerHTML='<p class="caution">POW comparison data could not be initialized. Reload the page to retry.</p>';
+ if(table)table.innerHTML='<tr><td colspan="8">POW comparison data is unavailable.</td></tr>';
+ if(metrics)metrics.innerHTML='<p class="caution">5/5 comparison data could not be initialized. Reload the page to retry.</p>';
+ if(tokenTable)tokenTable.innerHTML='<tr><td colspan="4">5/5 comparison data is unavailable.</td></tr>';
+}};
+setTimeout(()=>{{
+ const pending=['hgab-pow-summary','#hgab-pow-table tbody','token-pow-metrics','#token-pow-table tbody'].some(selector=>{{const node=selector.startsWith('#')?document.querySelector(selector):document.getElementById(selector);return /Loading|Comparing/i.test(node?.textContent||'')}});
+ if(pending)window.__showPowComparisonUnavailable();
+}},40000);
+</script><script src="pow-hgab-parsed-documents.js?v={version}" defer onerror="window.__showPowComparisonUnavailable()"></script></body>''', 1)
 
     from report_table_presentation import apply_page_table_module
     page, table_contract = apply_page_table_module("pow.html", page)

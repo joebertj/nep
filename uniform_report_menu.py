@@ -11,8 +11,6 @@ RESEARCH_STATUS_VERSION=hashlib.sha256((STATIC/'research-status.js').read_bytes(
 MENU_GROUPS=[
     ('Summary',[
         ('summary.html','Summary · investigative leads'),
-        ('dpwh-simple.html','DPWH · roads and bridges in six pictures'),
-        ('mpb-simple.html','MPB · simple visual summary'),
     ]),
     ('Budget 2027',[
         ('dpwh.html','Senate HGAB documents'),
