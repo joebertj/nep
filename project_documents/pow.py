@@ -52,12 +52,58 @@ def normalized_item_code(value):
         code=code[:-1]
     return code if ITEM.fullmatch(code) else None
 
+def normalize_item_fields(item_code, description):
+    """Repair duplicated or split item-code text at description boundaries."""
+    code=str(item_code or '').strip()
+    value=str(description or '').strip()
+    if code and value[:len(code)].casefold()==code.casefold():
+        remainder=value[len(code):]
+        if not remainder or remainder[0].isspace() or remainder[0] in '):|–—-':
+            if remainder.startswith(')'):remainder=remainder[1:]
+            value=remainder.lstrip()
+
+    # OCR/table extraction can leave the item-code subsection in the
+    # description, either before the words or after them. Recover only the
+    # standard parenthesized code suffix, with an optional lowercase letter
+    # suffix, and only when the resulting code matches the DPWH item pattern.
+    if code and normalized_item_code(code):
+        prefix=re.match(r'^\s*(\(\d+\))\s*([a-z]\d?)?(?=\s|$)',value)
+        if prefix:
+            suffix=prefix.group(1)+(prefix.group(2) or '')
+            candidate=code+suffix
+            if normalized_item_code(candidate):
+                code=candidate
+                value=value[prefix.end():].lstrip()
+        if '(' not in code:
+            tail=re.search(r'(?:\s+'+re.escape(code)+r')?\s*(\(\d+\))\s*([a-z]\d?)?\s*$',value)
+            if tail:
+                suffix=tail.group(1)+(tail.group(2) or '')
+                candidate=code+suffix
+                if normalized_item_code(candidate):
+                    code=candidate
+                    value=value[:tail.start()].rstrip()
+    # OCR sometimes copies the complete item code into the description tail.
+    # Remove that echo without interpreting its own parenthetical part as a
+    # second code suffix.
+    if code and value.casefold().endswith(code.casefold()):
+        start=len(value)-len(code)
+        if start==0 or value[start-1].isspace():value=value[:start].rstrip()
+    return code,value
+
+def clean_item_description(item_code, description):
+    """Compatibility wrapper returning only the normalized description."""
+    return normalize_item_fields(item_code,description)[1]
+
 def item_code_at_anchor(tokens,anchor,width):
     parts=[anchor['text']]
     end=anchor.get('x1',anchor['x'])
     for token in sorted((t for t in tokens if anchor['y']-5<=t['y']<=anchor['y']+5 and end<t['x']<width*.1),key=lambda t:t['x']):
         if token['x']-end>width*.018:break
         value=token['text'].strip()
+        # The description column can begin close to the item-code column.
+        # OCR often returns its initial capital as a separate one-letter token;
+        # do not absorb that letter into an otherwise valid code.
+        if len(value)==1 and value.isalpha() and value.isupper():break
         if not (normalized_item_code(value) or re.fullmatch(r'\(?[A-Za-z0-9]{1,2}\)?',value)):break
         parts.append(value);end=token.get('x1',token['x'])
     return normalized_item_code(''.join(parts)) or normalized_item_code(anchor['text'])
@@ -973,7 +1019,9 @@ def parse_pdf(path,output,allocation_pesos=None):
                 target.update(reviewed_row)
             else:
                 result.append(reviewed_row)
-    for row in result:row['shareOfNepAllocationPct']=round(100*row['amountPesos']/allocation_pesos,4) if allocation_pesos else None
+    for row in result:
+        row['itemCode'],row['description']=normalize_item_fields(row.get('itemCode'),row.get('description'))
+        row['shareOfNepAllocationPct']=round(100*row['amountPesos']/allocation_pesos,4) if allocation_pesos else None
     for row in result:
         allocation_share=row.get('shareOfNepAllocationPct')
         row['lowShareParsingIndicator']=bool(allocation_share is not None and allocation_share<1)

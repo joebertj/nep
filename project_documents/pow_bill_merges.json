@@ -13,7 +13,18 @@
         "Project Billboard / Sign Board",
         "Billboard / Signboard",
         "Billboard/Signboard",
-        "Billboard / Sign Board"
+        "Billboard / Sign Board",
+        "Project Billboard/Signboard (DPWH and COA)",
+        "Project Billboard/Signboard (DPWH)",
+        "Project Billboard/Signboard (COA)",
+        "Project Billboard / Signboard (DPWH)",
+        "Project Billboard / Signboard (COA)",
+        "Project Billboard/ Signboard (COA)",
+        "Project Billboard / Sign Board (DPWH)",
+        "Project Billboard/Sign Board (DPWH Billboard and COA Billboard)",
+        "Project Billboard/Signboard (COA Standard Project Billboard)",
+        "Project Billboard/Signboard (DPWH Standard Project Billboard)",
+        "Project Signboard Billboard /"
       ],
       "reviewNote": "Spacing and slash variants; row numbers are excluded from the displayed item. Original printed labels remain available."
     },
@@ -22,7 +33,16 @@
       "variants": [
         "Mobilization/Demobilization",
         "Mobilization - Demobilization",
-        "Mobilization and Demobilization"
+        "Mobilization and Demobilization",
+        "Moblization/Demobilization",
+        "B.9 Mobilization/Demobilization",
+        "B.9 Mobilization / Demobilization",
+        "B.9 (1) Mobilization / Demobilization",
+        "B.9(1) Mobilization/Demobilization",
+        "Mobilization / Demobilization 1.00",
+        "Mobilization/Demobilization 1.00",
+        "Mobilization/Demobilization B.9 (1)",
+        "Mobilization / Demobilization (1)"
       ],
       "reviewNote": "Punctuation and conjunction variants only. Original printed labels remain available."
     },
@@ -33,14 +53,26 @@
         "(1)a Structure Excavation (Common Soil)",
         "(1)a Structure Excavation, Common Soil",
         "(1) a Structure Excavation (Common Soil)",
-        "(1) a Structure Excavation, Common Soil"
+        "(1) a Structure Excavation, Common Soil",
+        "Structure Excavation (Common Soil)",
+        "(1) Structure Excavation (Common Soil)",
+        "(1) Structure Excavation, Common Soil"
       ],
       "reviewNote": "Punctuation and printed item-number variants; soil type is retained. Original printed labels remain available."
     },
     {
       "canonical": "Subgrade Preparation (Common Material)",
       "variants": [
-        "Subgrade Preparation, Common Material"
+        "Subgrade Preparation, Common Material",
+        "Subgrade Preparation (Common Materials)",
+        "SUBGRADE PREPARATION (COMMON MATERIALS)",
+        "Subgrade Preparation (Common Material)",
+        "Subgrade Prepartion (Common Material)",
+        "Subgrade Preperation (Common Material)",
+        "105(1)a Subgrade Preparation (Common Material)",
+        "105(1)a Subgrade Preparation, Common Material",
+        "105(1)a Subgrade Preparation - Common Material",
+        "Subgrade Preparation (Common Material),"
       ],
       "reviewNote": "Punctuation variant; material specification is retained. Original printed labels remain available."
     },
@@ -60,7 +92,10 @@
         "Painting Works, (Masonry/Concrete)",
         "Painting Works (Masonry / Concrete)",
         "Painting Works - Masonry/Concrete",
-        "Painting Works (Concrete)"
+        "Painting Works (Concrete)",
+        "Painting Works Masonry/ Conrete",
+        "Painting Works (Masonry/Conrete)",
+        "Painting Works, Masonry/Conrete"
       ],
       "reviewNote": "Punctuation and spacing variants with the same masonry/concrete scope. Original printed labels remain available. Approved merge: Painting Works (Concrete) is grouped with Masonry/Concrete; original printed labels remain available."
     },
@@ -100,7 +135,9 @@
       "canonical": "Metal Structure Accessories, Bolts and Rods",
       "variants": [
         "Metal Structure Accessories (Bolts and Rods)",
-        "Metal Structure Accessories Bolts and Rods"
+        "Metal Structure Accessories Bolts and Rods",
+        "Metal Structure Accessories, Bolts and Rod",
+        "Metal Structure Accessories (Bolts and Rod)"
       ],
       "reviewNote": "Punctuation variants with the same accessory scope. Original printed labels remain available."
     },
@@ -110,7 +147,10 @@
         "Metal Structure Accessories (Sagrods)",
         "Metal Structure Accessories Sagrods",
         "Metal Structure Accessories (Sagrods))",
-        "Metal Structure Accessories (Sagrods)]"
+        "Metal Structure Accessories (Sagrods)]",
+        "Metal Structure Accessories, Sag Rods",
+        "Metal Structure Accessories (Sag Rods)",
+        "Metal Structure Accessories, Sag Rod"
       ],
       "reviewNote": "Punctuation and closing-mark OCR variants. Original printed labels remain available."
     },
@@ -185,6 +225,43 @@
         "Occupational Safety & Health Program"
       ],
       "reviewNote": "Shortened label used for the same recurring Occupational Safety and Health bill item; original printed labels remain available."
+    },
+    {
+      "canonical": "Painting Works, Wood",
+      "variants": [
+        "Painting Works (Wood)",
+        "Painting Works ─ Wood",
+        "Painting works, Wood",
+        "Painting Works - Wood",
+        "Painting Works(Wood)"
+      ],
+      "reviewNote": "Same wood-painting work with punctuation, capitalization, and spacing variants. Wood remains separate from steel and masonry/concrete painting."
+    },
+    {
+      "canonical": "Metal Structure Accessories, Cross Bracing",
+      "variants": [
+        "Metal Structure Accessories (Cross Bracing)",
+        "Metal Structure Accessories (Crossbracing)",
+        "Metal Structure Accessories, Crossbracing",
+        "Metal Structure Accessories (Cross bracing)"
+      ],
+      "reviewNote": "Same cross-bracing accessory with spacing and punctuation variants; kept separate from plates, bolts, rods, sagrods, and tumbuckles."
+    },
+    {
+      "canonical": "Structural Steel Sheet Piles, Driven",
+      "variants": [
+        "Structural Steel Sheet Piles Driven",
+        "Structural Steel Sheet Piles, driven"
+      ],
+      "reviewNote": "Driven sheet piles remain separate from furnished sheet piles and other structural-steel items."
+    },
+    {
+      "canonical": "Structural Steel Sheet Piles, Furnished",
+      "variants": [
+        "Structural Steel Sheet Piles Furnished",
+        "Structural Steel Sheet Piles, furnished"
+      ],
+      "reviewNote": "Furnished sheet piles remain separate from driven sheet piles and other structural-steel items."
     }
   ]
 }

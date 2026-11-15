@@ -4,6 +4,7 @@ import json,html,shutil,hashlib,uuid,re,unicodedata,statistics,subprocess,sys
 from datetime import datetime,timezone
 from pathlib import Path
 from urllib.parse import unquote,urlsplit
+from project_documents.pow import normalize_item_fields
 ROOT=Path(__file__).resolve().parent
 OUT=ROOT/'analysis_output'
 STATIC=ROOT.parent/'open-data-visualization/static/nep-preview'
@@ -268,6 +269,8 @@ def collect_hgab_pow_results(document_projects):
         if not re.fullmatch(r'2027DPWH-HGAB-\d{5}',str(code or '')):
             continue
         rows=[{k:r.get(k) for k in allowed_rows if k in r} for r in parsed.get('rows',[])]
+        for row in rows:
+            row['itemCode'],row['description']=normalize_item_fields(row.get('itemCode'),row.get('description'))
         categories=[{k:r.get(k) for k in allowed_categories if k in r} for r in parsed.get('costCategoryBreakdown',[])]
         # Prefer the current broad first-page scan for the exact source file.
         # The legacy crosswalk covers only a small earlier subset.

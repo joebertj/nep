@@ -10,6 +10,7 @@ import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parent
 OCR_DIR = ROOT / "analysis_output/miagao-transparency-ocr"
@@ -59,12 +60,32 @@ def main():
     native_text_documents = 0
     rows = []
     seen_hashes = set()
+    source_hashes = set()
+    parser_candidate_hashes = set()
+    pdf_candidate_hashes = set()
+    jpeg_candidate_hashes = set()
+
+    for source in inventory.get("linkedUrls", []):
+        archive = source.get("archive") or {}
+        sha = archive.get("sha256")
+        if not sha:
+            continue
+        source_hashes.add(sha)
+        extension = Path(urlparse(source.get("url", "")).path).suffix.lower()
+        if extension == ".pdf":
+            pdf_candidate_hashes.add(sha)
+            parser_candidate_hashes.add(sha)
+        elif extension in {".jpg", ".jpeg"}:
+            jpeg_candidate_hashes.add(sha)
+            parser_candidate_hashes.add(sha)
 
     for source in inventory.get("linkedUrls", []):
         archive = source.get("archive") or {}
         sha = archive.get("sha256")
         local_path = archive.get("localPath")
         if not sha or not local_path:
+            continue
+        if sha not in parser_candidate_hashes:
             continue
         if sha in seen_hashes:
             continue
@@ -83,20 +104,14 @@ def main():
         # A URL may be attached to a new official post after its bytes were
         # archived and parsed. Keep the parser's stable document references,
         # while refreshing the latest post/page references from each crawl.
-        refs = []
-        ref_keys = set()
+        refs_by_key = {}
         for ref in [*(result.get("sourceDocumentUrls") or []), *(source.get("sources") or [])]:
-            normalized = {
-                "documentUrl": ref.get("documentUrl") or source.get("url"),
-                "sourcePageUrl": ref.get("sourcePageUrl") or ref.get("sourceUrl"),
-                "sourceTitle": ref.get("sourceTitle"),
-                "sourceDate": ref.get("sourceDate"),
-                "publishedAt": ref.get("publishedAt"),
-            }
+            normalized = dict(ref)
+            normalized["documentUrl"] = ref.get("documentUrl") or source.get("url")
+            normalized["sourcePageUrl"] = ref.get("sourcePageUrl") or ref.get("sourceUrl")
             key = (normalized["documentUrl"], normalized["sourcePageUrl"])
-            if key not in ref_keys:
-                ref_keys.add(key)
-                refs.append({key: value for key, value in normalized.items() if value is not None})
+            refs_by_key.setdefault(key, {}).update(normalized)
+        refs = list(refs_by_key.values())
         if not refs:
             refs = [{"documentUrl": source.get("url")}]
         for page_index, page in enumerate(result_rows, start=1):
@@ -143,22 +158,33 @@ def main():
             })
 
     ocr_pages = sum(row["pageNumber"] is not None for row in rows)
-    error_documents = len(list((OCR_DIR / "documents").glob("*.error.json")))
-    source_documents = len({
-        (item.get("archive") or {}).get("sha256")
-        for item in inventory.get("linkedUrls", [])
-        if (item.get("archive") or {}).get("sha256")
-    })
+    error_hashes = {
+        path.name.removesuffix(".error.json")
+        for path in (OCR_DIR / "documents").glob("*.error.json")
+    } & parser_candidate_hashes
+    skipped_candidate_hashes = skipped_hashes & parser_candidate_hashes
+    error_documents = len(error_hashes)
+    source_documents = len(source_hashes)
+    completed_documents = len(seen_hashes)
     summary = {
         "sourceDocuments": source_documents,
+        "parserCandidateDocuments": len(parser_candidate_hashes),
         "completedDocuments": completed_documents,
+        "pdfCandidateDocuments": len(pdf_candidate_hashes),
+        "pdfCompletedDocuments": len(seen_hashes & pdf_candidate_hashes),
+        "jpegCandidateDocuments": len(jpeg_candidate_hashes),
+        "jpegCompletedDocuments": len(seen_hashes & jpeg_candidate_hashes),
+        "unsupportedDocuments": max(0, source_documents - len(parser_candidate_hashes)),
         "ocrPageRows": ocr_pages,
         "nativeTextDocuments": native_text_documents,
         "errorDocuments": error_documents,
-        "intentionallySkippedDocuments": len(skipped_hashes),
+        "intentionallySkippedDocuments": len(skipped_candidate_hashes),
         "pendingDocuments": max(
             0,
-            source_documents - completed_documents - error_documents - len(skipped_hashes),
+            len(parser_candidate_hashes)
+            - completed_documents
+            - error_documents
+            - len(skipped_candidate_hashes),
         ),
     }
     payload = {
@@ -171,7 +197,7 @@ def main():
     outputs = [args.output]
     if args.output.resolve() == DEFAULT_OUTPUT.resolve() and DEFAULT_PREVIEW_OUTPUT.parent.is_dir():
         outputs.append(DEFAULT_PREVIEW_OUTPUT)
-    serialized = json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n"
+    serialized = json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
     for output in outputs:
         output.parent.mkdir(parents=True, exist_ok=True)
         temporary = output.with_suffix(output.suffix + ".tmp")

@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parent
 CRAWLER = ROOT / "crawl_miagao_transparency.py"
 SUPERVISOR = ROOT / "supervise_miagao_transparency_ocr.py"
 PUBLISHER = ROOT / "publish_miagao_historical_index.py"
+TABLE_BUILDER = ROOT.parent / "bettermiagao/scripts/build-miagao-historical-tables.py"
 INVENTORY = ROOT / "analysis_output/miagao-transparency-source-inventory.json"
 OCR_DIR = ROOT / "analysis_output/miagao-transparency-ocr/documents"
 ELIGIBLE = {".pdf", ".jpg", ".jpeg"}
@@ -54,6 +55,15 @@ def run_cycle() -> None:
     else:
         log("No new parser-supported documents found")
     subprocess.run([sys.executable, str(PUBLISHER)], cwd=ROOT, check=True)
+    if TABLE_BUILDER.is_file():
+        log("Refreshing structured table extractions for /historical")
+        subprocess.run(
+            [sys.executable, str(TABLE_BUILDER), "--archive-root", str(ROOT)],
+            cwd=ROOT.parent / "bettermiagao",
+            check=True,
+        )
+    else:
+        raise FileNotFoundError(f"Historical table builder not found: {TABLE_BUILDER}")
 
 
 def main() -> int:
