@@ -103,7 +103,9 @@ unrelated_paths="$(
     ':(exclude)templates/mobile/visualizations_home.html'
 )"
 if [[ -n "$unrelated_paths" ]]; then
-  echo "Refusing deployment: server checkout has changes outside the deployable assets." >&2
+  echo "Refusing deployment: server checkout has changes outside the deployable assets:" >&2
+  printf '%s\n' "$unrelated_paths" | sort -u | sed 's/^/  /' >&2
+  echo "Inspect all server changes with: ./deployment/deploy_odv_git.sh inspect" >&2
   exit 2
 fi
 git -C "$r" fetch origin main
