@@ -1,0 +1,1559 @@
+{
+  "generatedAtUtc": "2026-11-18T10:53:32.969366+00:00",
+  "scope": "FY2027 House 3rd-reading DPWH project allocations matched to Senate-provided HGAB POWs.",
+  "method": "Exact normalized POW title matches only. The comparison uses I. TOTAL ESTIMATED COST from the first page. When the I amount is unreadable or fails to reconcile, I is calculated from the printed G Total Construction Cost (D+E+F) plus H Engineering and Administrative Overhead (EAO). The first-page A+B+C summary is supporting evidence only and is not added to a bill subtotal. Repeated copies with the same HGAB file code are deduplicated. Projects with multiple distinct matched POW codes are shown as review cases and excluded from aggregate totals.",
+  "limitations": [
+    "POW printed category totals are estimates, not actual expenditures, contract prices, or proof of completed work.",
+    "The comparison target is I. TOTAL ESTIMATED COST, which includes G Total Construction Cost (D+E+F) and H Engineering and Administrative Overhead (EAO). A 100% A+B+C summary or D+E+F bill subtotal alone is not the comparison amount.",
+    "I amounts are read from the printed first-page total. Where that amount is obscured or its extracted text does not reconcile, the value is reconstructed only when printed G and H amounts are both available. These cases are identified in each POW detail.",
+    "Two HGAB file codes have different totals across distinct source PDF versions; those codes remain review cases and are not selected for aggregate comparison.",
+    "Allocation and POW estimate can cover different scope, phases, or cost bases. A difference is a review signal, not an overrun, saving, or finding of wrongdoing.",
+    "Multiple distinct matched POW codes and conflicting parses of one code are not summed or arbitrarily selected; they are excluded from aggregate comparison pending review.",
+    "No exact-title match or no recovered summary does not prove that a POW is absent."
+  ],
+  "flagging": {
+    "basis": "directional difference between POW I. TOTAL ESTIMATED COST (As Submitted) and HGAB allocation",
+    "thresholdsPesos": {
+      "doubleRedFlagAbove": 500000,
+      "redFlagAbove": 50000
+    },
+    "comparison": "Strictly greater than thresholds. If estimated cost is above allocation, the row is Red flag only; if allocation is above estimate by more than ₱500,000, it is Double red flag.",
+    "labels": {
+      "double_red_flag": "Double red flag (allocation exceeds estimate by more than ₱500,000)",
+      "red_flag": "Red flag (difference above ₱50,000; above-allocation estimates remain red)",
+      "no_flag": "No flag (difference at or below ₱50,000)",
+      "not_comparable": "Not comparable (difference unavailable)"
+    },
+    "counts": {
+      "double_red_flag": 16,
+      "red_flag": 12,
+      "no_flag": 1713,
+      "not_comparable": 437
+    },
+    "sourceFile": "expectation-vs-reality-data.json",
+    "sourceSnapshot": {
+      "gitCommit": "0ae8ede63",
+      "note": "Pre-OCR-rescan table matching the supplied screenshot; compatible rescan estimates are added, and contradictory rescan candidates are retained for review."
+    }
+  },
+  "rescanReconciliation": {
+    "rescanSource": "static/nep-preview/expectation-vs-reality-data.json (current rescan)",
+    "policy": "Use the pre-rescan table as the comparison baseline. Preserve its known estimates when the rescan conflicts. Add a previously missing rescan estimate only when the rescan marks it comparable and a supporting A+B+C subtotal is recovered; keep unsupported candidates separate for source-page review. User-directed rule: retain original values and reject rescan candidates when the original absolute allocation-versus-I gap is under ₱1,000.",
+    "counts": {
+      "rescanAugmented": 17,
+      "sameEstimate": 401,
+      "retainedBaselineOverRescanConflict": 7,
+      "retainedBaselineRescanUnavailable": 1129,
+      "rescanCandidateNeedsSourceReview": 14,
+      "userVerifiedRescan": 1,
+      "userVerifiedEtcBlank": 1,
+      "userVerifiedOriginal": 3,
+      "originalPreferredUnder1kGap": 183
+    },
+    "conflicts": [
+      {
+        "hgabId": "HB10858-3-0416-005785",
+        "title": "Palao-Calaba Bypass Road - Sta. 3+000-Sta. 3+273, Bangued, Abra",
+        "baselineEstimatePesos": 108352937.64,
+        "rescanPrintedCandidatePesos": 108352997.64,
+        "baselineGPlusHPesos": 108352937.64,
+        "baselineMatchesGPlusH": true,
+        "rescanStatus": "visible_total_estimated_cost_ocr",
+        "rescanComparableEstimateCandidatePesos": null
+      },
+      {
+        "hgabId": "HB10858-3-0729-012170",
+        "title": "Construction of Multi-Purpose Building, Barangay Bulihan, City of Malolos, Bulacan, 14.860758, 120.811636",
+        "baselineEstimatePesos": 9999982.51,
+        "rescanPrintedCandidatePesos": 999982.51,
+        "baselineGPlusHPesos": 9949982.6,
+        "baselineMatchesGPlusH": false,
+        "rescanStatus": "i_total_below_supporting_subtotal_review",
+        "rescanComparableEstimateCandidatePesos": null
+      },
+      {
+        "hgabId": "HB10858-3-0536-008238",
+        "title": "Construction of Road including Drainage, Liwliwa, Barangay Sto. Niño, San Felipe, Zambales Sta. 0+000 - Sta 0+750",
+        "baselineEstimatePesos": 11628504.03,
+        "rescanPrintedCandidatePesos": 1628504.03,
+        "baselineGPlusHPesos": 11628504.03,
+        "baselineMatchesGPlusH": true,
+        "rescanStatus": "i_total_below_supporting_subtotal_review",
+        "rescanComparableEstimateCandidatePesos": null
+      },
+      {
+        "hgabId": "HB10858-3-0776-013129",
+        "title": "Construction of Multi-Purpose Building, Barangay V-A, San Pablo City, Laguna",
+        "baselineEstimatePesos": 17500000.0,
+        "rescanPrintedCandidatePesos": 500000.0,
+        "baselineGPlusHPesos": 17500000.0,
+        "baselineMatchesGPlusH": true,
+        "rescanStatus": "i_total_below_supporting_subtotal_review",
+        "rescanComparableEstimateCandidatePesos": null
+      },
+      {
+        "hgabId": "HB10858-3-0418-005813",
+        "title": "Construction of Bridge, Barangay Pag-asa, Echague, Isabela",
+        "baselineEstimatePesos": 82640276.98,
+        "rescanPrintedCandidatePesos": 826402.77,
+        "baselineGPlusHPesos": 82640276.97999999,
+        "baselineMatchesGPlusH": true,
+        "rescanStatus": "i_total_below_supporting_subtotal_review",
+        "rescanComparableEstimateCandidatePesos": null
+      },
+      {
+        "hgabId": "HB10858-3-0129-000366",
+        "title": "Villasis-Malasiqui-Sn Carlos Rd (S00026LZ), K0192+018 - K0192+283",
+        "baselineEstimatePesos": 4203000.0,
+        "rescanPrintedCandidatePesos": 84060.0,
+        "baselineGPlusHPesos": 4203000.0,
+        "baselineMatchesGPlusH": true,
+        "rescanStatus": "i_total_below_supporting_subtotal_review",
+        "rescanComparableEstimateCandidatePesos": null
+      },
+      {
+        "hgabId": "HB10858-3-0298-003490",
+        "title": "Rehabilitation of Road and Drainage System along Sto. Domingo Avenue (Chainage 0+000 - Chainage 1+115.50), District I, Quezon City",
+        "baselineEstimatePesos": 332951037.48,
+        "rescanPrintedCandidatePesos": 330000.0,
+        "baselineGPlusHPesos": 329621037.48,
+        "baselineMatchesGPlusH": false,
+        "rescanStatus": "i_total_below_supporting_subtotal_review",
+        "rescanComparableEstimateCandidatePesos": null
+      }
+    ],
+    "manualVerifications": [
+      {
+        "hgabId": "HB10858-3-0695-011469",
+        "estimatePesos": 10000000,
+        "allocationPesos": 10000000,
+        "result": "I. TOTAL ESTIMATED COST matches the HGAB allocation; user verified."
+      },
+      {
+        "hgabId": "HB10858-3-0284-003193",
+        "result": "User verified I. TOTAL ESTIMATED COST is blank; G + H not used as a substitute.",
+        "rejectedRescanCandidatePesos": 1631000
+      },
+      {
+        "hgabId": "HB10858-3-0325-003989",
+        "estimatePesos": 26999249.4,
+        "allocationPesos": 27000000,
+        "result": "User confirmed the original I. TOTAL ESTIMATED COST; rescan candidate rejected."
+      },
+      {
+        "hgabId": "HB10858-3-0303-003586",
+        "estimatePesos": 80408336.6,
+        "rescanCandidatePesos": 80408396.6,
+        "result": "Original estimate ending in 336 verified; rescan ending in 396 rejected."
+      },
+      {
+        "hgabId": "HB10858-3-0925-016026",
+        "estimatePesos": 29999537.97,
+        "allocationPesos": 30000000,
+        "rescanCandidatePesos": 309009000,
+        "result": "Original estimate confirmed; rescan amount rejected as materially incorrect."
+      }
+    ],
+    "rejectedRescanCandidates": [
+      {
+        "hgabId": "HB10858-3-0284-003193",
+        "candidatePesos": 1631000,
+        "reason": "The printed I. TOTAL ESTIMATED COST line is blank per user verification."
+      }
+    ]
+  },
+  "filter": {
+    "flag": "red_flag",
+    "label": "Red flag"
+  },
+  "summary": {
+    "projectCount": 12,
+    "comparableProjects": 12,
+    "allocationPesos": 305331000.0,
+    "powEstimatePesos": 459596136.09000003,
+    "differencePesos": 154265136.09
+  },
+  "projects": [
+    {
+      "hgabId": "HB10858-3-0365-004753",
+      "title": "Improvement of Balanti Creek, Second District, Barangay Concepcion Dos, Marikina City (Sta 0+000 - Sta.126.80, Sta. 280 - Sta. 837.60)",
+      "office": "Central Office",
+      "region": "National Capital Region",
+      "pap": "Construction/ Rehabilitation of Flood Mitigation Facilities within Major River Basins and Principal Rivers",
+      "allocationPesos": 44826000,
+      "powEstimatePesos": 142826155.18,
+      "differencePesos": 98000155.18,
+      "differencePct": 218.62,
+      "status": "comparable_total_estimated_cost",
+      "powFiles": [
+        {
+          "code": "2027DPWH-HGAB-11147",
+          "status": "no_bill_rows_recovered",
+          "pageCount": 5,
+          "summaryPages": [
+            1
+          ],
+          "categoryCount": 4,
+          "shareTotalPct": 100.0,
+          "totalEstimatedCostPesos": 142826155.18,
+          "totalEstimateStatus": "printed_total_estimated_cost_extracted",
+          "totalConstructionCostPesos": 137827210.18,
+          "engineeringAdministrativeOverheadPesos": null,
+          "printedTotalEstimatedCostPesos": 142826155.18,
+          "sourcePdfCount": 1,
+          "sourcePdfSha256": [
+            "d6891de308fa6753d6261ca413c8c70cf925113442c2d0914db31ad1f9c72b3a"
+          ],
+          "conflictingTotalEstimatedCostPesos": [],
+          "firstPageSummarySubtotalPesos": 106189287.85,
+          "itemizedDirectCostSubtotalPesos": null,
+          "summaryCategories": [
+            {
+              "label": "BANK AND SLOPE PROTECTION WORKS",
+              "sharePct": 97.48,
+              "amountPesos": 103517530.59,
+              "sourcePage": 1
+            },
+            {
+              "label": "EARTHWORKS",
+              "sharePct": 1.36,
+              "amountPesos": 1441910.13,
+              "sourcePage": 1
+            },
+            {
+              "label": "OTHER GENERAL REQUIREMENTS",
+              "sharePct": 0.92,
+              "amountPesos": 978183.13,
+              "sourcePage": 1
+            },
+            {
+              "label": "FACILITIES FOR THE ENGINEER",
+              "sharePct": 0.24,
+              "amountPesos": 251664.0,
+              "sourcePage": 1
+            }
+          ],
+          "duplicateParseCount": 1,
+          "conflictingEstimatePesos": []
+        }
+      ],
+      "rescanDisposition": "rescan_agrees",
+      "flagAmountPesos": 98000155.18,
+      "flag": "red_flag",
+      "allocationSource": {
+        "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+        "sourcePage": 365
+      },
+      "supportingDocumentAmounts": [
+        {
+          "documentKind": "BP 202",
+          "sourceProvider": "BetterGov budget assets",
+          "sourceStage": "HGAB supporting document",
+          "sourceUrl": "https://budget-assets.bettergov.ph/hgab/2027/dpwh/supporting-documents/NCR/OO2/MM1DEO/2027DPWH-HGAB-11147/2027DPWH-HGAB-11147_BP202.pdf",
+          "sourceName": "2027DPWH-HGAB-11147_BP202.pdf",
+          "status": "value_extracted",
+          "amountPesos": 142826155.18,
+          "printedValue": "142,826,155.18",
+          "amountUnit": "PHP",
+          "amountLabel": "Total Proposal Cost",
+          "sourcePage": 1,
+          "extractionMethod": "Tesseract OCR",
+          "matchBasis": "Labelled Total Proposal Cost field · one BP 202 per project",
+          "projectMatchCount": 1,
+          "multipleDocumentMatchReview": false
+        },
+        {
+          "status": "exact_project_title_not_found",
+          "amountLabel": "Project amount in COI project list",
+          "extractionMethod": "Exact project title not found in linked COI",
+          "sourceProvider": "BetterGov budget assets",
+          "sourceStage": "HGAB supporting document",
+          "sourceUrl": "https://budget-assets.bettergov.ph/hgab/2027/dpwh/supporting-documents/NCR/OO2/MM1DEO/2027DPWH-HGAB-11147/2027DPWH-HGAB-11147_Cert%20of%20Implementability.pdf",
+          "sourceName": "2027DPWH-HGAB-11147_Cert of Implementability.pdf",
+          "documentKind": "Certificate of Implementability",
+          "projectMatchCount": 0,
+          "multipleDocumentMatchReview": false
+        }
+      ]
+    },
+    {
+      "hgabId": "HB10858-3-0220-002008",
+      "title": "Sampaloc By-Pass Rd, Sta. 0+000 - 0+600, Sampaloc, Quezon",
+      "office": "Central Office",
+      "region": "Region IV-A",
+      "pap": "Construction of By-Pass and Diversion Roads",
+      "allocationPesos": 60000000,
+      "powEstimatePesos": 80000000.0,
+      "differencePesos": 20000000.0,
+      "differencePct": 33.33,
+      "status": "comparable_total_estimated_cost",
+      "powFiles": [
+        {
+          "code": "2027DPWH-HGAB-10509",
+          "status": "candidate_rows",
+          "pageCount": 8,
+          "summaryPages": [
+            1
+          ],
+          "categoryCount": 7,
+          "shareTotalPct": 99.77,
+          "totalEstimatedCostPesos": 80000000.0,
+          "evaluatedTotalEstimatedCostPesos": null,
+          "totalEstimateStatus": "visible_total_estimated_cost_ocr",
+          "totalConstructionCostPesos": 7900000.0,
+          "engineeringAdministrativeOverheadPesos": null,
+          "printedTotalEstimatedCostPesos": 80000000.0,
+          "sourcePdfCount": 1,
+          "sourcePdfSha256": [
+            "8589cbb42cf14b91430a85eb9d276ad81e82c2b8f2a97ba1cc4ba60e8bb82b5b"
+          ],
+          "conflictingTotalEstimatedCostPesos": [],
+          "firstPageSummarySubtotalPesos": 43048213.01,
+          "itemizedDirectCostSubtotalPesos": 43115539,
+          "summaryCategories": [
+            {
+              "label": "Drainage and Slope Protection Structures",
+              "sharePct": 59.57,
+              "amountPesos": 25704894.91,
+              "sourcePage": 1
+            },
+            {
+              "label": "Surface Courses",
+              "sharePct": 32.34,
+              "amountPesos": 13954344.6,
+              "sourcePage": 1
+            },
+            {
+              "label": "Subbase and Base Course",
+              "sharePct": 4.48,
+              "amountPesos": 1932195.84,
+              "sourcePage": 1
+            },
+            {
+              "label": "Earthwork",
+              "sharePct": 1.79,
+              "amountPesos": 772794.19,
+              "sourcePage": 1
+            },
+            {
+              "label": "Other General Requirements",
+              "sharePct": 1.5,
+              "amountPesos": 647093.47,
+              "sourcePage": 1
+            },
+            {
+              "label": "Facilities for the Engineer",
+              "sharePct": 0.09,
+              "amountPesos": 36890.0,
+              "sourcePage": 1
+            },
+            {
+              "label": "Electrical",
+              "sharePct": 0.0,
+              "amountPesos": 0.0,
+              "sourcePage": 1
+            }
+          ],
+          "duplicateParseCount": 1,
+          "conflictingEstimatePesos": []
+        }
+      ],
+      "rescanDisposition": "augmented_from_rescan",
+      "flagAmountPesos": 20000000.0,
+      "flag": "red_flag",
+      "allocationSource": {
+        "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+        "sourcePage": 220
+      },
+      "supportingDocumentAmounts": [
+        {
+          "documentKind": "BP 202",
+          "sourceProvider": "BetterGov budget assets",
+          "sourceUrl": "https://budget-assets.bettergov.ph/hgab/2027/dpwh/supporting-documents/Region%20IV-A/OO1/2027DPWH-HGAB-10509/2027DPWH-HGAB-10509_BP202.pdf",
+          "sourceName": "2027DPWH-HGAB-10509_BP202.pdf",
+          "status": "value_extracted",
+          "amountPesos": 60000000.0,
+          "printedValue": "60,000,000",
+          "amountUnit": "PHP",
+          "amountLabel": "Total Proposal Cost",
+          "sourcePage": 1,
+          "matchBasis": "Labelled Total Proposal Cost field",
+          "extractionMethod": "native PDF text extraction",
+          "sourceStage": "HGAB supporting document",
+          "projectMatchCount": 1,
+          "multipleDocumentMatchReview": false
+        },
+        {
+          "amountPesos": 60000000.0,
+          "printedValue": "60,000,000.00",
+          "amountUnit": "PHP as printed (×1 matches HGAB allocation)",
+          "amountScaleCheck": "allocation_factor_match_x1",
+          "amountLabel": "Project amount in COI project list",
+          "sourcePage": 1,
+          "sourcePages": [
+            1
+          ],
+          "amountCandidatesPrinted": [
+            "60,000,000.00"
+          ],
+          "extractionMethod": "native PDF text extraction",
+          "status": "value_extracted",
+          "matchBasis": "Exact normalized project title with adjacent amount; ×1, ×1000, and ÷1000 checked against HGAB allocation",
+          "documentKind": "Certificate of Implementability",
+          "sourceStage": "HGAB supporting document",
+          "sourceProvider": "BetterGov budget assets",
+          "sourceUrl": "https://budget-assets.bettergov.ph/hgab/2027/dpwh/supporting-documents/Region%20IV-A/OO1/2027DPWH-HGAB-10509/2027DPWH-HGAB-10509_Cert%20of%20Implementability.pdf",
+          "sourceName": "2027DPWH-HGAB-10509_Cert of Implementability.pdf",
+          "projectMatchCount": 1,
+          "multipleDocumentMatchReview": false
+        }
+      ]
+    },
+    {
+      "hgabId": "HB10858-3-0542-008401",
+      "title": "Concreting of Roads at Barangay Poblacion #5 to Pinaglintikan Road, Barangay Poblacion #5, Amadeo, Cavite",
+      "office": "Cavite 1st District Engineering Office",
+      "region": "Region IV-A",
+      "pap": "BIP - Access Roads and/or Bridges from the National Roads leading to Major/ Strategic Public Buildings/ Facilities",
+      "allocationPesos": 5000000,
+      "powEstimatePesos": 15000000.0,
+      "differencePesos": 10000000.0,
+      "differencePct": 200.0,
+      "status": "comparable_total_estimated_cost",
+      "powFiles": [
+        {
+          "code": "2027DPWH-HGAB-12220",
+          "status": "candidate_rows",
+          "pageCount": 20,
+          "summaryPages": [
+            1
+          ],
+          "categoryCount": 5,
+          "shareTotalPct": 100.01,
+          "totalEstimatedCostPesos": 15000000.0,
+          "totalEstimateStatus": "printed_total_reconciles_to_G_plus_H",
+          "totalConstructionCostPesos": 14850000,
+          "engineeringAdministrativeOverheadPesos": 150000,
+          "printedTotalEstimatedCostPesos": 15000000,
+          "sourcePdfCount": 1,
+          "sourcePdfSha256": [
+            "8d429c07772aa5a1e9f4caaff4a80fb52e76ccff4332830124218949e2e38049"
+          ],
+          "conflictingTotalEstimatedCostPesos": [],
+          "firstPageSummarySubtotalPesos": 11088742.88,
+          "itemizedDirectCostSubtotalPesos": 562590,
+          "summaryCategories": [
+            {
+              "label": "Finishing and other civil works",
+              "sharePct": 70.25,
+              "amountPesos": 7790226.94,
+              "sourcePage": 1
+            },
+            {
+              "label": "Reinforced concrete",
+              "sharePct": 20.05,
+              "amountPesos": 2222921.65,
+              "sourcePage": 1
+            },
+            {
+              "label": "Earthwork",
+              "sharePct": 6.68,
+              "amountPesos": 740289.13,
+              "sourcePage": 1
+            },
+            {
+              "label": "Other General Requirements",
+              "sharePct": 3.02,
+              "amountPesos": 334531.23,
+              "sourcePage": 1
+            },
+            {
+              "label": "Facilities for the Engineer",
+              "sharePct": 0.01,
+              "amountPesos": 773.93,
+              "sourcePage": 1
+            }
+          ],
+          "duplicateParseCount": 1,
+          "conflictingEstimatePesos": []
+        }
+      ],
+      "rescanDisposition": "baseline_retained_rescan_unavailable",
+      "flagAmountPesos": 10000000.0,
+      "flag": "red_flag",
+      "allocationSource": {
+        "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+        "sourcePage": 542
+      },
+      "supportingDocumentAmounts": [
+        {
+          "documentKind": "BP 202",
+          "sourceProvider": "BetterGov budget assets",
+          "sourceStage": "HGAB supporting document",
+          "sourceUrl": "https://budget-assets.bettergov.ph/hgab/2027/dpwh/supporting-documents/Region%20IV-A/CSSP/2027DPWH-HGAB-12220/2027DPWH-HGAB-12220_BP202.pdf",
+          "sourceName": "2027DPWH-HGAB-12220_BP202.pdf",
+          "status": "amount_not_found",
+          "extractionMethod": "native PDF text + Tesseract OCR fallback attempted",
+          "projectMatchCount": 0,
+          "multipleDocumentMatchReview": false
+        },
+        {
+          "amountPesos": 5000000.0,
+          "printedValue": "5,000",
+          "amountUnit": "P'000 ×1000 (matches HGAB allocation)",
+          "amountScaleCheck": "allocation_factor_match_x1000",
+          "amountLabel": "Project amount in COI project list",
+          "sourcePage": 1,
+          "sourcePages": [
+            1
+          ],
+          "amountCandidatesPrinted": [
+            "5,000"
+          ],
+          "extractionMethod": "native PDF text extraction",
+          "status": "value_extracted",
+          "matchBasis": "Exact normalized project title with adjacent amount; ×1, ×1000, and ÷1000 checked against HGAB allocation",
+          "documentKind": "Certificate of Implementability",
+          "sourceStage": "HGAB supporting document",
+          "sourceProvider": "BetterGov budget assets",
+          "sourceUrl": "https://budget-assets.bettergov.ph/hgab/2027/dpwh/supporting-documents/Region%20IV-A/CSSP/2027DPWH-HGAB-12220/2027DPWH-HGAB-12220_Certificate%20of%20Implementability.pdf",
+          "sourceName": "2027DPWH-HGAB-12220_Certificate of Implementability.pdf",
+          "projectMatchCount": 1,
+          "multipleDocumentMatchReview": false
+        }
+      ]
+    },
+    {
+      "hgabId": "HB10858-3-0594-009532",
+      "title": "Concreting of Road, Buga-Buga, Villaba, Leyte 11.174963, 124.423733",
+      "office": "Leyte 3rd District Engineering Office",
+      "region": "Region VIII",
+      "pap": "BIP - Access Roads and/or Bridges from the National Roads leading to Major/ Strategic Public Buildings/ Facilities",
+      "allocationPesos": 10000000,
+      "powEstimatePesos": 19999999.99,
+      "differencePesos": 9999999.99,
+      "differencePct": 100.0,
+      "status": "comparable_total_estimated_cost",
+      "powFiles": [
+        {
+          "code": "2027DPWH-HGAB-12569",
+          "status": "candidate_rows",
+          "pageCount": 21,
+          "summaryPages": [
+            1
+          ],
+          "categoryCount": 6,
+          "shareTotalPct": 100.01,
+          "totalEstimatedCostPesos": 19999999.99,
+          "totalEstimateStatus": "printed_total_estimated_cost_extracted",
+          "totalConstructionCostPesos": 19599999.99,
+          "engineeringAdministrativeOverheadPesos": null,
+          "printedTotalEstimatedCostPesos": 19999999.99,
+          "sourcePdfCount": 1,
+          "sourcePdfSha256": [
+            "e51e1de3135301fd41a57c294615f773ca2c7292ddf20b852309d22d262938ed"
+          ],
+          "conflictingTotalEstimatedCostPesos": [],
+          "firstPageSummarySubtotalPesos": 14639226.28,
+          "itemizedDirectCostSubtotalPesos": 14886285,
+          "summaryCategories": [
+            {
+              "label": "Surface Courses",
+              "sharePct": 59.56,
+              "amountPesos": 8718960.52,
+              "sourcePage": 1
+            },
+            {
+              "label": "Drainage and Slope Protection Structures",
+              "sharePct": 13.53,
+              "amountPesos": 1980428.5,
+              "sourcePage": 1
+            },
+            {
+              "label": "Earthwork",
+              "sharePct": 13.42,
+              "amountPesos": 1964477.64,
+              "sourcePage": 1
+            },
+            {
+              "label": "Subbase and Base Course",
+              "sharePct": 10.61,
+              "amountPesos": 1552810.56,
+              "sourcePage": 1
+            },
+            {
+              "label": "Other General Requirements",
+              "sharePct": 2.14,
+              "amountPesos": 313364.49,
+              "sourcePage": 1
+            },
+            {
+              "label": "Electrical",
+              "sharePct": 0.75,
+              "amountPesos": 109184.57,
+              "sourcePage": 1
+            }
+          ],
+          "duplicateParseCount": 1,
+          "conflictingEstimatePesos": []
+        }
+      ],
+      "rescanDisposition": "baseline_retained_rescan_unavailable",
+      "flagAmountPesos": 9999999.99,
+      "flag": "red_flag",
+      "allocationSource": {
+        "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+        "sourcePage": 594
+      },
+      "supportingDocumentAmounts": []
+    },
+    {
+      "hgabId": "HB10858-3-0758-012759",
+      "title": "Construction of Multi-purpose Building at Barangay Talisay, Lipa City, Batangas",
+      "office": "Batangas 4th District Engineering Office",
+      "region": "Region IV-A",
+      "pap": "BIP - Multi-Purpose Buildings/ Facilities to support Social Services",
+      "allocationPesos": 30000000,
+      "powEstimatePesos": 35000000.0,
+      "differencePesos": 5000000.0,
+      "differencePct": 16.67,
+      "status": "comparable_total_estimated_cost",
+      "powFiles": [
+        {
+          "code": "2027DPWH-HGAB-14339",
+          "status": "candidate_rows",
+          "pageCount": 8,
+          "summaryPages": [],
+          "categoryCount": 0,
+          "shareTotalPct": 0,
+          "totalEstimatedCostPesos": 35000000.0,
+          "totalEstimateStatus": "printed_total_reconciles_to_G_plus_H",
+          "totalConstructionCostPesos": 34650000,
+          "engineeringAdministrativeOverheadPesos": 350000,
+          "printedTotalEstimatedCostPesos": 35000000,
+          "sourcePdfCount": 1,
+          "sourcePdfSha256": [
+            "c802c669aae3bfcb88256719c78c0f4b1480f68d18acbd3428f23c7af98a2bd2"
+          ],
+          "conflictingTotalEstimatedCostPesos": [],
+          "firstPageSummarySubtotalPesos": null,
+          "itemizedDirectCostSubtotalPesos": 20596102,
+          "summaryCategories": [],
+          "duplicateParseCount": 1,
+          "conflictingEstimatePesos": []
+        }
+      ],
+      "rescanDisposition": "baseline_retained_rescan_unavailable",
+      "flagAmountPesos": 5000000.0,
+      "flag": "red_flag",
+      "allocationSource": {
+        "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+        "sourcePage": 758
+      },
+      "supportingDocumentAmounts": [
+        {
+          "documentKind": "BP 202",
+          "sourceProvider": "BetterGov budget assets",
+          "sourceUrl": "https://budget-assets.bettergov.ph/hgab/2027/dpwh/supporting-documents/Region%20IV-A/CSSP/2027DPWH-HGAB-14339/2027DPWH-HGAB-14339_BP202.pdf",
+          "sourceName": "2027DPWH-HGAB-14339_BP202.pdf",
+          "status": "value_extracted",
+          "amountPesos": 30000000.0,
+          "printedValue": "30,000,000.00",
+          "amountUnit": "PHP",
+          "amountLabel": "Total Proposal Cost",
+          "sourcePage": 1,
+          "matchBasis": "Labelled Total Proposal Cost field",
+          "extractionMethod": "native PDF text extraction",
+          "sourceStage": "HGAB supporting document",
+          "projectMatchCount": 1,
+          "multipleDocumentMatchReview": false
+        },
+        {
+          "amountPesos": 30000000.0,
+          "printedValue": "30,000,000",
+          "amountUnit": "PHP as printed (×1 matches HGAB allocation)",
+          "amountScaleCheck": "allocation_factor_match_x1",
+          "amountLabel": "Project amount in COI project list",
+          "sourcePage": 2,
+          "sourcePages": [
+            2
+          ],
+          "amountCandidatesPrinted": [
+            "30,000,000"
+          ],
+          "extractionMethod": "native PDF text extraction",
+          "status": "value_extracted",
+          "matchBasis": "Exact normalized project title with adjacent amount; ×1, ×1000, and ÷1000 checked against HGAB allocation",
+          "documentKind": "Certificate of Implementability",
+          "sourceStage": "HGAB supporting document",
+          "sourceProvider": "BetterGov budget assets",
+          "sourceUrl": "https://budget-assets.bettergov.ph/hgab/2027/dpwh/supporting-documents/Region%20IV-A/CSSP/2027DPWH-HGAB-14339/2027DPWH-HGAB-14339_CERT%20OF%20IMPLEMENTABILITY.pdf",
+          "sourceName": "2027DPWH-HGAB-14339_CERT OF IMPLEMENTABILITY.pdf",
+          "projectMatchCount": 1,
+          "multipleDocumentMatchReview": false
+        }
+      ]
+    },
+    {
+      "hgabId": "HB10858-3-0643-010458",
+      "title": "Construction of Multi-Purpose Building Barangay Calabagas San Vicente Camarines Norte, 14.08401, 123.014459",
+      "office": "Central Office",
+      "region": "Region V",
+      "pap": "BIP - Multi-Purpose Buildings/ Facilities to support Social Services",
+      "allocationPesos": 5000000,
+      "powEstimatePesos": 10000000.0,
+      "differencePesos": 5000000.0,
+      "differencePct": 100.0,
+      "status": "comparable_total_estimated_cost",
+      "powFiles": [
+        {
+          "code": "2027DPWH-HGAB-12977",
+          "status": "candidate_rows",
+          "pageCount": 8,
+          "summaryPages": [
+            1
+          ],
+          "categoryCount": 4,
+          "shareTotalPct": 100.0,
+          "totalEstimatedCostPesos": 10000000.0,
+          "totalEstimateStatus": "printed_total_reconciles_to_G_plus_H",
+          "totalConstructionCostPesos": 9900000,
+          "engineeringAdministrativeOverheadPesos": 100000,
+          "printedTotalEstimatedCostPesos": 10000000,
+          "sourcePdfCount": 1,
+          "sourcePdfSha256": [
+            "cb2848eb8a1f467715ede212101b410fdd72599170cbb4c214f7f0a642f13618"
+          ],
+          "conflictingTotalEstimatedCostPesos": [],
+          "firstPageSummarySubtotalPesos": 7402773.69,
+          "itemizedDirectCostSubtotalPesos": 13166070,
+          "summaryCategories": [
+            {
+              "label": "Reinforced concrete",
+              "sharePct": 61.0,
+              "amountPesos": 4493248.73,
+              "sourcePage": 1
+            },
+            {
+              "label": "Finishing and other civil works",
+              "sharePct": 33.2,
+              "amountPesos": 2445526.17,
+              "sourcePage": 1
+            },
+            {
+              "label": "Other General Requirements",
+              "sharePct": 3.91,
+              "amountPesos": 324768.55,
+              "sourcePage": 1
+            },
+            {
+              "label": "Electrical",
+              "sharePct": 1.89,
+              "amountPesos": 139230.24,
+              "sourcePage": 1
+            }
+          ],
+          "duplicateParseCount": 1,
+          "conflictingEstimatePesos": []
+        }
+      ],
+      "rescanDisposition": "baseline_retained_rescan_unavailable",
+      "flagAmountPesos": 5000000.0,
+      "flag": "red_flag",
+      "allocationSource": {
+        "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+        "sourcePage": 643
+      },
+      "supportingDocumentAmounts": [
+        {
+          "documentKind": "BP 202",
+          "sourceProvider": "BetterGov budget assets",
+          "sourceStage": "HGAB supporting document",
+          "sourceUrl": "https://budget-assets.bettergov.ph/hgab/2027/dpwh/supporting-documents/Region%20V/CSSP/CAMARINES%20NORTE%20SUB-DEO/2027DPWH-HGAB-12977/2027DPWH-HGAB-12977_BP202.pdf",
+          "sourceName": "2027DPWH-HGAB-12977_BP202.pdf",
+          "status": "value_extracted",
+          "amountPesos": 5000000.0,
+          "printedValue": "5,000,000.00",
+          "amountUnit": "PHP",
+          "amountLabel": "Total Proposal Cost",
+          "sourcePage": 1,
+          "extractionMethod": "Tesseract OCR",
+          "matchBasis": "Labelled Total Proposal Cost field · one BP 202 per project",
+          "projectMatchCount": 1,
+          "multipleDocumentMatchReview": false
+        },
+        {
+          "status": "exact_project_title_not_found",
+          "amountLabel": "Project amount in COI project list",
+          "extractionMethod": "Exact project title not found in linked COI",
+          "sourceProvider": "BetterGov budget assets",
+          "sourceStage": "HGAB supporting document",
+          "sourceUrl": "https://budget-assets.bettergov.ph/hgab/2027/dpwh/supporting-documents/Region%20V/CSSP/CAMARINES%20NORTE%20SUB-DEO/2027DPWH-HGAB-12977/2027DPWH-HGAB-12977_Cert%20of%20Implementability.PDF",
+          "sourceName": "2027DPWH-HGAB-12977_Cert of Implementability.PDF",
+          "documentKind": "Certificate of Implementability",
+          "projectMatchCount": 0,
+          "multipleDocumentMatchReview": false
+        }
+      ]
+    },
+    {
+      "hgabId": "HB10858-3-0776-013129",
+      "title": "Construction of Multi-Purpose Building, Barangay V-A, San Pablo City, Laguna",
+      "office": "Laguna 3rd District Engineering Office",
+      "region": "Region IV-A",
+      "pap": "BIP - Multi-Purpose Buildings/ Facilities to support Social Services",
+      "allocationPesos": 14500000,
+      "powEstimatePesos": 17500000.0,
+      "differencePesos": 3000000.0,
+      "differencePct": 20.69,
+      "status": "comparable_total_estimated_cost",
+      "powFiles": [
+        {
+          "code": "2027DPWH-HGAB-14522",
+          "status": "candidate_rows",
+          "pageCount": 6,
+          "summaryPages": [
+            1
+          ],
+          "categoryCount": 7,
+          "shareTotalPct": 99.99,
+          "totalEstimatedCostPesos": 17500000.0,
+          "totalEstimateStatus": "printed_total_reconciles_to_G_plus_H",
+          "totalConstructionCostPesos": 17325000,
+          "engineeringAdministrativeOverheadPesos": 175000,
+          "printedTotalEstimatedCostPesos": 17500000,
+          "sourcePdfCount": 1,
+          "sourcePdfSha256": [
+            "679651044b2a750bc2d0784292fc0d1ac6508caa1268c4e42de93ed51aee3aa7"
+          ],
+          "conflictingTotalEstimatedCostPesos": [],
+          "firstPageSummarySubtotalPesos": 12998402.84,
+          "itemizedDirectCostSubtotalPesos": 35353426,
+          "summaryCategories": [
+            {
+              "label": "Reinforced concrete",
+              "sharePct": 41.85,
+              "amountPesos": 5440169.17,
+              "sourcePage": 1
+            },
+            {
+              "label": "Finishing and other civil works",
+              "sharePct": 35.44,
+              "amountPesos": 4607074.56,
+              "sourcePage": 1
+            },
+            {
+              "label": "Earthwork",
+              "sharePct": 9.49,
+              "amountPesos": 1233206.45,
+              "sourcePage": 1
+            },
+            {
+              "label": "Other General Requirements",
+              "sharePct": 6.98,
+              "amountPesos": 907870.29,
+              "sourcePage": 1
+            },
+            {
+              "label": "Electrical",
+              "sharePct": 5.43,
+              "amountPesos": 706144.85,
+              "sourcePage": 1
+            },
+            {
+              "label": "Mechanical",
+              "sharePct": 0.73,
+              "amountPesos": 95007.52,
+              "sourcePage": 1
+            },
+            {
+              "label": "Facilities for the Engineer",
+              "sharePct": 0.07,
+              "amountPesos": 8930.0,
+              "sourcePage": 1
+            }
+          ],
+          "duplicateParseCount": 1,
+          "conflictingEstimatePesos": []
+        }
+      ],
+      "rescanDisposition": "baseline_retained_rescan_conflict",
+      "rescanReview": {
+        "baselineEstimatePesos": 17500000.0,
+        "rescanPrintedCandidatePesos": 500000.0,
+        "rescanStatus": "i_total_below_supporting_subtotal_review",
+        "rescanReviewIssue": "I amount is materially below A+B+C",
+        "baselineGPlusHPesos": 17500000.0,
+        "baselineMatchesGPlusH": true,
+        "decision": "Retained pre-rescan table estimate; the differing rescan value is a candidate requiring source-page review.",
+        "rescanComparableEstimateCandidatePesos": null
+      },
+      "flagAmountPesos": 3000000.0,
+      "flag": "red_flag",
+      "allocationSource": {
+        "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+        "sourcePage": 776
+      },
+      "supportingDocumentAmounts": [
+        {
+          "documentKind": "BP 202",
+          "sourceProvider": "BetterGov budget assets",
+          "sourceUrl": "https://budget-assets.bettergov.ph/hgab/2027/dpwh/supporting-documents/Region%20IV-A/CSSP/2027DPWH-HGAB-14522/2027DPWH-HGAB-14522_BP202.pdf",
+          "sourceName": "2027DPWH-HGAB-14522_BP202.pdf",
+          "status": "value_extracted",
+          "amountPesos": 17500000.0,
+          "printedValue": "17,500,000.00",
+          "amountUnit": "PHP",
+          "amountLabel": "Total Proposal Cost",
+          "sourcePage": 1,
+          "matchBasis": "Labelled Total Proposal Cost field",
+          "extractionMethod": "native PDF text extraction",
+          "sourceStage": "HGAB supporting document",
+          "projectMatchCount": 1,
+          "multipleDocumentMatchReview": false
+        }
+      ]
+    },
+    {
+      "hgabId": "HB10858-3-0418-005813",
+      "title": "Construction of Bridge, Barangay Pag-asa, Echague, Isabela",
+      "office": "Central Office",
+      "region": "Region II",
+      "pap": "BIP - Access Roads and/or Bridges from the National Roads leading to Major/ Strategic Public Buildings/ Facilities",
+      "allocationPesos": 80000000,
+      "powEstimatePesos": 82640276.98,
+      "differencePesos": 2640276.98,
+      "differencePct": 3.3,
+      "status": "comparable_total_estimated_cost",
+      "powFiles": [
+        {
+          "code": "2027DPWH-HGAB-11335",
+          "status": "candidate_rows",
+          "pageCount": 4,
+          "summaryPages": [
+            1
+          ],
+          "categoryCount": 6,
+          "shareTotalPct": 100.0,
+          "totalEstimatedCostPesos": 82640276.98,
+          "totalEstimateStatus": "printed_total_reconciles_to_G_plus_H",
+          "totalConstructionCostPesos": 81813874.21,
+          "engineeringAdministrativeOverheadPesos": 826402.77,
+          "printedTotalEstimatedCostPesos": 82640276.98,
+          "sourcePdfCount": 1,
+          "sourcePdfSha256": [
+            "4ed5a26adb8952e746fedd0cea3d476754c51604d5c54c7e70c4684fbaf937da"
+          ],
+          "conflictingTotalEstimatedCostPesos": [],
+          "firstPageSummarySubtotalPesos": 62134341.73,
+          "itemizedDirectCostSubtotalPesos": 62114835,
+          "summaryCategories": [
+            {
+              "label": "Bridge Construction",
+              "sharePct": 89.99,
+              "amountPesos": 55914099.42,
+              "sourcePage": 1
+            },
+            {
+              "label": "Surface Courses",
+              "sharePct": 3.57,
+              "amountPesos": 2217138.98,
+              "sourcePage": 1
+            },
+            {
+              "label": "Subbase and Base Course",
+              "sharePct": 2.65,
+              "amountPesos": 1646225.66,
+              "sourcePage": 1
+            },
+            {
+              "label": "Other General Requirements",
+              "sharePct": 2.19,
+              "amountPesos": 1363257.28,
+              "sourcePage": 1
+            },
+            {
+              "label": "Earthworks",
+              "sharePct": 1.57,
+              "amountPesos": 974113.97,
+              "sourcePage": 1
+            },
+            {
+              "label": "Facilities of the Engineer",
+              "sharePct": 0.03,
+              "amountPesos": 19506.42,
+              "sourcePage": 1
+            }
+          ],
+          "duplicateParseCount": 1,
+          "conflictingEstimatePesos": []
+        }
+      ],
+      "rescanDisposition": "baseline_retained_rescan_conflict",
+      "rescanReview": {
+        "baselineEstimatePesos": 82640276.98,
+        "rescanPrintedCandidatePesos": 826402.77,
+        "rescanStatus": "i_total_below_supporting_subtotal_review",
+        "rescanReviewIssue": "I amount is materially below A+B+C",
+        "baselineGPlusHPesos": 82640276.97999999,
+        "baselineMatchesGPlusH": true,
+        "decision": "Retained pre-rescan table estimate; the differing rescan value is a candidate requiring source-page review.",
+        "rescanComparableEstimateCandidatePesos": null
+      },
+      "flagAmountPesos": 2640276.98,
+      "flag": "red_flag",
+      "allocationSource": {
+        "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+        "sourcePage": 418
+      },
+      "supportingDocumentAmounts": [
+        {
+          "documentKind": "BP 202",
+          "sourceProvider": "BetterGov budget assets",
+          "sourceUrl": "https://budget-assets.bettergov.ph/hgab/2027/dpwh/supporting-documents/Region%20II/CSSP/Isabela%204th%20DEO/2027DPWH-HGAB-11335/2027DPWH-HGAB-11335_BP202.pdf",
+          "sourceName": "2027DPWH-HGAB-11335_BP202.pdf",
+          "status": "value_extracted",
+          "amountPesos": 80000000.0,
+          "printedValue": "80,000,000.00",
+          "amountUnit": "PHP",
+          "amountLabel": "Total Proposal Cost",
+          "sourcePage": 1,
+          "matchBasis": "Labelled Total Proposal Cost field",
+          "extractionMethod": "native PDF text extraction",
+          "sourceStage": "HGAB supporting document",
+          "projectMatchCount": 1,
+          "multipleDocumentMatchReview": false
+        },
+        {
+          "amountPesos": 80000000.0,
+          "printedValue": "80,000,000.00",
+          "amountUnit": "PHP as printed (×1 matches HGAB allocation)",
+          "amountScaleCheck": "allocation_factor_match_x1",
+          "amountLabel": "Project amount in COI project list",
+          "sourcePage": 1,
+          "sourcePages": [
+            1
+          ],
+          "amountCandidatesPrinted": [
+            "80,000,000.00"
+          ],
+          "extractionMethod": "native PDF text extraction",
+          "status": "value_extracted",
+          "matchBasis": "Exact normalized project title with adjacent amount; ×1, ×1000, and ÷1000 checked against HGAB allocation",
+          "documentKind": "Certificate of Implementability",
+          "sourceStage": "HGAB supporting document",
+          "sourceProvider": "BetterGov budget assets",
+          "sourceUrl": "https://budget-assets.bettergov.ph/hgab/2027/dpwh/supporting-documents/Region%20II/CSSP/Isabela%204th%20DEO/2027DPWH-HGAB-11335/2027DPWH-HGAB-11335_Cert%20of%20Implementability.pdf",
+          "sourceName": "2027DPWH-HGAB-11335_Cert of Implementability.pdf",
+          "projectMatchCount": 1,
+          "multipleDocumentMatchReview": false
+        }
+      ]
+    },
+    {
+      "hgabId": "HB10858-3-0872-015007",
+      "title": "Rehabilitation of Multi-Purpose Building, Barangay Poblacion, Municipality of Impasugong, Bukidnon",
+      "office": "Bukidnon 1st District Engineering Office",
+      "region": "Region X",
+      "pap": "BIP - Multi-Purpose Buildings/ Facilities to support Social Services",
+      "allocationPesos": 4000000,
+      "powEstimatePesos": 5000000.0,
+      "differencePesos": 1000000.0,
+      "differencePct": 25.0,
+      "status": "comparable_total_estimated_cost",
+      "powFiles": [
+        {
+          "code": "2027DPWH-HGAB-15589",
+          "status": "candidate_rows",
+          "pageCount": 5,
+          "summaryPages": [
+            1
+          ],
+          "categoryCount": 3,
+          "shareTotalPct": 101.0,
+          "totalEstimatedCostPesos": 5000000.0,
+          "totalEstimateStatus": "printed_total_estimated_cost_extracted",
+          "totalConstructionCostPesos": 4950000,
+          "engineeringAdministrativeOverheadPesos": null,
+          "printedTotalEstimatedCostPesos": 5000000,
+          "sourcePdfCount": 1,
+          "sourcePdfSha256": [
+            "bf9721d4807c1488bf803ecff459a2212d45ec51551e7c8154a44ff4d04f6ebb"
+          ],
+          "conflictingTotalEstimatedCostPesos": [],
+          "firstPageSummarySubtotalPesos": 3575120.16,
+          "itemizedDirectCostSubtotalPesos": 3006858,
+          "summaryCategories": [
+            {
+              "label": "FINISHING AND CIVIL WORKS",
+              "sharePct": 84.0,
+              "amountPesos": 2985987.68,
+              "sourcePage": 1
+            },
+            {
+              "label": "Other General Requirements",
+              "sharePct": 9.0,
+              "amountPesos": 315216.23,
+              "sourcePage": 1
+            },
+            {
+              "label": "Electrical",
+              "sharePct": 8.0,
+              "amountPesos": 273916.25,
+              "sourcePage": 1
+            }
+          ],
+          "duplicateParseCount": 1,
+          "conflictingEstimatePesos": []
+        }
+      ],
+      "rescanDisposition": "baseline_retained_rescan_unavailable",
+      "flagAmountPesos": 1000000.0,
+      "flag": "red_flag",
+      "allocationSource": {
+        "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+        "sourcePage": 872
+      },
+      "supportingDocumentAmounts": [
+        {
+          "documentKind": "BP 202",
+          "sourceProvider": "BetterGov budget assets",
+          "sourceUrl": "https://budget-assets.bettergov.ph/hgab/2027/dpwh/supporting-documents/Region%20X/CSSP/Bukidnon%201st%20DEO/2027DPWH-HGAB-15589/2027DPWH-HGAB-15589_BP202.pdf",
+          "sourceName": "2027DPWH-HGAB-15589_BP202.pdf",
+          "status": "value_extracted",
+          "amountPesos": 4000000.0,
+          "printedValue": "4,000,000.00",
+          "amountUnit": "PHP",
+          "amountLabel": "Total Proposal Cost",
+          "sourcePage": 1,
+          "matchBasis": "Labelled Total Proposal Cost field",
+          "extractionMethod": "native PDF text extraction",
+          "sourceStage": "HGAB supporting document",
+          "projectMatchCount": 1,
+          "multipleDocumentMatchReview": false
+        },
+        {
+          "amountPesos": 4000000.0,
+          "printedValue": "4,000,000",
+          "amountUnit": "PHP as printed (×1 matches HGAB allocation)",
+          "amountScaleCheck": "allocation_factor_match_x1",
+          "amountLabel": "Project amount in COI project list",
+          "sourcePage": 2,
+          "sourcePages": [
+            2
+          ],
+          "amountCandidatesPrinted": [
+            "4,000,000"
+          ],
+          "extractionMethod": "native PDF text extraction",
+          "status": "value_extracted",
+          "matchBasis": "Exact normalized project title with adjacent amount; ×1, ×1000, and ÷1000 checked against HGAB allocation",
+          "documentKind": "Certificate of Implementability",
+          "sourceStage": "HGAB supporting document",
+          "sourceProvider": "BetterGov budget assets",
+          "sourceUrl": "https://budget-assets.bettergov.ph/hgab/2027/dpwh/supporting-documents/Region%20X/CSSP/Bukidnon%201st%20DEO/2027DPWH-HGAB-15589/2027DPWH-HGAB-15589_Cert%20of%20Implementability.pdf",
+          "sourceName": "2027DPWH-HGAB-15589_Cert of Implementability.pdf",
+          "projectMatchCount": 1,
+          "multipleDocumentMatchReview": false
+        }
+      ]
+    },
+    {
+      "hgabId": "HB10858-3-0463-006695",
+      "title": "Rehabilitation of Road, Barangay Tarrag-Aggasi-Baduang, Barangays Tarrag, Aggasi and Baduang, Pagudpud, Ilocos Norte",
+      "office": "Ilocos Norte 1st District Engineering Office",
+      "region": "Region I",
+      "pap": "BIP - Access Roads and/or Bridges from the National Roads leading to Major/ Strategic Public Buildings/ Facilities",
+      "allocationPesos": 20000000,
+      "powEstimatePesos": 19799955.01,
+      "differencePesos": -200044.99,
+      "differencePct": -1.0,
+      "status": "comparable_total_estimated_cost",
+      "powFiles": [
+        {
+          "code": "2027DPWH-HGAB-11678",
+          "status": "candidate_rows",
+          "pageCount": 23,
+          "summaryPages": [
+            1
+          ],
+          "categoryCount": 9,
+          "shareTotalPct": 100.01,
+          "totalEstimatedCostPesos": 19799955.01,
+          "totalEstimateStatus": "printed_total_estimated_cost_extracted",
+          "totalConstructionCostPesos": 19599955.01,
+          "engineeringAdministrativeOverheadPesos": null,
+          "printedTotalEstimatedCostPesos": 19799955.01,
+          "sourcePdfCount": 1,
+          "sourcePdfSha256": [
+            "26637a458f7510044f859a09f2bcc62710dbabbd4f3a34efaade9dfc5e252c03"
+          ],
+          "conflictingTotalEstimatedCostPesos": [],
+          "firstPageSummarySubtotalPesos": 14625408.95,
+          "itemizedDirectCostSubtotalPesos": 15186653,
+          "summaryCategories": [
+            {
+              "label": "Drainage and Slope Protection Structures",
+              "sharePct": 58.06,
+              "amountPesos": 8490824.93,
+              "sourcePage": 1
+            },
+            {
+              "label": "Surface Courses",
+              "sharePct": 27.19,
+              "amountPesos": 3977302.48,
+              "sourcePage": 1
+            },
+            {
+              "label": "Subbase and Base Course",
+              "sharePct": 5.95,
+              "amountPesos": 870185.26,
+              "sourcePage": 1
+            },
+            {
+              "label": "Earthwork",
+              "sharePct": 5.22,
+              "amountPesos": 763209.81,
+              "sourcePage": 1
+            },
+            {
+              "label": "Other General Requirements",
+              "sharePct": 2.51,
+              "amountPesos": 366441.81,
+              "sourcePage": 1
+            },
+            {
+              "label": "Miscellaneous Structures",
+              "sharePct": 0.75,
+              "amountPesos": 109419.15,
+              "sourcePage": 1
+            },
+            {
+              "label": "Facilities for the Engineer",
+              "sharePct": 0.33,
+              "amountPesos": 48025.51,
+              "sourcePage": 1
+            },
+            {
+              "label": "Bridge Construction",
+              "sharePct": 0.0,
+              "amountPesos": 0.0,
+              "sourcePage": 1
+            },
+            {
+              "label": "Materials Details",
+              "sharePct": 0.0,
+              "amountPesos": 0.0,
+              "sourcePage": 1
+            }
+          ],
+          "duplicateParseCount": 1,
+          "conflictingEstimatePesos": []
+        }
+      ],
+      "rescanDisposition": "rescan_agrees",
+      "flagAmountPesos": 200044.99,
+      "flag": "red_flag",
+      "allocationSource": {
+        "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+        "sourcePage": 463
+      },
+      "supportingDocumentAmounts": [
+        {
+          "documentKind": "BP 202",
+          "sourceProvider": "BetterGov budget assets",
+          "sourceUrl": "https://budget-assets.bettergov.ph/hgab/2027/dpwh/supporting-documents/Region%20I/CSSP/2027DPWH-HGAB-11678/2027DPWH-HGAB-11678_BP202.pdf",
+          "sourceName": "2027DPWH-HGAB-11678_BP202.pdf",
+          "status": "value_extracted",
+          "amountPesos": 20000000.0,
+          "printedValue": "20,000,000.00",
+          "amountUnit": "PHP",
+          "amountLabel": "Total Proposal Cost",
+          "sourcePage": 1,
+          "matchBasis": "Labelled Total Proposal Cost field",
+          "extractionMethod": "native PDF text extraction",
+          "sourceStage": "HGAB supporting document",
+          "projectMatchCount": 1,
+          "multipleDocumentMatchReview": false
+        },
+        {
+          "amountPesos": 20000000.0,
+          "printedValue": "20,000,000",
+          "amountUnit": "PHP as printed (×1 matches HGAB allocation)",
+          "amountScaleCheck": "allocation_factor_match_x1",
+          "amountLabel": "Project amount in COI project list",
+          "sourcePage": 9,
+          "sourcePages": [
+            9
+          ],
+          "amountCandidatesPrinted": [
+            "20,000,000"
+          ],
+          "extractionMethod": "native PDF text extraction",
+          "status": "value_extracted",
+          "matchBasis": "Exact normalized project title with adjacent amount; ×1, ×1000, and ÷1000 checked against HGAB allocation",
+          "documentKind": "Certificate of Implementability",
+          "sourceStage": "HGAB supporting document",
+          "sourceProvider": "BetterGov budget assets",
+          "sourceUrl": "https://budget-assets.bettergov.ph/hgab/2027/dpwh/supporting-documents/Region%20I/CSSP/2027DPWH-HGAB-11678/2027DPWH-HGAB-11678_Cert%20of%20Implementability.pdf",
+          "sourceName": "2027DPWH-HGAB-11678_Cert of Implementability.pdf",
+          "projectMatchCount": 1,
+          "multipleDocumentMatchReview": false
+        }
+      ]
+    },
+    {
+      "hgabId": "HB10858-3-0691-011385",
+      "title": "Construction of Multi-Purpose Building, Barangay Lt. Balag, Pudtol, Apayao",
+      "office": "Apayao 2nd District Engineering Office",
+      "region": "CAR",
+      "pap": "BIP - Multi-Purpose Buildings/ Facilities to support Social Services",
+      "allocationPesos": 10000000,
+      "powEstimatePesos": 9900000.0,
+      "differencePesos": -100000.0,
+      "differencePct": -1.0,
+      "status": "comparable_total_estimated_cost",
+      "powFiles": [
+        {
+          "code": "2027DPWH-HGAB-13622",
+          "status": "no_bill_rows_recovered",
+          "pageCount": 96,
+          "summaryPages": [
+            1
+          ],
+          "categoryCount": 6,
+          "shareTotalPct": 100.0,
+          "totalEstimatedCostPesos": 9900000.0,
+          "evaluatedTotalEstimatedCostPesos": 548902.99,
+          "totalEstimateStatus": "visible_total_estimated_cost_ocr",
+          "totalConstructionCostPesos": null,
+          "engineeringAdministrativeOverheadPesos": null,
+          "printedTotalEstimatedCostPesos": 9900000.0,
+          "sourcePdfCount": 1,
+          "sourcePdfSha256": [
+            "34f333e2d161dd0ba553eae31fc30b237f072a4c1492989b2aaf68ca070d52dc"
+          ],
+          "conflictingTotalEstimatedCostPesos": [],
+          "firstPageSummarySubtotalPesos": 7485357.39,
+          "itemizedDirectCostSubtotalPesos": null,
+          "summaryCategories": [
+            {
+              "label": "FINISHINGAND I। Tim OTHERCIVILWORKS '",
+              "sharePct": 44.89,
+              "amountPesos": 3360038.43,
+              "sourcePage": 1
+            },
+            {
+              "label": "REINFORCEDCONCRETE (I",
+              "sharePct": 35.31,
+              "amountPesos": 2643462.15,
+              "sourcePage": 1
+            },
+            {
+              "label": "ELECTRICAL . ' .1",
+              "sharePct": 6.97,
+              "amountPesos": 521542.25,
+              "sourcePage": 1
+            },
+            {
+              "label": "OTHERGENERALREQUIREMENTS IT",
+              "sharePct": 6.93,
+              "amountPesos": 518902.99,
+              "sourcePage": 1
+            },
+            {
+              "label": "EARTHWORK",
+              "sharePct": 3.89,
+              "amountPesos": 291012.31,
+              "sourcePage": 1
+            },
+            {
+              "label": "GAD RELATEDITEMS",
+              "sharePct": 2.01,
+              "amountPesos": 150399.26,
+              "sourcePage": 1
+            }
+          ],
+          "duplicateParseCount": 1,
+          "conflictingEstimatePesos": []
+        }
+      ],
+      "rescanDisposition": "augmented_from_rescan",
+      "flagAmountPesos": 100000.0,
+      "flag": "red_flag",
+      "allocationSource": {
+        "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+        "sourcePage": 691
+      },
+      "supportingDocumentAmounts": [
+        {
+          "documentKind": "BP 202",
+          "sourceProvider": "BetterGov budget assets",
+          "sourceStage": "HGAB supporting document",
+          "sourceUrl": "https://budget-assets.bettergov.ph/hgab/2027/dpwh/supporting-documents/CAR/CSSP/2027DPWH-HGAB-13622/2027DPWH-HGAB-13622_BP202.pdf",
+          "sourceName": "2027DPWH-HGAB-13622_BP202.pdf",
+          "status": "value_extracted",
+          "amountPesos": 40000000.0,
+          "printedValue": "40,000,000.00",
+          "amountUnit": "PHP",
+          "amountLabel": "Total Proposal Cost",
+          "sourcePage": 1,
+          "extractionMethod": "Tesseract OCR",
+          "matchBasis": "Labelled Total Proposal Cost field · one BP 202 per project",
+          "projectMatchCount": 1,
+          "multipleDocumentMatchReview": false
+        },
+        {
+          "amountPesos": 10000000.0,
+          "printedValue": "10,000,000.00",
+          "amountUnit": "PHP as printed (×1 matches HGAB allocation)",
+          "amountScaleCheck": "allocation_factor_match_x1",
+          "amountLabel": "Project amount in COI project list",
+          "sourcePage": 1,
+          "sourcePages": [
+            1
+          ],
+          "amountCandidatesPrinted": [
+            "10,000,000.00"
+          ],
+          "extractionMethod": "native PDF text extraction",
+          "status": "value_extracted",
+          "matchBasis": "Exact normalized project title with adjacent amount; ×1, ×1000, and ÷1000 checked against HGAB allocation",
+          "documentKind": "Certificate of Implementability",
+          "sourceStage": "HGAB supporting document",
+          "sourceProvider": "BetterGov budget assets",
+          "sourceUrl": "https://budget-assets.bettergov.ph/hgab/2027/dpwh/supporting-documents/CAR/CSSP/2027DPWH-HGAB-13622/2027DPWH-HGAB-13622_Cert%20of%20Implementability.PDF",
+          "sourceName": "2027DPWH-HGAB-13622_Cert of Implementability.PDF",
+          "projectMatchCount": 1,
+          "multipleDocumentMatchReview": false
+        }
+      ]
+    },
+    {
+      "hgabId": "HB10858-3-0170-001114",
+      "title": "Quezon-Alabat-Perez Rd - K0003 + 230 - K0003 + 275, K0017 + 670 - K0017 + 800, K0220 + 328 - K0020 + 513",
+      "office": "Quezon 4th District Engineering Office",
+      "region": "Region IV-A",
+      "pap": "Rehabilitation/ Reconstruction/ Upgrading of Damaged Paved Roads - Tertiary Roads",
+      "allocationPesos": 22005000,
+      "powEstimatePesos": 21929748.93,
+      "differencePesos": -75251.07,
+      "differencePct": -0.34,
+      "status": "comparable_total_estimated_cost",
+      "powFiles": [
+        {
+          "code": "2027DPWH-HGAB-03820",
+          "status": "candidate_rows",
+          "pageCount": 41,
+          "summaryPages": [
+            1
+          ],
+          "categoryCount": 6,
+          "shareTotalPct": 100.0,
+          "totalEstimatedCostPesos": 21929748.93,
+          "totalEstimateStatus": "printed_total_reconciles_to_G_plus_H",
+          "totalConstructionCostPesos": 21489648.93,
+          "engineeringAdministrativeOverheadPesos": 440100,
+          "printedTotalEstimatedCostPesos": 21929748.93,
+          "sourcePdfCount": 1,
+          "sourcePdfSha256": [
+            "412c06f302b00b1a8f7a696adef11cc1ac9121d1797ead57af39dab61becc5e8"
+          ],
+          "conflictingTotalEstimatedCostPesos": [],
+          "firstPageSummarySubtotalPesos": 16333543.42,
+          "itemizedDirectCostSubtotalPesos": 30895263,
+          "summaryCategories": [
+            {
+              "label": "Finishing and other civil works",
+              "sharePct": 68.73,
+              "amountPesos": 11225278.41,
+              "sourcePage": 1
+            },
+            {
+              "label": "Reinforced concrete",
+              "sharePct": 11.16,
+              "amountPesos": 1822890.4,
+              "sourcePage": 1
+            },
+            {
+              "label": "Other General Requirements",
+              "sharePct": 8.97,
+              "amountPesos": 1464387.26,
+              "sourcePage": 1
+            },
+            {
+              "label": "Facilities for the Engineer",
+              "sharePct": 5.42,
+              "amountPesos": 885912.16,
+              "sourcePage": 1
+            },
+            {
+              "label": "Earthwork",
+              "sharePct": 5.37,
+              "amountPesos": 877868.31,
+              "sourcePage": 1
+            },
+            {
+              "label": "Plumbing and sanitary works",
+              "sharePct": 0.35,
+              "amountPesos": 57206.88,
+              "sourcePage": 1
+            }
+          ],
+          "duplicateParseCount": 1,
+          "conflictingEstimatePesos": []
+        }
+      ],
+      "rescanDisposition": "baseline_retained_rescan_unavailable",
+      "flagAmountPesos": 75251.07,
+      "flag": "red_flag",
+      "allocationSource": {
+        "sourceVolume": "3- HB 10858 FOR 3RD READING VOL I-C .pdf",
+        "sourcePage": 170
+      },
+      "supportingDocumentAmounts": [
+        {
+          "documentKind": "BP 202",
+          "sourceProvider": "BetterGov budget assets",
+          "sourceUrl": "https://budget-assets.bettergov.ph/hgab/2027/dpwh/supporting-documents/Region%20IV-A/OO1/2027DPWH-HGAB-03820/2027DPWH-HGAB-03820_BP202.pdf",
+          "sourceName": "2027DPWH-HGAB-03820_BP202.pdf",
+          "status": "value_extracted",
+          "amountPesos": 22005000.0,
+          "printedValue": "22,005,000.00",
+          "amountUnit": "PHP",
+          "amountLabel": "Total Proposal Cost",
+          "sourcePage": 1,
+          "matchBasis": "Labelled Total Proposal Cost field",
+          "extractionMethod": "native PDF text extraction",
+          "sourceStage": "HGAB supporting document",
+          "projectMatchCount": 1,
+          "multipleDocumentMatchReview": false
+        },
+        {
+          "amountPesos": 22005000.0,
+          "printedValue": "22,005",
+          "amountUnit": "P'000 ×1000 (matches HGAB allocation)",
+          "amountScaleCheck": "allocation_factor_match_x1000",
+          "amountLabel": "Project amount in COI project list",
+          "sourcePage": 2,
+          "sourcePages": [
+            2
+          ],
+          "amountCandidatesPrinted": [
+            "22,005"
+          ],
+          "extractionMethod": "native PDF text extraction",
+          "status": "value_extracted",
+          "matchBasis": "Exact normalized project title with adjacent amount; ×1, ×1000, and ÷1000 checked against HGAB allocation",
+          "documentKind": "Certificate of Implementability",
+          "sourceStage": "HGAB supporting document",
+          "sourceProvider": "BetterGov budget assets",
+          "sourceUrl": "https://budget-assets.bettergov.ph/hgab/2027/dpwh/supporting-documents/Region%20IV-A/OO1/2027DPWH-HGAB-03820/2027DPWH-HGAB-03820_CERT%20OF%20IMPLEMENTABILITY.pdf",
+          "sourceName": "2027DPWH-HGAB-03820_CERT OF IMPLEMENTABILITY.pdf",
+          "projectMatchCount": 1,
+          "multipleDocumentMatchReview": false
+        }
+      ]
+    }
+  ]
+}
