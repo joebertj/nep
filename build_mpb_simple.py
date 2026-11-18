@@ -18,6 +18,10 @@ def load(name):
     return json.loads((OUT / name).read_text(encoding='utf-8'))
 
 
+def load_static(name):
+    return json.loads((STATIC / name).read_text(encoding='utf-8'))
+
+
 def collect():
     analysis = load('mpb_analysis.json')
     facilities = load('education-health-data.json')
@@ -25,6 +29,8 @@ def collect():
     base = load('mpb-barangay-base-data.json')
     history, current = Counter(), Counter()
     returning = first = earlier_only = neither = 0
+    recipients_by_region = {}
+    returning_repeat_titles = returning_new_titles = 0
     for place in base['barangays']:
         groups = place.get('buildings', [])
         earlier = sum(any(2015 <= int(e.get('year') or 0) <= 2026 for e in g.get('levelHistory', [])) for g in groups)
@@ -34,6 +40,18 @@ def collect():
             current[now] += 1
             returning += earlier > 0
             first += earlier == 0
+            region = str(place.get('region') or 'Unspecified region').strip() or 'Unspecified region'
+            region_counts = recipients_by_region.setdefault(region, {'returning': 0, 'firstTime': 0})
+            region_counts['returning' if earlier > 0 else 'firstTime'] += 1
+            if earlier > 0:
+                for group in groups:
+                    entries = group.get('levelHistory', [])
+                    if not any(int(e.get('year') or 0) == 2027 for e in entries):
+                        continue
+                    if any(2015 <= int(e.get('year') or 0) <= 2026 for e in entries):
+                        returning_repeat_titles += 1
+                    else:
+                        returning_new_titles += 1
         elif earlier:
             earlier_only += 1
         else:
@@ -43,6 +61,9 @@ def collect():
         raise ValueError('Historical barangay universe does not reconcile with the regional page')
     if returning + first + earlier_only + neither != official:
         raise ValueError('Current and historical barangay cohorts do not reconcile')
+    if (sum(row['returning'] for row in recipients_by_region.values()),
+            sum(row['firstTime'] for row in recipients_by_region.values())) != (returning, first):
+        raise ValueError('Regional recipient counts do not reconcile with the full returning/first-time totals')
     fy = analysis['summary']['fy2027HistoricalDistribution']
     if (sum(current.values()), sum(k*v for k, v in current.items()), returning, first) != (
         fy['coveredBarangays'], fy['historicalTitleMatches'], fy['previouslyMappedBarangays'], fy['firstTimeBarangays']
@@ -54,6 +75,40 @@ def collect():
     complete = sum(x['projectRows'] for x in docs['countsByMatchedTypeCount'] if x['matchedTypeCount'] >= 4)
     if (complete, docs['denominatorProjectRows'] - complete) != (docs['completeDocumentProjectRows'], docs['incompleteDocumentProjectRows']):
         raise ValueError('Document completeness counts do not reconcile')
+    coverage = load_static('hgab-document-coverage.json')
+    pow_parse = load_static('pow-hgab-parsed-documents.json')
+    required_types = {'POW', 'BP 202', 'Development Council', 'Geotagged photos', 'Certificate of Implementability'}
+    def normalize_document_type(value):
+        key = str(value or '').strip().casefold()
+        if key in {'pow', 'program of works', 'program of work'}: return 'POW'
+        if key in {'bp 202', 'bp202'}: return 'BP 202'
+        if key in {'development council', 'rdc endorsement', 'pdc endorsement', 'ldc endorsement', 'development council endorsement'}: return 'Development Council'
+        if key in {'geotagged photos', 'geotagged photo', 'geotegged photo', 'g.photo', 'photo', 'photos'}: return 'Geotagged photos'
+        if key in {'certificate of implementability', 'implementability certificate'}: return 'Certificate of Implementability'
+        return None
+    coverage_by_id = {str(row.get('hgabId') or ''): row for row in coverage.get('projects', [])}
+    mpb_ids = set(analysis.get('coordinateProximity', {}).get('projectDetails', {}))
+    mpb_five_of_five_ids = set()
+    for hgab_id in mpb_ids:
+        row = coverage_by_id.get(hgab_id)
+        if not row:
+            raise ValueError(f'MPB project {hgab_id} is missing document coverage')
+        matched_types = {normalize_document_type(value) for value in (row.get('proposalDocumentTypes') or []) + (row.get('senateDocumentTypes') or [])}
+        if required_types <= (matched_types - {None}):
+            mpb_five_of_five_ids.add(hgab_id)
+    five_of_five_rows = next(x['projectRows'] for x in docs['countsByMatchedTypeCount'] if x['matchedTypeCount'] == 5)
+    if len(mpb_five_of_five_ids) != five_of_five_rows:
+        raise ValueError('5-of-5 MPB document rows do not reconcile with the project-level document matches')
+    parsed_files_by_id = {}
+    for file in pow_parse.get('documents', []):
+        hgab_id = str(file.get('hgabId') or '')
+        if hgab_id:
+            parsed_files_by_id.setdefault(hgab_id, []).append(file)
+    token_pow_review_rows = sum(
+        hgab_id in mpb_five_of_five_ids and files
+        and all(file.get('status') == 'no_bill_rows_recovered' for file in files)
+        for hgab_id, files in parsed_files_by_id.items()
+    )
     tests = regional['statisticalTests']['povertyAssociations']
     excluded = set(tests['excludedForBoundaryOverlap'])
     points = []
@@ -92,7 +147,17 @@ def collect():
             'hospitalBeds': facilities['facilityInventories']['philhealthHospitals']['summary']['governmentBedsJoined'],
         },
         'recipientBarangays2027': {'returning': returning, 'firstTime': first, 'total': returning + first},
-        'documents2027': docs,
+        'recipientBarangaysByRegion2027': [
+            {'region': region, **counts}
+            for region, counts in sorted(recipients_by_region.items(), key=lambda item: (-item[1]['returning'], item[0]))
+        ],
+        'returningRecipientTitleHistory2027': {
+            'returningBarangays': returning,
+            'repeatTitleMatches': returning_repeat_titles,
+            'newTitleMatches': returning_new_titles,
+            'totalTitleMatches': returning_repeat_titles + returning_new_titles,
+        },
+        'documents2027': {**docs, 'tokenPowNoBillRowsWithinFiveOfFive': token_pow_review_rows},
         'coverage2027': {'officialBarangays': official, 'recipientBarangays': sum(current.values()),
                          'earlierOnlyBarangays': earlier_only, 'noMappedRecordAnyPeriod': neither,
                          'titleBarangayMatches': sum(k*v for k, v in current.items()),
@@ -195,7 +260,7 @@ def province_bars(rows):
 
 
 CSS = '''<style id="mpb-simple-style">
-*{box-sizing:border-box}body{margin:0;background:#F4F6FA;color:#17233B;font-family:Inter,system-ui,sans-serif}header{background:#00246A;color:#fff;padding:35px 5vw}header h1{font-size:clamp(34px,5vw,60px);line-height:1.1;max-width:900px;margin:0}header p{max-width:800px}main.simple-main{max-width:1200px;margin:auto;padding:30px clamp(16px,4vw,40px)}.simple-intro{font-size:clamp(20px,2.6vw,30px);line-height:1.4;max-width:920px;margin:20px 0 35px;font-weight:600}.simple-panel{background:#fff;border:1px solid #DFE5EF;border-radius:20px;padding:clamp(22px,4vw,48px);margin:0 0 30px;box-shadow:0 8px 25px #00246A06;break-inside:avoid;scroll-margin-top:24px}.simple-card-heading{display:flex;align-items:center;gap:14px;margin-bottom:20px}.simple-step{background:#00246A;color:#fff;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:800}.simple-period{color:#616D81;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}.simple-panel h2{font-size:clamp(26px,3.8vw,42px)!important;line-height:1.15!important;max-width:900px;margin:0 0 25px!important;letter-spacing:-.03em}.simple-panel figure{margin:0}.simple-panel figcaption{font-size:clamp(17px,2vw,22px);line-height:1.5;color:#33425B;margin:25px 0 0}.simple-panel .big-fraction{font-size:clamp(52px,9vw,100px);font-weight:850;line-height:1;letter-spacing:-.07em;color:#00246A;margin:5px 0 28px}.simple-panel .big-fraction small{font-size:.25em;font-weight:650;letter-spacing:0;color:#616D81}.icon-definitions{position:absolute;width:0;height:0;overflow:hidden}.pictogram{display:grid;grid-template-columns:repeat(20,minmax(0,1fr));gap:7px}.pictogram .unit{display:block;width:100%;height:auto;aspect-ratio:1}.blue{color:#0038A8}.yellow{color:#BA8900}.muted-icon{color:#D1D7E1}.light-blue{color:#91B0E0}.simple-legend{display:flex;flex-wrap:wrap;gap:10px 24px;margin:20px 0 0;font-size:14px;color:#40516D}.simple-legend>span{display:inline-flex;gap:8px;align-items:center}.swatch{display:inline-block;width:11px;height:11px;background:currentColor;border-radius:3px;flex-shrink:0}.swatch.blue{background:#0038A8}.swatch.yellow{background:#BA8900}.swatch.muted-icon{background:#D1D7E1}.swatch.light-blue{background:#91B0E0}.folders{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,4vw,45px);max-width:720px;margin:auto}.folders svg{width:100%;height:auto}.coverage-pair{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;text-align:center;gap:12px;max-width:650px;margin:30px auto}.coverage-pair strong{display:block;font-size:clamp(25px,5vw,46px);color:#00246A;line-height:1.2}.coverage-pair span{font-size:13px;color:#616D81}.coverage-pair .pair-separator{font-size:26px;color:#8A97AA}.poverty-plot{display:block;width:100%;height:auto;max-height:none}.axis-label{font:16px system-ui;fill:#596A84}.computations{border-top:1px solid #E2E7F0;margin-top:25px;padding-top:15px;font-size:13px;color:#596A84}.computations summary{cursor:pointer;font-size:12px;font-weight:650}.computations p{max-width:950px;line-height:1.65}.simple-main a{color:#0038A8}.simple-footer{font-size:13px;color:#596A84;line-height:1.6;padding:15px 0 35px}.simple-links{display:flex;gap:12px 22px;flex-wrap:wrap}.simple-download{display:inline-block;padding:10px 15px;background:#0038A8;color:#fff!important;border-radius:8px;text-decoration:none;font-weight:650;margin-bottom:16px}@media(max-width:650px){.pictogram{grid-template-columns:repeat(10,minmax(0,1fr));gap:6px}.simple-panel{border-radius:14px}.simple-legend{font-size:12px;gap:8px 12px}.axis-label{font-size:17px}}@media print{header nav,.computations,.simple-download{display:none}.simple-panel{box-shadow:none;break-inside:avoid}main.simple-main{padding:0}.pictogram{grid-template-columns:repeat(20,minmax(0,1fr))}*{print-color-adjust:exact}}
+*{box-sizing:border-box}body{margin:0;background:#F4F6FA;color:#17233B;font-family:Inter,system-ui,sans-serif}header{background:#00246A;color:#fff;padding:35px 5vw}header h1{font-size:clamp(34px,5vw,60px);line-height:1.1;max-width:900px;margin:0}header p{max-width:800px}main.simple-main{max-width:1200px;margin:auto;padding:30px clamp(16px,4vw,40px)}.simple-intro{font-size:clamp(20px,2.6vw,30px);line-height:1.4;max-width:920px;margin:20px 0 35px;font-weight:600}.simple-panel{background:#fff;border:1px solid #DFE5EF;border-radius:20px;padding:clamp(22px,4vw,48px);margin:0 0 30px;box-shadow:0 8px 25px #00246A06;break-inside:avoid;scroll-margin-top:24px}.simple-card-heading{display:flex;align-items:center;gap:14px;margin-bottom:20px}.simple-step{background:#00246A;color:#fff;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:800}.simple-period{color:#616D81;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}.simple-panel h2{font-size:clamp(26px,3.8vw,42px)!important;line-height:1.15!important;max-width:900px;margin:0 0 25px!important;letter-spacing:-.03em}.simple-panel figure{margin:0}.simple-panel figcaption{font-size:clamp(17px,2vw,22px);line-height:1.5;color:#33425B;margin:25px 0 0}.simple-panel .big-fraction{font-size:clamp(52px,9vw,100px);font-weight:850;line-height:1;letter-spacing:-.07em;color:#00246A;margin:5px 0 28px}.simple-panel .big-fraction small{font-size:.25em;font-weight:650;letter-spacing:0;color:#616D81}.icon-definitions{position:absolute;width:0;height:0;overflow:hidden}.pictogram{display:grid;grid-template-columns:repeat(20,minmax(0,1fr));gap:7px}.pictogram .unit{display:block;width:100%;height:auto;aspect-ratio:1}.blue{color:#0038A8}.yellow{color:#BA8900}.muted-icon{color:#D1D7E1}.light-blue{color:#91B0E0}.simple-legend{display:flex;flex-wrap:wrap;gap:10px 24px;margin:20px 0 0;font-size:14px;color:#40516D}.simple-legend>span{display:inline-flex;gap:8px;align-items:center}.swatch{display:inline-block;width:11px;height:11px;background:currentColor;border-radius:3px;flex-shrink:0}.swatch.blue{background:#0038A8}.swatch.yellow{background:#BA8900}.swatch.muted-icon{background:#D1D7E1}.swatch.light-blue{background:#91B0E0}.folders{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,4vw,45px);max-width:720px;margin:auto}.folders svg{width:100%;height:auto}.coverage-pair{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;text-align:center;gap:12px;max-width:650px;margin:30px auto}.coverage-pair strong{display:block;font-size:clamp(25px,5vw,46px);color:#00246A;line-height:1.2}.coverage-pair span{font-size:13px;color:#616D81}.coverage-pair .pair-separator{font-size:26px;color:#8A97AA}.poverty-plot{display:block;width:100%;height:auto;max-height:none}.axis-label{font:16px system-ui;fill:#596A84}.computations{border-top:1px solid #E2E7F0;margin-top:25px;padding-top:15px;font-size:13px;color:#596A84}.computations summary{cursor:pointer;font-size:12px;font-weight:650}.computations p{max-width:950px;line-height:1.65}.simple-main a{color:#0038A8}.simple-footer{font-size:13px;color:#596A84;line-height:1.6;padding:15px 0 35px}.simple-links{display:flex;gap:12px 22px;flex-wrap:wrap}.simple-download{display:inline-block;padding:10px 15px;background:#0038A8;color:#fff!important;border-radius:8px;text-decoration:none;font-weight:650;margin-bottom:16px}@media(max-width:650px){.pictogram{grid-template-columns:repeat(10,minmax(0,1fr));gap:6px}.simple-panel{border-radius:14px}.simple-legend{font-size:12px;gap:8px 12px}.axis-label{font-size:17px}}@media print{header nav,.computations,.simple-download{display:none}.simple-panel{box-shadow:none;break-inside:avoid}main.simple-main{padding:0}.pictogram{grid-template-columns:repeat(20,minmax(0,1fr))}*{print-color-adjust:exact}}
 </style>'''
 
 CSS += '''<style id="mpb-simple-coverage-style">
@@ -219,11 +284,16 @@ def build():
     panels = [card(1, 'FY2027 HGAB · recipient barangays', 'Most recipient barangays already have earlier MPB records.', graphic,
                    'A new allocation does not always reach a new barangay.',
                    details(f'{recipients["returning"]:,} of {total:,} mapped recipient barangays ({100*recipients["returning"]/total:.2f}%) have at least one mapped record in FY2015–FY2026. {recipients["firstTime"]:,} have no earlier match in this dataset. Icons are rounded shares. Earlier allocations do not establish completed buildings or whether further work is justified.', 'mpb.html#fy2027-mpb-history', 'Review FY2027 title history'))]
-    graphic = '<div class="big-fraction">About 1 in 3</div><div class="folders" role="img" aria-label="Approximately one third of FY2027 MPB project rows have fewer than four named document types matched.">' + ''.join(f'<svg class="{style}" viewBox="0 0 120 110" aria-hidden="true"><use href="#{symbol}"/></svg>' for style, symbol in [('blue', 'folder-icon'), ('blue', 'folder-icon'), ('yellow', 'partial-folder-icon')]) + '</div>'
-    graphic += legend([('blue', 'At least 4 of 5 document types matched'), ('yellow', 'Below that threshold')])
-    panels.append(card(2, 'FY2027 HGAB · document matches', 'About a third have incomplete document matches.', graphic,
-                       'These allocations still need their supporting records checked.',
-                       details(f'{docs["incompleteDocumentProjectRows"]:,} of {docs["denominatorProjectRows"]:,} MPB project rows ({100*docs["incompleteDocumentProjectRows"]/docs["denominatorProjectRows"]:.2f}%) have fewer than four of five named document types matched. {docs["completeDocumentProjectRows"]:,} meet the threshold. Named types: POW, BP 202, Development Council, geotagged photos and Certificate of Implementability. Proposal and Senate document matches are combined per project. A missing match does not prove a document is absent; file presence does not verify contents. Document snapshot: {escape(docs.get("documentCoverageGeneratedAtUtc") or "not recorded")}. The three folders show a rounded proportion.', 'mpb.html#fy2027-mpb-documents', 'Review document coverage')))
+    full_document_rows = sum(
+        row['projectRows'] for row in docs['countsByMatchedTypeCount']
+        if row['matchedTypeCount'] == 5
+    )
+    below_full_rows = docs['denominatorProjectRows'] - full_document_rows
+    graphic = '<div class="big-fraction">About 1 in 4</div><div class="folders" role="img" aria-label="About one quarter of FY2027 MPB project rows have all five document types matched; the other three quarters have fewer than five.">' + ''.join(f'<svg class="{style}" viewBox="0 0 120 110" aria-hidden="true"><use href="#{symbol}"/></svg>' for style, symbol in [('blue', 'folder-icon'), ('yellow', 'partial-folder-icon'), ('yellow', 'partial-folder-icon'), ('yellow', 'partial-folder-icon')]) + '</div>'
+    graphic += legend([('blue', '5 of 5 document types matched'), ('yellow', 'Fewer than 5 of 5 matched')])
+    panels.append(card(2, 'FY2027 HGAB · document matches', 'About one in four have 5 of 5 document types matched.', graphic,
+                       'File matches measure document presence; project details require a separate review.',
+                       details(f'{full_document_rows:,} of {docs["denominatorProjectRows"]:,} MPB project rows ({100*full_document_rows/docs["denominatorProjectRows"]:.2f}%) have all five named document types matched; {below_full_rows:,} have fewer than five. The five types are POW, BP 202, Development Council, geotagged photos and Certificate of Implementability. Proposal and Senate document matches are combined per project. A 5/5 match records file presence, not POW bill-row detail or verified file contents. Document snapshot: {escape(docs.get("documentCoverageGeneratedAtUtc") or "not recorded")}. The four folder icons show a rounded one-in-four share.', 'mpb.html#fy2027-mpb-documents', 'Review document coverage')))
     coverage_counts = [cov['barangaysWithOneTitle'], cov['barangaysWithMultipleTitles'],
                        cov['earlierOnlyBarangays'], cov['noMappedRecordAnyPeriod']]
     coverage_icons = [round(100*count/cov['officialBarangays']) for count in coverage_counts]

@@ -13,6 +13,7 @@ MENU_GROUPS=[
         ('summary.html','Summary · investigative leads'),
     ]),
     ('Budget 2027',[
+        ('documents.html','Proposal + HGAB documents'),
         ('dpwh.html','Senate HGAB documents'),
         ('nia.html','NIA · irrigation and named projects'),
         ('fmr.html','FMR · manual red-flag review'),

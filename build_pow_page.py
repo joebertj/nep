@@ -13,8 +13,9 @@ INDEPTH = STATIC / "dpwh-in-depth-data.json"
 DATA_OUT = STATIC / "pow-hgab-parsed-documents.json"
 STATS_OUT = STATIC / "senate-hgab-pow-stats.json"
 JS_SOURCE = ROOT / "report_assets/pow_hgab_documents.js"
+REUSE_JS_SOURCE = ROOT / "report_assets/pow_document_reuse.js"
 
-SECTION = '''<section class="card" id="senate-hgab-parsed-pows"><h2>Senate-provided HGAB POW files · parsed results</h2><p>One row per parsed Senate HGAB POW file. The title link records the parser’s current match status; it does not verify the extracted bill rows or the project scope. Proposal PDF metadata and image-forensics above remain a separate corpus.</p><div id="hgab-pow-summary" class="scope" aria-live="polite"><p class="muted">Loading Senate HGAB POW results…</p></div><div class="controls"><input id="hgab-pow-query" type="search" placeholder="Search HGAB file code or matched project title"><select id="hgab-pow-match"><option value="">All title-match statuses</option></select><span id="hgab-pow-count" class="muted" aria-live="polite"></span></div><div class="controls"><button id="hgab-pow-export" type="button">Download all HGAB POW records as JSON</button><button id="hgab-pow-prev" type="button">Previous</button><span id="hgab-pow-page" class="muted" aria-live="polite"></span><button id="hgab-pow-next" type="button">Next</button></div><div class="tablewrap"><table id="hgab-pow-table"><thead><tr><th>HGAB file code</th><th>Matched HGAB project title</th><th>Title match</th><th>Parser status</th><th>Bill rows</th><th>Category-summary rows</th><th>PDF pages</th><th>Proposal counterpart</th></tr></thead><tbody><tr><td colspan="8">Loading Senate HGAB POW records…</td></tr></tbody></table></div><p class="muted">Files with no accepted title match remain listed by HGAB file code and are not assigned to project rows. Direct Senate file links and storage paths are not published.</p></section>'''
+SECTION = '''<section class="card" id="senate-hgab-parsed-pows"><h2>5. Senate-provided HGAB POW files · parsed results</h2><p>One row per parsed Senate HGAB POW file. The title link records the parser’s current match status; it does not verify the extracted bill rows or the project scope. Proposal PDF metadata and image-forensics above remain a separate corpus.</p><div id="hgab-pow-summary" class="scope" aria-live="polite"><p class="muted">Loading Senate HGAB POW results…</p></div><div class="controls"><input id="hgab-pow-query" type="search" placeholder="Search HGAB file code or matched project title"><select id="hgab-pow-match"><option value="">All title-match statuses</option></select><span id="hgab-pow-count" class="muted" aria-live="polite"></span></div><div class="controls"><button id="hgab-pow-export" type="button">Download all HGAB POW records as JSON</button><button id="hgab-pow-prev" type="button">Previous</button><span id="hgab-pow-page" class="muted" aria-live="polite"></span><button id="hgab-pow-next" type="button">Next</button></div><div class="tablewrap"><table id="hgab-pow-table"><thead><tr><th>HGAB file code</th><th>Matched HGAB project title</th><th>Title match</th><th>Parser status</th><th>Bill rows</th><th>Category-summary rows</th><th>PDF pages</th><th>Proposal counterpart</th></tr></thead><tbody><tr><td colspan="8">Loading Senate HGAB POW records…</td></tr></tbody></table></div><p class="muted">Files with no accepted title match remain listed by HGAB file code and are not assigned to project rows. Direct Senate file links and storage paths are not published.</p></section>'''
 
 
 def compact_document(record):
@@ -74,7 +75,7 @@ def build():
 
     page = TEMPLATE.read_text(encoding="utf-8")
     if 'id="senate-hgab-parsed-pows"' not in page:
-        insertion_point = '<section class="card"><h2>What this investigation can establish</h2>'
+        insertion_point = '<section class="card"><h2>6. What this investigation can establish</h2>'
         if insertion_point not in page:
             raise RuntimeError("POW page template is missing the expected insertion point")
         page = page.replace(insertion_point, SECTION + "\n" + insertion_point, 1)
@@ -84,6 +85,9 @@ def build():
     script = JS_SOURCE.read_text(encoding="utf-8")
     (STATIC / "pow-hgab-parsed-documents.js").write_text(script, encoding="utf-8")
     version = __import__("hashlib").sha256(script.encode("utf-8")).hexdigest()[:12]
+    reuse_script = REUSE_JS_SOURCE.read_text(encoding="utf-8")
+    (STATIC / "pow-document-reuse.js").write_text(reuse_script, encoding="utf-8")
+    reuse_version = __import__("hashlib").sha256(reuse_script.encode("utf-8")).hexdigest()[:12]
     page = page.replace("</body>", f'''<script>
 window.__showPowComparisonUnavailable=()=>{{
  const summary=document.getElementById('hgab-pow-summary'),table=document.querySelector('#hgab-pow-table tbody'),metrics=document.getElementById('token-pow-metrics'),tokenTable=document.querySelector('#token-pow-table tbody');
@@ -96,7 +100,7 @@ setTimeout(()=>{{
  const pending=['hgab-pow-summary','#hgab-pow-table tbody','token-pow-metrics','#token-pow-table tbody'].some(selector=>{{const node=selector.startsWith('#')?document.querySelector(selector):document.getElementById(selector);return /Loading|Comparing/i.test(node?.textContent||'')}});
  if(pending)window.__showPowComparisonUnavailable();
 }},40000);
-</script><script src="pow-hgab-parsed-documents.js?v={version}" defer onerror="window.__showPowComparisonUnavailable()"></script></body>''', 1)
+</script><script src="pow-hgab-parsed-documents.js?v={version}" defer onerror="window.__showPowComparisonUnavailable()"></script><script src="pow-document-reuse.js?v={reuse_version}" defer></script></body>''', 1)
 
     from report_table_presentation import apply_page_table_module
     page, table_contract = apply_page_table_module("pow.html", page)
