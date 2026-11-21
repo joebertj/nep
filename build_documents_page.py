@@ -102,6 +102,67 @@ def build_data() -> dict:
             stage_counts[stage][kind]['projectFolders'] = len(proposal_project_ids[kind]) if stage == 'Proposal' else None
             matched_counts[stage][kind]['houseRows'] = len(matched_house_ids[stage][kind])
 
+    # Compare House rows that lack each Proposal document type with the SCR.
+    # A removed row is a positive resolution of that later-stage gap (+); a
+    # row retained in the Senate schedule remains a gap (−). Ambiguous or
+    # unmatched rows are excluded and reported separately.
+    scr_data = {}
+    for path in (OUT / 'scr-data.json', STATIC / 'scr-data.json'):
+        if path.exists():
+            scr_data = json.loads(path.read_text(encoding='utf-8'))
+            break
+    title_index = defaultdict(list)
+    import re
+    import unicodedata
+    def norm_title(value):
+        value = unicodedata.normalize('NFKD', str(value or '')).encode('ascii', 'ignore').decode().lower()
+        return re.sub(r'[^a-z0-9]+', ' ', value).strip()
+    for row in scr_data.get('rows', []):
+        if row.get('program') != 'dpwh':
+            continue
+        for alias in {norm_title(row.get('title')), norm_title(row.get('house_title'))} - {''}:
+            title_index[alias].append(row)
+    scr_by_house_row = {}
+    unresolved_scr_rows = 0
+    for project in coverage.get('projects', []):
+        candidates = {row['id']: row for row in title_index.get(norm_title(project.get('title')), [])}
+        if len(candidates) > 1:
+            try:
+                amount = int(float(project.get('amountPesos') or 0))
+            except (TypeError, ValueError):
+                amount = 0
+            candidates = {rid: row for rid, row in candidates.items()
+                          if int(float(row.get('house_php') or 0)) == amount
+                          or int(float(row.get('senate_php') or 0)) == amount}
+        if len(candidates) == 1:
+            scr_by_house_row[project.get('hgabId')] = next(iter(candidates.values()))
+        else:
+            unresolved_scr_rows += 1
+    retained_statuses = {'unchanged', 'renamed', 'reduced', 'raised'}
+    unresolved_scr_rows += sum(1 for row in scr_by_house_row.values()
+                              if row.get('status') not in retained_statuses | {'cut'})
+    scr_gap_impact = {}
+    for kind in TYPES:
+        if kind == 'Other / unclassified':
+            continue
+        missing = [project for project in coverage.get('projects', [])
+                   if kind not in {normalize(value) for value in project.get('proposalDocumentTypes') or []}]
+        removed = retained = unresolved = 0
+        for project in missing:
+            row = scr_by_house_row.get(project.get('hgabId'))
+            if not row:
+                unresolved += 1
+            elif row.get('status') == 'cut':
+                removed += 1
+            elif row.get('status') in retained_statuses:
+                retained += 1
+            else:
+                unresolved += 1
+        scr_gap_impact[kind] = {
+            'missingProposalRows': len(missing), 'removedPositive': removed,
+            'retainedNegative': retained, 'unresolved': unresolved,
+        }
+
     expected = int(coverage.get('denominatorProjectRows') or 0)
     if len(coverage.get('projects', [])) != expected:
         raise ValueError('HGAB coverage rows do not match the stated denominator')
@@ -112,6 +173,8 @@ def build_data() -> dict:
         'denominatorProjectRows': expected,
         'stageCounts': stage_counts,
         'houseRowTypeCounts': matched_counts,
+        'scrProposalGapImpact': scr_gap_impact,
+        'scrProposalGapUnresolvedRows': unresolved_scr_rows,
         'complete': {
             'threshold': 'At least 4 of 5 named types',
             'unionCompleteRows': both_complete,

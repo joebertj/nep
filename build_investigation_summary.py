@@ -8,6 +8,7 @@ import json
 import math
 import re
 import statistics
+import unicodedata
 from collections import Counter
 from pathlib import Path
 from report_hero_module import STYLE
@@ -26,6 +27,28 @@ def read(name):
 
 def esc(v):return html.escape(str(v),quote=True)
 def peso(v):return '₱'+f'{v/1e9:,.3f}B' if v>=1e9 else '₱'+f'{v/1e6:,.3f}M'
+
+def scr_title_key(value):
+    """Normalize spacing and punctuation without fuzzy title matching."""
+    text=unicodedata.normalize('NFKD',str(value or '')).encode('ascii','ignore').decode().lower()
+    return re.sub(r'[^a-z0-9]+','',text)
+
+def scr_removed_cohort(items,title_of,amount_of,scr_index,program='dpwh'):
+    """Count unique SCR cuts linked by exact normalized title and House amount."""
+    linked=set();unresolved=0
+    for item in items:
+        key=(program,scr_title_key(title_of(item)),int(amount_of(item) or 0))
+        candidates=scr_index.get(key,[])
+        if len(candidates)!=1:
+            unresolved+=1
+            continue
+        linked.add(candidates[0]['id'])
+    removed=[scr_index['_by_id'][row_id] for row_id in linked if scr_index['_by_id'][row_id].get('status')=='cut']
+    cohort_exposure=sum(int(amount_of(item) or 0) for item in items)
+    removed_pesos=sum(int(float(row.get('house_php') or 0)) for row in removed)
+    return {'removedRows':len(removed),'removedPesos':removed_pesos,'cohortExposurePesos':cohort_exposure,
+            'remainingExposurePesos':max(0,cohort_exposure-removed_pesos),
+            'cohortRows':len(items),'unresolvedRows':unresolved}
 
 def table(headers,rows):
     csvbuffer=io.StringIO();writer=csv.writer(csvbuffer,lineterminator='\n');writer.writerow(headers);writer.writerows(rows)
@@ -106,14 +129,11 @@ def refresh_connectivity_card(page):
     data=json.loads((STATIC/'connectivity-data.json').read_text(encoding='utf-8'))
     rows=data.get('projects',[])
     classes=Counter(row.get('connectivityClass') for row in rows)
-    flag='Flag FMR · only road or mapped cropland ≤500 m'
-    double='Double Flag FMR · road and mapped cropland >500 m'
-    review='Review · other distance combinations'
-    baseline='Baseline FMR · road and mapped cropland ≤500 m'
-    flagged_count=classes[flag]+classes[double]
-    flagged_pesos=sum(int(row.get('amountPesos') or 0) for row in rows if row.get('connectivityClass') in {flag,double})
-    review_rows=[row for row in rows if row.get('connectivityClass')==review]
-    baseline_rows=[row for row in rows if row.get('connectivityClass')==baseline]
+    flagged_rows=[row for row in rows if str(row.get('connectivityClass') or '').startswith(('Flag FMR','Double Flag FMR'))]
+    flagged_count=len(flagged_rows)
+    flagged_pesos=sum(int(row.get('amountPesos') or 0) for row in flagged_rows)
+    baseline_rows=[row for row in rows if str(row.get('connectivityClass') or '').startswith('Baseline FMR')]
+    review_rows=[row for row in rows if row not in flagged_rows and row not in baseline_rows]
     coordinate_rows=sum(bool(row.get('coordinateQualityFlag')) for row in rows)
     amount=lambda value:f'₱{value/1e9:,.3f}B' if value>=1e9 else f'₱{value/1e6:,.3f}M'
     pattern=r'<article class="priority-card">(?:(?!</article>).)*?<h3>FMR road and cropland proximity</h3>.*?</article>'
@@ -123,7 +143,7 @@ def refresh_connectivity_card(page):
     card=match[0]
     card=re.sub(r'(<strong class="priority-metric">).*?(</strong>)',
                 lambda m:m[1]+f'{amount(flagged_pesos)} · {flagged_count:,} Flag / Double Flag projects'+m[2],card,count=1,flags=re.S)
-    secondary=(f'<div class="priority-secondary"><span><strong>{len(review_rows):,}</strong> Review · {amount(sum(int(r.get("amountPesos") or 0) for r in review_rows))}</span>'
+    secondary=(f'<div class="priority-secondary"><span><strong>{len(review_rows):,}</strong> Other / coordinate review · {amount(sum(int(r.get("amountPesos") or 0) for r in review_rows))}</span>'
                f'<span><strong>{len(baseline_rows):,}</strong> Baseline · {amount(sum(int(r.get("amountPesos") or 0) for r in baseline_rows))}</span>'
                f'<span><strong>{coordinate_rows:,}</strong> Coordinate review</span><span><strong>{len(rows):,}</strong> FMRs screened</span></div>')
     card=re.sub(r'<div class="priority-secondary">.*?</div>',lambda _m:secondary,card,count=1,flags=re.S)
@@ -132,6 +152,31 @@ def refresh_connectivity_card(page):
     card=re.sub(r'<p>.*?</p>',lambda _m:'<p>'+html.escape(description)+'</p>',card,count=1,flags=re.S)
     return page[:match.start()]+card+page[match.end():],{'flagOrDoubleRows':flagged_count,'flagOrDoublePesos':flagged_pesos,
         'baselineRows':len(baseline_rows),'reviewRows':len(review_rows),'coordinateReviewRows':coordinate_rows,'totalRows':len(rows)}
+
+def refresh_summary_scr_lines(page,card_map,cohorts):
+    """Add each priority card's own SCR removal and residual exposure figures."""
+    page=re.sub(r'<p class="scr-card-adjustment">.*?</p>','',page,flags=re.I|re.S)
+    pattern=re.compile(r'<article class="priority-card">.*?</article>',re.I|re.S)
+    index=0
+    def replace(match):
+        nonlocal index
+        index+=1
+        cohort=cohorts.get(card_map.get(index,''))
+        if not cohort:
+            return match.group(0)
+        details=(f'<p class="scr-card-adjustment"><strong>SCR Removed in this card\'s review set:</strong> '
+                 f'{cohort["removedRows"]:,} matched projects · {peso(cohort["removedPesos"])}<br>'
+                 f'<strong>House-allocation exposure after SCR removals:</strong> {peso(cohort["remainingExposurePesos"])} '
+                 f'(starting exposure {peso(cohort["cohortExposurePesos"])}).<br>'
+                 f'{cohort["unresolvedRows"]:,} rows are not uniquely matched to an SCR line. '
+                 'These are budget-stage removals, not realized savings.</p>')
+        card=match.group(0)
+        if index==3:
+            card=re.sub(r'(<strong class="priority-metric">).*?(</strong>)',
+                        lambda m:m[1]+f'{peso(cohort["cohortExposurePesos"])} · {cohort["cohortRows"]:,} unique NEP proposals'+m[2],
+                        card,count=1,flags=re.S)
+        return card[:-len('</article>')]+details+'</article>'
+    return pattern.sub(replace,page)
 
 def integer_units(weights,total,ids):
     shares=[total*w/sum(weights) for w in weights];rounded=[math.floor(v) for v in shares]
@@ -314,10 +359,62 @@ def main():
         'hgab-no-nep-counterpart':(sum(int(r.get('amountPesos',0)) for r in hgab_rows),'All HGAB-only row allocations; 6,105-row cohort'),
         'hgab-no-listed-documents':(sum(int(r.get('amountPesos',0)) for r in hgab_rows if not r.get('hasAtLeastOneTitleMatchedDocument')),'Allocations for HGAB-only rows without a matched supporting file'),
     }
+    scr_data=read('scr-data.json')
+    scr_rows=scr_data.get('rows',[])
+    scr_index={}
+    scr_by_id={row['id']:row for row in scr_rows}
+    for row in scr_rows:
+        key=(row.get('program'),scr_title_key(row.get('house_title') or row.get('title')),int(float(row.get('house_php') or 0)))
+        scr_index.setdefault(key,[]).append(row)
+    scr_index['_by_id']=scr_by_id
+    repeat_rows=list(unique.values())
+    project_rows=length_data['projects']
+    five_million_rows=dpwh.get('fiveMillionRows',[])
+    is_flood=lambda row:'flood' in str(row.get('category','')).lower()
+    is_road=lambda row:'road' in str(row.get('category','')).lower() and not is_flood(row)
+    office_pairs={(row['office'],is_flood(row)) for row in five_million_rows}
+    overlap_offices={office for office,isflood in office_pairs if isflood and (office,False) in office_pairs}
+    # The published office-level screen stores source categories rather than
+    # a canonical label. Use the tested office set, then select one ₱5M line
+    # from each side to match the card's stated minimum exposure.
+    price_pairs=[]
+    for office in overlap_offices:
+        office_rows=[row for row in five_million_rows if row.get('office')==office]
+        for predicate in (is_road,is_flood):
+            row=next((row for row in office_rows if predicate(row)),None)
+            if row:
+                price_pairs.append({'title':row.get('project_name'),'amount':int(float(row.get('amount') or 0))})
+    scr_cohorts={
+        'rcs':scr_removed_cohort(districts,lambda r:r.get('projectName'),lambda r:r.get('currentPesos'),scr_index),
+        'prices':scr_removed_cohort(price_pairs,lambda r:r.get('title'),lambda r:r.get('amount'),scr_index),
+        'repeats':scr_removed_cohort(repeat_rows,lambda r:r.get('project'),lambda r:r.get('amount_2027'),scr_index),
+        'insertions':scr_removed_cohort(domestic,lambda r:r.get('projectName'),lambda r:r.get('amountPesos'),scr_index),
+        'mpb':scr_removed_cohort(json.loads((ROOT/'analysis_output/mpb_analysis.json').read_text()).get('insertions',[]),lambda r:r.get('projectName'),lambda r:r.get('amountPesos'),scr_index),
+        'length-coverage':scr_removed_cohort([r for r in project_rows if r.get('lengthStatus')!='Usable stated segment length'],lambda r:r.get('projectName'),lambda r:r.get('amountPesos'),scr_index),
+        'cost-per-km':scr_removed_cohort([r for r in project_rows if r.get('highRateCandidate')],lambda r:r.get('projectName'),lambda r:r.get('amountPesos'),scr_index),
+        'hgab-no-nep-counterpart':scr_removed_cohort(hgab_rows,lambda r:r.get('title'),lambda r:r.get('amountPesos'),scr_index),
+        'hgab-no-listed-documents':scr_removed_cohort([r for r in hgab_rows if not r.get('hasAtLeastOneTitleMatchedDocument')],lambda r:r.get('title'),lambda r:r.get('amountPesos'),scr_index),
+    }
+    scr_card_map={1:'undocumented',2:'office-changes',3:'repeats',4:'mpb',5:'cost-per-km',
+                  6:'fmr-proximity',7:'out-of-place',8:'rcs'}
+    coverage_projects=json.loads((STATIC/'hgab-document-coverage.json').read_text()).get('projects',[])
+    undocumented_projects=[r for r in coverage_projects if not r.get('proposalDocumentsMatched') and not r.get('senateHgabDocumentsMatched')]
+    scr_cohorts['undocumented']=scr_removed_cohort(undocumented_projects,lambda r:r.get('title'),lambda r:r.get('amountPesos'),scr_index)
+    adjustment_rows=dpwh.get('allocationAdjustments',{}).get('domestic',[])
+    adjustment_rows=[r for r in adjustment_rows if r.get('hgabTitle') and r.get('hgabPesos') is not None]
+    scr_cohorts['office-changes']=scr_removed_cohort(adjustment_rows,lambda r:r.get('hgabTitle'),lambda r:r.get('hgabPesos'),scr_index)
+    fmr_rows=json.loads((STATIC/'connectivity-data.json').read_text()).get('projects',[])
+    scr_cohorts['fmr-proximity']=scr_removed_cohort([r for r in fmr_rows if str(r.get('connectivityClass') or '').startswith(('Flag FMR','Double Flag FMR'))],
+        lambda r:r.get('title'),lambda r:r.get('amountPesos'),scr_index,program='fmr')
+    oop_rows=json.loads((STATIC/'out-of-place-data.json').read_text()).get('projects',[])
+    scr_cohorts['out-of-place']=scr_removed_cohort(oop_rows,lambda r:r.get('projectName'),lambda r:r.get('amountPesos'),scr_index)
     for finding in findings:
         exposure=exposure_by_id.get(finding['id'])
         finding['costExposurePesos']=exposure[0] if exposure else None
         finding['costExposureBasis']=exposure[1] if exposure else 'No comparable allocation total in the current Proposal attachment-list extract'
+        scr=scr_cohorts.get(finding['id'])
+        if scr and exposure:
+            finding['scrRemoved']=scr
     findings.sort(key=lambda r:(r['costExposurePesos'] is None,-(r['costExposurePesos'] or 0),r['id']))
     findings=findings[:8]
     if len(findings) != 8:
@@ -352,9 +449,9 @@ def main():
     (STATIC/'summary-data.json').write_text(json.dumps(document,ensure_ascii=False,indent=2)+'\n')
     (ROOT/'analysis_output/investigation_summary.json').write_text(json.dumps(document,ensure_ascii=False,indent=2)+'\n')
     from uniform_report_menu import NAV as nav, apply_page as apply_report_menu
-    cards=''.join(f'<article class="finding" id="lead-{r["id"]}" data-basis="{esc(r["basis"])}"><span class="rank">Allocation exposure order {r["rank"]} · {esc(r["basis"])}</span><h2>{esc(r["title"])}</h2><p class="lead">{esc(r["lead"])}</p><p class="cost-exposure">Allocation exposure in this review scope: {peso(r["costExposurePesos"]) if r.get("costExposurePesos") is not None else "Not available for comparison"} · {esc(r["costExposureBasis"])}</p><dl>'+''.join(f'<dt>{label}</dt><dd>{esc(r[key])}</dd>' for label,key in [('Talking point','question'),('Observed evidence','evidence'),('Plausible explanation','alternative'),('What investigators need next','next'),('Parsing/location caution','caution')])+f'</dl><p><a href="{esc(r["page"])}">Supporting analysis and source tables →</a></p></article>' for r in findings)
+    cards=''.join(f'<article class="finding" id="lead-{r["id"]}" data-basis="{esc(r["basis"])}"><span class="rank">Allocation exposure order {r["rank"]} · {esc(r["basis"])}</span><h2>{esc(r["title"])}</h2><p class="lead">{esc(r["lead"])}</p><p class="cost-exposure">Allocation exposure in this review scope: {peso(r["costExposurePesos"]) if r.get("costExposurePesos") is not None else "Not available for comparison"} · {esc(r["costExposureBasis"])}</p>'+ (f'<p class="cost-exposure"><strong>SCR Removed in SCR:</strong> {r["scrRemoved"]["removedRows"]:,} matched projects · {peso(r["scrRemoved"]["removedPesos"])}<br><strong>Exposure after matched SCR removals:</strong> {peso(r["scrRemoved"]["remainingExposurePesos"])}<br>{r["scrRemoved"]["unresolvedRows"]:,} cohort rows are not uniquely linked to an SCR line. SCR removals are budget-stage changes, not realized savings.</p>' if r.get('scrRemoved') else '')+'<dl>'+''.join(f'<dt>{label}</dt><dd>{esc(r[key])}</dd>' for label,key in [('Talking point','question'),('Observed evidence','evidence'),('Plausible explanation','alternative'),('What investigators need next','next'),('Parsing/location caution','caution')])+f'</dl><p><a href="{esc(r["page"])}">Supporting analysis and source tables →</a></p></article>' for r in findings)
     ranked='<div class="summary-lead-grid" role="list" aria-label="Eight investigative leads ranked by allocation exposure">'+''.join(
-        f'<a class="summary-priority-card" role="listitem" href="#lead-{esc(r["id"])}"><span class="summary-card-rank">Priority {r["rank"]} · {esc(r["basis"])}</span><h3>{esc(r["title"])}</h3><p class="summary-card-lead">{esc(r["lead"])}</p><p class="summary-card-exposure"><strong>Allocation exposure: {peso(r["costExposurePesos"]) if r.get("costExposurePesos") is not None else "Not available"}</strong><br>{esc(r["costExposureBasis"])}</p></a>'
+        f'<a class="summary-priority-card" role="listitem" href="#lead-{esc(r["id"])}"><span class="summary-card-rank">Priority {r["rank"]} · {esc(r["basis"])}</span><h3>{esc(r["title"])}</h3><p class="summary-card-lead">{esc(r["lead"])}</p><p class="summary-card-exposure"><strong>Allocation exposure: {peso(r["costExposurePesos"]) if r.get("costExposurePesos") is not None else "Not available"}</strong><br>{esc(r["costExposureBasis"])}</p>'+(f'<p class="summary-card-exposure"><strong>SCR Removed:</strong> {r["scrRemoved"]["removedRows"]:,} matched · {peso(r["scrRemoved"]["removedPesos"])}<br><strong>Exposure after SCR removals:</strong> {peso(r["scrRemoved"]["remainingExposurePesos"])}<br>{r["scrRemoved"]["unresolvedRows"]:,} rows not uniquely linked</p>' if r.get('scrRemoved') else '')+'</a>'
         for r in findings)+'</div>'
     neutral=table(['Schedule','HGAB 3rd lines','HGAB 3rd pesos','Changed between 2nd and 3rd'],coverage_rows)
     neutral+='<p>These extracted FMR, NIA, HFEP and DepEd schedules have no allocation changes between the two readings. Stability is not itself a red flag. No year-on-year repetition or NEP insertion claim follows from unchanged bill-stage totals. NIA named projects and the irrigation appendix are separate schedule slices; do not add their totals without reconciling hierarchy.</p>'
@@ -394,6 +491,7 @@ def main():
     if restored_summary.is_file():
         final_summary,document_gap_stats=refresh_undocumented_hgab_card(final_summary)
         final_summary,connectivity_card_stats=refresh_connectivity_card(final_summary)
+        final_summary=refresh_summary_scr_lines(final_summary,scr_card_map,scr_cohorts)
         final_summary=remove_line_item_queue(final_summary)
         (STATIC/'summary.html').write_text(final_summary,encoding='utf-8')
     else:

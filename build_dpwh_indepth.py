@@ -272,8 +272,10 @@ def collect_hgab_pow_results(document_projects):
         for row in rows:
             row['itemCode'],row['description']=normalize_item_fields(row.get('itemCode'),row.get('description'))
         categories=[{k:r.get(k) for k in allowed_categories if k in r} for r in parsed.get('costCategoryBreakdown',[])]
-        # Prefer the current broad first-page scan for the exact source file.
-        # The legacy crosswalk covers only a small earlier subset.
+        # Prefer the current broad first-page scan when it identifies one
+        # project. OCR can also return junk or no title; in those cases retain
+        # a unique exact-title assignment from the code-based crosswalk rather
+        # than replacing known evidence with a failed scan.
         legacy_match=matches.get(code) or {'status':'not_assessed','hgabIds':[]}
         match=legacy_match
         relative_path=str(parsed.get('sourceRelativePath') or '').replace('\\','/')
@@ -282,10 +284,17 @@ def collect_hgab_pow_results(document_projects):
             relative_path=relative_path.split(marker,1)[1]
         scanned=scan_by_file.get(relative_path)
         if scanned is not None:
-            match={'status':scanned.get('matchStatus','not_assessed'),
-                   'hgabIds':scanned.get('matchedHgabIds',[]),
-                   'matchedTitle':(scanned.get('matchedHgabTitles') or [None])[0],
-                   'cohortStatus':'in_transparency_link_gap_cohort' if scanned.get('matchedHgabIds') else None}
+            scan_match={'status':scanned.get('matchStatus','not_assessed'),
+                        'hgabIds':scanned.get('matchedHgabIds',[]),
+                        'matchedTitle':(scanned.get('matchedHgabTitles') or [None])[0],
+                        'cohortStatus':'in_transparency_link_gap_cohort' if scanned.get('matchedHgabIds') else None}
+            accepted={'exact_title_match','relaxed_title_match'}
+            if scan_match['status'] in accepted and len(scan_match['hgabIds'])==1:
+                match=scan_match
+            elif legacy_match.get('status') in accepted and len(legacy_match.get('hgabIds',[]))==1:
+                match=legacy_match
+            else:
+                match=scan_match
         exact=match.get('status')=='exact_title_match'
         unique_candidate=match.get('status') in {'exact_title_match','relaxed_title_match'}
         # The broad title scan is newer than the legacy crosswalk. Use its
