@@ -264,7 +264,9 @@ def apply_page(text,page=None,status=None):
     if page in {'mpb.html','mpb-barangay.html','mpb-base.html'}:
         text=apply_mpb_source_footer(text)
     text=text.replace('</head>',CSS+'</head>',1)
-    return apply_menu_behavior(apply_research_status(text,status))
+    text=apply_menu_behavior(apply_research_status(text,status))
+    from report_table_presentation import apply_scr_stage_column
+    return apply_scr_stage_column(text,page)
 
 def apply():
     """Compatibility entry point; never rewrite multiple report pages."""

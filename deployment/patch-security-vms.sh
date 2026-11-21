@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Security-advisory updates only for the two explicitly listed VMs.
-readonly HOSTS=(178.128.95.212 165.245.186.194)
+readonly HOSTS=(10.27.79.1 10.27.79.12)
 MODE=check
 TARGET=all
 REMOTE_USER="${SECURITY_PATCH_USER:-}"
@@ -15,7 +15,7 @@ Usage: deployment/patch-security-vms.sh [--check|--apply] [--host IP|all] [--use
   --check          Simulate security-only OS updates (default)
   --apply          Apply security-only OS updates; requires exact confirmation
   --host IP        Select one allowlisted VM (default: both)
-  --user USER      SSH user (defaults per host: joebert; WireGuard host: joebertj)
+  --user USER      SSH user (default: joebert)
   --identity FILE  SSH private key (default: ~/.ssh/klti)
 
 Uses Debian/Ubuntu security pockets or DNF/YUM security advisories only.
@@ -40,7 +40,7 @@ done
 
 if [[ "$TARGET" == all ]]; then
   SELECTED_HOSTS=("${HOSTS[@]}")
-elif [[ "$TARGET" == 178.128.95.212 || "$TARGET" == 165.245.186.194 ]]; then
+elif [[ "$TARGET" == 10.27.79.1 || "$TARGET" == 10.27.79.12 ]]; then
   SELECTED_HOSTS=("$TARGET")
 else
   echo "Host is not on the authorized target list: $TARGET" >&2; exit 2
@@ -67,7 +67,8 @@ if command -v apt-get >/dev/null 2>&1 && command -v dpkg-query >/dev/null 2>&1; 
       echo "Non-security unattended-upgrades origin is enabled: $origin" >&2; exit 4;
     }
   done <<<"$origins"
-  echo "Security-only simulation using allowed origins: ${origins//$'\n'/, }"
+  echo "Security-only simulation using allowed origins:"
+  printf "  %s\n" "$origins"
   sudo unattended-upgrade --dry-run --debug
 elif command -v dnf >/dev/null 2>&1; then
   echo "Security-only simulation via DNF advisory metadata"
@@ -140,15 +141,10 @@ echo "Selected hosts: ${SELECTED_HOSTS[*]}"
 if [[ -n "$REMOTE_USER" ]]; then echo "SSH user override: $REMOTE_USER"; fi
 echo "Mode: $MODE"
 for host in "${SELECTED_HOSTS[@]}"; do
-  # Prefer the verified WireGuard route for the host whose public SSH endpoint timed out.
-  target="$host"
   host_user="${REMOTE_USER:-joebert}"
-  case "$host" in
-    178.128.95.212) target="${SECURITY_PATCH_WG_178_128_95_212:-10.27.79.2}"; host_user="${REMOTE_USER:-joebertj}" ;;
-  esac
   echo
-  echo "=== Security update preflight: $host via $target (user $host_user) ==="
-  "${SSH[@]}" "$host_user@$target" 'bash -s' <<<"$REMOTE_SECURITY"
+  echo "=== Security update preflight: $host (WireGuard, user $host_user) ==="
+  "${SSH[@]}" "$host_user@$host" 'bash -s' <<<"$REMOTE_SECURITY"
 done
 
 if [[ "$MODE" == check ]]; then
@@ -164,12 +160,8 @@ printf '\nThis applies only security-advisory OS package updates. Type exactly: 
 read -r answer
 [[ "$answer" == "$confirmation" ]] || { echo "Cancelled; no package changes made."; exit 1; }
 for host in "${SELECTED_HOSTS[@]}"; do
-  target="$host"
   host_user="${REMOTE_USER:-joebert}"
-  case "$host" in
-    178.128.95.212) target="${SECURITY_PATCH_WG_178_128_95_212:-10.27.79.2}"; host_user="${REMOTE_USER:-joebertj}" ;;
-  esac
-  echo; echo "=== Applying security updates: $host via $target (user $host_user) ==="
-  "${SSH[@]}" "$host_user@$target" 'bash -s' <<<"$REMOTE_APPLY"
+  echo; echo "=== Applying security updates: $host (WireGuard, user $host_user) ==="
+  "${SSH[@]}" "$host_user@$host" 'bash -s' <<<"$REMOTE_APPLY"
 done
 echo; echo "Security update cycle finished for: ${SELECTED_HOSTS[*]}"

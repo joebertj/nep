@@ -2,7 +2,7 @@
 # Git deploy; HTTP checks run locally, outside the SSH command.
 set -euo pipefail
 
-REMOTE_HOST="${NEP_DEPLOY_HOST:-165.245.186.194}"
+REMOTE_HOST="${NEP_DEPLOY_HOST:-10.27.79.12}"
 REMOTE_USER="${NEP_DEPLOY_USER:-joebert}"
 REMOTE_DIR="${NEP_DEPLOY_DIR:-/home/joebert/open-data-visualization}"
 SSH_IDENTITY="${NEP_SSH_IDENTITY:-$HOME/.ssh/klti}"

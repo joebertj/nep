@@ -2,6 +2,23 @@
 import hashlib,re
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
+SCR_COLUMN_PAGES={
+    'dpwh.html','dpwh-hgab.html','dpwh-OO2-hgab.html','dpwh-hgab-comparison.html',
+    'fmr.html','nia.html','hfep.html','repeats.html','out-of-place.html',
+    'congress.html','flags.html','cost-per-km.html',
+}
+
+def apply_scr_stage_column(text,page):
+    if page not in SCR_COLUMN_PAGES:
+        return text
+    raw=(ROOT/'report_assets/scr_stage_column.js').read_bytes()
+    version=hashlib.sha256(raw).hexdigest()[:12]
+    for target in (ROOT.parent/'open-data-visualization/static/nep-preview',ROOT/'analysis_output'):
+        target.mkdir(parents=True,exist_ok=True)
+        (target/'scr-stage-column.js').write_bytes(raw)
+    text=re.sub(r'<script\b[^>]*\bid="scr-stage-column-script"[^>]*>.*?</script>','',text,flags=re.S)
+    text=re.sub(r'<script\b[^>]*\bsrc=["\'][^"\']*scr-stage-column\.js(?:\?[^"\']*)?["\'][^>]*>\s*</script>','',text,flags=re.S)
+    return text.replace('</body>',f'<script id="scr-stage-column-script" src="scr-stage-column.js?v={version}"></script></body>',1)
 
 BETTERGOV_COLOR_REPLACEMENTS={
     '#087e78':'#0038A8', '#168277':'#0038A8', '#174b55':'#0038A8', '#123944':'#00246A', '#102f3e':'#00246A',
@@ -37,6 +54,9 @@ def publish_assets():
     raw=(ROOT/'report_assets/research_theme.css').read_bytes()
     (static/'research-theme.css').write_bytes(raw);(out/'research-theme.css').write_bytes(raw)
     versions['theme']=hashlib.sha256(raw).hexdigest()[:12]
+    raw=(ROOT/'report_assets/scr_stage_column.js').read_bytes()
+    (static/'scr-stage-column.js').write_bytes(raw);(out/'scr-stage-column.js').write_bytes(raw)
+    versions['scr_stage_column']=hashlib.sha256(raw).hexdigest()[:12]
     tailwind=ROOT.parent/'open-data-visualization/static/css/tailwind.css'
     if not tailwind.exists():raise FileNotFoundError(f'Tailwind stylesheet missing: {tailwind}')
     versions['tailwind']=hashlib.sha256(tailwind.read_bytes()).hexdigest()[:12]
@@ -71,7 +91,8 @@ def _apply_page_presentation(text,versions,page=None):
     text=re.sub(r'<script\b[^>]*\bid="nep-hgab-comparison-script"[^>]*>.*?</script>','',text,flags=re.S)
     text=text.replace('</head>',f'<link id="nep-hgab-comparison-style" rel="stylesheet" href="nep-hgab-comparison-graphs.css?v={versions["comparison_css"]}"></head>',1)
     text=text.replace('</body>',f'<script id="nep-hgab-comparison-script" src="nep-hgab-comparison-graphs.js?v={versions["comparison_js"]}"></script></body>',1)
-    return text.replace('</body>',f'<script id="report-table-readability-script" src="report-table-readability.js?v={versions["js"]}"></script></body>',1)
+    text=text.replace('</body>',f'<script id="report-table-readability-script" src="report-table-readability.js?v={versions["js"]}"></script></body>',1)
+    return apply_scr_stage_column(text,page)
 
 
 PAGE_TABLE_CONTRACTS={

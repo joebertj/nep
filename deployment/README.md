@@ -57,8 +57,12 @@ service activity, and the web-root listing without changing the server.
 
 ## OS security patching
 
-`patch-security-vms.sh` targets the two authorized hosts, `178.128.95.212` and
-`165.245.186.194`. The default simulates security-only OS updates:
+`patch-security-vms.sh` targets the two authorized VMs over WireGuard at
+`10.27.79.1` and `10.27.79.12`. The default simulates security-only OS updates:
+
+Both VMs now block SSH addressed to their public IPv4 addresses; use the
+WireGuard addresses for administration. The hub at `.1` continues to listen
+for WireGuard on UDP `51820`. HTTP/HTTPS listeners remain available.
 
 ```sh
 ./deployment/patch-security-vms.sh --check
@@ -87,12 +91,8 @@ not change Python requirements, Cargo.lock, package-lock.json, FastAPI, Tailwind
 or other app dependencies. Those need security audits, lockfile changes, a
 build, and deployment so the running apps match the reviewed source.
 
-The VM at `178.128.95.212` timed out over public SSH during the November 21,
-2026 preflight. The patch helper routes this allowlisted target through its
-verified WireGuard address `10.27.79.2` and uses account `joebertj`, matching
-the successful key login. Override the endpoint with
-`SECURITY_PATCH_WG_178_128_95_212` if the tunnel address changes. An explicit
-`--user` option overrides the per-host SSH account. The Jammy VM routes APT's
+Both patch targets use the `joebert` SSH account by default. An explicit
+`--user` option overrides it. The Jammy VM routes APT's
 `_apt` fetch user over its primary interface because
 the host's WireGuard full-tunnel route cannot reach public repositories. Its
 `/etc/resolv.conf` uses the active `systemd-resolved` stub, and APT is configured
@@ -103,8 +103,8 @@ The default SSH user is `joebert`, which matches the BetterGov VM. If the
 Better Miagao VM uses another account, pass it explicitly, for example:
 
 ```sh
-./deployment/patch-security-vms.sh --check --host 178.128.95.212 --user deploy
-./deployment/patch-security-vms.sh --apply --host 178.128.95.212 --user deploy
+./deployment/patch-security-vms.sh --check --host 10.27.79.1 --user deploy
+./deployment/patch-security-vms.sh --apply --host 10.27.79.1 --user deploy
 ```
 
 ## Preview copy (not yet run)
