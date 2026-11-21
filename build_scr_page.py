@@ -2,6 +2,7 @@
 """Build the FY2027 Senate Committee Report stage comparison and impact audit."""
 import csv, json, html
 from pathlib import Path
+import re, unicodedata
 
 ROOT = Path(__file__).resolve().parent
 STATIC = ROOT.parent / 'open-data-visualization/static/nep-preview'
@@ -9,18 +10,24 @@ OUT = ROOT / 'analysis_output'
 DATA = ROOT / 'data_sources/senate-2027-dataset'
 
 PAGES = [
-    ('dpwh.html', 'DPWH project and document analyses', 'Highest priority', 'The SCR dataset has 17,613 DPWH rows, including cuts, renames, additions and allocation changes. Recheck insertion, deletion, title, office and allocation findings; retain a row-level SCR explanation and mark only confirmed resolutions green.'),
-    ('dpwh-hgab.html', 'DPWH NEP → HGAB analysis', 'Highest priority', 'Compare the House-stage flags to SCR row disposition. A cut may invalidate a claim that a project remains in the bill; a rename or correction may resolve a title or location concern; a new or raised item may add or worsen a concern.'),
-    ('dpwh-OO2-hgab.html', 'DPWH OO2-adjusted candidate analysis', 'High', 'Recheck House-only and insertion candidates against SCR cuts, restored lines, renames and amount changes. Keep the earlier HGAB evidence and annotate its later disposition.'),
-    ('dpwh-hgab-comparison.html', 'House reading comparison', 'High', 'Add the next stage to the existing reading timeline where rows can be linked reliably; avoid treating stage totals as additive allocations.'),
-    ('fmr.html', 'Farm-to-market roads', 'High', 'The SCR includes 1,200 FMR rows and 141 Senate additions. Reassess project presence, restoration, amount changes and title/location concerns.'),
-    ('nia.html', 'NIA projects', 'High', 'The SCR includes 1,117 NIA rows, including renames, cuts, additions and restorations. Recheck project identity, scope and amount flags.'),
-    ('hfep.html', 'Health Facilities Enhancement Program', 'High', 'The SCR includes 905 HFEP rows. Facility/component matches can resolve or add project-level flags; confirm facility identity before changing an existing finding.'),
-    ('repeats.html', 'Project repeats', 'Medium', 'SCR stage status can show that an apparent repeat was cut, renamed or retained. It does not establish whether two projects are duplicates; preserve repeat evidence and annotate the later stage.'),
-    ('out-of-place.html', 'Out of Place', 'Medium', 'Recheck location and attribution concerns when the SCR renames or changes an item. The report’s own correction is useful evidence, but does not independently validate geographic attribution.'),
-    ('congress.html', 'Project flags and district allocations', 'Medium', 'Reassess district and insertion flags for the four covered schedules. Preserve prior-stage results and add SCR evidence only for reliably linked rows.'),
-    ('flags.html', 'Flag index', 'Medium', 'Best destination for a compact SCR status badge and a link to the Senate report page, once flags are joined to project IDs.'),
-    ('cost-per-km.html', 'Cost per meter', 'Conditional', 'Recalculate only where SCR changes the comparable project scope or allocation and the metric uses an affected schedule. A budget change alone is not a unit-cost finding.'),
+    ('documents.html', 'Proposal + HGAB document inventory', 'High', 'The document-type totals are aggregate rows and should not get a project disposition. Add SCR columns only to project-level tables that expose a reliable project title; do not infer that a missing file is resolved by an SCR cut.'),
+    ('dpwh.html', 'DPWH HGAB projects and documents', 'Highest priority', 'The all-project coverage table and POW line items expose DPWH project titles. Add the SCR column on uniquely matched project rows; keep document-presence findings separate from SCR budget disposition.'),
+    ('nia.html', 'NIA irrigation and named projects', 'High', 'Add SCR disposition where a project title joins uniquely. Location and workbook review tables remain NIA-specific evidence and should keep their existing flags.'),
+    ('fmr.html', 'FMR coordinate and manual review', 'High', 'The project tables can join to the FMR schedule. The manual red-flag list has a defensible SCR overlap for a removed-row summary; coordinate concerns remain evidence about the House version.'),
+    ('dpwh-transparency.html', 'DPWH Transparency inventory', 'Conditional', 'The inventory is not a direct budget-stage table. Add row-level SCR only where the inventory project title and allocation identify one DPWH report row.'),
+    ('congress.html', 'Project flags and district allocations', 'High', 'Aggregate district totals cannot take a project SCR column. Project-detail rows can be annotated when title joins uniquely; do not imply that district attribution establishes sponsorship.'),
+    ('flags.html', 'Flag index', 'Highest priority', 'Join the row-level flagged project list to SCR by title and amount. The hero can count matched flagged lines removed, while each flag and its historical HGAB basis stays visible.'),
+    ('undocumented-hgab.html', 'Undocumented HGAB', 'High', 'Project rows can show whether the House line remains in SCR. A cut changes the later-stage allocation status; it does not retroactively supply missing House documents.'),
+    ('repeats.html', 'Project repeats', 'Medium', 'Annotate each matched project occurrence in a pair row. A removal changes stage survival but does not establish that the pair was a duplicate.'),
+    ('out-of-place.html', 'Out of Place', 'High', 'The selected-project card can show its SCR disposition. The hero can summarize removed coordinate-review rows and their gross House value; this does not erase the original location signal.'),
+    ('cost-per-km.html', 'Cost per meter', 'High', 'The 191 high-rate scope-review candidates can be joined to DPWH SCR rows. The hero can sum gross House allocations for candidates labeled Removed; this is not net or realized savings.'),
+    ('pccp-cost-per-unit.html', 'Cost per Unit · DPWH Atlas', 'Conditional', 'Add a project SCR column to identifiable project rows; keep material/benchmark comparisons separate from Senate allocation changes.'),
+    ('cost-per-unit.html', 'Cost per Unit · peer comparison', 'Conditional', 'Project-and-office rows can show SCR disposition when the budget row is identifiable. Unit-cost comparisons need scope and quantity checks before a cut is called savings.'),
+    ('cmpd-cost-per-unit.html', 'CMPD · cost per unit', 'Conditional', 'POW project rows can receive an SCR link only where the project name uniquely matches. Office material-price references are not Senate project rows.'),
+    ('expectation-vs-reality.html', 'Costing vs proposed allocation', 'High', 'Project rows can show SCR title and allocation changes where they join uniquely. Keep estimate-to-allocation differences distinct from SCR removals.'),
+    ('rcs.html', 'RCS project scope', 'Conditional', 'Add SCR disposition to identifiable DPWH project rows; RCS scope status alone does not show that a budget change resolves the scope review.'),
+    ('mpb.html', 'MPB flags', 'High', 'Project-level location and source rows can show SCR status where matched. A Senate cut changes the later-stage budget line, not the observed geographic evidence.'),
+    ('barangay.html', 'Barangay allocations', 'Conditional', 'A barangay aggregate is not a project-level SCR row. Add the column only in project-detail rows with a reliable title match.'),
 ]
 
 def load_csv(name):
@@ -32,6 +39,75 @@ def money(v):
     except (ValueError, TypeError): return 0
 
 def peso(v): return '₱' + format(round(v), ',')
+
+def norm_title(value):
+    value=unicodedata.normalize('NFKD',str(value or '')).encode('ascii','ignore').decode('ascii').lower()
+    return re.sub(r'[^a-z0-9]+',' ',value).strip()
+
+def load_optional_json(name):
+    for path in (STATIC/name,OUT/name):
+        if path.exists():
+            try: return json.loads(path.read_text(encoding='utf-8'))
+            except (OSError,ValueError): return None
+    return None
+
+def overlap_summary(source_rows,scr_rows,program,title_key,amount_key,title,value_label,note,filter_row=None):
+    by_title={}
+    for row in scr_rows:
+        if row['program']!=program: continue
+        aliases={norm_title(row.get('house_title')),norm_title(row.get('title'))}-{''}
+        for alias in aliases:
+            if len(alias)>=18: by_title.setdefault(alias,[]).append(row)
+    matched=[]; examined=0
+    for source in source_rows:
+        if filter_row and not filter_row(source): continue
+        examined+=1
+        key=norm_title(source.get(title_key))
+        candidates={r['id']:r for r in by_title.get(key,[])}
+        if len(candidates)>1:
+            value=money(source.get(amount_key))
+            candidates={rid:r for rid,r in candidates.items() if money(r.get('house_php'))==value or money(r.get('senate_php'))==value}
+        if len(candidates)==1: matched.append((source,next(iter(candidates.values()))))
+    removed=[pair for pair in matched if pair[1]['status']=='cut']
+    return {'title':title,'sourceRows':examined,'matchedCount':len(matched),
+        'removedCount':len(removed),'removedGross':sum(abs(money(r.get('house_php'))) for _,r in removed),
+        'valueLabel':value_label,'note':note}
+
+def build_page_summaries(scr_rows,by_program):
+    summaries={}
+    cost=load_optional_json('cost-per-km-data.json')
+    if cost:
+        summaries['cost-per-km.html']=overlap_summary(cost.get('projects',[]),scr_rows,'dpwh','projectName','amountPesos',
+            'SCR · high-rate scope-review candidates','Potential gross savings from removed candidates',
+            'Only high-rate candidates listed on this page are counted. Removed House lines are absent from SCR; this is not net or realized savings.',
+            lambda r:r.get('rateReview')=='High relative rate · scope review needed')
+    oop=load_optional_json('out-of-place-data.json')
+    if oop:
+        summaries['out-of-place.html']=overlap_summary(oop.get('projects',[]),scr_rows,'dpwh','projectName','amountPesos',
+            'SCR · coordinate-review projects','Gross House allocation removed',
+            'This counts only the page’s coordinate-review projects. The location signal remains part of the HGAB record; removal changes the later-stage budget status.')
+    flags=load_optional_json('flags-data.json')
+    if flags:
+        summaries['flags.html']=overlap_summary(flags.get('projects',[]),scr_rows,'dpwh','title','amountPesos',
+            'SCR · matched flagged House rows','Gross House allocation removed',
+            'This summary covers exact-title matches in the flag index. It does not erase the historical HGAB flag or classify every flag as resolved.')
+    fmr=load_optional_json('fmr-manual-red-flags.json')
+    if fmr:
+        summaries['fmr.html']=overlap_summary(fmr.get('projects',[]),scr_rows,'fmr','title','amountPesos',
+            'SCR · manual FMR red-flag list','Gross House allocation removed',
+            'Counts only projects listed in the manual red-flag table. Coordinate or manual-review evidence remains part of the HGAB-stage record.')
+    congress=load_optional_json('congress-district-review-data.json')
+    if congress:
+        summaries['congress.html']=overlap_summary(congress.get('projects',[]),scr_rows,'dpwh','projectName','amountPesos',
+            'SCR · district-allocation project rows','Gross House allocation removed',
+            'This compares project rows in the district-allocation inventory, not aggregate district totals or member sponsorship.')
+    for page,program in (('dpwh.html','dpwh'),('nia.html','nia')):
+        a=by_program.get(program,{})
+        summaries[page]={'title':f"SCR · {program.upper()} schedule changes",'sourceRows':a.get('rows',0),
+            'matchedCount':a.get('rows',0),'removedCount':a.get('cut',0),'removedGross':a.get('grossCut',0),
+            'valueLabel':'Gross House allocation on rows Removed in SCR',
+            'note':'Schedule-wide context, not a sum of the page’s document or location flags. It is not net or realized savings.'}
+    return summaries
 
 def build():
     rows = load_csv('senate-2027-projects.csv')
@@ -55,7 +131,8 @@ def build():
     slim = []
     for r in rows:
         slim.append({k:r.get(k,'') for k in ('program','id','house_id','status','status_label','title','house_title','region','office','program_line','pap','nep_php','house_php','senate_php','vs_house_php','vs_nep_php','inserted_by_house','replaces_id','senate_doc','senate_page','senate_pdf_url','house_doc','house_page','house_pdf_url','nep_doc','nep_page','nep_pdf_url','page_url','matched_by','check_id','check_note')})
-    data = {'source':'data_sources/senate-2027-dataset','rows':slim}
+    data = {'source':'data_sources/senate-2027-dataset','rows':slim,
+            'pageSummaries':build_page_summaries(rows,by_program)}
     summary_by_dept=[]
     for r in summary_rows:
         if r['level'] in ('department','total'):
@@ -84,11 +161,11 @@ let page=0;const size=50;function render(){{const q=document.querySelector('#q')
     page=apply_uniform_menu(page,'scr.html')
     # Keep this data-heavy comparison page's brand mark in proportion with
     # its title. Other report pages use the larger shared header lockup.
+    page=page.replace('class="report-header-brand" href="https://bettergov.ph/"', 'class="report-header-brand" style="display:inline-flex!important;align-items:center!important;align-self:flex-start!important;flex:0 0 auto!important;box-sizing:border-box!important;width:88px!important;max-width:88px!important;height:24px!important;overflow:hidden!important" href="https://bettergov.ph/"', 1)
+    page=page.replace('<img src="https://assets.bettergov.ph/logos/webp/horizontal-black.webp" alt="BetterGov">', '<img src="https://assets.bettergov.ph/logos/webp/horizontal-black.webp" alt="BetterGov" style="display:block!important;flex:0 0 76px!important;width:76px!important;max-width:76px!important;height:16px!important;object-fit:contain!important">', 1)
     page=page.replace('<body class="bettergov-research">','<body class="bettergov-research scr-report">',1)
     page=page.replace('</head>','''<style id="scr-header-fit">
-body.bettergov-research.scr-report>header .report-header-brand{width:106px!important;height:24px!important;padding:2px 6px!important}
-body.bettergov-research.scr-report>header .report-header-brand img{width:92px!important;height:20px!important;max-width:92px!important}
-@media(max-width:560px){body.bettergov-research.scr-report>header .report-header-brand{width:98px!important;height:22px!important;padding:2px 5px!important}body.bettergov-research.scr-report>header .report-header-brand img{width:86px!important;height:18px!important;max-width:86px!important}}
+body.bettergov-research.scr-report>header .report-header-brand{padding:2px 6px!important}
 </style></head>''',1)
     serialized=json.dumps(data,ensure_ascii=False,separators=(',',':'))
     (STATIC/'scr.html').write_text(page,encoding='utf-8')

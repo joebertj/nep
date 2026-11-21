@@ -3,9 +3,11 @@ import hashlib,re
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 SCR_COLUMN_PAGES={
-    'dpwh.html','dpwh-hgab.html','dpwh-OO2-hgab.html','dpwh-hgab-comparison.html',
-    'fmr.html','nia.html','hfep.html','repeats.html','out-of-place.html',
-    'congress.html','flags.html','cost-per-km.html',
+    'documents.html','dpwh.html','nia.html','fmr.html','dpwh-transparency.html',
+    'congress.html','flags.html','undocumented-hgab.html','repeats.html',
+    'out-of-place.html','cost-per-km.html','pccp-cost-per-unit.html',
+    'cost-per-unit.html','cmpd-cost-per-unit.html','expectation-vs-reality.html',
+    'rcs.html','mpb.html','barangay.html',
 }
 
 def apply_scr_stage_column(text,page):
