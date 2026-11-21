@@ -18,10 +18,12 @@ STATUS = OUT / "parsed-document-page-refresh-status.json"
 LOCK = OUT / ".parsed-document-page-refresh.lock"
 PAGE_BUILDERS = (
     "build_dpwh_indepth.py",
+    "build_pow_page.py",
     "build_dpwh_transparency_page.py",
     "build_cost_per_unit_page.py",
     "build_pccp_cost_per_unit_page.py",
     "build_expectation_vs_reality.py",
+    "build_coi_document_dates.py",
     "build_development_council.py",
     "build_undocumented_hgab.py",
     "build_investigation_summary.py",
@@ -51,9 +53,14 @@ def run_builder(script):
 
 
 def validate_page_outputs():
-    expected_headers = ["HGAB code", "Project", "Office · region", "HGAB allocation",
-                        "Proposal docs", "Senate HGAB docs",
-                        "Signatories in related documents"]
+    expected_headers_by_page = {
+        "dpwh.html": ["HGAB code", "Project", "Office · region", "HGAB allocation",
+                      "Proposal docs", "Senate HGAB docs", "Senate document IDs / names",
+                      "Signatories in related documents"],
+        "undocumented-hgab.html": ["HGAB code", "Project", "Office · region", "HGAB allocation",
+                                   "Proposal docs", "Senate HGAB docs",
+                                   "Signatories in related documents"],
+    }
     checks = {}
     for name in ("dpwh.html", "undocumented-hgab.html"):
         text = (STATIC / name).read_text()
@@ -65,7 +72,7 @@ def validate_page_outputs():
         head = re.search(r"<thead>(.*?)</thead>", section, re.S)
         headers = [re.sub(r"<[^>]+>", "", cell).strip()
                    for cell in re.findall(r"<th\b[^>]*>(.*?)</th>", head.group(1), re.S)] if head else []
-        if headers != expected_headers:
+        if headers != expected_headers_by_page[name]:
             raise RuntimeError(f"{name} coverage columns changed: {headers!r}")
         if 'data-report-table-exempt="true"' not in section:
             raise RuntimeError(f"{name} coverage table must be exempt from shared 3-column project-card compaction")
@@ -75,9 +82,9 @@ def validate_page_outputs():
     import re
     main = re.search(r"<main\b[^>]*>(.*?)</main>", dpwh, re.S)
     final_sections = re.findall(r'<section\b[^>]*id="([^"]+)"[^>]*>', main.group(1), re.S) if main else []
-    if not final_sections or final_sections[-1] != "all-hgab-document-coverage":
-        raise RuntimeError(f"DPWH final section must be all-hgab-document-coverage; found {final_sections[-1:]!r}")
-    checks["dpwh.html"]["finalSection"] = final_sections[-1]
+    if len(final_sections) < 2 or final_sections[:2] != ["senate-supporting-document-coverage", "all-hgab-document-coverage"]:
+        raise RuntimeError(f"DPWH opening coverage sections changed: {final_sections[:2]!r}")
+    checks["dpwh.html"]["allHgabCoveragePosition"] = 2
     for section_id in ("senate-title-match-coverage", "senate-supporting-document-coverage"):
         start = dpwh.find(f'id="{section_id}"')
         end = dpwh.find("</section>", start)
@@ -87,8 +94,8 @@ def validate_page_outputs():
     checks["dpwh.html"]["documentCoverageScope"] = "all-HGAB"
 
     coverage_js = (STATIC / "hgab-document-coverage.js").read_text()
-    if "<td>'+signatoryCell+'</td></tr>'" not in coverage_js or "colspan=\"7\"" not in coverage_js:
-        raise RuntimeError("All-HGAB coverage row renderer must retain seven columns")
+    if "'+documentCell+'<td>'+signatoryCell+'</td></tr>'" not in coverage_js or "allHgab?'8':'7'" not in coverage_js:
+        raise RuntimeError("All-HGAB coverage row renderer must retain the linked-document column")
 
     summary = (STATIC / "summary.html").read_text()
     summary_data = json.loads((STATIC / "summary-data.json").read_text())

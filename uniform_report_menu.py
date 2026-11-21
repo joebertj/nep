@@ -75,6 +75,7 @@ def refresh_generated_menus():
                 continue
             revised=re.sub(r'<nav\b[^>]*class="report-nav"[^>]*>.*?</nav>',
                            lambda _match:NAV,text,count=1,flags=re.S)
+            revised=re.sub(r'<style id="uniform-report-menu-style">.*?</style>',CSS,revised,count=1,flags=re.S)
             revised=apply_menu_behavior(revised)
             if revised!=text:
                 path.write_text(revised,encoding='utf-8')
@@ -104,7 +105,6 @@ header .report-nav a:focus-visible{outline:2px solid #0038A8!important;outline-o
 .chart-legend-no-rank{list-style:none!important;padding-left:0!important}.chart-legend-no-rank li{grid-template-columns:minmax(0,1fr) auto!important}.chart-legend-no-rank li>span:first-child{overflow-wrap:anywhere}
 .site-ai-credit{box-sizing:border-box!important;width:100%!important;margin:36px 0 0!important;padding:14px clamp(16px,2vw,32px)!important;border-top:1px solid #BDBDBD!important;color:#5A6670!important;font:12px/1.55 system-ui,sans-serif!important}.site-ai-credit p{max-width:none!important;margin:0!important}.site-ai-credit p+p{margin-top:6px!important}.site-ai-credit a{color:#0038A8!important;text-underline-offset:2px!important}
 .mpb-source-footer{box-sizing:border-box!important;width:100%!important;margin:36px 0 0!important;padding:16px clamp(16px,2vw,32px)!important;border-top:1px solid #BDBDBD!important;color:#5A6670!important;font:12px/1.55 system-ui,sans-serif!important}.mpb-source-footer p{max-width:none!important;margin:0 0 6px!important}.mpb-source-footer p:last-child{margin-bottom:0!important}.mpb-source-footer a{color:#0038A8!important;text-underline-offset:2px!important}
-@media(max-width:680px){header .report-nav-group{flex:1 1 calc(33.333% - 8px)!important;min-width:100px!important}header .report-nav-single{flex:1 1 calc(33.333% - 8px)!important;min-width:100px!important}header .report-nav-group>summary{justify-content:center!important;min-height:40px!important}header .report-nav-group>summary::after{position:absolute!important;right:14px!important}header .report-nav-links{grid-template-columns:1fr!important;width:min(480px,calc(100vw - 32px))!important}header .report-nav-group:last-child .report-nav-links{right:0!important;left:auto!important}}
 body.bettergov-research>header.uniform-report-header{box-sizing:border-box!important;display:grid!important;grid-template-rows:auto auto!important;gap:14px!important;align-content:start!important;height:auto!important;min-height:0!important;padding-top:22px!important;padding-bottom:18px!important;border-bottom:3px solid #FCD116!important;overflow:visible!important}
 body.bettergov-research>header.uniform-report-header{background:#00246A!important;color:#fff!important}
 body.bettergov-research>header.uniform-report-header>.report-nav{margin:0!important;align-self:start!important}

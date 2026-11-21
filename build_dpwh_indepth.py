@@ -800,6 +800,12 @@ def build_all_hgab_document_coverage(indepth=None):
         if doc.get('code') and doc.get('hgabId') in projects:
             code_ids.setdefault(doc['code'],set()).add(doc['hgabId'])
     records=scan.get('documents',[])
+    printed_dates_by_file_code={}
+    for record in records:
+        record_code=str(record.get('projectCode') or '').upper()
+        filename=Path(str(record.get('file') or '')).name.casefold()
+        if record_code and filename and record.get('printedDates'):
+            printed_dates_by_file_code[(record_code,filename)]=record['printedDates']
     for doc in records:
         status=doc.get('matchStatus')
         ids=set(doc.get('matchedHgabIds') or []) & projects.keys()
@@ -837,7 +843,10 @@ def build_all_hgab_document_coverage(indepth=None):
     for code,ids in code_ids.items():
         if len(ids)!=1: continue
         hid=next(iter(ids))
-        senate_documents[hid].extend(file_links_by_code.get(code,[]))
+        for link in file_links_by_code.get(code,[]):
+            item=dict(link)
+            item['printedDates']=printed_dates_by_file_code.get((str(code).upper(),str(item.get('documentName') or '').casefold()),[])
+            senate_documents[hid].append(item)
     for docs in senate_documents.values():
         docs.sort(key=lambda d:(d['documentType'],d['documentName'].casefold(),str(d.get('fileLinkId') or '')))
 

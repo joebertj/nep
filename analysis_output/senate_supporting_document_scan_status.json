@@ -1,1 +1,16 @@
-{"status":"idle","source":"Cloudflare-file-downloads.jsonl","totalProjectRows":6105,"candidateFiles":0,"completedThisPass":0,"workers":4,"heartbeatAtUtc":"2026-11-10T19:53:41.185020+00:00","projectsWithAtLeastOneMatchedDocument":3777}
+{
+  "status": "complete",
+  "source": "Cloudflare-file-downloads.jsonl",
+  "totalProjectRows": 6105,
+  "candidateFiles": 34317,
+  "completedThisPass": 34317,
+  "workers": 4,
+  "heartbeatAtUtc": "2026-11-20T07:54:47Z",
+  "projectsWithAtLeastOneMatchedDocument": 3792,
+  "matchedDocuments": 19813,
+  "pdfFilesAvailableFromManifest": 34317,
+  "pdfFilesExpectedFromManifest": 34319,
+  "pdfFilesRemainingToScan": 0,
+  "pageRefreshStatus": "complete",
+  "lastError": null
+}

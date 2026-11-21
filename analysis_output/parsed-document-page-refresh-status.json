@@ -1,8 +1,8 @@
 {
   "status": "complete",
-  "startedAtUtc": "2026-11-08T07:37:35.584997+00:00",
-  "pid": 50107,
-  "source": "project-document-view-build",
+  "startedAtUtc": "2026-11-20T07:53:56.216471+00:00",
+  "pid": 28082,
+  "source": "senate-supporting-document-scan",
   "builders": {
     "build_dpwh_indepth.py": {
       "projectsWithParsedPow": 7225,
@@ -15,9 +15,48 @@
       "attemptedDocuments": 12130,
       "errorTypes": {}
     },
+    "build_pow_page.py": {
+      "page": "pow.html",
+      "generatedAtUtc": "2026-11-20T07:54:12.720023+00:00",
+      "source": "Current published DPWH in-depth data and parsed Senate HGAB POW result shards",
+      "parsedDocuments": 6259,
+      "documentsWithBillRows": 4974,
+      "billRows": 156858,
+      "printedCategories": 25100,
+      "parserStatuses": {
+        "candidate_rows": 4973,
+        "no_bill_rows_recovered": 1201,
+        "needs_manual_review": 85
+      },
+      "titleMatchStatuses": {
+        "no_exact_title_match": 2683,
+        "not_assessed": 1264,
+        "exact_title_match": 2195,
+        "ambiguous_relaxed_title_match": 25,
+        "relaxed_title_match": 92
+      },
+      "filesWithAcceptedHgabTitleMatch": 2287,
+      "uniqueMatchedHgabProjectRows": 2259,
+      "rowsWithProposalCounterpart": 19,
+      "scopeNote": "Counts summarize parsed file records. A parsed file can have no matched HGAB project row; accepted title matches are unverified and do not establish document contents.",
+      "tableContract": {
+        "page": "pow.html",
+        "builder": null,
+        "tables": 7,
+        "currencyCellsFormatted": true,
+        "chainageViewer": false,
+        "tableStandardModule": true,
+        "noNestedScroll": true,
+        "jsonExport": true,
+        "coloredHeader": true,
+        "topAndBottomNavigation": true,
+        "chartBeforeTable": false,
+        "tableAssetVersion": "dc259e9c89ce"
+      }
+    },
     "build_dpwh_transparency_page.py": {
       "page": "dpwh-transparency.html",
-      "dataVersion": "8b2b1abbce7f"
+      "dataVersion": "5616bc675ab6"
     },
     "build_cost_per_unit_page.py": {
       "page": "cost-per-unit.html"
@@ -27,30 +66,32 @@
     },
     "build_expectation_vs_reality.py": {
       "matchedProjectsWithPowRecords": 2178,
-      "projectsWithComparableEstimate": 1668,
+      "projectsWithComparableEstimate": 495,
       "projectsWithMultiplePowFiles": 11,
-      "projectsWithConflictingParseResults": 2,
-      "projectsWithItemizedSubtotalOnly": 400,
-      "projectsWithoutRecoveredEstimate": 97,
-      "allocationPesos": 43927896000,
-      "powEstimatePesos": 32719784010,
-      "differencePesos": -11208111990,
-      "differencePct": -25.51,
-      "estimateBelowAllocationMoreThan5Pct": 1658,
-      "estimateAboveAllocationMoreThan5Pct": 8,
-      "within5Pct": 2
+      "projectsWithConflictingParseResults": 0,
+      "projectsWithIReconciliationIssues": 149,
+      "projectsWithSubtotalEvidenceOnly": 1458,
+      "projectsWithSubtotalEvidenceAndNoTotal": 65,
+      "projectsWithoutRecoveredEstimate": 65,
+      "allocationPesos": 15684162000,
+      "powEstimatePesos": 18762027865.68,
+      "differencePesos": 3077865865.6800003,
+      "differencePct": 19.62,
+      "estimateBelowAllocationMoreThan5Pct": 26,
+      "estimateAboveAllocationMoreThan5Pct": 29,
+      "within5Pct": 440
     },
     "build_development_council.py": {
-      "projectsWithParsedRoleCandidates": 3560,
-      "projectsWithRoleCandidates": 3560,
-      "candidateProjectRows": 9346,
-      "uniqueCandidates": 804,
+      "projectsWithParsedRoleCandidates": 3554,
+      "projectsWithRoleCandidates": 3554,
+      "candidateProjectRows": 9311,
+      "uniqueCandidates": 803,
       "byRole": {
         "Governor": {
           "uniquePeople": 13,
-          "candidateProjectRows": 206,
-          "distinctProjects": 204,
-          "projectAllocationPesos": 9806741000
+          "candidateProjectRows": 207,
+          "distinctProjects": 205,
+          "projectAllocationPesos": 9811741000
         },
         "Mayor": {
           "uniquePeople": 6,
@@ -60,21 +101,21 @@
         },
         "District Engineer": {
           "uniquePeople": 121,
-          "candidateProjectRows": 2473,
+          "candidateProjectRows": 2471,
           "distinctProjects": 2438,
-          "projectAllocationPesos": 60200826000
+          "projectAllocationPesos": 60160126000
         },
         "Assistant District Engineer": {
           "uniquePeople": 108,
-          "candidateProjectRows": 1700,
+          "candidateProjectRows": 1699,
           "distinctProjects": 1696,
-          "projectAllocationPesos": 45227944000
+          "projectAllocationPesos": 45341344000
         },
         "Engineer": {
-          "uniquePeople": 562,
-          "candidateProjectRows": 4677,
-          "distinctProjects": 3118,
-          "projectAllocationPesos": 86780842000
+          "uniquePeople": 559,
+          "candidateProjectRows": 4644,
+          "distinctProjects": 3112,
+          "projectAllocationPesos": 86721342000
         },
         "Development Council Chair": {
           "uniquePeople": 20,
@@ -86,19 +127,20 @@
       "sourceProjectRows": {
         "Proposal · Development Council": 107,
         "Proposal · parsed POW": 209,
-        "Senate HGAB · Development Council": 172,
-        "Senate HGAB · parsed POW": 3278
+        "Senate HGAB · Development Council": 173,
+        "Senate HGAB · POW · page 1 visually reviewed": 5,
+        "Senate HGAB · parsed POW": 3272
       }
     },
     "build_undocumented_hgab.py": {
-      "noDocumentProjects": 1929,
-      "amountPesos": 53595249000,
-      "completeDocumentProjectRows": 3168,
-      "completeDocumentProjectRowsPct": 51.89,
-      "completeDocumentAllocationPesos": 89499883000,
+      "noDocumentProjects": 1925,
+      "amountPesos": 53448249000,
+      "completeDocumentProjectRows": 1491,
+      "completeDocumentProjectRowsPct": 24.42,
+      "completeDocumentAllocationPesos": 45501826000,
       "allHgabOnlyAllocationPesos": 170494419000,
       "completeDocumentDenominator": 6105,
-      "completeDocumentTypeThreshold": 4,
+      "completeDocumentTypeThreshold": 5,
       "completeDocumentTypeNames": [
         "BP 202",
         "Certificate of Implementability",
@@ -106,8 +148,8 @@
         "Geotagged photos",
         "POW"
       ],
-      "withReviewFlags": 1929,
-      "withNoSelectedNep": 1929,
+      "withReviewFlags": 1925,
+      "withNoSelectedNep": 1925,
       "withinStageRepeatCandidates": 35,
       "gabRemovedItemsReported": 295,
       "gabRemovedPesosReported": 8836000000,
@@ -121,7 +163,7 @@
       "portalOnlyGapProjects": 6378,
       "portalOnlyGapPesos": 183926806000,
       "advanceCopyMatchedRows": 3307,
-      "advanceCopyNewlyCoveredProjects": 4449,
+      "advanceCopyNewlyCoveredProjects": 4453,
       "advanceCopyFilesInPortalOnlyGap": 120,
       "advanceCopyParsedBillRowsInPortalOnlyGap": 60029,
       "advanceCopyPowMatchedProjects": 0,
@@ -171,16 +213,16 @@
       },
       "senateSupportingDocumentCoverage": {
         "denominatorProjectRows": 6105,
-        "projectsWithAtLeastOneMatchedDocument": 3777,
-        "projectsWithAtLeastOneMatchedDocumentPct": 61.87,
-        "projectRowsWithoutMatchedDocument": 2328,
-        "matchedFileRecords": 19734,
+        "projectsWithAtLeastOneMatchedDocument": 3792,
+        "projectsWithAtLeastOneMatchedDocumentPct": 62.11,
+        "projectRowsWithoutMatchedDocument": 2313,
+        "matchedFileRecords": 19813,
         "byType": {
           "POW": {
             "filesScanned": 6683,
-            "matchedProjectRows": 3620,
-            "matchedFileRecords": 3868,
-            "exactTitleMatchedFiles": 793,
+            "matchedProjectRows": 3623,
+            "matchedFileRecords": 3874,
+            "exactTitleMatchedFiles": 799,
             "relaxedTitleMatchedFiles": 141,
             "uniqueCodeSiblingFileMatches": 2934,
             "pdfFilesExpectedFromManifest": 6683,
@@ -188,15 +230,15 @@
             "pdfFilesAvailableButNotScanned": 0,
             "pdfFilesMissingFromT5": 0,
             "scanErrors": 3,
-            "filesWithoutNativeText": 1345
+            "filesWithoutNativeText": 1346
           },
           "BP 202": {
             "filesScanned": 6610,
-            "matchedProjectRows": 3599,
-            "matchedFileRecords": 3867,
-            "exactTitleMatchedFiles": 2599,
+            "matchedProjectRows": 3617,
+            "matchedFileRecords": 3889,
+            "exactTitleMatchedFiles": 2670,
             "relaxedTitleMatchedFiles": 0,
-            "uniqueCodeSiblingFileMatches": 1268,
+            "uniqueCodeSiblingFileMatches": 1219,
             "pdfFilesExpectedFromManifest": 6611,
             "pdfFilesPresentOnT5": 6610,
             "pdfFilesAvailableButNotScanned": 0,
@@ -206,11 +248,11 @@
           },
           "Development Council": {
             "filesScanned": 3374,
-            "matchedProjectRows": 1695,
-            "matchedFileRecords": 1880,
+            "matchedProjectRows": 1704,
+            "matchedFileRecords": 1891,
             "exactTitleMatchedFiles": 9,
             "relaxedTitleMatchedFiles": 0,
-            "uniqueCodeSiblingFileMatches": 1871,
+            "uniqueCodeSiblingFileMatches": 1882,
             "pdfFilesExpectedFromManifest": 3374,
             "pdfFilesPresentOnT5": 3374,
             "pdfFilesAvailableButNotScanned": 0,
@@ -220,11 +262,11 @@
           },
           "Geotagged photos": {
             "filesScanned": 5920,
-            "matchedProjectRows": 3194,
-            "matchedFileRecords": 3428,
-            "exactTitleMatchedFiles": 2072,
+            "matchedProjectRows": 3203,
+            "matchedFileRecords": 3441,
+            "exactTitleMatchedFiles": 2078,
             "relaxedTitleMatchedFiles": 333,
-            "uniqueCodeSiblingFileMatches": 1023,
+            "uniqueCodeSiblingFileMatches": 1030,
             "pdfFilesExpectedFromManifest": 5921,
             "pdfFilesPresentOnT5": 5920,
             "pdfFilesAvailableButNotScanned": 0,
@@ -234,9 +276,9 @@
           },
           "Certificate of Implementability": {
             "filesScanned": 6693,
-            "matchedProjectRows": 3574,
-            "matchedFileRecords": 3787,
-            "exactTitleMatchedFiles": 1150,
+            "matchedProjectRows": 3589,
+            "matchedFileRecords": 3804,
+            "exactTitleMatchedFiles": 1167,
             "relaxedTitleMatchedFiles": 0,
             "uniqueCodeSiblingFileMatches": 2637,
             "pdfFilesExpectedFromManifest": 6693,
@@ -248,11 +290,11 @@
           },
           "Other": {
             "filesScanned": 5037,
-            "matchedProjectRows": 2055,
-            "matchedFileRecords": 2904,
-            "exactTitleMatchedFiles": 641,
+            "matchedProjectRows": 2059,
+            "matchedFileRecords": 2914,
+            "exactTitleMatchedFiles": 654,
             "relaxedTitleMatchedFiles": 51,
-            "uniqueCodeSiblingFileMatches": 2212,
+            "uniqueCodeSiblingFileMatches": 2209,
             "pdfFilesExpectedFromManifest": 5037,
             "pdfFilesPresentOnT5": 5037,
             "pdfFilesAvailableButNotScanned": 0,
@@ -262,24 +304,24 @@
           }
         },
         "signatoryCandidateCounts": {
-          "engineer": 30425,
-          "assistant_district_engineer": 2848,
-          "district_engineer": 3760,
+          "engineer": 30450,
+          "assistant_district_engineer": 2847,
+          "district_engineer": 3762,
           "rdc_chair": 72,
-          "governor": 105,
+          "governor": 106,
           "pdc_chair": 90,
           "mayor": 17,
           "ldc_chair": 5
         },
         "signatoryCandidatesByDocumentType": {
           "POW": {
-            "engineer": 30425,
-            "assistant_district_engineer": 2848,
-            "district_engineer": 3760
+            "engineer": 30450,
+            "assistant_district_engineer": 2847,
+            "district_engineer": 3762
           },
           "Development Council": {
             "rdc_chair": 72,
-            "governor": 105,
+            "governor": 106,
             "pdc_chair": 90,
             "mayor": 17,
             "ldc_chair": 5
@@ -415,15 +457,15 @@
       }
     },
     "build_investigation_summary.py": {
-      "output": "ear retained link\": 1370,\n    \"No selected or cited counterpart\": 122\n  }\n}\nCongress benchmark refresh skipped (Benchmark attribution does not reconcile); retaining the last reconciled benchmark.\n{\n  \"findings\": 8,\n  \"rcs\": {\n    \"offices\": 199,\n    \"poolPesos\": 835800000,\n    \"allocationCV\": 0,\n    \"rainfallProxyCV\": 0.19125774992682673,\n    \"minimumRainMm\": 1564.0,\n    \"maximumRainMm\": 4045.0,\n    \"wettestToDriestRatio\": 2.586317135549872,\n    \"officeMeanUnitsMoved\": 0.0,\n    \"provinceMeanUnitsMoved\": 44.0,\n    \"officeMedianUnitsMoved\": 0.0,\n    \"meanMedianDifferentOfficeUnits\": 0,\n    \"regionalFallbackOffices\": 1,\n    \"correlation\": \"Undefined: allocation variance is zero; no correlation p-value reported.\"\n  },\n  \"repeats\": {\n    \"comparisonPairs\": 2598,\n    \"uniqueCurrentProposals\": 1576,\n    \"uniqueCurrentPesos\": 51293004750,\n    \"chainageStatuses\": {\n      \"overlap\": 27,\n      \"not stated\": 827,\n      \"incomplete\": 738,\n      \"not applicable\": 1006\n    },\n    \"overlapUniqueProposals\": 26,\n    \"trancheStatuses\": {\n      \"not stated\": 2572,\n      \"same tranche\": 9,\n      \"one side stated\": 17\n    }\n  },\n  \"fiveMillion\": {\n    \"N\": 199,\n    \"roadOffices\": 96,\n    \"floodOffices\": 45,\n    \"overlap\": 35,\n    \"expectedOverlap\": 21.70854271356784,\n    \"hypergeometricP\": 5.067002321181279e-06,\n    \"oddsRatio\": 5.336065573770492,\n    \"wald95CI\": [\n      2.4621913292960116,\n      11.56433111789073\n    ],\n    \"regionalPermutationP\": 0.0003199968000319997,\n    \"regionalPermutationRepetitions\": 100000,\n    \"postSelectionAdjusted\": false\n  },\n  \"domesticInsertionCandidates\": 5491,\n  \"allHgabDocumentGap\": {\n    \"rows\": 2362,\n    \"allocationPesos\": 71100604000,\n    \"matchedRows\": 13617,\n    \"denominatorRows\": 15979,\n    \"matchedPct\": 85.22,\n    \"totalAllocationPesos\": 540798450000\n  },\n  \"fmrConnectivity\": {\n    \"flagOrDoubleRows\": 749,\n    \"flagOrDoublePesos\": 14551317500,\n    \"baselineRows\": 206,\n    \"reviewRows\": 0,\n    \"coordinateReviewRows\": 9,\n    \"totalRows\": 964\n  }\n}\n"
+      "output": "\": 84,\n    \"Clear retained link\": 1370,\n    \"No selected or cited counterpart\": 122\n  }\n}\nCongress benchmark refresh skipped (Benchmark attribution does not reconcile); retaining the last reconciled benchmark.\n{\n  \"findings\": 8,\n  \"rcs\": {\n    \"offices\": 199,\n    \"poolPesos\": 835800000,\n    \"allocationCV\": 0,\n    \"rainfallProxyCV\": 0.19125774992682673,\n    \"minimumRainMm\": 1564.0,\n    \"maximumRainMm\": 4045.0,\n    \"wettestToDriestRatio\": 2.586317135549872,\n    \"officeMeanUnitsMoved\": 0.0,\n    \"provinceMeanUnitsMoved\": 44.0,\n    \"officeMedianUnitsMoved\": 0.0,\n    \"meanMedianDifferentOfficeUnits\": 0,\n    \"regionalFallbackOffices\": 1,\n    \"correlation\": \"Undefined: allocation variance is zero; no correlation p-value reported.\"\n  },\n  \"repeats\": {\n    \"comparisonPairs\": 2598,\n    \"uniqueCurrentProposals\": 1576,\n    \"uniqueCurrentPesos\": 51293004750,\n    \"chainageStatuses\": {\n      \"overlap\": 27,\n      \"not stated\": 827,\n      \"incomplete\": 738,\n      \"not applicable\": 1006\n    },\n    \"overlapUniqueProposals\": 26,\n    \"trancheStatuses\": {\n      \"not stated\": 2572,\n      \"same tranche\": 9,\n      \"one side stated\": 17\n    }\n  },\n  \"fiveMillion\": {\n    \"N\": 199,\n    \"roadOffices\": 96,\n    \"floodOffices\": 45,\n    \"overlap\": 35,\n    \"expectedOverlap\": 21.70854271356784,\n    \"hypergeometricP\": 5.067002321181279e-06,\n    \"oddsRatio\": 5.336065573770492,\n    \"wald95CI\": [\n      2.4621913292960116,\n      11.56433111789073\n    ],\n    \"regionalPermutationP\": 0.0003199968000319997,\n    \"regionalPermutationRepetitions\": 100000,\n    \"postSelectionAdjusted\": false\n  },\n  \"domesticInsertionCandidates\": 5491,\n  \"allHgabDocumentGap\": {\n    \"rows\": 2356,\n    \"allocationPesos\": 71013804000,\n    \"matchedRows\": 13623,\n    \"denominatorRows\": 15979,\n    \"matchedPct\": 85.26,\n    \"totalAllocationPesos\": 540798450000\n  },\n  \"fmrConnectivity\": {\n    \"flagOrDoubleRows\": 0,\n    \"flagOrDoublePesos\": 0,\n    \"baselineRows\": 0,\n    \"reviewRows\": 0,\n    \"coordinateReviewRows\": 5,\n    \"totalRows\": 964\n  }\n}\n"
     }
   },
   "activeBuilder": null,
-  "heartbeatAtUtc": "2026-11-08T07:38:36.253244+00:00",
+  "heartbeatAtUtc": "2026-11-20T07:54:43.108097+00:00",
   "outputContracts": {
     "dpwh.html": {
-      "coverageColumns": 7,
-      "finalSection": "all-hgab-document-coverage",
+      "coverageColumns": 8,
+      "allHgabCoveragePosition": 2,
       "documentCoverageScope": "all-HGAB"
     },
     "undocumented-hgab.html": {
@@ -435,10 +477,10 @@
       "restoredFrom": "open-data-visualization:72f9346cc"
     },
     "documentPageStatsAudit": {
-      "status": "ok",
-      "checkedPages": 8
+      "status": "ok_with_warnings",
+      "checkedPages": 9
     }
   },
-  "completedAtUtc": "2026-11-08T07:38:41.061674+00:00",
+  "completedAtUtc": "2026-11-20T07:54:47.941886+00:00",
   "lastError": null
 }

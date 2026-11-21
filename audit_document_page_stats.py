@@ -173,8 +173,14 @@ def audit():
                               'allRowsHgabOnly': not outside,
                               'coverageExportRows': len(only_rows)}
 
-    expected_columns = ['HGAB code', 'Project', 'Office · region', 'HGAB allocation',
-                        'Proposal docs', 'Senate HGAB docs', 'Signatories in related documents']
+    expected_columns_by_page = {
+        'dpwh.html': ['HGAB code', 'Project', 'Office · region', 'HGAB allocation',
+                      'Proposal docs', 'Senate HGAB docs', 'Senate document IDs / names',
+                      'Signatories in related documents'],
+        'undocumented-hgab.html': ['HGAB code', 'Project', 'Office · region', 'HGAB allocation',
+                                   'Proposal docs', 'Senate HGAB docs',
+                                   'Signatories in related documents'],
+    }
     shared_renderer = (ROOT / 'project_documents/hgab-document-coverage.js').read_text(encoding='utf-8')
     shared_renderer_path = STATIC / 'hgab-document-coverage.js'
     if not shared_renderer_path.exists() or shared_renderer_path.read_text(encoding='utf-8') != shared_renderer:
@@ -187,7 +193,7 @@ def audit():
         section = html[start:end] if start >= 0 and end >= 0 else ''
         header = re.search(r'<thead>(.*?)</thead>', section, re.S)
         columns = [re.sub(r'<[^>]+>', '', x).strip() for x in re.findall(r'<th\b[^>]*>(.*?)</th>', header.group(1), re.S)] if header else []
-        if columns != expected_columns:
+        if columns != expected_columns_by_page[page_name]:
             fail(errors, 'coverage-table-columns', f'{page_name}: {columns!r}')
         if 'data-report-table-exempt="true"' not in section:
             fail(errors, 'coverage-table-column-compaction',

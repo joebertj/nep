@@ -1,14 +1,14 @@
 {
-  "status": "ok",
-  "checkedAtUtc": "2026-11-08T09:10:03.871104+01:00",
+  "status": "ok_with_warnings",
+  "checkedAtUtc": "2026-11-20T08:54:47.839908+01:00",
   "source": "Cloudflare manifest SHA-256 reconciliation across the T5 source folder and parser attachment cache, plus page outputs.",
   "checks": {
     "senateScan": {
       "denominatorProjectRows": 6105,
-      "projectsWithAtLeastOneMatchedDocument": 3777,
-      "projectRowsWithoutMatchedDocument": 2328,
-      "matchedFileRecords": 19734,
-      "generatedAtUtc": "2026-11-07T18:11:08.771602+00:00",
+      "projectsWithAtLeastOneMatchedDocument": 3792,
+      "projectRowsWithoutMatchedDocument": 2313,
+      "matchedFileRecords": 19813,
+      "generatedAtUtc": "2026-11-19T19:07:49.371366+00:00",
       "uniqueProjectIds": 6105
     },
     "t5CloudflareManifest": {
@@ -20,16 +20,16 @@
       "pdfFilesScanned": 34317
     },
     "scannerStatus": {
-      "status": "idle",
-      "matchedProjectRows": 3777,
+      "status": "error",
+      "matchedProjectRows": 3792,
       "matchesConsolidatedOutput": true
     },
     "allHgabCoverage": {
       "rows": 15979,
       "withProposal": 9577,
-      "withSenate": 4102,
-      "union": 13617,
-      "generatedAtUtc": "2026-11-08T07:38:18.556173+00:00"
+      "withSenate": 4108,
+      "union": 13623,
+      "generatedAtUtc": "2026-11-20T07:54:25.190828+00:00"
     },
     "parsedPow": {
       "parsedDocuments": 6259,
@@ -39,8 +39,8 @@
       "titleMatchDenominator": null
     },
     "undocumented": {
-      "queueRows": 1929,
-      "uniqueRows": 1929,
+      "queueRows": 1925,
+      "uniqueRows": 1925,
       "allRowsHgabOnly": true,
       "coverageExportRows": 6105
     },
@@ -68,7 +68,7 @@
       "loadsParsedResults": true
     },
     "pageFreshness": {
-      "sourceScanGeneratedAtUtc": "2026-11-07T18:11:08.771602+00:00",
+      "sourceScanGeneratedAtUtc": "2026-11-19T19:07:49.371366+00:00",
       "pagesAtOrAfterScan": 8,
       "pagesExpected": 8,
       "stalePages": []
@@ -76,48 +76,53 @@
   },
   "pages": {
     "dpwh.html": {
-      "coverageColumns": 7,
+      "coverageColumns": 8,
       "loadsCoverageRenderer": true,
       "coverageSource": "hgab-document-coverage.json",
       "builder": "build_dpwh_indepth.py",
-      "builtAtUtc": "2026-11-08T08:38:32.546834+01:00"
+      "builtAtUtc": "2026-11-20T08:54:32.927686+01:00"
     },
     "undocumented-hgab.html": {
       "coverageColumns": 7,
       "loadsCoverageRenderer": true,
       "coverageSource": "hgab-only-document-coverage.json",
       "builder": "build_undocumented_hgab.py",
-      "builtAtUtc": "2026-11-08T08:38:36.107382+01:00"
+      "builtAtUtc": "2026-11-20T08:54:42.969127+01:00"
     },
     "dpwh-transparency.html": {
       "builder": "build_dpwh_transparency_page.py",
-      "builtAtUtc": "2026-11-08T08:38:32.656536+01:00"
+      "builtAtUtc": "2026-11-20T08:54:36.663357+01:00"
     },
     "cost-per-unit.html": {
       "builder": "build_cost_per_unit_page.py",
-      "builtAtUtc": "2026-11-08T08:38:32.594506+01:00"
+      "builtAtUtc": "2026-11-20T08:54:36.932230+01:00"
     },
     "pccp-cost-per-unit.html": {
       "builder": "build_pccp_cost_per_unit_page.py",
-      "builtAtUtc": "2026-11-08T08:38:32.542850+01:00"
+      "builtAtUtc": "2026-11-20T08:54:37.140668+01:00"
     },
     "expectation-vs-reality.html": {
       "builder": "build_expectation_vs_reality.py",
-      "builtAtUtc": "2026-11-08T08:38:32.654873+01:00"
+      "builtAtUtc": "2026-11-20T08:54:39.266005+01:00"
     },
     "development-council.html": {
       "builder": "build_development_council.py",
-      "builtAtUtc": "2026-11-08T08:38:32.533147+01:00"
+      "builtAtUtc": "2026-11-20T08:54:39.739793+01:00"
     },
     "pow.html": {
       "builder": "build_pow_page.py",
-      "builtAtUtc": "2026-11-08T09:09:23.268686+01:00"
+      "builtAtUtc": "2026-11-20T08:54:33.650742+01:00"
     },
     "summary.html": {
       "builder": "build_investigation_summary.py",
-      "builtAtUtc": "2026-11-08T08:38:38.930499+01:00"
+      "builtAtUtc": "2026-11-20T08:54:45.785069+01:00"
     }
   },
-  "warnings": [],
+  "warnings": [
+    {
+      "code": "scanner-or-refresh-error",
+      "detail": "CalledProcessError: Command '['/Users/joebertj/nep/.venv/bin/python', '/Users/joebertj/nep/refresh_parsed_document_pages.py', 'senate-supporting-document-scan']' returned non-zero exit status 1."
+    }
+  ],
   "errors": []
 }

@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import json
 import math
+import re
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -29,6 +30,29 @@ def build_data():
     indepth = read('dpwh-in-depth-data.json')
     total_cost_data = read('hgab-pow-total-estimates.json')
     total_cost_by_code = total_cost_data.get('byCode') or {}
+    scan_path = OUT / 'senate_supporting_documents_hgab_only_scan.json'
+    scan = json.loads(scan_path.read_text(encoding='utf-8')) if scan_path.is_file() else {}
+    printed_dates_by_code_name = {
+        (str(row.get('projectCode') or '').upper(), Path(str(row.get('file') or '')).name.casefold()): row.get('printedDates') or []
+        for row in scan.get('documents', []) if row.get('projectCode') and row.get('file')
+    }
+    pow_dates_by_code = defaultdict(dict)
+    for row in scan.get('documents', []):
+        if row.get('documentType') != 'POW' or not row.get('projectCode'):
+            continue
+        code = str(row['projectCode']).upper()
+        for date in row.get('printedDates') or []:
+            label = str(date.get('printedDate') or '').strip()
+            if not label:
+                continue
+            item = pow_dates_by_code.setdefault(code, {}).setdefault(label, {'isoDate': date.get('isoDate'), 'sourcePages': set()})
+            if date.get('sourcePage') is not None:
+                item['sourcePages'].add(int(date['sourcePage']))
+    pow_dates_by_code = {
+        code: [{'printedDate': label, 'isoDate': item['isoDate'], 'sourcePages': sorted(item['sourcePages'])}
+               for label, item in sorted(values.items(), key=lambda pair: (pair[1]['isoDate'] or '', pair[0]))]
+        for code, values in pow_dates_by_code.items()
+    }
     mapping = read('hb_nep_comparison_3rd_mapping.json')
     hgab = {}
     for row in mapping.get('hgabWithoutSelectedCounterpart', []):
@@ -66,6 +90,7 @@ def build_data():
             'totalConstructionCostPesos': source_total.get('totalConstructionCostPesos'),
             'engineeringAdministrativeOverheadPesos': source_total.get('engineeringAdministrativeOverheadPesos'),
             'printedTotalEstimatedCostPesos': source_total.get('printedTotalEstimatedCostPesos'),
+            'printedDates': pow_dates_by_code.get(code.upper(), []),
             'sourcePdfCount': total_cost.get('sourcePdfCount') or 0,
             'sourcePdfSha256': total_cost.get('sourcePdfSha256') or [],
             'conflictingTotalEstimatedCostPesos': total_cost.get('conflictingTotalEstimatedCostPesos') or [],
@@ -77,6 +102,13 @@ def build_data():
             ],
         })
 
+    prior_path = OUT / 'expectation-vs-reality-data.json'
+    prior_projects = {}
+    if prior_path.is_file():
+        try:
+            prior_projects = {row.get('hgabId'): row for row in json.loads(prior_path.read_text(encoding='utf-8')).get('projects', []) if row.get('hgabId')}
+        except (json.JSONDecodeError, OSError):
+            prior_projects = {}
     projects = []
     for hgab_id, docs in docs_by_project.items():
         source = hgab[hgab_id]
@@ -153,6 +185,14 @@ def build_data():
             'powFiles': candidates,
         })
 
+    for project in projects:
+        saved_docs = prior_projects.get(project['hgabId'], {}).get('supportingDocumentAmounts') or []
+        if saved_docs:
+            for document in saved_docs:
+                code = re.search(r'2027DPWH-HGAB-\d{5}', str(document.get('sourceUrl') or ''), re.I)
+                key = (code.group(0).upper() if code else '', str(document.get('sourceName') or '').casefold())
+                document['printedDates'] = printed_dates_by_code_name.get(key, document.get('printedDates') or [])
+            project['supportingDocumentAmounts'] = saved_docs
     projects.sort(key=lambda p: (p['status'] != 'comparable_total_estimated_cost', -abs(p.get('differencePesos') or 0), p['title'].casefold()))
     eligible = [p for p in projects if p['status'] == 'comparable_total_estimated_cost']
     allocation_total = sum(p['allocationPesos'] for p in eligible)
@@ -206,7 +246,7 @@ def render(data):
 </style></head><body><header><div class="brand"><a href="https://bettergov.ph/" aria-label="BetterGov"><img src="https://assets.bettergov.ph/logos/webp/horizontal-black.webp" alt="BetterGov"></a><div><div class="eyebrow">FY2027 · Budget research · Senate HGAB</div><h1>HGAB allocation vs TOTAL ESTIMATED COST</h1><p>Compare House project allocations with I. TOTAL ESTIMATED COST from the matched POW.</p></div></div></header><main>
 <div class="notice"><strong>Correct comparison basis.</strong> Compare the proposed allocation with I. TOTAL ESTIMATED COST · As Submitted. The first-page A+B+C summary and the D+E+F bill components feed into that total; neither subtotal alone is the comparison amount. The comparison uses the visible As Submitted amount in I. TOTAL ESTIMATED COST; As Evaluated is shown separately when present. A POW estimate is not actual expenditure, and differences may reflect scope or phase.</div>
 <section><h2>TOTAL ESTIMATED COST comparison</h2><p>Aggregate comparison includes only unique HGAB project rows with one exact-title-matched POW file and a recovered I. TOTAL ESTIMATED COST. First-page A+B+C and bill-page D+E+F values are retained as evidence, not substituted for I.</p><div id="metrics" class="cards"></div><div id="bars" class="bars"></div><details class="details"><summary>How this comparison is calculated</summary><ul id="methods"></ul></details></section>
-<section><h2>Project-level comparison and review queue</h2><p>Rows are sorted by the absolute difference when I is available. Projects without a recovered I are retained for review with their available subtotals identified. Multiple distinct POW files for one project are shown as review cases and excluded from totals.</p><div id="distribution" class="cards"></div><div id="scatter" class="scatter" role="img" aria-label="Project allocations compared with recovered TOTAL ESTIMATED COST values"></div><div class="controls"><label for="q">Search</label><input id="q" type="search" placeholder="Project, office, House row, or HGAB file code"><label for="status">Estimate status</label><select id="status"><option value="">All statuses</option><option value="comparable_total_estimated_cost">Comparable TOTAL ESTIMATED COST</option><option value="multiple_pow_files_review">Multiple POW files · review</option><option value="i_total_reconciliation_review">I total below A+B+C / G · review</option><option value="conflicting_total_estimated_cost_review">Conflicting TOTAL ESTIMATED COST values</option><option value="subtotal_evidence_only_no_total_estimated_cost">Subtotal evidence only · I not recovered</option><option value="no_recovered_total_estimate">No recovered TOTAL ESTIMATED COST</option></select><label for="sort">Sort</label><select id="sort"><option value="difference">Largest absolute difference</option><option value="allocation">Largest allocation</option><option value="estimate">Largest POW estimate</option><option value="title">Project title</option><option value="office">Office</option></select></div><div class="table-wrap"><table><thead><tr><th>HGAB project / office</th><th>HGAB allocation</th><th>POW I. TOTAL ESTIMATED COST · As Submitted</th><th>Difference · I − allocation</th><th>Difference %</th><th>POW file / basis</th></tr></thead><tbody id="rows"></tbody></table></div><div class="pager"><button id="previous">Previous</button><span id="page"></span><button id="next">Next</button></div></section>
+<section><h2>Project-level comparison and review queue</h2><p>Rows are sorted by the absolute difference when I is available. Projects without a recovered I are retained for review with their available subtotals identified. Multiple distinct POW files for one project are shown as review cases and excluded from totals.</p><div id="distribution" class="cards"></div><div id="scatter" class="scatter" role="img" aria-label="Project allocations compared with recovered TOTAL ESTIMATED COST values"></div><div class="controls"><label for="q">Search</label><input id="q" type="search" placeholder="Project, office, House row, or HGAB file code"><label for="status">Estimate status</label><select id="status"><option value="">All statuses</option><option value="comparable_total_estimated_cost">Comparable TOTAL ESTIMATED COST</option><option value="multiple_pow_files_review">Multiple POW files · review</option><option value="i_total_reconciliation_review">I total below A+B+C / G · review</option><option value="conflicting_total_estimated_cost_review">Conflicting TOTAL ESTIMATED COST values</option><option value="subtotal_evidence_only_no_total_estimated_cost">Subtotal evidence only · I not recovered</option><option value="no_recovered_total_estimate">No recovered TOTAL ESTIMATED COST</option></select><label for="sort">Sort</label><select id="sort"><option value="difference">Largest absolute difference</option><option value="allocation">Largest allocation</option><option value="estimate">Largest POW estimate</option><option value="title">Project title</option><option value="office">Office</option></select></div><div class="table-wrap"><table><thead><tr><th>HGAB project / office</th><th>HGAB allocation</th><th>POW I. TOTAL ESTIMATED COST · As Submitted</th><th>POW printed date(s)</th><th>Difference · I − allocation</th><th>Difference %</th><th>POW file / basis</th></tr></thead><tbody id="rows"></tbody></table></div><div class="pager"><button id="previous">Previous</button><span id="page"></span><button id="next">Next</button></div></section>
 </main><footer><p>Sources: FY2027 HGAB 3rd-reading project ledger and indexed Senate-provided HGAB POW PDFs. This comparison uses I. TOTAL ESTIMATED COST; OCR extraction status and visible A+B+C, G, and H context are shown per POW. Source PDF links are not published. Values are OCRed from rendered page images. <a href="dpwh.html">Return to Senate HGAB document coverage →</a></p><p>Generated data are preliminary machine extraction. Verify source pages and project scope before interpretation.</p></footer>
 <script>
 (async()=>{const D=await fetch('expectation-vs-reality-data.json?v=__VERSION__').then(r=>{if(!r.ok)throw Error('Comparison data failed to load');return r.json()}),S=D.summary||{},P=D.projects||[],fmt=n=>Number(n||0).toLocaleString('en-PH'),peso=n=>'₱'+fmt(Math.round(Number(n||0))),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),eligible=P.filter(p=>p.status==='comparable_total_estimated_cost'),metric=(v,l)=>`<div class="metric"><strong>${esc(v)}</strong><span>${esc(l)}</span></div>`;
@@ -214,9 +254,39 @@ const comparableCount=Number(S.projectsWithComparableEstimate||0);document.getEl
 const max=Math.max(1,S.allocationPesos||0,S.powEstimatePesos||0);document.getElementById('bars').innerHTML=comparableCount?[['HGAB allocation',S.allocationPesos,'allocation'],['POW TOTAL ESTIMATED COST',S.powEstimatePesos,'estimate']].map(([l,v,k])=>`<div class="bar-row"><strong>${esc(l)}</strong><div class="track"><div class="fill ${k}" style="width:${100*Number(v||0)/max}%"></div></div><div class="bar-value">${peso(v)}</div></div>`).join(''):'<p class="notice">No aggregate comparison is shown until I. TOTAL ESTIMATED COST is recovered from the matched POWs.</p>';document.getElementById('methods').innerHTML=(D.limitations||[]).map(x=>`<li>${esc(x)}</li>`).join('');
 for(const [id,val,label] of [['under',S.estimateBelowAllocationMoreThan5Pct,'TOTAL ESTIMATED COST more than 5% below allocation'],['near',S.within5Pct,'within ±5%'],['over',S.estimateAboveAllocationMoreThan5Pct,'TOTAL ESTIMATED COST more than 5% above allocation'],['subtotal',S.projectsWithSubtotalEvidenceOnly,'Subtotal evidence only · I not recovered'],['reconcile',S.projectsWithIReconciliationIssues,'I below A+B+C or G · OCR reconciliation review'],['multiple',S.projectsWithMultiplePowFiles,'multiple distinct POW files · excluded from totals'],['conflicts',S.projectsWithConflictingParseResults,'conflicting parse results · excluded from totals']])document.getElementById('distribution').insertAdjacentHTML('beforeend',metric(fmt(val),label));
 const W=960,H=520,L=150,R=30,T=28,B=62,maxAxis=Math.max(1,...eligible.flatMap(p=>[p.allocationPesos,p.powEstimatePesos])),x=v=>L+(Number(v||0)/maxAxis)*(W-L-R),y=v=>H-B-(Number(v||0)/maxAxis)*(H-T-B),ticks=5,svg=[`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Scatter plot of TOTAL ESTIMATED COST against HGAB allocation; dashed line indicates equality">`];for(let i=0;i<=ticks;i++){const v=maxAxis*i/ticks,px=x(v),py=y(v);svg.push(`<line class="grid" x1="${L}" y1="${py}" x2="${W-R}" y2="${py}"/><line class="grid" x1="${px}" y1="${T}" x2="${px}" y2="${H-B}"/><text x="${L-10}" y="${py+4}" text-anchor="end" font-size="11">${esc(peso(v))}</text><text x="${px}" y="${H-B+20}" text-anchor="middle" font-size="11">${esc(peso(v))}</text>`)}svg.push(`<line class="identity" x1="${x(0)}" y1="${y(0)}" x2="${x(maxAxis)}" y2="${y(maxAxis)}"/><line class="axis" x1="${L}" y1="${T}" x2="${L}" y2="${H-B}"/><line class="axis" x1="${L}" y1="${H-B}" x2="${W-R}" y2="${H-B}"/><text x="${(L+W-R)/2}" y="${H-12}" text-anchor="middle" font-size="13">POW I. TOTAL ESTIMATED COST</text><text x="26" y="${(T+H-B)/2}" text-anchor="middle" font-size="13" transform="rotate(-90 26 ${(T+H-B)/2})">HGAB proposed allocation</text>`);for(const p of eligible)svg.push(`<circle class="point" cx="${x(p.powEstimatePesos)}" cy="${y(p.allocationPesos)}" r="3"><title>${esc(p.title)} · allocation ${esc(peso(p.allocationPesos))} · POW estimate ${esc(peso(p.powEstimatePesos))}</title></circle>`);svg.push('</svg>');document.getElementById('scatter').innerHTML=eligible.length?svg.join(''):'<p class="notice">No plotted comparisons: no matched POW currently has a recovered I. TOTAL ESTIMATED COST amount.</p>';
-let page=0,perPage=25;const q=document.getElementById('q'),status=document.getElementById('status'),sort=document.getElementById('sort'),body=document.getElementById('rows'),draw=()=>{const needle=q.value.trim().toLocaleLowerCase();let rows=P.filter(p=>(!status.value||p.status===status.value)&&(!needle||[p.title,p.office,p.region,p.hgabId,...p.powFiles.map(f=>f.code)].join(' ').toLocaleLowerCase().includes(needle)));rows.sort((a,b)=>{if(sort.value==='title')return a.title.localeCompare(b.title);if(sort.value==='office')return a.office.localeCompare(b.office)||a.title.localeCompare(b.title);if(sort.value==='allocation')return b.allocationPesos-a.allocationPesos;if(sort.value==='estimate')return (b.powEstimatePesos||0)-(a.powEstimatePesos||0);return Math.abs(b.differencePesos||0)-Math.abs(a.differencePesos||0)||a.title.localeCompare(b.title)});const pages=Math.max(1,Math.ceil(rows.length/perPage));page=Math.max(0,Math.min(page,pages-1));body.innerHTML=rows.slice(page*perPage,(page+1)*perPage).map(p=>{const estimate=p.powEstimatePesos==null?'—':peso(p.powEstimatePesos),difference=p.differencePesos==null?'—':peso(Math.abs(p.differencePesos))+(p.differencePesos<0?' below':' above'),pct=p.differencePct==null?'—':(p.differencePct>0?'+':'')+p.differencePct+'%',files=p.powFiles.map(f=>`<details><summary>${esc(f.code)}</summary><p>${fmt(f.categoryCount)} A+B+C summary rows · category shares ${fmt(f.shareTotalPct)}% · first-page subtotal ${f.firstPageSummarySubtotalPesos==null?'not recovered':peso(f.firstPageSummarySubtotalPesos)} · G (D+E+F) ${f.totalConstructionCostPesos==null?'not recovered':peso(f.totalConstructionCostPesos)} · H EAO ${f.engineeringAdministrativeOverheadPesos==null?'not recovered':peso(f.engineeringAdministrativeOverheadPesos)} · I. TOTAL ESTIMATED COST · As Submitted ${f.totalEstimatedCostPesos==null?'not recovered':peso(f.totalEstimatedCostPesos)} · As Evaluated ${f.evaluatedTotalEstimatedCostPesos==null?'not printed/recovered':peso(f.evaluatedTotalEstimatedCostPesos)} · extraction ${esc(f.totalEstimateStatus)} · pages ${esc(f.summaryPages.join(', ')||'not recorded')}${f.totalEstimateReviewIssue?` · review: ${esc(f.totalEstimateReviewIssue)}`:''}${f.conflictingEstimatePesos?.length?` · conflicting parsed estimates ${f.conflictingEstimatePesos.map(peso).join(' / ')}`:''}${f.duplicateParseCount>1?` · ${fmt(f.duplicateParseCount)} parser records for this file code`:''}${f.itemizedDirectCostSubtotalPesos?` · itemized subtotal ${peso(f.itemizedDirectCostSubtotalPesos)}`:''}</p><ul>${f.summaryCategories.map(c=>`<li>${esc(c.label)} · ${fmt(c.sharePct)}% · ${peso(c.amountPesos)} · p. ${fmt(c.sourcePage)}</li>`).join('')}</ul></details>`).join('');return `<tr><td><strong>${esc(p.title)}</strong><span class="sub">${esc(p.hgabId)} · ${esc(p.office)} · ${esc(p.region)}</span><span class="sub">${esc(p.pap)}</span></td><td class="num">${peso(p.allocationPesos)}</td><td class="num">${estimate}<span class="sub">${esc(p.status.replaceAll('_',' '))}</span></td><td class="num ${p.differencePesos==null?'':p.differencePesos<0?'gap-negative':'gap-positive'}">${difference}</td><td class="num">${pct}</td><td>${files||'No matched POW file code available'}</td></tr>`}).join('')||'<tr><td colspan="6">No project rows match this filter.</td></tr>';document.getElementById('page').textContent=`Page ${page+1} of ${pages} · ${fmt(rows.length)} project rows`;document.getElementById('previous').disabled=page===0;document.getElementById('next').disabled=page+1>=pages};for(const el of [q,status,sort])el.addEventListener(el===q?'input':'change',()=>{page=0;draw()});document.getElementById('previous').onclick=()=>{page--;draw()};document.getElementById('next').onclick=()=>{page++;draw()};draw();})().catch(e=>{document.querySelector('main').insertAdjacentHTML('afterbegin',`<div class="notice">${String(e.message||e)}</div>`)})
+let page=0,perPage=25;const q=document.getElementById('q'),status=document.getElementById('status'),sort=document.getElementById('sort'),body=document.getElementById('rows'),draw=()=>{const needle=q.value.trim().toLocaleLowerCase();let rows=P.filter(p=>(!status.value||p.status===status.value)&&(!needle||[p.title,p.office,p.region,p.hgabId,...p.powFiles.map(f=>f.code)].join(' ').toLocaleLowerCase().includes(needle)));rows.sort((a,b)=>{if(sort.value==='title')return a.title.localeCompare(b.title);if(sort.value==='office')return a.office.localeCompare(b.office)||a.title.localeCompare(b.title);if(sort.value==='allocation')return b.allocationPesos-a.allocationPesos;if(sort.value==='estimate')return (b.powEstimatePesos||0)-(a.powEstimatePesos||0);return Math.abs(b.differencePesos||0)-Math.abs(a.differencePesos||0)||a.title.localeCompare(b.title)});const pages=Math.max(1,Math.ceil(rows.length/perPage));page=Math.max(0,Math.min(page,pages-1));body.innerHTML=rows.slice(page*perPage,(page+1)*perPage).map(p=>{const estimate=p.powEstimatePesos==null?'—':peso(p.powEstimatePesos),powDates=p.powFiles.flatMap(f=>(f.printedDates||[]).map(d=>({...d,code:f.code}))),dateCell=powDates.length?powDates.map(d=>`<div><strong>${esc(d.printedDate)}</strong><span class="sub">${esc(d.code)}${d.sourcePages?.length?` · p. ${d.sourcePages.map(fmt).join(', ')}`:''}</span></div>`).join(''):'<span class="sub">No printed date extracted</span>',difference=p.differencePesos==null?'—':peso(Math.abs(p.differencePesos))+(p.differencePesos<0?' below':' above'),pct=p.differencePct==null?'—':(p.differencePct>0?'+':'')+p.differencePct+'%',files=p.powFiles.map(f=>`<details><summary>${esc(f.code)}</summary><p>${fmt(f.categoryCount)} A+B+C summary rows · category shares ${fmt(f.shareTotalPct)}% · first-page subtotal ${f.firstPageSummarySubtotalPesos==null?'not recovered':peso(f.firstPageSummarySubtotalPesos)} · G (D+E+F) ${f.totalConstructionCostPesos==null?'not recovered':peso(f.totalConstructionCostPesos)} · H EAO ${f.engineeringAdministrativeOverheadPesos==null?'not recovered':peso(f.engineeringAdministrativeOverheadPesos)} · I. TOTAL ESTIMATED COST · As Submitted ${f.totalEstimatedCostPesos==null?'not recovered':peso(f.totalEstimatedCostPesos)} · As Evaluated ${f.evaluatedTotalEstimatedCostPesos==null?'not printed/recovered':peso(f.evaluatedTotalEstimatedCostPesos)} · extraction ${esc(f.totalEstimateStatus)} · pages ${esc(f.summaryPages.join(', ')||'not recorded')}${f.totalEstimateReviewIssue?` · review: ${esc(f.totalEstimateReviewIssue)}`:''}${f.conflictingEstimatePesos?.length?` · conflicting parsed estimates ${f.conflictingEstimatePesos.map(peso).join(' / ')}`:''}${f.duplicateParseCount>1?` · ${fmt(f.duplicateParseCount)} parser records for this file code`:''}${f.itemizedDirectCostSubtotalPesos?` · itemized subtotal ${peso(f.itemizedDirectCostSubtotalPesos)}`:''}</p><ul>${f.summaryCategories.map(c=>`<li>${esc(c.label)} · ${fmt(c.sharePct)}% · ${peso(c.amountPesos)} · p. ${fmt(c.sourcePage)}</li>`).join('')}</ul></details>`).join('');return `<tr><td><strong>${esc(p.title)}</strong><span class="sub">${esc(p.hgabId)} · ${esc(p.office)} · ${esc(p.region)}</span><span class="sub">${esc(p.pap)}</span></td><td class="num">${peso(p.allocationPesos)}</td><td class="num">${estimate}<span class="sub">${esc(p.status.replaceAll('_',' '))}</span></td><td>${dateCell}</td><td class="num ${p.differencePesos==null?'':p.differencePesos<0?'gap-negative':'gap-positive'}">${difference}</td><td class="num">${pct}</td><td>${files||'No matched POW file code available'}</td></tr>`}).join('')||'<tr><td colspan="7">No project rows match this filter.</td></tr>';document.getElementById('page').textContent=`Page ${page+1} of ${pages} · ${fmt(rows.length)} project rows`;document.getElementById('previous').disabled=page===0;document.getElementById('next').disabled=page+1>=pages};for(const el of [q,status,sort])el.addEventListener(el===q?'input':'change',()=>{page=0;draw()});document.getElementById('previous').onclick=()=>{page--;draw()};document.getElementById('next').onclick=()=>{page++;draw()};draw();})().catch(e=>{document.querySelector('main').insertAdjacentHTML('afterbegin',`<div class="notice">${String(e.message||e)}</div>`)})
 </script></body></html>'''
     html = html.replace('__VERSION__', version)
+    # Several source-linked investigation tables are maintained as page sections
+    # alongside this generated POW comparison. Preserve them across refreshes.
+    prior_page = STATIC / 'expectation-vs-reality.html'
+    if prior_page.is_file():
+        prior_html = prior_page.read_text(encoding='utf-8')
+        section_ids = ('amount-mismatch-hero', 'supporting-document-comparison',
+                       'token-pow-content-review', 'supporting-document-costs',
+                       'document-content-reuse', 'visual-photo-review')
+        sections = []
+        for section_id in section_ids:
+            match = re.search(r'<section\b(?=[^>]*\bid="'+re.escape(section_id)+r'")[^>]*>.*?</section>', prior_html, re.S)
+            if match:
+                sections.append(match.group(0))
+        if sections:
+            html = html.replace('</main>', ''.join(sections)+'</main>', 1)
+        shared_styles = re.findall(r'<style\b[^>]*id="supporting-document-comparison-style"[^>]*>.*?</style>', prior_html, re.S)
+        if shared_styles:
+            html = html.replace('</head>', ''.join(shared_styles)+'</head>', 1)
+        shared_scripts = re.findall(r'<script\b[^>]*src="(?:expectation-vs-reality-mismatch-hero|report-json-shards|supporting-cost-comparison|pow-hgab-parsed-documents|pow-document-reuse)\.js(?:\?[^"]*)?"[^>]*></script>', prior_html, re.S)
+        if shared_scripts:
+            refreshed_scripts = []
+            for tag in shared_scripts:
+                match = re.search(r'src="([^"]+\.js)(?:\?[^"]*)?"', tag)
+                if match and Path(STATIC / match.group(1)).is_file():
+                    asset = STATIC / match.group(1)
+                    version = hashlib.sha256(asset.read_bytes()).hexdigest()[:12]
+                    tag = tag.replace(match.group(0), f'src="{match.group(1)}?v={version}"')
+                refreshed_scripts.append(tag)
+            shared_scripts = refreshed_scripts
+            html = html.replace('</body>', ''.join(shared_scripts)+'</body>', 1)
     import uniform_report_menu
     html = uniform_report_menu.apply_page(html, 'expectation-vs-reality.html')
     from report_table_presentation import apply_page_table_module

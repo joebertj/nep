@@ -56,7 +56,7 @@ def run_cycle() -> None:
         log("No new parser-supported documents found")
     subprocess.run([sys.executable, str(PUBLISHER)], cwd=ROOT, check=True)
     if TABLE_BUILDER.is_file():
-        log("Refreshing structured table extractions for /historical")
+        log("Refreshing PDF tables and XLSX workbook rows for /historical")
         subprocess.run(
             [sys.executable, str(TABLE_BUILDER), "--archive-root", str(ROOT)],
             cwd=ROOT.parent / "bettermiagao",

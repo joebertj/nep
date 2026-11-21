@@ -31,6 +31,7 @@ STATUS = ROOT / 'analysis_output/senate_supporting_document_scan_status.json'
 CSV_OUT = ROOT / 'analysis_output/senate_supporting_documents_hgab_only_scan.csv'
 CODE = re.compile(r'(?:2027[-_\s]*)?DPWH[-_\s]*HGAB[-_\s-]*(\d{5})', re.I)
 SIGNATORY_PARSER_VERSION = 2
+DOCUMENT_DATE_PARSER_VERSION = 1
 T5_AUDIT = ROOT / 'analysis_output/t5-cloudflare-manifest-audit.json'
 EXTENSIONS = {'.pdf'}
 GENERIC = set('construction rehabilitation improvement widening reconstruction completion road roads bridge bridges multi purpose building barangay city province municipality access along of the and at in to for near project new concreting preventive maintenance repair upgrading existing drainage development works site station sta covered court multipurpose'.split())
@@ -38,6 +39,46 @@ WORKER_TITLE_INDEX = {}
 WORKER_TITLES_BY_ID = {}
 WORKER_TITLE_FREQUENCY = {}
 WORKER_BY_TITLE = {}
+
+MONTHS = {name.casefold(): number for number, names in enumerate((
+    ('January', 'Jan'), ('February', 'Feb'), ('March', 'Mar'), ('April', 'Apr'),
+    ('May',), ('June', 'Jun'), ('July', 'Jul'), ('August', 'Aug'),
+    ('September', 'Sep', 'Sept'), ('October', 'Oct'), ('November', 'Nov'),
+    ('December', 'Dec'),
+), 1) for name in names}
+
+
+def extract_printed_dates(pages):
+    """Return date strings found in PDF page text; never consult file metadata."""
+    patterns = (
+        re.compile(r'\b(?P<month>January|February|March|April|May|June|July|August|September|Sept|October|November|December|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+(?P<day>\d{1,2})(?:st|nd|rd|th)?[,]?\s+(?P<year>19\d{2}|20\d{2})\b', re.I),
+        re.compile(r'\b(?P<day>\d{1,2})(?:st|nd|rd|th)?\s+(?P<month>January|February|March|April|May|June|July|August|September|Sept|October|November|December|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[, ]+\s*(?P<year>19\d{2}|20\d{2})\b', re.I),
+        re.compile(r'\b(?P<year>19\d{2}|20\d{2})[-/.](?P<month>0?[1-9]|1[0-2])[-/.](?P<day>0?[1-9]|[12]\d|3[01])\b'),
+        re.compile(r'\b(?P<month>0?[1-9]|1[0-2])/(?P<day>0?[1-9]|[12]\d|3[01])/(?P<year>19\d{2}|20\d{2})\b'),
+    )
+    found, seen = [], set()
+    for page_number, page in enumerate(pages, 1):
+        text, extraction_method = page if isinstance(page, tuple) else (page, 'native PDF text')
+        for pattern in patterns:
+            for match in pattern.finditer(text):
+                printed = re.sub(r'\s+', ' ', match.group(0)).strip()
+                values = match.groupdict()
+                month_value = values['month']
+                month = MONTHS.get(month_value.casefold(), int(month_value) if month_value.isdigit() else None)
+                try:
+                    from datetime import date
+                    iso = date(int(values['year']), int(month), int(values['day'])).isoformat()
+                except (TypeError, ValueError):
+                    continue
+                identity = (page_number, printed.casefold())
+                if identity in seen:
+                    continue
+                seen.add(identity)
+                start, end = max(0, match.start() - 45), min(len(text), match.end() + 45)
+                context = re.sub(r'\s+', ' ', text[start:end]).strip()
+                found.append({'printedDate': printed, 'isoDate': iso, 'sourcePage': page_number,
+                              'context': context, 'extractionMethod': extraction_method})
+    return found
 
 
 def key(value):
@@ -99,6 +140,7 @@ def scan_one(task):
     result = {k: task.get(k) for k in ('file', 'documentType', 'sourceSize', 'sourceMtimeNs', 'sourceSha256', 'projectCode')}
     if task.get('roleKind'):
         result['signatoryParserVersion'] = SIGNATORY_PARSER_VERSION
+    result['documentDateParserVersion'] = DOCUMENT_DATE_PARSER_VERSION
     result.update({'extractedTitle': None, 'matchStatus': 'no_exact_title_match',
                    'matchedHgabIds': [], 'matchedHgabTitles': [], 'nativeText': False,
                    'pageCount': None, 'firstPageImageCount': 0, 'signatories': [], 'signatoryStatus': None})
@@ -106,9 +148,25 @@ def scan_one(task):
         source = Path(task['absolutePath'])
         with pymupdf.open(source) as document:
             result['pageCount'] = len(document)
-            text = document[0].get_text() if len(document) else ''
+            first_page_text = document[0].get_text() if len(document) else ''
             result['firstPageImageCount'] = len(document[0].get_images(full=True)) if len(document) else 0
+            page_texts = []
+            is_photo_document = task.get('documentType') == 'Geotagged photos'
+            for page in document:
+                page_text = page.get_text()
+                has_native_page_text = bool(page_text.strip())
+                extraction_method = 'native PDF text'
+                if page.get_images(full=True) and (not page_text.strip() or is_photo_document):
+                    try:
+                        ocr_text = page.get_text(textpage=page.get_textpage_ocr(language='eng', dpi=180))
+                        page_text = page_text + '\n' + ocr_text
+                        extraction_method = 'native PDF text + Tesseract OCR' if has_native_page_text else 'Tesseract OCR'
+                    except Exception:
+                        extraction_method = 'native PDF text' if page_text.strip() else 'OCR unavailable'
+                page_texts.append((page_text, extraction_method))
+        text = first_page_text
         result['nativeText'] = bool(text.strip())
+        result['printedDates'] = extract_printed_dates(page_texts)
         result['extractedTitle'] = extract_title(text, WORKER_TITLE_INDEX, WORKER_TITLES_BY_ID, WORKER_TITLE_FREQUENCY) if text.strip() else None
         title = result['extractedTitle']
         if title:
@@ -517,7 +575,8 @@ def _run():
         for task in all_tasks:
             previous = old_records.get(task['file'])
             if (previous and previous.get('sourceSha256') == task.get('sourceSha256')
-                    and (not task.get('roleKind') or previous.get('signatoryParserVersion') == SIGNATORY_PARSER_VERSION)):
+                    and (not task.get('roleKind') or previous.get('signatoryParserVersion') == SIGNATORY_PARSER_VERSION)
+                    and previous.get('documentDateParserVersion') == DOCUMENT_DATE_PARSER_VERSION):
                 continue
             paths.append(task)
         if args.max_documents:
