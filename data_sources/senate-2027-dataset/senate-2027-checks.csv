@@ -1,0 +1,39 @@
+﻿check,ours,printed,difference,ok,source,note,blocking
+Source PDF senate-cr-general-summary.pdf: SHA-256 of the copy published,7345416b34d94c36b3696059f1907ddc3d2e64cc4904b484613a30c5b75e53bd,7345416b34d94c36b3696059f1907ddc3d2e64cc4904b484613a30c5b75e53bd,,True,General Summary of Committee Report No. __ on House Bill No. 10858 (FY 2027 GAB).pdf,the file the pipeline read (its SHA-256 recorded at build) and the copy at budget-assets are the same bytes,True
+Source PDF senate-cr-annex-a.pdf: SHA-256 of the copy published,77065842846fe14f2942464d8ba6ddca9b13200445dfe4ecf483fafeb4a7abb8,77065842846fe14f2942464d8ba6ddca9b13200445dfe4ecf483fafeb4a7abb8,,True,Annex A - Line By Line Amendments (1).pdf,the file the pipeline read (its SHA-256 recorded at build) and the copy at budget-assets are the same bytes,True
+Source PDF senate-cr-annex-a1.pdf: SHA-256 of the copy published,176ff3411000942d858d9e4850a965cf1d7cafb85e9137d7d1b74d17c80484e8,176ff3411000942d858d9e4850a965cf1d7cafb85e9137d7d1b74d17c80484e8,,True,Annex A-1 DA Farm-to-Market Roads.pdf,the file the pipeline read (its SHA-256 recorded at build) and the copy at budget-assets are the same bytes,True
+Source PDF senate-cr-annex-a2.pdf: SHA-256 of the copy published,87ff59ac9f0fbd8ec541252370918bc45080b9977d0ca2261bb745229ef5e5dd,87ff59ac9f0fbd8ec541252370918bc45080b9977d0ca2261bb745229ef5e5dd,,True,Annex A-2 DOH Health Facilities Enhancement Program (HFEP).pdf,the file the pipeline read (its SHA-256 recorded at build) and the copy at budget-assets are the same bytes,True
+Source PDF senate-cr-annex-a3.pdf: SHA-256 of the copy published,587dcd6b83f32c172b88cbaaab601e69f628c46e136faad0347730cf16895824,587dcd6b83f32c172b88cbaaab601e69f628c46e136faad0347730cf16895824,,True,Annex A-3 BSGC-OEOs-NIA-Details of NIA's Operations Budget.pdf,the file the pipeline read (its SHA-256 recorded at build) and the copy at budget-assets are the same bytes,True
+Source PDF senate-cr-annex-a4.pdf: SHA-256 of the copy published,8b849fd8661d142ae9b35d35238e8d3d76d688f279ee4fbca9f1a90e90750194,8b849fd8661d142ae9b35d35238e8d3d76d688f279ee4fbca9f1a90e90750194,,True,Annex A-4 Details of DPWH's Programs-Projects (FY 2027 General Appropriations Bill Volume I-C).pdf,the file the pipeline read (its SHA-256 recorded at build) and the copy at budget-assets are the same bytes,True
+Source PDF senate-cr-annex-a5.pdf: SHA-256 of the copy published,e845de4fdaf729053580eb80b72fe8c7c62c0134f1d7fe9e295eb9f5071541e4,e845de4fdaf729053580eb80b72fe8c7c62c0134f1d7fe9e295eb9f5071541e4,,True,Annex A-5 Details of BSGC-DOT-TIEZA and TPB.pdf,the file the pipeline read (its SHA-256 recorded at build) and the copy at budget-assets are the same bytes,True
+Source PDF senate-cr-annex-b.pdf: SHA-256 of the copy published,e562247978059abbce55aefb6c2133a10c569522f5fdb3103465776782e51719,e562247978059abbce55aefb6c2133a10c569522f5fdb3103465776782e51719,,True,Annex B - Amendments to the Special and General Provisions.pdf,the file the pipeline read (its SHA-256 recorded at build) and the copy at budget-assets are the same bytes,True
+DPWH projects (Annex A-4): House bill total,587075661000,587075661000,0.0,True,"Annex A-4: DPWH programs and projects, printed total",,True
+DPWH projects (Annex A-4): Senate total,520876384250,520876384250,0.0,True,"Annex A-4: DPWH programs and projects, printed total",,True
+"DPWH projects (Annex A-4): House bill + change = Senate, every project",16272,16272,0.0,True,row arithmetic,,True
+DA farm-to-market roads (Annex A-1): House bill total,19628100000,19628100000,0.0,True,"Annex A-1: DA farm-to-market roads, printed total",,True
+DA farm-to-market roads (Annex A-1): Senate total,16000000000,16000000000,0.0,True,"Annex A-1: DA farm-to-market roads, printed total",,True
+"DA farm-to-market roads (Annex A-1): House bill + change = Senate, every project",1177,1177,0.0,True,row arithmetic,,True
+DOH Health Facilities Enhancement Program (Annex A-2): House bill total,10021659000,10021659000,0.0,True,"Annex A-2: DOH Health Facilities Enhancement Program, printed total",,True
+DOH Health Facilities Enhancement Program (Annex A-2): Senate total,15513059000,15513059000,0.0,True,"Annex A-2: DOH Health Facilities Enhancement Program, printed total",,True
+"DOH Health Facilities Enhancement Program (Annex A-2): House bill + change = Senate, every project",728,728,0.0,True,row arithmetic,,True
+NIA projects (Annex A-3): House bill total,17999305000,17999305000,0.0,True,"Annex A-3: NIA projects, printed total",,True
+NIA projects (Annex A-3): Senate total,17748181000,17748181000,0.0,True,"Annex A-3: NIA projects, printed total",,True
+"NIA projects (Annex A-3): House bill + change = Senate, every project",940,940,0.0,True,row arithmetic,,True
+DPWH projects (Annex A-4): Senate committee report page links print their project,8712,8712,0.0,True,"Senate committee report PDFs, page by page",,False
+DPWH projects (Annex A-4): House bill page links print their project,16271,16271,0.0,True,"House bill PDFs, page by page",,False
+DPWH projects (Annex A-4): NEP page links print their project,11419,11419,0.0,True,"NEP PDFs, page by page",,False
+DA farm-to-market roads (Annex A-1): Senate committee report page links print their project,1177,1177,0.0,True,"Senate committee report PDFs, page by page",,False
+DA farm-to-market roads (Annex A-1): House bill page links print their project,964,964,0.0,True,"House bill PDFs, page by page",,False
+DA farm-to-market roads (Annex A-1): NEP page links print their project,704,704,0.0,True,"NEP PDFs, page by page",,False
+DOH Health Facilities Enhancement Program (Annex A-2): Senate committee report page links print their project,189,189,0.0,True,"Senate committee report PDFs, page by page",,False
+DOH Health Facilities Enhancement Program (Annex A-2): House bill page links print their project,564,564,0.0,True,"House bill PDFs, page by page",,False
+DOH Health Facilities Enhancement Program (Annex A-2): NEP page links print their project,560,562,-2.0,False,"NEP PDFs, page by page",misses in senate-2027-page-misses.csv,False
+NIA projects (Annex A-3): Senate committee report page links print their project,940,940,0.0,True,"Senate committee report PDFs, page by page",,False
+NIA projects (Annex A-3): House bill page links print their project,828,828,0.0,True,"House bill PDFs, page by page",,False
+NIA projects (Annex A-3): NEP page links print their project,791,791,0.0,True,"NEP PDFs, page by page",,False
+"Annex A: House bill + net change = Senate, every row that prints all three",1986,1986,0.0,True,"Annex A, row arithmetic",,True
+"Annex A: increase + decrease = net change, every row",2705,2705,0.0,True,"Annex A, row arithmetic",,True
+"General Summary: each department's agencies (level agency) add up to the department (House bill, net change, Senate)",35,35,0.0,True,General Summary,,True
+General Summary: departments + special purpose funds = programmed appropriations (Senate),4494082001000,4494082001000,0.0,True,"General Summary, printed totals",,True
+General Summary: programmed + unprogrammed = total new appropriations (Senate),4605253699000,4605253699000,0.0,True,"General Summary, printed totals",,True
+"Line by line: each department's lines, with their Senate amounts, add up to its General Summary total (House bill and Senate)",43,43,0.0,True,General Summary; Annex A,,True

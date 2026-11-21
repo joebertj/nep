@@ -1,0 +1,298 @@
+{
+ "title": "FY2027 Senate committee report on HB 10858: projects, amendments, General Summary and provisions",
+ "built_at": "2026-11-21T09:06:17Z",
+ "source_commit": "b6cca85d0dc66f93521ec5684a66be2c137ad395",
+ "build": "npm run build:senate-cr (scripts/senate-cr/run.sh)",
+ "repository": "https://github.com/bettergovph/ai-reports",
+ "site": "https://budget.bettergov.ph/senate/2027/data",
+ "sources": [
+  {
+   "key": "senate-cr-general-summary",
+   "title": "General Summary",
+   "original_file": "General Summary of Committee Report No. __ on House Bill No. 10858 (FY 2027 GAB).pdf",
+   "sha256": "7345416b34d94c36b3696059f1907ddc3d2e64cc4904b484613a30c5b75e53bd",
+   "bytes": 497449,
+   "url": "https://budget-assets.bettergov.ph/senate/2027/pdf/senate-cr-general-summary.pdf"
+  },
+  {
+   "key": "senate-cr-annex-a",
+   "title": "Annex A: Line-by-line amendments",
+   "original_file": "Annex A - Line By Line Amendments (1).pdf",
+   "sha256": "77065842846fe14f2942464d8ba6ddca9b13200445dfe4ecf483fafeb4a7abb8",
+   "bytes": 1284882,
+   "url": "https://budget-assets.bettergov.ph/senate/2027/pdf/senate-cr-annex-a.pdf"
+  },
+  {
+   "key": "senate-cr-annex-a1",
+   "title": "Annex A-1: DA farm-to-market roads",
+   "original_file": "Annex A-1 DA Farm-to-Market Roads.pdf",
+   "sha256": "176ff3411000942d858d9e4850a965cf1d7cafb85e9137d7d1b74d17c80484e8",
+   "bytes": 1049081,
+   "url": "https://budget-assets.bettergov.ph/senate/2027/pdf/senate-cr-annex-a1.pdf"
+  },
+  {
+   "key": "senate-cr-annex-a2",
+   "title": "Annex A-2: DOH Health Facilities Enhancement Program",
+   "original_file": "Annex A-2 DOH Health Facilities Enhancement Program (HFEP).pdf",
+   "sha256": "87ff59ac9f0fbd8ec541252370918bc45080b9977d0ca2261bb745229ef5e5dd",
+   "bytes": 243282,
+   "url": "https://budget-assets.bettergov.ph/senate/2027/pdf/senate-cr-annex-a2.pdf"
+  },
+  {
+   "key": "senate-cr-annex-a3",
+   "title": "Annex A-3: NIA projects",
+   "original_file": "Annex A-3 BSGC-OEOs-NIA-Details of NIA's Operations Budget.pdf",
+   "sha256": "587dcd6b83f32c172b88cbaaab601e69f628c46e136faad0347730cf16895824",
+   "bytes": 920394,
+   "url": "https://budget-assets.bettergov.ph/senate/2027/pdf/senate-cr-annex-a3.pdf"
+  },
+  {
+   "key": "senate-cr-annex-a4",
+   "title": "Annex A-4: DPWH programs and projects",
+   "original_file": "Annex A-4 Details of DPWH's Programs-Projects (FY 2027 General Appropriations Bill Volume I-C).pdf",
+   "sha256": "8b849fd8661d142ae9b35d35238e8d3d76d688f279ee4fbca9f1a90e90750194",
+   "bytes": 1984658,
+   "url": "https://budget-assets.bettergov.ph/senate/2027/pdf/senate-cr-annex-a4.pdf"
+  },
+  {
+   "key": "senate-cr-annex-a5",
+   "title": "Annex A-5: TIEZA and Tourism Promotions Board",
+   "original_file": "Annex A-5 Details of BSGC-DOT-TIEZA and TPB.pdf",
+   "sha256": "e845de4fdaf729053580eb80b72fe8c7c62c0134f1d7fe9e295eb9f5071541e4",
+   "bytes": 176274,
+   "url": "https://budget-assets.bettergov.ph/senate/2027/pdf/senate-cr-annex-a5.pdf"
+  },
+  {
+   "key": "senate-cr-annex-b",
+   "title": "Annex B: Special and general provisions",
+   "original_file": "Annex B - Amendments to the Special and General Provisions.pdf",
+   "sha256": "e562247978059abbce55aefb6c2133a10c569522f5fdb3103465776782e51719",
+   "bytes": 972744,
+   "url": "https://budget-assets.bettergov.ph/senate/2027/pdf/senate-cr-annex-b.pdf"
+  }
+ ],
+ "tables": [
+  {
+   "name": "projects",
+   "about": "Every project of the four programs the report details: NEP, House bill and Senate amounts, what the Senate does to it, and the pages that print each amount.",
+   "rows": 20835,
+   "columns": [
+    "program",
+    "id",
+    "house_id",
+    "status",
+    "status_label",
+    "title",
+    "house_title",
+    "renamed",
+    "region",
+    "office",
+    "program_line",
+    "pap",
+    "nep_php",
+    "house_php",
+    "senate_php",
+    "vs_house_php",
+    "vs_nep_php",
+    "inserted_by_house",
+    "replaces_id",
+    "senate_doc",
+    "senate_page",
+    "senate_pdf_url",
+    "house_doc",
+    "house_page",
+    "house_pdf_url",
+    "nep_doc",
+    "nep_page",
+    "nep_pdf_url",
+    "page_url",
+    "matched_by",
+    "check_id",
+    "check_note"
+   ]
+  },
+  {
+   "name": "annex-a",
+   "about": "Annex A, the line-by-line amendments, as printed: one row per amount the report changes, tied to the House bill line it cites.",
+   "rows": 2719,
+   "columns": [
+    "department_id",
+    "department_no",
+    "department",
+    "agency_no",
+    "agency",
+    "kind",
+    "is_total_row",
+    "label",
+    "printed_heading",
+    "house_bill_path",
+    "status",
+    "status_meaning",
+    "deleted",
+    "instruction",
+    "nep_php",
+    "house_php",
+    "increase_php",
+    "decrease_php",
+    "net_php",
+    "senate_php",
+    "house_doc",
+    "house_pdf_page",
+    "house_printed_page",
+    "house_line",
+    "house_pdf_url",
+    "senate_page",
+    "senate_pdf_url"
+   ]
+  },
+  {
+   "name": "general-summary",
+   "about": "The General Summary: House bill, increase, decrease, net change and Senate amount by department and agency, in pesos (the report prints thousands).",
+   "rows": 450,
+   "columns": [
+    "level",
+    "department_no",
+    "department",
+    "agency_no",
+    "agency",
+    "nep_php",
+    "house_php",
+    "increase_php",
+    "decrease_php",
+    "net_php",
+    "senate_php"
+   ]
+  },
+  {
+   "name": "provisions",
+   "about": "Annex B: the amendments to the special and general provisions, each with the House bill page and lines it changes.",
+   "rows": 186,
+   "columns": [
+    "part",
+    "department",
+    "agency",
+    "volume",
+    "house_printed_page",
+    "house_lines",
+    "instruction",
+    "amended_text",
+    "house_doc",
+    "house_pdf_page",
+    "house_pdf_url",
+    "senate_page",
+    "senate_pdf_url"
+   ]
+  },
+  {
+   "name": "pairings",
+   "about": "Insertions we read as a renamed House project, a restored NEP project, a possible duplicate, or the same facility's other component: to check.",
+   "rows": 281,
+   "columns": [
+    "program",
+    "matched_by",
+    "status",
+    "status_label",
+    "id",
+    "title",
+    "paired_title",
+    "house_title",
+    "region",
+    "pap",
+    "nep_php",
+    "house_php",
+    "senate_php",
+    "check_note",
+    "senate_page",
+    "senate_pdf_url",
+    "page_url"
+   ]
+  }
+ ],
+ "files": [
+  {
+   "file": "README.md",
+   "bytes": 13143,
+   "sha256": "7499829e6b6fd38ebb5a0963a656b1a6782aeb10a4ceebd8988a70ac1e97faa7",
+   "url": "https://budget-assets.bettergov.ph/senate/2027/downloads/README.md"
+  },
+  {
+   "file": "senate-2027-annex-a.csv",
+   "bytes": 1522519,
+   "sha256": "c778e859b078646e6643dfa67ece612a746ab7f1ecaa4e4d2452c8c340b71d2c",
+   "url": "https://budget-assets.bettergov.ph/senate/2027/downloads/senate-2027-annex-a.csv"
+  },
+  {
+   "file": "senate-2027-annex-a.parquet",
+   "bytes": 117308,
+   "sha256": "9ba3474fa25bab314313be5a92d64a9bddcdb3d56ed7b827bb4fe45b35eca9bc",
+   "url": "https://budget-assets.bettergov.ph/senate/2027/downloads/senate-2027-annex-a.parquet"
+  },
+  {
+   "file": "senate-2027-checks.csv",
+   "bytes": 7321,
+   "sha256": "adead5a7d7aa749ca4c4ffd3bcb3bacc7674f5ff983976f96ea03e26006afbac",
+   "url": "https://budget-assets.bettergov.ph/senate/2027/downloads/senate-2027-checks.csv"
+  },
+  {
+   "file": "senate-2027-general-summary.csv",
+   "bytes": 54384,
+   "sha256": "140df837f99bfc21934c34aee4e232425cd9b34b5856a4ff189a6f64f3a0c7b7",
+   "url": "https://budget-assets.bettergov.ph/senate/2027/downloads/senate-2027-general-summary.csv"
+  },
+  {
+   "file": "senate-2027-general-summary.parquet",
+   "bytes": 23396,
+   "sha256": "859191a802d03d98ed3887e7292e7eb0a9d909d329498afa6b78894d1ca88016",
+   "url": "https://budget-assets.bettergov.ph/senate/2027/downloads/senate-2027-general-summary.parquet"
+  },
+  {
+   "file": "senate-2027-page-misses.csv",
+   "bytes": 343,
+   "sha256": "1eddf593d3a843a9aa53ae4adb0eb4a8d710a9aae5de90ae57ab0d6e772846fb",
+   "url": "https://budget-assets.bettergov.ph/senate/2027/downloads/senate-2027-page-misses.csv"
+  },
+  {
+   "file": "senate-2027-pairings.csv",
+   "bytes": 144940,
+   "sha256": "fa32984b710a7280a5c886641492a15b0a8074b7aa003f0d058efca237ae6f83",
+   "url": "https://budget-assets.bettergov.ph/senate/2027/downloads/senate-2027-pairings.csv"
+  },
+  {
+   "file": "senate-2027-pairings.parquet",
+   "bytes": 39329,
+   "sha256": "b9ba4afccbd05d51d53d00ca46c2f541e6beaa71f448fea46d0f495526c062b0",
+   "url": "https://budget-assets.bettergov.ph/senate/2027/downloads/senate-2027-pairings.parquet"
+  },
+  {
+   "file": "senate-2027-projects.csv",
+   "bytes": 15856930,
+   "sha256": "a81b87cfb38d3b381422f2a3b0c51e589b353cbc5ac1057ab2573038f9071ef9",
+   "url": "https://budget-assets.bettergov.ph/senate/2027/downloads/senate-2027-projects.csv"
+  },
+  {
+   "file": "senate-2027-projects.parquet",
+   "bytes": 1640873,
+   "sha256": "168f1556ef5e4d83a8fe3682d895ba70642426d26cbcad3f7ac2b02c1c6c8c09",
+   "url": "https://budget-assets.bettergov.ph/senate/2027/downloads/senate-2027-projects.parquet"
+  },
+  {
+   "file": "senate-2027-provisions.csv",
+   "bytes": 180158,
+   "sha256": "955b2434ba1b6e17a4d83f02168b8d8346aac5dfab319371ba5d562192e98d92",
+   "url": "https://budget-assets.bettergov.ph/senate/2027/downloads/senate-2027-provisions.csv"
+  },
+  {
+   "file": "senate-2027-provisions.parquet",
+   "bytes": 62584,
+   "sha256": "fb8897bbe2ad879e081ea675a194ff937fad354465e23d398753c86e6a3ba9b1",
+   "url": "https://budget-assets.bettergov.ph/senate/2027/downloads/senate-2027-provisions.parquet"
+  }
+ ],
+ "checks": {
+  "run": 38,
+  "passed": 37,
+  "blocking_failed": 0,
+  "file": "senate-2027-checks.csv"
+ },
+ "under_citizen_review": true
+}

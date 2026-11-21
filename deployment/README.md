@@ -55,6 +55,58 @@ intervention when the Git path is unsuitable, and keep routine releases in Git.
 Inspection is the default. It reports repository state, deployment filenames,
 service activity, and the web-root listing without changing the server.
 
+## OS security patching
+
+`patch-security-vms.sh` targets the two authorized hosts, `178.128.95.212` and
+`165.245.186.194`. The default simulates security-only OS updates:
+
+```sh
+./deployment/patch-security-vms.sh --check
+```
+
+Apply only after reviewing the simulation for both hosts:
+
+```sh
+./deployment/patch-security-vms.sh --apply
+```
+
+The apply action requires typing `APPLY SECURITY UPDATES ON BOTH VMS`. Debian
+and Ubuntu use the configured `unattended-upgrades` origin allowlist, which the
+helper checks for security origins and permits the base release only as a
+dependency source; DNF and YUM use security advisories. APT refreshes its indexes
+over IPv4 and stops if any source fails. Unsupported package manager/OS
+combinations stop without applying updates. This covers system packages such as OpenSSH, NGINX, Python, Rust and
+npm when those packages receive OS security advisories. If NGINX is installed,
+the helper validates its configuration as root with `sudo nginx -t` and reloads
+it only if the service was already active. The update can report that a reboot
+is required. Both actions require the local `~/.ssh/klti` key and non-interactive
+SSH; apply requires passwordless sudo.
+
+Application dependencies are a separate deployment path. This helper does
+not change Python requirements, Cargo.lock, package-lock.json, FastAPI, Tailwind,
+or other app dependencies. Those need security audits, lockfile changes, a
+build, and deployment so the running apps match the reviewed source.
+
+The VM at `178.128.95.212` timed out over public SSH during the November 21,
+2026 preflight. The patch helper routes this allowlisted target through its
+verified WireGuard address `10.27.79.2` and uses account `joebertj`, matching
+the successful key login. Override the endpoint with
+`SECURITY_PATCH_WG_178_128_95_212` if the tunnel address changes. An explicit
+`--user` option overrides the per-host SSH account. The Jammy VM routes APT's
+`_apt` fetch user over its primary interface because
+the host's WireGuard full-tunnel route cannot reach public repositories. Its
+`/etc/resolv.conf` uses the active `systemd-resolved` stub, and APT is configured
+to use IPv4 because the VM has no IPv6 route. The route exception is limited to
+the `_apt` UID; other host and VPN traffic retains its existing routing.
+
+The default SSH user is `joebert`, which matches the BetterGov VM. If the
+Better Miagao VM uses another account, pass it explicitly, for example:
+
+```sh
+./deployment/patch-security-vms.sh --check --host 178.128.95.212 --user deploy
+./deployment/patch-security-vms.sh --apply --host 178.128.95.212 --user deploy
+```
+
 ## Preview copy (not yet run)
 
 ```sh
