@@ -45,16 +45,42 @@ def extract_section(html, marker):
     raise ValueError(f'Could not find closing section tag for: {marker}')
 
 
+def extract_element(html, tag, marker):
+    """Find a balanced element while ignoring markup-looking text in scripts."""
+    start = html.find(marker)
+    if start < 0:
+        raise ValueError(f'Could not locate opening {tag} tag for: {marker}')
+    token = re.compile(rf'<script\b[^>]*>.*?</script\s*>|</?{re.escape(tag)}\b[^>]*>', re.I | re.S)
+    depth = 0
+    for match in token.finditer(html, start):
+        if match.group(0).lower().startswith('<script'):
+            continue
+        if match.group(0).lower().startswith(f'</{tag}'):
+            depth -= 1
+            if depth == 0:
+                return start, match.end()
+        else:
+            depth += 1
+    raise ValueError(f'Could not find closing {tag} tag for: {marker}')
+
+
 def reorder_intro_sections(html):
-    """Put the district selector after the hero, ahead of the two lower sections."""
+    """Put the selected-district report after its selector and before other sections."""
     selector_start, selector_end = extract_section(html, 'class="panel selector-panel"')
     selector = html[selector_start:selector_end]
     html = html[:selector_start] + html[selector_end:]
     _, hero_end = extract_section(html, 'id="report-hero"')
     html = html[:hero_end] + selector + html[hero_end:]
 
+    report_start, report_end = extract_element(html, 'div', 'id="report-content"')
+    report = html[report_start:report_end]
+    html = html[:report_start] + html[report_end:]
+    _, selector_end = extract_section(html, 'class="panel selector-panel"')
+    html = html[:selector_end] + report + html[selector_end:]
+
     order = [html.find('id="report-hero"'), html.find('class="panel selector-panel"'),
-             html.find('id="leg-district-insertions"'), html.find('id="district-allocation-analysis-link"')]
+             html.find('id="report-content"'), html.find('id="leg-district-insertions"'),
+             html.find('id="district-allocation-analysis-link"')]
     if any(position < 0 for position in order) or order != sorted(order):
         raise ValueError(f'Congress opening section order is invalid: {order}')
     return html

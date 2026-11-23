@@ -187,6 +187,8 @@ let page=0;const size=50;function render(){{const q=document.querySelector('#q')
     (OUT/'scr.html').write_text(page,encoding='utf-8')
     (STATIC/'scr-data.json').write_text(serialized,encoding='utf-8')
     (OUT/'scr-data.json').write_text(serialized,encoding='utf-8')
-    print(json.dumps({'page':str(OUT/'scr.html'),'publishedPage':str(STATIC/'scr.html'),'projects':len(rows),'checksPassed':checks_ok,'checksTotal':len(checks),'programs':by_program},ensure_ascii=False))
+    from scr_page_shard_builder import refresh_all_pages
+    page_shards=refresh_all_pages()
+    print(json.dumps({'page':str(OUT/'scr.html'),'publishedPage':str(STATIC/'scr.html'),'projects':len(rows),'checksPassed':checks_ok,'checksTotal':len(checks),'programs':by_program,'pageShards':page_shards},ensure_ascii=False))
 
 if __name__=='__main__': build()

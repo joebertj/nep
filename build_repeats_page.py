@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Collate generated project-repeat sections, preserving their tables and evidence."""
 import csv
-import hashlib
 import json
 import re
 from pathlib import Path

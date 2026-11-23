@@ -20,7 +20,10 @@ def apply_scr_stage_column(text,page):
         (target/'scr-stage-column.js').write_bytes(raw)
     text=re.sub(r'<script\b[^>]*\bid="scr-stage-column-script"[^>]*>.*?</script>','',text,flags=re.S)
     text=re.sub(r'<script\b[^>]*\bsrc=["\'][^"\']*scr-stage-column\.js(?:\?[^"\']*)?["\'][^>]*>\s*</script>','',text,flags=re.S)
-    return text.replace('</body>',f'<script id="scr-stage-column-script" src="scr-stage-column.js?v={version}"></script></body>',1)
+    text=text.replace('</body>',f'<script id="scr-stage-column-script" src="scr-stage-column.js?v={version}"></script></body>',1)
+    from scr_page_shard_builder import prepare_page
+    text,_=prepare_page(text,page)
+    return text
 
 BETTERGOV_COLOR_REPLACEMENTS={
     '#087e78':'#0038A8', '#168277':'#0038A8', '#174b55':'#0038A8', '#123944':'#00246A', '#102f3e':'#00246A',
