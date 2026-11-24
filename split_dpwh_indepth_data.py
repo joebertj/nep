@@ -23,6 +23,10 @@ def atomic_bytes(path, payload):
 def encode_shard(items):
     return (json.dumps(items, ensure_ascii=False, separators=(',', ':')) + '\n').encode('utf-8')
 
+def hgab_pow_directory(documents):
+    return [{key: document.get(key) for key in ('code', 'hgabTitle', 'proposalCode')}
+            for document in documents]
+
 
 def split_array(key, items, static):
     """Write an array to <=10 MB files and return a compact shard manifest."""
@@ -71,6 +75,8 @@ def publish(source=SOURCE, static=STATIC):
     arrays = {}
     for key in ('projects', 'powPeers', 'summaryPeerGroups', 'hgabPowResults', 'costUnitHgabResults'):
         values = snapshot.pop(key, [])
+        if key == 'hgabPowResults':
+            snapshot['hgabPowDirectory'] = hgab_pow_directory(values)
         arrays[key] = split_array(key, values, static)
         snapshot[f'{key[:-1] if key.endswith("s") else key}Count'] = len(values)
 

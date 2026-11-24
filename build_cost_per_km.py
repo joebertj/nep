@@ -363,7 +363,22 @@ function renderStatic3D(category,id,error){const target=document.getElementById(
 function supportsWebGL(){try{const c=document.createElement('canvas');return !!(c.getContext('webgl2')||c.getContext('webgl')||c.getContext('experimental-webgl'))}catch(e){return false}}
 function cuboidTrace(category,color){const rows=spatialRows.filter(r=>r.category===category).sort((a,b)=>Number(b.density)-Number(a.density)).slice(0,30);const maxLength=Math.max(1,...rows.map(r=>Number(r.lengthMeters))),maxLanes=Math.max(1,...rows.map(r=>r.plotLanes)),logs=rows.map(r=>Math.log10(Math.max(1,r.density))),minLog=Math.min(...logs),maxLog=Math.max(...logs),lengthScale=18/maxLength,laneScale=.62,rowGap=maxLanes*laneScale+1.25,planePitch=3.8,t={type:'mesh3d',name:category,color,opacity:.96,flatshading:true,hoverinfo:'text',x:[],y:[],z:[],i:[],j:[],k:[],text:[],hovertemplate:'%{text}<extra>'+category+'</extra>'};const faces=[[0,2,1],[0,3,2],[4,5,6],[4,6,7],[0,1,5],[0,5,4],[1,2,6],[1,6,5],[2,3,7],[2,7,6],[3,0,4],[3,4,7]];rows.forEach((r,index)=>{const position=index%5,plane=Math.floor(index/5),x0=0,y0=position*rowGap,z0=plane*planePitch,dx=Math.max(.08,Number(r.lengthMeters)*lengthScale),dy=Math.max(.45,r.plotLanes*laneScale),logDensity=Math.log10(Math.max(1,r.density)),normalized=maxLog===minLog?1:(logDensity-minLog)/(maxLog-minLog),dz=.4+Math.pow(normalized,.9)*2.0,vertices=[[x0,y0,z0],[x0+dx,y0,z0],[x0+dx,y0+dy,z0],[x0,y0+dy,z0],[x0,y0,z0+dz],[x0+dx,y0,z0+dz],[x0+dx,y0+dy,z0+dz],[x0,y0+dy,z0+dz]],base=t.x.length;vertices.forEach(v=>{t.x.push(v[0]);t.y.push(v[1]);t.z.push(v[2]);t.text.push('<b>'+r.projectName+'</b><br>'+category+' · plane '+(plane+1)+'<br>'+r.program+'<br>Length: '+Number(r.lengthMeters).toLocaleString()+' m<br>Lanes: '+r.plotLanes+' · '+r.laneBasis+'<br>Allocation: ₱'+Number(r.amountPesos).toLocaleString()+'<br>Density: ₱'+Number(r.density).toLocaleString(undefined,{maximumFractionDigits:2})+'/lane-meter<br>Source: '+r.sourceVolume+' · p. '+r.sourcePage)});faces.forEach(f=>{t.i.push(base+f[0]);t.j.push(base+f[1]);t.k.push(base+f[2])})});return t}
 function renderRoadBridge3D(){if(!window.Plotly||!supportsWebGL()){renderStatic3D('Roads','roads-3d-plot');renderStatic3D('Bridges','bridges-3d-plot');return}for(const [category,color,id] of [['Roads','#0038A8','roads-3d-plot'],['Bridges','#CE1126','bridges-3d-plot']]){const target=document.getElementById(id),trace=cuboidTrace(category,color),layout={autosize:true,height:600,margin:{l:0,r:0,b:0,t:12},paper_bgcolor:'rgba(0,0,0,0)',scene:{aspectmode:'manual',aspectratio:{x:3.1,y:2.4,z:1.3},xaxis:{visible:false},yaxis:{visible:false},zaxis:{title:'Log density · stacked planes',visible:true,gridcolor:'#dce5e3',zerolinecolor:'#b9c9c6'},camera:{eye:{x:1.6,y:1.5,z:1.25}}},font:{family:'system-ui, sans-serif',color:'#212121'}};try{Promise.resolve(Plotly.newPlot(target,[trace],layout,{responsive:true,displaylogo:false,scrollZoom:true})).then(()=>requestAnimationFrame(()=>{if(!target.querySelector('canvas'))renderStatic3D(category,id,new Error('Plotly did not create its WebGL canvas'))})).catch(error=>renderStatic3D(category,id,error))}catch(error){renderStatic3D(category,id,error)}}}
-renderRoadBridge3D();window.addEventListener('resize',()=>{if(window.Plotly){Plotly.Plots.resize('roads-3d-plot');Plotly.Plots.resize('bridges-3d-plot')}});
+function loadRoadBridge3D(){
+  if(!supportsWebGL()||window.Plotly){renderRoadBridge3D();return}
+  const script=document.createElement('script');
+  script.src='__PLOTLY_URL__';
+  script.onload=renderRoadBridge3D;
+  script.onerror=renderRoadBridge3D;
+  document.head.append(script);
+}
+if('IntersectionObserver' in window){
+  const observer=new IntersectionObserver(entries=>{
+    if(!entries.some(entry=>entry.isIntersecting))return;
+    observer.disconnect();
+    loadRoadBridge3D();
+  },{rootMargin:'300px'});
+  observer.observe(document.getElementById('road-bridge-3d'));
+}else loadRoadBridge3D();
 }catch(error){for(const id of ['roads-3d-plot','bridges-3d-plot']){const target=document.getElementById(id);if(target&&!target.querySelector('svg,canvas'))target.innerHTML=`<p class=\"caution\">3D comparison could not initialize: ${String(error.message||error).slice(0,200)}</p>`}}
 '''
     # Matching/coverage evidence and allocation calculations share controls/data,
@@ -400,7 +415,7 @@ const projectFields=D.projectIndexFields||[];D.projects=(D.projectIndexRows||[])
     exploratory=render_density(density).replace('<h2>At what stated lengths does allocation density change?</h2>','<h2>3. Length and allocation-density exploration</h2>',1)
     support_block='<section id="coordinate-approximations"><h2>4. Coordinate-distance approximations</h2><p>Coordinate-distance estimates stay separate from stated-meter rates and high-rate flags. Detailed asset matching, recovered dimensions, length coverage and extraction methods are on <a href="cost-matching.html">Asset matching and length coverage</a>.</p>'+approximation_note+'<div id="support-sections"></div></section>'
     bridge_rehab_block=bridge_rehabilitation_review(data)
-    page=head+'<body class="bettergov-research"><header><div class="eyebrow">BetterGov · Budget research</div><h1>Cost per meter and lane-meter</h1><p>HGAB 3rd reading · calculations and peer comparisons</p></header><main>'+evidence_limits+hero+rate_block.replace('<div id="rate-sections"></div>','<div id="rate-sections"><p id="cost-table-load-status" class="caution">Project tables load as you reach this section.</p></div>')+lane_block+exploratory+support_block+bridge_rehab_block+'</main>'+chart_data_script+'<script src="plotly-2.35.2.min.js?v='+plotly_version+'"></script>'+cost_table_loader+'<script>'+spatial_script+'</script></body></html>'
+    page=head+'<body class="bettergov-research"><header><div class="eyebrow">BetterGov · Budget research</div><h1>Cost per meter and lane-meter</h1><p>HGAB 3rd reading · calculations and peer comparisons</p></header><main>'+evidence_limits+hero+rate_block.replace('<div id="rate-sections"></div>','<div id="rate-sections"><p id="cost-table-load-status" class="caution">Project tables load as you reach this section.</p></div>')+lane_block+exploratory+support_block+bridge_rehab_block+'</main>'+chart_data_script+cost_table_loader+'<script>'+spatial_script.replace('__PLOTLY_URL__','plotly-2.35.2.min.js?v='+plotly_version)+'</script></body></html>'
     from report_hero_module import STYLE,hero as lead_card
     page=page.replace('__HERO_STYLE__',STYLE)
     from uniform_report_menu import apply_page as apply_uniform_menu_page

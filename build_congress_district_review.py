@@ -47,9 +47,10 @@ def extract_section(html, marker):
 
 def extract_element(html, tag, marker):
     """Find a balanced element while ignoring markup-looking text in scripts."""
-    start = html.find(marker)
-    if start < 0:
+    opening = re.search(rf'<{re.escape(tag)}\b[^>]*{re.escape(marker)}[^>]*>', html, re.I)
+    if not opening:
         raise ValueError(f'Could not locate opening {tag} tag for: {marker}')
+    start = opening.start()
     token = re.compile(rf'<script\b[^>]*>.*?</script\s*>|</?{re.escape(tag)}\b[^>]*>', re.I | re.S)
     depth = 0
     for match in token.finditer(html, start):

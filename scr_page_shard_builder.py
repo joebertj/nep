@@ -19,7 +19,7 @@ PAGE_PROGRAMS={
     'expectation-vs-reality.html':['dpwh'],'rcs.html':['dpwh'],'mpb.html':['dpwh'],
     'barangay.html':['dpwh'],
 }
-JSON_REF=re.compile(r'''(?:fetch\s*\(\s*|(?:data-[\w-]+)\s*=\s*)["']([^"']+\.json(?:\?[^"']*)?)["']''',re.I)
+JSON_REF=re.compile(r'''(?:\bfetch(?:Json)?\s*\(\s*|(?:data-[\w-]+)\s*=\s*)["']([^"']+\.json(?:\?[^"']*)?)["']''',re.I)
 SCRIPT_REF=re.compile(r'''<script\b[^>]*\bsrc=["']([^"']+\.js(?:\?[^"']*)?)["']''',re.I)
 INLINE_TEXT=re.compile(r'''"(?:title|projectName|project|project_name|projectTitle|house_title|hgabTitle|nepTitle)"\s*:\s*"((?:\\.|[^"\\]){18,})"''',re.I)
 TITLE_FIELDS={'title','projectname','project','project_name','projecttitle','house_title','hgabtitle','neptitle','project_name'}
@@ -80,20 +80,35 @@ def page_title_texts(page,name):
         inline_titles(raw)
         try:data=json.loads(raw)
         except (ValueError,TypeError):continue
-        def walk(value,key=''):
+        def walk(value, key=''):
             if isinstance(value,dict):
-                shard_path=value.get('path')
-                if isinstance(shard_path,str) and shard_path.endswith('.json'):queue.append(shard_path)
-                for k,v in value.items():walk(v,k)
+                shard_path = value.get('path')
+                if isinstance(shard_path, str) and shard_path.endswith('.json'):
+                    queue.append(shard_path)
+                for k, v in value.items():
+                    walk(v, k)
+                if (name == 'cost-per-unit.html' and 'code' in value
+                        and isinstance(value.get('name'), str)):
+                    texts.append(value['name'])
             elif isinstance(value,list):
-                if 'shard' in key.lower():queue.extend(x for x in value if isinstance(x,str) and x.endswith('.json'))
-                else:
-                    for v in value:walk(v,key)
+                for v in value:
+                    walk(v, key)
             elif isinstance(value,str):
                 if 'shard' in key.lower() and value.endswith('.json'):queue.append(value)
                 elif key.lower() in TITLE_FIELDS and len(value)>=18:texts.append(value)
+        if asset.name == 'cost-per-km-page-index.json':
+            fields = data.get('projectIndexFields', [])
+            if 'projectName' in fields:
+                title_column = fields.index('projectName')
+                texts.extend(row[title_column] for row in data.get('projectIndexRows', []) if len(row) > title_column)
+        if asset.name == 'cmpd-cost-per-unit-data.json':
+            for files in data.get('candidateShards', {}).values():
+                queue.extend(files)
+        if asset.name == 'cost-per-unit-index.json' and name == 'cost-per-unit.html':
+            queue.extend(data.get('costUnitGroupFiles', {}).values())
+            queue.extend(data[key] for key in ('costUnitSummaryFile', 'billboardRowsFile') if data.get(key))
         walk(data)
-    return {normalize(value) for value in texts if len(normalize(value))>=18}
+    return {value for text in texts if len(value := normalize(text)) >= 18}
 
 def build_page_subset(page,filename,scr_data):
     scr_rows=scr_data.get('rows',[])
@@ -103,7 +118,7 @@ def build_page_subset(page,filename,scr_data):
     aliases={}
     for row in scr_rows:
         if row.get('program') not in programs:continue
-        for title in {normalize(row.get('house_title')),normalize(row.get('title'))}:
+        for title in dict.fromkeys((normalize(row.get('house_title')), normalize(row.get('title')))):
             if len(title)>=18:aliases.setdefault(' '.join(title.split()[:3]),[]).append((title,row))
     selected={}
     for prefix,candidates in aliases.items():
