@@ -11,6 +11,7 @@ from urllib.parse import urlencode, urlsplit
 from analyze_mpb_proximity import PAIR, coordinates
 from analyze_priority_repeats import classify
 from lane_cost_enrichment import BRIDGE, key as inventory_key, rows as inventory_rows
+from location_data.historical_repeat_titles import project_key
 from location_data.repeat_browser_places import RepeatPlaces
 from scr_page_shard_builder import normalize
 
@@ -23,8 +24,9 @@ DATA_NAME = 'repeat-project-browser-data.json'
 CURRENT_DATA_NAME = 'repeat-project-browser-2027-data.json'
 PAGE_SIZE = 100
 CATEGORY_KEYS = {'Road': 'roads', 'Bridge': 'bridges', 'Multi-purpose building': 'mpb', 'Flood control': 'flood'}
-HISTORICAL_NOTE = ('Ranked by distinct matched GAA lines, then by their combined allocation. The 2027 stages are shown '
-                   'separately. Bridge inventory matches identify the asset and can cover different work on that bridge.')
+HISTORICAL_NOTE = ('Ranked by distinct matched GAA lines, then by their combined allocation. Historical titles qualify '
+                   'when they recur across fiscal years in the same city or municipality. The 2027 stages are shown where linked. '
+                   'Bridge inventory matches can cover different work on the same bridge.')
 CURRENT_NOTE = ('Ranked by FY2027 candidate pairs, then by allocation in the latest linked stage. Selected counterparts '
                 'show how lines carried forward. Similar titles are candidates for review.')
 
@@ -226,7 +228,39 @@ def bridge_historical_matches(historical):
             }
 
 
-def build(payload, historical):
+def add_gaa_history(projects, historical, places):
+    current = defaultdict(list)
+    for project in projects.values():
+        title = (project.get('house') or project['nep'])['title']
+        if key := project_key(title, places):
+            current[key].append(project)
+
+    groups = defaultdict(list)
+    for year, records in historical.items():
+        for record in records:
+            if record['amount'] > 0 and (key := project_key(record['name'], places)):
+                groups[key].append((year, record))
+    for key, matches in groups.items():
+        if len({year for year, _ in matches}) < 2:
+            continue
+        current_matches = current[key]
+        if len(current_matches) == 1:
+            project = current_matches[0]
+        else:
+            _, latest = max(matches, key=lambda item: (item[0], item[1]['amount'], item[1]['source']))
+            project = {'title': latest['name'], 'office': '', 'history': {},
+                       'reportedRegions': set(), 'nepCategory': latest['category']}
+            projects['gaa', *key] = project
+        for year, record in matches:
+            identity = year, record['source'], normalize(record['name']), record['amount']
+            if identity not in project['history']:
+                add_history(project, year, record['name'], record['amount'], record['source'],
+                            'Matching GAA title and municipality across fiscal years')
+
+
+def build(payload, historical, places=None):
+    if places is None:
+        places = RepeatPlaces()
     projects = {}
     linked_hgab = {}
     retention = {link['sourceCode']: link for link in read('repeat-nep-hgab-survival.json')['proposals']}
@@ -277,6 +311,7 @@ def build(payload, historical):
         for year, old in matches:
             add_history(project, year, old['name'], old['amount'], old['source'],
                         f"DPWH bridge inventory · {asset['id']} · {address}")
+    add_gaa_history(projects, historical, places)
     fill_nep_counterparts(projects)
     proposal_photos, house_photos = photo_indexes(
         {project.get('nepCode') for project in projects.values()},
@@ -308,7 +343,8 @@ def build(payload, historical):
         staged = defaultdict(list)
         for key, value in sorted(history.items(), key=lambda entry: (-entry[0][0], -(entry[0][3] or 0), entry[0][1])):
             staged[key[0]].append(value)
-        project['title'] = (house or nep)['title']
+        if house or nep:
+            project['title'] = (house or nep)['title']
         project['category'] = category_key(project['title'], project.pop('program', '') or (scr or {}).get('pap'),
                                            project.pop('nepCategory', None))
         project['repeatCount'] = len(history)
@@ -321,8 +357,8 @@ def build(payload, historical):
     return sorted(projects.values(), key=lambda project: (-project['repeatCount'], -project['total'], normalize(project['title'])))
 
 
-def publish_index(records, data_name, mode):
-    geography = RepeatPlaces().index(records)
+def publish_index(records, data_name, mode, places=None):
+    geography = (places if places is not None else RepeatPlaces()).index(records)
     filters = {key: [] for key in CATEGORY_KEYS.values()}
     for i, record in enumerate(records):
         category = record.pop('category')
@@ -352,7 +388,8 @@ def publish_index(records, data_name, mode):
 
 
 def publish(payload, historical):
-    publish_index(build(payload, historical), DATA_NAME, 'historical')
+    places = RepeatPlaces()
+    publish_index(build(payload, historical, places), DATA_NAME, 'historical', places)
     return browser_markup(DATA_NAME, '#nep-historical', HISTORICAL_NOTE)
 
 

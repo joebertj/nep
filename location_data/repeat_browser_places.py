@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import re
 
+from location_data.historical_repeat_titles import location_title
 from location_data.location_text import barangay_key, geographic_title, place_key, text_key
 
 PSGC = Path(__file__).resolve().parents[1] / 'data_sources/bettergov-psgc-locations.jsonl'
@@ -13,6 +14,10 @@ TOWNS = {'city', 'municipality'}
 REGIONS = ('I', 'II', 'III', 'IV-A', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII')
 BARANGAY = re.compile(r'\b(?:barangay|brgy\.?|bgy\.?)\s+')
 MUNICIPALITY_ALIASES = {'0603030000': {'miag-ao'}}
+
+
+def compact_name(name):
+    return re.sub(r'[\s‐‑–-]+', '', name)
 
 
 def variants(name, level):
@@ -42,15 +47,15 @@ class RepeatPlaces:
         with PSGC.open(encoding='utf-8') as stream:
             self.places = {row['code']: row for row in map(json.loads, stream)}
         self.names = defaultdict(set)
+        self.compact_names = defaultdict(set)
         for code, place in self.places.items():
             level = place['level']
             if level not in LEVELS:
                 continue
-            for name in variants(place['name'], level):
+            for name in variants(place['name'], level) | MUNICIPALITY_ALIASES.get(code, set()):
                 self.names[level, name].add(code)
-            if level == 'municipality':
-                for name in MUNICIPALITY_ALIASES.get(code, ()):
-                    self.names[level, name].add(code)
+                if level in TOWNS or level == 'province':
+                    self.compact_names[level, compact_name(name)].add(code)
 
     @lru_cache(maxsize=None)
     def lineage(self, code):
@@ -66,12 +71,18 @@ class RepeatPlaces:
     def towns(self, name):
         key = place_key(name)
         if re.search(r'^city of\b|\bcity$', name):
-            return self.names['city', key]
+            return self.place_matches('city', key)
         if name.startswith('municipality of '):
-            return self.names['municipality', key]
+            return self.place_matches('municipality', key)
         if name.startswith('province of '):
             return set()
-        return self.names['city', key] | self.names['municipality', key]
+        exact = self.names.get(('city', key), set()) | self.names.get(('municipality', key), set())
+        compact = compact_name(key)
+        return exact or (self.compact_names.get(('city', compact), set()) |
+                         self.compact_names.get(('municipality', compact), set()))
+
+    def place_matches(self, level, key):
+        return self.names.get((level, key)) or self.compact_names.get((level, compact_name(key)), set())
 
     @lru_cache(maxsize=None)
     def region(self, name):
@@ -80,17 +91,21 @@ class RepeatPlaces:
 
     @lru_cache(maxsize=None)
     def resolve(self, title, reported_region=''):
+        return self.resolve_with_scope(title, reported_region)[0]
+
+    @lru_cache(maxsize=None)
+    def resolve_with_scope(self, title, reported_region=''):
         text, _ = geographic_title(title)
         fields = [part.strip(' .;') for part in text.split(',') if part.strip(' .;')]
         if len(fields) < 2:
-            return ()
+            return (), ''
         region = self.region(fields[-1])
         if region:
             fields.pop()
         if len(fields) < 2:
-            return (region,) if region else ()
+            return ((region,) if region else ()), ''
         last = fields[-1]
-        province = self.names['province', place_key(last)]
+        province = self.place_matches('province', place_key(last))
         towns = self.towns(last)
         if re.search(r'^(?:city|municipality) of\b|\bcity$', last):
             province = set()
@@ -111,15 +126,17 @@ class RepeatPlaces:
         else:
             prefix = fields[:-1]
             if province and not towns:
-                return tuple(province) if len(province) == 1 else ()
+                return (tuple(province) if len(province) == 1 else ()), ''
             if province and towns and not region:
-                return ()
+                return (), ''
         context = region or self.region(reported_region)
         if context and len(towns) > 1:
             towns = {town for town in towns if self.lineage(town).get('region') == context}
         if len(towns) != 1:
-            return (region,) if region else ()
+            return ((region,) if region else ()), ''
         town = next(iter(towns))
+        if region and self.lineage(town).get('region') != region:
+            return (region,), ''
         names = BARANGAY.split(','.join(prefix))[1:]
         if not names and prefix:
             names = prefix[-1:]
@@ -129,7 +146,7 @@ class RepeatPlaces:
             hits = {code for code in self.names['barangay', name] if self.lineage(code).get('municipality') == town}
             if len(hits) == 1:
                 barangays.update(hits)
-        return tuple(sorted(barangays)) or (town,)
+        return (tuple(sorted(barangays)) or (town,)), ','.join(prefix)
 
     def parent(self, code):
         parent = self.places[code]['parent_code']
@@ -149,7 +166,7 @@ class RepeatPlaces:
                 places.update(self.resolve(row['title'], self.places[region]['name'] if region else ''))
             for _, rows in project['years']:
                 for row in rows:
-                    places.update(self.resolve(row['title']))
+                    places.update(self.resolve(location_title(row['title'])))
             if not places and region:
                 places.add(region)
             for code in {ancestor for place in places for ancestor in self.lineage(place).values()}:
