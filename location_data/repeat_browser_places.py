@@ -12,6 +12,7 @@ LEVELS = {'region', 'province', 'city', 'municipality', 'barangay'}
 TOWNS = {'city', 'municipality'}
 REGIONS = ('I', 'II', 'III', 'IV-A', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII')
 BARANGAY = re.compile(r'\b(?:barangay|brgy\.?|bgy\.?)\s+')
+MUNICIPALITY_ALIASES = {'0603030000': {'miag-ao'}}
 
 
 def variants(name, level):
@@ -47,6 +48,9 @@ class RepeatPlaces:
                 continue
             for name in variants(place['name'], level):
                 self.names[level, name].add(code)
+            if level == 'municipality':
+                for name in MUNICIPALITY_ALIASES.get(code, ()):
+                    self.names[level, name].add(code)
 
     @lru_cache(maxsize=None)
     def lineage(self, code):
@@ -139,6 +143,8 @@ class RepeatPlaces:
             regions = {code for name in project.pop('reportedRegions', []) if (code := self.region(name))}
             region = next(iter(regions)) if len(regions) == 1 else None
             places = set()
+            for address in project.pop('inventoryAddresses', ()):
+                places.update(self.resolve(address))
             for row in project['stages']:
                 places.update(self.resolve(row['title'], self.places[region]['name'] if region else ''))
             for _, rows in project['years']:

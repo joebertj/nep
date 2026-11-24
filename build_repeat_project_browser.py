@@ -10,6 +10,7 @@ from urllib.parse import urlencode, urlsplit
 
 from analyze_mpb_proximity import PAIR, coordinates
 from analyze_priority_repeats import classify
+from lane_cost_enrichment import BRIDGE, key as inventory_key, rows as inventory_rows
 from location_data.repeat_browser_places import RepeatPlaces
 from scr_page_shard_builder import normalize
 
@@ -23,7 +24,7 @@ CURRENT_DATA_NAME = 'repeat-project-browser-2027-data.json'
 PAGE_SIZE = 100
 CATEGORY_KEYS = {'Road': 'roads', 'Bridge': 'bridges', 'Multi-purpose building': 'mpb', 'Flood control': 'flood'}
 HISTORICAL_NOTE = ('Ranked by distinct matched GAA lines, then by their combined allocation. The 2027 stages are shown '
-                   'separately. Title matches are candidates for review.')
+                   'separately. Bridge inventory matches identify the asset and can cover different work on that bridge.')
 CURRENT_NOTE = ('Ranked by FY2027 candidate pairs, then by allocation in the latest linked stage. Selected counterparts '
                 'show how lines carried forward. Similar titles are candidates for review.')
 
@@ -177,7 +178,55 @@ def fill_nep_counterparts(projects):
             del missing[match['hgab_id']]
 
 
-def build(payload):
+def bridge_historical_matches(historical):
+    by_id = defaultdict(list)
+    by_title = defaultdict(list)
+    for asset in inventory_rows('bridge_inventory', []):
+        bridge_id = asset.get('BRIDGE_ID') or ''
+        if not BRIDGE.fullmatch(bridge_id):
+            continue
+        by_id[bridge_id.upper()].append(asset)
+        if asset.get('BR_NAME') and asset.get('ROAD_NAME'):
+            title = f"{asset['BR_NAME']} along {asset['ROAD_NAME']}"
+            by_title[inventory_key(title)].append(asset)
+    history = defaultdict(list)
+    for year, records in historical.items():
+        for old in records:
+            if old['amount'] <= 0:
+                continue
+            candidates = by_title.get(inventory_key(BRIDGE.sub('', old['name'])), ())
+            if len(candidates) != 1:
+                continue
+            bridge_id = candidates[0]['BRIDGE_ID'].upper()
+            if set(BRIDGE.findall(old['name'].upper())) <= {bridge_id}:
+                history[bridge_id].append((year, old))
+    with (OUTPUT / 'hb_nep_comparison_3rd.csv').open(newline='', encoding='utf-8-sig') as stream:
+        for line in csv.DictReader(stream):
+            title = line['projectName']
+            ids = set(BRIDGE.findall(title.upper()))
+            if len(ids) != 1:
+                continue
+            bridge_id = next(iter(ids))
+            if bridge_id not in history:
+                continue
+            assets = by_id[bridge_id]
+            if len(assets) != 1:
+                continue
+            asset = assets[0]
+            route_title = f"{asset['BR_NAME']} along {asset['ROAD_NAME']}"
+            if inventory_key(BRIDGE.sub('', title)) != inventory_key(route_title):
+                continue
+            address = ', '.join(asset[field].strip() for field in ('BRGY', 'MUNICIPAL', 'PROVINCE')
+                                if isinstance(asset.get(field), str) and asset[field].strip())
+            if not asset.get('MUNICIPAL') or not asset.get('PROVINCE'):
+                continue
+            yield line, history[bridge_id], address, {
+                'id': bridge_id, 'barangay': (asset.get('BRGY') or '').title(),
+                'municipality': asset['MUNICIPAL'].title(), 'province': asset['PROVINCE'].title(),
+            }
+
+
+def build(payload, historical):
     projects = {}
     linked_hgab = {}
     retention = {link['sourceCode']: link for link in read('repeat-nep-hgab-survival.json')['proposals']}
@@ -213,6 +262,21 @@ def build(payload):
         project['house']['page'] = record['sourcePage']
         add_history(project, record['gaaYear'], record['gaaTitle'], record['gaaAmountPesos'],
                     record['gaaSource'], 'HGAB exact title and place')
+    for line, matches, address, asset in bridge_historical_matches(historical):
+        code = line['hgab_id']
+        project = linked_hgab.get(code)
+        if project is None:
+            project = projects.setdefault(code, {'office': line['office'], 'history': {}, 'hgabId': code,
+                                                 'reportedRegions': {line['region']}, 'program': 'Bridge'})
+        if 'house' not in project:
+            project['house'] = row('2027 HGAB', line['projectName'], line['amountPesos'],
+                                   f"{line['sourceVolume']} · p. {line['sourcePage']}")
+            project['house']['page'] = line['sourcePage']
+        project['inventoryAddresses'] = [address]
+        project['bridgeAsset'] = asset
+        for year, old in matches:
+            add_history(project, year, old['name'], old['amount'], old['source'],
+                        f"DPWH bridge inventory · {asset['id']} · {address}")
     fill_nep_counterparts(projects)
     proposal_photos, house_photos = photo_indexes(
         {project.get('nepCode') for project in projects.values()},
@@ -225,8 +289,11 @@ def build(payload):
         scr = find_scr(senate_rows, house) if house else None
         stages = []
         if scr:
-            stages.append(row('2027 SCR', scr['title'], scr['senate_php'], f"Senate committee report · p. {scr['senate_page']}",
-                              scr['senate_pdf_url'], scr['status_label']))
+            senate_page = scr['senate_page']
+            citation = (f'Senate committee report · p. {senate_page}' if senate_page
+                        else f"House schedule · p. {scr['house_page']} · carried into SCR")
+            stages.append(row('2027 SCR', scr['title'], scr['senate_php'], citation,
+                              scr['senate_pdf_url'] if senate_page else scr['house_pdf_url'], scr['status_label']))
             house['url'] = scr['house_pdf_url']
             project['reportedRegions'].add(scr.get('region', ''))
         if house:
@@ -284,8 +351,8 @@ def publish_index(records, data_name, mode):
         copyfile(STATIC / name, path)
 
 
-def publish(payload):
-    publish_index(build(payload), DATA_NAME, 'historical')
+def publish(payload, historical):
+    publish_index(build(payload, historical), DATA_NAME, 'historical')
     return browser_markup(DATA_NAME, '#nep-historical', HISTORICAL_NOTE)
 
 
