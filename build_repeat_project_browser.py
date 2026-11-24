@@ -9,6 +9,8 @@ from shutil import copyfile
 from urllib.parse import urlencode, urlsplit
 
 from analyze_mpb_proximity import PAIR, coordinates
+from analyze_priority_repeats import classify
+from location_data.repeat_browser_places import RepeatPlaces
 from scr_page_shard_builder import normalize
 
 ROOT = Path(__file__).resolve().parent
@@ -17,7 +19,13 @@ OUTPUT = ROOT / 'analysis_output'
 ASSETS = ROOT / 'report_assets'
 ASSET_NAMES = ('repeat-project-browser.css', 'repeat-project-browser.js')
 DATA_NAME = 'repeat-project-browser-data.json'
+CURRENT_DATA_NAME = 'repeat-project-browser-2027-data.json'
 PAGE_SIZE = 100
+CATEGORY_KEYS = {'Road': 'roads', 'Bridge': 'bridges', 'Multi-purpose building': 'mpb', 'Flood control': 'flood'}
+HISTORICAL_NOTE = ('Ranked by distinct matched GAA lines, then by their combined allocation. The 2027 stages are shown '
+                   'separately. Title matches are candidates for review.')
+CURRENT_NOTE = ('Ranked by FY2027 candidate pairs, then by allocation in the latest linked stage. Selected counterparts '
+                'show how lines carried forward. Similar titles are candidates for review.')
 
 
 def read(name):
@@ -106,9 +114,9 @@ def photo_indexes(nep_codes, hgab_ids):
     return proposal, hgab
 
 
-def scr_index():
+def scr_index(records=None):
     index = defaultdict(list)
-    for record in read('scr-data.json')['rows']:
+    for record in records if records is not None else read('scr-data.json')['rows']:
         if record['program'] == 'dpwh' and record['house_title'] and record['house_php']:
             key = normalize(record['house_title']), amount(record['house_php'])
             index[key].append(record)
@@ -128,6 +136,21 @@ def add_history(project, year, title, pesos, source, evidence):
     # The two comparisons use the same GAA extracts. Keep a source line once.
     key = year, source, normalize(title), item['pesos']
     project['history'][key] = item
+
+
+def category_key(title, program='', fallback=None):
+    family = classify(program)
+    if family in {'Multi-purpose building', 'Flood control'}:
+        return CATEGORY_KEYS[family]
+    if re.search(r'\b(?:viaduct|overpass|flyover)\b|\bbr\.\s*\d+', title, re.I):
+        return 'bridges'
+    title_category = classify(title)
+    if not title_category and re.search(r'\b(?:highway|street|avenue)\b', title, re.I):
+        title_category = 'Road'
+    # A combined roads/bridges program does not identify the work by itself.
+    if re.search(r'\broads?\b', program or '', re.I) and re.search(r'\bbridges?\b', program or '', re.I):
+        family = None
+    return CATEGORY_KEYS.get(title_category or fallback or family)
 
 
 def fill_nep_counterparts(projects):
@@ -163,7 +186,8 @@ def build(payload):
         if code not in projects:
             link = retention.get(code) or {}
             project = {'office': record['office'], 'history': {}, 'nepCode': code,
-                       'hgabId': link.get('hgabId')}
+                       'reportedRegions': {record.get('region', '')},
+                       'hgabId': link.get('hgabId'), 'nepCategory': record['category']}
             projects[code] = project
             project['nep'] = row('2027 NEP', record['project'], record['amount_2027'], code,
                                  'project-documents.html?' + urlencode({'project': code}))
@@ -179,7 +203,10 @@ def build(payload):
         code = record['hgabId']
         project = linked_hgab.get(code)
         if project is None:
-            project = projects.setdefault(code, {'office': record['office'], 'history': {}, 'hgabId': code})
+            project = projects.setdefault(code, {'office': record['office'], 'history': {}, 'hgabId': code,
+                                                 'reportedRegions': set()})
+        project['reportedRegions'].add(record.get('region', ''))
+        project['program'] = record['program']
         prior_status = project.get('house', {}).get('status', '')
         project['house'] = row('2027 HGAB', record['projectName'], record['amountPesos'],
                                f"{record['sourceVolume']} · p. {record['sourcePage']}", status=prior_status)
@@ -201,6 +228,7 @@ def build(payload):
             stages.append(row('2027 SCR', scr['title'], scr['senate_php'], f"Senate committee report · p. {scr['senate_page']}",
                               scr['senate_pdf_url'], scr['status_label']))
             house['url'] = scr['house_pdf_url']
+            project['reportedRegions'].add(scr.get('region', ''))
         if house:
             house.pop('page')
             stages.append(house)
@@ -214,6 +242,8 @@ def build(payload):
         for key, value in sorted(history.items(), key=lambda entry: (-entry[0][0], -(entry[0][3] or 0), entry[0][1])):
             staged[key[0]].append(value)
         project['title'] = (house or nep)['title']
+        project['category'] = category_key(project['title'], project.pop('program', '') or (scr or {}).get('pap'),
+                                           project.pop('nepCategory', None))
         project['repeatCount'] = len(history)
         project['total'] = sum(item['pesos'] or 0 for item in history.values())
         project['stages'] = stages
@@ -224,8 +254,13 @@ def build(payload):
     return sorted(projects.values(), key=lambda project: (-project['repeatCount'], -project['total'], normalize(project['title'])))
 
 
-def publish(payload):
-    records = build(payload)
+def publish_index(records, data_name, mode):
+    geography = RepeatPlaces().index(records)
+    filters = {key: [] for key in CATEGORY_KEYS.values()}
+    for i, record in enumerate(records):
+        category = record.pop('category')
+        if category:
+            filters[category].append(i)
     files = {name: (ASSETS / name).read_bytes() for name in ASSET_NAMES}
     pages = []
     for start in range(PAGE_SIZE, len(records), PAGE_SIZE):
@@ -234,8 +269,9 @@ def publish(payload):
         name = f'repeat-project-browser/{digest}.json'
         files[name] = content
         pages.append(name)
-    index = {'total': len(records), 'pageSize': PAGE_SIZE, 'first': records[:PAGE_SIZE], 'pages': pages}
-    files[DATA_NAME] = json.dumps(index, ensure_ascii=False, separators=(',', ':')).encode()
+    index = {'mode': mode, 'total': len(records), 'pageSize': PAGE_SIZE, 'first': records[:PAGE_SIZE],
+             'pages': pages, 'filters': filters, 'geography': geography}
+    files[data_name] = json.dumps(index, ensure_ascii=False, separators=(',', ':')).encode()
     for name, content in files.items():
         for folder in (STATIC, OUTPUT):
             path = folder / name
@@ -246,17 +282,20 @@ def publish(payload):
         path = OUTPUT / name
         path.parent.mkdir(parents=True, exist_ok=True)
         copyfile(STATIC / name, path)
-    return browser_markup()
 
 
-def browser_markup(comparison_href='#nep-historical'):
-    names = (DATA_NAME, *ASSET_NAMES)
-    if any(not (STATIC / name).is_file() for name in names):
-        publish(read('repeats-historical-data.json'))
+def publish(payload):
+    publish_index(build(payload), DATA_NAME, 'historical')
+    return browser_markup(DATA_NAME, '#nep-historical', HISTORICAL_NOTE)
+
+
+def browser_markup(data_name, comparison_href, note):
+    names = (data_name, *ASSET_NAMES)
     versions = {name: hashlib.sha256((STATIC / name).read_bytes()).hexdigest()[:12] for name in names}
     return (ASSETS / 'repeat-project-browser.html').read_text().format(
         comparison_href=comparison_href,
-        data=f'{DATA_NAME}?v={versions[DATA_NAME]}',
+        note=note,
+        data=f'{data_name}?v={versions[data_name]}',
         css=f'{ASSET_NAMES[0]}?v={versions[ASSET_NAMES[0]]}',
         script=f'{ASSET_NAMES[1]}?v={versions[ASSET_NAMES[1]]}',
     )

@@ -8,7 +8,8 @@ OUT=ROOT/'analysis_output'
 def build():
     from analyze_within_stage_repeats import build as build_within, render as render_within
     from build_investigation_summary import JS as evidence_exports, section
-    from build_repeat_project_browser import browser_markup, read
+    from build_current_repeat_browser import publish as publish_current_browser
+    from build_repeat_project_browser import read
     from build_repeat_stage_survival import render as render_nep_survival
     from build_repeats_split import build_repeats_page as render_repeats_page
     from build_scr_repeat_survival import build as build_scr_survival, render as render_scr_survival
@@ -24,7 +25,7 @@ def build():
     html=apply_five_million_evidence(html)
     from report_table_presentation import apply_page_table_module
     html,_=apply_page_table_module('repeats.html',html)
-    html=html.replace('<main>', '<main>' + browser_markup('#within-stage-repeats'), 1)
+    html=html.replace('<main>', '<main>' + publish_current_browser(within), 1)
     html=html.replace('</body>', evidence_exports + '</body>', 1)
     html=html.replace('\r\n', '\n').rstrip()+'\n'
     (STATIC/'repeats.html').write_text(html,encoding='utf-8')

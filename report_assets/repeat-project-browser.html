@@ -7,9 +7,24 @@
     </div>
     <a href="{comparison_href}">Open comparison tables ↓</a>
   </div>
+  <div class="repeat-browser-filters" role="group" aria-label="Filter projects by category">
+    <button type="button" data-repeat-filter="all" aria-pressed="true" disabled>All</button>
+    <button type="button" data-repeat-filter="roads" aria-pressed="false" disabled>Roads</button>
+    <button type="button" data-repeat-filter="bridges" aria-pressed="false" disabled>Bridges</button>
+    <button type="button" data-repeat-filter="mpb" aria-pressed="false" disabled>MPB</button>
+    <button type="button" data-repeat-filter="flood" aria-pressed="false" disabled>Flood Control</button>
+  </div>
+  <div class="repeat-browser-geography" role="group" aria-label="Filter projects by location">
+    <label>Region <select data-repeat-place="region" disabled><option value="">All regions</option></select></label>
+    <label>Province <select data-repeat-place="province" disabled><option value="">All provinces</option></select></label>
+    <label>Municipality / city <select data-repeat-place="municipality" disabled><option value="">All municipalities / cities</option></select></label>
+    <label>Barangay <select data-repeat-place="barangay" disabled><option value="">All barangays</option></select></label>
+    <button class="repeat-browser-clear-place" type="button" disabled>Clear location</button>
+  </div>
   <h3 class="repeat-browser-title"></h3>
   <p class="repeat-browser-office"></p>
   <div class="repeat-browser-stats" hidden></div>
+  <div class="repeat-browser-location" role="group" aria-label="Project map links" hidden></div>
   <div class="repeat-browser-body" hidden>
     <button class="repeat-browser-arrow repeat-browser-prev" type="button" aria-label="Previous project" title="Previous project">‹</button>
     <button class="repeat-browser-arrow repeat-browser-next" type="button" aria-label="Next project" title="Next project">›</button>
@@ -31,7 +46,7 @@
       <div class="repeat-browser-record" aria-label="Selected budget record"></div>
     </div>
   </div>
-  <p class="repeat-browser-note">Ranked by distinct matched GAA lines, then by their combined allocation. The 2027 stages are shown separately. Title matches are candidates for review.</p>
+  <p class="repeat-browser-note">{note} Location filters use named PSGC places and regions listed in the source records.</p>
   <button class="repeat-browser-retry" type="button" hidden>Retry loading projects</button>
 </section>
 <script src="{script}" defer></script>
