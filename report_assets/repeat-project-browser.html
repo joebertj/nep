@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="{css}">
+<section id="repeat-project-browser" data-source="{data}" aria-labelledby="repeat-browser-heading">
+  <div class="repeat-browser-header">
+    <div>
+      <h2 id="repeat-browser-heading">Project browser</h2>
+      <p class="repeat-browser-position" aria-live="polite">Loading ranked projects…</p>
+    </div>
+    <a href="{comparison_href}">Open comparison tables ↓</a>
+  </div>
+  <h3 class="repeat-browser-title"></h3>
+  <p class="repeat-browser-office"></p>
+  <div class="repeat-browser-stats" hidden></div>
+  <div class="repeat-browser-body" hidden>
+    <button class="repeat-browser-arrow repeat-browser-prev" type="button" aria-label="Previous project" title="Previous project">‹</button>
+    <button class="repeat-browser-arrow repeat-browser-next" type="button" aria-label="Next project" title="Next project">›</button>
+    <div class="repeat-browser-timeline">
+      <h4>Budget timeline</h4>
+      <div class="repeat-browser-years" aria-label="Budget records"></div>
+    </div>
+    <div class="repeat-browser-evidence">
+      <figure class="repeat-browser-photo">
+        <div class="repeat-browser-photo-stage"></div>
+        <figcaption>
+          <p class="repeat-browser-photo-label"></p>
+          <div class="repeat-browser-photo-controls" hidden>
+            <label><span class="repeat-browser-sr-only">Photo attachment</span><select></select></label>
+          </div>
+          <a class="repeat-browser-photo-source" target="_blank" rel="noopener" hidden>Open photo source ↗</a>
+        </figcaption>
+      </figure>
+      <div class="repeat-browser-record" aria-label="Selected budget record"></div>
+    </div>
+  </div>
+  <p class="repeat-browser-note">Ranked by distinct matched GAA lines, then by their combined allocation. The 2027 stages are shown separately. Title matches are candidates for review.</p>
+  <button class="repeat-browser-retry" type="button" hidden>Retry loading projects</button>
+</section>
+<script src="{script}" defer></script>

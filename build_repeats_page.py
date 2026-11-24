@@ -1,34 +1,32 @@
 #!/usr/bin/env python3
-"""Collate generated project-repeat sections, preserving their tables and evidence."""
-import csv
-import json
-import re
+"""Build the FY2027 project-repeat report from the comparison datasets."""
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 STATIC=ROOT.parent/'open-data-visualization/static/nep-preview'
 OUT=ROOT/'analysis_output'
-SECTION=re.compile(r'<section\b[^>]*>(?:(?!<section\b).)*?</section>',re.S)
-CACHE=OUT/'repeat_page_fragments.json'
-HGAB_GAA_DATA=STATIC/'repeat-hgab-historical-gaa.json'
-SPLIT_GAA_DATA=STATIC/'repeats-historical-data.json'
 
 def build():
-    """Build only repeats.html from cached, page-independent repeat fragments."""
-    if not CACHE.exists():
-        raise FileNotFoundError(f"Repeat section cache is required: {CACHE}")
-    fragments=json.loads(CACHE.read_text(encoding='utf-8'))
-    required={'within','survival'}
-    missing=required-set(fragments)
-    if missing:
-        raise ValueError('Missing repeat sections in cache: '+', '.join(sorted(missing)))
+    from analyze_within_stage_repeats import build as build_within, render as render_within
+    from build_investigation_summary import JS as evidence_exports, section
+    from build_repeat_project_browser import browser_markup, read
+    from build_repeat_stage_survival import render as render_nep_survival
     from build_repeats_split import build_repeats_page as render_repeats_page
-    result=render_repeats_page(fragments)
+    from build_scr_repeat_survival import build as build_scr_survival, render as render_scr_survival
+
+    within = build_within()
+    nep_survival = read('repeat-nep-hgab-survival.json')
+    scr_survival = build_scr_survival(within, nep_survival)
+    within_section = section('within-stage-repeats', 'Similar line items within NEP, HGAB 3rd reading and SCR',
+                             render_within(within))
+    result=render_repeats_page(within_section, render_scr_survival(scr_survival), render_nep_survival(nep_survival))
     html=result.pop('html')
     from build_five_million_evidence import apply_page as apply_five_million_evidence
     html=apply_five_million_evidence(html)
     from report_table_presentation import apply_page_table_module
     html,_=apply_page_table_module('repeats.html',html)
-    html=html.rstrip()+'\n'
+    html=html.replace('<main>', '<main>' + browser_markup('#within-stage-repeats'), 1)
+    html=html.replace('</body>', evidence_exports + '</body>', 1)
+    html=html.replace('\r\n', '\n').rstrip()+'\n'
     (STATIC/'repeats.html').write_text(html,encoding='utf-8')
     (OUT/'repeats.html').write_text(html,encoding='utf-8')
     return result

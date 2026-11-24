@@ -9,17 +9,20 @@ ODV = ROOT.parent / 'open-data-visualization'
 STATIC = ODV / 'static/nep-preview'
 OUT = ROOT / 'analysis_output'
 
-def build_repeats_page(fragments):
-    within = fragments['within']
-    within = within.replace('<h3>FY2027 NEP · first 50 review pairs</h3>', '<h3 id="inter-nep">FY2027 NEP · first 50 review pairs</h3>')
-    within = within.replace('<h3>FY2027 HGAB 3rd · first 50 review pairs</h3>', '<h3 id="inter-hgab">FY2027 HGAB 3rd · first 50 review pairs</h3>')
-    survival = fragments['survival']
-
+def build_repeats_page(within, scr_survival, nep_survival):
     common_style = '''<style>
 *{box-sizing:border-box}body{margin:0;background:#f3f6f5;color:#18303b;font:15px/1.55 system-ui,sans-serif}main{width:100%;padding:24px clamp(16px,2vw,32px)}section{margin:20px 0;padding:22px;border:1px solid #c6dbd6;border-radius:14px;background:#fff}.repeat-hero{padding:22px;border-left:7px solid #FCD116;border-radius:14px;background:linear-gradient(120deg,#00246A,#0038A8);color:#fff}.repeat-hero h2{margin:0 0 8px;color:#fff}.repeat-hero p{margin:0}.toolbar,.pagination{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:14px 0}.toolbar input,.toolbar select{font:inherit;padding:8px;border:1px solid #b6c9c4;border-radius:8px}.toolbar input{min-width:min(320px,100%);flex:1}button{font:inherit;padding:8px 12px;border:1px solid #0038A8;border-radius:8px;background:#fff;color:#0038A8;cursor:pointer}button:hover{background:#eef3fb}button:disabled{opacity:.45;cursor:not-allowed}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;table-layout:fixed}th,td{padding:9px;vertical-align:top;border-bottom:1px solid #d9e3e1;overflow-wrap:anywhere;text-align:left}th{background:#eef5f3}.num{white-space:nowrap;text-align:right}.repeat-summary{display:flex;flex-wrap:wrap;gap:10px}.repeat-summary strong{font-size:1.35rem}.historical-hero-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}.historical-hero-metrics>div{padding:12px;border:1px solid #ffffff55;border-radius:10px;background:#ffffff12}.historical-hero-metrics strong{display:block;font-size:clamp(22px,3vw,32px);font-variant-numeric:tabular-nums}.historical-hero-metrics span{display:block;font-size:13px}.year-chart{overflow:auto}.year-chart svg{display:block;width:100%;min-width:660px;height:auto}.year-chart-legend{display:flex;flex-wrap:wrap;gap:16px;margin:8px 0 0;font-size:13px}.year-chart-legend span::before{content:'';display:inline-block;width:11px;height:11px;margin-right:6px;border-radius:3px;background:#FCD116}.year-chart-legend span+span::before{background:#6de0d4}.repeat-nav{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.repeat-nav a{padding:7px 10px;border:1px solid #b6c9c4;border-radius:8px;background:#fff;color:#0038A8;text-decoration:none;font-weight:650}
 </style>'''
     from uniform_report_menu import apply_page
     from review_report_language import NOTICE
+    common_style += '''
+<style>
+#within-stage-repeats .repeat-pair-table{overflow-x:auto!important}
+#within-stage-repeats .repeat-pair-table table{min-width:1050px!important;table-layout:auto!important}
+#within-stage-repeats .repeat-pair-table :is(th,td).report-card-hidden-column{display:table-cell!important}
+#within-stage-repeats .repeat-pair-table col{width:auto!important;display:table-column!important}
+#within-stage-repeats .repeat-pair-table :is(th,td):nth-child(-n+2){width:22%!important}
+</style>'''
 
     def publish(filename, title, teaser, body, extra_script=''):
         html = ('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
@@ -40,13 +43,16 @@ def build_repeats_page(fragments):
 
     body_2027 = (
         '<section class="repeat-hero"><h2>2027-only comparison sets</h2>'
-        '<p>Review similar line items within the NEP, within HGAB 3rd reading, and across NEP-to-HGAB. Historical GAA comparisons are on <a href="repeats-historical.html">Project repeats · Historical</a>.</p></section>'
-        '<nav class="repeat-nav" aria-label="2027 repeat sections"><a href="#inter-nep">Within NEP</a><a href="#inter-hgab">Within HGAB</a><a href="#repeat-hgab-survival">NEP ↔ HGAB</a></nav>'
-        + within + survival
+        '<p>Review similar line items within NEP, HGAB 3rd reading and SCR, then trace which candidates carried into the next stage. '
+        'See the <a href="repeats-historical.html">historical report</a> for the GAA comparison tables.</p></section>'
+        '<nav class="repeat-nav" aria-label="2027 repeat sections"><a href="#inter-nep">Within NEP</a>'
+        '<a href="#inter-hgab">Within HGAB</a><a href="#inter-scr">Within SCR</a>'
+        '<a href="#repeat-scr-survival">HGAB → SCR</a><a href="#repeat-hgab-survival">NEP → HGAB</a></nav>'
+        + within + scr_survival + nep_survival
     )
-    html=publish('repeats.html', 'Project repeats · 2027', 'Compare 2027 line items within each budget stage and across NEP and HGAB.', body_2027)
+    html=publish('repeats.html', 'Project repeats · 2027', 'Compare FY2027 line items within and across NEP, HGAB and SCR.', body_2027)
 
-    return {'page':'repeats.html','html':html,'withinSections':['Inter-NEP','Inter-HGAB','Inter-NEP-HGAB']}
+    return {'page':'repeats.html','html':html,'withinSections':['Inter-NEP','Inter-HGAB','Inter-SCR']}
 
 
 def build_repeats_historical_page(fragments=None):
@@ -109,7 +115,8 @@ def build_repeats_historical_page(fragments=None):
         + fmr_section + nia_section
     )
     hist_script = f'''<script>
-(async()=>{{const D=await fetch('repeats-historical-data.json?v={version}').then(r=>{{if(!r.ok)throw Error(r.status);return r.json()}}),$=id=>document.getElementById(id),peso=n=>'₱'+Number(n||0).toLocaleString('en-PH'),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}}[c]));
+(()=>{{
+  const load = () => (async()=>{{const D=await fetch('repeats-historical-data.json?v={version}').then(r=>{{if(!r.ok)throw Error(r.status);return r.json()}}),$=id=>document.getElementById(id),peso=n=>'₱'+Number(n||0).toLocaleString('en-PH'),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}}[c]));
 const nep=D.nepVsGaa.rows,hgab=D.hgabVsGaa.rows,size=50;let pn=0,ph=0,nf=[],hf=[];
 function initYear(select,years){{for(const y of years){{const o=document.createElement('option');o.value=y;o.textContent='FY'+y+' GAA';$(select).append(o)}}}}
 initYear('nep-year',D.nepVsGaa.years);initYear('hgab-year',D.hgabVsGaa.summary.years);$('hero-nep-count').textContent=nep.length.toLocaleString('en-PH');$('hero-hgab-count').textContent=hgab.length.toLocaleString('en-PH');$('hero-year-count').textContent=[...new Set([...D.nepVsGaa.years,...D.hgabVsGaa.summary.years])].length.toLocaleString('en-PH');
@@ -121,6 +128,20 @@ function csv(name,rows,keys){{const out=[keys,...rows.map(r=>keys.map(k=>r[k]))]
 for(const id of ['nep-search','nep-year'])$(id).oninput=$(id).onchange=()=>{{pn=0;drawNep()}};for(const id of ['hgab-search','hgab-year'])$(id).oninput=$(id).onchange=()=>{{ph=0;drawHgab()}};
 for(const [prefix,setPage,draw] of [['nep',v=>pn=v,drawNep],['hgab',v=>ph=v,drawHgab]]){{$(`${{prefix}}-prev`).onclick=()=>{{setPage(prefix==='nep'?pn-1:ph-1);draw()}};$(`${{prefix}}-next`).onclick=()=>{{setPage(prefix==='nep'?pn+1:ph+1);draw()}}}}
 $('nep-export').onclick=()=>csv('nep-historical-gaa-repeats.csv',nf,['category','project','office','comparison_year','prior_project','amount_2027','prior_amount','similarity_pct','prior_source']);$('hgab-export').onclick=()=>csv('hgab-historical-gaa-repeats.csv',hf,['hgabId','projectName','office','gaaYear','gaaTitle','amountPesos','gaaAmountPesos','changePesos','gaaSource','chainageStatus','chainageOverlap']);drawNep();drawHgab()}})().catch(e=>{{document.getElementById('nep-status').textContent='Historical repeat data unavailable: '+e.message}});
+  if ('IntersectionObserver' in window) {{
+    const observer = new IntersectionObserver(entries => {{
+      if (!entries.some(entry => entry.isIntersecting)) return;
+      observer.disconnect();
+      load();
+    }}, {{rootMargin: '320px'}});
+    for (const selector of ['.repeat-hero', '#nep-historical', '#hgab-historical']) {{
+      observer.observe(document.querySelector(selector));
+    }}
+  }} else load();
+}})();
 </script>'''
+    from build_repeat_project_browser import publish as publish_project_browser
+    browser = publish_project_browser(payload)
     html=publish('repeats-historical.html', 'Project repeats · Historical', 'Compare project titles against enacted historical GAA records.', historical_body, hist_script)
+    html = html.replace('<main>', '<main>' + browser, 1)
     return {'page':'repeats-historical.html','html':html,'dataFilename':'repeats-historical-data.json','data':serialized,'nepVsGaaPairs':len(nep_rows),'hgabVsGaaPairs':len(historical_rows)}

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Conservative within-stage DPWH title/segment review; never pair NEP with HGAB."""
+"""Screen similar DPWH line items separately within each FY2027 budget stage."""
 import csv
 import hashlib
 import json
@@ -13,6 +13,32 @@ from location_data.project_location_scope import qualified,location_conflict
 from location_data.location_text import geographic_title
 
 STOP=set('construction improvement rehabilitation repair completion of the and in at to for road roads bridge bridges multi purpose building buildings barangay city municipality province project system along concrete concreting flood control drainage'.split())
+NEP_STAGE = 'FY2027 NEP'
+HGAB_STAGE = 'FY2027 HGAB 3rd'
+SCR_STAGE = 'FY2027 SCR'
+SCR_DATA = STATIC / 'scr-data.json'
+
+
+def scr_occurrences(records):
+    for record in records:
+        if record['program'] != 'dpwh' or record['status'] in {'cut', 'nep_only'}:
+            continue
+        amount = int(record['senate_php'] or 0)
+        if amount <= 0:
+            continue
+        cited = bool(record['senate_page'])
+        yield {
+            'id': record['id'],
+            'projectName': record['title'],
+            'office': record['office'],
+            'pap3': record['pap'],
+            'allocationKind': 'foreign-assisted project' if normalize(record['pap']) == 'foreign assisted projects' else '',
+            'amountPesos': amount,
+            'sourcePage': record['senate_page'] if cited else record['house_page'],
+            'sourceVolume': 'SCR Annex A-4' if cited else 'House schedule · carried into SCR',
+            'sourceUrl': record['senate_pdf_url'] if cited else record['house_pdf_url'],
+            'sourceEvidence': record['status_label'],
+        }
 
 def scan(rows,stage):
     buckets=defaultdict(list);eligible=[];counts=Counter();pairs=[]
@@ -56,7 +82,10 @@ def scan(rows,stage):
                 if chain['chainage_status']=='disjoint':counts['disjointChainageVeto']+=1;continue
                 kind='Identical normalized full title' if full else 'Similar title with explicit chainage overlap' if chain['overlaps'] else 'Similar title · funded segment unresolved'
                 def extract(x):
-                    return {k:x.get(k,'') for k in ['id','projectName','pap3','office','amountPesos','sourcePage','sourceVolume','sourceNepId','apiId','sourceEvidence']}
+                    item = {k:x.get(k,'') for k in ['id','projectName','pap3','office','amountPesos','sourcePage','sourceVolume','sourceNepId','apiId','sourceEvidence']}
+                    if x.get('sourceUrl'):
+                        item['sourceUrl'] = x['sourceUrl']
+                    return item
                 pairs.append({'stage':stage,'kind':kind,'titleSimilarity':round(similarity,4),'contextEvidence':'Qualified municipality and province agree' if a['qualifiedContext'] and b['qualifiedContext'] else 'Same implementing office only; geographic identity unverified','chainage':chain,'left':extract(b),'right':extract(a)})
             for token in a['distinctive']:index[token].add(i)
     pairs.sort(key=lambda p:(0 if p['chainage']['overlaps'] else 1,0 if p['kind'].startswith('Identical') else 1,-max(p['left']['amountPesos'],p['right']['amountPesos']),p['left']['id'],p['right']['id']))
@@ -67,31 +96,35 @@ def build():
     baseline=OUT/'nep_dpwh_baseline.json';house=OUT/'hb_nep_comparison_3rd.csv'
     nep=json.loads(baseline.read_text())['data']['data']
     with house.open() as f:hb=[{**r,'id':r['hgab_id'],'amountPesos':int(r['amountPesos'])} for r in csv.DictReader(f)]
-    for rows in [nep,hb]:
+    scr = list(scr_occurrences(json.loads(SCR_DATA.read_bytes())['rows']))
+    for rows in [nep,hb,scr]:
         if len({r['id'] for r in rows})!=len(rows):raise ValueError('Duplicate source IDs: cannot rank source occurrences')
     summaries=[];pairs=[]
-    for stage,rows in [('FY2027 NEP',nep),('FY2027 HGAB 3rd',hb)]:
+    for stage,rows in [(NEP_STAGE,nep),(HGAB_STAGE,hb),(SCR_STAGE,scr)]:
         summary,found=scan(rows,stage);summaries.append(summary);pairs.extend(found)
     data={'summary':summaries,'pairs':pairs,'method':'Compare distinct allocation occurrence IDs within each stage only. FAPs and untrusted NEP primary titles excluded. Same normalized official PAP and either qualified municipality/province or same implementing office required. At least three shared distinctive nonnumeric title tokens required. Same base title after trailing geographic metadata removal, or ≥0.94 SequenceMatcher similarity with qualified municipality/province AND identical distinctive token sets, produces a candidate. Changed route-endpoint or other distinctive scope tokens veto even when text similarity is high. Different explicit bridge numbers identify different structures and veto a pair, even on the same bypass road. Direction, qualified-location and tranche conflicts veto. Explicit disjoint ranges veto. Printed range endpoints are assumed to be ordered min/max. Mixed bare/plus ranges retain an unknown endpoint: a known maximum at or below another range’s known minimum excludes positive overlap, without resolving length. Other mixed ranges remain incomplete; possible overlap is not certified overlap. No amount-equality requirement. Missing chainage never proves scope overlap.',
           'limits':['Matching allocation occurrences does not establish duplicate contracts, duplicate payment, fraud or authorship. Different engineering components and legitimate amendments can share titles.','Office-only agreement is weaker than site evidence. Unresolved locations are never inferred from similar names.','Pair counts are not project counts: three linked records produce three pairs. Distinct occurrence counts are shown separately; amounts are not summed as loss.','Exact official PAP blocking, trusted-title requirements and conservative location rules miss possible cross-program, paraphrased or unresolved duplicates. No flag is not clearance.','Tranche differences are excluded from this conservative queue, not certified as legitimate. Missing chainage requires source and engineering-scope review.','NEP baseline includes source records outside the API. Its documented source-title confidence limits remain applicable.'],
-          'sources':[{'file':p.name,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in [baseline,house,ROOT/'location_data/philippine_locations.sqlite']]}
+          'sources':[{'file':p.name,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in [baseline,house,ROOT/'location_data/philippine_locations.sqlite',SCR_DATA]]}
     text=json.dumps(data,ensure_ascii=False,indent=2)+'\n';(OUT/'within_stage_repeats.json').write_text(text);(STATIC/'within-stage-repeats.json').write_text(text)
     return data
 
 def render(data):
     from build_investigation_summary import table,esc
-    body='<p>This screen compares NEP with other NEP occurrences, and HGAB 3rd reading with other HGAB 3rd-reading occurrences. It complements the historical GAA screen. Similar titles are candidates for scope review, not established duplicate work. Pair counts and distinct allocation occurrences have different denominators.</p>'
+    body='<p>This screen compares line items separately within NEP, HGAB 3rd reading and SCR. The SCR screen uses DPWH schedule rows with a positive SCR allocation. Carried-forward lines use their House source when the annex gives no page. Similar titles are candidates for scope review. Counts show both pairs and distinct allocation lines.</p>'
     maxpairs=max((s['candidatePairs'] for s in data['summary']),default=1) or 1
-    svg='<svg class="evidence-graphic" viewBox="0 0 900 310" role="img" aria-label="Within-stage similar-title pair counts, separated by NEP and HGAB"><text x="40" y="25">Candidate pairs within each stage · not unique projects</text>'
+    svg='<svg class="evidence-graphic" viewBox="0 0 900 310" role="img" aria-label="Within-stage similar-title pair counts in NEP, HGAB and SCR"><text x="40" y="25">Candidate pairs within each stage</text>'
     for i,s in enumerate(data['summary']):
-        h=190*s['candidatePairs']/maxpairs;x=150+i*400
-        svg+=f'<rect x="{x}" y="{230-h}" width="140" height="{h}" fill="#087e78"/><text x="{x}" y="{220-h}">{s["candidatePairs"]:,} pairs</text><text x="{x}" y="260">{esc(s["stage"])}</text>'
+        h=175*s['candidatePairs']/maxpairs
+        x=(i+.5)*900/len(data['summary'])
+        svg+=f'<rect x="{x-70}" y="{230-h}" width="140" height="{h}" fill="#0038A8"/><text text-anchor="middle" x="{x}" y="{220-h}">{s["candidatePairs"]:,} pairs</text><text text-anchor="middle" x="{x}" y="260">{esc(s["stage"])}</text>'
     body+=svg+'</svg>'+table(['Stage','Source occurrences','Screened occurrences','Candidate pairs','Distinct flagged occurrences','Pairs with explicit range overlap'],[[s['stage'],s['sourceOccurrences'],s['screenedOccurrences'],s['candidatePairs'],s['distinctFlaggedOccurrences'],s['positiveOverlapPairs']] for s in data['summary']])
     for s in data['summary']:
         stage=s['stage'];rows=[p for p in data['pairs'] if p['stage']==stage][:50]
-        body+='<h3>'+esc(stage)+' · first 50 review pairs</h3><p>Explicit overlap comes first, followed by identical full titles, then the larger individual allocation. All candidate pairs are available in the downloadable JSON. The CSV exports the displayed pairs.</p>'
+        anchor = {NEP_STAGE:'inter-nep',HGAB_STAGE:'inter-hgab',SCR_STAGE:'inter-scr'}[stage]
+        body+=f'<h3 id="{anchor}">'+esc(stage)+' · first 50 review pairs</h3><p>Explicit overlap comes first, followed by identical full titles, then the larger individual allocation. The JSON contains every candidate pair. The CSV exports the pairs in this table.</p>'
         def source(r):return r['id']+' · '+('NEP source p. ' if stage=='FY2027 NEP' else str(r['sourceVolume'])+' · p. ')+str(r['sourcePage'])
-        body+=table(['First project · source','Second project · source','Official program','Implementing offices','Individual allocations pesos · first / second','Screening evidence','Stated segment evidence'],[[p['left']['projectName']+' · '+source(p['left']),p['right']['projectName']+' · '+source(p['right']),p['left']['pap3'],p['left']['office']+' / '+p['right']['office'],f'₱{p["left"]["amountPesos"]:,} / ₱{p["right"]["amountPesos"]:,}',p['kind']+' · '+p['contextEvidence'],p['chainage']['chainage_status']+' · '+p['chainage'].get('chainage_overlap','')] for p in rows])
+        pair_table = table(['First project · source','Second project · source','Official program','Implementing offices','Individual allocations pesos · first / second','Screening evidence','Stated segment evidence'],[[p['left']['projectName']+' · '+source(p['left']),p['right']['projectName']+' · '+source(p['right']),p['left']['pap3'],p['left']['office']+' / '+p['right']['office'],f'₱{p["left"]["amountPesos"]:,} / ₱{p["right"]["amountPesos"]:,}',p['kind']+' · '+p['contextEvidence'],p['chainage']['chainage_status']+' · '+p['chainage'].get('chainage_overlap','')] for p in rows])
+        body += pair_table.replace('class="evidence-table"', 'class="evidence-table repeat-pair-table"', 1)
     body+='<h3>Methodology and exclusions</h3><p>'+esc(data['method'])+'</p><ul>'+''.join('<li>'+esc(v)+'</li>' for v in data['limits'])+'</ul>'
     body+=table(['Stage','Excluded records or vetoed candidate comparisons','Count'],[[s['stage'],k,v] for s in data['summary'] for k,v in s['exclusionsAndVetoes'].items()])
     body+='<p><a href="within-stage-repeats.json" download>Download every candidate pair, original titles, source IDs, amounts and input hashes</a></p>'

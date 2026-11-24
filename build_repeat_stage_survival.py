@@ -62,4 +62,65 @@ def build():
     print(json.dumps(output['summary'],indent=2))
     return output
 
+
+def render(data):
+    from build_investigation_summary import esc, section, table
+
+    summary = data['summary']
+    groups = data['groups']
+    pair_count = summary['comparisonPairs']
+    proposal_count = summary['uniqueNEPProposals']
+    clear_pairs = summary['pairStatuses'].get('Clear retained link', 0)
+    clear_proposals = summary['uniqueStatuses'].get('Clear retained link', 0)
+    body = (
+        f'<p>The historical NEP screen contains {pair_count:,} GAA comparisons for {proposal_count:,} distinct proposals. '
+        f'<strong>{clear_pairs:,} comparisons representing {clear_proposals:,} proposals</strong> have a clear selected '
+        'counterpart in HGAB 3rd reading.</p>'
+    )
+
+    colors = ('#0038A8', '#b65b09', '#777', '#355b92')
+    body += (
+        f'<svg class="evidence-graphic" viewBox="0 0 850 340" role="img" '
+        f'aria-label="HGAB retention classes for {pair_count:,} comparison pairs and {proposal_count:,} distinct proposals">'
+    )
+    peak = max(pair_count, proposal_count, 1)
+    for x, field, total, label in [
+        (95, 'comparisonPairs', pair_count, 'Comparison pairs'),
+        (250, 'uniqueNEPProposals', proposal_count, 'Distinct proposals'),
+    ]:
+        y = 280
+        for group, color in zip(groups, colors):
+            count = group[field]
+            height = 220 * count / peak
+            if height:
+                y -= height
+                body += (
+                    f'<rect x="{x}" y="{y:.2f}" width="86" height="{height:.2f}" fill="{color}">'
+                    f'<title>{esc(group["status"])} · {count:,}</title></rect>'
+                )
+        body += (
+            f'<text x="{x + 43}" y="{y - 8:.2f}" text-anchor="middle">{total:,}</text>'
+            f'<text x="{x + 43}" y="305" text-anchor="middle">{label}</text>'
+        )
+    for i, (group, color) in enumerate(zip(groups, colors)):
+        y = 76 + 34 * i
+        body += (f'<rect x="405" y="{y - 12}" width="14" height="14" fill="{color}"/>'
+                 f'<text x="432" y="{y}">{esc(group["status"])}</text>')
+    body += '</svg>'
+    body += table(
+        ['HGAB retention class', 'Original GAA comparison pairs', 'Distinct NEP proposals',
+         'Original NEP allocation pesos', 'Selected HGAB allocation pesos'],
+        [[group['status'], group['comparisonPairs'], group['uniqueNEPProposals'], f'₱{group["nepPesos"]:,}',
+          'No selected allocation' if group['selectedHgabPesos'] is None else f'₱{group["selectedHgabPesos"]:,}']
+         for group in groups],
+    )
+    body += (
+        '<p>Each historical comparison counts once. A proposal with several matches contributes one distinct proposal. '
+        'Clear retention uses the selected scope-compatible title link. Potential links remain provisional. '
+        'Projects without a selected counterpart need source review before assigning a disposition.</p>'
+        f'<p><a class="export-btn" href="repeat-nep-hgab-proposals.csv" download>Export all {proposal_count:,} proposal traces CSV</a> '
+        '· <a href="repeat-nep-hgab-survival.json">Full pair and proposal evidence JSON</a></p>'
+    )
+    return section('repeat-hgab-survival', 'Of the NEP repeat candidates, how many survived into HGAB?', body)
+
 if __name__=='__main__':build()
