@@ -374,6 +374,12 @@ def publish_index(records, data_name, mode, places=None):
         pages.append(name)
     index = {'mode': mode, 'total': len(records), 'pageSize': PAGE_SIZE, 'first': records[:PAGE_SIZE],
              'pages': pages, 'filters': filters, 'geography': geography}
+    titles = json.dumps([project['title'] for project in records], ensure_ascii=False, separators=(',', ':')).encode()
+    title_index = f'repeat-project-browser/titles-{hashlib.sha256(titles).hexdigest()[:16]}.json'
+    files[title_index] = titles
+    index['titleIndex'] = title_index
+    if mode == 'historical':
+        index['linked2027'] = [i for i, project in enumerate(records) if project['stages']]
     files[data_name] = json.dumps(index, ensure_ascii=False, separators=(',', ':')).encode()
     for name, content in files.items():
         for folder in (STATIC, OUTPUT):
@@ -399,6 +405,12 @@ def browser_markup(data_name, comparison_href, note):
     return (ASSETS / 'repeat-project-browser.html').read_text().format(
         comparison_href=comparison_href,
         note=note,
+        period_filters=(
+            '  <div class="repeat-browser-filters" role="group" aria-label="Filter projects by years">\n'
+            '    <button type="button" data-repeat-period="2027" aria-pressed="true" disabled>FY2027 Linked</button>\n'
+            '    <button type="button" data-repeat-period="all" aria-pressed="false" disabled>All Years</button>\n'
+            '  </div>\n'
+        ) if data_name == DATA_NAME else '',
         data=f'{data_name}?v={versions[data_name]}',
         css=f'{ASSET_NAMES[0]}?v={versions[ASSET_NAMES[0]]}',
         script=f'{ASSET_NAMES[1]}?v={versions[ASSET_NAMES[1]]}',

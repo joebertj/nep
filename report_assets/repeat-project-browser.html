@@ -7,7 +7,11 @@
     </div>
     <a href="{comparison_href}">Open comparison tables ↓</a>
   </div>
-  <div class="repeat-browser-filters" role="group" aria-label="Filter projects by category">
+  <label class="repeat-browser-title-search">
+    Project title
+    <input type="search" placeholder="Search project titles" disabled>
+  </label>
+{period_filters}  <div class="repeat-browser-filters" role="group" aria-label="Filter projects by category">
     <button type="button" data-repeat-filter="all" aria-pressed="true" disabled>All</button>
     <button type="button" data-repeat-filter="roads" aria-pressed="false" disabled>Roads</button>
     <button type="button" data-repeat-filter="bridges" aria-pressed="false" disabled>Bridges</button>
