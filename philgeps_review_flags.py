@@ -22,6 +22,10 @@ def attach_flags(notices, scr_rows, existing, title_key):
             flags.append({'label': 'Different project segment',
                           'evidence': 'The invitation and the nearby NEP line state disjoint chainage ranges. Check the corrected schedule for a funding link.',
                           'url': notice['url']})
+        if not budget and not notice.get('related'):
+            flags.append({'label': 'Budget match unestablished',
+                          'evidence': 'Check the notice title, project scope and location against the FY2027 budget schedules.',
+                          'url': notice['url']})
         if budget and not any(line['stage'] == 'SCR' for line in budget):
             trace = {}
             for line in budget:

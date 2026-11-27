@@ -194,8 +194,9 @@ def build_data():
     crawl = read(LIVE_SNAPSHOT) if LIVE_SNAPSHOT.exists() else {'notices': []}
     by_notice = {(row['reference'], row['contract']): row for row in current}
     for notice in crawl['notices']:
-        budget = by_title.get(notice['matchKey'])
-        if not budget:
+        key = notice['matchKey']
+        budget = by_title.get(key, [])
+        if key and not budget:
             raise ValueError(f"Budget title no longer matches PhilGEPS notice {notice['reference']}")
         identity = notice['reference'], notice['contract']
         if identity not in by_notice:

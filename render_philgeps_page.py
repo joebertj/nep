@@ -3,6 +3,7 @@ from html import escape
 import re
 from urllib.parse import quote
 
+from report_hero_module import STYLE as HERO_STYLE, hero
 from uniform_report_menu import apply_page
 
 V2_LINK = 'https://huggingface.co/datasets/bettergovph/philgeps-v2'
@@ -144,23 +145,50 @@ def render(data, asset):
     summary = data['coverage']
     stage_counts = ' · '.join(f'{stage} {summary["byStage"].get(stage, 0):,}' for stage in ('NEP', 'HGAB', 'SCR'))
     invitations = ''.join(invitation_html(row) for row in data['invitations'])
+    source_count = len({row['url'] for row in data['invitations']})
+    contract_count = len(data['invitations'])
+    matched_count = sum(bool(row['budget']) for row in data['invitations'])
+    lead = hero(
+        'PhilGEPS · FY2027', f'{contract_count:,}', 'contracts citing FY2027 funds',
+        f'{matched_count:,}', 'have a budget match in the available schedules',
+        [
+            ('Official PhilGEPS sources', f'{source_count:,}', 'Public tender notices and invitations'),
+            ('Budget match unestablished', f'{contract_count - matched_count:,}', 'Scope or funding link requires review'),
+        ],
+        'The sources document invitations to bid. Confirming a contract award requires separate evidence.',
+    )
     crawl = data['crawl']
     crawl_summary = ''
     if crawl:
-        crawl_summary = (f'<p>Through {escape(crawl["asOf"])}, the limited crawl screened '
-                         f'{crawl["listingsScreened"]:,} public listings and requested '
-                         f'{crawl["detailsRequested"]:,} notice detail pages. '
+        window = escape(crawl['asOf'])
+        if crawl.get('requestedFrom'):
+            window = escape(crawl['requestedFrom']) + ' to ' + window
+        reviewed = crawl.get('detailsReviewed', crawl['detailsRequested'] - len(crawl.get('detailFailures', [])))
+        pending = max(0, crawl['listingsScreened'] - reviewed) if crawl.get('allDetails') else 0
+        coverage = ''
+        if crawl.get('inProgress'):
+            coverage = ' The crawl is still in progress.'
+        elif crawl.get('searchError') or pending:
+            coverage = ' The run encountered incomplete coverage.'
+        if pending:
+            coverage += f' {pending:,} listed notices still need detail review.'
+        if (reported := crawl.get('reportedListings')) and reported > crawl['listingsScreened']:
+            coverage += f' The portal reported {reported:,} listings in the search.'
+        crawl_summary = (f'<p>The public civil-works crawl for {window} found '
+                         f'{crawl["listingsScreened"]:,} distinct listings and reviewed '
+                         f'{reviewed:,} detail pages.{coverage} '
                          f'<a href="{escape(crawl["listingUrl"], quote=True)}">PhilGEPS public listings</a></p>')
     html = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FY2027 budget projects and PhilGEPS | BetterGov</title>{STYLE}</head>
+<title>FY2027 budget projects and PhilGEPS | BetterGov</title>{STYLE}{HERO_STYLE}</head>
 <body><header><div>BetterGov · Budget research</div>
 <h1>FY2027 budget projects and PhilGEPS</h1>
-<p>Compare named NEP, House third-reading and Senate Committee Report projects with PhilGEPS notices and award records.</p>
+<p>Published invitations, matched budget lines and source-linked review flags.</p>
 </header><main>
+{lead}
 <section id="verified-invitations">
 <h2>Verified FY2027 invitations to bid</h2>
-<p>{len({row['url'] for row in data['invitations']})} official PhilGEPS sources list {len(data['invitations'])} contracts citing FY2027 funds. {sum(bool(row['budget']) for row in data['invitations'])} have a budget match in the available schedules. The sources establish invitations and scheduled bid openings. Actual bid openings and FY2027 awards remain unverified.</p>
+<p>The sources establish invitations and scheduled bid openings. Actual bid openings and FY2027 awards remain unverified.</p>
 {crawl_summary}
 <p>Review flags below link to their source evidence. An invitation under Early Procurement Activity is permitted when the requirements in section 12 are met.</p>
 {invitations}
