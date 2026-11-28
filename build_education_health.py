@@ -221,6 +221,20 @@ def join_map_point_crosschecks(places, geography_rows):
     return audit
 
 
+def is_evacuation_candidate(tags):
+    return (
+        tags.get('emergency', '').casefold() in {'evacuation_center', 'evacuation_centre'}
+        or tags.get('disaster_help_point:shelter', '').casefold() == 'yes'
+        or tags.get('emergency:social_facility', '').casefold() == 'shelter'
+        or tags.get('emergency:social_facility:for', '').casefold() == 'displaced'
+        or (
+            tags.get('social_facility', '').casefold() == 'shelter'
+            and ('displaced' in tags.get('social_facility:for', '').casefold().split(';')
+                 or not tags.get('social_facility:for'))
+        )
+    )
+
+
 def join_facility_candidates(places, geography_rows):
     mapped = json.loads(FACILITIES.read_text())['rows']
     raw = json.loads(FACILITIES_RAW.read_text())['elements']
@@ -251,17 +265,7 @@ def join_facility_candidates(places, geography_rows):
     categories = {
         'schools': lambda row, tags: row['type'] == 'School / education facility' and explicitly_public(tags),
         'health': lambda row, tags: row['type'] == 'Health / medical facility' and explicitly_public(tags),
-        'evacuation': lambda row, tags: (
-            tags.get('emergency', '').casefold() in {'evacuation_center', 'evacuation_centre'}
-            or tags.get('disaster_help_point:shelter', '').casefold() == 'yes'
-            or tags.get('emergency:social_facility', '').casefold() == 'shelter'
-            or tags.get('emergency:social_facility:for', '').casefold() == 'displaced'
-            or (
-                tags.get('social_facility', '').casefold() == 'shelter'
-                and ('displaced' in tags.get('social_facility:for', '').casefold().split(';')
-                     or not tags.get('social_facility:for'))
-            )
-        ),
+        'evacuation': lambda row, tags: is_evacuation_candidate(tags),
     }
     counters = {key: defaultdict(int) for key in categories}
     inventories = {}
